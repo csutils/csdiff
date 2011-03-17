@@ -167,7 +167,6 @@ bool Parser::parseClass(Defect *def) {
 
 fail:
     free(text);
-    this->wrongToken();
     return false;
 }
 
@@ -201,7 +200,6 @@ bool Parser::parseLine(DefMsg *msg) {
 
 fail:
     free(text);
-    this->wrongToken();
     return false;
 }
 
@@ -210,17 +208,17 @@ bool Parser::parseMsg(DefMsg *msg) {
     if (seekForToken(T_FILE))
         msg->fileName = lexer_.YYText();
     else
-        return false;
+        goto fail;
 
     // parse line/column
     if (!seekForToken(T_LINE) || !parseLine(msg))
-        return false;
+        goto fail;
 
     // parse basic msg
     if (seekForToken(T_MSG))
         msg->msg = lexer_.YYText();
     else
-        return false;
+        goto fail;
 
     // parse extra msg
     for (;;) {
@@ -229,6 +227,7 @@ bool Parser::parseMsg(DefMsg *msg) {
             case T_NULL:
             case T_INIT:
             case T_FILE:
+                // all OK
                 return true;
 
             case T_MSG_EX:
@@ -237,16 +236,22 @@ bool Parser::parseMsg(DefMsg *msg) {
                 continue;
 
             default:
-                this->wrongToken();
-                return false;
+                goto fail;
         }
     }
+
+fail:
+    this->wrongToken();
+    return false;
 }
 
 bool Parser::parseNext(Defect *def) {
     // parse defect header
-    if (!seekForToken(T_INIT) || !seekForToken(T_DEFECT) || !parseClass(def))
+    if (!seekForToken(T_INIT))
         return false;
+
+    if (!seekForToken(T_DEFECT) || !parseClass(def))
+        goto fail;
 
     // parse defect body
     while (T_NULL != code_ && T_INIT != code_) {
@@ -258,7 +263,13 @@ bool Parser::parseNext(Defect *def) {
         def->msgs.push_back(msg);
     }
 
-    return true;
+    if (!def->msgs.empty())
+        // all OK
+        return true;
+
+fail:
+    this->wrongToken();
+    return false;
 }
 
 bool Parser::getNext(Defect *def) {
