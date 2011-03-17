@@ -14,6 +14,9 @@
 #include <boost/lexical_cast.hpp>
 #include <boost/regex.hpp>
 
+// if 1, debug string substitutions while matching them
+#define DEBUG_SUBST 0
+
 std::ostream& operator<<(std::ostream &str, EToken code) {
     switch (code) {
         case T_NULL:    str << "T_NULL";    break;
@@ -283,49 +286,45 @@ bool Parser::getNext(Defect *def) {
     return false;
 }
 
-class PathFilter {
-    private:
-        static PathFilter *self_;
-        const boost::regex re_;
-
-        PathFilter():
-            re_("(?:/builddir/build/BUILD/)[^/]+/")
-        {
-        }
-
-    public:
-        static PathFilter* inst() {
-            return (self_)
-                ? (self_)
-                : (self_ = new PathFilter);
-        }
-
-        std::string filter(const std::string &path) {
-            return boost::regex_replace(path, re_, "");
-        }
-};
-
-PathFilter* PathFilter::self_;
+inline std::string regexReplaceWrap(
+        const std::string       &input,
+        const boost::regex      &re,
+        const std::string       &fmt)
+{
+    std::string output(boost::regex_replace(input, re, fmt));
+#if DEBUG_SUBST
+    if (input != output)
+        std::cerr << "regex_replace: " << input << " -> " << output << "\n";
+#endif
+    return output;
+}
 
 class MsgFilter {
     private:
         static MsgFilter *self_;
-        const boost::regex re_;
+        const boost::regex reMsg_, rePath_;
 
         MsgFilter():
-            re_("[0-9][0-9]* out of [0-9][0-9]* times")
+            reMsg_("[0-9][0-9]* out of [0-9][0-9]* times"),
+            rePath_("^(?:/builddir/build/BUILD/)?[^/]+/")
         {
         }
 
     public:
+        // we use singleton in order to compile the regexes only once per run
+        // NOTE: we do not care about destruction of the single instance
         static MsgFilter* inst() {
             return (self_)
                 ? (self_)
                 : (self_ = new MsgFilter);
         }
 
-        std::string filter(const std::string &msg) {
-            return boost::regex_replace(msg, re_, "");
+        std::string filterMsg(const std::string &msg) {
+            return regexReplaceWrap(msg, reMsg_, "");
+        }
+
+        std::string filterPath(const std::string &path) {
+            return regexReplaceWrap(path, rePath_, "");
         }
 };
 
@@ -343,8 +342,9 @@ void hashDefect(TStor &stor, const Defect &def)
     TDefByFile &row = stor[def.defClass];
 
     const DefMsg &msg = def.msgs.front();
-    TDefByMsg &col = row[PathFilter::inst()->filter(msg.fileName)];
-    TDefList &cell = col[MsgFilter::inst()->filter(msg.msg)];
+    MsgFilter *filter = MsgFilter::inst();
+    TDefByMsg &col = row[filter->filterPath(msg.fileName)];
+    TDefList &cell = col[filter->filterMsg(msg.msg)];
 
     cell.push_back(def);
 }
@@ -359,7 +359,8 @@ bool lookup(TStor &stor, const Defect &def)
 
     // simplify path
     const DefMsg &msg = def.msgs.front();
-    const std::string path(PathFilter::inst()->filter(msg.fileName));
+    MsgFilter *filter = MsgFilter::inst();
+    const std::string path(filter->filterPath(msg.fileName));
 
     // look for file name
     TDefByFile &row = iRow->second;
@@ -369,7 +370,7 @@ bool lookup(TStor &stor, const Defect &def)
 
     // look by msg
     TDefByMsg &col = iCol->second;
-    TDefByMsg::iterator iCell = col.find(MsgFilter::inst()->filter(msg.msg));
+    TDefByMsg::iterator iCell = col.find(filter->filterMsg(msg.msg));
     if (col.end() == iCell)
         return false;
 
