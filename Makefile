@@ -1,10 +1,14 @@
 CXXFLAGS = -Wall -Wextra -O2
-OBJS = csdiff.o csdiff.yy.o
-csdiff: $(OBJS)
-	g++ -o $@ $(OBJS) -lboost_regex
+PARSER_OBJS = csparser.o csparser.yy.o
+csdiff: csdiff.o $(PARSER_OBJS)
+	g++ -o $@ csdiff.o $(PARSER_OBJS) -lboost_regex
 
-csdiff.yy.cc: csdiff.lex
+csparser.yy.cc: csparser.lex
 	flex -o $@ $<
 
+# .hh deps (built manually for now)
+$(PARSER_OBJS): csparser-priv.hh
+csparser.o csdiff.o: csparser.hh
+
 clean:
-	rm -f csdiff csdiff.o csdiff.yy.o csdiff.yy.cc
+	rm -fv csdiff csdiff.o $(PARSER_OBJS) csparser.yy.cc

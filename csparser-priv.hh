@@ -1,3 +1,6 @@
+#ifndef H_GUARD_CSPARSER_PRIV_H
+#define H_GUARD_CSPARSER_PRIV_H
+
 enum EToken {
     T_NULL = 0,
 
@@ -8,3 +11,5 @@ enum EToken {
     T_MSG,
     T_MSG_EX
 };
+
+#endif /* H_GUARD_CSPARSER_PRIV_H */

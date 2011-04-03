@@ -8,7 +8,7 @@
 %option noyywrap
 
 %{
-#include "csdiff.hh"
+#include "csparser-priv.hh"
 %}
 
 spaces              [ \t\n]*
