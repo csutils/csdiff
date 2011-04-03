@@ -16,16 +16,23 @@
 # along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
 
 CXXFLAGS = -Wall -Wextra -O2
+
+.PHONY: all clean
+all: csdiff cstat
+
 PARSER_OBJS = csparser.o csparser.yy.o
 csdiff: csdiff.o $(PARSER_OBJS)
 	g++ -o $@ csdiff.o $(PARSER_OBJS) -lboost_regex
+
+cstat: cstat.o $(PARSER_OBJS)
+	g++ -o $@ cstat.o $(PARSER_OBJS)
 
 csparser.yy.cc: csparser.lex
 	flex -o $@ $<
 
 # .hh deps (built manually for now)
 $(PARSER_OBJS): csparser-priv.hh
-csparser.o csdiff.o: csparser.hh
+csparser.o csdiff.o cstat.o: csparser.hh
 
 clean:
-	rm -fv csdiff csdiff.o $(PARSER_OBJS) csparser.yy.cc
+	rm -fv csdiff csdiff.o cstat cstat.o $(PARSER_OBJS) csparser.yy.cc
