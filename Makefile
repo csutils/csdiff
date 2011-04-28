@@ -25,7 +25,7 @@ csdiff: csdiff.o $(PARSER_OBJS)
 	g++ -o $@ csdiff.o $(PARSER_OBJS) -lboost_regex
 
 cstat: cstat.o $(PARSER_OBJS)
-	g++ -o $@ cstat.o $(PARSER_OBJS)
+	g++ -o $@ cstat.o $(PARSER_OBJS) -lboost_program_options -lboost_regex
 
 csparser.yy.cc: csparser.lex
 	flex -o $@ $<

@@ -28,6 +28,7 @@
 #include <set>
 
 #include <boost/foreach.hpp>
+#include <boost/program_options.hpp>
 #include <boost/regex.hpp>
 
 class AbstractEngine {
@@ -169,45 +170,91 @@ class MsgFilter: public AbstractFilter {
 int main(int argc, char *argv[])
 {
     using std::string;
+    namespace po = boost::program_options;
+
     if (argc < 1)
         abort();
 
-    DefCounter dc;
-    bool hasError = false;
-    const string dash("-");
+    const string name(argv[0]);
 
-    if (1 == argc) {
-        // read from stdin
-        hasError = !dc.handleFile("-");
-        dc.flush();
-        return !hasError;
+    po::variables_map vm;
+    po::options_description desc(string("Usage: ") + name
+            + " [--mode=stat|grep|files] [--msg=PATTERN] [file1.err [...]]");
+
+    typedef std::vector<string> TStringList;
+    string mode;
+
+    try {
+        desc.add_options()
+            ("help", "produce help message")
+            ("mode", po::value<string>(&mode)->default_value("stat"),
+             "stat, grep, or files")
+            ("msg", po::value<string>(), "match msgs by the given regex");
+
+        po::options_description hidden("");
+        hidden.add_options()
+            ("input-file", po::value<TStringList>(), "input file");
+        po::positional_options_description p;
+        p.add("input-file", -1);
+
+        po::store(po::parse_command_line(argc, argv, desc), vm);
+        po::notify(vm);    
+
+        po::options_description opts;
+        opts.add(desc).add(hidden);
+        po::store(po::command_line_parser(argc, argv).
+                options(opts).positional(p).run(), vm);
+        po::notify(vm);
+    }
+    catch (po::error &e) {
+        std::cerr << name << ": error: " << e.what() << "\n\n";
+        desc.print(std::cerr);
+        return 1;
     }
 
-    // scan args for "-" and "--help"
-    for (int i = 1; i < argc; ++i) {
-        const string arg(argv[i]);
-        if (arg == string("--help")) {
-            std::cerr << "Usage: " << argv[0] << " [file1.err [...]]\n";
-            return 0;
+    if (vm.count("help")) {
+        desc.print(std::cerr);
+        return 0;
+    }
+
+    AbstractEngine *eng = 0;
+    if (string("stat") == mode)
+        eng = new DefCounter;
+    else if (string("grep") == mode)
+        eng = new DefPrinter;
+    else if (string("files") == mode)
+        eng = new FilePrinter;
+    else {
+        std::cerr << name << ": error: unknown mode: " << mode << "\n";
+        return 1;
+    }
+
+    if (vm.count("msg")) {
+        const string &reStr = vm["msg"].as<string>();
+        try {
+            eng = new MsgFilter(eng, reStr);
         }
+        catch (...) {
+            std::cerr << name << ": error: invalid regex: " << reStr << "\n";
+            return 1;
+        }
+    }
 
-        // "-" means "read from stdin"
-        if (dash == arg && !dc.handleFile("-"))
+    bool hasError = false;
+
+    const TStringList &files = vm["input-file"].as<TStringList>();
+    if (files.empty()) {
+        hasError = !eng->handleFile("-");
+        goto ready;
+    }
+
+    BOOST_FOREACH(const string &fileName, files) {
+        if (!eng->handleFile(fileName))
             hasError = true;
     }
 
-    // go through the given arguments
-    for (int i = 1; i < argc; ++i) {
-        const char *fileName = argv[i];
-        if (dash == string(fileName))
-            // already handled
-            continue;
-
-        if (!dc.handleFile(fileName))
-            hasError = true;
-    }
-
-    // print the summarized statistics
-    dc.flush();
+ready:
+    eng->flush();
+    delete eng;
     return hasError;
 }
