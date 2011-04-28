@@ -19,38 +19,68 @@
 
 #include "csparser.hh"
 
+#include <errno.h>
+#include <error.h>
+
 #include <cstdlib>
 #include <fstream>
 #include <map>
 
 #include <boost/foreach.hpp>
 
-typedef std::map<std::string, int> TDefCounter;
+class AbstractEngine {
+    protected:
+        virtual void handleDef(const Defect &def) = 0;
 
-namespace {
+    public:
+        virtual ~AbstractEngine() { }
 
-bool countDeffects(TDefCounter &dc, std::istream &str, const char *fileName) {
-    Parser parser(str, fileName);
+        bool handleFile(const std::string &fileName) {
+            std::fstream fstr;
+            std::istream *pStr = &fstr;
 
-    // go through the contents
-    Defect def;
-    while (parser.getNext(&def))
-        ++dc[def.defClass];
+            const char *szFileName = fileName.c_str();
+            const bool isFile = !!fileName.compare("-");
+            if (isFile)
+                fstr.open(szFileName, std::ios::in);
+            else
+                pStr = &std::cin;
 
-    return !parser.hasError();
-}
+            if (!fstr) {
+                error(0, errno, "failed to open %s", szFileName);
+                return false;
+            }
 
-bool countDeffectsCin(TDefCounter &dc) {
-    return countDeffects(dc, std::cin, "-");
-}
+            Parser parser(*pStr, fileName);
+            Defect def;
+            while (parser.getNext(&def))
+                this->handleDef(def);
 
-void printStats(const TDefCounter &dc) {
-    BOOST_FOREACH(TDefCounter::const_reference item, dc) {
-        std::cout << item.second << "\t" << item.first << "\n";
-    }
-}
+            if (isFile)
+                fstr.close();
 
-} // namespace
+            return !parser.hasError();
+        }
+
+        virtual void flush() { };
+};
+
+class DefCounter: public AbstractEngine {
+    private:
+        typedef std::map<std::string, int> TMap;
+        TMap cnt_;
+
+    public:
+        virtual void handleDef(const Defect &def) {
+            ++cnt_[def.defClass];
+        }
+
+        virtual void flush() {
+            BOOST_FOREACH(TMap::const_reference item, cnt_) {
+                std::cout << item.second << "\t" << item.first << "\n";
+            }
+        }
+};
 
 int main(int argc, char *argv[])
 {
@@ -58,15 +88,14 @@ int main(int argc, char *argv[])
     if (argc < 1)
         abort();
 
-    // initialize counter
-    TDefCounter dc;
+    DefCounter dc;
     bool hasError = false;
     const string dash("-");
 
     if (1 == argc) {
         // read from stdin
-        hasError = !countDeffectsCin(dc);
-        printStats(dc);
+        hasError = !dc.handleFile("-");
+        dc.flush();
         return !hasError;
     }
 
@@ -79,7 +108,7 @@ int main(int argc, char *argv[])
         }
 
         // "-" means "read from stdin"
-        if (dash == arg && !countDeffectsCin(dc))
+        if (dash == arg && !dc.handleFile("-"))
             hasError = true;
     }
 
@@ -90,22 +119,11 @@ int main(int argc, char *argv[])
             // already handled
             continue;
 
-        // open a file
-        std::fstream fstr(fileName, std::ios::in);
-        if (!fstr) {
-            std::cerr << fileName << ": failed to open input file\n";
-            return false;
-        }
-
-        // read from stream
-        if (!countDeffects(dc, fstr, fileName))
+        if (!dc.handleFile(fileName))
             hasError = true;
-
-        // close stream
-        fstr.close();
     }
 
     // print the summarized statistics
-    printStats(dc);
+    dc.flush();
     return hasError;
 }
