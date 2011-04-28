@@ -25,12 +25,16 @@
 #include <cstdlib>
 #include <fstream>
 #include <map>
+#include <set>
 
 #include <boost/foreach.hpp>
+#include <boost/regex.hpp>
 
 class AbstractEngine {
     protected:
         virtual void handleDef(const Defect &def) = 0;
+        virtual void notifyFile(const std::string &) { }
+        friend class AbstractFilter;
 
     public:
         virtual ~AbstractEngine() { }
@@ -51,6 +55,8 @@ class AbstractEngine {
                 return false;
             }
 
+            this->notifyFile(fileName);
+
             Parser parser(*pStr, fileName);
             Defect def;
             while (parser.getNext(&def))
@@ -63,6 +69,34 @@ class AbstractEngine {
         }
 
         virtual void flush() { };
+};
+
+class DefPrinter: public AbstractEngine {
+    public:
+        virtual void handleDef(const Defect &def) {
+            std::cout << def;
+        }
+};
+
+class FilePrinter: public AbstractEngine {
+    private:
+        std::string                 file_;
+        std::set<std::string>       fset_;
+
+    protected:
+        virtual void notifyFile(const std::string &fileName) {
+            file_ = fileName;
+        }
+
+        virtual void handleDef(const Defect &) {
+            fset_.insert(file_);
+        }
+
+    public:
+        virtual void flush() {
+            BOOST_FOREACH(const std::string &fileName, fset_)
+                std::cout << fileName << "\n";
+        }
 };
 
 class DefCounter: public AbstractEngine {
@@ -79,6 +113,56 @@ class DefCounter: public AbstractEngine {
             BOOST_FOREACH(TMap::const_reference item, cnt_) {
                 std::cout << item.second << "\t" << item.first << "\n";
             }
+        }
+};
+
+class AbstractFilter: public AbstractEngine {
+    protected:
+        AbstractEngine *slave_;
+        virtual bool matchDef(const Defect &def) = 0;
+
+        virtual void notifyFile(const std::string &fileName) {
+            slave_->notifyFile(fileName);
+        }
+
+    public:
+        AbstractFilter(AbstractEngine *slave):
+            slave_(slave)
+        {
+        }
+
+        ~AbstractFilter() {
+            delete slave_;
+        }
+
+        virtual void handleDef(const Defect &def) {
+            if (matchDef(def))
+                slave_->handleDef(def);
+        }
+
+        virtual void flush() {
+            slave_->flush();
+        }
+};
+
+class MsgFilter: public AbstractFilter {
+    private:
+        boost::regex        re_;
+
+    public:
+        MsgFilter(AbstractEngine *slave, const std::string reStr):
+            AbstractFilter(slave),
+            re_(reStr)
+        {
+        }
+
+        virtual bool matchDef(const Defect &def) {
+            BOOST_FOREACH(const DefMsg &msg, def.msgs) {
+                if (boost::regex_search(msg.msg, re_))
+                    return true;
+            }
+
+            return false;
         }
 };
 
