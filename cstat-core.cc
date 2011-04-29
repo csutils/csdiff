@@ -144,7 +144,7 @@ class AbstractFilter: public AbstractEngine {
 
 class MsgFilter: public AbstractFilter {
     private:
-        boost::regex        re_;
+        boost::regex re_;
 
     public:
         MsgFilter(
@@ -163,6 +163,26 @@ class MsgFilter: public AbstractFilter {
             }
 
             return false;
+        }
+};
+
+class ErrorFilter: public AbstractFilter {
+    private:
+        boost::regex re_;
+
+    public:
+        ErrorFilter(
+                AbstractEngine                                 *slave,
+                const std::string                               reStr,
+                boost::regex_constants::syntax_option_type      flags):
+            AbstractFilter(slave),
+            re_(reStr, flags)
+        {
+        }
+
+        virtual bool matchDef(const Defect &def) {
+            const DefMsg &msg = def.msgs.front();
+            return boost::regex_search(msg.msg, re_);
         }
 };
 
@@ -227,7 +247,8 @@ bool chainFilters(
     if (vm.count("ignore-case"))
         flags |= boost::regex_constants::icase;
 
-    return chainFilterIfNeeded<MsgFilter>(pEng, vm, flags, "msg");
+    return chainFilterIfNeeded<MsgFilter>       (pEng, vm, flags, "msg")
+        && chainFilterIfNeeded<ErrorFilter>     (pEng, vm, flags, "error");
 }
 
 int cStatCore(int argc, char *argv[], const char *defMode)
@@ -245,6 +266,7 @@ int cStatCore(int argc, char *argv[], const char *defMode)
 
     try {
         desc.add_options()
+            ("error", po::value<string>(), "match errors by the given regex")
             ("help", "produce help message")
             ("ignore-case,i", "ignore case when matching regular expressions")
             ("mode", po::value<string>(&mode)->default_value(defMode),
