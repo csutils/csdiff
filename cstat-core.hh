@@ -17,9 +17,9 @@
  * along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "cstat-core.hh"
+#ifndef H_GUARD_CSTAT_CORE_H
+#define H_GUARD_CSTAT_CORE_H
 
-int main(int argc, char *argv[])
-{
-    return cStatCore(argc, argv, "stat");
-}
+int cStatCore(int argc, char *argv[], const char *defMode);
+
+#endif /* H_GUARD_CSTAT_CORE_H */

@@ -21,5 +21,5 @@
 
 int main(int argc, char *argv[])
 {
-    return cStatCore(argc, argv, "stat");
+    return cStatCore(argc, argv, "grep");
 }

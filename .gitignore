@@ -1,7 +1,6 @@
 csdiff
-csdiff.o
+csgrep
 cstat
-cstat.o
-csparser.o
+cslib.a
 csparser.yy.cc
-csparser.yy.o
+*.o
