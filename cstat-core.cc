@@ -331,7 +331,7 @@ int cStatCore(int argc, char *argv[], const char *defMode)
 
     po::variables_map vm;
     po::options_description desc(string("Usage: ") + name
-            + " [--mode=stat|grep|files] [--msg=PATTERN] [file1.err [...]]");
+            + " [options] [file1.err [...]], where options are");
 
     typedef std::vector<string> TStringList;
     string mode;
@@ -346,7 +346,7 @@ int cStatCore(int argc, char *argv[], const char *defMode)
             ("invert-match,v", "select defects that do not match the regex")
             ("mode", po::value<string>(&mode)->default_value(defMode),
              "stat, grep, files, or grouped")
-            ("msg", po::value<string>(), "match msgs by the given regex")
+            ("msg", po::value<string>(), "match messages by the given regex")
             ("path", po::value<string>(),
              "match source path by the given regex")
             ("quiet,q", "do not report any parsing errors");
@@ -373,14 +373,15 @@ int cStatCore(int argc, char *argv[], const char *defMode)
     }
 
     if (vm.count("help")) {
-        desc.print(std::cerr);
+        desc.print(std::cout);
         return 0;
     }
 
     EngineFactory factory;
     AbstractEngine *eng = factory.create(mode);
     if (!eng) {
-        std::cerr << name << ": error: unknown mode: " << mode << "\n";
+        std::cerr << name << ": error: unknown mode: " << mode << "\n\n";
+        desc.print(std::cerr);
         return 1;
     }
 
