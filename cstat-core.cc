@@ -186,6 +186,26 @@ class ErrorFilter: public AbstractFilter {
         }
 };
 
+class PathFilter: public AbstractFilter {
+    private:
+        boost::regex re_;
+
+    public:
+        PathFilter(
+                AbstractEngine                                 *slave,
+                const std::string                               reStr,
+                boost::regex_constants::syntax_option_type      flags):
+            AbstractFilter(slave),
+            re_(reStr, flags)
+        {
+        }
+
+        virtual bool matchDef(const Defect &def) {
+            const DefMsg &msg = def.msgs.front();
+            return boost::regex_search(msg.fileName, re_);
+        }
+};
+
 class DefClassFilter: public AbstractFilter {
     private:
         boost::regex re_;
@@ -266,9 +286,10 @@ bool chainFilters(
     if (vm.count("ignore-case"))
         flags |= boost::regex_constants::icase;
 
-    return chainFilterIfNeeded<MsgFilter>       (pEng, vm, flags, "msg")
+    return chainFilterIfNeeded<DefClassFilter>  (pEng, vm, flags, "checker")
         && chainFilterIfNeeded<ErrorFilter>     (pEng, vm, flags, "error")
-        && chainFilterIfNeeded<DefClassFilter>  (pEng, vm, flags, "checker");
+        && chainFilterIfNeeded<MsgFilter>       (pEng, vm, flags, "msg")
+        && chainFilterIfNeeded<PathFilter>      (pEng, vm, flags, "path");
 }
 
 int cStatCore(int argc, char *argv[], const char *defMode)
@@ -294,6 +315,8 @@ int cStatCore(int argc, char *argv[], const char *defMode)
             ("mode", po::value<string>(&mode)->default_value(defMode),
              "stat, grep, or files")
             ("msg", po::value<string>(), "match msgs by the given regex")
+            ("path", po::value<string>(),
+             "match source path by the given regex")
             ("quiet,q", "do not report any parsing errors");
 
         po::options_description hidden("");
