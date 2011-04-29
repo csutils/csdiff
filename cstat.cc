@@ -40,7 +40,7 @@ class AbstractEngine {
     public:
         virtual ~AbstractEngine() { }
 
-        bool handleFile(const std::string &fileName) {
+        bool handleFile(const std::string &fileName, bool silent) {
             std::fstream fstr;
             std::istream *pStr = &fstr;
 
@@ -58,7 +58,7 @@ class AbstractEngine {
 
             this->notifyFile(fileName);
 
-            Parser parser(*pStr, fileName);
+            Parser parser(*pStr, fileName, silent);
             Defect def;
             while (parser.getNext(&def))
                 this->handleDef(def);
@@ -189,7 +189,8 @@ int main(int argc, char *argv[])
             ("help", "produce help message")
             ("mode", po::value<string>(&mode)->default_value("stat"),
              "stat, grep, or files")
-            ("msg", po::value<string>(), "match msgs by the given regex");
+            ("msg", po::value<string>(), "match msgs by the given regex")
+            ("quiet,q", "do not report any parsing errors");
 
         po::options_description hidden("");
         hidden.add_options()
@@ -240,16 +241,17 @@ int main(int argc, char *argv[])
         }
     }
 
+    const bool silent = vm.count("quiet");
     bool hasError = false;
 
     const TStringList &files = vm["input-file"].as<TStringList>();
     if (files.empty()) {
-        hasError = !eng->handleFile("-");
+        hasError = !eng->handleFile("-", silent);
         goto ready;
     }
 
     BOOST_FOREACH(const string &fileName, files) {
-        if (!eng->handleFile(fileName))
+        if (!eng->handleFile(fileName, silent))
             hasError = true;
     }
 

@@ -27,6 +27,8 @@
 #include <cstring>
 
 #include <boost/foreach.hpp>
+#include <boost/iostreams/device/null.hpp>
+#include <boost/iostreams/stream.hpp>
 #include <boost/lexical_cast.hpp>
 #include <boost/regex.hpp>
 
@@ -60,9 +62,15 @@ std::ostream& operator<<(std::ostream &str, const Defect &def) {
 }
 
 class FlexLexerWrap: public yyFlexLexer {
+    private:
+        typedef boost::iostreams::basic_null_sink<char> TSink;
+        TSink                           sinkPriv_;
+        boost::iostreams::stream<TSink> sink_;
+
     public:
-        FlexLexerWrap(std::istream &input, std::string fileName):
-            yyFlexLexer(&input, &std::cerr),
+        FlexLexerWrap(std::istream &input, std::string fileName, bool silent):
+            yyFlexLexer(&input, (silent) ? &sink_ : &std::cerr),
+            sink_(sinkPriv_),
             fileName_(fileName),
             hasError_(false)
         {
@@ -105,8 +113,8 @@ struct Parser::Private {
     bool                    hasError;
     EToken                  code;
 
-    Private(std::istream &input_, std::string fileName_):
-        lexer(input_, fileName_),
+    Private(std::istream &input_, std::string fileName_, bool silent):
+        lexer(input_, fileName_, silent),
         fileName(fileName_),
         hasError(false),
         code(T_NULL)
@@ -121,8 +129,8 @@ struct Parser::Private {
     bool parseNext(Defect *);
 };
 
-Parser::Parser(std::istream &input, std::string fileName):
-    d(new Private(input, fileName))
+Parser::Parser(std::istream &input, std::string fileName, bool silent):
+    d(new Private(input, fileName, silent))
 {
 }
 

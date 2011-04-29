@@ -40,7 +40,7 @@ std::ostream& operator<<(std::ostream &str, const Defect &def);
 
 class Parser {
     public:
-        Parser(std::istream &input, std::string fileName);
+        Parser(std::istream &input, std::string fileName, bool silent = false);
         ~Parser();
         bool getNext(Defect *);
         bool hasError() const;
