@@ -191,12 +191,50 @@ class EngineFactory {
         }
 };
 
+static std::string name;
+
+namespace po = boost::program_options;
+
+template <class TFilter>
+bool chainFilterIfNeeded(
+        AbstractEngine                                  **pEng,
+        const po::variables_map                         &vm,
+        boost::regex_constants::syntax_option_type      flags,
+        const char                                      *key)
+{
+    if (!vm.count(key))
+        return true;
+
+    const std::string &reStr = vm[key].as<std::string>();
+    try {
+        *pEng = new TFilter(*pEng, reStr, flags);
+    }
+    catch (...) {
+        // NOTE: eng is already free'd by AbstractFilter::~AbstractFilter()
+        std::cerr << ::name << ": error: invalid regex: " << reStr << "\n";
+        return false;
+    }
+
+    return true;
+}
+
+bool chainFilters(
+        AbstractEngine                                  **pEng,
+        const po::variables_map                         &vm)
+{
+    // common matching flags
+    boost::regex_constants::syntax_option_type flags = 0;
+    if (vm.count("ignore-case"))
+        flags |= boost::regex_constants::icase;
+
+    return chainFilterIfNeeded<MsgFilter>(pEng, vm, flags, "msg");
+}
+
 int cStatCore(int argc, char *argv[], const char *defMode)
 {
     using std::string;
-    namespace po = boost::program_options;
 
-    const string name(argv[0]);
+    ::name = argv[0];
 
     po::variables_map vm;
     po::options_description desc(string("Usage: ") + name
@@ -240,10 +278,6 @@ int cStatCore(int argc, char *argv[], const char *defMode)
         return 0;
     }
 
-    boost::regex_constants::syntax_option_type flags = 0;
-    if (vm.count("ignore-case"))
-        flags |= boost::regex_constants::icase;
-
     EngineFactory factory;
     AbstractEngine *eng = factory.create(mode);
     if (!eng) {
@@ -251,17 +285,10 @@ int cStatCore(int argc, char *argv[], const char *defMode)
         return 1;
     }
 
-    if (vm.count("msg")) {
-        const string &reStr = vm["msg"].as<string>();
-        try {
-            eng = new MsgFilter(eng, reStr, flags);
-        }
-        catch (...) {
-            // NOTE: eng is already free'd by AbstractFilter::~AbstractFilter()
-            std::cerr << name << ": error: invalid regex: " << reStr << "\n";
-            return 1;
-        }
-    }
+    // chain all filters
+    if (!chainFilters(&eng, vm))
+        // an error message already printed out
+        return 1;
 
     const bool silent = vm.count("quiet");
     bool hasError = false;
