@@ -133,6 +133,9 @@ class DefCounter: public AbstractEngine {
 };
 
 class AbstractFilter: public AbstractEngine {
+    private:
+        bool neg_;
+
     protected:
         AbstractEngine *slave_;
         virtual bool matchDef(const Defect &def) = 0;
@@ -143,6 +146,7 @@ class AbstractFilter: public AbstractEngine {
 
     public:
         AbstractFilter(AbstractEngine *slave):
+            neg_(false),
             slave_(slave)
         {
         }
@@ -151,9 +155,15 @@ class AbstractFilter: public AbstractEngine {
             delete slave_;
         }
 
+        void setInvertMatch(bool enabled = true) {
+            neg_ = enabled;
+        }
+
         virtual void handleDef(const Defect &def) {
-            if (matchDef(def))
-                slave_->handleDef(def);
+            if (neg_ == matchDef(def))
+                return;
+
+            slave_->handleDef(def);
         }
 
         virtual void flush() {
@@ -290,6 +300,9 @@ bool chainFilterIfNeeded(
         return false;
     }
 
+    if (vm.count("invert-match"))
+        filter->setInvertMatch();
+
     // successfully created a filter
     *pEng = filter;
     return true;
@@ -330,6 +343,7 @@ int cStatCore(int argc, char *argv[], const char *defMode)
             ("error", po::value<string>(), "match errors by the given regex")
             ("help", "produce help message")
             ("ignore-case,i", "ignore case when matching regular expressions")
+            ("invert-match,v", "select defects that do not match the regex")
             ("mode", po::value<string>(&mode)->default_value(defMode),
              "stat, grep, files, or grouped")
             ("msg", po::value<string>(), "match msgs by the given regex")
