@@ -166,12 +166,9 @@ class MsgFilter: public AbstractFilter {
         boost::regex re_;
 
     public:
-        MsgFilter(
-                AbstractEngine                                 *slave,
-                const std::string                               reStr,
-                boost::regex_constants::syntax_option_type      flags):
+        MsgFilter(AbstractEngine *slave, const boost::regex &re):
             AbstractFilter(slave),
-            re_(reStr, flags)
+            re_(re)
         {
         }
 
@@ -190,12 +187,9 @@ class ErrorFilter: public AbstractFilter {
         boost::regex re_;
 
     public:
-        ErrorFilter(
-                AbstractEngine                                 *slave,
-                const std::string                               reStr,
-                boost::regex_constants::syntax_option_type      flags):
+        ErrorFilter(AbstractEngine *slave, const boost::regex &re):
             AbstractFilter(slave),
-            re_(reStr, flags)
+            re_(re)
         {
         }
 
@@ -210,12 +204,9 @@ class PathFilter: public AbstractFilter {
         boost::regex re_;
 
     public:
-        PathFilter(
-                AbstractEngine                                 *slave,
-                const std::string                               reStr,
-                boost::regex_constants::syntax_option_type      flags):
+        PathFilter(AbstractEngine *slave, const boost::regex &re):
             AbstractFilter(slave),
-            re_(reStr, flags)
+            re_(re)
         {
         }
 
@@ -230,12 +221,9 @@ class DefClassFilter: public AbstractFilter {
         boost::regex re_;
 
     public:
-        DefClassFilter(
-                AbstractEngine                                 *slave,
-                const std::string                               reStr,
-                boost::regex_constants::syntax_option_type      flags):
+        DefClassFilter(AbstractEngine *slave, const boost::regex &re):
             AbstractFilter(slave),
-            re_(reStr, flags)
+            re_(re)
         {
         }
 
@@ -285,16 +273,25 @@ bool chainFilterIfNeeded(
     if (!vm.count(key))
         return true;
 
+    AbstractFilter *filter = 0;
     const std::string &reStr = vm[key].as<std::string>();
     try {
-        *pEng = new TFilter(*pEng, reStr, flags);
+        boost::regex re(reStr, flags);
+        filter = new TFilter(*pEng, re);
     }
     catch (...) {
-        // NOTE: eng is already free'd by AbstractFilter::~AbstractFilter()
-        std::cerr << ::name << ": error: invalid regex: " << reStr << "\n";
+        std::cerr << ::name << ": error: failed to compile regex: --"
+            << key << " '" << reStr << "'\n";
+    }
+
+    if (!filter) {
+        delete *pEng;
+        *pEng = 0;
         return false;
     }
 
+    // successfully created a filter
+    *pEng = filter;
     return true;
 }
 
