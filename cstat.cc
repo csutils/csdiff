@@ -25,7 +25,6 @@
 #include <cstdlib>
 #include <fstream>
 #include <map>
-#include <set>
 
 #include <boost/foreach.hpp>
 #include <boost/program_options.hpp>
@@ -81,8 +80,7 @@ class DefPrinter: public AbstractEngine {
 
 class FilePrinter: public AbstractEngine {
     private:
-        std::string                 file_;
-        std::set<std::string>       fset_;
+        std::string file_;
 
     protected:
         virtual void notifyFile(const std::string &fileName) {
@@ -90,13 +88,11 @@ class FilePrinter: public AbstractEngine {
         }
 
         virtual void handleDef(const Defect &) {
-            fset_.insert(file_);
-        }
+            if (file_.empty())
+                return;
 
-    public:
-        virtual void flush() {
-            BOOST_FOREACH(const std::string &fileName, fset_)
-                std::cout << fileName << "\n";
+            std::cout << file_ << "\n";
+            file_.clear();
         }
 };
 
