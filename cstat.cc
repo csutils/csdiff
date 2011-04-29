@@ -151,9 +151,12 @@ class MsgFilter: public AbstractFilter {
         boost::regex        re_;
 
     public:
-        MsgFilter(AbstractEngine *slave, const std::string reStr):
+        MsgFilter(
+                AbstractEngine                                 *slave,
+                const std::string                               reStr,
+                boost::regex_constants::syntax_option_type      flags):
             AbstractFilter(slave),
-            re_(reStr)
+            re_(reStr, flags)
         {
         }
 
@@ -167,13 +170,35 @@ class MsgFilter: public AbstractFilter {
         }
 };
 
+class EngineFactory {
+    private:
+        typedef std::map<std::string, AbstractEngine* (*)(void)> TTable;
+        TTable tbl_;
+
+        static AbstractEngine* createStat()  { return new DefCounter;  }
+        static AbstractEngine* createGrep()  { return new DefPrinter;  }
+        static AbstractEngine* createFiles() { return new FilePrinter; }
+
+    public:
+        EngineFactory() {
+            tbl_["stat"]    = createStat;
+            tbl_["grep"]    = createGrep;
+            tbl_["files"]   = createFiles;
+        }
+
+        AbstractEngine* create(const std::string mode) const {
+            TTable::const_iterator it = tbl_.find(mode);
+            if (tbl_.end() == it)
+                return 0;
+
+            return it->second();
+        }
+};
+
 int main(int argc, char *argv[])
 {
     using std::string;
     namespace po = boost::program_options;
-
-    if (argc < 1)
-        abort();
 
     const string name(argv[0]);
 
@@ -187,6 +212,7 @@ int main(int argc, char *argv[])
     try {
         desc.add_options()
             ("help", "produce help message")
+            ("ignore-case,i", "ignore case when matching regular expressions")
             ("mode", po::value<string>(&mode)->default_value("stat"),
              "stat, grep, or files")
             ("msg", po::value<string>(), "match msgs by the given regex")
@@ -218,14 +244,13 @@ int main(int argc, char *argv[])
         return 0;
     }
 
-    AbstractEngine *eng = 0;
-    if (string("stat") == mode)
-        eng = new DefCounter;
-    else if (string("grep") == mode)
-        eng = new DefPrinter;
-    else if (string("files") == mode)
-        eng = new FilePrinter;
-    else {
+    boost::regex_constants::syntax_option_type flags = 0;
+    if (vm.count("ignore-case"))
+        flags |= boost::regex_constants::icase;
+
+    EngineFactory factory;
+    AbstractEngine *eng = factory.create(mode);
+    if (!eng) {
         std::cerr << name << ": error: unknown mode: " << mode << "\n";
         return 1;
     }
@@ -233,9 +258,10 @@ int main(int argc, char *argv[])
     if (vm.count("msg")) {
         const string &reStr = vm["msg"].as<string>();
         try {
-            eng = new MsgFilter(eng, reStr);
+            eng = new MsgFilter(eng, reStr, flags);
         }
         catch (...) {
+            // NOTE: eng is already free'd by AbstractFilter::~AbstractFilter()
             std::cerr << name << ": error: invalid regex: " << reStr << "\n";
             return 1;
         }
@@ -244,18 +270,17 @@ int main(int argc, char *argv[])
     const bool silent = vm.count("quiet");
     bool hasError = false;
 
-    const TStringList &files = vm["input-file"].as<TStringList>();
-    if (files.empty()) {
+    if (!vm.count("input-file")) {
         hasError = !eng->handleFile("-", silent);
-        goto ready;
+    }
+    else {
+        const TStringList &files = vm["input-file"].as<TStringList>();
+        BOOST_FOREACH(const string &fileName, files) {
+            if (!eng->handleFile(fileName, silent))
+                hasError = true;
+        }
     }
 
-    BOOST_FOREACH(const string &fileName, files) {
-        if (!eng->handleFile(fileName, silent))
-            hasError = true;
-    }
-
-ready:
     eng->flush();
     delete eng;
     return hasError;
