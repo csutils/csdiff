@@ -96,6 +96,25 @@ class FilePrinter: public AbstractEngine {
         }
 };
 
+class GroupPrinter: public AbstractEngine {
+    private:
+        std::string file_;
+
+    protected:
+        virtual void notifyFile(const std::string &fileName) {
+            file_ = fileName;
+        }
+
+        virtual void handleDef(const Defect &def) {
+            if (!file_.empty()) {
+                std::cout << "\n\n=== " << file_ << " ===\n";
+                file_.clear();
+            }
+
+            std::cout << def;
+        }
+};
+
 class DefCounter: public AbstractEngine {
     private:
         typedef std::map<std::string, int> TMap;
@@ -230,15 +249,17 @@ class EngineFactory {
         typedef std::map<std::string, AbstractEngine* (*)(void)> TTable;
         TTable tbl_;
 
-        static AbstractEngine* createStat()  { return new DefCounter;  }
-        static AbstractEngine* createGrep()  { return new DefPrinter;  }
-        static AbstractEngine* createFiles() { return new FilePrinter; }
+        static AbstractEngine* createFiles()    { return new FilePrinter;   }
+        static AbstractEngine* createGrep()     { return new DefPrinter;    }
+        static AbstractEngine* createGrouped()  { return new GroupPrinter;  }
+        static AbstractEngine* createStat()     { return new DefCounter;    }
 
     public:
         EngineFactory() {
-            tbl_["stat"]    = createStat;
-            tbl_["grep"]    = createGrep;
             tbl_["files"]   = createFiles;
+            tbl_["grep"]    = createGrep;
+            tbl_["grouped"] = createGrouped;
+            tbl_["stat"]    = createStat;
         }
 
         AbstractEngine* create(const std::string mode) const {
@@ -313,7 +334,7 @@ int cStatCore(int argc, char *argv[], const char *defMode)
             ("help", "produce help message")
             ("ignore-case,i", "ignore case when matching regular expressions")
             ("mode", po::value<string>(&mode)->default_value(defMode),
-             "stat, grep, or files")
+             "stat, grep, files, or grouped")
             ("msg", po::value<string>(), "match msgs by the given regex")
             ("path", po::value<string>(),
              "match source path by the given regex")
