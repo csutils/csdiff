@@ -186,6 +186,25 @@ class ErrorFilter: public AbstractFilter {
         }
 };
 
+class DefClassFilter: public AbstractFilter {
+    private:
+        boost::regex re_;
+
+    public:
+        DefClassFilter(
+                AbstractEngine                                 *slave,
+                const std::string                               reStr,
+                boost::regex_constants::syntax_option_type      flags):
+            AbstractFilter(slave),
+            re_(reStr, flags)
+        {
+        }
+
+        virtual bool matchDef(const Defect &def) {
+            return boost::regex_search(def.defClass, re_);
+        }
+};
+
 class EngineFactory {
     private:
         typedef std::map<std::string, AbstractEngine* (*)(void)> TTable;
@@ -248,7 +267,8 @@ bool chainFilters(
         flags |= boost::regex_constants::icase;
 
     return chainFilterIfNeeded<MsgFilter>       (pEng, vm, flags, "msg")
-        && chainFilterIfNeeded<ErrorFilter>     (pEng, vm, flags, "error");
+        && chainFilterIfNeeded<ErrorFilter>     (pEng, vm, flags, "error")
+        && chainFilterIfNeeded<DefClassFilter>  (pEng, vm, flags, "checker");
 }
 
 int cStatCore(int argc, char *argv[], const char *defMode)
@@ -266,6 +286,8 @@ int cStatCore(int argc, char *argv[], const char *defMode)
 
     try {
         desc.add_options()
+            ("checker", po::value<string>(),
+             "match checkers by the given regex")
             ("error", po::value<string>(), "match errors by the given regex")
             ("help", "produce help message")
             ("ignore-case,i", "ignore case when matching regular expressions")
