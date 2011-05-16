@@ -17,59 +17,12 @@
  * along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include "csfilter.hh"
 #include "csparser.hh"
 
+#include <cstdlib>
 #include <fstream>
 #include <map>
-
-#include <boost/regex.hpp>
-
-// if 1, debug string substitutions while matching them
-#define DEBUG_SUBST 0
-
-inline std::string regexReplaceWrap(
-        const std::string       &input,
-        const boost::regex      &re,
-        const std::string       &fmt)
-{
-    std::string output(boost::regex_replace(input, re, fmt));
-#if DEBUG_SUBST
-    if (input != output)
-        std::cerr << "regex_replace: " << input << " -> " << output << "\n";
-#endif
-    return output;
-}
-
-class MsgFilter {
-    private:
-        static MsgFilter *self_;
-        const boost::regex reMsg_, rePath_;
-
-        MsgFilter():
-            reMsg_("[0-9][0-9]* out of [0-9][0-9]* times"),
-            rePath_("^(?:/builddir/build/BUILD/)?[^/]+/")
-        {
-        }
-
-    public:
-        // we use singleton in order to compile the regexes only once per run
-        // NOTE: we do not care about destruction of the single instance
-        static MsgFilter* inst() {
-            return (self_)
-                ? (self_)
-                : (self_ = new MsgFilter);
-        }
-
-        std::string filterMsg(const std::string &msg) {
-            return regexReplaceWrap(msg, reMsg_, "");
-        }
-
-        std::string filterPath(const std::string &path) {
-            return regexReplaceWrap(path, rePath_, "");
-        }
-};
-
-MsgFilter* MsgFilter::self_;
 
 // TODO: optimize such that no deep copies of strings are necessary
 typedef std::vector<Defect>                     TDefList;

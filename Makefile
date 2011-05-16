@@ -22,7 +22,8 @@ CXXFLAGS = -Wall -Wextra -O2
 TARGETS = csdiff csgrep cstat
 all: $(TARGETS)
 
-CSLIB_OBJS = csparser.o csparser.yy.o cstat-core.o
+PARSER_OBJS = csparser.o csparser.yy.o
+CSLIB_OBJS = csfilter.o $(PARSER_OBJS) cstat-core.o
 cslib.a: $(CSLIB_OBJS)
 	ar r $@ $(CSLIB_OBJS)
 	ranlib $@
@@ -42,7 +43,8 @@ csparser.yy.cc: csparser.lex
 # .hh deps (built manually for now)
 $(PARSER_OBJS): csparser-priv.hh
 csparser.o csdiff.o cstat-core.o: csparser.hh
-csdiff.o csgrep.o cstat.o cstat-core.o: cstat-core.hh
+csgrep.o cstat.o cstat-core.o: cstat-core.hh
+csdiff.o csfilter.o: csfilter.hh
 
 clean:
 	rm -fv *.o cslib.a $(TARGETS) csparser.yy.cc

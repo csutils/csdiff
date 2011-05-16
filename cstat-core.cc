@@ -18,6 +18,7 @@
  */
 
 #include "csparser.hh"
+#include "cstat-core.hh"
 
 #include <errno.h>
 #include <error.h>
