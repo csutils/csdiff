@@ -229,12 +229,12 @@ bool DefQueryParser::getNext(DefQueryParser::QRow &dst) {
 struct HtWriter {
 #define PRE_STYLE "white-space: pre-wrap;"
 
-    static void docOpen(/* TODO: a title based on .err file name */) {
+    static void docOpen(std::string fileName) {
         std::cout << "<?xml version='1.0' encoding='utf-8'?>\n\
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.1//EN' \
 'http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd'>\n\
 <html xmlns='http://www.w3.org/1999/xhtml'>\n\
-<head><title>A List of Defects</title></head>\n\
+<head><title>" << fileName << " (defects listing)</title></head>\n\
 <body>\n<pre style='" PRE_STYLE "'>\n";
     }
 
@@ -243,7 +243,7 @@ struct HtWriter {
     }
 
     static void initSection(std::string name) {
-        std::cout << "</pre>\n<h1>" << name << "</h1>\n"
+        std::cout << "</pre>\n<h3>" << name << "</h3>\n"
             "<pre style='" PRE_STYLE "'>\n";
     }
 
@@ -271,26 +271,7 @@ void linkify(
         const char                      *chkBase)
 {
     using std::cout;
-    cout << "Error: <b>" << def.defClass << "</b>";
-
-    const int cid = row.cid;
-    if (defBase && *defBase && (0 < cid)) {
-        cout << " <a href='" << defBase << cid
-            << "'>[Go to <b>Integrity Manager</b>: ";
-
-        if (!row.fnc.empty())
-            cout << row.fnc << ", ";
-
-        cout << "CID " << cid << "]</a>";
-    }
-
-    if (chkBase && *chkBase) {
-        cout << " <a href='" << chkBase
-            << def.defClass << "'>[Go to <b>Documentation</b> of "
-            << def.defClass << "]</a>";
-    }
-
-    cout << "\n";
+    cout << "Error: <b>" << def.defClass << "</b>\n";
 
     const unsigned cnt = def.msgs.size();
     for (unsigned i = 0; i < cnt; ++i) {
@@ -306,6 +287,23 @@ void linkify(
 
         HtWriter::writeEscaped(msg.msg);
         cout << "\n";
+    }
+
+    if (chkBase && *chkBase) {
+        cout << "<a href='" << chkBase
+            << def.defClass << "'>[Go to <b>Documentation</b> of "
+            << def.defClass << "]</a>\n";
+    }
+
+    const int cid = row.cid;
+    if (defBase && *defBase && (0 < cid)) {
+        cout << "<a href='" << defBase << cid
+            << "'>[Go to <b>Integrity Manager</b>: ";
+
+        if (!row.fnc.empty())
+            cout << row.fnc << ", ";
+
+        cout << "CID " << cid << "]</a>\n";
     }
 
     cout << "\n";
@@ -350,21 +348,7 @@ class OrphanPrinter {
 
 void DefLinker::printBareCid(const DefQueryParser::QRow &row) {
     using std::cout;
-    cout << "Error: <b>" << row.defClass << "</b>";
-
-    if (!defBase_.empty()) {
-        cout << " <a href='" << defBase_ << row.cid
-            << "'>[Go to <b>Integrity Manager</b>: "
-            << "CID " << row.cid << "]</a>";
-    }
-
-    if (!chkBase_.empty()) {
-        cout << " <a href='" << chkBase_
-            << row.defClass << "'>[Go to <b>Documentation</b> of "
-            << row.defClass << "]</a>";
-    }
-
-    cout << "\n";
+    cout << "Error: <b>" << row.defClass << "</b>\n";
 
     if (!row.fileName.empty()) {
         // print file name
@@ -375,6 +359,18 @@ void DefLinker::printBareCid(const DefQueryParser::QRow &row) {
             cout << " <b>" << row.fnc << "</b>";
 
         cout << " [<i>Sorry, no more details available...</i>]\n";
+    }
+
+    if (!chkBase_.empty()) {
+        cout << "<a href='" << chkBase_
+            << row.defClass << "'>[Go to <b>Documentation</b> of "
+            << row.defClass << "]</a>\n";
+    }
+
+    if (!defBase_.empty()) {
+        cout << "<a href='" << defBase_ << row.cid
+            << "'>[Go to <b>Integrity Manager</b>: "
+            << "CID " << row.cid << "]</a>\n";
     }
 
     cout << "\n";
@@ -398,7 +394,7 @@ int main(int argc, char *argv[])
     }
 
     // output HTML header
-    HtWriter::docOpen();
+    HtWriter::docOpen(defListFile);
 
     // read defects from .err
     Parser defParser(defListStream, defListFile);
@@ -439,7 +435,7 @@ int main(int argc, char *argv[])
 
     if (!stor.empty()) {
         std::cerr << defListFile << ": warning: IM data seems incomplete\n";
-        HtWriter::initSection("Defects Not Available via Integrity Manager");
+        HtWriter::initSection("Defects Not Found in the Integrity Manager");
 
         // set up a visitor and guide it through orphans
         OrphanPrinter visitor(linker);
@@ -447,7 +443,8 @@ int main(int argc, char *argv[])
     }
 
     if (!unmatched.empty()) {
-        HtWriter::initSection("Defects Available Only via Integrity Manager");
+        std::string secHead("Defects Not matched in ");
+        HtWriter::initSection(secHead + defListFile);
 
         do {
             linker.printBareCid(unmatched.front());
