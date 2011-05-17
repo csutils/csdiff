@@ -123,10 +123,10 @@ class FileNameDigger {
         bool guessFileName(Defect *);
 };
 
-bool FileNameDigger_UNINIT_CTOR(Defect *def) {
+inline bool digFileNameGeneric(Defect *def, const char *event) {
     const std::vector<DefMsg> &msgList = def->msgs;
     BOOST_FOREACH(const DefMsg &msg, msgList) {
-        if (msg.event.compare("uninit_member"))
+        if (msg.event.compare(event))
             continue;
 
         // matched
@@ -137,9 +137,18 @@ bool FileNameDigger_UNINIT_CTOR(Defect *def) {
     return false;
 }
 
+bool digFileName_UNINIT_CTOR(Defect *def) {
+    return digFileNameGeneric(def, "uninit_member");
+}
+
+bool digFileName_NULL_RETURNS(Defect *def) {
+    return digFileNameGeneric(def, "returned_null");
+}
+
 FileNameDigger::FileNameDigger() {
     // register checker-specific handlers
-    hMap_["UNINIT_CTOR"] = FileNameDigger_UNINIT_CTOR;
+    hMap_["UNINIT_CTOR"]        = digFileName_UNINIT_CTOR;
+    hMap_["NULL_RETURNS"]       = digFileName_NULL_RETURNS;
 }
 
 bool FileNameDigger::guessFileName(Defect *def) {
