@@ -44,10 +44,12 @@ MsgFilter* MsgFilter::self_;
 struct MsgFilter::Private {
     const boost::regex reMsg;
     const boost::regex rePath;
+    const boost::regex rePathFlex;
 
     Private():
         reMsg("[0-9][0-9]* out of [0-9][0-9]* times"),
-        rePath("^(?:/builddir/build/BUILD/)?[^/]+/")
+        rePath("^(?:/builddir/build/BUILD/)?[^/]+/"),
+        rePathFlex("\\.l$")
     {
     }
 };
@@ -66,5 +68,7 @@ std::string MsgFilter::filterMsg(const std::string &msg) {
 }
 
 std::string MsgFilter::filterPath(const std::string &path) {
-    return regexReplaceWrap(path, d->rePath, "");
+    return regexReplaceWrap(
+            regexReplaceWrap(path, d->rePath, ""),
+            d->rePathFlex, ".c");
 }
