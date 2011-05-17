@@ -55,7 +55,12 @@ std::ostream& operator<<(std::ostream &str, const Defect &def) {
         if (0 < msg.column)
             str << msg.column << ":";
 
-        str << " " << msg.msg << "\n";
+        str << " ";
+
+        if (!msg.event.empty())
+            str << msg.event << ": ";
+
+        str << msg.msg << "\n";
     }
 
     return str;
@@ -226,6 +231,8 @@ fail:
 }
 
 bool Parser::Private::parseMsg(DefMsg *msg) {
+    char *text;
+
     // parse file
     if (seekForToken(T_FILE))
         msg->fileName = lexer.YYText();
@@ -237,10 +244,26 @@ bool Parser::Private::parseMsg(DefMsg *msg) {
         goto fail;
 
     // parse basic msg
-    if (seekForToken(T_MSG))
-        msg->msg = lexer.YYText();
-    else
+    if (!seekForToken(T_MSG))
         goto fail;
+
+    text = const_cast<char *>(lexer.YYText());
+    if (!text)
+        goto fail;
+
+    // parse event name (if any)
+    if (!isupper(text[0])) {
+        char *pos = strchr(text, ':');
+        if (pos && pos[1]) {
+            *pos = '\0';
+            msg->event = text;
+            *pos = ':';
+            text = pos /* skip ": " */ + 2;
+        }
+    }
+
+    // store basic msg
+    msg->msg = text;
 
     // parse extra msg
     for (;;) {

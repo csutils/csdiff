@@ -301,9 +301,10 @@ void linkify(
             cout << msg.column << ":";
 
         cout << " ";
-        // TODO: highlight events once we refine the parser to read em seprately
-        HtWriter::writeEscaped(msg.msg);
+        if (!msg.event.empty())
+            cout << "<b>" << msg.event << "</b>: ";
 
+        HtWriter::writeEscaped(msg.msg);
         cout << "\n";
     }
 
@@ -371,7 +372,7 @@ void DefLinker::printBareCid(const DefQueryParser::QRow &row) {
 
         // print a function name if available
         if (!row.fnc.empty())
-            cout << " " << row.fnc;
+            cout << " <b>" << row.fnc << "</b>";
 
         cout << " [<i>Sorry, no more details available...</i>]\n";
     }

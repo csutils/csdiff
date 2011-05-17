@@ -28,6 +28,7 @@ struct DefMsg {
     std::string             fileName;
     int                     line;
     int                     column;
+    std::string             event;
     std::string             msg;
 };
 
