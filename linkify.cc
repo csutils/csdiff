@@ -28,6 +28,7 @@
 
 #include <boost/lexical_cast.hpp>
 #include <boost/algorithm/string/classification.hpp>
+#include <boost/algorithm/string/replace.hpp>
 #include <boost/algorithm/string/split.hpp>
 
 #define DEBUG_DEF_MATCH                 0
@@ -206,34 +207,111 @@ bool DefQueryParser::getNext(DefQueryParser::QRow &dst) {
     return false;
 }
 
+struct HtWriter {
+#define PRE_STYLE "white-space: pre-wrap;"
+
+    static void docOpen(/* TODO: a title based on .err file name */) {
+        std::cout << "<?xml version='1.0' encoding='utf-8'?>\n\
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.1//EN' \
+'http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd'>\n\
+<html xmlns='http://www.w3.org/1999/xhtml'>\n\
+<head><title>A List of Defects</title></head>\n\
+<body>\n<pre style='" PRE_STYLE "'>\n";
+    }
+
+    static void docClose() {
+        std::cout << "</pre>\n</body>\n</html>\n";
+    }
+
+    static void initSection(std::string name) {
+        std::cout << "</pre>\n<h1>" << name << "</h1>\n"
+            "<pre style='" PRE_STYLE "'>\n";
+    }
+
+    static void writeEscaped(std::string text) {
+        using boost::algorithm::replace_all;
+
+        replace_all(text,  "&", "&amp;" );
+        replace_all(text, "\"", "&quot;");
+        replace_all(text, "\'", "&apos;");
+        replace_all(text,  "<", "&lt;"  );
+        replace_all(text,  ">", "&gt;"  );
+
+        std::cout << text;
+    }
+
+    private:
+        // library class
+        HtWriter();
+};
+
 void linkify(
-        const Defect            &def,
-        const int                cid,
-        const char              *chkBase,
-        const char              *defBase)
+        const Defect                    &def,
+        const int                        cid,
+        const char                      *defBase,
+        const char                      *chkBase)
 {
     using std::cout;
-    cout << "\nError: " << def.defClass << " <a href='"
-        << chkBase << def.defClass << "'>[ documentation ]</a>\n";
+    cout << "Error: <b>" << def.defClass << "</b>";
+
+    if (defBase && *defBase) {
+        cout << " <a href='" << defBase << cid
+            << "'>[ Go to <b>Integrity Manager</b> (CID " << cid << ") ]</a>";
+    }
+
+    if (chkBase && *chkBase) {
+        cout << " <a href='" << chkBase
+            << def.defClass << "'>[ Go to <b>Documentation</b> ]</a>";
+    }
+
+    cout << "\n";
 
     const unsigned cnt = def.msgs.size();
     for (unsigned i = 0; i < cnt; ++i) {
-        if (!i)
-            cout << "<a href='" << defBase << cid << "'>";
-
         const DefMsg &msg = def.msgs[i];
         cout << msg.fileName << ":" << msg.line << ":";
 
         if (0 < msg.column)
             cout << msg.column << ":";
 
-        cout << " " << /* TODO: escape HTML entities */ msg.msg;
-
-        if (!i)
-            cout << "</a>";
+        cout << " ";
+        // TODO: highlight events once we refine the parser to read em seprately
+        HtWriter::writeEscaped(msg.msg);
 
         cout << "\n";
     }
+
+    cout << "\n";
+}
+
+void linkBareCid(
+        const DefQueryParser::QRow      &row,
+        const char                      *defBase,
+        const char                      *chkBase)
+{
+    using std::cout;
+    cout << "Error: <b>" << row.defClass << "</b>";
+
+    if (defBase && *defBase) {
+        cout << " <a href='" << defBase << row.cid
+            << "'>[ Go to <b>Integrity Manager</b> (CID "
+            << row.cid << ") ]</a>";
+    }
+
+    if (chkBase && *chkBase) {
+        cout << " <a href='" << chkBase
+            << row.defClass << "'>[ Go to <b>Documentation</b> ]</a>";
+    }
+
+    cout << "\n";
+
+    if (!row.fileName.empty()) {
+        cout << row.fileName
+            << ": [ <i>Sorry, no more details available...</i> ]\n";
+    }
+
+    // TODO: print at least a fnc name unless we want to make maintainers angry
+    cout << "\n";
 }
 
 int main(int argc, char *argv[])
@@ -245,6 +323,9 @@ int main(int argc, char *argv[])
         return EXIT_FAILURE;
     }
 
+    const char *defBase = argv[/* defect  URL base */ 1];
+    const char *chkBase = argv[/* checker URL base */ 2];
+
     // open .err
     const char *defListFile = argv[/* .err */ 3];
     std::fstream defListStream(defListFile, std::ios::in);
@@ -253,7 +334,8 @@ int main(int argc, char *argv[])
         return EXIT_FAILURE;
     }
 
-    // TODO: output HTML header
+    // output HTML header
+    HtWriter::docOpen();
 
     // read defects from .err
     Parser defParser(defListStream, defListFile);
@@ -264,7 +346,10 @@ int main(int argc, char *argv[])
 
     // close stream
     defListStream.close();
-    bool lookupError = false;
+
+    // a list of CIDs not matched in the .err file (they are going to appear
+    // in a separate section)
+    std::list<DefQueryParser::QRow> unmatched;
 
     // read defects IDs from stdin
     DefQueryParser qParser;
@@ -274,24 +359,36 @@ int main(int argc, char *argv[])
 
         // look for the corresponding entry in .err (already hashed)
         if (!stor.lookup(def, row.defClass, row.fileName)) {
-            std::cerr << "-: defect lookup failed, cid = " << cid << "\n";
-            lookupError = true;
+            std::cerr << defListFile
+                << ": warning: defect lookup failed, cid = " << cid << "\n";
+            unmatched.push_back(row);
             continue;
         }
 
         // output a single defect
-        linkify(def, cid,
-                argv[/* checker URL base */ 1],
-                argv[/* defect  URL base */ 2]);
+        linkify(def, cid, defBase, chkBase);
     }
 
+    if (!unmatched.empty()) {
+        HtWriter::initSection("Defects Available Only via Integrity Manager");
+
+        do {
+            linkBareCid(unmatched.front(), defBase, chkBase);
+            unmatched.pop_front();
+        }
+        while (!unmatched.empty());
+    }
+
+    bool lookupError = false;
     if (!stor.empty()) {
         // it seems like some defects from .err were not supplied by IM
-        std::cerr << defListFile << ": offset detected\n";
+        std::cerr << defListFile << ": error: offset detected\n";
         lookupError = true;
+        // TODO: print them separately in a new section instead
     }
 
-    // TODO: output HTML footer
+    // output HTML footer
+    HtWriter::docClose();
 
     // unfortunately, a zero exit status is not likely to happen
     return lookupError
