@@ -112,11 +112,59 @@ class FlexLexerWrap: public yyFlexLexer {
         bool                silent_;
 };
 
+class FileNameDigger {
+    private:
+        typedef bool (*THandler)(Defect *);
+        typedef std::map<std::string, THandler> TMap;
+        TMap hMap_;
+
+    public:
+        FileNameDigger();
+        bool guessFileName(Defect *);
+};
+
+bool FileNameDigger_UNINIT_CTOR(Defect *def) {
+    const std::vector<DefMsg> &msgList = def->msgs;
+    BOOST_FOREACH(const DefMsg &msg, msgList) {
+        if (msg.event.compare("uninit_member"))
+            continue;
+
+        // matched
+        def->fileName = msg.fileName;
+        return true;
+    }
+
+    return false;
+}
+
+FileNameDigger::FileNameDigger() {
+    // register checker-specific handlers
+    hMap_["UNINIT_CTOR"] = FileNameDigger_UNINIT_CTOR;
+}
+
+bool FileNameDigger::guessFileName(Defect *def) {
+    if (def->msgs.empty())
+        return false;
+
+    TMap::const_iterator it = hMap_.find(def->defClass);
+    if (hMap_.end() != it) {
+        const THandler handler = it->second;
+        if (handler(def))
+            // the checker-specific handler has succeeded!
+            return true;
+    }
+
+    // fallback to default (just pick the file name from the first event)
+    def->fileName = def->msgs.front().fileName;
+    return true;
+}
+
 struct Parser::Private {
     FlexLexerWrap           lexer;
     std::string             fileName;
     bool                    hasError;
     EToken                  code;
+    FileNameDigger          fnDigger;
 
     Private(std::istream &input_, std::string fileName_, bool silent):
         lexer(input_, fileName_, silent),
@@ -308,7 +356,7 @@ bool Parser::Private::parseNext(Defect *def) {
         def->msgs.push_back(msg);
     }
 
-    if (!def->msgs.empty())
+    if (this->fnDigger.guessFileName(def))
         // all OK
         return true;
 

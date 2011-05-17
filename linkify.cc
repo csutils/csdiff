@@ -67,11 +67,7 @@ class DefQueue {
 void DefQueue::hashDefect(const Defect &def)
 {
     TDefByFile &row = stor_[def.defClass];
-
-    const DefMsg &msg = def.msgs.front();
-    MsgFilter *filter = MsgFilter::inst();
-    TDefList &col = row[filter->filterPath(msg.fileName)];
-
+    TDefList &col = row[filt_->filterPath(def.fileName)];
     col.push_back(def);
 }
 

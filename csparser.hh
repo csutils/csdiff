@@ -34,6 +34,7 @@ struct DefMsg {
 
 struct Defect {
     std::string             defClass;
+    std::string             fileName;   ///< just a guess
     std::vector<DefMsg>     msgs;
 };
 
