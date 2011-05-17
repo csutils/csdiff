@@ -26,6 +26,7 @@
 #include <list>
 #include <vector>
 
+#include <boost/foreach.hpp>
 #include <boost/lexical_cast.hpp>
 #include <boost/algorithm/string/classification.hpp>
 #include <boost/algorithm/string/replace.hpp>
@@ -59,6 +60,8 @@ class DefQueue {
         bool empty() const {
             return stor_.empty();
         }
+
+        template <class TVisitor> bool walk(TVisitor &);
 };
 
 void DefQueue::hashDefect(const Defect &def)
@@ -136,12 +139,24 @@ bool DefQueue::lookup(
     return true;
 }
 
+template <class TVisitor> bool DefQueue::walk(TVisitor &visitor) {
+    BOOST_FOREACH(const TDefByClass::const_reference iRow, stor_)
+        BOOST_FOREACH(const TDefByFile::const_reference iCol, iRow.second)
+            BOOST_FOREACH(const Defect &def, iCol.second)
+                if (! /* continue */ visitor(def))
+                    return false;
+
+    return true;
+}
+
 class DefQueryParser {
     public:
         struct QRow {
             int                         cid;
             std::string                 defClass;
             std::string                 fileName;
+
+            QRow(): cid(-1) { }
         };
 
         DefQueryParser():
@@ -254,7 +269,7 @@ void linkify(
     using std::cout;
     cout << "Error: <b>" << def.defClass << "</b>";
 
-    if (defBase && *defBase) {
+    if (defBase && *defBase && (0 < cid)) {
         cout << " <a href='" << defBase << cid
             << "'>[ Go to <b>Integrity Manager</b> (CID " << cid << ") ]</a>";
     }
@@ -284,22 +299,55 @@ void linkify(
     cout << "\n";
 }
 
-void linkBareCid(
-        const DefQueryParser::QRow      &row,
-        const char                      *defBase,
-        const char                      *chkBase)
-{
+class DefLinker {
+    private:
+        std::string                     defBase_;
+        std::string                     chkBase_;
+
+    public:
+        typedef DefQueryParser::QRow    QRow;
+
+        DefLinker(const char *defBase, const char *chkBase):
+            defBase_(defBase),
+            chkBase_(chkBase)
+        {
+        }
+
+        void printDef(const Defect &def, const QRow &row = QRow()) {
+            ::linkify(def, row.cid, defBase_.c_str(), chkBase_.c_str());
+        }
+
+        void printBareCid(const QRow &);
+};
+
+class OrphanPrinter {
+    private:
+        DefLinker                       linker_;
+
+    public:
+        OrphanPrinter(const DefLinker &linker):
+            linker_(linker)
+        {
+        }
+
+        bool operator()(const Defect &def) {
+            linker_.printDef(def);
+            return /* continue */ true;
+        }
+};
+
+void DefLinker::printBareCid(const DefQueryParser::QRow &row) {
     using std::cout;
     cout << "Error: <b>" << row.defClass << "</b>";
 
-    if (defBase && *defBase) {
-        cout << " <a href='" << defBase << row.cid
+    if (!defBase_.empty()) {
+        cout << " <a href='" << defBase_ << row.cid
             << "'>[ Go to <b>Integrity Manager</b> (CID "
             << row.cid << ") ]</a>";
     }
 
-    if (chkBase && *chkBase) {
-        cout << " <a href='" << chkBase
+    if (!chkBase_.empty()) {
+        cout << " <a href='" << chkBase_
             << row.defClass << "'>[ Go to <b>Documentation</b> ]</a>";
     }
 
@@ -322,9 +370,6 @@ int main(int argc, char *argv[])
             << " is UNDOCUMENTED and is NOT supposed to be used on its own\n";
         return EXIT_FAILURE;
     }
-
-    const char *defBase = argv[/* defect  URL base */ 1];
-    const char *chkBase = argv[/* checker URL base */ 2];
 
     // open .err
     const char *defListFile = argv[/* .err */ 3];
@@ -351,6 +396,11 @@ int main(int argc, char *argv[])
     // in a separate section)
     std::list<DefQueryParser::QRow> unmatched;
 
+    // this allows to write translated defects to stdout
+    DefLinker linker(
+            argv[/* defect  URL base */ 1],
+            argv[/* checker URL base */ 2]);
+
     // read defects IDs from stdin
     DefQueryParser qParser;
     DefQueryParser::QRow row;
@@ -366,32 +416,32 @@ int main(int argc, char *argv[])
         }
 
         // output a single defect
-        linkify(def, cid, defBase, chkBase);
+        linker.printDef(def, row);
+    }
+
+    if (!stor.empty()) {
+        std::cerr << defListFile << ": warning: IM data seems incomplete\n";
+        HtWriter::initSection("Defects Not Available via Integrity Manager");
+
+        // set up a visitor and guide it through orphans
+        OrphanPrinter visitor(linker);
+        stor.walk(visitor);
     }
 
     if (!unmatched.empty()) {
         HtWriter::initSection("Defects Available Only via Integrity Manager");
 
         do {
-            linkBareCid(unmatched.front(), defBase, chkBase);
+            linker.printBareCid(unmatched.front());
             unmatched.pop_front();
         }
         while (!unmatched.empty());
     }
 
-    bool lookupError = false;
-    if (!stor.empty()) {
-        // it seems like some defects from .err were not supplied by IM
-        std::cerr << defListFile << ": error: offset detected\n";
-        lookupError = true;
-        // TODO: print them separately in a new section instead
-    }
-
     // output HTML footer
     HtWriter::docClose();
 
-    // unfortunately, a zero exit status is not likely to happen
-    return lookupError
-        || qParser.hasError()
+    // we treat only parsing errors as errors, lookup errors are warnings for us
+    return qParser.hasError()
         || defParser.hasError();
 }
