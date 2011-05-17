@@ -155,6 +155,7 @@ class DefQueryParser {
             int                         cid;
             std::string                 defClass;
             std::string                 fileName;
+            std::string                 fnc;
 
             QRow(): cid(-1) { }
         };
@@ -206,6 +207,9 @@ bool DefQueryParser::parse(DefQueryParser::QRow &dst) {
     // all OK
     dst.defClass = tokens[/* defClass */ 1];
     dst.fileName = tokens[/* fileName */ 2];
+    if (3 < tokens.size())
+        dst.fnc  = tokens[/* fnc      */ 3];
+
     return true;
 }
 
@@ -262,21 +266,28 @@ struct HtWriter {
 
 void linkify(
         const Defect                    &def,
-        const int                        cid,
+        const DefQueryParser::QRow      &row,
         const char                      *defBase,
         const char                      *chkBase)
 {
     using std::cout;
     cout << "Error: <b>" << def.defClass << "</b>";
 
+    const int cid = row.cid;
     if (defBase && *defBase && (0 < cid)) {
         cout << " <a href='" << defBase << cid
-            << "'>[ Go to <b>Integrity Manager</b> (CID " << cid << ") ]</a>";
+            << "'>[Go to <b>Integrity Manager</b>: ";
+
+        if (!row.fnc.empty())
+            cout << row.fnc << ", ";
+
+        cout << "CID " << cid << "]</a>";
     }
 
     if (chkBase && *chkBase) {
         cout << " <a href='" << chkBase
-            << def.defClass << "'>[ Go to <b>Documentation</b> ]</a>";
+            << def.defClass << "'>[Go to <b>Documentation</b> of "
+            << def.defClass << "]</a>";
     }
 
     cout << "\n";
@@ -314,7 +325,7 @@ class DefLinker {
         }
 
         void printDef(const Defect &def, const QRow &row = QRow()) {
-            ::linkify(def, row.cid, defBase_.c_str(), chkBase_.c_str());
+            ::linkify(def, row, defBase_.c_str(), chkBase_.c_str());
         }
 
         void printBareCid(const QRow &);
@@ -342,23 +353,29 @@ void DefLinker::printBareCid(const DefQueryParser::QRow &row) {
 
     if (!defBase_.empty()) {
         cout << " <a href='" << defBase_ << row.cid
-            << "'>[ Go to <b>Integrity Manager</b> (CID "
-            << row.cid << ") ]</a>";
+            << "'>[Go to <b>Integrity Manager</b>: "
+            << "CID " << row.cid << "]</a>";
     }
 
     if (!chkBase_.empty()) {
         cout << " <a href='" << chkBase_
-            << row.defClass << "'>[ Go to <b>Documentation</b> ]</a>";
+            << row.defClass << "'>[Go to <b>Documentation</b> of "
+            << row.defClass << "]</a>";
     }
 
     cout << "\n";
 
     if (!row.fileName.empty()) {
-        cout << row.fileName
-            << ": [ <i>Sorry, no more details available...</i> ]\n";
+        // print file name
+        cout << row.fileName << ":";
+
+        // print a function name if available
+        if (!row.fnc.empty())
+            cout << " " << row.fnc;
+
+        cout << " [<i>Sorry, no more details available...</i>]\n";
     }
 
-    // TODO: print at least a fnc name unless we want to make maintainers angry
     cout << "\n";
 }
 
