@@ -49,7 +49,7 @@ struct MsgFilter::Private {
     Private():
         reMsg("[0-9][0-9]* out of [0-9][0-9]* times"),
         rePath("^(?:/builddir/build/BUILD/)?[^/]+/"),
-        rePathFlex("\\.l$")
+        rePathFlex("\\.[ly]$")
     {
     }
 };

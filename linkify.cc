@@ -255,51 +255,44 @@ struct HtWriter {
         std::cout << text;
     }
 
+    static void writeCheckerLine(
+            const std::string           &defBase,
+            const std::string           &chkBase,
+            const DefQueryParser::QRow  &row);
+
     private:
         // library class
         HtWriter();
 };
 
-void linkify(
-        const Defect                    &def,
-        const DefQueryParser::QRow      &row,
-        const char                      *defBase,
-        const char                      *chkBase)
+void HtWriter::writeCheckerLine(
+        const std::string               &defBase,
+        const std::string               &chkBase,
+        const DefQueryParser::QRow      &row)
 {
     using std::cout;
-    cout << "Error: <b>" << def.defClass << "</b>\n";
+    cout << "<b>Error: ";
 
-    const unsigned cnt = def.msgs.size();
-    for (unsigned i = 0; i < cnt; ++i) {
-        const DefMsg &msg = def.msgs[i];
-        cout << msg.fileName << ":" << msg.line << ":";
+    const bool hasChkLnk = !chkBase.empty();
+    if (hasChkLnk)
+        cout << "<a href='" << chkBase << row.defClass << "'>";
 
-        if (0 < msg.column)
-            cout << msg.column << ":";
+    cout << row.defClass;
+    if (hasChkLnk)
+        cout << "</a>";
 
-        cout << " ";
-        if (!msg.event.empty())
-            cout << "<b>" << msg.event << "</b>: ";
-
-        HtWriter::writeEscaped(msg.msg);
-        cout << "\n";
-    }
-
-    if (chkBase && *chkBase) {
-        cout << "<a href='" << chkBase
-            << def.defClass << "'>[Go to <b>Documentation</b> of "
-            << def.defClass << "]</a>\n";
-    }
+    cout << "</b>";
 
     const int cid = row.cid;
-    if (defBase && *defBase && (0 < cid)) {
-        cout << "<a href='" << defBase << cid
+    const bool hasDefLnk = !defBase.empty() && (0 < cid);
+    if (hasDefLnk) {
+        cout << " <a href='" << defBase << cid
             << "'>[Go to <b>Integrity Manager</b>: ";
 
         if (!row.fnc.empty())
             cout << row.fnc << ", ";
 
-        cout << "CID " << cid << "]</a>\n";
+        cout << "CID " << cid << "]</a>";
     }
 
     cout << "\n";
@@ -319,12 +312,60 @@ class DefLinker {
         {
         }
 
-        void printDef(const Defect &def, const QRow &row = QRow()) {
-            ::linkify(def, row, defBase_.c_str(), chkBase_.c_str());
-        }
+        void printDef(const Defect &def, QRow row = QRow());
 
         void printBareCid(const QRow &);
 };
+
+void DefLinker::printDef(
+        const Defect                    &def,
+        DefQueryParser::QRow            row)
+{
+    using std::cout;
+
+    if (-1 == row.cid)
+        // no row was given, take defClass from def
+        row.defClass = def.defClass;
+
+    HtWriter::writeCheckerLine(defBase_, chkBase_, row);
+
+    const unsigned cnt = def.msgs.size();
+    for (unsigned i = 0; i < cnt; ++i) {
+        const DefMsg &msg = def.msgs[i];
+        cout << msg.fileName << ":" << msg.line << ":";
+
+        if (0 < msg.column)
+            cout << msg.column << ":";
+
+        cout << " ";
+        if (!msg.event.empty())
+            cout << "<b>" << msg.event << "</b>: ";
+
+        HtWriter::writeEscaped(msg.msg);
+        cout << "\n";
+    }
+
+    cout << "\n";
+}
+
+void DefLinker::printBareCid(const DefQueryParser::QRow &row) {
+    using std::cout;
+
+    HtWriter::writeCheckerLine(defBase_, chkBase_, row);
+
+    if (!row.fileName.empty()) {
+        // print file name
+        cout << row.fileName << ":";
+
+        // print a function name if available
+        if (!row.fnc.empty())
+            cout << " <b>" << row.fnc << "</b>";
+
+        cout << " [<i>Sorry, no more details available...</i>]\n";
+    }
+
+    cout << "\n";
+}
 
 class OrphanPrinter {
     private:
@@ -341,36 +382,6 @@ class OrphanPrinter {
             return /* continue */ true;
         }
 };
-
-void DefLinker::printBareCid(const DefQueryParser::QRow &row) {
-    using std::cout;
-    cout << "Error: <b>" << row.defClass << "</b>\n";
-
-    if (!row.fileName.empty()) {
-        // print file name
-        cout << row.fileName << ":";
-
-        // print a function name if available
-        if (!row.fnc.empty())
-            cout << " <b>" << row.fnc << "</b>";
-
-        cout << " [<i>Sorry, no more details available...</i>]\n";
-    }
-
-    if (!chkBase_.empty()) {
-        cout << "<a href='" << chkBase_
-            << row.defClass << "'>[Go to <b>Documentation</b> of "
-            << row.defClass << "]</a>\n";
-    }
-
-    if (!defBase_.empty()) {
-        cout << "<a href='" << defBase_ << row.cid
-            << "'>[Go to <b>Integrity Manager</b>: "
-            << "CID " << row.cid << "]</a>\n";
-    }
-
-    cout << "\n";
-}
 
 int main(int argc, char *argv[])
 {
