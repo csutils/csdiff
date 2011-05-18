@@ -225,13 +225,18 @@ bool DefQueryParser::getNext(DefQueryParser::QRow &dst) {
 struct HtWriter {
 #define PRE_STYLE "white-space: pre-wrap;"
 
-    static void docOpen(std::string fileName) {
+    static void docOpen(const char *projName, const char *projURL) {
         std::cout << "<?xml version='1.0' encoding='utf-8'?>\n\
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.1//EN' \
 'http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd'>\n\
 <html xmlns='http://www.w3.org/1999/xhtml'>\n\
-<head><title>" << fileName << " (defects listing)</title></head>\n\
+<head><title>" << projName << " (defects listing)</title></head>\n\
 <body>\n<pre style='" PRE_STYLE "'>\n";
+
+        if (projURL && *projURL) {
+            std::cout << "Browse the defect list via <b>Integrity Manager</b>: "
+                "<a href='" << projURL << "'>" << projName << "</a>\n\n";
+        }
     }
 
     static void docClose() {
@@ -386,14 +391,14 @@ class OrphanPrinter {
 int main(int argc, char *argv[])
 {
     // check if a file name was given
-    if (argc != 4) {
+    if (argc != 6) {
         std::cerr << "WARNING: " << argv[0]
             << " is UNDOCUMENTED and is NOT supposed to be used on its own\n";
         return EXIT_FAILURE;
     }
 
     // open .err
-    const char *defListFile = argv[/* .err */ 3];
+    const char *defListFile = argv[/* .err */ 5];
     std::fstream defListStream(defListFile, std::ios::in);
     if (!defListStream) {
         std::cerr << defListFile << ": failed to open input file\n";
@@ -401,7 +406,9 @@ int main(int argc, char *argv[])
     }
 
     // output HTML header
-    HtWriter::docOpen(defListFile);
+    HtWriter::docOpen(
+            argv[/* IM project name */ 1],
+            argv[/* IM project URL  */ 2]);
 
     // read defects from .err
     Parser defParser(defListStream, defListFile);
@@ -419,8 +426,8 @@ int main(int argc, char *argv[])
 
     // this allows to write translated defects to stdout
     DefLinker linker(
-            argv[/* defect  URL base */ 1],
-            argv[/* checker URL base */ 2]);
+            argv[/* defect  URL base */ 3],
+            argv[/* checker URL base */ 4]);
 
     // read defects IDs from stdin
     DefQueryParser qParser;
