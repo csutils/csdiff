@@ -263,7 +263,8 @@ struct HtWriter {
     static void writeCheckerLine(
             const std::string           &defBase,
             const std::string           &chkBase,
-            const DefQueryParser::QRow  &row);
+            const DefQueryParser::QRow  &row,
+            const std::string           &comm = std::string());
 
     private:
         // library class
@@ -273,7 +274,8 @@ struct HtWriter {
 void HtWriter::writeCheckerLine(
         const std::string               &defBase,
         const std::string               &chkBase,
-        const DefQueryParser::QRow      &row)
+        const DefQueryParser::QRow      &row,
+        const std::string               &comm)
 {
     using std::cout;
     cout << "<b>Error: ";
@@ -287,6 +289,9 @@ void HtWriter::writeCheckerLine(
         cout << "</a>";
 
     cout << "</b>";
+
+    if (!comm.empty())
+        cout << " <i style='color: #808080;'>(" << comm << ")</i>";
 
     const int cid = row.cid;
     const bool hasDefLnk = !defBase.empty() && (0 < cid);
@@ -307,14 +312,30 @@ class DefLinker {
     private:
         std::string                     defBase_;
         std::string                     chkBase_;
+        std::map<std::string, std::string>  chkComments_;
 
     public:
         typedef DefQueryParser::QRow    QRow;
 
-        DefLinker(const char *defBase, const char *chkBase):
+        DefLinker(
+                const char             *defBase,
+                const char             *chkBase,
+                const char             *chkComments):
             defBase_(defBase),
             chkBase_(chkBase)
         {
+            std::fstream fstr(chkComments, std::ios::in);
+            std::string line;
+            while (std::getline(fstr, line)) {
+                std::vector<std::string> tokens;
+                boost::split(tokens, line, boost::algorithm::is_any_of("\t"));
+                if (tokens.size() < 2)
+                    continue;
+
+                const std::string &chk     = tokens[0];
+                const std::string &comment = tokens[1];
+                chkComments_[chk] = comment;
+            }
         }
 
         void printDef(const Defect &def, QRow row = QRow());
@@ -332,7 +353,8 @@ void DefLinker::printDef(
         // no row was given, take defClass from def
         row.defClass = def.defClass;
 
-    HtWriter::writeCheckerLine(defBase_, chkBase_, row);
+    const std::string &comm = chkComments_[row.defClass];
+    HtWriter::writeCheckerLine(defBase_, chkBase_, row, comm);
 
     const unsigned cnt = def.msgs.size();
     for (unsigned i = 0; i < cnt; ++i) {
@@ -356,7 +378,8 @@ void DefLinker::printDef(
 void DefLinker::printBareCid(const DefQueryParser::QRow &row) {
     using std::cout;
 
-    HtWriter::writeCheckerLine(defBase_, chkBase_, row);
+    const std::string &comm = chkComments_[row.defClass];
+    HtWriter::writeCheckerLine(defBase_, chkBase_, row, comm);
 
     if (!row.fileName.empty()) {
         // print file name
@@ -391,7 +414,7 @@ class OrphanPrinter {
 int main(int argc, char *argv[])
 {
     // check if a file name was given
-    if (argc != 6) {
+    if (argc < 6 || 7 < argc) {
         std::cerr << "WARNING: " << argv[0]
             << " is UNDOCUMENTED and is NOT supposed to be used on its own\n";
         return EXIT_FAILURE;
@@ -427,7 +450,8 @@ int main(int argc, char *argv[])
     // this allows to write translated defects to stdout
     DefLinker linker(
             argv[/* defect  URL base */ 3],
-            argv[/* checker URL base */ 4]);
+            argv[/* checker URL base */ 4],
+            argv[/* checker comments */ 6]);
 
     // read defects IDs from stdin
     DefQueryParser qParser;
