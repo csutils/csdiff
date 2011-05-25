@@ -481,7 +481,7 @@ int main(int argc, char *argv[])
     }
 
     if (!unmatched.empty()) {
-        std::string secHead("Defects Not matched in ");
+        std::string secHead("Defects Not Matched in ");
         HtWriter::initSection(secHead + defListFile);
 
         do {
