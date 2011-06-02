@@ -19,67 +19,10 @@
 
 #include "csfilter.hh"
 #include "csparser.hh"
+#include "deflookup.hh"
 
 #include <cstdlib>
 #include <fstream>
-#include <map>
-
-// TODO: optimize such that no deep copies of strings are necessary
-typedef std::vector<Defect>                     TDefList;
-typedef std::map<std::string, TDefList>         TDefByMsg;
-typedef std::map<std::string, TDefByMsg>        TDefByFile;
-typedef std::map<std::string, TDefByFile>       TDefByClass;
-
-template <class TStor>
-void hashDefect(TStor &stor, const Defect &def)
-{
-    TDefByFile &row = stor[def.defClass];
-
-    const DefMsg &msg = def.msgs.front();
-    MsgFilter *filter = MsgFilter::inst();
-    TDefByMsg &col = row[filter->filterPath(msg.fileName)];
-    TDefList &cell = col[filter->filterMsg(msg.msg)];
-
-    cell.push_back(def);
-}
-
-template <class TStor>
-bool lookup(TStor &stor, const Defect &def)
-{
-    // look for defect class
-    TDefByClass::iterator iRow = stor.find(def.defClass);
-    if (stor.end() == iRow)
-        return false;
-
-    // simplify path
-    const DefMsg &msg = def.msgs.front();
-    MsgFilter *filter = MsgFilter::inst();
-    const std::string path(filter->filterPath(msg.fileName));
-
-    // look for file name
-    TDefByFile &row = iRow->second;
-    TDefByFile::iterator iCol = row.find(path);
-    if (row.end() == iCol)
-        return false;
-
-    // look by msg
-    TDefByMsg &col = iCol->second;
-    TDefByMsg::iterator iCell = col.find(filter->filterMsg(msg.msg));
-    if (col.end() == iCell)
-        return false;
-
-    // FIXME: nasty over-approximation
-    TDefList &defs = iCell->second;
-    unsigned cnt = defs.size();
-    if (cnt)
-        // just remove an arbitrary one
-        defs.resize(cnt - 1);
-    else
-        return false;
-
-    // TODO: add some other criteria in order to make the match more precise
-    return true;
-}
 
 int main(int argc, char *argv[])
 {
@@ -108,15 +51,15 @@ int main(int argc, char *argv[])
 
     // read old
     Parser pOld(strOld, fnOld);
-    TDefByClass stor;
+    DefLookup stor;
     Defect def;
     while (pOld.getNext(&def))
-        hashDefect(stor, def);
+        stor.hashDefect(def);
 
     // read new
     Parser pNew(strNew, fnNew);
     while (pNew.getNext(&def)) {
-        if (lookup(stor, def))
+        if (stor.lookup(def))
             continue;
 
         // a newly added defect found
