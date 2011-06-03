@@ -19,6 +19,7 @@
 
 #include "csfilter.hh"
 #include "csparser.hh"
+#include "deflookup.hh"
 
 #include <cstdlib>
 #include <fstream>
@@ -225,19 +226,10 @@ bool DefQueryParser::getNext(DefQueryParser::QRow &dst) {
 struct HtWriter {
 #define PRE_STYLE "white-space: pre-wrap;"
 
-    static void docOpen(const char *projName, const char *projURL) {
-        std::cout << "<?xml version='1.0' encoding='utf-8'?>\n\
-<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.1//EN' \
-'http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd'>\n\
-<html xmlns='http://www.w3.org/1999/xhtml'>\n\
-<head><title>" << projName << " (defects listing)</title></head>\n\
-<body>\n<pre style='" PRE_STYLE "'>\n";
-
-        if (projURL && *projURL) {
-            std::cout << "Browse the defect list via <b>Integrity Manager</b>: "
-                "<a href='" << projURL << "'>" << projName << "</a>\n\n";
-        }
-    }
+    static void docOpen(
+            const char                  *projName,
+            const char                  *projURL,
+            const char                  *projNameOld);
 
     static void docClose() {
         std::cout << "</pre>\n</body>\n</html>\n";
@@ -263,7 +255,9 @@ struct HtWriter {
     static void writeCheckerLine(
             const std::string           &defBase,
             const std::string           &chkBase,
+            const std::string           &projNameOld,
             const DefQueryParser::QRow  &row,
+            const bool                   isNew,
             const std::string           &comm = std::string());
 
     private:
@@ -271,10 +265,38 @@ struct HtWriter {
         HtWriter();
 };
 
+void HtWriter::docOpen(
+        const char                      *projName,
+        const char                      *projURL,
+        const char                      *projNameOld)
+{
+    std::cout << "<?xml version='1.0' encoding='utf-8'?>\n\
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.1//EN' \
+'http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd'>\n\
+<html xmlns='http://www.w3.org/1999/xhtml'>\n\
+<head><title>" << projName << " (defects listing)</title></head>\n\
+<body>\n<pre style='" PRE_STYLE "'>\n";
+
+    if (projURL && *projURL) {
+        std::cout << "Browse the defect list via <b>Integrity Manager</b>: "
+            "<a href='" << projURL << "'>" << projName << "</a>\n\n";
+    }
+    else if (projNameOld && *projNameOld) {
+        std::cout << "<h1>" << projName
+            << " - defects not occurring in " << projNameOld << "</h1>\n";
+    }
+    else {
+        std::cout << "<h1>" << projName
+            << " - defects not occurring upstream</h1>\n";
+    }
+}
+
 void HtWriter::writeCheckerLine(
         const std::string               &defBase,
         const std::string               &chkBase,
+        const std::string               &projNameOld,
         const DefQueryParser::QRow      &row,
+        const bool                       isNew,
         const std::string               &comm)
 {
     using std::cout;
@@ -289,6 +311,18 @@ void HtWriter::writeCheckerLine(
         cout << "</a>";
 
     cout << "</b>";
+
+    if (isNew) {
+        cout << " <span style='color: #00FF00;'>"
+            "[<b>warning:</b> defect not occurring ";
+
+        if (projNameOld.empty())
+            cout << "<b>upstream";
+        else
+            cout << "in <b>" << projNameOld;
+
+        cout << "</b>]</span>";
+    }
 
     if (!comm.empty())
         cout << " <i style='color: #808080;'>(" << comm << ")</i>";
@@ -310,8 +344,13 @@ void HtWriter::writeCheckerLine(
 
 class DefLinker {
     private:
-        std::string                     defBase_;
-        std::string                     chkBase_;
+        const std::string               defBase_;
+        const std::string               chkBase_;
+        const std::string               projNameOld_;
+        const bool                      onlyNew_;
+
+        DefLookup                      *oldLookup_;
+
         std::map<std::string, std::string>  chkComments_;
 
     public:
@@ -320,9 +359,15 @@ class DefLinker {
         DefLinker(
                 const char             *defBase,
                 const char             *chkBase,
-                const char             *chkComments):
+                const char             *chkComments,
+                const char             *projNameOld,
+                const bool              onlyNew,
+                DefLookup              *oldLookup):
             defBase_(defBase),
-            chkBase_(chkBase)
+            chkBase_(chkBase),
+            projNameOld_(projNameOld),
+            onlyNew_(onlyNew),
+            oldLookup_(oldLookup)
         {
             std::fstream fstr(chkComments, std::ios::in);
             std::string line;
@@ -349,12 +394,24 @@ void DefLinker::printDef(
 {
     using std::cout;
 
+    bool isNew = oldLookup_ && !oldLookup_->lookup(def);
+    if (onlyNew_) {
+        if (isNew)
+            isNew = false;
+        else
+            return;
+    }
+
     if (-1 == row.cid)
         // no row was given, take defClass from def
         row.defClass = def.defClass;
 
     const std::string &comm = chkComments_[row.defClass];
-    HtWriter::writeCheckerLine(defBase_, chkBase_, row, comm);
+    HtWriter::writeCheckerLine(
+            defBase_,
+            chkBase_,
+            projNameOld_,
+            row, isNew, comm);
 
     const unsigned cnt = def.msgs.size();
     for (unsigned i = 0; i < cnt; ++i) {
@@ -379,7 +436,13 @@ void DefLinker::printBareCid(const DefQueryParser::QRow &row) {
     using std::cout;
 
     const std::string &comm = chkComments_[row.defClass];
-    HtWriter::writeCheckerLine(defBase_, chkBase_, row, comm);
+    HtWriter::writeCheckerLine(
+            defBase_,
+            chkBase_,
+            projNameOld_,
+            row,
+            /* isNew */ false,
+            comm);
 
     if (!row.fileName.empty()) {
         // print file name
@@ -414,7 +477,7 @@ class OrphanPrinter {
 int main(int argc, char *argv[])
 {
     // check if a file name was given
-    if (argc < 6 || 7 < argc) {
+    if (argc < 6 || 9 < argc) {
         std::cerr << "WARNING: " << argv[0]
             << " is UNDOCUMENTED and is NOT supposed to be used on its own\n";
         return EXIT_FAILURE;
@@ -428,11 +491,6 @@ int main(int argc, char *argv[])
         return EXIT_FAILURE;
     }
 
-    // output HTML header
-    HtWriter::docOpen(
-            argv[/* IM project name */ 1],
-            argv[/* IM project URL  */ 2]);
-
     // read defects from .err
     Parser defParser(defListStream, defListFile);
     DefQueue stor;
@@ -443,15 +501,54 @@ int main(int argc, char *argv[])
     // close stream
     defListStream.close();
 
+    DefLookup diffBase;
+    const char *defBaseFile = "";
+    if (7 < argc)
+        defBaseFile = argv[/* .err */ 7];
+    if (defBaseFile[0]) {
+        std::fstream defBaseStream(defBaseFile, std::ios::in);
+        if (!defBaseStream) {
+            std::cerr << defBaseFile << ": failed to open input file\n";
+            return EXIT_FAILURE;
+        }
+
+        // load defect list from run0 (or old release)
+        Parser defBaseParser(defBaseStream, defBaseFile);
+        while (defBaseParser.getNext(&def))
+            diffBase.hashDefect(def);
+
+        // here encountered parsing errors have no effect on the exit code
+        defBaseStream.close();
+    }
+
+    const char *projNameOld = "";
+    if (8 < argc)
+        projNameOld = argv[/* IM project name of the old pkg */ 8];
+
+    // output HTML header
+    const char *const projName = argv[/* IM project name */ 1];
+    const char *const projURL  = argv[/* IM project URL  */ 2];
+    HtWriter::docOpen(projName, projURL, projNameOld);
+
     // a list of CIDs not matched in the .err file (they are going to appear
     // in a separate section)
     std::list<DefQueryParser::QRow> unmatched;
 
-    // this allows to write translated defects to stdout
+    // are we going to diff the list with an old defect list
+    DefLookup *oldLookup = 0;
+    const bool diffOld = defBaseFile[0];
+    if (diffOld)
+        oldLookup = &diffBase;
+
+    // 'linker' writes translated defects to stdout
+    const bool onlyNew = diffOld && !projURL[0];
     DefLinker linker(
             argv[/* defect  URL base */ 3],
             argv[/* checker URL base */ 4],
-            argv[/* checker comments */ 6]);
+            argv[/* checker comments */ 6],
+            projNameOld,
+            onlyNew,
+            oldLookup);
 
     // read defects IDs from stdin
     DefQueryParser qParser;
