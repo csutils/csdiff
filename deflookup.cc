@@ -40,6 +40,17 @@ DefLookup::DefLookup():
     d->filt = MsgFilter::inst();
 }
 
+DefLookup::DefLookup(const DefLookup &ref):
+    d(new Private(*ref.d))
+{
+}
+
+DefLookup& DefLookup::operator=(const DefLookup &ref) {
+    delete d;
+    d = new Private(*ref.d);
+    return *this;
+}
+
 DefLookup::~DefLookup() {
     delete d;
 }

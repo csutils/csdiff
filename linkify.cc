@@ -458,6 +458,21 @@ void DefLinker::printBareCid(const DefQueryParser::QRow &row) {
     cout << "\n";
 }
 
+class OrphanValidityChk {
+    private:
+        DefLookup                       invalid_;
+
+    public:
+        OrphanValidityChk(const DefLookup &invalid):
+            invalid_(invalid)
+        {
+        }
+
+        bool operator()(const Defect &def) {
+            return /* continue */ invalid_.lookup(def);
+        }
+};
+
 class OrphanPrinter {
     private:
         DefLinker                       linker_;
@@ -473,6 +488,11 @@ class OrphanPrinter {
             return /* continue */ true;
         }
 };
+
+bool haveValidOrphans(DefQueue &stor, const DefLookup &invalid) {
+    OrphanValidityChk visitor(invalid);
+    return !stor.walk(visitor);
+}
 
 int main(int argc, char *argv[])
 {
@@ -568,7 +588,7 @@ int main(int argc, char *argv[])
         linker.printDef(def, row);
     }
 
-    if (!stor.empty()) {
+    if (!stor.empty() && (!onlyNew || haveValidOrphans(stor, diffBase))) {
         std::cerr << defListFile << ": warning: IM data seems incomplete\n";
         HtWriter::initSection("Defects Not Found in the Integrity Manager");
 

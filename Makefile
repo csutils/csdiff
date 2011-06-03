@@ -48,6 +48,7 @@ $(PARSER_OBJS): csparser-priv.hh
 csparser.o csdiff.o cstat-core.o deflookup.o linkify.o: csparser.hh
 csgrep.o cstat.o cstat-core.o: cstat-core.hh
 csdiff.o csfilter.o deflookup.o linkify.o: csfilter.hh
+csdiff.o linkify.o: deflookup.hh
 
 clean:
 	rm -fv *.o cslib.a $(TARGETS) csparser.yy.cc

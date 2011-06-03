@@ -27,6 +27,9 @@ class DefLookup {
         DefLookup();
         ~DefLookup();
 
+        DefLookup(const DefLookup &);
+        DefLookup& operator=(const DefLookup &);
+
         void hashDefect(const Defect &);
         bool lookup(const Defect &);
 
