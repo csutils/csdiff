@@ -333,8 +333,10 @@ void HtWriter::writeCheckerLine(
         cout << " <a href='" << defBase << cid
             << "'>[Go to <b>Integrity Manager</b>: ";
 
-        if (!row.fnc.empty())
-            cout << row.fnc << ", ";
+        if (!row.fnc.empty()) {
+            HtWriter::writeEscaped(row.fnc);
+            cout << ", ";
+        }
 
         cout << "CID " << cid << "]</a>";
     }
