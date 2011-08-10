@@ -184,8 +184,8 @@ class MsgFilter: public AbstractFilter {
         }
 
         virtual bool matchDef(const Defect &def) {
-            BOOST_FOREACH(const DefMsg &msg, def.msgs) {
-                if (boost::regex_search(msg.msg, re_))
+            BOOST_FOREACH(const DefEvent &evt, def.events) {
+                if (boost::regex_search(evt.msg, re_))
                     return true;
             }
 
@@ -205,8 +205,8 @@ class ErrorFilter: public AbstractFilter {
         }
 
         virtual bool matchDef(const Defect &def) {
-            const DefMsg &msg = def.msgs.front();
-            return boost::regex_search(msg.msg, re_);
+            const DefEvent &evt = def.events.front();
+            return boost::regex_search(evt.msg, re_);
         }
 };
 
@@ -222,8 +222,8 @@ class PathFilter: public AbstractFilter {
         }
 
         virtual bool matchDef(const Defect &def) {
-            const DefMsg &msg = def.msgs.front();
-            return boost::regex_search(msg.fileName, re_);
+            const DefEvent &evt = def.events.front();
+            return boost::regex_search(evt.fileName, re_);
         }
 };
 

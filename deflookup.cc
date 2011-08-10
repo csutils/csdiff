@@ -58,10 +58,10 @@ DefLookup::~DefLookup() {
 void DefLookup::hashDefect(const Defect &def) {
     TDefByFile &row = d->stor[def.defClass];
 
-    const DefMsg &msg = def.msgs.front();
+    const DefEvent &evt = def.events.front();
     MsgFilter *filter = MsgFilter::inst();
-    TDefByMsg &col = row[filter->filterPath(msg.fileName)];
-    TDefList &cell = col[filter->filterMsg(msg.msg)];
+    TDefByMsg &col = row[filter->filterPath(evt.fileName)];
+    TDefList &cell = col[filter->filterMsg(evt.msg)];
 
     cell.push_back(def);
 }
@@ -73,8 +73,8 @@ bool DefLookup::lookup(const Defect &def) {
         return false;
 
     // simplify path
-    const DefMsg &msg = def.msgs.front();
-    const std::string path(d->filt->filterPath(msg.fileName));
+    const DefEvent &evt = def.events.front();
+    const std::string path(d->filt->filterPath(evt.fileName));
 
     // look for file name
     TDefByFile &row = iRow->second;
@@ -84,7 +84,7 @@ bool DefLookup::lookup(const Defect &def) {
 
     // look by msg
     TDefByMsg &col = iCol->second;
-    TDefByMsg::iterator iCell = col.find(d->filt->filterMsg(msg.msg));
+    TDefByMsg::iterator iCell = col.find(d->filt->filterMsg(evt.msg));
     if (col.end() == iCell)
         return false;
 

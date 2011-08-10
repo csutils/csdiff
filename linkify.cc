@@ -415,19 +415,19 @@ void DefLinker::printDef(
             projNameOld_,
             row, isNew, comm);
 
-    const unsigned cnt = def.msgs.size();
+    const unsigned cnt = def.events.size();
     for (unsigned i = 0; i < cnt; ++i) {
-        const DefMsg &msg = def.msgs[i];
-        cout << msg.fileName << ":" << msg.line << ":";
+        const DefEvent &evt = def.events[i];
+        cout << evt.fileName << ":" << evt.line << ":";
 
-        if (0 < msg.column)
-            cout << msg.column << ":";
+        if (0 < evt.column)
+            cout << evt.column << ":";
 
         cout << " ";
-        if (!msg.event.empty())
-            cout << "<b>" << msg.event << "</b>: ";
+        if (!evt.event.empty())
+            cout << "<b>" << evt.event << "</b>: ";
 
-        HtWriter::writeEscaped(msg.msg);
+        HtWriter::writeEscaped(evt.msg);
         cout << "\n";
     }
 

@@ -24,7 +24,7 @@
 #include <string>
 #include <vector>
 
-struct DefMsg {
+struct DefEvent {
     std::string             fileName;
     int                     line;
     int                     column;
@@ -35,7 +35,7 @@ struct DefMsg {
 struct Defect {
     std::string             defClass;
     std::string             fileName;   ///< just a guess
-    std::vector<DefMsg>     msgs;
+    std::vector<DefEvent>   events;
 };
 
 std::ostream& operator<<(std::ostream &str, const Defect &def);

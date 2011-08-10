@@ -17,7 +17,6 @@
  * along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "csfilter.hh"
 #include "csparser.hh"
 #include "deflookup.hh"
 

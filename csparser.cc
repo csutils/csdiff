@@ -49,18 +49,18 @@ std::ostream& operator<<(std::ostream &str, EToken code) {
 std::ostream& operator<<(std::ostream &str, const Defect &def) {
     str << "\nError: " << def.defClass << ":\n";
 
-    BOOST_FOREACH(const DefMsg &msg, def.msgs) {
-        str << msg.fileName << ":" << msg.line << ":";
+    BOOST_FOREACH(const DefEvent &evt, def.events) {
+        str << evt.fileName << ":" << evt.line << ":";
 
-        if (0 < msg.column)
-            str << msg.column << ":";
+        if (0 < evt.column)
+            str << evt.column << ":";
 
         str << " ";
 
-        if (!msg.event.empty())
-            str << msg.event << ": ";
+        if (!evt.event.empty())
+            str << evt.event << ": ";
 
-        str << msg.msg << "\n";
+        str << evt.msg << "\n";
     }
 
     return str;
@@ -124,13 +124,13 @@ class FileNameDigger {
 };
 
 inline bool digFileNameGeneric(Defect *def, const char *event) {
-    const std::vector<DefMsg> &msgList = def->msgs;
-    BOOST_FOREACH(const DefMsg &msg, msgList) {
-        if (msg.event.compare(event))
+    const std::vector<DefEvent> &evtList = def->events;
+    BOOST_FOREACH(const DefEvent &evt, evtList) {
+        if (evt.event.compare(event))
             continue;
 
         // matched
-        def->fileName = msg.fileName;
+        def->fileName = evt.fileName;
         return true;
     }
 
@@ -152,7 +152,7 @@ FileNameDigger::FileNameDigger() {
 }
 
 bool FileNameDigger::guessFileName(Defect *def) {
-    if (def->msgs.empty())
+    if (def->events.empty())
         return false;
 
     TMap::const_iterator it = hMap_.find(def->defClass);
@@ -164,7 +164,7 @@ bool FileNameDigger::guessFileName(Defect *def) {
     }
 
     // fallback to default (just pick the file name from the first event)
-    def->fileName = def->msgs.front().fileName;
+    def->fileName = def->events.front().fileName;
     return true;
 }
 
@@ -186,8 +186,8 @@ struct Parser::Private {
     void wrongToken();
     bool seekForToken(const EToken);
     bool parseClass(Defect *);
-    bool parseLine(DefMsg *);
-    bool parseMsg(DefMsg *);
+    bool parseLine(DefEvent *);
+    bool parseMsg(DefEvent *);
     bool parseNext(Defect *);
 };
 
@@ -245,7 +245,7 @@ bool Parser::Private::parseClass(Defect *def) {
     // OK
     *end = '\0';
     def->defClass = text;
-    def->msgs.clear();
+    def->events.clear();
     free(text);
     return true;
 
@@ -254,7 +254,7 @@ fail:
     return false;
 }
 
-bool Parser::Private::parseLine(DefMsg *msg) {
+bool Parser::Private::parseLine(DefEvent *evt) {
     char *beg, *end;
     char *text = strdup(lexer.YYText());
     if (!text || ':' != text[0])
@@ -267,17 +267,17 @@ bool Parser::Private::parseLine(DefMsg *msg) {
         goto fail;
 
     *end = '\0';
-    msg->line = boost::lexical_cast<int>(beg);
+    evt->line = boost::lexical_cast<int>(beg);
 
     // parse column
     beg = end + 1;
     end = strchr(beg, ':');
     if (end) {
         *end = '\0';
-        msg->column = boost::lexical_cast<int>(beg);
+        evt->column = boost::lexical_cast<int>(beg);
     }
     else
-        msg->column = 0;
+        evt->column = 0;
 
     free(text);
     return true;
@@ -287,17 +287,17 @@ fail:
     return false;
 }
 
-bool Parser::Private::parseMsg(DefMsg *msg) {
+bool Parser::Private::parseMsg(DefEvent *evt) {
     char *text;
 
     // parse file
     if (seekForToken(T_FILE))
-        msg->fileName = lexer.YYText();
+        evt->fileName = lexer.YYText();
     else
         goto fail;
 
     // parse line/column
-    if (!seekForToken(T_LINE) || !parseLine(msg))
+    if (!seekForToken(T_LINE) || !parseLine(evt))
         goto fail;
 
     // parse basic msg
@@ -313,14 +313,14 @@ bool Parser::Private::parseMsg(DefMsg *msg) {
         char *pos = strchr(text, ':');
         if (pos && pos[1]) {
             *pos = '\0';
-            msg->event = text;
+            evt->event = text;
             *pos = ':';
             text = pos /* skip ": " */ + 2;
         }
     }
 
     // store basic msg
-    msg->msg = text;
+    evt->msg = text;
 
     // parse extra msg
     for (;;) {
@@ -333,8 +333,8 @@ bool Parser::Private::parseMsg(DefMsg *msg) {
                 return true;
 
             case T_MSG_EX:
-                msg->msg += "\n";
-                msg->msg += lexer.YYText();
+                evt->msg += "\n";
+                evt->msg += lexer.YYText();
                 continue;
 
             default:
@@ -357,12 +357,12 @@ bool Parser::Private::parseNext(Defect *def) {
 
     // parse defect body
     while (T_NULL != code && T_INIT != code) {
-        DefMsg msg;
-        if (!parseMsg(&msg))
+        DefEvent evt;
+        if (!parseMsg(&evt))
             return false;
 
-        // append single message
-        def->msgs.push_back(msg);
+        // append single event
+        def->events.push_back(evt);
     }
 
     if (this->fnDigger.guessFileName(def))
