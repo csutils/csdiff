@@ -112,25 +112,26 @@ class FlexLexerWrap: public yyFlexLexer {
         bool                silent_;
 };
 
-class FileNameDigger {
+class KeyEventDigger {
     private:
         typedef bool (*THandler)(Defect *);
         typedef std::map<std::string, THandler> TMap;
         TMap hMap_;
 
     public:
-        FileNameDigger();
-        bool guessFileName(Defect *);
+        KeyEventDigger();
+        bool guessKeyEvent(Defect *);
 };
 
 inline bool digFileNameGeneric(Defect *def, const char *event) {
     const std::vector<DefEvent> &evtList = def->events;
-    BOOST_FOREACH(const DefEvent &evt, evtList) {
+    for (unsigned idx = 0; idx < evtList.size(); ++idx) {
+        const DefEvent &evt = evtList[idx];
         if (evt.event.compare(event))
             continue;
 
         // matched
-        def->fileName = evt.fileName;
+        def->keyEventIdx = idx;
         return true;
     }
 
@@ -145,13 +146,13 @@ bool digFileName_NULL_RETURNS(Defect *def) {
     return digFileNameGeneric(def, "returned_null");
 }
 
-FileNameDigger::FileNameDigger() {
+KeyEventDigger::KeyEventDigger() {
     // register checker-specific handlers
     hMap_["UNINIT_CTOR"]        = digFileName_UNINIT_CTOR;
     hMap_["NULL_RETURNS"]       = digFileName_NULL_RETURNS;
 }
 
-bool FileNameDigger::guessFileName(Defect *def) {
+bool KeyEventDigger::guessKeyEvent(Defect *def) {
     if (def->events.empty())
         return false;
 
@@ -163,8 +164,8 @@ bool FileNameDigger::guessFileName(Defect *def) {
             return true;
     }
 
-    // fallback to default (just pick the file name from the first event)
-    def->fileName = def->events.front().fileName;
+    // fallback to default (just pick the first event in the list)
+    def->keyEventIdx = 0;
     return true;
 }
 
@@ -173,7 +174,7 @@ struct Parser::Private {
     std::string             fileName;
     bool                    hasError;
     EToken                  code;
-    FileNameDigger          fnDigger;
+    KeyEventDigger          keDigger;
 
     Private(std::istream &input_, std::string fileName_, bool silent):
         lexer(input_, fileName_, silent),
@@ -365,7 +366,7 @@ bool Parser::Private::parseNext(Defect *def) {
         def->events.push_back(evt);
     }
 
-    if (this->fnDigger.guessFileName(def))
+    if (this->keDigger.guessKeyEvent(def))
         // all OK
         return true;
 

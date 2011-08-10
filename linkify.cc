@@ -68,7 +68,8 @@ class DefQueue {
 void DefQueue::hashDefect(const Defect &def)
 {
     TDefByFile &row = stor_[def.defClass];
-    TDefList &col = row[filt_->filterPath(def.fileName)];
+    const std::string &fileName = def.events[def.keyEventIdx].fileName;
+    TDefList &col = row[filt_->filterPath(fileName)];
     col.push_back(def);
 }
 

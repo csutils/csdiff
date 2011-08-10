@@ -34,8 +34,8 @@ struct DefEvent {
 
 struct Defect {
     std::string             defClass;
-    std::string             fileName;   ///< just a guess
     std::vector<DefEvent>   events;
+    unsigned                keyEventIdx;    ///< in range 0..(events.size()-1)
 };
 
 std::ostream& operator<<(std::ostream &str, const Defect &def);
