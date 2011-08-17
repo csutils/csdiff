@@ -19,7 +19,11 @@
 
 #include "json-writer.hh"
 
+#include <boost/foreach.hpp>
+#include <boost/property_tree/json_parser.hpp>
+
 struct JsonWriter::Private {
+    boost::property_tree::ptree defList;
 };
 
 JsonWriter::JsonWriter():
@@ -32,9 +36,40 @@ JsonWriter::~JsonWriter() {
 }
 
 void JsonWriter::handleDef(const Defect &def) {
-    std::cerr << "JsonWriter not implemented\n";
+    using std::string;
+
+    // go through events
+    boost::property_tree::ptree evtList;
+    BOOST_FOREACH(const DefEvent &evt, def.events) {
+        boost::property_tree::ptree evtNode;
+
+        // describe the location
+        evtNode.put<string>("file_name", evt.fileName);
+        evtNode.put<int>("line", evt.line);
+        if (0 < evt.column)
+            evtNode.put<int>("column", evt.column);
+
+        // describe the event
+        evtNode.put<string>("event", evt.event);
+        evtNode.put<string>("message", evt.msg);
+
+        // append the event to the list
+        evtList.push_back(std::make_pair("", evtNode));
+    }
+
+    // create a node for a single defect
+    boost::property_tree::ptree defNode;
+    defNode.put<string>("checker", def.defClass);
+    defNode.put<int>("key_event_idx", def.keyEventIdx);
+    defNode.put_child("events", evtList);
+
+    // append the node to the list
+    d->defList.push_back(std::make_pair("", defNode));
 }
 
 void JsonWriter::flush() {
-    std::cerr << "Please implement JsonWriter!\n";
+    // finally create the root node and stream out the defect list
+    boost::property_tree::ptree root;
+    root.put_child("defects", d->defList);
+    write_json(std::cout, root);
 }
