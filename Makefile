@@ -23,7 +23,10 @@ TARGETS = csdiff csgrep cstat linkify
 all: $(TARGETS)
 
 PARSER_OBJS = csparser.o csparser.yy.o
-CSLIB_OBJS = csfilter.o $(PARSER_OBJS) cstat-core.o deflookup.o
+
+CSLIB_OBJS = abstract-filter.o csfilter.o $(PARSER_OBJS) cstat-core.o \
+			 deflookup.o json-writer.o
+
 cslib.a: $(CSLIB_OBJS)
 	ar r $@ $(CSLIB_OBJS)
 	ranlib $@
@@ -45,10 +48,12 @@ linkify: linkify.o cslib.a
 
 # .hh deps (built manually for now)
 $(PARSER_OBJS): csparser-priv.hh
+abstract-filter.o cstat-core.o json-writer.o: abstract-filter.hh
 csparser.o csdiff.o cstat-core.o deflookup.o linkify.o: csparser.hh
 csgrep.o cstat.o cstat-core.o: cstat-core.hh
 csfilter.o deflookup.o linkify.o: csfilter.hh
 csdiff.o linkify.o: deflookup.hh
+cstat-core.o json-writer.o: json-writer.hh
 
 clean:
 	rm -fv *.o cslib.a $(TARGETS) csparser.yy.cc

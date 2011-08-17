@@ -19,58 +19,15 @@
 
 #include "csparser.hh"
 #include "cstat-core.hh"
-
-#include <errno.h>
-#include <error.h>
+#include "abstract-filter.hh"
+#include "json-writer.hh"
 
 #include <cstdlib>
-#include <fstream>
 #include <map>
 
 #include <boost/foreach.hpp>
 #include <boost/program_options.hpp>
 #include <boost/regex.hpp>
-
-class AbstractEngine {
-    protected:
-        virtual void handleDef(const Defect &def) = 0;
-        virtual void notifyFile(const std::string &) { }
-        friend class AbstractFilter;
-
-    public:
-        virtual ~AbstractEngine() { }
-
-        bool handleFile(const std::string &fileName, bool silent) {
-            std::fstream fstr;
-            std::istream *pStr = &fstr;
-
-            const char *szFileName = fileName.c_str();
-            const bool isFile = !!fileName.compare("-");
-            if (isFile)
-                fstr.open(szFileName, std::ios::in);
-            else
-                pStr = &std::cin;
-
-            if (!fstr) {
-                error(0, errno, "failed to open %s", szFileName);
-                return false;
-            }
-
-            this->notifyFile(fileName);
-
-            Parser parser(*pStr, fileName, silent);
-            Defect def;
-            while (parser.getNext(&def))
-                this->handleDef(def);
-
-            if (isFile)
-                fstr.close();
-
-            return !parser.hasError();
-        }
-
-        virtual void flush() { };
-};
 
 class DefPrinter: public AbstractEngine {
     public:
@@ -130,45 +87,6 @@ class DefCounter: public AbstractEngine {
             BOOST_FOREACH(TMap::const_reference item, cnt_) {
                 std::cout << item.second << "\t" << item.first << "\n";
             }
-        }
-};
-
-class AbstractFilter: public AbstractEngine {
-    private:
-        bool neg_;
-
-    protected:
-        AbstractEngine *slave_;
-        virtual bool matchDef(const Defect &def) = 0;
-
-        virtual void notifyFile(const std::string &fileName) {
-            slave_->notifyFile(fileName);
-        }
-
-    public:
-        AbstractFilter(AbstractEngine *slave):
-            neg_(false),
-            slave_(slave)
-        {
-        }
-
-        ~AbstractFilter() {
-            delete slave_;
-        }
-
-        void setInvertMatch(bool enabled = true) {
-            neg_ = enabled;
-        }
-
-        virtual void handleDef(const Defect &def) {
-            if (neg_ == matchDef(def))
-                return;
-
-            slave_->handleDef(def);
-        }
-
-        virtual void flush() {
-            slave_->flush();
         }
 };
 
@@ -252,6 +170,7 @@ class EngineFactory {
         static AbstractEngine* createGrep()     { return new DefPrinter;    }
         static AbstractEngine* createGrouped()  { return new GroupPrinter;  }
         static AbstractEngine* createStat()     { return new DefCounter;    }
+        static AbstractEngine* createJson()     { return new JsonWriter;    }
 
     public:
         EngineFactory() {
@@ -259,6 +178,7 @@ class EngineFactory {
             tbl_["grep"]    = createGrep;
             tbl_["grouped"] = createGrouped;
             tbl_["stat"]    = createStat;
+            tbl_["json"]    = createJson;
         }
 
         AbstractEngine* create(const std::string mode) const {
@@ -346,7 +266,7 @@ int cStatCore(int argc, char *argv[], const char *defMode)
             ("ignore-case,i", "ignore case when matching regular expressions")
             ("invert-match,v", "select defects that do not match the regex")
             ("mode", po::value<string>(&mode)->default_value(defMode),
-             "stat, grep, files, or grouped")
+             "stat, grep, files, grouped, or json")
             ("msg", po::value<string>(), "match messages by the given regex")
             ("path", po::value<string>(),
              "match source path by the given regex")
