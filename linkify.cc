@@ -32,6 +32,7 @@
 #include <boost/algorithm/string/classification.hpp>
 #include <boost/algorithm/string/replace.hpp>
 #include <boost/algorithm/string/split.hpp>
+#include <boost/regex.hpp>
 
 #define DEBUG_DEF_MATCH                 0
 #define DEBUG_LOOKUP_OFFSET             0
@@ -230,6 +231,7 @@ struct HtWriter {
     static void docOpen(
             const char                  *projName,
             const char                  *projURL,
+            const char                  *defBase,
             const char                  *projNameOld);
 
     static void docClose() {
@@ -269,6 +271,7 @@ struct HtWriter {
 void HtWriter::docOpen(
         const char                      *projName,
         const char                      *projURL,
+        const char                      *defBase,
         const char                      *projNameOld)
 {
     std::cout << "<?xml version='1.0' encoding='utf-8'?>\n\
@@ -276,19 +279,38 @@ void HtWriter::docOpen(
 'http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd'>\n\
 <html xmlns='http://www.w3.org/1999/xhtml'>\n\
 <head><title>" << projName << " (defects listing)</title></head>\n\
-<body>\n<pre style='" PRE_STYLE "'>\n";
+<body>\n<h1>" << projName;
 
-    if (projURL && *projURL) {
+    const bool haveProject = (projURL && *projURL);
+
+    if (!haveProject) {
+        if (projNameOld && *projNameOld)
+            std::cout << " - defects not occurring in " << projNameOld;
+        else
+            std::cout << " - defects not occurring upstream";
+    }
+
+    std::cout << "</h1>\n";
+
+    if (defBase && *defBase) {
+        const boost::regex re("([^/])/[^/].*$");
+        const std::string urlOrigin(defBase);
+        const std::string url(boost::regex_replace(urlOrigin, re, "$1"));
+        std::cout << "<div style='margin: 48px 0px;'>\n  "
+            "<span style='border: 4px #00FF00 solid; padding: 16px;'>To access "
+            "the <b>Integrity Manager</b>, you need to log in first:\n    "
+            "<form action='" << url << "/j_spring_security_check' "
+            "method='post' target='_blank' style='display: inline;'>\n      "
+            "<input type='hidden' name='j_username' value='admin' />\n      "
+            "<input type='hidden' name='j_password' value='xxxxxx' />\n      "
+            "<input type='submit' value='Log in' />\n    "
+            "</form>\n  </span>\n</div>\n";
+    }
+
+    std::cout << "<pre style='" PRE_STYLE "'>\n";
+    if (haveProject) {
         std::cout << "Browse the defect list via <b>Integrity Manager</b>: "
             "<a href='" << projURL << "'>" << projName << "</a>\n\n";
-    }
-    else if (projNameOld && *projNameOld) {
-        std::cout << "<h1>" << projName
-            << " - defects not occurring in " << projNameOld << "</h1>\n";
-    }
-    else {
-        std::cout << "<h1>" << projName
-            << " - defects not occurring upstream</h1>\n";
     }
 }
 
@@ -551,7 +573,8 @@ int main(int argc, char *argv[])
     // output HTML header
     const char *const projName = argv[/* IM project name */ 1];
     const char *const projURL  = argv[/* IM project URL  */ 2];
-    HtWriter::docOpen(projName, projURL, projNameOld);
+    const char *const defBase  = argv[/* defect URL base */ 3];
+    HtWriter::docOpen(projName, projURL, defBase, projNameOld);
 
     // a list of CIDs not matched in the .err file (they are going to appear
     // in a separate section)
@@ -566,7 +589,7 @@ int main(int argc, char *argv[])
     // 'linker' writes translated defects to stdout
     const bool onlyNew = diffOld && !projURL[0];
     DefLinker linker(
-            argv[/* defect  URL base */ 3],
+            defBase,
             argv[/* checker URL base */ 4],
             argv[/* checker comments */ 6],
             projNameOld,

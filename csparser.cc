@@ -25,12 +25,12 @@
 #include <cctype>
 #include <cstdlib>
 #include <cstring>
+#include <map>
 
 #include <boost/foreach.hpp>
 #include <boost/iostreams/device/null.hpp>
 #include <boost/iostreams/stream.hpp>
 #include <boost/lexical_cast.hpp>
-#include <boost/regex.hpp>
 
 std::ostream& operator<<(std::ostream &str, EToken code) {
     switch (code) {
