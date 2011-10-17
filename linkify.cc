@@ -284,8 +284,10 @@ void HtWriter::docOpen(
     const bool haveProject = (projURL && *projURL);
 
     if (!haveProject) {
-        if (projNameOld && *projNameOld)
-            std::cout << " - defects not occurring in " << projNameOld;
+        if (projNameOld && *projNameOld) {
+            if (!!strcmp(projNameOld, ".security"))
+                std::cout << " - defects not occurring in " << projNameOld;
+        }
         else
             std::cout << " - defects not occurring upstream";
     }
