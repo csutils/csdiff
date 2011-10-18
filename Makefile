@@ -19,7 +19,7 @@ CXXFLAGS = -Wall -Wextra -O2
 
 .PHONY: all clean
 
-TARGETS = csdiff csgrep cstat linkify
+TARGETS = csannot csdiff csgrep cstat linkify
 all: $(TARGETS)
 
 PARSER_OBJS = csparser.o csparser.yy.o
@@ -30,6 +30,9 @@ CSLIB_OBJS = abstract-filter.o csfilter.o $(PARSER_OBJS) cstat-core.o \
 cslib.a: $(CSLIB_OBJS)
 	ar r $@ $(CSLIB_OBJS)
 	ranlib $@
+
+csannot: csannot.o cslib.a
+	g++ -o $@ csannot.o cslib.a -lboost_regex
 
 csdiff: csdiff.o cslib.a
 	g++ -o $@ csdiff.o cslib.a -lboost_regex
@@ -49,7 +52,7 @@ linkify: linkify.o cslib.a
 # .hh deps (built manually for now)
 $(PARSER_OBJS): csparser-priv.hh
 abstract-filter.o cstat-core.o json-writer.o: abstract-filter.hh
-csparser.o csdiff.o cstat-core.o deflookup.o linkify.o: csparser.hh
+csparser.o csannot.o csdiff.o cstat-core.o deflookup.o linkify.o: csparser.hh
 csgrep.o cstat.o cstat-core.o: cstat-core.hh
 csfilter.o deflookup.o linkify.o: csfilter.hh
 csdiff.o linkify.o: deflookup.hh
