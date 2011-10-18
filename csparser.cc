@@ -47,7 +47,7 @@ std::ostream& operator<<(std::ostream &str, EToken code) {
 }
 
 std::ostream& operator<<(std::ostream &str, const Defect &def) {
-    str << "\nError: " << def.defClass << ":\n";
+    str << "\nError: " << def.defClass << def.annotation << ":\n";
 
     BOOST_FOREACH(const DefEvent &evt, def.events) {
         str << evt.fileName << ":" << evt.line << ":";
@@ -234,7 +234,7 @@ bool Parser::Private::seekForToken(const EToken token) {
 }
 
 bool Parser::Private::parseClass(Defect *def) {
-    char *end;
+    char *ann, *end;
     char *text = strdup(lexer.YYText());
     if (!text || !isupper(text[0]))
         goto fail;
@@ -245,6 +245,16 @@ bool Parser::Private::parseClass(Defect *def) {
 
     // OK
     *end = '\0';
+
+    // look for annotation
+    ann = strpbrk(text, " (");
+    if (ann) {
+        def->annotation = ann;
+        *ann = '\0';
+    }
+    else
+        def->annotation.clear();
+
     def->defClass = text;
     def->events.clear();
     free(text);

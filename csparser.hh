@@ -34,6 +34,7 @@ struct DefEvent {
 
 struct Defect {
     std::string             defClass;
+    std::string             annotation;
     std::vector<DefEvent>   events;
     unsigned                keyEventIdx;    ///< in range 0..(events.size()-1)
 };
