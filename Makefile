@@ -25,7 +25,7 @@ all: $(TARGETS)
 PARSER_OBJS = csparser.o csparser.yy.o
 
 CSLIB_OBJS = abstract-filter.o csfilter.o $(PARSER_OBJS) cstat-core.o \
-			 deflookup.o json-writer.o
+			 deflookup.o instream.o json-writer.o
 
 cslib.a: $(CSLIB_OBJS)
 	ar r $@ $(CSLIB_OBJS)
@@ -57,6 +57,7 @@ csgrep.o cstat.o cstat-core.o: cstat-core.hh
 csfilter.o deflookup.o linkify.o: csfilter.hh
 csdiff.o linkify.o: deflookup.hh
 cstat-core.o json-writer.o: json-writer.hh
+instream.o csdiff.o: instream.hh
 
 clean:
 	rm -fv *.o cslib.a $(TARGETS) csparser.yy.cc

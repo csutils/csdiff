@@ -19,9 +19,9 @@
 
 #include "csparser.hh"
 #include "deflookup.hh"
+#include "instream.hh"
 
 #include <cstdlib>
-#include <fstream>
 
 int main(int argc, char *argv[])
 {
@@ -31,44 +31,37 @@ int main(int argc, char *argv[])
         return EXIT_FAILURE;
     }
 
-    // open old
-    const char *fnOld = argv[1];
-    std::fstream strOld(fnOld, std::ios::in);
-    if (!strOld) {
-        std::cerr << fnOld << ": failed to open input file\n";
+    try {
+        // open old
+        const char *fnOld = argv[1];
+        InStream strOld(fnOld);
+
+        // open new
+        const char *fnNew = argv[2];
+        InStream strNew(fnNew);
+
+        // read old
+        Parser pOld(strOld.str(), fnOld);
+        DefLookup stor;
+        Defect def;
+        while (pOld.getNext(&def))
+            stor.hashDefect(def);
+
+        // read new
+        Parser pNew(strNew.str(), fnNew);
+        while (pNew.getNext(&def)) {
+            if (stor.lookup(def))
+                continue;
+
+            // a newly added defect found
+            std::cout << def;
+        }
+
+        return pOld.hasError()
+            || pNew.hasError();
+    }
+    catch (const InFileException &e) {
+        std::cerr << e.fileName << ": failed to open input file\n";
         return EXIT_FAILURE;
     }
-
-    // open new
-    const char *fnNew = argv[2];
-    std::fstream strNew(fnNew, std::ios::in);
-    if (!strNew) {
-        std::cerr << fnNew << ": failed to open input file\n";
-        strOld.close();
-        return EXIT_FAILURE;
-    }
-
-    // read old
-    Parser pOld(strOld, fnOld);
-    DefLookup stor;
-    Defect def;
-    while (pOld.getNext(&def))
-        stor.hashDefect(def);
-
-    // read new
-    Parser pNew(strNew, fnNew);
-    while (pNew.getNext(&def)) {
-        if (stor.lookup(def))
-            continue;
-
-        // a newly added defect found
-        std::cout << def;
-    }
-
-    // close streams
-    strOld.close();
-    strNew.close();
-
-    return pOld.hasError()
-        || pNew.hasError();
 }
