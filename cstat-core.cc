@@ -238,6 +238,9 @@ bool chainFilters(
         flags |= boost::regex_constants::icase;
 
     if (vm.count("invert-match"))
+        pf->setInvertMatch();
+
+    if (vm.count("invert-regex"))
         pf->setInvertEachMatch();
 
     return appendPredIfNeeded<DefClassPredicate>  (pEng, vm, flags, "checker")
@@ -267,6 +270,7 @@ int cStatCore(int argc, char *argv[], const char *defMode)
             ("help", "produce help message")
             ("ignore-case,i", "ignore case when matching regular expressions")
             ("invert-match,v", "select defects that do not match the regex")
+            ("invert-regex,n", "invert all given regexes before matching them")
             ("mode", po::value<string>(&mode)->default_value(defMode),
              "stat, grep, files, grouped, or json")
             ("msg", po::value<string>(), "match messages by the given regex")
