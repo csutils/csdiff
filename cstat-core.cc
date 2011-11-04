@@ -90,18 +90,17 @@ class DefCounter: public AbstractEngine {
         }
 };
 
-class MsgFilter: public AbstractFilter {
+class MsgPredicate: public IPredicate {
     private:
         boost::regex re_;
 
     public:
-        MsgFilter(AbstractEngine *slave, const boost::regex &re):
-            AbstractFilter(slave),
+        MsgPredicate(const boost::regex &re):
             re_(re)
         {
         }
 
-        virtual bool matchDef(const Defect &def) {
+        virtual bool matchDef(const Defect &def) const {
             BOOST_FOREACH(const DefEvent &evt, def.events) {
                 if (boost::regex_search(evt.msg, re_))
                     return true;
@@ -111,52 +110,49 @@ class MsgFilter: public AbstractFilter {
         }
 };
 
-class ErrorFilter: public AbstractFilter {
+class ErrorPredicate: public IPredicate {
     private:
         boost::regex re_;
 
     public:
-        ErrorFilter(AbstractEngine *slave, const boost::regex &re):
-            AbstractFilter(slave),
+        ErrorPredicate(const boost::regex &re):
             re_(re)
         {
         }
 
-        virtual bool matchDef(const Defect &def) {
+        virtual bool matchDef(const Defect &def) const {
             const DefEvent &evt = def.events.front();
             return boost::regex_search(evt.msg, re_);
         }
 };
 
-class PathFilter: public AbstractFilter {
+class PathPredicate: public IPredicate {
     private:
         boost::regex re_;
 
     public:
-        PathFilter(AbstractEngine *slave, const boost::regex &re):
-            AbstractFilter(slave),
+        PathPredicate(const boost::regex &re):
             re_(re)
         {
         }
 
-        virtual bool matchDef(const Defect &def) {
+        virtual bool matchDef(const Defect &def) const {
             const DefEvent &evt = def.events.front();
             return boost::regex_search(evt.fileName, re_);
         }
 };
 
-class DefClassFilter: public AbstractFilter {
+class DefClassPredicate: public IPredicate {
     private:
         boost::regex re_;
 
     public:
-        DefClassFilter(AbstractEngine *slave, const boost::regex &re):
-            AbstractFilter(slave),
+        DefClassPredicate(const boost::regex &re):
             re_(re)
         {
         }
 
-        virtual bool matchDef(const Defect &def) {
+        virtual bool matchDef(const Defect &def) const {
             return boost::regex_search(def.defClass, re_);
         }
 };
@@ -194,8 +190,8 @@ static std::string name;
 
 namespace po = boost::program_options;
 
-template <class TFilter>
-bool chainFilterIfNeeded(
+template <class TPred>
+bool appendPredIfNeeded(
         AbstractEngine                                  **pEng,
         const po::variables_map                         &vm,
         boost::regex_constants::syntax_option_type      flags,
@@ -204,28 +200,27 @@ bool chainFilterIfNeeded(
     if (!vm.count(key))
         return true;
 
-    AbstractFilter *filter = 0;
+    TPred *pred = 0;
     const std::string &reStr = vm[key].as<std::string>();
     try {
         boost::regex re(reStr, flags);
-        filter = new TFilter(*pEng, re);
+        pred = new TPred(re);
     }
     catch (...) {
         std::cerr << ::name << ": error: failed to compile regex: --"
             << key << " '" << reStr << "'\n";
     }
 
-    if (!filter) {
+    if (!pred) {
         delete *pEng;
         *pEng = 0;
         return false;
     }
 
-    if (vm.count("invert-match"))
-        filter->setInvertMatch();
+    // append a predicate
+    PredicateFilter *pf = dynamic_cast<PredicateFilter *>(*pEng);
+    pf->append(pred);
 
-    // successfully created a filter
-    *pEng = filter;
     return true;
 }
 
@@ -233,15 +228,22 @@ bool chainFilters(
         AbstractEngine                                  **pEng,
         const po::variables_map                         &vm)
 {
+    // insert a filter predicate into the chain
+    PredicateFilter *pf = new PredicateFilter(*pEng);
+    *pEng = pf;
+
     // common matching flags
     boost::regex_constants::syntax_option_type flags = 0;
     if (vm.count("ignore-case"))
         flags |= boost::regex_constants::icase;
 
-    return chainFilterIfNeeded<DefClassFilter>  (pEng, vm, flags, "checker")
-        && chainFilterIfNeeded<ErrorFilter>     (pEng, vm, flags, "error")
-        && chainFilterIfNeeded<MsgFilter>       (pEng, vm, flags, "msg")
-        && chainFilterIfNeeded<PathFilter>      (pEng, vm, flags, "path");
+    if (vm.count("invert-match"))
+        pf->setInvertEachMatch();
+
+    return appendPredIfNeeded<DefClassPredicate>  (pEng, vm, flags, "checker")
+        && appendPredIfNeeded<ErrorPredicate>     (pEng, vm, flags, "error")
+        && appendPredIfNeeded<MsgPredicate>       (pEng, vm, flags, "msg")
+        && appendPredIfNeeded<PathPredicate>      (pEng, vm, flags, "path");
 }
 
 int cStatCore(int argc, char *argv[], const char *defMode)

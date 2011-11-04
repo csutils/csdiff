@@ -22,6 +22,12 @@
 #include <errno.h>
 #include <error.h>
 #include <fstream>
+#include <vector>
+
+#include <boost/foreach.hpp>
+
+// /////////////////////////////////////////////////////////////////////////////
+// implementation of AbstractEngine
 
 bool AbstractEngine::handleFile(const std::string &fileName, bool silent) {
     std::fstream fstr;
@@ -50,4 +56,51 @@ bool AbstractEngine::handleFile(const std::string &fileName, bool silent) {
         fstr.close();
 
     return !parser.hasError();
+}
+
+
+// /////////////////////////////////////////////////////////////////////////////
+// implementation of PredicateFilter
+
+struct PredicateFilter::Private {
+    typedef std::vector<IPredicate *>               TList;
+    bool                invertEach_;
+    TList               preds_;
+
+    Private():
+        invertEach_(false)
+    {
+    }
+};
+
+PredicateFilter::PredicateFilter(AbstractEngine *slave):
+    AbstractFilter(slave),
+    d(new Private)
+{
+}
+
+PredicateFilter::~PredicateFilter() {
+    BOOST_FOREACH(IPredicate *pred, d->preds_)
+        delete pred;
+
+    delete d;
+}
+
+void PredicateFilter::append(IPredicate *pred) {
+    d->preds_.push_back(pred);
+}
+
+void PredicateFilter::setInvertEachMatch(bool enabled) {
+    d->invertEach_ = enabled;
+}
+
+bool PredicateFilter::matchDef(const Defect &def) const {
+    const bool neg = d->invertEach_;
+
+    BOOST_FOREACH(const IPredicate *pred, d->preds_) {
+        if (neg == pred->matchDef(def))
+            return false;
+    }
+
+    return true;
 }

@@ -43,7 +43,7 @@ class AbstractFilter: public AbstractEngine {
 
     protected:
         AbstractEngine *slave_;
-        virtual bool matchDef(const Defect &def) = 0;
+        virtual bool matchDef(const Defect &def) const = 0;
 
         virtual void notifyFile(const std::string &fileName) {
             slave_->notifyFile(fileName);
@@ -74,6 +74,30 @@ class AbstractFilter: public AbstractEngine {
         virtual void flush() {
             slave_->flush();
         }
+};
+
+class IPredicate {
+    public:
+        virtual ~IPredicate() { }
+        virtual bool matchDef(const Defect &def) const = 0;
+};
+
+class PredicateFilter: public AbstractFilter {
+    public:
+        PredicateFilter(AbstractEngine *slave);
+        virtual ~PredicateFilter();
+
+        /// takes ownership of pred and will call delete on it on destruction
+        void append(IPredicate *);
+
+        void setInvertEachMatch(bool enabled = true);
+
+    protected:
+        virtual bool matchDef(const Defect &def) const;
+
+    private:
+        struct Private;
+        Private *d;
 };
 
 #endif /* H_GUARD_ABSTRACT_FILTER_H */
