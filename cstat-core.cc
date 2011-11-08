@@ -90,6 +90,39 @@ class DefCounter: public AbstractEngine {
         }
 };
 
+class FileDefCounter: public AbstractEngine {
+    private:
+        typedef std::map<std::string, DefCounter *> TMap;
+        TMap cntMap_;
+
+    public:
+        virtual ~FileDefCounter() {
+            BOOST_FOREACH(TMap::const_reference item, cntMap_)
+                delete /* (DefCounter *) */ item.second;
+        }
+
+        virtual void handleDef(const Defect &def) {
+            const std::string fName = def.events[def.keyEventIdx].fileName;
+            TMap::const_iterator it = cntMap_.find(fName);
+
+            DefCounter *defCnt = (cntMap_.end() == it)
+                ? (cntMap_[fName] = new DefCounter)
+                : (it->second);
+
+            defCnt->handleDef(def);
+        }
+
+        virtual void flush() {
+            BOOST_FOREACH(TMap::const_reference item, cntMap_) {
+                const std::string fName = item.first;
+                std::cout << "\n\n--- " << fName << " ---\n";
+
+                DefCounter *defCnt = item.second;
+                defCnt->flush();
+            }
+        }
+};
+
 class MsgPredicate: public IPredicate {
     private:
         boost::regex re_;
@@ -201,6 +234,7 @@ class EngineFactory {
         static AbstractEngine* createGrep()     { return new DefPrinter;    }
         static AbstractEngine* createGrouped()  { return new GroupPrinter;  }
         static AbstractEngine* createStat()     { return new DefCounter;    }
+        static AbstractEngine* createFileStat() { return new FileDefCounter;}
         static AbstractEngine* createJson()     { return new JsonWriter;    }
 
     public:
@@ -209,6 +243,7 @@ class EngineFactory {
             tbl_["grep"]    = createGrep;
             tbl_["grouped"] = createGrouped;
             tbl_["stat"]    = createStat;
+            tbl_["filestat"]= createFileStat;
             tbl_["json"]    = createJson;
         }
 
@@ -312,7 +347,7 @@ int cStatCore(int argc, char *argv[], const char *defMode)
             ("invert-match,v", "select defects that do not match the regex")
             ("invert-regex,n", "invert all given regexes before matching them")
             ("mode", po::value<string>(&mode)->default_value(defMode),
-             "stat, grep, files, grouped, or json")
+             "stat, filestat, grep, files, grouped, or json")
             ("msg", po::value<string>(), "match messages by the given regex")
             ("path", po::value<string>(),
              "match source path by the given regex")
