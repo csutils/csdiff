@@ -321,6 +321,26 @@ bool chainFilters(
         && appendPredIfNeeded<PathPredicate>      (pEng, vm, flags, "path");
 }
 
+template <class TDesc, class TStream>
+void printUsage(TStream &str, const TDesc &desc) {
+    desc.print(str);
+    str << "\n\n\
+DESCRIPTION OF AVAILABLE MODES\n\
+------------------------------\n\
+\n\
+stat - print overall statistics of the matched defects in given error files\n\
+\n\
+filestat - print statistics of matched defects per individual source files\n\
+\n\
+grep - print matched defects using the same format as expected on the input\n\
+\n\
+files - print only names of error files that contain the matched defects\n\
+\n\
+grouped - print matched defects, grouped by error files they originate from\n\
+\n\
+json - print matched defects in a JSON format\n\n";
+}
+
 int cStatCore(int argc, char *argv[], const char *defMode)
 {
     using std::string;
@@ -375,7 +395,7 @@ int cStatCore(int argc, char *argv[], const char *defMode)
     }
 
     if (vm.count("help")) {
-        desc.print(std::cout);
+        printUsage(std::cout, desc);
         return 0;
     }
 
@@ -383,7 +403,7 @@ int cStatCore(int argc, char *argv[], const char *defMode)
     AbstractEngine *eng = factory.create(mode);
     if (!eng) {
         std::cerr << name << ": error: unknown mode: " << mode << "\n\n";
-        desc.print(std::cerr);
+        printUsage(std::cerr, desc);
         return 1;
     }
 
