@@ -177,6 +177,21 @@ class DefClassPredicate: public IPredicate {
         }
 };
 
+class AnnotPredicate: public IPredicate {
+    private:
+        boost::regex re_;
+
+    public:
+        AnnotPredicate(const boost::regex &re):
+            re_(re)
+        {
+        }
+
+        virtual bool matchDef(const Defect &def) const {
+            return boost::regex_search(def.annotation, re_);
+        }
+};
+
 class EngineFactory {
     private:
         typedef std::map<std::string, AbstractEngine* (*)(void)> TTable;
@@ -264,6 +279,7 @@ bool chainFilters(
         pf->setInvertEachMatch();
 
     return appendPredIfNeeded<DefClassPredicate>  (pEng, vm, flags, "checker")
+        && appendPredIfNeeded<AnnotPredicate>     (pEng, vm, flags, "annot")
         && appendPredIfNeeded<ErrorPredicate>     (pEng, vm, flags, "error")
         && appendPredIfNeeded<EventPredicate>     (pEng, vm, flags, "event")
         && appendPredIfNeeded<MsgPredicate>       (pEng, vm, flags, "msg")
@@ -285,6 +301,8 @@ int cStatCore(int argc, char *argv[], const char *defMode)
 
     try {
         desc.add_options()
+            ("annot", po::value<string>(),
+             "match annotations by the given regex")
             ("checker", po::value<string>(),
              "match checkers by the given regex")
             ("error", po::value<string>(), "match errors by the given regex")
