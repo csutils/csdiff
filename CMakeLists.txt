@@ -52,3 +52,6 @@ add_executable(csdiff csdiff.cc)
 add_executable(csgrep csgrep.cc)
 add_executable(cstat cstat.cc)
 add_executable(linkify linkify.cc)
+
+# load regression tests
+add_subdirectory(tests)
