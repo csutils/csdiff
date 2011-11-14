@@ -22,7 +22,6 @@
 #include <iostream>
 
 #include <boost/regex.hpp>
-#include <boost/algorithm/string/replace.hpp>
 
 // if 1, debug string substitutions while matching them
 #define DEBUG_SUBST 0
@@ -43,10 +42,14 @@ inline std::string regexReplaceWrap(
 MsgFilter* MsgFilter::self_;
 
 struct MsgFilter::Private {
+    const std::string strKrn;
+    const boost::regex reKrn;
     const boost::regex reMsg;
     const boost::regex rePath;
 
     Private():
+        strKrn("[a-zA-Z]"),
+        reKrn(strKrn),
         reMsg("[0-9][0-9]* out of [0-9][0-9]* times"),
         rePath("^(?:/builddir/build/BUILD/)?([^/]+/)(.*)(\\.[ly])?$")
     {
@@ -75,8 +78,11 @@ std::string MsgFilter::filterPath(const std::string &path) {
     std::string nvr (sm[/* NVR  */ 1]);
     std::string core(sm[/* core */ 2]);
 
-    // quirk for OpenLDAP directory structure with multiple version strings
-    boost::algorithm::replace_first(core, nvr, "");
+    // try to kill the multiple version strings in paths (kernel, OpenLDAP, ...)
+    nvr.resize(nvr.size() - 1);
+    std::string ver(boost::regex_replace(nvr, d->reKrn, ""));
+    const boost::regex reKill(d->strKrn + ver + "[^/]*/");
+    core = boost::regex_replace(core, reKill, "");
 
     // quirk for Coverity inconsistency in handling bison-generated file names
     std::string suff(sm[/* Bison suffix */ 3]);
