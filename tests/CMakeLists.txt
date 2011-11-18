@@ -28,7 +28,7 @@ macro(test_csdiff dir num)
     set(cmd "${cmd} | ${diffcmd} ${tst}-add.err -")
     add_test("${dir}-${num}-added" sh -c "${cmd}")
 
-    set(cmd "${csdiff} ${tst}-new.err ${tst}-old.err")
+    set(cmd "${csdiff} -x ${tst}-old.err ${tst}-new.err")
     set(cmd "${cmd} | ${diffcmd} ${tst}-fix.err -")
     add_test("${dir}-${num}-fixed" sh -c "${cmd}")
 endmacro()

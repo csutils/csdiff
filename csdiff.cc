@@ -23,32 +23,84 @@
 
 #include <cstdlib>
 
+#include <boost/program_options.hpp>
+
 int main(int argc, char *argv[])
 {
-    // check if file names were given
-    if (argc != 3) {
-        std::cerr << "Usage: " << argv[0] << " old.err new.err\n";
-        return EXIT_FAILURE;
-    }
+    using std::string;
+    const char *name = argv[0];
+
+    namespace po = boost::program_options;
+    po::variables_map vm;
+    po::options_description desc(string("Usage: ") + name
+            + " [options] old.err new.err, where options are");
+
+    typedef std::vector<string> TStringList;
+    string mode;
 
     try {
-        // open old
-        const char *fnOld = argv[1];
-        InStream strOld(fnOld);
+        desc.add_options()
+            ("fixed,x", "print fixed defects (just swaps the arguments)")
+            ("quiet,q", "do not report any parsing errors")
+            ("help", "produce help message");
 
-        // open new
-        const char *fnNew = argv[2];
-        InStream strNew(fnNew);
+        po::options_description hidden("");
+        hidden.add_options()
+            ("input-file", po::value<TStringList>(), "input file");
+        po::positional_options_description p;
+        p.add("input-file", -1);
+
+        po::store(po::parse_command_line(argc, argv, desc), vm);
+        po::notify(vm);    
+
+        po::options_description opts;
+        opts.add(desc).add(hidden);
+        po::store(po::command_line_parser(argc, argv).
+                options(opts).positional(p).run(), vm);
+        po::notify(vm);
+    }
+    catch (po::error &e) {
+        std::cerr << name << ": error: " << e.what() << "\n\n";
+        desc.print(std::cerr);
+        return 1;
+    }
+
+    if (vm.count("help")) {
+        desc.print(std::cout);
+        return 0;
+    }
+
+    if (!vm.count("input-file")) {
+        desc.print(std::cerr);
+        return 1;
+    }
+
+    const TStringList &files = vm["input-file"].as<TStringList>();
+    if (2 != files.size()) {
+        desc.print(std::cerr);
+        return 1;
+    }
+
+    const bool swap = vm.count("fixed");
+    const string &fnOld = files[swap];
+    const string &fnNew = files[!swap];
+
+    const bool silent = vm.count("quiet");
+
+    try {
+        // open streams
+        InStream strOld(fnOld.c_str());
+        InStream strNew(fnNew.c_str());
 
         // read old
-        Parser pOld(strOld.str(), fnOld);
+        Parser pOld(strOld.str(), fnOld, silent);
         DefLookup stor;
         Defect def;
         while (pOld.getNext(&def))
             stor.hashDefect(def);
 
         // read new
-        Parser pNew(strNew.str(), fnNew);
+        Parser pNew(strNew.str(), fnNew, silent);
         while (pNew.getNext(&def)) {
             if (stor.lookup(def))
                 continue;

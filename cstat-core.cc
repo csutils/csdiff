@@ -390,7 +390,7 @@ int cStatCore(int argc, char *argv[], const char *defMode)
     }
     catch (po::error &e) {
         std::cerr << name << ": error: " << e.what() << "\n\n";
-        desc.print(std::cerr);
+        printUsage(std::cerr, desc);
         return 1;
     }
 
