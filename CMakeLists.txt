@@ -21,7 +21,7 @@ enable_testing()
 add_definitions(-Wall -Wextra)
 
 # Flex
-find_package(FLEX)
+find_package(FLEX REQUIRED)
 set(flex_scanner ${CMAKE_CURRENT_BINARY_DIR}/csparser.yy.cc)
 flex_target(csparser csparser.lex ${flex_scanner})
 add_definitions(-iquote ${CMAKE_CURRENT_SOURCE_DIR})

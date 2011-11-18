@@ -69,8 +69,8 @@ MsgFilter::~MsgFilter() {
     delete d;
 }
 
-void MsgFilter::setIgnorePath(bool) {
-    d->ignorePath = true;
+void MsgFilter::setIgnorePath(bool enable) {
+    d->ignorePath = enable;
 }
 
 std::string MsgFilter::filterMsg(const std::string &msg) {
