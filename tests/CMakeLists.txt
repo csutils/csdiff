@@ -34,6 +34,7 @@ macro(test_csdiff dir num)
 endmacro()
 
 # add regression tests ony by one
-test_csdiff(diff7.0-qt 00)
-test_csdiff(diff7.0-virtuoso-opensource 00)
-test_csdiff(diff5.8-kernel 00)
+test_csdiff(diff7.0-qt                              00)
+test_csdiff(diff7.0-icu                             00)
+test_csdiff(diff7.0-virtuoso-opensource             00)
+test_csdiff(diff5.8-kernel                          00)
