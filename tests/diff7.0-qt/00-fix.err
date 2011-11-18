@@ -1,1 +1,4 @@
-qt-4.8.0-0.11.beta1.fc17-truncated.fixed.err
+
+Error: BAD_OVERRIDE:
+qt-everywhere-opensource-src-4.7.2/tools/qdoc3/ditaxmlgenerator.cpp:3388: bad_override: Method "struct DitaXmlGenerator::fileBase" hides but does not override "struct PageGenerator::fileBase" because some type qualifiers do not match.
+qt-everywhere-opensource-src-4.7.2/tools/qdoc3/pagegenerator.cpp:183: not_overridden: virtual method "fileBase" is not overridden.

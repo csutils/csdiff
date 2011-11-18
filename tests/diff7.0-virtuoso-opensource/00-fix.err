@@ -1,1 +1,1464 @@
-virtuoso-opensource-6.1.3-1.fc16.fixed.err
+
+Error: CHECKED_RETURN:
+virtuoso-opensource-6.1.2/binsrc/tests/blobnulls.c:78: check_return: Calling function "SQLExecDirect" without checking return value (as is done elsewhere 36 out of 45 times).
+virtuoso-opensource-6.1.2/binsrc/tests/ins.c:171: example_checked: "SQLExecDirect(ck_stmt, (UCHAR *)dd_stmt_text, -3)" has its value checked in "-1 == SQLExecDirect(ck_stmt, (UCHAR *)dd_stmt_text, -3)".
+virtuoso-opensource-6.1.2/binsrc/tests/ins.c:173: example_checked: "SQLExecDirect(ck_stmt, (UCHAR *)dd_1, -3)" has its value checked in "-1 == SQLExecDirect(ck_stmt, (UCHAR *)dd_1, -3)".
+virtuoso-opensource-6.1.2/binsrc/tests/ins.c:175: example_checked: "SQLExecDirect(ck_stmt, (UCHAR *)dd_2, -3)" has its value checked in "-1 == SQLExecDirect(ck_stmt, (UCHAR *)dd_2, -3)".
+virtuoso-opensource-6.1.2/binsrc/tests/ins.c:177: example_checked: "SQLExecDirect(ck_stmt, (UCHAR *)dd_3, -3)" has its value checked in "-1 == SQLExecDirect(ck_stmt, (UCHAR *)dd_3, -3)".
+virtuoso-opensource-6.1.2/binsrc/tests/ins.c:429: example_checked: "SQLExecDirect(init_stmt, (UCHAR *)init_texts[i++], -3)" has its value checked in "-1 == SQLExecDirect(init_stmt, (UCHAR *)init_texts[i++], -3)".
+virtuoso-opensource-6.1.2/binsrc/tests/blobnulls.c:78: unchecked_value: No check of the return value of "SQLExecDirect(ck_stmt, (UCHAR *)dd_stmt_text, -3)".
+
+Error: CHECKED_RETURN:
+virtuoso-opensource-6.1.2/binsrc/tests/blobs.c:79: check_return: Calling function "SQLExecDirect" without checking return value (as is done elsewhere 36 out of 45 times).
+virtuoso-opensource-6.1.2/binsrc/tests/ins.c:171: example_checked: "SQLExecDirect(ck_stmt, (UCHAR *)dd_stmt_text, -3)" has its value checked in "-1 == SQLExecDirect(ck_stmt, (UCHAR *)dd_stmt_text, -3)".
+virtuoso-opensource-6.1.2/binsrc/tests/ins.c:173: example_checked: "SQLExecDirect(ck_stmt, (UCHAR *)dd_1, -3)" has its value checked in "-1 == SQLExecDirect(ck_stmt, (UCHAR *)dd_1, -3)".
+virtuoso-opensource-6.1.2/binsrc/tests/ins.c:175: example_checked: "SQLExecDirect(ck_stmt, (UCHAR *)dd_2, -3)" has its value checked in "-1 == SQLExecDirect(ck_stmt, (UCHAR *)dd_2, -3)".
+virtuoso-opensource-6.1.2/binsrc/tests/ins.c:177: example_checked: "SQLExecDirect(ck_stmt, (UCHAR *)dd_3, -3)" has its value checked in "-1 == SQLExecDirect(ck_stmt, (UCHAR *)dd_3, -3)".
+virtuoso-opensource-6.1.2/binsrc/tests/ins.c:429: example_checked: "SQLExecDirect(init_stmt, (UCHAR *)init_texts[i++], -3)" has its value checked in "-1 == SQLExecDirect(init_stmt, (UCHAR *)init_texts[i++], -3)".
+virtuoso-opensource-6.1.2/binsrc/tests/blobs.c:79: unchecked_value: No check of the return value of "SQLExecDirect(ck_stmt, (UCHAR *)dd_stmt_text, -3)".
+
+Error: CHECKED_RETURN:
+virtuoso-opensource-6.1.2/binsrc/tests/blobs2.c:78: check_return: Calling function "SQLExecDirect" without checking return value (as is done elsewhere 36 out of 45 times).
+virtuoso-opensource-6.1.2/binsrc/tests/ins.c:171: example_checked: "SQLExecDirect(ck_stmt, (UCHAR *)dd_stmt_text, -3)" has its value checked in "-1 == SQLExecDirect(ck_stmt, (UCHAR *)dd_stmt_text, -3)".
+virtuoso-opensource-6.1.2/binsrc/tests/ins.c:173: example_checked: "SQLExecDirect(ck_stmt, (UCHAR *)dd_1, -3)" has its value checked in "-1 == SQLExecDirect(ck_stmt, (UCHAR *)dd_1, -3)".
+virtuoso-opensource-6.1.2/binsrc/tests/ins.c:175: example_checked: "SQLExecDirect(ck_stmt, (UCHAR *)dd_2, -3)" has its value checked in "-1 == SQLExecDirect(ck_stmt, (UCHAR *)dd_2, -3)".
+virtuoso-opensource-6.1.2/binsrc/tests/ins.c:177: example_checked: "SQLExecDirect(ck_stmt, (UCHAR *)dd_3, -3)" has its value checked in "-1 == SQLExecDirect(ck_stmt, (UCHAR *)dd_3, -3)".
+virtuoso-opensource-6.1.2/binsrc/tests/ins.c:429: example_checked: "SQLExecDirect(init_stmt, (UCHAR *)init_texts[i++], -3)" has its value checked in "-1 == SQLExecDirect(init_stmt, (UCHAR *)init_texts[i++], -3)".
+virtuoso-opensource-6.1.2/binsrc/tests/blobs2.c:78: unchecked_value: No check of the return value of "SQLExecDirect(ck_stmt, (UCHAR *)dd_stmt_text, -3)".
+
+Error: CONSTANT_EXPRESSION_RESULT:
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlsrv.c:4059: result_independent_of_operands: !(log_file_line & 2UL) || ((log_info("%s (%d)", "sqlsrv.c", 4059)) , 1) > 0 is always true regardless of the values of its operands. This occurs as the logical second operand of '&&'.
+
+Error: CONSTANT_EXPRESSION_RESULT:
+virtuoso-opensource-6.1.2/libsrc/Wi/http.c:10423: result_independent_of_operands: !(log_file_line & 2UL) || ((log_info("%s (%d)", "http.c", 10423)) , 1) > 0 is always true regardless of the values of its operands. This occurs as the logical second operand of '&&'.
+
+Error: CONSTANT_EXPRESSION_RESULT:
+virtuoso-opensource-6.1.2/libsrc/Wi/rltrx.c:1506: result_independent_of_operands: !(log_file_line & 2UL) || ((log_info("%s (%d)", "rltrx.c", 1506)) , 1) > 0 is always true regardless of the values of its operands. This occurs as the logical second operand of '&&'.
+
+Error: CONSTANT_EXPRESSION_RESULT:
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlprocc.c:1287: result_independent_of_operands: !(log_file_line & 2UL) || ((log_info("%s (%d)", "sqlprocc.c", 1287)) , 1) > 0 is always true regardless of the values of its operands. This occurs as the logical second operand of '&&'.
+
+Error: CONSTANT_EXPRESSION_RESULT:
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlprocc.c:1289: result_independent_of_operands: !(log_file_line & 2UL) || ((log_info("%s (%d)", "sqlprocc.c", 1289)) , 1) > 0 is always true regardless of the values of its operands. This occurs as the logical second operand of '&&'.
+
+Error: CONSTANT_EXPRESSION_RESULT:
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlcomp2.c:1371: result_independent_of_operands: !(log_file_line & 2UL) || ((log_info("%s (%d)", "sqlcomp2.c", 1371)) , 1) > 0 is always true regardless of the values of its operands. This occurs as the logical second operand of '&&'.
+
+Error: CONSTANT_EXPRESSION_RESULT:
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlcomp2.c:1687: result_independent_of_operands: !(log_file_line & 2UL) || ((log_info("%s (%d)", "sqlcomp2.c", 1687)) , 1) > 0 is always true regardless of the values of its operands. This occurs as the logical second operand of '&&'.
+
+Error: CONSTANT_EXPRESSION_RESULT:
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlcomp2.c:1700: result_independent_of_operands: !(log_file_line & 2UL) || ((log_info("%s (%d)", "sqlcomp2.c", 1700)) , 1) > 0 is always true regardless of the values of its operands. This occurs as the logical second operand of '&&'.
+
+Error: CONSTANT_EXPRESSION_RESULT:
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlsrv.c:542: result_independent_of_operands: !(log_file_line & 2UL) || ((log_info("%s (%d)", "sqlsrv.c", 542)) , 1) > 0 is always true regardless of the values of its operands. This occurs as the logical second operand of '&&'.
+
+Error: CONSTANT_EXPRESSION_RESULT:
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlsrv.c:569: result_independent_of_operands: !(log_file_line & 2UL) || ((log_info("%s (%d)", "sqlsrv.c", 569)) , 1) > 0 is always true regardless of the values of its operands. This occurs as the logical second operand of '&&'.
+
+Error: CONSTANT_EXPRESSION_RESULT:
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlsrv.c:1295: result_independent_of_operands: !(log_file_line & 2UL) || ((log_info("%s (%d)", "sqlsrv.c", 1295)) , 1) > 0 is always true regardless of the values of its operands. This occurs as the logical second operand of '&&'.
+
+Error: CONSTANT_EXPRESSION_RESULT:
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_soap.c:5314: result_independent_of_operands: !(log_file_line & 2UL) || ((log_info("%s (%d)", "bif_soap.c", 5314)) , 1) > 0 is always true regardless of the values of its operands. This occurs as the logical second operand of '&&'.
+
+Error: CONSTANT_EXPRESSION_RESULT:
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_soap.c:5949: result_independent_of_operands: !(log_file_line & 2UL) || ((log_info("%s (%d)", "bif_soap.c", 5949)) , 1) > 0 is always true regardless of the values of its operands. This occurs as the logical second operand of '&&'.
+
+Error: CONSTANT_EXPRESSION_RESULT:
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_soap.c:1031: result_independent_of_operands: !(log_file_line & 2UL) || ((log_info("%s (%d)", "bif_soap.c", 1031)) , 1) > 0 is always true regardless of the values of its operands. This occurs as the logical second operand of '&&'.
+
+Error: CONSTANT_EXPRESSION_RESULT:
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_soap.c:3945: result_independent_of_operands: !(log_file_line & 2UL) || ((log_info("%s (%d)", "bif_soap.c", 3945)) , 1) > 0 is always true regardless of the values of its operands. This occurs as the logical second operand of '&&'.
+
+Error: CONSTANT_EXPRESSION_RESULT:
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_soap.c:3979: result_independent_of_operands: !(log_file_line & 2UL) || ((log_info("%s (%d)", "bif_soap.c", 3979)) , 1) > 0 is always true regardless of the values of its operands. This occurs as the logical second operand of '&&'.
+
+Error: CONSTANT_EXPRESSION_RESULT:
+virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:3482: result_independent_of_operands: !(log_file_line & 2UL) || ((log_info("%s (%d)", "ddlrun.c", 3482)) , 1) > 0 is always true regardless of the values of its operands. This occurs as the logical second operand of '&&'.
+
+Error: CONSTANT_EXPRESSION_RESULT:
+virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:2759: result_independent_of_operands: !(log_file_line & 2UL) || ((log_info("%s (%d)", "ddlrun.c", 2759)) , 1) > 0 is always true regardless of the values of its operands. This occurs as the logical second operand of '&&'.
+
+Error: CONSTANT_EXPRESSION_RESULT:
+virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:2764: result_independent_of_operands: !(log_file_line & 2UL) || ((log_info("%s (%d)", "ddlrun.c", 2764)) , 1) > 0 is always true regardless of the values of its operands. This occurs as the logical second operand of '&&'.
+
+Error: CONSTANT_EXPRESSION_RESULT:
+virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:3343: result_independent_of_operands: !(log_file_line & 2UL) || ((log_info("%s (%d)", "ddlrun.c", 3343)) , 1) > 0 is always true regardless of the values of its operands. This occurs as the logical second operand of '&&'.
+
+Error: CONSTANT_EXPRESSION_RESULT:
+virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:2958: result_independent_of_operands: !(log_file_line & 2UL) || ((log_info("%s (%d)", "ddlrun.c", 2958)) , 1) > 0 is always true regardless of the values of its operands. This occurs as the logical second operand of '&&'.
+
+Error: CONSTANT_EXPRESSION_RESULT:
+virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:2959: result_independent_of_operands: !(log_file_line & 2UL) || ((log_info("%s (%d)", "ddlrun.c", 2959)) , 1) > 0 is always true regardless of the values of its operands. This occurs as the logical second operand of '&&'.
+
+Error: CONSTANT_EXPRESSION_RESULT:
+virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:3031: result_independent_of_operands: !(log_file_line & 2UL) || ((log_info("%s (%d)", "ddlrun.c", 3031)) , 1) > 0 is always true regardless of the values of its operands. This occurs as the logical second operand of '&&'.
+
+Error: CONSTANT_EXPRESSION_RESULT:
+virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:3034: result_independent_of_operands: !(log_file_line & 2UL) || ((log_info("%s (%d)", "ddlrun.c", 3034)) , 1) > 0 is always true regardless of the values of its operands. This occurs as the logical second operand of '&&'.
+
+Error: CONSTANT_EXPRESSION_RESULT:
+virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:3427: result_independent_of_operands: !(log_file_line & 2UL) || ((log_info("%s (%d)", "ddlrun.c", 3427)) , 1) > 0 is always true regardless of the values of its operands. This occurs as the logical second operand of '&&'.
+
+Error: CONSTANT_EXPRESSION_RESULT:
+virtuoso-opensource-6.1.2/libsrc/Wi/http.c:3641: result_independent_of_operands: !(log_file_line & 2UL) || ((log_info("%s (%d)", "http.c", 3641)) , 1) > 0 is always true regardless of the values of its operands. This occurs as the logical second operand of '&&'.
+
+Error: CONSTANT_EXPRESSION_RESULT:
+virtuoso-opensource-6.1.2/libsrc/Wi/lock.c:2057: result_independent_of_operands: !(log_file_line & 2UL) || ((log_info("%s (%d)", "lock.c", 2057)) , 1) > 0 is always true regardless of the values of its operands. This occurs as the logical second operand of '&&'.
+
+Error: CONSTANT_EXPRESSION_RESULT:
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:11573: result_independent_of_operands: !(log_file_line & 2UL) || ((log_info("%s (%d)", "sqlbif.c", 11573)) , 1) > 0 is always true regardless of the values of its operands. This occurs as the logical second operand of '&&'.
+
+Error: CONSTANT_EXPRESSION_RESULT:
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:11576: result_independent_of_operands: !(log_file_line & 2UL) || ((log_info("%s (%d)", "sqlbif.c", 11576)) , 1) > 0 is always true regardless of the values of its operands. This occurs as the logical second operand of '&&'.
+
+Error: CONSTANT_EXPRESSION_RESULT:
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlsrv.c:1203: result_independent_of_operands: !(log_file_line & 2UL) || ((log_info("%s (%d)", "sqlsrv.c", 1203)) , 1) > 0 is always true regardless of the values of its operands. This occurs as the logical second operand of '&&'.
+
+Error: CONSTANT_EXPRESSION_RESULT:
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlsrv.c:1828: result_independent_of_operands: !(log_file_line & 2UL) || ((log_info("%s (%d)", "sqlsrv.c", 1828)) , 1) > 0 is always true regardless of the values of its operands. This occurs as the logical second operand of '&&'.
+
+Error: CONSTANT_EXPRESSION_RESULT:
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlsrv.c:1852: result_independent_of_operands: !(log_file_line & 2UL) || ((log_info("%s (%d)", "sqlsrv.c", 1852)) , 1) > 0 is always true regardless of the values of its operands. This occurs as the logical second operand of '&&'.
+
+Error: DEADCODE:
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_date.c:250: dead_error_condition: On this path, the condition "ymd_found" cannot be false.
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_date.c:148: const: After this line, the value of "ymd_found" is equal to 1.
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_date.c:148: assignment: Assigning: "ymd_found" = "1".
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_date.c:252: dead_error_begin: Execution cannot reach this statement "err_msg_ret[0] = "Datetime ...".
+
+Error: FORWARD_NULL:
+virtuoso-opensource-6.1.2/libsrc/Wi/sparql_tree.c:3224: assign_zero: Assigning: "esub_res" = 0.
+virtuoso-opensource-6.1.2/libsrc/Wi/sparql_tree.c:3272: var_deref_op: Dereferencing null variable "esub_res".
+
+Error: FORWARD_NULL:
+virtuoso-opensource-6.1.2/libsrc/Wi/rdfinf.c:1806: var_compare_op: Comparing "p_dfe" to null implies that "p_dfe" might be null.
+virtuoso-opensource-6.1.2/libsrc/Wi/rdfinf.c:1818: var_deref_op: Dereferencing null variable "p_dfe".
+
+Error: FORWARD_NULL:
+virtuoso-opensource-6.1.2/libsrc/Tidy/tidy.c:809: assign_zero: Assigning: "out.tio.tio_data.lm_memblock" = 0.
+virtuoso-opensource-6.1.2/libsrc/Tidy/tidy.c:933: var_deref_model: Passing null variable "out.tio.tio_data.lm_memblock" to function "box_dv_short_nchars", which dereferences it.
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1340: deref_parm_in_call: Function "memcpy" dereferences parameter "buf". (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)
+
+Error: FORWARD_NULL:
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_soap.c:8144: assign_zero: Assigning: "custom_type" = 0.
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_soap.c:8148: var_deref_op: Dereferencing null variable "custom_type".
+
+Error: FORWARD_NULL:
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_soap.c:3883: assign_zero: Assigning: "req_xml" = 0.
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_soap.c:3962: var_deref_model: Passing null variable "req_xml" to function "xml_make_tree", which dereferences it.
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_xml.c:730: deref_parm: Directly dereferencing parameter "text".
+
+Error: FORWARD_NULL:
+virtuoso-opensource-6.1.2/libsrc/Wi/map_schema.c:418: var_compare_op: Comparing "attr_component->cm_type.spec.attribute.ann.sql_field" to null implies that "attr_component->cm_type.spec.attribute.ann.sql_field" might be null.
+virtuoso-opensource-6.1.2/libsrc/Wi/map_schema.c:439: var_deref_model: Passing null variable "(caddr_t)attr_component->cm_type.spec.attribute.ann.sql_field" to function "box_dv_uname_string", which dereferences it.
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:2125: deref_parm_in_call: Function "strlen" dereferences parameter "string". (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)
+
+Error: FORWARD_NULL:
+virtuoso-opensource-6.1.2/libsrc/Wi/sparql_tree.c:3896: var_compare_op: Comparing "tree" to null implies that "tree" might be null.
+virtuoso-opensource-6.1.2/libsrc/Wi/sparql_tree.c:3923: var_deref_op: Dereferencing null variable "tree".
+virtuoso-opensource-6.1.2/libsrc/Wi/sparql_tree.c:4182: var_deref_op: Dereferencing null variable "tree".
+virtuoso-opensource-6.1.2/libsrc/Wi/sparql_tree.c:4249: var_deref_model: Passing null variable "(char *)tree" to function "strlen", which dereferences it. (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)
+virtuoso-opensource-6.1.2/libsrc/Wi/sparql_tree.c:4256: var_deref_model: Passing null variable "(char *)tree" to function "strlen", which dereferences it. (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)
+virtuoso-opensource-6.1.2/libsrc/Wi/sparql_tree.c:4263: var_deref_model: Passing null variable "(char *)tree" to function "strlen", which dereferences it. (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)
+virtuoso-opensource-6.1.2/libsrc/Wi/sparql_tree.c:4278: var_deref_op: Dereferencing null variable "tree".
+
+Error: FORWARD_NULL:
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:11473: var_compare_op: Comparing "proc_qr" to null implies that "proc_qr" might be null.
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:11476: var_deref_model: Passing null variable "proc_qr" to function "qr_proc_repl_check_valid", which dereferences it.
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlcomp2.c:1311: deref_parm: Directly dereferencing parameter "qr".
+
+Error: FORWARD_NULL:
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlsrv.c:3012: var_compare_op: Comparing "key" to null implies that "key" might be null.
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlsrv.c:3014: var_deref_op: Dereferencing null variable "key".
+
+Error: NEGATIVE_RETURNS:
+virtuoso-opensource-6.1.2/binsrc/tests/b3078.c:56: negative_returns: A negative constant "-3" is passed as an argument to a parameter that cannot be negative.
+virtuoso-opensource-6.1.2/libsrc/Wi/CLIsql3.c:916: neg_sink_parm_call: Passing "cbDSN" to "StrCopyIn", which cannot accept a negative.
+virtuoso-opensource-6.1.2/libsrc/util/strcpyin.c:46: neg_sink_parm_call: Passing "size" to "memcpy", which cannot accept a negative.
+
+Error: NEGATIVE_RETURNS:
+virtuoso-opensource-6.1.2/binsrc/tests/blobnulls.c:591: negative_returns: A negative constant "-3" is passed as an argument to a parameter that cannot be negative.
+virtuoso-opensource-6.1.2/libsrc/Wi/CLIsql3.c:916: neg_sink_parm_call: Passing "cbDSN" to "StrCopyIn", which cannot accept a negative.
+virtuoso-opensource-6.1.2/libsrc/util/strcpyin.c:46: neg_sink_parm_call: Passing "size" to "memcpy", which cannot accept a negative.
+
+Error: NEGATIVE_RETURNS:
+virtuoso-opensource-6.1.2/binsrc/tests/blobs.c:584: negative_returns: A negative constant "-3" is passed as an argument to a parameter that cannot be negative.
+virtuoso-opensource-6.1.2/libsrc/Wi/CLIsql3.c:916: neg_sink_parm_call: Passing "cbDSN" to "StrCopyIn", which cannot accept a negative.
+virtuoso-opensource-6.1.2/libsrc/util/strcpyin.c:46: neg_sink_parm_call: Passing "size" to "memcpy", which cannot accept a negative.
+
+Error: NEGATIVE_RETURNS:
+virtuoso-opensource-6.1.2/binsrc/tests/blobs2.c:579: negative_returns: A negative constant "-3" is passed as an argument to a parameter that cannot be negative.
+virtuoso-opensource-6.1.2/libsrc/Wi/CLIsql3.c:916: neg_sink_parm_call: Passing "cbDSN" to "StrCopyIn", which cannot accept a negative.
+virtuoso-opensource-6.1.2/libsrc/util/strcpyin.c:46: neg_sink_parm_call: Passing "size" to "memcpy", which cannot accept a negative.
+
+Error: NEGATIVE_RETURNS:
+virtuoso-opensource-6.1.2/binsrc/tests/burstoff.c:242: negative_returns: A negative constant "-3" is passed as an argument to a parameter that cannot be negative.
+virtuoso-opensource-6.1.2/libsrc/Wi/CLIsql3.c:916: neg_sink_parm_call: Passing "cbDSN" to "StrCopyIn", which cannot accept a negative.
+virtuoso-opensource-6.1.2/libsrc/util/strcpyin.c:46: neg_sink_parm_call: Passing "size" to "memcpy", which cannot accept a negative.
+
+Error: NEGATIVE_RETURNS:
+virtuoso-opensource-6.1.2/binsrc/tests/cursor.c:301: negative_returns: A negative constant "-3" is passed as an argument to a parameter that cannot be negative.
+virtuoso-opensource-6.1.2/libsrc/Wi/CLIsql3.c:916: neg_sink_parm_call: Passing "cbDSN" to "StrCopyIn", which cannot accept a negative.
+virtuoso-opensource-6.1.2/libsrc/util/strcpyin.c:46: neg_sink_parm_call: Passing "size" to "memcpy", which cannot accept a negative.
+
+Error: NEGATIVE_RETURNS:
+virtuoso-opensource-6.1.2/binsrc/tests/dbdump.c:5560: negative_returns: A negative constant "-3" is passed as an argument to a parameter that cannot be negative.
+virtuoso-opensource-6.1.2/libsrc/Wi/CLIsql3.c:916: neg_sink_parm_call: Passing "cbDSN" to "StrCopyIn", which cannot accept a negative.
+virtuoso-opensource-6.1.2/libsrc/util/strcpyin.c:46: neg_sink_parm_call: Passing "size" to "memcpy", which cannot accept a negative.
+
+Error: NEGATIVE_RETURNS:
+virtuoso-opensource-6.1.2/binsrc/tests/force_dbms_name.c:105: negative_returns: A negative constant "-3" is passed as an argument to a parameter that cannot be negative.
+virtuoso-opensource-6.1.2/libsrc/Wi/CLIsql3.c:916: neg_sink_parm_call: Passing "cbDSN" to "StrCopyIn", which cannot accept a negative.
+virtuoso-opensource-6.1.2/libsrc/util/strcpyin.c:46: neg_sink_parm_call: Passing "size" to "memcpy", which cannot accept a negative.
+
+Error: NEGATIVE_RETURNS:
+virtuoso-opensource-6.1.2/binsrc/tests/getdata.c:422: negative_returns: A negative constant "-3" is passed as an argument to a parameter that cannot be negative.
+virtuoso-opensource-6.1.2/libsrc/Wi/CLIsql3.c:916: neg_sink_parm_call: Passing "cbDSN" to "StrCopyIn", which cannot accept a negative.
+virtuoso-opensource-6.1.2/libsrc/util/strcpyin.c:46: neg_sink_parm_call: Passing "size" to "memcpy", which cannot accept a negative.
+
+Error: NEGATIVE_RETURNS:
+virtuoso-opensource-6.1.2/binsrc/tests/ins.c:413: negative_returns: A negative constant "-3" is passed as an argument to a parameter that cannot be negative.
+virtuoso-opensource-6.1.2/libsrc/Wi/CLIsql3.c:916: neg_sink_parm_call: Passing "cbDSN" to "StrCopyIn", which cannot accept a negative.
+virtuoso-opensource-6.1.2/libsrc/util/strcpyin.c:46: neg_sink_parm_call: Passing "size" to "memcpy", which cannot accept a negative.
+
+Error: NEGATIVE_RETURNS:
+virtuoso-opensource-6.1.2/binsrc/tests/mail_virt.c:133: negative_returns: A negative constant "-3" is passed as an argument to a parameter that cannot be negative.
+virtuoso-opensource-6.1.2/libsrc/Wi/CLIsql3.c:916: neg_sink_parm_call: Passing "cbDSN" to "StrCopyIn", which cannot accept a negative.
+virtuoso-opensource-6.1.2/libsrc/util/strcpyin.c:46: neg_sink_parm_call: Passing "size" to "memcpy", which cannot accept a negative.
+
+Error: NEGATIVE_RETURNS:
+virtuoso-opensource-6.1.2/binsrc/tests/paramstats.c:117: negative_returns: A negative constant "-3" is passed as an argument to a parameter that cannot be negative.
+virtuoso-opensource-6.1.2/libsrc/Wi/CLIsql3.c:916: neg_sink_parm_call: Passing "cbDSN" to "StrCopyIn", which cannot accept a negative.
+virtuoso-opensource-6.1.2/libsrc/util/strcpyin.c:46: neg_sink_parm_call: Passing "size" to "memcpy", which cannot accept a negative.
+
+Error: NEGATIVE_RETURNS:
+virtuoso-opensource-6.1.2/binsrc/tests/scroll.c:974: negative_returns: A negative constant "-3" is passed as an argument to a parameter that cannot be negative.
+virtuoso-opensource-6.1.2/libsrc/Wi/CLIsql3.c:916: neg_sink_parm_call: Passing "cbDSN" to "StrCopyIn", which cannot accept a negative.
+virtuoso-opensource-6.1.2/libsrc/util/strcpyin.c:46: neg_sink_parm_call: Passing "size" to "memcpy", which cannot accept a negative.
+
+Error: NEGATIVE_RETURNS:
+virtuoso-opensource-6.1.2/binsrc/tests/setcurs.c:98: negative_returns: A negative constant "-3" is passed as an argument to a parameter that cannot be negative.
+virtuoso-opensource-6.1.2/libsrc/Wi/CLIsql3.c:916: neg_sink_parm_call: Passing "cbDSN" to "StrCopyIn", which cannot accept a negative.
+virtuoso-opensource-6.1.2/libsrc/util/strcpyin.c:46: neg_sink_parm_call: Passing "size" to "memcpy", which cannot accept a negative.
+
+Error: NEGATIVE_RETURNS:
+virtuoso-opensource-6.1.2/binsrc/tests/tkset.c:58: negative_returns: A negative constant "-3" is passed as an argument to a parameter that cannot be negative.
+virtuoso-opensource-6.1.2/libsrc/Wi/CLIsql3.c:916: neg_sink_parm_call: Passing "cbDSN" to "StrCopyIn", which cannot accept a negative.
+virtuoso-opensource-6.1.2/libsrc/util/strcpyin.c:46: neg_sink_parm_call: Passing "size" to "memcpy", which cannot accept a negative.
+
+Error: NEGATIVE_RETURNS:
+virtuoso-opensource-6.1.2/binsrc/tests/tpccodbc.c:152: negative_returns: A negative constant "-3" is passed as an argument to a parameter that cannot be negative.
+virtuoso-opensource-6.1.2/libsrc/Wi/CLIsql3.c:916: neg_sink_parm_call: Passing "cbDSN" to "StrCopyIn", which cannot accept a negative.
+virtuoso-opensource-6.1.2/libsrc/util/strcpyin.c:46: neg_sink_parm_call: Passing "size" to "memcpy", which cannot accept a negative.
+
+Error: NEGATIVE_RETURNS:
+virtuoso-opensource-6.1.2/binsrc/virtuoso/viconfig.c:2124: var_tested_neg: Variable "lck_fd" tests negative.
+virtuoso-opensource-6.1.2/binsrc/virtuoso/viconfig.c:2147: negative_returns: "lck_fd" is passed to a parameter that cannot be negative.
+
+Error: NEGATIVE_RETURNS:
+virtuoso-opensource-6.1.2/libsrc/Wi/replsub.c:334: negative_return_fn: Function "open(rm->rm_log_file, 0, 438)" returns a negative number.
+virtuoso-opensource-6.1.2/libsrc/Wi/replsub.c:334: var_assign: Assigning: signed variable "fd" = "open".
+virtuoso-opensource-6.1.2/libsrc/Wi/replsub.c:336: negative_returns: "fd" is passed to a parameter that cannot be negative.
+
+Error: NO_EFFECT:
+virtuoso-opensource-6.1.2/libsrc/Wi/meta.c:1751: array_null: Comparing an array to null is not useful: "q".
+
+Error: NO_EFFECT:
+virtuoso-opensource-6.1.2/libsrc/Wi/meta.c:1753: array_null: Comparing an array to null is not useful: "q".
+
+Error: NO_EFFECT:
+virtuoso-opensource-6.1.2/libsrc/Wi/sparul2sql.c:508: self_assign: Assignment operation "sc_for_big_ssl_const->sc_super = sc_for_big_ssl_const->sc_super" has no effect.
+
+Error: NO_EFFECT:
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_file.c:3012: bad_memset: Calling memset with size 0: "memset(result, 24, 0UL)" does nothing.
+
+Error: NULL_RETURNS:
+virtuoso-opensource-6.1.2/libsrc/Wi/replsri.c:721: returned_null: Function "ra_find" returns null (checked 19 out of 21 times).
+virtuoso-opensource-6.1.2/libsrc/Wi/repldb.c:400: return_null: Explicitly returning NULL.
+virtuoso-opensource-6.1.2/libsrc/Wi/log.c:1767: example_assign: Assigning: "ra" = return value from "ra_find(replh[1], replh[0])".
+virtuoso-opensource-6.1.2/libsrc/Wi/log.c:1772: example_checked: "ra" has its value checked in "ra".
+virtuoso-opensource-6.1.2/libsrc/Wi/repldb.c:728: example_assign: Assigning: "ra" = return value from "ra_find(server, account)".
+virtuoso-opensource-6.1.2/libsrc/Wi/repldb.c:732: example_checked: "ra" has its value checked in "ra".
+virtuoso-opensource-6.1.2/libsrc/Wi/repldb.c:774: example_assign: Assigning: "ra" = return value from "ra_find(srv, acct)".
+virtuoso-opensource-6.1.2/libsrc/Wi/repldb.c:788: example_checked: "ra" has its value checked in "ra".
+virtuoso-opensource-6.1.2/libsrc/Wi/repldb.c:829: example_checked: "ra_find(db_name, db_name)" has its value checked in "ra_find(db_name, db_name)".
+virtuoso-opensource-6.1.2/libsrc/Wi/repldb.c:1055: example_assign: Assigning: "ra" = return value from "ra_find(server, account)".
+virtuoso-opensource-6.1.2/libsrc/Wi/repldb.c:1056: example_checked: "ra" has its value checked in "ra".
+virtuoso-opensource-6.1.2/libsrc/Wi/replsri.c:721: var_assigned: Assigning: "ra" = null return value from "ra_find".
+virtuoso-opensource-6.1.2/libsrc/Wi/replsri.c:737: dereference: Dereferencing a null pointer "ra".
+
+Error: NULL_RETURNS:
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:12282: returned_null: Function "bif_string_or_wide_or_null_arg" returns null (checked 15 out of 18 times).
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:409: return_null: Explicitly returning NULL.
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2318: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "repeat")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2328: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2462: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "ltrim")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2472: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2505: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "rtrim")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2515: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2548: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "trim")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2561: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2823: example_assign: Assigning: "src_str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, me)".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2842: example_checked: "src_str" has its value checked in "NULL == src_str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:12282: var_assigned: Assigning: "_text" = null return value from "bif_string_or_wide_or_null_arg".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:12289: dereference: Dereferencing a null pointer "_text".
+
+Error: NULL_RETURNS:
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:12345: returned_null: Function "bif_string_or_wide_or_null_arg" returns null (checked 15 out of 18 times).
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:409: return_null: Explicitly returning NULL.
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2318: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "repeat")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2328: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2462: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "ltrim")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2472: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2505: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "rtrim")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2515: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2548: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "trim")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2561: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2823: example_assign: Assigning: "src_str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, me)".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2842: example_checked: "src_str" has its value checked in "NULL == src_str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:12345: var_assigned: Assigning: "_text" = null return value from "bif_string_or_wide_or_null_arg".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:12353: dereference: Dereferencing a null pointer "_text".
+
+Error: NULL_RETURNS:
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:4719: returned_null: Function "bif_string_or_wide_or_null_arg" returns null (checked 15 out of 18 times).
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:409: return_null: Explicitly returning NULL.
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2318: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "repeat")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2328: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2462: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "ltrim")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2472: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2505: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "rtrim")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2515: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2548: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "trim")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2561: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2823: example_assign: Assigning: "src_str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, me)".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2842: example_checked: "src_str" has its value checked in "NULL == src_str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:4719: var_assigned: Assigning: "str_in" = null return value from "bif_string_or_wide_or_null_arg".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:4721: dereference: Dereferencing a null pointer "str_in".
+
+Error: NULL_RETURNS:
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:4663: returned_null: Function "bif_string_or_wide_or_null_arg" returns null (checked 15 out of 18 times).
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:409: return_null: Explicitly returning NULL.
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2318: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "repeat")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2328: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2462: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "ltrim")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2472: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2505: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "rtrim")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2515: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2548: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "trim")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2561: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2823: example_assign: Assigning: "src_str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, me)".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2842: example_checked: "src_str" has its value checked in "NULL == src_str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:4663: var_assigned: Assigning: "str_in" = null return value from "bif_string_or_wide_or_null_arg".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:4665: dereference: Dereferencing a null pointer "str_in".
+
+Error: NULL_RETURNS:
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:4540: returned_null: Function "bif_string_or_wide_or_null_arg" returns null (checked 15 out of 18 times).
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:409: return_null: Explicitly returning NULL.
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2318: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "repeat")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2328: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2462: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "ltrim")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2472: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2505: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "rtrim")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2515: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2548: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "trim")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2561: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2823: example_assign: Assigning: "src_str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, me)".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2842: example_checked: "src_str" has its value checked in "NULL == src_str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:4540: var_assigned: Assigning: "str1" = null return value from "bif_string_or_wide_or_null_arg".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:4545: dereference: Dereferencing a null pointer "str1".
+
+Error: NULL_RETURNS:
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2462: returned_null: Function "bif_string_or_wide_or_null_arg" returns null (checked 15 out of 18 times).
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:409: return_null: Explicitly returning NULL.
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2318: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "repeat")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2328: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2462: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "ltrim")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2472: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2505: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "rtrim")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2515: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2548: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "trim")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2561: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2823: example_assign: Assigning: "src_str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, me)".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2842: example_checked: "src_str" has its value checked in "NULL == src_str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2462: var_assigned: Assigning: "str" = null return value from "bif_string_or_wide_or_null_arg".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2469: dereference: Dereferencing a null pointer "str".
+
+Error: NULL_RETURNS:
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:4598: returned_null: Function "bif_string_or_wide_or_null_arg" returns null (checked 15 out of 18 times).
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:409: return_null: Explicitly returning NULL.
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2318: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "repeat")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2328: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2462: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "ltrim")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2472: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2505: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "rtrim")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2515: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2548: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "trim")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2561: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2823: example_assign: Assigning: "src_str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, me)".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2842: example_checked: "src_str" has its value checked in "NULL == src_str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:4598: var_assigned: Assigning: "str1" = null return value from "bif_string_or_wide_or_null_arg".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:4600: dereference: Dereferencing a null pointer "str1".
+
+Error: NULL_RETURNS:
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2318: returned_null: Function "bif_string_or_wide_or_null_arg" returns null (checked 15 out of 18 times).
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:409: return_null: Explicitly returning NULL.
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2318: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "repeat")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2328: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2462: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "ltrim")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2472: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2505: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "rtrim")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2515: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2548: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "trim")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2561: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2823: example_assign: Assigning: "src_str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, me)".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2842: example_checked: "src_str" has its value checked in "NULL == src_str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2318: var_assigned: Assigning: "str" = null return value from "bif_string_or_wide_or_null_arg".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2324: dereference: Dereferencing a null pointer "str".
+
+Error: NULL_RETURNS:
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2823: returned_null: Function "bif_string_or_wide_or_null_arg" returns null (checked 15 out of 18 times).
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:409: return_null: Explicitly returning NULL.
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2318: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "repeat")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2328: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2462: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "ltrim")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2472: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2505: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "rtrim")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2515: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2548: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "trim")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2561: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2823: example_assign: Assigning: "src_str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, me)".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2842: example_checked: "src_str" has its value checked in "NULL == src_str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2823: var_assigned: Assigning: "src_str" = null return value from "bif_string_or_wide_or_null_arg".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2832: dereference: Dereferencing a null pointer "src_str".
+
+Error: NULL_RETURNS:
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2825: returned_null: Function "bif_string_or_wide_or_null_arg" returns null (checked 1 out of 1 times).
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:409: return_null: Explicitly returning NULL.
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2825: example_assign: Assigning: "to_str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 2, me)".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2842: example_checked: "to_str" has its value checked in "NULL == to_str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2825: var_assigned: Assigning: "to_str" = null return value from "bif_string_or_wide_or_null_arg".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2834: dereference: Dereferencing a null pointer "to_str".
+
+Error: NULL_RETURNS:
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2505: returned_null: Function "bif_string_or_wide_or_null_arg" returns null (checked 15 out of 18 times).
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:409: return_null: Explicitly returning NULL.
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2318: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "repeat")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2328: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2462: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "ltrim")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2472: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2505: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "rtrim")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2515: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2548: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "trim")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2561: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2823: example_assign: Assigning: "src_str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, me)".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2842: example_checked: "src_str" has its value checked in "NULL == src_str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2505: var_assigned: Assigning: "str" = null return value from "bif_string_or_wide_or_null_arg".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2512: dereference: Dereferencing a null pointer "str".
+
+Error: NULL_RETURNS:
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:9989: returned_null: Function "bif_string_or_wide_or_null_arg" returns null (checked 15 out of 18 times).
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:409: return_null: Explicitly returning NULL.
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2318: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "repeat")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2328: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2462: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "ltrim")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2472: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2505: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "rtrim")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2515: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2548: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "trim")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2561: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2823: example_assign: Assigning: "src_str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, me)".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2842: example_checked: "src_str" has its value checked in "NULL == src_str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:9989: var_assigned: Assigning: "qual" = null return value from "bif_string_or_wide_or_null_arg".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:9993: dereference: Dereferencing a null pointer "qual".
+
+Error: NULL_RETURNS:
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2548: returned_null: Function "bif_string_or_wide_or_null_arg" returns null (checked 15 out of 18 times).
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:409: return_null: Explicitly returning NULL.
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2318: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "repeat")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2328: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2462: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "ltrim")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2472: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2505: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "rtrim")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2515: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2548: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "trim")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2561: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2823: example_assign: Assigning: "src_str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, me)".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2842: example_checked: "src_str" has its value checked in "NULL == src_str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2548: var_assigned: Assigning: "str" = null return value from "bif_string_or_wide_or_null_arg".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2557: dereference: Dereferencing a null pointer "str".
+
+Error: OVERRUN_DYNAMIC:
+virtuoso-opensource-6.1.2/binsrc/sqldoc/isql_log_normalize.c:220: buffer_alloc: Calling allocating function "malloc" which allocated memory dictated by argument "strlen(srcline)".
+virtuoso-opensource-6.1.2/binsrc/sqldoc/isql_log_normalize.c:220: var_assign: Assigning: "tgtline" = "malloc(strlen(srcline))".
+virtuoso-opensource-6.1.2/binsrc/sqldoc/isql_log_normalize.c:221: strcpy_overrun: strcpy, whose first argument "tgtline" has length equal to strlen of its second argument "srcline", will overrun its first argument because of the terminating null.
+
+Error: OVERRUN_DYNAMIC:
+virtuoso-opensource-6.1.2/binsrc/sqldoc/isql_log_normalize.c:230: buffer_alloc: Calling allocating function "malloc" which allocated memory dictated by argument "strlen(srcline)".
+virtuoso-opensource-6.1.2/binsrc/sqldoc/isql_log_normalize.c:230: var_assign: Assigning: "tgtline" = "malloc(strlen(srcline))".
+virtuoso-opensource-6.1.2/binsrc/sqldoc/isql_log_normalize.c:231: strcpy_overrun: strcpy, whose first argument "tgtline" has length equal to strlen of its second argument "srcline", will overrun its first argument because of the terminating null.
+
+Error: OVERRUN_STATIC:
+virtuoso-opensource-6.1.2/binsrc/tests/isql.c:10198: overrun-buffer-arg: Overrunning static array "tmp1buf" of size 20020 bytes by passing it to a function which indexes it with argument "20019" at byte position 40036.
+virtuoso-opensource-6.1.2/binsrc/tests/isql.c:3454: access_dbuff_in_call: Calling "wcsncpy" indexes array "result" with index "maxsize".
+
+Error: OVERRUN_STATIC:
+virtuoso-opensource-6.1.2/binsrc/tests/isql.c:10198: overrun-buffer-arg: Overrunning static array "tmp1buf" of size 20020 bytes by passing it to a function which indexes it with argument "20019" at byte position 80076.
+virtuoso-opensource-6.1.2/binsrc/tests/isql.c:3496: access_dbuff_in_call: Calling "get_list_of_datasources" indexes array "result" with index "maxsize".
+virtuoso-opensource-6.1.2/binsrc/tests/isql.c:10096: index_parm: Pointer "dest_buf" is directly accessed by indexing it with parameter "dest_size".
+
+Error: OVERRUN_STATIC:
+virtuoso-opensource-6.1.2/binsrc/tests/isql.c:10249: overrun-buffer-arg: Overrunning static array "tmp1" of size 8008 bytes by passing it to a function which indexes it with argument "8007" at byte position 16012.
+
+Error: OVERRUN_STATIC:
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_uuencode.c:80: overrun-call: Overrunning callee's array of size 6 by passing index "uuenctype" of value 10 in call to function "uu_encode_string_session(&res, (dk_session_t *)input, uuenctype, maxlinespersection)".
+virtuoso-opensource-6.1.2/libsrc/Wi/uuencode.c:350: index_parm: Directly indexing parameter.
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlexp.c:371: alloc_fn: Calling allocation function "key_name_to_iri_id".
+virtuoso-opensource-6.1.2/libsrc/Wi/rdf_core.c:1942: alloc_fn: Storage is returned from allocation function "key_name_to_iri_id_1".
+virtuoso-opensource-6.1.2/libsrc/Wi/rdf_core.c:1855: alloc_fn: Storage is returned from allocation function "box_copy".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1117: alloc_fn: Storage is returned from allocation function "dk_alloc_box".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:181: return_alloc: Returning allocated memory "ptr".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1117: var_assign: Assigning: "copy" = "dk_alloc_box(len, tag)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1119: noescape: Variable "copy" is not freed or pointed-to in function "memcpy".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1120: return_alloc: Returning allocated memory "copy".
+virtuoso-opensource-6.1.2/libsrc/Wi/rdf_core.c:1855: return_alloc_fn: Directly returning storage allocated by "box_copy".
+virtuoso-opensource-6.1.2/libsrc/Wi/rdf_core.c:1942: var_assign: Assigning: "r" = "key_name_to_iri_id_1(lt, name, make_new)".
+virtuoso-opensource-6.1.2/libsrc/Wi/rdf_core.c:1949: return_alloc: Returning allocated memory "r".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlexp.c:371: var_assign: Assigning: "data" =  storage returned from "key_name_to_iri_id(NULL, name, 0)".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlexp.c:378: leaked_storage: Variable "data" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/rdfinf.c:2028: alloc_fn: Calling allocation function "dfe_iri_const".
+virtuoso-opensource-6.1.2/libsrc/Wi/rdfinf.c:1970: alloc_fn: Storage is returned from allocation function "key_name_to_iri_id".
+virtuoso-opensource-6.1.2/libsrc/Wi/rdf_core.c:1942: alloc_fn: Storage is returned from allocation function "key_name_to_iri_id_1".
+virtuoso-opensource-6.1.2/libsrc/Wi/rdf_core.c:1855: alloc_fn: Storage is returned from allocation function "box_copy".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1117: alloc_fn: Storage is returned from allocation function "dk_alloc_box".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:181: return_alloc: Returning allocated memory "ptr".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1117: var_assign: Assigning: "copy" = "dk_alloc_box(len, tag)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1119: noescape: Variable "copy" is not freed or pointed-to in function "memcpy".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1120: return_alloc: Returning allocated memory "copy".
+virtuoso-opensource-6.1.2/libsrc/Wi/rdf_core.c:1855: return_alloc_fn: Directly returning storage allocated by "box_copy".
+virtuoso-opensource-6.1.2/libsrc/Wi/rdf_core.c:1942: var_assign: Assigning: "r" = "key_name_to_iri_id_1(lt, name, make_new)".
+virtuoso-opensource-6.1.2/libsrc/Wi/rdf_core.c:1949: return_alloc: Returning allocated memory "r".
+virtuoso-opensource-6.1.2/libsrc/Wi/rdfinf.c:1970: return_alloc_fn: Directly returning storage allocated by "key_name_to_iri_id".
+virtuoso-opensource-6.1.2/libsrc/Wi/rdfinf.c:2028: var_assign: Assigning: "const_s" =  storage returned from "dfe_iri_const(s_dfe)".
+virtuoso-opensource-6.1.2/libsrc/Wi/rdfinf.c:2096: leaked_storage: Variable "const_s" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:1616: alloc_fn: Calling allocation function "ins_key".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:1569: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:1569: var_assign: Assigning: "ik" = "dk_alloc(sizeof (ins_key_t) /*16*/)".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:1569: noescape: Variable "ik" is not freed or pointed-to in function "memset".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:1596: return_alloc: Returning allocated memory "ik".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:1616: noescape: Variable "ins_key(cc, ins, key)" is not freed or pointed-to in function "list".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:1616: leaked_storage: Failing to save storage allocated by "ins_key(cc, ins, key)" leaks it.
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/recovery.c:301: alloc_fn: Calling allocation function "bh_from_dv".
+virtuoso-opensource-6.1.2/libsrc/Wi/blob.c:1545: alloc_fn: Storage is returned from allocation function "dk_alloc_box_zero".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:269: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:269: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:279: noescape: Variable "ptr" is not freed or pointed-to in function "memset".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:281: return_alloc: Returning allocated memory "ptr".
+virtuoso-opensource-6.1.2/libsrc/Wi/blob.c:1545: var_assign: Assigning: "bh" = "dk_alloc_box_zero(sizeof (blob_handle_t) /*128*/, (dtp_t)((131 == *col) ? 126 : ((dtp_t)*col + 1)))".
+virtuoso-opensource-6.1.2/libsrc/Wi/blob.c:1577: return_alloc: Returning allocated memory "bh".
+virtuoso-opensource-6.1.2/libsrc/Wi/recovery.c:301: var_assign: Assigning: "bh" =  storage returned from "bh_from_dv(col, itc)".
+virtuoso-opensource-6.1.2/libsrc/Wi/recovery.c:304: noescape: Variable "bh" is not freed or pointed-to in function "bh_fetch_dir".
+virtuoso-opensource-6.1.2/libsrc/Wi/blob.c:2908:48: noescape: "bh_fetch_dir" does not free or save its pointer parameter "bh".
+virtuoso-opensource-6.1.2/libsrc/Wi/recovery.c:307: noescape: Variable "bh" is not freed or pointed-to in function "blob_check".
+virtuoso-opensource-6.1.2/libsrc/Wi/blob.c:2921:29: noescape: "blob_check" does not free or save its pointer parameter "bh".
+virtuoso-opensource-6.1.2/libsrc/Wi/recovery.c:308: leaked_storage: Variable "bh" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:1812: alloc_fn: Calling allocation function "eql_compile_2".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2546: alloc_fn: Storage is returned from allocation function "eql_compile_eql".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2486: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2486: var_assign: Assigning: "qr" = "dk_alloc(sizeof (query_t) /*528*/)".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2486: noescape: Variable "qr" is not freed or pointed-to in function "memset".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2488: var_assign: Assigning: "cc.cc_query" = "qr".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2508: noescape: Variable "qr" is not freed or pointed-to in function "qr_add_current_of_output".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2067:37: noescape: "qr_add_current_of_output" does not free or save its pointer parameter "qr".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2509: noescape: Variable "qr" is not freed or pointed-to in function "qr_set_freeable".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:1427:48: noescape: "qr_set_freeable" does not free or save its pointer parameter "qr".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2526: return_alloc: Returning allocated memory "qr".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2546: var_assign: Assigning: "qr" = "eql_compile_eql(string, cli, err)".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2549: return_alloc: Returning allocated memory "qr".
+virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:1812: var_assign: Assigning: "obj_create" =  storage returned from "eql_compile_2(text, bootstrap_cli, &err, 0)".
+virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:1820: leaked_storage: Variable "obj_create" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:1866: alloc_fn: Calling allocation function "eql_compile_2".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2546: alloc_fn: Storage is returned from allocation function "eql_compile_eql".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2486: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2486: var_assign: Assigning: "qr" = "dk_alloc(sizeof (query_t) /*528*/)".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2486: noescape: Variable "qr" is not freed or pointed-to in function "memset".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2488: var_assign: Assigning: "cc.cc_query" = "qr".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2508: noescape: Variable "qr" is not freed or pointed-to in function "qr_add_current_of_output".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2067:37: noescape: "qr_add_current_of_output" does not free or save its pointer parameter "qr".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2509: noescape: Variable "qr" is not freed or pointed-to in function "qr_set_freeable".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:1427:48: noescape: "qr_set_freeable" does not free or save its pointer parameter "qr".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2526: return_alloc: Returning allocated memory "qr".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2546: var_assign: Assigning: "qr" = "eql_compile_eql(string, cli, err)".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2549: return_alloc: Returning allocated memory "qr".
+virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:1866: var_assign: Assigning: "obj_create" =  storage returned from "eql_compile_2(text, bootstrap_cli, &err, 0)".
+virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:1873: leaked_storage: Variable "obj_create" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:1451: alloc_fn: Calling allocation function "eql_compile_2".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2546: alloc_fn: Storage is returned from allocation function "eql_compile_eql".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2486: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2486: var_assign: Assigning: "qr" = "dk_alloc(sizeof (query_t) /*528*/)".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2486: noescape: Variable "qr" is not freed or pointed-to in function "memset".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2488: var_assign: Assigning: "cc.cc_query" = "qr".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2508: noescape: Variable "qr" is not freed or pointed-to in function "qr_add_current_of_output".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2067:37: noescape: "qr_add_current_of_output" does not free or save its pointer parameter "qr".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2509: noescape: Variable "qr" is not freed or pointed-to in function "qr_set_freeable".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:1427:48: noescape: "qr_set_freeable" does not free or save its pointer parameter "qr".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2526: return_alloc: Returning allocated memory "qr".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2546: var_assign: Assigning: "qr" = "eql_compile_eql(string, cli, err)".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2549: return_alloc: Returning allocated memory "qr".
+virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:1451: var_assign: Assigning: "obj_create" =  storage returned from "eql_compile_2(object_dd_text, bootstrap_cli, &err, 0)".
+virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:1459: leaked_storage: Variable "obj_create" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/meta.c:2105: alloc_fn: Calling allocation function "safe_blob_to_string".
+virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:4512: alloc_fn: Storage is returned from allocation function "blob_to_string".
+virtuoso-opensource-6.1.2/libsrc/Wi/blob.c:3363: alloc_fn: Storage is returned from allocation function "blob_to_string_isp".
+virtuoso-opensource-6.1.2/libsrc/Wi/blob.c:3353: alloc_fn: Storage is returned from allocation function "dk_alloc_box_zero".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:269: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:269: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:279: noescape: Variable "ptr" is not freed or pointed-to in function "memset".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:281: return_alloc: Returning allocated memory "ptr".
+virtuoso-opensource-6.1.2/libsrc/Wi/blob.c:3353: return_alloc_fn: Directly returning storage allocated by "dk_alloc_box_zero".
+virtuoso-opensource-6.1.2/libsrc/Wi/blob.c:3363: return_alloc_fn: Directly returning storage allocated by "blob_to_string_isp".
+virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:4512: var_assign: Assigning: "ret" = "blob_to_string(lt, bhp)".
+virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:4529: return_alloc: Returning allocated memory "ret".
+virtuoso-opensource-6.1.2/libsrc/Wi/meta.c:2105: var_assign: Assigning: "udt_parse_tree_text" =  storage returned from "safe_blob_to_string(lt, udt_parse_tree, &err)".
+virtuoso-opensource-6.1.2/libsrc/Wi/meta.c:2114: leaked_storage: Variable "udt_parse_tree_text" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/meta.c:2237: alloc_fn: Calling allocation function "safe_blob_to_string".
+virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:4512: alloc_fn: Storage is returned from allocation function "blob_to_string".
+virtuoso-opensource-6.1.2/libsrc/Wi/blob.c:3363: alloc_fn: Storage is returned from allocation function "blob_to_string_isp".
+virtuoso-opensource-6.1.2/libsrc/Wi/blob.c:3353: alloc_fn: Storage is returned from allocation function "dk_alloc_box_zero".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:269: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:269: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:279: noescape: Variable "ptr" is not freed or pointed-to in function "memset".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:281: return_alloc: Returning allocated memory "ptr".
+virtuoso-opensource-6.1.2/libsrc/Wi/blob.c:3353: return_alloc_fn: Directly returning storage allocated by "dk_alloc_box_zero".
+virtuoso-opensource-6.1.2/libsrc/Wi/blob.c:3363: return_alloc_fn: Directly returning storage allocated by "blob_to_string_isp".
+virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:4512: var_assign: Assigning: "ret" = "blob_to_string(lt, bhp)".
+virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:4529: return_alloc: Returning allocated memory "ret".
+virtuoso-opensource-6.1.2/libsrc/Wi/meta.c:2237: var_assign: Assigning: "str" =  storage returned from "safe_blob_to_string(lt, cs_aliases, &err)".
+virtuoso-opensource-6.1.2/libsrc/Wi/meta.c:2245: leaked_storage: Variable "str" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:4808: alloc_fn: Calling allocation function "safe_blob_to_string".
+virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:4512: alloc_fn: Storage is returned from allocation function "blob_to_string".
+virtuoso-opensource-6.1.2/libsrc/Wi/blob.c:3363: alloc_fn: Storage is returned from allocation function "blob_to_string_isp".
+virtuoso-opensource-6.1.2/libsrc/Wi/blob.c:3353: alloc_fn: Storage is returned from allocation function "dk_alloc_box_zero".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:269: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:269: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:279: noescape: Variable "ptr" is not freed or pointed-to in function "memset".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:281: return_alloc: Returning allocated memory "ptr".
+virtuoso-opensource-6.1.2/libsrc/Wi/blob.c:3353: return_alloc_fn: Directly returning storage allocated by "dk_alloc_box_zero".
+virtuoso-opensource-6.1.2/libsrc/Wi/blob.c:3363: return_alloc_fn: Directly returning storage allocated by "blob_to_string_isp".
+virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:4512: var_assign: Assigning: "ret" = "blob_to_string(lt, bhp)".
+virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:4529: return_alloc: Returning allocated memory "ret".
+virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:4808: var_assign: Assigning: "full_text" =  storage returned from "safe_blob_to_string(bootstrap_cli->cli_trx, long_text, &err)".
+virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:4817: leaked_storage: Variable "full_text" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:4676: alloc_fn: Calling allocation function "safe_blob_to_string".
+virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:4512: alloc_fn: Storage is returned from allocation function "blob_to_string".
+virtuoso-opensource-6.1.2/libsrc/Wi/blob.c:3363: alloc_fn: Storage is returned from allocation function "blob_to_string_isp".
+virtuoso-opensource-6.1.2/libsrc/Wi/blob.c:3353: alloc_fn: Storage is returned from allocation function "dk_alloc_box_zero".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:269: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:269: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:279: noescape: Variable "ptr" is not freed or pointed-to in function "memset".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:281: return_alloc: Returning allocated memory "ptr".
+virtuoso-opensource-6.1.2/libsrc/Wi/blob.c:3353: return_alloc_fn: Directly returning storage allocated by "dk_alloc_box_zero".
+virtuoso-opensource-6.1.2/libsrc/Wi/blob.c:3363: return_alloc_fn: Directly returning storage allocated by "blob_to_string_isp".
+virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:4512: var_assign: Assigning: "ret" = "blob_to_string(lt, bhp)".
+virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:4529: return_alloc: Returning allocated memory "ret".
+virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:4676: var_assign: Assigning: "src_text_to_free" =  storage returned from "safe_blob_to_string(bootstrap_cli->cli_trx, p_more, &err)".
+virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:4676: var_assign: Assigning: "src_text" = "src_text_to_free".
+virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:4684: leaked_storage: Variable "src_text_to_free" going out of scope leaks the storage it points to.
+virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:4684: leaked_storage: Variable "src_text" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/repldb.c:1324: alloc_fn: Calling allocation function "eql_compile_2".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2546: alloc_fn: Storage is returned from allocation function "eql_compile_eql".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2486: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2486: var_assign: Assigning: "qr" = "dk_alloc(sizeof (query_t) /*528*/)".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2486: noescape: Variable "qr" is not freed or pointed-to in function "memset".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2488: var_assign: Assigning: "cc.cc_query" = "qr".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2508: noescape: Variable "qr" is not freed or pointed-to in function "qr_add_current_of_output".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2067:37: noescape: "qr_add_current_of_output" does not free or save its pointer parameter "qr".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2509: noescape: Variable "qr" is not freed or pointed-to in function "qr_set_freeable".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:1427:48: noescape: "qr_set_freeable" does not free or save its pointer parameter "qr".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2526: return_alloc: Returning allocated memory "qr".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2546: var_assign: Assigning: "qr" = "eql_compile_eql(string, cli, err)".
+virtuoso-opensource-6.1.2/libsrc/Wi/eqlcomp.c:2549: return_alloc: Returning allocated memory "qr".
+virtuoso-opensource-6.1.2/libsrc/Wi/repldb.c:1324: var_assign: Assigning: "qr" =  storage returned from "eql_compile_2(text, bootstrap_cli, &err, 0)".
+virtuoso-opensource-6.1.2/libsrc/Wi/repldb.c:1331: leaked_storage: Variable "qr" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/repldb.c:479: alloc_fn: Calling allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Wi/repldb.c:479: var_assign: Assigning: "rs" =  storage returned from "dk_alloc(sizeof (repl_subscriber_t) /*16*/)".
+virtuoso-opensource-6.1.2/libsrc/Wi/repldb.c:479: noescape: Variable "rs" is not freed or pointed-to in function "memset".
+virtuoso-opensource-6.1.2/libsrc/Wi/repldb.c:489: overwrite_var: Overwriting "rs" in call "rs = rs_find(ra, subscriber)" leaks the storage that "rs" points to.
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/replsri.c:373: alloc_fn: Calling allocation function "read_object".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkmarshal.c:292: alloc_fn: Storage is returned from allocation function "scan_session_boxing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkmarshal.c:776: alloc_fn: Storage is returned from allocation function "dk_try_alloc_box".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:236: alloc_fn: Storage is returned from allocation function "dk_try_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:627: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:627: return_alloc_fn: Directly returning storage allocated by "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:236: var_assign: Assigning: "ptr" = "dk_try_alloc(align_bytes)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:253: return_alloc: Returning allocated memory "ptr".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkmarshal.c:776: var_assign: Assigning: "box" = "dk_try_alloc_box(sizeof (float) /*4*/, 190)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkmarshal.c:778: return_alloc: Returning allocated memory "box".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkmarshal.c:292: return_alloc_fn: Directly returning storage allocated by "scan_session_boxing".
+virtuoso-opensource-6.1.2/libsrc/Wi/replsri.c:373: var_assign: Assigning: "head" =  storage returned from "read_object(ses)".
+virtuoso-opensource-6.1.2/libsrc/Wi/replsri.c:387: leaked_storage: Variable "head" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/binsrc/tests/isql.c:7765: alloc_fn: Calling allocation function "chemalloc".
+virtuoso-opensource-6.1.2/binsrc/tests/isql.c:1057: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/binsrc/tests/isql.c:1057: var_assign: Assigning: "result" = "malloc(size * sizeof (wchar_t) /*4*/)".
+virtuoso-opensource-6.1.2/binsrc/tests/isql.c:1080: return_alloc: Returning allocated memory "result".
+virtuoso-opensource-6.1.2/binsrc/tests/isql.c:7765: var_assign: Assigning: "own_inbuf" =  storage returned from "chemalloc(own_inbuf_size + 1, L"isql_foreach")".
+virtuoso-opensource-6.1.2/binsrc/tests/isql.c:7783: leaked_storage: Variable "own_inbuf" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_file.c:5101: alloc_fn: Calling allocation function "dk_alloc_box_zero".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:269: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:269: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:279: noescape: Variable "ptr" is not freed or pointed-to in function "memset".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:281: return_alloc: Returning allocated memory "ptr".
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_file.c:5101: var_assign: Assigning: "id" =  storage returned from "dk_alloc_box_zero(ilen + 1U, 182)".
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_file.c:5174: leaked_storage: Variable "id" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_file.c:5103: alloc_fn: Calling allocation function "dk_alloc_box_zero".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:269: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:269: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:279: noescape: Variable "ptr" is not freed or pointed-to in function "memset".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:281: return_alloc: Returning allocated memory "ptr".
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_file.c:5103: var_assign: Assigning: "opts" =  storage returned from "dk_alloc_box_zero(opt_len + 1U, 182)".
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_file.c:5174: leaked_storage: Variable "opts" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_file.c:5102: alloc_fn: Calling allocation function "dk_alloc_box_zero".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:269: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:269: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:279: noescape: Variable "ptr" is not freed or pointed-to in function "memset".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:281: return_alloc: Returning allocated memory "ptr".
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_file.c:5102: var_assign: Assigning: "type" =  storage returned from "dk_alloc_box_zero(tlen + 1U, 182)".
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_file.c:5102: overwrite_var: Overwriting "type" in call "type = dk_alloc_box_zero(tlen + 1U, 182)" leaks the storage that "type" points to.
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_file.c:5148: noescape: Variable "type" is not freed or pointed-to in function "list".
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_file.c:5102: alloc_fn: Calling allocation function "dk_alloc_box_zero".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:269: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:269: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:279: noescape: Variable "ptr" is not freed or pointed-to in function "memset".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:281: return_alloc: Returning allocated memory "ptr".
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_file.c:5102: var_assign: Assigning: "type" =  storage returned from "dk_alloc_box_zero(tlen + 1U, 182)".
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_file.c:5148: noescape: Variable "type" is not freed or pointed-to in function "list".
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_file.c:5174: leaked_storage: Variable "type" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_file.c:5346: alloc_fn: Calling allocation function "dk_alloc_box_zero".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:269: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:269: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:279: noescape: Variable "ptr" is not freed or pointed-to in function "memset".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:281: return_alloc: Returning allocated memory "ptr".
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_file.c:5346: var_assign: Assigning: "id" =  storage returned from "dk_alloc_box_zero(ilen + 1U, 182)".
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_file.c:5414: leaked_storage: Variable "id" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_file.c:5347: alloc_fn: Calling allocation function "dk_alloc_box_zero".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:269: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:269: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:279: noescape: Variable "ptr" is not freed or pointed-to in function "memset".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:281: return_alloc: Returning allocated memory "ptr".
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_file.c:5347: var_assign: Assigning: "type" =  storage returned from "dk_alloc_box_zero(tlen + 1U, 182)".
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_file.c:5347: overwrite_var: Overwriting "type" in call "type = dk_alloc_box_zero(tlen + 1U, 182)" leaks the storage that "type" points to.
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_file.c:5387: noescape: Variable "type" is not freed or pointed-to in function "list".
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_file.c:5347: alloc_fn: Calling allocation function "dk_alloc_box_zero".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:269: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:269: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:279: noescape: Variable "ptr" is not freed or pointed-to in function "memset".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:281: return_alloc: Returning allocated memory "ptr".
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_file.c:5347: var_assign: Assigning: "type" =  storage returned from "dk_alloc_box_zero(tlen + 1U, 182)".
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_file.c:5387: noescape: Variable "type" is not freed or pointed-to in function "list".
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_file.c:5414: leaked_storage: Variable "type" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_nntp.c:149: alloc_fn: Calling allocation function "box_dv_short_string".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1286: alloc_fn: Storage is returned from allocation function "dk_alloc_box".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:181: return_alloc: Returning allocated memory "ptr".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1286: var_assign: Assigning: "box" = "dk_alloc_box(len, 182)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1287: noescape: Variable "box" is not freed or pointed-to in function "memcpy".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1289: return_alloc: Returning allocated memory "box".
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_nntp.c:149: leaked_storage: Failing to save storage allocated by "box_dv_short_string(group_name)" leaks it.
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_nntp.c:149: leaked_storage: Failing to save storage allocated by "box_dv_short_string(post)" leaks it.
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_nntp.c:149: noescape: Variable "box_dv_short_string(group_name)" is not freed or pointed-to in function "list".
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_nntp.c:149: noescape: Variable "box_dv_short_string(post)" is not freed or pointed-to in function "list".
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_phrasematch.c:1223: alloc_fn: Calling allocation function "box_copy_tree".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1168: alloc_fn: Storage is returned from allocation function "dk_alloc_box".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:181: return_alloc: Returning allocated memory "ptr".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1168: var_assign: Assigning: "copy" = "dk_alloc_box(len, tag)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1170: noescape: Variable "copy" is not freed or pointed-to in function "memcpy".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1171: return_alloc: Returning allocated memory "copy".
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_phrasematch.c:1223: leaked_storage: Failing to save storage allocated by "box_copy_tree(apc->apc_app_env)" leaks it.
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_phrasematch.c:1223: noescape: Variable "box_copy_tree(apc->apc_app_env)" is not freed or pointed-to in function "list".
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_phrasematch.c:1229: alloc_fn: Calling allocation function "box_copy_tree".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1168: alloc_fn: Storage is returned from allocation function "dk_alloc_box".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:181: return_alloc: Returning allocated memory "ptr".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1168: var_assign: Assigning: "copy" = "dk_alloc_box(len, tag)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1170: noescape: Variable "copy" is not freed or pointed-to in function "memcpy".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1171: return_alloc: Returning allocated memory "copy".
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_phrasematch.c:1229: leaked_storage: Failing to save storage allocated by "box_copy_tree(aps->aps_app_env)" leaks it.
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_phrasematch.c:1229: noescape: Variable "box_copy_tree(aps->aps_app_env)" is not freed or pointed-to in function "list".
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_phrasematch.c:1242: alloc_fn: Calling allocation function "box_copy_tree".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1168: alloc_fn: Storage is returned from allocation function "dk_alloc_box".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:181: return_alloc: Returning allocated memory "ptr".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1168: var_assign: Assigning: "copy" = "dk_alloc_box(len, tag)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1170: noescape: Variable "copy" is not freed or pointed-to in function "memcpy".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1171: return_alloc: Returning allocated memory "copy".
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_phrasematch.c:1242: leaked_storage: Failing to save storage allocated by "box_copy_tree(app->app_link_data)" leaks it.
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_phrasematch.c:1242: noescape: Variable "box_copy_tree(app->app_link_data)" is not freed or pointed-to in function "list".
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_phrasematch.c:1229: alloc_fn: Calling allocation function "box_dv_short_string".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1286: alloc_fn: Storage is returned from allocation function "dk_alloc_box".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:181: return_alloc: Returning allocated memory "ptr".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1286: var_assign: Assigning: "box" = "dk_alloc_box(len, 182)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1287: noescape: Variable "box" is not freed or pointed-to in function "memcpy".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1289: return_alloc: Returning allocated memory "box".
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_phrasematch.c:1229: leaked_storage: Failing to save storage allocated by "box_dv_short_string(aps->aps_name)" leaks it.
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_phrasematch.c:1229: noescape: Variable "box_dv_short_string(aps->aps_name)" is not freed or pointed-to in function "list".
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_phrasematch.c:1242: alloc_fn: Calling allocation function "box_dv_short_string".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1286: alloc_fn: Storage is returned from allocation function "dk_alloc_box".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:181: return_alloc: Returning allocated memory "ptr".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1286: var_assign: Assigning: "box" = "dk_alloc_box(len, 182)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1287: noescape: Variable "box" is not freed or pointed-to in function "memcpy".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1289: return_alloc: Returning allocated memory "box".
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_phrasematch.c:1242: leaked_storage: Failing to save storage allocated by "box_dv_short_string(app->app_text)" leaks it.
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_phrasematch.c:1242: noescape: Variable "box_dv_short_string(app->app_text)" is not freed or pointed-to in function "list".
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_phrasematch.c:1223: alloc_fn: Calling allocation function "box_dv_short_string".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1286: alloc_fn: Storage is returned from allocation function "dk_alloc_box".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:181: return_alloc: Returning allocated memory "ptr".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1286: var_assign: Assigning: "box" = "dk_alloc_box(len, 182)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1287: noescape: Variable "box" is not freed or pointed-to in function "memcpy".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1289: return_alloc: Returning allocated memory "box".
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_phrasematch.c:1223: leaked_storage: Failing to save storage allocated by "box_dv_short_string(apc->apc_callback)" leaks it.
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_phrasematch.c:1223: leaked_storage: Failing to save storage allocated by "box_dv_short_string(apc->apc_name)" leaks it.
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_phrasematch.c:1223: noescape: Variable "box_dv_short_string(apc->apc_callback)" is not freed or pointed-to in function "list".
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_phrasematch.c:1223: noescape: Variable "box_dv_short_string(apc->apc_name)" is not freed or pointed-to in function "list".
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_soap.c:4030: alloc_fn: Calling allocation function "box_dv_short_string".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1286: alloc_fn: Storage is returned from allocation function "dk_alloc_box".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:181: return_alloc: Returning allocated memory "ptr".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1286: var_assign: Assigning: "box" = "dk_alloc_box(len, 182)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1287: noescape: Variable "box" is not freed or pointed-to in function "memcpy".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1289: return_alloc: Returning allocated memory "box".
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_soap.c:4030: leaked_storage: Failing to save storage allocated by "box_dv_short_string("")" leaks it.
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_soap.c:4030: leaked_storage: Failing to save storage allocated by "box_dv_short_string(((soap_version == 1) ? "urn:schemas-xmlsoap-org:soap.v1" : ((soap_version == 11) ? "http://schemas.xmlsoap.org/soap/envelope/" : ((soap_version == 12) ? "http://www.w3.org/2003/05/soap-envelope" : NULL))))" leaks it.
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_soap.c:4030: noescape: Variable "box_dv_short_string("")" is not freed or pointed-to in function "list".
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_soap.c:4030: noescape: Variable "box_dv_short_string(((soap_version == 1) ? "urn:schemas-xmlsoap-org:soap.v1" : ((soap_version == 11) ? "http://schemas.xmlsoap.org/soap/envelope/" : ((soap_version == 12) ? "http://www.w3.org/2003/05/soap-envelope" : NULL))))" is not freed or pointed-to in function "list".
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/sqltype.c:4806: alloc_fn: Calling allocation function "box_copy_tree".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1168: alloc_fn: Storage is returned from allocation function "dk_alloc_box".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:181: return_alloc: Returning allocated memory "ptr".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1168: var_assign: Assigning: "copy" = "dk_alloc_box(len, tag)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1170: noescape: Variable "copy" is not freed or pointed-to in function "memcpy".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1171: return_alloc: Returning allocated memory "copy".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqltype.c:4806: var_assign: Assigning: "udt_old_tree" =  storage returned from "box_copy_tree((box_t)udt_tree)".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqltype.c:4945: leaked_storage: Variable "udt_old_tree" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/http.c:8153: alloc_fn: Calling allocation function "http_host_normalize".
+virtuoso-opensource-6.1.2/libsrc/Wi/http.c:7614: alloc_fn: Storage is returned from allocation function "http_host_normalize_1".
+virtuoso-opensource-6.1.2/libsrc/Wi/http.c:7603: alloc_fn: Storage is returned from allocation function "dk_alloc_box".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:181: return_alloc: Returning allocated memory "ptr".
+virtuoso-opensource-6.1.2/libsrc/Wi/http.c:7603: var_assign: Assigning: "host1" = "dk_alloc_box(strlen(host2) + 2UL, 182)".
+virtuoso-opensource-6.1.2/libsrc/Wi/http.c:7604: noescape: Variable "host1" is not freed or pointed-to in function "snprintf".
+virtuoso-opensource-6.1.2/libsrc/Wi/http.c:7608: return_alloc: Returning allocated memory "host1".
+virtuoso-opensource-6.1.2/libsrc/Wi/http.c:7614: return_alloc_fn: Directly returning storage allocated by "http_host_normalize_1".
+virtuoso-opensource-6.1.2/libsrc/Wi/http.c:8153: var_assign: Assigning: "host" =  storage returned from "http_host_normalize(bif_string_arg(qst, args, 0, "http_listen_host"), 0)".
+virtuoso-opensource-6.1.2/libsrc/Wi/http.c:8163: leaked_storage: Variable "host" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/rdfinf.c:461: alloc_fn: Calling allocation function "box_copy_tree".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1168: alloc_fn: Storage is returned from allocation function "dk_alloc_box".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:181: return_alloc: Returning allocated memory "ptr".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1168: var_assign: Assigning: "copy" = "dk_alloc_box(len, tag)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1170: noescape: Variable "copy" is not freed or pointed-to in function "memcpy".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1171: return_alloc: Returning allocated memory "copy".
+virtuoso-opensource-6.1.2/libsrc/Wi/rdfinf.c:461: var_assign: Assigning: "iri" =  storage returned from "box_copy_tree(iri)".
+virtuoso-opensource-6.1.2/libsrc/Wi/rdfinf.c:462: noescape: Variable "iri" is not freed or pointed-to in function "hash_queue_add".
+virtuoso-opensource-6.1.2/libsrc/Wi/rdfinf.c:390:74: noescape: "hash_queue_add" does not free or save its pointer parameter "item".
+virtuoso-opensource-6.1.2/libsrc/Wi/rdfinf.c:463: leaked_storage: Variable "iri" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/repldb.c:1240: alloc_fn: Calling allocation function "box_copy".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1117: alloc_fn: Storage is returned from allocation function "dk_alloc_box".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:181: return_alloc: Returning allocated memory "ptr".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1117: var_assign: Assigning: "copy" = "dk_alloc_box(len, tag)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1119: noescape: Variable "copy" is not freed or pointed-to in function "memcpy".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1120: return_alloc: Returning allocated memory "copy".
+virtuoso-opensource-6.1.2/libsrc/Wi/repldb.c:1240: var_assign: Assigning: "g_copy" =  storage returned from "box_copy(grnt)".
+virtuoso-opensource-6.1.2/libsrc/Wi/repldb.c:1257: leaked_storage: Variable "g_copy" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/replpush.c:404: alloc_fn: Calling allocation function "PrpcReadObject".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkmarshal.c:716: alloc_fn: Storage is returned from allocation function "read_object".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkmarshal.c:292: alloc_fn: Storage is returned from allocation function "scan_session_boxing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkmarshal.c:776: alloc_fn: Storage is returned from allocation function "dk_try_alloc_box".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:236: alloc_fn: Storage is returned from allocation function "dk_try_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:627: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:627: return_alloc_fn: Directly returning storage allocated by "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:236: var_assign: Assigning: "ptr" = "dk_try_alloc(align_bytes)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:253: return_alloc: Returning allocated memory "ptr".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkmarshal.c:776: var_assign: Assigning: "box" = "dk_try_alloc_box(sizeof (float) /*4*/, 190)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkmarshal.c:778: return_alloc: Returning allocated memory "box".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkmarshal.c:292: return_alloc_fn: Directly returning storage allocated by "scan_session_boxing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkmarshal.c:716: return_alloc_fn: Directly returning storage allocated by "read_object".
+virtuoso-opensource-6.1.2/libsrc/Wi/replpush.c:404: var_assign: Assigning: "header" =  storage returned from "PrpcReadObject(ses)".
+virtuoso-opensource-6.1.2/libsrc/Wi/replpush.c:404: overwrite_var: Overwriting "header" in call "header = (caddr_t *)PrpcReadObject(ses)" leaks the storage that "header" points to.
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/replpush.c:404: alloc_fn: Calling allocation function "PrpcReadObject".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkmarshal.c:716: alloc_fn: Storage is returned from allocation function "read_object".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkmarshal.c:292: alloc_fn: Storage is returned from allocation function "scan_session_boxing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkmarshal.c:776: alloc_fn: Storage is returned from allocation function "dk_try_alloc_box".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:236: alloc_fn: Storage is returned from allocation function "dk_try_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:627: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:627: return_alloc_fn: Directly returning storage allocated by "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:236: var_assign: Assigning: "ptr" = "dk_try_alloc(align_bytes)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:253: return_alloc: Returning allocated memory "ptr".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkmarshal.c:776: var_assign: Assigning: "box" = "dk_try_alloc_box(sizeof (float) /*4*/, 190)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkmarshal.c:778: return_alloc: Returning allocated memory "box".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkmarshal.c:292: return_alloc_fn: Directly returning storage allocated by "scan_session_boxing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkmarshal.c:716: return_alloc_fn: Directly returning storage allocated by "read_object".
+virtuoso-opensource-6.1.2/libsrc/Wi/replpush.c:404: var_assign: Assigning: "header" =  storage returned from "PrpcReadObject(ses)".
+virtuoso-opensource-6.1.2/libsrc/Wi/replpush.c:474: leaked_storage: Variable "header" going out of scope leaks the storage it points to.
+virtuoso-opensource-6.1.2/libsrc/Wi/replpush.c:483: leaked_storage: Variable "header" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/replsub.c:537: alloc_fn: Calling allocation function "PrpcReadObject".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkmarshal.c:716: alloc_fn: Storage is returned from allocation function "read_object".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkmarshal.c:292: alloc_fn: Storage is returned from allocation function "scan_session_boxing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkmarshal.c:776: alloc_fn: Storage is returned from allocation function "dk_try_alloc_box".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:236: alloc_fn: Storage is returned from allocation function "dk_try_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:627: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:627: return_alloc_fn: Directly returning storage allocated by "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:236: var_assign: Assigning: "ptr" = "dk_try_alloc(align_bytes)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:253: return_alloc: Returning allocated memory "ptr".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkmarshal.c:776: var_assign: Assigning: "box" = "dk_try_alloc_box(sizeof (float) /*4*/, 190)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkmarshal.c:778: return_alloc: Returning allocated memory "box".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkmarshal.c:292: return_alloc_fn: Directly returning storage allocated by "scan_session_boxing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkmarshal.c:716: return_alloc_fn: Directly returning storage allocated by "read_object".
+virtuoso-opensource-6.1.2/libsrc/Wi/replsub.c:537: var_assign: Assigning: "header" =  storage returned from "PrpcReadObject(ses)".
+virtuoso-opensource-6.1.2/libsrc/Wi/replsub.c:539: leaked_storage: Variable "header" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/xmlsql.c:4142: alloc_fn: Calling allocation function "box_copy".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1117: alloc_fn: Storage is returned from allocation function "dk_alloc_box".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:181: return_alloc: Returning allocated memory "ptr".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1117: var_assign: Assigning: "copy" = "dk_alloc_box(len, tag)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1119: noescape: Variable "copy" is not freed or pointed-to in function "memcpy".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1120: return_alloc: Returning allocated memory "copy".
+virtuoso-opensource-6.1.2/libsrc/Wi/xmlsql.c:4142: var_assign: Assigning: "copy_id" =  storage returned from "box_copy(tag[ix + 1])".
+virtuoso-opensource-6.1.2/libsrc/Wi/xmlsql.c:4300: leaked_storage: Variable "copy_id" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/xmlsql.c:4145: alloc_fn: Calling allocation function "box_copy".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1117: alloc_fn: Storage is returned from allocation function "dk_alloc_box".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:181: return_alloc: Returning allocated memory "ptr".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1117: var_assign: Assigning: "copy" = "dk_alloc_box(len, tag)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1119: noescape: Variable "copy" is not freed or pointed-to in function "memcpy".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1120: return_alloc: Returning allocated memory "copy".
+virtuoso-opensource-6.1.2/libsrc/Wi/xmlsql.c:4145: var_assign: Assigning: "copy_identity" =  storage returned from "box_copy(tag[ix + 1])".
+virtuoso-opensource-6.1.2/libsrc/Wi/xmlsql.c:4300: leaked_storage: Variable "copy_identity" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/xmlsql.c:4205: alloc_fn: Calling allocation function "box_copy".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1117: alloc_fn: Storage is returned from allocation function "dk_alloc_box".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:181: return_alloc: Returning allocated memory "ptr".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1117: var_assign: Assigning: "copy" = "dk_alloc_box(len, tag)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1119: noescape: Variable "copy" is not freed or pointed-to in function "memcpy".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1120: return_alloc: Returning allocated memory "copy".
+virtuoso-opensource-6.1.2/libsrc/Wi/xmlsql.c:4205: var_assign: Assigning: "copy_id" =  storage returned from "box_copy(evalue)".
+virtuoso-opensource-6.1.2/libsrc/Wi/xmlsql.c:4300: leaked_storage: Variable "copy_id" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/xmlsql.c:4198: alloc_fn: Calling allocation function "box_copy".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1117: alloc_fn: Storage is returned from allocation function "dk_alloc_box".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:181: return_alloc: Returning allocated memory "ptr".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1117: var_assign: Assigning: "copy" = "dk_alloc_box(len, tag)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1119: noescape: Variable "copy" is not freed or pointed-to in function "memcpy".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1120: return_alloc: Returning allocated memory "copy".
+virtuoso-opensource-6.1.2/libsrc/Wi/xmlsql.c:4198: var_assign: Assigning: "copy_identity" =  storage returned from "box_copy(evalue)".
+virtuoso-opensource-6.1.2/libsrc/Wi/xmlsql.c:4263: leaked_storage: Variable "copy_identity" going out of scope leaks the storage it points to.
+virtuoso-opensource-6.1.2/libsrc/Wi/xmlsql.c:4300: leaked_storage: Variable "copy_identity" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/xmlsql.c:4609: alloc_fn: Calling allocation function "xs_idnval".
+virtuoso-opensource-6.1.2/libsrc/Wi/xmlsql.c:4373: alloc_fn: Storage is returned from allocation function "box_copy".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1117: alloc_fn: Storage is returned from allocation function "dk_alloc_box".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:181: return_alloc: Returning allocated memory "ptr".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1117: var_assign: Assigning: "copy" = "dk_alloc_box(len, tag)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1119: noescape: Variable "copy" is not freed or pointed-to in function "memcpy".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1120: return_alloc: Returning allocated memory "copy".
+virtuoso-opensource-6.1.2/libsrc/Wi/xmlsql.c:4373: return_alloc_fn: Directly returning storage allocated by "box_copy".
+virtuoso-opensource-6.1.2/libsrc/Wi/xmlsql.c:4609: var_assign: Assigning: "ins_val" =  storage returned from "xs_idnval(xs_idn, xs_var, pairsb[ix - nparsa + 1])".
+virtuoso-opensource-6.1.2/libsrc/Wi/xmlsql.c:4700: leaked_storage: Variable "ins_val" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+virtuoso-opensource-6.1.2/libsrc/Wi/xmltree.c:6777: alloc_fn: Calling allocation function "box_copy_tree".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1168: alloc_fn: Storage is returned from allocation function "dk_alloc_box".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: alloc_fn: Storage is returned from allocation function "dk_alloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: alloc_fn: Storage is returned from allocation function "malloc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5237: var_assign: Assigning: "thing" = "malloc(size)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkernel.c:5264: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:181: return_alloc: Returning allocated memory "ptr".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1168: var_assign: Assigning: "copy" = "dk_alloc_box(len, tag)".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1170: noescape: Variable "copy" is not freed or pointed-to in function "memcpy".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1171: return_alloc: Returning allocated memory "copy".
+virtuoso-opensource-6.1.2/libsrc/Wi/xmltree.c:6777: var_assign: Assigning: "tree_copy" =  storage returned from "box_copy_tree((caddr_t)src_xte->xte_stack_top->xteb_current)".
+virtuoso-opensource-6.1.2/libsrc/Wi/xmltree.c:6781: noescape: Variable "tree_copy" is not freed or pointed-to in function "list".
+virtuoso-opensource-6.1.2/libsrc/Wi/xmltree.c:6781: overwrite_var: Overwriting "tree_copy" in call "tree_copy = (caddr_t *)list(2L, list(1L, uname__root), tree_copy)" leaks the storage that "tree_copy" points to.
+
+Error: SIZECHECK:
+virtuoso-opensource-6.1.2/binsrc/sqldoc/isql_log_normalize.c:220: size_is_strlen: Calling allocating function "malloc" with function argument "strlen(srcline)". Did you intend to add 1 to the byte count?
+
+Error: SIZECHECK:
+virtuoso-opensource-6.1.2/binsrc/sqldoc/isql_log_normalize.c:230: size_is_strlen: Calling allocating function "malloc" with function argument "strlen(srcline)". Did you intend to add 1 to the byte count?
+
+Error: SIZEOF_MISMATCH:
+virtuoso-opensource-6.1.2/binsrc/tests/isql.c:3504: suspicious_pointer_arithmetic: Adding "sizeof (L"+") /*8*/" to pointer "text + 1" of type "wchar_t *" is suspicious because adding an integral value to this pointer automatically scales that value by the size, 4 bytes, of the pointed-to type, "wchar_t".  Most likely, "sizeof (L"+")" is extraneous and should be replaced with 1.
+
+Error: SIZEOF_MISMATCH:
+virtuoso-opensource-6.1.2/binsrc/tests/isql.c:3510: suspicious_pointer_arithmetic: Adding "sizeof (L"+") /*8*/" to pointer "text" of type "wchar_t *" is suspicious because adding an integral value to this pointer automatically scales that value by the size, 4 bytes, of the pointed-to type, "wchar_t".  Most likely, "sizeof (L"+")" is extraneous and should be replaced with 1.
+
+Error: SIZEOF_MISMATCH:
+virtuoso-opensource-6.1.2/binsrc/tests/isql.c:3532: suspicious_pointer_arithmetic: Adding "sizeof (L"-") /*8*/" to pointer "text + 1" of type "wchar_t *" is suspicious because adding an integral value to this pointer automatically scales that value by the size, 4 bytes, of the pointed-to type, "wchar_t".  Most likely, "sizeof (L"-")" is extraneous and should be replaced with 1.
+
+Error: SIZEOF_MISMATCH:
+virtuoso-opensource-6.1.2/binsrc/tests/isql.c:3538: suspicious_pointer_arithmetic: Adding "sizeof (L"-") /*8*/" to pointer "text" of type "wchar_t *" is suspicious because adding an integral value to this pointer automatically scales that value by the size, 4 bytes, of the pointed-to type, "wchar_t".  Most likely, "sizeof (L"-")" is extraneous and should be replaced with 1.
+
+Error: SIZEOF_MISMATCH:
+virtuoso-opensource-6.1.2/binsrc/tests/isql.c:3648: suspicious_pointer_arithmetic: Adding "sizeof (L"ARGV") /*20*/" to pointer "text + 1" of type "wchar_t *" is suspicious because adding an integral value to this pointer automatically scales that value by the size, 4 bytes, of the pointed-to type, "wchar_t".  Most likely, "sizeof (L"ARGV")" is extraneous and should be replaced with 1.
+
+Error: SIZEOF_MISMATCH:
+virtuoso-opensource-6.1.2/binsrc/tests/isql.c:3493: suspicious_pointer_arithmetic: Adding "sizeof (L"DATASOURCES") /*48*/" to pointer "text + 1" of type "wchar_t *" is suspicious because adding an integral value to this pointer automatically scales that value by the size, 4 bytes, of the pointed-to type, "wchar_t".  Most likely, "sizeof (L"DATASOURCES")" is extraneous and should be replaced with 1.
+
+Error: SIZEOF_MISMATCH:
+virtuoso-opensource-6.1.2/binsrc/tests/isql.c:3495: suspicious_pointer_arithmetic: Adding "sizeof (L"DATASOURCES") /*48*/" to pointer "text" of type "wchar_t *" is suspicious because adding an integral value to this pointer automatically scales that value by the size, 4 bytes, of the pointed-to type, "wchar_t".  Most likely, "sizeof (L"DATASOURCES")" is extraneous and should be replaced with 1.
+
+Error: SIZEOF_MISMATCH:
+virtuoso-opensource-6.1.2/binsrc/tests/isql.c:3476: suspicious_pointer_arithmetic: Adding "sizeof (L"HHMMSS") /*28*/" to pointer "text + 1" of type "wchar_t *" is suspicious because adding an integral value to this pointer automatically scales that value by the size, 4 bytes, of the pointed-to type, "wchar_t".  Most likely, "sizeof (L"HHMMSS")" is extraneous and should be replaced with 1.
+
+Error: SIZEOF_MISMATCH:
+virtuoso-opensource-6.1.2/binsrc/tests/isql.c:3482: suspicious_pointer_arithmetic: Adding "sizeof (L"HHMMSS") /*28*/" to pointer "text" of type "wchar_t *" is suspicious because adding an integral value to this pointer automatically scales that value by the size, 4 bytes, of the pointed-to type, "wchar_t".  Most likely, "sizeof (L"HHMMSS")" is extraneous and should be replaced with 1.
+
+Error: SIZEOF_MISMATCH:
+virtuoso-opensource-6.1.2/binsrc/tests/isql.c:3561: suspicious_pointer_arithmetic: Adding "sizeof (L"IF") /*12*/" to pointer "text + 1" of type "wchar_t *" is suspicious because adding an integral value to this pointer automatically scales that value by the size, 4 bytes, of the pointed-to type, "wchar_t".  Most likely, "sizeof (L"IF")" is extraneous and should be replaced with 1.
+
+Error: SIZEOF_MISMATCH:
+virtuoso-opensource-6.1.2/binsrc/tests/isql.c:3576: suspicious_pointer_arithmetic: Adding "sizeof (L"IF") /*12*/" to pointer "text" of type "wchar_t *" is suspicious because adding an integral value to this pointer automatically scales that value by the size, 4 bytes, of the pointed-to type, "wchar_t".  Most likely, "sizeof (L"IF")" is extraneous and should be replaced with 1.
+
+Error: SIZEOF_MISMATCH:
+virtuoso-opensource-6.1.2/binsrc/tests/isql.c:3498: suspicious_pointer_arithmetic: Adding "sizeof (L"INPUT_DATASOURCE") /*68*/" to pointer "text + 1" of type "wchar_t *" is suspicious because adding an integral value to this pointer automatically scales that value by the size, 4 bytes, of the pointed-to type, "wchar_t".  Most likely, "sizeof (L"INPUT_DATASOURCE")" is extraneous and should be replaced with 1.
+
+Error: SIZEOF_MISMATCH:
+virtuoso-opensource-6.1.2/binsrc/tests/isql.c:3500: suspicious_pointer_arithmetic: Adding "sizeof (L"INPUT_DATASOURCE") /*68*/" to pointer "text" of type "wchar_t *" is suspicious because adding an integral value to this pointer automatically scales that value by the size, 4 bytes, of the pointed-to type, "wchar_t".  Most likely, "sizeof (L"INPUT_DATASOURCE")" is extraneous and should be replaced with 1.
+
+Error: SIZEOF_MISMATCH:
+virtuoso-opensource-6.1.2/binsrc/tests/isql.c:3648: suspicious_pointer_arithmetic: Adding "sizeof (L"LAST") /*20*/" to pointer "text + 1" of type "wchar_t *" is suspicious because adding an integral value to this pointer automatically scales that value by the size, 4 bytes, of the pointed-to type, "wchar_t".  Most likely, "sizeof (L"LAST")" is extraneous and should be replaced with 1.
+
+Error: SIZEOF_MISMATCH:
+virtuoso-opensource-6.1.2/binsrc/tests/isql.c:3648: suspicious_pointer_arithmetic: Adding "sizeof (L"LAST") /*20*/" to pointer "text" of type "wchar_t *" is suspicious because adding an integral value to this pointer automatically scales that value by the size, 4 bytes, of the pointed-to type, "wchar_t".  Most likely, "sizeof (L"LAST")" is extraneous and should be replaced with 1.
+
+Error: SIZEOF_MISMATCH:
+virtuoso-opensource-6.1.2/binsrc/tests/isql.c:3449: suspicious_pointer_arithmetic: Adding "sizeof (L"LINENO") /*28*/" to pointer "text + 1" of type "wchar_t *" is suspicious because adding an integral value to this pointer automatically scales that value by the size, 4 bytes, of the pointed-to type, "wchar_t".  Most likely, "sizeof (L"LINENO")" is extraneous and should be replaced with 1.
+
+Error: SIZEOF_MISMATCH:
+virtuoso-opensource-6.1.2/binsrc/tests/isql.c:3451: suspicious_pointer_arithmetic: Adding "sizeof (L"LINENO") /*28*/" to pointer "text" of type "wchar_t *" is suspicious because adding an integral value to this pointer automatically scales that value by the size, 4 bytes, of the pointed-to type, "wchar_t".  Most likely, "sizeof (L"LINENO")" is extraneous and should be replaced with 1.
+
+Error: SIZEOF_MISMATCH:
+virtuoso-opensource-6.1.2/binsrc/tests/isql.c:3443: suspicious_pointer_arithmetic: Adding "sizeof (L"LOADEXPR") /*36*/" to pointer "text + 1" of type "wchar_t *" is suspicious because adding an integral value to this pointer automatically scales that value by the size, 4 bytes, of the pointed-to type, "wchar_t".  Most likely, "sizeof (L"LOADEXPR")" is extraneous and should be replaced with 1.
+
+Error: SIZEOF_MISMATCH:
+virtuoso-opensource-6.1.2/binsrc/tests/isql.c:3445: suspicious_pointer_arithmetic: Adding "sizeof (L"LOADEXPR") /*36*/" to pointer "text" of type "wchar_t *" is suspicious because adding an integral value to this pointer automatically scales that value by the size, 4 bytes, of the pointed-to type, "wchar_t".  Most likely, "sizeof (L"LOADEXPR")" is extraneous and should be replaced with 1.
+
+Error: SIZEOF_MISMATCH:
+virtuoso-opensource-6.1.2/binsrc/tests/isql.c:3459: suspicious_pointer_arithmetic: Adding "sizeof (L"YYYYMMDD") /*36*/" to pointer "text + 1" of type "wchar_t *" is suspicious because adding an integral value to this pointer automatically scales that value by the size, 4 bytes, of the pointed-to type, "wchar_t".  Most likely, "sizeof (L"YYYYMMDD")" is extraneous and should be replaced with 1.
+
+Error: SIZEOF_MISMATCH:
+virtuoso-opensource-6.1.2/binsrc/tests/isql.c:3465: suspicious_pointer_arithmetic: Adding "sizeof (L"YYYYMMDD") /*36*/" to pointer "text" of type "wchar_t *" is suspicious because adding an integral value to this pointer automatically scales that value by the size, 4 bytes, of the pointed-to type, "wchar_t".  Most likely, "sizeof (L"YYYYMMDD")" is extraneous and should be replaced with 1.
+
+Error: SIZEOF_MISMATCH:
+virtuoso-opensource-6.1.2/binsrc/tests/isql.c:9410: suspicious_pointer_arithmetic: Adding "sizeof (L" filename=") /*44*/" to pointer "tp1" of type "wchar_t *" is suspicious because adding an integral value to this pointer automatically scales that value by the size, 4 bytes, of the pointed-to type, "wchar_t".  Most likely, "sizeof (L" filename=")" is extraneous and should be replaced with 1.
+
+Error: SIZEOF_MISMATCH:
+virtuoso-opensource-6.1.2/binsrc/tests/isql.c:9406: suspicious_pointer_arithmetic: Adding "sizeof (L" name=") /*28*/" to pointer "tp1" of type "wchar_t *" is suspicious because adding an integral value to this pointer automatically scales that value by the size, 4 bytes, of the pointed-to type, "wchar_t".  Most likely, "sizeof (L" name=")" is extraneous and should be replaced with 1.
+
+Error: SIZEOF_MISMATCH:
+virtuoso-opensource-6.1.2/binsrc/tests/isql.c:9422: suspicious_pointer_arithmetic: Adding "sizeof (L"Content-Transfer-Encoding:") /*108*/" to pointer "input" of type "wchar_t *" is suspicious because adding an integral value to this pointer automatically scales that value by the size, 4 bytes, of the pointed-to type, "wchar_t".  Most likely, "sizeof (L"Content-Transfer-Encoding:")" is extraneous and should be replaced with 1.
+
+Error: SIZEOF_MISMATCH:
+virtuoso-opensource-6.1.2/binsrc/tests/isql.c:9417: suspicious_pointer_arithmetic: Adding "sizeof (L"Content-Type:") /*56*/" to pointer "input" of type "wchar_t *" is suspicious because adding an integral value to this pointer automatically scales that value by the size, 4 bytes, of the pointed-to type, "wchar_t".  Most likely, "sizeof (L"Content-Type:")" is extraneous and should be replaced with 1.
+
+Error: UNINIT:
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlgen.c:723: var_decl: Declaring variable "n_eqs" without initializer.
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlgen.c:731: uninit_use: Using uninitialized value "n_eqs".
+
+Error: UNINIT:
+virtuoso-opensource-6.1.2/libsrc/Wi/xmltree.c:9704: var_decl: Declaring variable "rb".
+virtuoso-opensource-6.1.2/libsrc/Wi/xmltree.c:9705: uninit_use: Using uninitialized value "rb".
+virtuoso-opensource-6.1.2/libsrc/Wi/xmltree.c:9705: uninit_use: Using uninitialized value "rb->rb_type".
+virtuoso-opensource-6.1.2/libsrc/Wi/xmltree.c:9713: uninit_use: Using uninitialized value "((rdf_bigbox_t *)rb)->rbb_box_dtp".
+virtuoso-opensource-6.1.2/libsrc/Wi/xmltree.c:9713: uninit_use: Using uninitialized value "rb->rb_box".
+virtuoso-opensource-6.1.2/libsrc/Wi/xmltree.c:9713: uninit_use: Using uninitialized value "rb->rb_is_outlined".
+
+Error: UNINIT:
+virtuoso-opensource-6.1.2/libsrc/Wi/rdfbox.c:1427: var_decl: Declaring variable "qi".
+virtuoso-opensource-6.1.2/libsrc/Wi/rdfbox.c:1434: uninit_use_in_call: Using uninitialized value "qi->qi_trx" when calling "rb_complete".
+virtuoso-opensource-6.1.2/libsrc/Wi/rdfbox.c:112: read_parm: Reading a parameter value.
+virtuoso-opensource-6.1.2/libsrc/Wi/rdfbox.c:1434: uninit_use: Using uninitialized value "qi".
+
+Error: UNINIT:
+virtuoso-opensource-6.1.2/libsrc/Wi/sparql_core.c:3858: var_decl: Declaring variable "sqlvals" without initializer.
+virtuoso-opensource-6.1.2/libsrc/Wi/sparql_core.c:3906: uninit_use_in_call: Using uninitialized value "sqlvals[0]" when calling "spar_make_literal_from_sql_box".
+virtuoso-opensource-6.1.2/libsrc/Wi/sparql_core.c:3796: read_parm: Reading a parameter value.
+
+Error: UNREACHABLE:
+virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:5312: unreachable: This code cannot be reached: "dk_free_box(r_text);".
+
+Error: UNUSED_VALUE:
+virtuoso-opensource-6.1.2/libsrc/Wi/rdfinf.c:2028: returned_pointer: Pointer "const_s" returned by "dfe_iri_const(s_dfe)" is never used.
+
+Error: UNUSED_VALUE:
+virtuoso-opensource-6.1.2/libsrc/Wi/replsri.c:608: returned_pointer: Pointer "err" returned by "qr_rec_exec(tp_item, cli, &lc_item, qi, NULL, 3L, ":0", db_name, 1L, ":1", obj_name, 1L, ":2", (long)obj_type, 0L)" is never used.
+
+Error: UNUSED_VALUE:
+virtuoso-opensource-6.1.2/libsrc/Wi/sparql2sql.c:489: returned_pointer: Pointer "retval" returned by "spartlist(sparp, 4L, 1001L, retval, name, (struct qm_format_s *)0x350)" is never used.
+
+Error: USE_AFTER_FREE:
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:12161: freed_arg: "lc_free" frees "lc".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlrun.c:3838: freed_arg: "dk_free" frees parameter "lc".
+virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:680: freed_arg: "free" frees parameter "ptr".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:12174: deref_arg: Calling "lc_next" dereferences freed pointer "lc".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlrun.c:3787: deref_parm: Directly dereferencing parameter "lc".

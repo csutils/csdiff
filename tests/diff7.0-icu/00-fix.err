@@ -1,1 +1,1034 @@
-icu-4.8.1-1.fc17.fixed.err
+
+Error: BAD_FREE:
+icu/source/common/udata.c:176: address_free: "udata_checkCommonData_44" frees address of "tData".
+icu/source/common/ucmndata.c:278: freed_arg: "udata_close_44" frees parameter "udm".
+icu/source/common/udatamem.c:94: freed_arg: "uprv_free_44" frees parameter "pData".
+icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+
+Error: BAD_FREE:
+icu/source/common/udata.c:894: address_free: "udata_checkCommonData_44" frees address of "tData".
+icu/source/common/ucmndata.c:278: freed_arg: "udata_close_44" frees parameter "udm".
+icu/source/common/udatamem.c:94: freed_arg: "uprv_free_44" frees parameter "pData".
+icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+
+Error: BAD_FREE:
+icu/source/common/udata.c:1116: address_free: "udata_close_44" frees address of "dataMemory".
+icu/source/common/udatamem.c:94: freed_arg: "uprv_free_44" frees parameter "pData".
+icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+
+Error: BAD_FREE:
+icu/source/common/locavailable.cpp:166: address_free: "ures_close_44" frees address of "installed".
+icu/source/common/uresbund.c:824: freed_arg: "ures_closeBundle" frees parameter "resB".
+icu/source/common/uresbund.c:810: freed_arg: "uprv_free_44" frees parameter "resB".
+icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+
+Error: BAD_FREE:
+icu/source/common/uresbund.c:1667: address_free: "ures_close_44" frees address of "stack".
+icu/source/common/uresbund.c:824: freed_arg: "ures_closeBundle" frees parameter "resB".
+icu/source/common/uresbund.c:810: freed_arg: "uprv_free_44" frees parameter "resB".
+icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+
+Error: BAD_FREE:
+icu/source/common/locresdata.cpp:148: address_free: "ures_close_44" frees address of "subTable".
+icu/source/common/uresbund.c:824: freed_arg: "ures_closeBundle" frees parameter "resB".
+icu/source/common/uresbund.c:810: freed_arg: "uprv_free_44" frees parameter "resB".
+icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+icu/source/common/locresdata.cpp:149: address_free: "ures_close_44" frees address of "table".
+
+Error: BAD_FREE:
+icu/source/common/resbund.cpp:350: address_free: "ures_close_44" frees address of "r".
+icu/source/common/uresbund.c:824: freed_arg: "ures_closeBundle" frees parameter "resB".
+icu/source/common/uresbund.c:810: freed_arg: "uprv_free_44" frees parameter "resB".
+icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+
+Error: BAD_FREE:
+icu/source/common/resbund.cpp:297: address_free: "ures_close_44" frees address of "r".
+icu/source/common/uresbund.c:824: freed_arg: "ures_closeBundle" frees parameter "resB".
+icu/source/common/uresbund.c:810: freed_arg: "uprv_free_44" frees parameter "resB".
+icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+
+Error: BAD_FREE:
+icu/source/common/resbund.cpp:339: address_free: "ures_close_44" frees address of "r".
+icu/source/common/uresbund.c:824: freed_arg: "ures_closeBundle" frees parameter "resB".
+icu/source/common/uresbund.c:810: freed_arg: "uprv_free_44" frees parameter "resB".
+icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+
+Error: BAD_FREE:
+icu/source/common/resbund.cpp:321: address_free: "ures_close_44" frees address of "r".
+icu/source/common/uresbund.c:824: freed_arg: "ures_closeBundle" frees parameter "resB".
+icu/source/common/uresbund.c:810: freed_arg: "uprv_free_44" frees parameter "resB".
+icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+
+Error: BAD_FREE:
+icu/source/common/udata.c:1019: address_free: "udata_checkCommonData_44" frees address of "udm".
+icu/source/common/ucmndata.c:278: freed_arg: "udata_close_44" frees parameter "udm".
+icu/source/common/udatamem.c:94: freed_arg: "uprv_free_44" frees parameter "pData".
+icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+
+Error: BAD_FREE:
+icu/source/common/udata.c:991: address_free: "udata_checkCommonData_44" frees address of "dataMemory".
+icu/source/common/ucmndata.c:278: freed_arg: "udata_close_44" frees parameter "udm".
+icu/source/common/udatamem.c:94: freed_arg: "uprv_free_44" frees parameter "pData".
+icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+
+Error: BAD_FREE:
+icu/source/common/uresbund.c:2148: address_free: "ures_close_44" frees address of "resData".
+icu/source/common/uresbund.c:824: freed_arg: "ures_closeBundle" frees parameter "resB".
+icu/source/common/uresbund.c:810: freed_arg: "uprv_free_44" frees parameter "resB".
+icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+icu/source/common/uresbund.c:2152: address_free: "ures_close_44" frees address of "resData".
+
+Error: BAD_FREE:
+icu/source/common/uresbund.c:2614: address_free: "ures_close_44" frees address of "bund1".
+icu/source/common/uresbund.c:824: freed_arg: "ures_closeBundle" frees parameter "resB".
+icu/source/common/uresbund.c:810: freed_arg: "uprv_free_44" frees parameter "resB".
+icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+icu/source/common/uresbund.c:2615: address_free: "ures_close_44" frees address of "bund2".
+
+Error: BAD_FREE:
+icu/source/common/uresbund.c:2658: address_free: "ures_close_44" frees address of "item".
+icu/source/common/uresbund.c:824: freed_arg: "ures_closeBundle" frees parameter "resB".
+icu/source/common/uresbund.c:810: freed_arg: "uprv_free_44" frees parameter "resB".
+icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+icu/source/common/uresbund.c:2659: address_free: "ures_close_44" frees address of "subItem".
+icu/source/common/uresbund.c:2729: address_free: "ures_close_44" frees address of "item".
+icu/source/common/uresbund.c:2730: address_free: "ures_close_44" frees address of "subItem".
+
+Error: BAD_FREE:
+icu/source/common/uresbund.c:2225: address_free: Using "&ctx->installed" to refer to containing object "*ctx" freed by "ures_close_44".
+icu/source/common/uresbund.c:824: freed_arg: "ures_closeBundle" frees parameter "resB".
+icu/source/common/uresbund.c:810: freed_arg: "uprv_free_44" frees parameter "resB".
+icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+
+Error: BAD_FREE:
+icu/source/common/uresbund.c:2224: address_free: "ures_close_44" frees address of "ctx->curr".
+icu/source/common/uresbund.c:824: freed_arg: "ures_closeBundle" frees parameter "resB".
+icu/source/common/uresbund.c:810: freed_arg: "uprv_free_44" frees parameter "resB".
+icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+
+Error: BAD_FREE:
+icu/source/i18n/timezone.cpp:172: address_free: "ures_close_44" frees address of "res".
+icu/source/common/uresbund.c:824: freed_arg: "ures_closeBundle" frees parameter "resB".
+icu/source/common/uresbund.c:810: freed_arg: "uprv_free_44" frees parameter "resB".
+icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+
+Error: BAD_FREE:
+icu/source/i18n/olsontz.cpp:245: address_free: "ures_close_44" frees address of "r".
+icu/source/common/uresbund.c:824: freed_arg: "ures_closeBundle" frees parameter "resB".
+icu/source/common/uresbund.c:810: freed_arg: "uprv_free_44" frees parameter "resB".
+icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+
+Error: BAD_FREE:
+icu/source/i18n/timezone.cpp:442: address_free: "ures_close_44" frees address of "res".
+icu/source/common/uresbund.c:824: freed_arg: "ures_closeBundle" frees parameter "resB".
+icu/source/common/uresbund.c:810: freed_arg: "uprv_free_44" frees parameter "resB".
+icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+
+Error: BAD_FREE:
+icu/source/i18n/coll.cpp:297: address_free: "ures_close_44" frees address of "installed".
+icu/source/common/uresbund.c:824: freed_arg: "ures_closeBundle" frees parameter "resB".
+icu/source/common/uresbund.c:810: freed_arg: "uprv_free_44" frees parameter "resB".
+icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+
+Error: BAD_FREE:
+icu/source/i18n/timezone.cpp:883: address_free: "ures_close_44" frees address of "r".
+icu/source/common/uresbund.c:824: freed_arg: "ures_closeBundle" frees parameter "resB".
+icu/source/common/uresbund.c:810: freed_arg: "uprv_free_44" frees parameter "resB".
+icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+icu/source/i18n/timezone.cpp:885: address_free: "ures_close_44" frees address of "res".
+
+Error: BAD_FREE:
+icu/source/i18n/timezone.cpp:854: address_free: "ures_close_44" frees address of "r".
+icu/source/common/uresbund.c:824: freed_arg: "ures_closeBundle" frees parameter "resB".
+icu/source/common/uresbund.c:810: freed_arg: "uprv_free_44" frees parameter "resB".
+icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+icu/source/i18n/timezone.cpp:856: address_free: "ures_close_44" frees address of "res".
+
+Error: BAD_FREE:
+icu/source/i18n/ucurr.cpp:2243: address_free: "ures_close_44" frees address of "to".
+icu/source/common/uresbund.c:824: freed_arg: "ures_closeBundle" frees parameter "resB".
+icu/source/common/uresbund.c:810: freed_arg: "uprv_free_44" frees parameter "resB".
+icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+icu/source/i18n/ucurr.cpp:2244: address_free: "ures_close_44" frees address of "curbndl".
+icu/source/i18n/ucurr.cpp:2245: address_free: "ures_close_44" frees address of "regbndl".
+icu/source/i18n/ucurr.cpp:2246: address_free: "ures_close_44" frees address of "bundlekey".
+
+Error: CHECKED_RETURN:
+icu/source/common/ucasemap.c:98: check_return: Calling function "ucase_getCaseLocale_44" without checking return value (as is done elsewhere 4 out of 5 times).
+icu/source/common/ustrcase.c:301: example_checked: "ucase_getCaseLocale_44(csm->locale, &csm->locCache)" has its value checked in "ucase_getCaseLocale_44(csm->locale, &csm->locCache) == 4".
+icu/source/common/ucasemap.c:364: example_checked: "ucase_getCaseLocale_44(csm->locale, &csm->locCache)" has its value checked in "ucase_getCaseLocale_44(csm->locale, &csm->locCache) == 4".
+icu/source/common/ucase.c:1070: example_assign: Assigning: "loc" = return value from "ucase_getCaseLocale_44(locale, locCache)".
+icu/source/common/ucase.c:1078: example_checked: "loc" has its value checked in "loc == 3".
+icu/source/common/ucase.c:1214: example_assign: Assigning: "loc" = return value from "ucase_getCaseLocale_44(locale, locCache)".
+icu/source/common/ucase.c:1216: example_checked: "loc" has its value checked in "loc == 2".
+icu/source/common/ucasemap.c:98: unchecked_value: No check of the return value of "ucase_getCaseLocale_44(csm->locale, &csm->locCache)".
+
+Error: CHECKED_RETURN:
+icu/source/i18n/tridpars.cpp:422: check_return: Calling function "icu_44::ICU_Utility::parseChar(icu_44::UnicodeString const &, int &, unsigned short)" without checking return value (as is done elsewhere 4 out of 5 times).
+icu/source/i18n/tridpars.cpp:369: example_checked: "icu_44::ICU_Utility::parseChar(id, pos, 59)" has its value checked in "icu_44::ICU_Utility::parseChar(id, pos, 59)".
+icu/source/i18n/tridpars.cpp:396: example_checked: "icu_44::ICU_Utility::parseChar(id, pos, 59)" has its value checked in "icu_44::ICU_Utility::parseChar(id, pos, 59)".
+icu/source/i18n/rbt_pars.cpp:981: example_checked: "icu_44::ICU_Utility::parseChar(rule, p, 59)" has its value checked in "icu_44::ICU_Utility::parseChar(rule, p, 59)".
+icu/source/i18n/rbt_pars.cpp:996: example_checked: "icu_44::ICU_Utility::parseChar(rule, p, 59)" has its value checked in "icu_44::ICU_Utility::parseChar(rule, p, 59)".
+icu/source/i18n/tridpars.cpp:422: unchecked_value: No check of the return value of "icu_44::ICU_Utility::parseChar(id, pos, 59)".
+
+Error: CHECKED_RETURN:
+icu/source/io/ustdio.c:612: check_return: Calling function "ufile_getch_44" without checking return value (as is done elsewhere 4 out of 5 times).
+icu/source/io/uscanf_p.c:324: example_checked: "ufile_getch_44(input, &c)" has its value checked in "isNotEOF = ufile_getch_44(input, &c)".
+icu/source/io/uscanf_p.c:358: example_checked: "ufile_getch_44(input, &c)" has its value checked in "isNotEOF = ufile_getch_44(input, &c)".
+icu/source/io/uscanf_p.c:829: example_checked: "ufile_getch_44(input, &c)" has its value checked in "isNotEOF = ufile_getch_44(input, &c)".
+icu/source/io/uscanf_p.c:917: example_checked: "ufile_getch_44(input, &c)" has its value checked in "isNotEOF = ufile_getch_44(input, &c)".
+icu/source/io/ustdio.c:612: unchecked_value: No check of the return value of "ufile_getch_44(f, &ch)".
+
+Error: DEADCODE:
+icu/source/common/uresdata.c:583: dead_error_condition: On this path, the condition "type == 9" cannot be false.
+icu/source/common/uresdata.c:583: const: After this line, the value of "type" is equal to 9.
+icu/source/common/uresdata.c:551: equality_cond: Condition "type == 2" is evaluated as false.
+icu/source/common/uresdata.c:555: equality_cond: Condition "type == 2" is evaluated as false.
+icu/source/common/uresdata.c:572: equality_cond: Condition "type == 2" is evaluated as false.
+icu/source/common/uresdata.c:551: equality_cond: Condition "type == 4" is evaluated as false.
+icu/source/common/uresdata.c:555: equality_cond: Condition "type == 4" is evaluated as false.
+icu/source/common/uresdata.c:572: equality_cond: Condition "type == 4" is evaluated as false.
+icu/source/common/uresdata.c:551: equality_cond: Condition "type == 5" is evaluated as false.
+icu/source/common/uresdata.c:555: equality_cond: Condition "type == 5" is evaluated as false.
+icu/source/common/uresdata.c:572: equality_cond: Condition "type == 5" is evaluated as false.
+icu/source/common/uresdata.c:551: equality_cond: Condition "type == 8" is evaluated as false.
+icu/source/common/uresdata.c:555: equality_cond: Condition "type == 8" is evaluated as false.
+icu/source/common/uresdata.c:583: equality_cond: Condition "type == 8" is evaluated as false.
+icu/source/common/uresdata.c:551: new_values: Noticing condition "type == 9".
+icu/source/common/uresdata.c:555: new_values: Noticing condition "type == 9".
+icu/source/common/uresdata.c:592: dead_error_line: Execution cannot reach this statement "t2 = 4294967295U;".
+
+Error: DEADCODE:
+icu/source/common/uprops.cpp:382: dead_error_condition: On this path, the switch value "which" cannot reach the default case.
+icu/source/common/uprops.cpp:381: between: After this line, the value of "which" is between 4096 and 4116.
+icu/source/common/uprops.cpp:375: new_values: Noticing condition "which < 0".
+icu/source/common/uprops.cpp:379: new_values: Noticing condition "which < 4096".
+icu/source/common/uprops.cpp:381: new_values: Noticing condition "which < 4117".
+icu/source/common/uprops.cpp:377: new_values: Noticing condition "which < 57".
+icu/source/common/uprops.cpp:436: dead_error_begin: Execution cannot reach this statement "default:".
+
+Error: DEADCODE:
+icu/source/common/uprops.cpp:460: dead_error_condition: On this path, the switch value "which" cannot reach the default case.
+icu/source/common/uprops.cpp:459: between: After this line, the value of "which" is between 4096 and 4116.
+icu/source/common/uprops.cpp:453: new_values: Noticing condition "which < 0".
+icu/source/common/uprops.cpp:457: new_values: Noticing condition "which < 4096".
+icu/source/common/uprops.cpp:459: new_values: Noticing condition "which < 4117".
+icu/source/common/uprops.cpp:455: new_values: Noticing condition "which < 57".
+icu/source/common/uprops.cpp:499: dead_error_begin: Execution cannot reach this statement "default:".
+
+Error: DEADCODE:
+icu/source/tools/gennames/gennames.c:455: dead_error_condition: On this path, the condition "argc >= 2" cannot be false.
+icu/source/tools/gennames/gennames.c:452: at_least: After this line, the value of "argc" is at least 3.
+icu/source/tools/gennames/gennames.c:452: const: After this line, the value of "argc" is equal to 2.
+icu/source/tools/gennames/gennames.c:396: new_values: Noticing condition "argc < 0".
+icu/source/tools/gennames/gennames.c:403: new_values: Noticing condition "argc < 0".
+icu/source/tools/gennames/gennames.c:400: new_values: Noticing condition "argc < 2".
+icu/source/tools/gennames/gennames.c:452: new_values: Noticing condition "argc >= 3".
+icu/source/tools/gennames/gennames.c:455: dead_error_line: Execution cannot reach this expression ""-"" inside statement "parseDB(((argc >= 2) ? argv...".
+
+Error: FORWARD_NULL:
+icu/source/common/uniset_props.cpp:117: var_compare_op: Comparing "set" to null implies that "set" might be null.
+icu/source/common/uniset_props.cpp:120: var_deref_model: Passing null variable "set" to function "icu_44::UnicodeSet::freeze()", which dereferences it.
+icu/source/common/uniset.cpp:2086: deref_parm_in_call: Function "icu_44::UnicodeSet::isFrozen() const" dereferences parameter "this".
+icu/source/common/unicode/uniset.h:1616: deref_parm: Directly dereferencing parameter "this".
+
+Error: FORWARD_NULL:
+icu/source/i18n/ucol.cpp:2624: var_deref_model: Passing null variable "source->iterator" to function "collIter_bos(collIterate *)", which dereferences it.
+icu/source/i18n/ucol.cpp:339: deref_parm: Directly dereferencing parameter "source->iterator".
+icu/source/i18n/ucol.cpp:2684: var_deref_model: Passing null variable "source->iterator" to function "collIter_eos(collIterate *)", which dereferences it.
+icu/source/i18n/ucol.cpp:294: deref_parm: Directly dereferencing parameter "s->iterator".
+icu/source/i18n/ucol.cpp:2702: var_deref_model: Passing null variable "source->iterator" to function "getNextNormalizedChar(collIterate *)", which dereferences it.
+icu/source/i18n/ucol.cpp:2141: deref_parm: Directly dereferencing parameter "data->iterator".
+icu/source/i18n/ucol.cpp:2725: var_compare_op: Comparing "source->iterator" to null implies that "source->iterator" might be null.
+icu/source/i18n/ucol.cpp:2738: var_deref_model: Passing null variable "source->iterator" to function "getNextNormalizedChar(collIterate *)", which dereferences it.
+icu/source/i18n/ucol.cpp:2815: var_deref_model: Passing null variable "source->iterator" to function "getNextNormalizedChar(collIterate *)", which dereferences it.
+icu/source/i18n/ucol.cpp:2976: var_deref_model: Passing null variable "source->iterator" to function "collIter_eos(collIterate *)", which dereferences it.
+icu/source/i18n/ucol.cpp:2977: var_deref_model: Passing null variable "source->iterator" to function "getNextNormalizedChar(collIterate *)", which dereferences it.
+icu/source/i18n/ucol.cpp:2979: var_deref_model: Passing null variable "source->iterator" to function "collIter_eos(collIterate *)", which dereferences it.
+icu/source/i18n/ucol.cpp:2981: var_deref_model: Passing null variable "source->iterator" to function "getNextNormalizedChar(collIterate *)", which dereferences it.
+icu/source/i18n/ucol.cpp:3148: var_deref_model: Passing null variable "source->iterator" to function "collIter_eos(collIterate *)", which dereferences it.
+icu/source/i18n/ucol.cpp:3148: var_deref_model: Passing null variable "source->iterator" to function "getNextNormalizedChar(collIterate *)", which dereferences it.
+icu/source/i18n/ucol.cpp:3169: var_deref_op: Dereferencing null variable "source->iterator".
+
+Error: FORWARD_NULL:
+icu/source/i18n/ucol.cpp:1933: var_compare_op: Comparing "data->fcdPosition" to null implies that "data->fcdPosition" might be null.
+icu/source/i18n/ucol.cpp:1974: var_deref_model: Passing null variable "data->fcdPosition" to function "ucol_prv_getSpecialPrevCE_44", which dereferences it.
+icu/source/i18n/ucol.cpp:4006: var_assign_parm: Assigning: "prev" = "source->fcdPosition".
+icu/source/i18n/ucol.cpp:4008: deref_var: Dereferencing "prev", which equals a pointer parameter.
+icu/source/i18n/ucol.cpp:1999: var_deref_model: Passing null variable "data->fcdPosition" to function "ucol_prv_getSpecialPrevCE_44", which dereferences it.
+icu/source/i18n/ucol.cpp:2014: var_deref_model: Passing null variable "data->fcdPosition" to function "ucol_prv_getSpecialPrevCE_44", which dereferences it.
+
+Error: FORWARD_NULL:
+icu/source/i18n/plurfmt.cpp:312: var_compare_op: Comparing "this->fParsedValuesHash" to null implies that "this->fParsedValuesHash" might be null.
+icu/source/i18n/plurfmt.cpp:321: var_deref_model: Passing null variable "this->fParsedValuesHash" to function "icu_44::Hashtable::get(icu_44::UnicodeString const &) const", which dereferences it.
+icu/source/common/hash.h:166: deref_parm: Directly dereferencing parameter "this".
+
+Error: FORWARD_NULL:
+icu/source/i18n/uspoof_impl.cpp:38: var_compare_op: Comparing "allowedCharsSet" to null implies that "allowedCharsSet" might be null.
+icu/source/i18n/uspoof_impl.cpp:41: var_deref_model: Passing null variable "allowedCharsSet" to function "icu_44::UnicodeSet::freeze()", which dereferences it.
+icu/source/common/uniset.cpp:2086: deref_parm_in_call: Function "icu_44::UnicodeSet::isFrozen() const" dereferences parameter "this".
+icu/source/common/unicode/uniset.h:1616: deref_parm: Directly dereferencing parameter "this".
+
+Error: MISSING_BREAK:
+icu/source/i18n/plurfmt.cpp:230: unterminated_case: This case (value 4) is not terminated by a 'break' statement.
+icu/source/i18n/plurfmt.cpp:235: fallthrough: The above case falls through to this one.
+
+Error: NEGATIVE_RETURNS:
+icu/source/common/ucnv.c:485: negative_return_fn: Function "ucnv_fromUChars_44(clone, chars, (int32_t)sizeof (chars) /*32*/, s, length, err)" returns a negative number.
+icu/source/common/ucnv.c:1769: negative_return: Calling "u_terminateChars_44", which might return a negative value.
+icu/source/common/ustring.c:1451: var_tested_neg: Variable "length" is negative.
+icu/source/common/ustring.c:1452: return_negative_variable: Explicitly returning negative variable "length".
+icu/source/common/ucnv.c:1769: return_negative_fn: Returning the return value of "u_terminateChars_44", which might be negative.
+icu/source/common/ucnv.c:485: var_assign: Assigning: signed variable "length8" = "ucnv_fromUChars_44".
+icu/source/common/ucnv.c:544: negative_returns: "length8" is passed to a parameter that cannot be negative.
+
+Error: NEGATIVE_RETURNS:
+icu/source/i18n/plurrule.cpp:380: negative_return_fn: Function "token->extract(0, token->length(), digits, 128, _ZN6icu_4413UnicodeString10kInvariantE)" returns a negative number.
+icu/source/common/unistr.cpp:780: negative_return: Calling "u_terminateChars_44", which might return a negative value.
+icu/source/common/ustring.c:1451: var_tested_neg: Variable "length" is negative.
+icu/source/common/ustring.c:1452: return_negative_variable: Explicitly returning negative variable "length".
+icu/source/common/unistr.cpp:780: return_negative_fn: Returning the return value of "u_terminateChars_44", which might be negative.
+icu/source/i18n/plurrule.cpp:380: var_assign: Assigning: signed variable "i" = "icu_44::UnicodeString::extract(int, int, char *, int, icu_44::UnicodeString::EInvariant) const".
+icu/source/i18n/plurrule.cpp:381: negative_returns: Using variable "i" as an index to array "digits".
+
+Error: NEGATIVE_RETURNS:
+icu/source/i18n/calendar.cpp:239: negative_return_fn: Function "uloc_getCountry_44(canonicalName, region, 3, &status)" returns a negative number.
+icu/source/common/uloc.c:1902: negative_return: Calling "u_terminateChars_44", which might return a negative value.
+icu/source/common/ustring.c:1451: var_tested_neg: Variable "length" is negative.
+icu/source/common/ustring.c:1452: return_negative_variable: Explicitly returning negative variable "length".
+icu/source/common/uloc.c:1902: return_negative_fn: Returning the return value of "u_terminateChars_44", which might be negative.
+icu/source/i18n/calendar.cpp:239: var_assign: Assigning: signed variable "regionLen" = "uloc_getCountry_44".
+icu/source/i18n/calendar.cpp:249: negative_returns: Using variable "regionLen" as an index to array "region".
+
+Error: NEGATIVE_RETURNS:
+icu/source/i18n/calendar.cpp:244: negative_return_fn: Function "uloc_getCountry_44(fullLoc, region, 3, &status)" returns a negative number.
+icu/source/common/uloc.c:1902: negative_return: Calling "u_terminateChars_44", which might return a negative value.
+icu/source/common/ustring.c:1451: var_tested_neg: Variable "length" is negative.
+icu/source/common/ustring.c:1452: return_negative_variable: Explicitly returning negative variable "length".
+icu/source/common/uloc.c:1902: return_negative_fn: Returning the return value of "u_terminateChars_44", which might be negative.
+icu/source/i18n/calendar.cpp:244: var_assign: Assigning: signed variable "regionLen" = "uloc_getCountry_44".
+icu/source/i18n/calendar.cpp:249: negative_returns: Using variable "regionLen" as an index to array "region".
+
+Error: NEGATIVE_RETURNS:
+icu/source/i18n/calendar.cpp:225: negative_return_fn: Function "uloc_getKeywordValue_44(canonicalName, "calendar", calTypeBuf, 31, &status)" returns a negative number.
+icu/source/common/uloc.c:855: negative_return: Calling "u_terminateChars_44", which might return a negative value.
+icu/source/common/ustring.c:1451: var_tested_neg: Variable "length" is negative.
+icu/source/common/ustring.c:1452: return_negative_variable: Explicitly returning negative variable "length".
+icu/source/common/uloc.c:855: var_assign: Assigning: "result" = "u_terminateChars_44(buffer, bufferCapacity, i, status)", which might be negative.
+icu/source/common/uloc.c:865: return_negative_variable: Explicitly returning negative variable "result".
+icu/source/i18n/calendar.cpp:225: var_assign: Assigning: signed variable "calTypeBufLen" = "uloc_getKeywordValue_44".
+icu/source/i18n/calendar.cpp:227: negative_returns: Using variable "calTypeBufLen" as an index to array "calTypeBuf".
+
+Error: NEGATIVE_RETURNS:
+icu/source/i18n/ucol.cpp:2319: negative_returns: Passing negative constant "-1" to a parameter that cannot be negative.
+icu/source/i18n/ucol.cpp:1770: index: Indexing with parameter "offset".
+icu/source/i18n/ucol.cpp:2364: negative_returns: Passing negative constant "-2" to a parameter that cannot be negative.
+
+Error: NEGATIVE_RETURNS:
+icu/source/i18n/ucol_sit.cpp:581: negative_return_fn: Function "uloc_getCountry_44(locBuff, tempbuff, 512, status)" returns a negative number.
+icu/source/common/uloc.c:1902: negative_return: Calling "u_terminateChars_44", which might return a negative value.
+icu/source/common/ustring.c:1451: var_tested_neg: Variable "length" is negative.
+icu/source/common/ustring.c:1452: return_negative_variable: Explicitly returning negative variable "length".
+icu/source/common/uloc.c:1902: return_negative_fn: Returning the return value of "u_terminateChars_44", which might be negative.
+icu/source/i18n/ucol_sit.cpp:581: var_assign: Assigning: signed variable "elementSize" = "uloc_getCountry_44".
+icu/source/i18n/ucol_sit.cpp:582: negative_returns: "elementSize" is passed to a parameter that cannot be negative.
+icu/source/i18n/ucol_sit.cpp:548: neg_sink_parm_call: Passing "len" to "strncat", which cannot accept a negative.
+
+Error: NEGATIVE_RETURNS:
+icu/source/i18n/ucol_sit.cpp:587: negative_return_fn: Function "uloc_getKeywordValue_44(locBuff, "collation", tempbuff, 512, status)" returns a negative number.
+icu/source/common/uloc.c:855: negative_return: Calling "u_terminateChars_44", which might return a negative value.
+icu/source/common/ustring.c:1451: var_tested_neg: Variable "length" is negative.
+icu/source/common/ustring.c:1452: return_negative_variable: Explicitly returning negative variable "length".
+icu/source/common/uloc.c:855: var_assign: Assigning: "result" = "u_terminateChars_44(buffer, bufferCapacity, i, status)", which might be negative.
+icu/source/common/uloc.c:865: return_negative_variable: Explicitly returning negative variable "result".
+icu/source/i18n/ucol_sit.cpp:587: var_assign: Assigning: signed variable "elementSize" = "uloc_getKeywordValue_44".
+icu/source/i18n/ucol_sit.cpp:588: negative_returns: "elementSize" is passed to a parameter that cannot be negative.
+icu/source/i18n/ucol_sit.cpp:548: neg_sink_parm_call: Passing "len" to "strncat", which cannot accept a negative.
+
+Error: NEGATIVE_RETURNS:
+icu/source/i18n/ucol_elm.cpp:1295: negative_return_fn: Function "source.extract(element->cPoints, 128, status)" returns a negative number.
+icu/source/common/unistr.cpp:754: negative_return: Calling "u_terminateUChars_44", which might return a negative value.
+icu/source/common/ustring.c:1445: var_tested_neg: Variable "length" is negative.
+icu/source/common/ustring.c:1446: return_negative_variable: Explicitly returning negative variable "length".
+icu/source/common/unistr.cpp:754: return_negative_fn: Returning the return value of "u_terminateUChars_44", which might be negative.
+icu/source/i18n/ucol_elm.cpp:1295: var_assign: Assigning: unsigned variable "element->cSize" = "icu_44::UnicodeString::extract(unsigned short *, int, UErrorCode &) const".
+icu/source/i18n/ucol_elm.cpp:1296: negative_returns: "element->cSize" is passed to a parameter that cannot be negative.
+icu/source/i18n/ucol_elm.cpp:1067: parm_loop_bound: Using unsigned parameter "element->cSize" in a loop exit test.
+
+Error: NEGATIVE_RETURNS:
+icu/source/i18n/ucol_elm.cpp:1259: negative_return_fn: Function "unorm_normalize_44(element->prefix, element->prefixSize, UNORM_NFC, 0, composed->prefix, 128, status)" returns a negative number.
+icu/source/common/unorm.cpp:465: negative_return: Calling "unorm2_normalize_44", which might return a negative value.
+icu/source/common/normalizer2.cpp:660: negative_return: Calling "icu_44::UnicodeString::extract(unsigned short *, int, UErrorCode &) const", which might return a negative value.
+icu/source/common/unistr.cpp:754: negative_return: Calling "u_terminateUChars_44", which might return a negative value.
+icu/source/common/ustring.c:1445: var_tested_neg: Variable "length" is negative.
+icu/source/common/ustring.c:1446: return_negative_variable: Explicitly returning negative variable "length".
+icu/source/common/unistr.cpp:754: return_negative_fn: Returning the return value of "u_terminateUChars_44", which might be negative.
+icu/source/common/normalizer2.cpp:660: return_negative_fn: Returning the return value of "icu_44::UnicodeString::extract(unsigned short *, int, UErrorCode &) const", which might be negative.
+icu/source/common/unorm.cpp:465: return_negative_fn: Returning the return value of "unorm2_normalize_44", which might be negative.
+icu/source/i18n/ucol_elm.cpp:1259: var_assign: Assigning: unsigned variable "composed->prefixSize" = "unorm_normalize_44".
+icu/source/i18n/ucol_elm.cpp:1280: negative_returns: "composed->prefixSize" is passed to a parameter that cannot be negative.
+icu/source/i18n/ucol_elm.cpp:845: parm_loop_bound: Using unsigned parameter "element->prefixSize" in a loop exit test.
+
+Error: NEGATIVE_RETURNS:
+icu/source/i18n/ucol_bld.cpp:626: negative_return_fn: Function "unorm_normalize_44(src, len, UNORM_NFKD, 0, n, 128, status)" returns a negative number.
+icu/source/common/unorm.cpp:465: negative_return: Calling "unorm2_normalize_44", which might return a negative value.
+icu/source/common/normalizer2.cpp:660: negative_return: Calling "icu_44::UnicodeString::extract(unsigned short *, int, UErrorCode &) const", which might return a negative value.
+icu/source/common/unistr.cpp:754: negative_return: Calling "u_terminateUChars_44", which might return a negative value.
+icu/source/common/ustring.c:1445: var_tested_neg: Variable "length" is negative.
+icu/source/common/ustring.c:1446: return_negative_variable: Explicitly returning negative variable "length".
+icu/source/common/unistr.cpp:754: return_negative_fn: Returning the return value of "u_terminateUChars_44", which might be negative.
+icu/source/common/normalizer2.cpp:660: return_negative_fn: Returning the return value of "icu_44::UnicodeString::extract(unsigned short *, int, UErrorCode &) const", which might be negative.
+icu/source/common/unorm.cpp:465: return_negative_fn: Returning the return value of "unorm2_normalize_44", which might be negative.
+icu/source/i18n/ucol_bld.cpp:626: var_assign: Assigning: unsigned variable "nLen" = "unorm_normalize_44".
+icu/source/i18n/ucol_bld.cpp:628: negative_returns: Using unsigned variable "nLen" in a loop exit condition.
+
+Error: NEGATIVE_RETURNS:
+icu/source/i18n/ucol_elm.cpp:1730: negative_return_fn: Function "unorm_normalize_44(data, len, UNORM_NFC, 0, comp, 256, status)" returns a negative number.
+icu/source/common/unorm.cpp:465: negative_return: Calling "unorm2_normalize_44", which might return a negative value.
+icu/source/common/normalizer2.cpp:660: negative_return: Calling "icu_44::UnicodeString::extract(unsigned short *, int, UErrorCode &) const", which might return a negative value.
+icu/source/common/unistr.cpp:754: negative_return: Calling "u_terminateUChars_44", which might return a negative value.
+icu/source/common/ustring.c:1445: var_tested_neg: Variable "length" is negative.
+icu/source/common/ustring.c:1446: return_negative_variable: Explicitly returning negative variable "length".
+icu/source/common/unistr.cpp:754: return_negative_fn: Returning the return value of "u_terminateUChars_44", which might be negative.
+icu/source/common/normalizer2.cpp:660: return_negative_fn: Returning the return value of "icu_44::UnicodeString::extract(unsigned short *, int, UErrorCode &) const", which might be negative.
+icu/source/common/unorm.cpp:465: return_negative_fn: Returning the return value of "unorm2_normalize_44", which might be negative.
+icu/source/i18n/ucol_elm.cpp:1730: var_assign: Assigning: signed variable "compLen" = "unorm_normalize_44".
+icu/source/i18n/ucol_elm.cpp:1731: negative_returns: Using variable "compLen" as an index to array "comp".
+
+Error: NEGATIVE_RETURNS:
+icu/source/i18n/ucol_elm.cpp:1729: negative_return_fn: Function "unorm_normalize_44(data, len, UNORM_NFD, 0, decomp, 256, status)" returns a negative number.
+icu/source/common/unorm.cpp:465: negative_return: Calling "unorm2_normalize_44", which might return a negative value.
+icu/source/common/normalizer2.cpp:660: negative_return: Calling "icu_44::UnicodeString::extract(unsigned short *, int, UErrorCode &) const", which might return a negative value.
+icu/source/common/unistr.cpp:754: negative_return: Calling "u_terminateUChars_44", which might return a negative value.
+icu/source/common/ustring.c:1445: var_tested_neg: Variable "length" is negative.
+icu/source/common/ustring.c:1446: return_negative_variable: Explicitly returning negative variable "length".
+icu/source/common/unistr.cpp:754: return_negative_fn: Returning the return value of "u_terminateUChars_44", which might be negative.
+icu/source/common/normalizer2.cpp:660: return_negative_fn: Returning the return value of "icu_44::UnicodeString::extract(unsigned short *, int, UErrorCode &) const", which might be negative.
+icu/source/common/unorm.cpp:465: return_negative_fn: Returning the return value of "unorm2_normalize_44", which might be negative.
+icu/source/i18n/ucol_elm.cpp:1729: var_assign: Assigning: signed variable "decLen" = "unorm_normalize_44".
+icu/source/i18n/ucol_elm.cpp:1731: negative_returns: Using variable "decLen" as an index to array "decomp".
+
+Error: NO_EFFECT:
+icu/source/common/unorm.cpp:295: array_null: Comparing an array to null is not useful: "canonStartSets != NULL".
+
+Error: NO_EFFECT:
+icu/source/i18n/decnumstr.cpp:73: bad_memset: Calling memset with size 0: "memset(this->fText[this->fLength], length - this->fLength, 0UL)" does nothing.
+
+Error: NO_EFFECT:
+icu/source/tools/genrb/derb.c:275: array_null: Comparing an array to null is not useful: "locale".
+
+Error: NO_EFFECT:
+icu/source/tools/genrb/derb.c:348: array_null: Comparing an array to null is not useful: "locale".
+
+Error: NULL_RETURNS:
+icu/source/tools/genuca/genuca.cpp:648: returned_null: Function "strchr" returns null (checked 36 out of 44 times).
+icu/source/common/locid.cpp:581: example_assign: Assigning: "sep2" = return value from "strchr(field[fieldIdx - 1], 46)".
+icu/source/common/locid.cpp:583: example_checked: "sep2" has its value checked in "sep2 != NULL".
+icu/source/i18n/digitlst.cpp:431: example_assign: Assigning: "decimalPt" = return value from "strchr(s.operator char *(), 46)".
+icu/source/i18n/digitlst.cpp:432: example_checked: "decimalPt" has its value checked in "decimalPt != NULL".
+icu/source/common/locid.cpp:423: example_checked: "strchr(newKeywords, 61)" has its value checked in "strchr(newKeywords, 61)".
+icu/source/common/locid.cpp:580: example_assign: Assigning: "separator" = return value from "strchr(field[fieldIdx - 1], 64)".
+icu/source/common/locid.cpp:582: example_checked: "separator" has its value checked in "separator != NULL".
+icu/source/common/locid.cpp:1045: example_assign: Assigning: "variantStart" = return value from "strchr(this->fullName, 64)".
+icu/source/common/locid.cpp:1047: example_checked: "variantStart" has its value checked in "variantStart".
+icu/source/tools/genuca/genuca.cpp:648: var_assigned: Assigning: "pointer" = null return value from "strchr".
+icu/source/tools/genuca/genuca.cpp:649: dereference: Incrementing a pointer which might be null: "pointer".
+
+Error: OVERRUN_DYNAMIC:
+icu/source/tools/genrb/wrtxml.cpp:176: buffer_alloc: Calling allocating function "uprv_malloc_44" which allocated memory dictated by argument "idLen".
+icu/source/common/cmemory.c:45: buffer_alloc: "malloc" allocates memory determined by parameter "s" of the current function.
+icu/source/common/cmemory.c:45: return_dbuffer: Returning allocated array "malloc(s)".
+icu/source/tools/genrb/wrtxml.cpp:176: var_assign: Assigning: "localeID" = "uprv_malloc_44(idLen)".
+icu/source/tools/genrb/wrtxml.cpp:188: symbolic_assign: Tracking "pos" since "idLen" is tracked with "localeID".
+icu/source/tools/genrb/wrtxml.cpp:191: overrun-local: Overrunning dynamic array "localeID" at offset corresponding to index variable "pos".
+
+Error: OVERRUN_STATIC:
+icu/source/common/rbbiscan.cpp:995: overrun-local: Overrunning static array of size 880 bytes at byte position 9768 by accessing with pointer "&this->fRuleSets[tableEl->fCharClass - 128]" through dereference in call to "icu_44::UnicodeSet::contains(int) const". (The dereference happens because this is a virtual function call.)
+icu/source/common/rbbiscan.cpp:995: overrun-local: Note: These bugs are often difficult to see at first glance.  Coverity recommends a close inspection of the events leading to this overrun.
+
+Error: OVERRUN_STATIC:
+icu/source/i18n/decNumber.c:6704: overrun-local: Overrunning static array "d2utable_44", with 50 elements, at position 98 with index variable "digits + shift".
+
+Error: OVERRUN_STATIC:
+icu/source/i18n/dtitvfmt.cpp:999: ptr_assign: Pointer "ptn" is assigned the address of a static array pointer "&this->fIntervalPatterns[itvPtnIndex]" of size 728 bytes and offset 728 bytes.
+icu/source/i18n/dtitvfmt.cpp:1001: overrun-local: Overrunning static array of size 728 bytes at byte position 728 by accessing with pointer "ptn".
+icu/source/i18n/dtitvfmt.cpp:1001: overrun-local: Note: These bugs are often difficult to see at first glance.  Coverity recommends a close inspection of the events leading to this overrun.
+
+Error: OVERRUN_STATIC:
+icu/source/i18n/dtitvfmt.cpp:1393: ptr_assign: Pointer "timeItvPtnInfo" is assigned the address of a static array pointer "&this->fIntervalPatterns[itvPtnIndex]" of size 728 bytes and offset 728 bytes.
+icu/source/i18n/dtitvfmt.cpp:1394: overrun-local: Overrunning static array of size 728 bytes at byte position 728 by accessing with pointer "timeItvPtnInfo".
+icu/source/i18n/dtitvfmt.cpp:1394: overrun-local: Note: These bugs are often difficult to see at first glance.  Coverity recommends a close inspection of the events leading to this overrun.
+
+Error: OVERRUN_STATIC:
+icu/source/i18n/regexcmp.cpp:204: overrun-local: Overrunning static array of size 880 bytes at byte position 9768 by accessing with pointer "&icu_44::RegexStaticSets::gStaticSets->fRuleSets[tableEl->fCharClass - 128]" through dereference in call to "icu_44::UnicodeSet::contains(int) const". (The dereference happens because this is a virtual function call.)
+icu/source/i18n/regexcmp.cpp:204: overrun-local: Note: These bugs are often difficult to see at first glance.  Coverity recommends a close inspection of the events leading to this overrun.
+
+Error: RESOURCE_LEAK:
+icu/source/common/icuplug.c:747: alloc_fn: Calling allocation function "fopen".
+icu/source/common/icuplug.c:747: var_assign: Assigning: "f" =  storage returned from "fopen(plugin_file, "r")".
+icu/source/common/icuplug.c:755: noescape: Variable "f" is not freed or pointed-to in function "fgets".
+icu/source/common/icuplug.c:755: noescape: Variable "f" is not freed or pointed-to in function "fgets".
+icu/source/common/icuplug.c:755: noescape: Variable "f" is not freed or pointed-to in function "fgets".
+icu/source/common/icuplug.c:755: noescape: Variable "f" is not freed or pointed-to in function "fgets".
+icu/source/common/icuplug.c:821: leaked_storage: Variable "f" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+icu/source/common/locutil.cpp:200: alloc_fn: Calling allocation function "icu_44::UMemory::operator new(unsigned long)".
+icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_44".
+icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_44".
+icu/source/common/locutil.cpp:200: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_44::Hashtable::Hashtable(UErrorCode &)".
+icu/source/common/hash.h:130:19: noescape: "icu_44::Hashtable::Hashtable(UErrorCode &)" does not free or save its pointer parameter "this".
+icu/source/common/locutil.cpp:200: var_assign: Assigning: "cache" =  storage returned from "new icu_44::Hashtable(status)".
+icu/source/common/locutil.cpp:202: leaked_storage: Variable "cache" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+icu/source/common/rbbisetb.cpp:360: alloc_fn: Calling allocation function "icu_44::UMemory::operator new(unsigned long)".
+icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_44".
+icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_44".
+icu/source/common/rbbisetb.cpp:360: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_44::RBBINode::RBBINode(icu_44::RBBINode::NodeType)".
+icu/source/common/rbbinode.cpp:46:11: noescape: "icu_44::RBBINode::RBBINode(icu_44::RBBINode::NodeType)" does not free or save its pointer parameter "this".
+icu/source/common/rbbisetb.cpp:360: var_assign: Assigning: "leafNode" =  storage returned from "new icu_44::RBBINode(_ZN6icu_448RBBINode8leafCharE)".
+icu/source/common/rbbisetb.cpp:376: leaked_storage: Variable "leafNode" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+icu/source/common/rbbirb.cpp:294: alloc_fn: Calling allocation function "icu_44::RBBIRuleBuilder::flattenData()".
+icu/source/common/rbbirb.cpp:169: alloc_fn: Storage is returned from allocation function "uprv_malloc_44".
+icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+icu/source/common/rbbirb.cpp:169: var_assign: Assigning: "data" = "uprv_malloc_44(totalSize)".
+icu/source/common/rbbirb.cpp:174: noescape: Variable "data" is not freed or pointed-to in function "memset".
+icu/source/common/rbbirb.cpp:209: var_assign: Assigning: "ruleStatusTable" = "data".
+icu/source/common/rbbirb.cpp:216: return_alloc: Returning allocated memory "data".
+icu/source/common/rbbirb.cpp:294: var_assign: Assigning: "data" =  storage returned from "builder.flattenData()".
+icu/source/common/rbbirb.cpp:296: leaked_storage: Variable "data" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+icu/source/common/serv.cpp:530: alloc_fn: Calling allocation function "icu_44::UMemory::operator new(unsigned long)".
+icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_44".
+icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_44".
+icu/source/common/serv.cpp:530: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_44::UnicodeString::UnicodeString(icu_44::UnicodeString const &)".
+icu/source/common/unistr.cpp:324:16: noescape: "icu_44::UnicodeString::UnicodeString(icu_44::UnicodeString const &)" does not free or save its pointer parameter "this".
+icu/source/common/serv.cpp:530: var_assign: Assigning: "idToCache" =  storage returned from "new icu_44::UnicodeString(currentDescriptor)".
+icu/source/common/serv.cpp:531: noescape: Variable "idToCache" is not freed or pointed-to in function "icu_44::UnicodeString::isBogus() const".
+icu/source/common/unicode/unistr.h:3498:16: noescape: "icu_44::UnicodeString::isBogus() const" does not free or save its pointer parameter "this".
+icu/source/common/serv.cpp:533: leaked_storage: Variable "idToCache" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+icu/source/common/uloc.c:2269: alloc_fn: Calling allocation function "uprv_realloc_44".
+icu/source/common/cmemory.c:55: alloc_fn: Storage is returned from allocation function "uprv_malloc_44".
+icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+icu/source/common/cmemory.c:55: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_44".
+icu/source/common/uloc.c:2269: var_assign: Assigning: "j" =  storage returned from "uprv_realloc_44(j, sizeof (j[0]) /*16*/ * jSize * 2UL)".
+icu/source/common/uloc.c:2243: leaked_storage: Variable "j" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+icu/source/common/ushape.c:797: alloc_fn: Calling allocation function "uprv_malloc_44".
+icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+icu/source/common/ushape.c:797: var_assign: Assigning: "tempbuffer" =  storage returned from "uprv_malloc_44((sourceLength + 1) * 2)".
+icu/source/common/ushape.c:805: noescape: Variable "tempbuffer" is not freed or pointed-to in function "memset".
+icu/source/common/ushape.c:823: noescape: Variable "tempbuffer" is not freed or pointed-to in function "memcpy".
+icu/source/common/ushape.c:844: overwrite_var: Overwriting "tempbuffer" in call "tempbuffer = (UChar *)uprv_malloc_44((sourceLength + 1) * 2)" leaks the storage that "tempbuffer" points to.
+
+Error: RESOURCE_LEAK:
+icu/source/i18n/nfrule.cpp:101: alloc_fn: Calling allocation function "icu_44::UMemory::operator new(unsigned long)".
+icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_44".
+icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_44".
+icu/source/i18n/nfrule.cpp:101: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_44::NFRule::NFRule(icu_44::RuleBasedNumberFormat const *)".
+icu/source/i18n/nfrule.cpp:32:9: noescape: "icu_44::NFRule::NFRule(icu_44::RuleBasedNumberFormat const *)" does not free or save its pointer parameter "this".
+icu/source/i18n/nfrule.cpp:101: var_assign: Assigning: "rule1" =  storage returned from "new icu_44::NFRule(rbnf)".
+icu/source/i18n/nfrule.cpp:107: noescape: Variable "rule1" is not freed or pointed-to in function "icu_44::NFRule::parseRuleDescriptor(icu_44::UnicodeString &, UErrorCode &)".
+icu/source/i18n/nfrule.cpp:222:9: noescape: "icu_44::NFRule::parseRuleDescriptor(icu_44::UnicodeString &, UErrorCode &)" does not free or save its pointer parameter "this".
+icu/source/i18n/nfrule.cpp:118: noescape: Variable "rule1" is not freed or pointed-to in function "icu_44::NFRule::getType() const".
+icu/source/i18n/nfrule.h:56:15: noescape: "icu_44::NFRule::getType() const" does not free or save its pointer parameter "this".
+icu/source/i18n/nfrule.cpp:118: noescape: Variable "rule1" is not freed or pointed-to in function "icu_44::NFRule::getType() const".
+icu/source/i18n/nfrule.cpp:133: noescape: Variable "rule1" is not freed or pointed-to in function "icu_44::NFRule::getType() const".
+icu/source/i18n/nfrule.cpp:147: leaked_storage: Variable "rule1" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+icu/source/i18n/rbt_pars.cpp:547: alloc_fn: Calling allocation function "icu_44::TransliteratorIDParser::parseFilterID(icu_44::UnicodeString const &, int &)".
+icu/source/i18n/tridpars.cpp:224: alloc_fn: Storage is returned from allocation function "icu_44::TransliteratorIDParser::specsToID(icu_44::TransliteratorIDParser::Specs const *, int)".
+icu/source/i18n/tridpars.cpp:839: alloc_fn: Storage is returned from allocation function "icu_44::UMemory::operator new(unsigned long)".
+icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_44".
+icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_44".
+icu/source/i18n/tridpars.cpp:839: var_assign: Assigning: "<storage from new>" = "icu_44::UMemory::operator new(152UL)".
+icu/source/i18n/tridpars.cpp:839: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_44::TransliteratorIDParser::SingleID::SingleID(icu_44::UnicodeString const &, icu_44::UnicodeString const &)".
+icu/source/i18n/tridpars.cpp:67:35: noescape: "icu_44::TransliteratorIDParser::SingleID::SingleID(icu_44::UnicodeString const &, icu_44::UnicodeString const &)" does not free or save its pointer parameter "this".
+icu/source/i18n/tridpars.cpp:839: return_alloc: Returning allocated memory "new icu_44::TransliteratorIDParser::SingleID(canonID, basicID)".
+icu/source/i18n/tridpars.cpp:224: var_assign: Assigning: "single" = "icu_44::TransliteratorIDParser::specsToID(specs, 0)".
+icu/source/i18n/tridpars.cpp:229: return_alloc: Returning allocated memory "single".
+icu/source/i18n/rbt_pars.cpp:547: var_assign: Assigning: "single" =  storage returned from "icu_44::TransliteratorIDParser::parseFilterID(rule, iref)".
+icu/source/i18n/rbt_pars.cpp:552: leaked_storage: Variable "single" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+icu/source/i18n/tridpars.cpp:131: alloc_fn: Calling allocation function "icu_44::TransliteratorIDParser::parseFilterID(icu_44::UnicodeString const &, int &, signed char)".
+icu/source/i18n/tridpars.cpp:801: alloc_fn: Storage is returned from allocation function "icu_44::UMemory::operator new(unsigned long)".
+icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_44".
+icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_44".
+icu/source/i18n/tridpars.cpp:801: var_assign: Assigning: "<storage from new>" = "icu_44::UMemory::operator new(208UL)".
+icu/source/i18n/tridpars.cpp:801: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_44::TransliteratorIDParser::Specs::Specs(icu_44::UnicodeString const &, icu_44::UnicodeString const &, icu_44::UnicodeString const &, signed char, icu_44::UnicodeString const &)".
+icu/source/i18n/tridpars.cpp:50:32: noescape: "icu_44::TransliteratorIDParser::Specs::Specs(icu_44::UnicodeString const &, icu_44::UnicodeString const &, icu_44::UnicodeString const &, signed char, icu_44::UnicodeString const &)" does not free or save its pointer parameter "this".
+icu/source/i18n/tridpars.cpp:801: return_alloc: Returning allocated memory "new icu_44::TransliteratorIDParser::Specs(source, target, variant, sawSource, filter)".
+icu/source/i18n/tridpars.cpp:131: var_assign: Assigning: "specsB" =  storage returned from "icu_44::TransliteratorIDParser::parseFilterID(id, pos, 1)".
+icu/source/i18n/tridpars.cpp:136: leaked_storage: Variable "specsB" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+icu/source/i18n/tridpars.cpp:122: alloc_fn: Calling allocation function "icu_44::TransliteratorIDParser::parseFilterID(icu_44::UnicodeString const &, int &, signed char)".
+icu/source/i18n/tridpars.cpp:801: alloc_fn: Storage is returned from allocation function "icu_44::UMemory::operator new(unsigned long)".
+icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_44".
+icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_44".
+icu/source/i18n/tridpars.cpp:801: var_assign: Assigning: "<storage from new>" = "icu_44::UMemory::operator new(208UL)".
+icu/source/i18n/tridpars.cpp:801: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_44::TransliteratorIDParser::Specs::Specs(icu_44::UnicodeString const &, icu_44::UnicodeString const &, icu_44::UnicodeString const &, signed char, icu_44::UnicodeString const &)".
+icu/source/i18n/tridpars.cpp:50:32: noescape: "icu_44::TransliteratorIDParser::Specs::Specs(icu_44::UnicodeString const &, icu_44::UnicodeString const &, icu_44::UnicodeString const &, signed char, icu_44::UnicodeString const &)" does not free or save its pointer parameter "this".
+icu/source/i18n/tridpars.cpp:801: return_alloc: Returning allocated memory "new icu_44::TransliteratorIDParser::Specs(source, target, variant, sawSource, filter)".
+icu/source/i18n/tridpars.cpp:122: var_assign: Assigning: "specsA" =  storage returned from "icu_44::TransliteratorIDParser::parseFilterID(id, pos, 1)".
+icu/source/i18n/tridpars.cpp:148: noescape: Variable "specsA" is not freed or pointed-to in function "icu_44::TransliteratorIDParser::specsToID(icu_44::TransliteratorIDParser::Specs const *, int)".
+icu/source/i18n/tridpars.cpp:812:48: noescape: "icu_44::TransliteratorIDParser::specsToID(icu_44::TransliteratorIDParser::Specs const *, int)" does not free or save its pointer parameter "specs".
+icu/source/i18n/tridpars.cpp:154: leaked_storage: Variable "specsA" going out of scope leaks the storage it points to.
+icu/source/i18n/tridpars.cpp:163: noescape: Variable "specsA" is not freed or pointed-to in function "icu_44::TransliteratorIDParser::specsToID(icu_44::TransliteratorIDParser::Specs const *, int)".
+icu/source/i18n/tridpars.cpp:170: leaked_storage: Variable "specsA" going out of scope leaks the storage it points to.
+icu/source/i18n/tridpars.cpp:182: noescape: Variable "specsA" is not freed or pointed-to in function "icu_44::TransliteratorIDParser::specsToID(icu_44::TransliteratorIDParser::Specs const *, int)".
+icu/source/i18n/tridpars.cpp:184: noescape: Variable "specsA" is not freed or pointed-to in function "icu_44::TransliteratorIDParser::specsToSpecialInverse(icu_44::TransliteratorIDParser::Specs const &, UErrorCode &)".
+icu/source/i18n/tridpars.cpp:850:60: noescape: "icu_44::TransliteratorIDParser::specsToSpecialInverse(icu_44::TransliteratorIDParser::Specs const &, UErrorCode &)" does not free or save its pointer parameter "specs".
+icu/source/i18n/tridpars.cpp:186: noescape: Variable "specsA" is not freed or pointed-to in function "icu_44::TransliteratorIDParser::specsToID(icu_44::TransliteratorIDParser::Specs const *, int)".
+icu/source/i18n/tridpars.cpp:192: leaked_storage: Variable "specsA" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+icu/source/i18n/basictz.cpp:340: alloc_fn: Calling allocation function "icu_44::UMemory::operator new(unsigned long)".
+icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_44".
+icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_44".
+icu/source/i18n/basictz.cpp:340: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_44::UVector::UVector(UErrorCode &)".
+icu/source/common/uvector.cpp:29:10: noescape: "icu_44::UVector::UVector(UErrorCode &)" does not free or save its pointer parameter "this".
+icu/source/i18n/basictz.cpp:340: var_assign: Assigning: "filteredRules" =  storage returned from "new icu_44::UVector(status)".
+icu/source/i18n/basictz.cpp:520: leaked_storage: Variable "filteredRules" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+icu/source/i18n/basictz.cpp:347: alloc_fn: Calling allocation function "icu_44::UMemory::operator new(unsigned long)".
+icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_44".
+icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_44".
+icu/source/i18n/basictz.cpp:347: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_44::InitialTimeZoneRule::InitialTimeZoneRule(icu_44::UnicodeString const &, int, int)".
+icu/source/i18n/tzrule.cpp:93:22: noescape: "icu_44::InitialTimeZoneRule::InitialTimeZoneRule(icu_44::UnicodeString const &, int, int)" does not free or save its pointer parameter "this".
+icu/source/i18n/basictz.cpp:347: var_assign: Assigning: "res_initial" =  storage returned from "new icu_44::InitialTimeZoneRule(name, tzt.getTo()->getRawOffset(), tzt.getTo()->getDSTSavings())".
+icu/source/i18n/basictz.cpp:353: noescape: Variable "res_initial" is not freed or pointed-to in function "icu_44::TimeZoneRule::getRawOffset() const".
+icu/source/i18n/tzrule.cpp:73:15: noescape: "icu_44::TimeZoneRule::getRawOffset() const" does not free or save its pointer parameter "this".
+icu/source/i18n/basictz.cpp:353: noescape: Variable "res_initial" is not freed or pointed-to in function "icu_44::TimeZoneRule::getDSTSavings() const".
+icu/source/i18n/tzrule.cpp:78:15: noescape: "icu_44::TimeZoneRule::getDSTSavings() const" does not free or save its pointer parameter "this".
+icu/source/i18n/basictz.cpp:520: leaked_storage: Variable "res_initial" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+icu/source/i18n/ucol.cpp:3400: alloc_fn: Calling allocation function "uprv_malloc_44".
+icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+icu/source/i18n/ucol.cpp:3400: var_assign: Assigning: "strbuffer" =  storage returned from "uprv_malloc_44(sizeof (UChar) /*2*/ * (newsize + 128))".
+icu/source/i18n/ucol.cpp:3407: var_assign: Assigning: "UCharOffset" = "strbuffer".
+icu/source/i18n/ucol.cpp:3408: noescape: Variable "UCharOffset" is not freed or pointed-to in function "memcpy".
+icu/source/i18n/ucol.cpp:3400: overwrite_var: Overwriting "strbuffer" in call "strbuffer = (UChar *)uprv_malloc_44(sizeof (UChar) /*2*/ * (newsize + 128))" leaks the storage that "strbuffer" points to.
+icu/source/i18n/ucol.cpp:3407: overwrite_var: Overwriting "UCharOffset" in call "UCharOffset = strbuffer + newsize" leaks the storage that "UCharOffset" points to.
+
+Error: RESOURCE_LEAK:
+icu/source/i18n/ucol.cpp:3400: alloc_fn: Calling allocation function "uprv_malloc_44".
+icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+icu/source/i18n/ucol.cpp:3400: var_assign: Assigning: "strbuffer" =  storage returned from "uprv_malloc_44(sizeof (UChar) /*2*/ * (newsize + 128))".
+icu/source/i18n/ucol.cpp:3407: var_assign: Assigning: "UCharOffset" = "strbuffer".
+icu/source/i18n/ucol.cpp:3408: noescape: Variable "UCharOffset" is not freed or pointed-to in function "memcpy".
+icu/source/i18n/ucol.cpp:3400: overwrite_var: Overwriting "strbuffer" in call "strbuffer = (UChar *)uprv_malloc_44(sizeof (UChar) /*2*/ * (newsize + 128))" leaks the storage that "strbuffer" points to.
+icu/source/i18n/ucol.cpp:3405: leaked_storage: Variable "UCharOffset" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+icu/source/i18n/colldata.cpp:331: alloc_fn: Calling allocation function "icu_44::UMemory::operator new(unsigned long)".
+icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_44".
+icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_44".
+icu/source/i18n/colldata.cpp:331: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_44::StringList::StringList(UErrorCode &)".
+icu/source/i18n/colldata.cpp:200:13: noescape: "icu_44::StringList::StringList(UErrorCode &)" does not free or save its pointer parameter "this".
+icu/source/i18n/colldata.cpp:331: var_assign: Assigning: "strings" =  storage returned from "new icu_44::StringList(status)".
+icu/source/i18n/colldata.cpp:335: leaked_storage: Variable "strings" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+icu/source/i18n/ucol_elm.cpp:1249: alloc_fn: Calling allocation function "uprv_malloc_44".
+icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+icu/source/i18n/ucol_elm.cpp:1249: var_assign: Assigning: "composed" =  storage returned from "uprv_malloc_44(sizeof (UCAElements) /*2600*/)".
+icu/source/i18n/ucol_elm.cpp:1255: noescape: Variable "composed" is not freed or pointed-to in function "memcpy".
+icu/source/i18n/ucol_elm.cpp:1272: leaked_storage: Variable "composed" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+icu/source/i18n/ucol_elm.cpp:231: alloc_fn: Calling allocation function "uprv_malloc_44".
+icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+icu/source/i18n/ucol_elm.cpp:231: var_assign: Assigning: "r" =  storage returned from "uprv_malloc_44(sizeof (tempUCATable) /*96*/)".
+icu/source/i18n/ucol_elm.cpp:237: noescape: Variable "r" is not freed or pointed-to in function "memset".
+icu/source/i18n/ucol_elm.cpp:377: leaked_storage: Variable "r" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+icu/source/i18n/dtptngen.cpp:1269: alloc_fn: Calling allocation function "icu_44::UMemory::operator new(unsigned long)".
+icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_44".
+icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_44".
+icu/source/i18n/dtptngen.cpp:1269: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_44::PtnElem::PtnElem(icu_44::UnicodeString const &, icu_44::UnicodeString const &)".
+icu/source/i18n/dtptngen.cpp:1986:10: noescape: "icu_44::PtnElem::PtnElem(icu_44::UnicodeString const &, icu_44::UnicodeString const &)" does not free or save its pointer parameter "this".
+icu/source/i18n/dtptngen.cpp:1269: var_assign: Assigning: "curElem" =  storage returned from "new icu_44::PtnElem(otherElem->basePattern, otherElem->pattern)".
+icu/source/i18n/dtptngen.cpp:1280: leaked_storage: Variable "curElem" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+icu/source/i18n/gregocal.cpp:1330: alloc_fn: Calling allocation function "icu_44::UMemory::operator new(unsigned long)".
+icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_44".
+icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_44".
+icu/source/i18n/gregocal.cpp:1330: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_44::GregorianCalendar::GregorianCalendar(UErrorCode &)".
+icu/source/i18n/gregocal.cpp:152:20: noescape: "icu_44::GregorianCalendar::GregorianCalendar(UErrorCode &)" does not free or save its pointer parameter "this".
+icu/source/i18n/gregocal.cpp:1330: var_assign: Assigning: "calendar" =  storage returned from "new icu_44::GregorianCalendar(status)".
+icu/source/i18n/gregocal.cpp:1349: leaked_storage: Variable "calendar" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+icu/source/i18n/olsontz.cpp:820: alloc_fn: Calling allocation function "icu_44::UMemory::operator new(unsigned long)".
+icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_44".
+icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_44".
+icu/source/i18n/olsontz.cpp:820: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_44::TimeArrayTimeZoneRule::TimeArrayTimeZoneRule(icu_44::UnicodeString const &, int, int, double const *, int, icu_44::DateTimeRule::TimeRuleType)".
+icu/source/i18n/tzrule.cpp:400:24: noescape: "icu_44::TimeArrayTimeZoneRule::TimeArrayTimeZoneRule(icu_44::UnicodeString const &, int, int, double const *, int, icu_44::DateTimeRule::TimeRuleType)" does not free or save its pointer parameter "this".
+icu/source/i18n/olsontz.cpp:820: var_assign: Assigning: "firstFinalRule" =  storage returned from "new icu_44::TimeArrayTimeZoneRule(tzid, this->finalZone->getRawOffset(), 0, &startTime, 1, _ZN6icu_4412DateTimeRule8UTC_TIMEE)".
+icu/source/i18n/olsontz.cpp:842: leaked_storage: Variable "firstFinalRule" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+icu/source/i18n/olsontz.cpp:718: alloc_fn: Calling allocation function "uprv_malloc_44".
+icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+icu/source/i18n/olsontz.cpp:718: var_assign: Assigning: "times" =  storage returned from "uprv_malloc_44(sizeof (UDate) /*8*/ * transCount)".
+icu/source/i18n/olsontz.cpp:754: noescape: Variable "times" is not freed or pointed-to in function "icu_44::TimeArrayTimeZoneRule::TimeArrayTimeZoneRule(icu_44::UnicodeString const &, int, int, double const *, int, icu_44::DateTimeRule::TimeRuleType)".
+icu/source/i18n/tzrule.cpp:403:59: noescape: "icu_44::TimeArrayTimeZoneRule::TimeArrayTimeZoneRule(icu_44::UnicodeString const &, int, int, double const *, int, icu_44::DateTimeRule::TimeRuleType)" does not free or save its pointer parameter "startTimes".
+icu/source/i18n/olsontz.cpp:760: leaked_storage: Variable "times" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+icu/source/i18n/plurrule.cpp:225: alloc_fn: Calling allocation function "icu_44::PluralRules::getKeywords(UErrorCode &) const".
+icu/source/i18n/plurrule.cpp:188: alloc_fn: Storage is returned from allocation function "icu_44::UMemory::operator new(unsigned long)".
+icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_44".
+icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_44".
+icu/source/i18n/plurrule.cpp:188: var_assign: Assigning: "<storage from new>" = "icu_44::UMemory::operator new(144UL)".
+icu/source/i18n/plurrule.cpp:188: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_44::PluralKeywordEnumeration::PluralKeywordEnumeration(icu_44::RuleChain *, UErrorCode &)".
+icu/source/i18n/plurrule.cpp:1151:27: noescape: "icu_44::PluralKeywordEnumeration::PluralKeywordEnumeration(icu_44::RuleChain *, UErrorCode &)" does not free or save its pointer parameter "this".
+icu/source/i18n/plurrule.cpp:188: var_assign: Assigning: "nameEnumerator" = "new icu_44::PluralKeywordEnumeration(this->mRules, status)".
+icu/source/i18n/plurrule.cpp:191: return_alloc: Returning allocated memory "nameEnumerator".
+icu/source/i18n/plurrule.cpp:225: var_assign: Assigning: "myKeywordList" =  storage returned from "this->getKeywords(status)".
+icu/source/i18n/plurrule.cpp:231: leaked_storage: Variable "myKeywordList" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+icu/source/i18n/rbtz.cpp:644: alloc_fn: Calling allocation function "icu_44::UMemory::operator new(unsigned long)".
+icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_44".
+icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_44".
+icu/source/i18n/rbtz.cpp:644: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_44::UVector::UVector(int, UErrorCode &)".
+icu/source/common/uvector.cpp:39:10: noescape: "icu_44::UVector::UVector(int, UErrorCode &)" does not free or save its pointer parameter "this".
+icu/source/i18n/rbtz.cpp:644: var_assign: Assigning: "rules" =  storage returned from "new icu_44::UVector(size, ec)".
+icu/source/i18n/rbtz.cpp:646: leaked_storage: Variable "rules" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+icu/source/i18n/timezone.cpp:1085: alloc_fn: Calling allocation function "icu_44::UMemory::operator new(unsigned long)".
+icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_44".
+icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_44".
+icu/source/i18n/timezone.cpp:1085: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_44::SimpleTimeZone::SimpleTimeZone(int, icu_44::UnicodeString const &, signed char, signed char, signed char, int, signed char, signed char, signed char, int, int, UErrorCode &)".
+icu/source/i18n/simpletz.cpp:102:17: noescape: "icu_44::SimpleTimeZone::SimpleTimeZone(int, icu_44::UnicodeString const &, signed char, signed char, signed char, int, signed char, signed char, signed char, int, int, UErrorCode &)" does not free or save its pointer parameter "this".
+icu/source/i18n/timezone.cpp:1085: var_assign: Assigning: "tz" =  storage returned from "new icu_44::SimpleTimeZone(rawOffset, tempID, 5, 1, 0, 0, 7, 1, 0, 0, this->getDSTSavings(), status)".
+icu/source/i18n/timezone.cpp:1093: leaked_storage: Variable "tz" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+icu/source/i18n/tmutfmt.cpp:474: alloc_fn: Calling allocation function "icu_44::TimeUnitFormat::initHash(UErrorCode &)".
+icu/source/i18n/tmutfmt.cpp:821: alloc_fn: Storage is returned from allocation function "icu_44::UMemory::operator new(unsigned long)".
+icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_44".
+icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_44".
+icu/source/i18n/tmutfmt.cpp:821: var_assign: Assigning: "<storage from new>" = "icu_44::UMemory::operator new(88UL)".
+icu/source/i18n/tmutfmt.cpp:821: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_44::Hashtable::Hashtable(signed char, UErrorCode &)".
+icu/source/common/hash.h:119:19: noescape: "icu_44::Hashtable::Hashtable(signed char, UErrorCode &)" does not free or save its pointer parameter "this".
+icu/source/i18n/tmutfmt.cpp:821: var_assign: Assigning: "hTable" = "new icu_44::Hashtable(1, status)".
+icu/source/i18n/tmutfmt.cpp:825: noescape: Variable "hTable" is not freed or pointed-to in function "icu_44::Hashtable::setValueComparator(signed char (*)(UHashTok, UHashTok))".
+icu/source/common/hash.h:197:37: noescape: "icu_44::Hashtable::setValueComparator(signed char (*)(UHashTok, UHashTok))" does not free or save its pointer parameter "this".
+icu/source/i18n/tmutfmt.cpp:826: return_alloc: Returning allocated memory "hTable".
+icu/source/i18n/tmutfmt.cpp:474: var_assign: Assigning: "countToPatterns" =  storage returned from "this->initHash(err)".
+icu/source/i18n/tmutfmt.cpp:498: noescape: Variable "countToPatterns" is not freed or pointed-to in function "icu_44::Hashtable::get(icu_44::UnicodeString const &) const".
+icu/source/common/hash.h:165:25: noescape: "icu_44::Hashtable::get(icu_44::UnicodeString const &) const" does not free or save its pointer parameter "this".
+icu/source/i18n/tmutfmt.cpp:504: noescape: Variable "countToPatterns" is not freed or pointed-to in function "icu_44::Hashtable::put(icu_44::UnicodeString const &, void *, UErrorCode &)".
+icu/source/common/hash.h:157:25: noescape: "icu_44::Hashtable::put(icu_44::UnicodeString const &, void *, UErrorCode &)" does not free or save its pointer parameter "this".
+icu/source/i18n/tmutfmt.cpp:528: leaked_storage: Variable "countToPatterns" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+icu/source/i18n/vtzone.cpp:1711: alloc_fn: Calling allocation function "icu_44::UMemory::operator new(unsigned long)".
+icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_44".
+icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_44".
+icu/source/i18n/vtzone.cpp:1711: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_44::UVector::UVector(void (*)(void *), signed char (*)(UHashTok, UHashTok), UErrorCode &)".
+icu/source/common/uvector.cpp:49:10: noescape: "icu_44::UVector::UVector(void (*)(void *), signed char (*)(UHashTok, UHashTok), UErrorCode &)" does not free or save its pointer parameter "this".
+icu/source/i18n/vtzone.cpp:1711: var_assign: Assigning: "customProps" =  storage returned from "new icu_44::UVector(uhash_deleteUnicodeString_44, uhash_compareUnicodeString_44, status)".
+icu/source/i18n/vtzone.cpp:1713: leaked_storage: Variable "customProps" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+icu/source/tools/gencnval/gencnval.c:968: alloc_fn: Calling allocation function "uprv_malloc_44".
+icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+icu/source/tools/gencnval/gencnval.c:968: var_assign: Assigning: "uniqueAliasesToConverter" =  storage returned from "uprv_malloc_44(knownAliasesCount * sizeof (uint16_t) /*2*/)".
+icu/source/tools/gencnval/gencnval.c:971: noescape: Variable "uniqueAliasesToConverter" is not freed or pointed-to in function "resolveAliases".
+icu/source/tools/gencnval/gencnval.c:832:52: noescape: "resolveAliases" does not free or save its pointer parameter "uniqueAliasToConverterArr".
+icu/source/tools/gencnval/gencnval.c:1024: noescape: Variable "uniqueAliasesToConverter" is not freed or pointed-to in function "udata_writeBlock".
+icu/source/tools/toolutil/unewdata.c:215:53: noescape: "udata_writeBlock" does not free or save its pointer parameter "s".
+icu/source/tools/gencnval/gencnval.c:1059: leaked_storage: Variable "uniqueAliasesToConverter" going out of scope leaks the storage it points to.
+
+Error: REVERSE_INULL:
+icu/source/common/uniset_props.cpp:195: deref_ptr_in_call: Dereferencing pointer "incl".
+icu/source/common/uniset.cpp:1576: deref_parm: Directly dereferencing parameter "this".
+icu/source/common/uniset_props.cpp:196: check_after_deref: Dereferencing "incl" before a null check.
+
+Error: REVERSE_INULL:
+icu/source/common/uloc_tag.c:1633: deref_ptr_in_call: Dereferencing pointer "t".
+icu/source/common/uloc_tag.c:530: deref_parm: Directly dereferencing parameter "langtag".
+icu/source/common/uloc_tag.c:1635: check_after_deref: Dereferencing "t" before a null check.
+
+Error: REVERSE_INULL:
+icu/source/tools/genuca/genuca.cpp:345: deref_ptr_in_call: Dereferencing pointer "result". (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)
+icu/source/tools/genuca/genuca.cpp:346: check_after_deref: Dereferencing "result" before a null check.
+
+Error: SIZECHECK:
+icu/source/layout/LEInsertionList.cpp:60: buffer_alloc: "uprv_malloc_44((sizeof (struct icu_44::InsertionRecord) /*24*/ + (count - 1) * sizeof (LEGlyphID) /*4*/) * sizeof (char) /*1*/)" allocates memory.
+icu/source/common/cmemory.c:45: buffer_alloc: "malloc" allocates memory determined by parameter "s" of the current function.
+icu/source/common/cmemory.c:45: return_dbuffer: Returning allocated array "malloc(s)".
+icu/source/layout/LEInsertionList.cpp:60: incorrect_multiplication: Allocating a multiple of 1 bytes to pointer "insertion", which needs 24 bytes.
+
+Error: SIZEOF_MISMATCH:
+icu/source/i18n/zstrfmt.cpp:1695: suspicious_sizeof: Passing argument "sizeof (UChar const **) /*8*/ * genericColCount" to function "uprv_malloc_44" and then casting the return value to "UChar const **" is suspicious.  Did you intend to use "sizeof(UChar const *)" instead of "sizeof (UChar const **)" ?  In this particular case sizeof(UChar const **) happens to be equal to sizeof(UChar const *), but this is not a portable assumption.
+
+Error: SIZEOF_MISMATCH:
+icu/source/i18n/zstrfmt.cpp:1677: suspicious_sizeof: Passing argument "sizeof (UChar const **) /*8*/ * stringsCount" to function "uprv_malloc_44" and then casting the return value to "UChar const **" is suspicious.  Did you intend to use "sizeof(UChar const *)" instead of "sizeof (UChar const **)" ?  In this particular case sizeof(UChar const **) happens to be equal to sizeof(UChar const *), but this is not a portable assumption.
+
+Error: SIZEOF_MISMATCH:
+icu/source/i18n/zstrfmt.cpp:1688: suspicious_sizeof: Passing argument "sizeof (UChar const ***) /*8*/ * genericRowCount" to function "uprv_malloc_44" and then casting the return value to "UChar const ***" is suspicious.  Did you intend to use "sizeof(UChar const **)" instead of "sizeof (UChar const ***)" ?  In this particular case sizeof(UChar const ***) happens to be equal to sizeof(UChar const **), but this is not a portable assumption.
+
+Error: SIZEOF_MISMATCH:
+icu/source/tools/genrb/reslist.c:1677: suspicious_sizeof: Passing argument "count * sizeof (struct SResource **) /*8*/" to function "uprv_malloc_44" and then casting the return value to "struct SResource **" is suspicious.  Did you intend to use "sizeof(struct SResource *)" instead of "sizeof (struct SResource **)" ?  In this particular case sizeof(struct SResource **) happens to be equal to sizeof(struct SResource *), but this is not a portable assumption.
+
+Error: SIZEOF_MISMATCH:
+icu/source/tools/genrb/reslist.c:1694: suspicious_sizeof: Passing argument "array" of type "struct SResource **" and argument "(int32_t)sizeof (struct SResource **) /*8*/" to function "uprv_sortArray_44" is suspicious.  Did you intend to use "sizeof(struct SResource *)" instead of "sizeof (struct SResource **)" ?  In this particular case sizeof(struct SResource **) happens to be equal to sizeof(struct SResource *), but this is not a portable assumption.
+
+Error: SIZEOF_MISMATCH:
+icu/source/tools/genrb/reslist.c:1742: suspicious_sizeof: Passing argument "array" of type "struct SResource **" and argument "(int32_t)sizeof (struct SResource **) /*8*/" to function "uprv_sortArray_44" is suspicious.  Did you intend to use "sizeof(struct SResource *)" instead of "sizeof (struct SResource **)" ?  In this particular case sizeof(struct SResource **) happens to be equal to sizeof(struct SResource *), but this is not a portable assumption.
+
+Error: UNINIT:
+icu/source/common/ucnvmbcs.c:3942: var_decl: Declaring variable "length" without initializer.
+icu/source/common/ucnvmbcs.c:4489: uninit_use: Using uninitialized value "length".
+
+Error: UNINIT_CTOR:
+icu/source/i18n/plurrule_impl.h:212: member_decl: Class member declaration for pos.
+icu/source/i18n/plurrule.cpp:1158: uninit_member: Non-static class member pos is not initialized in this constructor nor in any functions that it calls.
+
+Error: UNINIT_CTOR:
+icu/source/i18n/unicode/plurrule.h:273: member_decl: Class member declaration for fLocaleStringsHash.
+icu/source/i18n/unicode/plurrule.h:276: member_decl: Class member declaration for mParser.
+icu/source/i18n/plurrule.cpp:66: uninit_member: Non-static class member fLocaleStringsHash is not initialized in this constructor nor in any functions that it calls.
+icu/source/i18n/plurrule.cpp:66: uninit_member: Non-static class member mParser is not initialized in this constructor nor in any functions that it calls.
+icu/source/i18n/plurrule.cpp:72: uninit_member: Non-static class member fLocaleStringsHash is not initialized in this constructor nor in any functions that it calls.
+
+Error: UNINIT_CTOR:
+icu/source/i18n/unicode/plurfmt.h:521: member_decl: Class member declaration for pluralRules.
+icu/source/i18n/unicode/plurfmt.h:523: member_decl: Class member declaration for fParsedValuesHash.
+icu/source/i18n/unicode/plurfmt.h:524: member_decl: Class member declaration for numberFormat.
+icu/source/i18n/unicode/plurfmt.h:525: member_decl: Class member declaration for replacedNumberFormat.
+icu/source/i18n/plurfmt.cpp:60: uninit_member: Non-static class member fParsedValuesHash is not initialized in this constructor nor in any functions that it calls.
+icu/source/i18n/plurfmt.cpp:60: uninit_member: Non-static class member numberFormat is not initialized in this constructor nor in any functions that it calls.
+icu/source/i18n/plurfmt.cpp:60: uninit_member: Non-static class member pluralRules is not initialized in this constructor nor in any functions that it calls.
+icu/source/i18n/plurfmt.cpp:60: uninit_member: Non-static class member replacedNumberFormat is not initialized in this constructor nor in any functions that it calls.
+
+Error: UNINIT_CTOR:
+icu/source/i18n/unicode/selfmt.h:356: member_decl: Class member declaration for parsedValuesHash.
+icu/source/i18n/selfmt.cpp:43: uninit_member: Non-static class member parsedValuesHash is not initialized in this constructor nor in any functions that it calls.
+
+Error: UNINIT_CTOR:
+icu/source/i18n/zstrfmt.cpp:1923: member_decl: Class member declaration for fStrings.
+icu/source/i18n/zstrfmt.cpp:1930: uninit_member: Non-static class member fStrings is not initialized in this constructor nor in any functions that it calls.
+
+Error: UNINIT_CTOR:
+icu/source/i18n/unicode/plurfmt.h:521: member_decl: Class member declaration for pluralRules.
+icu/source/i18n/unicode/plurfmt.h:523: member_decl: Class member declaration for fParsedValuesHash.
+icu/source/i18n/unicode/plurfmt.h:524: member_decl: Class member declaration for numberFormat.
+icu/source/i18n/unicode/plurfmt.h:525: member_decl: Class member declaration for replacedNumberFormat.
+icu/source/i18n/plurfmt.cpp:38: uninit_member: Non-static class member fParsedValuesHash is not initialized in this constructor nor in any functions that it calls.
+icu/source/i18n/plurfmt.cpp:38: uninit_member: Non-static class member numberFormat is not initialized in this constructor nor in any functions that it calls.
+icu/source/i18n/plurfmt.cpp:38: uninit_member: Non-static class member pluralRules is not initialized in this constructor nor in any functions that it calls.
+icu/source/i18n/plurfmt.cpp:38: uninit_member: Non-static class member replacedNumberFormat is not initialized in this constructor nor in any functions that it calls.
+
+Error: UNINIT_CTOR:
+icu/source/i18n/unicode/plurfmt.h:521: member_decl: Class member declaration for pluralRules.
+icu/source/i18n/unicode/plurfmt.h:523: member_decl: Class member declaration for fParsedValuesHash.
+icu/source/i18n/unicode/plurfmt.h:524: member_decl: Class member declaration for numberFormat.
+icu/source/i18n/unicode/plurfmt.h:525: member_decl: Class member declaration for replacedNumberFormat.
+icu/source/i18n/plurfmt.cpp:46: uninit_member: Non-static class member fParsedValuesHash is not initialized in this constructor nor in any functions that it calls.
+icu/source/i18n/plurfmt.cpp:46: uninit_member: Non-static class member numberFormat is not initialized in this constructor nor in any functions that it calls.
+icu/source/i18n/plurfmt.cpp:46: uninit_member: Non-static class member pluralRules is not initialized in this constructor nor in any functions that it calls.
+icu/source/i18n/plurfmt.cpp:46: uninit_member: Non-static class member replacedNumberFormat is not initialized in this constructor nor in any functions that it calls.
+
+Error: UNINIT_CTOR:
+icu/source/i18n/unicode/plurfmt.h:521: member_decl: Class member declaration for pluralRules.
+icu/source/i18n/unicode/plurfmt.h:523: member_decl: Class member declaration for fParsedValuesHash.
+icu/source/i18n/unicode/plurfmt.h:524: member_decl: Class member declaration for numberFormat.
+icu/source/i18n/unicode/plurfmt.h:525: member_decl: Class member declaration for replacedNumberFormat.
+icu/source/i18n/plurfmt.cpp:65: uninit_member: Non-static class member fParsedValuesHash is not initialized in this constructor nor in any functions that it calls.
+icu/source/i18n/plurfmt.cpp:65: uninit_member: Non-static class member numberFormat is not initialized in this constructor nor in any functions that it calls.
+icu/source/i18n/plurfmt.cpp:65: uninit_member: Non-static class member pluralRules is not initialized in this constructor nor in any functions that it calls.
+icu/source/i18n/plurfmt.cpp:65: uninit_member: Non-static class member replacedNumberFormat is not initialized in this constructor nor in any functions that it calls.
+
+Error: UNINIT_CTOR:
+icu/source/i18n/unicode/plurfmt.h:521: member_decl: Class member declaration for pluralRules.
+icu/source/i18n/unicode/plurfmt.h:523: member_decl: Class member declaration for fParsedValuesHash.
+icu/source/i18n/unicode/plurfmt.h:524: member_decl: Class member declaration for numberFormat.
+icu/source/i18n/unicode/plurfmt.h:525: member_decl: Class member declaration for replacedNumberFormat.
+icu/source/i18n/plurfmt.cpp:55: uninit_member: Non-static class member fParsedValuesHash is not initialized in this constructor nor in any functions that it calls.
+icu/source/i18n/plurfmt.cpp:55: uninit_member: Non-static class member numberFormat is not initialized in this constructor nor in any functions that it calls.
+icu/source/i18n/plurfmt.cpp:55: uninit_member: Non-static class member pluralRules is not initialized in this constructor nor in any functions that it calls.
+icu/source/i18n/plurfmt.cpp:55: uninit_member: Non-static class member replacedNumberFormat is not initialized in this constructor nor in any functions that it calls.
+
+Error: UNINIT_CTOR:
+icu/source/i18n/unicode/plurfmt.h:521: member_decl: Class member declaration for pluralRules.
+icu/source/i18n/unicode/plurfmt.h:523: member_decl: Class member declaration for fParsedValuesHash.
+icu/source/i18n/unicode/plurfmt.h:524: member_decl: Class member declaration for numberFormat.
+icu/source/i18n/unicode/plurfmt.h:525: member_decl: Class member declaration for replacedNumberFormat.
+icu/source/i18n/plurfmt.cpp:42: uninit_member: Non-static class member fParsedValuesHash is not initialized in this constructor nor in any functions that it calls.
+icu/source/i18n/plurfmt.cpp:42: uninit_member: Non-static class member numberFormat is not initialized in this constructor nor in any functions that it calls.
+icu/source/i18n/plurfmt.cpp:42: uninit_member: Non-static class member pluralRules is not initialized in this constructor nor in any functions that it calls.
+icu/source/i18n/plurfmt.cpp:42: uninit_member: Non-static class member replacedNumberFormat is not initialized in this constructor nor in any functions that it calls.
+
+Error: UNINIT_CTOR:
+icu/source/i18n/unicode/plurfmt.h:521: member_decl: Class member declaration for pluralRules.
+icu/source/i18n/unicode/plurfmt.h:523: member_decl: Class member declaration for fParsedValuesHash.
+icu/source/i18n/unicode/plurfmt.h:524: member_decl: Class member declaration for numberFormat.
+icu/source/i18n/unicode/plurfmt.h:525: member_decl: Class member declaration for replacedNumberFormat.
+icu/source/i18n/plurfmt.cpp:50: uninit_member: Non-static class member fParsedValuesHash is not initialized in this constructor nor in any functions that it calls.
+icu/source/i18n/plurfmt.cpp:50: uninit_member: Non-static class member numberFormat is not initialized in this constructor nor in any functions that it calls.
+icu/source/i18n/plurfmt.cpp:50: uninit_member: Non-static class member pluralRules is not initialized in this constructor nor in any functions that it calls.
+icu/source/i18n/plurfmt.cpp:50: uninit_member: Non-static class member replacedNumberFormat is not initialized in this constructor nor in any functions that it calls.
+
+Error: UNINIT_CTOR:
+icu/source/i18n/unicode/plurfmt.h:521: member_decl: Class member declaration for pluralRules.
+icu/source/i18n/unicode/plurfmt.h:523: member_decl: Class member declaration for fParsedValuesHash.
+icu/source/i18n/unicode/plurfmt.h:524: member_decl: Class member declaration for numberFormat.
+icu/source/i18n/unicode/plurfmt.h:525: member_decl: Class member declaration for replacedNumberFormat.
+icu/source/i18n/plurfmt.cpp:70: uninit_member: Non-static class member fParsedValuesHash is not initialized in this constructor nor in any functions that it calls.
+icu/source/i18n/plurfmt.cpp:70: uninit_member: Non-static class member numberFormat is not initialized in this constructor nor in any functions that it calls.
+icu/source/i18n/plurfmt.cpp:70: uninit_member: Non-static class member pluralRules is not initialized in this constructor nor in any functions that it calls.
+icu/source/i18n/plurfmt.cpp:70: uninit_member: Non-static class member replacedNumberFormat is not initialized in this constructor nor in any functions that it calls.
+
+Error: UNINIT_CTOR:
+icu/source/i18n/uspoof_impl.h:115: member_decl: Class member declaration for fCheckMask.
+icu/source/i18n/uspoof_impl.cpp:55: uninit_member: Non-static class member fCheckMask is not initialized in this constructor nor in any functions that it calls.
+
+Error: UNINIT_CTOR:
+icu/source/common/propname.h:164: member_decl: Class member declaration for enumToName_offset.
+icu/source/common/propname.h:167: member_decl: Class member declaration for nameToEnum_offset.
+icu/source/common/propname.h:171: member_decl: Class member declaration for enumToValue_offset.
+icu/source/common/propname.h:175: member_decl: Class member declaration for total_size.
+icu/source/common/propname.h:176: member_decl: Class member declaration for valueMap_offset.
+icu/source/common/propname.h:177: member_decl: Class member declaration for valueMap_count.
+icu/source/common/propname.h:178: member_decl: Class member declaration for nameGroupPool_offset.
+icu/source/common/propname.h:179: member_decl: Class member declaration for nameGroupPool_count.
+icu/source/common/propname.h:180: member_decl: Class member declaration for stringPool_offset.
+icu/source/common/propname.h:181: member_decl: Class member declaration for stringPool_count.
+icu/source/tools/genpname/genpname.cpp:308: member_decl: Class member declaration for enumToName_size.
+icu/source/tools/genpname/genpname.cpp:309: member_decl: Class member declaration for enumToName_offset.
+icu/source/tools/genpname/genpname.cpp:315: member_decl: Class member declaration for nameToEnum_size.
+icu/source/tools/genpname/genpname.cpp:316: member_decl: Class member declaration for nameToEnum_offset.
+icu/source/tools/genpname/genpname.cpp:320: member_decl: Class member declaration for enumToValue_size.
+icu/source/tools/genpname/genpname.cpp:321: member_decl: Class member declaration for enumToValue_offset.
+icu/source/tools/genpname/genpname.cpp:325: member_decl: Class member declaration for valueMap_size.
+icu/source/tools/genpname/genpname.cpp:327: member_decl: Class member declaration for valueMap_offset.
+icu/source/tools/genpname/genpname.cpp:346: member_decl: Class member declaration for nameGroupPool_count.
+icu/source/tools/genpname/genpname.cpp:347: member_decl: Class member declaration for nameGroupPool_size.
+icu/source/tools/genpname/genpname.cpp:348: member_decl: Class member declaration for nameGroupPool_offset.
+icu/source/tools/genpname/genpname.cpp:352: member_decl: Class member declaration for stringPool_count.
+icu/source/tools/genpname/genpname.cpp:353: member_decl: Class member declaration for stringPool_size.
+icu/source/tools/genpname/genpname.cpp:354: member_decl: Class member declaration for stringPool_offset.
+icu/source/tools/genpname/genpname.cpp:357: member_decl: Class member declaration for total_size.
+icu/source/tools/genpname/genpname.cpp:433: uninit_member: Non-static class member field header.enumToName_offset is not initialized in this constructor nor in any functions that it calls.
+icu/source/tools/genpname/genpname.cpp:433: uninit_member: Non-static class member field header.enumToValue_offset is not initialized in this constructor nor in any functions that it calls.
+icu/source/tools/genpname/genpname.cpp:433: uninit_member: Non-static class member field header.nameGroupPool_count is not initialized in this constructor nor in any functions that it calls.
+icu/source/tools/genpname/genpname.cpp:433: uninit_member: Non-static class member field header.nameGroupPool_offset is not initialized in this constructor nor in any functions that it calls.
+icu/source/tools/genpname/genpname.cpp:433: uninit_member: Non-static class member field header.nameToEnum_offset is not initialized in this constructor nor in any functions that it calls.
+icu/source/tools/genpname/genpname.cpp:433: uninit_member: Non-static class member field header.stringPool_count is not initialized in this constructor nor in any functions that it calls.
+icu/source/tools/genpname/genpname.cpp:433: uninit_member: Non-static class member field header.stringPool_offset is not initialized in this constructor nor in any functions that it calls.
+icu/source/tools/genpname/genpname.cpp:433: uninit_member: Non-static class member field header.total_size is not initialized in this constructor nor in any functions that it calls.
+icu/source/tools/genpname/genpname.cpp:433: uninit_member: Non-static class member field header.valueMap_count is not initialized in this constructor nor in any functions that it calls.
+icu/source/tools/genpname/genpname.cpp:433: uninit_member: Non-static class member field header.valueMap_offset is not initialized in this constructor nor in any functions that it calls.
+icu/source/tools/genpname/genpname.cpp:433: uninit_member: Non-static class member enumToName_offset is not initialized in this constructor nor in any functions that it calls.
+icu/source/tools/genpname/genpname.cpp:433: uninit_member: Non-static class member enumToName_size is not initialized in this constructor nor in any functions that it calls.
+icu/source/tools/genpname/genpname.cpp:433: uninit_member: Non-static class member enumToValue_offset is not initialized in this constructor nor in any functions that it calls.
+icu/source/tools/genpname/genpname.cpp:433: uninit_member: Non-static class member enumToValue_size is not initialized in this constructor nor in any functions that it calls.
+icu/source/tools/genpname/genpname.cpp:433: uninit_member: Non-static class member nameGroupPool_count is not initialized in this constructor nor in any functions that it calls.
+icu/source/tools/genpname/genpname.cpp:433: uninit_member: Non-static class member nameGroupPool_offset is not initialized in this constructor nor in any functions that it calls.
+icu/source/tools/genpname/genpname.cpp:433: uninit_member: Non-static class member nameGroupPool_size is not initialized in this constructor nor in any functions that it calls.
+icu/source/tools/genpname/genpname.cpp:433: uninit_member: Non-static class member nameToEnum_offset is not initialized in this constructor nor in any functions that it calls.
+icu/source/tools/genpname/genpname.cpp:433: uninit_member: Non-static class member nameToEnum_size is not initialized in this constructor nor in any functions that it calls.
+icu/source/tools/genpname/genpname.cpp:433: uninit_member: Non-static class member stringPool_count is not initialized in this constructor nor in any functions that it calls.
+icu/source/tools/genpname/genpname.cpp:433: uninit_member: Non-static class member stringPool_offset is not initialized in this constructor nor in any functions that it calls.
+icu/source/tools/genpname/genpname.cpp:433: uninit_member: Non-static class member stringPool_size is not initialized in this constructor nor in any functions that it calls.
+icu/source/tools/genpname/genpname.cpp:433: uninit_member: Non-static class member total_size is not initialized in this constructor nor in any functions that it calls.
+icu/source/tools/genpname/genpname.cpp:433: uninit_member: Non-static class member valueMap_offset is not initialized in this constructor nor in any functions that it calls.
+icu/source/tools/genpname/genpname.cpp:433: uninit_member: Non-static class member valueMap_size is not initialized in this constructor nor in any functions that it calls.
+
+Error: UNINIT_CTOR:
+icu/source/tools/toolutil/package.cpp:411: uninit_member: Non-static class member field items.data is not initialized in this constructor nor in any functions that it calls.
+icu/source/tools/toolutil/package.cpp:411: uninit_member: Non-static class member field items.name is not initialized in this constructor nor in any functions that it calls.
+icu/source/tools/toolutil/package.h:37: member_decl: Class member declaration for name.
+icu/source/tools/toolutil/package.h:38: member_decl: Class member declaration for data.
+
+Error: UNINIT_CTOR:
+icu/source/tools/toolutil/package.cpp:411: uninit_member: Non-static class member field items.isDataOwned is not initialized in this constructor nor in any functions that it calls.
+icu/source/tools/toolutil/package.cpp:411: uninit_member: Non-static class member field items.length is not initialized in this constructor nor in any functions that it calls.
+icu/source/tools/toolutil/package.cpp:411: uninit_member: Non-static class member field items.type is not initialized in this constructor nor in any functions that it calls.
+icu/source/tools/toolutil/package.cpp:411: uninit_member: Non-static class member inStrings is not initialized in this constructor nor in any functions that it calls.
+icu/source/tools/toolutil/package.cpp:411: uninit_member: Non-static class member isMissingItems is not initialized in this constructor nor in any functions that it calls.
+icu/source/tools/toolutil/package.cpp:411: uninit_member: Non-static class member outStrings is not initialized in this constructor nor in any functions that it calls.
+icu/source/tools/toolutil/package.h:39: member_decl: Class member declaration for length.
+icu/source/tools/toolutil/package.h:40: member_decl: Class member declaration for isDataOwned.
+icu/source/tools/toolutil/package.h:41: member_decl: Class member declaration for type.
+icu/source/tools/toolutil/package.h:151: member_decl: Class member declaration for inStrings.
+icu/source/tools/toolutil/package.h:151: member_decl: Class member declaration for outStrings.
+icu/source/tools/toolutil/package.h:162: member_decl: Class member declaration for isMissingItems.
+
+Error: UNUSED_VALUE:
+icu/source/i18n/ucurr.cpp:1875: returned_pointer: Pointer "s" returned by "ures_getStringByKey_44(currencyRes, "id", &resLen, &localStatus)" is never used.
+
+Error: UNUSED_VALUE:
+icu/source/tools/gencase/store.c:777: returned_pointer: Pointer "row" returned by "upvec_getRow_44(pv, i, NULL, &end)" is never used.
+
+Error: USE_AFTER_FREE:
+icu/source/i18n/dtitvfmt.cpp:491: freed_arg: "icu_44::DateIntervalFormat::DateIntervalFormat(icu_44::Locale const &, icu_44::DateIntervalInfo *, icu_44::UnicodeString const *, UErrorCode &)" frees "dtitvinf".
+icu/source/i18n/dtitvfmt.cpp:427: freed_arg: "icu_44::UMemory::operator delete(void *)" frees parameter "dtItvInfo".
+icu/source/common/uobject.cpp:65: freed_arg: "uprv_free_44" frees parameter "p".
+icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+icu/source/i18n/dtitvfmt.cpp:495: deref_arg: Calling "icu_44::DateIntervalInfo::~DateIntervalInfo()" dereferences freed pointer "dtitvinf". (The dereference happens because this is a virtual function call.)
