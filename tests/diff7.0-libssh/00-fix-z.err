@@ -1,0 +1,403 @@
+
+Error: CHECKED_RETURN:
+libssh-0.4.8/libssh/messages.c:870: check_return: Calling function "ssh_list_append" without checking return value (as is done elsewhere 4 out of 5 times).
+libssh-0.4.8/libssh/options.c:103: example_assign: Assigning: "rc" = return value from "ssh_list_append(new->identity, id)".
+libssh-0.4.8/libssh/options.c:104: example_checked: "rc" has its value checked in "rc < 0".
+libssh-0.4.8/libssh/session.c:111: example_assign: Assigning: "rc" = return value from "ssh_list_append(session->identity, id)".
+libssh-0.4.8/libssh/session.c:112: example_checked: "rc" has its value checked in "rc == -1".
+libssh-0.4.8/libssh/session.c:120: example_assign: Assigning: "rc" = return value from "ssh_list_append(session->identity, id)".
+libssh-0.4.8/libssh/session.c:121: example_checked: "rc" has its value checked in "rc == -1".
+libssh-0.4.8/libssh/session.c:129: example_assign: Assigning: "rc" = return value from "ssh_list_append(session->identity, id)".
+libssh-0.4.8/libssh/session.c:130: example_checked: "rc" has its value checked in "rc == -1".
+libssh-0.4.8/libssh/messages.c:870: unchecked_value: No check of the return value of "ssh_list_append(session->ssh_message_list, msg)".
+
+Error: CHECKED_RETURN:
+libssh-0.4.8/libssh/channels.c:561: check_return: Calling function "buffer_add_u32" without checking return value (as is done elsewhere 71 out of 72 times).
+libssh-0.4.8/libssh/agent.c:429: example_checked: "buffer_add_u32(request, ({...}))" has its value checked in "buffer_add_u32(request, ({...})) < 0".
+libssh-0.4.8/libssh/agent.c:436: example_checked: "buffer_add_u32(request, ({...}))" has its value checked in "buffer_add_u32(request, ({...})) < 0".
+libssh-0.4.8/libssh/auth.c:1109: example_checked: "buffer_add_u32(session->out_buffer, 0U)" has its value checked in "buffer_add_u32(session->out_buffer, 0U) < 0".
+libssh-0.4.8/libssh/auth.c:1266: example_checked: "buffer_add_u32(session->out_buffer, ({...}))" has its value checked in "buffer_add_u32(session->out_buffer, ({...})) < 0".
+libssh-0.4.8/libssh/channels.c:139: example_checked: "buffer_add_u32(session->out_buffer, ({...}))" has its value checked in "buffer_add_u32(session->out_buffer, ({...})) < 0".
+libssh-0.4.8/libssh/channels.c:561: unchecked_value: No check of the return value of "buffer_add_u32(session->out_buffer, ({...}))".
+
+Error: CHECKED_RETURN:
+libssh-0.4.8/libssh/session.c:436: check_return: Calling function "buffer_add_u8" without checking return value (as is done elsewhere 49 out of 51 times).
+libssh-0.4.8/libssh/agent.c:288: example_checked: "buffer_add_u8(request, c1)" has its value checked in "buffer_add_u8(request, c1) < 0".
+libssh-0.4.8/libssh/agent.c:418: example_checked: "buffer_add_u8(request, 13)" has its value checked in "buffer_add_u8(request, 13) < 0".
+libssh-0.4.8/libssh/auth.c:267: example_checked: "buffer_add_u8(session->out_buffer, 50)" has its value checked in "buffer_add_u8(session->out_buffer, 50) < 0".
+libssh-0.4.8/libssh/auth.c:377: example_checked: "buffer_add_u8(session->out_buffer, 0)" has its value checked in "buffer_add_u8(session->out_buffer, 0) < 0".
+libssh-0.4.8/libssh/auth.c:377: example_checked: "buffer_add_u8(session->out_buffer, 50)" has its value checked in "buffer_add_u8(session->out_buffer, 50) < 0".
+libssh-0.4.8/libssh/session.c:436: unchecked_value: No check of the return value of "buffer_add_u8(session->out_buffer, 82)".
+
+Error: CHECKED_RETURN:
+libssh-0.4.8/libssh/scp.c:325: check_return: Calling function "channel_poll" without checking return value (as is done elsewhere 11 out of 12 times).
+libssh-0.4.8/libssh/channels.c:1974: example_assign: Assigning: "to_read" = return value from "channel_poll(channel, is_stderr)".
+libssh-0.4.8/libssh/channels.c:1976: example_checked: "to_read" has its value checked in "to_read <= 0U".
+libssh-0.4.8/libssh/connect.c:422: example_checked: "channel_poll(channels[i], 0)" has its value checked in "channel_poll(channels[i], 0) > 0".
+libssh-0.4.8/libssh/connect.c:426: example_checked: "channel_poll(channels[i], 1)" has its value checked in "channel_poll(channels[i], 1) > 0".
+libssh-0.4.8/libssh/connect.c:490: example_checked: "channel_poll(channels[i], 0)" has its value checked in "channel_poll(channels[i], 0) > 0".
+libssh-0.4.8/libssh/connect.c:490: example_checked: "channel_poll(channels[i], 1)" has its value checked in "channel_poll(channels[i], 1) > 0".
+libssh-0.4.8/libssh/scp.c:325: unchecked_value: No check of the return value of "channel_poll(scp->channel, 0)".
+
+Error: CHECKED_RETURN:
+libssh-0.4.8/examples/sample.c:428: check_return: Calling function "channel_open_session" without checking return value (as is done elsewhere 5 out of 6 times).
+libssh-0.4.8/libssh/scp.c:87: example_assign: Assigning: "r" = return value from "channel_open_session(scp->channel)".
+libssh-0.4.8/libssh/scp.c:88: example_checked: "r" has its value checked in "r == -1".
+libssh-0.4.8/libssh/sftp.c:138: example_checked: "channel_open_session(sftp->channel)" has its value checked in "channel_open_session(sftp->channel)".
+libssh-0.4.8/examples/exec.c:25: example_assign: Assigning: "rc" = return value from "channel_open_session(channel)".
+libssh-0.4.8/examples/exec.c:26: example_checked: "rc" has its value checked in "rc < 0".
+libssh-0.4.8/examples/sample.c:397: example_checked: "channel_open_session(channel)" has its value checked in "channel_open_session(channel)".
+libssh-0.4.8/examples/scp_download.c:65: example_checked: "channel_open_session(channel)" has its value checked in "channel_open_session(channel) != 0".
+libssh-0.4.8/examples/sample.c:428: unchecked_value: No check of the return value of "channel_open_session(channel)".
+
+Error: DEADCODE:
+libssh-0.4.8/libssh/socket.c:296: dead_error_condition: On this path, the condition "r == 0" cannot be true.
+libssh-0.4.8/libssh/socket.c:287: cannot_single: After this line (or expression), the value of "r" cannot be 0.
+libssh-0.4.8/libssh/socket.c:288: at_least: After this line, the value of "r" is at least 1.
+libssh-0.4.8/libssh/socket.c:288: new_values: Noticing condition "r < 0".
+libssh-0.4.8/libssh/socket.c:297: dead_error_line: Execution cannot reach this statement "return 0;".
+
+Error: DEADCODE:
+libssh-0.4.8/libssh/kex.c:698: dead_error_condition: On this path, the condition "serverkey == NULL" cannot be true.
+libssh-0.4.8/libssh/kex.c:694: cannot_single: After this line (or expression), the value of "serverkey" cannot be 0.
+libssh-0.4.8/libssh/kex.c:699: dead_error_line: Execution cannot reach this statement "goto error;".
+
+Error: FORWARD_NULL:
+libssh-0.4.8/libssh/kex.c:222: var_compare_op: Comparing "tok_preferred" to null implies that "tok_preferred" might be null.
+libssh-0.4.8/libssh/kex.c:227: var_deref_op: Dereferencing null variable "tok_preferred".
+
+Error: FORWARD_NULL:
+libssh-0.4.8/libssh/dh.c:837: var_compare_op: Comparing "session->current_crypto" to null implies that "session->current_crypto" might be null.
+libssh-0.4.8/libssh/dh.c:853: var_deref_op: Dereferencing null variable "session->current_crypto".
+
+Error: MISSING_BREAK:
+libssh-0.4.8/libssh/client.c:247: unterminated_case: This case (value 0) is not terminated by a 'break' statement.
+libssh-0.4.8/libssh/client.c:277: fallthrough: The above case falls through to this one.
+
+Error: MISSING_BREAK:
+libssh-0.4.8/libssh/client.c:277: unterminated_case: This case (value 1) is not terminated by a 'break' statement.
+libssh-0.4.8/libssh/client.c:283: fallthrough: The above case falls through to this one.
+
+Error: MISSING_BREAK:
+libssh-0.4.8/libssh/client.c:283: unterminated_case: This case (value 2) is not terminated by a 'break' statement.
+libssh-0.4.8/libssh/client.c:337: fallthrough: The above case falls through to this one.
+
+Error: MISSING_BREAK:
+libssh-0.4.8/libssh/client.c:337: unterminated_case: This case (value 3) is not terminated by a 'break' statement.
+libssh-0.4.8/libssh/client.c:345: fallthrough: The above case falls through to this one.
+
+Error: NEGATIVE_RETURNS:
+libssh-0.4.8/examples/sshnetcat.c:99: negative_return_fn: Function "read(0, buffer, sizeof (buffer) /*4096*/)" returns a negative number.
+libssh-0.4.8/examples/sshnetcat.c:99: var_assign: Assigning: signed variable "lus" = "read".
+libssh-0.4.8/examples/sshnetcat.c:101: negative_returns: "lus" is passed to a parameter that cannot be negative.
+libssh-0.4.8/libssh/channels.c:984: neg_sink_parm_call: Passing "len" to "channel_write_common", which cannot accept a negative.
+libssh-0.4.8/libssh/channels.c:918: parm_loop_bound: Using unsigned parameter "len" in a loop exit test.
+
+Error: NULL_RETURNS:
+libssh-0.4.8/libssh/kex.c:461: returned_null: Function "string_from_char" returns null (checked 74 out of 82 times).
+libssh-0.4.8/libssh/string.c:89: return_null: Explicitly returning NULL.
+libssh-0.4.8/libssh/auth.c:242: example_assign: Assigning: "user" = return value from "string_from_char(session->username)".
+libssh-0.4.8/libssh/auth.c:247: example_checked: "user" has its value checked in "user == NULL".
+libssh-0.4.8/libssh/auth.c:244: example_assign: Assigning: "user" = return value from "string_from_char(username)".
+libssh-0.4.8/libssh/auth.c:247: example_checked: "user" has its value checked in "user == NULL".
+libssh-0.4.8/libssh/auth.c:258: example_assign: Assigning: "method" = return value from "string_from_char("none")".
+libssh-0.4.8/libssh/auth.c:259: example_checked: "method" has its value checked in "method == NULL".
+libssh-0.4.8/libssh/auth.c:262: example_assign: Assigning: "service" = return value from "string_from_char("ssh-connection")".
+libssh-0.4.8/libssh/auth.c:263: example_checked: "service" has its value checked in "service == NULL".
+libssh-0.4.8/libssh/auth.c:348: example_assign: Assigning: "user" = return value from "string_from_char(session->username)".
+libssh-0.4.8/libssh/auth.c:353: example_checked: "user" has its value checked in "user == NULL".
+libssh-0.4.8/libssh/kex.c:461: var_assigned: Assigning: "rsa" = null return value from "string_from_char".
+libssh-0.4.8/libssh/kex.c:463: dereference: Dereferencing a pointer that might be null "rsa" when calling "buffer_add_ssh_string".
+libssh-0.4.8/libssh/buffer.c:171: deref_parm_in_call: Function "buffer_add_data" dereferences parameter "string".
+libssh-0.4.8/libssh/buffer.c:154: deref_parm_in_call: Function "memcpy" dereferences parameter "data". (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)
+
+Error: NULL_RETURNS:
+libssh-0.4.8/libssh/server.c:695: returned_null: Function "string_from_char" returns null (checked 74 out of 82 times).
+libssh-0.4.8/libssh/string.c:89: return_null: Explicitly returning NULL.
+libssh-0.4.8/libssh/auth.c:242: example_assign: Assigning: "user" = return value from "string_from_char(session->username)".
+libssh-0.4.8/libssh/auth.c:247: example_checked: "user" has its value checked in "user == NULL".
+libssh-0.4.8/libssh/auth.c:244: example_assign: Assigning: "user" = return value from "string_from_char(username)".
+libssh-0.4.8/libssh/auth.c:247: example_checked: "user" has its value checked in "user == NULL".
+libssh-0.4.8/libssh/auth.c:258: example_assign: Assigning: "method" = return value from "string_from_char("none")".
+libssh-0.4.8/libssh/auth.c:259: example_checked: "method" has its value checked in "method == NULL".
+libssh-0.4.8/libssh/auth.c:262: example_assign: Assigning: "service" = return value from "string_from_char("ssh-connection")".
+libssh-0.4.8/libssh/auth.c:263: example_checked: "service" has its value checked in "service == NULL".
+libssh-0.4.8/libssh/auth.c:348: example_assign: Assigning: "user" = return value from "string_from_char(session->username)".
+libssh-0.4.8/libssh/auth.c:353: example_checked: "user" has its value checked in "user == NULL".
+libssh-0.4.8/libssh/server.c:695: var_assigned: Assigning: "service" = null return value from "string_from_char".
+libssh-0.4.8/libssh/server.c:696: dereference: Dereferencing a pointer that might be null "service" when calling "buffer_add_ssh_string".
+libssh-0.4.8/libssh/buffer.c:171: deref_parm_in_call: Function "buffer_add_data" dereferences parameter "string".
+libssh-0.4.8/libssh/buffer.c:154: deref_parm_in_call: Function "memcpy" dereferences parameter "data". (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)
+
+Error: RESOURCE_LEAK:
+libssh-0.4.8/libssh/keys.c:882: alloc_fn: Calling allocation function "buffer_new".
+libssh-0.4.8/libssh/buffer.c:74: alloc_fn: Storage is returned from allocation function "malloc".
+libssh-0.4.8/libssh/buffer.c:74: var_assign: Assigning: "buf" = "malloc(sizeof (struct ssh_buffer_struct) /*24*/)".
+libssh-0.4.8/libssh/buffer.c:79: noescape: Variable "buf" is not freed or pointed-to in function "memset".
+libssh-0.4.8/libssh/buffer.c:81: return_alloc: Returning allocated memory "buf".
+libssh-0.4.8/libssh/keys.c:882: var_assign: Assigning: "tmpbuf" =  storage returned from "buffer_new()".
+libssh-0.4.8/libssh/keys.c:889: noescape: Variable "tmpbuf" is not freed or pointed-to in function "buffer_add_data".
+libssh-0.4.8/libssh/buffer.c:146:47: noescape: "buffer_add_data" does not free or save its pointer parameter "buffer".
+libssh-0.4.8/libssh/keys.c:895: noescape: Variable "tmpbuf" is not freed or pointed-to in function "buffer_get_ssh_string".
+libssh-0.4.8/libssh/buffer.c:405:75: noescape: "buffer_get_ssh_string" does not free or save its pointer parameter "buffer".
+libssh-0.4.8/libssh/keys.c:1037: leaked_storage: Variable "tmpbuf" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+libssh-0.4.8/libssh/messages.c:145: alloc_fn: Calling allocation function "string_to_char".
+libssh-0.4.8/libssh/string.c:119: alloc_fn: Storage is returned from allocation function "malloc".
+libssh-0.4.8/libssh/string.c:119: var_assign: Assigning: "new" = "malloc(len)".
+libssh-0.4.8/libssh/string.c:124: noescape: Variable "new" is not freed or pointed-to in function "memcpy".
+libssh-0.4.8/libssh/string.c:126: return_alloc: Returning allocated memory "new".
+libssh-0.4.8/libssh/messages.c:145: var_assign: Assigning: "service_c" =  storage returned from "string_to_char(service)".
+libssh-0.4.8/libssh/messages.c:160: noescape: Variable "service_c" is not freed or pointed-to in function "ssh_log".
+libssh-0.4.8/libssh/messages.c:277: leaked_storage: Variable "service_c" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+libssh-0.4.8/libssh/session.c:424: alloc_fn: Calling allocation function "buffer_get_ssh_string".
+libssh-0.4.8/libssh/buffer.c:418: alloc_fn: Storage is returned from allocation function "string_new".
+libssh-0.4.8/libssh/string.c:47: alloc_fn: Storage is returned from allocation function "malloc".
+libssh-0.4.8/libssh/string.c:47: var_assign: Assigning: "str" = "malloc(size + 4UL)".
+libssh-0.4.8/libssh/string.c:53: return_alloc: Returning allocated memory "str".
+libssh-0.4.8/libssh/buffer.c:418: var_assign: Assigning: "str" = "string_new(hostlen)".
+libssh-0.4.8/libssh/buffer.c:422: noescape: Variable "str" is not freed or pointed-to in function "string_data".
+libssh-0.4.8/libssh/string.c:166:45: noescape: "string_data" does not free or save its pointer parameter "s".
+libssh-0.4.8/libssh/buffer.c:428: return_alloc: Returning allocated memory "str".
+libssh-0.4.8/libssh/session.c:424: var_assign: Assigning: "type" =  storage returned from "buffer_get_ssh_string(session->in_buffer)".
+libssh-0.4.8/libssh/session.c:428: noescape: Variable "type" is not freed or pointed-to in function "string_to_char".
+libssh-0.4.8/libssh/string.c:117:48: noescape: "string_to_char" does not free or save its pointer parameter "s".
+libssh-0.4.8/libssh/session.c:430: leaked_storage: Variable "type" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+libssh-0.4.8/libssh/auth.c:85: alloc_fn: Calling allocation function "buffer_get_ssh_string".
+libssh-0.4.8/libssh/buffer.c:418: alloc_fn: Storage is returned from allocation function "string_new".
+libssh-0.4.8/libssh/string.c:47: alloc_fn: Storage is returned from allocation function "malloc".
+libssh-0.4.8/libssh/string.c:47: var_assign: Assigning: "str" = "malloc(size + 4UL)".
+libssh-0.4.8/libssh/string.c:53: return_alloc: Returning allocated memory "str".
+libssh-0.4.8/libssh/buffer.c:418: var_assign: Assigning: "str" = "string_new(hostlen)".
+libssh-0.4.8/libssh/buffer.c:422: noescape: Variable "str" is not freed or pointed-to in function "string_data".
+libssh-0.4.8/libssh/string.c:166:45: noescape: "string_data" does not free or save its pointer parameter "s".
+libssh-0.4.8/libssh/buffer.c:428: return_alloc: Returning allocated memory "str".
+libssh-0.4.8/libssh/auth.c:85: var_assign: Assigning: "auth" =  storage returned from "buffer_get_ssh_string(session->in_buffer)".
+libssh-0.4.8/libssh/auth.c:90: leaked_storage: Variable "auth" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+libssh-0.4.8/libssh/agent.c:442: alloc_fn: Calling allocation function "buffer_new".
+libssh-0.4.8/libssh/buffer.c:74: alloc_fn: Storage is returned from allocation function "malloc".
+libssh-0.4.8/libssh/buffer.c:74: var_assign: Assigning: "buf" = "malloc(sizeof (struct ssh_buffer_struct) /*24*/)".
+libssh-0.4.8/libssh/buffer.c:79: noescape: Variable "buf" is not freed or pointed-to in function "memset".
+libssh-0.4.8/libssh/buffer.c:81: return_alloc: Returning allocated memory "buf".
+libssh-0.4.8/libssh/agent.c:442: var_assign: Assigning: "reply" =  storage returned from "buffer_new()".
+libssh-0.4.8/libssh/agent.c:448: noescape: Variable "reply" is not freed or pointed-to in function "agent_talk".
+libssh-0.4.8/libssh/agent.c:207:66: noescape: "agent_talk" does not free or save its pointer parameter "reply".
+libssh-0.4.8/libssh/agent.c:450: leaked_storage: Variable "reply" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+libssh-0.4.8/libssh/auth.c:578: alloc_fn: Calling allocation function "string_from_char".
+libssh-0.4.8/libssh/string.c:87: alloc_fn: Storage is returned from allocation function "malloc".
+libssh-0.4.8/libssh/string.c:87: var_assign: Assigning: "ptr" = "malloc(4UL + len)".
+libssh-0.4.8/libssh/string.c:94: return_alloc: Returning allocated memory "ptr".
+libssh-0.4.8/libssh/auth.c:578: var_assign: Assigning: "user" =  storage returned from "string_from_char(session->username)".
+libssh-0.4.8/libssh/auth.c:612: noescape: Variable "user" is not freed or pointed-to in function "buffer_add_ssh_string".
+libssh-0.4.8/libssh/buffer.c:167:31: noescape: "buffer_add_ssh_string" does not free or save its pointer parameter "string".
+libssh-0.4.8/libssh/auth.c:631: leaked_storage: Variable "user" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+libssh-0.4.8/libssh/auth.c:594: alloc_fn: Calling allocation function "string_from_char".
+libssh-0.4.8/libssh/string.c:87: alloc_fn: Storage is returned from allocation function "malloc".
+libssh-0.4.8/libssh/string.c:87: var_assign: Assigning: "ptr" = "malloc(4UL + len)".
+libssh-0.4.8/libssh/string.c:94: return_alloc: Returning allocated memory "ptr".
+libssh-0.4.8/libssh/auth.c:594: var_assign: Assigning: "service" =  storage returned from "string_from_char("ssh-connection")".
+libssh-0.4.8/libssh/auth.c:612: noescape: Variable "service" is not freed or pointed-to in function "buffer_add_ssh_string".
+libssh-0.4.8/libssh/buffer.c:167:31: noescape: "buffer_add_ssh_string" does not free or save its pointer parameter "string".
+libssh-0.4.8/libssh/auth.c:631: leaked_storage: Variable "service" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+libssh-0.4.8/libssh/auth.c:598: alloc_fn: Calling allocation function "string_from_char".
+libssh-0.4.8/libssh/string.c:87: alloc_fn: Storage is returned from allocation function "malloc".
+libssh-0.4.8/libssh/string.c:87: var_assign: Assigning: "ptr" = "malloc(4UL + len)".
+libssh-0.4.8/libssh/string.c:94: return_alloc: Returning allocated memory "ptr".
+libssh-0.4.8/libssh/auth.c:598: var_assign: Assigning: "method" =  storage returned from "string_from_char("publickey")".
+libssh-0.4.8/libssh/auth.c:612: noescape: Variable "method" is not freed or pointed-to in function "buffer_add_ssh_string".
+libssh-0.4.8/libssh/buffer.c:167:31: noescape: "buffer_add_ssh_string" does not free or save its pointer parameter "string".
+libssh-0.4.8/libssh/auth.c:631: leaked_storage: Variable "method" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+libssh-0.4.8/libssh/auth.c:602: alloc_fn: Calling allocation function "string_from_char".
+libssh-0.4.8/libssh/string.c:87: alloc_fn: Storage is returned from allocation function "malloc".
+libssh-0.4.8/libssh/string.c:87: var_assign: Assigning: "ptr" = "malloc(4UL + len)".
+libssh-0.4.8/libssh/string.c:94: return_alloc: Returning allocated memory "ptr".
+libssh-0.4.8/libssh/auth.c:602: var_assign: Assigning: "algo" =  storage returned from "string_from_char(ssh_type_to_char(publickey->type))".
+libssh-0.4.8/libssh/auth.c:612: noescape: Variable "algo" is not freed or pointed-to in function "buffer_add_ssh_string".
+libssh-0.4.8/libssh/buffer.c:167:31: noescape: "buffer_add_ssh_string" does not free or save its pointer parameter "string".
+libssh-0.4.8/libssh/auth.c:631: leaked_storage: Variable "algo" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+libssh-0.4.8/libssh/agent.c:287: alloc_fn: Calling allocation function "buffer_new".
+libssh-0.4.8/libssh/buffer.c:74: alloc_fn: Storage is returned from allocation function "malloc".
+libssh-0.4.8/libssh/buffer.c:74: var_assign: Assigning: "buf" = "malloc(sizeof (struct ssh_buffer_struct) /*24*/)".
+libssh-0.4.8/libssh/buffer.c:79: noescape: Variable "buf" is not freed or pointed-to in function "memset".
+libssh-0.4.8/libssh/buffer.c:81: return_alloc: Returning allocated memory "buf".
+libssh-0.4.8/libssh/agent.c:287: var_assign: Assigning: "request" =  storage returned from "buffer_new()".
+libssh-0.4.8/libssh/agent.c:288: noescape: Variable "request" is not freed or pointed-to in function "buffer_add_u8".
+libssh-0.4.8/libssh/buffer.c:225:45: noescape: "buffer_add_u8" does not free or save its pointer parameter "buffer".
+libssh-0.4.8/libssh/agent.c:290: leaked_storage: Variable "request" going out of scope leaks the storage it points to.
+libssh-0.4.8/libssh/agent.c:296: leaked_storage: Variable "request" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+libssh-0.4.8/libssh/agent.c:293: alloc_fn: Calling allocation function "buffer_new".
+libssh-0.4.8/libssh/buffer.c:74: alloc_fn: Storage is returned from allocation function "malloc".
+libssh-0.4.8/libssh/buffer.c:74: var_assign: Assigning: "buf" = "malloc(sizeof (struct ssh_buffer_struct) /*24*/)".
+libssh-0.4.8/libssh/buffer.c:79: noescape: Variable "buf" is not freed or pointed-to in function "memset".
+libssh-0.4.8/libssh/buffer.c:81: return_alloc: Returning allocated memory "buf".
+libssh-0.4.8/libssh/agent.c:293: var_assign: Assigning: "reply" =  storage returned from "buffer_new()".
+libssh-0.4.8/libssh/agent.c:299: noescape: Variable "reply" is not freed or pointed-to in function "agent_talk".
+libssh-0.4.8/libssh/agent.c:207:66: noescape: "agent_talk" does not free or save its pointer parameter "reply".
+libssh-0.4.8/libssh/agent.c:301: leaked_storage: Variable "reply" going out of scope leaks the storage it points to.
+libssh-0.4.8/libssh/agent.c:306: noescape: Variable "reply" is not freed or pointed-to in function "buffer_get_u8".
+libssh-0.4.8/libssh/buffer.c:375:45: noescape: "buffer_get_u8" does not free or save its pointer parameter "buffer".
+libssh-0.4.8/libssh/agent.c:311: leaked_storage: Variable "reply" going out of scope leaks the storage it points to.
+libssh-0.4.8/libssh/agent.c:315: leaked_storage: Variable "reply" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+libssh-0.4.8/libssh/keyfiles.c:1682: alloc_fn: Calling allocation function "ssh_hostport".
+libssh-0.4.8/libssh/misc.c:157: alloc_fn: Storage is returned from allocation function "malloc".
+libssh-0.4.8/libssh/misc.c:157: var_assign: Assigning: "dest" = "malloc(len)".
+libssh-0.4.8/libssh/misc.c:160: noescape: Variable "dest" is not freed or pointed-to in function "snprintf".
+libssh-0.4.8/libssh/misc.c:161: return_alloc: Returning allocated memory "dest".
+libssh-0.4.8/libssh/keyfiles.c:1682: var_assign: Assigning: "hostport" =  storage returned from "ssh_hostport(host, session->port)".
+libssh-0.4.8/libssh/keyfiles.c:1684: var_assign: Assigning: "host" = "hostport".
+libssh-0.4.8/libssh/keyfiles.c:1685: overwrite_var: Overwriting "hostport" in call "hostport = NULL" leaks the storage that "hostport" points to.
+libssh-0.4.8/libssh/keyfiles.c:1691: leaked_storage: Variable "host" going out of scope leaks the storage it points to.
+libssh-0.4.8/libssh/keyfiles.c:1699: leaked_storage: Variable "host" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+libssh-0.4.8/libssh/keyfiles.c:811: alloc_fn: Calling allocation function "fopen".
+libssh-0.4.8/libssh/keyfiles.c:811: var_assign: Assigning: "file" =  storage returned from "fopen(filename, "r")".
+libssh-0.4.8/libssh/keyfiles.c:863: leaked_storage: Variable "file" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+libssh-0.4.8/examples/scp_download.c:88: alloc_fn: Calling allocation function "ssh_scp_new".
+libssh-0.4.8/libssh/scp.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+libssh-0.4.8/libssh/scp.c:45: var_assign: Assigning: "scp" = "malloc(sizeof (struct ssh_scp_struct) /*88*/)".
+libssh-0.4.8/libssh/scp.c:50: noescape: Variable "(char *)scp" is not freed or pointed-to in function "memset".
+libssh-0.4.8/libssh/scp.c:67: return_alloc: Returning allocated memory "scp".
+libssh-0.4.8/examples/scp_download.c:88: var_assign: Assigning: "scp" =  storage returned from "ssh_scp_new(session, 17, "/tmp/libssh_tests/*")".
+libssh-0.4.8/examples/scp_download.c:89: noescape: Variable "scp" is not freed or pointed-to in function "ssh_scp_init".
+libssh-0.4.8/libssh/scp.c:70:26: noescape: "ssh_scp_init" does not free or save its pointer parameter "scp".
+libssh-0.4.8/examples/scp_download.c:91: leaked_storage: Variable "scp" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+libssh-0.4.8/libssh/sftp.c:2407: alloc_fn: Calling allocation function "buffer_new".
+libssh-0.4.8/libssh/buffer.c:74: alloc_fn: Storage is returned from allocation function "malloc".
+libssh-0.4.8/libssh/buffer.c:74: var_assign: Assigning: "buf" = "malloc(sizeof (struct ssh_buffer_struct) /*24*/)".
+libssh-0.4.8/libssh/buffer.c:79: noescape: Variable "buf" is not freed or pointed-to in function "memset".
+libssh-0.4.8/libssh/buffer.c:81: return_alloc: Returning allocated memory "buf".
+libssh-0.4.8/libssh/sftp.c:2407: var_assign: Assigning: "buffer" =  storage returned from "buffer_new()".
+libssh-0.4.8/libssh/sftp.c:2412: overwrite_var: Overwriting "buffer" in call "buffer = buffer_new()" leaks the storage that "buffer" points to.
+
+Error: RESOURCE_LEAK:
+libssh-0.4.8/libssh/sftp.c:2408: alloc_fn: Calling allocation function "string_from_char".
+libssh-0.4.8/libssh/string.c:87: alloc_fn: Storage is returned from allocation function "malloc".
+libssh-0.4.8/libssh/string.c:87: var_assign: Assigning: "ptr" = "malloc(4UL + len)".
+libssh-0.4.8/libssh/string.c:94: return_alloc: Returning allocated memory "ptr".
+libssh-0.4.8/libssh/sftp.c:2408: var_assign: Assigning: "path" =  storage returned from "string_from_char(file)".
+libssh-0.4.8/libssh/sftp.c:2418: overwrite_var: Overwriting "path" in call "path = string_from_char(file)" leaks the storage that "path" points to.
+
+Error: RESOURCE_LEAK:
+libssh-0.4.8/libssh/sftp.c:2408: alloc_fn: Calling allocation function "string_from_char".
+libssh-0.4.8/libssh/string.c:87: alloc_fn: Storage is returned from allocation function "malloc".
+libssh-0.4.8/libssh/string.c:87: var_assign: Assigning: "ptr" = "malloc(4UL + len)".
+libssh-0.4.8/libssh/string.c:94: return_alloc: Returning allocated memory "ptr".
+libssh-0.4.8/libssh/sftp.c:2408: var_assign: Assigning: "path" =  storage returned from "string_from_char(file)".
+libssh-0.4.8/libssh/sftp.c:2415: leaked_storage: Variable "path" going out of scope leaks the storage it points to.
+
+Error: REVERSE_INULL:
+libssh-0.4.8/libssh/sftp.c:107: deref_ptr: Directly dereferencing pointer "session".
+libssh-0.4.8/libssh/sftp.c:109: check_after_deref: Dereferencing "session" before a null check.
+
+Error: REVERSE_INULL:
+libssh-0.4.8/libssh/server.c:686: deref_ptr: Directly dereferencing pointer "msg".
+libssh-0.4.8/libssh/server.c:687: check_after_deref: Dereferencing "msg" before a null check.
+
+Error: UNREACHABLE:
+libssh-0.4.8/libssh/channels.c:117: unreachable: This code cannot be reached: "{
+  do {
+    {
+      if (se...".
+
+Error: UNUSED_VALUE:
+libssh-0.4.8/examples/sample.c:61: returned_pointer: Pointer "ptr" returned by "strchr(buf, 10)" is never used.
+
+Error: UNUSED_VALUE:
+libssh-0.4.8/libssh/sftp.c:2407: returned_pointer: Pointer "buffer" returned by "buffer_new()" is never used.
+
+Error: UNUSED_VALUE:
+libssh-0.4.8/libssh/sftp.c:2408: returned_pointer: Pointer "path" returned by "string_from_char(file)" is never used.
+
+Error: USE_AFTER_FREE:
+libssh-0.4.8/libssh/messages.c:543: freed_arg: "string_free" frees "type".
+libssh-0.4.8/libssh/string.c:179: freed_arg: "free" frees parameter "s".
+libssh-0.4.8/libssh/messages.c:716: double_free: Calling "string_free" frees pointer "type" which has already been freed.
+
+Error: USE_AFTER_FREE:
+libssh-0.4.8/libssh/agent.c:452: freed_arg: "buffer_free" frees "request".
+libssh-0.4.8/libssh/buffer.c:99: freed_arg: "free" frees parameter "buffer".
+libssh-0.4.8/libssh/agent.c:476: double_free: Calling "buffer_free" frees pointer "request" which has already been freed.
+
+Error: USE_AFTER_FREE:
+libssh-0.4.8/libssh/channels.c:1064: freed_arg: "string_free" frees "req".
+libssh-0.4.8/libssh/string.c:179: freed_arg: "free" frees parameter "s".
+libssh-0.4.8/libssh/channels.c:1104: double_free: Calling "string_free" frees pointer "req" which has already been freed.
+
+Error: USE_AFTER_FREE:
+libssh-0.4.8/libssh/sftp.c:1209: freed_arg: "string_free" frees "longname".
+libssh-0.4.8/libssh/string.c:179: freed_arg: "free" frees parameter "s".
+libssh-0.4.8/libssh/sftp.c:1315: double_free: Calling "string_free" frees pointer "longname" which has already been freed.
+
+Error: USE_AFTER_FREE:
+libssh-0.4.8/libssh/sftp.c:1201: freed_arg: "string_free" frees "name".
+libssh-0.4.8/libssh/string.c:179: freed_arg: "free" frees parameter "s".
+libssh-0.4.8/libssh/sftp.c:1314: double_free: Calling "string_free" frees pointer "name" which has already been freed.
+
+Error: USE_AFTER_FREE:
+libssh-0.4.8/libssh/sftp.c:2095: freed_arg: "buffer_free" frees "buffer".
+libssh-0.4.8/libssh/buffer.c:99: freed_arg: "free" frees parameter "buffer".
+libssh-0.4.8/libssh/sftp.c:2098: deref_arg: Calling "sftp_packet_write" dereferences freed pointer "buffer".
+libssh-0.4.8/libssh/sftp.c:266: deref_parm_in_call: Function "buffer_prepend_data" dereferences parameter "payload".
+libssh-0.4.8/libssh/buffer.c:243: deref_parm: Directly dereferencing parameter "buffer".
+
+Error: USE_AFTER_FREE:
+libssh-0.4.8/libssh/sftp.c:2099: freed_arg: "buffer_free" frees "buffer".
+libssh-0.4.8/libssh/buffer.c:99: freed_arg: "free" frees parameter "buffer".
+libssh-0.4.8/libssh/sftp.c:2103: double_free: Calling "buffer_free" frees pointer "buffer" which has already been freed.
+
+Error: USE_AFTER_FREE:
+libssh-0.4.8/libssh/sftp.c:2100: freed_arg: "string_free" frees "filename".
+libssh-0.4.8/libssh/string.c:179: freed_arg: "free" frees parameter "s".
+libssh-0.4.8/libssh/sftp.c:2102: double_free: Calling "string_free" frees pointer "filename" which has already been freed.
+
+Error: USE_AFTER_FREE:
+libssh-0.4.8/libssh/sftp.c:2096: freed_arg: "string_free" frees "filename".
+libssh-0.4.8/libssh/string.c:179: freed_arg: "free" frees parameter "s".
+libssh-0.4.8/libssh/sftp.c:2100: double_free: Calling "string_free" frees pointer "filename" which has already been freed.
+libssh-0.4.8/libssh/sftp.c:2102: double_free: Calling "string_free" frees pointer "filename" which has already been freed.
+
+Error: USE_AFTER_FREE:
+libssh-0.4.8/libssh/channels.c:1437: freed_arg: "string_free" frees "req".
+libssh-0.4.8/libssh/string.c:179: freed_arg: "free" frees parameter "s".
+libssh-0.4.8/libssh/channels.c:1477: double_free: Calling "string_free" frees pointer "req" which has already been freed.
+
+Error: USE_AFTER_FREE:
+libssh-0.4.8/libssh/keyfiles.c:1182: freed_arg: "string_free" frees "pubkey".
+libssh-0.4.8/libssh/string.c:179: freed_arg: "free" frees parameter "s".
+libssh-0.4.8/libssh/keyfiles.c:1189: use_after_free: Using freed pointer "pubkey".
+
+Error: USE_AFTER_FREE:
+libssh-0.4.8/libssh/sftp.c:2251: freed_arg: "buffer_free" frees "buffer".
+libssh-0.4.8/libssh/buffer.c:99: freed_arg: "free" frees parameter "buffer".
+libssh-0.4.8/libssh/sftp.c:2254: double_free: Calling "buffer_free" frees pointer "buffer" which has already been freed.
+
+Error: USE_AFTER_FREE:
+libssh-0.4.8/libssh/sftp.c:2252: freed_arg: "string_free" frees "path".
+libssh-0.4.8/libssh/string.c:179: freed_arg: "free" frees parameter "s".
+libssh-0.4.8/libssh/sftp.c:2255: double_free: Calling "string_free" frees pointer "path" which has already been freed.

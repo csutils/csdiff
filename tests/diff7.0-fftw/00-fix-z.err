@@ -1,0 +1,196 @@
+
+Error: ARRAY_VS_SINGLETON:
+fftw-3.2.2/long/rdft/problem.c:230: address_of: Taking address with "&kind" yields a singleton pointer.
+fftw-3.2.2/long/rdft/problem.c:230: callee_ptr_arith: Passing "&kind" to function "fftwl_mkproblem_rdft_d" which uses it as an array. This might corrupt or misinterpret adjacent memory locations.
+fftw-3.2.2/long/rdft/problem.c:213: callee_ptr_arith: Performing pointer arithmetic on "kind" in callee "fftwl_mkproblem_rdft".
+fftw-3.2.2/long/rdft/problem.c:154: ptr_arith: Performing pointer arithmetic on "kind" in expression "kind + i".
+
+Error: ARRAY_VS_SINGLETON:
+fftw-3.2.2/long/rdft/problem.c:223: address_of: Taking address with "&kind" yields a singleton pointer.
+fftw-3.2.2/long/rdft/problem.c:223: callee_ptr_arith: Passing "&kind" to function "fftwl_mkproblem_rdft" which uses it as an array. This might corrupt or misinterpret adjacent memory locations.
+fftw-3.2.2/long/rdft/problem.c:154: ptr_arith: Performing pointer arithmetic on "kind" in expression "kind + i".
+
+Error: ARRAY_VS_SINGLETON:
+fftw-3.2.2/single/rdft/problem.c:230: address_of: Taking address with "&kind" yields a singleton pointer.
+fftw-3.2.2/single/rdft/problem.c:230: callee_ptr_arith: Passing "&kind" to function "fftwf_mkproblem_rdft_d" which uses it as an array. This might corrupt or misinterpret adjacent memory locations.
+fftw-3.2.2/single/rdft/problem.c:213: callee_ptr_arith: Performing pointer arithmetic on "kind" in callee "fftwf_mkproblem_rdft".
+fftw-3.2.2/single/rdft/problem.c:154: ptr_arith: Performing pointer arithmetic on "kind" in expression "kind + i".
+
+Error: ARRAY_VS_SINGLETON:
+fftw-3.2.2/single/rdft/problem.c:223: address_of: Taking address with "&kind" yields a singleton pointer.
+fftw-3.2.2/single/rdft/problem.c:223: callee_ptr_arith: Passing "&kind" to function "fftwf_mkproblem_rdft" which uses it as an array. This might corrupt or misinterpret adjacent memory locations.
+fftw-3.2.2/single/rdft/problem.c:154: ptr_arith: Performing pointer arithmetic on "kind" in expression "kind + i".
+
+Error: BAD_FREE:
+fftw-3.2.2/double/rdft/vrank3-transpose.c:753: address_free: Using "&pln->super.super" to refer to containing object "*pln" freed by "fftw_plan_destroy_internal".
+fftw-3.2.2/double/kernel/plan.c:50: freed_arg: "fftw_ifree" frees parameter "ego".
+fftw-3.2.2/double/kernel/alloc.c:280: freed_arg: "fftw_kernel_free" frees parameter "p".
+fftw-3.2.2/double/kernel/kalloc.c:142: freed_arg: "free" frees parameter "p".
+
+Error: BAD_FREE:
+fftw-3.2.2/long/rdft/vrank3-transpose.c:753: address_free: Using "&pln->super.super" to refer to containing object "*pln" freed by "fftwl_plan_destroy_internal".
+fftw-3.2.2/long/kernel/plan.c:50: freed_arg: "fftwl_ifree" frees parameter "ego".
+fftw-3.2.2/long/kernel/alloc.c:280: freed_arg: "fftwl_kernel_free" frees parameter "p".
+fftw-3.2.2/long/kernel/kalloc.c:142: freed_arg: "free" frees parameter "p".
+
+Error: FORWARD_NULL:
+fftw-3.2.2/long/dft/ct.c:123: assign_zero: Assigning: "pln" = 0.
+fftw-3.2.2/long/dft/ct.c:219: var_deref_op: Dereferencing null variable "pln".
+
+Error: FORWARD_NULL:
+fftw-3.2.2/long/rdft/ct-hc2c.c:150: assign_zero: Assigning: "pln" = 0.
+fftw-3.2.2/long/rdft/ct-hc2c.c:260: var_deref_op: Dereferencing null variable "pln".
+
+Error: FORWARD_NULL:
+fftw-3.2.2/long/rdft/hc2hc.c:120: assign_zero: Assigning: "pln" = 0.
+fftw-3.2.2/long/rdft/hc2hc.c:181: var_deref_op: Dereferencing null variable "pln".
+
+Error: FORWARD_NULL:
+fftw-3.2.2/long/rdft/rank0-rdft2.c:147: assign_zero: Assigning: "cldcpy" = 0.
+fftw-3.2.2/long/rdft/rank0-rdft2.c:183: var_deref_op: Dereferencing null variable "cldcpy".
+
+Error: FORWARD_NULL:
+fftw-3.2.2/long/threads/ct.c:120: assign_zero: Assigning: "pln" = 0.
+fftw-3.2.2/long/threads/ct.c:238: var_deref_op: Dereferencing null variable "pln".
+
+Error: FORWARD_NULL:
+fftw-3.2.2/long/threads/hc2hc.c:118: assign_zero: Assigning: "pln" = 0.
+fftw-3.2.2/long/threads/hc2hc.c:204: var_deref_op: Dereferencing null variable "pln".
+
+Error: FORWARD_NULL:
+fftw-3.2.2/single/dft/ct.c:123: assign_zero: Assigning: "pln" = 0.
+fftw-3.2.2/single/dft/ct.c:219: var_deref_op: Dereferencing null variable "pln".
+
+Error: FORWARD_NULL:
+fftw-3.2.2/single/rdft/ct-hc2c.c:150: assign_zero: Assigning: "pln" = 0.
+fftw-3.2.2/single/rdft/ct-hc2c.c:260: var_deref_op: Dereferencing null variable "pln".
+
+Error: FORWARD_NULL:
+fftw-3.2.2/single/rdft/hc2hc.c:120: assign_zero: Assigning: "pln" = 0.
+fftw-3.2.2/single/rdft/hc2hc.c:181: var_deref_op: Dereferencing null variable "pln".
+
+Error: FORWARD_NULL:
+fftw-3.2.2/single/rdft/rank0-rdft2.c:147: assign_zero: Assigning: "cldcpy" = 0.
+fftw-3.2.2/single/rdft/rank0-rdft2.c:183: var_deref_op: Dereferencing null variable "cldcpy".
+
+Error: FORWARD_NULL:
+fftw-3.2.2/single/threads/ct.c:120: assign_zero: Assigning: "pln" = 0.
+fftw-3.2.2/single/threads/ct.c:238: var_deref_op: Dereferencing null variable "pln".
+
+Error: FORWARD_NULL:
+fftw-3.2.2/single/threads/hc2hc.c:118: assign_zero: Assigning: "pln" = 0.
+fftw-3.2.2/single/threads/hc2hc.c:204: var_deref_op: Dereferencing null variable "pln".
+
+Error: REVERSE_INULL:
+fftw-3.2.2/long/threads/dft-vrank-geq1.c:165: deref_ptr: Directly dereferencing pointer "cldrn".
+fftw-3.2.2/long/threads/dft-vrank-geq1.c:197: check_after_deref: Dereferencing "cldrn" before a null check.
+
+Error: REVERSE_INULL:
+fftw-3.2.2/long/threads/rdft-vrank-geq1.c:163: deref_ptr: Directly dereferencing pointer "cldrn".
+fftw-3.2.2/long/threads/rdft-vrank-geq1.c:194: check_after_deref: Dereferencing "cldrn" before a null check.
+
+Error: REVERSE_INULL:
+fftw-3.2.2/long/threads/vrank-geq1-rdft2.c:173: deref_ptr: Directly dereferencing pointer "cldrn".
+fftw-3.2.2/long/threads/vrank-geq1-rdft2.c:206: check_after_deref: Dereferencing "cldrn" before a null check.
+
+Error: REVERSE_INULL:
+fftw-3.2.2/single/threads/dft-vrank-geq1.c:165: deref_ptr: Directly dereferencing pointer "cldrn".
+fftw-3.2.2/single/threads/dft-vrank-geq1.c:197: check_after_deref: Dereferencing "cldrn" before a null check.
+
+Error: REVERSE_INULL:
+fftw-3.2.2/single/threads/rdft-vrank-geq1.c:163: deref_ptr: Directly dereferencing pointer "cldrn".
+fftw-3.2.2/single/threads/rdft-vrank-geq1.c:194: check_after_deref: Dereferencing "cldrn" before a null check.
+
+Error: REVERSE_INULL:
+fftw-3.2.2/single/threads/vrank-geq1-rdft2.c:173: deref_ptr: Directly dereferencing pointer "cldrn".
+fftw-3.2.2/single/threads/vrank-geq1-rdft2.c:206: check_after_deref: Dereferencing "cldrn" before a null check.
+
+Error: SIZECHECK:
+fftw-3.2.2/double/tests/bench.c:80: buffer_alloc: "bench_malloc(sizeof (int *) /*8*/ * t->rnk)" allocates memory.
+fftw-3.2.2/double/libbench2/util.c:198: buffer_alloc: "memalign" allocates memory determined by parameter "n" of the current function.
+fftw-3.2.2/double/libbench2/util.c:198: var_assign: Assigning: "p" =  storage allocated by "memalign(128UL, n)".
+fftw-3.2.2/double/libbench2/util.c:215: return_dbuffer: Returning allocated array "p".
+fftw-3.2.2/double/tests/bench.c:80: incorrect_multiplication: Allocating a multiple of 8 bytes to pointer "n", which needs 4 bytes.
+
+Error: SIZECHECK:
+fftw-3.2.2/double/tests/bench.c:91: buffer_alloc: "bench_malloc(sizeof (int *) /*8*/ * t->rnk)" allocates memory.
+fftw-3.2.2/double/libbench2/util.c:198: buffer_alloc: "memalign" allocates memory determined by parameter "n" of the current function.
+fftw-3.2.2/double/libbench2/util.c:198: var_assign: Assigning: "p" =  storage allocated by "memalign(128UL, n)".
+fftw-3.2.2/double/libbench2/util.c:215: return_dbuffer: Returning allocated array "p".
+fftw-3.2.2/double/tests/bench.c:91: incorrect_multiplication: Allocating a multiple of 8 bytes to pointer "inembed", which needs 4 bytes.
+
+Error: SIZECHECK:
+fftw-3.2.2/double/tests/bench.c:92: buffer_alloc: "bench_malloc(sizeof (int *) /*8*/ * t->rnk)" allocates memory.
+fftw-3.2.2/double/libbench2/util.c:198: buffer_alloc: "memalign" allocates memory determined by parameter "n" of the current function.
+fftw-3.2.2/double/libbench2/util.c:198: var_assign: Assigning: "p" =  storage allocated by "memalign(128UL, n)".
+fftw-3.2.2/double/libbench2/util.c:215: return_dbuffer: Returning allocated array "p".
+fftw-3.2.2/double/tests/bench.c:92: incorrect_multiplication: Allocating a multiple of 8 bytes to pointer "onembed", which needs 4 bytes.
+
+Error: SIZECHECK:
+fftw-3.2.2/long/tests/bench.c:80: buffer_alloc: "bench_malloc(sizeof (int *) /*8*/ * t->rnk)" allocates memory.
+fftw-3.2.2/double/libbench2/util.c:198: buffer_alloc: "memalign" allocates memory determined by parameter "n" of the current function.
+fftw-3.2.2/double/libbench2/util.c:198: var_assign: Assigning: "p" =  storage allocated by "memalign(128UL, n)".
+fftw-3.2.2/double/libbench2/util.c:215: return_dbuffer: Returning allocated array "p".
+fftw-3.2.2/long/tests/bench.c:80: incorrect_multiplication: Allocating a multiple of 8 bytes to pointer "n", which needs 4 bytes.
+
+Error: SIZECHECK:
+fftw-3.2.2/long/tests/bench.c:91: buffer_alloc: "bench_malloc(sizeof (int *) /*8*/ * t->rnk)" allocates memory.
+fftw-3.2.2/double/libbench2/util.c:198: buffer_alloc: "memalign" allocates memory determined by parameter "n" of the current function.
+fftw-3.2.2/double/libbench2/util.c:198: var_assign: Assigning: "p" =  storage allocated by "memalign(128UL, n)".
+fftw-3.2.2/double/libbench2/util.c:215: return_dbuffer: Returning allocated array "p".
+fftw-3.2.2/long/tests/bench.c:91: incorrect_multiplication: Allocating a multiple of 8 bytes to pointer "inembed", which needs 4 bytes.
+
+Error: SIZECHECK:
+fftw-3.2.2/long/tests/bench.c:92: buffer_alloc: "bench_malloc(sizeof (int *) /*8*/ * t->rnk)" allocates memory.
+fftw-3.2.2/double/libbench2/util.c:198: buffer_alloc: "memalign" allocates memory determined by parameter "n" of the current function.
+fftw-3.2.2/double/libbench2/util.c:198: var_assign: Assigning: "p" =  storage allocated by "memalign(128UL, n)".
+fftw-3.2.2/double/libbench2/util.c:215: return_dbuffer: Returning allocated array "p".
+fftw-3.2.2/long/tests/bench.c:92: incorrect_multiplication: Allocating a multiple of 8 bytes to pointer "onembed", which needs 4 bytes.
+
+Error: SIZECHECK:
+fftw-3.2.2/single/tests/bench.c:80: buffer_alloc: "bench_malloc(sizeof (int *) /*8*/ * t->rnk)" allocates memory.
+fftw-3.2.2/double/libbench2/util.c:198: buffer_alloc: "memalign" allocates memory determined by parameter "n" of the current function.
+fftw-3.2.2/double/libbench2/util.c:198: var_assign: Assigning: "p" =  storage allocated by "memalign(128UL, n)".
+fftw-3.2.2/double/libbench2/util.c:215: return_dbuffer: Returning allocated array "p".
+fftw-3.2.2/single/tests/bench.c:80: incorrect_multiplication: Allocating a multiple of 8 bytes to pointer "n", which needs 4 bytes.
+
+Error: SIZECHECK:
+fftw-3.2.2/single/tests/bench.c:91: buffer_alloc: "bench_malloc(sizeof (int *) /*8*/ * t->rnk)" allocates memory.
+fftw-3.2.2/double/libbench2/util.c:198: buffer_alloc: "memalign" allocates memory determined by parameter "n" of the current function.
+fftw-3.2.2/double/libbench2/util.c:198: var_assign: Assigning: "p" =  storage allocated by "memalign(128UL, n)".
+fftw-3.2.2/double/libbench2/util.c:215: return_dbuffer: Returning allocated array "p".
+fftw-3.2.2/single/tests/bench.c:91: incorrect_multiplication: Allocating a multiple of 8 bytes to pointer "inembed", which needs 4 bytes.
+
+Error: SIZECHECK:
+fftw-3.2.2/single/tests/bench.c:92: buffer_alloc: "bench_malloc(sizeof (int *) /*8*/ * t->rnk)" allocates memory.
+fftw-3.2.2/double/libbench2/util.c:198: buffer_alloc: "memalign" allocates memory determined by parameter "n" of the current function.
+fftw-3.2.2/double/libbench2/util.c:198: var_assign: Assigning: "p" =  storage allocated by "memalign(128UL, n)".
+fftw-3.2.2/double/libbench2/util.c:215: return_dbuffer: Returning allocated array "p".
+fftw-3.2.2/single/tests/bench.c:92: incorrect_multiplication: Allocating a multiple of 8 bytes to pointer "onembed", which needs 4 bytes.
+
+Error: SIZEOF_MISMATCH:
+fftw-3.2.2/double/tests/bench.c:80: suspicious_sizeof: Passing argument "sizeof (int *) /*8*/ * t->rnk" to function "bench_malloc" and then casting the return value to "int *" is suspicious.  Did you intend to use "sizeof(int)" instead of "sizeof (int *)" ?
+
+Error: SIZEOF_MISMATCH:
+fftw-3.2.2/double/tests/bench.c:91: suspicious_sizeof: Passing argument "sizeof (int *) /*8*/ * t->rnk" to function "bench_malloc" and then casting the return value to "int *" is suspicious.  Did you intend to use "sizeof(int)" instead of "sizeof (int *)" ?
+
+Error: SIZEOF_MISMATCH:
+fftw-3.2.2/double/tests/bench.c:92: suspicious_sizeof: Passing argument "sizeof (int *) /*8*/ * t->rnk" to function "bench_malloc" and then casting the return value to "int *" is suspicious.  Did you intend to use "sizeof(int)" instead of "sizeof (int *)" ?
+
+Error: SIZEOF_MISMATCH:
+fftw-3.2.2/long/tests/bench.c:80: suspicious_sizeof: Passing argument "sizeof (int *) /*8*/ * t->rnk" to function "bench_malloc" and then casting the return value to "int *" is suspicious.  Did you intend to use "sizeof(int)" instead of "sizeof (int *)" ?
+
+Error: SIZEOF_MISMATCH:
+fftw-3.2.2/long/tests/bench.c:91: suspicious_sizeof: Passing argument "sizeof (int *) /*8*/ * t->rnk" to function "bench_malloc" and then casting the return value to "int *" is suspicious.  Did you intend to use "sizeof(int)" instead of "sizeof (int *)" ?
+
+Error: SIZEOF_MISMATCH:
+fftw-3.2.2/long/tests/bench.c:92: suspicious_sizeof: Passing argument "sizeof (int *) /*8*/ * t->rnk" to function "bench_malloc" and then casting the return value to "int *" is suspicious.  Did you intend to use "sizeof(int)" instead of "sizeof (int *)" ?
+
+Error: SIZEOF_MISMATCH:
+fftw-3.2.2/single/tests/bench.c:80: suspicious_sizeof: Passing argument "sizeof (int *) /*8*/ * t->rnk" to function "bench_malloc" and then casting the return value to "int *" is suspicious.  Did you intend to use "sizeof(int)" instead of "sizeof (int *)" ?
+
+Error: SIZEOF_MISMATCH:
+fftw-3.2.2/single/tests/bench.c:91: suspicious_sizeof: Passing argument "sizeof (int *) /*8*/ * t->rnk" to function "bench_malloc" and then casting the return value to "int *" is suspicious.  Did you intend to use "sizeof(int)" instead of "sizeof (int *)" ?
+
+Error: SIZEOF_MISMATCH:
+fftw-3.2.2/single/tests/bench.c:92: suspicious_sizeof: Passing argument "sizeof (int *) /*8*/ * t->rnk" to function "bench_malloc" and then casting the return value to "int *" is suspicious.  Did you intend to use "sizeof(int)" instead of "sizeof (int *)" ?

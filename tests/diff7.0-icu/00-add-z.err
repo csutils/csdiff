@@ -1,0 +1,1453 @@
+
+Error: BAD_FREE:
+/builddir/build/BUILD/icu/source/common/udata.cpp:202: address_free: "udata_checkCommonData_48" frees address of "tData".
+/builddir/build/BUILD/icu/source/common/ucmndata.c:358: freed_arg: "udata_close_48" frees parameter "udm".
+/builddir/build/BUILD/icu/source/common/udatamem.c:94: freed_arg: "uprv_free_48" frees parameter "pData".
+/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+
+Error: BAD_FREE:
+/builddir/build/BUILD/icu/source/common/udata.cpp:772: address_free: "udata_checkCommonData_48" frees address of "tData".
+/builddir/build/BUILD/icu/source/common/ucmndata.c:358: freed_arg: "udata_close_48" frees parameter "udm".
+/builddir/build/BUILD/icu/source/common/udatamem.c:94: freed_arg: "uprv_free_48" frees parameter "pData".
+/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+
+Error: BAD_FREE:
+/builddir/build/BUILD/icu/source/common/udata.cpp:997: address_free: "udata_close_48" frees address of "dataMemory".
+/builddir/build/BUILD/icu/source/common/udatamem.c:94: freed_arg: "uprv_free_48" frees parameter "pData".
+/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+
+Error: BAD_FREE:
+/builddir/build/BUILD/icu/source/common/locavailable.cpp:166: address_free: "ures_close_48" frees address of "installed".
+/builddir/build/BUILD/icu/source/common/uresbund.c:832: freed_arg: "ures_closeBundle" frees parameter "resB".
+/builddir/build/BUILD/icu/source/common/uresbund.c:818: freed_arg: "uprv_free_48" frees parameter "resB".
+/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+
+Error: BAD_FREE:
+/builddir/build/BUILD/icu/source/common/uresbund.c:1675: address_free: "ures_close_48" frees address of "stack".
+/builddir/build/BUILD/icu/source/common/uresbund.c:832: freed_arg: "ures_closeBundle" frees parameter "resB".
+/builddir/build/BUILD/icu/source/common/uresbund.c:818: freed_arg: "uprv_free_48" frees parameter "resB".
+/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+
+Error: BAD_FREE:
+/builddir/build/BUILD/icu/source/common/locresdata.cpp:148: address_free: "ures_close_48" frees address of "subTable".
+/builddir/build/BUILD/icu/source/common/uresbund.c:832: freed_arg: "ures_closeBundle" frees parameter "resB".
+/builddir/build/BUILD/icu/source/common/uresbund.c:818: freed_arg: "uprv_free_48" frees parameter "resB".
+/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+/builddir/build/BUILD/icu/source/common/locresdata.cpp:149: address_free: "ures_close_48" frees address of "table".
+
+Error: BAD_FREE:
+/builddir/build/BUILD/icu/source/common/resbund.cpp:350: address_free: "ures_close_48" frees address of "r".
+/builddir/build/BUILD/icu/source/common/uresbund.c:832: freed_arg: "ures_closeBundle" frees parameter "resB".
+/builddir/build/BUILD/icu/source/common/uresbund.c:818: freed_arg: "uprv_free_48" frees parameter "resB".
+/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+
+Error: BAD_FREE:
+/builddir/build/BUILD/icu/source/common/resbund.cpp:297: address_free: "ures_close_48" frees address of "r".
+/builddir/build/BUILD/icu/source/common/uresbund.c:832: freed_arg: "ures_closeBundle" frees parameter "resB".
+/builddir/build/BUILD/icu/source/common/uresbund.c:818: freed_arg: "uprv_free_48" frees parameter "resB".
+/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+
+Error: BAD_FREE:
+/builddir/build/BUILD/icu/source/common/resbund.cpp:339: address_free: "ures_close_48" frees address of "r".
+/builddir/build/BUILD/icu/source/common/uresbund.c:832: freed_arg: "ures_closeBundle" frees parameter "resB".
+/builddir/build/BUILD/icu/source/common/uresbund.c:818: freed_arg: "uprv_free_48" frees parameter "resB".
+/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+
+Error: BAD_FREE:
+/builddir/build/BUILD/icu/source/common/resbund.cpp:321: address_free: "ures_close_48" frees address of "r".
+/builddir/build/BUILD/icu/source/common/uresbund.c:832: freed_arg: "ures_closeBundle" frees parameter "resB".
+/builddir/build/BUILD/icu/source/common/uresbund.c:818: freed_arg: "uprv_free_48" frees parameter "resB".
+/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+
+Error: BAD_FREE:
+/builddir/build/BUILD/icu/source/common/udata.cpp:903: address_free: "udata_checkCommonData_48" frees address of "udm".
+/builddir/build/BUILD/icu/source/common/ucmndata.c:358: freed_arg: "udata_close_48" frees parameter "udm".
+/builddir/build/BUILD/icu/source/common/udatamem.c:94: freed_arg: "uprv_free_48" frees parameter "pData".
+/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+
+Error: BAD_FREE:
+/builddir/build/BUILD/icu/source/common/udata.cpp:875: address_free: "udata_checkCommonData_48" frees address of "dataMemory".
+/builddir/build/BUILD/icu/source/common/ucmndata.c:358: freed_arg: "udata_close_48" frees parameter "udm".
+/builddir/build/BUILD/icu/source/common/udatamem.c:94: freed_arg: "uprv_free_48" frees parameter "pData".
+/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+
+Error: BAD_FREE:
+/builddir/build/BUILD/icu/source/common/uresbund.c:2164: address_free: "ures_close_48" frees address of "resData".
+/builddir/build/BUILD/icu/source/common/uresbund.c:832: freed_arg: "ures_closeBundle" frees parameter "resB".
+/builddir/build/BUILD/icu/source/common/uresbund.c:818: freed_arg: "uprv_free_48" frees parameter "resB".
+/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+/builddir/build/BUILD/icu/source/common/uresbund.c:2168: address_free: "ures_close_48" frees address of "resData".
+
+Error: BAD_FREE:
+/builddir/build/BUILD/icu/source/common/uresbund.c:2646: address_free: "ures_close_48" frees address of "bund1".
+/builddir/build/BUILD/icu/source/common/uresbund.c:832: freed_arg: "ures_closeBundle" frees parameter "resB".
+/builddir/build/BUILD/icu/source/common/uresbund.c:818: freed_arg: "uprv_free_48" frees parameter "resB".
+/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+/builddir/build/BUILD/icu/source/common/uresbund.c:2647: address_free: "ures_close_48" frees address of "bund2".
+
+Error: BAD_FREE:
+/builddir/build/BUILD/icu/source/common/uresbund.c:2690: address_free: "ures_close_48" frees address of "item".
+/builddir/build/BUILD/icu/source/common/uresbund.c:832: freed_arg: "ures_closeBundle" frees parameter "resB".
+/builddir/build/BUILD/icu/source/common/uresbund.c:818: freed_arg: "uprv_free_48" frees parameter "resB".
+/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+/builddir/build/BUILD/icu/source/common/uresbund.c:2691: address_free: "ures_close_48" frees address of "subItem".
+/builddir/build/BUILD/icu/source/common/uresbund.c:2761: address_free: "ures_close_48" frees address of "item".
+/builddir/build/BUILD/icu/source/common/uresbund.c:2762: address_free: "ures_close_48" frees address of "subItem".
+
+Error: BAD_FREE:
+/builddir/build/BUILD/icu/source/common/uresbund.c:2257: address_free: Using "&ctx->installed" to refer to containing object "*ctx" freed by "ures_close_48".
+/builddir/build/BUILD/icu/source/common/uresbund.c:832: freed_arg: "ures_closeBundle" frees parameter "resB".
+/builddir/build/BUILD/icu/source/common/uresbund.c:818: freed_arg: "uprv_free_48" frees parameter "resB".
+/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+
+Error: BAD_FREE:
+/builddir/build/BUILD/icu/source/common/uresbund.c:2256: address_free: "ures_close_48" frees address of "ctx->curr".
+/builddir/build/BUILD/icu/source/common/uresbund.c:832: freed_arg: "ures_closeBundle" frees parameter "resB".
+/builddir/build/BUILD/icu/source/common/uresbund.c:818: freed_arg: "uprv_free_48" frees parameter "resB".
+/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+
+Error: BAD_FREE:
+/builddir/build/BUILD/icu/source/i18n/olsontz.cpp:251: address_free: "ures_close_48" frees address of "r".
+/builddir/build/BUILD/icu/source/common/uresbund.c:832: freed_arg: "ures_closeBundle" frees parameter "resB".
+/builddir/build/BUILD/icu/source/common/uresbund.c:818: freed_arg: "uprv_free_48" frees parameter "resB".
+/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+
+Error: BAD_FREE:
+/builddir/build/BUILD/icu/source/i18n/coll.cpp:297: address_free: "ures_close_48" frees address of "installed".
+/builddir/build/BUILD/icu/source/common/uresbund.c:832: freed_arg: "ures_closeBundle" frees parameter "resB".
+/builddir/build/BUILD/icu/source/common/uresbund.c:818: freed_arg: "uprv_free_48" frees parameter "resB".
+/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+
+Error: BAD_FREE:
+/builddir/build/BUILD/icu/source/i18n/timezone.cpp:1041: address_free: "ures_close_48" frees address of "res".
+/builddir/build/BUILD/icu/source/common/uresbund.c:832: freed_arg: "ures_closeBundle" frees parameter "resB".
+/builddir/build/BUILD/icu/source/common/uresbund.c:818: freed_arg: "uprv_free_48" frees parameter "resB".
+/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+
+Error: BAD_FREE:
+/builddir/build/BUILD/icu/source/i18n/timezone.cpp:1012: address_free: "ures_close_48" frees address of "res".
+/builddir/build/BUILD/icu/source/common/uresbund.c:832: freed_arg: "ures_closeBundle" frees parameter "resB".
+/builddir/build/BUILD/icu/source/common/uresbund.c:818: freed_arg: "uprv_free_48" frees parameter "resB".
+/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+
+Error: BAD_FREE:
+/builddir/build/BUILD/icu/source/i18n/ucurr.cpp:2408: address_free: "ures_close_48" frees address of "to".
+/builddir/build/BUILD/icu/source/common/uresbund.c:832: freed_arg: "ures_closeBundle" frees parameter "resB".
+/builddir/build/BUILD/icu/source/common/uresbund.c:818: freed_arg: "uprv_free_48" frees parameter "resB".
+/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+/builddir/build/BUILD/icu/source/i18n/ucurr.cpp:2409: address_free: "ures_close_48" frees address of "curbndl".
+/builddir/build/BUILD/icu/source/i18n/ucurr.cpp:2410: address_free: "ures_close_48" frees address of "regbndl".
+/builddir/build/BUILD/icu/source/i18n/ucurr.cpp:2411: address_free: "ures_close_48" frees address of "bundlekey".
+
+Error: BUFFER_SIZE_WARNING:
+/builddir/build/BUILD/icu/source/common/brkiter.cpp:96: buffer_size_warning: Calling strncpy with a maximum size argument of 157 bytes on destination array "actualLocale" of size 157 bytes might leave the destination string unterminated.
+
+Error: BUFFER_SIZE_WARNING:
+/builddir/build/BUILD/icu/source/common/icuplug.c:356: buffer_size_warning: Calling strncpy with a maximum size argument of 100 bytes on destination array "plug->config" of size 100 bytes might leave the destination string unterminated.
+/builddir/build/BUILD/icu/source/common/icuplug.c:362: buffer_size_warning: Calling strncpy with a maximum size argument of 100 bytes on destination array "plug->sym" of size 100 bytes might leave the destination string unterminated.
+
+Error: BUFFER_SIZE_WARNING:
+/builddir/build/BUILD/icu/source/common/icuplug.c:549: buffer_size_warning: Calling strncpy with a maximum size argument of 100 bytes on destination array "plug->sym" of size 100 bytes might leave the destination string unterminated.
+/builddir/build/BUILD/icu/source/common/icuplug.c:553: buffer_size_warning: Calling strncpy with a maximum size argument of 100 bytes on destination array "plug->libName" of size 100 bytes might leave the destination string unterminated.
+/builddir/build/BUILD/icu/source/common/icuplug.c:557: buffer_size_warning: Calling strncpy with a maximum size argument of 100 bytes on destination array "plug->name" of size 100 bytes might leave the destination string unterminated.
+/builddir/build/BUILD/icu/source/common/icuplug.c:561: buffer_size_warning: Calling strncpy with a maximum size argument of 100 bytes on destination array "plug->config" of size 100 bytes might leave the destination string unterminated.
+
+Error: BUFFER_SIZE_WARNING:
+/builddir/build/BUILD/icu/source/common/icuplug.c:186: buffer_size_warning: Calling strncpy with a maximum size argument of 100 bytes on destination array "(libraryList + libEntry).name" of size 100 bytes might leave the destination string unterminated.
+
+Error: BUFFER_SIZE_WARNING:
+/builddir/build/BUILD/icu/source/common/icuplug.c:446: buffer_size_warning: Calling strncpy with a maximum size argument of 100 bytes on destination array "data->name" of size 100 bytes might leave the destination string unterminated.
+
+Error: BUFFER_SIZE_WARNING:
+/builddir/build/BUILD/icu/source/common/ucnv2022.c:469: buffer_size_warning: Calling strncpy with a maximum size argument of 6 bytes on destination array "myLocale" of size 6 bytes might leave the destination string unterminated.
+
+Error: BUFFER_SIZE_WARNING:
+/builddir/build/BUILD/icu/source/i18n/ucal.cpp:151: buffer_size_warning: Calling strncpy with a maximum size argument of 258 bytes on destination array "localeBuf" of size 258 bytes might leave the destination string unterminated.
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/icu/source/common/ucasemap.c:98: check_return: Calling function "ucase_getCaseLocale_48" without checking return value (as is done elsewhere 4 out of 5 times).
+/builddir/build/BUILD/icu/source/common/ustrcase.c:298: example_checked: "ucase_getCaseLocale_48(csm->locale, &csm->locCache)" has its value checked in "ucase_getCaseLocale_48(csm->locale, &csm->locCache) == 4".
+/builddir/build/BUILD/icu/source/common/ucasemap.c:364: example_checked: "ucase_getCaseLocale_48(csm->locale, &csm->locCache)" has its value checked in "ucase_getCaseLocale_48(csm->locale, &csm->locCache) == 4".
+/builddir/build/BUILD/icu/source/common/ucase.c:795: example_assign: Assigning: "loc" = return value from "ucase_getCaseLocale_48(locale, locCache)".
+/builddir/build/BUILD/icu/source/common/ucase.c:803: example_checked: "loc" has its value checked in "loc == 3".
+/builddir/build/BUILD/icu/source/common/ucase.c:939: example_assign: Assigning: "loc" = return value from "ucase_getCaseLocale_48(locale, locCache)".
+/builddir/build/BUILD/icu/source/common/ucase.c:941: example_checked: "loc" has its value checked in "loc == 2".
+/builddir/build/BUILD/icu/source/common/ucasemap.c:98: unchecked_value: No check of the return value of "ucase_getCaseLocale_48(csm->locale, &csm->locCache)".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:422: check_return: Calling function "icu_48::ICU_Utility::parseChar(icu_48::UnicodeString const &, int &, unsigned short)" without checking return value (as is done elsewhere 4 out of 5 times).
+/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:369: example_checked: "icu_48::ICU_Utility::parseChar(id, pos, 59)" has its value checked in "icu_48::ICU_Utility::parseChar(id, pos, 59)".
+/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:396: example_checked: "icu_48::ICU_Utility::parseChar(id, pos, 59)" has its value checked in "icu_48::ICU_Utility::parseChar(id, pos, 59)".
+/builddir/build/BUILD/icu/source/i18n/rbt_pars.cpp:982: example_checked: "icu_48::ICU_Utility::parseChar(rule, p, 59)" has its value checked in "icu_48::ICU_Utility::parseChar(rule, p, 59)".
+/builddir/build/BUILD/icu/source/i18n/rbt_pars.cpp:997: example_checked: "icu_48::ICU_Utility::parseChar(rule, p, 59)" has its value checked in "icu_48::ICU_Utility::parseChar(rule, p, 59)".
+/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:422: unchecked_value: No check of the return value of "icu_48::ICU_Utility::parseChar(id, pos, 59)".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/icu/source/io/ustdio.c:612: check_return: Calling function "ufile_getch_48" without checking return value (as is done elsewhere 4 out of 5 times).
+/builddir/build/BUILD/icu/source/io/uscanf_p.c:324: example_checked: "ufile_getch_48(input, &c)" has its value checked in "isNotEOF = ufile_getch_48(input, &c)".
+/builddir/build/BUILD/icu/source/io/uscanf_p.c:358: example_checked: "ufile_getch_48(input, &c)" has its value checked in "isNotEOF = ufile_getch_48(input, &c)".
+/builddir/build/BUILD/icu/source/io/uscanf_p.c:829: example_checked: "ufile_getch_48(input, &c)" has its value checked in "isNotEOF = ufile_getch_48(input, &c)".
+/builddir/build/BUILD/icu/source/io/uscanf_p.c:917: example_checked: "ufile_getch_48(input, &c)" has its value checked in "isNotEOF = ufile_getch_48(input, &c)".
+/builddir/build/BUILD/icu/source/io/ustdio.c:612: unchecked_value: No check of the return value of "ufile_getch_48(f, &ch)".
+
+Error: DEADCODE:
+/builddir/build/BUILD/icu/source/common/uresdata.c:583: dead_error_condition: On this path, the condition "(int32_t)type == 9" cannot be false.
+/builddir/build/BUILD/icu/source/common/uresdata.c:583: const: After this line, the value of "type" is equal to 9.
+/builddir/build/BUILD/icu/source/common/uresdata.c:551: equality_cond: Condition "(int32_t)type == 2" is evaluated as false.
+/builddir/build/BUILD/icu/source/common/uresdata.c:555: equality_cond: Condition "(int32_t)type == 2" is evaluated as false.
+/builddir/build/BUILD/icu/source/common/uresdata.c:572: equality_cond: Condition "(int32_t)type == 2" is evaluated as false.
+/builddir/build/BUILD/icu/source/common/uresdata.c:551: equality_cond: Condition "(int32_t)type == 4" is evaluated as false.
+/builddir/build/BUILD/icu/source/common/uresdata.c:555: equality_cond: Condition "(int32_t)type == 4" is evaluated as false.
+/builddir/build/BUILD/icu/source/common/uresdata.c:572: equality_cond: Condition "(int32_t)type == 4" is evaluated as false.
+/builddir/build/BUILD/icu/source/common/uresdata.c:551: equality_cond: Condition "(int32_t)type == 5" is evaluated as false.
+/builddir/build/BUILD/icu/source/common/uresdata.c:555: equality_cond: Condition "(int32_t)type == 5" is evaluated as false.
+/builddir/build/BUILD/icu/source/common/uresdata.c:572: equality_cond: Condition "(int32_t)type == 5" is evaluated as false.
+/builddir/build/BUILD/icu/source/common/uresdata.c:551: equality_cond: Condition "(int32_t)type == 8" is evaluated as false.
+/builddir/build/BUILD/icu/source/common/uresdata.c:555: equality_cond: Condition "(int32_t)type == 8" is evaluated as false.
+/builddir/build/BUILD/icu/source/common/uresdata.c:583: equality_cond: Condition "(int32_t)type == 8" is evaluated as false.
+/builddir/build/BUILD/icu/source/common/uresdata.c:551: new_values: Noticing condition "(int32_t)type == 9".
+/builddir/build/BUILD/icu/source/common/uresdata.c:555: new_values: Noticing condition "(int32_t)type == 9".
+/builddir/build/BUILD/icu/source/common/uresdata.c:592: dead_error_line: Execution cannot reach this statement "t2 = 4294967295U;".
+
+Error: DEADCODE:
+/builddir/build/BUILD/icu/source/i18n/ucol_tok.cpp:821: dead_error_condition: On this path, the condition "len > 0" cannot be false.
+/builddir/build/BUILD/icu/source/i18n/ucol_tok.cpp:812: at_least: After this line, the value of "len" is at least 1.
+/builddir/build/BUILD/icu/source/i18n/ucol_tok.cpp:812: new_values: Noticing condition "len <= 0".
+/builddir/build/BUILD/icu/source/i18n/ucol_tok.cpp:824: dead_error_line: Execution cannot reach this statement "tempStuff.remove();".
+
+Error: FORWARD_NULL:
+/builddir/build/BUILD/icu/source/common/bytestriebuilder.cpp:162: var_compare_op: Comparing "newElements" to null implies that "newElements" might be null.
+/builddir/build/BUILD/icu/source/common/bytestriebuilder.cpp:166: var_deref_model: Passing null variable "newElements" to function "memcpy", which dereferences it. (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)
+
+Error: FORWARD_NULL:
+/builddir/build/BUILD/icu/source/common/ucharstriebuilder.cpp:112: var_compare_op: Comparing "newElements" to null implies that "newElements" might be null.
+/builddir/build/BUILD/icu/source/common/ucharstriebuilder.cpp:116: var_deref_model: Passing null variable "newElements" to function "memcpy", which dereferences it. (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)
+
+Error: FORWARD_NULL:
+/builddir/build/BUILD/icu/source/i18n/alphaindex.cpp:891: var_compare_op: Comparing "str" to null implies that "str" might be null.
+/builddir/build/BUILD/icu/source/i18n/alphaindex.cpp:895: var_deref_model: Passing null variable "str" to function "icu_48::UnicodeString::length() const", which dereferences it.
+/builddir/build/BUILD/icu/source/common/unicode/unistr.h:3512: deref_parm: Directly dereferencing parameter "this".
+
+Error: FORWARD_NULL:
+/builddir/build/BUILD/icu/source/i18n/ucol.cpp:2768: var_deref_model: Passing null variable "source->iterator" to function "collIter_bos(icu_48::collIterate *)", which dereferences it.
+/builddir/build/BUILD/icu/source/i18n/ucol.cpp:376: deref_parm: Directly dereferencing parameter "source->iterator".
+/builddir/build/BUILD/icu/source/i18n/ucol.cpp:2828: var_deref_model: Passing null variable "source->iterator" to function "collIter_eos(icu_48::collIterate *)", which dereferences it.
+/builddir/build/BUILD/icu/source/i18n/ucol.cpp:331: deref_parm: Directly dereferencing parameter "s->iterator".
+/builddir/build/BUILD/icu/source/i18n/ucol.cpp:2846: var_deref_model: Passing null variable "source->iterator" to function "getNextNormalizedChar(icu_48::collIterate *)", which dereferences it.
+/builddir/build/BUILD/icu/source/i18n/ucol.cpp:2294: deref_parm: Directly dereferencing parameter "data->iterator".
+/builddir/build/BUILD/icu/source/i18n/ucol.cpp:2869: var_compare_op: Comparing "source->iterator" to null implies that "source->iterator" might be null.
+/builddir/build/BUILD/icu/source/i18n/ucol.cpp:2882: var_deref_model: Passing null variable "source->iterator" to function "getNextNormalizedChar(icu_48::collIterate *)", which dereferences it.
+/builddir/build/BUILD/icu/source/i18n/ucol.cpp:2959: var_deref_model: Passing null variable "source->iterator" to function "getNextNormalizedChar(icu_48::collIterate *)", which dereferences it.
+/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3120: var_deref_model: Passing null variable "source->iterator" to function "collIter_eos(icu_48::collIterate *)", which dereferences it.
+/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3121: var_deref_model: Passing null variable "source->iterator" to function "getNextNormalizedChar(icu_48::collIterate *)", which dereferences it.
+/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3123: var_deref_model: Passing null variable "source->iterator" to function "collIter_eos(icu_48::collIterate *)", which dereferences it.
+/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3125: var_deref_model: Passing null variable "source->iterator" to function "getNextNormalizedChar(icu_48::collIterate *)", which dereferences it.
+/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3295: var_deref_model: Passing null variable "source->iterator" to function "collIter_eos(icu_48::collIterate *)", which dereferences it.
+/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3295: var_deref_model: Passing null variable "source->iterator" to function "getNextNormalizedChar(icu_48::collIterate *)", which dereferences it.
+/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3316: var_deref_op: Dereferencing null variable "source->iterator".
+
+Error: FORWARD_NULL:
+/builddir/build/BUILD/icu/source/i18n/ucol.cpp:303: var_compare_op: Comparing "this->offsetStore" to null implies that "this->offsetStore" might be null.
+/builddir/build/BUILD/icu/source/i18n/ucol.cpp:319: dereference: Incrementing "this->offsetStore", which might be null.
+
+Error: FORWARD_NULL:
+/builddir/build/BUILD/icu/source/i18n/msgfmt.cpp:296: assign_zero: Assigning: "this->argTypes" = 0.
+/builddir/build/BUILD/icu/source/i18n/msgfmt.cpp:299: var_deref_model: Passing null variable "this->argTypes" to function "icu_48::MessageFormat::copyObjects(icu_48::MessageFormat const &, UErrorCode &)", which dereferences it.
+/builddir/build/BUILD/icu/source/i18n/msgfmt.cpp:1189: deref_parm_in_call: Function "memcpy" dereferences parameter "this->argTypes". (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)
+
+Error: FORWARD_NULL:
+/builddir/build/BUILD/icu/source/i18n/msgfmt.cpp:1785: var_compare_op: Comparing "this->rules" to null implies that "this->rules" might be null.
+/builddir/build/BUILD/icu/source/i18n/msgfmt.cpp:1791: var_deref_model: Passing null variable "this->rules" to function "icu_48::PluralRules::select(double) const", which dereferences it.
+/builddir/build/BUILD/icu/source/i18n/plurrule.cpp:188: deref_parm: Directly dereferencing parameter "this".
+
+Error: FORWARD_NULL:
+/builddir/build/BUILD/icu/source/i18n/rematch.cpp:503: var_compare_op: Comparing "dest" to null implies that "dest" might be null.
+/builddir/build/BUILD/icu/source/i18n/rematch.cpp:511: var_deref_model: Passing null variable "dest" to function "utext_nativeLength_48", which dereferences it.
+/builddir/build/BUILD/icu/source/common/utext.cpp:82: deref_parm: Directly dereferencing parameter "ut".
+/builddir/build/BUILD/icu/source/i18n/rematch.cpp:528: var_deref_model: Passing null variable "dest" to function "utext_nativeLength_48", which dereferences it.
+
+Error: FORWARD_NULL:
+/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:680: var_compare_op: Comparing "countToPatterns" to null implies that "countToPatterns" might be null.
+/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:714: var_deref_model: Passing null variable "countToPatterns" to function "icu_48::Hashtable::get(icu_48::UnicodeString const &) const", which dereferences it.
+/builddir/build/BUILD/icu/source/common/hash.h:166: deref_parm: Directly dereferencing parameter "this".
+
+Error: FORWARD_NULL:
+/builddir/build/BUILD/icu/source/i18n/ucal.cpp:274: dynamic_cast: Dynamic cast to pointer "dynamic_cast <struct icu_48::GregorianCalendar const *>(cpp_cal)" can return null.
+/builddir/build/BUILD/icu/source/i18n/ucal.cpp:274: alias_transfer: Assigning null: "gregocal" = "dynamic_cast <struct icu_48::GregorianCalendar const *>(cpp_cal)".
+/builddir/build/BUILD/icu/source/i18n/ucal.cpp:281: var_deref_model: Passing null variable "gregocal" to function "icu_48::GregorianCalendar::getGregorianChange() const", which dereferences it.
+/builddir/build/BUILD/icu/source/i18n/gregocal.cpp:454: deref_parm: Directly dereferencing parameter "this".
+
+Error: FORWARD_NULL:
+/builddir/build/BUILD/icu/source/i18n/ucal.cpp:257: dynamic_cast: Dynamic cast to pointer "dynamic_cast <struct icu_48::GregorianCalendar *>(cpp_cal)" can return null.
+/builddir/build/BUILD/icu/source/i18n/ucal.cpp:257: alias_transfer: Assigning null: "gregocal" = "dynamic_cast <struct icu_48::GregorianCalendar *>(cpp_cal)".
+/builddir/build/BUILD/icu/source/i18n/ucal.cpp:265: var_deref_model: Passing null variable "gregocal" to function "icu_48::GregorianCalendar::setGregorianChange(double, UErrorCode &)", which dereferences it.
+/builddir/build/BUILD/icu/source/i18n/gregocal.cpp:325: deref_parm: Directly dereferencing parameter "this".
+
+Error: FORWARD_NULL:
+/builddir/build/BUILD/icu/source/i18n/unum.cpp:142: dynamic_cast: Dynamic cast to pointer "dynamic_cast <struct icu_48::RuleBasedNumberFormat const *>(nf)" can return null.
+/builddir/build/BUILD/icu/source/i18n/unum.cpp:142: alias_transfer: Assigning null: "rbnf" = "dynamic_cast <struct icu_48::RuleBasedNumberFormat const *>(nf)".
+/builddir/build/BUILD/icu/source/i18n/unum.cpp:144: var_deref_model: Passing null variable "rbnf" to function "icu_48::RuleBasedNumberFormat::clone() const", which dereferences it. (The dereference happens because this is a virtual function call.)
+
+Error: FORWARD_NULL:
+/builddir/build/BUILD/icu/source/i18n/unum.cpp:697: dynamic_cast: Dynamic cast to pointer "dynamic_cast <struct icu_48::RuleBasedNumberFormat const *>(nf)" can return null.
+/builddir/build/BUILD/icu/source/i18n/unum.cpp:697: alias_transfer: Assigning null: "rbnf" = "dynamic_cast <struct icu_48::RuleBasedNumberFormat const *>(nf)".
+/builddir/build/BUILD/icu/source/i18n/unum.cpp:700: var_deref_model: Passing null variable "rbnf" to function "icu_48::RuleBasedNumberFormat::getDefaultRuleSetName() const", which dereferences it. (The dereference happens because this is a virtual function call.)
+/builddir/build/BUILD/icu/source/i18n/unum.cpp:702: var_deref_model: Passing null variable "rbnf" to function "icu_48::RuleBasedNumberFormat::getNumberOfRuleSetNames() const", which dereferences it. (The dereference happens because this is a virtual function call.)
+
+Error: FORWARD_NULL:
+/builddir/build/BUILD/icu/source/i18n/unum.cpp:398: var_compare_op: Comparing "outBuf" to null implies that "outBuf" might be null.
+/builddir/build/BUILD/icu/source/i18n/unum.cpp:410: var_deref_model: Passing null variable "outBuf" to function "strncpy", which dereferences it. (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)
+/builddir/build/BUILD/icu/source/i18n/unum.cpp:413: var_deref_model: Passing null variable "outBuf" to function "strcpy", which dereferences it. (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)
+
+Error: FORWARD_NULL:
+/builddir/build/BUILD/icu/source/i18n/unum.cpp:761: dynamic_cast: Dynamic cast to pointer "dynamic_cast <struct icu_48::RuleBasedNumberFormat *>(nf)" can return null.
+/builddir/build/BUILD/icu/source/i18n/unum.cpp:761: alias_transfer: Assigning null: "rbnf" = "dynamic_cast <struct icu_48::RuleBasedNumberFormat *>(nf)".
+/builddir/build/BUILD/icu/source/i18n/unum.cpp:764: var_deref_model: Passing null variable "rbnf" to function "icu_48::RuleBasedNumberFormat::setDefaultRuleSet(icu_48::UnicodeString const &, UErrorCode &)", which dereferences it. (The dereference happens because this is a virtual function call.)
+
+Error: FORWARD_NULL:
+/builddir/build/BUILD/icu/source/i18n/unum.cpp:796: dynamic_cast: Dynamic cast to pointer "dynamic_cast <struct icu_48::RuleBasedNumberFormat const *>(nf)" can return null.
+/builddir/build/BUILD/icu/source/i18n/unum.cpp:796: alias_transfer: Assigning null: "rbnf" = "dynamic_cast <struct icu_48::RuleBasedNumberFormat const *>(nf)".
+/builddir/build/BUILD/icu/source/i18n/unum.cpp:798: var_deref_model: Passing null variable "rbnf" to function "icu_48::RuleBasedNumberFormat::getRules() const", which dereferences it. (The dereference happens because this is a virtual function call.)
+
+Error: FORWARD_NULL:
+/builddir/build/BUILD/icu/source/i18n/uregex.cpp:1916: var_compare_op: Comparing "destBuf" to null implies that "destBuf" might be null.
+/builddir/build/BUILD/icu/source/i18n/uregex.cpp:1924: var_deref_model: Passing null variable "destBuf" to function "icu_48::RegexCImpl::split(icu_48::RegularExpression *, unsigned short *, int, int *, unsigned short **, int, UErrorCode *)", which dereferences it.
+/builddir/build/BUILD/icu/source/i18n/uregex.cpp:1862: deref_parm: Directly dereferencing parameter "destBuf".
+
+Error: MISSING_BREAK:
+/builddir/build/BUILD/icu/source/i18n/tzgnames.cpp:888: unterminated_case: This case (value 2) is not terminated by a 'break' statement.
+/builddir/build/BUILD/icu/source/i18n/tzgnames.cpp:890: fallthrough: The above case falls through to this one.
+
+Error: NEGATIVE_RETURNS:
+/builddir/build/BUILD/icu/source/common/ucnv.c:487: negative_return_fn: Function "ucnv_fromUChars_48(clone, chars, (int32_t)sizeof (chars) /*32*/, s, length, err)" returns a negative number.
+/builddir/build/BUILD/icu/source/common/ucnv.c:1771: negative_return: Calling "u_terminateChars_48", which might return a negative value.
+/builddir/build/BUILD/icu/source/common/ustring.c:1451: var_tested_neg: Variable "length" is negative.
+/builddir/build/BUILD/icu/source/common/ustring.c:1452: return_negative_variable: Explicitly returning negative variable "length".
+/builddir/build/BUILD/icu/source/common/ucnv.c:1771: return_negative_fn: Returning the return value of "u_terminateChars_48", which might be negative.
+/builddir/build/BUILD/icu/source/common/ucnv.c:487: var_assign: Assigning: signed variable "length8" = "ucnv_fromUChars_48".
+/builddir/build/BUILD/icu/source/common/ucnv.c:546: negative_returns: "length8" is passed to a parameter that cannot be negative.
+
+Error: NEGATIVE_RETURNS:
+/builddir/build/BUILD/icu/source/i18n/plurrule.cpp:442: negative_return_fn: Function "token->extract(0, token->length(), digits, 128, _ZN6icu_4813UnicodeString10kInvariantE)" returns a negative number.
+/builddir/build/BUILD/icu/source/common/unistr.cpp:781: negative_return: Calling "u_terminateChars_48", which might return a negative value.
+/builddir/build/BUILD/icu/source/common/ustring.c:1451: var_tested_neg: Variable "length" is negative.
+/builddir/build/BUILD/icu/source/common/ustring.c:1452: return_negative_variable: Explicitly returning negative variable "length".
+/builddir/build/BUILD/icu/source/common/unistr.cpp:781: return_negative_fn: Returning the return value of "u_terminateChars_48", which might be negative.
+/builddir/build/BUILD/icu/source/i18n/plurrule.cpp:442: var_assign: Assigning: signed variable "i" = "icu_48::UnicodeString::extract(int, int, char *, int, icu_48::UnicodeString::EInvariant) const".
+/builddir/build/BUILD/icu/source/i18n/plurrule.cpp:443: negative_returns: Using variable "i" as an index to array "digits".
+
+Error: NEGATIVE_RETURNS:
+/builddir/build/BUILD/icu/source/i18n/calendar.cpp:246: negative_return_fn: Function "uloc_getCountry_48(canonicalName, region, 3, &status)" returns a negative number.
+/builddir/build/BUILD/icu/source/common/uloc.c:1963: negative_return: Calling "u_terminateChars_48", which might return a negative value.
+/builddir/build/BUILD/icu/source/common/ustring.c:1451: var_tested_neg: Variable "length" is negative.
+/builddir/build/BUILD/icu/source/common/ustring.c:1452: return_negative_variable: Explicitly returning negative variable "length".
+/builddir/build/BUILD/icu/source/common/uloc.c:1963: return_negative_fn: Returning the return value of "u_terminateChars_48", which might be negative.
+/builddir/build/BUILD/icu/source/i18n/calendar.cpp:246: var_assign: Assigning: signed variable "regionLen" = "uloc_getCountry_48".
+/builddir/build/BUILD/icu/source/i18n/calendar.cpp:256: negative_returns: Using variable "regionLen" as an index to array "region".
+
+Error: NEGATIVE_RETURNS:
+/builddir/build/BUILD/icu/source/i18n/calendar.cpp:251: negative_return_fn: Function "uloc_getCountry_48(fullLoc, region, 3, &status)" returns a negative number.
+/builddir/build/BUILD/icu/source/common/uloc.c:1963: negative_return: Calling "u_terminateChars_48", which might return a negative value.
+/builddir/build/BUILD/icu/source/common/ustring.c:1451: var_tested_neg: Variable "length" is negative.
+/builddir/build/BUILD/icu/source/common/ustring.c:1452: return_negative_variable: Explicitly returning negative variable "length".
+/builddir/build/BUILD/icu/source/common/uloc.c:1963: return_negative_fn: Returning the return value of "u_terminateChars_48", which might be negative.
+/builddir/build/BUILD/icu/source/i18n/calendar.cpp:251: var_assign: Assigning: signed variable "regionLen" = "uloc_getCountry_48".
+/builddir/build/BUILD/icu/source/i18n/calendar.cpp:256: negative_returns: Using variable "regionLen" as an index to array "region".
+
+Error: NEGATIVE_RETURNS:
+/builddir/build/BUILD/icu/source/i18n/calendar.cpp:232: negative_return_fn: Function "uloc_getKeywordValue_48(canonicalName, "calendar", calTypeBuf, 31, &status)" returns a negative number.
+/builddir/build/BUILD/icu/source/common/uloc.c:900: negative_return: Calling "u_terminateChars_48", which might return a negative value.
+/builddir/build/BUILD/icu/source/common/ustring.c:1451: var_tested_neg: Variable "length" is negative.
+/builddir/build/BUILD/icu/source/common/ustring.c:1452: return_negative_variable: Explicitly returning negative variable "length".
+/builddir/build/BUILD/icu/source/common/uloc.c:900: var_assign: Assigning: "result" = "u_terminateChars_48(buffer, bufferCapacity, i, status)", which might be negative.
+/builddir/build/BUILD/icu/source/common/uloc.c:910: return_negative_variable: Explicitly returning negative variable "result".
+/builddir/build/BUILD/icu/source/i18n/calendar.cpp:232: var_assign: Assigning: signed variable "calTypeBufLen" = "uloc_getKeywordValue_48".
+/builddir/build/BUILD/icu/source/i18n/calendar.cpp:234: negative_returns: Using variable "calTypeBufLen" as an index to array "calTypeBuf".
+
+Error: NEGATIVE_RETURNS:
+/builddir/build/BUILD/icu/source/i18n/ucol_bld.cpp:633: negative_return_fn: Function "unorm_normalize_48(src, len, UNORM_NFKD, 0, n, 128, status)" returns a negative number.
+/builddir/build/BUILD/icu/source/common/unorm.cpp:104: negative_return: Calling "unorm2_normalize_48", which might return a negative value.
+/builddir/build/BUILD/icu/source/common/normalizer2.cpp:687: negative_return: Calling "icu_48::UnicodeString::extract(unsigned short *, int, UErrorCode &) const", which might return a negative value.
+/builddir/build/BUILD/icu/source/common/unistr.cpp:755: negative_return: Calling "u_terminateUChars_48", which might return a negative value.
+/builddir/build/BUILD/icu/source/common/ustring.c:1445: var_tested_neg: Variable "length" is negative.
+/builddir/build/BUILD/icu/source/common/ustring.c:1446: return_negative_variable: Explicitly returning negative variable "length".
+/builddir/build/BUILD/icu/source/common/unistr.cpp:755: return_negative_fn: Returning the return value of "u_terminateUChars_48", which might be negative.
+/builddir/build/BUILD/icu/source/common/normalizer2.cpp:687: return_negative_fn: Returning the return value of "icu_48::UnicodeString::extract(unsigned short *, int, UErrorCode &) const", which might be negative.
+/builddir/build/BUILD/icu/source/common/unorm.cpp:104: return_negative_fn: Returning the return value of "unorm2_normalize_48", which might be negative.
+/builddir/build/BUILD/icu/source/i18n/ucol_bld.cpp:633: var_assign: Assigning: unsigned variable "nLen" = "unorm_normalize_48".
+/builddir/build/BUILD/icu/source/i18n/ucol_bld.cpp:635: negative_returns: Using unsigned variable "nLen" in a loop exit condition.
+
+Error: NEGATIVE_RETURNS:
+/builddir/build/BUILD/icu/source/i18n/ucol_elm.cpp:1751: negative_return_fn: Function "unorm_normalize_48(data, len, UNORM_NFC, 0, comp, 256, status)" returns a negative number.
+/builddir/build/BUILD/icu/source/common/unorm.cpp:104: negative_return: Calling "unorm2_normalize_48", which might return a negative value.
+/builddir/build/BUILD/icu/source/common/normalizer2.cpp:687: negative_return: Calling "icu_48::UnicodeString::extract(unsigned short *, int, UErrorCode &) const", which might return a negative value.
+/builddir/build/BUILD/icu/source/common/unistr.cpp:755: negative_return: Calling "u_terminateUChars_48", which might return a negative value.
+/builddir/build/BUILD/icu/source/common/ustring.c:1445: var_tested_neg: Variable "length" is negative.
+/builddir/build/BUILD/icu/source/common/ustring.c:1446: return_negative_variable: Explicitly returning negative variable "length".
+/builddir/build/BUILD/icu/source/common/unistr.cpp:755: return_negative_fn: Returning the return value of "u_terminateUChars_48", which might be negative.
+/builddir/build/BUILD/icu/source/common/normalizer2.cpp:687: return_negative_fn: Returning the return value of "icu_48::UnicodeString::extract(unsigned short *, int, UErrorCode &) const", which might be negative.
+/builddir/build/BUILD/icu/source/common/unorm.cpp:104: return_negative_fn: Returning the return value of "unorm2_normalize_48", which might be negative.
+/builddir/build/BUILD/icu/source/i18n/ucol_elm.cpp:1751: var_assign: Assigning: signed variable "compLen" = "unorm_normalize_48".
+/builddir/build/BUILD/icu/source/i18n/ucol_elm.cpp:1752: negative_returns: Using variable "compLen" as an index to array "comp".
+
+Error: NEGATIVE_RETURNS:
+/builddir/build/BUILD/icu/source/i18n/ucol_elm.cpp:1750: negative_return_fn: Function "unorm_normalize_48(data, len, UNORM_NFD, 0, decomp, 256, status)" returns a negative number.
+/builddir/build/BUILD/icu/source/common/unorm.cpp:104: negative_return: Calling "unorm2_normalize_48", which might return a negative value.
+/builddir/build/BUILD/icu/source/common/normalizer2.cpp:687: negative_return: Calling "icu_48::UnicodeString::extract(unsigned short *, int, UErrorCode &) const", which might return a negative value.
+/builddir/build/BUILD/icu/source/common/unistr.cpp:755: negative_return: Calling "u_terminateUChars_48", which might return a negative value.
+/builddir/build/BUILD/icu/source/common/ustring.c:1445: var_tested_neg: Variable "length" is negative.
+/builddir/build/BUILD/icu/source/common/ustring.c:1446: return_negative_variable: Explicitly returning negative variable "length".
+/builddir/build/BUILD/icu/source/common/unistr.cpp:755: return_negative_fn: Returning the return value of "u_terminateUChars_48", which might be negative.
+/builddir/build/BUILD/icu/source/common/normalizer2.cpp:687: return_negative_fn: Returning the return value of "icu_48::UnicodeString::extract(unsigned short *, int, UErrorCode &) const", which might be negative.
+/builddir/build/BUILD/icu/source/common/unorm.cpp:104: return_negative_fn: Returning the return value of "unorm2_normalize_48", which might be negative.
+/builddir/build/BUILD/icu/source/i18n/ucol_elm.cpp:1750: var_assign: Assigning: signed variable "decLen" = "unorm_normalize_48".
+/builddir/build/BUILD/icu/source/i18n/ucol_elm.cpp:1752: negative_returns: Using variable "decLen" as an index to array "decomp".
+
+Error: NEGATIVE_RETURNS:
+/builddir/build/BUILD/icu/source/i18n/ucol_sit.cpp:581: negative_return_fn: Function "uloc_getCountry_48(locBuff, tempbuff, 512, status)" returns a negative number.
+/builddir/build/BUILD/icu/source/common/uloc.c:1963: negative_return: Calling "u_terminateChars_48", which might return a negative value.
+/builddir/build/BUILD/icu/source/common/ustring.c:1451: var_tested_neg: Variable "length" is negative.
+/builddir/build/BUILD/icu/source/common/ustring.c:1452: return_negative_variable: Explicitly returning negative variable "length".
+/builddir/build/BUILD/icu/source/common/uloc.c:1963: return_negative_fn: Returning the return value of "u_terminateChars_48", which might be negative.
+/builddir/build/BUILD/icu/source/i18n/ucol_sit.cpp:581: var_assign: Assigning: signed variable "elementSize" = "uloc_getCountry_48".
+/builddir/build/BUILD/icu/source/i18n/ucol_sit.cpp:582: negative_returns: "elementSize" is passed to a parameter that cannot be negative.
+/builddir/build/BUILD/icu/source/i18n/ucol_sit.cpp:548: neg_sink_parm_call: Passing "len" to "strncat", which cannot accept a negative.
+
+Error: NEGATIVE_RETURNS:
+/builddir/build/BUILD/icu/source/i18n/ucol_sit.cpp:587: negative_return_fn: Function "uloc_getKeywordValue_48(locBuff, "collation", tempbuff, 512, status)" returns a negative number.
+/builddir/build/BUILD/icu/source/common/uloc.c:900: negative_return: Calling "u_terminateChars_48", which might return a negative value.
+/builddir/build/BUILD/icu/source/common/ustring.c:1451: var_tested_neg: Variable "length" is negative.
+/builddir/build/BUILD/icu/source/common/ustring.c:1452: return_negative_variable: Explicitly returning negative variable "length".
+/builddir/build/BUILD/icu/source/common/uloc.c:900: var_assign: Assigning: "result" = "u_terminateChars_48(buffer, bufferCapacity, i, status)", which might be negative.
+/builddir/build/BUILD/icu/source/common/uloc.c:910: return_negative_variable: Explicitly returning negative variable "result".
+/builddir/build/BUILD/icu/source/i18n/ucol_sit.cpp:587: var_assign: Assigning: signed variable "elementSize" = "uloc_getKeywordValue_48".
+/builddir/build/BUILD/icu/source/i18n/ucol_sit.cpp:588: negative_returns: "elementSize" is passed to a parameter that cannot be negative.
+/builddir/build/BUILD/icu/source/i18n/ucol_sit.cpp:548: neg_sink_parm_call: Passing "len" to "strncat", which cannot accept a negative.
+
+Error: NEGATIVE_RETURNS:
+/builddir/build/BUILD/icu/source/i18n/tznames_impl.cpp:1183: negative_return_fn: Function "mzID->extract(0, mzID->length(), mzIdChar, 129, _ZN6icu_4813UnicodeString10kInvariantE)" returns a negative number.
+/builddir/build/BUILD/icu/source/common/unistr.cpp:781: negative_return: Calling "u_terminateChars_48", which might return a negative value.
+/builddir/build/BUILD/icu/source/common/ustring.c:1451: var_tested_neg: Variable "length" is negative.
+/builddir/build/BUILD/icu/source/common/ustring.c:1452: return_negative_variable: Explicitly returning negative variable "length".
+/builddir/build/BUILD/icu/source/common/unistr.cpp:781: return_negative_fn: Returning the return value of "u_terminateChars_48", which might be negative.
+/builddir/build/BUILD/icu/source/i18n/tznames_impl.cpp:1183: var_assign: Assigning: signed variable "keyLen" = "icu_48::UnicodeString::extract(int, int, char *, int, icu_48::UnicodeString::EInvariant) const".
+/builddir/build/BUILD/icu/source/i18n/tznames_impl.cpp:1185: negative_returns: "keyLen" is passed to a parameter that cannot be negative.
+
+Error: NEGATIVE_RETURNS:
+/builddir/build/BUILD/icu/source/i18n/tznames_impl.cpp:1271: negative_return_fn: Function "tzID->extract(tzIDKey, 129, status)" returns a negative number.
+/builddir/build/BUILD/icu/source/common/unistr.cpp:755: negative_return: Calling "u_terminateUChars_48", which might return a negative value.
+/builddir/build/BUILD/icu/source/common/ustring.c:1445: var_tested_neg: Variable "length" is negative.
+/builddir/build/BUILD/icu/source/common/ustring.c:1446: return_negative_variable: Explicitly returning negative variable "length".
+/builddir/build/BUILD/icu/source/common/unistr.cpp:755: return_negative_fn: Returning the return value of "u_terminateUChars_48", which might be negative.
+/builddir/build/BUILD/icu/source/i18n/tznames_impl.cpp:1271: var_assign: Assigning: signed variable "tzIDKeyLen" = "icu_48::UnicodeString::extract(unsigned short *, int, UErrorCode &) const".
+/builddir/build/BUILD/icu/source/i18n/tznames_impl.cpp:1273: negative_returns: Using variable "tzIDKeyLen" as an index to array "tzIDKey".
+
+Error: NEGATIVE_RETURNS:
+/builddir/build/BUILD/icu/source/i18n/tzfmt.cpp:65: negative_return_fn: Function "uloc_getCountry_48(loc, this->fTargetRegion, sizeof (this->fTargetRegion) /*4*/, status)" returns a negative number.
+/builddir/build/BUILD/icu/source/common/uloc.c:1963: negative_return: Calling "u_terminateChars_48", which might return a negative value.
+/builddir/build/BUILD/icu/source/common/ustring.c:1451: var_tested_neg: Variable "length" is negative.
+/builddir/build/BUILD/icu/source/common/ustring.c:1452: return_negative_variable: Explicitly returning negative variable "length".
+/builddir/build/BUILD/icu/source/common/uloc.c:1963: return_negative_fn: Returning the return value of "u_terminateChars_48", which might be negative.
+/builddir/build/BUILD/icu/source/i18n/tzfmt.cpp:65: var_assign: Assigning: signed variable "regionLen" = "uloc_getCountry_48".
+/builddir/build/BUILD/icu/source/i18n/tzfmt.cpp:67: negative_returns: Using variable "regionLen" as an index to array "this->fTargetRegion".
+
+Error: NEGATIVE_RETURNS:
+/builddir/build/BUILD/icu/source/i18n/tzgnames.cpp:471: negative_return_fn: Function "tzCanonicalID->extract(tzIDKey, 129, status)" returns a negative number.
+/builddir/build/BUILD/icu/source/common/unistr.cpp:755: negative_return: Calling "u_terminateUChars_48", which might return a negative value.
+/builddir/build/BUILD/icu/source/common/ustring.c:1445: var_tested_neg: Variable "length" is negative.
+/builddir/build/BUILD/icu/source/common/ustring.c:1446: return_negative_variable: Explicitly returning negative variable "length".
+/builddir/build/BUILD/icu/source/common/unistr.cpp:755: return_negative_fn: Returning the return value of "u_terminateUChars_48", which might be negative.
+/builddir/build/BUILD/icu/source/i18n/tzgnames.cpp:471: var_assign: Assigning: signed variable "tzIDKeyLen" = "icu_48::UnicodeString::extract(unsigned short *, int, UErrorCode &) const".
+/builddir/build/BUILD/icu/source/i18n/tzgnames.cpp:473: negative_returns: Using variable "tzIDKeyLen" as an index to array "tzIDKey".
+
+Error: NEGATIVE_RETURNS:
+/builddir/build/BUILD/icu/source/i18n/tzgnames.cpp:499: negative_return_fn: Function "usCountryCode.extract(0, usCountryCode.length(), countryCode, sizeof (countryCode) /*4*/, _ZN6icu_4813UnicodeString10kInvariantE)" returns a negative number.
+/builddir/build/BUILD/icu/source/common/unistr.cpp:781: negative_return: Calling "u_terminateChars_48", which might return a negative value.
+/builddir/build/BUILD/icu/source/common/ustring.c:1451: var_tested_neg: Variable "length" is negative.
+/builddir/build/BUILD/icu/source/common/ustring.c:1452: return_negative_variable: Explicitly returning negative variable "length".
+/builddir/build/BUILD/icu/source/common/unistr.cpp:781: return_negative_fn: Returning the return value of "u_terminateChars_48", which might be negative.
+/builddir/build/BUILD/icu/source/i18n/tzgnames.cpp:499: var_assign: Assigning: signed variable "ccLen" = "icu_48::UnicodeString::extract(int, int, char *, int, icu_48::UnicodeString::EInvariant) const".
+/builddir/build/BUILD/icu/source/i18n/tzgnames.cpp:500: negative_returns: Using variable "ccLen" as an index to array "countryCode".
+
+Error: NEGATIVE_RETURNS:
+/builddir/build/BUILD/icu/source/i18n/tzgnames.cpp:747: negative_return_fn: Function "usCountryCode.extract(0, usCountryCode.length(), countryCode, sizeof (countryCode) /*4*/, _ZN6icu_4813UnicodeString10kInvariantE)" returns a negative number.
+/builddir/build/BUILD/icu/source/common/unistr.cpp:781: negative_return: Calling "u_terminateChars_48", which might return a negative value.
+/builddir/build/BUILD/icu/source/common/ustring.c:1451: var_tested_neg: Variable "length" is negative.
+/builddir/build/BUILD/icu/source/common/ustring.c:1452: return_negative_variable: Explicitly returning negative variable "length".
+/builddir/build/BUILD/icu/source/common/unistr.cpp:781: return_negative_fn: Returning the return value of "u_terminateChars_48", which might be negative.
+/builddir/build/BUILD/icu/source/i18n/tzgnames.cpp:747: var_assign: Assigning: signed variable "ccLen" = "icu_48::UnicodeString::extract(int, int, char *, int, icu_48::UnicodeString::EInvariant) const".
+/builddir/build/BUILD/icu/source/i18n/tzgnames.cpp:748: negative_returns: Using variable "ccLen" as an index to array "countryCode".
+
+Error: NEGATIVE_RETURNS:
+/builddir/build/BUILD/icu/source/i18n/tzgnames.cpp:363: negative_return_fn: Function "uloc_getCountry_48(loc, this->fTargetRegion, sizeof (this->fTargetRegion) /*4*/, status)" returns a negative number.
+/builddir/build/BUILD/icu/source/common/uloc.c:1963: negative_return: Calling "u_terminateChars_48", which might return a negative value.
+/builddir/build/BUILD/icu/source/common/ustring.c:1451: var_tested_neg: Variable "length" is negative.
+/builddir/build/BUILD/icu/source/common/ustring.c:1452: return_negative_variable: Explicitly returning negative variable "length".
+/builddir/build/BUILD/icu/source/common/uloc.c:1963: return_negative_fn: Returning the return value of "u_terminateChars_48", which might be negative.
+/builddir/build/BUILD/icu/source/i18n/tzgnames.cpp:363: var_assign: Assigning: signed variable "regionLen" = "uloc_getCountry_48".
+/builddir/build/BUILD/icu/source/i18n/tzgnames.cpp:365: negative_returns: Using variable "regionLen" as an index to array "this->fTargetRegion".
+
+Error: NEGATIVE_RETURNS:
+/builddir/build/BUILD/icu/source/i18n/zonemeta.cpp:631: negative_return_fn: Function "canonicalID.extract(0, canonicalID.length(), tzKey, sizeof (tzKey) /*129*/, _ZN6icu_4813UnicodeString10kInvariantE)" returns a negative number.
+/builddir/build/BUILD/icu/source/common/unistr.cpp:781: negative_return: Calling "u_terminateChars_48", which might return a negative value.
+/builddir/build/BUILD/icu/source/common/ustring.c:1451: var_tested_neg: Variable "length" is negative.
+/builddir/build/BUILD/icu/source/common/ustring.c:1452: return_negative_variable: Explicitly returning negative variable "length".
+/builddir/build/BUILD/icu/source/common/unistr.cpp:781: return_negative_fn: Returning the return value of "u_terminateChars_48", which might be negative.
+/builddir/build/BUILD/icu/source/i18n/zonemeta.cpp:631: var_assign: Assigning: signed variable "tzKeyLen" = "icu_48::UnicodeString::extract(int, int, char *, int, icu_48::UnicodeString::EInvariant) const".
+/builddir/build/BUILD/icu/source/i18n/zonemeta.cpp:632: negative_returns: Using variable "tzKeyLen" as an index to array "tzKey".
+
+Error: NEGATIVE_RETURNS:
+/builddir/build/BUILD/icu/source/i18n/zonemeta.cpp:723: negative_return_fn: Function "mzid->extract(0, mzid->length(), keyBuf, 129, _ZN6icu_4813UnicodeString10kInvariantE)" returns a negative number.
+/builddir/build/BUILD/icu/source/common/unistr.cpp:781: negative_return: Calling "u_terminateChars_48", which might return a negative value.
+/builddir/build/BUILD/icu/source/common/ustring.c:1451: var_tested_neg: Variable "length" is negative.
+/builddir/build/BUILD/icu/source/common/ustring.c:1452: return_negative_variable: Explicitly returning negative variable "length".
+/builddir/build/BUILD/icu/source/common/unistr.cpp:781: return_negative_fn: Returning the return value of "u_terminateChars_48", which might be negative.
+/builddir/build/BUILD/icu/source/i18n/zonemeta.cpp:723: var_assign: Assigning: signed variable "keyLen" = "icu_48::UnicodeString::extract(int, int, char *, int, icu_48::UnicodeString::EInvariant) const".
+/builddir/build/BUILD/icu/source/i18n/zonemeta.cpp:724: negative_returns: Using variable "keyLen" as an index to array "keyBuf".
+
+Error: NEGATIVE_RETURNS:
+/builddir/build/BUILD/icu/source/i18n/zonemeta.cpp:733: negative_return_fn: Function "region->extract(0, region->length(), keyBuf, 129, _ZN6icu_4813UnicodeString10kInvariantE)" returns a negative number.
+/builddir/build/BUILD/icu/source/common/unistr.cpp:781: negative_return: Calling "u_terminateChars_48", which might return a negative value.
+/builddir/build/BUILD/icu/source/common/ustring.c:1451: var_tested_neg: Variable "length" is negative.
+/builddir/build/BUILD/icu/source/common/ustring.c:1452: return_negative_variable: Explicitly returning negative variable "length".
+/builddir/build/BUILD/icu/source/common/unistr.cpp:781: return_negative_fn: Returning the return value of "u_terminateChars_48", which might be negative.
+/builddir/build/BUILD/icu/source/i18n/zonemeta.cpp:733: var_assign: Assigning: signed variable "keyLen" = "icu_48::UnicodeString::extract(int, int, char *, int, icu_48::UnicodeString::EInvariant) const".
+/builddir/build/BUILD/icu/source/i18n/zonemeta.cpp:734: negative_returns: Using variable "keyLen" as an index to array "keyBuf".
+
+Error: NEGATIVE_RETURNS:
+/builddir/build/BUILD/icu/source/tools/toolutil/denseranges.cpp:151: negative_return_fn: Function "gaps.firstAfter(minValue)" returns a negative number.
+/builddir/build/BUILD/icu/source/tools/toolutil/denseranges.cpp:62: return_negative_constant: Explicitly returning negative value "-1".
+/builddir/build/BUILD/icu/source/tools/toolutil/denseranges.cpp:151: var_assign: Assigning: signed variable "gapIndex" = "<unnamed>::LargestGaps::firstAfter(int) const".
+/builddir/build/BUILD/icu/source/tools/toolutil/denseranges.cpp:152: negative_returns: Passing variable "gapIndex" to a parameter that cannot be negative.
+/builddir/build/BUILD/icu/source/tools/toolutil/denseranges.cpp:57: index: Indexing with parameter "i".
+
+Error: OVERRUN_DYNAMIC:
+/builddir/build/BUILD/icu/source/tools/genrb/wrtxml.cpp:176: buffer_alloc: Calling allocating function "uprv_malloc_48" which allocated memory dictated by argument "idLen".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: buffer_alloc: "malloc" allocates memory determined by parameter "s" of the current function.
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_dbuffer: Returning allocated array "malloc(s)".
+/builddir/build/BUILD/icu/source/tools/genrb/wrtxml.cpp:176: var_assign: Assigning: "localeID" = "uprv_malloc_48(idLen)".
+/builddir/build/BUILD/icu/source/tools/genrb/wrtxml.cpp:188: symbolic_assign: Tracking "pos" since "idLen" is tracked with "localeID".
+/builddir/build/BUILD/icu/source/tools/genrb/wrtxml.cpp:191: overrun-local: Overrunning dynamic array "localeID" at offset corresponding to index variable "pos".
+
+Error: OVERRUN_STATIC:
+/builddir/build/BUILD/icu/source/common/rbbiscan.cpp:995: overrun-local: Overrunning static array of size 880 bytes at byte position 9768 by accessing with pointer "&this->fRuleSets[tableEl->fCharClass - 128]" through dereference in call to "icu_48::UnicodeSet::contains(int) const". (The dereference happens because this is a virtual function call.)
+/builddir/build/BUILD/icu/source/common/rbbiscan.cpp:995: overrun-local: Note: These bugs are often difficult to see at first glance.  Coverity recommends a close inspection of the events leading to this overrun.
+
+Error: OVERRUN_STATIC:
+/builddir/build/BUILD/icu/source/i18n/decNumber.c:6704: overrun-local: Overrunning static array "d2utable_48", with 50 elements, at position 98 with index variable "digits + shift".
+
+Error: OVERRUN_STATIC:
+/builddir/build/BUILD/icu/source/i18n/ucol_res.cpp:1368: overrun-local: Overrunning static array "newLeadByteUsed", with 256 elements, at position 256 with index variable "reorderCode".
+
+Error: OVERRUN_STATIC:
+/builddir/build/BUILD/icu/source/i18n/dtitvfmt.cpp:1046: ptr_assign: Pointer "ptn" is assigned the address of a static array pointer "&this->fIntervalPatterns[itvPtnIndex]" of size 616 bytes and offset 616 bytes.
+/builddir/build/BUILD/icu/source/i18n/dtitvfmt.cpp:1048: overrun-local: Overrunning static array of size 616 bytes at byte position 616 by accessing with pointer "ptn".
+/builddir/build/BUILD/icu/source/i18n/dtitvfmt.cpp:1048: overrun-local: Note: These bugs are often difficult to see at first glance.  Coverity recommends a close inspection of the events leading to this overrun.
+
+Error: OVERRUN_STATIC:
+/builddir/build/BUILD/icu/source/i18n/dtitvfmt.cpp:1441: ptr_assign: Pointer "timeItvPtnInfo" is assigned the address of a static array pointer "&this->fIntervalPatterns[itvPtnIndex]" of size 616 bytes and offset 616 bytes.
+/builddir/build/BUILD/icu/source/i18n/dtitvfmt.cpp:1442: overrun-local: Overrunning static array of size 616 bytes at byte position 616 by accessing with pointer "timeItvPtnInfo".
+/builddir/build/BUILD/icu/source/i18n/dtitvfmt.cpp:1442: overrun-local: Note: These bugs are often difficult to see at first glance.  Coverity recommends a close inspection of the events leading to this overrun.
+
+Error: OVERRUN_STATIC:
+/builddir/build/BUILD/icu/source/i18n/regexcmp.cpp:205: overrun-local: Overrunning static array of size 880 bytes at byte position 9768 by accessing with pointer "&icu_48::RegexStaticSets::gStaticSets->fRuleSets[tableEl->fCharClass - 128]" through dereference in call to "icu_48::UnicodeSet::contains(int) const". (The dereference happens because this is a virtual function call.)
+/builddir/build/BUILD/icu/source/i18n/regexcmp.cpp:205: overrun-local: Note: These bugs are often difficult to see at first glance.  Coverity recommends a close inspection of the events leading to this overrun.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/icu/source/common/uloc_tag.c:2051: alloc_fn: Calling allocation function "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+/builddir/build/BUILD/icu/source/common/uloc_tag.c:2051: var_assign: Assigning: "t" =  storage returned from "uprv_malloc_48(sizeof (ULanguageTag) /*96*/)".
+/builddir/build/BUILD/icu/source/common/uloc_tag.c:2057: noescape: Variable "t" is not freed or pointed-to in function "_initializeULanguageTag".
+/builddir/build/BUILD/icu/source/common/uloc_tag.c:614:39: noescape: "_initializeULanguageTag" does not free or save its pointer parameter "langtag".
+/builddir/build/BUILD/icu/source/common/uloc_tag.c:2075: leaked_storage: Variable "t" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/icu/source/common/locutil.cpp:198: alloc_fn: Calling allocation function "icu_48::UMemory::operator new(unsigned long)".
+/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/common/locutil.cpp:198: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::Hashtable::Hashtable(UErrorCode &)".
+/builddir/build/BUILD/icu/source/common/hash.h:130:19: noescape: "icu_48::Hashtable::Hashtable(UErrorCode &)" does not free or save its pointer parameter "this".
+/builddir/build/BUILD/icu/source/common/locutil.cpp:198: var_assign: Assigning: "cache" =  storage returned from "new icu_48::Hashtable(status)".
+/builddir/build/BUILD/icu/source/common/locutil.cpp:200: leaked_storage: Variable "cache" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/icu/source/common/rbbisetb.cpp:360: alloc_fn: Calling allocation function "icu_48::UMemory::operator new(unsigned long)".
+/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/common/rbbisetb.cpp:360: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::RBBINode::RBBINode(icu_48::RBBINode::NodeType)".
+/builddir/build/BUILD/icu/source/common/rbbinode.cpp:46:11: noescape: "icu_48::RBBINode::RBBINode(icu_48::RBBINode::NodeType)" does not free or save its pointer parameter "this".
+/builddir/build/BUILD/icu/source/common/rbbisetb.cpp:360: var_assign: Assigning: "leafNode" =  storage returned from "new icu_48::RBBINode(_ZN6icu_488RBBINode8leafCharE)".
+/builddir/build/BUILD/icu/source/common/rbbisetb.cpp:376: leaked_storage: Variable "leafNode" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/icu/source/common/rbbirb.cpp:294: alloc_fn: Calling allocation function "icu_48::RBBIRuleBuilder::flattenData()".
+/builddir/build/BUILD/icu/source/common/rbbirb.cpp:169: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+/builddir/build/BUILD/icu/source/common/rbbirb.cpp:169: var_assign: Assigning: "data" = "uprv_malloc_48(totalSize)".
+/builddir/build/BUILD/icu/source/common/rbbirb.cpp:174: noescape: Variable "data" is not freed or pointed-to in function "memset".
+/builddir/build/BUILD/icu/source/common/rbbirb.cpp:209: var_assign: Assigning: "ruleStatusTable" = "data".
+/builddir/build/BUILD/icu/source/common/rbbirb.cpp:216: return_alloc: Returning allocated memory "data".
+/builddir/build/BUILD/icu/source/common/rbbirb.cpp:294: var_assign: Assigning: "data" =  storage returned from "builder.flattenData()".
+/builddir/build/BUILD/icu/source/common/rbbirb.cpp:296: leaked_storage: Variable "data" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/icu/source/common/serv.cpp:527: alloc_fn: Calling allocation function "icu_48::UMemory::operator new(unsigned long)".
+/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/common/serv.cpp:527: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::UnicodeString::UnicodeString(icu_48::UnicodeString const &)".
+/builddir/build/BUILD/icu/source/common/unistr.cpp:325:16: noescape: "icu_48::UnicodeString::UnicodeString(icu_48::UnicodeString const &)" does not free or save its pointer parameter "this".
+/builddir/build/BUILD/icu/source/common/serv.cpp:527: var_assign: Assigning: "idToCache" =  storage returned from "new icu_48::UnicodeString(currentDescriptor)".
+/builddir/build/BUILD/icu/source/common/serv.cpp:528: noescape: Variable "idToCache" is not freed or pointed-to in function "icu_48::UnicodeString::isBogus() const".
+/builddir/build/BUILD/icu/source/common/unicode/unistr.h:3523:16: noescape: "icu_48::UnicodeString::isBogus() const" does not free or save its pointer parameter "this".
+/builddir/build/BUILD/icu/source/common/serv.cpp:530: leaked_storage: Variable "idToCache" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/icu/source/common/uloc.c:2341: alloc_fn: Calling allocation function "uprv_realloc_48".
+/builddir/build/BUILD/icu/source/common/cmemory.c:55: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+/builddir/build/BUILD/icu/source/common/cmemory.c:55: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/common/uloc.c:2341: var_assign: Assigning: "j" =  storage returned from "uprv_realloc_48(j, sizeof (j[0]) /*16*/ * jSize * 2UL)".
+/builddir/build/BUILD/icu/source/common/uloc.c:2315: leaked_storage: Variable "j" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/icu/source/common/uloc_tag.c:1353: alloc_fn: Calling allocation function "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+/builddir/build/BUILD/icu/source/common/uloc_tag.c:1353: var_assign: Assigning: "attr" =  storage returned from "uprv_malloc_48(sizeof (AttributeListEntry) /*16*/)".
+/builddir/build/BUILD/icu/source/common/uloc_tag.c:1544: overwrite_var: Overwriting "attr" in call "attr = firstAttr" leaks the storage that "attr" points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/icu/source/common/ushape.c:790: alloc_fn: Calling allocation function "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+/builddir/build/BUILD/icu/source/common/ushape.c:790: var_assign: Assigning: "tempbuffer" =  storage returned from "uprv_malloc_48((sourceLength + 1) * 2)".
+/builddir/build/BUILD/icu/source/common/ushape.c:798: noescape: Variable "tempbuffer" is not freed or pointed-to in function "memset".
+/builddir/build/BUILD/icu/source/common/ushape.c:816: noescape: Variable "tempbuffer" is not freed or pointed-to in function "memcpy".
+/builddir/build/BUILD/icu/source/common/ushape.c:837: overwrite_var: Overwriting "tempbuffer" in call "tempbuffer = (UChar *)uprv_malloc_48((sourceLength + 1) * 2)" leaks the storage that "tempbuffer" points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/icu/source/i18n/decimfmt.cpp:3322: alloc_fn: Calling allocation function "icu_48::UMemory::operator new(unsigned long)".
+/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/i18n/decimfmt.cpp:3322: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::ChoiceFormat::ChoiceFormat(icu_48::UnicodeString const &, UErrorCode &)".
+/builddir/build/BUILD/icu/source/i18n/choicfmt.cpp:75:15: noescape: "icu_48::ChoiceFormat::ChoiceFormat(icu_48::UnicodeString const &, UErrorCode &)" does not free or save its pointer parameter "this".
+/builddir/build/BUILD/icu/source/i18n/decimfmt.cpp:3322: var_assign: Assigning: "fmt" =  storage returned from "new icu_48::ChoiceFormat(struct icu_48::UnicodeString(s), ec)".
+/builddir/build/BUILD/icu/source/i18n/decimfmt.cpp:3333: leaked_storage: Variable "fmt" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/icu/source/i18n/nfrule.cpp:100: alloc_fn: Calling allocation function "icu_48::UMemory::operator new(unsigned long)".
+/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/i18n/nfrule.cpp:100: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::NFRule::NFRule(icu_48::RuleBasedNumberFormat const *)".
+/builddir/build/BUILD/icu/source/i18n/nfrule.cpp:31:9: noescape: "icu_48::NFRule::NFRule(icu_48::RuleBasedNumberFormat const *)" does not free or save its pointer parameter "this".
+/builddir/build/BUILD/icu/source/i18n/nfrule.cpp:100: var_assign: Assigning: "rule1" =  storage returned from "new icu_48::NFRule(rbnf)".
+/builddir/build/BUILD/icu/source/i18n/nfrule.cpp:106: noescape: Variable "rule1" is not freed or pointed-to in function "icu_48::NFRule::parseRuleDescriptor(icu_48::UnicodeString &, UErrorCode &)".
+/builddir/build/BUILD/icu/source/i18n/nfrule.cpp:221:9: noescape: "icu_48::NFRule::parseRuleDescriptor(icu_48::UnicodeString &, UErrorCode &)" does not free or save its pointer parameter "this".
+/builddir/build/BUILD/icu/source/i18n/nfrule.cpp:117: noescape: Variable "rule1" is not freed or pointed-to in function "icu_48::NFRule::getType() const".
+/builddir/build/BUILD/icu/source/i18n/nfrule.h:56:15: noescape: "icu_48::NFRule::getType() const" does not free or save its pointer parameter "this".
+/builddir/build/BUILD/icu/source/i18n/nfrule.cpp:117: noescape: Variable "rule1" is not freed or pointed-to in function "icu_48::NFRule::getType() const".
+/builddir/build/BUILD/icu/source/i18n/nfrule.cpp:132: noescape: Variable "rule1" is not freed or pointed-to in function "icu_48::NFRule::getType() const".
+/builddir/build/BUILD/icu/source/i18n/nfrule.cpp:146: leaked_storage: Variable "rule1" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/icu/source/i18n/rbt_pars.cpp:548: alloc_fn: Calling allocation function "icu_48::TransliteratorIDParser::parseFilterID(icu_48::UnicodeString const &, int &)".
+/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:224: alloc_fn: Storage is returned from allocation function "icu_48::TransliteratorIDParser::specsToID(icu_48::TransliteratorIDParser::Specs const *, int)".
+/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:839: alloc_fn: Storage is returned from allocation function "icu_48::UMemory::operator new(unsigned long)".
+/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:839: var_assign: Assigning: "<storage from new>" = "icu_48::UMemory::operator new(128UL)".
+/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:839: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::TransliteratorIDParser::SingleID::SingleID(icu_48::UnicodeString const &, icu_48::UnicodeString const &)".
+/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:67:35: noescape: "icu_48::TransliteratorIDParser::SingleID::SingleID(icu_48::UnicodeString const &, icu_48::UnicodeString const &)" does not free or save its pointer parameter "this".
+/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:839: return_alloc: Returning allocated memory "new icu_48::TransliteratorIDParser::SingleID(canonID, basicID)".
+/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:224: var_assign: Assigning: "single" = "icu_48::TransliteratorIDParser::specsToID(specs, 0)".
+/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:229: return_alloc: Returning allocated memory "single".
+/builddir/build/BUILD/icu/source/i18n/rbt_pars.cpp:548: var_assign: Assigning: "single" =  storage returned from "icu_48::TransliteratorIDParser::parseFilterID(rule, iref)".
+/builddir/build/BUILD/icu/source/i18n/rbt_pars.cpp:553: leaked_storage: Variable "single" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:131: alloc_fn: Calling allocation function "icu_48::TransliteratorIDParser::parseFilterID(icu_48::UnicodeString const &, int &, signed char)".
+/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:801: alloc_fn: Storage is returned from allocation function "icu_48::UMemory::operator new(unsigned long)".
+/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:801: var_assign: Assigning: "<storage from new>" = "icu_48::UMemory::operator new(176UL)".
+/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:801: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::TransliteratorIDParser::Specs::Specs(icu_48::UnicodeString const &, icu_48::UnicodeString const &, icu_48::UnicodeString const &, signed char, icu_48::UnicodeString const &)".
+/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:50:32: noescape: "icu_48::TransliteratorIDParser::Specs::Specs(icu_48::UnicodeString const &, icu_48::UnicodeString const &, icu_48::UnicodeString const &, signed char, icu_48::UnicodeString const &)" does not free or save its pointer parameter "this".
+/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:801: return_alloc: Returning allocated memory "new icu_48::TransliteratorIDParser::Specs(source, target, variant, sawSource, filter)".
+/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:131: var_assign: Assigning: "specsB" =  storage returned from "icu_48::TransliteratorIDParser::parseFilterID(id, pos, 1)".
+/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:136: leaked_storage: Variable "specsB" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:122: alloc_fn: Calling allocation function "icu_48::TransliteratorIDParser::parseFilterID(icu_48::UnicodeString const &, int &, signed char)".
+/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:801: alloc_fn: Storage is returned from allocation function "icu_48::UMemory::operator new(unsigned long)".
+/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:801: var_assign: Assigning: "<storage from new>" = "icu_48::UMemory::operator new(176UL)".
+/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:801: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::TransliteratorIDParser::Specs::Specs(icu_48::UnicodeString const &, icu_48::UnicodeString const &, icu_48::UnicodeString const &, signed char, icu_48::UnicodeString const &)".
+/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:50:32: noescape: "icu_48::TransliteratorIDParser::Specs::Specs(icu_48::UnicodeString const &, icu_48::UnicodeString const &, icu_48::UnicodeString const &, signed char, icu_48::UnicodeString const &)" does not free or save its pointer parameter "this".
+/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:801: return_alloc: Returning allocated memory "new icu_48::TransliteratorIDParser::Specs(source, target, variant, sawSource, filter)".
+/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:122: var_assign: Assigning: "specsA" =  storage returned from "icu_48::TransliteratorIDParser::parseFilterID(id, pos, 1)".
+/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:148: noescape: Variable "specsA" is not freed or pointed-to in function "icu_48::TransliteratorIDParser::specsToID(icu_48::TransliteratorIDParser::Specs const *, int)".
+/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:812:48: noescape: "icu_48::TransliteratorIDParser::specsToID(icu_48::TransliteratorIDParser::Specs const *, int)" does not free or save its pointer parameter "specs".
+/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:154: leaked_storage: Variable "specsA" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:163: noescape: Variable "specsA" is not freed or pointed-to in function "icu_48::TransliteratorIDParser::specsToID(icu_48::TransliteratorIDParser::Specs const *, int)".
+/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:170: leaked_storage: Variable "specsA" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:182: noescape: Variable "specsA" is not freed or pointed-to in function "icu_48::TransliteratorIDParser::specsToID(icu_48::TransliteratorIDParser::Specs const *, int)".
+/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:184: noescape: Variable "specsA" is not freed or pointed-to in function "icu_48::TransliteratorIDParser::specsToSpecialInverse(icu_48::TransliteratorIDParser::Specs const &, UErrorCode &)".
+/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:850:60: noescape: "icu_48::TransliteratorIDParser::specsToSpecialInverse(icu_48::TransliteratorIDParser::Specs const &, UErrorCode &)" does not free or save its pointer parameter "specs".
+/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:186: noescape: Variable "specsA" is not freed or pointed-to in function "icu_48::TransliteratorIDParser::specsToID(icu_48::TransliteratorIDParser::Specs const *, int)".
+/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:192: leaked_storage: Variable "specsA" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/icu/source/i18n/ucol_elm.cpp:231: alloc_fn: Calling allocation function "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+/builddir/build/BUILD/icu/source/i18n/ucol_elm.cpp:231: var_assign: Assigning: "r" =  storage returned from "uprv_malloc_48(sizeof (tempUCATable) /*96*/)".
+/builddir/build/BUILD/icu/source/i18n/ucol_elm.cpp:237: noescape: Variable "r" is not freed or pointed-to in function "memset".
+/builddir/build/BUILD/icu/source/i18n/ucol_elm.cpp:377: leaked_storage: Variable "r" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3535: alloc_fn: Calling allocation function "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3535: var_assign: Assigning: "strbuffer" =  storage returned from "uprv_malloc_48(sizeof (UChar) /*2*/ * (newsize + 128))".
+/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3542: var_assign: Assigning: "UCharOffset" = "strbuffer".
+/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3543: noescape: Variable "UCharOffset" is not freed or pointed-to in function "memcpy".
+/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3535: overwrite_var: Overwriting "strbuffer" in call "strbuffer = (UChar *)uprv_malloc_48(sizeof (UChar) /*2*/ * (newsize + 128))" leaks the storage that "strbuffer" points to.
+/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3542: overwrite_var: Overwriting "UCharOffset" in call "UCharOffset = strbuffer + newsize" leaks the storage that "UCharOffset" points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3535: alloc_fn: Calling allocation function "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3535: var_assign: Assigning: "strbuffer" =  storage returned from "uprv_malloc_48(sizeof (UChar) /*2*/ * (newsize + 128))".
+/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3542: var_assign: Assigning: "UCharOffset" = "strbuffer".
+/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3543: noescape: Variable "UCharOffset" is not freed or pointed-to in function "memcpy".
+/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3535: overwrite_var: Overwriting "strbuffer" in call "strbuffer = (UChar *)uprv_malloc_48(sizeof (UChar) /*2*/ * (newsize + 128))" leaks the storage that "strbuffer" points to.
+/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3540: leaked_storage: Variable "UCharOffset" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/icu/source/i18n/colldata.cpp:335: alloc_fn: Calling allocation function "icu_48::UMemory::operator new(unsigned long)".
+/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/i18n/colldata.cpp:335: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::StringList::StringList(UErrorCode &)".
+/builddir/build/BUILD/icu/source/i18n/colldata.cpp:200:13: noescape: "icu_48::StringList::StringList(UErrorCode &)" does not free or save its pointer parameter "this".
+/builddir/build/BUILD/icu/source/i18n/colldata.cpp:335: var_assign: Assigning: "strings" =  storage returned from "new icu_48::StringList(status)".
+/builddir/build/BUILD/icu/source/i18n/colldata.cpp:339: leaked_storage: Variable "strings" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/icu/source/i18n/dtptngen.cpp:1269: alloc_fn: Calling allocation function "icu_48::UMemory::operator new(unsigned long)".
+/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/i18n/dtptngen.cpp:1269: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::PtnElem::PtnElem(icu_48::UnicodeString const &, icu_48::UnicodeString const &)".
+/builddir/build/BUILD/icu/source/i18n/dtptngen.cpp:1986:10: noescape: "icu_48::PtnElem::PtnElem(icu_48::UnicodeString const &, icu_48::UnicodeString const &)" does not free or save its pointer parameter "this".
+/builddir/build/BUILD/icu/source/i18n/dtptngen.cpp:1269: var_assign: Assigning: "curElem" =  storage returned from "new icu_48::PtnElem(otherElem->basePattern, otherElem->pattern)".
+/builddir/build/BUILD/icu/source/i18n/dtptngen.cpp:1280: leaked_storage: Variable "curElem" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/icu/source/i18n/gregocal.cpp:1330: alloc_fn: Calling allocation function "icu_48::UMemory::operator new(unsigned long)".
+/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/i18n/gregocal.cpp:1330: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::GregorianCalendar::GregorianCalendar(UErrorCode &)".
+/builddir/build/BUILD/icu/source/i18n/gregocal.cpp:152:20: noescape: "icu_48::GregorianCalendar::GregorianCalendar(UErrorCode &)" does not free or save its pointer parameter "this".
+/builddir/build/BUILD/icu/source/i18n/gregocal.cpp:1330: var_assign: Assigning: "calendar" =  storage returned from "new icu_48::GregorianCalendar(status)".
+/builddir/build/BUILD/icu/source/i18n/gregocal.cpp:1349: leaked_storage: Variable "calendar" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/icu/source/i18n/olsontz.cpp:831: alloc_fn: Calling allocation function "icu_48::UMemory::operator new(unsigned long)".
+/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/i18n/olsontz.cpp:831: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::TimeArrayTimeZoneRule::TimeArrayTimeZoneRule(icu_48::UnicodeString const &, int, int, double const *, int, icu_48::DateTimeRule::TimeRuleType)".
+/builddir/build/BUILD/icu/source/i18n/tzrule.cpp:400:24: noescape: "icu_48::TimeArrayTimeZoneRule::TimeArrayTimeZoneRule(icu_48::UnicodeString const &, int, int, double const *, int, icu_48::DateTimeRule::TimeRuleType)" does not free or save its pointer parameter "this".
+/builddir/build/BUILD/icu/source/i18n/olsontz.cpp:831: var_assign: Assigning: "firstFinalRule" =  storage returned from "new icu_48::TimeArrayTimeZoneRule(tzid, this->finalZone->getRawOffset(), 0, &startTime, 1, _ZN6icu_4812DateTimeRule8UTC_TIMEE)".
+/builddir/build/BUILD/icu/source/i18n/olsontz.cpp:853: leaked_storage: Variable "firstFinalRule" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/icu/source/i18n/olsontz.cpp:729: alloc_fn: Calling allocation function "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+/builddir/build/BUILD/icu/source/i18n/olsontz.cpp:729: var_assign: Assigning: "times" =  storage returned from "uprv_malloc_48(sizeof (UDate) /*8*/ * transCount)".
+/builddir/build/BUILD/icu/source/i18n/olsontz.cpp:765: noescape: Variable "times" is not freed or pointed-to in function "icu_48::TimeArrayTimeZoneRule::TimeArrayTimeZoneRule(icu_48::UnicodeString const &, int, int, double const *, int, icu_48::DateTimeRule::TimeRuleType)".
+/builddir/build/BUILD/icu/source/i18n/tzrule.cpp:403:59: noescape: "icu_48::TimeArrayTimeZoneRule::TimeArrayTimeZoneRule(icu_48::UnicodeString const &, int, int, double const *, int, icu_48::DateTimeRule::TimeRuleType)" does not free or save its pointer parameter "startTimes".
+/builddir/build/BUILD/icu/source/i18n/olsontz.cpp:771: leaked_storage: Variable "times" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/icu/source/i18n/rbtz.cpp:646: alloc_fn: Calling allocation function "icu_48::UMemory::operator new(unsigned long)".
+/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/i18n/rbtz.cpp:646: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::UVector::UVector(int, UErrorCode &)".
+/builddir/build/BUILD/icu/source/common/uvector.cpp:39:10: noescape: "icu_48::UVector::UVector(int, UErrorCode &)" does not free or save its pointer parameter "this".
+/builddir/build/BUILD/icu/source/i18n/rbtz.cpp:646: var_assign: Assigning: "rules" =  storage returned from "new icu_48::UVector(size, ec)".
+/builddir/build/BUILD/icu/source/i18n/rbtz.cpp:648: leaked_storage: Variable "rules" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/icu/source/i18n/timezone.cpp:1303: alloc_fn: Calling allocation function "icu_48::UMemory::operator new(unsigned long)".
+/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/i18n/timezone.cpp:1303: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::SimpleTimeZone::SimpleTimeZone(int, icu_48::UnicodeString const &, signed char, signed char, signed char, int, signed char, signed char, signed char, int, int, UErrorCode &)".
+/builddir/build/BUILD/icu/source/i18n/simpletz.cpp:104:17: noescape: "icu_48::SimpleTimeZone::SimpleTimeZone(int, icu_48::UnicodeString const &, signed char, signed char, signed char, int, signed char, signed char, signed char, int, int, UErrorCode &)" does not free or save its pointer parameter "this".
+/builddir/build/BUILD/icu/source/i18n/timezone.cpp:1303: var_assign: Assigning: "tz" =  storage returned from "new icu_48::SimpleTimeZone(rawOffset, tempID, 5, 1, 0, 0, 7, 1, 0, 0, this->getDSTSavings(), status)".
+/builddir/build/BUILD/icu/source/i18n/timezone.cpp:1311: leaked_storage: Variable "tz" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:475: alloc_fn: Calling allocation function "icu_48::TimeUnitFormat::initHash(UErrorCode &)".
+/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:843: alloc_fn: Storage is returned from allocation function "icu_48::UMemory::operator new(unsigned long)".
+/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:843: var_assign: Assigning: "<storage from new>" = "icu_48::UMemory::operator new(88UL)".
+/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:843: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::Hashtable::Hashtable(signed char, UErrorCode &)".
+/builddir/build/BUILD/icu/source/common/hash.h:119:19: noescape: "icu_48::Hashtable::Hashtable(signed char, UErrorCode &)" does not free or save its pointer parameter "this".
+/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:843: var_assign: Assigning: "hTable" = "new icu_48::Hashtable(1, status)".
+/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:851: noescape: Variable "hTable" is not freed or pointed-to in function "icu_48::Hashtable::setValueComparator(signed char (*)(UHashTok, UHashTok))".
+/builddir/build/BUILD/icu/source/common/hash.h:197:37: noescape: "icu_48::Hashtable::setValueComparator(signed char (*)(UHashTok, UHashTok))" does not free or save its pointer parameter "this".
+/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:852: return_alloc: Returning allocated memory "hTable".
+/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:475: var_assign: Assigning: "countToPatterns" =  storage returned from "this->initHash(err)".
+/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:498: noescape: Variable "countToPatterns" is not freed or pointed-to in function "icu_48::Hashtable::get(icu_48::UnicodeString const &) const".
+/builddir/build/BUILD/icu/source/common/hash.h:165:25: noescape: "icu_48::Hashtable::get(icu_48::UnicodeString const &) const" does not free or save its pointer parameter "this".
+/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:503: noescape: Variable "countToPatterns" is not freed or pointed-to in function "icu_48::Hashtable::put(icu_48::UnicodeString const &, void *, UErrorCode &)".
+/builddir/build/BUILD/icu/source/common/hash.h:157:25: noescape: "icu_48::Hashtable::put(icu_48::UnicodeString const &, void *, UErrorCode &)" does not free or save its pointer parameter "this".
+/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:527: leaked_storage: Variable "countToPatterns" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/icu/source/i18n/ucurr.cpp:1864: alloc_fn: Calling allocation function "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+/builddir/build/BUILD/icu/source/i18n/ucurr.cpp:1864: var_assign: Assigning: "entry" =  storage returned from "uprv_malloc_48(sizeof (IsoCodeEntry) /*24*/)".
+/builddir/build/BUILD/icu/source/i18n/ucurr.cpp:1874: leaked_storage: Variable "entry" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/icu/source/i18n/vtzone.cpp:1744: alloc_fn: Calling allocation function "icu_48::UMemory::operator new(unsigned long)".
+/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/i18n/vtzone.cpp:1744: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::UVector::UVector(void (*)(void *), signed char (*)(UHashTok, UHashTok), UErrorCode &)".
+/builddir/build/BUILD/icu/source/common/uvector.cpp:49:10: noescape: "icu_48::UVector::UVector(void (*)(void *), signed char (*)(UHashTok, UHashTok), UErrorCode &)" does not free or save its pointer parameter "this".
+/builddir/build/BUILD/icu/source/i18n/vtzone.cpp:1744: var_assign: Assigning: "customProps" =  storage returned from "new icu_48::UVector(uhash_deleteUnicodeString_48, uhash_compareUnicodeString_48, status)".
+/builddir/build/BUILD/icu/source/i18n/vtzone.cpp:1746: leaked_storage: Variable "customProps" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/icu/source/tools/gencnval/gencnval.c:968: alloc_fn: Calling allocation function "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+/builddir/build/BUILD/icu/source/tools/gencnval/gencnval.c:968: var_assign: Assigning: "uniqueAliasesToConverter" =  storage returned from "uprv_malloc_48(knownAliasesCount * sizeof (uint16_t) /*2*/)".
+/builddir/build/BUILD/icu/source/tools/gencnval/gencnval.c:971: noescape: Variable "uniqueAliasesToConverter" is not freed or pointed-to in function "resolveAliases".
+/builddir/build/BUILD/icu/source/tools/gencnval/gencnval.c:832:52: noescape: "resolveAliases" does not free or save its pointer parameter "uniqueAliasToConverterArr".
+/builddir/build/BUILD/icu/source/tools/gencnval/gencnval.c:1024: noescape: Variable "uniqueAliasesToConverter" is not freed or pointed-to in function "udata_writeBlock".
+/builddir/build/BUILD/icu/source/tools/toolutil/unewdata.c:215:53: noescape: "udata_writeBlock" does not free or save its pointer parameter "s".
+/builddir/build/BUILD/icu/source/tools/gencnval/gencnval.c:1059: leaked_storage: Variable "uniqueAliasesToConverter" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/icu/source/tools/genrb/parse.c:659: alloc_fn: Calling allocation function "uprv_malloc_48".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
+/builddir/build/BUILD/icu/source/tools/genrb/parse.c:659: var_assign: Assigning: "filename" =  storage returned from "uprv_malloc_48(localeLength + 5)".
+/builddir/build/BUILD/icu/source/tools/genrb/parse.c:673: noescape: Variable "filename" is not freed or pointed-to in function "memcpy".
+/builddir/build/BUILD/icu/source/tools/genrb/parse.c:687: leaked_storage: Variable "filename" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/icu/source/tools/genrb/parse.c:693: noescape: Variable "filename" is not freed or pointed-to in function "strlen".
+/builddir/build/BUILD/icu/source/tools/genrb/parse.c:801: leaked_storage: Variable "filename" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/icu/source/tools/toolutil/flagparser.c:29: alloc_fn: Calling allocation function "T_FileStream_open".
+/builddir/build/BUILD/icu/source/tools/toolutil/filestrm.c:34: alloc_fn: Storage is returned from allocation function "fopen".
+/builddir/build/BUILD/icu/source/tools/toolutil/filestrm.c:34: var_assign: Assigning: "file" = "fopen(filename, mode)".
+/builddir/build/BUILD/icu/source/tools/toolutil/filestrm.c:35: return_alloc: Returning allocated memory "file".
+/builddir/build/BUILD/icu/source/tools/toolutil/flagparser.c:29: var_assign: Assigning: "f" =  storage returned from "T_FileStream_open(fileName, "r")".
+/builddir/build/BUILD/icu/source/tools/toolutil/flagparser.c:37: leaked_storage: Variable "f" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/icu/source/tools/toolutil/flagparser.c:48: leaked_storage: Variable "f" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/icu/source/tools/toolutil/flagparser.c:52: noescape: Variable "f" is not freed or pointed-to in function "T_FileStream_readLine".
+/builddir/build/BUILD/icu/source/tools/toolutil/filestrm.c:151:35: noescape: "T_FileStream_readLine" does not free or save its pointer parameter "fileStream".
+/builddir/build/BUILD/icu/source/tools/toolutil/flagparser.c:60: noescape: Variable "f" is not freed or pointed-to in function "T_FileStream_rewind".
+/builddir/build/BUILD/icu/source/tools/toolutil/filestrm.c:116:33: noescape: "T_FileStream_rewind" does not free or save its pointer parameter "fileStream".
+
+Error: REVERSE_INULL:
+/builddir/build/BUILD/icu/source/i18n/ucol_res.cpp:1157: deref_ptr: Directly dereferencing pointer "coll".
+/builddir/build/BUILD/icu/source/i18n/ucol_res.cpp:1175: check_after_deref: Dereferencing "coll" before a null check.
+
+Error: REVERSE_INULL:
+/builddir/build/BUILD/icu/source/i18n/decfmtst.cpp:99: deref_ptr_in_call: Dereferencing pointer "this->fDefaultGroupingSeparators". (The dereference happens because this is a virtual function call.)
+/builddir/build/BUILD/icu/source/i18n/decfmtst.cpp:107: check_after_deref: Dereferencing "this->fDefaultGroupingSeparators" before a null check.
+
+Error: REVERSE_INULL:
+/builddir/build/BUILD/icu/source/i18n/decfmtst.cpp:98: deref_ptr_in_call: Dereferencing pointer "this->fDotEquivalents".
+/builddir/build/BUILD/icu/source/common/uniset.cpp:202: deref_parm_in_call: Function "icu_48::UnicodeFilter::UnicodeFilter(icu_48::UnicodeFilter const &)" dereferences parameter "o".
+/builddir/build/BUILD/icu/source/common/unicode/unifilt.h:59:20: deref_parm: Directly dereferencing parameter "<anonymous>".
+/builddir/build/BUILD/icu/source/i18n/decfmtst.cpp:107: check_after_deref: Dereferencing "this->fDotEquivalents" before a null check.
+
+Error: REVERSE_INULL:
+/builddir/build/BUILD/icu/source/i18n/decfmtst.cpp:102: deref_ptr_in_call: Dereferencing pointer "this->fStrictDotEquivalents".
+/builddir/build/BUILD/icu/source/common/uniset.cpp:202: deref_parm_in_call: Function "icu_48::UnicodeFilter::UnicodeFilter(icu_48::UnicodeFilter const &)" dereferences parameter "o".
+/builddir/build/BUILD/icu/source/common/unicode/unifilt.h:59:20: deref_parm: Directly dereferencing parameter "<anonymous>".
+/builddir/build/BUILD/icu/source/i18n/decfmtst.cpp:107: check_after_deref: Dereferencing "this->fStrictDotEquivalents" before a null check.
+
+Error: REVERSE_INULL:
+/builddir/build/BUILD/icu/source/i18n/dtfmtsym.cpp:1068: deref_ptr_in_call: Dereferencing pointer "tzids". (The dereference happens because this is a virtual function call.)
+/builddir/build/BUILD/icu/source/i18n/dtfmtsym.cpp:1124: check_after_deref: Dereferencing "tzids" before a null check.
+
+Error: REVERSE_INULL:
+/builddir/build/BUILD/icu/source/i18n/tzgnames.cpp:828: deref_ptr_in_call: Dereferencing pointer "mzIDs". (The dereference happens because this is a virtual function call.)
+/builddir/build/BUILD/icu/source/i18n/tzgnames.cpp:847: check_after_deref: Dereferencing "mzIDs" before a null check.
+
+Error: REVERSE_INULL:
+/builddir/build/BUILD/icu/source/tools/genrb/parse.c:673: deref_ptr_in_call: Dereferencing pointer "filename". (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)
+/builddir/build/BUILD/icu/source/tools/genrb/parse.c:689: check_after_deref: Dereferencing "filename" before a null check.
+
+Error: SIZECHECK:
+/builddir/build/BUILD/icu/source/layout/LEInsertionList.cpp:60: buffer_alloc: "uprv_malloc_48((sizeof (struct icu_48::InsertionRecord) /*24*/ + (count - 1) * sizeof (LEGlyphID) /*4*/) * sizeof (char) /*1*/)" allocates memory.
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: buffer_alloc: "malloc" allocates memory determined by parameter "s" of the current function.
+/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_dbuffer: Returning allocated array "malloc(s)".
+/builddir/build/BUILD/icu/source/layout/LEInsertionList.cpp:60: incorrect_multiplication: Allocating a multiple of 1 bytes to pointer "insertion", which needs 24 bytes.
+
+Error: SIZEOF_MISMATCH:
+/builddir/build/BUILD/icu/source/tools/genrb/reslist.c:1677: suspicious_sizeof: Passing argument "count * sizeof (struct SResource **) /*8*/" to function "uprv_malloc_48" and then casting the return value to "struct SResource **" is suspicious.  Did you intend to use "sizeof(struct SResource *)" instead of "sizeof (struct SResource **)" ?  In this particular case sizeof(struct SResource **) happens to be equal to sizeof(struct SResource *), but this is not a portable assumption.
+
+Error: SIZEOF_MISMATCH:
+/builddir/build/BUILD/icu/source/tools/genrb/reslist.c:1694: suspicious_sizeof: Passing argument "array" of type "struct SResource **" and argument "(int32_t)sizeof (struct SResource **) /*8*/" to function "uprv_sortArray_48" is suspicious.  Did you intend to use "sizeof(struct SResource *)" instead of "sizeof (struct SResource **)" ?  In this particular case sizeof(struct SResource **) happens to be equal to sizeof(struct SResource *), but this is not a portable assumption.
+
+Error: SIZEOF_MISMATCH:
+/builddir/build/BUILD/icu/source/tools/genrb/reslist.c:1742: suspicious_sizeof: Passing argument "array" of type "struct SResource **" and argument "(int32_t)sizeof (struct SResource **) /*8*/" to function "uprv_sortArray_48" is suspicious.  Did you intend to use "sizeof(struct SResource *)" instead of "sizeof (struct SResource **)" ?  In this particular case sizeof(struct SResource **) happens to be equal to sizeof(struct SResource *), but this is not a portable assumption.
+
+Error: STRING_NULL:
+/builddir/build/BUILD/icu/source/tools/toolutil/ucbuf.c:61: string_null_argument: Function "T_FileStream_read" does not terminate string "*start".
+/builddir/build/BUILD/icu/source/tools/toolutil/filestrm.c:105: string_null_argument: Function "fread" fills array "*addr" with a non-terminated string.
+/builddir/build/BUILD/icu/source/tools/toolutil/ucbuf.c:63: string_null: Passing unterminated string "start" to a function expecting a null-terminated string.
+/builddir/build/BUILD/icu/source/common/ucnv.c:2779: string_null_sink_parm_call: Passing parameter "source" to "strlen" which expects a null-terminated string.
+
+Error: STRING_NULL:
+/builddir/build/BUILD/icu/source/tools/pkgdata/pkgdata.cpp:1797: string_null_argument: Function "fread" does not terminate string "*buf".
+/builddir/build/BUILD/icu/source/tools/pkgdata/pkgdata.cpp:1807: string_null: Passing unterminated string "buf" to a function expecting a null-terminated string.
+
+Error: STRING_NULL:
+/builddir/build/BUILD/icu/source/tools/toolutil/xmlparser.cpp:183: string_null_argument: Function "T_FileStream_read" does not terminate string "*bytes".
+/builddir/build/BUILD/icu/source/tools/toolutil/filestrm.c:105: string_null_argument: Function "fread" fills array "*addr" with a non-terminated string.
+/builddir/build/BUILD/icu/source/tools/toolutil/xmlparser.cpp:198: string_null: Passing unterminated string "bytes" to a function expecting a null-terminated string.
+/builddir/build/BUILD/icu/source/common/ucnv.c:2779: string_null_sink_parm_call: Passing parameter "source" to "strlen" which expects a null-terminated string.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/common/uloc.c:750: fixed_size_dest: You might overrun the 25 byte fixed-size string "keywordList[numKeywords].keyword" by copying "addKeyword" without checking the length.
+/builddir/build/BUILD/icu/source/common/uloc.c:750: parameter_as_source: Note: This defect has an elevated risk because the source argument is a parameter of the current function.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/common/uresbund.c:334: fixed_size_dest: You might overrun the 96 byte fixed-size string "name" by copying the return value of "uloc_getDefault_48" without checking the length.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/common/uresbund.c:338: fixed_size_dest: You might overrun the 96 byte fixed-size string "name" by copying "localeID" without checking the length.
+/builddir/build/BUILD/icu/source/common/uresbund.c:338: parameter_as_source: Note: This defect has an elevated risk because the source argument is a parameter of the current function.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/common/uresbund.c:616: fixed_size_dest: You might overrun the 96 byte fixed-size string "name" by copying the return value of "uloc_getDefault_48" without checking the length.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/common/uresbund.c:540: fixed_size_dest: You might overrun the 96 byte fixed-size string "name" by copying "localeID" without checking the length.
+/builddir/build/BUILD/icu/source/common/uresbund.c:540: parameter_as_source: Note: This defect has an elevated risk because the source argument is a parameter of the current function.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/common/uresbund.c:546: fixed_size_dest: You might overrun the 96 byte fixed-size string "usrDataPath" by copying "path" without checking the length.
+/builddir/build/BUILD/icu/source/common/uresbund.c:546: parameter_as_source: Note: This defect has an elevated risk because the source argument is a parameter of the current function.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/common/uresbund.c:949: fixed_size_dest: You might overrun the 200 byte fixed-size string "chAlias" by copying "aKey" without checking the length.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/common/putil.c:954: fixed_size_dest: You might overrun the 4096 byte fixed-size string "SEARCH_TZFILE_RESULT" by copying "zoneid" without checking the length.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/common/putil.c:924: fixed_size_dest: You might overrun the 4096 byte fixed-size string "curpath" by copying "path" without checking the length.
+/builddir/build/BUILD/icu/source/common/putil.c:924: parameter_as_source: Note: This defect has an elevated risk because the source argument is a parameter of the current function.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/common/uloc_tag.c:1057: fixed_size_dest: You might overrun the 12 byte fixed-size string "buf" by copying "DEPRECATEDLANGS[i + 1]" without checking the length.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/common/uresbund.c:2455: fixed_size_dest: You might overrun the 1024 byte fixed-size string "found" by copying the return value of "ures_getLocaleByType_48" without checking the length.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/common/uresbund.c:2634: fixed_size_dest: You might overrun the 1024 byte fixed-size string "found" by copying "keyword" without checking the length.
+/builddir/build/BUILD/icu/source/common/uresbund.c:2634: parameter_as_source: Note: This defect has an elevated risk because the source argument is a parameter of the current function.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/common/uresbund.c:2639: fixed_size_dest: You might overrun the 1024 byte fixed-size string "found" by copying "keyword" without checking the length.
+/builddir/build/BUILD/icu/source/common/uresbund.c:2639: parameter_as_source: Note: This defect has an elevated risk because the source argument is a parameter of the current function.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:114: fixed_size_dest: You might overrun the 2048 byte fixed-size string "dataPath" by copying the return value of "u_getDataDirectory_48" without checking the length.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/i18n/plurrule.cpp:682: fixed_size_dest: You might overrun the 157 byte fixed-size string "parentLocaleName" by copying "curLocaleName" without checking the length.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/i18n/ucurr.cpp:752: fixed_size_dest: You might overrun the 157 byte fixed-size string "locale" by copying "loc" without checking the length.
+/builddir/build/BUILD/icu/source/i18n/ucurr.cpp:752: parameter_as_source: Note: This defect has an elevated risk because the source argument is a parameter of the current function.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/i18n/ucurr.cpp:1340: fixed_size_dest: You might overrun the 157 byte fixed-size string "cacheEntry->locale" by copying "locale" without checking the length.
+/builddir/build/BUILD/icu/source/i18n/ucurr.cpp:1340: parameter_as_source: Note: This defect has an elevated risk because the source argument is a parameter of the current function.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/i18n/dtptngen.cpp:647: fixed_size_dest: You might overrun the 50 byte fixed-size string "parentLocale" by copying "curLocaleName" without checking the length.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/i18n/dtptngen.cpp:651: fixed_size_dest: You might overrun the 50 byte fixed-size string "parentLocale" by copying "curLocaleName" without checking the length.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/i18n/dtitvinf.cpp:225: fixed_size_dest: You might overrun the 157 byte fixed-size string "parentLocale" by copying "locName" without checking the length.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:674: fixed_size_dest: You might overrun the 157 byte fixed-size string "pLocale" by copying "localeName" without checking the length.
+/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:674: parameter_as_source: Note: This defect has an elevated risk because the source argument is a parameter of the current function.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:615: fixed_size_dest: You might overrun the 157 byte fixed-size string "parentLocale" by copying "localeName" without checking the length.
+/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:615: parameter_as_source: Note: This defect has an elevated risk because the source argument is a parameter of the current function.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/layoutex/ParagraphLayout.cpp:950: fixed_size_dest: You might overrun the 8 byte fixed-size string "code" by copying "country" without checking the length.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/layoutex/ParagraphLayout.cpp:946: fixed_size_dest: You might overrun the 8 byte fixed-size string "code" by copying "language" without checking the length.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/tools/ctestfw/ctest.c:1219: fixed_size_dest: You might overrun the 256 byte fixed-size string "XML_PREFIX" by copying "rootName" without checking the length.
+/builddir/build/BUILD/icu/source/tools/ctestfw/ctest.c:1219: parameter_as_source: Note: This defect has an elevated risk because the source argument is a parameter of the current function.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/tools/ctestfw/ctest.c:349: fixed_size_dest: You might overrun the 128 byte fixed-size string "pathToFunction" by copying "nodeList[i]->name" without checking the length.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/tools/ctestfw/ctest.c:352: fixed_size_dest: You might overrun the 128 byte fixed-size string "pathToFunction" by copying "nodeList[i]->name" without checking the length.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/tools/toolutil/pkg_genc.c:269: fixed_size_dest: You might overrun the 64 byte fixed-size string "entry" by copying "optEntryPoint" without checking the length.
+/builddir/build/BUILD/icu/source/tools/toolutil/pkg_genc.c:269: parameter_as_source: Note: This defect has an elevated risk because the source argument is a parameter of the current function.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/tools/toolutil/pkg_genc.c:338: fixed_size_dest: You might overrun the 64 byte fixed-size string "entry" by copying "optName" without checking the length.
+/builddir/build/BUILD/icu/source/tools/toolutil/pkg_genc.c:338: parameter_as_source: Note: This defect has an elevated risk because the source argument is a parameter of the current function.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/tools/gencnval/gencnval.c:262: fixed_size_dest: You might overrun the 512 byte fixed-size string "pathBuf" by copying "path" without checking the length.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/tools/toolutil/toolutil.cpp:232: fixed_size_dest: You might overrun the 64 byte fixed-size string "mem->name" by copying "name" without checking the length.
+/builddir/build/BUILD/icu/source/tools/toolutil/toolutil.cpp:232: parameter_as_source: Note: This defect has an elevated risk because the source argument is a parameter of the current function.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/tools/genrb/derb.c:255: fixed_size_dest: You might overrun the 4096 byte fixed-size string "infile" by copying "inputDir" without checking the length.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/tools/genrb/derb.c:307: fixed_size_dest: You might overrun the 4096 byte fixed-size string "thefile" by copying "outputDir" without checking the length.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/tools/genrb/wrtjava.c:639: fixed_size_dest: You might overrun the 256 byte fixed-size string "className" by copying "bName" without checking the length.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/tools/genrb/wrtjava.c:643: fixed_size_dest: You might overrun the 256 byte fixed-size string "className" by copying "srBundle->fLocale" without checking the length.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/tools/genrb/wrtjava.c:646: fixed_size_dest: You might overrun the 256 byte fixed-size string "fileName" by copying "outputDir" without checking the length.
+/builddir/build/BUILD/icu/source/tools/genrb/wrtjava.c:646: parameter_as_source: Note: This defect has an elevated risk because the source argument is a parameter of the current function.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/tools/genrb/genrb.c:422: fixed_size_dest: You might overrun the 2048 byte fixed-size string "theCurrentFileName" by copying "arg" without checking the length.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/tools/genrb/genrb.c:417: fixed_size_dest: You might overrun the 2048 byte fixed-size string "theCurrentFileName" by copying "inputDir" without checking the length.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/tools/genrb/parse.c:525: fixed_size_dest: You might overrun the 256 byte fixed-size string "filename" by copying "state->outputdir" without checking the length.
+/builddir/build/BUILD/icu/source/tools/genrb/parse.c:525: parameter_as_source: Note: This defect has an elevated risk because the source argument is a parameter of the current function.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/tools/genrb/parse.c:452: fixed_size_dest: You might overrun the 256 byte fixed-size string "filename" by copying "state->inputdir" without checking the length.
+/builddir/build/BUILD/icu/source/tools/genrb/parse.c:452: parameter_as_source: Note: This defect has an elevated risk because the source argument is a parameter of the current function.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/tools/genrb/parse.c:311: fixed_size_dest: You might overrun the 256 byte fixed-size string "filename" by copying "state->inputdir" without checking the length.
+/builddir/build/BUILD/icu/source/tools/genrb/parse.c:311: parameter_as_source: Note: This defect has an elevated risk because the source argument is a parameter of the current function.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/tools/gentest/genres32.c:56: fixed_size_dest: You might overrun the 512 byte fixed-size string "file" by copying "path" without checking the length.
+/builddir/build/BUILD/icu/source/tools/gentest/genres32.c:56: parameter_as_source: Note: This defect has an elevated risk because the source argument is a parameter of the current function.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/tools/gentest/gentest.c:148: fixed_size_dest: You might overrun the 512 byte fixed-size string "file" by copying "outputDir" without checking the length.
+/builddir/build/BUILD/icu/source/tools/gentest/gentest.c:148: parameter_as_source: Note: This defect has an elevated risk because the source argument is a parameter of the current function.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/tools/icupkg/icupkg.cpp:463: fixed_size_dest: You might overrun the 1024 byte fixed-size string "outFilenameBuffer" by copying "inFilename" without checking the length.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/tools/toolutil/ucmstate.c:322: fixed_size_dest: You might overrun the 60 byte fixed-size string "ucm->baseName" by copying "*pValue" without checking the length.
+/builddir/build/BUILD/icu/source/tools/toolutil/ucmstate.c:322: parameter_as_source: Note: This defect has an elevated risk because the source argument is a parameter of the current function.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/tools/makeconv/makeconv.c:463: fixed_size_dest: You might overrun the 60 byte fixed-size string "staticData->name" by copying "value" without checking the length.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/tools/makeconv/makeconv.c:727: fixed_size_dest: You might overrun the 500 byte fixed-size string "baseFilename" by copying "converterName" without checking the length.
+/builddir/build/BUILD/icu/source/tools/makeconv/makeconv.c:727: parameter_as_source: Note: This defect has an elevated risk because the source argument is a parameter of the current function.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/tools/makeconv/makeconv.c:373: string_overflow: You might overrun the 60 byte destination string "data.staticData.name" by writing 660 bytes from "cnvName".
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/tools/makeconv/makeconv.c:324: fixed_size_dest: You might overrun the 660 byte fixed-size string "cnvName" by copying "outBasename" without checking the length.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/tools/makeconv/makeconv.c:265: fixed_size_dest: You might overrun the 660 byte fixed-size string "outFileName" by copying "destdir" without checking the length.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/tools/pkgdata/pkgdata.cpp:1232: fixed_size_dest: You might overrun the 512 byte fixed-size string "tempObjectFile" by copying "gencFilePath" without checking the length.
+/builddir/build/BUILD/icu/source/tools/pkgdata/pkgdata.cpp:1232: parameter_as_source: Note: This defect has an elevated risk because the source argument is a parameter of the current function.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/tools/toolutil/filetools.cpp:52: fixed_size_dest: You might overrun the 4096 byte fixed-size string "newpath" by copying "checkAgainst" without checking the length.
+/builddir/build/BUILD/icu/source/tools/toolutil/filetools.cpp:52: parameter_as_source: Note: This defect has an elevated risk because the source argument is a parameter of the current function.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/tools/pkgdata/pkgdata.cpp:564: fixed_size_dest: You might overrun the 512 byte fixed-size string "datFileName" by copying "o->shortName" without checking the length.
+/builddir/build/BUILD/icu/source/tools/pkgdata/pkgdata.cpp:564: parameter_as_source: Note: This defect has an elevated risk because the source argument is a parameter of the current function.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/tools/pkgdata/pkgdata.cpp:543: fixed_size_dest: You might overrun the 512 byte fixed-size string "targetDir" by copying "o->install" without checking the length.
+/builddir/build/BUILD/icu/source/tools/pkgdata/pkgdata.cpp:543: parameter_as_source: Note: This defect has an elevated risk because the source argument is a parameter of the current function.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/tools/pkgdata/pkgdata.cpp:546: fixed_size_dest: You might overrun the 512 byte fixed-size string "targetDir" by copying "o->shortName" without checking the length.
+/builddir/build/BUILD/icu/source/tools/pkgdata/pkgdata.cpp:546: parameter_as_source: Note: This defect has an elevated risk because the source argument is a parameter of the current function.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/tools/pkgdata/pkgdata.cpp:556: fixed_size_dest: You might overrun the 512 byte fixed-size string "targetDir" by copying "o->targetDir" without checking the length.
+/builddir/build/BUILD/icu/source/tools/pkgdata/pkgdata.cpp:556: parameter_as_source: Note: This defect has an elevated risk because the source argument is a parameter of the current function.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/tools/pkgdata/pkgdata.cpp:559: fixed_size_dest: You might overrun the 512 byte fixed-size string "tmpDir" by copying "o->tmpDir" without checking the length.
+/builddir/build/BUILD/icu/source/tools/pkgdata/pkgdata.cpp:559: parameter_as_source: Note: This defect has an elevated risk because the source argument is a parameter of the current function.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/tools/pkgdata/pkgtypes.c:93: fixed_size_dest: You might overrun the 1024 byte fixed-size string "buffer" by copying "&buffer[1]" without checking the length.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/tools/pkgdata/pkgtypes.c:43: fixed_size_dest: You might overrun the 1024 byte fixed-size string "buffer" by copying "&buffer[1]" without checking the length.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/icu/source/tools/toolutil/writesrc.c:39: fixed_size_dest: You might overrun the 1024 byte fixed-size string "buffer" by copying "path" without checking the length.
+/builddir/build/BUILD/icu/source/tools/toolutil/writesrc.c:39: parameter_as_source: Note: This defect has an elevated risk because the source argument is a parameter of the current function.
+
+Error: STRING_SIZE:
+/builddir/build/BUILD/icu/source/tools/gensprep/gensprep.c:184: var_assign_var: Assigning: "argv[1]" = "inputFileName". Both are now tainted.
+/builddir/build/BUILD/icu/source/tools/gensprep/gensprep.c:223: string_size: Passing string "inputFileName" of unknown size to a function that expects a string of a particular size.
+
+Error: TAINTED_SCALAR:
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1151: var_assign_var: Assigning: "argv + 1" = "remainArgvLimit". Both are now tainted.
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1152: var_assign_var: Assigning: "argv + 1" = "iter". Both are now tainted.
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1208: tainted_data: Passing tainted variable "**iter" to a tainted sink.
+/builddir/build/BUILD/icu/source/common/ucnv_io.c:979: data_index: Passing tainted variable "*alias" to a tainted data index sink.
+/builddir/build/BUILD/icu/source/common/ucnv_io.c:905: data_index: Passing tainted variable "*alias" to a tainted data index sink.
+/builddir/build/BUILD/icu/source/common/ucnv_io.c:594: data_index: Passing tainted variable "*alias" to a tainted data index sink.
+/builddir/build/BUILD/icu/source/common/ucnv_io.c:504: lower_bounds: Checking lower bounds of signed scalar "*name1" by "(int8_t)*name1 >= 0".
+/builddir/build/BUILD/icu/source/common/ucnv_io.c:504: data_index: Using tainted variable "(uint8_t)*name1" as an index to array "asciiTypes".
+
+Error: TAINTED_SCALAR:
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1151: var_assign_var: Assigning: "argv + 1" = "remainArgvLimit". Both are now tainted.
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1152: var_assign_var: Assigning: "argv + 1" = "iter". Both are now tainted.
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1157: var_assign_var: Assigning: "*iter" = "fromcpage". Both are now tainted.
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1208: tainted_data: Passing tainted variable "**iter" to a tainted sink.
+/builddir/build/BUILD/icu/source/common/ucnv_io.c:979: data_index: Passing tainted variable "*alias" to a tainted data index sink.
+/builddir/build/BUILD/icu/source/common/ucnv_io.c:905: data_index: Passing tainted variable "*alias" to a tainted data index sink.
+/builddir/build/BUILD/icu/source/common/ucnv_io.c:594: data_index: Passing tainted variable "*alias" to a tainted data index sink.
+/builddir/build/BUILD/icu/source/common/ucnv_io.c:504: lower_bounds: Checking lower bounds of signed scalar "*name1" by "(int8_t)*name1 >= 0".
+/builddir/build/BUILD/icu/source/common/ucnv_io.c:504: data_index: Using tainted variable "(uint8_t)*name1" as an index to array "asciiTypes".
+
+Error: TAINTED_SCALAR:
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1151: var_assign_var: Assigning: "argv + 1" = "remainArgvLimit". Both are now tainted.
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1152: var_assign_var: Assigning: "argv + 1" = "iter". Both are now tainted.
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1157: var_assign_var: Assigning: "*iter" = "fromcpage". Both are now tainted.
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1163: var_assign_var: Assigning: "*iter" = "tocpage". Both are now tainted.
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1208: tainted_data: Passing tainted variable "**iter" to a tainted sink.
+/builddir/build/BUILD/icu/source/common/ucnv_io.c:979: data_index: Passing tainted variable "*alias" to a tainted data index sink.
+/builddir/build/BUILD/icu/source/common/ucnv_io.c:905: data_index: Passing tainted variable "*alias" to a tainted data index sink.
+/builddir/build/BUILD/icu/source/common/ucnv_io.c:594: data_index: Passing tainted variable "*alias" to a tainted data index sink.
+/builddir/build/BUILD/icu/source/common/ucnv_io.c:504: lower_bounds: Checking lower bounds of signed scalar "*name1" by "(int8_t)*name1 >= 0".
+/builddir/build/BUILD/icu/source/common/ucnv_io.c:504: data_index: Using tainted variable "(uint8_t)*name1" as an index to array "asciiTypes".
+
+Error: TAINTED_SCALAR:
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1151: var_assign_var: Assigning: "argv + 1" = "remainArgvLimit". Both are now tainted.
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1152: var_assign_var: Assigning: "argv + 1" = "iter". Both are now tainted.
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1157: var_assign_var: Assigning: "*iter" = "fromcpage". Both are now tainted.
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1163: var_assign_var: Assigning: "*iter" = "tocpage". Both are now tainted.
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1169: var_assign_var: Assigning: "*iter" = "translit". Both are now tainted.
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1208: tainted_data: Passing tainted variable "**iter" to a tainted sink.
+/builddir/build/BUILD/icu/source/common/ucnv_io.c:979: data_index: Passing tainted variable "*alias" to a tainted data index sink.
+/builddir/build/BUILD/icu/source/common/ucnv_io.c:905: data_index: Passing tainted variable "*alias" to a tainted data index sink.
+/builddir/build/BUILD/icu/source/common/ucnv_io.c:594: data_index: Passing tainted variable "*alias" to a tainted data index sink.
+/builddir/build/BUILD/icu/source/common/ucnv_io.c:504: lower_bounds: Checking lower bounds of signed scalar "*name1" by "(int8_t)*name1 >= 0".
+/builddir/build/BUILD/icu/source/common/ucnv_io.c:504: data_index: Using tainted variable "(uint8_t)*name1" as an index to array "asciiTypes".
+
+Error: TAINTED_SCALAR:
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1151: var_assign_var: Assigning: "argv + 1" = "remainArgvLimit". Both are now tainted.
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1152: var_assign_var: Assigning: "argv + 1" = "iter". Both are now tainted.
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1157: var_assign_var: Assigning: "*iter" = "fromcpage". Both are now tainted.
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1163: var_assign_var: Assigning: "*iter" = "tocpage". Both are now tainted.
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1169: var_assign_var: Assigning: "*iter" = "translit". Both are now tainted.
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1179: tainted_data_transitive: Call to function "atoi" with tainted argument "*iter" returns tainted data.
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1208: tainted_data: Passing tainted variable "**iter" to a tainted sink.
+/builddir/build/BUILD/icu/source/common/ucnv_io.c:979: data_index: Passing tainted variable "*alias" to a tainted data index sink.
+/builddir/build/BUILD/icu/source/common/ucnv_io.c:905: data_index: Passing tainted variable "*alias" to a tainted data index sink.
+/builddir/build/BUILD/icu/source/common/ucnv_io.c:594: data_index: Passing tainted variable "*alias" to a tainted data index sink.
+/builddir/build/BUILD/icu/source/common/ucnv_io.c:504: lower_bounds: Checking lower bounds of signed scalar "*name1" by "(int8_t)*name1 >= 0".
+/builddir/build/BUILD/icu/source/common/ucnv_io.c:504: data_index: Using tainted variable "(uint8_t)*name1" as an index to array "asciiTypes".
+
+Error: TAINTED_SCALAR:
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1151: var_assign_var: Assigning: "argv + 1" = "remainArgvLimit". Both are now tainted.
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1152: var_assign_var: Assigning: "argv + 1" = "iter". Both are now tainted.
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1157: var_assign_var: Assigning: "*iter" = "fromcpage". Both are now tainted.
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1163: var_assign_var: Assigning: "*iter" = "tocpage". Both are now tainted.
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1169: var_assign_var: Assigning: "*iter" = "translit". Both are now tainted.
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1179: tainted_data_transitive: Call to function "atoi" with tainted argument "*iter" returns tainted data.
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1292: var_assign_var: Assigning: "*iter" = "outfilestr". Both are now tainted.
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1208: tainted_data: Passing tainted variable "**iter" to a tainted sink.
+/builddir/build/BUILD/icu/source/common/ucnv_io.c:979: data_index: Passing tainted variable "*alias" to a tainted data index sink.
+/builddir/build/BUILD/icu/source/common/ucnv_io.c:905: data_index: Passing tainted variable "*alias" to a tainted data index sink.
+/builddir/build/BUILD/icu/source/common/ucnv_io.c:594: data_index: Passing tainted variable "*alias" to a tainted data index sink.
+/builddir/build/BUILD/icu/source/common/ucnv_io.c:504: lower_bounds: Checking lower bounds of signed scalar "*name1" by "(int8_t)*name1 >= 0".
+/builddir/build/BUILD/icu/source/common/ucnv_io.c:504: data_index: Using tainted variable "(uint8_t)*name1" as an index to array "asciiTypes".
+
+Error: TAINTED_SCALAR:
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1151: var_assign_var: Assigning: "argv + 1" = "remainArgvLimit". Both are now tainted.
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1152: var_assign_var: Assigning: "argv + 1" = "iter". Both are now tainted.
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1157: var_assign_var: Assigning: "*iter" = "fromcpage". Both are now tainted.
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1163: var_assign_var: Assigning: "*iter" = "tocpage". Both are now tainted.
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1169: var_assign_var: Assigning: "*iter" = "translit". Both are now tainted.
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1179: tainted_data_transitive: Call to function "atoi" with tainted argument "*iter" returns tainted data.
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1179: var_assign: Assigning: "bufsz" = "atoi", which taints "bufsz".
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1180: lower_bounds: Checking lower bounds of unsigned scalar "bufsz" by "(int)bufsz <= 0".
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:1346: tainted_data: Passing tainted variable "bufsz" to a tainted sink.
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:541: var_assign_parm: Assigning: "this->bufsz" = "bufferSize". "this->bufsz" is now tainted.
+/builddir/build/BUILD/icu/source/extra/uconv/uconv.cpp:543: tainted_data_sink_lv_call: Passing tainted variable "2UL * this->bufsz" to tainted data sink "operator new[](unsigned long)".
+
+Error: TAINTED_STRING:
+/builddir/build/BUILD/icu/source/tools/pkgdata/pkgdata.cpp:1037: tainted_string_argument: "T_FileStream_readLine" taints variable "buffer".
+/builddir/build/BUILD/icu/source/tools/toolutil/filestrm.c:153: tainted_string_argument: Calling function "fgets" taints parameter "*buffer".
+/builddir/build/BUILD/icu/source/tools/pkgdata/pkgdata.cpp:1037: tainted_data_transitive: Call to function "T_FileStream_readLine" with tainted argument "buffer" returns tainted data.
+/builddir/build/BUILD/icu/source/tools/toolutil/filestrm.c:153: tainted_data_transitive: Calling function "fgets" with tainted argument "buffer" results in tainted data.
+/builddir/build/BUILD/icu/source/tools/toolutil/filestrm.c:153: return_tainted_data: Returning tainted variable "fgets(buffer, length, (FILE *)fileStream)".
+/builddir/build/BUILD/icu/source/tools/pkgdata/pkgdata.cpp:1041: vararg_transitive: Call to "sprintf" with tainted argument "buffer" taints "cmd".
+/builddir/build/BUILD/icu/source/tools/pkgdata/pkgdata.cpp:1046: tainted_string: Passing tainted string "cmd" to a function that cannot accept tainted data.
+/builddir/build/BUILD/icu/source/tools/pkgdata/pkgdata.cpp:504: var_assign_parm: Assigning: "cmd" = "command", which taints "cmd".
+/builddir/build/BUILD/icu/source/tools/pkgdata/pkgdata.cpp:508: tainted_string_sink_content_lv_call: Passing tainted string "cmd" to "system", which depends on its content.
+
+Error: TOCTOU:
+/builddir/build/BUILD/icu/source/common/umapfile.c:172: fs_check_call: Calling function "stat" to perform check on "path".
+/builddir/build/BUILD/icu/source/common/umapfile.c:178: toctou: Calling function "open" that uses "path" after a check function. This can cause a time-of-check, time-of-use race condition.
+
+Error: UNINIT:
+/builddir/build/BUILD/icu/source/common/stringtriebuilder.cpp:166: var_decl: Declaring variable "jumpTargets" without initializer.
+/builddir/build/BUILD/icu/source/common/stringtriebuilder.cpp:187: uninit_use: Using uninitialized value "jumpTargets[unitNumber]".
+
+Error: UNINIT:
+/builddir/build/BUILD/icu/source/common/uloc_tag.c:1881: var_decl: Declaring variable "tmpAppend" without initializer.
+/builddir/build/BUILD/icu/source/common/uloc_tag.c:1986: uninit_use_in_call: Using uninitialized element of array "tmpAppend" when calling "memcpy".
+
+Error: UNINIT:
+/builddir/build/BUILD/icu/source/tools/toolutil/denseranges.cpp:121: var_decl: Declaring variable "gaps".
+/builddir/build/BUILD/icu/source/tools/toolutil/denseranges.cpp:128: uninit_use_in_call: Using uninitialized element of array "gaps.gapLengths" when calling "<unnamed>::LargestGaps::add(int, long)".
+/builddir/build/BUILD/icu/source/tools/toolutil/denseranges.cpp:32: read_parm_fld: Reading a parameter field.
+
+Error: UNINIT_CTOR:
+/builddir/build/BUILD/icu/source/common/normalizer2impl.cpp:1773: member_decl: Class member declaration for newData.
+/builddir/build/BUILD/icu/source/common/normalizer2impl.cpp:1754: uninit_member: Non-static class member newData is not initialized in this constructor nor in any functions that it calls.
+
+Error: UNINIT_CTOR:
+/builddir/build/BUILD/icu/source/common/unicode/unistr.h:3446: member_decl: Class member declaration for fRestOfStackBuffer.
+/builddir/build/BUILD/icu/source/common/unistr.cpp:231: uninit_member: Non-static class member fRestOfStackBuffer is not initialized in this constructor nor in any functions that it calls.
+
+Error: UNINIT_CTOR:
+/builddir/build/BUILD/icu/source/common/unicode/unistr.h:3446: member_decl: Class member declaration for fRestOfStackBuffer.
+/builddir/build/BUILD/icu/source/common/unistr.cpp:297: uninit_member: Non-static class member fRestOfStackBuffer is not initialized in this constructor nor in any functions that it calls.
+
+Error: UNINIT_CTOR:
+/builddir/build/BUILD/icu/source/common/unicode/unistr.h:3446: member_decl: Class member declaration for fRestOfStackBuffer.
+/builddir/build/BUILD/icu/source/common/unistr.cpp:223: uninit_member: Non-static class member fRestOfStackBuffer is not initialized in this constructor nor in any functions that it calls.
+
+Error: UNINIT_CTOR:
+/builddir/build/BUILD/icu/source/common/unicode/unistr.h:3446: member_decl: Class member declaration for fRestOfStackBuffer.
+/builddir/build/BUILD/icu/source/common/unistr.cpp:154: uninit_member: Non-static class member fRestOfStackBuffer is not initialized in this constructor nor in any functions that it calls.
+
+Error: UNINIT_CTOR:
+/builddir/build/BUILD/icu/source/common/unicode/unistr.h:3446: member_decl: Class member declaration for fRestOfStackBuffer.
+/builddir/build/BUILD/icu/source/common/unistr.cpp:331: uninit_member: Non-static class member fRestOfStackBuffer is not initialized in this constructor nor in any functions that it calls.
+
+Error: UNINIT_CTOR:
+/builddir/build/BUILD/icu/source/common/unicode/stringtriebuilder.h:294: member_decl: Class member declaration for firstEdgeNumber.
+/builddir/build/BUILD/icu/source/common/unicode/stringtriebuilder.h:292: uninit_member: Non-static class member firstEdgeNumber is not initialized in this constructor nor in any functions that it calls.
+
+Error: UNINIT_CTOR:
+/builddir/build/BUILD/icu/source/common/unicode/stringtriebuilder.h:300: uninit_member: Non-static class member equal is not initialized in this constructor nor in any functions that it calls.
+/builddir/build/BUILD/icu/source/common/unicode/stringtriebuilder.h:300: uninit_member: Non-static class member units is not initialized in this constructor nor in any functions that it calls.
+/builddir/build/BUILD/icu/source/common/unicode/stringtriebuilder.h:300: uninit_member: Non-static class member values is not initialized in this constructor nor in any functions that it calls.
+/builddir/build/BUILD/icu/source/common/unicode/stringtriebuilder.h:321: member_decl: Class member declaration for equal.
+/builddir/build/BUILD/icu/source/common/unicode/stringtriebuilder.h:323: member_decl: Class member declaration for values.
+/builddir/build/BUILD/icu/source/common/unicode/stringtriebuilder.h:324: member_decl: Class member declaration for units.
+
+Error: UNINIT_CTOR:
+/builddir/build/BUILD/icu/source/common/unicode/unistr.h:3446: member_decl: Class member declaration for fRestOfStackBuffer.
+/builddir/build/BUILD/icu/source/common/unistr.cpp:216: uninit_member: Non-static class member fRestOfStackBuffer is not initialized in this constructor nor in any functions that it calls.
+
+Error: UNINIT_CTOR:
+/builddir/build/BUILD/icu/source/common/unicode/unistr.h:3446: member_decl: Class member declaration for fRestOfStackBuffer.
+/builddir/build/BUILD/icu/source/common/unistr.cpp:254: uninit_member: Non-static class member fRestOfStackBuffer is not initialized in this constructor nor in any functions that it calls.
+
+Error: UNINIT_CTOR:
+/builddir/build/BUILD/icu/source/common/unicode/unistr.h:3446: member_decl: Class member declaration for fRestOfStackBuffer.
+/builddir/build/BUILD/icu/source/common/unistr.cpp:350: uninit_member: Non-static class member fRestOfStackBuffer is not initialized in this constructor nor in any functions that it calls.
+
+Error: UNINIT_CTOR:
+/builddir/build/BUILD/icu/source/common/unicode/messagepattern.h:703: uninit_member: Non-static class member index is not initialized in this constructor nor in any functions that it calls.
+/builddir/build/BUILD/icu/source/common/unicode/messagepattern.h:703: uninit_member: Non-static class member length is not initialized in this constructor nor in any functions that it calls.
+/builddir/build/BUILD/icu/source/common/unicode/messagepattern.h:703: uninit_member: Non-static class member limitPartIndex is not initialized in this constructor nor in any functions that it calls.
+/builddir/build/BUILD/icu/source/common/unicode/messagepattern.h:703: uninit_member: Non-static class member type is not initialized in this constructor nor in any functions that it calls.
+/builddir/build/BUILD/icu/source/common/unicode/messagepattern.h:703: uninit_member: Non-static class member value is not initialized in this constructor nor in any functions that it calls.
+/builddir/build/BUILD/icu/source/common/unicode/messagepattern.h:811: member_decl: Class member declaration for type.
+/builddir/build/BUILD/icu/source/common/unicode/messagepattern.h:812: member_decl: Class member declaration for index.
+/builddir/build/BUILD/icu/source/common/unicode/messagepattern.h:813: member_decl: Class member declaration for length.
+/builddir/build/BUILD/icu/source/common/unicode/messagepattern.h:814: member_decl: Class member declaration for value.
+/builddir/build/BUILD/icu/source/common/unicode/messagepattern.h:815: member_decl: Class member declaration for limitPartIndex.
+
+Error: UNINIT_CTOR:
+/builddir/build/BUILD/icu/source/common/unicode/unistr.h:3446: member_decl: Class member declaration for fRestOfStackBuffer.
+/builddir/build/BUILD/icu/source/common/unistr.cpp:278: uninit_member: Non-static class member fRestOfStackBuffer is not initialized in this constructor nor in any functions that it calls.
+
+Error: UNINIT_CTOR:
+/builddir/build/BUILD/icu/source/common/unicode/unistr.h:3446: member_decl: Class member declaration for fRestOfStackBuffer.
+/builddir/build/BUILD/icu/source/common/unistr.cpp:206: uninit_member: Non-static class member fRestOfStackBuffer is not initialized in this constructor nor in any functions that it calls.
+
+Error: UNINIT_CTOR:
+/builddir/build/BUILD/icu/source/common/unicode/unistr.h:3446: member_decl: Class member declaration for fRestOfStackBuffer.
+/builddir/build/BUILD/icu/source/common/unistr.cpp:340: uninit_member: Non-static class member fRestOfStackBuffer is not initialized in this constructor nor in any functions that it calls.
+
+Error: UNINIT_CTOR:
+/builddir/build/BUILD/icu/source/common/unicode/unistr.h:3446: member_decl: Class member declaration for fRestOfStackBuffer.
+/builddir/build/BUILD/icu/source/common/unistr.cpp:199: uninit_member: Non-static class member fRestOfStackBuffer is not initialized in this constructor nor in any functions that it calls.
+
+Error: UNINIT_CTOR:
+/builddir/build/BUILD/icu/source/common/unicode/unistr.h:3446: member_decl: Class member declaration for fRestOfStackBuffer.
+/builddir/build/BUILD/icu/source/common/unistr_cnv.cpp:49: uninit_member: Non-static class member fRestOfStackBuffer is not initialized in this constructor nor in any functions that it calls.
+
+Error: UNINIT_CTOR:
+/builddir/build/BUILD/icu/source/common/unicode/unistr.h:3446: member_decl: Class member declaration for fRestOfStackBuffer.
+/builddir/build/BUILD/icu/source/common/unistr_cnv.cpp:72: uninit_member: Non-static class member fRestOfStackBuffer is not initialized in this constructor nor in any functions that it calls.
+
+Error: UNINIT_CTOR:
+/builddir/build/BUILD/icu/source/common/unicode/unistr.h:3446: member_decl: Class member declaration for fRestOfStackBuffer.
+/builddir/build/BUILD/icu/source/common/unistr_cnv.cpp:59: uninit_member: Non-static class member fRestOfStackBuffer is not initialized in this constructor nor in any functions that it calls.
+
+Error: UNINIT_CTOR:
+/builddir/build/BUILD/icu/source/common/unicode/unistr.h:3446: member_decl: Class member declaration for fRestOfStackBuffer.
+/builddir/build/BUILD/icu/source/common/unistr_cnv.cpp:120: uninit_member: Non-static class member fRestOfStackBuffer is not initialized in this constructor nor in any functions that it calls.
+
+Error: UNINIT_CTOR:
+/builddir/build/BUILD/icu/source/common/unicode/unistr.h:3446: member_decl: Class member declaration for fRestOfStackBuffer.
+/builddir/build/BUILD/icu/source/common/unistr_cnv.cpp:83: uninit_member: Non-static class member fRestOfStackBuffer is not initialized in this constructor nor in any functions that it calls.
+
+Error: UNINIT_CTOR:
+/builddir/build/BUILD/icu/source/common/cmemory.h:458: member_decl: Class member declaration for stackArray.
+/builddir/build/BUILD/icu/source/common/cmemory.h:377: uninit_member: Non-static class member stackArray is not initialized in this constructor nor in any functions that it calls.
+
+Error: UNINIT_CTOR:
+/builddir/build/BUILD/icu/source/i18n/unicode/alphaindex.h:689: member_decl: Class member declaration for langType_.
+/builddir/build/BUILD/icu/source/i18n/alphaindex.cpp:92: uninit_member: Non-static class member langType_ is not initialized in this constructor nor in any functions that it calls.
+
+Error: UNINIT_CTOR:
+/builddir/build/BUILD/icu/source/i18n/tzfmt.cpp:44: member_decl: Class member declaration for fTargetRegion.
+/builddir/build/BUILD/icu/source/i18n/tzfmt.cpp:69: uninit_member: Non-static class member fTargetRegion is not initialized in this constructor nor in any functions that it calls.
+
+Error: UNINIT_CTOR:
+/builddir/build/BUILD/icu/source/i18n/tznames_impl.cpp:365: member_decl: Class member declaration for fStrings.
+/builddir/build/BUILD/icu/source/i18n/tznames_impl.cpp:372: uninit_member: Non-static class member fStrings is not initialized in this constructor nor in any functions that it calls.
+
+Error: UNINIT_CTOR:
+/builddir/build/BUILD/icu/source/tools/toolutil/package.cpp:418: uninit_member: Non-static class member inStrings is not initialized in this constructor nor in any functions that it calls.
+/builddir/build/BUILD/icu/source/tools/toolutil/package.cpp:418: uninit_member: Non-static class member isMissingItems is not initialized in this constructor nor in any functions that it calls.
+/builddir/build/BUILD/icu/source/tools/toolutil/package.cpp:418: uninit_member: Non-static class member outStrings is not initialized in this constructor nor in any functions that it calls.
+/builddir/build/BUILD/icu/source/tools/toolutil/package.h:156: member_decl: Class member declaration for inStrings.
+/builddir/build/BUILD/icu/source/tools/toolutil/package.h:156: member_decl: Class member declaration for outStrings.
+/builddir/build/BUILD/icu/source/tools/toolutil/package.h:167: member_decl: Class member declaration for isMissingItems.
+
+Error: UNINIT_CTOR:
+/builddir/build/BUILD/icu/source/tools/toolutil/denseranges.cpp:28: uninit_member: Non-static class member gapLengths is not initialized in this constructor nor in any functions that it calls.
+/builddir/build/BUILD/icu/source/tools/toolutil/denseranges.cpp:28: uninit_member: Non-static class member gapStarts is not initialized in this constructor nor in any functions that it calls.
+/builddir/build/BUILD/icu/source/tools/toolutil/denseranges.cpp:80: member_decl: Class member declaration for gapStarts.
+/builddir/build/BUILD/icu/source/tools/toolutil/denseranges.cpp:81: member_decl: Class member declaration for gapLengths.
+
+Error: UNREACHABLE:
+/builddir/build/BUILD/icu/source/common/messagepattern.cpp:925: unreachable: Since the loop increment is unreachable, the loop body will never execute more than once.
+
+Error: UNUSED_VALUE:
+/builddir/build/BUILD/icu/source/i18n/zonemeta.cpp:359: returned_pointer: Pointer "canonicalInCache" returned by "uhash_put_48(gCanonicalIDCache, (void *)canonicalID, (void *)canonicalID, status)" is never used.
+
+Error: UNUSED_VALUE:
+/builddir/build/BUILD/icu/source/i18n/zonemeta.cpp:351: returned_pointer: Pointer "idInCache" returned by "uhash_put_48(gCanonicalIDCache, (void *)key, (void *)canonicalID, status)" is never used.
+
+Error: USE_AFTER_FREE:
+/builddir/build/BUILD/icu/source/i18n/msgfmt.cpp:533: freed_arg: "icu_48::UMemory::operator delete(void *)" frees "formatter".
+/builddir/build/BUILD/icu/source/common/uobject.cpp:65: freed_arg: "uprv_free_48" frees parameter "p".
+/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+/builddir/build/BUILD/icu/source/i18n/msgfmt.cpp:539: deref_arg: Calling "icu_48::Format::~Format()" dereferences freed pointer "formatter". (The dereference happens because this is a virtual function call.)
+
+Error: USE_AFTER_FREE:
+/builddir/build/BUILD/icu/source/i18n/msgfmt.cpp:533: freed_arg: "icu_48::UMemory::operator delete(void *)" frees "formatter".
+/builddir/build/BUILD/icu/source/common/uobject.cpp:65: freed_arg: "uprv_free_48" frees parameter "p".
+/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+/builddir/build/BUILD/icu/source/i18n/msgfmt.cpp:547: pass_freed_arg: Passing freed pointer "formatter" as an argument to function "uhash_iput_48".
+
+Error: USE_AFTER_FREE:
+/builddir/build/BUILD/icu/source/i18n/tznames_impl.cpp:1215: alias: Assigning: "cacheVal" = "znames". Now both point to the same storage.
+/builddir/build/BUILD/icu/source/i18n/tznames_impl.cpp:1224: freed_arg: "icu_48::UMemory::operator delete(void *)" frees "znames".
+/builddir/build/BUILD/icu/source/common/uobject.cpp:65: freed_arg: "uprv_free_48" frees parameter "p".
+/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+/builddir/build/BUILD/icu/source/i18n/tznames_impl.cpp:1255: use_after_free: Using freed pointer "znames".
+
+Error: USE_AFTER_FREE:
+/builddir/build/BUILD/icu/source/i18n/dtfmtsym.cpp:1117: freed_arg: "uprv_free_48" frees "zarray".
+/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+/builddir/build/BUILD/icu/source/i18n/dtfmtsym.cpp:1128: use_after_free: Using freed pointer "zarray".
+
+Error: USE_AFTER_FREE:
+/builddir/build/BUILD/icu/source/i18n/dtitvfmt.cpp:538: freed_arg: "icu_48::DateIntervalFormat::DateIntervalFormat(icu_48::Locale const &, icu_48::DateIntervalInfo *, icu_48::UnicodeString const *, UErrorCode &)" frees "dtitvinf".
+/builddir/build/BUILD/icu/source/i18n/dtitvfmt.cpp:474: freed_arg: "icu_48::UMemory::operator delete(void *)" frees parameter "dtItvInfo".
+/builddir/build/BUILD/icu/source/common/uobject.cpp:65: freed_arg: "uprv_free_48" frees parameter "p".
+/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+/builddir/build/BUILD/icu/source/i18n/dtitvfmt.cpp:542: deref_arg: Calling "icu_48::DateIntervalInfo::~DateIntervalInfo()" dereferences freed pointer "dtitvinf". (The dereference happens because this is a virtual function call.)

@@ -1,0 +1,140 @@
+
+Error: BUFFER_SIZE_WARNING:
+/builddir/build/BUILD/sudo-1.8.1p2/src/utmp.c:212: buffer_size_warning: Calling strncpy with a maximum size argument of 32 bytes on destination array "utbuf.ut_line" of size 32 bytes might leave the destination string unterminated.
+
+Error: BUFFER_SIZE_WARNING:
+/builddir/build/BUILD/sudo-1.8.1p2/src/utmp.c:111: buffer_size_warning: Calling strncpy with a maximum size argument of 4 bytes on destination array "new->ut_id" of size 4 bytes might leave the destination string unterminated.
+
+Error: BUFFER_SIZE_WARNING:
+/builddir/build/BUILD/sudo-1.8.1p2/src/utmp.c:143: buffer_size_warning: Calling strncpy with a maximum size argument of 32 bytes on destination array "ut_new->ut_user" of size 32 bytes might leave the destination string unterminated.
+/builddir/build/BUILD/sudo-1.8.1p2/src/utmp.c:150: buffer_size_warning: Calling strncpy with a maximum size argument of 32 bytes on destination array "ut_new->ut_user" of size 32 bytes might leave the destination string unterminated.
+/builddir/build/BUILD/sudo-1.8.1p2/src/utmp.c:151: buffer_size_warning: Calling strncpy with a maximum size argument of 32 bytes on destination array "ut_new->ut_line" of size 32 bytes might leave the destination string unterminated.
+
+Error: BUFFER_SIZE_WARNING:
+/builddir/build/BUILD/sudo-1.8.1p2/src/utmp.c:190: buffer_size_warning: Calling strncpy with a maximum size argument of 32 bytes on destination array "utbuf.ut_line" of size 32 bytes might leave the destination string unterminated.
+
+Error: FORWARD_NULL:
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/set_perms.c:107: assign_zero: Assigning: "ostate" = 0.
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/set_perms.c:124: var_deref_model: Passing null variable "ostate" to function "memcmp", which dereferences it. (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)
+
+Error: FORWARD_NULL:
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c:400: var_compare_op: Comparing "pw" to null implies that "pw" might be null.
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c:403: var_deref_op: Dereferencing null variable "pw".
+
+Error: FORWARD_NULL:
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoreplay.c:668: var_compare_op: Comparing "fp" to null implies that "fp" might be null.
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoreplay.c:745: var_deref_model: Passing null variable "fp" to function "fclose", which dereferences it.
+
+Error: FORWARD_NULL:
+/builddir/build/BUILD/sudo-1.8.1p2/src/utmp.c:140: var_compare_op: Comparing "ut_old" to null implies that "ut_old" might be null.
+/builddir/build/BUILD/sudo-1.8.1p2/src/utmp.c:153: var_deref_model: Passing null variable "ut_old" to function "utmp_setid", which dereferences it.
+/builddir/build/BUILD/sudo-1.8.1p2/src/utmp.c:101: deref_parm_field_in_call: Function "strncmp" dereferences field "old->ut_id". (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c:1401: alloc_fn: Calling allocation function "estrdup".
+/builddir/build/BUILD/sudo-1.8.1p2/common/alloc.c:158: alloc_fn: Storage is returned from allocation function "emalloc".
+/builddir/build/BUILD/sudo-1.8.1p2/common/alloc.c:81: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/sudo-1.8.1p2/common/alloc.c:81: var_assign: Assigning: "ptr" = "malloc(size)".
+/builddir/build/BUILD/sudo-1.8.1p2/common/alloc.c:83: return_alloc: Returning allocated memory "ptr".
+/builddir/build/BUILD/sudo-1.8.1p2/common/alloc.c:158: var_assign: Assigning: "dst" = "emalloc(len + 1UL)".
+/builddir/build/BUILD/sudo-1.8.1p2/common/alloc.c:159: noescape: Variable "dst" is not freed or pointed-to in function "memcpy".
+/builddir/build/BUILD/sudo-1.8.1p2/common/alloc.c:162: return_alloc: Returning allocated memory "dst".
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c:1401: var_assign: Assigning: "editor" =  storage returned from "estrdup(sudo_defs_table[51].sd_un.str)".
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c:1402: noescape: Variable "editor" is not freed or pointed-to in function "strtok".
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c:1402: var_assign: Assigning: "cp" =  storage returned from "strtok(editor, ":")".
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c:1404: noescape: Variable "cp" is not freed or pointed-to in function "resolve_editor".
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c:1333:22: noescape: "resolve_editor" does not free or save its pointer parameter "editor".
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c:1405: overwrite_var: Overwriting "cp" in call "cp = strtok(NULL, ":")" leaks the storage that "cp" points to.
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c:1411: noescape: Variable "editor" is not freed or pointed-to in function "audit_failure".
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c:1412: noescape: Variable "editor" is not freed or pointed-to in function "warningx".
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c:1414: leaked_storage: Variable "editor" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c:600: alloc_arg: Calling allocation function "find_editor" on "edit_argv".
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c:1394: alloc_arg: "resolve_editor" opens handle stored into "*argv_out".
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c:1361: alloc_fn: Storage is returned from allocation function "emalloc2".
+/builddir/build/BUILD/sudo-1.8.1p2/common/alloc.c:101: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/sudo-1.8.1p2/common/alloc.c:101: var_assign: Assigning: "ptr" = "malloc(size)".
+/builddir/build/BUILD/sudo-1.8.1p2/common/alloc.c:103: return_alloc: Returning allocated memory "ptr".
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c:1361: var_assign: Assigning: "nargv" = "emalloc2(nargc + 1 + nfiles + 1, sizeof (char *) /*8*/)".
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c:1371: var_assign: Assigning: "*argv_out" = "nargv".
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c:685: leaked_storage: Variable "edit_argv" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/sudo-1.8.1p2/src/load_plugins.c:179: alloc_fn: Calling allocation function "dlopen".
+/builddir/build/BUILD/sudo-1.8.1p2/src/load_plugins.c:179: var_assign: Assigning: "handle" =  storage returned from "dlopen(path, 1)".
+/builddir/build/BUILD/sudo-1.8.1p2/src/load_plugins.c:184: noescape: Variable "handle" is not freed or pointed-to in function "dlsym".
+/builddir/build/BUILD/sudo-1.8.1p2/src/load_plugins.c:231: leaked_storage: Variable "handle" going out of scope leaks the storage it points to.
+
+Error: STRAY_SEMICOLON:
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/visudo.c:1157: stray_semicolon: "if" statement "if (write(2, (/*implicit*/void const *)myname, strlen(myname)) == -1L || write(2, (/*implicit*/void const *)(/*implicit*/char *)/*&*/" exiting due to signal: ", 24UL /* sizeof (" exiting due to signal: ") /*25*/ - 1UL */) == -1L || write(2, (/*implicit*/void const *)signame, strlen(signame)) == -1L || write(2, (/*implicit*/void const *)(/*implicit*/char *)/*&*/"\n", 1UL) == -1L);" with no "then" or "else" is suspicious.  Is the ';' after "if (write(2, myname, strlen(myname)) == -1L || write(2, " exiting due to signal: ", 24UL) == -1L || write(2, signame, strlen(signame)) == -1L || write(2, "\n", 1UL) == -1L)" extraneous?
+
+Error: STRAY_SEMICOLON:
+/builddir/build/BUILD/sudo-1.8.1p2/src/tgetpass.c:300: stray_semicolon: "if" statement "if (write(fd, (/*implicit*/void const *)(/*implicit*/char *)/*&*/"*", 1UL) == -1L);" with no "then" or "else" is suspicious.  Is the ';' after "if (write(fd, "*", 1UL) == -1L)" extraneous?
+
+Error: STRAY_SEMICOLON:
+/builddir/build/BUILD/sudo-1.8.1p2/src/exec.c:550: stray_semicolon: "if" statement "if (write(signal_pipe[1], (/*implicit*/void const *)&signo, sizeof (signo) /*1*/) == -1L);" with no "then" or "else" is suspicious.  Is the ';' after "if (write(signal_pipe[1], &signo, sizeof (signo) /*1*/) == -1L)" extraneous?
+
+Error: STRAY_SEMICOLON:
+/builddir/build/BUILD/sudo-1.8.1p2/src/exec_pty.c:894: stray_semicolon: "if" statement "if (write(errpipe[1], (/*implicit*/void const *)&cstat, sizeof (cstat) /*8*/) == -1L);" with no "then" or "else" is suspicious.  Is the ';' after "if (write(errpipe[1], &cstat, sizeof (cstat) /*8*/) == -1L)" extraneous?
+
+Error: STRAY_SEMICOLON:
+/builddir/build/BUILD/sudo-1.8.1p2/src/exec_pty.c:650: stray_semicolon: "if" statement "if (write(n, (/*implicit*/void const *)(/*implicit*/char *)/*&*/" (core dumped)", 14UL) == -1L);" with no "then" or "else" is suspicious.  Is the ';' after "if (write(n, " (core dumped)", 14UL) == -1L)" extraneous?
+
+Error: STRAY_SEMICOLON:
+/builddir/build/BUILD/sudo-1.8.1p2/src/exec_pty.c:653: stray_semicolon: "if" statement "if (write(n, (/*implicit*/void const *)(/*implicit*/char *)/*&*/"\n", 1UL) == -1L);" with no "then" or "else" is suspicious.  Is the ';' after "if (write(n, "\n", 1UL) == -1L)" extraneous?
+
+Error: TAINTED_SCALAR:
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoreplay.c:302: var_assign_var: Assigning: "argv[0]" = "id". Both are now tainted.
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoreplay.c:303: tainted_data: Using tainted variable "(int)(unsigned char)id[0]" as an index to pointer "*__ctype_b_loc()".
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoreplay.c:303: tainted_data: Using tainted variable "(int)(unsigned char)id[1]" as an index to pointer "*__ctype_b_loc()".
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoreplay.c:303: tainted_data: Using tainted variable "(int)(unsigned char)id[2]" as an index to pointer "*__ctype_b_loc()".
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoreplay.c:303: tainted_data: Using tainted variable "(int)(unsigned char)id[3]" as an index to pointer "*__ctype_b_loc()".
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoreplay.c:303: tainted_data: Using tainted variable "(int)(unsigned char)id[4]" as an index to pointer "*__ctype_b_loc()".
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoreplay.c:303: tainted_data: Using tainted variable "(int)(unsigned char)id[5]" as an index to pointer "*__ctype_b_loc()".
+
+Error: TOCTOU:
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/check.c:451: fs_check_call: Calling function "lstat" to perform check on "dirparent".
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/check.c:465: toctou: Calling function "chmod" that uses "dirparent" after a check function. This can cause a time-of-check, time-of-use race condition.
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/check.c:473: toctou: Calling function "mkdir" that uses "dirparent" after a check function. This can cause a time-of-check, time-of-use race condition.
+
+Error: TOCTOU:
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/check.c:490: fs_check_call: Calling function "lstat" to perform check on "timestampdir".
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/check.c:494: toctou: Calling function "unlink" that uses "timestampdir" after a check function. This can cause a time-of-check, time-of-use race condition.
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/check.c:509: toctou: Calling function "chmod" that uses "timestampdir" after a check function. This can cause a time-of-check, time-of-use race condition.
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/check.c:522: toctou: Calling function "mkdir" that uses "timestampdir" after a check function. This can cause a time-of-check, time-of-use race condition.
+
+Error: TOCTOU:
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/check.c:536: fs_check_call: Calling function "lstat" to perform check on "timestampfile".
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/check.c:548: toctou: Calling function "unlink" that uses "timestampfile" after a check function. This can cause a time-of-check, time-of-use race condition.
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/check.c:553: toctou: Calling function "unlink" that uses "timestampfile" after a check function. This can cause a time-of-check, time-of-use race condition.
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/check.c:557: toctou: Calling function "chmod" that uses "timestampfile" after a check function. This can cause a time-of-check, time-of-use race condition.
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/check.c:569: toctou: Calling function "open" that uses "timestampfile" after a check function. This can cause a time-of-check, time-of-use race condition.
+
+Error: TOCTOU:
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c:922: fs_check_call: Calling function "lstat" to perform check on "sudoers".
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c:936: toctou: Calling function "fopen" that uses "sudoers" after a check function. This can cause a time-of-check, time-of-use race condition.
+
+Error: TOCTOU:
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c:897: fs_check_call: Calling function "lstat" to perform check on "sudoers".
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c:901: toctou: Calling function "chmod" that uses "sudoers" after a check function. This can cause a time-of-check, time-of-use race condition.
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c:936: toctou: Calling function "fopen" that uses "sudoers" after a check function. This can cause a time-of-check, time-of-use race condition.
+
+Error: TOCTOU:
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/group_plugin.c:98: fs_check_call: Calling function "stat" to perform check on "path".
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/group_plugin.c:112: toctou: Calling function "dlopen" that uses "path" after a check function. This can cause a time-of-check, time-of-use race condition.
+
+Error: TOCTOU:
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/iolog.c:120: fs_check_call: Calling function "stat" to perform check on "path".
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/iolog.c:121: toctou: Calling function "mkdir" that uses "path" after a check function. This can cause a time-of-check, time-of-use race condition.
+
+Error: TOCTOU:
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/iolog.c:151: fs_check_call: Calling function "stat" to perform check on "iolog_dir".
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/iolog.c:152: toctou: Calling function "mkdir" that uses "iolog_dir" after a check function. This can cause a time-of-check, time-of-use race condition.
+
+Error: TOCTOU:
+/builddir/build/BUILD/sudo-1.8.1p2/src/load_plugins.c:165: fs_check_call: Calling function "stat" to perform check on "path".
+/builddir/build/BUILD/sudo-1.8.1p2/src/load_plugins.c:179: toctou: Calling function "dlopen" that uses "path" after a check function. This can cause a time-of-check, time-of-use race condition.
+
+Error: UNUSED_VALUE:
+/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/group_plugin.c:80: returned_pointer: Pointer "args" returned by "strpbrk(plugin_info, " \t")" is never used.

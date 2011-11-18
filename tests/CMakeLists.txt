@@ -31,6 +31,14 @@ macro(test_csdiff dir num)
     set(cmd "${csdiff} -x ${tst}-old.err ${tst}-new.err")
     set(cmd "${cmd} | ${diffcmd} ${tst}-fix.err -")
     add_test("${dir}-${num}-fixed" sh -c "${cmd}")
+
+    set(cmd "${csdiff} -z ${tst}-old.err ${tst}-new.err")
+    set(cmd "${cmd} | ${diffcmd} ${tst}-add-z.err -")
+    add_test("${dir}-${num}-added-with-z" sh -c "${cmd}")
+
+    set(cmd "${csdiff} -xz ${tst}-old.err ${tst}-new.err")
+    set(cmd "${cmd} | ${diffcmd} ${tst}-fix-z.err -")
+    add_test("${dir}-${num}-fixed-with-z" sh -c "${cmd}")
 endmacro()
 
 # add regression tests ony by one
