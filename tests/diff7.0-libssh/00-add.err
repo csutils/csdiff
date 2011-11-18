@@ -1,0 +1,690 @@
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/libssh-0.5.0/src/pcap.c:374: check_return: Calling function "buffer_add_data" without checking return value (as is done elsewhere 44 out of 48 times).
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:255: example_checked: "buffer_add_data(reply, payload, n)" has its value checked in "buffer_add_data(reply, payload, n) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:432: example_checked: "buffer_add_data(request, buffer_get_rest(data), dlen)" has its value checked in "buffer_add_data(request, buffer_get_rest(data), dlen) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/base64.c:91: example_checked: "buffer_add_data(buffer, block, 3U)" has its value checked in "buffer_add_data(buffer, block, 3U) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/base64.c:115: example_checked: "buffer_add_data(buffer, block, 3U)" has its value checked in "buffer_add_data(buffer, block, 3U) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/base64.c:134: example_checked: "buffer_add_data(buffer, block, 1U)" has its value checked in "buffer_add_data(buffer, block, 1U) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/pcap.c:374: unchecked_value: No check of the return value of "buffer_add_data(ip, data, len)".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/libssh-0.5.0/src/pcap.c:318: check_return: Calling function "buffer_add_u8" without checking return value (as is done elsewhere 50 out of 58 times).
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:288: example_checked: "buffer_add_u8(request, c1)" has its value checked in "buffer_add_u8(request, c1) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:418: example_checked: "buffer_add_u8(request, 13)" has its value checked in "buffer_add_u8(request, 13) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:428: example_checked: "buffer_add_u8(session->out_buffer, 50)" has its value checked in "buffer_add_u8(session->out_buffer, 50) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:552: example_checked: "buffer_add_u8(session->out_buffer, 0)" has its value checked in "buffer_add_u8(session->out_buffer, 0) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:552: example_checked: "buffer_add_u8(session->out_buffer, 50)" has its value checked in "buffer_add_u8(session->out_buffer, 50) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/pcap.c:318: unchecked_value: No check of the return value of "buffer_add_u8(ip, 69)".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/libssh-0.5.0/src/pcap.c:320: check_return: Calling function "buffer_add_u8" without checking return value (as is done elsewhere 50 out of 58 times).
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:288: example_checked: "buffer_add_u8(request, c1)" has its value checked in "buffer_add_u8(request, c1) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:418: example_checked: "buffer_add_u8(request, 13)" has its value checked in "buffer_add_u8(request, 13) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:428: example_checked: "buffer_add_u8(session->out_buffer, 50)" has its value checked in "buffer_add_u8(session->out_buffer, 50) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:552: example_checked: "buffer_add_u8(session->out_buffer, 0)" has its value checked in "buffer_add_u8(session->out_buffer, 0) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:552: example_checked: "buffer_add_u8(session->out_buffer, 50)" has its value checked in "buffer_add_u8(session->out_buffer, 50) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/pcap.c:320: unchecked_value: No check of the return value of "buffer_add_u8(ip, 0)".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/libssh-0.5.0/src/pcap.c:329: check_return: Calling function "buffer_add_u8" without checking return value (as is done elsewhere 50 out of 58 times).
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:288: example_checked: "buffer_add_u8(request, c1)" has its value checked in "buffer_add_u8(request, c1) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:418: example_checked: "buffer_add_u8(request, 13)" has its value checked in "buffer_add_u8(request, 13) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:428: example_checked: "buffer_add_u8(session->out_buffer, 50)" has its value checked in "buffer_add_u8(session->out_buffer, 50) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:552: example_checked: "buffer_add_u8(session->out_buffer, 0)" has its value checked in "buffer_add_u8(session->out_buffer, 0) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:552: example_checked: "buffer_add_u8(session->out_buffer, 50)" has its value checked in "buffer_add_u8(session->out_buffer, 50) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/pcap.c:329: unchecked_value: No check of the return value of "buffer_add_u8(ip, 64)".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/libssh-0.5.0/src/pcap.c:331: check_return: Calling function "buffer_add_u8" without checking return value (as is done elsewhere 50 out of 58 times).
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:288: example_checked: "buffer_add_u8(request, c1)" has its value checked in "buffer_add_u8(request, c1) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:418: example_checked: "buffer_add_u8(request, 13)" has its value checked in "buffer_add_u8(request, 13) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:428: example_checked: "buffer_add_u8(session->out_buffer, 50)" has its value checked in "buffer_add_u8(session->out_buffer, 50) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:552: example_checked: "buffer_add_u8(session->out_buffer, 0)" has its value checked in "buffer_add_u8(session->out_buffer, 0) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:552: example_checked: "buffer_add_u8(session->out_buffer, 50)" has its value checked in "buffer_add_u8(session->out_buffer, 50) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/pcap.c:331: unchecked_value: No check of the return value of "buffer_add_u8(ip, 6)".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/libssh-0.5.0/src/pcap.c:364: check_return: Calling function "buffer_add_u8" without checking return value (as is done elsewhere 50 out of 58 times).
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:288: example_checked: "buffer_add_u8(request, c1)" has its value checked in "buffer_add_u8(request, c1) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:418: example_checked: "buffer_add_u8(request, 13)" has its value checked in "buffer_add_u8(request, 13) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:428: example_checked: "buffer_add_u8(session->out_buffer, 50)" has its value checked in "buffer_add_u8(session->out_buffer, 50) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:552: example_checked: "buffer_add_u8(session->out_buffer, 0)" has its value checked in "buffer_add_u8(session->out_buffer, 0) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:552: example_checked: "buffer_add_u8(session->out_buffer, 50)" has its value checked in "buffer_add_u8(session->out_buffer, 50) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/pcap.c:364: unchecked_value: No check of the return value of "buffer_add_u8(ip, 80)".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/libssh-0.5.0/src/pcap.c:366: check_return: Calling function "buffer_add_u8" without checking return value (as is done elsewhere 50 out of 58 times).
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:288: example_checked: "buffer_add_u8(request, c1)" has its value checked in "buffer_add_u8(request, c1) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:418: example_checked: "buffer_add_u8(request, 13)" has its value checked in "buffer_add_u8(request, 13) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:428: example_checked: "buffer_add_u8(session->out_buffer, 50)" has its value checked in "buffer_add_u8(session->out_buffer, 50) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:552: example_checked: "buffer_add_u8(session->out_buffer, 0)" has its value checked in "buffer_add_u8(session->out_buffer, 0) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:552: example_checked: "buffer_add_u8(session->out_buffer, 50)" has its value checked in "buffer_add_u8(session->out_buffer, 50) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/pcap.c:366: unchecked_value: No check of the return value of "buffer_add_u8(ip, 24)".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/libssh-0.5.0/src/scp.c:394: check_return: Calling function "ssh_channel_poll" without checking return value (as is done elsewhere 10 out of 12 times).
+/builddir/build/BUILD/libssh-0.5.0/src/channels.c:2243: example_assign: Assigning: "r" = return value from "ssh_channel_poll(channel, is_stderr)".
+/builddir/build/BUILD/libssh-0.5.0/src/channels.c:2244: example_checked: "r" has its value checked in "r < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/channels.c:2412: example_assign: Assigning: "to_read" = return value from "ssh_channel_poll(channel, is_stderr)".
+/builddir/build/BUILD/libssh-0.5.0/src/channels.c:2414: example_checked: "to_read" has its value checked in "to_read <= 0".
+/builddir/build/BUILD/libssh-0.5.0/src/connect.c:464: example_checked: "ssh_channel_poll(channels[i], 0)" has its value checked in "ssh_channel_poll(channels[i], 0) > 0".
+/builddir/build/BUILD/libssh-0.5.0/src/connect.c:468: example_checked: "ssh_channel_poll(channels[i], 1)" has its value checked in "ssh_channel_poll(channels[i], 1) > 0".
+/builddir/build/BUILD/libssh-0.5.0/src/connect.c:532: example_checked: "ssh_channel_poll(channels[i], 1)" has its value checked in "ssh_channel_poll(channels[i], 1) > 0".
+/builddir/build/BUILD/libssh-0.5.0/src/scp.c:394: unchecked_value: No check of the return value of "ssh_channel_poll(scp->channel, 0)".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:318: check_return: Calling function "buffer_add_data" without checking return value (as is done elsewhere 44 out of 48 times).
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:255: example_checked: "buffer_add_data(reply, payload, n)" has its value checked in "buffer_add_data(reply, payload, n) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:432: example_checked: "buffer_add_data(request, buffer_get_rest(data), dlen)" has its value checked in "buffer_add_data(request, buffer_get_rest(data), dlen) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/base64.c:91: example_checked: "buffer_add_data(buffer, block, 3U)" has its value checked in "buffer_add_data(buffer, block, 3U) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/base64.c:115: example_checked: "buffer_add_data(buffer, block, 3U)" has its value checked in "buffer_add_data(buffer, block, 3U) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/base64.c:134: example_checked: "buffer_add_data(buffer, block, 1U)" has its value checked in "buffer_add_data(buffer, block, 1U) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:318: unchecked_value: No check of the return value of "buffer_add_data(packet->payload, buffer, r)".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:336: check_return: Calling function "buffer_add_data" without checking return value (as is done elsewhere 44 out of 48 times).
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:255: example_checked: "buffer_add_data(reply, payload, n)" has its value checked in "buffer_add_data(reply, payload, n) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:432: example_checked: "buffer_add_data(request, buffer_get_rest(data), dlen)" has its value checked in "buffer_add_data(request, buffer_get_rest(data), dlen) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/base64.c:91: example_checked: "buffer_add_data(buffer, block, 3U)" has its value checked in "buffer_add_data(buffer, block, 3U) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/base64.c:115: example_checked: "buffer_add_data(buffer, block, 3U)" has its value checked in "buffer_add_data(buffer, block, 3U) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/base64.c:134: example_checked: "buffer_add_data(buffer, block, 1U)" has its value checked in "buffer_add_data(buffer, block, 1U) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:336: unchecked_value: No check of the return value of "buffer_add_data(packet->payload, buffer, r)".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/libssh-0.5.0/src/channels.c:782: check_return: Calling function "buffer_add_u8" without checking return value (as is done elsewhere 50 out of 58 times).
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:288: example_checked: "buffer_add_u8(request, c1)" has its value checked in "buffer_add_u8(request, c1) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:418: example_checked: "buffer_add_u8(request, 13)" has its value checked in "buffer_add_u8(request, 13) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:428: example_checked: "buffer_add_u8(session->out_buffer, 50)" has its value checked in "buffer_add_u8(session->out_buffer, 50) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:552: example_checked: "buffer_add_u8(session->out_buffer, 0)" has its value checked in "buffer_add_u8(session->out_buffer, 0) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:552: example_checked: "buffer_add_u8(session->out_buffer, 50)" has its value checked in "buffer_add_u8(session->out_buffer, 50) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/channels.c:782: unchecked_value: No check of the return value of "buffer_add_u8(session->out_buffer, 100)".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/libssh-0.5.0/src/packet.c:379: check_return: Calling function "buffer_add_u8" without checking return value (as is done elsewhere 50 out of 58 times).
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:288: example_checked: "buffer_add_u8(request, c1)" has its value checked in "buffer_add_u8(request, c1) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:418: example_checked: "buffer_add_u8(request, 13)" has its value checked in "buffer_add_u8(request, 13) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:428: example_checked: "buffer_add_u8(session->out_buffer, 50)" has its value checked in "buffer_add_u8(session->out_buffer, 50) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:552: example_checked: "buffer_add_u8(session->out_buffer, 0)" has its value checked in "buffer_add_u8(session->out_buffer, 0) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:552: example_checked: "buffer_add_u8(session->out_buffer, 50)" has its value checked in "buffer_add_u8(session->out_buffer, 50) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/packet.c:379: unchecked_value: No check of the return value of "buffer_add_u8(session->out_buffer, 3)".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/libssh-0.5.0/src/sftpserver.c:83: check_return: Calling function "buffer_get_u64" without checking return value (as is done elsewhere 16 out of 18 times).
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:999: example_checked: "buffer_get_u64(buf, &attr->size)" has its value checked in "buffer_get_u64(buf, &attr->size) != 8".
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:1046: example_checked: "buffer_get_u64(buf, &attr->atime64)" has its value checked in "buffer_get_u64(buf, &attr->atime64) != 8".
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:1060: example_checked: "buffer_get_u64(buf, &attr->createtime)" has its value checked in "buffer_get_u64(buf, &attr->createtime) != 8".
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:1074: example_checked: "buffer_get_u64(buf, &attr->mtime64)" has its value checked in "buffer_get_u64(buf, &attr->mtime64) != 8".
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:1249: example_checked: "buffer_get_u64(buf, &attr->size)" has its value checked in "buffer_get_u64(buf, &attr->size) != sizeof (uint64_t) /*8*/".
+/builddir/build/BUILD/libssh-0.5.0/src/sftpserver.c:83: unchecked_value: No check of the return value of "buffer_get_u64(payload, &msg->offset)".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/libssh-0.5.0/src/sftpserver.c:93: check_return: Calling function "buffer_get_u64" without checking return value (as is done elsewhere 16 out of 18 times).
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:999: example_checked: "buffer_get_u64(buf, &attr->size)" has its value checked in "buffer_get_u64(buf, &attr->size) != 8".
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:1046: example_checked: "buffer_get_u64(buf, &attr->atime64)" has its value checked in "buffer_get_u64(buf, &attr->atime64) != 8".
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:1060: example_checked: "buffer_get_u64(buf, &attr->createtime)" has its value checked in "buffer_get_u64(buf, &attr->createtime) != 8".
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:1074: example_checked: "buffer_get_u64(buf, &attr->mtime64)" has its value checked in "buffer_get_u64(buf, &attr->mtime64) != 8".
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:1249: example_checked: "buffer_get_u64(buf, &attr->size)" has its value checked in "buffer_get_u64(buf, &attr->size) != sizeof (uint64_t) /*8*/".
+/builddir/build/BUILD/libssh-0.5.0/src/sftpserver.c:93: unchecked_value: No check of the return value of "buffer_get_u64(payload, &msg->offset)".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/libssh-0.5.0/src/socket.c:279: check_return: Calling function "buffer_add_data" without checking return value (as is done elsewhere 44 out of 48 times).
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:255: example_checked: "buffer_add_data(reply, payload, n)" has its value checked in "buffer_add_data(reply, payload, n) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:432: example_checked: "buffer_add_data(request, buffer_get_rest(data), dlen)" has its value checked in "buffer_add_data(request, buffer_get_rest(data), dlen) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/base64.c:91: example_checked: "buffer_add_data(buffer, block, 3U)" has its value checked in "buffer_add_data(buffer, block, 3U) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/base64.c:115: example_checked: "buffer_add_data(buffer, block, 3U)" has its value checked in "buffer_add_data(buffer, block, 3U) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/base64.c:134: example_checked: "buffer_add_data(buffer, block, 1U)" has its value checked in "buffer_add_data(buffer, block, 1U) < 0".
+/builddir/build/BUILD/libssh-0.5.0/src/socket.c:279: unchecked_value: No check of the return value of "buffer_add_data(s->in_buffer, buffer, r)".
+
+Error: DEADCODE:
+/builddir/build/BUILD/libssh-0.5.0/src/channels.c:1116: dead_error_condition: On this path, the condition "data == NULL" cannot be true.
+/builddir/build/BUILD/libssh-0.5.0/src/channels.c:1112: cannot_single: After this line (or expression), the value of "data" cannot be 0.
+/builddir/build/BUILD/libssh-0.5.0/src/channels.c:1117: dead_error_begin: Execution cannot reach this statement "ssh_set_error_invalid(sessi...".
+
+Error: DEADCODE:
+/builddir/build/BUILD/libssh-0.5.0/examples/sample.c:67: dead_error_condition: On this path, the condition "answer == NULL" cannot be true.
+/builddir/build/BUILD/libssh-0.5.0/examples/sample.c:56: cannot_single: After this line (or expression), the value of "answer" cannot be 0.
+/builddir/build/BUILD/libssh-0.5.0/examples/sample.c:68: dead_error_line: Execution cannot reach this statement "return -1;".
+
+Error: DEADCODE:
+/builddir/build/BUILD/libssh-0.5.0/src/client.c:382: dead_error_condition: On this path, the condition "f != NULL" cannot be true.
+/builddir/build/BUILD/libssh-0.5.0/src/client.c:322: const: After this line, the value of "f" is equal to 0.
+/builddir/build/BUILD/libssh-0.5.0/src/client.c:322: assignment: Assigning: "f" = "NULL".
+/builddir/build/BUILD/libssh-0.5.0/src/client.c:383: dead_error_begin: Execution cannot reach this statement "ssh_string_burn(f);".
+
+Error: DEADCODE:
+/builddir/build/BUILD/libssh-0.5.0/src/client.c:386: dead_error_condition: On this path, the condition "signature != NULL" cannot be true.
+/builddir/build/BUILD/libssh-0.5.0/src/client.c:323: const: After this line, the value of "signature" is equal to 0.
+/builddir/build/BUILD/libssh-0.5.0/src/client.c:323: assignment: Assigning: "signature" = "NULL".
+/builddir/build/BUILD/libssh-0.5.0/src/client.c:387: dead_error_begin: Execution cannot reach this statement "ssh_string_burn(signature);".
+
+Error: FORWARD_NULL:
+/builddir/build/BUILD/libssh-0.5.0/src/client.c:623: var_compare_op: Comparing "session" to null implies that "session" might be null.
+/builddir/build/BUILD/libssh-0.5.0/src/client.c:624: var_deref_model: Passing null variable "session" to function "ssh_set_error", which dereferences it.
+/builddir/build/BUILD/libssh-0.5.0/src/error.c:51: var_assign_parm: Assigning: "err" = "error".
+/builddir/build/BUILD/libssh-0.5.0/src/error.c:54: deref_var: Dereferencing "err", which equals a pointer parameter.
+
+Error: FORWARD_NULL:
+/builddir/build/BUILD/libssh-0.5.0/src/config.c:194: assign_zero: Assigning: "lowerhost" = 0.
+/builddir/build/BUILD/libssh-0.5.0/src/config.c:197: var_deref_model: Passing null variable "lowerhost" to function "match_hostname", which dereferences it.
+/builddir/build/BUILD/libssh-0.5.0/src/match.c:182: deref_parm_in_call: Function "match_pattern_list" dereferences parameter "host".
+/builddir/build/BUILD/libssh-0.5.0/src/match.c:158: deref_parm_in_call: Function "match_pattern" dereferences parameter "string".
+/builddir/build/BUILD/libssh-0.5.0/src/match.c:52: deref_parm: Directly dereferencing parameter "s".
+
+Error: FORWARD_NULL:
+/builddir/build/BUILD/libssh-0.5.0/examples/sshnetcat.c:158: var_compare_op: Comparing "channel" to null implies that "channel" might be null.
+/builddir/build/BUILD/libssh-0.5.0/examples/sshnetcat.c:104: var_deref_model: Passing null variable "channel" to function "channel_send_eof", which dereferences it.
+/builddir/build/BUILD/libssh-0.5.0/src/legacy.c:169: deref_parm_in_call: Function "ssh_channel_send_eof" dereferences parameter "channel".
+/builddir/build/BUILD/libssh-0.5.0/src/channels.c:1022: deref_parm: Directly dereferencing parameter "channel".
+
+Error: FORWARD_NULL:
+/builddir/build/BUILD/libssh-0.5.0/src/server.c:187: assign_zero: Assigning: "prv" = 0.
+/builddir/build/BUILD/libssh-0.5.0/src/server.c:190: var_deref_model: Passing null variable "prv" to function "publickey_from_privatekey", which dereferences it.
+/builddir/build/BUILD/libssh-0.5.0/src/keys.c:333: deref_parm: Directly dereferencing parameter "prv".
+
+Error: FORWARD_NULL:
+/builddir/build/BUILD/libssh-0.5.0/src/socket.c:258: assign_zero: Assigning: "p" = 0.
+/builddir/build/BUILD/libssh-0.5.0/src/socket.c:300: var_deref_model: Passing null variable "p" to function "ssh_poll_set_events", which dereferences it.
+/builddir/build/BUILD/libssh-0.5.0/src/poll.c:334: deref_parm: Directly dereferencing parameter "p".
+
+Error: INFINITE_LOOP:
+/builddir/build/BUILD/libssh-0.5.0/src/server.c:118: non_progress_update: Update "j--" makes no progress toward satisfying the loop exit condition "j <= 0".
+/builddir/build/BUILD/libssh-0.5.0/src/server.c:118: loop_top: Top of the loop.
+/builddir/build/BUILD/libssh-0.5.0/src/server.c:118: loop_bottom: Bottom of the loop.
+/builddir/build/BUILD/libssh-0.5.0/src/server.c:118: loop_condition: "j <= 0" must remain true for the loop to continue.
+
+Error: MISSING_BREAK:
+/builddir/build/BUILD/libssh-0.5.0/src/client.c:556: unterminated_case: This case (value 5) is not terminated by a 'break' statement.
+/builddir/build/BUILD/libssh-0.5.0/src/client.c:570: fallthrough: The above case falls through to this one.
+
+Error: MISSING_BREAK:
+/builddir/build/BUILD/libssh-0.5.0/src/packet.c:141: unterminated_case: This case (value 0) is not terminated by a 'break' statement.
+/builddir/build/BUILD/libssh-0.5.0/src/packet.c:185: fallthrough: The above case falls through to this one.
+
+Error: MISSING_BREAK:
+/builddir/build/BUILD/libssh-0.5.0/src/sftpserver.c:197: unterminated_case: This case (value 3) is not terminated by a 'break' statement.
+/builddir/build/BUILD/libssh-0.5.0/src/sftpserver.c:218: fallthrough: The above case falls through to this one.
+
+Error: NEGATIVE_RETURNS:
+/builddir/build/BUILD/libssh-0.5.0/src/channels.c:2611: var_tested_neg: Assigning: "max_fd" = a negative value.
+/builddir/build/BUILD/libssh-0.5.0/src/channels.c:2696: negative_returns: "max_fd" is passed to a parameter that cannot be negative.
+
+Error: NULL_RETURNS:
+/builddir/build/BUILD/libssh-0.5.0/src/server.c:631: returned_null: Function "ssh_string_from_char" returns null (checked 79 out of 87 times).
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:99: return_null: Explicitly returning NULL.
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:381: example_assign: Assigning: "user" = return value from "ssh_string_from_char(session->username)".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:386: example_checked: "user" has its value checked in "user == NULL".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:383: example_assign: Assigning: "user" = return value from "ssh_string_from_char(username)".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:386: example_checked: "user" has its value checked in "user == NULL".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:417: example_assign: Assigning: "method" = return value from "ssh_string_from_char("none")".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:418: example_checked: "method" has its value checked in "method == NULL".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:422: example_assign: Assigning: "service" = return value from "ssh_string_from_char("ssh-connection")".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:423: example_checked: "service" has its value checked in "service == NULL".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:519: example_assign: Assigning: "user" = return value from "ssh_string_from_char(session->username)".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:524: example_checked: "user" has its value checked in "user == NULL".
+/builddir/build/BUILD/libssh-0.5.0/src/server.c:631: var_assigned: Assigning: "service" = null return value from "ssh_string_from_char".
+/builddir/build/BUILD/libssh-0.5.0/src/server.c:632: dereference: Dereferencing a pointer that might be null "service" when calling "buffer_add_ssh_string".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:213: deref_parm_in_call: Function "buffer_add_data" dereferences parameter "string".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:191: deref_parm_in_call: Function "memcpy" dereferences parameter "data". (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)
+
+Error: NULL_RETURNS:
+/builddir/build/BUILD/libssh-0.5.0/src/messages.c:908: returned_null: Function "ssh_message_new" returns null (checked 4 out of 5 times).
+/builddir/build/BUILD/libssh-0.5.0/src/messages.c:65: return_null: Explicitly returning NULL.
+/builddir/build/BUILD/libssh-0.5.0/src/messages.c:259: example_assign: Assigning: "msg" = return value from "ssh_message_new(session)".
+/builddir/build/BUILD/libssh-0.5.0/src/messages.c:260: example_checked: "msg" has its value checked in "msg".
+/builddir/build/BUILD/libssh-0.5.0/src/messages.c:293: example_assign: Assigning: "msg" = return value from "ssh_message_new(session)".
+/builddir/build/BUILD/libssh-0.5.0/src/messages.c:294: example_checked: "msg" has its value checked in "msg == NULL".
+/builddir/build/BUILD/libssh-0.5.0/src/messages.c:475: example_assign: Assigning: "msg" = return value from "ssh_message_new(session)".
+/builddir/build/BUILD/libssh-0.5.0/src/messages.c:476: example_checked: "msg" has its value checked in "msg == NULL".
+/builddir/build/BUILD/libssh-0.5.0/src/messages.c:705: example_assign: Assigning: "msg" = return value from "ssh_message_new(session)".
+/builddir/build/BUILD/libssh-0.5.0/src/messages.c:706: example_checked: "msg" has its value checked in "msg == NULL".
+/builddir/build/BUILD/libssh-0.5.0/src/messages.c:908: var_assigned: Assigning: "msg" = null return value from "ssh_message_new".
+/builddir/build/BUILD/libssh-0.5.0/src/messages.c:909: dereference: Dereferencing a null pointer "msg".
+
+Error: NULL_RETURNS:
+/builddir/build/BUILD/libssh-0.5.0/src/server.c:809: returned_null: Function "ssh_string_from_char" returns null (checked 79 out of 87 times).
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:99: return_null: Explicitly returning NULL.
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:381: example_assign: Assigning: "user" = return value from "ssh_string_from_char(session->username)".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:386: example_checked: "user" has its value checked in "user == NULL".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:383: example_assign: Assigning: "user" = return value from "ssh_string_from_char(username)".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:386: example_checked: "user" has its value checked in "user == NULL".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:417: example_assign: Assigning: "method" = return value from "ssh_string_from_char("none")".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:418: example_checked: "method" has its value checked in "method == NULL".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:422: example_assign: Assigning: "service" = return value from "ssh_string_from_char("ssh-connection")".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:423: example_checked: "service" has its value checked in "service == NULL".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:519: example_assign: Assigning: "user" = return value from "ssh_string_from_char(session->username)".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:524: example_checked: "user" has its value checked in "user == NULL".
+/builddir/build/BUILD/libssh-0.5.0/src/server.c:809: var_assigned: Assigning: "algo" = null return value from "ssh_string_from_char".
+/builddir/build/BUILD/libssh-0.5.0/src/server.c:811: dereference: Dereferencing a pointer that might be null "algo" when calling "ssh_message_auth_reply_pk_ok".
+/builddir/build/BUILD/libssh-0.5.0/src/server.c:796: deref_parm_in_call: Function "buffer_add_ssh_string" dereferences parameter "algo".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:213: deref_parm_in_call: Function "buffer_add_data" dereferences parameter "string".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:191: deref_parm_in_call: Function "memcpy" dereferences parameter "data". (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)
+
+Error: OVERRUN_STATIC:
+/builddir/build/BUILD/libssh-0.5.0/src/misc.c:647: overrun-local: Overrunning static array "u", with 128 elements, at position 128 with index variable "s".
+
+Error: OVERRUN_STATIC:
+/builddir/build/BUILD/libssh-0.5.0/src/misc.c:710: overrun-local: Overrunning static array "buf", with 4096 elements, at position 4096 with index variable "i".
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/libssh-0.5.0/src/misc.c:688: alloc_fn: Calling allocation function "ssh_path_expand_tilde".
+/builddir/build/BUILD/libssh-0.5.0/src/misc.c:629: alloc_fn: Storage is returned from allocation function "strdup".
+/builddir/build/BUILD/libssh-0.5.0/src/misc.c:629: return_alloc_fn: Directly returning storage allocated by "strdup".
+/builddir/build/BUILD/libssh-0.5.0/src/misc.c:688: var_assign: Assigning: "r" =  storage returned from "ssh_path_expand_tilde(s)".
+/builddir/build/BUILD/libssh-0.5.0/src/misc.c:694: noescape: Variable "r" is not freed or pointed-to in function "strlen".
+/builddir/build/BUILD/libssh-0.5.0/src/misc.c:700: var_assign: Assigning: "p" = "r".
+/builddir/build/BUILD/libssh-0.5.0/src/misc.c:708: leaked_storage: Variable "p" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/libssh-0.5.0/src/misc.c:708: leaked_storage: Variable "r" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/libssh-0.5.0/src/misc.c:748: leaked_storage: Variable "p" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/libssh-0.5.0/src/misc.c:748: leaked_storage: Variable "r" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:442: alloc_fn: Calling allocation function "ssh_buffer_new".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:82: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:82: var_assign: Assigning: "buf" = "malloc(sizeof (struct ssh_buffer_struct) /*24*/)".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:87: noescape: Variable "buf" is not freed or pointed-to in function "memset".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:89: return_alloc: Returning allocated memory "buf".
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:442: var_assign: Assigning: "reply" =  storage returned from "ssh_buffer_new()".
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:448: noescape: Variable "reply" is not freed or pointed-to in function "agent_talk".
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:207:66: noescape: "agent_talk" does not free or save its pointer parameter "reply".
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:450: leaked_storage: Variable "reply" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:888: alloc_fn: Calling allocation function "publickey_to_string".
+/builddir/build/BUILD/libssh-0.5.0/src/keys.c:717: alloc_fn: Storage is returned from allocation function "ssh_string_new".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:53: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:53: var_assign: Assigning: "str" = "malloc(size + 4UL)".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:59: return_alloc: Returning allocated memory "str".
+/builddir/build/BUILD/libssh-0.5.0/src/keys.c:717: var_assign: Assigning: "ret" = "ssh_string_new(buffer_get_rest_len(buf))".
+/builddir/build/BUILD/libssh-0.5.0/src/keys.c:722: noescape: Variable "ret" is not freed or pointed-to in function "ssh_string_fill".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:73:47: noescape: "ssh_string_fill" does not free or save its pointer parameter "s".
+/builddir/build/BUILD/libssh-0.5.0/src/keys.c:728: return_alloc: Returning allocated memory "ret".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:888: var_assign: Assigning: "key" =  storage returned from "publickey_to_string(publickey)".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:895: noescape: Variable "key" is not freed or pointed-to in function "buffer_add_ssh_string".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:209:31: noescape: "buffer_add_ssh_string" does not free or save its pointer parameter "string".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:917: leaked_storage: Variable "key" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:856: alloc_fn: Calling allocation function "ssh_string_from_char".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:97: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:97: var_assign: Assigning: "ptr" = "malloc(4UL + len)".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:104: return_alloc: Returning allocated memory "ptr".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:856: var_assign: Assigning: "user" =  storage returned from "ssh_string_from_char(session->username)".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:895: noescape: Variable "user" is not freed or pointed-to in function "buffer_add_ssh_string".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:209:31: noescape: "buffer_add_ssh_string" does not free or save its pointer parameter "string".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:917: leaked_storage: Variable "user" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:873: alloc_fn: Calling allocation function "ssh_string_from_char".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:97: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:97: var_assign: Assigning: "ptr" = "malloc(4UL + len)".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:104: return_alloc: Returning allocated memory "ptr".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:873: var_assign: Assigning: "service" =  storage returned from "ssh_string_from_char("ssh-connection")".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:895: noescape: Variable "service" is not freed or pointed-to in function "buffer_add_ssh_string".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:209:31: noescape: "buffer_add_ssh_string" does not free or save its pointer parameter "string".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:917: leaked_storage: Variable "service" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:878: alloc_fn: Calling allocation function "ssh_string_from_char".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:97: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:97: var_assign: Assigning: "ptr" = "malloc(4UL + len)".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:104: return_alloc: Returning allocated memory "ptr".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:878: var_assign: Assigning: "method" =  storage returned from "ssh_string_from_char("publickey")".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:895: noescape: Variable "method" is not freed or pointed-to in function "buffer_add_ssh_string".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:209:31: noescape: "buffer_add_ssh_string" does not free or save its pointer parameter "string".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:917: leaked_storage: Variable "method" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:883: alloc_fn: Calling allocation function "ssh_string_from_char".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:97: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:97: var_assign: Assigning: "ptr" = "malloc(4UL + len)".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:104: return_alloc: Returning allocated memory "ptr".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:883: var_assign: Assigning: "algo" =  storage returned from "ssh_string_from_char(ssh_type_to_char(publickey->type))".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:895: noescape: Variable "algo" is not freed or pointed-to in function "buffer_add_ssh_string".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:209:31: noescape: "buffer_add_ssh_string" does not free or save its pointer parameter "string".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:917: leaked_storage: Variable "algo" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:287: alloc_fn: Calling allocation function "ssh_buffer_new".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:82: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:82: var_assign: Assigning: "buf" = "malloc(sizeof (struct ssh_buffer_struct) /*24*/)".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:87: noescape: Variable "buf" is not freed or pointed-to in function "memset".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:89: return_alloc: Returning allocated memory "buf".
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:287: var_assign: Assigning: "request" =  storage returned from "ssh_buffer_new()".
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:288: noescape: Variable "request" is not freed or pointed-to in function "buffer_add_u8".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:288:45: noescape: "buffer_add_u8" does not free or save its pointer parameter "buffer".
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:290: leaked_storage: Variable "request" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:296: leaked_storage: Variable "request" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:293: alloc_fn: Calling allocation function "ssh_buffer_new".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:82: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:82: var_assign: Assigning: "buf" = "malloc(sizeof (struct ssh_buffer_struct) /*24*/)".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:87: noescape: Variable "buf" is not freed or pointed-to in function "memset".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:89: return_alloc: Returning allocated memory "buf".
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:293: var_assign: Assigning: "reply" =  storage returned from "ssh_buffer_new()".
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:299: noescape: Variable "reply" is not freed or pointed-to in function "agent_talk".
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:207:66: noescape: "agent_talk" does not free or save its pointer parameter "reply".
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:301: leaked_storage: Variable "reply" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:306: noescape: Variable "reply" is not freed or pointed-to in function "buffer_get_u8".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:502:45: noescape: "buffer_get_u8" does not free or save its pointer parameter "buffer".
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:311: leaked_storage: Variable "reply" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:315: leaked_storage: Variable "reply" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:1222: alloc_fn: Calling allocation function "publickey_to_string".
+/builddir/build/BUILD/libssh-0.5.0/src/keys.c:717: alloc_fn: Storage is returned from allocation function "ssh_string_new".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:53: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:53: var_assign: Assigning: "str" = "malloc(size + 4UL)".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:59: return_alloc: Returning allocated memory "str".
+/builddir/build/BUILD/libssh-0.5.0/src/keys.c:717: var_assign: Assigning: "ret" = "ssh_string_new(buffer_get_rest_len(buf))".
+/builddir/build/BUILD/libssh-0.5.0/src/keys.c:722: noescape: Variable "ret" is not freed or pointed-to in function "ssh_string_fill".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:73:47: noescape: "ssh_string_fill" does not free or save its pointer parameter "s".
+/builddir/build/BUILD/libssh-0.5.0/src/keys.c:728: return_alloc: Returning allocated memory "ret".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:1222: var_assign: Assigning: "pubkey_string" =  storage returned from "publickey_to_string(pubkey)".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:1236: leaked_storage: Variable "pubkey_string" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:1204: alloc_fn: Calling allocation function "privatekey_from_file".
+/builddir/build/BUILD/libssh-0.5.0/src/keyfiles.c:812: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/libssh-0.5.0/src/keyfiles.c:812: var_assign: Assigning: "privkey" = "malloc(sizeof (struct ssh_private_key_struct) /*24*/)".
+/builddir/build/BUILD/libssh-0.5.0/src/keyfiles.c:823: noescape: Variable "(char *)privkey" is not freed or pointed-to in function "memset".
+/builddir/build/BUILD/libssh-0.5.0/src/keyfiles.c:828: return_alloc: Returning allocated memory "privkey".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:1204: var_assign: Assigning: "privkey" =  storage returned from "privatekey_from_file(session, privkey_file, type, passphrase)".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:1214: noescape: Variable "privkey" is not freed or pointed-to in function "publickey_from_privatekey".
+/builddir/build/BUILD/libssh-0.5.0/src/keys.c:314:58: noescape: "publickey_from_privatekey" does not free or save its pointer parameter "prv".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:1228: leaked_storage: Variable "privkey" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:1236: leaked_storage: Variable "privkey" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:1254: leaked_storage: Variable "privkey" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/libssh-0.5.0/src/known_hosts.c:545: alloc_fn: Calling allocation function "ssh_lowercase".
+/builddir/build/BUILD/libssh-0.5.0/src/misc.c:309: alloc_fn: Storage is returned from allocation function "strdup".
+/builddir/build/BUILD/libssh-0.5.0/src/misc.c:309: var_assign: Assigning: "new" = "strdup(str)".
+/builddir/build/BUILD/libssh-0.5.0/src/misc.c:314: var_assign: Assigning: "p" = "new".
+/builddir/build/BUILD/libssh-0.5.0/src/misc.c:318: return_alloc: Returning allocated memory "new".
+/builddir/build/BUILD/libssh-0.5.0/src/known_hosts.c:545: var_assign: Assigning: "host" =  storage returned from "ssh_lowercase(session->host)".
+/builddir/build/BUILD/libssh-0.5.0/src/known_hosts.c:557: leaked_storage: Variable "host" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/libssh-0.5.0/src/known_hosts.c:563: leaked_storage: Variable "host" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/libssh-0.5.0/src/known_hosts.c:569: leaked_storage: Variable "host" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/libssh-0.5.0/src/known_hosts.c:576: leaked_storage: Variable "host" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/libssh-0.5.0/src/known_hosts.c:548: alloc_fn: Calling allocation function "ssh_hostport".
+/builddir/build/BUILD/libssh-0.5.0/src/misc.c:328: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/libssh-0.5.0/src/misc.c:328: var_assign: Assigning: "dest" = "malloc(len)".
+/builddir/build/BUILD/libssh-0.5.0/src/misc.c:331: noescape: Variable "dest" is not freed or pointed-to in function "snprintf".
+/builddir/build/BUILD/libssh-0.5.0/src/misc.c:332: return_alloc: Returning allocated memory "dest".
+/builddir/build/BUILD/libssh-0.5.0/src/known_hosts.c:548: var_assign: Assigning: "hostport" =  storage returned from "ssh_hostport(host, session->port)".
+/builddir/build/BUILD/libssh-0.5.0/src/known_hosts.c:550: var_assign: Assigning: "host" = "hostport".
+/builddir/build/BUILD/libssh-0.5.0/src/known_hosts.c:551: overwrite_var: Overwriting "hostport" in call "hostport = NULL" leaks the storage that "hostport" points to.
+/builddir/build/BUILD/libssh-0.5.0/src/known_hosts.c:557: leaked_storage: Variable "host" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/libssh-0.5.0/src/known_hosts.c:563: leaked_storage: Variable "host" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/libssh-0.5.0/src/known_hosts.c:569: leaked_storage: Variable "host" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/libssh-0.5.0/src/known_hosts.c:576: leaked_storage: Variable "host" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/libssh-0.5.0/examples/libssh_scp.c:197: alloc_fn: Calling allocation function "strdup".
+/builddir/build/BUILD/libssh-0.5.0/examples/libssh_scp.c:197: var_assign: Assigning: "filename" =  storage returned from "strdup(ssh_scp_request_get_filename(src->scp))".
+/builddir/build/BUILD/libssh-0.5.0/examples/libssh_scp.c:215: leaked_storage: Variable "filename" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/libssh-0.5.0/examples/libssh_scp.c:219: noescape: Variable "filename" is not freed or pointed-to in function "fopen".
+/builddir/build/BUILD/libssh-0.5.0/examples/libssh_scp.c:236: leaked_storage: Variable "filename" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:539: alloc_fn: Calling allocation function "sftp_packet_read".
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:298: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:298: var_assign: Assigning: "packet" = "malloc(sizeof (struct sftp_packet_struct) /*24*/)".
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:361: return_alloc: Returning allocated memory "packet".
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:539: var_assign: Assigning: "packet" =  storage returned from "sftp_packet_read(sftp)".
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:579: leaked_storage: Variable "packet" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:936: alloc_fn: Calling allocation function "parse_handle_msg".
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:854: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:854: var_assign: Assigning: "file" = "malloc(sizeof (struct sftp_file_struct) /*40*/)".
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:859: noescape: Variable "(char *)file" is not freed or pointed-to in function "memset".
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:873: return_alloc: Returning allocated memory "file".
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:936: var_assign: Assigning: "file" =  storage returned from "parse_handle_msg(msg)".
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:942: leaked_storage: Variable "file" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:1006: alloc_fn: Calling allocation function "buffer_get_ssh_string".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:554: alloc_fn: Storage is returned from allocation function "ssh_string_new".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:53: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:53: var_assign: Assigning: "str" = "malloc(size + 4UL)".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:59: return_alloc: Returning allocated memory "str".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:554: var_assign: Assigning: "str" = "ssh_string_new(hostlen)".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:558: noescape: Variable "str" is not freed or pointed-to in function "ssh_string_data".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:197:49: noescape: "ssh_string_data" does not free or save its pointer parameter "s".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:564: return_alloc: Returning allocated memory "str".
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:1006: var_assign: Assigning: "owner" =  storage returned from "buffer_get_ssh_string(buf)".
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:1006: noescape: Variable "owner" is not freed or pointed-to in function "ssh_string_to_char".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:133:52: noescape: "ssh_string_to_char" does not free or save its pointer parameter "s".
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:1128: leaked_storage: Variable "owner" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:1010: alloc_fn: Calling allocation function "buffer_get_ssh_string".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:554: alloc_fn: Storage is returned from allocation function "ssh_string_new".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:53: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:53: var_assign: Assigning: "str" = "malloc(size + 4UL)".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:59: return_alloc: Returning allocated memory "str".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:554: var_assign: Assigning: "str" = "ssh_string_new(hostlen)".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:558: noescape: Variable "str" is not freed or pointed-to in function "ssh_string_data".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:197:49: noescape: "ssh_string_data" does not free or save its pointer parameter "s".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:564: return_alloc: Returning allocated memory "str".
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:1010: var_assign: Assigning: "group" =  storage returned from "buffer_get_ssh_string(buf)".
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:1010: noescape: Variable "group" is not freed or pointed-to in function "ssh_string_to_char".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:133:52: noescape: "ssh_string_to_char" does not free or save its pointer parameter "s".
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:1128: leaked_storage: Variable "group" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:1481: alloc_fn: Calling allocation function "buffer_get_ssh_string".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:554: alloc_fn: Storage is returned from allocation function "ssh_string_new".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:53: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:53: var_assign: Assigning: "str" = "malloc(size + 4UL)".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:59: return_alloc: Returning allocated memory "str".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:554: var_assign: Assigning: "str" = "ssh_string_new(hostlen)".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:558: noescape: Variable "str" is not freed or pointed-to in function "ssh_string_data".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:197:49: noescape: "ssh_string_data" does not free or save its pointer parameter "s".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:564: return_alloc: Returning allocated memory "str".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:1481: var_assign: Assigning: "instruction" =  storage returned from "buffer_get_ssh_string(packet)".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:1515: leaked_storage: Variable "instruction" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:1482: alloc_fn: Calling allocation function "buffer_get_ssh_string".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:554: alloc_fn: Storage is returned from allocation function "ssh_string_new".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:53: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:53: var_assign: Assigning: "str" = "malloc(size + 4UL)".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:59: return_alloc: Returning allocated memory "str".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:554: var_assign: Assigning: "str" = "ssh_string_new(hostlen)".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:558: noescape: Variable "str" is not freed or pointed-to in function "ssh_string_data".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:197:49: noescape: "ssh_string_data" does not free or save its pointer parameter "s".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:564: return_alloc: Returning allocated memory "str".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:1482: var_assign: Assigning: "tmp" =  storage returned from "buffer_get_ssh_string(packet)".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:1491: leaked_storage: Variable "tmp" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/libssh-0.5.0/src/channels.c:679: alloc_fn: Calling allocation function "ssh_string_to_char".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:139: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:139: var_assign: Assigning: "new" = "malloc(len)".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:144: noescape: Variable "new" is not freed or pointed-to in function "memcpy".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:146: return_alloc: Returning allocated memory "new".
+/builddir/build/BUILD/libssh-0.5.0/src/channels.c:679: var_assign: Assigning: "sig" =  storage returned from "ssh_string_to_char(signal)".
+/builddir/build/BUILD/libssh-0.5.0/src/channels.c:687: noescape: Variable "sig" is not freed or pointed-to in function "ssh_log".
+/builddir/build/BUILD/libssh-0.5.0/src/channels.c:697: leaked_storage: Variable "sig" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/libssh-0.5.0/src/client.c:202: alloc_fn: Calling allocation function "buffer_get_ssh_string".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:554: alloc_fn: Storage is returned from allocation function "ssh_string_new".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:53: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:53: var_assign: Assigning: "str" = "malloc(size + 4UL)".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:59: return_alloc: Returning allocated memory "str".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:554: var_assign: Assigning: "str" = "ssh_string_new(hostlen)".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:558: noescape: Variable "str" is not freed or pointed-to in function "ssh_string_data".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:197:49: noescape: "ssh_string_data" does not free or save its pointer parameter "s".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:564: return_alloc: Returning allocated memory "str".
+/builddir/build/BUILD/libssh-0.5.0/src/client.c:202: var_assign: Assigning: "f" =  storage returned from "buffer_get_ssh_string(packet)".
+/builddir/build/BUILD/libssh-0.5.0/src/client.c:207: noescape: Variable "f" is not freed or pointed-to in function "dh_import_f".
+/builddir/build/BUILD/libssh-0.5.0/src/dh.c:407:49: noescape: "dh_import_f" does not free or save its pointer parameter "f_string".
+/builddir/build/BUILD/libssh-0.5.0/src/client.c:238: leaked_storage: Variable "f" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/libssh-0.5.0/src/keys.c:895: alloc_fn: Calling allocation function "malloc".
+/builddir/build/BUILD/libssh-0.5.0/src/keys.c:895: var_assign: Assigning: "sign" =  storage returned from "malloc(sizeof (SIGNATURE) /*24*/)".
+/builddir/build/BUILD/libssh-0.5.0/src/keys.c:1056: leaked_storage: Variable "sign" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/libssh-0.5.0/src/keys.c:901: alloc_fn: Calling allocation function "ssh_buffer_new".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:82: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:82: var_assign: Assigning: "buf" = "malloc(sizeof (struct ssh_buffer_struct) /*24*/)".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:87: noescape: Variable "buf" is not freed or pointed-to in function "memset".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:89: return_alloc: Returning allocated memory "buf".
+/builddir/build/BUILD/libssh-0.5.0/src/keys.c:901: var_assign: Assigning: "tmpbuf" =  storage returned from "ssh_buffer_new()".
+/builddir/build/BUILD/libssh-0.5.0/src/keys.c:908: noescape: Variable "tmpbuf" is not freed or pointed-to in function "buffer_add_data".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:181:47: noescape: "buffer_add_data" does not free or save its pointer parameter "buffer".
+/builddir/build/BUILD/libssh-0.5.0/src/keys.c:914: noescape: Variable "tmpbuf" is not freed or pointed-to in function "buffer_get_ssh_string".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:541:75: noescape: "buffer_get_ssh_string" does not free or save its pointer parameter "buffer".
+/builddir/build/BUILD/libssh-0.5.0/src/keys.c:1056: leaked_storage: Variable "tmpbuf" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/libssh-0.5.0/src/messages.c:320: alloc_fn: Calling allocation function "ssh_string_to_char".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:139: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:139: var_assign: Assigning: "new" = "malloc(len)".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:144: noescape: Variable "new" is not freed or pointed-to in function "memcpy".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:146: return_alloc: Returning allocated memory "new".
+/builddir/build/BUILD/libssh-0.5.0/src/messages.c:320: var_assign: Assigning: "service_c" =  storage returned from "ssh_string_to_char(service)".
+/builddir/build/BUILD/libssh-0.5.0/src/messages.c:335: noescape: Variable "service_c" is not freed or pointed-to in function "ssh_log".
+/builddir/build/BUILD/libssh-0.5.0/src/messages.c:463: leaked_storage: Variable "service_c" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/libssh-0.5.0/src/sftpserver.c:53: alloc_fn: Calling allocation function "sftp_packet_read".
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:298: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:298: var_assign: Assigning: "packet" = "malloc(sizeof (struct sftp_packet_struct) /*24*/)".
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:361: return_alloc: Returning allocated memory "packet".
+/builddir/build/BUILD/libssh-0.5.0/src/sftpserver.c:53: var_assign: Assigning: "packet" =  storage returned from "sftp_packet_read(sftp)".
+/builddir/build/BUILD/libssh-0.5.0/src/sftpserver.c:73: leaked_storage: Variable "packet" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/libssh-0.5.0/src/sftpserver.c:81: leaked_storage: Variable "packet" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/libssh-0.5.0/src/sftpserver.c:91: leaked_storage: Variable "packet" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/libssh-0.5.0/src/sftpserver.c:98: leaked_storage: Variable "packet" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/libssh-0.5.0/src/sftpserver.c:110: leaked_storage: Variable "packet" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/libssh-0.5.0/src/sftpserver.c:117: leaked_storage: Variable "packet" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/libssh-0.5.0/src/sftpserver.c:126: leaked_storage: Variable "packet" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/libssh-0.5.0/src/sftpserver.c:133: leaked_storage: Variable "packet" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/libssh-0.5.0/src/sftpserver.c:139: leaked_storage: Variable "packet" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/libssh-0.5.0/src/sftpserver.c:148: leaked_storage: Variable "packet" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/libssh-0.5.0/src/sftpserver.c:155: leaked_storage: Variable "packet" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/libssh-0.5.0/src/sftpserver.c:161: leaked_storage: Variable "packet" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/libssh-0.5.0/src/sftpserver.c:169: leaked_storage: Variable "packet" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/libssh-0.5.0/src/sftpserver.c:175: leaked_storage: Variable "packet" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/libssh-0.5.0/src/sftpserver.c:184: leaked_storage: Variable "packet" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/libssh-0.5.0/src/sftpserver.c:191: leaked_storage: Variable "packet" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/libssh-0.5.0/src/sftpserver.c:202: leaked_storage: Variable "packet" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/libssh-0.5.0/src/sftpserver.c:209: leaked_storage: Variable "packet" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/libssh-0.5.0/src/sftpserver.c:216: leaked_storage: Variable "packet" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/libssh-0.5.0/src/sftpserver.c:231: leaked_storage: Variable "packet" going out of scope leaks the storage it points to.
+
+Error: REVERSE_INULL:
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:1602: deref_ptr: Directly dereferencing pointer "session".
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:1604: check_after_deref: Dereferencing "session" before a null check.
+
+Error: REVERSE_INULL:
+/builddir/build/BUILD/libssh-0.5.0/src/channels.c:974: deref_ptr: Directly dereferencing pointer "channel".
+/builddir/build/BUILD/libssh-0.5.0/src/channels.c:977: check_after_deref: Dereferencing "channel" before a null check.
+
+Error: REVERSE_INULL:
+/builddir/build/BUILD/libssh-0.5.0/src/client.c:764: deref_ptr_in_call: Dereferencing pointer "session->socket".
+/builddir/build/BUILD/libssh-0.5.0/src/socket.c:481: deref_parm: Directly dereferencing parameter "s".
+/builddir/build/BUILD/libssh-0.5.0/src/client.c:785: deref_ptr_in_call: Dereferencing pointer "session->socket".
+/builddir/build/BUILD/libssh-0.5.0/src/socket.c:405: deref_parm_in_call: Function "ssh_socket_is_open" dereferences parameter "s".
+/builddir/build/BUILD/libssh-0.5.0/src/client.c:789: check_after_deref: Dereferencing "session->socket" before a null check.
+
+Error: REVERSE_INULL:
+/builddir/build/BUILD/libssh-0.5.0/src/session.c:160: deref_ptr: Directly dereferencing pointer "session".
+/builddir/build/BUILD/libssh-0.5.0/src/session.c:162: check_after_deref: Dereferencing "session" before a null check.
+
+Error: REVERSE_INULL:
+/builddir/build/BUILD/libssh-0.5.0/src/messages.c:626: deref_ptr: Directly dereferencing pointer "msg".
+/builddir/build/BUILD/libssh-0.5.0/src/messages.c:631: check_after_deref: Dereferencing "msg" before a null check.
+
+Error: REVERSE_INULL:
+/builddir/build/BUILD/libssh-0.5.0/src/keyfiles.c:610: deref_ptr_in_call: Dereferencing pointer "session".
+/builddir/build/BUILD/libssh-0.5.0/src/log.c:55: deref_parm: Directly dereferencing parameter "session".
+/builddir/build/BUILD/libssh-0.5.0/src/keyfiles.c:613: check_after_deref: Dereferencing "session" before a null check.
+
+Error: REVERSE_INULL:
+/builddir/build/BUILD/libssh-0.5.0/src/session.c:261: deref_ptr: Directly dereferencing pointer "session".
+/builddir/build/BUILD/libssh-0.5.0/src/session.c:263: check_after_deref: Dereferencing "session" before a null check.
+
+Error: SIZEOF_MISMATCH:
+/builddir/build/BUILD/libssh-0.5.0/src/poll.c:474: suspicious_sizeof: Passing argument "ctx->pollptrs" of type "ssh_poll_handle *" and argument "sizeof (ssh_poll_handle *) /*8*/ * new_size" to function "realloc" is suspicious.  Did you intend to use "sizeof(ssh_poll_handle)" instead of "sizeof (ssh_poll_handle *)" ?  In this particular case sizeof(ssh_poll_handle *) happens to be equal to sizeof(ssh_poll_handle), but this is not a portable assumption.
+
+Error: SIZEOF_MISMATCH:
+/builddir/build/BUILD/libssh-0.5.0/src/poll.c:481: suspicious_sizeof: Passing argument "pollptrs" of type "ssh_poll_handle *" and argument "sizeof (ssh_poll_handle *) /*8*/ * ctx->polls_allocated" to function "realloc" is suspicious.  Did you intend to use "sizeof(ssh_poll_handle)" instead of "sizeof (ssh_poll_handle *)" ?  In this particular case sizeof(ssh_poll_handle *) happens to be equal to sizeof(ssh_poll_handle), but this is not a portable assumption.
+
+Error: SIZEOF_MISMATCH:
+/builddir/build/BUILD/libssh-0.5.0/src/dh.c:852: suspicious_sizeof: Passing argument "128UL /* sizeof (unsigned char *) /*8*/ * 16UL */" to function "malloc" and then casting the return value to "unsigned char *" is suspicious.
+
+Error: SIZEOF_MISMATCH:
+/builddir/build/BUILD/libssh-0.5.0/src/server.c:107: suspicious_sizeof: Passing argument "80UL /* 10UL * sizeof (char **) /*8*/ */" to function "malloc" and then casting the return value to "char **" is suspicious.  Did you intend to use "sizeof(char *)" instead of "sizeof (char **)" ?  In this particular case sizeof(char **) happens to be equal to sizeof(char *), but this is not a portable assumption.
+
+Error: SIZEOF_MISMATCH:
+/builddir/build/BUILD/libssh-0.5.0/src/kex.c:371: suspicious_sizeof: Passing argument "80UL /* 10UL * sizeof (char **) /*8*/ */" to function "malloc" and then casting the return value to "char **" is suspicious.  Did you intend to use "sizeof(char *)" instead of "sizeof (char **)" ?  In this particular case sizeof(char **) happens to be equal to sizeof(char *), but this is not a portable assumption.
+
+Error: SIZEOF_MISMATCH:
+/builddir/build/BUILD/libssh-0.5.0/src/kex.c:377: suspicious_sizeof: Passing argument "client->methods" of type "char **" and argument "80UL /* 10UL * sizeof (char **) /*8*/ */" to function "memset" is suspicious.  Did you intend to use "sizeof(char *)" instead of "sizeof (char **)" ?  In this particular case sizeof(char **) happens to be equal to sizeof(char *), but this is not a portable assumption.
+
+Error: SIZEOF_MISMATCH:
+/builddir/build/BUILD/libssh-0.5.0/src/kex.c:308: suspicious_sizeof: Passing argument "80UL /* 10UL * sizeof (char **) /*8*/ */" to function "malloc" and then casting the return value to "char **" is suspicious.  Did you intend to use "sizeof(char *)" instead of "sizeof (char **)" ?  In this particular case sizeof(char **) happens to be equal to sizeof(char *), but this is not a portable assumption.
+
+Error: SIZEOF_MISMATCH:
+/builddir/build/BUILD/libssh-0.5.0/src/kex.c:318: suspicious_sizeof: Passing argument "80UL /* 10UL * sizeof (char **) /*8*/ */" to function "malloc" and then casting the return value to "char **" is suspicious.  Did you intend to use "sizeof(char *)" instead of "sizeof (char **)" ?  In this particular case sizeof(char **) happens to be equal to sizeof(char *), but this is not a portable assumption.
+
+Error: UNREACHABLE:
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:401: unreachable: This code cannot be reached: "rc = -1;".
+
+Error: UNREACHABLE:
+/builddir/build/BUILD/libssh-0.5.0/src/auth.c:1015: unreachable: This code cannot be reached: "rc = -1;".
+
+Error: UNREACHABLE:
+/builddir/build/BUILD/libssh-0.5.0/src/channels.c:2130: unreachable: This code cannot be reached: "ssh_set_error_oom(channel->...".
+
+Error: UNREACHABLE:
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:1876: unreachable: This code cannot be reached: "{
+  do {
+    {
+      if (sf...".
+
+Error: USE_AFTER_FREE:
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:452: freed_arg: "ssh_buffer_free" frees "request".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:109: freed_arg: "free" frees parameter "buffer".
+/builddir/build/BUILD/libssh-0.5.0/src/agent.c:476: double_free: Calling "ssh_buffer_free" frees pointer "request" which has already been freed.
+
+Error: USE_AFTER_FREE:
+/builddir/build/BUILD/libssh-0.5.0/src/channels.c:1384: freed_arg: "ssh_string_free" frees "req".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:211: freed_arg: "free" frees parameter "s".
+/builddir/build/BUILD/libssh-0.5.0/src/channels.c:1436: double_free: Calling "ssh_string_free" frees pointer "req" which has already been freed.
+
+Error: USE_AFTER_FREE:
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:1224: freed_arg: "ssh_string_free" frees "longname".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:211: freed_arg: "free" frees parameter "s".
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:1330: double_free: Calling "ssh_string_free" frees pointer "longname" which has already been freed.
+
+Error: USE_AFTER_FREE:
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:1216: freed_arg: "ssh_string_free" frees "name".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:211: freed_arg: "free" frees parameter "s".
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:1329: double_free: Calling "ssh_string_free" frees pointer "name" which has already been freed.
+
+Error: USE_AFTER_FREE:
+/builddir/build/BUILD/libssh-0.5.0/src/keyfiles.c:1263: freed_arg: "ssh_string_free" frees "pubkey".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:211: freed_arg: "free" frees parameter "s".
+/builddir/build/BUILD/libssh-0.5.0/src/keyfiles.c:1270: use_after_free: Using freed pointer "pubkey".
+
+Error: USE_AFTER_FREE:
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:2271: freed_arg: "ssh_buffer_free" frees "buffer".
+/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:109: freed_arg: "free" frees parameter "buffer".
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:2274: double_free: Calling "ssh_buffer_free" frees pointer "buffer" which has already been freed.
+
+Error: USE_AFTER_FREE:
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:2272: freed_arg: "ssh_string_free" frees "path".
+/builddir/build/BUILD/libssh-0.5.0/src/string.c:211: freed_arg: "free" frees parameter "s".
+/builddir/build/BUILD/libssh-0.5.0/src/sftp.c:2275: double_free: Calling "ssh_string_free" frees pointer "path" which has already been freed.

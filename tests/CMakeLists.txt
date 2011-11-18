@@ -35,6 +35,9 @@ endmacro()
 
 # add regression tests ony by one
 test_csdiff(diff7.0-qt                              00)
+test_csdiff(diff7.0-fftw                            00)
+test_csdiff(diff7.0-sudo                            00)
+test_csdiff(diff7.0-libssh                          00)
 test_csdiff(diff7.0-icu                             00)
 test_csdiff(diff7.0-virtuoso-opensource             00)
 test_csdiff(diff5.8-kernel                          00)
