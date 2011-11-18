@@ -33,5 +33,6 @@ macro(test_csdiff dir num)
     add_test("${dir}-${num}-fixed" sh -c "${cmd}")
 endmacro()
 
-# add one pair of regression tests
+# add regression tests ony by one
+test_csdiff(diff7.0-qt 00)
 test_csdiff(diff5.8-kernel 00)

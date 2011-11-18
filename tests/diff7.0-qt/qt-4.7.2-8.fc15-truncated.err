@@ -1,0 +1,45 @@
+
+Error: ARRAY_VS_SINGLETON:
+qt-everywhere-opensource-src-4.7.2/src/corelib/tools/qregexp.cpp:1427: address_of: Taking address with "&char_null" yields a singleton pointer.
+qt-everywhere-opensource-src-4.7.2/src/corelib/tools/qregexp.cpp:1427: assign: Assigning: "this->in" = "&char_null".
+qt-everywhere-opensource-src-4.7.2/src/corelib/tools/qregexp.cpp:1446: callee_ptr_arith: Passing "this->in" via argument "this" to function "QRegExpEngine::badCharMatch(QRegExpMatchState &) const" which uses it as an array. This might corrupt or misinterpret adjacent memory locations.
+qt-everywhere-opensource-src-4.7.2/src/corelib/tools/qregexp.cpp:1902: ptr_arith: Performing pointer arithmetic on "matchState.in" in expression "matchState.in + (matchState.pos + i)".
+
+Error: ARRAY_VS_SINGLETON:
+qt-everywhere-opensource-src-4.7.2/src/corelib/tools/qregexp.cpp:1427: address_of: Taking address with "&char_null" yields a singleton pointer.
+qt-everywhere-opensource-src-4.7.2/src/corelib/tools/qregexp.cpp:1427: assign: Assigning: "this->in" = "&char_null".
+qt-everywhere-opensource-src-4.7.2/src/corelib/tools/qregexp.cpp:1444: callee_ptr_arith: Passing "this->in" via argument "this" to function "QRegExpEngine::goodStringMatch(QRegExpMatchState &) const" which uses it as an array. This might corrupt or misinterpret adjacent memory locations.
+qt-everywhere-opensource-src-4.7.2/src/corelib/tools/qregexp.cpp:1873: callee_ptr_arith: Performing pointer arithmetic on "matchState.in" in callee "QStringMatcher::indexIn(QChar const *, int, int) const".
+qt-everywhere-opensource-src-4.7.2/src/corelib/tools/qstringmatcher.cpp:293: callee_ptr_arith: Performing pointer arithmetic on "(ushort const *)str" in callee "bm_find(unsigned short const *, unsigned int, int, unsigned short const *, unsigned int, unsigned char const *, Qt::CaseSensitivity)".
+qt-everywhere-opensource-src-4.7.2/src/corelib/tools/qstringmatcher.cpp:72: ptr_arith: Performing pointer arithmetic on "uc" in expression "uc + index".
+
+Error: ARRAY_VS_SINGLETON:
+qt-everywhere-opensource-src-4.7.2/src/corelib/tools/qregexp.cpp:1427: address_of: Taking address with "&char_null" yields a singleton pointer.
+qt-everywhere-opensource-src-4.7.2/src/corelib/tools/qregexp.cpp:1427: assign: Assigning: "this->in" = "&char_null".
+qt-everywhere-opensource-src-4.7.2/src/corelib/tools/qregexp.cpp:1438: callee_ptr_arith: Passing "this->in" via argument "this" to function "QRegExpMatchState::matchHere()" which uses it as an array. This might corrupt or misinterpret adjacent memory locations.
+qt-everywhere-opensource-src-4.7.2/src/corelib/tools/qregexp.cpp:1994: ptr_arith: Performing pointer arithmetic on "this->in" in expression "this->in + (this->pos + i)".
+
+Error: ARRAY_VS_SINGLETON:
+qt-everywhere-opensource-src-4.7.2/src/corelib/tools/qregexp.cpp:1427: address_of: Taking address with "&char_null" yields a singleton pointer.
+qt-everywhere-opensource-src-4.7.2/src/corelib/tools/qregexp.cpp:1427: assign: Assigning: "this->in" = "&char_null".
+qt-everywhere-opensource-src-4.7.2/src/corelib/tools/qregexp.cpp:1442: callee_ptr_arith: Passing "this->in" via argument "this" to function "QRegExpMatchState::matchHere()" which uses it as an array. This might corrupt or misinterpret adjacent memory locations.
+qt-everywhere-opensource-src-4.7.2/src/corelib/tools/qregexp.cpp:1994: ptr_arith: Performing pointer arithmetic on "this->in" in expression "this->in + (this->pos + i)".
+
+Error: BAD_FREE:
+qt-everywhere-opensource-src-4.7.2/src/3rdparty/clucene/src/CLucene/store/FSDirectory.cpp:371: array_free: "CLuceneError::CLuceneError(int, char const *, bool)" frees array ""Cannot create temp directory"".
+qt-everywhere-opensource-src-4.7.2/src/3rdparty/clucene/src/CLucene/debug/error.cpp:25: freed_arg: "operator delete[](void *)" frees parameter "str".
+
+Error: BAD_OVERRIDE:
+qt-everywhere-opensource-src-4.7.2/demos/boxes/glbuffers.h:138: bad_override: Method "struct GLRenderTargetCube::failed" hides but does not override "struct GLTexture::failed" because some type qualifiers do not match.
+qt-everywhere-opensource-src-4.7.2/demos/boxes/glbuffers.h:72: not_overridden: virtual method "failed" is not overridden.
+
+Error: BAD_OVERRIDE:
+qt-everywhere-opensource-src-4.7.2/src/3rdparty/clucene/src/CLucene/index/SegmentReader.cpp:585: bad_override: Method "struct lucene::index::SegmentReader::hasNorms" hides but does not override "struct lucene::index::IndexReader::hasNorms" because some type qualifiers do not match.
+qt-everywhere-opensource-src-4.7.2/src/3rdparty/clucene/src/CLucene/index/IndexReader.cpp:564: not_overridden: virtual method "hasNorms" is not overridden.
+
+Error: BAD_OVERRIDE:
+qt-everywhere-opensource-src-4.7.2/tools/qdoc3/ditaxmlgenerator.cpp:3388: bad_override: Method "struct DitaXmlGenerator::fileBase" hides but does not override "struct PageGenerator::fileBase" because some type qualifiers do not match.
+qt-everywhere-opensource-src-4.7.2/tools/qdoc3/pagegenerator.cpp:183: not_overridden: virtual method "fileBase" is not overridden.
+
+Error: BAD_SIZEOF:
+qt-everywhere-opensource-src-4.7.2/src/3rdparty/md5/md5.cpp:138: bad_sizeof: Taking the size of pointer parameter "ctx" is suspicious.
