@@ -1,0 +1,53 @@
+
+Error: ARRAY_VS_SINGLETON:
+/builddir/build/BUILD/fftw-3.3/rdft/problem.c:230: address_of: Taking address with "&kind" yields a singleton pointer.
+/builddir/build/BUILD/fftw-3.3/rdft/problem.c:230: callee_ptr_arith: Passing "&kind" to function "fftwf_mkproblem_rdft_d" which uses it as an array. This might corrupt or misinterpret adjacent memory locations.
+/builddir/build/BUILD/fftw-3.3/rdft/problem.c:213: callee_ptr_arith: Performing pointer arithmetic on "kind" in callee "fftwf_mkproblem_rdft".
+/builddir/build/BUILD/fftw-3.3/rdft/problem.c:154: ptr_arith: Performing pointer arithmetic on "kind" in expression "kind + i".
+
+Error: ARRAY_VS_SINGLETON:
+/builddir/build/BUILD/fftw-3.3/rdft/problem.c:223: address_of: Taking address with "&kind" yields a singleton pointer.
+/builddir/build/BUILD/fftw-3.3/rdft/problem.c:223: callee_ptr_arith: Passing "&kind" to function "fftwf_mkproblem_rdft" which uses it as an array. This might corrupt or misinterpret adjacent memory locations.
+/builddir/build/BUILD/fftw-3.3/rdft/problem.c:154: ptr_arith: Performing pointer arithmetic on "kind" in expression "kind + i".
+
+Error: BAD_FREE:
+/builddir/build/BUILD/fftw-3.3/rdft/vrank3-transpose.c:753: address_free: Using "&pln->super.super" to refer to containing object "*pln" freed by "fftwf_plan_destroy_internal".
+/builddir/build/BUILD/fftw-3.3/kernel/plan.c:50: freed_arg: "fftwf_ifree" frees parameter "ego".
+/builddir/build/BUILD/fftw-3.3/kernel/alloc.c:280: freed_arg: "fftwf_kernel_free" frees parameter "p".
+/builddir/build/BUILD/fftw-3.3/kernel/kalloc.c:143: freed_arg: "free" frees parameter "p".
+
+Error: FORWARD_NULL:
+/builddir/build/BUILD/fftw-3.3/dft/ct.c:123: assign_zero: Assigning: "pln" = 0.
+/builddir/build/BUILD/fftw-3.3/dft/ct.c:219: var_deref_op: Dereferencing null variable "pln".
+
+Error: FORWARD_NULL:
+/builddir/build/BUILD/fftw-3.3/rdft/ct-hc2c.c:150: assign_zero: Assigning: "pln" = 0.
+/builddir/build/BUILD/fftw-3.3/rdft/ct-hc2c.c:260: var_deref_op: Dereferencing null variable "pln".
+
+Error: FORWARD_NULL:
+/builddir/build/BUILD/fftw-3.3/rdft/hc2hc.c:120: assign_zero: Assigning: "pln" = 0.
+/builddir/build/BUILD/fftw-3.3/rdft/hc2hc.c:181: var_deref_op: Dereferencing null variable "pln".
+
+Error: FORWARD_NULL:
+/builddir/build/BUILD/fftw-3.3/rdft/rank0-rdft2.c:147: assign_zero: Assigning: "cldcpy" = 0.
+/builddir/build/BUILD/fftw-3.3/rdft/rank0-rdft2.c:183: var_deref_op: Dereferencing null variable "cldcpy".
+
+Error: FORWARD_NULL:
+/builddir/build/BUILD/fftw-3.3/threads/ct.c:120: assign_zero: Assigning: "pln" = 0.
+/builddir/build/BUILD/fftw-3.3/threads/ct.c:238: var_deref_op: Dereferencing null variable "pln".
+
+Error: FORWARD_NULL:
+/builddir/build/BUILD/fftw-3.3/threads/hc2hc.c:118: assign_zero: Assigning: "pln" = 0.
+/builddir/build/BUILD/fftw-3.3/threads/hc2hc.c:204: var_deref_op: Dereferencing null variable "pln".
+
+Error: REVERSE_INULL:
+/builddir/build/BUILD/fftw-3.3/threads/dft-vrank-geq1.c:165: deref_ptr: Directly dereferencing pointer "cldrn".
+/builddir/build/BUILD/fftw-3.3/threads/dft-vrank-geq1.c:197: check_after_deref: Dereferencing "cldrn" before a null check.
+
+Error: REVERSE_INULL:
+/builddir/build/BUILD/fftw-3.3/threads/rdft-vrank-geq1.c:163: deref_ptr: Directly dereferencing pointer "cldrn".
+/builddir/build/BUILD/fftw-3.3/threads/rdft-vrank-geq1.c:194: check_after_deref: Dereferencing "cldrn" before a null check.
+
+Error: REVERSE_INULL:
+/builddir/build/BUILD/fftw-3.3/threads/vrank-geq1-rdft2.c:173: deref_ptr: Directly dereferencing pointer "cldrn".
+/builddir/build/BUILD/fftw-3.3/threads/vrank-geq1-rdft2.c:206: check_after_deref: Dereferencing "cldrn" before a null check.
