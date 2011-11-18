@@ -42,15 +42,19 @@ inline std::string regexReplaceWrap(
 MsgFilter* MsgFilter::self_;
 
 struct MsgFilter::Private {
+    bool ignorePath;
     const std::string strKrn;
     const boost::regex reKrn;
     const boost::regex reMsg;
+    const boost::regex reDir;
     const boost::regex rePath;
 
     Private():
+        ignorePath(false),
         strKrn("[a-zA-Z]"),
         reKrn(strKrn),
         reMsg("[0-9][0-9]* out of [0-9][0-9]* times"),
+        reDir("^[^:]*/"),
         rePath("^(?:/builddir/build/BUILD/)?([^/]+/)(.*)(\\.[ly])?$")
     {
     }
@@ -65,11 +69,18 @@ MsgFilter::~MsgFilter() {
     delete d;
 }
 
+void MsgFilter::setIgnorePath(bool) {
+    d->ignorePath = true;
+}
+
 std::string MsgFilter::filterMsg(const std::string &msg) {
     return regexReplaceWrap(msg, d->reMsg, "");
 }
 
 std::string MsgFilter::filterPath(const std::string &path) {
+    if (d->ignorePath)
+        return regexReplaceWrap(path, d->reDir, "");
+
     boost::smatch sm;
     if (!boost::regex_match(path, sm, d->rePath))
         // no match

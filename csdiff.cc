@@ -17,6 +17,7 @@
  * along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include "csfilter.hh"
 #include "csparser.hh"
 #include "deflookup.hh"
 #include "instream.hh"
@@ -41,6 +42,7 @@ int main(int argc, char *argv[])
     try {
         desc.add_options()
             ("fixed,x", "print fixed defects (just swaps the arguments)")
+            ("ignore-path,z", "ignore directory structure when matching")
             ("quiet,q", "do not report any parsing errors")
             ("help", "produce help message");
 
@@ -80,6 +82,9 @@ int main(int argc, char *argv[])
         desc.print(std::cerr);
         return 1;
     }
+
+    if (vm.count("ignore-path"))
+        MsgFilter::inst()->setIgnorePath(true);
 
     const bool swap = vm.count("fixed");
     const string &fnOld = files[swap];
