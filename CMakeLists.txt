@@ -15,10 +15,15 @@
 # You should have received a copy of the GNU General Public License
 # along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
 
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 2.6)
 project(csdiff CXX)
 enable_testing()
 add_definitions(-Wall -Wextra)
+
+# we keep a local instance of FindFLEX.cmake (it was introduced in CMake 2.8)
+include(cmake-modules-2.8/CMakeParseArguments.cmake)
+include(cmake-modules-2.8/FindPackageHandleStandardArgs.cmake)
+set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake-modules-2.8)
 
 # Flex
 find_package(FLEX REQUIRED)
