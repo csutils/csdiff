@@ -20,16 +20,13 @@ CTEST ?= ctest
 
 CMAKE_BUILD_TYPE ?= RelWithDebInfo
 
-.PHONY: all check clean distclean distcheck fast
+.PHONY: all check clean distclean distcheck fast install
 
 all:
 	mkdir -p ../csdiff_build
 	cd ../csdiff_build && $(CMAKE) -D 'CMAKE_BUILD_TYPE=$(CMAKE_BUILD_TYPE)' \
 		../csdiff 
 	$(MAKE) -C ../csdiff_build
-
-../cl_build:
-	test -d $@ || $(MAKE) -C ../cl
 
 fast:
 	$(MAKE) -sC ../csdiff_build
@@ -45,3 +42,6 @@ distclean:
 
 distcheck: distclean
 	$(MAKE) check
+
+install: all
+	$(MAKE) -C ../csdiff_build install

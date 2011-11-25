@@ -60,3 +60,12 @@ add_executable(linkify linkify.cc)
 
 # load regression tests
 add_subdirectory(tests)
+
+# declare what 'make install' should install
+install(TARGETS
+    csannot
+    csdiff
+    csgrep
+    cstat
+    linkify
+    DESTINATION bin)
