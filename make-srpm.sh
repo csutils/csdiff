@@ -78,7 +78,9 @@ data format.
 %setup -q
 
 %build
-make %{?_smp_mflags} -C $PKG CMAKE='cmake -D CMAKE_INSTALL_PREFIX=/usr' V=1
+make %{?_smp_mflags} -C $PKG                    \
+    CMAKE='cmake -D CMAKE_INSTALL_PREFIX=/usr'  \
+    VERBOSE=yes
 
 %install
 make -C $PKG install DESTDIR="\$RPM_BUILD_ROOT"
