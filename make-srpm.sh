@@ -28,7 +28,7 @@ test -z "`git diff HEAD`" \
 test -z "`git diff origin/master`" \
     || die "not synced with origin/master"
 
-VER="`git log --pretty="%cd-%h" --date=short -1 | tr -- - _`" \
+VER="0.`git log --pretty="%cd_%h" --date=short -1 | tr -d -`" \
     || die "git log failed"
 
 TMP="`mktemp -d`"
