@@ -417,6 +417,8 @@ Error: DEADCODE:
 /builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:352: assignment: Assigning: "d" = "((f & 8) != 0) + ((f & 1) != 0) + ((f & 2) != 0) + ((f & 4) != 0)".
 /builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:391: dead_error_line: Execution cannot reach this statement "if (!hv){
   n = 0;
+}
+else i...".
 
 Error: DEADCODE:
 /builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:398: dead_error_condition: On this path, the condition "d == 1" cannot be true.
@@ -426,6 +428,8 @@ Error: DEADCODE:
 /builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:390: equality_cond: Condition "d" is evaluated as true.
 /builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:399: dead_error_line: Execution cannot reach this statement "if (!hv){
   n = 3;
+}
+else i...".
 
 Error: DEADCODE:
 /builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:406: dead_error_condition: On this path, the condition "d == 2" cannot be true.
@@ -436,6 +440,8 @@ Error: DEADCODE:
 /builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:390: equality_cond: Condition "d" is evaluated as true.
 /builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:407: dead_error_line: Execution cannot reach this statement "if (!hv){
   n = 6;
+}
+else {...".
 
 Error: DEADCODE:
 /builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:360: dead_error_condition: On this path, the condition "h" cannot be false.
@@ -461,6 +467,9 @@ Error: DEADCODE:
 /builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:357: assignment: Assigning: "v" = "t".
 /builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:376: dead_error_line: Execution cannot reach this statement "if (!d){
   n = 5;
+}
+else {
+...".
 
 Error: DEADCODE:
 /builddir/build/BUILD/netpbm-10.35.58/converter/other/pnmtojpeg.c:298: dead_error_condition: On this path, the condition "dctval == NULL" cannot be false.

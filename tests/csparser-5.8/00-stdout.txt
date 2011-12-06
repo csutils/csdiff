@@ -66,6 +66,7 @@ Error: UNREACHABLE:
 Error: UNREACHABLE:
 /builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-296.el5.x86_64/net/ipv6/exthdrs.c:269: unreachable: This code cannot be reached: "if (hdr->hdrlen & 1){
   ({
+...".
 
 Error: UNREACHABLE:
 /builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-296.el5.x86_64/net/sctp/debug.c:98: unreachable: This code cannot be reached: "return "unknown chunk";".
