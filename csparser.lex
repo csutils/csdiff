@@ -34,7 +34,7 @@ spaces              [ \t\n]*
 nocolons            [^:]+
 
 init                ^Error:{spaces}
-defect              [A-Z][A-Z_.]+[ ]*(\([^\)]*\))?[ ]*:$
+defect              [A-Z][A-Z_.]+[ ]*([(][^\n)]*[)])?[ ]*:$
 file                ^{nocolons}\/{nocolons}
 line                :[0-9:]+{spaces}
 mesg                [a-z][a-z_-]+:\ .*$
