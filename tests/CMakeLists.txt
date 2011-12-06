@@ -17,6 +17,7 @@
 
 # common setup for all tests
 set(csdiff      "${csdiff_BINARY_DIR}/csdiff")
+set(csgrep      "${csdiff_BINARY_DIR}/csgrep")
 set(testdir     "${csdiff_SOURCE_DIR}/tests")
 set(diffcmd     "diff -up")
 
@@ -49,7 +50,22 @@ macro(test_csdiff dir num)
     add_test_wrap("${dir}-${num}-fixed-with-z" "${cmd}")
 endmacro()
 
+# a generic template for csparser test-cases
+macro(test_csparser dir num)
+    set(tst "${testdir}/${dir}/${num}")
+
+    set(cmd "${csgrep} ${tst}-stdin.txt 2>/dev/null")
+    set(cmd "${cmd} | ${diffcmd} ${tst}-stdout.txt -")
+    add_test_wrap("${dir}-${num}-stdout" "${cmd}")
+
+    set(cmd "${csgrep} ${tst}-stdin.txt 2>&1 >/dev/null")
+    set(cmd "${cmd} | sed -s 's|^[^:]*/||' | ${diffcmd} ${tst}-stderr.txt -")
+    add_test_wrap("${dir}-${num}-stderr" "${cmd}")
+endmacro()
+
 # add regression tests ony by one
+test_csparser(csparser-5.8                          00)
+test_csparser(csparser-5.8                          01)
 test_csdiff(diff7.0-qt                              00)
 test_csdiff(diff7.0-fftw                            00)
 test_csdiff(diff7.0-sudo                            00)

@@ -1,0 +1,90 @@
+
+Error: UNREACHABLE:
+/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-296.el5.x86_64/arch/i386/kernel/alternative.c:327: unreachable: This code cannot be reached: "if (no_replacement || smp_a...".
+
+Error: UNREACHABLE:
+/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-296.el5.x86_64/arch/x86_64/mm/gup.c:238: unreachable: This code cannot be reached: "{
+  int ret;
+  slow:
+  do {...".
+
+Error: UNREACHABLE:
+/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-296.el5.x86_64/crypto/xts.c:122: unreachable: This code cannot be reached: "for (; true; ){
+  do {
+    ...".
+
+Error: UNREACHABLE:
+/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-296.el5.x86_64/drivers/atm/horizon.c:2719: unreachable: This code cannot be reached: "goto out_disable;".
+
+Error: UNREACHABLE:
+/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-296.el5.x86_64/drivers/char/mem.c:361: unreachable: This code cannot be reached: "read = 0L;".
+
+Error: UNREACHABLE:
+/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-296.el5.x86_64/drivers/infiniband/ulp/iser/iser_verbs.c:167: unreachable: This code cannot be reached: "ret = -12;".
+
+Error: UNREACHABLE:
+/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-296.el5.x86_64/drivers/isdn/hisax/enternow_pci.c:324: unreachable: Since the loop increment is unreachable, the loop body will never execute more than once.
+
+Error: UNREACHABLE:
+/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-296.el5.x86_64/drivers/isdn/hisax/hisax_fcpcipnp.c:1009: unreachable: This code cannot be reached: "out_unregister_pci:".
+
+Error: UNREACHABLE:
+/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-296.el5.x86_64/drivers/mtd/chips/cfi_cmdset_0001.c:690: unreachable: Since the loop increment is unreachable, the loop body will never execute more than once.
+
+Error: UNREACHABLE:
+/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-296.el5.x86_64/drivers/mtd/chips/cfi_cmdset_0002.c:496: unreachable: Since the loop increment is unreachable, the loop body will never execute more than once.
+
+Error: UNREACHABLE:
+/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-296.el5.x86_64/drivers/net/bnx2x/bnx2x_main.c:4359: unreachable: This code cannot be reached: "vlan_mac_obj = &(bp->fp + c...".
+
+Error: UNREACHABLE:
+/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-296.el5.x86_64/drivers/net/igb/igb_main.c:1452: unreachable: This code cannot be reached: "if (adapter->hw.phy.media_t...".
+
+Error: UNREACHABLE:
+/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-296.el5.x86_64/drivers/net/igb/igb_main.c:1466: unreachable: This code cannot be reached: "if (adapter->hw.phy.media_t...".
+
+Error: UNREACHABLE:
+/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-296.el5.x86_64/drivers/net/wireless/airo.c:6641: unreachable: This code cannot be reached: "if (local->config.authType ...".
+
+Error: UNREACHABLE:
+/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-296.el5.x86_64/net/mac80211/main.c:357: unreachable: This code cannot be reached: "sta->tx_filtered_count++;".
+
+Error: UNREACHABLE:
+/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-296.el5.x86_64/fs/cifs/cifssmb.c:516: unreachable: This code cannot be reached: "goto neg_err_exit;".
+
+Error: UNREACHABLE:
+/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-296.el5.x86_64/net/atm/lec.c:2087: unreachable: Since the loop increment "entry = next;" is unreachable, the loop body will never execute more than once.
+
+Error: UNREACHABLE:
+/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-296.el5.x86_64/net/ipv4/xfrm4_ninput.c:96: unreachable: This code cannot be reached: "do {
+  struct iphdr *iph = ...".
+
+Error: UNREACHABLE:
+/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-296.el5.x86_64/net/ipv6/xfrm6_ninput.c:88: unreachable: This code cannot be reached: "do {
+  struct ipv6hdr *iph ...".
+
+Error: UNREACHABLE:
+/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-296.el5.x86_64/net/ipv6/exthdrs.c:269: unreachable: This code cannot be reached: "if (hdr->hdrlen & 1){
+  ({
+
+Error: UNREACHABLE:
+/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-296.el5.x86_64/net/sctp/debug.c:98: unreachable: This code cannot be reached: "return "unknown chunk";".
+
+Error: UNREACHABLE:
+/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-296.el5.x86_64/net/tux/proto_ftp.c:326: unreachable: This code cannot be reached: "{
+  char pass[100];
+  unsig...".
+
+Error: UNREACHABLE:
+/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-296.el5.x86_64/net/tux/proto_ftp.c:349: unreachable: This code cannot be reached: "{
+  char type[3];
+  unsigne...".
+
+Error: UNREACHABLE:
+/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-296.el5.x86_64/sound/pci/au88x0/au88x0_a3d.c:627: unreachable: This code cannot be reached: "v->mixxtlk[0] = vortex_adb_...".
+
+Error: UNREACHABLE:
+/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-296.el5.x86_64/sound/pci/ymfpci/ymfpci_main.c:278: unreachable: Since the loop increment is unreachable, the loop body will never execute more than once.
+
+Error: UNREACHABLE:
+/builddir/build/BUILD/kernel-2.6.18/xen/common/sched_sedf.c:645: unreachable: This code cannot be reached: "inf->score[0] = (inf->perio...".
