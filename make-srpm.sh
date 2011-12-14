@@ -46,11 +46,6 @@ SRC="${PKG}.tar.xz"
 git archive --prefix="$NV/$PKG/" --format="tar" HEAD -- . | xz -c > "$SRC"
 tar tf "$SRC"
 
-# This pakcage contains the csdiff tool for comparing Coverity plain-text defect
-# lists in order to find out added or fixed defects.  There is also the csgrep
-# utility for filtering defect lists using various filtering predicates.  It can
-# be also used for summarizing the results and exporting them to a JSON-based
-# data format.
 SPEC="./$PKG.spec"
 cat > "$SPEC" << EOF
 Name:       $PKG
