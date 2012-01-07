@@ -77,7 +77,8 @@ class FlexLexerWrap: public yyFlexLexer {
             yyFlexLexer(&input, (silent) ? &sink_ : &std::cerr),
             sink_(sinkPriv_),
             fileName_(fileName),
-            hasError_(false)
+            hasError_(false),
+            silent_(false)
         {
         }
 

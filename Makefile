@@ -18,9 +18,14 @@
 CMAKE ?= cmake
 CTEST ?= ctest
 
+CPPCHECK = cppcheck -j5 \
+		   --enable=style,performance,portability,information,missingInclude \
+		   --template gcc \
+		   --inline-suppr
+
 CMAKE_BUILD_TYPE ?= RelWithDebInfo
 
-.PHONY: all check clean distclean distcheck fast install
+.PHONY: all check clean cppcheck distclean distcheck fast install
 
 all:
 	mkdir -p ../csdiff_build
@@ -33,6 +38,9 @@ fast:
 
 check: all
 	cd ../csdiff_build && $(CTEST) --output-on-failure
+
+cppcheck: all
+	$(CPPCHECK) .
 
 clean:
 	if test -e ../csdiff_build/Makefile; then $(MAKE) clean -C ../csdiff_build; fi

@@ -46,6 +46,9 @@ DefLookup::DefLookup(const DefLookup &ref):
 }
 
 DefLookup& DefLookup::operator=(const DefLookup &ref) {
+    if (&ref == this)
+        return *this;
+
     delete d;
     d = new Private(*ref.d);
     return *this;

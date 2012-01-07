@@ -247,7 +247,7 @@ class EngineFactory {
             tbl_["json"]    = createJson;
         }
 
-        AbstractEngine* create(const std::string mode) const {
+        AbstractEngine* create(const std::string &mode) const {
             TTable::const_iterator it = tbl_.find(mode);
             if (tbl_.end() == it)
                 return 0;

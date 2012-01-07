@@ -28,7 +28,7 @@ struct InFileException {
     std::string fileName;
     // TODO: details (errno?)
 
-    InFileException(const std::string fileName_):
+    InFileException(const std::string &fileName_):
         fileName(fileName_)
     {
     }
