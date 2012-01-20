@@ -26,6 +26,7 @@
 #include <cstdlib>
 #include <cstring>
 #include <map>
+#include <set>
 
 #include <boost/foreach.hpp>
 #include <boost/iostreams/device/null.hpp>
@@ -115,8 +116,8 @@ class FlexLexerWrap: public yyFlexLexer {
 
 class KeyEventDigger {
     private:
-        typedef bool (*THandler)(Defect *);
-        typedef std::map<std::string, THandler> TMap;
+        typedef std::set<std::string>               TSet;
+        typedef std::map<std::string, TSet>         TMap;
         TMap hMap_;
 
     public:
@@ -124,11 +125,34 @@ class KeyEventDigger {
         bool guessKeyEvent(Defect *);
 };
 
-inline bool digFileNameGeneric(Defect *def, const char *event) {
+KeyEventDigger::KeyEventDigger() {
+    // register checker-specific key events
+    hMap_["NULL_RETURNS"]           .insert("returned_null");
+    hMap_["UNINIT_CTOR"]            .insert("uninit_member");
+    hMap_["USE_AFTER_FREE"]         .insert("deref_after_free");
+    hMap_["USE_AFTER_FREE"]         .insert("deref_arg");
+    hMap_["USE_AFTER_FREE"]         .insert("double_free");
+    hMap_["USE_AFTER_FREE"]         .insert("pass_freed_arg");
+    hMap_["USE_AFTER_FREE"]         .insert("use_after_free");
+}
+
+bool KeyEventDigger::guessKeyEvent(Defect *def) {
+    if (def->events.empty())
+        return false;
+
+    TMap::const_iterator it = hMap_.find(def->defClass);
+    if (hMap_.end() == it) {
+        // fallback to default (just pick the first event in the list)
+        def->keyEventIdx = 0;
+        return true;
+    }
+
+    const TSet &keyEvents = it->second;
+
     const std::vector<DefEvent> &evtList = def->events;
     for (unsigned idx = 0; idx < evtList.size(); ++idx) {
         const DefEvent &evt = evtList[idx];
-        if (evt.event.compare(event))
+        if (!keyEvents.count(evt.event))
             continue;
 
         // matched
@@ -137,37 +161,6 @@ inline bool digFileNameGeneric(Defect *def, const char *event) {
     }
 
     return false;
-}
-
-bool digFileName_UNINIT_CTOR(Defect *def) {
-    return digFileNameGeneric(def, "uninit_member");
-}
-
-bool digFileName_NULL_RETURNS(Defect *def) {
-    return digFileNameGeneric(def, "returned_null");
-}
-
-KeyEventDigger::KeyEventDigger() {
-    // register checker-specific handlers
-    hMap_["UNINIT_CTOR"]        = digFileName_UNINIT_CTOR;
-    hMap_["NULL_RETURNS"]       = digFileName_NULL_RETURNS;
-}
-
-bool KeyEventDigger::guessKeyEvent(Defect *def) {
-    if (def->events.empty())
-        return false;
-
-    TMap::const_iterator it = hMap_.find(def->defClass);
-    if (hMap_.end() != it) {
-        const THandler handler = it->second;
-        if (handler(def))
-            // the checker-specific handler has succeeded!
-            return true;
-    }
-
-    // fallback to default (just pick the first event in the list)
-    def->keyEventIdx = 0;
-    return true;
 }
 
 struct Parser::Private {
