@@ -23,6 +23,7 @@
 #include "json-writer.hh"
 
 #include <cstdlib>
+#include <fstream>
 #include <map>
 
 #include <boost/foreach.hpp>
@@ -225,6 +226,48 @@ class AnnotPredicate: public IPredicate {
         }
 };
 
+class SrcAnnotPredicate: public IPredicate {
+    private:
+        boost::regex re_;
+
+    public:
+        SrcAnnotPredicate(const boost::regex &re):
+            re_(re)
+        {
+        }
+
+        // FIXME: this implementation is desperately inefficient
+        virtual bool matchDef(const Defect &def) const {
+            const DefEvent &evt = def.events[def.keyEventIdx];
+            const std::string &fname = evt.fileName;
+            std::fstream fstr(fname.c_str(), std::ios::in);
+            if (!fstr) {
+                std::cerr << "failed to open source file: " << fname << "\n";
+                return false;
+            }
+
+            bool matched = false;
+
+            const int lineno = evt.line;
+            std::string line;
+            for (int i = 1; i <= lineno; i++) {
+                if (std::getline(fstr, line))
+                    continue;
+
+                std::cerr << "failed to seek line "
+                    << lineno << " in the source file: "
+                    << fname << "\n";
+
+                goto fail;
+            }
+
+            matched = boost::regex_search(line, re_);
+fail:
+            fstr.close();
+            return matched;
+        }
+};
+
 class EngineFactory {
     private:
         typedef std::map<std::string, AbstractEngine* (*)(void)> TTable;
@@ -314,6 +357,7 @@ bool chainFilters(
         pf->setInvertEachMatch();
 
     return appendPredIfNeeded<DefClassPredicate>  (pEng, vm, flags, "checker")
+        && appendPredIfNeeded<SrcAnnotPredicate>  (pEng, vm, flags, "src-annot")
         && appendPredIfNeeded<AnnotPredicate>     (pEng, vm, flags, "annot")
         && appendPredIfNeeded<ErrorPredicate>     (pEng, vm, flags, "error")
         && appendPredIfNeeded<EventPredicate>     (pEng, vm, flags, "event")
@@ -371,7 +415,9 @@ int cStatCore(int argc, char *argv[], const char *defMode)
             ("msg", po::value<string>(), "match messages by the given regex")
             ("path", po::value<string>(),
              "match source path by the given regex")
-            ("quiet,q", "do not report any parsing errors");
+            ("quiet,q", "do not report any parsing errors")
+            ("src-annot", po::value<string>(),
+             "match annotations in the _source_ file by the given regex");
 
         po::options_description hidden("");
         hidden.add_options()
