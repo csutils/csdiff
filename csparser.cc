@@ -128,6 +128,9 @@ class KeyEventDigger {
 KeyEventDigger::KeyEventDigger() {
     // register checker-specific key events
     hMap_["NULL_RETURNS"]           .insert("returned_null");
+    hMap_["OVERRUN_STATIC"]         .insert("index_parm");
+    hMap_["OVERRUN_STATIC"]         .insert("overrun-buffer-arg");
+    hMap_["OVERRUN_STATIC"]         .insert("overrun-local");
     hMap_["UNINIT_CTOR"]            .insert("uninit_member");
     hMap_["USE_AFTER_FREE"]         .insert("deref_after_free");
     hMap_["USE_AFTER_FREE"]         .insert("deref_arg");
