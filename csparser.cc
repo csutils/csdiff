@@ -135,6 +135,8 @@ KeyEventDigger::KeyEventDigger() {
     hMap_["OVERRUN_STATIC"]         .insert("index_parm");
     hMap_["OVERRUN_STATIC"]         .insert("overrun-buffer-arg");
     hMap_["OVERRUN_STATIC"]         .insert("overrun-local");
+    hMap_["UNINIT"]                 .insert("uninit_use");
+    hMap_["UNINIT"]                 .insert("uninit_use_in_call");
     hMap_["UNINIT_CTOR"]            .insert("uninit_member");
     hMap_["USE_AFTER_FREE"]         .insert("deref_after_free");
     hMap_["USE_AFTER_FREE"]         .insert("deref_arg");
