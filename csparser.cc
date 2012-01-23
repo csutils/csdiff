@@ -141,6 +141,8 @@ KeyEventDigger::KeyEventDigger() {
     hMap_["USE_AFTER_FREE"]         .insert("double_free");
     hMap_["USE_AFTER_FREE"]         .insert("pass_freed_arg");
     hMap_["USE_AFTER_FREE"]         .insert("use_after_free");
+    hMap_["TAINTED_STRING"]         .insert("tainted_string");
+    hMap_["TOCTOU"]                 .insert("toctou");
 }
 
 bool KeyEventDigger::guessKeyEvent(Defect *def) {
