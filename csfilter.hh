@@ -31,15 +31,15 @@ class MsgFilter {
                 : (self_ = new MsgFilter);
         }
 
-        MsgFilter();
-        ~MsgFilter();
-
         void setIgnorePath(bool);
 
         std::string filterMsg(const std::string &msg);
         std::string filterPath(const std::string &path);
 
     private:
+        MsgFilter();
+        ~MsgFilter();
+
         static MsgFilter *self_;
         struct Private;
         Private *d;

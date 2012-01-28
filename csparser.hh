@@ -49,6 +49,9 @@ class Parser {
         bool hasError() const;
 
     private:
+        Parser(const Parser &);
+        Parser& operator=(const Parser &);
+
         struct Private;
         Private *d;
 };

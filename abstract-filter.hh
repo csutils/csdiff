@@ -29,11 +29,16 @@ class AbstractEngine {
         friend class AbstractFilter;
 
     public:
+        AbstractEngine() { }
         virtual ~AbstractEngine() { }
 
         bool handleFile(const std::string &fileName, bool silent);
 
         virtual void flush() { };
+
+    private:
+        AbstractEngine(const AbstractEngine &);
+        AbstractEngine& operator=(const AbstractEngine &);
 };
 
 /// decorator
