@@ -241,7 +241,7 @@ bool Parser::Private::seekForToken(const EToken token) {
 bool Parser::Private::parseClass(Defect *def) {
     char *ann, *end;
     char *text = strdup(lexer.YYText());
-    if (!text || !isupper(text[0]))
+    if (!text || !isupper((unsigned char) text[0]))
         goto fail;
 
     end = strchr(text, ':');
@@ -325,7 +325,7 @@ bool Parser::Private::parseMsg(DefEvent *evt) {
         goto fail;
 
     // parse event name (if any)
-    if (!isupper(text[0])) {
+    if (!isupper((unsigned char) text[0])) {
         char *pos = strchr(text, ':');
         if (pos && pos[1]) {
             *pos = '\0';

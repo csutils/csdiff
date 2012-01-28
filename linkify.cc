@@ -107,7 +107,7 @@ bool DefQueue::lookup(
     }
 
     TDefList &col = iCol->second;
-    if (row.empty()) {
+    if (col.empty()) {
 #if DEBUG_DEF_MATCH
         std::cerr << checker << ": " << path << ": list empty\n";
 #endif
