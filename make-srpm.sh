@@ -88,6 +88,7 @@ make -C $PKG check CTEST='ctest %{?_smp_mflags}'
 %{_bindir}/csannot
 %{_bindir}/csdiff
 %{_bindir}/csgrep
+%{_bindir}/cssort
 %{_bindir}/cstat
 %{_bindir}/linkify
 EOF

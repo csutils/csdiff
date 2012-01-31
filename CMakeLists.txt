@@ -55,6 +55,7 @@ link_libraries(cs boost_regex boost_program_options)
 add_executable(csannot csannot.cc)
 add_executable(csdiff csdiff.cc)
 add_executable(csgrep csgrep.cc)
+add_executable(cssort cssort.cc)
 add_executable(cstat cstat.cc)
 add_executable(linkify linkify.cc)
 
@@ -66,6 +67,7 @@ install(TARGETS
     csannot
     csdiff
     csgrep
+    cssort
     cstat
     linkify
     DESTINATION bin)
