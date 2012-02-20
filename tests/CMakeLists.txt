@@ -66,6 +66,7 @@ endmacro()
 # add regression tests ony by one
 test_csparser(csparser-5.8                          00)
 test_csparser(csparser-5.8                          01)
+test_csparser(csparser-5.8                          02)
 test_csdiff(diff7.0-qt                              00)
 test_csdiff(diff7.0-fftw                            00)
 test_csdiff(diff7.0-sudo                            00)
