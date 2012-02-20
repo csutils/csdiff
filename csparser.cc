@@ -148,26 +148,27 @@ KeyEventDigger::KeyEventDigger() {
 }
 
 bool KeyEventDigger::guessKeyEvent(Defect *def) {
-    if (def->events.empty())
+    const std::vector<DefEvent> &evtList = def->events;
+    if (evtList.empty())
         return false;
 
+    // use the last event as key event by default
+    const unsigned evtCount = def->events.size();
+    def->keyEventIdx = evtCount - 1U;
+
     TMap::const_iterator it = hMap_.find(def->defClass);
-    if (hMap_.end() == it) {
-        // fallback to default (just pick the first event in the list)
-        def->keyEventIdx = 0;
+    if (hMap_.end() == it)
+        // no overrides for this checker
         return true;
-    }
 
     const TSet &keyEvents = it->second;
-
-    const std::vector<DefEvent> &evtList = def->events;
-    for (unsigned idx = 0; idx < evtList.size(); ++idx) {
-        def->keyEventIdx = idx;
-
+    for (unsigned idx = 0; idx < evtCount; ++idx) {
         const DefEvent &evt = evtList[idx];
-        if (keyEvents.count(evt.event))
-            // matched
-            break;
+        if (!keyEvents.count(evt.event))
+            continue;
+
+        // matched
+        def->keyEventIdx = idx;
     }
 
     return true;
