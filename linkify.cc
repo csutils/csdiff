@@ -538,6 +538,9 @@ int main(int argc, char *argv[])
         return EXIT_FAILURE;
     }
 
+    // filter out the directory part of the path when matching
+    MsgFilter::inst()->setIgnorePath(true);
+
     // read defects from .err
     Parser defParser(defListStream, defListFile);
     DefQueue stor;
