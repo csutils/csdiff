@@ -20,6 +20,8 @@
 #include "json-writer.hh"
 
 #include <boost/foreach.hpp>
+#include <boost/iostreams/filtering_stream.hpp>
+#include <boost/iostreams/filter/regex.hpp>
 #include <boost/property_tree/json_parser.hpp>
 
 struct JsonWriter::Private {
@@ -68,8 +70,15 @@ void JsonWriter::handleDef(const Defect &def) {
 }
 
 void JsonWriter::flush() {
+    // create a regex-based filter to restore integral values wrapped as strings
+    const boost::regex re(": \"([0-9])+\",$");
+    boost::iostreams::basic_regex_filter<char> reFilter(re, ": \\1,");
+    boost::iostreams::filtering_ostream str;
+    str.push(reFilter);
+    str.push(std::cout);
+
     // finally create the root node and stream out the defect list
     boost::property_tree::ptree root;
     root.put_child("defects", d->defList);
-    write_json(std::cout, root);
+    write_json(str, root);
 }
