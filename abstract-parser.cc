@@ -17,28 +17,36 @@
  * along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef H_GUARD_CSPARSER_H
-#define H_GUARD_CSPARSER_H
-
 #include "abstract-parser.hh"
 
-class CovParser: public AbstractParser {
-    public:
-        CovParser(
-                std::istream        &input,
-                const std::string   &fileName,
-                const bool           silent);
+#include "csparser.hh"
 
-        virtual ~CovParser();
-        bool getNext(Defect *);
-        bool hasError() const;
+#include <boost/foreach.hpp>
 
-    private:
-        CovParser(const Parser &);
-        CovParser& operator=(const Parser &);
+std::ostream& operator<<(std::ostream &str, const Defect &def) {
+    str << "\nError: " << def.defClass << def.annotation << ":\n";
 
-        struct Private;
-        Private *d;
-};
+    BOOST_FOREACH(const DefEvent &evt, def.events) {
+        str << evt.fileName << ":" << evt.line << ":";
 
-#endif /* H_GUARD_CSPARSER_H */
+        if (0 < evt.column)
+            str << evt.column << ":";
+
+        str << " ";
+
+        if (!evt.event.empty())
+            str << evt.event << ": ";
+
+        str << evt.msg << "\n";
+    }
+
+    return str;
+}
+
+AbstractParser* createParser(
+        std::istream        &input,
+        const std::string   &fileName,
+        const bool          silent)
+{
+    return new CovParser(input, fileName, silent);
+}

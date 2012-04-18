@@ -17,8 +17,9 @@
  * along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "csparser.hh"
 #include "cstat-core.hh"
+
+#include "abstract-parser.hh"
 #include "abstract-filter.hh"
 #include "json-writer.hh"
 

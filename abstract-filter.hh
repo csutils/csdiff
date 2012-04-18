@@ -20,7 +20,7 @@
 #ifndef H_GUARD_ABSTRACT_FILTER_H
 #define H_GUARD_ABSTRACT_FILTER_H
 
-#include "csparser.hh"
+#include "abstract-parser.hh"
 
 class AbstractEngine {
     protected:

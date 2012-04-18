@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011 Red Hat, Inc.
+ * Copyright (C) 2011-2012 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -28,7 +28,6 @@
 #include <map>
 #include <set>
 
-#include <boost/foreach.hpp>
 #include <boost/iostreams/device/null.hpp>
 #include <boost/iostreams/stream.hpp>
 #include <boost/lexical_cast.hpp>
@@ -42,26 +41,6 @@ std::ostream& operator<<(std::ostream &str, EToken code) {
         case T_LINE:    str << "T_LINE";    break;
         case T_MSG:     str << "T_MSG";     break;
         case T_MSG_EX:  str << "T_MSG_EX";  break;
-    }
-
-    return str;
-}
-
-std::ostream& operator<<(std::ostream &str, const Defect &def) {
-    str << "\nError: " << def.defClass << def.annotation << ":\n";
-
-    BOOST_FOREACH(const DefEvent &evt, def.events) {
-        str << evt.fileName << ":" << evt.line << ":";
-
-        if (0 < evt.column)
-            str << evt.column << ":";
-
-        str << " ";
-
-        if (!evt.event.empty())
-            str << evt.event << ": ";
-
-        str << evt.msg << "\n";
     }
 
     return str;
@@ -174,7 +153,7 @@ bool KeyEventDigger::guessKeyEvent(Defect *def) {
     return true;
 }
 
-struct Parser::Private {
+struct CovParser::Private {
     FlexLexerWrap           lexer;
     std::string             fileName;
     bool                    hasError;
@@ -197,21 +176,24 @@ struct Parser::Private {
     bool parseNext(Defect *);
 };
 
-Parser::Parser(std::istream &input, std::string fileName, bool silent):
+CovParser::CovParser(
+        std::istream                &input,
+        const std::string           &fileName,
+        const bool                   silent):
     d(new Private(input, fileName, silent))
 {
 }
 
-Parser::~Parser() {
+CovParser::~CovParser() {
     delete d;
 }
 
-bool Parser::hasError() const {
+bool CovParser::hasError() const {
     return d->lexer.hasError()
         || d->hasError;
 }
 
-void Parser::Private::wrongToken() {
+void CovParser::Private::wrongToken() {
     this->hasError = true;
     std::cerr << this->fileName
         << ":" << this->lexer.lineno()
@@ -219,7 +201,7 @@ void Parser::Private::wrongToken() {
         << this->code << "\n";
 }
 
-bool Parser::Private::seekForToken(const EToken token) {
+bool CovParser::Private::seekForToken(const EToken token) {
     if (token == code)
         return true;
 
@@ -238,7 +220,7 @@ bool Parser::Private::seekForToken(const EToken token) {
     return false;
 }
 
-bool Parser::Private::parseClass(Defect *def) {
+bool CovParser::Private::parseClass(Defect *def) {
     char *ann, *end;
     char *text = strdup(lexer.YYText());
     if (!text || !isupper((unsigned char) text[0]))
@@ -270,7 +252,7 @@ fail:
     return false;
 }
 
-bool Parser::Private::parseLine(DefEvent *evt) {
+bool CovParser::Private::parseLine(DefEvent *evt) {
     char *beg, *end;
     char *text = strdup(lexer.YYText());
     if (!text || ':' != text[0])
@@ -303,7 +285,7 @@ fail:
     return false;
 }
 
-bool Parser::Private::parseMsg(DefEvent *evt) {
+bool CovParser::Private::parseMsg(DefEvent *evt) {
     char *text;
 
     // parse file
@@ -363,7 +345,7 @@ fail:
     return false;
 }
 
-bool Parser::Private::parseNext(Defect *def) {
+bool CovParser::Private::parseNext(Defect *def) {
     // parse defect header
     if (!seekForToken(T_INIT))
         return false;
@@ -390,7 +372,7 @@ fail:
     return false;
 }
 
-bool Parser::getNext(Defect *def) {
+bool CovParser::getNext(Defect *def) {
     // error recovery loop
     do {
         if (d->parseNext(def))

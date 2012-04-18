@@ -17,7 +17,7 @@
  * along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "csparser.hh"
+#include "abstract-parser.hh"
 #include "instream.hh"
 
 #include <boost/foreach.hpp>

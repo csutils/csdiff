@@ -19,8 +19,8 @@
 
 #include "deflookup.hh"
 
+#include "abstract-parser.hh"
 #include "csfilter.hh"
-#include "csparser.hh"
 
 #include <map>
 
