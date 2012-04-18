@@ -71,7 +71,7 @@ void JsonWriter::handleDef(const Defect &def) {
 
 void JsonWriter::flush() {
     // create a regex-based filter to restore integral values wrapped as strings
-    const boost::regex re(": \"([0-9])+\",$");
+    const boost::regex re(": \"([0-9]+)\",$");
     boost::iostreams::basic_regex_filter<char> reFilter(re, ": \\1,");
     boost::iostreams::filtering_ostream str;
     str.push(reFilter);
