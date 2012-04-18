@@ -19,8 +19,8 @@
 
 #include "abstract-filter.hh"
 
-#include <errno.h>
-#include <error.h>
+#include "instream.hh"
+
 #include <fstream>
 #include <vector>
 
@@ -30,32 +30,22 @@
 // implementation of AbstractEngine
 
 bool AbstractEngine::handleFile(const std::string &fileName, bool silent) {
-    std::fstream fstr;
-    std::istream *pStr = &fstr;
+    try {
+        InStream str(fileName.c_str());
 
-    const char *szFileName = fileName.c_str();
-    const bool isFile = !!fileName.compare("-");
-    if (isFile)
-        fstr.open(szFileName, std::ios::in);
-    else
-        pStr = &std::cin;
+        this->notifyFile(fileName);
 
-    if (!fstr) {
-        error(0, errno, "failed to open %s", szFileName);
+        Parser parser(str.str(), fileName, silent);
+        Defect def;
+        while (parser.getNext(&def))
+            this->handleDef(def);
+
+        return !parser.hasError();
+    }
+    catch (const InFileException &e) {
+        std::cerr << e.fileName << ": failed to open input file\n";
         return false;
     }
-
-    this->notifyFile(fileName);
-
-    Parser parser(*pStr, fileName, silent);
-    Defect def;
-    while (parser.getNext(&def))
-        this->handleDef(def);
-
-    if (isFile)
-        fstr.close();
-
-    return !parser.hasError();
 }
 
 
