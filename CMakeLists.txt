@@ -45,6 +45,7 @@ add_library(cs STATIC
     cstat-core.cc
     deflookup.cc
     instream.cc
+    json-parser.cc
     json-writer.cc
     ${flex_scanner}
 )

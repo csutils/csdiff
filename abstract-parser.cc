@@ -20,6 +20,7 @@
 #include "abstract-parser.hh"
 
 #include "csparser.hh"
+#include "json-parser.hh"
 
 #include <boost/foreach.hpp>
 
@@ -48,5 +49,22 @@ AbstractParser* createParser(
         const std::string   &fileName,
         const bool          silent)
 {
+    bool jsonDetected = false;
+
+    // sniff the first char from the input
+    char c;
+    if (input >> c) {
+        if ('{' == c)
+            jsonDetected = true;
+
+        // now put the char back to the input stream
+        input.putback(c);
+    }
+
+    if (jsonDetected)
+        // create a JSON parser
+        return new JsonParser(input, fileName, silent);
+
+    // fall-back to default
     return new CovParser(input, fileName, silent);
 }
