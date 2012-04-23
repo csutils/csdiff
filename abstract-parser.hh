@@ -32,10 +32,12 @@ struct DefEvent {
     std::string             msg;
 };
 
+typedef std::vector<DefEvent> TEvtList;
+
 struct Defect {
     std::string             defClass;
     std::string             annotation;
-    std::vector<DefEvent>   events;
+    TEvtList                events;
     unsigned                keyEventIdx;    ///< in range 0..(events.size()-1)
 };
 
