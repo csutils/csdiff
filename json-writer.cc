@@ -62,6 +62,9 @@ void JsonWriter::handleDef(const Defect &def) {
     // create a node for a single defect
     boost::property_tree::ptree defNode;
     defNode.put<string>("checker", def.defClass);
+    if (!def.annotation.empty())
+        defNode.put<string>("annotation", def.annotation);
+
     defNode.put<int>("key_event_idx", def.keyEventIdx);
     defNode.put_child("events", evtList);
 

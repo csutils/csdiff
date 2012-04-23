@@ -137,6 +137,9 @@ void JsonParser::Private::readNode(
     // assume the last event is the key event if not specified otherwise
     const unsigned defKeyEvent = evtListDst.size() - 1;
     def->keyEventIdx = valueOf<int>(defNode, "key_event_idx", defKeyEvent);
+
+    // read annotation if available
+    def->annotation = valueOf<std::string>(defNode, "annotation", "");
 }
 
 bool JsonParser::Private::readNext(Defect *def) {
