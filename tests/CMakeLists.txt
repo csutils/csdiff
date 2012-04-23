@@ -18,6 +18,7 @@
 # common setup for all tests
 set(csdiff      "${csdiff_BINARY_DIR}/csdiff")
 set(csgrep      "${csdiff_BINARY_DIR}/csgrep")
+set(csjson      "${csdiff_BINARY_DIR}/csjson")
 set(testdir     "${csdiff_SOURCE_DIR}/tests")
 set(diffcmd     "diff -up")
 
@@ -34,18 +35,22 @@ macro(test_csdiff dir num)
     set(tst "${testdir}/${dir}/${num}")
 
     set(cmd "${csdiff} ${tst}-old.err ${tst}-new.err")
+    set(cmd "${cmd} | ${csjson} | ${csgrep}")
     set(cmd "${cmd} | ${diffcmd} ${tst}-add.err -")
     add_test_wrap("${dir}-${num}-added" "${cmd}")
 
     set(cmd "${csdiff} -x ${tst}-old.err ${tst}-new.err")
+    set(cmd "${cmd} | ${csjson} | ${csgrep}")
     set(cmd "${cmd} | ${diffcmd} ${tst}-fix.err -")
     add_test_wrap("${dir}-${num}-fixed" "${cmd}")
 
     set(cmd "${csdiff} -z ${tst}-old.err ${tst}-new.err")
+    set(cmd "${cmd} | ${csjson} | ${csgrep}")
     set(cmd "${cmd} | ${diffcmd} ${tst}-add-z.err -")
     add_test_wrap("${dir}-${num}-added-with-z" "${cmd}")
 
     set(cmd "${csdiff} -xz ${tst}-old.err ${tst}-new.err")
+    set(cmd "${cmd} | ${csjson} | ${csgrep}")
     set(cmd "${cmd} | ${diffcmd} ${tst}-fix-z.err -")
     add_test_wrap("${dir}-${num}-fixed-with-z" "${cmd}")
 endmacro()
