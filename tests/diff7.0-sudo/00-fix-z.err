@@ -1,4 +1,3 @@
-
 Error: FORWARD_NULL:
 sudo-1.7.4p5/sudo.c:387: var_compare_op: Comparing "pw" to null implies that "pw" might be null.
 sudo-1.7.4p5/sudo.c:390: var_deref_op: Dereferencing null variable "pw".

@@ -18,6 +18,7 @@
  */
 
 #include "abstract-parser.hh"
+#include "cswriter.hh"
 #include "instream.hh"
 
 #include <boost/foreach.hpp>
@@ -47,9 +48,13 @@ class GenericSort: public AbstractSort {
 
     public:
         virtual void flush() {
+            // sort the container
             std::sort(cont_.begin(), cont_.end());
+
+            // write the data
+            CovWriter writer;
             BOOST_FOREACH(const Defect &def, cont_)
-                std::cout << def;
+                writer.handleDef(def);
         }
 
     protected:

@@ -1,4 +1,3 @@
-
 Error: CHECKED_RETURN:
 libssh-0.4.8/libssh/messages.c:870: check_return: Calling function "ssh_list_append" without checking return value (as is done elsewhere 4 out of 5 times).
 libssh-0.4.8/libssh/options.c:103: example_assign: Assigning: "rc" = return value from "ssh_list_append(new->identity, id)".

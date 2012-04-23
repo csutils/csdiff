@@ -1,4 +1,3 @@
-
 Error: ARRAY_VS_SINGLETON:
 /builddir/build/BUILD/icu/source/common/ucnvmbcs.c:5517: address_of: Taking address with "&cnv->subChar1" yields a singleton pointer.
 /builddir/build/BUILD/icu/source/common/ucnvmbcs.c:5517: assign: Assigning: "subchar" = "(char *)&cnv->subChar1".

@@ -1,4 +1,3 @@
-
 Error: ARRAY_VS_SINGLETON:
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/sparql_p.c:3293: address_of: Taking address with "&yyptr->yyss_alloc" yields a singleton pointer.
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/sparql_p.c:3293: assign: Assigning: "yyss" = "&yyptr->yyss_alloc".

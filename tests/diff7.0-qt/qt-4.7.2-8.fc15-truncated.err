@@ -1,4 +1,3 @@
-
 Error: ARRAY_VS_SINGLETON:
 qt-everywhere-opensource-src-4.7.2/src/corelib/tools/qregexp.cpp:1427: address_of: Taking address with "&char_null" yields a singleton pointer.
 qt-everywhere-opensource-src-4.7.2/src/corelib/tools/qregexp.cpp:1427: assign: Assigning: "this->in" = "&char_null".

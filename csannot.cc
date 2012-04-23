@@ -18,6 +18,7 @@
  */
 
 #include "abstract-parser.hh"
+#include "cswriter.hh"
 
 #include <cstdlib>
 #include <fstream>
@@ -104,6 +105,9 @@ int main(int argc, char *argv[])
     AnnotationTable tbl(str, fileName);
     str.close();
 
+    // create writer
+    CovWriter writer;
+
     // read from stdin
     Parser pInput(std::cin, "-");
     Defect def;
@@ -114,7 +118,7 @@ int main(int argc, char *argv[])
             // update annotation
             annotation.swap(def.annotation);
 
-        std::cout << def;
+        writer.handleDef(def);
     }
 
     return tbl.hasError()

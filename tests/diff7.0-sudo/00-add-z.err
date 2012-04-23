@@ -1,4 +1,3 @@
-
 Error: BUFFER_SIZE_WARNING:
 /builddir/build/BUILD/sudo-1.8.1p2/src/utmp.c:212: buffer_size_warning: Calling strncpy with a maximum size argument of 32 bytes on destination array "utbuf.ut_line" of size 32 bytes might leave the destination string unterminated.
 

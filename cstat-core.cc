@@ -21,6 +21,7 @@
 
 #include "abstract-parser.hh"
 #include "abstract-filter.hh"
+#include "cswriter.hh"
 #include "json-writer.hh"
 
 #include <cstdlib>
@@ -30,13 +31,6 @@
 #include <boost/foreach.hpp>
 #include <boost/program_options.hpp>
 #include <boost/regex.hpp>
-
-class DefPrinter: public AbstractWriter {
-    public:
-        virtual void handleDef(const Defect &def) {
-            std::cout << def;
-        }
-};
 
 class FilePrinter: public AbstractWriter {
     private:
@@ -71,7 +65,7 @@ class GroupPrinter: public AbstractWriter {
                 file_.clear();
             }
 
-            std::cout << def;
+            CovWriter().handleDef(def);
         }
 };
 
@@ -275,7 +269,7 @@ class WriterFactory {
         TTable tbl_;
 
         static AbstractWriter* createFiles()    { return new FilePrinter;   }
-        static AbstractWriter* createGrep()     { return new DefPrinter;    }
+        static AbstractWriter* createGrep()     { return new CovWriter;     }
         static AbstractWriter* createGrouped()  { return new GroupPrinter;  }
         static AbstractWriter* createStat()     { return new DefCounter;    }
         static AbstractWriter* createFileStat() { return new FileDefCounter;}

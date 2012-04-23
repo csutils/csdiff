@@ -1,4 +1,3 @@
-
 Error: ARRAY_VS_SINGLETON:
 /builddir/build/BUILD/fftw-3.3/rdft/problem.c:230: address_of: Taking address with "&kind" yields a singleton pointer.
 /builddir/build/BUILD/fftw-3.3/rdft/problem.c:230: callee_ptr_arith: Passing "&kind" to function "fftwf_mkproblem_rdft_d" which uses it as an array. This might corrupt or misinterpret adjacent memory locations.

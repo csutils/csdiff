@@ -44,6 +44,7 @@ add_library(cs STATIC
     csfilter.cc
     csparser.cc
     cstat-core.cc
+    cswriter.cc
     deflookup.cc
     instream.cc
     json-parser.cc

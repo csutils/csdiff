@@ -41,8 +41,6 @@ struct Defect {
     unsigned                keyEventIdx;    ///< in range 0..(events.size()-1)
 };
 
-std::ostream& operator<<(std::ostream &str, const Defect &def);
-
 // abstract class with a factory method
 class AbstractParser {
     public:

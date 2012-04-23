@@ -24,26 +24,6 @@
 
 #include <boost/foreach.hpp>
 
-std::ostream& operator<<(std::ostream &str, const Defect &def) {
-    str << "\nError: " << def.defClass << def.annotation << ":\n";
-
-    BOOST_FOREACH(const DefEvent &evt, def.events) {
-        str << evt.fileName << ":" << evt.line << ":";
-
-        if (0 < evt.column)
-            str << evt.column << ":";
-
-        str << " ";
-
-        if (!evt.event.empty())
-            str << evt.event << ": ";
-
-        str << evt.msg << "\n";
-    }
-
-    return str;
-}
-
 AbstractParser* createParser(
         std::istream        &input,
         const std::string   &fileName,

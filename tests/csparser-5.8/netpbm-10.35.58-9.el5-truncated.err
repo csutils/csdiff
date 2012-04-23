@@ -1,4 +1,3 @@
-
 Error: BAD_FREE:
 /builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/readframe.c:327: address_free: "Frame_Resize" frees address of "tempFrame".
 /builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/frame.c:835: freed_arg: "free" frees parameter "mf".

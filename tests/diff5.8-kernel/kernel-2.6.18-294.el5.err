@@ -1,4 +1,3 @@
-
 Error: ARRAY_VS_SINGLETON (CWE-119):
 /builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-294.el5.x86_64/arch/x86_64/kernel/traps-xen.c:424: address_of: Taking address with "&dummy" yields a singleton pointer.
 /builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-294.el5.x86_64/arch/x86_64/kernel/traps-xen.c:424: callee_ptr_arith: Passing "&dummy" to function "show_trace" which uses it as an array. This might corrupt or misinterpret adjacent memory locations.

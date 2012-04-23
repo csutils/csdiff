@@ -1,4 +1,3 @@
-
 Error: ARRAY_VS_SINGLETON:
 virtuoso-opensource-6.1.2/libsrc/Wi/sparql_tree.c:3018: address_of: Taking address with "&fake_stack" yields a singleton pointer.
 virtuoso-opensource-6.1.2/libsrc/Wi/sparql_tree.c:3018: callee_ptr_arith: Passing "&fake_stack" to function "sparp_trav_out_clauses_int" which uses it as an array. This might corrupt or misinterpret adjacent memory locations.

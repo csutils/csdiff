@@ -1,4 +1,3 @@
-
 Error: ARRAY_VS_SINGLETON:
 icu/source/common/ucnvmbcs.c:5514: address_of: Taking address with "&cnv->subChar1" yields a singleton pointer.
 icu/source/common/ucnvmbcs.c:5514: assign: Assigning: "subchar" = "(char *)&cnv->subChar1".

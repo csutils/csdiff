@@ -19,6 +19,7 @@
 
 #include "abstract-parser.hh"
 #include "csfilter.hh"
+#include "cswriter.hh"
 #include "deflookup.hh"
 #include "instream.hh"
 
@@ -96,6 +97,7 @@ int main(int argc, char *argv[])
         // open streams
         InStream strOld(fnOld.c_str());
         InStream strNew(fnNew.c_str());
+        CovWriter writer;
 
         // read old
         Parser pOld(strOld.str(), fnOld, silent);
@@ -111,7 +113,7 @@ int main(int argc, char *argv[])
                 continue;
 
             // a newly added defect found
-            std::cout << def;
+            writer.handleDef(def);
         }
 
         return pOld.hasError()
