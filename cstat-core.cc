@@ -31,14 +31,14 @@
 #include <boost/program_options.hpp>
 #include <boost/regex.hpp>
 
-class DefPrinter: public AbstractEngine {
+class DefPrinter: public AbstractWriter {
     public:
         virtual void handleDef(const Defect &def) {
             std::cout << def;
         }
 };
 
-class FilePrinter: public AbstractEngine {
+class FilePrinter: public AbstractWriter {
     private:
         std::string file_;
 
@@ -56,7 +56,7 @@ class FilePrinter: public AbstractEngine {
         }
 };
 
-class GroupPrinter: public AbstractEngine {
+class GroupPrinter: public AbstractWriter {
     private:
         std::string file_;
 
@@ -75,7 +75,7 @@ class GroupPrinter: public AbstractEngine {
         }
 };
 
-class DefCounter: public AbstractEngine {
+class DefCounter: public AbstractWriter {
     private:
         typedef std::map<std::string, int> TMap;
         TMap cnt_;
@@ -92,7 +92,7 @@ class DefCounter: public AbstractEngine {
         }
 };
 
-class FileDefCounter: public AbstractEngine {
+class FileDefCounter: public AbstractWriter {
     private:
         typedef std::map<std::string, DefCounter *> TMap;
         TMap cntMap_;
@@ -269,20 +269,20 @@ fail:
         }
 };
 
-class EngineFactory {
+class WriterFactory {
     private:
-        typedef std::map<std::string, AbstractEngine* (*)(void)> TTable;
+        typedef std::map<std::string, AbstractWriter* (*)(void)> TTable;
         TTable tbl_;
 
-        static AbstractEngine* createFiles()    { return new FilePrinter;   }
-        static AbstractEngine* createGrep()     { return new DefPrinter;    }
-        static AbstractEngine* createGrouped()  { return new GroupPrinter;  }
-        static AbstractEngine* createStat()     { return new DefCounter;    }
-        static AbstractEngine* createFileStat() { return new FileDefCounter;}
-        static AbstractEngine* createJson()     { return new JsonWriter;    }
+        static AbstractWriter* createFiles()    { return new FilePrinter;   }
+        static AbstractWriter* createGrep()     { return new DefPrinter;    }
+        static AbstractWriter* createGrouped()  { return new GroupPrinter;  }
+        static AbstractWriter* createStat()     { return new DefCounter;    }
+        static AbstractWriter* createFileStat() { return new FileDefCounter;}
+        static AbstractWriter* createJson()     { return new JsonWriter;    }
 
     public:
-        EngineFactory() {
+        WriterFactory() {
             tbl_["files"]   = createFiles;
             tbl_["grep"]    = createGrep;
             tbl_["grouped"] = createGrouped;
@@ -291,7 +291,7 @@ class EngineFactory {
             tbl_["json"]    = createJson;
         }
 
-        AbstractEngine* create(const std::string &mode) const {
+        AbstractWriter* create(const std::string &mode) const {
             TTable::const_iterator it = tbl_.find(mode);
             if (tbl_.end() == it)
                 return 0;
@@ -306,7 +306,7 @@ namespace po = boost::program_options;
 
 template <class TPred>
 bool appendPredIfNeeded(
-        AbstractEngine                                  **pEng,
+        AbstractWriter                                  **pEng,
         const po::variables_map                         &vm,
         boost::regex_constants::syntax_option_type      flags,
         const char                                      *key)
@@ -339,7 +339,7 @@ bool appendPredIfNeeded(
 }
 
 bool chainFilters(
-        AbstractEngine                                  **pEng,
+        AbstractWriter                                  **pEng,
         const po::variables_map                         &vm)
 {
     // insert a filter predicate into the chain
@@ -446,8 +446,8 @@ int cStatCore(int argc, char *argv[], const char *defMode)
         return 0;
     }
 
-    EngineFactory factory;
-    AbstractEngine *eng = factory.create(mode);
+    WriterFactory factory;
+    AbstractWriter *eng = factory.create(mode);
     if (!eng) {
         std::cerr << name << ": error: unknown mode: " << mode << "\n\n";
         printUsage(std::cerr, desc);

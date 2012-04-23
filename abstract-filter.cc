@@ -27,29 +27,6 @@
 #include <boost/foreach.hpp>
 
 // /////////////////////////////////////////////////////////////////////////////
-// implementation of AbstractEngine
-
-bool AbstractEngine::handleFile(const std::string &fileName, bool silent) {
-    try {
-        InStream str(fileName.c_str());
-
-        this->notifyFile(fileName);
-
-        Parser parser(str.str(), fileName, silent);
-        Defect def;
-        while (parser.getNext(&def))
-            this->handleDef(def);
-
-        return !parser.hasError();
-    }
-    catch (const InFileException &e) {
-        std::cerr << e.fileName << ": failed to open input file\n";
-        return false;
-    }
-}
-
-
-// /////////////////////////////////////////////////////////////////////////////
 // implementation of PredicateFilter
 
 struct PredicateFilter::Private {
@@ -63,7 +40,7 @@ struct PredicateFilter::Private {
     }
 };
 
-PredicateFilter::PredicateFilter(AbstractEngine *slave):
+PredicateFilter::PredicateFilter(AbstractWriter *slave):
     AbstractFilter(slave),
     d(new Private)
 {

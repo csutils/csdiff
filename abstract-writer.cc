@@ -17,22 +17,28 @@
  * along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef H_GUARD_JSON_WRITER_H
-#define H_GUARD_JSON_WRITER_H
-
 #include "abstract-writer.hh"
 
-class JsonWriter: public AbstractWriter {
-    public:
-        JsonWriter();
-        virtual ~JsonWriter();
+#include "instream.hh"
 
-        virtual void handleDef(const Defect &def);
-        virtual void flush();
+// /////////////////////////////////////////////////////////////////////////////
+// implementation of AbstractWriter
 
-    private:
-        struct Private;
-        Private *d;
-};
+bool AbstractWriter::handleFile(const std::string &fileName, bool silent) {
+    try {
+        InStream str(fileName.c_str());
 
-#endif /* H_GUARD_JSON_WRITER_H */
+        this->notifyFile(fileName);
+
+        Parser parser(str.str(), fileName, silent);
+        Defect def;
+        while (parser.getNext(&def))
+            this->handleDef(def);
+
+        return !parser.hasError();
+    }
+    catch (const InFileException &e) {
+        std::cerr << e.fileName << ": failed to open input file\n";
+        return false;
+    }
+}

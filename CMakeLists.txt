@@ -40,6 +40,7 @@ include_directories(${Boost_INCLUDE_DIRS})
 add_library(cs STATIC
     abstract-filter.cc
     abstract-parser.cc
+    abstract-writer.cc
     csfilter.cc
     csparser.cc
     cstat-core.cc

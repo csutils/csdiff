@@ -20,42 +20,23 @@
 #ifndef H_GUARD_ABSTRACT_FILTER_H
 #define H_GUARD_ABSTRACT_FILTER_H
 
-#include "abstract-parser.hh"
-
-class AbstractEngine {
-    protected:
-        virtual void handleDef(const Defect &def) = 0;
-        virtual void notifyFile(const std::string &) { }
-        friend class AbstractFilter;
-
-    public:
-        AbstractEngine() { }
-        virtual ~AbstractEngine() { }
-
-        bool handleFile(const std::string &fileName, bool silent);
-
-        virtual void flush() { };
-
-    private:
-        AbstractEngine(const AbstractEngine &);
-        AbstractEngine& operator=(const AbstractEngine &);
-};
+#include "abstract-writer.hh"
 
 /// decorator
-class AbstractFilter: public AbstractEngine {
+class AbstractFilter: public AbstractWriter {
     private:
         bool neg_;
 
     protected:
-        AbstractEngine *slave_;
+        AbstractWriter *slave_;
         virtual bool matchDef(const Defect &def) const = 0;
 
+    public:
         virtual void notifyFile(const std::string &fileName) {
             slave_->notifyFile(fileName);
         }
 
-    public:
-        AbstractFilter(AbstractEngine *slave):
+        AbstractFilter(AbstractWriter *slave):
             neg_(false),
             slave_(slave)
         {
@@ -89,7 +70,7 @@ class IPredicate {
 
 class PredicateFilter: public AbstractFilter {
     public:
-        PredicateFilter(AbstractEngine *slave);
+        PredicateFilter(AbstractWriter *slave);
         virtual ~PredicateFilter();
 
         /// takes ownership of pred and will call delete on it on destruction

@@ -17,22 +17,27 @@
  * along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef H_GUARD_JSON_WRITER_H
-#define H_GUARD_JSON_WRITER_H
+#ifndef H_GUARD_ABSTRACT_WRITER_H
+#define H_GUARD_ABSTRACT_WRITER_H
 
-#include "abstract-writer.hh"
+#include "abstract-parser.hh"
 
-class JsonWriter: public AbstractWriter {
+class AbstractWriter {
     public:
-        JsonWriter();
-        virtual ~JsonWriter();
+        virtual void handleDef(const Defect &def) = 0;
+        virtual void notifyFile(const std::string &) { }
 
-        virtual void handleDef(const Defect &def);
-        virtual void flush();
+    public:
+        AbstractWriter() { }
+        virtual ~AbstractWriter() { }
+
+        bool handleFile(const std::string &fileName, bool silent);
+
+        virtual void flush() { };
 
     private:
-        struct Private;
-        Private *d;
+        AbstractWriter(const AbstractWriter &);
+        AbstractWriter& operator=(const AbstractWriter &);
 };
 
-#endif /* H_GUARD_JSON_WRITER_H */
+#endif /* H_GUARD_ABSTRACT_WRITER_H */
