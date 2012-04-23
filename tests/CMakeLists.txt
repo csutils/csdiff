@@ -35,7 +35,7 @@ macro(test_csdiff dir num)
     set(tst "${testdir}/${dir}/${num}")
 
     set(cmd "${csdiff} ${tst}-old.err ${tst}-new.err")
-    set(cmd "${cmd} | ${csjson} | ${csgrep}")
+    set(cmd "${cmd}")
     set(cmd "${cmd} | ${diffcmd} ${tst}-add.err -")
     add_test_wrap("${dir}-${num}-added" "${cmd}")
 
@@ -53,6 +53,15 @@ macro(test_csdiff dir num)
     set(cmd "${cmd} | ${csjson} | ${csgrep}")
     set(cmd "${cmd} | ${diffcmd} ${tst}-fix-z.err -")
     add_test_wrap("${dir}-${num}-fixed-with-z" "${cmd}")
+
+    set(cmd "${csdiff} -c ${tst}-old.err ${tst}-new.err")
+    set(cmd "${cmd} | ${diffcmd} ${tst}-add.err -")
+    add_test_wrap("${dir}-${num}-added-with-c" "${cmd}")
+
+    set(cmd "${csdiff} -jx ${tst}-old.err ${tst}-new.err")
+    set(cmd "${cmd} | ${csgrep}")
+    set(cmd "${cmd} | ${diffcmd} ${tst}-fix.err -")
+    add_test_wrap("${dir}-${num}-fixed-with-j" "${cmd}")
 endmacro()
 
 # a generic template for csparser test-cases

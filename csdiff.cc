@@ -22,10 +22,12 @@
 #include "cswriter.hh"
 #include "deflookup.hh"
 #include "instream.hh"
+#include "json-writer.hh"
 
 #include <cstdlib>
 
 #include <boost/program_options.hpp>
+#include <boost/shared_ptr.hpp>
 
 int main(int argc, char *argv[])
 {
@@ -42,8 +44,10 @@ int main(int argc, char *argv[])
 
     try {
         desc.add_options()
+            ("coverity-output,c", "write the result in Coverity format")
             ("fixed,x", "print fixed defects (just swaps the arguments)")
             ("ignore-path,z", "ignore directory structure when matching")
+            ("json-output,j", "write the result in JSON format")
             ("quiet,q", "do not report any parsing errors")
             ("help", "produce help message");
 
@@ -73,6 +77,14 @@ int main(int argc, char *argv[])
         return 0;
     }
 
+    const bool forceCov  = !!vm.count("coverity-output");
+    const bool forceJson = !!vm.count("json-output");
+    if (forceCov && forceJson) {
+        std::cerr << name << ": error: options --coverity-output(-c) "
+            "and --json-output(-j) are mutually exclusive\n\n";
+        return 1;
+    }
+
     if (!vm.count("input-file")) {
         desc.print(std::cerr);
         return 1;
@@ -97,24 +109,44 @@ int main(int argc, char *argv[])
         // open streams
         InStream strOld(fnOld.c_str());
         InStream strNew(fnNew.c_str());
-        CovWriter writer;
+
+        // create Parsers
+        Parser pOld(strOld.str(), fnOld, silent);
+        Parser pNew(strNew.str(), fnNew, silent);
+
+        // decide which format use for the output
+        bool json;
+        if (forceJson)
+            json = true;
+        else if (forceCov)
+            json = false;
+        else
+            json = pOld.isJson()
+                && pNew.isJson();
+
+        // create the appropriate writer
+        boost::shared_ptr<AbstractWriter> writer;
+        if (json)
+            writer.reset(new JsonWriter);
+        else
+            writer.reset(new CovWriter);
 
         // read old
-        Parser pOld(strOld.str(), fnOld, silent);
         DefLookup stor;
         Defect def;
         while (pOld.getNext(&def))
             stor.hashDefect(def);
 
         // read new
-        Parser pNew(strNew.str(), fnNew, silent);
         while (pNew.getNext(&def)) {
             if (stor.lookup(def))
                 continue;
 
             // a newly added defect found
-            writer.handleDef(def);
+            writer->handleDef(def);
         }
+
+        writer->flush();
 
         return pOld.hasError()
             || pNew.hasError();

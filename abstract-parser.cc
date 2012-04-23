@@ -48,3 +48,7 @@ AbstractParser* createParser(
     // fall-back to default
     return new CovParser(input, fileName, silent);
 }
+
+bool Parser::isJson() const {
+    return !!dynamic_cast<JsonParser *>(parser_);
+}

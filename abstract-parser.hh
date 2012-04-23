@@ -77,6 +77,8 @@ class Parser {
             return parser_->hasError();
         }
 
+        bool isJson() const;
+
     private:
         Parser(const Parser &);
         Parser& operator=(const Parser &);
