@@ -52,8 +52,6 @@ bool AbstractWriter::handleFile(const std::string &fileName, bool silent) {
 AbstractWriter* createWriter(const EFileFormat format) {
     switch (format) {
         case FF_INVALID:
-            break;
-
         case FF_COVERITY:
             return new CovWriter;
 

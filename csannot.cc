@@ -17,8 +17,7 @@
  * along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "abstract-parser.hh"
-#include "cswriter.hh"
+#include "abstract-writer.hh"
 
 #include <cstdlib>
 #include <fstream>
@@ -105,11 +104,10 @@ int main(int argc, char *argv[])
     AnnotationTable tbl(str, fileName);
     str.close();
 
-    // create writer
-    CovWriter writer;
-
-    // read from stdin
+    // create parser/writer
     Parser pInput(std::cin, "-");
+    AbstractWriter *writer = createWriter(pInput.inputFormat());
+
     Defect def;
     while (pInput.getNext(&def)) {
         std::string annotation;
@@ -118,8 +116,12 @@ int main(int argc, char *argv[])
             // update annotation
             annotation.swap(def.annotation);
 
-        writer.handleDef(def);
+        writer->handleDef(def);
     }
+
+    // flush data and delete writer
+    writer->flush();
+    delete writer;
 
     return tbl.hasError()
         || pInput.hasError();

@@ -114,6 +114,7 @@ test_csparser(csparser-5.8                          02)
 
 # csannot tests
 test_csannot(csannot                                00)
+test_csannot(csannot                                01)
 
 # cssort tests
 test_cssort(cssort-5.8                              00)

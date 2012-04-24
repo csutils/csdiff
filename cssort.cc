@@ -17,8 +17,7 @@
  * along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "abstract-parser.hh"
-#include "cswriter.hh"
+#include "abstract-writer.hh"
 
 #include <boost/foreach.hpp>
 #include <boost/program_options.hpp>
@@ -41,10 +40,6 @@ class GenericSort: public AbstractWriter {
 
             // use the same output format is the input format
             AbstractWriter *writer = createWriter(this->inputFormat());
-
-            if (!writer)
-                // fallback to default
-                writer = new CovWriter;
 
             // write the data
             BOOST_FOREACH(const Defect &def, cont_)

@@ -1,0 +1,1572 @@
+{
+    "defects":
+    [
+        {
+            "checker": "BAD_FREE",
+            "key_event_idx": 2,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/env.c",
+                    "line": 539,
+                    "event": "array_assign",
+                    "message": "Assigning: \"cp\" = \"\"/var/mail\"\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/env.c",
+                    "line": 613,
+                    "event": "incorrect_free",
+                    "message": "\"efree\" frees incorrect pointer \"cp\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/common/alloc.c",
+                    "line": 225,
+                    "event": "freed_arg",
+                    "message": "\"free\" frees parameter \"ptr\"."
+                }
+            ]
+        },
+        {
+            "checker": "BUFFER_SIZE_WARNING",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/src/utmp.c",
+                    "line": 212,
+                    "event": "buffer_size_warning",
+                    "message": "Calling strncpy with a maximum size argument of 32 bytes on destination array \"utbuf.ut_line\" of size 32 bytes might leave the destination string unterminated."
+                }
+            ]
+        },
+        {
+            "checker": "BUFFER_SIZE_WARNING",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/src/utmp.c",
+                    "line": 111,
+                    "event": "buffer_size_warning",
+                    "message": "Calling strncpy with a maximum size argument of 4 bytes on destination array \"new->ut_id\" of size 4 bytes might leave the destination string unterminated."
+                }
+            ]
+        },
+        {
+            "checker": "BUFFER_SIZE_WARNING",
+            "key_event_idx": 2,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/src/utmp.c",
+                    "line": 143,
+                    "event": "buffer_size_warning",
+                    "message": "Calling strncpy with a maximum size argument of 32 bytes on destination array \"ut_new->ut_user\" of size 32 bytes might leave the destination string unterminated."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/src/utmp.c",
+                    "line": 150,
+                    "event": "buffer_size_warning",
+                    "message": "Calling strncpy with a maximum size argument of 32 bytes on destination array \"ut_new->ut_user\" of size 32 bytes might leave the destination string unterminated."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/src/utmp.c",
+                    "line": 151,
+                    "event": "buffer_size_warning",
+                    "message": "Calling strncpy with a maximum size argument of 32 bytes on destination array \"ut_new->ut_line\" of size 32 bytes might leave the destination string unterminated."
+                }
+            ]
+        },
+        {
+            "checker": "BUFFER_SIZE_WARNING",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/src/utmp.c",
+                    "line": 190,
+                    "event": "buffer_size_warning",
+                    "message": "Calling strncpy with a maximum size argument of 32 bytes on destination array \"utbuf.ut_line\" of size 32 bytes might leave the destination string unterminated."
+                }
+            ]
+        },
+        {
+            "checker": "DEADCODE",
+            "key_event_idx": 2,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/toke.l",
+                    "line": 717,
+                    "event": "dead_error_condition",
+                    "message": "On this path, the condition \"count\" cannot be false."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/toke.l",
+                    "line": 695,
+                    "event": "cannot_single",
+                    "message": "After this line (or expression), the value of \"count\" cannot be 0."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/toke.l",
+                    "line": 723,
+                    "event": "dead_error_line",
+                    "message": "Execution cannot reach this statement \"path = NULL;\"."
+                }
+            ]
+        },
+        {
+            "checker": "DEADCODE",
+            "key_event_idx": 6,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/parse.c",
+                    "line": 592,
+                    "event": "dead_error_condition",
+                    "message": "On this path, the condition \"host_match\" cannot be false."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/parse.c",
+                    "line": 584,
+                    "event": "const",
+                    "message": "After this line, the value of \"host_match\" is equal to 1."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/parse.c",
+                    "line": 584,
+                    "event": "new_values",
+                    "message": "Noticing condition \"host_match != 1\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/parse.c",
+                    "line": 592,
+                    "event": "dead_error_condition",
+                    "message": "On this path, the condition \"runas_match\" cannot be false."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/parse.c",
+                    "line": 589,
+                    "event": "const",
+                    "message": "After this line, the value of \"runas_match\" is equal to 1."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/parse.c",
+                    "line": 589,
+                    "event": "new_values",
+                    "message": "Noticing condition \"runas_match == 1\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/parse.c",
+                    "line": 592,
+                    "event": "dead_error_line",
+                    "message": "Execution cannot reach this expression \"NULL\" inside statement \"match = ((host_match && run...\"."
+                }
+            ]
+        },
+        {
+            "checker": "FORWARD_NULL",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/set_perms.c",
+                    "line": 107,
+                    "event": "assign_zero",
+                    "message": "Assigning: \"ostate\" = 0."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/set_perms.c",
+                    "line": 124,
+                    "event": "var_deref_model",
+                    "message": "Passing null variable \"ostate\" to function \"memcmp\", which dereferences it. (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)"
+                }
+            ]
+        },
+        {
+            "checker": "FORWARD_NULL",
+            "key_event_idx": 2,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/toke.l",
+                    "line": 901,
+                    "event": "var_compare_op",
+                    "message": "Comparing \"path\" to null implies that \"path\" might be null."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/toke.l",
+                    "line": 905,
+                    "event": "alias_transfer",
+                    "message": "Assigning null: \"pp\" = \"path\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/toke.l",
+                    "line": 913,
+                    "event": "dereference",
+                    "message": "Incrementing \"pp\", which might be null."
+                }
+            ]
+        },
+        {
+            "checker": "FORWARD_NULL",
+            "key_event_idx": 2,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/toke.l",
+                    "line": 901,
+                    "event": "var_compare_op",
+                    "message": "Comparing \"path\" to null implies that \"path\" might be null."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/toke.l",
+                    "line": 905,
+                    "event": "alias_transfer",
+                    "message": "Assigning null: \"pp\" = \"path\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/toke.l",
+                    "line": 908,
+                    "event": "var_deref_model",
+                    "message": "Passing null variable \"pp\" to function \"memcpy\", which dereferences it. (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)"
+                }
+            ]
+        },
+        {
+            "checker": "FORWARD_NULL",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/iolog.c",
+                    "line": 475,
+                    "event": "var_compare_op",
+                    "message": "Comparing \"io_logfile\" to null implies that \"io_logfile\" might be null."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/iolog.c",
+                    "line": 526,
+                    "event": "var_deref_model",
+                    "message": "Passing null variable \"io_logfile\" to function \"fprintf\", which dereferences it."
+                }
+            ]
+        },
+        {
+            "checker": "FORWARD_NULL",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c",
+                    "line": 400,
+                    "event": "var_compare_op",
+                    "message": "Comparing \"pw\" to null implies that \"pw\" might be null."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c",
+                    "line": 403,
+                    "event": "var_deref_op",
+                    "message": "Dereferencing null variable \"pw\"."
+                }
+            ]
+        },
+        {
+            "checker": "FORWARD_NULL",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoreplay.c",
+                    "line": 668,
+                    "event": "var_compare_op",
+                    "message": "Comparing \"fp\" to null implies that \"fp\" might be null."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoreplay.c",
+                    "line": 745,
+                    "event": "var_deref_model",
+                    "message": "Passing null variable \"fp\" to function \"fclose\", which dereferences it."
+                }
+            ]
+        },
+        {
+            "checker": "FORWARD_NULL",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/src/utmp.c",
+                    "line": 140,
+                    "event": "var_compare_op",
+                    "message": "Comparing \"ut_old\" to null implies that \"ut_old\" might be null."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/src/utmp.c",
+                    "line": 153,
+                    "event": "var_deref_model",
+                    "message": "Passing null variable \"ut_old\" to function \"utmp_setid\", which dereferences it."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/src/utmp.c",
+                    "line": 101,
+                    "event": "deref_parm_field_in_call",
+                    "message": "Function \"strncmp\" dereferences field \"old->ut_id\". (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)"
+                }
+            ]
+        },
+        {
+            "checker": "MISSING_BREAK",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/auth/pam.c",
+                    "line": 168,
+                    "event": "unterminated_case",
+                    "message": "This case (value 7) is not terminated by a 'break' statement."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/auth/pam.c",
+                    "line": 173,
+                    "event": "fallthrough",
+                    "message": "The above case falls through to this one."
+                }
+            ]
+        },
+        {
+            "checker": "MISSING_BREAK",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/match.c",
+                    "line": 696,
+                    "event": "unterminated_case",
+                    "message": "This case (value 2) is not terminated by a 'break' statement."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/match.c",
+                    "line": 700,
+                    "event": "fallthrough",
+                    "message": "The above case falls through to this one."
+                }
+            ]
+        },
+        {
+            "checker": "NEGATIVE_RETURNS",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/iolog.c",
+                    "line": 168,
+                    "event": "var_tested_neg",
+                    "message": "Variable \"fd\" tests negative."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/iolog.c",
+                    "line": 173,
+                    "event": "negative_returns",
+                    "message": "\"fd\" is passed to a parameter that cannot be negative."
+                }
+            ]
+        },
+        {
+            "checker": "NEGATIVE_RETURNS",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/src/selinux.c",
+                    "line": 160,
+                    "event": "var_tested_neg",
+                    "message": "Variable \"se_state.ttyfd\" tests negative."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/src/selinux.c",
+                    "line": 204,
+                    "event": "negative_returns",
+                    "message": "\"se_state.ttyfd\" is passed to a parameter that cannot be negative."
+                }
+            ]
+        },
+        {
+            "checker": "NEGATIVE_RETURNS",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/src/selinux.c",
+                    "line": 193,
+                    "event": "var_tested_neg",
+                    "message": "Variable \"se_state.ttyfd\" tests negative."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/src/selinux.c",
+                    "line": 198,
+                    "event": "negative_returns",
+                    "message": "\"se_state.ttyfd\" is passed to a parameter that cannot be negative."
+                }
+            ]
+        },
+        {
+            "checker": "NEGATIVE_RETURNS",
+            "key_event_idx": 2,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/src/sudo_edit.c",
+                    "line": 201,
+                    "event": "negative_return_fn",
+                    "message": "Function \"read(ofd, buf, sizeof (buf) /*8192*/)\" returns a negative number."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/src/sudo_edit.c",
+                    "line": 201,
+                    "event": "var_assign",
+                    "message": "Assigning: signed variable \"nread\" = \"read\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/src/sudo_edit.c",
+                    "line": 202,
+                    "event": "negative_returns",
+                    "message": "\"nread\" is passed to a parameter that cannot be negative."
+                }
+            ]
+        },
+        {
+            "checker": "NULL_RETURNS",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/visudo.c",
+                    "line": 844,
+                    "event": "returned_null",
+                    "message": "Function \"strtok\" returns null (checked 32 out of 34 times)."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/group_plugin.c",
+                    "line": 148,
+                    "event": "example_assign",
+                    "message": "Assigning: \"cp\" = return value from \"strtok(NULL, \" \\t\")\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/group_plugin.c",
+                    "line": 148,
+                    "event": "example_checked",
+                    "message": "\"cp\" has its value checked in \"cp\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/group_plugin.c",
+                    "line": 148,
+                    "event": "example_assign",
+                    "message": "Assigning: \"cp\" = return value from \"strtok(args, \" \\t\")\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/group_plugin.c",
+                    "line": 148,
+                    "event": "example_checked",
+                    "message": "\"cp\" has its value checked in \"cp\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/interfaces.c",
+                    "line": 66,
+                    "event": "example_assign",
+                    "message": "Assigning: \"addr\" = return value from \"strtok(NULL, \" \\t\")\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/interfaces.c",
+                    "line": 66,
+                    "event": "example_checked",
+                    "message": "\"addr\" has its value checked in \"addr != NULL\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/interfaces.c",
+                    "line": 66,
+                    "event": "example_assign",
+                    "message": "Assigning: \"addr\" = return value from \"strtok(addrinfo, \" \\t\")\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/interfaces.c",
+                    "line": 66,
+                    "event": "example_checked",
+                    "message": "\"addr\" has its value checked in \"addr != NULL\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/interfaces.c",
+                    "line": 110,
+                    "event": "example_assign",
+                    "message": "Assigning: \"cp\" = return value from \"strtok(NULL, \" \\t\")\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/interfaces.c",
+                    "line": 110,
+                    "event": "example_checked",
+                    "message": "\"cp\" has its value checked in \"cp != NULL\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/visudo.c",
+                    "line": 844,
+                    "event": "var_assigned",
+                    "message": "Assigning: \"Editor\" = null return value from \"strtok\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/visudo.c",
+                    "line": 846,
+                    "event": "dereference",
+                    "message": "Dereferencing a pointer that might be null \"Editor\" when calling \"get_args\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/visudo.c",
+                    "line": 903,
+                    "event": "var_assign_parm",
+                    "message": "Assigning: \"args\" = \"cmnd\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/visudo.c",
+                    "line": 904,
+                    "event": "deref_var",
+                    "message": "Dereferencing \"args\", which equals a pointer parameter."
+                }
+            ]
+        },
+        {
+            "checker": "NULL_RETURNS",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/visudo.c",
+                    "line": 880,
+                    "event": "returned_null",
+                    "message": "Function \"strtok\" returns null (checked 32 out of 34 times)."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/group_plugin.c",
+                    "line": 148,
+                    "event": "example_assign",
+                    "message": "Assigning: \"cp\" = return value from \"strtok(NULL, \" \\t\")\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/group_plugin.c",
+                    "line": 148,
+                    "event": "example_checked",
+                    "message": "\"cp\" has its value checked in \"cp\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/group_plugin.c",
+                    "line": 148,
+                    "event": "example_assign",
+                    "message": "Assigning: \"cp\" = return value from \"strtok(args, \" \\t\")\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/group_plugin.c",
+                    "line": 148,
+                    "event": "example_checked",
+                    "message": "\"cp\" has its value checked in \"cp\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/interfaces.c",
+                    "line": 66,
+                    "event": "example_assign",
+                    "message": "Assigning: \"addr\" = return value from \"strtok(NULL, \" \\t\")\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/interfaces.c",
+                    "line": 66,
+                    "event": "example_checked",
+                    "message": "\"addr\" has its value checked in \"addr != NULL\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/interfaces.c",
+                    "line": 66,
+                    "event": "example_assign",
+                    "message": "Assigning: \"addr\" = return value from \"strtok(addrinfo, \" \\t\")\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/interfaces.c",
+                    "line": 66,
+                    "event": "example_checked",
+                    "message": "\"addr\" has its value checked in \"addr != NULL\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/interfaces.c",
+                    "line": 110,
+                    "event": "example_assign",
+                    "message": "Assigning: \"cp\" = return value from \"strtok(NULL, \" \\t\")\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/interfaces.c",
+                    "line": 110,
+                    "event": "example_checked",
+                    "message": "\"cp\" has its value checked in \"cp != NULL\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/visudo.c",
+                    "line": 880,
+                    "event": "var_assigned",
+                    "message": "Assigning: \"Editor\" = null return value from \"strtok\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/visudo.c",
+                    "line": 882,
+                    "event": "dereference",
+                    "message": "Dereferencing a pointer that might be null \"Editor\" when calling \"get_args\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/visudo.c",
+                    "line": 903,
+                    "event": "var_assign_parm",
+                    "message": "Assigning: \"args\" = \"cmnd\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/visudo.c",
+                    "line": 904,
+                    "event": "deref_var",
+                    "message": "Dereferencing \"args\", which equals a pointer parameter."
+                }
+            ]
+        },
+        {
+            "checker": "RESOURCE_LEAK",
+            "key_event_idx": 3,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/logging.c",
+                    "line": 190,
+                    "event": "alloc_fn",
+                    "message": "Calling allocation function \"fopen\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/logging.c",
+                    "line": 190,
+                    "event": "var_assign",
+                    "message": "Assigning: \"fp\" =  storage returned from \"fopen(sudo_defs_table[37].sd_un.str, \"a\")\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/logging.c",
+                    "line": 194,
+                    "event": "noescape",
+                    "message": "Variable \"fp\" is not freed or pointed-to in function \"fileno\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/logging.c",
+                    "line": 280,
+                    "event": "leaked_storage",
+                    "message": "Variable \"fp\" going out of scope leaks the storage it points to."
+                }
+            ]
+        },
+        {
+            "checker": "RESOURCE_LEAK",
+            "key_event_idx": 5,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/toke.l",
+                    "line": 658,
+                    "event": "alloc_fn",
+                    "message": "Calling allocation function \"opendir\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/toke.l",
+                    "line": 658,
+                    "event": "var_assign",
+                    "message": "Assigning: \"dir\" =  storage returned from \"opendir(dirpath)\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/toke.l",
+                    "line": 670,
+                    "event": "noescape",
+                    "message": "Variable \"dir\" is not freed or pointed-to in function \"readdir\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/toke.l",
+                    "line": 670,
+                    "event": "noescape",
+                    "message": "Variable \"dir\" is not freed or pointed-to in function \"readdir\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/toke.l",
+                    "line": 670,
+                    "event": "noescape",
+                    "message": "Variable \"dir\" is not freed or pointed-to in function \"readdir\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/toke.l",
+                    "line": 738,
+                    "event": "leaked_storage",
+                    "message": "Variable \"dir\" going out of scope leaks the storage it points to."
+                }
+            ]
+        },
+        {
+            "checker": "RESOURCE_LEAK",
+            "key_event_idx": 16,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c",
+                    "line": 1401,
+                    "event": "alloc_fn",
+                    "message": "Calling allocation function \"estrdup\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/common/alloc.c",
+                    "line": 158,
+                    "event": "alloc_fn",
+                    "message": "Storage is returned from allocation function \"emalloc\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/common/alloc.c",
+                    "line": 81,
+                    "event": "alloc_fn",
+                    "message": "Storage is returned from allocation function \"malloc\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/common/alloc.c",
+                    "line": 81,
+                    "event": "var_assign",
+                    "message": "Assigning: \"ptr\" = \"malloc(size)\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/common/alloc.c",
+                    "line": 83,
+                    "event": "return_alloc",
+                    "message": "Returning allocated memory \"ptr\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/common/alloc.c",
+                    "line": 158,
+                    "event": "var_assign",
+                    "message": "Assigning: \"dst\" = \"emalloc(len + 1UL)\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/common/alloc.c",
+                    "line": 159,
+                    "event": "noescape",
+                    "message": "Variable \"dst\" is not freed or pointed-to in function \"memcpy\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/common/alloc.c",
+                    "line": 162,
+                    "event": "return_alloc",
+                    "message": "Returning allocated memory \"dst\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c",
+                    "line": 1401,
+                    "event": "var_assign",
+                    "message": "Assigning: \"editor\" =  storage returned from \"estrdup(sudo_defs_table[51].sd_un.str)\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c",
+                    "line": 1402,
+                    "event": "noescape",
+                    "message": "Variable \"editor\" is not freed or pointed-to in function \"strtok\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c",
+                    "line": 1402,
+                    "event": "var_assign",
+                    "message": "Assigning: \"cp\" =  storage returned from \"strtok(editor, \":\")\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c",
+                    "line": 1404,
+                    "event": "noescape",
+                    "message": "Variable \"cp\" is not freed or pointed-to in function \"resolve_editor\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c",
+                    "line": 1333,
+                    "column": 22,
+                    "event": "noescape",
+                    "message": "\"resolve_editor\" does not free or save its pointer parameter \"editor\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c",
+                    "line": 1405,
+                    "event": "overwrite_var",
+                    "message": "Overwriting \"cp\" in call \"cp = strtok(NULL, \":\")\" leaks the storage that \"cp\" points to."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c",
+                    "line": 1411,
+                    "event": "noescape",
+                    "message": "Variable \"editor\" is not freed or pointed-to in function \"audit_failure\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c",
+                    "line": 1412,
+                    "event": "noescape",
+                    "message": "Variable \"editor\" is not freed or pointed-to in function \"warningx\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c",
+                    "line": 1414,
+                    "event": "leaked_storage",
+                    "message": "Variable \"editor\" going out of scope leaks the storage it points to."
+                }
+            ]
+        },
+        {
+            "checker": "RESOURCE_LEAK",
+            "key_event_idx": 8,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c",
+                    "line": 600,
+                    "event": "alloc_arg",
+                    "message": "Calling allocation function \"find_editor\" on \"edit_argv\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c",
+                    "line": 1394,
+                    "event": "alloc_arg",
+                    "message": "\"resolve_editor\" opens handle stored into \"*argv_out\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c",
+                    "line": 1361,
+                    "event": "alloc_fn",
+                    "message": "Storage is returned from allocation function \"emalloc2\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/common/alloc.c",
+                    "line": 101,
+                    "event": "alloc_fn",
+                    "message": "Storage is returned from allocation function \"malloc\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/common/alloc.c",
+                    "line": 101,
+                    "event": "var_assign",
+                    "message": "Assigning: \"ptr\" = \"malloc(size)\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/common/alloc.c",
+                    "line": 103,
+                    "event": "return_alloc",
+                    "message": "Returning allocated memory \"ptr\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c",
+                    "line": 1361,
+                    "event": "var_assign",
+                    "message": "Assigning: \"nargv\" = \"emalloc2(nargc + 1 + nfiles + 1, sizeof (char *) /*8*/)\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c",
+                    "line": 1371,
+                    "event": "var_assign",
+                    "message": "Assigning: \"*argv_out\" = \"nargv\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c",
+                    "line": 685,
+                    "event": "leaked_storage",
+                    "message": "Variable \"edit_argv\" going out of scope leaks the storage it points to."
+                }
+            ]
+        },
+        {
+            "checker": "RESOURCE_LEAK",
+            "key_event_idx": 9,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/visudo.c",
+                    "line": 325,
+                    "event": "alloc_fn",
+                    "message": "Calling allocation function \"emalloc2\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/common/alloc.c",
+                    "line": 101,
+                    "event": "alloc_fn",
+                    "message": "Storage is returned from allocation function \"malloc\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/common/alloc.c",
+                    "line": 101,
+                    "event": "var_assign",
+                    "message": "Assigning: \"ptr\" = \"malloc(size)\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/common/alloc.c",
+                    "line": 103,
+                    "event": "return_alloc",
+                    "message": "Returning allocated memory \"ptr\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/visudo.c",
+                    "line": 325,
+                    "event": "var_assign",
+                    "message": "Assigning: \"av\" =  storage returned from \"emalloc2(ac, sizeof (char *) /*8*/)\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/visudo.c",
+                    "line": 349,
+                    "event": "noescape",
+                    "message": "Variable \"av\" is not freed or pointed-to in function \"run_command\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/visudo.c",
+                    "line": 654,
+                    "column": 32,
+                    "event": "noescape",
+                    "message": "\"run_command\" does not free or save its pointer parameter \"argv\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/visudo.c",
+                    "line": 357,
+                    "event": "leaked_storage",
+                    "message": "Variable \"av\" going out of scope leaks the storage it points to."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/visudo.c",
+                    "line": 367,
+                    "event": "leaked_storage",
+                    "message": "Variable \"av\" going out of scope leaks the storage it points to."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/visudo.c",
+                    "line": 391,
+                    "event": "leaked_storage",
+                    "message": "Variable \"av\" going out of scope leaks the storage it points to."
+                }
+            ]
+        },
+        {
+            "checker": "RESOURCE_LEAK",
+            "key_event_idx": 3,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/src/load_plugins.c",
+                    "line": 179,
+                    "event": "alloc_fn",
+                    "message": "Calling allocation function \"dlopen\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/src/load_plugins.c",
+                    "line": 179,
+                    "event": "var_assign",
+                    "message": "Assigning: \"handle\" =  storage returned from \"dlopen(path, 1)\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/src/load_plugins.c",
+                    "line": 184,
+                    "event": "noescape",
+                    "message": "Variable \"handle\" is not freed or pointed-to in function \"dlsym\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/src/load_plugins.c",
+                    "line": 231,
+                    "event": "leaked_storage",
+                    "message": "Variable \"handle\" going out of scope leaks the storage it points to."
+                }
+            ]
+        },
+        {
+            "checker": "RESOURCE_LEAK",
+            "key_event_idx": 11,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/src/sudo_edit.c",
+                    "line": 148,
+                    "event": "alloc_fn",
+                    "message": "Calling allocation function \"emalloc2\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/common/alloc.c",
+                    "line": 101,
+                    "event": "alloc_fn",
+                    "message": "Storage is returned from allocation function \"malloc\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/common/alloc.c",
+                    "line": 101,
+                    "event": "var_assign",
+                    "message": "Assigning: \"ptr\" = \"malloc(size)\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/common/alloc.c",
+                    "line": 103,
+                    "event": "return_alloc",
+                    "message": "Returning allocated memory \"ptr\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/src/sudo_edit.c",
+                    "line": 148,
+                    "event": "var_assign",
+                    "message": "Assigning: \"tf\" =  storage returned from \"emalloc2(nfiles, sizeof (*tf) /*40*/)\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/src/sudo_edit.c",
+                    "line": 149,
+                    "event": "noescape",
+                    "message": "Variable \"tf\" is not freed or pointed-to in function \"zero_bytes\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/common/zero_bytes.c",
+                    "line": 29,
+                    "column": 27,
+                    "event": "noescape",
+                    "message": "\"zero_bytes\" does not free or save its pointer parameter \"v\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/src/sudo_edit.c",
+                    "line": 219,
+                    "event": "noescape",
+                    "message": "Variable \"tf\" is not freed or pointed-to in function \"touch\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/common/fileops.c",
+                    "line": 61,
+                    "column": 43,
+                    "event": "noescape",
+                    "message": "\"touch\" does not free or save its pointer parameter \"tvp\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/src/sudo_edit.c",
+                    "line": 231,
+                    "event": "leaked_storage",
+                    "message": "Variable \"tf\" going out of scope leaks the storage it points to."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/src/sudo_edit.c",
+                    "line": 333,
+                    "event": "leaked_storage",
+                    "message": "Variable \"tf\" going out of scope leaks the storage it points to."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/src/sudo_edit.c",
+                    "line": 340,
+                    "event": "leaked_storage",
+                    "message": "Variable \"tf\" going out of scope leaks the storage it points to."
+                }
+            ]
+        },
+        {
+            "checker": "STRAY_SEMICOLON",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/visudo.c",
+                    "line": 1157,
+                    "event": "stray_semicolon",
+                    "message": "\"if\" statement \"if (write(2, (/*implicit*/void const *)myname, strlen(myname)) == -1L || write(2, (/*implicit*/void const *)(/*implicit*/char *)/*&*/\" exiting due to signal: \", 24UL /* sizeof (\" exiting due to signal: \") /*25*/ - 1UL */) == -1L || write(2, (/*implicit*/void const *)signame, strlen(signame)) == -1L || write(2, (/*implicit*/void const *)(/*implicit*/char *)/*&*/\"\\n\", 1UL) == -1L);\" with no \"then\" or \"else\" is suspicious.  Is the ';' after \"if (write(2, myname, strlen(myname)) == -1L || write(2, \" exiting due to signal: \", 24UL) == -1L || write(2, signame, strlen(signame)) == -1L || write(2, \"\\n\", 1UL) == -1L)\" extraneous?"
+                }
+            ]
+        },
+        {
+            "checker": "STRAY_SEMICOLON",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/src/tgetpass.c",
+                    "line": 300,
+                    "event": "stray_semicolon",
+                    "message": "\"if\" statement \"if (write(fd, (/*implicit*/void const *)(/*implicit*/char *)/*&*/\"*\", 1UL) == -1L);\" with no \"then\" or \"else\" is suspicious.  Is the ';' after \"if (write(fd, \"*\", 1UL) == -1L)\" extraneous?"
+                }
+            ]
+        },
+        {
+            "checker": "STRAY_SEMICOLON",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/src/exec.c",
+                    "line": 550,
+                    "event": "stray_semicolon",
+                    "message": "\"if\" statement \"if (write(signal_pipe[1], (/*implicit*/void const *)&signo, sizeof (signo) /*1*/) == -1L);\" with no \"then\" or \"else\" is suspicious.  Is the ';' after \"if (write(signal_pipe[1], &signo, sizeof (signo) /*1*/) == -1L)\" extraneous?"
+                }
+            ]
+        },
+        {
+            "checker": "STRAY_SEMICOLON",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/src/exec_pty.c",
+                    "line": 894,
+                    "event": "stray_semicolon",
+                    "message": "\"if\" statement \"if (write(errpipe[1], (/*implicit*/void const *)&cstat, sizeof (cstat) /*8*/) == -1L);\" with no \"then\" or \"else\" is suspicious.  Is the ';' after \"if (write(errpipe[1], &cstat, sizeof (cstat) /*8*/) == -1L)\" extraneous?"
+                }
+            ]
+        },
+        {
+            "checker": "STRAY_SEMICOLON",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/src/exec_pty.c",
+                    "line": 650,
+                    "event": "stray_semicolon",
+                    "message": "\"if\" statement \"if (write(n, (/*implicit*/void const *)(/*implicit*/char *)/*&*/\" (core dumped)\", 14UL) == -1L);\" with no \"then\" or \"else\" is suspicious.  Is the ';' after \"if (write(n, \" (core dumped)\", 14UL) == -1L)\" extraneous?"
+                }
+            ]
+        },
+        {
+            "checker": "STRAY_SEMICOLON",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/src/exec_pty.c",
+                    "line": 653,
+                    "event": "stray_semicolon",
+                    "message": "\"if\" statement \"if (write(n, (/*implicit*/void const *)(/*implicit*/char *)/*&*/\"\\n\", 1UL) == -1L);\" with no \"then\" or \"else\" is suspicious.  Is the ';' after \"if (write(n, \"\\n\", 1UL) == -1L)\" extraneous?"
+                }
+            ]
+        },
+        {
+            "checker": "TAINTED_SCALAR",
+            "key_event_idx": 6,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoreplay.c",
+                    "line": 302,
+                    "event": "var_assign_var",
+                    "message": "Assigning: \"argv[0]\" = \"id\". Both are now tainted."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoreplay.c",
+                    "line": 303,
+                    "event": "tainted_data",
+                    "message": "Using tainted variable \"(int)(unsigned char)id[0]\" as an index to pointer \"*__ctype_b_loc()\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoreplay.c",
+                    "line": 303,
+                    "event": "tainted_data",
+                    "message": "Using tainted variable \"(int)(unsigned char)id[1]\" as an index to pointer \"*__ctype_b_loc()\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoreplay.c",
+                    "line": 303,
+                    "event": "tainted_data",
+                    "message": "Using tainted variable \"(int)(unsigned char)id[2]\" as an index to pointer \"*__ctype_b_loc()\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoreplay.c",
+                    "line": 303,
+                    "event": "tainted_data",
+                    "message": "Using tainted variable \"(int)(unsigned char)id[3]\" as an index to pointer \"*__ctype_b_loc()\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoreplay.c",
+                    "line": 303,
+                    "event": "tainted_data",
+                    "message": "Using tainted variable \"(int)(unsigned char)id[4]\" as an index to pointer \"*__ctype_b_loc()\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoreplay.c",
+                    "line": 303,
+                    "event": "tainted_data",
+                    "message": "Using tainted variable \"(int)(unsigned char)id[5]\" as an index to pointer \"*__ctype_b_loc()\"."
+                }
+            ]
+        },
+        {
+            "checker": "TOCTOU",
+            "key_event_idx": 2,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/check.c",
+                    "line": 451,
+                    "event": "fs_check_call",
+                    "message": "Calling function \"lstat\" to perform check on \"dirparent\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/check.c",
+                    "line": 465,
+                    "event": "toctou",
+                    "message": "Calling function \"chmod\" that uses \"dirparent\" after a check function. This can cause a time-of-check, time-of-use race condition."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/check.c",
+                    "line": 473,
+                    "event": "toctou",
+                    "message": "Calling function \"mkdir\" that uses \"dirparent\" after a check function. This can cause a time-of-check, time-of-use race condition."
+                }
+            ]
+        },
+        {
+            "checker": "TOCTOU",
+            "key_event_idx": 3,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/check.c",
+                    "line": 490,
+                    "event": "fs_check_call",
+                    "message": "Calling function \"lstat\" to perform check on \"timestampdir\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/check.c",
+                    "line": 494,
+                    "event": "toctou",
+                    "message": "Calling function \"unlink\" that uses \"timestampdir\" after a check function. This can cause a time-of-check, time-of-use race condition."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/check.c",
+                    "line": 509,
+                    "event": "toctou",
+                    "message": "Calling function \"chmod\" that uses \"timestampdir\" after a check function. This can cause a time-of-check, time-of-use race condition."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/check.c",
+                    "line": 522,
+                    "event": "toctou",
+                    "message": "Calling function \"mkdir\" that uses \"timestampdir\" after a check function. This can cause a time-of-check, time-of-use race condition."
+                }
+            ]
+        },
+        {
+            "checker": "TOCTOU",
+            "key_event_idx": 4,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/check.c",
+                    "line": 536,
+                    "event": "fs_check_call",
+                    "message": "Calling function \"lstat\" to perform check on \"timestampfile\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/check.c",
+                    "line": 548,
+                    "event": "toctou",
+                    "message": "Calling function \"unlink\" that uses \"timestampfile\" after a check function. This can cause a time-of-check, time-of-use race condition."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/check.c",
+                    "line": 553,
+                    "event": "toctou",
+                    "message": "Calling function \"unlink\" that uses \"timestampfile\" after a check function. This can cause a time-of-check, time-of-use race condition."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/check.c",
+                    "line": 557,
+                    "event": "toctou",
+                    "message": "Calling function \"chmod\" that uses \"timestampfile\" after a check function. This can cause a time-of-check, time-of-use race condition."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/check.c",
+                    "line": 569,
+                    "event": "toctou",
+                    "message": "Calling function \"open\" that uses \"timestampfile\" after a check function. This can cause a time-of-check, time-of-use race condition."
+                }
+            ]
+        },
+        {
+            "checker": "TOCTOU",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c",
+                    "line": 922,
+                    "event": "fs_check_call",
+                    "message": "Calling function \"lstat\" to perform check on \"sudoers\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c",
+                    "line": 936,
+                    "event": "toctou",
+                    "message": "Calling function \"fopen\" that uses \"sudoers\" after a check function. This can cause a time-of-check, time-of-use race condition."
+                }
+            ]
+        },
+        {
+            "checker": "TOCTOU",
+            "key_event_idx": 2,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c",
+                    "line": 897,
+                    "event": "fs_check_call",
+                    "message": "Calling function \"lstat\" to perform check on \"sudoers\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c",
+                    "line": 901,
+                    "event": "toctou",
+                    "message": "Calling function \"chmod\" that uses \"sudoers\" after a check function. This can cause a time-of-check, time-of-use race condition."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/sudoers.c",
+                    "line": 936,
+                    "event": "toctou",
+                    "message": "Calling function \"fopen\" that uses \"sudoers\" after a check function. This can cause a time-of-check, time-of-use race condition."
+                }
+            ]
+        },
+        {
+            "checker": "TOCTOU",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/group_plugin.c",
+                    "line": 98,
+                    "event": "fs_check_call",
+                    "message": "Calling function \"stat\" to perform check on \"path\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/group_plugin.c",
+                    "line": 112,
+                    "event": "toctou",
+                    "message": "Calling function \"dlopen\" that uses \"path\" after a check function. This can cause a time-of-check, time-of-use race condition."
+                }
+            ]
+        },
+        {
+            "checker": "TOCTOU",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/iolog.c",
+                    "line": 120,
+                    "event": "fs_check_call",
+                    "message": "Calling function \"stat\" to perform check on \"path\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/iolog.c",
+                    "line": 121,
+                    "event": "toctou",
+                    "message": "Calling function \"mkdir\" that uses \"path\" after a check function. This can cause a time-of-check, time-of-use race condition."
+                }
+            ]
+        },
+        {
+            "checker": "TOCTOU",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/iolog.c",
+                    "line": 151,
+                    "event": "fs_check_call",
+                    "message": "Calling function \"stat\" to perform check on \"iolog_dir\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/iolog.c",
+                    "line": 152,
+                    "event": "toctou",
+                    "message": "Calling function \"mkdir\" that uses \"iolog_dir\" after a check function. This can cause a time-of-check, time-of-use race condition."
+                }
+            ]
+        },
+        {
+            "checker": "TOCTOU",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/src/load_plugins.c",
+                    "line": 165,
+                    "event": "fs_check_call",
+                    "message": "Calling function \"stat\" to perform check on \"path\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/src/load_plugins.c",
+                    "line": 179,
+                    "event": "toctou",
+                    "message": "Calling function \"dlopen\" that uses \"path\" after a check function. This can cause a time-of-check, time-of-use race condition."
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "key_event_idx": 2,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/src/exec_pty.c",
+                    "line": 285,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"sa\" without initializer."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/src/exec_pty.c",
+                    "line": 323,
+                    "event": "uninit_use_in_call",
+                    "message": "Using uninitialized value \"sa.sa_mask\": field \"sa.sa_mask\".__val is uninitialized when calling \"sigaction\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/src/exec_pty.c",
+                    "line": 323,
+                    "event": "uninit_use_in_call",
+                    "message": "Using uninitialized value \"sa.sa_flags\" when calling \"sigaction\"."
+                }
+            ]
+        },
+        {
+            "checker": "UNUSED_VALUE",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/group_plugin.c",
+                    "line": 80,
+                    "event": "returned_pointer",
+                    "message": "Pointer \"args\" returned by \"strpbrk(plugin_info, \" \\t\")\" is never used."
+                }
+            ]
+        },
+        {
+            "checker": "USE_AFTER_FREE",
+            "key_event_idx": 3,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/logging.c",
+                    "line": 379,
+                    "event": "alias",
+                    "message": "Assigning: \"logline\" = \"message\". Now both point to the same storage."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/logging.c",
+                    "line": 393,
+                    "event": "freed_arg",
+                    "message": "\"efree\" frees \"message\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/common/alloc.c",
+                    "line": 225,
+                    "event": "freed_arg",
+                    "message": "\"free\" frees parameter \"ptr\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/logging.c",
+                    "line": 405,
+                    "event": "deref_arg",
+                    "message": "Calling \"do_syslog\" dereferences freed pointer \"logline\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/logging.c",
+                    "line": 143,
+                    "event": "var_assign_parm",
+                    "message": "Assigning: \"p\" = \"msg\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/logging.c",
+                    "line": 143,
+                    "event": "deref_var",
+                    "message": "Dereferencing \"p\", which equals a pointer parameter."
+                }
+            ]
+        },
+        {
+            "checker": "USE_AFTER_FREE",
+            "key_event_idx": 3,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/logging.c",
+                    "line": 379,
+                    "event": "alias",
+                    "message": "Assigning: \"logline\" = \"message\". Now both point to the same storage."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/logging.c",
+                    "line": 393,
+                    "event": "freed_arg",
+                    "message": "\"efree\" frees \"message\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/common/alloc.c",
+                    "line": 225,
+                    "event": "freed_arg",
+                    "message": "\"free\" frees parameter \"ptr\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/logging.c",
+                    "line": 409,
+                    "event": "double_free",
+                    "message": "Calling \"efree\" frees pointer \"logline\" which has already been freed."
+                }
+            ]
+        },
+        {
+            "checker": "USE_AFTER_FREE",
+            "key_event_idx": 3,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/logging.c",
+                    "line": 379,
+                    "event": "alias",
+                    "message": "Assigning: \"logline\" = \"message\". Now both point to the same storage."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/logging.c",
+                    "line": 393,
+                    "event": "freed_arg",
+                    "message": "\"efree\" frees \"message\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/common/alloc.c",
+                    "line": 225,
+                    "event": "freed_arg",
+                    "message": "\"free\" frees parameter \"ptr\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/logging.c",
+                    "line": 407,
+                    "event": "pass_freed_arg",
+                    "message": "Passing freed pointer \"logline\" as an argument to function \"do_logfile\"."
+                }
+            ]
+        },
+        {
+            "checker": "USE_AFTER_FREE",
+            "key_event_idx": 3,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/logging.c",
+                    "line": 379,
+                    "event": "alias",
+                    "message": "Assigning: \"logline\" = \"message\". Now both point to the same storage."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/logging.c",
+                    "line": 393,
+                    "event": "freed_arg",
+                    "message": "\"efree\" frees \"message\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/common/alloc.c",
+                    "line": 225,
+                    "event": "freed_arg",
+                    "message": "\"free\" frees parameter \"ptr\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/logging.c",
+                    "line": 399,
+                    "event": "pass_freed_arg",
+                    "message": "Passing freed pointer \"logline\" as an argument to function \"send_mail\"."
+                }
+            ]
+        }
+    ]
+}
