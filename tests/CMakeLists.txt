@@ -100,6 +100,7 @@ test_csparser(csparser-5.8                          02)
 test_cssort(cssort-5.8                              00)
 test_cssort(cssort-5.8                              01)
 test_cssort(cssort-5.8                              02)
+test_cssort(cssort-5.8                              03)
 
 # csdiff tests
 test_csdiff(diff7.0-qt                              00)

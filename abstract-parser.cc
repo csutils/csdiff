@@ -49,6 +49,8 @@ AbstractParser* createParser(
     return new CovParser(input, fileName, silent);
 }
 
-bool Parser::isJson() const {
-    return !!dynamic_cast<JsonParser *>(parser_);
+EFileFormat Parser::inputFormat() const {
+    return (dynamic_cast<JsonParser *>(parser_))\
+        ? FF_JSON
+        : FF_COVERITY;
 }

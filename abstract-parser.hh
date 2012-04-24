@@ -41,6 +41,12 @@ struct Defect {
     unsigned                keyEventIdx;    ///< in range 0..(events.size()-1)
 };
 
+enum EFileFormat {
+    FF_INVALID = 0,                         ///< for signalling errors
+    FF_COVERITY,                            ///< what cov-format-errors produces
+    FF_JSON                                 ///< JSON format
+};
+
 // abstract class with a factory method
 class AbstractParser {
     public:
@@ -77,7 +83,11 @@ class Parser {
             return parser_->hasError();
         }
 
-        bool isJson() const;
+        EFileFormat inputFormat() const;
+
+        bool isJson() const {
+            return FF_JSON == this->inputFormat();
+        }
 
     private:
         Parser(const Parser &);

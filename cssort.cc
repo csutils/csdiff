@@ -39,10 +39,20 @@ class GenericSort: public AbstractWriter {
             // sort the container
             std::sort(cont_.begin(), cont_.end());
 
+            // use the same output format is the input format
+            AbstractWriter *writer = createWriter(this->inputFormat());
+
+            if (!writer)
+                // fallback to default
+                writer = new CovWriter;
+
             // write the data
-            CovWriter writer;
             BOOST_FOREACH(const Defect &def, cont_)
-                writer.handleDef(def);
+                writer->handleDef(def);
+
+            // flush data and destroy writer
+            writer->flush();
+            delete writer;
         }
 
     protected:

@@ -19,7 +19,9 @@
 
 #include "abstract-writer.hh"
 
+#include "cswriter.hh"
 #include "instream.hh"
+#include "json-writer.hh"
 
 // /////////////////////////////////////////////////////////////////////////////
 // implementation of AbstractWriter
@@ -30,7 +32,11 @@ bool AbstractWriter::handleFile(const std::string &fileName, bool silent) {
 
         this->notifyFile(fileName);
 
+        // detect the input format and create the parser
         Parser parser(str.str(), fileName, silent);
+        if (inputFormat_ == FF_INVALID)
+            inputFormat_ = parser.inputFormat();
+
         Defect def;
         while (parser.getNext(&def))
             this->handleDef(def);
@@ -41,4 +47,19 @@ bool AbstractWriter::handleFile(const std::string &fileName, bool silent) {
         std::cerr << e.fileName << ": failed to open input file\n";
         return false;
     }
+}
+
+AbstractWriter* createWriter(const EFileFormat format) {
+    switch (format) {
+        case FF_INVALID:
+            break;
+
+        case FF_COVERITY:
+            return new CovWriter;
+
+        case FF_JSON:
+            return new JsonWriter;
+    }
+
+    return 0;
 }

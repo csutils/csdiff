@@ -22,22 +22,36 @@
 
 #include "abstract-parser.hh"
 
+// FIXME: misleading class name
 class AbstractWriter {
     public:
         virtual void handleDef(const Defect &def) = 0;
         virtual void notifyFile(const std::string &) { }
 
     public:
-        AbstractWriter() { }
+        AbstractWriter():
+            inputFormat_(FF_INVALID)
+        {
+        }
+
         virtual ~AbstractWriter() { }
+
+        virtual void flush() { };
 
         bool handleFile(const std::string &fileName, bool silent);
 
-        virtual void flush() { };
+        EFileFormat inputFormat() const {
+            return inputFormat_;
+        }
 
     private:
         AbstractWriter(const AbstractWriter &);
         AbstractWriter& operator=(const AbstractWriter &);
+
+    private:
+        EFileFormat inputFormat_;
 };
+
+AbstractWriter* createWriter(const EFileFormat format);
 
 #endif /* H_GUARD_ABSTRACT_WRITER_H */
