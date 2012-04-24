@@ -19,29 +19,17 @@
 
 #include "abstract-parser.hh"
 #include "cswriter.hh"
-#include "instream.hh"
 
 #include <boost/foreach.hpp>
 #include <boost/program_options.hpp>
 
-class AbstractSort {
-    public:
-        virtual ~AbstractSort() { }
-        virtual bool handleFile(const std::string &fname, bool silent);
-        virtual void flush() = 0;
-
-    protected:
-        /// template method
-        virtual void insertDef(const Defect &) = 0;
-};
-
 class SortFactory {
     public:
-        AbstractSort* create(const std::string &key);
+        AbstractWriter* create(const std::string &key);
 };
 
 template <class TItem>
-class GenericSort: public AbstractSort {
+class GenericSort: public AbstractWriter {
     private:
         typedef std::vector<TItem> TCont;
         TCont cont_;
@@ -58,7 +46,7 @@ class GenericSort: public AbstractSort {
         }
 
     protected:
-        virtual void insertDef(const Defect &def) {
+        virtual void handleDef(const Defect &def) {
             cont_.push_back(static_cast<const TItem &>(def));
         }
 };
@@ -93,26 +81,7 @@ bool operator<(const DefByPath &a, const DefByPath &b) {
     return cmpFileNames(a, b);
 }
 
-bool AbstractSort::handleFile(const std::string &fname, bool silent) {
-    try {
-        // create a parser
-        InStream fstr(fname.c_str());
-        Parser parser(fstr.str(), fname, silent);
-
-        // parse the input
-        Defect def;
-        while (parser.getNext(&def))
-            this->insertDef(def);
-
-        return !parser.hasError();
-    }
-    catch (const InFileException &e) {
-        std::cerr << e.fileName << ": failed to open input file\n";
-        return false;
-    }
-}
-
-AbstractSort* SortFactory::create(const std::string &key) {
+AbstractWriter* SortFactory::create(const std::string &key) {
     if (!key.compare("checker"))
         return new GenericSort<DefByChecker>;
 
@@ -180,7 +149,7 @@ int main(int argc, char *argv[])
     }
 
     SortFactory factory;
-    AbstractSort *eng = factory.create(key);
+    AbstractWriter *eng = factory.create(key);
     if (!eng) {
         std::cerr << name << ": error: unknown key: " << key << "\n\n";
         printUsage(std::cerr, desc);
