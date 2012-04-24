@@ -16,6 +16,7 @@
 # along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
 
 # common setup for all tests
+set(csannot     "${csdiff_BINARY_DIR}/csannot")
 set(csdiff      "${csdiff_BINARY_DIR}/csdiff")
 set(csgrep      "${csdiff_BINARY_DIR}/csgrep")
 set(csjson      "${csdiff_BINARY_DIR}/csjson")
@@ -30,6 +31,21 @@ macro(add_test_wrap test_name cmd)
 endmacro()
 
 set(test_cost 1048576)
+
+# a generic template for csannot test-cases
+macro(test_csannot dir num)
+    set(tab "${testdir}/${dir}/def-to-cwe.map")
+    set(tst "${testdir}/${dir}/${num}")
+
+    set(cmd "${csannot} ${tab} <${tst}-input.err 2>/dev/null")
+    set(cmd "${cmd} | ${diffcmd} ${tst}-output.err -")
+    add_test_wrap("${dir}-${num}" "${cmd}")
+
+    set(cmd "${csannot} ${tab} <${tst}-input.err 2>/dev/null")
+    set(cmd "${cmd} | ${csannot} ${tab} 2>/dev/null")
+    set(cmd "${cmd} | ${diffcmd} ${tst}-output.err -")
+    add_test_wrap("${dir}-${num}-twice" "${cmd}")
+endmacro()
 
 # a generic template for a csdiff test-case
 macro(test_csdiff dir num)
@@ -96,7 +112,10 @@ test_csparser(csparser-5.8                          00)
 test_csparser(csparser-5.8                          01)
 test_csparser(csparser-5.8                          02)
 
-# csgrep tests
+# csannot tests
+test_csannot(csannot                                00)
+
+# cssort tests
 test_cssort(cssort-5.8                              00)
 test_cssort(cssort-5.8                              01)
 test_cssort(cssort-5.8                              02)
