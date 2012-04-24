@@ -1,0 +1,509 @@
+Error: BAD_FREE:
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/readframe.c:327: address_free: "Frame_Resize" frees address of "tempFrame".
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/frame.c:835: freed_arg: "free" frees parameter "mf".
+
+Error: BAD_FREE:
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/param.c:352: address_free: "mergeInputSource" frees address of "subInputSource".
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/param.c:298: freed_arg: "free" frees parameter "addedSourceP".
+
+Error: BAD_SIZEOF:
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_enc.c:2109: bad_sizeof: Taking the size of binary expression "tcmpt->numstepsizes * sizeof (uint_fast16_t) /*8*/" is suspicious.  Did you intend "sizeof(tcmpt->numstepsizes) * sizeof (uint_fast16_t) /*8*/"?
+
+Error: BUFFER_SIZE_WARNING:
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/xpmtoppm.c:154: buffer_size_warning: Calling strncpy with a maximum size argument of 8193 bytes on destination array "lastInputLine" of size 8193 bytes might leave the destination string unterminated.
+
+Error: BUFFER_SIZE_WARNING:
+/builddir/build/BUILD/netpbm-10.35.58/other/pamx/window.c:499: buffer_size_warning: Calling strncpy with a maximum size argument of 8192 bytes on destination array "buf" of size 8192 bytes might leave the destination string unterminated.
+
+Error: CHAR_IO:
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/cameratopam/camera.c:896: char_io: Assigning the return value of "fgetc" to char "c" truncates its value.
+
+Error: CHAR_IO:
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/cameratopam/camera.c:958: char_io: Assigning the return value of "fgetc" to char "c" truncates its value.
+
+Error: CHAR_IO:
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/cameratopam/canon.c:147: char_io: Assigning the return value of "fgetc" to char "c" truncates its value.
+
+Error: CHAR_IO:
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/cameratopam/util.c:21: char_io: Assigning the return value of "fgetc" to char "a" truncates its value.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/cameratopam/util.c:21: char_io: Assigning the return value of "fgetc" to char "b" truncates its value.
+
+Error: CHAR_IO:
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/cameratopam/util.c:37: char_io: Assigning the return value of "fgetc" to char "a" truncates its value.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/cameratopam/util.c:37: char_io: Assigning the return value of "fgetc" to char "b" truncates its value.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/cameratopam/util.c:38: char_io: Assigning the return value of "fgetc" to char "c" truncates its value.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/cameratopam/util.c:38: char_io: Assigning the return value of "fgetc" to char "d" truncates its value.
+
+Error: CHAR_IO:
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/xwdtopnm.c:887: char_io: Assigning the return value of "_IO_getc" to char "item8" truncates its value.
+
+Error: CHAR_IO:
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/macptopbm.c:130: char_io: Assigning the return value of "_IO_getc" to char "ch" truncates its value.
+
+Error: CHAR_IO:
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/mgrtopbm.c:90: char_io: Assigning the return value of "_IO_getc" to char "item" truncates its value.
+
+Error: CHAR_IO:
+/builddir/build/BUILD/netpbm-10.35.58/converter/pgm/lispmtopgm.c:91: char_io: Assigning the return value of "_IO_getc" to char "magic[i]" truncates its value.
+
+Error: CHAR_IO:
+/builddir/build/BUILD/netpbm-10.35.58/converter/pgm/spottopgm.c:208: char_io: Assigning the return value of "fgetc" to char "arecord.sub1" truncates its value.
+/builddir/build/BUILD/netpbm-10.35.58/converter/pgm/spottopgm.c:209: char_io: Assigning the return value of "fgetc" to char "arecord.type" truncates its value.
+/builddir/build/BUILD/netpbm-10.35.58/converter/pgm/spottopgm.c:210: char_io: Assigning the return value of "fgetc" to char "arecord.sub2" truncates its value.
+/builddir/build/BUILD/netpbm-10.35.58/converter/pgm/spottopgm.c:211: char_io: Assigning the return value of "fgetc" to char "arecord.sub3" truncates its value.
+
+Error: CHAR_IO:
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/leaftoppm.c:64: char_io: Assigning the return value of "fgetc" to char "compressed" truncates its value.
+
+Error: CHAR_IO:
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/pc1toppm.c:76: char_io: Assigning the return value of "_IO_getc" to char "*(*lineposP)++" truncates its value.
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/pc1toppm.c:82: char_io: Assigning the return value of "_IO_getc" to char "duplicated_color" truncates its value.
+
+Error: CHAR_IO:
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/spctoppm.c:52: char_io: Assigning the return value of "_IO_getc" to char "c1" truncates its value.
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/spctoppm.c:53: char_io: Assigning the return value of "_IO_getc" to char "c2" truncates its value.
+
+Error: CHAR_IO:
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/spctoppm.c:137: char_io: Assigning the return value of "_IO_getc" to char "h" truncates its value.
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/spctoppm.c:144: char_io: Assigning the return value of "_IO_getc" to char "c" truncates its value.
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/spctoppm.c:152: char_io: Assigning the return value of "_IO_getc" to char "c" truncates its value.
+
+Error: CHAR_IO:
+/builddir/build/BUILD/netpbm-10.35.58/lib/ppmdfont.c:17: char_io: Assigning the return value of "fgetc" to char "glyphHeaderP->commandCount" truncates its value.
+/builddir/build/BUILD/netpbm-10.35.58/lib/ppmdfont.c:18: char_io: Assigning the return value of "fgetc" to char "glyphHeaderP->skipBefore" truncates its value.
+/builddir/build/BUILD/netpbm-10.35.58/lib/ppmdfont.c:19: char_io: Assigning the return value of "fgetc" to char "glyphHeaderP->skipAfter" truncates its value.
+
+Error: CHAR_IO:
+/builddir/build/BUILD/netpbm-10.35.58/lib/ppmdfont.c:29: char_io: Assigning the return value of "fgetc" to char "glyphCommandP->x" truncates its value.
+/builddir/build/BUILD/netpbm-10.35.58/lib/ppmdfont.c:30: char_io: Assigning the return value of "fgetc" to char "glyphCommandP->y" truncates its value.
+
+Error: CHAR_IO:
+/builddir/build/BUILD/netpbm-10.35.58/lib/ppmdfont.c:67: char_io: Assigning the return value of "fgetc" to char "fontHeaderP->format" truncates its value.
+/builddir/build/BUILD/netpbm-10.35.58/lib/ppmdfont.c:68: char_io: Assigning the return value of "fgetc" to char "fontHeaderP->characterCount" truncates its value.
+/builddir/build/BUILD/netpbm-10.35.58/lib/ppmdfont.c:69: char_io: Assigning the return value of "fgetc" to char "fontHeaderP->firstCodePoint" truncates its value.
+
+Error: CHAR_IO:
+/builddir/build/BUILD/netpbm-10.35.58/urt/rle_getrow.c:397: char_io: Assigning the return value of "_IO_getc" to char "inst[0]" truncates its value.
+/builddir/build/BUILD/netpbm-10.35.58/urt/rle_getrow.c:398: char_io: Assigning the return value of "_IO_getc" to char "inst[1]" truncates its value.
+
+Error: CHAR_IO:
+/builddir/build/BUILD/netpbm-10.35.58/urt/rle_getskip.c:77: char_io: Assigning the return value of "_IO_getc" to char "inst[0]" truncates its value.
+/builddir/build/BUILD/netpbm-10.35.58/urt/rle_getskip.c:78: char_io: Assigning the return value of "_IO_getc" to char "inst[1]" truncates its value.
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/cameratopam/camera.c:1261: check_return: Calling function "sscanf" without checking return value (as is done elsewhere 154 out of 182 times).
+/builddir/build/BUILD/netpbm-10.35.58/lib/colorname.c:125: example_checked: "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname)" has its value checked in "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname) == 4".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libppmcolor.c:226: example_checked: "sscanf(colorname, "rgbi:%f/%f/%f", &fr, &fg, &fb)" has its value checked in "sscanf(colorname, "rgbi:%f/%f/%f", &fr, &fg, &fb) != 3".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libppmcolor.c:354: example_checked: "sscanf(colorname, "%f,%f,%f", &fr, &fg, &fb)" has its value checked in "sscanf(colorname, "%f,%f,%f", &fr, &fg, &fb) != 3".
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/macptopbm.c:42: example_checked: "sscanf(argv[argn], "%d", &extraskip)" has its value checked in "sscanf(argv[argn], "%d", &extraskip) != 1".
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/xbmtopbm.c:112: example_checked: "sscanf(line, "#define %s %d", name_and_type, &v)" has its value checked in "sscanf(line, "#define %s %d", name_and_type, &v) == 2".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/cameratopam/camera.c:1261: unchecked_value: No check of the return value of "sscanf(val, "%d.%d.%d", &t.tm_mday, &t.tm_mon, &t.tm_year)".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/cameratopam/camera.c:1263: check_return: Calling function "sscanf" without checking return value (as is done elsewhere 154 out of 182 times).
+/builddir/build/BUILD/netpbm-10.35.58/lib/colorname.c:125: example_checked: "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname)" has its value checked in "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname) == 4".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libppmcolor.c:226: example_checked: "sscanf(colorname, "rgbi:%f/%f/%f", &fr, &fg, &fb)" has its value checked in "sscanf(colorname, "rgbi:%f/%f/%f", &fr, &fg, &fb) != 3".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libppmcolor.c:354: example_checked: "sscanf(colorname, "%f,%f,%f", &fr, &fg, &fb)" has its value checked in "sscanf(colorname, "%f,%f,%f", &fr, &fg, &fb) != 3".
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/macptopbm.c:42: example_checked: "sscanf(argv[argn], "%d", &extraskip)" has its value checked in "sscanf(argv[argn], "%d", &extraskip) != 1".
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/xbmtopbm.c:112: example_checked: "sscanf(line, "#define %s %d", name_and_type, &v)" has its value checked in "sscanf(line, "#define %s %d", name_and_type, &v) == 2".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/cameratopam/camera.c:1263: unchecked_value: No check of the return value of "sscanf(val, "%d:%d:%d", &t.tm_hour, &t.tm_min, &t.tm_sec)".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:922: check_return: Calling function "jpc_getuint8" without checking return value (as is done elsewhere 17 out of 20 times).
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:477: example_checked: "jpc_getuint8(in, &sot->numparts)" has its value checked in "jpc_getuint8(in, &sot->numparts)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:546: example_checked: "jpc_getuint8(in, &(siz->comps + i).hsamp)" has its value checked in "jpc_getuint8(in, &(siz->comps + i).hsamp)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:623: example_checked: "jpc_getuint8(in, &cod->csty)" has its value checked in "jpc_getuint8(in, &cod->csty)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:626: example_checked: "jpc_getuint8(in, &cod->mctrans)" has its value checked in "jpc_getuint8(in, &cod->mctrans)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:697: example_checked: "jpc_getuint8(in, &tmp)" has its value checked in "jpc_getuint8(in, &tmp)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:922: unchecked_value: No check of the return value of "jpc_getuint8(in, &tmp)".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:926: check_return: Calling function "jpc_getuint16" without checking return value (as is done elsewhere 14 out of 16 times).
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:292: example_checked: "jpc_getuint16(in, &ms->id)" has its value checked in "jpc_getuint16(in, &ms->id)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:307: example_checked: "jpc_getuint16(in, &ms->len)" has its value checked in "jpc_getuint16(in, &ms->len)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:477: example_checked: "jpc_getuint16(in, &sot->tileno)" has its value checked in "jpc_getuint16(in, &sot->tileno)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:526: example_checked: "jpc_getuint16(in, &siz->numcomps)" has its value checked in "jpc_getuint16(in, &siz->numcomps)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:626: example_checked: "jpc_getuint16(in, &cod->numlyrs)" has its value checked in "jpc_getuint16(in, &cod->numlyrs)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:926: unchecked_value: No check of the return value of "jpc_getuint16(in, &qcc->compno)".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:945: check_return: Calling function "jpc_putuint16" without checking return value (as is done elsewhere 11 out of 13 times).
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:376: example_checked: "jpc_putuint16(out, ms->id)" has its value checked in "jpc_putuint16(out, ms->id)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:399: example_checked: "jpc_putuint16(out, ms->len + 2UL)" has its value checked in "jpc_putuint16(out, ms->len + 2UL)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:492: example_checked: "jpc_putuint16(out, sot->tileno)" has its value checked in "jpc_putuint16(out, sot->tileno)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:568: example_checked: "jpc_putuint16(out, siz->numcomps)" has its value checked in "jpc_putuint16(out, siz->numcomps)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:647: example_checked: "jpc_putuint16(out, cod->numlyrs)" has its value checked in "jpc_putuint16(out, cod->numlyrs)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:945: unchecked_value: No check of the return value of "jpc_putuint16(out, qcc->compno)".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:986: check_return: Calling function "jpc_getuint8" without checking return value (as is done elsewhere 17 out of 20 times).
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:477: example_checked: "jpc_getuint8(in, &sot->numparts)" has its value checked in "jpc_getuint8(in, &sot->numparts)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:546: example_checked: "jpc_getuint8(in, &(siz->comps + i).hsamp)" has its value checked in "jpc_getuint8(in, &(siz->comps + i).hsamp)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:623: example_checked: "jpc_getuint8(in, &cod->csty)" has its value checked in "jpc_getuint8(in, &cod->csty)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:626: example_checked: "jpc_getuint8(in, &cod->mctrans)" has its value checked in "jpc_getuint8(in, &cod->mctrans)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:697: example_checked: "jpc_getuint8(in, &tmp)" has its value checked in "jpc_getuint8(in, &tmp)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:986: unchecked_value: No check of the return value of "jpc_getuint8(in, &tmp)".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:1014: check_return: Calling function "jpc_getuint16" without checking return value (as is done elsewhere 14 out of 16 times).
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:292: example_checked: "jpc_getuint16(in, &ms->id)" has its value checked in "jpc_getuint16(in, &ms->id)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:307: example_checked: "jpc_getuint16(in, &ms->len)" has its value checked in "jpc_getuint16(in, &ms->len)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:477: example_checked: "jpc_getuint16(in, &sot->tileno)" has its value checked in "jpc_getuint16(in, &sot->tileno)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:526: example_checked: "jpc_getuint16(in, &siz->numcomps)" has its value checked in "jpc_getuint16(in, &siz->numcomps)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:626: example_checked: "jpc_getuint16(in, &cod->numlyrs)" has its value checked in "jpc_getuint16(in, &cod->numlyrs)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:1014: unchecked_value: No check of the return value of "jpc_getuint16(in, compparms->stepsizes + i)".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:1037: check_return: Calling function "jpc_putuint16" without checking return value (as is done elsewhere 11 out of 13 times).
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:376: example_checked: "jpc_putuint16(out, ms->id)" has its value checked in "jpc_putuint16(out, ms->id)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:399: example_checked: "jpc_putuint16(out, ms->len + 2UL)" has its value checked in "jpc_putuint16(out, ms->len + 2UL)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:492: example_checked: "jpc_putuint16(out, sot->tileno)" has its value checked in "jpc_putuint16(out, sot->tileno)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:568: example_checked: "jpc_putuint16(out, siz->numcomps)" has its value checked in "jpc_putuint16(out, siz->numcomps)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:647: example_checked: "jpc_putuint16(out, cod->numlyrs)" has its value checked in "jpc_putuint16(out, cod->numlyrs)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:1037: unchecked_value: No check of the return value of "jpc_putuint16(out, compparms->stepsizes[i])".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t2enc.c:387: check_return: Calling function "jpc_putms" without checking return value (as is done elsewhere 12 out of 13 times).
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_enc.c:356: example_checked: "jpc_putms(enc->out, enc->cstate, enc->mrk)" has its value checked in "jpc_putms(enc->out, enc->cstate, enc->mrk)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_enc.c:946: example_checked: "jpc_putms(enc->out, enc->cstate, enc->mrk)" has its value checked in "jpc_putms(enc->out, enc->cstate, enc->mrk)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_enc.c:976: example_checked: "jpc_putms(enc->out, enc->cstate, enc->mrk)" has its value checked in "jpc_putms(enc->out, enc->cstate, enc->mrk)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_enc.c:993: example_checked: "jpc_putms(enc->out, enc->cstate, enc->mrk)" has its value checked in "jpc_putms(enc->out, enc->cstate, enc->mrk)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_enc.c:1062: example_checked: "jpc_putms(enc->out, enc->cstate, enc->mrk)" has its value checked in "jpc_putms(enc->out, enc->cstate, enc->mrk)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t2enc.c:387: unchecked_value: No check of the return value of "jpc_putms(out, enc->cstate, ms)".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/pbmtolps.c:118: check_return: Calling function "sscanf" without checking return value (as is done elsewhere 154 out of 182 times).
+/builddir/build/BUILD/netpbm-10.35.58/lib/colorname.c:125: example_checked: "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname)" has its value checked in "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname) == 4".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libppmcolor.c:226: example_checked: "sscanf(colorname, "rgbi:%f/%f/%f", &fr, &fg, &fb)" has its value checked in "sscanf(colorname, "rgbi:%f/%f/%f", &fr, &fg, &fb) != 3".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libppmcolor.c:354: example_checked: "sscanf(colorname, "%f,%f,%f", &fr, &fg, &fb)" has its value checked in "sscanf(colorname, "%f,%f,%f", &fr, &fg, &fb) != 3".
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/macptopbm.c:42: example_checked: "sscanf(argv[argn], "%d", &extraskip)" has its value checked in "sscanf(argv[argn], "%d", &extraskip) != 1".
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/xbmtopbm.c:112: example_checked: "sscanf(line, "#define %s %d", name_and_type, &v)" has its value checked in "sscanf(line, "#define %s %d", name_and_type, &v) == 2".
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/pbmtolps.c:118: unchecked_value: No check of the return value of "sscanf(argv[i + 1], "%f", &dpi)".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/imgtoppm.c:72: check_return: Calling function "sscanf" without checking return value (as is done elsewhere 154 out of 182 times).
+/builddir/build/BUILD/netpbm-10.35.58/lib/colorname.c:125: example_checked: "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname)" has its value checked in "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname) == 4".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libppmcolor.c:226: example_checked: "sscanf(colorname, "rgbi:%f/%f/%f", &fr, &fg, &fb)" has its value checked in "sscanf(colorname, "rgbi:%f/%f/%f", &fr, &fg, &fb) != 3".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libppmcolor.c:354: example_checked: "sscanf(colorname, "%f,%f,%f", &fr, &fg, &fb)" has its value checked in "sscanf(colorname, "%f,%f,%f", &fr, &fg, &fb) != 3".
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/macptopbm.c:42: example_checked: "sscanf(argv[argn], "%d", &extraskip)" has its value checked in "sscanf(argv[argn], "%d", &extraskip) != 1".
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/xbmtopbm.c:112: example_checked: "sscanf(line, "#define %s %d", name_and_type, &v)" has its value checked in "sscanf(line, "#define %s %d", name_and_type, &v) == 2".
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/imgtoppm.c:72: unchecked_value: No check of the return value of "sscanf((char *)buf, "%4u%4u%4u", &cols, &rows, &cmaplen)".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtoarbtxt.c:294: check_return: Calling function "sscanf" without checking return value (as is done elsewhere 154 out of 182 times).
+/builddir/build/BUILD/netpbm-10.35.58/lib/colorname.c:125: example_checked: "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname)" has its value checked in "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname) == 4".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libppmcolor.c:226: example_checked: "sscanf(colorname, "rgbi:%f/%f/%f", &fr, &fg, &fb)" has its value checked in "sscanf(colorname, "rgbi:%f/%f/%f", &fr, &fg, &fb) != 3".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libppmcolor.c:354: example_checked: "sscanf(colorname, "%f,%f,%f", &fr, &fg, &fb)" has its value checked in "sscanf(colorname, "%f,%f,%f", &fr, &fg, &fb) != 3".
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/macptopbm.c:42: example_checked: "sscanf(argv[argn], "%d", &extraskip)" has its value checked in "sscanf(argv[argn], "%d", &extraskip) != 1".
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/xbmtopbm.c:112: example_checked: "sscanf(line, "#define %s %d", name_and_type, &v)" has its value checked in "sscanf(line, "#define %s %d", name_and_type, &v) == 2".
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtoarbtxt.c:294: unchecked_value: No check of the return value of "sscanf(objstr, "%s", typstr)".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/param.c:178: check_return: Calling function "sscanf" without checking return value (as is done elsewhere 154 out of 182 times).
+/builddir/build/BUILD/netpbm-10.35.58/lib/colorname.c:125: example_checked: "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname)" has its value checked in "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname) == 4".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libppmcolor.c:226: example_checked: "sscanf(colorname, "rgbi:%f/%f/%f", &fr, &fg, &fb)" has its value checked in "sscanf(colorname, "rgbi:%f/%f/%f", &fr, &fg, &fb) != 3".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libppmcolor.c:354: example_checked: "sscanf(colorname, "%f,%f,%f", &fr, &fg, &fb)" has its value checked in "sscanf(colorname, "%f,%f,%f", &fr, &fg, &fb) != 3".
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/macptopbm.c:42: example_checked: "sscanf(argv[argn], "%d", &extraskip)" has its value checked in "sscanf(argv[argn], "%d", &extraskip) != 1".
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/xbmtopbm.c:112: example_checked: "sscanf(line, "#define %s %d", name_and_type, &v)" has its value checked in "sscanf(line, "#define %s %d", name_and_type, &v) == 2".
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/param.c:178: unchecked_value: No check of the return value of "sscanf(p, "%f", &ratio)".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/param.c:231: check_return: Calling function "sscanf" without checking return value (as is done elsewhere 154 out of 182 times).
+/builddir/build/BUILD/netpbm-10.35.58/lib/colorname.c:125: example_checked: "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname)" has its value checked in "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname) == 4".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libppmcolor.c:226: example_checked: "sscanf(colorname, "rgbi:%f/%f/%f", &fr, &fg, &fb)" has its value checked in "sscanf(colorname, "rgbi:%f/%f/%f", &fr, &fg, &fb) != 3".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libppmcolor.c:354: example_checked: "sscanf(colorname, "%f,%f,%f", &fr, &fg, &fb)" has its value checked in "sscanf(colorname, "%f,%f,%f", &fr, &fg, &fb) != 3".
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/macptopbm.c:42: example_checked: "sscanf(argv[argn], "%d", &extraskip)" has its value checked in "sscanf(argv[argn], "%d", &extraskip) != 1".
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/xbmtopbm.c:112: example_checked: "sscanf(line, "#define %s %d", name_and_type, &v)" has its value checked in "sscanf(line, "#define %s %d", name_and_type, &v) == 2".
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/param.c:231: unchecked_value: No check of the return value of "sscanf(charPtr, "%s %s %s %s", machineName[numMachines], userName[numMachines], executable[numMachines], remoteParamFile[numMachines])".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/param.c:237: check_return: Calling function "sscanf" without checking return value (as is done elsewhere 154 out of 182 times).
+/builddir/build/BUILD/netpbm-10.35.58/lib/colorname.c:125: example_checked: "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname)" has its value checked in "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname) == 4".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libppmcolor.c:226: example_checked: "sscanf(colorname, "rgbi:%f/%f/%f", &fr, &fg, &fb)" has its value checked in "sscanf(colorname, "rgbi:%f/%f/%f", &fr, &fg, &fb) != 3".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libppmcolor.c:354: example_checked: "sscanf(colorname, "%f,%f,%f", &fr, &fg, &fb)" has its value checked in "sscanf(colorname, "%f,%f,%f", &fr, &fg, &fb) != 3".
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/macptopbm.c:42: example_checked: "sscanf(argv[argn], "%d", &extraskip)" has its value checked in "sscanf(argv[argn], "%d", &extraskip) != 1".
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/xbmtopbm.c:112: example_checked: "sscanf(line, "#define %s %d", name_and_type, &v)" has its value checked in "sscanf(line, "#define %s %d", name_and_type, &v) == 2".
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/param.c:237: unchecked_value: No check of the return value of "sscanf(input, "%s %s %s", machineName[numMachines], userName[numMachines], executable[numMachines])".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/param.c:265: check_return: Calling function "sscanf" without checking return value (as is done elsewhere 154 out of 182 times).
+/builddir/build/BUILD/netpbm-10.35.58/lib/colorname.c:125: example_checked: "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname)" has its value checked in "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname) == 4".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libppmcolor.c:226: example_checked: "sscanf(colorname, "rgbi:%f/%f/%f", &fr, &fg, &fb)" has its value checked in "sscanf(colorname, "rgbi:%f/%f/%f", &fr, &fg, &fb) != 3".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libppmcolor.c:354: example_checked: "sscanf(colorname, "%f,%f,%f", &fr, &fg, &fb)" has its value checked in "sscanf(colorname, "%f,%f,%f", &fr, &fg, &fb) != 3".
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/macptopbm.c:42: example_checked: "sscanf(argv[argn], "%d", &extraskip)" has its value checked in "sscanf(argv[argn], "%d", &extraskip) != 1".
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/xbmtopbm.c:112: example_checked: "sscanf(line, "#define %s %d", name_and_type, &v)" has its value checked in "sscanf(line, "#define %s %d", name_and_type, &v) == 2".
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/param.c:265: unchecked_value: No check of the return value of "sscanf(p, "%f", &rate)".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/param.c:759: check_return: Calling function "sscanf" without checking return value (as is done elsewhere 154 out of 182 times).
+/builddir/build/BUILD/netpbm-10.35.58/lib/colorname.c:125: example_checked: "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname)" has its value checked in "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname) == 4".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libppmcolor.c:226: example_checked: "sscanf(colorname, "rgbi:%f/%f/%f", &fr, &fg, &fb)" has its value checked in "sscanf(colorname, "rgbi:%f/%f/%f", &fr, &fg, &fb) != 3".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libppmcolor.c:354: example_checked: "sscanf(colorname, "%f,%f,%f", &fr, &fg, &fb)" has its value checked in "sscanf(colorname, "%f,%f,%f", &fr, &fg, &fb) != 3".
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/macptopbm.c:42: example_checked: "sscanf(argv[argn], "%d", &extraskip)" has its value checked in "sscanf(argv[argn], "%d", &extraskip) != 1".
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/xbmtopbm.c:112: example_checked: "sscanf(line, "#define %s %d", name_and_type, &v)" has its value checked in "sscanf(line, "#define %s %d", name_and_type, &v) == 2".
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/param.c:759: unchecked_value: No check of the return value of "sscanf(SkipSpacesTabs(input + 5), "%f", &GammaValue)".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/param.c:858: check_return: Calling function "sscanf" without checking return value (as is done elsewhere 154 out of 182 times).
+/builddir/build/BUILD/netpbm-10.35.58/lib/colorname.c:125: example_checked: "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname)" has its value checked in "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname) == 4".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libppmcolor.c:226: example_checked: "sscanf(colorname, "rgbi:%f/%f/%f", &fr, &fg, &fb)" has its value checked in "sscanf(colorname, "rgbi:%f/%f/%f", &fr, &fg, &fb) != 3".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libppmcolor.c:354: example_checked: "sscanf(colorname, "%f,%f,%f", &fr, &fg, &fb)" has its value checked in "sscanf(colorname, "%f,%f,%f", &fr, &fg, &fb) != 3".
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/macptopbm.c:42: example_checked: "sscanf(argv[argn], "%d", &extraskip)" has its value checked in "sscanf(argv[argn], "%d", &extraskip) != 1".
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/xbmtopbm.c:112: example_checked: "sscanf(line, "#define %s %d", name_and_type, &v)" has its value checked in "sscanf(line, "#define %s %d", name_and_type, &v) == 2".
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/param.c:858: unchecked_value: No check of the return value of "sscanf(arg, "%dx%d", &outputWidth, &outputHeight)".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/param.c:883: check_return: Calling function "sscanf" without checking return value (as is done elsewhere 154 out of 182 times).
+/builddir/build/BUILD/netpbm-10.35.58/lib/colorname.c:125: example_checked: "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname)" has its value checked in "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname) == 4".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libppmcolor.c:226: example_checked: "sscanf(colorname, "rgbi:%f/%f/%f", &fr, &fg, &fb)" has its value checked in "sscanf(colorname, "rgbi:%f/%f/%f", &fr, &fg, &fb) != 3".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libppmcolor.c:354: example_checked: "sscanf(colorname, "%f,%f,%f", &fr, &fg, &fb)" has its value checked in "sscanf(colorname, "%f,%f,%f", &fr, &fg, &fb) != 3".
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/macptopbm.c:42: example_checked: "sscanf(argv[argn], "%d", &extraskip)" has its value checked in "sscanf(argv[argn], "%d", &extraskip) != 1".
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/xbmtopbm.c:112: example_checked: "sscanf(line, "#define %s %d", name_and_type, &v)" has its value checked in "sscanf(line, "#define %s %d", name_and_type, &v) == 2".
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/param.c:883: unchecked_value: No check of the return value of "sscanf(arg, "%dx%d", &yuvWidth, &yuvHeight)".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/param.c:915: check_return: Calling function "sscanf" without checking return value (as is done elsewhere 154 out of 182 times).
+/builddir/build/BUILD/netpbm-10.35.58/lib/colorname.c:125: example_checked: "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname)" has its value checked in "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname) == 4".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libppmcolor.c:226: example_checked: "sscanf(colorname, "rgbi:%f/%f/%f", &fr, &fg, &fb)" has its value checked in "sscanf(colorname, "rgbi:%f/%f/%f", &fr, &fg, &fb) != 3".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libppmcolor.c:354: example_checked: "sscanf(colorname, "%f,%f,%f", &fr, &fg, &fb)" has its value checked in "sscanf(colorname, "%f,%f,%f", &fr, &fg, &fb) != 3".
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/macptopbm.c:42: example_checked: "sscanf(argv[argn], "%d", &extraskip)" has its value checked in "sscanf(argv[argn], "%d", &extraskip) != 1".
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/xbmtopbm.c:112: example_checked: "sscanf(line, "#define %s %d", name_and_type, &v)" has its value checked in "sscanf(line, "#define %s %d", name_and_type, &v) == 2".
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/param.c:915: unchecked_value: No check of the return value of "sscanf(arg, "%dx%d", &yuvWidth, &yuvHeight)".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/param.c:922: check_return: Calling function "sscanf" without checking return value (as is done elsewhere 154 out of 182 times).
+/builddir/build/BUILD/netpbm-10.35.58/lib/colorname.c:125: example_checked: "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname)" has its value checked in "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname) == 4".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libppmcolor.c:226: example_checked: "sscanf(colorname, "rgbi:%f/%f/%f", &fr, &fg, &fb)" has its value checked in "sscanf(colorname, "rgbi:%f/%f/%f", &fr, &fg, &fb) != 3".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libppmcolor.c:354: example_checked: "sscanf(colorname, "%f,%f,%f", &fr, &fg, &fb)" has its value checked in "sscanf(colorname, "%f,%f,%f", &fr, &fg, &fb) != 3".
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/macptopbm.c:42: example_checked: "sscanf(argv[argn], "%d", &extraskip)" has its value checked in "sscanf(argv[argn], "%d", &extraskip) != 1".
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/xbmtopbm.c:112: example_checked: "sscanf(line, "#define %s %d", name_and_type, &v)" has its value checked in "sscanf(line, "#define %s %d", name_and_type, &v) == 2".
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/param.c:922: unchecked_value: No check of the return value of "sscanf(arg, "%dx%d", &yuvWidth, &yuvHeight)".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/specifics.c:264: check_return: Calling function "sscanf" without checking return value (as is done elsewhere 154 out of 182 times).
+/builddir/build/BUILD/netpbm-10.35.58/lib/colorname.c:125: example_checked: "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname)" has its value checked in "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname) == 4".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libppmcolor.c:226: example_checked: "sscanf(colorname, "rgbi:%f/%f/%f", &fr, &fg, &fb)" has its value checked in "sscanf(colorname, "rgbi:%f/%f/%f", &fr, &fg, &fb) != 3".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libppmcolor.c:354: example_checked: "sscanf(colorname, "%f,%f,%f", &fr, &fg, &fb)" has its value checked in "sscanf(colorname, "%f,%f,%f", &fr, &fg, &fb) != 3".
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/macptopbm.c:42: example_checked: "sscanf(argv[argn], "%d", &extraskip)" has its value checked in "sscanf(argv[argn], "%d", &extraskip) != 1".
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/xbmtopbm.c:112: example_checked: "sscanf(line, "#define %s %d", name_and_type, &v)" has its value checked in "sscanf(line, "#define %s %d", name_and_type, &v) == 2".
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/specifics.c:264: unchecked_value: No check of the return value of "sscanf(lp, "%d %c %d", &fnum, &typ, &qs)".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/specifics.c:277: check_return: Calling function "sscanf" without checking return value (as is done elsewhere 154 out of 182 times).
+/builddir/build/BUILD/netpbm-10.35.58/lib/colorname.c:125: example_checked: "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname)" has its value checked in "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname) == 4".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libppmcolor.c:226: example_checked: "sscanf(colorname, "rgbi:%f/%f/%f", &fr, &fg, &fb)" has its value checked in "sscanf(colorname, "rgbi:%f/%f/%f", &fr, &fg, &fb) != 3".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libppmcolor.c:354: example_checked: "sscanf(colorname, "%f,%f,%f", &fr, &fg, &fb)" has its value checked in "sscanf(colorname, "%f,%f,%f", &fr, &fg, &fb) != 3".
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/macptopbm.c:42: example_checked: "sscanf(argv[argn], "%d", &extraskip)" has its value checked in "sscanf(argv[argn], "%d", &extraskip) != 1".
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/xbmtopbm.c:112: example_checked: "sscanf(line, "#define %s %d", name_and_type, &v)" has its value checked in "sscanf(line, "#define %s %d", name_and_type, &v) == 2".
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/specifics.c:277: unchecked_value: No check of the return value of "sscanf(lp, "%d %d", &snum, &newqs)".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/specifics.c:325: check_return: Calling function "sscanf" without checking return value (as is done elsewhere 154 out of 182 times).
+/builddir/build/BUILD/netpbm-10.35.58/lib/colorname.c:125: example_checked: "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname)" has its value checked in "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname) == 4".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libppmcolor.c:226: example_checked: "sscanf(colorname, "rgbi:%f/%f/%f", &fr, &fg, &fb)" has its value checked in "sscanf(colorname, "rgbi:%f/%f/%f", &fr, &fg, &fb) != 3".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libppmcolor.c:354: example_checked: "sscanf(colorname, "%f,%f,%f", &fr, &fg, &fb)" has its value checked in "sscanf(colorname, "%f,%f,%f", &fr, &fg, &fb) != 3".
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/macptopbm.c:42: example_checked: "sscanf(argv[argn], "%d", &extraskip)" has its value checked in "sscanf(argv[argn], "%d", &extraskip) != 1".
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/xbmtopbm.c:112: example_checked: "sscanf(line, "#define %s %d", name_and_type, &v)" has its value checked in "sscanf(line, "#define %s %d", name_and_type, &v) == 2".
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/specifics.c:325: unchecked_value: No check of the return value of "sscanf(lp, "%d %c %d", &fnum, &typ, &qs)".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/specifics.c:338: check_return: Calling function "sscanf" without checking return value (as is done elsewhere 154 out of 182 times).
+/builddir/build/BUILD/netpbm-10.35.58/lib/colorname.c:125: example_checked: "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname)" has its value checked in "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname) == 4".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libppmcolor.c:226: example_checked: "sscanf(colorname, "rgbi:%f/%f/%f", &fr, &fg, &fb)" has its value checked in "sscanf(colorname, "rgbi:%f/%f/%f", &fr, &fg, &fb) != 3".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libppmcolor.c:354: example_checked: "sscanf(colorname, "%f,%f,%f", &fr, &fg, &fb)" has its value checked in "sscanf(colorname, "%f,%f,%f", &fr, &fg, &fb) != 3".
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/macptopbm.c:42: example_checked: "sscanf(argv[argn], "%d", &extraskip)" has its value checked in "sscanf(argv[argn], "%d", &extraskip) != 1".
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/xbmtopbm.c:112: example_checked: "sscanf(line, "#define %s %d", name_and_type, &v)" has its value checked in "sscanf(line, "#define %s %d", name_and_type, &v) == 2".
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/specifics.c:338: unchecked_value: No check of the return value of "sscanf(lp, "%d %d", &snum, &newqs)".
+
+Error: CHECKED_RETURN:
+/builddir/build/BUILD/netpbm-10.35.58/lib/libpm.c:521: check_return: Calling function "sscanf" without checking return value (as is done elsewhere 154 out of 182 times).
+/builddir/build/BUILD/netpbm-10.35.58/lib/colorname.c:125: example_checked: "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname)" has its value checked in "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname) == 4".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libppmcolor.c:226: example_checked: "sscanf(colorname, "rgbi:%f/%f/%f", &fr, &fg, &fb)" has its value checked in "sscanf(colorname, "rgbi:%f/%f/%f", &fr, &fg, &fb) != 3".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libppmcolor.c:354: example_checked: "sscanf(colorname, "%f,%f,%f", &fr, &fg, &fb)" has its value checked in "sscanf(colorname, "%f,%f,%f", &fr, &fg, &fb) != 3".
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/macptopbm.c:42: example_checked: "sscanf(argv[argn], "%d", &extraskip)" has its value checked in "sscanf(argv[argn], "%d", &extraskip) != 1".
+/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/xbmtopbm.c:112: example_checked: "sscanf(line, "#define %s %d", name_and_type, &v)" has its value checked in "sscanf(line, "#define %s %d", name_and_type, &v) == 2".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libpm.c:521: unchecked_value: No check of the return value of "sscanf(line, "docurl=%s", docurl)".
+
+Error: CONSTANT_EXPRESSION_RESULT:
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/bmptopnm.c:893: operator_confusion: (ptr[i + 1U] << 4) & (ptr[i + 2U] >> 4) is always 0 regardless of the values of its operands. This occurs as the non-specific operand of assignment. Did you intend to use right-shift ('>>') in ptr[i + 1U] << 4?
+
+Error: CONSTANT_EXPRESSION_RESULT:
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:1012: missing_parentheses: (tmp >> 3) & -32 /* ~0x1f */ is always 0 regardless of the values of its operands. This occurs as the logical operand of '!'. Did you intend to apply '&' to 3 and -32 /* ~0x1f */? If so, parentheses would be required to force this interpretation.
+
+Error: DEADCODE:
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/fiasco/codec/mwfa.c:482: dead_error_condition: On this path, the switch value "mctype" cannot reach the default case.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/fiasco/codec/mwfa.c:470: const: After this line, the value of "mctype" is equal to 1.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/fiasco/codec/mwfa.c:472: const: After this line, the value of "mctype" is equal to 2.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/fiasco/codec/mwfa.c:477: const: After this line, the value of "mctype" is equal to 2.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/fiasco/codec/mwfa.c:479: const: After this line, the value of "mctype" is equal to 3.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/fiasco/codec/mwfa.c:472: assignment: Assigning: "mctype" = "BACKWARD".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/fiasco/codec/mwfa.c:477: assignment: Assigning: "mctype" = "BACKWARD".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/fiasco/codec/mwfa.c:470: assignment: Assigning: "mctype" = "FORWARD".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/fiasco/codec/mwfa.c:479: assignment: Assigning: "mctype" = "INTERPOLATED".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/fiasco/codec/mwfa.c:525: dead_error_begin: Execution cannot reach this statement "default:".
+
+Error: DEADCODE:
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/fiasco/lib/dither.c:125: dead_error_condition: On this path, the switch value "bpp" cannot reach the default case.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/fiasco/lib/dither.c:117: const: After this line, the value of "bpp" is equal to 16.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/fiasco/lib/dither.c:117: const: After this line, the value of "bpp" is equal to 24.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/fiasco/lib/dither.c:117: const: After this line, the value of "bpp" is equal to 32.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/fiasco/lib/dither.c:117: equality_cond: Condition "bpp == 16U" is evaluated as false.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/fiasco/lib/dither.c:108: equality_cond: Condition "bpp != 16U" is evaluated as true.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/fiasco/lib/dither.c:108: equality_cond: Condition "bpp != 24U" is evaluated as true.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/fiasco/lib/dither.c:108: new_values: Noticing condition "bpp != 16U".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/fiasco/lib/dither.c:108: new_values: Noticing condition "bpp != 24U".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/fiasco/lib/dither.c:108: new_values: Noticing condition "bpp != 32U".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/fiasco/lib/dither.c:117: new_values: Noticing condition "bpp == 16U".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/fiasco/lib/dither.c:139: dead_error_begin: Execution cannot reach this statement "default:".
+
+Error: DEADCODE:
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:360: dead_error_condition: On this path, the condition "h" cannot be false.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:350: const: After this line, the value of "h" is equal to 1.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:356: const: After this line, the value of "h" is equal to 1.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:350: const: After this line, the value of "h" is equal to 2.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:356: const: After this line, the value of "h" is equal to 2.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:350: assignment: Assigning: "h" = "((f & 0x80) != 0) + ((f & 0x20) != 0)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:356: assignment: Assigning: "h" = "v".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:351: assignment: Assigning: "v" = "((f & 0x10) != 0) + ((f & 0x40) != 0)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:361: dead_error_line: Execution cannot reach this statement "if (!v){
+  if (!d){
+    n =...".
+
+Error: DEADCODE:
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:375: dead_error_condition: On this path, the condition "v" cannot be false.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:351: const: After this line, the value of "v" is equal to 1.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:357: const: After this line, the value of "v" is equal to 1.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:351: const: After this line, the value of "v" is equal to 2.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:357: const: After this line, the value of "v" is equal to 2.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:350: assignment: Assigning: "h" = "((f & 0x80) != 0) + ((f & 0x20) != 0)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:351: assignment: Assigning: "v" = "((f & 0x10) != 0) + ((f & 0x40) != 0)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:357: assignment: Assigning: "v" = "t".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:376: dead_error_line: Execution cannot reach this statement "if (!d){
+  n = 5;
+}
+else {
+...".
+
+Error: DEADCODE:
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:390: dead_error_condition: On this path, the condition "d" cannot be false.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:352: const: After this line, the value of "d" is equal to 3.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:352: const: After this line, the value of "d" is equal to 4.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:352: assignment: Assigning: "d" = "((f & 8) != 0) + ((f & 1) != 0) + ((f & 2) != 0) + ((f & 4) != 0)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:391: dead_error_line: Execution cannot reach this statement "if (!hv){
+  n = 0;
+}
+else i...".
+
+Error: DEADCODE:
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:398: dead_error_condition: On this path, the condition "d == 1" cannot be true.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:390: const: After this line, the value of "d" is equal to 3.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:390: const: After this line, the value of "d" is equal to 4.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:352: assignment: Assigning: "d" = "((f & 8) != 0) + ((f & 1) != 0) + ((f & 2) != 0) + ((f & 4) != 0)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:390: equality_cond: Condition "d" is evaluated as true.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:399: dead_error_line: Execution cannot reach this statement "if (!hv){
+  n = 3;
+}
+else i...".
+
+Error: DEADCODE:
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:406: dead_error_condition: On this path, the condition "d == 2" cannot be true.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:398: const: After this line, the value of "d" is equal to 3.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:398: const: After this line, the value of "d" is equal to 4.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:352: assignment: Assigning: "d" = "((f & 8) != 0) + ((f & 1) != 0) + ((f & 2) != 0) + ((f & 4) != 0)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:398: equality_cond: Condition "d == 1" is evaluated as false.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:390: equality_cond: Condition "d" is evaluated as true.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:407: dead_error_line: Execution cannot reach this statement "if (!hv){
+  n = 6;
+}
+else {...".
+
+Error: DEADCODE:
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:431: dead_error_condition: On this path, the condition "hc" cannot be true.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:427: const: After this line, the value of "hc" is equal to 0.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:427: assignment: Assigning: "hc" = "((((f & 0x220) == 0x20) + ((f & 0x880) == 0x80) < 1) ? ((f & 0x220) == 0x20) + ((f & 0x880) == 0x80) : 1) - ((((f & 0x220) == 0x220) + ((f & 0x880) == 0x880) < 1) ? ((f & 0x220) == 0x220) + ((f & 0x880) == 0x880) : 1)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:431: dead_error_condition: On this path, the condition "vc" cannot be true.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:429: const: After this line, the value of "vc" is equal to 0.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:429: assignment: Assigning: "vc" = "((((f & 0x110) == 0x10) + ((f & 0x440) == 0x40) < 1) ? ((f & 0x110) == 0x10) + ((f & 0x440) == 0x40) : 1) - ((((f & 0x110) == 0x110) + ((f & 0x440) == 0x440) < 1) ? ((f & 0x110) == 0x110) + ((f & 0x440) == 0x440) : 1)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:434: dead_error_line: Execution cannot reach this expression "n" inside statement "n = !(hc > 0 || (!hc && vc ...".
+
+Error: DEADCODE:
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:455: dead_error_condition: On this path, the condition "hc < 0" cannot be true.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:454: const: After this line, the value of "hc" is equal to 0.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:448: assignment: Assigning: "hc" = "((((f & 0x220) == 0x20) + ((f & 0x880) == 0x80) < 1) ? ((f & 0x220) == 0x20) + ((f & 0x880) == 0x80) : 1) - ((((f & 0x220) == 0x220) + ((f & 0x880) == 0x880) < 1) ? ((f & 0x220) == 0x220) + ((f & 0x880) == 0x880) : 1)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:454: new_values: Noticing condition "hc <= 1".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:454: new_values: Noticing condition "hc >= -1".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:456: dead_error_begin: Execution cannot reach this statement "hc = -hc;".
+
+Error: DEADCODE:
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:460: dead_error_condition: On this path, the condition "vc == -1" cannot be true.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:454: const: After this line, the value of "vc" is equal to 0.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:451: assignment: Assigning: "vc" = "((((f & 0x110) == 0x10) + ((f & 0x440) == 0x40) < 1) ? ((f & 0x110) == 0x10) + ((f & 0x440) == 0x40) : 1) - ((((f & 0x110) == 0x110) + ((f & 0x440) == 0x440) < 1) ? ((f & 0x110) == 0x110) + ((f & 0x440) == 0x440) : 1)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:454: new_values: Noticing condition "vc <= 1".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:454: new_values: Noticing condition "vc >= -1".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:461: dead_error_line: Execution cannot reach this statement "n = 1;".
+
+Error: DEADCODE:
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:462: dead_error_condition: On this path, the condition "vc" cannot be true.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:460: const: After this line, the value of "vc" is equal to 0.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:451: assignment: Assigning: "vc" = "((((f & 0x110) == 0x10) + ((f & 0x440) == 0x40) < 1) ? ((f & 0x110) == 0x10) + ((f & 0x440) == 0x40) : 1) - ((((f & 0x110) == 0x110) + ((f & 0x440) == 0x440) < 1) ? ((f & 0x110) == 0x110) + ((f & 0x440) == 0x440) : 1)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:460: equality_cond: Condition "vc == -1" is evaluated as false.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:454: new_values: Noticing condition "vc <= 1".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:454: new_values: Noticing condition "vc >= -1".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:465: dead_error_line: Execution cannot reach this statement "n = 1;".
+
+Error: DEADCODE:
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:459: dead_error_condition: On this path, the condition "hc" cannot be true.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:455: const: After this line, the value of "hc" is equal to 0.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:448: assignment: Assigning: "hc" = "((((f & 0x220) == 0x20) + ((f & 0x880) == 0x80) < 1) ? ((f & 0x220) == 0x20) + ((f & 0x880) == 0x80) : 1) - ((((f & 0x220) == 0x220) + ((f & 0x880) == 0x880) < 1) ? ((f & 0x220) == 0x220) + ((f & 0x880) == 0x880) : 1)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:455: new_values: Noticing condition "hc < 0".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:454: new_values: Noticing condition "hc <= 1".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:454: new_values: Noticing condition "hc >= -1".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:467: dead_error_line: Execution cannot reach this statement "if (hc == 1){
+  if (vc == -...".
+
+Error: DEADCODE:
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/pnmtojpeg.c:298: dead_error_condition: On this path, the condition "dctval == NULL" cannot be false.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/pnmtojpeg.c:261: const: After this line, the value of "dctval" is equal to 0.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/pnmtojpeg.c:261: assignment: Assigning: "dctval" = "NULL".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/pnmtojpeg.c:301: dead_error_line: Execution cannot reach this statement "if (streq(dctval, "int"))cm...".
+
+Error: DEADCODE:
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/postdct.c:238: dead_error_condition: On this path, the condition "level == 0" cannot be true.
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/postdct.c:220: cannot_single: After this line (or expression), the value of "level" cannot be 0.
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/postdct.c:239: dead_error_line: Execution cannot reach this statement "coeff = 0;".
+
+Error: DEADCODE:
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:220: dead_error_condition: On this path, the switch value "(format == 20531 || format == 20534) ? 20531 : ((format == 20530 || format == 20533) ? 20530 : ((format == 20529 || format == 20532) ? 20529 : -1))" cannot be "20535".
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: const: After this line, the value of "format" is equal to 20529.
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: const: After this line, the value of "format" is equal to 20530.
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: const: After this line, the value of "format" is equal to 20531.
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: const: After this line, the value of "format" is equal to 20532.
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: const: After this line, the value of "format" is equal to 20533.
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: const: After this line, the value of "format" is equal to 20534.
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: equality_cond: Condition "format == 20529" is evaluated as false.
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: equality_cond: Condition "format == 20530" is evaluated as false.
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: equality_cond: Condition "format == 20531" is evaluated as false.
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: equality_cond: Condition "format == 20533" is evaluated as false.
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: equality_cond: Condition "format == 20534" is evaluated as false.
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: new_values: Noticing condition "format == 20529".
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: new_values: Noticing condition "format == 20530".
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: new_values: Noticing condition "format == 20531".
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: new_values: Noticing condition "format == 20532".
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: new_values: Noticing condition "format == 20533".
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: new_values: Noticing condition "format == 20534".
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:220: dead_error_begin: Execution cannot reach this statement "case 20535:".
+
+Error: DEADCODE:
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamscale.c:644: dead_error_condition: On this path, the condition "xsize == 0" cannot be true.
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamscale.c:624: const: After this line, the value of "xsize" is equal to -1.
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamscale.c:624: assignment: Assigning: "xsize" = "-1".
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamscale.c:645: dead_error_line: Execution cannot reach this statement "pm_error("-xsize/width must...".
+
+Error: DEADCODE:
+/builddir/build/BUILD/netpbm-10.35.58/lib/libpm.c:528: dead_error_condition: On this path, the condition "docurl == NULL" cannot be false.
+/builddir/build/BUILD/netpbm-10.35.58/lib/libpm.c:514: const: After this line, the value of "docurl" is equal to 0.
+/builddir/build/BUILD/netpbm-10.35.58/lib/libpm.c:524: const: After this line, the value of "docurl" is equal to 0.
+/builddir/build/BUILD/netpbm-10.35.58/lib/libpm.c:514: assignment: Assigning: "docurl" = "NULL".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libpm.c:516: assignment: Assigning: "docurl" = "NULL".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libpm.c:524: new_values: Noticing condition "docurl == NULL".
+/builddir/build/BUILD/netpbm-10.35.58/lib/libpm.c:534: dead_error_line: Execution cannot reach this statement "pm_message("This program is...".

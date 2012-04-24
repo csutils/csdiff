@@ -19,6 +19,7 @@
 set(csdiff      "${csdiff_BINARY_DIR}/csdiff")
 set(csgrep      "${csdiff_BINARY_DIR}/csgrep")
 set(csjson      "${csdiff_BINARY_DIR}/csjson")
+set(cssort      "${csdiff_BINARY_DIR}/cssort")
 set(testdir     "${csdiff_SOURCE_DIR}/tests")
 set(diffcmd     "diff -up")
 
@@ -77,10 +78,30 @@ macro(test_csparser dir num)
     add_test_wrap("${dir}-${num}-stderr" "${cmd}")
 endmacro()
 
-# add regression tests ony by one
+# a generic template for cssort test-cases
+macro(test_cssort dir num)
+    set(tst "${testdir}/${dir}/${num}")
+
+    set(cmd "${cssort} --key=checker ${tst}-input.err 2>/dev/null")
+    set(cmd "${cmd} | ${diffcmd} ${tst}-by-checker.err -")
+    add_test_wrap("${dir}-${num}-by-checker" "${cmd}")
+
+    set(cmd "${cssort} --key=path ${tst}-input.err 2>/dev/null")
+    set(cmd "${cmd} | ${diffcmd} ${tst}-by-path.err -")
+    add_test_wrap("${dir}-${num}-by-path" "${cmd}")
+endmacro()
+
+# csgrep tests
 test_csparser(csparser-5.8                          00)
 test_csparser(csparser-5.8                          01)
 test_csparser(csparser-5.8                          02)
+
+# csgrep tests
+test_cssort(cssort-5.8                              00)
+test_cssort(cssort-5.8                              01)
+test_cssort(cssort-5.8                              02)
+
+# csdiff tests
 test_csdiff(diff7.0-qt                              00)
 test_csdiff(diff7.0-fftw                            00)
 test_csdiff(diff7.0-sudo                            00)
