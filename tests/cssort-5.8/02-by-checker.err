@@ -649,11 +649,11 @@ Error: NULL_RETURNS:
 /builddir/build/BUILD/ATLAS/tune/blas/ger/r1search.c:520: dereference: Dereferencing a pointer that might be null "fp" when calling "fclose".
 
 Error: OVERRUN_STATIC:
-/builddir/build/BUILD/ATLAS/CONFIG/src/probe_OS.c:14: overrun-buffer-val: Overrunning static array "ln" of size 1024 bytes by passing it as an argument to a function which indexes it at byte position 2047.
+/builddir/build/BUILD/ATLAS/CONFIG/src/atlconf_misc.c:494: overrun-buffer-val: Overrunning static array "res" of size 256 bytes by passing it as an argument to a function which indexes it at byte position 2047.
 /builddir/build/BUILD/ATLAS/CONFIG/src/atlconf_misc.c:331: access_dbuff_const: Calling "fgets" indexes array "ln" with index "2048" at byte position 2047.
 
 Error: OVERRUN_STATIC:
-/builddir/build/BUILD/ATLAS/CONFIG/src/atlconf_misc.c:494: overrun-buffer-val: Overrunning static array "res" of size 256 bytes by passing it as an argument to a function which indexes it at byte position 2047.
+/builddir/build/BUILD/ATLAS/CONFIG/src/probe_OS.c:14: overrun-buffer-val: Overrunning static array "ln" of size 1024 bytes by passing it as an argument to a function which indexes it at byte position 2047.
 /builddir/build/BUILD/ATLAS/CONFIG/src/atlconf_misc.c:331: access_dbuff_const: Calling "fgets" indexes array "ln" with index "2048" at byte position 2047.
 
 Error: OVERRUN_STATIC:
@@ -696,20 +696,20 @@ Error: OVERRUN_STATIC:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:180: overrun-buffer-arg: Overrunning static array "ccflags" of size 256 bytes by passing it to a function which indexes it with argument "512" at byte position 511.
 
 Error: OVERRUN_STATIC:
-/builddir/build/BUILD/ATLAS/tune/sysinfo/emit_buildinfo.c:167: overrun-buffer-val: Overrunning static array "DATE" of size 128 bytes by passing it as an argument to a function which indexes it at byte position 511.
-/builddir/build/BUILD/ATLAS/tune/sysinfo/emit_buildinfo.c:88: access_dbuff_const: Calling "fgets" indexes array "ln" with index "512" at byte position 511.
-
-Error: OVERRUN_STATIC:
 /builddir/build/BUILD/ATLAS/tune/sysinfo/emit_buildinfo.c:165: overrun-buffer-val: Overrunning static array "UNAM" of size 64 bytes by passing it as an argument to a function which indexes it at byte position 511.
 /builddir/build/BUILD/ATLAS/tune/sysinfo/emit_buildinfo.c:88: access_dbuff_const: Calling "fgets" indexes array "ln" with index "512" at byte position 511.
 
 Error: OVERRUN_STATIC:
-/builddir/build/BUILD/ATLAS/src/blas/gemm/ATL_IBJBmm.c:52: overrun-call: Overrunning callee's array of size 84 by passing index "84" of value 84 in call to function "ATL_cpKBmm(IB, JB, 84, 1f, A, 84, B, 84, 1f, C, ldc)".
+/builddir/build/BUILD/ATLAS/tune/sysinfo/emit_buildinfo.c:167: overrun-buffer-val: Overrunning static array "DATE" of size 128 bytes by passing it as an argument to a function which indexes it at byte position 511.
+/builddir/build/BUILD/ATLAS/tune/sysinfo/emit_buildinfo.c:88: access_dbuff_const: Calling "fgets" indexes array "ln" with index "512" at byte position 511.
+
+Error: OVERRUN_STATIC:
+/builddir/build/BUILD/ATLAS/src/blas/gemm/ATL_IBJBmm.c:47: overrun-call: Overrunning callee's array of size 84 by passing index "84" of value 84 in call to function "ATL_cpKBmm(IB, JB, 84, 1f, A, 84, B, 84, beta, C, ldc)".
 /builddir/build/BUILD/ATLAS/x86_64_base/src/blas/gemm/KERNEL/ATL_cupKBmm_b1.c:599: index_parm_in_call: Function "ATL_cpKBmm_b1" uses "K" as an array index.
 /builddir/build/BUILD/ATLAS/x86_64_base/src/blas/gemm/KERNEL/ATL_cupKBmm_b1.c:580: index_parm: Indexing "mmfunc" with "K".
 
 Error: OVERRUN_STATIC:
-/builddir/build/BUILD/ATLAS/src/blas/gemm/ATL_IBJBmm.c:47: overrun-call: Overrunning callee's array of size 84 by passing index "84" of value 84 in call to function "ATL_cpKBmm(IB, JB, 84, 1f, A, 84, B, 84, beta, C, ldc)".
+/builddir/build/BUILD/ATLAS/src/blas/gemm/ATL_IBJBmm.c:52: overrun-call: Overrunning callee's array of size 84 by passing index "84" of value 84 in call to function "ATL_cpKBmm(IB, JB, 84, 1f, A, 84, B, 84, 1f, C, ldc)".
 /builddir/build/BUILD/ATLAS/x86_64_base/src/blas/gemm/KERNEL/ATL_cupKBmm_b1.c:599: index_parm_in_call: Function "ATL_cpKBmm_b1" uses "K" as an array index.
 /builddir/build/BUILD/ATLAS/x86_64_base/src/blas/gemm/KERNEL/ATL_cupKBmm_b1.c:580: index_parm: Indexing "mmfunc" with "K".
 
@@ -908,14 +908,14 @@ Error: RESOURCE_LEAK:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/axpysrch.c:199: leaked_storage: Variable "fpin" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/axpysrch.c:238: alloc_fn: Calling allocation function "fopen".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/axpysrch.c:238: var_assign: Assigning: "fpin" =  storage returned from "fopen(fnam, "r")".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/axpysrch.c:214: alloc_fn: Calling allocation function "fopen".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/axpysrch.c:214: var_assign: Assigning: "fpin" =  storage returned from "fopen(fnam, "r")".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/axpysrch.c:241: noescape: Variable "fpin" is not freed or pointed-to in function "fgets".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/axpysrch.c:243: leaked_storage: Variable "fpin" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/axpysrch.c:214: alloc_fn: Calling allocation function "fopen".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/axpysrch.c:214: var_assign: Assigning: "fpin" =  storage returned from "fopen(fnam, "r")".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/axpysrch.c:238: alloc_fn: Calling allocation function "fopen".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/axpysrch.c:238: var_assign: Assigning: "fpin" =  storage returned from "fopen(fnam, "r")".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/axpysrch.c:241: noescape: Variable "fpin" is not freed or pointed-to in function "fgets".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/axpysrch.c:243: leaked_storage: Variable "fpin" going out of scope leaks the storage it points to.
 
@@ -941,14 +941,14 @@ Error: RESOURCE_LEAK:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:193: leaked_storage: Variable "fpin" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:221: alloc_fn: Calling allocation function "fopen".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:221: var_assign: Assigning: "fpin" =  storage returned from "fopen(fnam, "r")".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:208: alloc_fn: Calling allocation function "fopen".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:208: var_assign: Assigning: "fpin" =  storage returned from "fopen(fnam, "r")".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:224: noescape: Variable "fpin" is not freed or pointed-to in function "fgets".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:226: leaked_storage: Variable "fpin" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:208: alloc_fn: Calling allocation function "fopen".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:208: var_assign: Assigning: "fpin" =  storage returned from "fopen(fnam, "r")".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:221: alloc_fn: Calling allocation function "fopen".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:221: var_assign: Assigning: "fpin" =  storage returned from "fopen(fnam, "r")".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:224: noescape: Variable "fpin" is not freed or pointed-to in function "fgets".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:226: leaked_storage: Variable "fpin" going out of scope leaks the storage it points to.
 
@@ -974,14 +974,14 @@ Error: RESOURCE_LEAK:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:199: leaked_storage: Variable "fpin" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:238: alloc_fn: Calling allocation function "fopen".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:238: var_assign: Assigning: "fpin" =  storage returned from "fopen(fnam, "r")".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:214: alloc_fn: Calling allocation function "fopen".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:214: var_assign: Assigning: "fpin" =  storage returned from "fopen(fnam, "r")".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:241: noescape: Variable "fpin" is not freed or pointed-to in function "fgets".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:243: leaked_storage: Variable "fpin" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:214: alloc_fn: Calling allocation function "fopen".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:214: var_assign: Assigning: "fpin" =  storage returned from "fopen(fnam, "r")".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:238: alloc_fn: Calling allocation function "fopen".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:238: var_assign: Assigning: "fpin" =  storage returned from "fopen(fnam, "r")".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:241: noescape: Variable "fpin" is not freed or pointed-to in function "fgets".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:243: leaked_storage: Variable "fpin" going out of scope leaks the storage it points to.
 
@@ -1040,14 +1040,14 @@ Error: RESOURCE_LEAK:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:192: leaked_storage: Variable "fpin" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:219: alloc_fn: Calling allocation function "fopen".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:219: var_assign: Assigning: "fpin" =  storage returned from "fopen(fnam, "r")".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:207: alloc_fn: Calling allocation function "fopen".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:207: var_assign: Assigning: "fpin" =  storage returned from "fopen(fnam, "r")".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:222: noescape: Variable "fpin" is not freed or pointed-to in function "fgets".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:224: leaked_storage: Variable "fpin" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:207: alloc_fn: Calling allocation function "fopen".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:207: var_assign: Assigning: "fpin" =  storage returned from "fopen(fnam, "r")".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:219: alloc_fn: Calling allocation function "fopen".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:219: var_assign: Assigning: "fpin" =  storage returned from "fopen(fnam, "r")".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:222: noescape: Variable "fpin" is not freed or pointed-to in function "fgets".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:224: leaked_storage: Variable "fpin" going out of scope leaks the storage it points to.
 
@@ -1073,14 +1073,14 @@ Error: RESOURCE_LEAK:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:193: leaked_storage: Variable "fpin" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:220: alloc_fn: Calling allocation function "fopen".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:220: var_assign: Assigning: "fpin" =  storage returned from "fopen(fnam, "r")".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:208: alloc_fn: Calling allocation function "fopen".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:208: var_assign: Assigning: "fpin" =  storage returned from "fopen(fnam, "r")".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:223: noescape: Variable "fpin" is not freed or pointed-to in function "fgets".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:225: leaked_storage: Variable "fpin" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:208: alloc_fn: Calling allocation function "fopen".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:208: var_assign: Assigning: "fpin" =  storage returned from "fopen(fnam, "r")".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:220: alloc_fn: Calling allocation function "fopen".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:220: var_assign: Assigning: "fpin" =  storage returned from "fopen(fnam, "r")".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:223: noescape: Variable "fpin" is not freed or pointed-to in function "fgets".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:225: leaked_storage: Variable "fpin" going out of scope leaks the storage it points to.
 
@@ -1106,14 +1106,14 @@ Error: RESOURCE_LEAK:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:202: leaked_storage: Variable "fpin" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:253: alloc_fn: Calling allocation function "fopen".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:253: var_assign: Assigning: "fpin" =  storage returned from "fopen(fnam, "r")".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:217: alloc_fn: Calling allocation function "fopen".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:217: var_assign: Assigning: "fpin" =  storage returned from "fopen(fnam, "r")".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:256: noescape: Variable "fpin" is not freed or pointed-to in function "fgets".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:258: leaked_storage: Variable "fpin" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:217: alloc_fn: Calling allocation function "fopen".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:217: var_assign: Assigning: "fpin" =  storage returned from "fopen(fnam, "r")".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:253: alloc_fn: Calling allocation function "fopen".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:253: var_assign: Assigning: "fpin" =  storage returned from "fopen(fnam, "r")".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:256: noescape: Variable "fpin" is not freed or pointed-to in function "fgets".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:258: leaked_storage: Variable "fpin" going out of scope leaks the storage it points to.
 
@@ -1139,14 +1139,14 @@ Error: RESOURCE_LEAK:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:200: leaked_storage: Variable "fpin" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:238: alloc_fn: Calling allocation function "fopen".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:238: var_assign: Assigning: "fpin" =  storage returned from "fopen(fnam, "r")".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:215: alloc_fn: Calling allocation function "fopen".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:215: var_assign: Assigning: "fpin" =  storage returned from "fopen(fnam, "r")".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:241: noescape: Variable "fpin" is not freed or pointed-to in function "fgets".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:243: leaked_storage: Variable "fpin" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:215: alloc_fn: Calling allocation function "fopen".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:215: var_assign: Assigning: "fpin" =  storage returned from "fopen(fnam, "r")".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:238: alloc_fn: Calling allocation function "fopen".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:238: var_assign: Assigning: "fpin" =  storage returned from "fopen(fnam, "r")".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:241: noescape: Variable "fpin" is not freed or pointed-to in function "fgets".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:243: leaked_storage: Variable "fpin" going out of scope leaks the storage it points to.
 
@@ -1172,14 +1172,14 @@ Error: RESOURCE_LEAK:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/setsrch.c:194: leaked_storage: Variable "fpin" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/setsrch.c:226: alloc_fn: Calling allocation function "fopen".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/setsrch.c:226: var_assign: Assigning: "fpin" =  storage returned from "fopen(fnam, "r")".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/setsrch.c:209: alloc_fn: Calling allocation function "fopen".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/setsrch.c:209: var_assign: Assigning: "fpin" =  storage returned from "fopen(fnam, "r")".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/setsrch.c:229: noescape: Variable "fpin" is not freed or pointed-to in function "fgets".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/setsrch.c:231: leaked_storage: Variable "fpin" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/setsrch.c:209: alloc_fn: Calling allocation function "fopen".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/setsrch.c:209: var_assign: Assigning: "fpin" =  storage returned from "fopen(fnam, "r")".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/setsrch.c:226: alloc_fn: Calling allocation function "fopen".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/setsrch.c:226: var_assign: Assigning: "fpin" =  storage returned from "fopen(fnam, "r")".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/setsrch.c:229: noescape: Variable "fpin" is not freed or pointed-to in function "fgets".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/setsrch.c:231: leaked_storage: Variable "fpin" going out of scope leaks the storage it points to.
 
@@ -1205,14 +1205,14 @@ Error: RESOURCE_LEAK:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:193: leaked_storage: Variable "fpin" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:221: alloc_fn: Calling allocation function "fopen".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:221: var_assign: Assigning: "fpin" =  storage returned from "fopen(fnam, "r")".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:208: alloc_fn: Calling allocation function "fopen".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:208: var_assign: Assigning: "fpin" =  storage returned from "fopen(fnam, "r")".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:224: noescape: Variable "fpin" is not freed or pointed-to in function "fgets".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:226: leaked_storage: Variable "fpin" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:208: alloc_fn: Calling allocation function "fopen".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:208: var_assign: Assigning: "fpin" =  storage returned from "fopen(fnam, "r")".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:221: alloc_fn: Calling allocation function "fopen".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:221: var_assign: Assigning: "fpin" =  storage returned from "fopen(fnam, "r")".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:224: noescape: Variable "fpin" is not freed or pointed-to in function "fgets".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:226: leaked_storage: Variable "fpin" going out of scope leaks the storage it points to.
 
@@ -1297,10 +1297,10 @@ Error: STRING_OVERFLOW:
 /builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:751: fixed_size_dest: You might overrun the 512 byte fixed-size string "Nccflags" by copying "ccflagsN[Nbest]" without checking the length.
 
 Error: STRING_OVERFLOW:
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:753: fixed_size_dest: You might overrun the 256 byte fixed-size string "Tfnam" by copying "fnamT[Tbest]" without checking the length.
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:753: fixed_size_dest: You might overrun the 256 byte fixed-size string "Tauth" by copying "authT[Tbest]" without checking the length.
 
 Error: STRING_OVERFLOW:
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:753: fixed_size_dest: You might overrun the 256 byte fixed-size string "Tauth" by copying "authT[Tbest]" without checking the length.
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:753: fixed_size_dest: You might overrun the 256 byte fixed-size string "Tfnam" by copying "fnamT[Tbest]" without checking the length.
 
 Error: STRING_OVERFLOW:
 /builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:754: fixed_size_dest: You might overrun the 256 byte fixed-size string "Tcc" by copying "ccT[Tbest]" without checking the length.
@@ -1309,10 +1309,10 @@ Error: STRING_OVERFLOW:
 /builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:755: fixed_size_dest: You might overrun the 512 byte fixed-size string "Tccflags" by copying "ccflagsT[Tbest]" without checking the length.
 
 Error: STRING_OVERFLOW:
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:758: fixed_size_dest: You might overrun the 256 byte fixed-size string "Sfnam" by copying "fnamN[Sbest]" without checking the length.
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:758: fixed_size_dest: You might overrun the 256 byte fixed-size string "Sauth" by copying "authN[Sbest]" without checking the length.
 
 Error: STRING_OVERFLOW:
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:758: fixed_size_dest: You might overrun the 256 byte fixed-size string "Sauth" by copying "authN[Sbest]" without checking the length.
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:758: fixed_size_dest: You might overrun the 256 byte fixed-size string "Sfnam" by copying "fnamN[Sbest]" without checking the length.
 
 Error: STRING_OVERFLOW:
 /builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:759: fixed_size_dest: You might overrun the 256 byte fixed-size string "Scc" by copying "ccN[Sbest]" without checking the length.
@@ -1461,22 +1461,6 @@ Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/CONFIG/src/probe_comp.c:942: tainted_data_transitive: Calling function "atoi" with tainted argument "args[i]" results in tainted data.
 /builddir/build/BUILD/ATLAS/CONFIG/src/probe_comp.c:947: tainted_data_transitive: Calling function "atoi" with tainted argument "args[i]" results in tainted data.
 /builddir/build/BUILD/ATLAS/CONFIG/src/probe_comp.c:947: parm_assign: Assigning: "*mach" = "atoi(args[i])", which taints "*mach".
-/builddir/build/BUILD/ATLAS/CONFIG/src/probe_comp.c:1111: tainted_data: Passing tainted variable "mach" to a tainted sink.
-/builddir/build/BUILD/ATLAS/CONFIG/src/probe_comp.c:614: data_index: Passing tainted variable "arch" to a tainted data index sink.
-/builddir/build/BUILD/ATLAS/CONFIG/src/probe_comp.c:446: data_index: Passing tainted variable "arch" to a tainted data index sink.
-/builddir/build/BUILD/ATLAS/CONFIG/src/probe_comp.c:194: data_index: Passing tainted variable "arch" to a tainted data index sink.
-/builddir/build/BUILD/ATLAS/CONFIG/src/probe_comp.c:166: data_index: Passing tainted variable "arch" to a tainted data index sink.
-/builddir/build/BUILD/ATLAS/CONFIG/src/atlconf_misc.c:526: var_assign_alias: Assigning: "word" = "bit >> 5". Both are now tainted.
-/builddir/build/BUILD/ATLAS/CONFIG/src/atlconf_misc.c:528: data_index: Using tainted variable "word" as an index to pointer "field".
-
-Error: TAINTED_SCALAR:
-/builddir/build/BUILD/ATLAS/CONFIG/src/probe_comp.c:1090: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "ptrbits".
-/builddir/build/BUILD/ATLAS/CONFIG/src/probe_comp.c:942: tainted_data_transitive: Calling function "atoi" with tainted argument "args[i]" results in tainted data.
-/builddir/build/BUILD/ATLAS/CONFIG/src/probe_comp.c:942: parm_assign: Assigning: "*ptrbits" = "atoi(args[i])", which taints "*ptrbits".
-/builddir/build/BUILD/ATLAS/CONFIG/src/probe_comp.c:1090: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "mach".
-/builddir/build/BUILD/ATLAS/CONFIG/src/probe_comp.c:942: tainted_data_transitive: Calling function "atoi" with tainted argument "args[i]" results in tainted data.
-/builddir/build/BUILD/ATLAS/CONFIG/src/probe_comp.c:947: tainted_data_transitive: Calling function "atoi" with tainted argument "args[i]" results in tainted data.
-/builddir/build/BUILD/ATLAS/CONFIG/src/probe_comp.c:947: parm_assign: Assigning: "*mach" = "atoi(args[i])", which taints "*mach".
 /builddir/build/BUILD/ATLAS/CONFIG/src/probe_comp.c:1090: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "vecexts".
 /builddir/build/BUILD/ATLAS/CONFIG/src/probe_comp.c:942: tainted_data_transitive: Calling function "atoi" with tainted argument "args[i]" results in tainted data.
 /builddir/build/BUILD/ATLAS/CONFIG/src/probe_comp.c:947: tainted_data_transitive: Calling function "atoi" with tainted argument "args[i]" results in tainted data.
@@ -1497,11 +1481,20 @@ Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/CONFIG/src/atlconf_misc.c:528: data_index: Using tainted variable "word" as an index to pointer "field".
 
 Error: TAINTED_SCALAR:
-/builddir/build/BUILD/ATLAS/CONFIG/src/config.c:128: tainted_data_argument: Calling function "fgets" taints argument "ln".
-/builddir/build/BUILD/ATLAS/CONFIG/src/config.c:128: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
-/builddir/build/BUILD/ATLAS/CONFIG/src/config.c:134: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "i".
-/builddir/build/BUILD/ATLAS/CONFIG/src/config.c:135: upper_bounds: Checking upper bounds of signed scalar "i" by "i >= 0".
-/builddir/build/BUILD/ATLAS/CONFIG/src/config.c:136: tainted_data: Using tainted variable "i" as an index to pointer "comps".
+/builddir/build/BUILD/ATLAS/CONFIG/src/probe_comp.c:1090: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "ptrbits".
+/builddir/build/BUILD/ATLAS/CONFIG/src/probe_comp.c:942: tainted_data_transitive: Calling function "atoi" with tainted argument "args[i]" results in tainted data.
+/builddir/build/BUILD/ATLAS/CONFIG/src/probe_comp.c:942: parm_assign: Assigning: "*ptrbits" = "atoi(args[i])", which taints "*ptrbits".
+/builddir/build/BUILD/ATLAS/CONFIG/src/probe_comp.c:1090: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "mach".
+/builddir/build/BUILD/ATLAS/CONFIG/src/probe_comp.c:942: tainted_data_transitive: Calling function "atoi" with tainted argument "args[i]" results in tainted data.
+/builddir/build/BUILD/ATLAS/CONFIG/src/probe_comp.c:947: tainted_data_transitive: Calling function "atoi" with tainted argument "args[i]" results in tainted data.
+/builddir/build/BUILD/ATLAS/CONFIG/src/probe_comp.c:947: parm_assign: Assigning: "*mach" = "atoi(args[i])", which taints "*mach".
+/builddir/build/BUILD/ATLAS/CONFIG/src/probe_comp.c:1111: tainted_data: Passing tainted variable "mach" to a tainted sink.
+/builddir/build/BUILD/ATLAS/CONFIG/src/probe_comp.c:614: data_index: Passing tainted variable "arch" to a tainted data index sink.
+/builddir/build/BUILD/ATLAS/CONFIG/src/probe_comp.c:446: data_index: Passing tainted variable "arch" to a tainted data index sink.
+/builddir/build/BUILD/ATLAS/CONFIG/src/probe_comp.c:194: data_index: Passing tainted variable "arch" to a tainted data index sink.
+/builddir/build/BUILD/ATLAS/CONFIG/src/probe_comp.c:166: data_index: Passing tainted variable "arch" to a tainted data index sink.
+/builddir/build/BUILD/ATLAS/CONFIG/src/atlconf_misc.c:526: var_assign_alias: Assigning: "word" = "bit >> 5". Both are now tainted.
+/builddir/build/BUILD/ATLAS/CONFIG/src/atlconf_misc.c:528: data_index: Using tainted variable "word" as an index to pointer "field".
 
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/CONFIG/src/config.c:128: tainted_data_argument: Calling function "fgets" taints argument "ln".
@@ -1509,6 +1502,13 @@ Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/CONFIG/src/config.c:134: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "i".
 /builddir/build/BUILD/ATLAS/CONFIG/src/config.c:135: lower_bounds: Checking lower bounds of signed scalar "i" by "i >= 0".
 /builddir/build/BUILD/ATLAS/CONFIG/src/config.c:135: lower_bounds: Checking lower bounds of signed scalar "i" by "i < 7".
+/builddir/build/BUILD/ATLAS/CONFIG/src/config.c:136: tainted_data: Using tainted variable "i" as an index to pointer "comps".
+
+Error: TAINTED_SCALAR:
+/builddir/build/BUILD/ATLAS/CONFIG/src/config.c:128: tainted_data_argument: Calling function "fgets" taints argument "ln".
+/builddir/build/BUILD/ATLAS/CONFIG/src/config.c:128: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
+/builddir/build/BUILD/ATLAS/CONFIG/src/config.c:134: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "i".
+/builddir/build/BUILD/ATLAS/CONFIG/src/config.c:135: upper_bounds: Checking upper bounds of signed scalar "i" by "i >= 0".
 /builddir/build/BUILD/ATLAS/CONFIG/src/config.c:136: tainted_data: Using tainted variable "i" as an index to pointer "comps".
 
 Error: TAINTED_SCALAR:
@@ -1599,31 +1599,6 @@ Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:354: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "N".
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:203: tainted_data_transitive: Calling function "atoi" with tainted argument "args[++i]" results in tainted data.
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:203: parm_assign: Assigning: "*N" = "atoi(args[++i])", which taints "*N".
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:410: tainted_data: Passing tainted variable "N" to a tainted sink.
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:252: tainted_data_sink_lv_call: Passing tainted variable "N" to tainted data sink "mmcase".
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:97: tainted_data_sink_lv_call: Passing tainted variable "32 + (N << 3) * K" to tainted data sink "malloc".
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:455: tainted_data: Passing tainted variable "N" to a tainted sink.
-/builddir/build/BUILD/ATLAS/src/blas/gemm/ATL_gemm.c:199: tainted_data_sink_lv_call: Passing tainted variable "N" to tainted data sink "ATL_cGEMM2NN".
-/builddir/build/BUILD/ATLAS/src/blas/gemm/ATL_gemmXX.c:159: lower_bounds: Checking lower bounds of signed scalar "N" by "N >= M".
-/builddir/build/BUILD/ATLAS/src/blas/gemm/ATL_gemmXX.c:262: tainted_data_sink_lv_call: Passing tainted variable "N" to tainted data sink "*mm1". (The function pointer resolves to "int ATL_cmmJITcp(CBLAS_TRANSPOSE const, CBLAS_TRANSPOSE const, int const, int const, int const, float const *, float const *, int const, float const *, int const, float const *, float *, int const)".)
-/builddir/build/BUILD/ATLAS/src/blas/gemm/ATL_cmmJITcp.c:538: lower_bounds: Checking lower bounds of signed scalar "N" by "N > 84".
-/builddir/build/BUILD/ATLAS/src/blas/gemm/ATL_cmmJITcp.c:576: lower_bounds: Checking lower bounds of signed scalar "N" by "M <= N".
-/builddir/build/BUILD/ATLAS/src/blas/gemm/ATL_cmmJITcp.c:578: tainted_data_sink_lv_call: Passing tainted variable "N" to tainted data sink "mmNMK".
-/builddir/build/BUILD/ATLAS/src/blas/gemm/ATL_cmmJITcp.c:425: a_loop_bound: Using tainted variable "N" as a loop boundary.
-
-Error: TAINTED_SCALAR:
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:354: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "CE0".
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:194: tainted_data_transitive: Calling function "atoi" with tainted argument "args[++i]" results in tainted data.
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:194: parm_assign: Assigning: "*CE0" = "atoi(args[++i])", which taints "*CE0".
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:354: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "CEN".
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:195: tainted_data_transitive: Calling function "atoi" with tainted argument "args[++i]" results in tainted data.
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:195: parm_assign: Assigning: "*CEN" = "atoi(args[++i])", which taints "*CEN".
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:354: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "incCE".
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:196: tainted_data_transitive: Calling function "atoi" with tainted argument "args[++i]" results in tainted data.
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:196: parm_assign: Assigning: "*incCE" = "atoi(args[++i])", which taints "*incCE".
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:354: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "N".
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:203: tainted_data_transitive: Calling function "atoi" with tainted argument "args[++i]" results in tainted data.
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:203: parm_assign: Assigning: "*N" = "atoi(args[++i])", which taints "*N".
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:404: lower_bounds: Checking lower bounds of signed scalar "N" by "M > N".
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:405: lower_bounds: Checking lower bounds of signed scalar "N" by "M > N".
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:410: tainted_data: Passing tainted variable "N" to a tainted sink.
@@ -1653,6 +1628,31 @@ Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:203: parm_assign: Assigning: "*N" = "atoi(args[++i])", which taints "*N".
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:404: upper_bounds: Checking upper bounds of signed scalar "N" by "M > N".
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:405: upper_bounds: Checking upper bounds of signed scalar "N" by "M > N".
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:410: tainted_data: Passing tainted variable "N" to a tainted sink.
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:252: tainted_data_sink_lv_call: Passing tainted variable "N" to tainted data sink "mmcase".
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:97: tainted_data_sink_lv_call: Passing tainted variable "32 + (N << 3) * K" to tainted data sink "malloc".
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:455: tainted_data: Passing tainted variable "N" to a tainted sink.
+/builddir/build/BUILD/ATLAS/src/blas/gemm/ATL_gemm.c:199: tainted_data_sink_lv_call: Passing tainted variable "N" to tainted data sink "ATL_cGEMM2NN".
+/builddir/build/BUILD/ATLAS/src/blas/gemm/ATL_gemmXX.c:159: lower_bounds: Checking lower bounds of signed scalar "N" by "N >= M".
+/builddir/build/BUILD/ATLAS/src/blas/gemm/ATL_gemmXX.c:262: tainted_data_sink_lv_call: Passing tainted variable "N" to tainted data sink "*mm1". (The function pointer resolves to "int ATL_cmmJITcp(CBLAS_TRANSPOSE const, CBLAS_TRANSPOSE const, int const, int const, int const, float const *, float const *, int const, float const *, int const, float const *, float *, int const)".)
+/builddir/build/BUILD/ATLAS/src/blas/gemm/ATL_cmmJITcp.c:538: lower_bounds: Checking lower bounds of signed scalar "N" by "N > 84".
+/builddir/build/BUILD/ATLAS/src/blas/gemm/ATL_cmmJITcp.c:576: lower_bounds: Checking lower bounds of signed scalar "N" by "M <= N".
+/builddir/build/BUILD/ATLAS/src/blas/gemm/ATL_cmmJITcp.c:578: tainted_data_sink_lv_call: Passing tainted variable "N" to tainted data sink "mmNMK".
+/builddir/build/BUILD/ATLAS/src/blas/gemm/ATL_cmmJITcp.c:425: a_loop_bound: Using tainted variable "N" as a loop boundary.
+
+Error: TAINTED_SCALAR:
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:354: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "CE0".
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:194: tainted_data_transitive: Calling function "atoi" with tainted argument "args[++i]" results in tainted data.
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:194: parm_assign: Assigning: "*CE0" = "atoi(args[++i])", which taints "*CE0".
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:354: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "CEN".
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:195: tainted_data_transitive: Calling function "atoi" with tainted argument "args[++i]" results in tainted data.
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:195: parm_assign: Assigning: "*CEN" = "atoi(args[++i])", which taints "*CEN".
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:354: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "incCE".
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:196: tainted_data_transitive: Calling function "atoi" with tainted argument "args[++i]" results in tainted data.
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:196: parm_assign: Assigning: "*incCE" = "atoi(args[++i])", which taints "*incCE".
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:354: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "N".
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:203: tainted_data_transitive: Calling function "atoi" with tainted argument "args[++i]" results in tainted data.
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:203: parm_assign: Assigning: "*N" = "atoi(args[++i])", which taints "*N".
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:410: tainted_data: Passing tainted variable "N" to a tainted sink.
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:252: tainted_data_sink_lv_call: Passing tainted variable "N" to tainted data sink "mmcase".
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:97: tainted_data_sink_lv_call: Passing tainted variable "32 + (N << 3) * K" to tainted data sink "malloc".
@@ -1892,6 +1892,21 @@ Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:1989: tainted_data: Using tainted variable "n" as a loop boundary.
 
 Error: TAINTED_SCALAR:
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2220: tainted_data_return: Function "CheckUser" returns tainted data.
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:1182: tainted_data_argument: Function "fgets" taints argument "fnam".
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:1182: tainted_data_transitive: Call to function "fgets" with tainted argument "fnam" returns tainted data.
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:1184: vararg_transitive: Call to "sscanf" with tainted argument "fnam" taints "i".
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:1184: vararg_transitive: Call to "sscanf" with tainted argument "fnam" taints "unb".
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:1200: return_tainted_data: Returning tainted variable "unb".
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2220: var_assign: Assigning: "nb" = "CheckUser", which taints "nb".
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2221: tainted_data: Passing tainted variable "nb" to a tainted sink.
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2208: tainted_data_sink_lv_call: Passing tainted variable "nb" to tainted data sink "FindUserCleanup".
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2190: tainted_data_sink_lv_call: Passing tainted variable "nb" to tainted data sink "RebuttUserCases".
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2121: tainted_data_sink_lv_call: Passing tainted variable "nb" to tainted data sink "RebuttUserKClean".
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2064: tainted_data_sink_lv_call: Passing tainted variable "nb" to tainted data sink "GetKBs".
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2019: tainted_data_sink_lv_call: Passing tainted variable "(nb + 1) * 4UL" to tainted data sink "malloc".
+
+Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2245: tainted_data_return: Function "CheckUser" returns tainted data.
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:1182: tainted_data_argument: Function "fgets" taints argument "fnam".
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:1182: tainted_data_transitive: Call to function "fgets" with tainted argument "fnam" returns tainted data.
@@ -1901,21 +1916,6 @@ Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2245: var_assign: Assigning: "nb" = "CheckUser", which taints "nb".
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2246: tainted_data: Passing tainted variable "nb" to a tainted sink.
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2232: tainted_data_sink_lv_call: Passing tainted variable "nb" to tainted data sink "FindAllUserClean".
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2208: tainted_data_sink_lv_call: Passing tainted variable "nb" to tainted data sink "FindUserCleanup".
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2190: tainted_data_sink_lv_call: Passing tainted variable "nb" to tainted data sink "RebuttUserCases".
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2121: tainted_data_sink_lv_call: Passing tainted variable "nb" to tainted data sink "RebuttUserKClean".
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2064: tainted_data_sink_lv_call: Passing tainted variable "nb" to tainted data sink "GetKBs".
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2019: tainted_data_sink_lv_call: Passing tainted variable "(nb + 1) * 4UL" to tainted data sink "malloc".
-
-Error: TAINTED_SCALAR:
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2220: tainted_data_return: Function "CheckUser" returns tainted data.
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:1182: tainted_data_argument: Function "fgets" taints argument "fnam".
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:1182: tainted_data_transitive: Call to function "fgets" with tainted argument "fnam" returns tainted data.
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:1184: vararg_transitive: Call to "sscanf" with tainted argument "fnam" taints "i".
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:1184: vararg_transitive: Call to "sscanf" with tainted argument "fnam" taints "unb".
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:1200: return_tainted_data: Returning tainted variable "unb".
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2220: var_assign: Assigning: "nb" = "CheckUser", which taints "nb".
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2221: tainted_data: Passing tainted variable "nb" to a tainted sink.
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2208: tainted_data_sink_lv_call: Passing tainted variable "nb" to tainted data sink "FindUserCleanup".
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2190: tainted_data_sink_lv_call: Passing tainted variable "nb" to tainted data sink "RebuttUserCases".
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2121: tainted_data_sink_lv_call: Passing tainted variable "nb" to tainted data sink "RebuttUserKClean".
@@ -1949,9 +1949,12 @@ Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/gemv/gemvtune.c:411: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "M".
 /builddir/build/BUILD/ATLAS/tune/blas/gemv/gemvtune.c:360: tainted_data_transitive: Calling function "atoi" with tainted argument "args[++i]" results in tainted data.
 /builddir/build/BUILD/ATLAS/tune/blas/gemv/gemvtune.c:360: parm_assign: Assigning: "*M" = "atoi(args[++i])", which taints "*M".
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/gemvtune.c:422: tainted_data: Passing tainted variable "M" to a tainted sink.
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/gemvtune.c:200: var_assign_alias: Assigning: "ly" = "i * M * 1". Both are now tainted.
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/gemvtune.c:201: tainted_data_sink_lv_call: Passing tainted variable "ly << 3" to tainted data sink "FA_malloc".
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/gemvtune.c:411: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "N".
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/gemvtune.c:363: tainted_data_transitive: Calling function "atoi" with tainted argument "args[++i]" results in tainted data.
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/gemvtune.c:363: parm_assign: Assigning: "*N" = "atoi(args[++i])", which taints "*N".
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/gemvtune.c:422: tainted_data: Passing tainted variable "N" to a tainted sink.
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/gemvtune.c:194: var_assign_alias: Assigning: "lx" = "i * N * 1". Both are now tainted.
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/gemvtune.c:195: tainted_data_sink_lv_call: Passing tainted variable "lx << 3" to tainted data sink "FA_malloc".
 /builddir/build/BUILD/ATLAS/tune/blas/gemv/gemvtune.c:107: tainted_data_sink_lv_call: Passing tainted variable "size" to tainted data sink "malloc".
 
 Error: TAINTED_SCALAR:
@@ -1968,12 +1971,9 @@ Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/gemv/gemvtune.c:411: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "M".
 /builddir/build/BUILD/ATLAS/tune/blas/gemv/gemvtune.c:360: tainted_data_transitive: Calling function "atoi" with tainted argument "args[++i]" results in tainted data.
 /builddir/build/BUILD/ATLAS/tune/blas/gemv/gemvtune.c:360: parm_assign: Assigning: "*M" = "atoi(args[++i])", which taints "*M".
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/gemvtune.c:411: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "N".
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/gemvtune.c:363: tainted_data_transitive: Calling function "atoi" with tainted argument "args[++i]" results in tainted data.
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/gemvtune.c:363: parm_assign: Assigning: "*N" = "atoi(args[++i])", which taints "*N".
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/gemvtune.c:422: tainted_data: Passing tainted variable "N" to a tainted sink.
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/gemvtune.c:194: var_assign_alias: Assigning: "lx" = "i * N * 1". Both are now tainted.
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/gemvtune.c:195: tainted_data_sink_lv_call: Passing tainted variable "lx << 3" to tainted data sink "FA_malloc".
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/gemvtune.c:422: tainted_data: Passing tainted variable "M" to a tainted sink.
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/gemvtune.c:200: var_assign_alias: Assigning: "ly" = "i * M * 1". Both are now tainted.
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/gemvtune.c:201: tainted_data_sink_lv_call: Passing tainted variable "ly << 3" to tainted data sink "FA_malloc".
 /builddir/build/BUILD/ATLAS/tune/blas/gemv/gemvtune.c:107: tainted_data_sink_lv_call: Passing tainted variable "size" to tainted data sink "malloc".
 
 Error: TAINTED_SCALAR:
@@ -1998,16 +1998,6 @@ Error: TAINTED_SCALAR:
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:342: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:343: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:344: upper_bounds: Checking upper bounds of signed scalar "n" by "n < 100".
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:344: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:345: tainted_data: Passing tainted variable "n * 8UL" to a tainted sink.
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:346: tainted_data: Passing tainted variable "n * 8UL" to a tainted sink.
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:347: tainted_data: Passing tainted variable "n * 8UL" to a tainted sink.
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:348: tainted_data: Passing tainted variable "n * 8UL" to a tainted sink.
-
-Error: TAINTED_SCALAR:
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:342: tainted_data_argument: Calling function "fgets" taints argument "ln".
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:343: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
 /builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:344: lower_bounds: Checking lower bounds of signed scalar "n" by "n < 100".
 /builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:345: tainted_data: Passing tainted variable "n * 8UL" to a tainted sink.
 /builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:346: tainted_data: Passing tainted variable "n * 8UL" to a tainted sink.
@@ -2019,12 +2009,22 @@ Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:343: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
 /builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:344: upper_bounds: Checking upper bounds of signed scalar "n" by "n < 100".
 /builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:344: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:345: tainted_data: Passing tainted variable "n * 8UL" to a tainted sink.
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:346: tainted_data: Passing tainted variable "n * 8UL" to a tainted sink.
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:347: tainted_data: Passing tainted variable "n * 8UL" to a tainted sink.
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:348: tainted_data: Passing tainted variable "n * 8UL" to a tainted sink.
+
+Error: TAINTED_SCALAR:
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:342: tainted_data_argument: Calling function "fgets" taints argument "ln".
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:343: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:344: lower_bounds: Checking lower bounds of signed scalar "n" by "n < 100".
 /builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:350: tainted_data: Using tainted variable "n" as a loop boundary.
 
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:342: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:343: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:344: lower_bounds: Checking lower bounds of signed scalar "n" by "n < 100".
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:344: upper_bounds: Checking upper bounds of signed scalar "n" by "n < 100".
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:344: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:350: tainted_data: Using tainted variable "n" as a loop boundary.
 
 Error: TAINTED_SCALAR:
@@ -2042,28 +2042,19 @@ Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:551: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "M0".
 /builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:507: tainted_data_transitive: Calling function "atoi" with tainted argument "args[++i]" results in tainted data.
 /builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:507: parm_assign: Assigning: "*M0" = "atoi(args[++i])", which taints "*M0".
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:562: var_assign_var: Assigning: "m" = "M0". Both are now tainted.
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:562: upper_bounds: Checking upper bounds of signed scalar "m" by "m <= MN".
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:566: var_assign_var: Assigning: "lda" = "m + ldagap". Both are now tainted.
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:569: tainted_data: Passing tainted variable "lda" to a tainted sink.
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:422: tainted_data_sink_lv_call: Passing tainted variable "lda" to tainted data sink "RunTest".
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:292: tainted_data_sink_lv_call: Passing tainted variable "lda * (nA << 3)" to tainted data sink "FA_malloc".
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:105: tainted_data_sink_lv_call: Passing tainted variable "size" to tainted data sink "malloc".
-
-Error: TAINTED_SCALAR:
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:551: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "MN".
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:501: tainted_data_transitive: Calling function "atoi" with tainted argument "args[++i]" results in tainted data.
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:501: parm_assign: Assigning: "*MN" = "atoi(args[++i])", which taints "*MN".
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:551: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "NN".
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:504: tainted_data_transitive: Calling function "atoi" with tainted argument "args[++i]" results in tainted data.
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:504: parm_assign: Assigning: "*NN" = "atoi(args[++i])", which taints "*NN".
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:551: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "M0".
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:507: tainted_data_transitive: Calling function "atoi" with tainted argument "args[++i]" results in tainted data.
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:507: parm_assign: Assigning: "*M0" = "atoi(args[++i])", which taints "*M0".
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:562: var_assign_var: Assigning: "m" = "M0". Both are now tainted.
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:562: upper_bounds: Checking upper bounds of signed scalar "m" by "m <= MN".
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:566: var_assign_var: Assigning: "lda" = "m + ldagap". Both are now tainted.
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:566: var_assign_var: Assigning: "lda" = "m + ldagap". Both are now tainted.
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:551: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "incM".
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:509: tainted_data_transitive: Calling function "atoi" with tainted argument "args[++i]" results in tainted data.
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:509: parm_assign: Assigning: "*incM" = "atoi(args[++i])", which taints "*incM".
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:551: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "N0".
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:512: tainted_data_transitive: Calling function "atoi" with tainted argument "args[++i]" results in tainted data.
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:512: parm_assign: Assigning: "*N0" = "atoi(args[++i])", which taints "*N0".
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:551: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "incN".
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:514: tainted_data_transitive: Calling function "atoi" with tainted argument "args[++i]" results in tainted data.
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:514: parm_assign: Assigning: "*incN" = "atoi(args[++i])", which taints "*incN".
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:551: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "lda".
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:517: tainted_data_transitive: Calling function "atoi" with tainted argument "args[++i]" results in tainted data.
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:517: parm_assign: Assigning: "*lda" = "atoi(args[++i])", which taints "*lda".
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:552: lower_bounds: Checking lower bounds of signed scalar "lda" by "lda < 0".
 /builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:569: tainted_data: Passing tainted variable "lda" to a tainted sink.
 /builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:422: tainted_data_sink_lv_call: Passing tainted variable "lda" to tainted data sink "RunTest".
 /builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:292: tainted_data_sink_lv_call: Passing tainted variable "lda * (nA << 3)" to tainted data sink "FA_malloc".
@@ -2103,19 +2094,28 @@ Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:551: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "M0".
 /builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:507: tainted_data_transitive: Calling function "atoi" with tainted argument "args[++i]" results in tainted data.
 /builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:507: parm_assign: Assigning: "*M0" = "atoi(args[++i])", which taints "*M0".
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:551: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "incM".
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:509: tainted_data_transitive: Calling function "atoi" with tainted argument "args[++i]" results in tainted data.
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:509: parm_assign: Assigning: "*incM" = "atoi(args[++i])", which taints "*incM".
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:551: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "N0".
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:512: tainted_data_transitive: Calling function "atoi" with tainted argument "args[++i]" results in tainted data.
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:512: parm_assign: Assigning: "*N0" = "atoi(args[++i])", which taints "*N0".
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:551: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "incN".
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:514: tainted_data_transitive: Calling function "atoi" with tainted argument "args[++i]" results in tainted data.
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:514: parm_assign: Assigning: "*incN" = "atoi(args[++i])", which taints "*incN".
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:551: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "lda".
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:517: tainted_data_transitive: Calling function "atoi" with tainted argument "args[++i]" results in tainted data.
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:517: parm_assign: Assigning: "*lda" = "atoi(args[++i])", which taints "*lda".
-/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:552: lower_bounds: Checking lower bounds of signed scalar "lda" by "lda < 0".
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:562: var_assign_var: Assigning: "m" = "M0". Both are now tainted.
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:562: upper_bounds: Checking upper bounds of signed scalar "m" by "m <= MN".
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:566: var_assign_var: Assigning: "lda" = "m + ldagap". Both are now tainted.
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:566: var_assign_var: Assigning: "lda" = "m + ldagap". Both are now tainted.
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:569: tainted_data: Passing tainted variable "lda" to a tainted sink.
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:422: tainted_data_sink_lv_call: Passing tainted variable "lda" to tainted data sink "RunTest".
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:292: tainted_data_sink_lv_call: Passing tainted variable "lda * (nA << 3)" to tainted data sink "FA_malloc".
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:105: tainted_data_sink_lv_call: Passing tainted variable "size" to tainted data sink "malloc".
+
+Error: TAINTED_SCALAR:
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:551: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "MN".
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:501: tainted_data_transitive: Calling function "atoi" with tainted argument "args[++i]" results in tainted data.
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:501: parm_assign: Assigning: "*MN" = "atoi(args[++i])", which taints "*MN".
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:551: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "NN".
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:504: tainted_data_transitive: Calling function "atoi" with tainted argument "args[++i]" results in tainted data.
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:504: parm_assign: Assigning: "*NN" = "atoi(args[++i])", which taints "*NN".
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:551: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "M0".
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:507: tainted_data_transitive: Calling function "atoi" with tainted argument "args[++i]" results in tainted data.
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:507: parm_assign: Assigning: "*M0" = "atoi(args[++i])", which taints "*M0".
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:562: var_assign_var: Assigning: "m" = "M0". Both are now tainted.
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:562: upper_bounds: Checking upper bounds of signed scalar "m" by "m <= MN".
+/builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:566: var_assign_var: Assigning: "lda" = "m + ldagap". Both are now tainted.
 /builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:569: tainted_data: Passing tainted variable "lda" to a tainted sink.
 /builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:422: tainted_data_sink_lv_call: Passing tainted variable "lda" to tainted data sink "RunTest".
 /builddir/build/BUILD/ATLAS/tune/blas/gemv/mvtest.c:292: tainted_data_sink_lv_call: Passing tainted variable "lda * (nA << 3)" to tainted data sink "FA_malloc".
@@ -2310,17 +2310,6 @@ Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/ger/r1test.c:198: a_loop_bound: Using tainted variable "M2" as a loop boundary.
 
 Error: TAINTED_SCALAR:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:168: tainted_data_argument: Calling function "fgets" taints argument "ln".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:168: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
-/builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:169: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:170: tainted_data: Using tainted variable "n" as a loop boundary.
-
-Error: TAINTED_SCALAR:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:168: tainted_data_argument: Calling function "fgets" taints argument "ln".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:169: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:170: tainted_data: Using tainted variable "n" as a loop boundary.
-
-Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:911: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" returns tainted data.
 /builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:880: var_assign_alias: Assigning: "ch" = "args[2][0]". Both are now tainted.
 /builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:906: return_tainted_data: Returning tainted variable "ch".
@@ -2334,6 +2323,17 @@ Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:170: a_loop_bound: Using tainted variable "n" as a loop boundary.
 
 Error: TAINTED_SCALAR:
+/builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:168: tainted_data_argument: Calling function "fgets" taints argument "ln".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:168: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
+/builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:169: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:170: tainted_data: Using tainted variable "n" as a loop boundary.
+
+Error: TAINTED_SCALAR:
+/builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:168: tainted_data_argument: Calling function "fgets" taints argument "ln".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:169: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:170: tainted_data: Using tainted variable "n" as a loop boundary.
+
+Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:786: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:786: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
 /builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:787: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
@@ -2342,8 +2342,9 @@ Error: TAINTED_SCALAR:
 
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:786: tainted_data_argument: Calling function "fgets" taints argument "ln".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:786: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
 /builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:787: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:788: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:788: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:790: tainted_data: Passing tainted variable "5 * n * 4UL" to a tainted sink.
 /builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:796: tainted_data: Passing tainted variable "n * 8UL" to a tainted sink.
 
@@ -2356,9 +2357,8 @@ Error: TAINTED_SCALAR:
 
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:786: tainted_data_argument: Calling function "fgets" taints argument "ln".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:786: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
 /builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:787: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:788: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:788: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:790: tainted_data: Passing tainted variable "5 * n * 4UL" to a tainted sink.
 /builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:796: tainted_data: Passing tainted variable "n * 8UL" to a tainted sink.
 
@@ -2372,25 +2372,14 @@ Error: TAINTED_SCALAR:
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:786: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:787: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:788: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:788: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:799: tainted_data: Using tainted variable "n" as a loop boundary.
 
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:786: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:787: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:788: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:788: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/asumsrch.c:799: tainted_data: Using tainted variable "n" as a loop boundary.
-
-Error: TAINTED_SCALAR:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:168: tainted_data_argument: Calling function "fgets" taints argument "ln".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:168: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
-/builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:169: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:170: tainted_data: Using tainted variable "n" as a loop boundary.
-
-Error: TAINTED_SCALAR:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:168: tainted_data_argument: Calling function "fgets" taints argument "ln".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:169: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:170: tainted_data: Using tainted variable "n" as a loop boundary.
 
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:1243: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" returns tainted data.
@@ -2406,6 +2395,17 @@ Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:170: a_loop_bound: Using tainted variable "n" as a loop boundary.
 
 Error: TAINTED_SCALAR:
+/builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:168: tainted_data_argument: Calling function "fgets" taints argument "ln".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:168: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
+/builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:169: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:170: tainted_data: Using tainted variable "n" as a loop boundary.
+
+Error: TAINTED_SCALAR:
+/builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:168: tainted_data_argument: Calling function "fgets" taints argument "ln".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:169: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:170: tainted_data: Using tainted variable "n" as a loop boundary.
+
+Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:1118: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:1118: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
 /builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:1119: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
@@ -2423,14 +2423,14 @@ Error: TAINTED_SCALAR:
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:1118: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:1119: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:1120: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:1120: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:1122: tainted_data: Passing tainted variable "5 * n * 4UL" to a tainted sink.
 /builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:1128: tainted_data: Passing tainted variable "n * 8UL" to a tainted sink.
 
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:1118: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:1119: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:1120: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:1120: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:1122: tainted_data: Passing tainted variable "5 * n * 4UL" to a tainted sink.
 /builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:1128: tainted_data: Passing tainted variable "n * 8UL" to a tainted sink.
 
@@ -2444,13 +2444,13 @@ Error: TAINTED_SCALAR:
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:1118: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:1119: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:1120: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:1120: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:1131: tainted_data: Using tainted variable "n" as a loop boundary.
 
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:1118: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:1119: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:1120: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:1120: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/axpbysrch.c:1131: tainted_data: Using tainted variable "n" as a loop boundary.
 
 Error: TAINTED_SCALAR:
@@ -2486,6 +2486,14 @@ Error: TAINTED_SCALAR:
 
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/axpysrch.c:973: tainted_data_argument: Calling function "fgets" taints argument "ln".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/axpysrch.c:973: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
+/builddir/build/BUILD/ATLAS/tune/blas/level1/axpysrch.c:974: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/axpysrch.c:975: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/axpysrch.c:977: tainted_data: Passing tainted variable "5 * n * 4UL" to a tainted sink.
+/builddir/build/BUILD/ATLAS/tune/blas/level1/axpysrch.c:983: tainted_data: Passing tainted variable "n * 8UL" to a tainted sink.
+
+Error: TAINTED_SCALAR:
+/builddir/build/BUILD/ATLAS/tune/blas/level1/axpysrch.c:973: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/axpysrch.c:974: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/axpysrch.c:975: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/axpysrch.c:977: tainted_data: Passing tainted variable "5 * n * 4UL" to a tainted sink.
@@ -2503,8 +2511,7 @@ Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/axpysrch.c:973: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
 /builddir/build/BUILD/ATLAS/tune/blas/level1/axpysrch.c:974: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/axpysrch.c:975: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/axpysrch.c:977: tainted_data: Passing tainted variable "5 * n * 4UL" to a tainted sink.
-/builddir/build/BUILD/ATLAS/tune/blas/level1/axpysrch.c:983: tainted_data: Passing tainted variable "n * 8UL" to a tainted sink.
+/builddir/build/BUILD/ATLAS/tune/blas/level1/axpysrch.c:986: tainted_data: Using tainted variable "n" as a loop boundary.
 
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/axpysrch.c:973: tainted_data_argument: Calling function "fgets" taints argument "ln".
@@ -2517,24 +2524,6 @@ Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/axpysrch.c:974: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/axpysrch.c:975: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/axpysrch.c:986: tainted_data: Using tainted variable "n" as a loop boundary.
-
-Error: TAINTED_SCALAR:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/axpysrch.c:973: tainted_data_argument: Calling function "fgets" taints argument "ln".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/axpysrch.c:973: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
-/builddir/build/BUILD/ATLAS/tune/blas/level1/axpysrch.c:974: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/axpysrch.c:975: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/axpysrch.c:986: tainted_data: Using tainted variable "n" as a loop boundary.
-
-Error: TAINTED_SCALAR:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:168: tainted_data_argument: Calling function "fgets" taints argument "ln".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:169: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:170: tainted_data: Using tainted variable "n" as a loop boundary.
-
-Error: TAINTED_SCALAR:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:168: tainted_data_argument: Calling function "fgets" taints argument "ln".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:168: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
-/builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:169: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:170: tainted_data: Using tainted variable "n" as a loop boundary.
 
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:1019: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" returns tainted data.
@@ -2550,6 +2539,17 @@ Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:170: a_loop_bound: Using tainted variable "n" as a loop boundary.
 
 Error: TAINTED_SCALAR:
+/builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:168: tainted_data_argument: Calling function "fgets" taints argument "ln".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:168: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
+/builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:169: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:170: tainted_data: Using tainted variable "n" as a loop boundary.
+
+Error: TAINTED_SCALAR:
+/builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:168: tainted_data_argument: Calling function "fgets" taints argument "ln".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:169: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:170: tainted_data: Using tainted variable "n" as a loop boundary.
+
+Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:894: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:894: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
 /builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:895: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
@@ -2567,14 +2567,14 @@ Error: TAINTED_SCALAR:
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:894: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:895: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:896: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:896: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:898: tainted_data: Passing tainted variable "5 * n * 4UL" to a tainted sink.
 /builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:904: tainted_data: Passing tainted variable "n * 8UL" to a tainted sink.
 
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:894: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:895: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:896: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:896: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:898: tainted_data: Passing tainted variable "5 * n * 4UL" to a tainted sink.
 /builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:904: tainted_data: Passing tainted variable "n * 8UL" to a tainted sink.
 
@@ -2588,25 +2588,14 @@ Error: TAINTED_SCALAR:
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:894: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:895: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:896: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:896: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:907: tainted_data: Using tainted variable "n" as a loop boundary.
 
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:894: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:895: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:896: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:896: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/copysrch.c:907: tainted_data: Using tainted variable "n" as a loop boundary.
-
-Error: TAINTED_SCALAR:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:168: tainted_data_argument: Calling function "fgets" taints argument "ln".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:169: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:170: tainted_data: Using tainted variable "n" as a loop boundary.
-
-Error: TAINTED_SCALAR:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:168: tainted_data_argument: Calling function "fgets" taints argument "ln".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:168: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
-/builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:169: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:170: tainted_data: Using tainted variable "n" as a loop boundary.
 
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:1118: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" returns tainted data.
@@ -2622,18 +2611,22 @@ Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:170: a_loop_bound: Using tainted variable "n" as a loop boundary.
 
 Error: TAINTED_SCALAR:
+/builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:168: tainted_data_argument: Calling function "fgets" taints argument "ln".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:168: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
+/builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:169: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:170: tainted_data: Using tainted variable "n" as a loop boundary.
+
+Error: TAINTED_SCALAR:
+/builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:168: tainted_data_argument: Calling function "fgets" taints argument "ln".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:169: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:170: tainted_data: Using tainted variable "n" as a loop boundary.
+
+Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:993: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:993: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
 /builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:994: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:995: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:997: tainted_data: Passing tainted variable "5 * n * 4UL" to a tainted sink.
-
-Error: TAINTED_SCALAR:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:993: tainted_data_argument: Calling function "fgets" taints argument "ln".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:994: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:995: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:997: tainted_data: Passing tainted variable "5 * n * 4UL" to a tainted sink.
-/builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:1003: tainted_data: Passing tainted variable "n * 8UL" to a tainted sink.
 
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:993: tainted_data_argument: Calling function "fgets" taints argument "ln".
@@ -2647,6 +2640,13 @@ Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:993: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:994: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:995: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:997: tainted_data: Passing tainted variable "5 * n * 4UL" to a tainted sink.
+/builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:1003: tainted_data: Passing tainted variable "n * 8UL" to a tainted sink.
+
+Error: TAINTED_SCALAR:
+/builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:993: tainted_data_argument: Calling function "fgets" taints argument "ln".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:994: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:995: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:997: tainted_data: Passing tainted variable "5 * n * 4UL" to a tainted sink.
 /builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:1003: tainted_data: Passing tainted variable "n * 8UL" to a tainted sink.
 
@@ -2660,13 +2660,13 @@ Error: TAINTED_SCALAR:
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:993: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:994: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:995: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:995: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:1006: tainted_data: Using tainted variable "n" as a loop boundary.
 
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:993: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:994: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:995: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:995: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/cpscsrch.c:1006: tainted_data: Using tainted variable "n" as a loop boundary.
 
 Error: TAINTED_SCALAR:
@@ -2684,21 +2684,29 @@ Error: TAINTED_SCALAR:
 
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/dotsrch.c:171: tainted_data_argument: Calling function "fgets" taints argument "ln".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/dotsrch.c:172: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/dotsrch.c:173: tainted_data: Using tainted variable "n" as a loop boundary.
-
-Error: TAINTED_SCALAR:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/dotsrch.c:171: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/dotsrch.c:171: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
 /builddir/build/BUILD/ATLAS/tune/blas/level1/dotsrch.c:172: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/dotsrch.c:173: tainted_data: Using tainted variable "n" as a loop boundary.
 
 Error: TAINTED_SCALAR:
+/builddir/build/BUILD/ATLAS/tune/blas/level1/dotsrch.c:171: tainted_data_argument: Calling function "fgets" taints argument "ln".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/dotsrch.c:172: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/dotsrch.c:173: tainted_data: Using tainted variable "n" as a loop boundary.
+
+Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/dotsrch.c:936: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/dotsrch.c:936: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
 /builddir/build/BUILD/ATLAS/tune/blas/level1/dotsrch.c:937: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/dotsrch.c:938: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/dotsrch.c:940: tainted_data: Passing tainted variable "5 * n * 4UL" to a tainted sink.
+
+Error: TAINTED_SCALAR:
+/builddir/build/BUILD/ATLAS/tune/blas/level1/dotsrch.c:936: tainted_data_argument: Calling function "fgets" taints argument "ln".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/dotsrch.c:936: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
+/builddir/build/BUILD/ATLAS/tune/blas/level1/dotsrch.c:937: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/dotsrch.c:938: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/dotsrch.c:940: tainted_data: Passing tainted variable "5 * n * 4UL" to a tainted sink.
+/builddir/build/BUILD/ATLAS/tune/blas/level1/dotsrch.c:946: tainted_data: Passing tainted variable "n * 8UL" to a tainted sink.
 
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/dotsrch.c:936: tainted_data_argument: Calling function "fgets" taints argument "ln".
@@ -2719,8 +2727,7 @@ Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/dotsrch.c:936: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
 /builddir/build/BUILD/ATLAS/tune/blas/level1/dotsrch.c:937: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/dotsrch.c:938: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/dotsrch.c:940: tainted_data: Passing tainted variable "5 * n * 4UL" to a tainted sink.
-/builddir/build/BUILD/ATLAS/tune/blas/level1/dotsrch.c:946: tainted_data: Passing tainted variable "n * 8UL" to a tainted sink.
+/builddir/build/BUILD/ATLAS/tune/blas/level1/dotsrch.c:949: tainted_data: Using tainted variable "n" as a loop boundary.
 
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/dotsrch.c:936: tainted_data_argument: Calling function "fgets" taints argument "ln".
@@ -2733,24 +2740,6 @@ Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/dotsrch.c:937: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/dotsrch.c:938: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/dotsrch.c:949: tainted_data: Using tainted variable "n" as a loop boundary.
-
-Error: TAINTED_SCALAR:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/dotsrch.c:936: tainted_data_argument: Calling function "fgets" taints argument "ln".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/dotsrch.c:936: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
-/builddir/build/BUILD/ATLAS/tune/blas/level1/dotsrch.c:937: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/dotsrch.c:938: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/dotsrch.c:949: tainted_data: Using tainted variable "n" as a loop boundary.
-
-Error: TAINTED_SCALAR:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:168: tainted_data_argument: Calling function "fgets" taints argument "ln".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:168: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
-/builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:169: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:170: tainted_data: Using tainted variable "n" as a loop boundary.
-
-Error: TAINTED_SCALAR:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:168: tainted_data_argument: Calling function "fgets" taints argument "ln".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:169: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:170: tainted_data: Using tainted variable "n" as a loop boundary.
 
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:899: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" returns tainted data.
@@ -2766,6 +2755,17 @@ Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:170: a_loop_bound: Using tainted variable "n" as a loop boundary.
 
 Error: TAINTED_SCALAR:
+/builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:168: tainted_data_argument: Calling function "fgets" taints argument "ln".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:168: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
+/builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:169: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:170: tainted_data: Using tainted variable "n" as a loop boundary.
+
+Error: TAINTED_SCALAR:
+/builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:168: tainted_data_argument: Calling function "fgets" taints argument "ln".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:169: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:170: tainted_data: Using tainted variable "n" as a loop boundary.
+
+Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:774: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:774: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
 /builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:775: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
@@ -2783,14 +2783,14 @@ Error: TAINTED_SCALAR:
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:774: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:775: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:776: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:776: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:778: tainted_data: Passing tainted variable "5 * n * 4UL" to a tainted sink.
 /builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:784: tainted_data: Passing tainted variable "n * 8UL" to a tainted sink.
 
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:774: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:775: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:776: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:776: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:778: tainted_data: Passing tainted variable "5 * n * 4UL" to a tainted sink.
 /builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:784: tainted_data: Passing tainted variable "n * 8UL" to a tainted sink.
 
@@ -2804,25 +2804,14 @@ Error: TAINTED_SCALAR:
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:774: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:775: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:776: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:776: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:787: tainted_data: Using tainted variable "n" as a loop boundary.
 
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:774: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:775: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:776: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:776: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/iamaxsrch.c:787: tainted_data: Using tainted variable "n" as a loop boundary.
-
-Error: TAINTED_SCALAR:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:168: tainted_data_argument: Calling function "fgets" taints argument "ln".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:168: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
-/builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:169: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:170: tainted_data: Using tainted variable "n" as a loop boundary.
-
-Error: TAINTED_SCALAR:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:168: tainted_data_argument: Calling function "fgets" taints argument "ln".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:169: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:170: tainted_data: Using tainted variable "n" as a loop boundary.
 
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:911: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" returns tainted data.
@@ -2838,11 +2827,30 @@ Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:170: a_loop_bound: Using tainted variable "n" as a loop boundary.
 
 Error: TAINTED_SCALAR:
+/builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:168: tainted_data_argument: Calling function "fgets" taints argument "ln".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:168: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
+/builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:169: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:170: tainted_data: Using tainted variable "n" as a loop boundary.
+
+Error: TAINTED_SCALAR:
+/builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:168: tainted_data_argument: Calling function "fgets" taints argument "ln".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:169: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:170: tainted_data: Using tainted variable "n" as a loop boundary.
+
+Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:786: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:786: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
 /builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:787: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:788: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:790: tainted_data: Passing tainted variable "5 * n * 4UL" to a tainted sink.
+
+Error: TAINTED_SCALAR:
+/builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:786: tainted_data_argument: Calling function "fgets" taints argument "ln".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:786: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
+/builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:787: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:788: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:790: tainted_data: Passing tainted variable "5 * n * 4UL" to a tainted sink.
+/builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:796: tainted_data: Passing tainted variable "n * 8UL" to a tainted sink.
 
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:786: tainted_data_argument: Calling function "fgets" taints argument "ln".
@@ -2863,8 +2871,7 @@ Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:786: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
 /builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:787: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:788: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:790: tainted_data: Passing tainted variable "5 * n * 4UL" to a tainted sink.
-/builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:796: tainted_data: Passing tainted variable "n * 8UL" to a tainted sink.
+/builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:799: tainted_data: Using tainted variable "n" as a loop boundary.
 
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:786: tainted_data_argument: Calling function "fgets" taints argument "ln".
@@ -2877,24 +2884,6 @@ Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:787: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:788: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:799: tainted_data: Using tainted variable "n" as a loop boundary.
-
-Error: TAINTED_SCALAR:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:786: tainted_data_argument: Calling function "fgets" taints argument "ln".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:786: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
-/builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:787: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:788: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/nrm2srch.c:799: tainted_data: Using tainted variable "n" as a loop boundary.
-
-Error: TAINTED_SCALAR:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:168: tainted_data_argument: Calling function "fgets" taints argument "ln".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:169: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:170: tainted_data: Using tainted variable "n" as a loop boundary.
-
-Error: TAINTED_SCALAR:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:168: tainted_data_argument: Calling function "fgets" taints argument "ln".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:168: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
-/builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:169: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:170: tainted_data: Using tainted variable "n" as a loop boundary.
 
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:1189: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" returns tainted data.
@@ -2910,11 +2899,30 @@ Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:170: a_loop_bound: Using tainted variable "n" as a loop boundary.
 
 Error: TAINTED_SCALAR:
+/builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:168: tainted_data_argument: Calling function "fgets" taints argument "ln".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:168: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
+/builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:169: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:170: tainted_data: Using tainted variable "n" as a loop boundary.
+
+Error: TAINTED_SCALAR:
+/builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:168: tainted_data_argument: Calling function "fgets" taints argument "ln".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:169: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:170: tainted_data: Using tainted variable "n" as a loop boundary.
+
+Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:1064: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:1064: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
 /builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:1065: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:1066: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:1068: tainted_data: Passing tainted variable "5 * n * 4UL" to a tainted sink.
+
+Error: TAINTED_SCALAR:
+/builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:1064: tainted_data_argument: Calling function "fgets" taints argument "ln".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:1064: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
+/builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:1065: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:1066: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:1068: tainted_data: Passing tainted variable "5 * n * 4UL" to a tainted sink.
+/builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:1074: tainted_data: Passing tainted variable "n * 8UL" to a tainted sink.
 
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:1064: tainted_data_argument: Calling function "fgets" taints argument "ln".
@@ -2935,8 +2943,7 @@ Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:1064: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
 /builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:1065: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:1066: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:1068: tainted_data: Passing tainted variable "5 * n * 4UL" to a tainted sink.
-/builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:1074: tainted_data: Passing tainted variable "n * 8UL" to a tainted sink.
+/builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:1077: tainted_data: Using tainted variable "n" as a loop boundary.
 
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:1064: tainted_data_argument: Calling function "fgets" taints argument "ln".
@@ -2949,18 +2956,6 @@ Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:1065: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:1066: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:1077: tainted_data: Using tainted variable "n" as a loop boundary.
-
-Error: TAINTED_SCALAR:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:1064: tainted_data_argument: Calling function "fgets" taints argument "ln".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:1064: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
-/builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:1065: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:1066: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/rotsrch.c:1077: tainted_data: Using tainted variable "n" as a loop boundary.
-
-Error: TAINTED_SCALAR:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:168: tainted_data_argument: Calling function "fgets" taints argument "ln".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:169: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:170: tainted_data: Using tainted variable "n" as a loop boundary.
 
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:997: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" returns tainted data.
@@ -2982,11 +2977,24 @@ Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:170: tainted_data: Using tainted variable "n" as a loop boundary.
 
 Error: TAINTED_SCALAR:
+/builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:168: tainted_data_argument: Calling function "fgets" taints argument "ln".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:169: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:170: tainted_data: Using tainted variable "n" as a loop boundary.
+
+Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:872: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:872: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
 /builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:873: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:874: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:876: tainted_data: Passing tainted variable "5 * n * 4UL" to a tainted sink.
+
+Error: TAINTED_SCALAR:
+/builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:872: tainted_data_argument: Calling function "fgets" taints argument "ln".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:872: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
+/builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:873: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:874: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:876: tainted_data: Passing tainted variable "5 * n * 4UL" to a tainted sink.
+/builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:882: tainted_data: Passing tainted variable "n * 8UL" to a tainted sink.
 
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:872: tainted_data_argument: Calling function "fgets" taints argument "ln".
@@ -2999,14 +3007,6 @@ Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:872: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:873: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:874: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:876: tainted_data: Passing tainted variable "5 * n * 4UL" to a tainted sink.
-/builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:882: tainted_data: Passing tainted variable "n * 8UL" to a tainted sink.
-
-Error: TAINTED_SCALAR:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:872: tainted_data_argument: Calling function "fgets" taints argument "ln".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:872: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
-/builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:873: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:874: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:876: tainted_data: Passing tainted variable "5 * n * 4UL" to a tainted sink.
 /builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:882: tainted_data: Passing tainted variable "n * 8UL" to a tainted sink.
 
@@ -3020,13 +3020,13 @@ Error: TAINTED_SCALAR:
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:872: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:873: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:874: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:874: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:885: tainted_data: Using tainted variable "n" as a loop boundary.
 
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:872: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:873: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:874: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:874: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/scalsrch.c:885: tainted_data: Using tainted variable "n" as a loop boundary.
 
 Error: TAINTED_SCALAR:
@@ -3071,14 +3071,14 @@ Error: TAINTED_SCALAR:
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/setsrch.c:857: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/setsrch.c:858: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/setsrch.c:859: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/setsrch.c:859: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/setsrch.c:861: tainted_data: Passing tainted variable "5 * n * 4UL" to a tainted sink.
 /builddir/build/BUILD/ATLAS/tune/blas/level1/setsrch.c:867: tainted_data: Passing tainted variable "n * 8UL" to a tainted sink.
 
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/setsrch.c:857: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/setsrch.c:858: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/setsrch.c:859: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/setsrch.c:859: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/setsrch.c:861: tainted_data: Passing tainted variable "5 * n * 4UL" to a tainted sink.
 /builddir/build/BUILD/ATLAS/tune/blas/level1/setsrch.c:867: tainted_data: Passing tainted variable "n * 8UL" to a tainted sink.
 
@@ -3092,13 +3092,13 @@ Error: TAINTED_SCALAR:
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/setsrch.c:857: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/setsrch.c:858: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/setsrch.c:859: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/setsrch.c:859: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/setsrch.c:870: tainted_data: Using tainted variable "n" as a loop boundary.
 
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/setsrch.c:857: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/setsrch.c:858: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/setsrch.c:859: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/setsrch.c:859: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/setsrch.c:870: tainted_data: Using tainted variable "n" as a loop boundary.
 
 Error: TAINTED_SCALAR:
@@ -3116,21 +3116,29 @@ Error: TAINTED_SCALAR:
 
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:168: tainted_data_argument: Calling function "fgets" taints argument "ln".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:169: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:170: tainted_data: Using tainted variable "n" as a loop boundary.
-
-Error: TAINTED_SCALAR:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:168: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:168: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
 /builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:169: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:170: tainted_data: Using tainted variable "n" as a loop boundary.
 
 Error: TAINTED_SCALAR:
+/builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:168: tainted_data_argument: Calling function "fgets" taints argument "ln".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:169: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:170: tainted_data: Using tainted variable "n" as a loop boundary.
+
+Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:894: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:894: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
 /builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:895: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:896: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:898: tainted_data: Passing tainted variable "5 * n * 4UL" to a tainted sink.
+
+Error: TAINTED_SCALAR:
+/builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:894: tainted_data_argument: Calling function "fgets" taints argument "ln".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:894: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
+/builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:895: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:896: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:898: tainted_data: Passing tainted variable "5 * n * 4UL" to a tainted sink.
+/builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:904: tainted_data: Passing tainted variable "n * 8UL" to a tainted sink.
 
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:894: tainted_data_argument: Calling function "fgets" taints argument "ln".
@@ -3151,18 +3159,10 @@ Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:894: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
 /builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:895: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:896: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:898: tainted_data: Passing tainted variable "5 * n * 4UL" to a tainted sink.
-/builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:904: tainted_data: Passing tainted variable "n * 8UL" to a tainted sink.
-
-Error: TAINTED_SCALAR:
-/builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:894: tainted_data_argument: Calling function "fgets" taints argument "ln".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:895: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:896: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:907: tainted_data: Using tainted variable "n" as a loop boundary.
 
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:894: tainted_data_argument: Calling function "fgets" taints argument "ln".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:894: tainted_data_transitive: Call to function "fgets" with tainted argument "ln" returns tainted data.
 /builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:895: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:896: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:907: tainted_data: Using tainted variable "n" as a loop boundary.
@@ -3170,7 +3170,7 @@ Error: TAINTED_SCALAR:
 Error: TAINTED_SCALAR:
 /builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:894: tainted_data_argument: Calling function "fgets" taints argument "ln".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:895: vararg_transitive: Call to "sscanf" with tainted argument "ln" taints "n".
-/builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:896: lower_bounds: Checking lower bounds of signed scalar "n" by "n > 0".
+/builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:896: upper_bounds: Checking upper bounds of signed scalar "n" by "n > 0".
 /builddir/build/BUILD/ATLAS/tune/blas/level1/swapsrch.c:907: tainted_data: Using tainted variable "n" as a loop boundary.
 
 Error: TAINTED_SCALAR:
@@ -3436,10 +3436,6 @@ Error: TAINTED_STRING:
 Error: TAINTED_STRING:
 /builddir/build/BUILD/ATLAS/bin/atlas_install.c:579: tainted_string_argument: Call to "fscanf(fp, " %d", &ncnb)" taints "ncnb".
 /builddir/build/BUILD/ATLAS/bin/atlas_install.c:586: vararg_transitive: Call to "sprintf" with tainted argument "ncnb" taints "fnam".
-/builddir/build/BUILD/ATLAS/bin/atlas_install.c:590: vararg_transitive: Call to "sprintf" with tainted argument "ncnb" taints "ln".
-/builddir/build/BUILD/ATLAS/bin/atlas_install.c:586: vararg_transitive: Call to "sprintf" with tainted argument "ncnb" taints "fnam".
-/builddir/build/BUILD/ATLAS/bin/atlas_install.c:590: vararg_transitive: Call to "sprintf" with tainted argument "ncnb" taints "ln".
-/builddir/build/BUILD/ATLAS/bin/atlas_install.c:586: vararg_transitive: Call to "sprintf" with tainted argument "ncnb" taints "fnam".
 /builddir/build/BUILD/ATLAS/bin/atlas_install.c:588: tainted_string: Passing tainted string "fnam" to a function that cannot accept tainted data.
 /builddir/build/BUILD/ATLAS/include/atlas_fopen.h:8: tainted_string_sink_content_lv_call: Passing tainted string "path" to "fopen", which depends on its content.
 
@@ -3453,6 +3449,10 @@ Error: TAINTED_STRING:
 
 Error: TAINTED_STRING:
 /builddir/build/BUILD/ATLAS/bin/atlas_install.c:579: tainted_string_argument: Call to "fscanf(fp, " %d", &ncnb)" taints "ncnb".
+/builddir/build/BUILD/ATLAS/bin/atlas_install.c:586: vararg_transitive: Call to "sprintf" with tainted argument "ncnb" taints "fnam".
+/builddir/build/BUILD/ATLAS/bin/atlas_install.c:590: vararg_transitive: Call to "sprintf" with tainted argument "ncnb" taints "ln".
+/builddir/build/BUILD/ATLAS/bin/atlas_install.c:586: vararg_transitive: Call to "sprintf" with tainted argument "ncnb" taints "fnam".
+/builddir/build/BUILD/ATLAS/bin/atlas_install.c:590: vararg_transitive: Call to "sprintf" with tainted argument "ncnb" taints "ln".
 /builddir/build/BUILD/ATLAS/bin/atlas_install.c:586: vararg_transitive: Call to "sprintf" with tainted argument "ncnb" taints "fnam".
 /builddir/build/BUILD/ATLAS/bin/atlas_install.c:588: tainted_string: Passing tainted string "fnam" to a function that cannot accept tainted data.
 /builddir/build/BUILD/ATLAS/include/atlas_fopen.h:8: tainted_string_sink_content_lv_call: Passing tainted string "path" to "fopen", which depends on its content.
@@ -3493,12 +3493,6 @@ Error: TAINTED_STRING:
 Error: TAINTED_STRING:
 /builddir/build/BUILD/ATLAS/bin/ccobj.c:116: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "outfile".
 /builddir/build/BUILD/ATLAS/bin/ccobj.c:30: tainted_data_transitive: Calling function "strcpy" with tainted argument "args[++i]" taints "outfile".
-/builddir/build/BUILD/ATLAS/bin/ccobj.c:118: vararg_transitive: Call to "sprintf" with tainted argument "outfile" taints "ln".
-/builddir/build/BUILD/ATLAS/bin/ccobj.c:121: tainted_string: Passing tainted string "ln" to a function that cannot accept tainted data.
-
-Error: TAINTED_STRING:
-/builddir/build/BUILD/ATLAS/bin/ccobj.c:116: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "outfile".
-/builddir/build/BUILD/ATLAS/bin/ccobj.c:30: tainted_data_transitive: Calling function "strcpy" with tainted argument "args[++i]" taints "outfile".
 /builddir/build/BUILD/ATLAS/bin/ccobj.c:116: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "name".
 /builddir/build/BUILD/ATLAS/bin/ccobj.c:31: tainted_data_transitive: Calling function "strcpy" with tainted argument "args[++i]" taints "name".
 /builddir/build/BUILD/ATLAS/bin/ccobj.c:116: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "objdir".
@@ -3515,16 +3509,22 @@ Error: TAINTED_STRING:
 /builddir/build/BUILD/ATLAS/bin/ccobj.c:121: tainted_string: Passing tainted string "ln" to a function that cannot accept tainted data.
 
 Error: TAINTED_STRING:
+/builddir/build/BUILD/ATLAS/bin/ccobj.c:116: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "outfile".
+/builddir/build/BUILD/ATLAS/bin/ccobj.c:30: tainted_data_transitive: Calling function "strcpy" with tainted argument "args[++i]" taints "outfile".
+/builddir/build/BUILD/ATLAS/bin/ccobj.c:118: vararg_transitive: Call to "sprintf" with tainted argument "outfile" taints "ln".
+/builddir/build/BUILD/ATLAS/bin/ccobj.c:121: tainted_string: Passing tainted string "ln" to a function that cannot accept tainted data.
+
+Error: TAINTED_STRING:
 /builddir/build/BUILD/ATLAS/bin/substr.c:123: tainted_string: Passing tainted string "args" to a function that cannot accept tainted data.
 /builddir/build/BUILD/ATLAS/bin/substr.c:33: tainted_string_sink_content_lv_call: Passing tainted string "args[i]" to "fopen", which depends on its content.
 
 Error: TAINTED_STRING:
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/emit_mm.c:2768: tainted_string_argument: "fgets" taints variable "fnam".
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/emit_mm.c:2768: tainted_data_transitive: Call to function "fgets" with tainted argument "fnam" returns tainted data.
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/emit_mm.c:2777: tainted_string: Passing tainted string "fnam" to a function that cannot accept tainted data.
 
 Error: TAINTED_STRING:
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/emit_mm.c:2768: tainted_string_argument: "fgets" taints variable "fnam".
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/emit_mm.c:2768: tainted_data_transitive: Call to function "fgets" with tainted argument "fnam" returns tainted data.
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/emit_mm.c:2777: tainted_string: Passing tainted string "fnam" to a function that cannot accept tainted data.
 
 Error: TAINTED_STRING:
@@ -3620,16 +3620,12 @@ Error: TAINTED_STRING:
 
 Error: TAINTED_STRING:
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:1852: tainted_string_argument: "fgets" taints variable "fnam".
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:1861: tainted_string: Passing tainted string "fnam" to a function that cannot accept tainted data.
-
-Error: TAINTED_STRING:
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:1852: tainted_string_argument: "fgets" taints variable "fnam".
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:1852: tainted_data_transitive: Call to function "fgets" with tainted argument "fnam" returns tainted data.
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:1861: tainted_string: Passing tainted string "fnam" to a function that cannot accept tainted data.
 
 Error: TAINTED_STRING:
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2380: tainted_string_argument: "fgets" taints variable "ln".
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2387: tainted_string: Passing tainted string "ln" to a function that cannot accept tainted data.
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:1852: tainted_string_argument: "fgets" taints variable "fnam".
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:1861: tainted_string: Passing tainted string "fnam" to a function that cannot accept tainted data.
 
 Error: TAINTED_STRING:
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2380: tainted_string_argument: "fgets" taints variable "ln".
@@ -3637,6 +3633,10 @@ Error: TAINTED_STRING:
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2387: tainted_string: Passing tainted string "ln" to a function that cannot accept tainted data.
 
 Error: TAINTED_STRING:
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2380: tainted_string_argument: "fgets" taints variable "ln".
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2387: tainted_string: Passing tainted string "ln" to a function that cannot accept tainted data.
+
+Error: TAINTED_STRING:
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2414: tainted_string_argument: Call to "fscanf(fp, " %d", &NB)" taints "NB".
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2421: vararg_transitive: Call to "sprintf" with tainted argument "NB" taints "fnam".
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2423: tainted_string: Passing tainted string "fnam" to a function that cannot accept tainted data.
@@ -3662,6 +3662,10 @@ Error: TAINTED_STRING:
 
 Error: TAINTED_STRING:
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2414: tainted_string_argument: Call to "fscanf(fp, " %d", &NB)" taints "NB".
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2421: vararg_transitive: Call to "sprintf" with tainted argument "NB" taints "fnam".
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2436: vararg_transitive: Call to "sprintf" with tainted argument "NB" taints "fnam".
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2421: vararg_transitive: Call to "sprintf" with tainted argument "NB" taints "fnam".
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2436: vararg_transitive: Call to "sprintf" with tainted argument "NB" taints "fnam".
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2421: vararg_transitive: Call to "sprintf" with tainted argument "NB" taints "fnam".
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2436: vararg_transitive: Call to "sprintf" with tainted argument "NB" taints "fnam".
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2438: tainted_string: Passing tainted string "fnam" to a function that cannot accept tainted data.
@@ -3678,10 +3682,6 @@ Error: TAINTED_STRING:
 
 Error: TAINTED_STRING:
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2414: tainted_string_argument: Call to "fscanf(fp, " %d", &NB)" taints "NB".
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2421: vararg_transitive: Call to "sprintf" with tainted argument "NB" taints "fnam".
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2436: vararg_transitive: Call to "sprintf" with tainted argument "NB" taints "fnam".
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2421: vararg_transitive: Call to "sprintf" with tainted argument "NB" taints "fnam".
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2436: vararg_transitive: Call to "sprintf" with tainted argument "NB" taints "fnam".
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2421: vararg_transitive: Call to "sprintf" with tainted argument "NB" taints "fnam".
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2436: vararg_transitive: Call to "sprintf" with tainted argument "NB" taints "fnam".
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:2438: tainted_string: Passing tainted string "fnam" to a function that cannot accept tainted data.
@@ -3791,17 +3791,17 @@ Error: TAINTED_STRING:
 Error: TAINTED_STRING:
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/userflag.c:303: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "outfile".
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/userflag.c:285: parm_assign: Assigning: "*outfile" = "args[++i]", which taints "*outfile".
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/userflag.c:304: tainted_string: Passing tainted string "outfile" to a function that cannot accept tainted data.
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/userflag.c:235: tainted_string_sink_content_lv_call: Passing tainted string "outfile" to "fopen", which depends on its content.
-
-Error: TAINTED_STRING:
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/userflag.c:303: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "outfile".
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/userflag.c:285: parm_assign: Assigning: "*outfile" = "args[++i]", which taints "*outfile".
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/userflag.c:303: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "infile".
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/userflag.c:288: parm_assign: Assigning: "*infile" = "args[++i]", which taints "*infile".
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/userflag.c:304: tainted_string: Passing tainted string "infile" to a function that cannot accept tainted data.
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/userflag.c:151: tainted_string_sink_content_lv_call: Passing tainted string "infile" to "NumUserCases0", which depends on its content.
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/userflag.c:55: tainted_string_sink_content_lv_call: Passing tainted string "nam" to "fopen", which depends on its content.
+
+Error: TAINTED_STRING:
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/userflag.c:303: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "outfile".
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/userflag.c:285: parm_assign: Assigning: "*outfile" = "args[++i]", which taints "*outfile".
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/userflag.c:304: tainted_string: Passing tainted string "outfile" to a function that cannot accept tainted data.
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/userflag.c:235: tainted_string_sink_content_lv_call: Passing tainted string "outfile" to "fopen", which depends on its content.
 
 Error: TAINTED_STRING:
 /builddir/build/BUILD/ATLAS/tune/blas/gemv/gemvtune.c:411: tainted_data_transitive: Call to function "GetFlags" with tainted argument "args" transitively taints "l2size".
@@ -4060,12 +4060,12 @@ Error: TAINTED_STRING:
 /builddir/build/BUILD/ATLAS/tune/sysinfo/masearch.c:261: tainted_string_sink_content_lv_call: Passing tainted string "fnam" to "fopen", which depends on its content.
 
 Error: UNINIT:
-/builddir/build/BUILD/ATLAS/CONFIG/src/backend/archinfo_x86.c:437: var_decl: Declaring variable "fam" without initializer.
-/builddir/build/BUILD/ATLAS/CONFIG/src/backend/archinfo_x86.c:465: uninit_use_in_call: Using uninitialized value "fam" when calling "fprintf".
-
-Error: UNINIT:
 /builddir/build/BUILD/ATLAS/CONFIG/src/backend/archinfo_x86.c:438: var_decl: Declaring variable "chip" without initializer.
 /builddir/build/BUILD/ATLAS/CONFIG/src/backend/archinfo_x86.c:465: uninit_use_in_call: Using uninitialized value "chip" when calling "fprintf".
+
+Error: UNINIT:
+/builddir/build/BUILD/ATLAS/CONFIG/src/backend/archinfo_x86.c:437: var_decl: Declaring variable "fam" without initializer.
+/builddir/build/BUILD/ATLAS/CONFIG/src/backend/archinfo_x86.c:465: uninit_use_in_call: Using uninitialized value "fam" when calling "fprintf".
 
 Error: UNINIT:
 /builddir/build/BUILD/ATLAS/CONFIG/src/backend/archinfo_x86.c:439: var_decl: Declaring variable "mach" without initializer.
@@ -4104,6 +4104,13 @@ Error: UNINIT:
 /builddir/build/BUILD/ATLAS/src/blas/level1/ATL_rotmg.c:187: uninit_use: Using uninitialized value "h21".
 
 Error: UNINIT:
+/builddir/build/BUILD/ATLAS/src/blas/level1/ATL_rotmg.c:38: var_decl: Declaring variable "h11" without initializer.
+/builddir/build/BUILD/ATLAS/src/blas/level1/ATL_rotmg.c:106: uninit_use: Using uninitialized value "h11".
+/builddir/build/BUILD/ATLAS/src/blas/level1/ATL_rotmg.c:120: uninit_use: Using uninitialized value "h11".
+/builddir/build/BUILD/ATLAS/src/blas/level1/ATL_rotmg.c:186: uninit_use: Using uninitialized value "h11".
+/builddir/build/BUILD/ATLAS/src/blas/level1/ATL_rotmg.c:188: uninit_use: Using uninitialized value "h11".
+
+Error: UNINIT:
 /builddir/build/BUILD/ATLAS/src/blas/level1/ATL_rotmg.c:38: var_decl: Declaring variable "h22" without initializer.
 /builddir/build/BUILD/ATLAS/src/blas/level1/ATL_rotmg.c:139: uninit_use: Using uninitialized value "h22".
 /builddir/build/BUILD/ATLAS/src/blas/level1/ATL_rotmg.c:150: uninit_use: Using uninitialized value "h22".
@@ -4111,13 +4118,6 @@ Error: UNINIT:
 /builddir/build/BUILD/ATLAS/src/blas/level1/ATL_rotmg.c:177: uninit_use: Using uninitialized value "h22".
 /builddir/build/BUILD/ATLAS/src/blas/level1/ATL_rotmg.c:186: uninit_use: Using uninitialized value "h22".
 /builddir/build/BUILD/ATLAS/src/blas/level1/ATL_rotmg.c:188: uninit_use: Using uninitialized value "h22".
-
-Error: UNINIT:
-/builddir/build/BUILD/ATLAS/src/blas/level1/ATL_rotmg.c:38: var_decl: Declaring variable "h11" without initializer.
-/builddir/build/BUILD/ATLAS/src/blas/level1/ATL_rotmg.c:106: uninit_use: Using uninitialized value "h11".
-/builddir/build/BUILD/ATLAS/src/blas/level1/ATL_rotmg.c:120: uninit_use: Using uninitialized value "h11".
-/builddir/build/BUILD/ATLAS/src/blas/level1/ATL_rotmg.c:186: uninit_use: Using uninitialized value "h11".
-/builddir/build/BUILD/ATLAS/src/blas/level1/ATL_rotmg.c:188: uninit_use: Using uninitialized value "h11".
 
 Error: UNINIT:
 /builddir/build/BUILD/ATLAS/src/blas/reference/level2/ATL_creftpmvLTU.c:80: var_decl: Declaring variable "iaij" without initializer.
@@ -4138,13 +4138,13 @@ Error: UNINIT:
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/emit_mm.c:4043: read_parm: Reading a parameter value.
 
 Error: UNINIT:
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:73: var_decl: Declaring variable "ldb" without initializer.
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:85: uninit_use_in_call: Using uninitialized value "ldb" when calling "ATL_cFindCE_mm".
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:73: var_decl: Declaring variable "lda" without initializer.
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:85: uninit_use_in_call: Using uninitialized value "lda" when calling "ATL_cFindCE_mm".
 /builddir/build/BUILD/ATLAS/src/blas/gemm/ATL_gemm.c:199: read_parm: Reading a parameter value.
 
 Error: UNINIT:
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:73: var_decl: Declaring variable "lda" without initializer.
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:85: uninit_use_in_call: Using uninitialized value "lda" when calling "ATL_cFindCE_mm".
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:73: var_decl: Declaring variable "ldb" without initializer.
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/findCE.c:85: uninit_use_in_call: Using uninitialized value "ldb" when calling "ATL_cFindCE_mm".
 /builddir/build/BUILD/ATLAS/src/blas/gemm/ATL_gemm.c:199: read_parm: Reading a parameter value.
 
 Error: UNINIT:

@@ -56,16 +56,68 @@ class GenericSort: public AbstractWriter {
         }
 };
 
-inline bool cmpFileNames(const Defect &a, const Defect &b) {
-    const DefEvent &ea = a.events[a.keyEventIdx];
-    const DefEvent &eb = b.events[b.keyEventIdx];
+#define RETURN_CMP_RESULT(result) do {  \
+    *pResult = (result);                \
+    return true;                        \
+} while (0)
 
+inline bool cmpEvents(bool *pResult, const DefEvent &ea, const DefEvent &eb)
+{
+    // compare path
     if (ea.fileName < eb.fileName)
-        return true;
+        RETURN_CMP_RESULT(true);
     if (eb.fileName < ea.fileName)
-        return false;
+        RETURN_CMP_RESULT(false);
 
-    return (ea.line < eb.line);
+    // compare line numbers
+    if (ea.line < eb.line)
+        RETURN_CMP_RESULT(true);
+    if (eb.line < ea.line)
+        RETURN_CMP_RESULT(false);
+
+    // compare column numbers
+    if (ea.column < eb.column)
+        RETURN_CMP_RESULT(true);
+    if (eb.column < ea.column)
+        RETURN_CMP_RESULT(false);
+
+    // compare events
+    if (ea.event < eb.event)
+        RETURN_CMP_RESULT(true);
+    if (eb.event < ea.event)
+        RETURN_CMP_RESULT(false);
+
+    // compare messages
+    if (ea.msg < eb.msg)
+        RETURN_CMP_RESULT(true);
+    if (eb.msg < ea.msg)
+        RETURN_CMP_RESULT(false);
+
+    // incomparable events
+    return false;
+}
+
+inline bool cmpFileNames(const Defect &a, const Defect &b) {
+    const TEvtList &ea = a.events;
+    const TEvtList &eb = b.events;
+
+    // first compare the key events
+    bool result;
+    if (cmpEvents(&result, ea[a.keyEventIdx], eb[b.keyEventIdx]))
+        return result;
+
+    // the key events are incomparable, compare all events
+    for (unsigned idx = 0;; ++idx) {
+        if (eb.size() <= idx)
+            // this includes the case where the events are equal
+            return false;
+
+        if (ea.size() <= idx)
+            return true;
+
+        if (cmpEvents(&result, ea[idx], eb[idx]))
+            return result;
+    }
 }
 
 struct DefByChecker: public Defect { };
