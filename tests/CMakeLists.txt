@@ -24,6 +24,9 @@ set(cssort      "${csdiff_BINARY_DIR}/cssort")
 set(testdir     "${csdiff_SOURCE_DIR}/tests")
 set(diffcmd     "diff -up")
 
+# new versions of Boost tend to escape '/' in JSON strings, no idea why
+set(jsfilter    "sed 's|\\\\\\\\\\\\\\\\/|/|g'")
+
 macro(add_test_wrap test_name cmd)
     add_test("${test_name}" sh -c "${cmd}")
     set_tests_properties(${test_name} PROPERTIES COST ${test_cost})
@@ -38,12 +41,12 @@ macro(test_csannot dir num)
     set(tst "${testdir}/${dir}/${num}")
 
     set(cmd "${csannot} ${tab} <${tst}-input.err 2>/dev/null")
-    set(cmd "${cmd} | ${diffcmd} ${tst}-output.err -")
+    set(cmd "${cmd} | ${jsfilter} | ${diffcmd} ${tst}-output.err -")
     add_test_wrap("${dir}-${num}" "${cmd}")
 
     set(cmd "${csannot} ${tab} <${tst}-input.err 2>/dev/null")
     set(cmd "${cmd} | ${csannot} ${tab} 2>/dev/null")
-    set(cmd "${cmd} | ${diffcmd} ${tst}-output.err -")
+    set(cmd "${cmd} | ${jsfilter} | ${diffcmd} ${tst}-output.err -")
     add_test_wrap("${dir}-${num}-twice" "${cmd}")
 endmacro()
 
@@ -99,11 +102,11 @@ macro(test_cssort dir num)
     set(tst "${testdir}/${dir}/${num}")
 
     set(cmd "${cssort} --key=checker ${tst}-input.err 2>/dev/null")
-    set(cmd "${cmd} | ${diffcmd} ${tst}-by-checker.err -")
+    set(cmd "${cmd} | ${jsfilter} | ${diffcmd} ${tst}-by-checker.err -")
     add_test_wrap("${dir}-${num}-by-checker" "${cmd}")
 
     set(cmd "${cssort} --key=path ${tst}-input.err 2>/dev/null")
-    set(cmd "${cmd} | ${diffcmd} ${tst}-by-path.err -")
+    set(cmd "${cmd} | ${jsfilter} | ${diffcmd} ${tst}-by-path.err -")
     add_test_wrap("${dir}-${num}-by-path" "${cmd}")
 endmacro()
 
