@@ -59,18 +59,14 @@ sudo-1.7.4p5/sudo_edit.c:282: leaked_storage: Variable "editor_argv" going out o
 sudo-1.7.4p5/sudo_edit.c:289: leaked_storage: Variable "editor_argv" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
-sudo-1.7.4p5/sudo_edit.c:112: alloc_fn: Calling allocation function "emalloc2".
+sudo-1.7.4p5/sudo_edit.c:199: alloc_fn: Calling allocation function "emalloc2".
 sudo-1.7.4p5/alloc.c:99: alloc_fn: Storage is returned from allocation function "malloc".
 sudo-1.7.4p5/alloc.c:99: var_assign: Assigning: "ptr" = "malloc(size)".
 sudo-1.7.4p5/alloc.c:101: return_alloc: Returning allocated memory "ptr".
-sudo-1.7.4p5/sudo_edit.c:112: var_assign: Assigning: "tf" =  storage returned from "emalloc2(nfiles, sizeof (*tf) /*40*/)".
-sudo-1.7.4p5/sudo_edit.c:113: noescape: Variable "tf" is not freed or pointed-to in function "zero_bytes".
-sudo-1.7.4p5/zero_bytes.c:27:12: noescape: "zero_bytes" does not free or save its pointer parameter "v".
-sudo-1.7.4p5/sudo_edit.c:178: noescape: Variable "tf" is not freed or pointed-to in function "touch".
-sudo-1.7.4p5/fileops.c:60:17: noescape: "touch" does not free or save its pointer parameter "tvp".
-sudo-1.7.4p5/sudo_edit.c:190: leaked_storage: Variable "tf" going out of scope leaks the storage it points to.
-sudo-1.7.4p5/sudo_edit.c:282: leaked_storage: Variable "tf" going out of scope leaks the storage it points to.
-sudo-1.7.4p5/sudo_edit.c:289: leaked_storage: Variable "tf" going out of scope leaks the storage it points to.
+sudo-1.7.4p5/sudo_edit.c:199: var_assign: Assigning: "nargv" =  storage returned from "emalloc2(1 + nargc + 1, sizeof (char *) /*8*/)".
+sudo-1.7.4p5/sudo_edit.c:212: noescape: Variable "nargv" is not freed or pointed-to in function "run_command".
+sudo-1.7.4p5/sudo.c:911:19: noescape: "run_command" does not free or save its pointer parameter "argv".
+sudo-1.7.4p5/sudo_edit.c:282: leaked_storage: Variable "nargv" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
 sudo-1.7.4p5/sudoreplay.c:662: alloc_fn: Calling allocation function "opendir".
@@ -86,6 +82,10 @@ sudo-1.7.4p5/sudo.c:670: use_invalid: Using "sudo_user.pw", which points to an o
 Error: UNINIT:
 sudo-1.7.4p5/auth/sudo_auth.c:94: var_decl: Declaring variable "sa" without initializer.
 sudo-1.7.4p5/auth/sudo_auth.c:103: uninit_use_in_call: Using uninitialized value "sa": field "sa".sa_restorer is uninitialized when calling "sigaction".
+
+Error: UNINIT:
+sudo-1.7.4p5/exec_pty.c:155: var_decl: Declaring variable "sa" without initializer.
+sudo-1.7.4p5/exec_pty.c:193: uninit_use_in_call: Using uninitialized value "sa": field "sa".sa_restorer is uninitialized when calling "sigaction".
 
 Error: USE_AFTER_FREE:
 sudo-1.7.4p5/toke.l:783: freed_arg: "efree" frees "path".

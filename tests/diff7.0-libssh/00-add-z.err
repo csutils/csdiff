@@ -171,10 +171,6 @@ Error: FORWARD_NULL:
 /builddir/build/BUILD/libssh-0.5.0/src/socket.c:300: var_deref_model: Passing null variable "p" to function "ssh_poll_set_events", which dereferences it.
 /builddir/build/BUILD/libssh-0.5.0/src/poll.c:334: deref_parm: Directly dereferencing parameter "p".
 
-Error: MISSING_BREAK:
-/builddir/build/BUILD/libssh-0.5.0/src/client.c:556: unterminated_case: This case (value 5) is not terminated by a 'break' statement.
-/builddir/build/BUILD/libssh-0.5.0/src/client.c:570: fallthrough: The above case falls through to this one.
-
 Error: NULL_RETURNS:
 /builddir/build/BUILD/libssh-0.5.0/src/server.c:631: returned_null: Function "ssh_string_from_char" returns null (checked 79 out of 87 times).
 /builddir/build/BUILD/libssh-0.5.0/src/string.c:99: return_null: Explicitly returning NULL.
@@ -225,84 +221,6 @@ Error: NULL_RETURNS:
 /builddir/build/BUILD/libssh-0.5.0/src/server.c:796: deref_parm_in_call: Function "buffer_add_ssh_string" dereferences parameter "algo".
 /builddir/build/BUILD/libssh-0.5.0/src/buffer.c:213: deref_parm_in_call: Function "buffer_add_data" dereferences parameter "string".
 /builddir/build/BUILD/libssh-0.5.0/src/buffer.c:191: deref_parm_in_call: Function "memcpy" dereferences parameter "data". (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/libssh-0.5.0/src/agent.c:442: alloc_fn: Calling allocation function "ssh_buffer_new".
-/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:82: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:82: var_assign: Assigning: "buf" = "malloc(sizeof (struct ssh_buffer_struct) /*24*/)".
-/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:87: noescape: Variable "buf" is not freed or pointed-to in function "memset".
-/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:89: return_alloc: Returning allocated memory "buf".
-/builddir/build/BUILD/libssh-0.5.0/src/agent.c:442: var_assign: Assigning: "reply" =  storage returned from "ssh_buffer_new()".
-/builddir/build/BUILD/libssh-0.5.0/src/agent.c:448: noescape: Variable "reply" is not freed or pointed-to in function "agent_talk".
-/builddir/build/BUILD/libssh-0.5.0/src/agent.c:207:66: noescape: "agent_talk" does not free or save its pointer parameter "reply".
-/builddir/build/BUILD/libssh-0.5.0/src/agent.c:450: leaked_storage: Variable "reply" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/libssh-0.5.0/src/auth.c:856: alloc_fn: Calling allocation function "ssh_string_from_char".
-/builddir/build/BUILD/libssh-0.5.0/src/string.c:97: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/libssh-0.5.0/src/string.c:97: var_assign: Assigning: "ptr" = "malloc(4UL + len)".
-/builddir/build/BUILD/libssh-0.5.0/src/string.c:104: return_alloc: Returning allocated memory "ptr".
-/builddir/build/BUILD/libssh-0.5.0/src/auth.c:856: var_assign: Assigning: "user" =  storage returned from "ssh_string_from_char(session->username)".
-/builddir/build/BUILD/libssh-0.5.0/src/auth.c:895: noescape: Variable "user" is not freed or pointed-to in function "buffer_add_ssh_string".
-/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:209:31: noescape: "buffer_add_ssh_string" does not free or save its pointer parameter "string".
-/builddir/build/BUILD/libssh-0.5.0/src/auth.c:917: leaked_storage: Variable "user" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/libssh-0.5.0/src/auth.c:873: alloc_fn: Calling allocation function "ssh_string_from_char".
-/builddir/build/BUILD/libssh-0.5.0/src/string.c:97: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/libssh-0.5.0/src/string.c:97: var_assign: Assigning: "ptr" = "malloc(4UL + len)".
-/builddir/build/BUILD/libssh-0.5.0/src/string.c:104: return_alloc: Returning allocated memory "ptr".
-/builddir/build/BUILD/libssh-0.5.0/src/auth.c:873: var_assign: Assigning: "service" =  storage returned from "ssh_string_from_char("ssh-connection")".
-/builddir/build/BUILD/libssh-0.5.0/src/auth.c:895: noescape: Variable "service" is not freed or pointed-to in function "buffer_add_ssh_string".
-/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:209:31: noescape: "buffer_add_ssh_string" does not free or save its pointer parameter "string".
-/builddir/build/BUILD/libssh-0.5.0/src/auth.c:917: leaked_storage: Variable "service" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/libssh-0.5.0/src/auth.c:878: alloc_fn: Calling allocation function "ssh_string_from_char".
-/builddir/build/BUILD/libssh-0.5.0/src/string.c:97: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/libssh-0.5.0/src/string.c:97: var_assign: Assigning: "ptr" = "malloc(4UL + len)".
-/builddir/build/BUILD/libssh-0.5.0/src/string.c:104: return_alloc: Returning allocated memory "ptr".
-/builddir/build/BUILD/libssh-0.5.0/src/auth.c:878: var_assign: Assigning: "method" =  storage returned from "ssh_string_from_char("publickey")".
-/builddir/build/BUILD/libssh-0.5.0/src/auth.c:895: noescape: Variable "method" is not freed or pointed-to in function "buffer_add_ssh_string".
-/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:209:31: noescape: "buffer_add_ssh_string" does not free or save its pointer parameter "string".
-/builddir/build/BUILD/libssh-0.5.0/src/auth.c:917: leaked_storage: Variable "method" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/libssh-0.5.0/src/auth.c:883: alloc_fn: Calling allocation function "ssh_string_from_char".
-/builddir/build/BUILD/libssh-0.5.0/src/string.c:97: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/libssh-0.5.0/src/string.c:97: var_assign: Assigning: "ptr" = "malloc(4UL + len)".
-/builddir/build/BUILD/libssh-0.5.0/src/string.c:104: return_alloc: Returning allocated memory "ptr".
-/builddir/build/BUILD/libssh-0.5.0/src/auth.c:883: var_assign: Assigning: "algo" =  storage returned from "ssh_string_from_char(ssh_type_to_char(publickey->type))".
-/builddir/build/BUILD/libssh-0.5.0/src/auth.c:895: noescape: Variable "algo" is not freed or pointed-to in function "buffer_add_ssh_string".
-/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:209:31: noescape: "buffer_add_ssh_string" does not free or save its pointer parameter "string".
-/builddir/build/BUILD/libssh-0.5.0/src/auth.c:917: leaked_storage: Variable "algo" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/libssh-0.5.0/src/agent.c:287: alloc_fn: Calling allocation function "ssh_buffer_new".
-/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:82: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:82: var_assign: Assigning: "buf" = "malloc(sizeof (struct ssh_buffer_struct) /*24*/)".
-/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:87: noescape: Variable "buf" is not freed or pointed-to in function "memset".
-/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:89: return_alloc: Returning allocated memory "buf".
-/builddir/build/BUILD/libssh-0.5.0/src/agent.c:287: var_assign: Assigning: "request" =  storage returned from "ssh_buffer_new()".
-/builddir/build/BUILD/libssh-0.5.0/src/agent.c:288: noescape: Variable "request" is not freed or pointed-to in function "buffer_add_u8".
-/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:288:45: noescape: "buffer_add_u8" does not free or save its pointer parameter "buffer".
-/builddir/build/BUILD/libssh-0.5.0/src/agent.c:290: leaked_storage: Variable "request" going out of scope leaks the storage it points to.
-/builddir/build/BUILD/libssh-0.5.0/src/agent.c:296: leaked_storage: Variable "request" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/libssh-0.5.0/src/agent.c:293: alloc_fn: Calling allocation function "ssh_buffer_new".
-/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:82: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:82: var_assign: Assigning: "buf" = "malloc(sizeof (struct ssh_buffer_struct) /*24*/)".
-/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:87: noescape: Variable "buf" is not freed or pointed-to in function "memset".
-/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:89: return_alloc: Returning allocated memory "buf".
-/builddir/build/BUILD/libssh-0.5.0/src/agent.c:293: var_assign: Assigning: "reply" =  storage returned from "ssh_buffer_new()".
-/builddir/build/BUILD/libssh-0.5.0/src/agent.c:299: noescape: Variable "reply" is not freed or pointed-to in function "agent_talk".
-/builddir/build/BUILD/libssh-0.5.0/src/agent.c:207:66: noescape: "agent_talk" does not free or save its pointer parameter "reply".
-/builddir/build/BUILD/libssh-0.5.0/src/agent.c:301: leaked_storage: Variable "reply" going out of scope leaks the storage it points to.
-/builddir/build/BUILD/libssh-0.5.0/src/agent.c:306: noescape: Variable "reply" is not freed or pointed-to in function "buffer_get_u8".
-/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:502:45: noescape: "buffer_get_u8" does not free or save its pointer parameter "buffer".
-/builddir/build/BUILD/libssh-0.5.0/src/agent.c:311: leaked_storage: Variable "reply" going out of scope leaks the storage it points to.
-/builddir/build/BUILD/libssh-0.5.0/src/agent.c:315: leaked_storage: Variable "reply" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
 /builddir/build/BUILD/libssh-0.5.0/src/auth.c:1222: alloc_fn: Calling allocation function "publickey_to_string".
@@ -357,11 +275,17 @@ Error: RESOURCE_LEAK:
 /builddir/build/BUILD/libssh-0.5.0/src/known_hosts.c:576: leaked_storage: Variable "host" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
-/builddir/build/BUILD/libssh-0.5.0/examples/libssh_scp.c:197: alloc_fn: Calling allocation function "strdup".
-/builddir/build/BUILD/libssh-0.5.0/examples/libssh_scp.c:197: var_assign: Assigning: "filename" =  storage returned from "strdup(ssh_scp_request_get_filename(src->scp))".
+/builddir/build/BUILD/libssh-0.5.0/examples/libssh_scp.c:186: alloc_fn: Calling allocation function "ssh_basename".
+/builddir/build/BUILD/libssh-0.5.0/src/misc.c:558: alloc_fn: Storage is returned from allocation function "strdup".
+/builddir/build/BUILD/libssh-0.5.0/src/misc.c:558: return_alloc_fn: Directly returning storage allocated by "strdup".
+/builddir/build/BUILD/libssh-0.5.0/examples/libssh_scp.c:186: var_assign: Assigning: "filename" =  storage returned from "ssh_basename(src->path)".
 /builddir/build/BUILD/libssh-0.5.0/examples/libssh_scp.c:215: leaked_storage: Variable "filename" going out of scope leaks the storage it points to.
 /builddir/build/BUILD/libssh-0.5.0/examples/libssh_scp.c:219: noescape: Variable "filename" is not freed or pointed-to in function "fopen".
-/builddir/build/BUILD/libssh-0.5.0/examples/libssh_scp.c:236: leaked_storage: Variable "filename" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/libssh-0.5.0/examples/libssh_scp.c:221: noescape: Variable "filename" is not freed or pointed-to in function "fprintf".
+/builddir/build/BUILD/libssh-0.5.0/examples/libssh_scp.c:224: leaked_storage: Variable "filename" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/libssh-0.5.0/examples/libssh_scp.c:255: leaked_storage: Variable "filename" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/libssh-0.5.0/examples/libssh_scp.c:261: leaked_storage: Variable "filename" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/libssh-0.5.0/examples/libssh_scp.c:268: leaked_storage: Variable "filename" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
 /builddir/build/BUILD/libssh-0.5.0/src/sftp.c:539: alloc_fn: Calling allocation function "sftp_packet_read".
@@ -404,29 +328,6 @@ Error: RESOURCE_LEAK:
 /builddir/build/BUILD/libssh-0.5.0/src/client.c:207: noescape: Variable "f" is not freed or pointed-to in function "dh_import_f".
 /builddir/build/BUILD/libssh-0.5.0/src/dh.c:407:49: noescape: "dh_import_f" does not free or save its pointer parameter "f_string".
 /builddir/build/BUILD/libssh-0.5.0/src/client.c:238: leaked_storage: Variable "f" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/libssh-0.5.0/src/keys.c:901: alloc_fn: Calling allocation function "ssh_buffer_new".
-/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:82: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:82: var_assign: Assigning: "buf" = "malloc(sizeof (struct ssh_buffer_struct) /*24*/)".
-/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:87: noescape: Variable "buf" is not freed or pointed-to in function "memset".
-/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:89: return_alloc: Returning allocated memory "buf".
-/builddir/build/BUILD/libssh-0.5.0/src/keys.c:901: var_assign: Assigning: "tmpbuf" =  storage returned from "ssh_buffer_new()".
-/builddir/build/BUILD/libssh-0.5.0/src/keys.c:908: noescape: Variable "tmpbuf" is not freed or pointed-to in function "buffer_add_data".
-/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:181:47: noescape: "buffer_add_data" does not free or save its pointer parameter "buffer".
-/builddir/build/BUILD/libssh-0.5.0/src/keys.c:914: noescape: Variable "tmpbuf" is not freed or pointed-to in function "buffer_get_ssh_string".
-/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:541:75: noescape: "buffer_get_ssh_string" does not free or save its pointer parameter "buffer".
-/builddir/build/BUILD/libssh-0.5.0/src/keys.c:1056: leaked_storage: Variable "tmpbuf" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/libssh-0.5.0/src/messages.c:320: alloc_fn: Calling allocation function "ssh_string_to_char".
-/builddir/build/BUILD/libssh-0.5.0/src/string.c:139: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/libssh-0.5.0/src/string.c:139: var_assign: Assigning: "new" = "malloc(len)".
-/builddir/build/BUILD/libssh-0.5.0/src/string.c:144: noescape: Variable "new" is not freed or pointed-to in function "memcpy".
-/builddir/build/BUILD/libssh-0.5.0/src/string.c:146: return_alloc: Returning allocated memory "new".
-/builddir/build/BUILD/libssh-0.5.0/src/messages.c:320: var_assign: Assigning: "service_c" =  storage returned from "ssh_string_to_char(service)".
-/builddir/build/BUILD/libssh-0.5.0/src/messages.c:335: noescape: Variable "service_c" is not freed or pointed-to in function "ssh_log".
-/builddir/build/BUILD/libssh-0.5.0/src/messages.c:463: leaked_storage: Variable "service_c" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
 /builddir/build/BUILD/libssh-0.5.0/src/sftpserver.c:53: alloc_fn: Calling allocation function "sftp_packet_read".
@@ -494,11 +395,6 @@ Error: USE_AFTER_FREE:
 /builddir/build/BUILD/libssh-0.5.0/src/sftp.c:1216: freed_arg: "ssh_string_free" frees "name".
 /builddir/build/BUILD/libssh-0.5.0/src/string.c:211: freed_arg: "free" frees parameter "s".
 /builddir/build/BUILD/libssh-0.5.0/src/sftp.c:1329: double_free: Calling "ssh_string_free" frees pointer "name" which has already been freed.
-
-Error: USE_AFTER_FREE:
-/builddir/build/BUILD/libssh-0.5.0/src/keyfiles.c:1263: freed_arg: "ssh_string_free" frees "pubkey".
-/builddir/build/BUILD/libssh-0.5.0/src/string.c:211: freed_arg: "free" frees parameter "s".
-/builddir/build/BUILD/libssh-0.5.0/src/keyfiles.c:1270: use_after_free: Using freed pointer "pubkey".
 
 Error: USE_AFTER_FREE:
 /builddir/build/BUILD/libssh-0.5.0/src/sftp.c:2271: freed_arg: "ssh_buffer_free" frees "buffer".

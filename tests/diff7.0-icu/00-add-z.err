@@ -1,74 +1,9 @@
 Error: BAD_FREE:
-/builddir/build/BUILD/icu/source/common/udata.cpp:202: address_free: "udata_checkCommonData_48" frees address of "tData".
-/builddir/build/BUILD/icu/source/common/ucmndata.c:358: freed_arg: "udata_close_48" frees parameter "udm".
-/builddir/build/BUILD/icu/source/common/udatamem.c:94: freed_arg: "uprv_free_48" frees parameter "pData".
-/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
-
-Error: BAD_FREE:
-/builddir/build/BUILD/icu/source/common/udata.cpp:772: address_free: "udata_checkCommonData_48" frees address of "tData".
-/builddir/build/BUILD/icu/source/common/ucmndata.c:358: freed_arg: "udata_close_48" frees parameter "udm".
-/builddir/build/BUILD/icu/source/common/udatamem.c:94: freed_arg: "uprv_free_48" frees parameter "pData".
-/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
-
-Error: BAD_FREE:
-/builddir/build/BUILD/icu/source/common/udata.cpp:997: address_free: "udata_close_48" frees address of "dataMemory".
-/builddir/build/BUILD/icu/source/common/udatamem.c:94: freed_arg: "uprv_free_48" frees parameter "pData".
-/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
-
-Error: BAD_FREE:
-/builddir/build/BUILD/icu/source/common/locavailable.cpp:166: address_free: "ures_close_48" frees address of "installed".
-/builddir/build/BUILD/icu/source/common/uresbund.c:832: freed_arg: "ures_closeBundle" frees parameter "resB".
-/builddir/build/BUILD/icu/source/common/uresbund.c:818: freed_arg: "uprv_free_48" frees parameter "resB".
-/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
-
-Error: BAD_FREE:
-/builddir/build/BUILD/icu/source/common/uresbund.c:1675: address_free: "ures_close_48" frees address of "stack".
-/builddir/build/BUILD/icu/source/common/uresbund.c:832: freed_arg: "ures_closeBundle" frees parameter "resB".
-/builddir/build/BUILD/icu/source/common/uresbund.c:818: freed_arg: "uprv_free_48" frees parameter "resB".
-/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
-
-Error: BAD_FREE:
 /builddir/build/BUILD/icu/source/common/locresdata.cpp:148: address_free: "ures_close_48" frees address of "subTable".
 /builddir/build/BUILD/icu/source/common/uresbund.c:832: freed_arg: "ures_closeBundle" frees parameter "resB".
 /builddir/build/BUILD/icu/source/common/uresbund.c:818: freed_arg: "uprv_free_48" frees parameter "resB".
 /builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
 /builddir/build/BUILD/icu/source/common/locresdata.cpp:149: address_free: "ures_close_48" frees address of "table".
-
-Error: BAD_FREE:
-/builddir/build/BUILD/icu/source/common/resbund.cpp:350: address_free: "ures_close_48" frees address of "r".
-/builddir/build/BUILD/icu/source/common/uresbund.c:832: freed_arg: "ures_closeBundle" frees parameter "resB".
-/builddir/build/BUILD/icu/source/common/uresbund.c:818: freed_arg: "uprv_free_48" frees parameter "resB".
-/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
-
-Error: BAD_FREE:
-/builddir/build/BUILD/icu/source/common/resbund.cpp:297: address_free: "ures_close_48" frees address of "r".
-/builddir/build/BUILD/icu/source/common/uresbund.c:832: freed_arg: "ures_closeBundle" frees parameter "resB".
-/builddir/build/BUILD/icu/source/common/uresbund.c:818: freed_arg: "uprv_free_48" frees parameter "resB".
-/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
-
-Error: BAD_FREE:
-/builddir/build/BUILD/icu/source/common/resbund.cpp:339: address_free: "ures_close_48" frees address of "r".
-/builddir/build/BUILD/icu/source/common/uresbund.c:832: freed_arg: "ures_closeBundle" frees parameter "resB".
-/builddir/build/BUILD/icu/source/common/uresbund.c:818: freed_arg: "uprv_free_48" frees parameter "resB".
-/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
-
-Error: BAD_FREE:
-/builddir/build/BUILD/icu/source/common/resbund.cpp:321: address_free: "ures_close_48" frees address of "r".
-/builddir/build/BUILD/icu/source/common/uresbund.c:832: freed_arg: "ures_closeBundle" frees parameter "resB".
-/builddir/build/BUILD/icu/source/common/uresbund.c:818: freed_arg: "uprv_free_48" frees parameter "resB".
-/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
-
-Error: BAD_FREE:
-/builddir/build/BUILD/icu/source/common/udata.cpp:903: address_free: "udata_checkCommonData_48" frees address of "udm".
-/builddir/build/BUILD/icu/source/common/ucmndata.c:358: freed_arg: "udata_close_48" frees parameter "udm".
-/builddir/build/BUILD/icu/source/common/udatamem.c:94: freed_arg: "uprv_free_48" frees parameter "pData".
-/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
-
-Error: BAD_FREE:
-/builddir/build/BUILD/icu/source/common/udata.cpp:875: address_free: "udata_checkCommonData_48" frees address of "dataMemory".
-/builddir/build/BUILD/icu/source/common/ucmndata.c:358: freed_arg: "udata_close_48" frees parameter "udm".
-/builddir/build/BUILD/icu/source/common/udatamem.c:94: freed_arg: "uprv_free_48" frees parameter "pData".
-/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
 
 Error: BAD_FREE:
 /builddir/build/BUILD/icu/source/common/uresbund.c:2164: address_free: "ures_close_48" frees address of "resData".
@@ -92,42 +27,6 @@ Error: BAD_FREE:
 /builddir/build/BUILD/icu/source/common/uresbund.c:2691: address_free: "ures_close_48" frees address of "subItem".
 /builddir/build/BUILD/icu/source/common/uresbund.c:2761: address_free: "ures_close_48" frees address of "item".
 /builddir/build/BUILD/icu/source/common/uresbund.c:2762: address_free: "ures_close_48" frees address of "subItem".
-
-Error: BAD_FREE:
-/builddir/build/BUILD/icu/source/common/uresbund.c:2257: address_free: Using "&ctx->installed" to refer to containing object "*ctx" freed by "ures_close_48".
-/builddir/build/BUILD/icu/source/common/uresbund.c:832: freed_arg: "ures_closeBundle" frees parameter "resB".
-/builddir/build/BUILD/icu/source/common/uresbund.c:818: freed_arg: "uprv_free_48" frees parameter "resB".
-/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
-
-Error: BAD_FREE:
-/builddir/build/BUILD/icu/source/common/uresbund.c:2256: address_free: "ures_close_48" frees address of "ctx->curr".
-/builddir/build/BUILD/icu/source/common/uresbund.c:832: freed_arg: "ures_closeBundle" frees parameter "resB".
-/builddir/build/BUILD/icu/source/common/uresbund.c:818: freed_arg: "uprv_free_48" frees parameter "resB".
-/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
-
-Error: BAD_FREE:
-/builddir/build/BUILD/icu/source/i18n/olsontz.cpp:251: address_free: "ures_close_48" frees address of "r".
-/builddir/build/BUILD/icu/source/common/uresbund.c:832: freed_arg: "ures_closeBundle" frees parameter "resB".
-/builddir/build/BUILD/icu/source/common/uresbund.c:818: freed_arg: "uprv_free_48" frees parameter "resB".
-/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
-
-Error: BAD_FREE:
-/builddir/build/BUILD/icu/source/i18n/coll.cpp:297: address_free: "ures_close_48" frees address of "installed".
-/builddir/build/BUILD/icu/source/common/uresbund.c:832: freed_arg: "ures_closeBundle" frees parameter "resB".
-/builddir/build/BUILD/icu/source/common/uresbund.c:818: freed_arg: "uprv_free_48" frees parameter "resB".
-/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
-
-Error: BAD_FREE:
-/builddir/build/BUILD/icu/source/i18n/timezone.cpp:1041: address_free: "ures_close_48" frees address of "res".
-/builddir/build/BUILD/icu/source/common/uresbund.c:832: freed_arg: "ures_closeBundle" frees parameter "resB".
-/builddir/build/BUILD/icu/source/common/uresbund.c:818: freed_arg: "uprv_free_48" frees parameter "resB".
-/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
-
-Error: BAD_FREE:
-/builddir/build/BUILD/icu/source/i18n/timezone.cpp:1012: address_free: "ures_close_48" frees address of "res".
-/builddir/build/BUILD/icu/source/common/uresbund.c:832: freed_arg: "ures_closeBundle" frees parameter "resB".
-/builddir/build/BUILD/icu/source/common/uresbund.c:818: freed_arg: "uprv_free_48" frees parameter "resB".
-/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
 
 Error: BAD_FREE:
 /builddir/build/BUILD/icu/source/i18n/ucurr.cpp:2408: address_free: "ures_close_48" frees address of "to".
@@ -190,29 +89,14 @@ Error: CHECKED_RETURN:
 /builddir/build/BUILD/icu/source/io/ustdio.c:612: unchecked_value: No check of the return value of "ufile_getch_48(f, &ch)".
 
 Error: DEADCODE:
-/builddir/build/BUILD/icu/source/common/uresdata.c:583: dead_error_condition: On this path, the condition "(int32_t)type == 9" cannot be false.
-/builddir/build/BUILD/icu/source/common/uresdata.c:583: const: After this line, the value of "type" is equal to 9.
-/builddir/build/BUILD/icu/source/common/uresdata.c:551: equality_cond: Condition "(int32_t)type == 2" is evaluated as false.
-/builddir/build/BUILD/icu/source/common/uresdata.c:555: equality_cond: Condition "(int32_t)type == 2" is evaluated as false.
-/builddir/build/BUILD/icu/source/common/uresdata.c:572: equality_cond: Condition "(int32_t)type == 2" is evaluated as false.
-/builddir/build/BUILD/icu/source/common/uresdata.c:551: equality_cond: Condition "(int32_t)type == 4" is evaluated as false.
-/builddir/build/BUILD/icu/source/common/uresdata.c:555: equality_cond: Condition "(int32_t)type == 4" is evaluated as false.
-/builddir/build/BUILD/icu/source/common/uresdata.c:572: equality_cond: Condition "(int32_t)type == 4" is evaluated as false.
-/builddir/build/BUILD/icu/source/common/uresdata.c:551: equality_cond: Condition "(int32_t)type == 5" is evaluated as false.
-/builddir/build/BUILD/icu/source/common/uresdata.c:555: equality_cond: Condition "(int32_t)type == 5" is evaluated as false.
-/builddir/build/BUILD/icu/source/common/uresdata.c:572: equality_cond: Condition "(int32_t)type == 5" is evaluated as false.
-/builddir/build/BUILD/icu/source/common/uresdata.c:551: equality_cond: Condition "(int32_t)type == 8" is evaluated as false.
-/builddir/build/BUILD/icu/source/common/uresdata.c:555: equality_cond: Condition "(int32_t)type == 8" is evaluated as false.
-/builddir/build/BUILD/icu/source/common/uresdata.c:583: equality_cond: Condition "(int32_t)type == 8" is evaluated as false.
-/builddir/build/BUILD/icu/source/common/uresdata.c:551: new_values: Noticing condition "(int32_t)type == 9".
-/builddir/build/BUILD/icu/source/common/uresdata.c:555: new_values: Noticing condition "(int32_t)type == 9".
-/builddir/build/BUILD/icu/source/common/uresdata.c:592: dead_error_line: Execution cannot reach this statement "t2 = 4294967295U;".
-
-Error: DEADCODE:
 /builddir/build/BUILD/icu/source/i18n/ucol_tok.cpp:821: dead_error_condition: On this path, the condition "len > 0" cannot be false.
 /builddir/build/BUILD/icu/source/i18n/ucol_tok.cpp:812: at_least: After this line, the value of "len" is at least 1.
 /builddir/build/BUILD/icu/source/i18n/ucol_tok.cpp:812: new_values: Noticing condition "len <= 0".
 /builddir/build/BUILD/icu/source/i18n/ucol_tok.cpp:824: dead_error_line: Execution cannot reach this statement "tempStuff.remove();".
+
+Error: FORWARD_NULL:
+/builddir/build/BUILD/icu/source/common/rbbi.cpp:1864: var_compare_op: Comparing "this->fUnhandledBreakEngine" to null implies that "this->fUnhandledBreakEngine" might be null.
+/builddir/build/BUILD/icu/source/common/rbbi.cpp:1880: var_deref_model: Passing null variable "this->fUnhandledBreakEngine" to function "icu_48::UnhandledEngine::handleCharacter(int, int)", which dereferences it. (The dereference happens because this is a virtual function call.)
 
 Error: FORWARD_NULL:
 /builddir/build/BUILD/icu/source/common/bytestriebuilder.cpp:162: var_compare_op: Comparing "newElements" to null implies that "newElements" might be null.
@@ -223,31 +107,21 @@ Error: FORWARD_NULL:
 /builddir/build/BUILD/icu/source/common/ucharstriebuilder.cpp:116: var_deref_model: Passing null variable "newElements" to function "memcpy", which dereferences it. (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)
 
 Error: FORWARD_NULL:
-/builddir/build/BUILD/icu/source/i18n/alphaindex.cpp:891: var_compare_op: Comparing "str" to null implies that "str" might be null.
-/builddir/build/BUILD/icu/source/i18n/alphaindex.cpp:895: var_deref_model: Passing null variable "str" to function "icu_48::UnicodeString::length() const", which dereferences it.
-/builddir/build/BUILD/icu/source/common/unicode/unistr.h:3512: deref_parm: Directly dereferencing parameter "this".
-
-Error: FORWARD_NULL:
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:2768: var_deref_model: Passing null variable "source->iterator" to function "collIter_bos(icu_48::collIterate *)", which dereferences it.
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:376: deref_parm: Directly dereferencing parameter "source->iterator".
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:2828: var_deref_model: Passing null variable "source->iterator" to function "collIter_eos(icu_48::collIterate *)", which dereferences it.
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:331: deref_parm: Directly dereferencing parameter "s->iterator".
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:2846: var_deref_model: Passing null variable "source->iterator" to function "getNextNormalizedChar(icu_48::collIterate *)", which dereferences it.
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:2294: deref_parm: Directly dereferencing parameter "data->iterator".
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:2869: var_compare_op: Comparing "source->iterator" to null implies that "source->iterator" might be null.
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:2882: var_deref_model: Passing null variable "source->iterator" to function "getNextNormalizedChar(icu_48::collIterate *)", which dereferences it.
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:2959: var_deref_model: Passing null variable "source->iterator" to function "getNextNormalizedChar(icu_48::collIterate *)", which dereferences it.
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3120: var_deref_model: Passing null variable "source->iterator" to function "collIter_eos(icu_48::collIterate *)", which dereferences it.
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3121: var_deref_model: Passing null variable "source->iterator" to function "getNextNormalizedChar(icu_48::collIterate *)", which dereferences it.
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3123: var_deref_model: Passing null variable "source->iterator" to function "collIter_eos(icu_48::collIterate *)", which dereferences it.
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3125: var_deref_model: Passing null variable "source->iterator" to function "getNextNormalizedChar(icu_48::collIterate *)", which dereferences it.
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3295: var_deref_model: Passing null variable "source->iterator" to function "collIter_eos(icu_48::collIterate *)", which dereferences it.
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3295: var_deref_model: Passing null variable "source->iterator" to function "getNextNormalizedChar(icu_48::collIterate *)", which dereferences it.
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3316: var_deref_op: Dereferencing null variable "source->iterator".
+/builddir/build/BUILD/icu/source/common/uprops.cpp:586: var_compare_op: Comparing "dest" to null implies that "dest" might be null.
+/builddir/build/BUILD/icu/source/common/uprops.cpp:608: var_deref_model: Passing null variable "dest" to function "u_terminateUChars_48", which dereferences it.
+/builddir/build/BUILD/icu/source/common/ustring.c:1445: deref_parm: Directly dereferencing parameter "dest".
+/builddir/build/BUILD/icu/source/common/uprops.cpp:624: var_deref_model: Passing null variable "dest" to function "u_terminateUChars_48", which dereferences it.
 
 Error: FORWARD_NULL:
 /builddir/build/BUILD/icu/source/i18n/ucol.cpp:303: var_compare_op: Comparing "this->offsetStore" to null implies that "this->offsetStore" might be null.
 /builddir/build/BUILD/icu/source/i18n/ucol.cpp:319: dereference: Incrementing "this->offsetStore", which might be null.
+
+Error: FORWARD_NULL:
+/builddir/build/BUILD/icu/source/i18n/bms.cpp:149: assign_zero: Assigning: "bms->targetString" = 0.
+/builddir/build/BUILD/icu/source/i18n/bms.cpp:152: var_deref_model: Passing null variable "bms->targetString" to function "icu_48::BoyerMooreSearch::setTargetString(icu_48::UnicodeString const *, UErrorCode &)", which dereferences it.
+/builddir/build/BUILD/icu/source/i18n/bmsearch.cpp:648: deref_parm_in_call: Function "icu_48::Target::setTargetString(icu_48::UnicodeString const *)" dereferences parameter "targetString".
+/builddir/build/BUILD/icu/source/i18n/bmsearch.cpp:164: deref_parm_in_call: Function "icu_48::UnicodeString::getBuffer() const" dereferences parameter "target".
+/builddir/build/BUILD/icu/source/common/unicode/unistr.h:3540: deref_parm: Directly dereferencing parameter "this".
 
 Error: FORWARD_NULL:
 /builddir/build/BUILD/icu/source/i18n/msgfmt.cpp:296: assign_zero: Assigning: "this->argTypes" = 0.
@@ -264,11 +138,6 @@ Error: FORWARD_NULL:
 /builddir/build/BUILD/icu/source/i18n/rematch.cpp:511: var_deref_model: Passing null variable "dest" to function "utext_nativeLength_48", which dereferences it.
 /builddir/build/BUILD/icu/source/common/utext.cpp:82: deref_parm: Directly dereferencing parameter "ut".
 /builddir/build/BUILD/icu/source/i18n/rematch.cpp:528: var_deref_model: Passing null variable "dest" to function "utext_nativeLength_48", which dereferences it.
-
-Error: FORWARD_NULL:
-/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:680: var_compare_op: Comparing "countToPatterns" to null implies that "countToPatterns" might be null.
-/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:714: var_deref_model: Passing null variable "countToPatterns" to function "icu_48::Hashtable::get(icu_48::UnicodeString const &) const", which dereferences it.
-/builddir/build/BUILD/icu/source/common/hash.h:166: deref_parm: Directly dereferencing parameter "this".
 
 Error: FORWARD_NULL:
 /builddir/build/BUILD/icu/source/i18n/ucal.cpp:274: dynamic_cast: Dynamic cast to pointer "dynamic_cast <struct icu_48::GregorianCalendar const *>(cpp_cal)" can return null.
@@ -316,112 +185,6 @@ Error: FORWARD_NULL:
 Error: MISSING_BREAK:
 /builddir/build/BUILD/icu/source/i18n/tzgnames.cpp:888: unterminated_case: This case (value 2) is not terminated by a 'break' statement.
 /builddir/build/BUILD/icu/source/i18n/tzgnames.cpp:890: fallthrough: The above case falls through to this one.
-
-Error: NEGATIVE_RETURNS:
-/builddir/build/BUILD/icu/source/common/ucnv.c:487: negative_return_fn: Function "ucnv_fromUChars_48(clone, chars, (int32_t)sizeof (chars) /*32*/, s, length, err)" returns a negative number.
-/builddir/build/BUILD/icu/source/common/ucnv.c:1771: negative_return: Calling "u_terminateChars_48", which might return a negative value.
-/builddir/build/BUILD/icu/source/common/ustring.c:1451: var_tested_neg: Variable "length" is negative.
-/builddir/build/BUILD/icu/source/common/ustring.c:1452: return_negative_variable: Explicitly returning negative variable "length".
-/builddir/build/BUILD/icu/source/common/ucnv.c:1771: return_negative_fn: Returning the return value of "u_terminateChars_48", which might be negative.
-/builddir/build/BUILD/icu/source/common/ucnv.c:487: var_assign: Assigning: signed variable "length8" = "ucnv_fromUChars_48".
-/builddir/build/BUILD/icu/source/common/ucnv.c:546: negative_returns: "length8" is passed to a parameter that cannot be negative.
-
-Error: NEGATIVE_RETURNS:
-/builddir/build/BUILD/icu/source/i18n/plurrule.cpp:442: negative_return_fn: Function "token->extract(0, token->length(), digits, 128, _ZN6icu_4813UnicodeString10kInvariantE)" returns a negative number.
-/builddir/build/BUILD/icu/source/common/unistr.cpp:781: negative_return: Calling "u_terminateChars_48", which might return a negative value.
-/builddir/build/BUILD/icu/source/common/ustring.c:1451: var_tested_neg: Variable "length" is negative.
-/builddir/build/BUILD/icu/source/common/ustring.c:1452: return_negative_variable: Explicitly returning negative variable "length".
-/builddir/build/BUILD/icu/source/common/unistr.cpp:781: return_negative_fn: Returning the return value of "u_terminateChars_48", which might be negative.
-/builddir/build/BUILD/icu/source/i18n/plurrule.cpp:442: var_assign: Assigning: signed variable "i" = "icu_48::UnicodeString::extract(int, int, char *, int, icu_48::UnicodeString::EInvariant) const".
-/builddir/build/BUILD/icu/source/i18n/plurrule.cpp:443: negative_returns: Using variable "i" as an index to array "digits".
-
-Error: NEGATIVE_RETURNS:
-/builddir/build/BUILD/icu/source/i18n/calendar.cpp:246: negative_return_fn: Function "uloc_getCountry_48(canonicalName, region, 3, &status)" returns a negative number.
-/builddir/build/BUILD/icu/source/common/uloc.c:1963: negative_return: Calling "u_terminateChars_48", which might return a negative value.
-/builddir/build/BUILD/icu/source/common/ustring.c:1451: var_tested_neg: Variable "length" is negative.
-/builddir/build/BUILD/icu/source/common/ustring.c:1452: return_negative_variable: Explicitly returning negative variable "length".
-/builddir/build/BUILD/icu/source/common/uloc.c:1963: return_negative_fn: Returning the return value of "u_terminateChars_48", which might be negative.
-/builddir/build/BUILD/icu/source/i18n/calendar.cpp:246: var_assign: Assigning: signed variable "regionLen" = "uloc_getCountry_48".
-/builddir/build/BUILD/icu/source/i18n/calendar.cpp:256: negative_returns: Using variable "regionLen" as an index to array "region".
-
-Error: NEGATIVE_RETURNS:
-/builddir/build/BUILD/icu/source/i18n/calendar.cpp:251: negative_return_fn: Function "uloc_getCountry_48(fullLoc, region, 3, &status)" returns a negative number.
-/builddir/build/BUILD/icu/source/common/uloc.c:1963: negative_return: Calling "u_terminateChars_48", which might return a negative value.
-/builddir/build/BUILD/icu/source/common/ustring.c:1451: var_tested_neg: Variable "length" is negative.
-/builddir/build/BUILD/icu/source/common/ustring.c:1452: return_negative_variable: Explicitly returning negative variable "length".
-/builddir/build/BUILD/icu/source/common/uloc.c:1963: return_negative_fn: Returning the return value of "u_terminateChars_48", which might be negative.
-/builddir/build/BUILD/icu/source/i18n/calendar.cpp:251: var_assign: Assigning: signed variable "regionLen" = "uloc_getCountry_48".
-/builddir/build/BUILD/icu/source/i18n/calendar.cpp:256: negative_returns: Using variable "regionLen" as an index to array "region".
-
-Error: NEGATIVE_RETURNS:
-/builddir/build/BUILD/icu/source/i18n/calendar.cpp:232: negative_return_fn: Function "uloc_getKeywordValue_48(canonicalName, "calendar", calTypeBuf, 31, &status)" returns a negative number.
-/builddir/build/BUILD/icu/source/common/uloc.c:900: negative_return: Calling "u_terminateChars_48", which might return a negative value.
-/builddir/build/BUILD/icu/source/common/ustring.c:1451: var_tested_neg: Variable "length" is negative.
-/builddir/build/BUILD/icu/source/common/ustring.c:1452: return_negative_variable: Explicitly returning negative variable "length".
-/builddir/build/BUILD/icu/source/common/uloc.c:900: var_assign: Assigning: "result" = "u_terminateChars_48(buffer, bufferCapacity, i, status)", which might be negative.
-/builddir/build/BUILD/icu/source/common/uloc.c:910: return_negative_variable: Explicitly returning negative variable "result".
-/builddir/build/BUILD/icu/source/i18n/calendar.cpp:232: var_assign: Assigning: signed variable "calTypeBufLen" = "uloc_getKeywordValue_48".
-/builddir/build/BUILD/icu/source/i18n/calendar.cpp:234: negative_returns: Using variable "calTypeBufLen" as an index to array "calTypeBuf".
-
-Error: NEGATIVE_RETURNS:
-/builddir/build/BUILD/icu/source/i18n/ucol_bld.cpp:633: negative_return_fn: Function "unorm_normalize_48(src, len, UNORM_NFKD, 0, n, 128, status)" returns a negative number.
-/builddir/build/BUILD/icu/source/common/unorm.cpp:104: negative_return: Calling "unorm2_normalize_48", which might return a negative value.
-/builddir/build/BUILD/icu/source/common/normalizer2.cpp:687: negative_return: Calling "icu_48::UnicodeString::extract(unsigned short *, int, UErrorCode &) const", which might return a negative value.
-/builddir/build/BUILD/icu/source/common/unistr.cpp:755: negative_return: Calling "u_terminateUChars_48", which might return a negative value.
-/builddir/build/BUILD/icu/source/common/ustring.c:1445: var_tested_neg: Variable "length" is negative.
-/builddir/build/BUILD/icu/source/common/ustring.c:1446: return_negative_variable: Explicitly returning negative variable "length".
-/builddir/build/BUILD/icu/source/common/unistr.cpp:755: return_negative_fn: Returning the return value of "u_terminateUChars_48", which might be negative.
-/builddir/build/BUILD/icu/source/common/normalizer2.cpp:687: return_negative_fn: Returning the return value of "icu_48::UnicodeString::extract(unsigned short *, int, UErrorCode &) const", which might be negative.
-/builddir/build/BUILD/icu/source/common/unorm.cpp:104: return_negative_fn: Returning the return value of "unorm2_normalize_48", which might be negative.
-/builddir/build/BUILD/icu/source/i18n/ucol_bld.cpp:633: var_assign: Assigning: unsigned variable "nLen" = "unorm_normalize_48".
-/builddir/build/BUILD/icu/source/i18n/ucol_bld.cpp:635: negative_returns: Using unsigned variable "nLen" in a loop exit condition.
-
-Error: NEGATIVE_RETURNS:
-/builddir/build/BUILD/icu/source/i18n/ucol_elm.cpp:1751: negative_return_fn: Function "unorm_normalize_48(data, len, UNORM_NFC, 0, comp, 256, status)" returns a negative number.
-/builddir/build/BUILD/icu/source/common/unorm.cpp:104: negative_return: Calling "unorm2_normalize_48", which might return a negative value.
-/builddir/build/BUILD/icu/source/common/normalizer2.cpp:687: negative_return: Calling "icu_48::UnicodeString::extract(unsigned short *, int, UErrorCode &) const", which might return a negative value.
-/builddir/build/BUILD/icu/source/common/unistr.cpp:755: negative_return: Calling "u_terminateUChars_48", which might return a negative value.
-/builddir/build/BUILD/icu/source/common/ustring.c:1445: var_tested_neg: Variable "length" is negative.
-/builddir/build/BUILD/icu/source/common/ustring.c:1446: return_negative_variable: Explicitly returning negative variable "length".
-/builddir/build/BUILD/icu/source/common/unistr.cpp:755: return_negative_fn: Returning the return value of "u_terminateUChars_48", which might be negative.
-/builddir/build/BUILD/icu/source/common/normalizer2.cpp:687: return_negative_fn: Returning the return value of "icu_48::UnicodeString::extract(unsigned short *, int, UErrorCode &) const", which might be negative.
-/builddir/build/BUILD/icu/source/common/unorm.cpp:104: return_negative_fn: Returning the return value of "unorm2_normalize_48", which might be negative.
-/builddir/build/BUILD/icu/source/i18n/ucol_elm.cpp:1751: var_assign: Assigning: signed variable "compLen" = "unorm_normalize_48".
-/builddir/build/BUILD/icu/source/i18n/ucol_elm.cpp:1752: negative_returns: Using variable "compLen" as an index to array "comp".
-
-Error: NEGATIVE_RETURNS:
-/builddir/build/BUILD/icu/source/i18n/ucol_elm.cpp:1750: negative_return_fn: Function "unorm_normalize_48(data, len, UNORM_NFD, 0, decomp, 256, status)" returns a negative number.
-/builddir/build/BUILD/icu/source/common/unorm.cpp:104: negative_return: Calling "unorm2_normalize_48", which might return a negative value.
-/builddir/build/BUILD/icu/source/common/normalizer2.cpp:687: negative_return: Calling "icu_48::UnicodeString::extract(unsigned short *, int, UErrorCode &) const", which might return a negative value.
-/builddir/build/BUILD/icu/source/common/unistr.cpp:755: negative_return: Calling "u_terminateUChars_48", which might return a negative value.
-/builddir/build/BUILD/icu/source/common/ustring.c:1445: var_tested_neg: Variable "length" is negative.
-/builddir/build/BUILD/icu/source/common/ustring.c:1446: return_negative_variable: Explicitly returning negative variable "length".
-/builddir/build/BUILD/icu/source/common/unistr.cpp:755: return_negative_fn: Returning the return value of "u_terminateUChars_48", which might be negative.
-/builddir/build/BUILD/icu/source/common/normalizer2.cpp:687: return_negative_fn: Returning the return value of "icu_48::UnicodeString::extract(unsigned short *, int, UErrorCode &) const", which might be negative.
-/builddir/build/BUILD/icu/source/common/unorm.cpp:104: return_negative_fn: Returning the return value of "unorm2_normalize_48", which might be negative.
-/builddir/build/BUILD/icu/source/i18n/ucol_elm.cpp:1750: var_assign: Assigning: signed variable "decLen" = "unorm_normalize_48".
-/builddir/build/BUILD/icu/source/i18n/ucol_elm.cpp:1752: negative_returns: Using variable "decLen" as an index to array "decomp".
-
-Error: NEGATIVE_RETURNS:
-/builddir/build/BUILD/icu/source/i18n/ucol_sit.cpp:581: negative_return_fn: Function "uloc_getCountry_48(locBuff, tempbuff, 512, status)" returns a negative number.
-/builddir/build/BUILD/icu/source/common/uloc.c:1963: negative_return: Calling "u_terminateChars_48", which might return a negative value.
-/builddir/build/BUILD/icu/source/common/ustring.c:1451: var_tested_neg: Variable "length" is negative.
-/builddir/build/BUILD/icu/source/common/ustring.c:1452: return_negative_variable: Explicitly returning negative variable "length".
-/builddir/build/BUILD/icu/source/common/uloc.c:1963: return_negative_fn: Returning the return value of "u_terminateChars_48", which might be negative.
-/builddir/build/BUILD/icu/source/i18n/ucol_sit.cpp:581: var_assign: Assigning: signed variable "elementSize" = "uloc_getCountry_48".
-/builddir/build/BUILD/icu/source/i18n/ucol_sit.cpp:582: negative_returns: "elementSize" is passed to a parameter that cannot be negative.
-/builddir/build/BUILD/icu/source/i18n/ucol_sit.cpp:548: neg_sink_parm_call: Passing "len" to "strncat", which cannot accept a negative.
-
-Error: NEGATIVE_RETURNS:
-/builddir/build/BUILD/icu/source/i18n/ucol_sit.cpp:587: negative_return_fn: Function "uloc_getKeywordValue_48(locBuff, "collation", tempbuff, 512, status)" returns a negative number.
-/builddir/build/BUILD/icu/source/common/uloc.c:900: negative_return: Calling "u_terminateChars_48", which might return a negative value.
-/builddir/build/BUILD/icu/source/common/ustring.c:1451: var_tested_neg: Variable "length" is negative.
-/builddir/build/BUILD/icu/source/common/ustring.c:1452: return_negative_variable: Explicitly returning negative variable "length".
-/builddir/build/BUILD/icu/source/common/uloc.c:900: var_assign: Assigning: "result" = "u_terminateChars_48(buffer, bufferCapacity, i, status)", which might be negative.
-/builddir/build/BUILD/icu/source/common/uloc.c:910: return_negative_variable: Explicitly returning negative variable "result".
-/builddir/build/BUILD/icu/source/i18n/ucol_sit.cpp:587: var_assign: Assigning: signed variable "elementSize" = "uloc_getKeywordValue_48".
-/builddir/build/BUILD/icu/source/i18n/ucol_sit.cpp:588: negative_returns: "elementSize" is passed to a parameter that cannot be negative.
-/builddir/build/BUILD/icu/source/i18n/ucol_sit.cpp:548: neg_sink_parm_call: Passing "len" to "strncat", which cannot accept a negative.
 
 Error: NEGATIVE_RETURNS:
 /builddir/build/BUILD/icu/source/i18n/tznames_impl.cpp:1183: negative_return_fn: Function "mzID->extract(0, mzID->length(), mzIdChar, 129, _ZN6icu_4813UnicodeString10kInvariantE)" returns a negative number.
@@ -520,37 +283,11 @@ Error: NEGATIVE_RETURNS:
 /builddir/build/BUILD/icu/source/tools/toolutil/denseranges.cpp:152: negative_returns: Passing variable "gapIndex" to a parameter that cannot be negative.
 /builddir/build/BUILD/icu/source/tools/toolutil/denseranges.cpp:57: index: Indexing with parameter "i".
 
-Error: OVERRUN_DYNAMIC:
-/builddir/build/BUILD/icu/source/tools/genrb/wrtxml.cpp:176: buffer_alloc: Calling allocating function "uprv_malloc_48" which allocated memory dictated by argument "idLen".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: buffer_alloc: "malloc" allocates memory determined by parameter "s" of the current function.
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_dbuffer: Returning allocated array "malloc(s)".
-/builddir/build/BUILD/icu/source/tools/genrb/wrtxml.cpp:176: var_assign: Assigning: "localeID" = "uprv_malloc_48(idLen)".
-/builddir/build/BUILD/icu/source/tools/genrb/wrtxml.cpp:188: symbolic_assign: Tracking "pos" since "idLen" is tracked with "localeID".
-/builddir/build/BUILD/icu/source/tools/genrb/wrtxml.cpp:191: overrun-local: Overrunning dynamic array "localeID" at offset corresponding to index variable "pos".
-
-Error: OVERRUN_STATIC:
-/builddir/build/BUILD/icu/source/common/rbbiscan.cpp:995: overrun-local: Overrunning static array of size 880 bytes at byte position 9768 by accessing with pointer "&this->fRuleSets[tableEl->fCharClass - 128]" through dereference in call to "icu_48::UnicodeSet::contains(int) const". (The dereference happens because this is a virtual function call.)
-/builddir/build/BUILD/icu/source/common/rbbiscan.cpp:995: overrun-local: Note: These bugs are often difficult to see at first glance.  Coverity recommends a close inspection of the events leading to this overrun.
-
 Error: OVERRUN_STATIC:
 /builddir/build/BUILD/icu/source/i18n/decNumber.c:6704: overrun-local: Overrunning static array "d2utable_48", with 50 elements, at position 98 with index variable "digits + shift".
 
 Error: OVERRUN_STATIC:
 /builddir/build/BUILD/icu/source/i18n/ucol_res.cpp:1368: overrun-local: Overrunning static array "newLeadByteUsed", with 256 elements, at position 256 with index variable "reorderCode".
-
-Error: OVERRUN_STATIC:
-/builddir/build/BUILD/icu/source/i18n/dtitvfmt.cpp:1046: ptr_assign: Pointer "ptn" is assigned the address of a static array pointer "&this->fIntervalPatterns[itvPtnIndex]" of size 616 bytes and offset 616 bytes.
-/builddir/build/BUILD/icu/source/i18n/dtitvfmt.cpp:1048: overrun-local: Overrunning static array of size 616 bytes at byte position 616 by accessing with pointer "ptn".
-/builddir/build/BUILD/icu/source/i18n/dtitvfmt.cpp:1048: overrun-local: Note: These bugs are often difficult to see at first glance.  Coverity recommends a close inspection of the events leading to this overrun.
-
-Error: OVERRUN_STATIC:
-/builddir/build/BUILD/icu/source/i18n/dtitvfmt.cpp:1441: ptr_assign: Pointer "timeItvPtnInfo" is assigned the address of a static array pointer "&this->fIntervalPatterns[itvPtnIndex]" of size 616 bytes and offset 616 bytes.
-/builddir/build/BUILD/icu/source/i18n/dtitvfmt.cpp:1442: overrun-local: Overrunning static array of size 616 bytes at byte position 616 by accessing with pointer "timeItvPtnInfo".
-/builddir/build/BUILD/icu/source/i18n/dtitvfmt.cpp:1442: overrun-local: Note: These bugs are often difficult to see at first glance.  Coverity recommends a close inspection of the events leading to this overrun.
-
-Error: OVERRUN_STATIC:
-/builddir/build/BUILD/icu/source/i18n/regexcmp.cpp:205: overrun-local: Overrunning static array of size 880 bytes at byte position 9768 by accessing with pointer "&icu_48::RegexStaticSets::gStaticSets->fRuleSets[tableEl->fCharClass - 128]" through dereference in call to "icu_48::UnicodeSet::contains(int) const". (The dereference happens because this is a virtual function call.)
-/builddir/build/BUILD/icu/source/i18n/regexcmp.cpp:205: overrun-local: Note: These bugs are often difficult to see at first glance.  Coverity recommends a close inspection of the events leading to this overrun.
 
 Error: RESOURCE_LEAK:
 /builddir/build/BUILD/icu/source/common/uloc_tag.c:2051: alloc_fn: Calling allocation function "uprv_malloc_48".
@@ -560,62 +297,6 @@ Error: RESOURCE_LEAK:
 /builddir/build/BUILD/icu/source/common/uloc_tag.c:2057: noescape: Variable "t" is not freed or pointed-to in function "_initializeULanguageTag".
 /builddir/build/BUILD/icu/source/common/uloc_tag.c:614:39: noescape: "_initializeULanguageTag" does not free or save its pointer parameter "langtag".
 /builddir/build/BUILD/icu/source/common/uloc_tag.c:2075: leaked_storage: Variable "t" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/common/locutil.cpp:198: alloc_fn: Calling allocation function "icu_48::UMemory::operator new(unsigned long)".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/locutil.cpp:198: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::Hashtable::Hashtable(UErrorCode &)".
-/builddir/build/BUILD/icu/source/common/hash.h:130:19: noescape: "icu_48::Hashtable::Hashtable(UErrorCode &)" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/common/locutil.cpp:198: var_assign: Assigning: "cache" =  storage returned from "new icu_48::Hashtable(status)".
-/builddir/build/BUILD/icu/source/common/locutil.cpp:200: leaked_storage: Variable "cache" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/common/rbbisetb.cpp:360: alloc_fn: Calling allocation function "icu_48::UMemory::operator new(unsigned long)".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/rbbisetb.cpp:360: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::RBBINode::RBBINode(icu_48::RBBINode::NodeType)".
-/builddir/build/BUILD/icu/source/common/rbbinode.cpp:46:11: noescape: "icu_48::RBBINode::RBBINode(icu_48::RBBINode::NodeType)" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/common/rbbisetb.cpp:360: var_assign: Assigning: "leafNode" =  storage returned from "new icu_48::RBBINode(_ZN6icu_488RBBINode8leafCharE)".
-/builddir/build/BUILD/icu/source/common/rbbisetb.cpp:376: leaked_storage: Variable "leafNode" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/common/rbbirb.cpp:294: alloc_fn: Calling allocation function "icu_48::RBBIRuleBuilder::flattenData()".
-/builddir/build/BUILD/icu/source/common/rbbirb.cpp:169: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/common/rbbirb.cpp:169: var_assign: Assigning: "data" = "uprv_malloc_48(totalSize)".
-/builddir/build/BUILD/icu/source/common/rbbirb.cpp:174: noescape: Variable "data" is not freed or pointed-to in function "memset".
-/builddir/build/BUILD/icu/source/common/rbbirb.cpp:209: var_assign: Assigning: "ruleStatusTable" = "data".
-/builddir/build/BUILD/icu/source/common/rbbirb.cpp:216: return_alloc: Returning allocated memory "data".
-/builddir/build/BUILD/icu/source/common/rbbirb.cpp:294: var_assign: Assigning: "data" =  storage returned from "builder.flattenData()".
-/builddir/build/BUILD/icu/source/common/rbbirb.cpp:296: leaked_storage: Variable "data" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/common/serv.cpp:527: alloc_fn: Calling allocation function "icu_48::UMemory::operator new(unsigned long)".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/serv.cpp:527: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::UnicodeString::UnicodeString(icu_48::UnicodeString const &)".
-/builddir/build/BUILD/icu/source/common/unistr.cpp:325:16: noescape: "icu_48::UnicodeString::UnicodeString(icu_48::UnicodeString const &)" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/common/serv.cpp:527: var_assign: Assigning: "idToCache" =  storage returned from "new icu_48::UnicodeString(currentDescriptor)".
-/builddir/build/BUILD/icu/source/common/serv.cpp:528: noescape: Variable "idToCache" is not freed or pointed-to in function "icu_48::UnicodeString::isBogus() const".
-/builddir/build/BUILD/icu/source/common/unicode/unistr.h:3523:16: noescape: "icu_48::UnicodeString::isBogus() const" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/common/serv.cpp:530: leaked_storage: Variable "idToCache" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/common/uloc.c:2341: alloc_fn: Calling allocation function "uprv_realloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:55: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:55: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/uloc.c:2341: var_assign: Assigning: "j" =  storage returned from "uprv_realloc_48(j, sizeof (j[0]) /*16*/ * jSize * 2UL)".
-/builddir/build/BUILD/icu/source/common/uloc.c:2315: leaked_storage: Variable "j" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
 /builddir/build/BUILD/icu/source/common/uloc_tag.c:1353: alloc_fn: Calling allocation function "uprv_malloc_48".
@@ -645,228 +326,11 @@ Error: RESOURCE_LEAK:
 /builddir/build/BUILD/icu/source/i18n/decimfmt.cpp:3333: leaked_storage: Variable "fmt" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/i18n/nfrule.cpp:100: alloc_fn: Calling allocation function "icu_48::UMemory::operator new(unsigned long)".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/i18n/nfrule.cpp:100: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::NFRule::NFRule(icu_48::RuleBasedNumberFormat const *)".
-/builddir/build/BUILD/icu/source/i18n/nfrule.cpp:31:9: noescape: "icu_48::NFRule::NFRule(icu_48::RuleBasedNumberFormat const *)" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/i18n/nfrule.cpp:100: var_assign: Assigning: "rule1" =  storage returned from "new icu_48::NFRule(rbnf)".
-/builddir/build/BUILD/icu/source/i18n/nfrule.cpp:106: noescape: Variable "rule1" is not freed or pointed-to in function "icu_48::NFRule::parseRuleDescriptor(icu_48::UnicodeString &, UErrorCode &)".
-/builddir/build/BUILD/icu/source/i18n/nfrule.cpp:221:9: noescape: "icu_48::NFRule::parseRuleDescriptor(icu_48::UnicodeString &, UErrorCode &)" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/i18n/nfrule.cpp:117: noescape: Variable "rule1" is not freed or pointed-to in function "icu_48::NFRule::getType() const".
-/builddir/build/BUILD/icu/source/i18n/nfrule.h:56:15: noescape: "icu_48::NFRule::getType() const" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/i18n/nfrule.cpp:117: noescape: Variable "rule1" is not freed or pointed-to in function "icu_48::NFRule::getType() const".
-/builddir/build/BUILD/icu/source/i18n/nfrule.cpp:132: noescape: Variable "rule1" is not freed or pointed-to in function "icu_48::NFRule::getType() const".
-/builddir/build/BUILD/icu/source/i18n/nfrule.cpp:146: leaked_storage: Variable "rule1" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/i18n/rbt_pars.cpp:548: alloc_fn: Calling allocation function "icu_48::TransliteratorIDParser::parseFilterID(icu_48::UnicodeString const &, int &)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:224: alloc_fn: Storage is returned from allocation function "icu_48::TransliteratorIDParser::specsToID(icu_48::TransliteratorIDParser::Specs const *, int)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:839: alloc_fn: Storage is returned from allocation function "icu_48::UMemory::operator new(unsigned long)".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:839: var_assign: Assigning: "<storage from new>" = "icu_48::UMemory::operator new(128UL)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:839: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::TransliteratorIDParser::SingleID::SingleID(icu_48::UnicodeString const &, icu_48::UnicodeString const &)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:67:35: noescape: "icu_48::TransliteratorIDParser::SingleID::SingleID(icu_48::UnicodeString const &, icu_48::UnicodeString const &)" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:839: return_alloc: Returning allocated memory "new icu_48::TransliteratorIDParser::SingleID(canonID, basicID)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:224: var_assign: Assigning: "single" = "icu_48::TransliteratorIDParser::specsToID(specs, 0)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:229: return_alloc: Returning allocated memory "single".
-/builddir/build/BUILD/icu/source/i18n/rbt_pars.cpp:548: var_assign: Assigning: "single" =  storage returned from "icu_48::TransliteratorIDParser::parseFilterID(rule, iref)".
-/builddir/build/BUILD/icu/source/i18n/rbt_pars.cpp:553: leaked_storage: Variable "single" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:131: alloc_fn: Calling allocation function "icu_48::TransliteratorIDParser::parseFilterID(icu_48::UnicodeString const &, int &, signed char)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:801: alloc_fn: Storage is returned from allocation function "icu_48::UMemory::operator new(unsigned long)".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:801: var_assign: Assigning: "<storage from new>" = "icu_48::UMemory::operator new(176UL)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:801: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::TransliteratorIDParser::Specs::Specs(icu_48::UnicodeString const &, icu_48::UnicodeString const &, icu_48::UnicodeString const &, signed char, icu_48::UnicodeString const &)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:50:32: noescape: "icu_48::TransliteratorIDParser::Specs::Specs(icu_48::UnicodeString const &, icu_48::UnicodeString const &, icu_48::UnicodeString const &, signed char, icu_48::UnicodeString const &)" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:801: return_alloc: Returning allocated memory "new icu_48::TransliteratorIDParser::Specs(source, target, variant, sawSource, filter)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:131: var_assign: Assigning: "specsB" =  storage returned from "icu_48::TransliteratorIDParser::parseFilterID(id, pos, 1)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:136: leaked_storage: Variable "specsB" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:122: alloc_fn: Calling allocation function "icu_48::TransliteratorIDParser::parseFilterID(icu_48::UnicodeString const &, int &, signed char)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:801: alloc_fn: Storage is returned from allocation function "icu_48::UMemory::operator new(unsigned long)".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:801: var_assign: Assigning: "<storage from new>" = "icu_48::UMemory::operator new(176UL)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:801: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::TransliteratorIDParser::Specs::Specs(icu_48::UnicodeString const &, icu_48::UnicodeString const &, icu_48::UnicodeString const &, signed char, icu_48::UnicodeString const &)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:50:32: noescape: "icu_48::TransliteratorIDParser::Specs::Specs(icu_48::UnicodeString const &, icu_48::UnicodeString const &, icu_48::UnicodeString const &, signed char, icu_48::UnicodeString const &)" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:801: return_alloc: Returning allocated memory "new icu_48::TransliteratorIDParser::Specs(source, target, variant, sawSource, filter)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:122: var_assign: Assigning: "specsA" =  storage returned from "icu_48::TransliteratorIDParser::parseFilterID(id, pos, 1)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:148: noescape: Variable "specsA" is not freed or pointed-to in function "icu_48::TransliteratorIDParser::specsToID(icu_48::TransliteratorIDParser::Specs const *, int)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:812:48: noescape: "icu_48::TransliteratorIDParser::specsToID(icu_48::TransliteratorIDParser::Specs const *, int)" does not free or save its pointer parameter "specs".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:154: leaked_storage: Variable "specsA" going out of scope leaks the storage it points to.
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:163: noescape: Variable "specsA" is not freed or pointed-to in function "icu_48::TransliteratorIDParser::specsToID(icu_48::TransliteratorIDParser::Specs const *, int)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:170: leaked_storage: Variable "specsA" going out of scope leaks the storage it points to.
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:182: noescape: Variable "specsA" is not freed or pointed-to in function "icu_48::TransliteratorIDParser::specsToID(icu_48::TransliteratorIDParser::Specs const *, int)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:184: noescape: Variable "specsA" is not freed or pointed-to in function "icu_48::TransliteratorIDParser::specsToSpecialInverse(icu_48::TransliteratorIDParser::Specs const &, UErrorCode &)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:850:60: noescape: "icu_48::TransliteratorIDParser::specsToSpecialInverse(icu_48::TransliteratorIDParser::Specs const &, UErrorCode &)" does not free or save its pointer parameter "specs".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:186: noescape: Variable "specsA" is not freed or pointed-to in function "icu_48::TransliteratorIDParser::specsToID(icu_48::TransliteratorIDParser::Specs const *, int)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:192: leaked_storage: Variable "specsA" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/i18n/ucol_elm.cpp:231: alloc_fn: Calling allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/i18n/ucol_elm.cpp:231: var_assign: Assigning: "r" =  storage returned from "uprv_malloc_48(sizeof (tempUCATable) /*96*/)".
-/builddir/build/BUILD/icu/source/i18n/ucol_elm.cpp:237: noescape: Variable "r" is not freed or pointed-to in function "memset".
-/builddir/build/BUILD/icu/source/i18n/ucol_elm.cpp:377: leaked_storage: Variable "r" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3535: alloc_fn: Calling allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3535: var_assign: Assigning: "strbuffer" =  storage returned from "uprv_malloc_48(sizeof (UChar) /*2*/ * (newsize + 128))".
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3542: var_assign: Assigning: "UCharOffset" = "strbuffer".
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3543: noescape: Variable "UCharOffset" is not freed or pointed-to in function "memcpy".
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3535: overwrite_var: Overwriting "strbuffer" in call "strbuffer = (UChar *)uprv_malloc_48(sizeof (UChar) /*2*/ * (newsize + 128))" leaks the storage that "strbuffer" points to.
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3542: overwrite_var: Overwriting "UCharOffset" in call "UCharOffset = strbuffer + newsize" leaks the storage that "UCharOffset" points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3535: alloc_fn: Calling allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3535: var_assign: Assigning: "strbuffer" =  storage returned from "uprv_malloc_48(sizeof (UChar) /*2*/ * (newsize + 128))".
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3542: var_assign: Assigning: "UCharOffset" = "strbuffer".
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3543: noescape: Variable "UCharOffset" is not freed or pointed-to in function "memcpy".
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3535: overwrite_var: Overwriting "strbuffer" in call "strbuffer = (UChar *)uprv_malloc_48(sizeof (UChar) /*2*/ * (newsize + 128))" leaks the storage that "strbuffer" points to.
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3540: leaked_storage: Variable "UCharOffset" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/i18n/colldata.cpp:335: alloc_fn: Calling allocation function "icu_48::UMemory::operator new(unsigned long)".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/i18n/colldata.cpp:335: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::StringList::StringList(UErrorCode &)".
-/builddir/build/BUILD/icu/source/i18n/colldata.cpp:200:13: noescape: "icu_48::StringList::StringList(UErrorCode &)" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/i18n/colldata.cpp:335: var_assign: Assigning: "strings" =  storage returned from "new icu_48::StringList(status)".
-/builddir/build/BUILD/icu/source/i18n/colldata.cpp:339: leaked_storage: Variable "strings" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/i18n/dtptngen.cpp:1269: alloc_fn: Calling allocation function "icu_48::UMemory::operator new(unsigned long)".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/i18n/dtptngen.cpp:1269: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::PtnElem::PtnElem(icu_48::UnicodeString const &, icu_48::UnicodeString const &)".
-/builddir/build/BUILD/icu/source/i18n/dtptngen.cpp:1986:10: noescape: "icu_48::PtnElem::PtnElem(icu_48::UnicodeString const &, icu_48::UnicodeString const &)" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/i18n/dtptngen.cpp:1269: var_assign: Assigning: "curElem" =  storage returned from "new icu_48::PtnElem(otherElem->basePattern, otherElem->pattern)".
-/builddir/build/BUILD/icu/source/i18n/dtptngen.cpp:1280: leaked_storage: Variable "curElem" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/i18n/gregocal.cpp:1330: alloc_fn: Calling allocation function "icu_48::UMemory::operator new(unsigned long)".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/i18n/gregocal.cpp:1330: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::GregorianCalendar::GregorianCalendar(UErrorCode &)".
-/builddir/build/BUILD/icu/source/i18n/gregocal.cpp:152:20: noescape: "icu_48::GregorianCalendar::GregorianCalendar(UErrorCode &)" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/i18n/gregocal.cpp:1330: var_assign: Assigning: "calendar" =  storage returned from "new icu_48::GregorianCalendar(status)".
-/builddir/build/BUILD/icu/source/i18n/gregocal.cpp:1349: leaked_storage: Variable "calendar" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/i18n/olsontz.cpp:831: alloc_fn: Calling allocation function "icu_48::UMemory::operator new(unsigned long)".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/i18n/olsontz.cpp:831: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::TimeArrayTimeZoneRule::TimeArrayTimeZoneRule(icu_48::UnicodeString const &, int, int, double const *, int, icu_48::DateTimeRule::TimeRuleType)".
-/builddir/build/BUILD/icu/source/i18n/tzrule.cpp:400:24: noescape: "icu_48::TimeArrayTimeZoneRule::TimeArrayTimeZoneRule(icu_48::UnicodeString const &, int, int, double const *, int, icu_48::DateTimeRule::TimeRuleType)" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/i18n/olsontz.cpp:831: var_assign: Assigning: "firstFinalRule" =  storage returned from "new icu_48::TimeArrayTimeZoneRule(tzid, this->finalZone->getRawOffset(), 0, &startTime, 1, _ZN6icu_4812DateTimeRule8UTC_TIMEE)".
-/builddir/build/BUILD/icu/source/i18n/olsontz.cpp:853: leaked_storage: Variable "firstFinalRule" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/i18n/olsontz.cpp:729: alloc_fn: Calling allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/i18n/olsontz.cpp:729: var_assign: Assigning: "times" =  storage returned from "uprv_malloc_48(sizeof (UDate) /*8*/ * transCount)".
-/builddir/build/BUILD/icu/source/i18n/olsontz.cpp:765: noescape: Variable "times" is not freed or pointed-to in function "icu_48::TimeArrayTimeZoneRule::TimeArrayTimeZoneRule(icu_48::UnicodeString const &, int, int, double const *, int, icu_48::DateTimeRule::TimeRuleType)".
-/builddir/build/BUILD/icu/source/i18n/tzrule.cpp:403:59: noescape: "icu_48::TimeArrayTimeZoneRule::TimeArrayTimeZoneRule(icu_48::UnicodeString const &, int, int, double const *, int, icu_48::DateTimeRule::TimeRuleType)" does not free or save its pointer parameter "startTimes".
-/builddir/build/BUILD/icu/source/i18n/olsontz.cpp:771: leaked_storage: Variable "times" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/i18n/rbtz.cpp:646: alloc_fn: Calling allocation function "icu_48::UMemory::operator new(unsigned long)".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/i18n/rbtz.cpp:646: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::UVector::UVector(int, UErrorCode &)".
-/builddir/build/BUILD/icu/source/common/uvector.cpp:39:10: noescape: "icu_48::UVector::UVector(int, UErrorCode &)" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/i18n/rbtz.cpp:646: var_assign: Assigning: "rules" =  storage returned from "new icu_48::UVector(size, ec)".
-/builddir/build/BUILD/icu/source/i18n/rbtz.cpp:648: leaked_storage: Variable "rules" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/i18n/timezone.cpp:1303: alloc_fn: Calling allocation function "icu_48::UMemory::operator new(unsigned long)".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/i18n/timezone.cpp:1303: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::SimpleTimeZone::SimpleTimeZone(int, icu_48::UnicodeString const &, signed char, signed char, signed char, int, signed char, signed char, signed char, int, int, UErrorCode &)".
-/builddir/build/BUILD/icu/source/i18n/simpletz.cpp:104:17: noescape: "icu_48::SimpleTimeZone::SimpleTimeZone(int, icu_48::UnicodeString const &, signed char, signed char, signed char, int, signed char, signed char, signed char, int, int, UErrorCode &)" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/i18n/timezone.cpp:1303: var_assign: Assigning: "tz" =  storage returned from "new icu_48::SimpleTimeZone(rawOffset, tempID, 5, 1, 0, 0, 7, 1, 0, 0, this->getDSTSavings(), status)".
-/builddir/build/BUILD/icu/source/i18n/timezone.cpp:1311: leaked_storage: Variable "tz" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:475: alloc_fn: Calling allocation function "icu_48::TimeUnitFormat::initHash(UErrorCode &)".
-/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:843: alloc_fn: Storage is returned from allocation function "icu_48::UMemory::operator new(unsigned long)".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:843: var_assign: Assigning: "<storage from new>" = "icu_48::UMemory::operator new(88UL)".
-/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:843: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::Hashtable::Hashtable(signed char, UErrorCode &)".
-/builddir/build/BUILD/icu/source/common/hash.h:119:19: noescape: "icu_48::Hashtable::Hashtable(signed char, UErrorCode &)" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:843: var_assign: Assigning: "hTable" = "new icu_48::Hashtable(1, status)".
-/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:851: noescape: Variable "hTable" is not freed or pointed-to in function "icu_48::Hashtable::setValueComparator(signed char (*)(UHashTok, UHashTok))".
-/builddir/build/BUILD/icu/source/common/hash.h:197:37: noescape: "icu_48::Hashtable::setValueComparator(signed char (*)(UHashTok, UHashTok))" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:852: return_alloc: Returning allocated memory "hTable".
-/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:475: var_assign: Assigning: "countToPatterns" =  storage returned from "this->initHash(err)".
-/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:498: noescape: Variable "countToPatterns" is not freed or pointed-to in function "icu_48::Hashtable::get(icu_48::UnicodeString const &) const".
-/builddir/build/BUILD/icu/source/common/hash.h:165:25: noescape: "icu_48::Hashtable::get(icu_48::UnicodeString const &) const" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:503: noescape: Variable "countToPatterns" is not freed or pointed-to in function "icu_48::Hashtable::put(icu_48::UnicodeString const &, void *, UErrorCode &)".
-/builddir/build/BUILD/icu/source/common/hash.h:157:25: noescape: "icu_48::Hashtable::put(icu_48::UnicodeString const &, void *, UErrorCode &)" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:527: leaked_storage: Variable "countToPatterns" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
 /builddir/build/BUILD/icu/source/i18n/ucurr.cpp:1864: alloc_fn: Calling allocation function "uprv_malloc_48".
 /builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
 /builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
 /builddir/build/BUILD/icu/source/i18n/ucurr.cpp:1864: var_assign: Assigning: "entry" =  storage returned from "uprv_malloc_48(sizeof (IsoCodeEntry) /*24*/)".
 /builddir/build/BUILD/icu/source/i18n/ucurr.cpp:1874: leaked_storage: Variable "entry" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/i18n/vtzone.cpp:1744: alloc_fn: Calling allocation function "icu_48::UMemory::operator new(unsigned long)".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/i18n/vtzone.cpp:1744: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::UVector::UVector(void (*)(void *), signed char (*)(UHashTok, UHashTok), UErrorCode &)".
-/builddir/build/BUILD/icu/source/common/uvector.cpp:49:10: noescape: "icu_48::UVector::UVector(void (*)(void *), signed char (*)(UHashTok, UHashTok), UErrorCode &)" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/i18n/vtzone.cpp:1744: var_assign: Assigning: "customProps" =  storage returned from "new icu_48::UVector(uhash_deleteUnicodeString_48, uhash_compareUnicodeString_48, status)".
-/builddir/build/BUILD/icu/source/i18n/vtzone.cpp:1746: leaked_storage: Variable "customProps" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/tools/gencnval/gencnval.c:968: alloc_fn: Calling allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/tools/gencnval/gencnval.c:968: var_assign: Assigning: "uniqueAliasesToConverter" =  storage returned from "uprv_malloc_48(knownAliasesCount * sizeof (uint16_t) /*2*/)".
-/builddir/build/BUILD/icu/source/tools/gencnval/gencnval.c:971: noescape: Variable "uniqueAliasesToConverter" is not freed or pointed-to in function "resolveAliases".
-/builddir/build/BUILD/icu/source/tools/gencnval/gencnval.c:832:52: noescape: "resolveAliases" does not free or save its pointer parameter "uniqueAliasToConverterArr".
-/builddir/build/BUILD/icu/source/tools/gencnval/gencnval.c:1024: noescape: Variable "uniqueAliasesToConverter" is not freed or pointed-to in function "udata_writeBlock".
-/builddir/build/BUILD/icu/source/tools/toolutil/unewdata.c:215:53: noescape: "udata_writeBlock" does not free or save its pointer parameter "s".
-/builddir/build/BUILD/icu/source/tools/gencnval/gencnval.c:1059: leaked_storage: Variable "uniqueAliasesToConverter" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
 /builddir/build/BUILD/icu/source/tools/genrb/parse.c:659: alloc_fn: Calling allocation function "uprv_malloc_48".
@@ -922,12 +386,6 @@ Error: REVERSE_INULL:
 Error: REVERSE_INULL:
 /builddir/build/BUILD/icu/source/tools/genrb/parse.c:673: deref_ptr_in_call: Dereferencing pointer "filename". (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)
 /builddir/build/BUILD/icu/source/tools/genrb/parse.c:689: check_after_deref: Dereferencing "filename" before a null check.
-
-Error: SIZECHECK:
-/builddir/build/BUILD/icu/source/layout/LEInsertionList.cpp:60: buffer_alloc: "uprv_malloc_48((sizeof (struct icu_48::InsertionRecord) /*24*/ + (count - 1) * sizeof (LEGlyphID) /*4*/) * sizeof (char) /*1*/)" allocates memory.
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: buffer_alloc: "malloc" allocates memory determined by parameter "s" of the current function.
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_dbuffer: Returning allocated array "malloc(s)".
-/builddir/build/BUILD/icu/source/layout/LEInsertionList.cpp:60: incorrect_multiplication: Allocating a multiple of 1 bytes to pointer "insertion", which needs 24 bytes.
 
 Error: SIZEOF_MISMATCH:
 /builddir/build/BUILD/icu/source/tools/genrb/reslist.c:1677: suspicious_sizeof: Passing argument "count * sizeof (struct SResource **) /*8*/" to function "uprv_malloc_48" and then casting the return value to "struct SResource **" is suspicious.  Did you intend to use "sizeof(struct SResource *)" instead of "sizeof (struct SResource **)" ?  In this particular case sizeof(struct SResource **) happens to be equal to sizeof(struct SResource *), but this is not a portable assumption.
@@ -1398,12 +856,8 @@ Error: UNINIT_CTOR:
 /builddir/build/BUILD/icu/source/i18n/tznames_impl.cpp:372: uninit_member: Non-static class member fStrings is not initialized in this constructor nor in any functions that it calls.
 
 Error: UNINIT_CTOR:
-/builddir/build/BUILD/icu/source/tools/toolutil/package.cpp:418: uninit_member: Non-static class member inStrings is not initialized in this constructor nor in any functions that it calls.
-/builddir/build/BUILD/icu/source/tools/toolutil/package.cpp:418: uninit_member: Non-static class member isMissingItems is not initialized in this constructor nor in any functions that it calls.
-/builddir/build/BUILD/icu/source/tools/toolutil/package.cpp:418: uninit_member: Non-static class member outStrings is not initialized in this constructor nor in any functions that it calls.
-/builddir/build/BUILD/icu/source/tools/toolutil/package.h:156: member_decl: Class member declaration for inStrings.
-/builddir/build/BUILD/icu/source/tools/toolutil/package.h:156: member_decl: Class member declaration for outStrings.
-/builddir/build/BUILD/icu/source/tools/toolutil/package.h:167: member_decl: Class member declaration for isMissingItems.
+/builddir/build/BUILD/icu/source/i18n/uspoof_impl.h:108: member_decl: Class member declaration for fChecks.
+/builddir/build/BUILD/icu/source/i18n/uspoof_impl.cpp:32: uninit_member: Non-static class member fChecks is not initialized in this constructor nor in any functions that it calls.
 
 Error: UNINIT_CTOR:
 /builddir/build/BUILD/icu/source/tools/toolutil/denseranges.cpp:28: uninit_member: Non-static class member gapLengths is not initialized in this constructor nor in any functions that it calls.
@@ -1419,6 +873,31 @@ Error: UNUSED_VALUE:
 
 Error: UNUSED_VALUE:
 /builddir/build/BUILD/icu/source/i18n/zonemeta.cpp:351: returned_pointer: Pointer "idInCache" returned by "uhash_put_48(gCanonicalIDCache, (void *)key, (void *)canonicalID, status)" is never used.
+
+Error: USE_AFTER_FREE:
+/builddir/build/BUILD/icu/source/common/usprep.cpp:737: alias: Assigning: "b2" = "b1". Now both point to the same storage.
+/builddir/build/BUILD/icu/source/common/usprep.cpp:809: freed_arg: "uprv_free_48" frees "b1".
+/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+/builddir/build/BUILD/icu/source/common/usprep.cpp:814: double_free: Calling "uprv_free_48" frees pointer "b2" which has already been freed.
+
+Error: USE_AFTER_FREE:
+/builddir/build/BUILD/icu/source/common/usprep.cpp:737: alias: Assigning: "b2" = "b1". Now both point to the same storage.
+/builddir/build/BUILD/icu/source/common/usprep.cpp:809: freed_arg: "uprv_free_48" frees "b1".
+/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+/builddir/build/BUILD/icu/source/common/usprep.cpp:814: pass_freed_arg: Passing freed pointer "b2" as an argument to function "uprv_free_48".
+
+Error: USE_AFTER_FREE:
+/builddir/build/BUILD/icu/source/common/ustrcase.c:499: alias: Assigning: "temp" = "dest". Now both point to the same storage.
+/builddir/build/BUILD/icu/source/common/ustrcase.c:545: freed_arg: "uprv_free_48" frees "temp".
+/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+/builddir/build/BUILD/icu/source/common/ustrcase.c:549: deref_arg: Calling "u_terminateUChars_48" dereferences freed pointer "dest".
+/builddir/build/BUILD/icu/source/common/ustring.c:1445: deref_parm: Directly dereferencing parameter "dest".
+
+Error: USE_AFTER_FREE:
+/builddir/build/BUILD/icu/source/common/ustrcase.c:499: alias: Assigning: "temp" = "dest". Now both point to the same storage.
+/builddir/build/BUILD/icu/source/common/ustrcase.c:545: freed_arg: "uprv_free_48" frees "temp".
+/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+/builddir/build/BUILD/icu/source/common/ustrcase.c:549: pass_freed_arg: Passing freed pointer "dest" as an argument to function "u_terminateUChars_48".
 
 Error: USE_AFTER_FREE:
 /builddir/build/BUILD/icu/source/i18n/msgfmt.cpp:533: freed_arg: "icu_48::UMemory::operator delete(void *)" frees "formatter".

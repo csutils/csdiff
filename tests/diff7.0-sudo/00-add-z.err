@@ -135,5 +135,10 @@ Error: TOCTOU:
 /builddir/build/BUILD/sudo-1.8.1p2/src/load_plugins.c:165: fs_check_call: Calling function "stat" to perform check on "path".
 /builddir/build/BUILD/sudo-1.8.1p2/src/load_plugins.c:179: toctou: Calling function "dlopen" that uses "path" after a check function. This can cause a time-of-check, time-of-use race condition.
 
+Error: UNINIT:
+/builddir/build/BUILD/sudo-1.8.1p2/src/exec_pty.c:285: var_decl: Declaring variable "sa" without initializer.
+/builddir/build/BUILD/sudo-1.8.1p2/src/exec_pty.c:323: uninit_use_in_call: Using uninitialized value "sa.sa_mask": field "sa.sa_mask".__val is uninitialized when calling "sigaction".
+/builddir/build/BUILD/sudo-1.8.1p2/src/exec_pty.c:323: uninit_use_in_call: Using uninitialized value "sa.sa_flags" when calling "sigaction".
+
 Error: UNUSED_VALUE:
 /builddir/build/BUILD/sudo-1.8.1p2/plugins/sudoers/group_plugin.c:80: returned_pointer: Pointer "args" returned by "strpbrk(plugin_info, " \t")" is never used.

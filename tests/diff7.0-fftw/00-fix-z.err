@@ -21,16 +21,16 @@ fftw-3.2.2/single/rdft/problem.c:223: callee_ptr_arith: Passing "&kind" to funct
 fftw-3.2.2/single/rdft/problem.c:154: ptr_arith: Performing pointer arithmetic on "kind" in expression "kind + i".
 
 Error: BAD_FREE:
-fftw-3.2.2/double/rdft/vrank3-transpose.c:753: address_free: Using "&pln->super.super" to refer to containing object "*pln" freed by "fftw_plan_destroy_internal".
-fftw-3.2.2/double/kernel/plan.c:50: freed_arg: "fftw_ifree" frees parameter "ego".
-fftw-3.2.2/double/kernel/alloc.c:280: freed_arg: "fftw_kernel_free" frees parameter "p".
-fftw-3.2.2/double/kernel/kalloc.c:142: freed_arg: "free" frees parameter "p".
-
-Error: BAD_FREE:
 fftw-3.2.2/long/rdft/vrank3-transpose.c:753: address_free: Using "&pln->super.super" to refer to containing object "*pln" freed by "fftwl_plan_destroy_internal".
 fftw-3.2.2/long/kernel/plan.c:50: freed_arg: "fftwl_ifree" frees parameter "ego".
 fftw-3.2.2/long/kernel/alloc.c:280: freed_arg: "fftwl_kernel_free" frees parameter "p".
 fftw-3.2.2/long/kernel/kalloc.c:142: freed_arg: "free" frees parameter "p".
+
+Error: BAD_FREE:
+fftw-3.2.2/single/rdft/vrank3-transpose.c:753: address_free: Using "&pln->super.super" to refer to containing object "*pln" freed by "fftwf_plan_destroy_internal".
+fftw-3.2.2/single/kernel/plan.c:50: freed_arg: "fftwf_ifree" frees parameter "ego".
+fftw-3.2.2/single/kernel/alloc.c:280: freed_arg: "fftwf_kernel_free" frees parameter "p".
+fftw-3.2.2/single/kernel/kalloc.c:142: freed_arg: "free" frees parameter "p".
 
 Error: FORWARD_NULL:
 fftw-3.2.2/long/dft/ct.c:123: assign_zero: Assigning: "pln" = 0.

@@ -61,7 +61,7 @@ DefLookup::~DefLookup() {
 void DefLookup::hashDefect(const Defect &def) {
     TDefByFile &row = d->stor[def.defClass];
 
-    const DefEvent &evt = def.events.front();
+    const DefEvent &evt = def.events[def.keyEventIdx];
     MsgFilter *filter = MsgFilter::inst();
     TDefByMsg &col = row[filter->filterPath(evt.fileName)];
     TDefList &cell = col[filter->filterMsg(evt.msg)];
@@ -76,7 +76,7 @@ bool DefLookup::lookup(const Defect &def) {
         return false;
 
     // simplify path
-    const DefEvent &evt = def.events.front();
+    const DefEvent &evt = def.events[def.keyEventIdx];
     const std::string path(d->filt->filterPath(evt.fileName));
 
     // look for file name
