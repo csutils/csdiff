@@ -59,7 +59,7 @@ DefLookup::~DefLookup() {
 }
 
 void DefLookup::hashDefect(const Defect &def) {
-    TDefByFile &row = d->stor[def.defClass];
+    TDefByFile &row = d->stor[def.checker];
 
     const DefEvent &evt = def.events[def.keyEventIdx];
     MsgFilter *filter = MsgFilter::inst();
@@ -71,7 +71,7 @@ void DefLookup::hashDefect(const Defect &def) {
 
 bool DefLookup::lookup(const Defect &def) {
     // look for defect class
-    TDefByClass::iterator iRow = d->stor.find(def.defClass);
+    TDefByClass::iterator iRow = d->stor.find(def.checker);
     if (d->stor.end() == iRow)
         return false;
 

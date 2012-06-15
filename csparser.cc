@@ -135,7 +135,7 @@ bool KeyEventDigger::guessKeyEvent(Defect *def) {
     const unsigned evtCount = def->events.size();
     def->keyEventIdx = evtCount - 1U;
 
-    TMap::const_iterator it = hMap_.find(def->defClass);
+    TMap::const_iterator it = hMap_.find(def->checker);
     if (hMap_.end() == it)
         // no overrides for this checker
         return true;
@@ -242,7 +242,7 @@ bool CovParser::Private::parseClass(Defect *def) {
     else
         def->annotation.clear();
 
-    def->defClass = text;
+    def->checker = text;
     def->events.clear();
     free(text);
     return true;

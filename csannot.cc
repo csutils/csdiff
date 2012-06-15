@@ -30,7 +30,7 @@ class AnnotationTable {
     public:
         AnnotationTable(std::istream &input, std::string fileName);
 
-        bool lookup(std::string &dst, const std::string &defClass) const;
+        bool lookup(std::string &dst, const std::string &checker) const;
 
         bool hasError() const { return hasError_; }
 
@@ -71,10 +71,10 @@ AnnotationTable::AnnotationTable(std::istream &input, std::string fileName):
     }
 }
 
-bool AnnotationTable::lookup(std::string &dst, const std::string &defClass)
+bool AnnotationTable::lookup(std::string &dst, const std::string &checker)
     const
 {
-    TCont::const_iterator it = cont_.find(defClass);
+    TCont::const_iterator it = cont_.find(checker);
     if (cont_.end() == it)
         return false;
 
@@ -112,7 +112,7 @@ int main(int argc, char *argv[])
     while (pInput.getNext(&def)) {
         std::string annotation;
 
-        if (tbl.lookup(annotation, def.defClass))
+        if (tbl.lookup(annotation, def.checker))
             // update annotation
             annotation.swap(def.annotation);
 

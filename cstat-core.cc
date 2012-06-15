@@ -76,7 +76,7 @@ class DefCounter: public AbstractWriter {
 
     public:
         virtual void handleDef(const Defect &def) {
-            ++cnt_[def.defClass];
+            ++cnt_[def.checker];
         }
 
         virtual void flush() {
@@ -202,7 +202,7 @@ class DefClassPredicate: public IPredicate {
         }
 
         virtual bool matchDef(const Defect &def) const {
-            return boost::regex_search(def.defClass, re_);
+            return boost::regex_search(def.checker, re_);
         }
 };
 

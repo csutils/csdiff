@@ -35,7 +35,7 @@ struct DefEvent {
 typedef std::vector<DefEvent> TEvtList;
 
 struct Defect {
-    std::string             defClass;
+    std::string             checker;
     std::string             annotation;
     TEvtList                events;
     unsigned                keyEventIdx;    ///< in range 0..(events.size()-1)

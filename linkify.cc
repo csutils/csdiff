@@ -68,7 +68,7 @@ class DefQueue {
 
 void DefQueue::hashDefect(const Defect &def)
 {
-    TDefByFile &row = stor_[def.defClass];
+    TDefByFile &row = stor_[def.checker];
     const std::string &fileName = def.events[def.keyEventIdx].fileName;
     TDefList &col = row[filt_->filterPath(fileName)];
     col.push_back(def);
@@ -152,7 +152,7 @@ class DefQueryParser {
     public:
         struct QRow {
             int                         cid;
-            std::string                 defClass;
+            std::string                 checker;
             std::string                 fileName;
             std::string                 fnc;
 
@@ -204,7 +204,7 @@ bool DefQueryParser::parse(DefQueryParser::QRow &dst) {
     }
 
     // all OK
-    dst.defClass = tokens[/* defClass */ 1];
+    dst.checker = tokens[/* checker */ 1];
     dst.fileName = tokens[/* fileName */ 2];
     if (3 < tokens.size())
         dst.fnc  = tokens[/* fnc      */ 3];
@@ -329,9 +329,9 @@ void HtWriter::writeCheckerLine(
 
     const bool hasChkLnk = !chkBase.empty();
     if (hasChkLnk)
-        cout << "<a href='" << chkBase << row.defClass << "'>";
+        cout << "<a href='" << chkBase << row.checker << "'>";
 
-    cout << row.defClass;
+    cout << row.checker;
     if (hasChkLnk)
         cout << "</a>";
 
@@ -430,10 +430,10 @@ void DefLinker::printDef(
     }
 
     if (-1 == row.cid)
-        // no row was given, take defClass from def
-        row.defClass = def.defClass;
+        // no row was given, take checker from def
+        row.checker = def.checker;
 
-    const std::string &comm = chkComments_[row.defClass];
+    const std::string &comm = chkComments_[row.checker];
     HtWriter::writeCheckerLine(
             defBase_,
             chkBase_,
@@ -462,7 +462,7 @@ void DefLinker::printDef(
 void DefLinker::printBareCid(const DefQueryParser::QRow &row) {
     using std::cout;
 
-    const std::string &comm = chkComments_[row.defClass];
+    const std::string &comm = chkComments_[row.checker];
     HtWriter::writeCheckerLine(
             defBase_,
             chkBase_,
@@ -608,7 +608,7 @@ int main(int argc, char *argv[])
         const int cid = row.cid;
 
         // look for the corresponding entry in .err (already hashed)
-        if (!stor.lookup(def, row.defClass, row.fileName)) {
+        if (!stor.lookup(def, row.checker, row.fileName)) {
             std::cerr << defListFile
                 << ": warning: defect lookup failed, cid = " << cid << "\n";
             unmatched.push_back(row);

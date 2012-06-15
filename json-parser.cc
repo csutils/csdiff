@@ -113,7 +113,7 @@ void JsonParser::Private::readNode(
         const pt::ptree             &defNode)
 {
     // the checker field is mandatory
-    def->defClass = defNode.get<std::string>("checker");
+    def->checker = defNode.get<std::string>("checker");
 
     // wipe the previous event list
     TEvtList &evtListDst = def->events;

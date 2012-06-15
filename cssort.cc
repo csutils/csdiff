@@ -122,8 +122,8 @@ inline bool cmpFileNames(const Defect &a, const Defect &b) {
 
 struct DefByChecker: public Defect { };
 bool operator<(const DefByChecker &a, const DefByChecker &b) {
-    const std::string &ca = a.defClass;
-    const std::string &cb = b.defClass;
+    const std::string &ca = a.checker;
+    const std::string &cb = b.checker;
 
     if (ca < cb)
         return true;
