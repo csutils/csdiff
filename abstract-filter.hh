@@ -60,6 +60,14 @@ class AbstractFilter: public AbstractWriter {
         virtual void flush() {
             slave_->flush();
         }
+
+        virtual const TScanProps& getScanProps() const {
+            return slave_->getScanProps();
+        }
+
+        virtual void setScanProps(const TScanProps &scanProps) {
+            slave_->setScanProps(scanProps);
+        }
 };
 
 class IPredicate {

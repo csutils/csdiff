@@ -106,7 +106,9 @@ int main(int argc, char *argv[])
 
     // create parser/writer
     Parser pInput(std::cin, "-");
-    AbstractWriter *writer = createWriter(pInput.inputFormat());
+    AbstractWriter *writer = createWriter(
+            pInput.inputFormat(),
+            pInput.getScanProps());
 
     Defect def;
     while (pInput.getNext(&def)) {

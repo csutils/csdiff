@@ -25,7 +25,8 @@
 #include <boost/property_tree/json_parser.hpp>
 
 struct JsonWriter::Private {
-    boost::property_tree::ptree defList;
+    boost::property_tree::ptree     defList;
+    TScanProps                      scanProps;
 };
 
 JsonWriter::JsonWriter():
@@ -35,6 +36,14 @@ JsonWriter::JsonWriter():
 
 JsonWriter::~JsonWriter() {
     delete d;
+}
+
+const TScanProps& JsonWriter::getScanProps() const {
+    return d->scanProps;
+}
+
+void JsonWriter::setScanProps(const TScanProps &scanProps) {
+    d->scanProps = scanProps;
 }
 
 void JsonWriter::handleDef(const Defect &def) {
@@ -65,6 +74,9 @@ void JsonWriter::handleDef(const Defect &def) {
     if (!def.annotation.empty())
         defNode.put<string>("annotation", def.annotation);
 
+    if (0 < def.defectId)
+        defNode.put<int>("defect_id", def.keyEventIdx);
+
     defNode.put<int>("key_event_idx", def.keyEventIdx);
     defNode.put_child("events", evtList);
 
@@ -80,8 +92,17 @@ void JsonWriter::flush() {
     str.push(reFilter);
     str.push(std::cout);
 
-    // finally create the root node and stream out the defect list
+    // encode scan properties if we have some
     boost::property_tree::ptree root;
+    if (!d->scanProps.empty()) {
+        boost::property_tree::ptree scan;
+        BOOST_FOREACH(TScanProps::const_reference prop, d->scanProps)
+            scan.put<std::string>(prop.first, prop.second);
+
+        root.put_child("scan", scan);
+    }
+
+    // append the list of defects and stream it out
     root.put_child("defects", d->defList);
     write_json(str, root);
 }

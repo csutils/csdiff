@@ -31,7 +31,9 @@ template <class TItem>
 class GenericSort: public AbstractWriter {
     private:
         typedef std::vector<TItem> TCont;
-        TCont cont_;
+
+        TCont           cont_;
+        TScanProps      scanProps_;
 
     public:
         virtual void flush() {
@@ -40,6 +42,7 @@ class GenericSort: public AbstractWriter {
 
             // use the same output format is the input format
             AbstractWriter *writer = createWriter(this->inputFormat());
+            writer->setScanProps(scanProps_);
 
             // write the data
             BOOST_FOREACH(const Defect &def, cont_)
@@ -48,6 +51,14 @@ class GenericSort: public AbstractWriter {
             // flush data and destroy writer
             writer->flush();
             delete writer;
+        }
+
+        virtual const TScanProps& getScanProps() const {
+            return scanProps_;
+        }
+
+        virtual void setScanProps(const TScanProps &scanProps) {
+            scanProps_ = scanProps;
         }
 
     protected:

@@ -21,6 +21,7 @@
 #define H_GUARD_ABSTRACT_PARSER_H
 
 #include <iostream>
+#include <map>
 #include <string>
 #include <vector>
 
@@ -39,7 +40,17 @@ struct Defect {
     std::string             annotation;
     TEvtList                events;
     unsigned                keyEventIdx;    ///< in range 0..(events.size()-1)
+    int                     defectId;       ///< used only by the JSON format
+
+    Defect():
+        keyEventIdx(0U),
+        defectId(0)
+    {
+    }
 };
+
+/// used only by the JSON format
+typedef std::map<std::string, std::string> TScanProps;
 
 enum EFileFormat {
     FF_INVALID = 0,                         ///< for signalling errors
@@ -53,6 +64,14 @@ class AbstractParser {
         virtual ~AbstractParser() { }
         virtual bool getNext(Defect *) = 0;
         virtual bool hasError() const = 0;
+
+        /// used only by the JSON format
+        virtual const TScanProps& getScanProps() const {
+            return emptyProps_;
+        }
+
+    private:
+        const TScanProps emptyProps_;
 };
 
 AbstractParser* createParser(
@@ -81,6 +100,10 @@ class Parser {
 
         bool hasError() const {
             return parser_->hasError();
+        }
+
+        const TScanProps& getScanProps() const {
+            return parser_->getScanProps();
         }
 
         EFileFormat inputFormat() const;

@@ -44,14 +44,23 @@ class AbstractWriter {
             return inputFormat_;
         }
 
+        virtual const TScanProps& getScanProps() const {
+            return emptyProps_;
+        }
+
+        virtual void setScanProps(const TScanProps &);
+
     private:
         AbstractWriter(const AbstractWriter &);
         AbstractWriter& operator=(const AbstractWriter &);
 
     private:
-        EFileFormat inputFormat_;
+        EFileFormat                 inputFormat_;
+        const TScanProps            emptyProps_;
 };
 
-AbstractWriter* createWriter(const EFileFormat format);
+AbstractWriter* createWriter(
+        const EFileFormat           format,
+        const TScanProps           &scanProps = TScanProps());
 
 #endif /* H_GUARD_ABSTRACT_WRITER_H */

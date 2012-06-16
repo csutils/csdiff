@@ -30,8 +30,9 @@ class JsonParser: public AbstractParser {
                 const bool           silent);
 
         virtual ~JsonParser();
-        bool getNext(Defect *);
-        bool hasError() const;
+        virtual bool getNext(Defect *);
+        virtual bool hasError() const;
+        virtual const TScanProps& getScanProps() const;
 
     private:
         JsonParser(const Parser &);

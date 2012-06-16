@@ -37,6 +37,10 @@ bool AbstractWriter::handleFile(const std::string &fileName, bool silent) {
         if (inputFormat_ == FF_INVALID)
             inputFormat_ = parser.inputFormat();
 
+        // read scan properties if still empty
+        if (this->getScanProps().empty())
+            this->setScanProps(parser.getScanProps());
+
         Defect def;
         while (parser.getNext(&def))
             this->handleDef(def);
@@ -49,15 +53,32 @@ bool AbstractWriter::handleFile(const std::string &fileName, bool silent) {
     }
 }
 
-AbstractWriter* createWriter(const EFileFormat format) {
+void AbstractWriter::setScanProps(const TScanProps &scanProps) {
+    if (scanProps.empty())
+        return;
+
+    std::cerr << "error: scan properties not supported by the output format\n";
+}
+
+AbstractWriter* createWriter(
+        const EFileFormat           format,
+        const TScanProps           &scanProps)
+{
+    AbstractWriter *writer = 0;
+
     switch (format) {
         case FF_INVALID:
         case FF_COVERITY:
-            return new CovWriter;
+            writer = new CovWriter;
+            break;
 
         case FF_JSON:
-            return new JsonWriter;
+            writer = new JsonWriter;
+            break;
     }
 
-    return 0;
+    if (!scanProps.empty())
+        writer->setScanProps(scanProps);
+
+    return writer;
 }

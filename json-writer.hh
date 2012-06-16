@@ -27,6 +27,9 @@ class JsonWriter: public AbstractWriter {
         JsonWriter();
         virtual ~JsonWriter();
 
+        virtual const TScanProps& getScanProps() const;
+        virtual void setScanProps(const TScanProps &);
+
         virtual void handleDef(const Defect &def);
         virtual void flush();
 

@@ -31,6 +31,7 @@ struct JsonParser::Private {
     pt::ptree                       defList;
     pt::ptree::const_iterator       defIter;
     int                             defNumber;
+    TScanProps                      scanProps;
 
     Private(const std::string &fileName_, bool silent_):
         fileName(fileName_),
@@ -85,6 +86,12 @@ JsonParser::JsonParser(
         // get the defect list
         d->defList = root.get_child("defects");
         d->defIter = d->defList.begin();
+
+        // read scan properties if available
+        pt::ptree emp;
+        pt::ptree scanNode = root.get_child_optional("scan").get_value_or(emp);
+        BOOST_FOREACH(const pt::ptree::value_type &item, scanNode)
+            d->scanProps[item.first] = item.second.data();
     }
     catch (pt::file_parser_error &e) {
         d->parseError(e.message(), e.line());
@@ -100,6 +107,10 @@ JsonParser::~JsonParser() {
 
 bool JsonParser::hasError() const {
     return d->hasError;
+}
+
+const TScanProps& JsonParser::getScanProps() const {
+    return d->scanProps;
 }
 
 template <typename T>
@@ -133,6 +144,9 @@ void JsonParser::Private::readNode(
 
         evtListDst.push_back(evt);
     }
+
+    // read "defect_id" if available
+    def->defectId = valueOf<int>(defNode, "defect_id", 0);
 
     // assume the last event is the key event if not specified otherwise
     const unsigned defKeyEvent = evtListDst.size() - 1;

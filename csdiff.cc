@@ -131,6 +131,9 @@ int main(int argc, char *argv[])
         else
             writer.reset(new CovWriter);
 
+        // propagate scan properties of the _new_ scan if available
+        writer->setScanProps(pNew.getScanProps());
+
         // read old
         DefLookup stor;
         Defect def;
