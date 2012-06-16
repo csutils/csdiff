@@ -27,6 +27,7 @@ namespace pt = boost::property_tree;
 struct JsonParser::Private {
     const std::string               fileName;
     const bool                      silent;
+    bool                            jsonValid;
     bool                            hasError;
     pt::ptree                       defList;
     pt::ptree::const_iterator       defIter;
@@ -36,6 +37,7 @@ struct JsonParser::Private {
     Private(const std::string &fileName_, bool silent_):
         fileName(fileName_),
         silent(silent_),
+        jsonValid(false),
         hasError(false),
         defNumber(-1)
     {
@@ -86,6 +88,7 @@ JsonParser::JsonParser(
         // get the defect list
         d->defList = root.get_child("defects");
         d->defIter = d->defList.begin();
+        d->jsonValid = true;
 
         // read scan properties if available
         pt::ptree emp;
@@ -174,6 +177,9 @@ bool JsonParser::Private::readNext(Defect *def) {
 }
 
 bool JsonParser::getNext(Defect *def) {
+    if (!d->jsonValid)
+        return false;
+
     // error recovery loop
     for (;;) {
         if (d->defList.end() == d->defIter)
