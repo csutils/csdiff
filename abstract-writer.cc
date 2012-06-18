@@ -26,14 +26,15 @@
 // /////////////////////////////////////////////////////////////////////////////
 // implementation of AbstractWriter
 
-bool AbstractWriter::handleFile(const std::string &fileName, bool silent) {
-    try {
-        InStream str(fileName.c_str());
-
+bool AbstractWriter::handleFile(
+        std::istream               &str,
+        const std::string          &fileName,
+        const bool                  silent)
+{
         this->notifyFile(fileName);
 
         // detect the input format and create the parser
-        Parser parser(str.str(), fileName, silent);
+        Parser parser(str, fileName, silent);
         if (inputFormat_ == FF_INVALID)
             inputFormat_ = parser.inputFormat();
 
@@ -46,6 +47,12 @@ bool AbstractWriter::handleFile(const std::string &fileName, bool silent) {
             this->handleDef(def);
 
         return !parser.hasError();
+}
+
+bool AbstractWriter::handleFile(const std::string &fileName, bool silent) {
+    try {
+        InStream str(fileName.c_str());
+        return this->handleFile(str.str(), fileName, silent);
     }
     catch (const InFileException &e) {
         std::cerr << e.fileName << ": failed to open input file\n";

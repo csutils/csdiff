@@ -38,6 +38,11 @@ class AbstractWriter {
 
         virtual void flush() { };
 
+        bool handleFile(
+                std::istream       &str,
+                const std::string  &fileName,
+                const bool          silent);
+
         bool handleFile(const std::string &fileName, bool silent);
 
         EFileFormat inputFormat() const {
