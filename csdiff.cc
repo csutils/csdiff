@@ -115,14 +115,8 @@ int main(int argc, char *argv[])
         Parser pNew(strNew.str(), fnNew, silent);
 
         // decide which format use for the output
-        bool json;
-        if (forceJson)
-            json = true;
-        else if (forceCov)
-            json = false;
-        else
-            json = pOld.isJson()
-                && pNew.isJson();
+        const bool json = forceJson
+            || (!forceCov && pNew.isJson());
 
         // create the appropriate writer
         boost::shared_ptr<AbstractWriter> writer;

@@ -40,7 +40,7 @@ void parseError(
 
     std::cerr << ": parse error: " << msg << "\n";
 }
-bool loadPropsFronIniFile(
+bool loadPropsFromIniFile(
         AbstractWriter             &writer,
         std::istream               &input,
         const std::string          &fName)
@@ -189,7 +189,7 @@ int main(int argc, char *argv[])
         // load .ini if available
         if (!fnIni.empty()) {
             InStream strIni(fnIni.c_str());
-            if (!loadPropsFronIniFile(writer, strIni.str(), fnIni))
+            if (!loadPropsFromIniFile(writer, strIni.str(), fnIni))
                 hasError = true;
         }
 
