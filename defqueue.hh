@@ -75,7 +75,9 @@ class DefQueryParser {
             QRow(): cid(-1) { }
         };
 
-        DefQueryParser():
+        DefQueryParser(std::istream &input, const std::string &fName):
+            input_(input),
+            fName_(fName),
             lineno_(0),
             hasError_(false)
         {
@@ -88,9 +90,13 @@ class DefQueryParser {
         }
 
     private:
-        int lineno_;
-        bool hasError_;
         bool parse(QRow &dst);
+
+    private:
+        std::istream                   &input_;
+        const std::string               fName_;
+        int                             lineno_;
+        bool                            hasError_;
 };
 
 #endif /* H_GUARD_DEFQUEUE_H */

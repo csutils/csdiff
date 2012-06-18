@@ -408,7 +408,7 @@ int main(int argc, char *argv[])
             oldLookup);
 
     // read defects IDs from stdin
-    DefQueryParser qParser;
+    DefQueryParser qParser(std::cin, "-");
     DefQueryParser::QRow row;
     while (qParser.getNext(row)) {
         const int cid = row.cid;

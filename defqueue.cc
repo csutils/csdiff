@@ -113,7 +113,7 @@ bool DefQueue::lookup(
 bool DefQueryParser::parse(DefQueryParser::QRow &dst) {
     // read one line from stdin
     std::string line;
-    if (!std::getline(std::cin, line))
+    if (!std::getline(input_, line))
         return false;
 
     // increment the line counter
@@ -123,7 +123,9 @@ bool DefQueryParser::parse(DefQueryParser::QRow &dst) {
     std::vector<std::string> tokens;
     boost::split(tokens, line, boost::algorithm::is_any_of(","));
     if (tokens.size() < 3) {
-        std::cerr << "-:" << lineno_ << ": error: not enough ',' at the line\n";
+        std::cerr << fName_ << ":" << lineno_
+            << ": error: not enough ',' at the line\n";
+
         return false;
     }
 
@@ -132,7 +134,7 @@ bool DefQueryParser::parse(DefQueryParser::QRow &dst) {
         dst.cid = boost::lexical_cast<int>(tokens[/* cid */ 0]);
     }
     catch(boost::bad_lexical_cast &) {
-        std::cerr << "-:" << lineno_ << ": error: failed to parse CID\n";
+        std::cerr << fName_ << ":" << lineno_ << ": error: failed to parse CID\n";
         return false;
     }
 
@@ -147,7 +149,7 @@ bool DefQueryParser::parse(DefQueryParser::QRow &dst) {
 
 bool DefQueryParser::getNext(DefQueryParser::QRow &dst) {
     // error recovery loop
-    while (std::cin) {
+    while (input_) {
         if (this->parse(dst))
             return true;
         else
