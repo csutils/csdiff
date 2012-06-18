@@ -20,12 +20,10 @@
 #include "abstract-parser.hh"
 #include "csfilter.hh"
 #include "deflookup.hh"
+#include "defqueue.hh"
 
 #include <cstdlib>
 #include <fstream>
-#include <map>
-#include <list>
-#include <vector>
 
 #include <boost/foreach.hpp>
 #include <boost/lexical_cast.hpp>
@@ -33,120 +31,6 @@
 #include <boost/algorithm/string/replace.hpp>
 #include <boost/algorithm/string/split.hpp>
 #include <boost/regex.hpp>
-
-#define DEBUG_DEF_MATCH                 0
-#define DEBUG_LOOKUP_OFFSET             0
-
-class DefQueue {
-    private:
-        typedef std::list<Defect>                       TDefList;
-        typedef std::map<std::string, TDefList>         TDefByFile;
-        typedef std::map<std::string, TDefByFile>       TDefByClass;
-
-        TDefByClass                     stor_;
-        MsgFilter                      *filt_;
-
-    public:
-        DefQueue():
-            filt_(MsgFilter::inst())
-        {
-        }
-
-        void hashDefect(const Defect &);
-
-        bool lookup(
-                Defect                  &dst,
-                const std::string       &checker,
-                const std::string       &fileName);
-
-        bool empty() const {
-            return stor_.empty();
-        }
-
-        template <class TVisitor> bool walk(TVisitor &);
-};
-
-void DefQueue::hashDefect(const Defect &def)
-{
-    TDefByFile &row = stor_[def.checker];
-    const std::string &fileName = def.events[def.keyEventIdx].fileName;
-    TDefList &col = row[filt_->filterPath(fileName)];
-    col.push_back(def);
-}
-
-bool DefQueue::lookup(
-        Defect                  &dst,
-        const std::string       &checker,
-        const std::string       &fileName)
-{
-    // look for the given defect class
-    TDefByClass::iterator iRow = stor_.find(checker);
-    if (stor_.end() == iRow) {
-#if DEBUG_DEF_MATCH
-        std::cerr << checker << ": not found\n";
-#endif
-        return false;
-    }
-
-    TDefByFile &row = iRow->second;
-    if (row.empty()) {
-#if DEBUG_DEF_MATCH
-        std::cerr << checker << ": row empty\n";
-#endif
-        return false;
-    }
-
-    // look for the given file name
-    std::string path = filt_->filterPath(fileName);
-    TDefByFile::iterator iCol = row.find(path);
-    if (row.end() == iCol) {
-#if DEBUG_DEF_MATCH
-        std::cerr << checker << ": " << path << ": not found\n";
-#endif
-        return false;
-    }
-
-    TDefList &col = iCol->second;
-    if (col.empty()) {
-#if DEBUG_DEF_MATCH
-        std::cerr << checker << ": " << path << ": list empty\n";
-#endif
-        return false;
-    }
-
-    // remove the first defect in the list...
-    dst = col.front();
-    col.pop_front();
-    if (col.empty()) {
-        // ... and subsequently the list itself once it becomes empty
-        row.erase(iCol);
-#if DEBUG_LOOKUP_OFFSET
-        std::cerr << checker << ": " << path
-            << ": list removed, row.size() = " << row.size() << "\n";
-#endif
-        if (row.empty()) {
-            // ... and eventually also the row where the list belongs to
-            stor_.erase(iRow);
-#if DEBUG_LOOKUP_OFFSET
-            std::cerr << checker << ": row removed, stor_.size() = "
-                << stor_.size() << "\n";
-#endif
-        }
-    }
-
-    // TODO: What else should we (and are we able to) check? fnc names?
-    return true;
-}
-
-template <class TVisitor> bool DefQueue::walk(TVisitor &visitor) {
-    BOOST_FOREACH(const TDefByClass::const_reference iRow, stor_)
-        BOOST_FOREACH(const TDefByFile::const_reference iCol, iRow.second)
-            BOOST_FOREACH(const Defect &def, iCol.second)
-                if (! /* continue */ visitor(def))
-                    return false;
-
-    return true;
-}
 
 class DefQueryParser {
     public:
