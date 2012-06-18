@@ -41,6 +41,7 @@ struct Defect {
     TEvtList                events;
     unsigned                keyEventIdx;    ///< in range 0..(events.size()-1)
     int                     defectId;       ///< used only by the JSON format
+    std::string             function;       ///< used only by the JSON format
 
     Defect():
         keyEventIdx(0U),

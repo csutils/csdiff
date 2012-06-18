@@ -148,8 +148,9 @@ void JsonParser::Private::readNode(
         evtListDst.push_back(evt);
     }
 
-    // read "defect_id" if available
-    def->defectId = valueOf<int>(defNode, "defect_id", 0);
+    // read "defect_id" and "function" if available
+    def->defectId = valueOf<int>        (defNode, "defect_id", 0);
+    def->function = valueOf<std::string>(defNode, "function", "");
 
     // assume the last event is the key event if not specified otherwise
     const unsigned defKeyEvent = evtListDst.size() - 1;

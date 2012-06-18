@@ -74,8 +74,11 @@ void JsonWriter::handleDef(const Defect &def) {
     if (!def.annotation.empty())
         defNode.put<string>("annotation", def.annotation);
 
+    // write "defect_id" and "function" if available
     if (0 < def.defectId)
-        defNode.put<int>("defect_id", def.keyEventIdx);
+        defNode.put<int>("defect_id", def.defectId);
+    if (!def.function.empty())
+        defNode.put<string>("function", def.function);
 
     defNode.put<int>("key_event_idx", def.keyEventIdx);
     defNode.put_child("events", evtList);
