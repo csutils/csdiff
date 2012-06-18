@@ -23,17 +23,53 @@
 #include "json-writer.hh"
 
 #include <boost/program_options.hpp>
+#include <boost/property_tree/ini_parser.hpp>
 
+namespace pt = boost::property_tree;
+
+void parseError(
+        const std::string          &msg,
+        const std::string          &fName,
+        const unsigned long         line = 0)
+{
+    std::cerr << fName;
+
+    if (line)
+        // line number available
+        std::cerr << ":" << line;
+
+    std::cerr << ": parse error: " << msg << "\n";
+}
 bool loadPropsFronIniFile(
         AbstractWriter             &writer,
         std::istream               &input,
         const std::string          &fName)
 {
-    // TODO
-    (void) writer;
-    (void) input;
-    (void) fName;
-    return false;
+    try {
+        // parse .ini
+        pt::ptree root;
+        read_ini(input, root);
+
+        // read the old scan properties from writer (if any)
+        TScanProps props(writer.getScanProps());
+
+        // update scan properties from the ptree node
+        pt::ptree scanNode = root.get_child("scan");
+        BOOST_FOREACH(const pt::ptree::value_type &item, scanNode)
+            props[item.first] = item.second.data();
+
+        // write the updated scan properties back to the writer
+        writer.setScanProps(props);
+        return true;
+    }
+    catch (pt::file_parser_error &e) {
+        parseError(e.message(), fName, e.line());
+        return false;
+    }
+    catch (pt::ptree_error &e) {
+        parseError(e.what(), fName);
+        return false;
+    }
 }
 
 class OrphanWriter {
