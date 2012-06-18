@@ -57,13 +57,16 @@ add_library(cs STATIC
 link_libraries(cs boost_regex boost_program_options)
 
 # the list of executables
-add_executable(csannot csannot.cc)
-add_executable(csdiff csdiff.cc)
-add_executable(csgrep csgrep.cc)
-add_executable(csjson csjson.cc)
-add_executable(cssort cssort.cc)
-add_executable(cstat cstat.cc)
-add_executable(linkify linkify.cc)
+add_executable(csannot      csannot.cc)
+add_executable(csdiff       csdiff.cc)
+add_executable(csgrep       csgrep.cc)
+add_executable(csjson       csjson.cc)
+add_executable(cslinker     cslinker.cc)
+add_executable(cssort       cssort.cc)
+add_executable(cstat        cstat.cc)
+
+# TODO: drop this
+add_executable(linkify      linkify.cc)
 
 # load regression tests
 add_subdirectory(tests)
