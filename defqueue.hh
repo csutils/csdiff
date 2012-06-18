@@ -64,4 +64,33 @@ template <class TVisitor> bool DefQueue::walk(TVisitor &visitor) {
     return true;
 }
 
+class DefQueryParser {
+    public:
+        struct QRow {
+            int                         cid;
+            std::string                 checker;
+            std::string                 fileName;
+            std::string                 fnc;
+
+            QRow(): cid(-1) { }
+        };
+
+        DefQueryParser():
+            lineno_(0),
+            hasError_(false)
+        {
+        }
+
+        bool getNext(QRow &dst);
+
+        bool hasError() const {
+            return hasError_;
+        }
+
+    private:
+        int lineno_;
+        bool hasError_;
+        bool parse(QRow &dst);
+};
+
 #endif /* H_GUARD_DEFQUEUE_H */

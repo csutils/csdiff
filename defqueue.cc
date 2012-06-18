@@ -20,6 +20,10 @@
 #include "defqueue.hh"
 #include "csfilter.hh"
 
+#include <boost/algorithm/string/classification.hpp>
+#include <boost/algorithm/string/split.hpp>
+#include <boost/lexical_cast.hpp>
+
 #define DEBUG_DEF_MATCH                 0
 #define DEBUG_LOOKUP_OFFSET             0
 
@@ -101,4 +105,55 @@ bool DefQueue::lookup(
 
     // TODO: What else should we (and are we able to) check? fnc names?
     return true;
+}
+
+// /////////////////////////////////////////////////////////////////////////////
+// implementation of DefQueryParser
+
+bool DefQueryParser::parse(DefQueryParser::QRow &dst) {
+    // read one line from stdin
+    std::string line;
+    if (!std::getline(std::cin, line))
+        return false;
+
+    // increment the line counter
+    ++lineno_;
+
+    // tokenize the line
+    std::vector<std::string> tokens;
+    boost::split(tokens, line, boost::algorithm::is_any_of(","));
+    if (tokens.size() < 3) {
+        std::cerr << "-:" << lineno_ << ": error: not enough ',' at the line\n";
+        return false;
+    }
+
+    // parse cid
+    try {
+        dst.cid = boost::lexical_cast<int>(tokens[/* cid */ 0]);
+    }
+    catch(boost::bad_lexical_cast &) {
+        std::cerr << "-:" << lineno_ << ": error: failed to parse CID\n";
+        return false;
+    }
+
+    // all OK
+    dst.checker = tokens[/* checker */ 1];
+    dst.fileName = tokens[/* fileName */ 2];
+    if (3 < tokens.size())
+        dst.fnc  = tokens[/* fnc      */ 3];
+
+    return true;
+}
+
+bool DefQueryParser::getNext(DefQueryParser::QRow &dst) {
+    // error recovery loop
+    while (std::cin) {
+        if (this->parse(dst))
+            return true;
+        else
+            hasError_ = true;
+    }
+
+    // EOF
+    return false;
 }
