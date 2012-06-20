@@ -77,6 +77,7 @@ install(TARGETS
     csdiff
     csgrep
     csjson
+    cslinker
     cssort
     cstat
     linkify

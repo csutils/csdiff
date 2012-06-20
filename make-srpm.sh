@@ -89,10 +89,11 @@ make -C $PKG check CTEST='ctest %{?_smp_mflags}'
 %{_bindir}/csdiff
 %{_bindir}/csgrep
 %{_bindir}/csjson
+%{_bindir}/cslinker
 %{_bindir}/cssort
 %{_bindir}/cstat
 
-# FIXME: this should probably go libexec
+# TODO: drop this
 %{_bindir}/linkify
 EOF
 
