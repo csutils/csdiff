@@ -28,28 +28,27 @@ CMAKE_BUILD_TYPE ?= RelWithDebInfo
 .PHONY: all check clean cppcheck distclean distcheck fast install
 
 all:
-	mkdir -p ../csdiff_build
-	cd ../csdiff_build && $(CMAKE) -D 'CMAKE_BUILD_TYPE=$(CMAKE_BUILD_TYPE)' \
-		../csdiff 
-	$(MAKE) -C ../csdiff_build
+	mkdir -p csdiff_build
+	cd csdiff_build && $(CMAKE) -D 'CMAKE_BUILD_TYPE=$(CMAKE_BUILD_TYPE)' ..
+	$(MAKE) -C csdiff_build
 
 fast:
-	$(MAKE) -sC ../csdiff_build
+	$(MAKE) -sC csdiff_build
 
 check: all
-	cd ../csdiff_build && $(CTEST) --output-on-failure
+	cd csdiff_build && $(CTEST) --output-on-failure
 
 cppcheck: all
 	$(CPPCHECK) .
 
 clean:
-	if test -e ../csdiff_build/Makefile; then $(MAKE) clean -C ../csdiff_build; fi
+	if test -e csdiff_build/Makefile; then $(MAKE) clean -C csdiff_build; fi
 
 distclean:
-	rm -rf ../csdiff_build
+	rm -rf csdiff_build
 
 distcheck: distclean
 	$(MAKE) check
 
 install: all
-	$(MAKE) -C ../csdiff_build install
+	$(MAKE) -C csdiff_build install
