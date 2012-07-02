@@ -37,7 +37,7 @@ cd "$TMP" >/dev/null || die "mktemp failed"
 
 # clone the repository
 git clone "$REPO" "$PKG"                || die "git clone failed"
-cd "$PKG/$PKG"                          || die "git clone failed"
+cd "$PKG"                               || die "git clone failed"
 
 make -j5 distcheck CTEST='ctest -j5'    || die "'make distcheck' has failed"
 
@@ -51,11 +51,11 @@ cat > "$SPEC" << EOF
 Name:       $PKG
 Version:    $VER
 Release:    1%{?dist}
-Summary:    Non-interactive tools for processing Coverity results in plain-text
+Summary:    Non-interactive tools for processing code scan results in plain-text
 
-Group:      CoverityScan
+Group:      Applications/Text
 License:    GPLv3+
-URL:        https://engineering.redhat.com/trac/CoverityScan
+URL:        https://fedorahosted.org/codescan-diff/
 Source0:    $SRC
 
 BuildRequires: cmake
@@ -63,11 +63,9 @@ BuildRequires: flex
 BuildRequires: boost-devel
 
 %description
-This package contains the csdiff tool for comparing Coverity plain-text defect
-lists in order to find out added or fixed defects.  There is also the csgrep
-utility for filtering defect lists using various filtering predicates.  It can
-also be used for summarizing the results and exporting them to a JSON-based
-data format.
+This package contains contains the csdiff tool for comparing code scan defect
+lists in order to find out added or fixed defects, and the csgrep utility for
+filtering defect lists using various filtering predicates. 
 
 %prep
 %setup -q
@@ -92,9 +90,6 @@ make -C $PKG check CTEST='ctest %{?_smp_mflags}'
 %{_bindir}/cslinker
 %{_bindir}/cssort
 %{_bindir}/cstat
-
-# TODO: drop this
-%{_bindir}/linkify
 EOF
 
 set -v
