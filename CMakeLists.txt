@@ -65,9 +65,6 @@ add_executable(cslinker     cslinker.cc)
 add_executable(cssort       cssort.cc)
 add_executable(cstat        cstat.cc)
 
-# TODO: drop this
-add_executable(linkify      linkify.cc)
-
 # load regression tests
 add_subdirectory(tests)
 
@@ -80,5 +77,4 @@ install(TARGETS
     cslinker
     cssort
     cstat
-    linkify
     DESTINATION bin)
