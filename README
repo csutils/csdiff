@@ -1,0 +1,64 @@
+codescan-diff utilities
+=======================
+This repository contains source codes of the csdiff tool for comparing code
+scan defect lists in order to find out added or fixed defects, and the csgrep
+utility for filtering defect lists using various filtering predicates.  You
+can find the up2date sources in the following repository:
+
+    http://git.fedorahosted.org/git/?p=codescan-diff.git
+
+Please report bugs and feature requests to the following mailing-list:
+
+    https://fedorahosted.org/mailman/listinfo/codescan-diff
+
+The codescan-diff utilities are licensed under GPLv3+, see COPYING for details.
+
+
+Dependences
+-----------
+    * Boost 1.41+
+
+    * CMake 2.6+
+
+    * flex
+
+
+Manual Installation
+-------------------
+    make
+
+    make check
+
+    make install
+
+
+RPM-based Installation (tested on Fedora and RHEL-6)
+----------------------------------------------------
+    ./make-srpm.sh
+
+    rpmbuild --rebuild ./csdiff-*.src.rpm
+
+    sudo yum install ...
+
+
+List of Utilities
+-----------------
+
+    csdiff - take two lists of defects and output either added or fixed ones
+
+    csgrep - filter the list of defects by the specified regex-based predicates
+
+    cssort - sort the given defect list by the selected key
+
+    NOTE: All other utilities are experimental and can be changed/removed later.
+
+
+Documentation
+-------------
+We have no man pages for now, but all utilities recognize the --help option:
+
+    csdiff --help
+
+    csgrep --help
+
+    cssort --help

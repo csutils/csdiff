@@ -43,7 +43,7 @@ make -j5 distcheck CTEST='ctest -j5'    || die "'make distcheck' has failed"
 
 NV="${PKG}-$VER"
 SRC="${PKG}.tar.xz"
-git archive --prefix="$NV/$PKG/" --format="tar" HEAD -- . | xz -c > "$SRC"
+git archive --prefix="$NV/" --format="tar" HEAD -- . | xz -c > "$SRC"
 tar tf "$SRC"
 
 SPEC="./$PKG.spec"
@@ -55,7 +55,7 @@ Summary:    Non-interactive tools for processing code scan results in plain-text
 
 Group:      Applications/Text
 License:    GPLv3+
-URL:        https://fedorahosted.org/codescan-diff/
+URL:        http://git.fedorahosted.org/git/?p=codescan-diff.git
 Source0:    $SRC
 
 BuildRequires: cmake
@@ -63,23 +63,21 @@ BuildRequires: flex
 BuildRequires: boost-devel
 
 %description
-This package contains contains the csdiff tool for comparing code scan defect
-lists in order to find out added or fixed defects, and the csgrep utility for
-filtering defect lists using various filtering predicates. 
+This package contains the csdiff tool for comparing code scan defect lists in
+order to find out added or fixed defects, and the csgrep utility for filtering
+defect lists using various filtering predicates. 
 
 %prep
 %setup -q
 
 %build
-make %{?_smp_mflags} -C $PKG                    \
-    CMAKE='cmake -D CMAKE_INSTALL_PREFIX=/usr'  \
-    VERBOSE=yes
+make %{?_smp_mflags} CMAKE='cmake -D CMAKE_INSTALL_PREFIX=/usr' VERBOSE=yes
 
 %install
-make -C $PKG install DESTDIR="\$RPM_BUILD_ROOT"
+make install DESTDIR="\$RPM_BUILD_ROOT"
 
 %check
-make -C $PKG check CTEST='ctest %{?_smp_mflags}'
+make check CTEST='ctest %{?_smp_mflags}'
 
 %files
 %defattr(-,root,root,-)
@@ -90,6 +88,7 @@ make -C $PKG check CTEST='ctest %{?_smp_mflags}'
 %{_bindir}/cslinker
 %{_bindir}/cssort
 %{_bindir}/cstat
+%doc COPYING README
 EOF
 
 set -v
