@@ -19,9 +19,6 @@
 
 #include "html-writer.hh"
 
-// TODO: drop this!
-#include "cswriter.hh"
-
 #include <boost/algorithm/string/replace.hpp>
 #include <boost/foreach.hpp>
 #include <boost/regex.hpp>
@@ -36,6 +33,11 @@ namespace HtmlLib {
         replace_all(text, "\'", "&apos;");
         replace_all(text,  "<", "&lt;"  );
         replace_all(text,  ">", "&gt;"  );
+    }
+
+    std::string escapeTextInline(std::string text) {
+        escapeText(text);
+        return text;
     }
 
     void initHtml(std::ostream &str, std::string title) {
@@ -181,13 +183,12 @@ struct HtmlWriter::Private {
     std::ostream                   &str;
     HtmlWriterCore                  core;
     TScanProps                      scanProps;
-
-    // TODO: drop this!
-    CovWriter                       cWriter;
+    const boost::regex              rePath;
 
     Private(std::ostream &str_):
         str(str_),
-        core(str_)
+        core(str_),
+        rePath("^/builddir/build/BUILD/")
     {
     }
 };
@@ -213,11 +214,29 @@ void HtmlWriter::setScanProps(const TScanProps &scanProps) {
 void HtmlWriter::handleDef(const Defect &def) {
     d->core.writeHeaderOnce(d->scanProps);
 
-    // FIXME: escape special characters!
-    d->cWriter.handleDef(def);
+    d->str << "<b>Error: "
+        << HtmlLib::escapeTextInline(def.checker)
+        << HtmlLib::escapeTextInline(def.annotation)
+        << ":</b>\n";
+
+    BOOST_FOREACH(const DefEvent &evt, def.events) {
+        d->str << boost::regex_replace(evt.fileName, d->rePath, "")
+            << ":" << evt.line << ":";
+
+        if (0 < evt.column)
+            d->str << evt.column << ":";
+
+        d->str << " ";
+
+        if (!evt.event.empty())
+            d->str << "<b>" << HtmlLib::escapeTextInline(evt.event) << "</b>: ";
+
+        d->str << HtmlLib::escapeTextInline(evt.msg) << "\n";
+    }
+
+    d->str << "\n";
 }
 
 void HtmlWriter::flush() {
-    d->cWriter.flush();
     d->core.closeDocument();
 }
