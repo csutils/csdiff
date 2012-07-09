@@ -19,14 +19,139 @@
 
 #include "html-writer.hh"
 
+// TODO: drop this!
+#include "cswriter.hh"
+
+#include <boost/algorithm/string/replace.hpp>
 #include <boost/foreach.hpp>
+
+namespace HtmlLib {
+
+    void escapeText(std::string &text) {
+        using namespace boost::algorithm;
+
+        replace_all(text,  "&", "&amp;" );
+        replace_all(text, "\"", "&quot;");
+        replace_all(text, "\'", "&apos;");
+        replace_all(text,  "<", "&lt;"  );
+        replace_all(text,  ">", "&gt;"  );
+    }
+
+    void initHtml(std::ostream &str, std::string title) {
+        escapeText(title);
+
+        str << "<?xml version='1.0' encoding='utf-8'?>\n\
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.1//EN' \
+'http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd'>\n\
+<html xmlns='http://www.w3.org/1999/xhtml'>\n\
+<head><title>" << title << "</title></head>\n\
+<body>\n<h1>" << title << "</h1>\n";
+    }
+
+    void finalizeHtml(std::ostream &str) {
+        str << "</body>\n</html>\n";
+    }
+
+    void initSection(std::ostream &str, std::string name) {
+        escapeText(name);
+        str << "<h2>" << name << "</h2>\n";
+    }
+
+    void initPre(std::ostream &str) {
+        str << "<pre style='white-space: pre-wrap;'>\n";
+    }
+
+    void finalizePre(std::ostream &str) {
+        str << "</pre>\n";
+    }
+
+} // namespace HtmlLib
+
+namespace CsLib {
+
+    std::string digTitle(const TScanProps &props) {
+        (void) props;
+        return "digTitle() not implemented yet";
+    }
+
+    void writeScanProps(std::ostream &str, const TScanProps &props) {
+        (void) props;
+        str << "writeScanProps() not implemented yet";
+    }
+
+} // namespace CsLib
+
+class HtmlWriterCore {
+    public:
+        HtmlWriterCore(std::ostream &str):
+            str_(str),
+            headerWritten_(false),
+            documentClosed_(false)
+        {
+        }
+
+        ~HtmlWriterCore();
+
+        bool headerWritten() const {
+            return headerWritten_;
+        }
+
+        void writeHeaderOnce(const TScanProps &);
+        void closeDocument();
+
+    private:
+        std::ostream       &str_;
+        bool                headerWritten_;
+        bool                documentClosed_;
+};
+
+HtmlWriterCore::~HtmlWriterCore() {
+    assert(headerWritten_);
+    assert(documentClosed_);
+}
+
+void HtmlWriterCore::writeHeaderOnce(const TScanProps &props) {
+    assert(!documentClosed_);
+    if (headerWritten_)
+        // header already out
+        return;
+
+    // initialize a HTML document
+    const std::string title = CsLib::digTitle(props);
+    HtmlLib::initHtml(str_, title);
+
+    // write scan propreties
+    CsLib::writeScanProps(str_, props);
+
+    // initialize the section for defects
+    HtmlLib::initSection(str_, "List of Defects");
+    HtmlLib::initPre(str_);
+
+    headerWritten_ = true;
+}
+
+void HtmlWriterCore::closeDocument() {
+    assert(headerWritten_);
+    assert(!documentClosed_);
+
+    // clsoe the HTML docuemnt
+    HtmlLib::finalizePre(str_);
+    HtmlLib::finalizeHtml(str_);
+
+    documentClosed_ = true;
+}
 
 struct HtmlWriter::Private {
     std::ostream                   &str;
+    HtmlWriterCore                  core;
     TScanProps                      scanProps;
 
+    // TODO: drop this!
+    CovWriter                       cWriter;
+
     Private(std::ostream &str_):
-        str(str_)
+        str(str_),
+        core(str_)
     {
     }
 };
@@ -45,14 +170,18 @@ const TScanProps& HtmlWriter::getScanProps() const {
 }
 
 void HtmlWriter::setScanProps(const TScanProps &scanProps) {
+    assert(!d->core.headerWritten());
     d->scanProps = scanProps;
 }
 
 void HtmlWriter::handleDef(const Defect &def) {
-    // TODO
-    (void) def;
+    d->core.writeHeaderOnce(d->scanProps);
+
+    // FIXME: escape special characters!
+    d->cWriter.handleDef(def);
 }
 
 void HtmlWriter::flush() {
-    // TODO
+    d->cWriter.flush();
+    d->core.closeDocument();
 }
