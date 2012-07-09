@@ -24,6 +24,7 @@
 
 #include <boost/algorithm/string/replace.hpp>
 #include <boost/foreach.hpp>
+#include <boost/regex.hpp>
 
 namespace HtmlLib {
 
@@ -69,14 +70,49 @@ namespace HtmlLib {
 
 namespace CsLib {
 
+#define RETURN_IF_FOUND(props, key) do {                \
+    TScanProps::const_iterator it = props.find(key);    \
+    if (props.end() != it)                              \
+        return it->second;                              \
+} while (0)
+
     std::string digTitle(const TScanProps &props) {
-        (void) props;
-        return "digTitle() not implemented yet";
+        RETURN_IF_FOUND(props, "title");
+        RETURN_IF_FOUND(props, "project-name");
+
+        TScanProps::const_iterator it = props.find("tool-args");
+        if (props.end() != it) {
+            const std::string &args = it->second;
+            const boost::regex reSrpm("^.*[ /]([^ /]*)\\.src\\.rpm.*$");
+
+            boost::smatch sm;
+            if (!boost::regex_match(args, sm, reSrpm))
+                goto fail;
+
+            return sm[/* NVR */ 1];
+        }
+
+fail:
+        return "Scan Results";
     }
 
     void writeScanProps(std::ostream &str, const TScanProps &props) {
-        (void) props;
-        str << "writeScanProps() not implemented yet";
+        if (props.empty())
+            return;
+
+        str << "<table style='font-family: monospace;'>\n";
+        int i = 0;
+
+        BOOST_FOREACH(TScanProps::const_reference item, props) {
+            const char *trStyle = "";
+            if (++i & 1)
+                trStyle = " style='background-color: #EEE;'";
+
+            str << "<tr" << trStyle << "><td style='padding-right: 8px;'>"
+                << item.first << "</td><td>" << item.second << "</td></tr>\n";
+        }
+
+        str << "</table>\n";
     }
 
 } // namespace CsLib
