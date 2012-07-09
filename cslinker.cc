@@ -40,6 +40,7 @@ void parseError(
 
     std::cerr << ": parse error: " << msg << "\n";
 }
+
 bool loadPropsFromIniFile(
         AbstractWriter             &writer,
         std::istream               &input,
@@ -124,7 +125,6 @@ int main(int argc, char *argv[])
             + " [options] proj.err [proj.ini [proj.map]], where options are");
 
     typedef std::vector<string> TStringList;
-    string mode;
 
     try {
         desc.add_options()

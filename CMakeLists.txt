@@ -47,6 +47,7 @@ add_library(cs STATIC
     cswriter.cc
     deflookup.cc
     defqueue.cc
+    html-writer.cc
     instream.cc
     json-parser.cc
     json-writer.cc
@@ -60,6 +61,7 @@ link_libraries(cs boost_regex boost_program_options)
 add_executable(csannot      csannot.cc)
 add_executable(csdiff       csdiff.cc)
 add_executable(csgrep       csgrep.cc)
+add_executable(cshtml       cshtml.cc)
 add_executable(csjson       csjson.cc)
 add_executable(cslinker     cslinker.cc)
 add_executable(cssort       cssort.cc)
@@ -73,6 +75,7 @@ install(TARGETS
     csannot
     csdiff
     csgrep
+    cshtml
     csjson
     cslinker
     cssort
