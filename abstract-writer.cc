@@ -68,7 +68,7 @@ void AbstractWriter::setScanProps(const TScanProps &scanProps) {
     if (scanProps.empty())
         return;
 
-    std::cerr << "error: scan properties not supported by the output format\n";
+    std::cerr << "warning: scan properties not supported by output format\n";
 }
 
 AbstractWriter* createWriter(

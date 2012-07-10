@@ -238,5 +238,6 @@ void HtmlWriter::handleDef(const Defect &def) {
 }
 
 void HtmlWriter::flush() {
+    d->core.writeHeaderOnce(d->scanProps);
     d->core.closeDocument();
 }
