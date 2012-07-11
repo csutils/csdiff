@@ -83,19 +83,17 @@ namespace CsLib {
         RETURN_IF_FOUND(props, "project-name");
 
         TScanProps::const_iterator it = props.find("tool-args");
-        if (props.end() != it) {
-            const std::string &args = it->second;
-            const boost::regex reSrpm("^.*[ /]([^ /]*)\\.src\\.rpm.*$");
+        if (props.end() == it)
+            return "";
 
-            boost::smatch sm;
-            if (!boost::regex_match(args, sm, reSrpm))
-                goto fail;
+        const std::string &args = it->second;
+        const boost::regex reSrpm("^.*[ /]([^ /]*)\\.src\\.rpm.*$");
 
-            return sm[/* NVR */ 1];
-        }
+        boost::smatch sm;
+        if (!boost::regex_match(args, sm, reSrpm))
+            return "";
 
-fail:
-        return "Scan Results";
+        return sm[/* NVR */ 1];
     }
 
     void writeScanProps(std::ostream &str, const TScanProps &props) {
@@ -121,13 +119,7 @@ fail:
 
 class HtmlWriterCore {
     public:
-        HtmlWriterCore(std::ostream &str):
-            str_(str),
-            headerWritten_(false),
-            documentClosed_(false)
-        {
-        }
-
+        HtmlWriterCore(std::ostream &str, const std::string &titleFallback);
         ~HtmlWriterCore();
 
         bool headerWritten() const {
@@ -139,9 +131,20 @@ class HtmlWriterCore {
 
     private:
         std::ostream       &str_;
+        std::string         titleFallback_;
         bool                headerWritten_;
         bool                documentClosed_;
 };
+
+HtmlWriterCore::HtmlWriterCore(std::ostream &str, const std::string &titleFb):
+    str_(str),
+    titleFallback_(titleFb),
+    headerWritten_(false),
+    documentClosed_(false)
+{
+    if (titleFallback_.empty())
+        titleFallback_ = "Scan Results";
+}
 
 HtmlWriterCore::~HtmlWriterCore() {
     assert(headerWritten_);
@@ -154,11 +157,15 @@ void HtmlWriterCore::writeHeaderOnce(const TScanProps &props) {
         // header already out
         return;
 
+    // resolve title of the document
+    std::string title = CsLib::digTitle(props);
+    if (title.empty())
+        title = titleFallback_;
+
     // initialize a HTML document
-    const std::string title = CsLib::digTitle(props);
     HtmlLib::initHtml(str_, title);
 
-    // write scan propreties
+    // write scan properties
     CsLib::writeScanProps(str_, props);
 
     // initialize the section for defects
@@ -172,7 +179,7 @@ void HtmlWriterCore::closeDocument() {
     assert(headerWritten_);
     assert(!documentClosed_);
 
-    // clsoe the HTML docuemnt
+    // close the HTML document
     HtmlLib::finalizePre(str_);
     HtmlLib::finalizeHtml(str_);
 
@@ -185,16 +192,16 @@ struct HtmlWriter::Private {
     TScanProps                      scanProps;
     const boost::regex              rePath;
 
-    Private(std::ostream &str_):
+    Private(std::ostream &str_, const std::string &titleFallback_):
         str(str_),
-        core(str_),
+        core(str_, titleFallback_),
         rePath("^/builddir/build/BUILD/")
     {
     }
 };
 
-HtmlWriter::HtmlWriter(std::ostream &str):
-    d(new Private(str))
+HtmlWriter::HtmlWriter(std::ostream &str, const std::string &titleFallback):
+    d(new Private(str, titleFallback))
 {
 }
 

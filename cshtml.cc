@@ -22,6 +22,20 @@
 #include "instream.hh"
 
 #include <boost/program_options.hpp>
+#include <boost/regex.hpp>
+
+std::string titleFromFileName(const std::string &fileName) {
+    if (!fileName.compare("-"))
+        return "";
+
+    const boost::regex reTitle("^(?:.*/)?([^/]*)\\.(?:err|js)$");
+
+    boost::smatch sm;
+    if (!boost::regex_match(fileName, sm, reTitle))
+        return "";
+
+    return sm[/* title */ 1];
+}
 
 int main(int argc, char *argv[])
 {
@@ -85,9 +99,11 @@ int main(int argc, char *argv[])
         InStream strInput(fnInput.c_str());
         Parser pInput(strInput.str(), fnInput, silent);
 
-        // initialize JSON writer
-        HtmlWriter writer(std::cout);
-        writer.setScanProps(pInput.getScanProps());
+        // initialize HTML writer
+        const std::string titleFallback = titleFromFileName(fnInput);
+        HtmlWriter writer(std::cout, titleFallback);
+
+        // write HTML
         writer.handleFile(pInput, fnInput);
         writer.flush();
 

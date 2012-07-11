@@ -24,7 +24,7 @@
 
 class HtmlWriter: public AbstractWriter {
     public:
-        HtmlWriter(std::ostream &);
+        HtmlWriter(std::ostream &, const std::string &titleFallback);
         virtual ~HtmlWriter();
 
         virtual const TScanProps& getScanProps() const;
