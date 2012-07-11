@@ -19,6 +19,8 @@
 
 #include "html-writer.hh"
 
+#include "deflookup.hh"
+
 #include <boost/algorithm/string/replace.hpp>
 #include <boost/foreach.hpp>
 #include <boost/format.hpp>
@@ -188,6 +190,8 @@ struct HtmlWriter::Private {
     TScanProps                      scanProps;
     const std::string               defUrlTemplate;
     const boost::regex              rePath;
+    DefLookup                      *baseLookup;
+    std::string                     newDefMsg;
 
     Private(
             std::ostream           &str_,
@@ -196,7 +200,8 @@ struct HtmlWriter::Private {
         str(str_),
         core(str_, titleFallback_),
         defUrlTemplate(defUrlTemplate_),
-        rePath("^/builddir/build/BUILD/")
+        rePath("^/builddir/build/BUILD/"),
+        baseLookup(0)
     {
         if (!defUrlTemplate.empty())
             // just make sure that the format string is correct
@@ -227,6 +232,29 @@ void HtmlWriter::setScanProps(const TScanProps &scanProps) {
     d->scanProps = scanProps;
 }
 
+void HtmlWriter::setDiffBase(
+        DefLookup                   *baseLookup,
+        const TScanProps            &baseProps,
+        const std::string           &baseTitleFallback)
+{
+    assert(baseLookup);
+    d->baseLookup = baseLookup;
+
+    const TScanProps::const_iterator it = baseProps.find("project-name");
+    const std::string projName = (baseProps.end() == it)
+        ? baseTitleFallback
+        : it->second;
+
+    if (projName.empty()) {
+        d->newDefMsg = "newly introduced defect";
+        return;
+    }
+
+    d->newDefMsg += "defect not occurring in <b>";
+    d->newDefMsg += projName;
+    d->newDefMsg += "</b>";
+}
+
 void HtmlWriter::Private::writeLinkToDetails(const Defect &def) {
     const int defId = def.defectId;
     if (!defId)
@@ -248,6 +276,13 @@ void HtmlWriter::Private::writeLinkToDetails(const Defect &def) {
     this->str << " <a href ='"
         << boost::format(this->defUrlTemplate) % projId % defId
         << "'>[Show Details]</a>";
+
+    if (!this->baseLookup || this->baseLookup->lookup(def))
+        return;
+
+    // a newly introduced defect
+    this->str << " <span style='color: #00FF00;'>[<b>warning:</b> "
+        << this->newDefMsg << "]</span>";
 }
 
 void HtmlWriter::handleDef(const Defect &def) {

@@ -22,6 +22,8 @@
 
 #include "abstract-writer.hh"
 
+class DefLookup;
+
 class HtmlWriter: public AbstractWriter {
     public:
         HtmlWriter(
@@ -36,6 +38,12 @@ class HtmlWriter: public AbstractWriter {
 
         virtual void handleDef(const Defect &def);
         virtual void flush();
+
+        /// @attention baseLookup needs to stay valid long enough (no deep copy)
+        void setDiffBase(
+                DefLookup                   *baseLookup,
+                const TScanProps            &baseProps,
+                const std::string           &baseTitleFallback);
 
     private:
         struct Private;

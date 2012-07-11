@@ -18,6 +18,7 @@
  */
 
 #include "abstract-parser.hh"
+#include "deflookup.hh"
 #include "html-writer.hh"
 #include "instream.hh"
 
@@ -48,12 +49,14 @@ int main(int argc, char *argv[])
             + " [options] proj.js, where options are");
 
     typedef std::vector<string> TStringList;
-    string defUrlTemplate;
+    string defUrlTemplate, fnBase;
 
     try {
         desc.add_options()
             ("defect-url-template", po::value(&defUrlTemplate),
-             "e.g. http://localhost/index.php?project=%d&defect=%d")
+             "e.g. http://localhost/index.php?proj=%d&defect=%d")
+            ("diff-base", po::value(&fnBase),
+             "use the given list of defects as diff base")
             ("quiet,q", "do not report any parsing errors")
             ("help", "produce help message");
 
@@ -102,9 +105,27 @@ int main(int argc, char *argv[])
         InStream strInput(fnInput.c_str());
         Parser pInput(strInput.str(), fnInput, silent);
 
+        DefLookup baseLookup;
+        TScanProps baseProps;
+
+        // read old defects if given
+        if (!fnBase.empty()) {
+            InStream strBase(fnBase.c_str());
+            Parser pBase(strBase.str(), fnBase, silent);
+            Defect def;
+            while (pBase.getNext(&def))
+                baseLookup.hashDefect(def);
+
+            baseProps = pBase.getScanProps();
+        }
+
         // initialize HTML writer
         const std::string titleFallback = titleFromFileName(fnInput);
         HtmlWriter writer(std::cout, titleFallback, defUrlTemplate);
+        if (!fnBase.empty()) {
+            const std::string diffTitleFallback = titleFromFileName(fnBase);
+            writer.setDiffBase(&baseLookup, baseProps, diffTitleFallback);
+        }
 
         // write HTML
         writer.handleFile(pInput, fnInput);
