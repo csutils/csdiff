@@ -48,9 +48,12 @@ int main(int argc, char *argv[])
             + " [options] proj.js, where options are");
 
     typedef std::vector<string> TStringList;
+    string defUrlTemplate;
 
     try {
         desc.add_options()
+            ("defect-url-template", po::value(&defUrlTemplate),
+             "e.g. http://localhost/index.php?project=%d&defect=%d")
             ("quiet,q", "do not report any parsing errors")
             ("help", "produce help message");
 
@@ -101,7 +104,7 @@ int main(int argc, char *argv[])
 
         // initialize HTML writer
         const std::string titleFallback = titleFromFileName(fnInput);
-        HtmlWriter writer(std::cout, titleFallback);
+        HtmlWriter writer(std::cout, titleFallback, defUrlTemplate);
 
         // write HTML
         writer.handleFile(pInput, fnInput);
@@ -111,6 +114,10 @@ int main(int argc, char *argv[])
     }
     catch (const InFileException &e) {
         std::cerr << e.fileName << ": failed to open input file\n";
+        return EXIT_FAILURE;
+    }
+    catch (const std::exception &e) {
+        std::cerr << name << ": error: " << e.what() << "\n";
         return EXIT_FAILURE;
     }
 }

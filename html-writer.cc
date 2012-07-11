@@ -21,6 +21,8 @@
 
 #include <boost/algorithm/string/replace.hpp>
 #include <boost/foreach.hpp>
+#include <boost/format.hpp>
+#include <boost/lexical_cast.hpp>
 #include <boost/regex.hpp>
 
 namespace HtmlLib {
@@ -120,7 +122,6 @@ namespace CsLib {
 class HtmlWriterCore {
     public:
         HtmlWriterCore(std::ostream &str, const std::string &titleFallback);
-        ~HtmlWriterCore();
 
         bool headerWritten() const {
             return headerWritten_;
@@ -144,11 +145,6 @@ HtmlWriterCore::HtmlWriterCore(std::ostream &str, const std::string &titleFb):
 {
     if (titleFallback_.empty())
         titleFallback_ = "Scan Results";
-}
-
-HtmlWriterCore::~HtmlWriterCore() {
-    assert(headerWritten_);
-    assert(documentClosed_);
 }
 
 void HtmlWriterCore::writeHeaderOnce(const TScanProps &props) {
@@ -190,18 +186,31 @@ struct HtmlWriter::Private {
     std::ostream                   &str;
     HtmlWriterCore                  core;
     TScanProps                      scanProps;
+    const std::string               defUrlTemplate;
     const boost::regex              rePath;
 
-    Private(std::ostream &str_, const std::string &titleFallback_):
+    Private(
+            std::ostream           &str_,
+            const std::string      &titleFallback_,
+            const std::string      &defUrlTemplate_):
         str(str_),
         core(str_, titleFallback_),
+        defUrlTemplate(defUrlTemplate_),
         rePath("^/builddir/build/BUILD/")
     {
+        if (!defUrlTemplate.empty())
+            // just make sure that the format string is correct
+            boost::format(defUrlTemplate) % 1 % 2;
     }
+
+    void writeLinkToDetails(const Defect &);
 };
 
-HtmlWriter::HtmlWriter(std::ostream &str, const std::string &titleFallback):
-    d(new Private(str, titleFallback))
+HtmlWriter::HtmlWriter(
+        std::ostream               &outputStream,
+        const std::string          &titleFallback,
+        const std::string          &defUrlTemplate):
+    d(new Private(outputStream, titleFallback, defUrlTemplate))
 {
 }
 
@@ -218,13 +227,40 @@ void HtmlWriter::setScanProps(const TScanProps &scanProps) {
     d->scanProps = scanProps;
 }
 
+void HtmlWriter::Private::writeLinkToDetails(const Defect &def) {
+    const int defId = def.defectId;
+    if (!defId)
+        // no defect ID
+        return;
+
+    if (this->defUrlTemplate.empty())
+        // no defect URL template
+        return;
+
+    const TScanProps::const_iterator it = this->scanProps.find("project-id");
+    if (this->scanProps.end() == it)
+        // no project ID
+        return;
+
+    const int projId = boost::lexical_cast<int>(it->second);
+
+    // write the link
+    this->str << " <a href ='"
+        << boost::format(this->defUrlTemplate) % projId % defId
+        << "'>[Show Details]</a>";
+}
+
 void HtmlWriter::handleDef(const Defect &def) {
     d->core.writeHeaderOnce(d->scanProps);
 
     d->str << "<b>Error: "
         << HtmlLib::escapeTextInline(def.checker)
         << HtmlLib::escapeTextInline(def.annotation)
-        << ":</b>\n";
+        << ":</b>";
+
+    d->writeLinkToDetails(def);
+    
+    d->str << "\n";
 
     BOOST_FOREACH(const DefEvent &evt, def.events) {
         d->str << boost::regex_replace(evt.fileName, d->rePath, "")
