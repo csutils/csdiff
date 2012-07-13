@@ -209,6 +209,7 @@ struct HtmlWriter::Private {
     }
 
     void writeLinkToDetails(const Defect &);
+    void writeNewDefWarning(const Defect &);
 };
 
 HtmlWriter::HtmlWriter(
@@ -276,7 +277,9 @@ void HtmlWriter::Private::writeLinkToDetails(const Defect &def) {
     this->str << " <a href ='"
         << boost::format(this->defUrlTemplate) % projId % defId
         << "'>[Show Details]</a>";
+}
 
+void HtmlWriter::Private::writeNewDefWarning(const Defect &def) {
     if (!this->baseLookup || this->baseLookup->lookup(def))
         return;
 
@@ -294,6 +297,7 @@ void HtmlWriter::handleDef(const Defect &def) {
         << ":</b>";
 
     d->writeLinkToDetails(def);
+    d->writeNewDefWarning(def);
     
     d->str << "\n";
 
