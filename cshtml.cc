@@ -122,6 +122,7 @@ int main(int argc, char *argv[])
         // initialize HTML writer
         const std::string titleFallback = titleFromFileName(fnInput);
         HtmlWriter writer(std::cout, titleFallback, defUrlTemplate);
+        writer.setScanProps(pInput.getScanProps());
         if (!fnBase.empty()) {
             const std::string diffTitleFallback = titleFromFileName(fnBase);
             writer.setDiffBase(&baseLookup, baseProps, diffTitleFallback);
