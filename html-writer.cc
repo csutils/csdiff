@@ -27,6 +27,9 @@
 #include <boost/lexical_cast.hpp>
 #include <boost/regex.hpp>
 
+static int parsingRatioThr = 95;
+static int parsingOldToNewRatioThr = 75;
+
 namespace HtmlLib {
 
     void escapeText(std::string &text) {
@@ -100,6 +103,37 @@ namespace CsLib {
         return sm[/* NVR */ 1];
     }
 
+    void writeParseWarnings(std::ostream &str, const TScanProps &props) {
+        typedef TScanProps::const_iterator TIter;
+        TIter itCount = props.find("compilation-unit-count");
+        TIter itRatio = props.find("compilation-unit-ratio");
+        if (props.end() == itCount || props.end() == itRatio)
+            return;
+
+        const int count = boost::lexical_cast<int>(itCount->second);
+        const int ratio = boost::lexical_cast<int>(itRatio->second);
+        if (ratio < parsingRatioThr)
+            str << "<p><b style='color: #FF0000;'>warning:</b> "
+                "low parsing ratio: " << ratio << "%</p>\n";
+
+        itCount = props.find("diffbase-compilation-unit-count");
+        itRatio = props.find("diffbase-compilation-unit-ratio");
+        if (props.end() == itCount || props.end() == itRatio)
+            return;
+
+        const int baseCount = boost::lexical_cast<int>(itCount->second);
+        const int baseRatio = boost::lexical_cast<int>(itRatio->second);
+        if (baseRatio < parsingRatioThr && baseRatio < ratio)
+            str << "<p><b style='color: #FF0000;'>warning:</b> "
+                "low parsing ratio in diff base: "
+                << baseRatio << "%</p>\n";
+
+        if (!count || 100 * baseCount / count < parsingOldToNewRatioThr)
+            str << "<p><b style='color: #FF0000;'>warning:</b> "
+                "low count of parsed units in diff base: "
+                << baseCount << "</p>\n";
+    }
+
     void writeScanProps(std::ostream &str, const TScanProps &props) {
         if (props.empty())
             return;
@@ -164,6 +198,7 @@ void HtmlWriterCore::writeHeaderOnce(const TScanProps &props) {
     HtmlLib::initHtml(str_, title);
 
     // write scan properties
+    CsLib::writeParseWarnings(str_, props);
     CsLib::writeScanProps(str_, props);
 
     // initialize the section for defects
@@ -241,7 +276,15 @@ void HtmlWriter::setDiffBase(
     assert(baseLookup);
     d->baseLookup = baseLookup;
 
-    const TScanProps::const_iterator it = baseProps.find("project-name");
+    // TODO: merge with already existing metadata stomping on the same keys
+    TScanProps::const_iterator it = baseProps.find("compilation-unit-count");
+    if (baseProps.end() != it)
+        d->scanProps["diffbase-compilation-unit-count"] = it->second;
+    it = baseProps.find("compilation-unit-ratio");
+    if (baseProps.end() != it)
+        d->scanProps["diffbase-compilation-unit-ratio"] = it->second;
+
+    it = baseProps.find("project-name");
     const std::string projName = (baseProps.end() == it)
         ? baseTitleFallback
         : it->second;
