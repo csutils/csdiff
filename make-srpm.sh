@@ -55,7 +55,7 @@ Summary:    Non-interactive tools for processing code scan results in plain-text
 
 Group:      Applications/Text
 License:    GPLv3+
-URL:        http://git.fedorahosted.org/git/?p=codescan-diff.git
+URL:        http://git.fedorahosted.org/cgit/codescan-diff.git
 Source0:    $SRC
 
 BuildRequires: cmake
