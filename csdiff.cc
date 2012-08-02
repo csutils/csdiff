@@ -26,8 +26,22 @@
 
 #include <cstdlib>
 
+#include <boost/foreach.hpp>
 #include <boost/program_options.hpp>
 #include <boost/shared_ptr.hpp>
+
+// FIXME: some keys should be merge more intelligently if they already exist
+// TODO: define a nesting limit for keys like diffbase-diffbase-diffbase-...
+void mergeScanProps(TScanProps &props, const TScanProps &oldProps)
+{
+    BOOST_FOREACH(TScanProps::const_reference item, oldProps) {
+        const std::string &oldKey = item.first;
+        const std::string &oldVal = item.second;
+        std::string key("diffbase-");
+        key += oldKey;
+        props[key] = oldVal;
+    }
+}
 
 int main(int argc, char *argv[])
 {
@@ -125,8 +139,10 @@ int main(int argc, char *argv[])
         else
             writer.reset(new CovWriter);
 
-        // propagate scan properties of the _new_ scan if available
-        writer->setScanProps(pNew.getScanProps());
+        // propagate scan properties if available
+        TScanProps props = pNew.getScanProps();
+        mergeScanProps(props, pOld.getScanProps());
+        writer->setScanProps(props);
 
         // read old
         DefLookup stor;
