@@ -334,8 +334,8 @@ void HtmlWriter::Private::writeNewDefWarning(const Defect &def) {
 void HtmlWriter::handleDef(const Defect &def) {
     d->core.writeHeaderOnce(d->scanProps);
 
-    d->str << "<b>Error: "
-        << HtmlLib::escapeTextInline(def.checker)
+    d->str << "<b>Error: <span style='background: #C0FF00;'>"
+        << HtmlLib::escapeTextInline(def.checker) << "</span>"
         << HtmlLib::escapeTextInline(def.annotation)
         << ":</b>";
 
@@ -344,7 +344,14 @@ void HtmlWriter::handleDef(const Defect &def) {
     
     d->str << "\n";
 
-    BOOST_FOREACH(const DefEvent &evt, def.events) {
+    const unsigned cntEvents = def.events.size();
+    for (unsigned idx = 0; idx < cntEvents; ++idx) {
+        const DefEvent &evt = def.events[idx];
+
+        const bool isKeyEvent = (def.keyEventIdx == idx);
+        if (!isKeyEvent)
+            d->str << "<span style='color: #808080;'>";
+
         d->str << boost::regex_replace(evt.fileName, d->rePath, "")
             << ":" << evt.line << ":";
 
@@ -356,7 +363,12 @@ void HtmlWriter::handleDef(const Defect &def) {
         if (!evt.event.empty())
             d->str << "<b>" << HtmlLib::escapeTextInline(evt.event) << "</b>: ";
 
-        d->str << HtmlLib::escapeTextInline(evt.msg) << "\n";
+        d->str << HtmlLib::escapeTextInline(evt.msg);
+
+        if (!isKeyEvent)
+            d->str << "</span>";
+
+        d->str << "\n";
     }
 
     d->str << "\n";
