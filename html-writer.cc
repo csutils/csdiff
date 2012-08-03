@@ -225,6 +225,7 @@ struct HtmlWriter::Private {
     TScanProps                      scanProps;
     const std::string               defUrlTemplate;
     const boost::regex              rePath;
+    unsigned                        defCnt;
     DefLookup                      *baseLookup;
     std::string                     newDefMsg;
 
@@ -236,6 +237,7 @@ struct HtmlWriter::Private {
         core(str_, titleFallback_),
         defUrlTemplate(defUrlTemplate_),
         rePath("^/builddir/build/BUILD/"),
+        defCnt(0),
         baseLookup(0)
     {
         if (!defUrlTemplate.empty())
@@ -334,12 +336,21 @@ void HtmlWriter::Private::writeNewDefWarning(const Defect &def) {
 void HtmlWriter::handleDef(const Defect &def) {
     d->core.writeHeaderOnce(d->scanProps);
 
+    // HTML anchor
+    d->str << "<a name='def" << ++(d->defCnt) << "'/>";
+
     d->str << "<b>Error: <span style='background: #C0FF00;'>"
         << HtmlLib::escapeTextInline(def.checker) << "</span>"
         << HtmlLib::escapeTextInline(def.annotation)
         << ":</b>";
 
     d->writeLinkToDetails(def);
+
+    // link to self
+    d->str << " <a href ='#def"
+        << d->defCnt << "'>[#def"
+        << d->defCnt << "]</a>";
+
     d->writeNewDefWarning(def);
     
     d->str << "\n";
