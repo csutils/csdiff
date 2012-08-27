@@ -103,6 +103,16 @@ bool writeMappedDefects(
             std::cerr
                 << fName << ": warning: defect lookup failed, cid = "
                 << row.cid << "\n";
+
+            DefEvent evt;
+            evt.fileName    = row.fileName;
+            evt.event       = "defect_lookup_failed";
+            evt.msg         = "unmatched defect in ";
+            evt.msg        += row.fnc;
+
+            def = Defect();
+            def.checker = row.checker;
+            def.events.push_back(evt);
         }
 
         def.defectId = row.cid;

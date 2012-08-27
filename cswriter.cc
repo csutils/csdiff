@@ -52,7 +52,10 @@ void CovWriter::handleDef(const Defect &def) {
     str << "Error: " << def.checker << def.annotation << ":\n";
 
     BOOST_FOREACH(const DefEvent &evt, def.events) {
-        str << evt.fileName << ":" << evt.line << ":";
+        str << evt.fileName << ":";
+        
+        if (0 < evt.line)
+            str << evt.line << ":";
 
         if (0 < evt.column)
             str << evt.column << ":";

@@ -363,8 +363,10 @@ void HtmlWriter::handleDef(const Defect &def) {
         if (!isKeyEvent)
             d->str << "<span style='color: #808080;'>";
 
-        d->str << boost::regex_replace(evt.fileName, d->rePath, "")
-            << ":" << evt.line << ":";
+        d->str << boost::regex_replace(evt.fileName, d->rePath, "") << ":";
+        
+        if (0 < evt.line)
+            d->str << evt.line << ":";
 
         if (0 < evt.column)
             d->str << evt.column << ":";

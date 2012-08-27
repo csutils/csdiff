@@ -31,6 +31,12 @@ struct DefEvent {
     int                     column;
     std::string             event;
     std::string             msg;
+
+    DefEvent():
+        line(0),
+        column(0)
+    {
+    }
 };
 
 typedef std::vector<DefEvent> TEvtList;
