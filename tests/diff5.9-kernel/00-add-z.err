@@ -1,0 +1,38 @@
+Error: ARRAY_VS_SINGLETON:
+/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-339.el5.x86_64/drivers/acpi/executer/exoparg1.c: defect_lookup_failed: unmatched defect in acpi_ex_opcode_1A_0T_1R()
+
+Error: ARRAY_VS_SINGLETON:
+/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-339.el5.x86_64/drivers/input/mouse/trackpoint.c: defect_lookup_failed: unmatched defect in trackpoint_sync()
+
+Error: ARRAY_VS_SINGLETON:
+/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-339.el5.x86_64/drivers/input/mouse/trackpoint.c: defect_lookup_failed: unmatched defect in trackpoint_detect()
+
+Error: ARRAY_VS_SINGLETON:
+/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-339.el5.x86_64/drivers/scsi/fcoe/fcoe.c: defect_lookup_failed: unmatched defect in fcoe_xmit()
+
+Error: ARRAY_VS_SINGLETON:
+/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-339.el5.x86_64/fs/ext2/xattr.c: defect_lookup_failed: unmatched defect in ext2_xattr_cache_insert()
+
+Error: ARRAY_VS_SINGLETON:
+/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-339.el5.x86_64/fs/ext3/xattr.c: defect_lookup_failed: unmatched defect in ext3_xattr_cache_insert()
+
+Error: ARRAY_VS_SINGLETON:
+/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-339.el5.x86_64/fs/ext4/xattr.c: defect_lookup_failed: unmatched defect in ext4_xattr_cache_insert()
+
+Error: ARRAY_VS_SINGLETON:
+/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-339.el5.x86_64/fs/fuse/control.c: defect_lookup_failed: unmatched defect in fuse_ctl_fill_super()
+
+Error: ARRAY_VS_SINGLETON:
+/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-339.el5.x86_64/fs/xfs/linux-2.6/xfs_aops.c: defect_lookup_failed: unmatched defect in xfs_page_state_convert()
+
+Error: ARRAY_VS_SINGLETON:
+/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-339.el5.x86_64/net/rds/tcp_recv.c: defect_lookup_failed: unmatched defect in rds_tcp_inc_copy_to_user()
+
+Error: BAD_FREE:
+/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-339.el5.x86_64/net/sctp/endpointola.c: defect_lookup_failed: unmatched defect in sctp_endpoint_destroy()
+
+Error: BAD_FREE:
+/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-339.el5.x86_64/net/sctp/transport.c: defect_lookup_failed: unmatched defect in sctp_transport_destroy()
+
+Error: BAD_FREE:
+/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-339.el5.x86_64/net/sctp/associola.c: defect_lookup_failed: unmatched defect in sctp_association_free()

@@ -1,0 +1,625 @@
+{
+    "scan":
+    {
+        "analyzer": "coverity",
+        "analyzer-args": "--wait-for-license --security --concurrency",
+        "analyzer-version": "5.5.3 (build 20120127033227)",
+        "compilation-unit-count": 15872,
+        "compilation-unit-ratio": 100,
+        "host": "dell-per610-03.lab.eng.brq.redhat.com",
+        "mock-config": "rhel-5.8-x86_64-xscan",
+        "project-id": 19895,
+        "project-name": "kernel-2.6.18-333.el5",
+        "time-created": "2012-08-09 18:00:13",
+        "time-finished": "2012-08-09 23:37:25",
+        "tool": "cov-mockbuild",
+        "tool-args": "-i -m rhel-5.8-x86_64-xscan kernel-2.6.18-333.el5.src.rpm --security --concurrency",
+        "tool-version": "cov-mockbuild-0.20120803_8ab033d-1.el6.noarch csdiff-0.20120803_12bbdb7-1.el6.x86_64"
+    },
+    "defects":
+    [
+        {
+            "checker": "",
+            "defect_id": 103460,
+            "function": "acpi_ex_opcode_1A_0T_1R()",
+            "key_event_idx": 0,
+            "events": ""
+        },
+        {
+            "checker": "ARRAY_VS_SINGLETON",
+            "annotation": " (CWE-119)",
+            "defect_id": 103461,
+            "function": "ata_exec_internal()",
+            "key_event_idx": 4,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/drivers/ata/libata-core.c",
+                    "line": 1867,
+                    "event": "address_of",
+                    "message": "Taking address with \"&sg\" yields a singleton pointer."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/drivers/ata/libata-core.c",
+                    "line": 1867,
+                    "event": "assign",
+                    "message": "Assigning: \"psg\" = \"&sg\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/drivers/ata/libata-core.c",
+                    "line": 1871,
+                    "event": "callee_ptr_arith",
+                    "message": "Passing \"psg\" to function \"ata_exec_internal_sg\" which uses it as an array. This might corrupt or misinterpret adjacent memory locations."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/drivers/ata/libata-core.c",
+                    "line": 1743,
+                    "event": "assign",
+                    "message": "Assigning: \"sg\" = \"sgl\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/drivers/ata/libata-core.c",
+                    "line": 1743,
+                    "event": "ptr_arith",
+                    "message": "Performing pointer arithmetic on \"sg\" in expression \"sg++\"."
+                }
+            ]
+        },
+        {
+            "checker": "",
+            "defect_id": 103466,
+            "function": "trackpoint_sync()",
+            "key_event_idx": 0,
+            "events": ""
+        },
+        {
+            "checker": "",
+            "defect_id": 103467,
+            "function": "trackpoint_detect()",
+            "key_event_idx": 0,
+            "events": ""
+        },
+        {
+            "checker": "ARRAY_VS_SINGLETON",
+            "annotation": " (CWE-119)",
+            "defect_id": 103468,
+            "function": "i8042_check_aux()",
+            "key_event_idx": 2,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/drivers/input/serio/i8042.c",
+                    "line": 626,
+                    "event": "address_of",
+                    "message": "Taking address with \"&param\" yields a singleton pointer."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/drivers/input/serio/i8042.c",
+                    "line": 626,
+                    "event": "callee_ptr_arith",
+                    "message": "Passing \"&param\" to function \"__i8042_command\" which uses it as an array. This might corrupt or misinterpret adjacent memory locations."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/drivers/input/serio/i8042.c",
+                    "line": 193,
+                    "event": "ptr_arith",
+                    "message": "Performing pointer arithmetic on \"param\" in expression \"param + i\"."
+                }
+            ]
+        },
+        {
+            "checker": "",
+            "defect_id": 103476,
+            "function": "fcoe_xmit()",
+            "key_event_idx": 0,
+            "events": ""
+        },
+        {
+            "checker": "",
+            "defect_id": 103480,
+            "function": "ext2_xattr_cache_insert()",
+            "key_event_idx": 0,
+            "events": ""
+        },
+        {
+            "checker": "",
+            "defect_id": 103481,
+            "function": "ext3_xattr_cache_insert()",
+            "key_event_idx": 0,
+            "events": ""
+        },
+        {
+            "checker": "",
+            "defect_id": 103482,
+            "function": "ext4_xattr_cache_insert()",
+            "key_event_idx": 0,
+            "events": ""
+        },
+        {
+            "checker": "ARRAY_VS_SINGLETON",
+            "annotation": " (CWE-119)",
+            "defect_id": 103483,
+            "function": "ext4_ext_convert_to_initialized()",
+            "key_event_idx": 3,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/fs/ext4/extents.c",
+                    "line": 2847,
+                    "event": "address_of",
+                    "message": "Taking address with \"&newex\" yields a singleton pointer."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/fs/ext4/extents.c",
+                    "line": 2847,
+                    "event": "assign",
+                    "message": "Assigning: \"ex2\" = \"&newex\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/fs/ext4/extents.c",
+                    "line": 2881,
+                    "event": "callee_ptr_arith",
+                    "message": "Passing \"ex2\" to function \"ext4_ext_try_to_merge\" which uses it as an array. This might corrupt or misinterpret adjacent memory locations."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/fs/ext4/extents.c",
+                    "line": 1608,
+                    "event": "ptr_arith",
+                    "message": "Performing pointer arithmetic on \"ex\" in expression \"ex + 1\"."
+                }
+            ]
+        },
+        {
+            "checker": "",
+            "defect_id": 103484,
+            "function": "fuse_ctl_fill_super()",
+            "key_event_idx": 0,
+            "events": ""
+        },
+        {
+            "checker": "",
+            "defect_id": 103485,
+            "function": "xfs_page_state_convert()",
+            "key_event_idx": 0,
+            "events": ""
+        },
+        {
+            "checker": "ARRAY_VS_SINGLETON",
+            "annotation": " (CWE-119)",
+            "defect_id": 103486,
+            "function": "inet_csk_diag_dump()",
+            "key_event_idx": 5,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/net/ipv4/inet_diag.c",
+                    "line": 478,
+                    "event": "address_of",
+                    "message": "Taking address with \"&inet->rcv_saddr\" yields a singleton pointer."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/net/ipv4/inet_diag.c",
+                    "line": 478,
+                    "event": "assign",
+                    "message": "Assigning: \"entry.saddr\" = \"&inet->rcv_saddr\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/net/ipv4/inet_diag.c",
+                    "line": 485,
+                    "event": "callee_ptr_arith",
+                    "message": "Passing \"entry.saddr\" via argument \"&entry\" to function \"inet_diag_bc_run\" which uses it as an array. This might corrupt or misinterpret adjacent memory locations."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/net/ipv4/inet_diag.c",
+                    "line": 370,
+                    "event": "assign",
+                    "message": "Assigning: \"addr\" = \"entry->saddr\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/net/ipv4/inet_diag.c",
+                    "line": 374,
+                    "event": "callee_ptr_arith",
+                    "message": "Performing pointer arithmetic on \"addr\" in callee \"bitstring_match\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/net/ipv4/inet_diag.c",
+                    "line": 312,
+                    "event": "ptr_arith",
+                    "message": "Performing pointer arithmetic on \"a1\" in expression \"a1 + words\"."
+                }
+            ]
+        },
+        {
+            "checker": "ARRAY_VS_SINGLETON",
+            "annotation": " (CWE-119)",
+            "defect_id": 103487,
+            "function": "inet_twsk_diag_dump()",
+            "key_event_idx": 5,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/net/ipv4/inet_diag.c",
+                    "line": 516,
+                    "event": "address_of",
+                    "message": "Taking address with \"&tw->tw_rcv_saddr\" yields a singleton pointer."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/net/ipv4/inet_diag.c",
+                    "line": 516,
+                    "event": "assign",
+                    "message": "Assigning: \"entry.saddr\" = \"&tw->tw_rcv_saddr\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/net/ipv4/inet_diag.c",
+                    "line": 523,
+                    "event": "callee_ptr_arith",
+                    "message": "Passing \"entry.saddr\" via argument \"&entry\" to function \"inet_diag_bc_run\" which uses it as an array. This might corrupt or misinterpret adjacent memory locations."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/net/ipv4/inet_diag.c",
+                    "line": 370,
+                    "event": "assign",
+                    "message": "Assigning: \"addr\" = \"entry->saddr\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/net/ipv4/inet_diag.c",
+                    "line": 374,
+                    "event": "callee_ptr_arith",
+                    "message": "Performing pointer arithmetic on \"addr\" in callee \"bitstring_match\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/net/ipv4/inet_diag.c",
+                    "line": 312,
+                    "event": "ptr_arith",
+                    "message": "Performing pointer arithmetic on \"a1\" in expression \"a1 + words\"."
+                }
+            ]
+        },
+        {
+            "checker": "ARRAY_VS_SINGLETON",
+            "annotation": " (CWE-119)",
+            "defect_id": 103488,
+            "function": "tcp_sendpage()",
+            "key_event_idx": 2,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/net/ipv4/tcp.c",
+                    "line": 635,
+                    "event": "address_of",
+                    "message": "Taking address with \"&page\" yields a singleton pointer."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/net/ipv4/tcp.c",
+                    "line": 635,
+                    "event": "callee_ptr_arith",
+                    "message": "Passing \"&page\" to function \"do_tcp_sendpages\" which uses it as an array. This might corrupt or misinterpret adjacent memory locations."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/net/ipv4/tcp.c",
+                    "line": 532,
+                    "event": "ptr_arith",
+                    "message": "Performing pointer arithmetic on \"pages\" in expression \"pages + poffset / 4096UL\"."
+                }
+            ]
+        },
+        {
+            "checker": "",
+            "defect_id": 103489,
+            "function": "rds_tcp_inc_copy_to_user()",
+            "key_event_idx": 0,
+            "events": ""
+        },
+        {
+            "checker": "ARRAY_VS_SINGLETON",
+            "annotation": " (CWE-119)",
+            "defect_id": 103490,
+            "function": "usX2Y_usb_disconnect()",
+            "key_event_idx": 2,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/sound/usb/usx2y/usbusx2y.c",
+                    "line": 437,
+                    "event": "address_of",
+                    "message": "Taking address with \"&usX2Y->AS04\" yields a singleton pointer."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/sound/usb/usx2y/usbusx2y.c",
+                    "line": 437,
+                    "event": "callee_ptr_arith",
+                    "message": "Passing \"&usX2Y->AS04\" to function \"usX2Y_unlinkSeq\" which uses it as an array. This might corrupt or misinterpret adjacent memory locations."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/sound/usb/usx2y/usbusx2y.c",
+                    "line": 308,
+                    "event": "ptr_arith",
+                    "message": "Performing pointer arithmetic on \"S\" in expression \"S + i\"."
+                }
+            ]
+        },
+        {
+            "checker": "BAD_FREE",
+            "annotation": " (CWE-590)",
+            "defect_id": 103496,
+            "function": "pci_probe()",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/drivers/firewire/fw-ohci.c",
+                    "line": 2534,
+                    "event": "address_free",
+                    "message": "Using \"&ohci->card\" to refer to containing object \"*ohci\" freed by \"kfree\"."
+                }
+            ]
+        },
+        {
+            "checker": "BAD_FREE",
+            "annotation": " (CWE-590)",
+            "defect_id": 103497,
+            "function": "pci_remove()",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/drivers/firewire/fw-ohci.c",
+                    "line": 2492,
+                    "event": "address_free",
+                    "message": "Using \"&ohci->card\" to refer to containing object \"*ohci\" freed by \"kfree\"."
+                }
+            ]
+        },
+        {
+            "checker": "BAD_FREE",
+            "annotation": " (CWE-590)",
+            "defect_id": 103498,
+            "function": "ipoib_remove_one()",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/drivers/infiniband/ulp/ipoib/ipoib_main.c",
+                    "line": 1436,
+                    "event": "address_compare",
+                    "message": "Comparison implies that pointer \"dev_list\" points to \"priv->list\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/drivers/infiniband/ulp/ipoib/ipoib_main.c",
+                    "line": 1453,
+                    "event": "incorrect_free",
+                    "message": "\"kfree\" frees incorrect pointer \"dev_list\"."
+                }
+            ]
+        },
+        {
+            "checker": "BAD_FREE",
+            "annotation": " (CWE-590)",
+            "defect_id": 103499,
+            "function": "__vxge_hw_fifo_delete()",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/drivers/net/vxge/vxge-config.c",
+                    "line": 2494,
+                    "event": "address_free",
+                    "message": "Using \"&fifo->channel\" to refer to containing object \"*fifo\" freed by \"__vxge_hw_channel_free\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/drivers/net/vxge/vxge-config.c",
+                    "line": 105,
+                    "event": "freed_arg",
+                    "message": "\"kfree\" frees parameter \"channel\"."
+                }
+            ]
+        },
+        {
+            "checker": "BAD_FREE",
+            "annotation": " (CWE-590)",
+            "defect_id": 103500,
+            "function": "__vxge_hw_ring_delete()",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/drivers/net/vxge/vxge-config.c",
+                    "line": 1432,
+                    "event": "address_free",
+                    "message": "Using \"&ring->channel\" to refer to containing object \"*ring\" freed by \"__vxge_hw_channel_free\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/drivers/net/vxge/vxge-config.c",
+                    "line": 105,
+                    "event": "freed_arg",
+                    "message": "\"kfree\" frees parameter \"channel\"."
+                }
+            ]
+        },
+        {
+            "checker": "BAD_FREE",
+            "annotation": " (CWE-590)",
+            "defect_id": 103501,
+            "function": "alua_bus_attach()",
+            "key_event_idx": 4,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/drivers/scsi/device_handler/scsi_dh_alua.c",
+                    "line": 758,
+                    "event": "array_assign",
+                    "message": "Assigning: \"h->buff\" = \"h->inq\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/drivers/scsi/device_handler/scsi_dh_alua.c",
+                    "line": 761,
+                    "event": "incorrect_free",
+                    "message": "\"alua_initialize\" frees incorrect pointer \"h->buff\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/drivers/scsi/device_handler/scsi_dh_alua.c",
+                    "line": 644,
+                    "event": "freed_arg",
+                    "message": "\"alua_vpd_inquiry\" frees parameter \"h->buff\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/drivers/scsi/device_handler/scsi_dh_alua.c",
+                    "line": 352,
+                    "event": "freed_arg",
+                    "message": "\"realloc_buffer\" frees parameter \"h->buff\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/drivers/scsi/device_handler/scsi_dh_alua.c",
+                    "line": 81,
+                    "event": "freed_arg",
+                    "message": "\"kfree\" frees parameter \"h->buff\"."
+                }
+            ]
+        },
+        {
+            "checker": "BAD_FREE",
+            "annotation": " (CWE-590)",
+            "defect_id": 103511,
+            "function": "nfs4svc_decode_compoundargs()",
+            "key_event_idx": 2,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/fs/nfsd/nfs4xdr.c",
+                    "line": 2714,
+                    "event": "array_assign",
+                    "message": "Assigning: \"args->ops\" = \"args->iops\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/fs/nfsd/nfs4xdr.c",
+                    "line": 2719,
+                    "event": "incorrect_free",
+                    "message": "\"nfsd4_release_compoundargs\" frees incorrect pointer \"args->ops\"."
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/fs/nfsd/nfs4xdr.c",
+                    "line": 2690,
+                    "event": "freed_arg",
+                    "message": "\"kfree\" frees parameter \"args->ops\"."
+                }
+            ]
+        },
+        {
+            "checker": "",
+            "defect_id": 103512,
+            "function": "sctp_endpoint_destroy()",
+            "key_event_idx": 0,
+            "events": ""
+        },
+        {
+            "checker": "",
+            "defect_id": 103513,
+            "function": "sctp_transport_destroy()",
+            "key_event_idx": 0,
+            "events": ""
+        },
+        {
+            "checker": "",
+            "defect_id": 103514,
+            "function": "sctp_association_free()",
+            "key_event_idx": 0,
+            "events": ""
+        },
+        {
+            "checker": "BAD_SIZEOF",
+            "annotation": " (CWE-467)",
+            "defect_id": 103516,
+            "function": "gf128mul_bbe()",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/crypto/gf128mul.c",
+                    "line": 185,
+                    "event": "bad_sizeof",
+                    "message": "Taking the size of pointer parameter \"r\" is suspicious."
+                }
+            ]
+        },
+        {
+            "checker": "BAD_SIZEOF",
+            "annotation": " (CWE-467)",
+            "defect_id": 103517,
+            "function": "gf128mul_lle()",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/crypto/gf128mul.c",
+                    "line": 223,
+                    "event": "bad_sizeof",
+                    "message": "Taking the size of pointer parameter \"r\" is suspicious."
+                }
+            ]
+        },
+        {
+            "checker": "BAD_SIZEOF",
+            "annotation": " (CWE-467)",
+            "defect_id": 103518,
+            "function": "register_snoop_agent()",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/drivers/infiniband/core/mad.c",
+                    "line": 417,
+                    "event": "bad_sizeof",
+                    "message": "Taking the size of pointer parameter \"mad_snoop_priv\" is suspicious."
+                }
+            ]
+        },
+        {
+            "checker": "BAD_SIZEOF",
+            "annotation": " (CWE-467)",
+            "defect_id": 103521,
+            "function": "mlx4_INIT_HCA()",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/drivers/net/mlx4/fw.c",
+                    "line": 868,
+                    "event": "bad_sizeof",
+                    "message": "Taking the size of binary expression \"(u8)(1 << 3)\" is suspicious."
+                }
+            ]
+        },
+        {
+            "checker": "BAD_SIZEOF",
+            "annotation": " (CWE-467)",
+            "defect_id": 103522,
+            "function": "bfad_start_ops()",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/drivers/scsi/bfa/bfad.c",
+                    "line": 1025,
+                    "event": "bad_sizeof",
+                    "message": "Taking the size of pointer arithmetic expression \"driver_info.os_device_name - 1\" is suspicious.  Did you intend \"sizeof(driver_info.os_device_name) - 1\"?"
+                }
+            ]
+        },
+        {
+            "checker": "BAD_SIZEOF",
+            "annotation": " (CWE-467)",
+            "defect_id": 103524,
+            "function": "_transport_set_identify()",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/drivers/scsi/mpt2sas/mpt2sas_transport.c",
+                    "line": 163,
+                    "event": "bad_sizeof",
+                    "message": "Taking the size of pointer parameter \"identify\" is suspicious."
+                }
+            ]
+        }
+    ]
+}

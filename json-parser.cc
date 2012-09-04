@@ -153,8 +153,12 @@ void JsonParser::Private::readNode(
     def->function = valueOf<std::string>(defNode, "function", "");
 
     // assume the last event is the key event if not specified otherwise
-    const unsigned defKeyEvent = evtListDst.size() - 1;
-    def->keyEventIdx = valueOf<int>(defNode, "key_event_idx", defKeyEvent);
+    int defKeyEvent = static_cast<int>(evtListDst.size()) - 1;
+    defKeyEvent = valueOf<int>(defNode, "key_event_idx", defKeyEvent);
+    if (0 <= defKeyEvent && defKeyEvent < evtListDst.size())
+        def->keyEventIdx = defKeyEvent;
+    else
+        throw pt::ptree_error("key event out of range");
 
     // read annotation if available
     def->annotation = valueOf<std::string>(defNode, "annotation", "");

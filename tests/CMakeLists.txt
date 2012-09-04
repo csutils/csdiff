@@ -54,8 +54,7 @@ endmacro()
 macro(test_csdiff dir num)
     set(tst "${testdir}/${dir}/${num}")
 
-    set(cmd "${csdiff} ${tst}-old.err ${tst}-new.err")
-    set(cmd "${cmd}")
+    set(cmd "${csdiff} -c ${tst}-old.err ${tst}-new.err")
     set(cmd "${cmd} | ${diffcmd} ${tst}-add.err -")
     add_test_wrap("${dir}-${num}-added" "${cmd}")
 
@@ -126,6 +125,7 @@ test_cssort(cssort-5.8                              02)
 test_cssort(cssort-5.8                              03)
 
 # csdiff tests
+test_csdiff(diff5.9-kernel                          00)
 test_csdiff(diff7.0-qt                              00)
 test_csdiff(diff7.0-fftw                            00)
 test_csdiff(diff7.0-sudo                            00)

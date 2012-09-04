@@ -1,0 +1,2 @@
+Error: BAD_SIZEOF (CWE-467):
+/builddir/build/BUILD/kernel-2.6.18/linux-2.6.18-333.el5.x86_64/drivers/scsi/mpt2sas/mpt2sas_transport.c:163: bad_sizeof: Taking the size of pointer parameter "identify" is suspicious.
