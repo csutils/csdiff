@@ -153,9 +153,10 @@ void JsonParser::Private::readNode(
     def->function = valueOf<std::string>(defNode, "function", "");
 
     // assume the last event is the key event if not specified otherwise
-    int defKeyEvent = static_cast<int>(evtListDst.size()) - 1;
+    const int cntEvents = evtListDst.size();
+    int defKeyEvent = cntEvents - 1;
     defKeyEvent = valueOf<int>(defNode, "key_event_idx", defKeyEvent);
-    if (0 <= defKeyEvent && defKeyEvent < evtListDst.size())
+    if (0 <= defKeyEvent && defKeyEvent < cntEvents)
         def->keyEventIdx = defKeyEvent;
     else
         throw pt::ptree_error("key event out of range");
