@@ -57,6 +57,7 @@ Group:      Applications/Text
 License:    GPLv3+
 URL:        http://git.fedorahosted.org/cgit/codescan-diff.git
 Source0:    $SRC
+BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires: cmake
 BuildRequires: flex
@@ -74,10 +75,14 @@ defect lists using various filtering predicates.
 make %{?_smp_mflags} CMAKE='cmake -D CMAKE_INSTALL_PREFIX=/usr' VERBOSE=yes
 
 %install
+rm -rf "\$RPM_BUILD_ROOT"
 make install DESTDIR="\$RPM_BUILD_ROOT"
 
 %check
 make check CTEST='ctest %{?_smp_mflags}'
+
+%clean
+rm -rf "\$RPM_BUILD_ROOT"
 
 %files
 %defattr(-,root,root,-)

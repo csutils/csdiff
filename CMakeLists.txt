@@ -32,9 +32,21 @@ flex_target(csparser csparser.lex ${flex_scanner})
 add_definitions(-iquote ${CMAKE_CURRENT_SOURCE_DIR})
 
 # Boost libraries
-find_package(Boost 1.41 REQUIRED)
+find_package(Boost 1.41)
+if(Boost_FOUND)
+    # boost >= 1.41 ... use everything from system
+    set(boost_incs_tmp ${Boost_INCLUDE_DIRS})
+else()
+    # boost < 1.41 ... use local overrides
+    find_package(Boost 1.33 REQUIRED)
+    message(STATUS "WARNING: System Boost libraries are tool old, using local!")
+    set(boost_incs_tmp ${Boost_INCLUDE_DIRS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/boost_1_34_1
+        ${CMAKE_CURRENT_SOURCE_DIR}/boost_1_41_0)
+endif()
+set(BOOST_INCS ${boost_incs_tmp} CACHE STRING "boost include directories")
+include_directories(SYSTEM ${BOOST_INCS})
 link_directories(${Boost_LIBRARY_DIRS})
-include_directories(${Boost_INCLUDE_DIRS})
 
 # cslib.a
 add_library(cs STATIC
