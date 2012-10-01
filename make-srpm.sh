@@ -98,7 +98,9 @@ rm -rf "\$RPM_BUILD_ROOT"
 EOF
 
 set -v
-rpmbuild -bs "$SPEC"            \
-    --define "_sourcedir ."     \
-    --define "_specdir ."       \
-    --define "_srcrpmdir $DST"
+rpmbuild -bs "$SPEC"                            \
+    --define "_sourcedir ."                     \
+    --define "_specdir ."                       \
+    --define "_srcrpmdir $DST"                  \
+    --define "_source_filedigest_algorithm md5" \
+    --define "_binary_filedigest_algorithm md5"
