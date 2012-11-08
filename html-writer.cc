@@ -138,6 +138,8 @@ namespace CsLib {
         if (props.empty())
             return;
 
+        HtmlLib::initSection(str, "Scan Properties");
+
         str << "<table style='font-family: monospace;'>\n";
         int i = 0;
 
@@ -157,30 +159,44 @@ namespace CsLib {
 
 class HtmlWriterCore {
     public:
-        HtmlWriterCore(std::ostream &str, const std::string &titleFallback);
+        HtmlWriterCore(
+                std::ostream       &str,
+                const std::string  &titleFallback,
+                const std::string  &spPlacement);
 
         bool headerWritten() const {
             return headerWritten_;
         }
 
         void writeHeaderOnce(const TScanProps &);
-        void closeDocument();
+        void closeDocument(const TScanProps &props);
 
     private:
         std::ostream       &str_;
         std::string         titleFallback_;
+        bool                spOnTop_;
+        bool                spBottom_;
         bool                headerWritten_;
         bool                documentClosed_;
 };
 
-HtmlWriterCore::HtmlWriterCore(std::ostream &str, const std::string &titleFb):
+HtmlWriterCore::HtmlWriterCore(
+        std::ostream               &str,
+        const std::string          &titleFb,
+        const std::string          &spPlacement):
     str_(str),
     titleFallback_(titleFb),
+    spOnTop_(!spPlacement.compare("top")),
+    spBottom_(!spPlacement.compare("bottom")),
     headerWritten_(false),
     documentClosed_(false)
 {
     if (titleFallback_.empty())
         titleFallback_ = "Scan Results";
+
+    if (!spOnTop_ && !spBottom_ && !!spPlacement.compare("none"))
+        std::cerr << "warning: unknown placement of scan properties table: "
+            << spPlacement << "\n";
 }
 
 void HtmlWriterCore::writeHeaderOnce(const TScanProps &props) {
@@ -199,7 +215,8 @@ void HtmlWriterCore::writeHeaderOnce(const TScanProps &props) {
 
     // write scan properties
     CsLib::writeParseWarnings(str_, props);
-    CsLib::writeScanProps(str_, props);
+    if (spOnTop_)
+        CsLib::writeScanProps(str_, props);
 
     // initialize the section for defects
     HtmlLib::initSection(str_, "List of Defects");
@@ -208,12 +225,16 @@ void HtmlWriterCore::writeHeaderOnce(const TScanProps &props) {
     headerWritten_ = true;
 }
 
-void HtmlWriterCore::closeDocument() {
+void HtmlWriterCore::closeDocument(const TScanProps &props) {
     assert(headerWritten_);
     assert(!documentClosed_);
 
     // close the HTML document
     HtmlLib::finalizePre(str_);
+
+    if (spBottom_)
+        CsLib::writeScanProps(str_, props);
+
     HtmlLib::finalizeHtml(str_);
 
     documentClosed_ = true;
@@ -232,9 +253,10 @@ struct HtmlWriter::Private {
     Private(
             std::ostream           &str_,
             const std::string      &titleFallback_,
-            const std::string      &defUrlTemplate_):
+            const std::string      &defUrlTemplate_,
+            const std::string      &spPlacement_):
         str(str_),
-        core(str_, titleFallback_),
+        core(str_, titleFallback_, spPlacement_),
         defUrlTemplate(defUrlTemplate_),
         rePath("^/builddir/build/BUILD/"),
         defCnt(0),
@@ -252,8 +274,9 @@ struct HtmlWriter::Private {
 HtmlWriter::HtmlWriter(
         std::ostream               &outputStream,
         const std::string          &titleFallback,
-        const std::string          &defUrlTemplate):
-    d(new Private(outputStream, titleFallback, defUrlTemplate))
+        const std::string          &defUrlTemplate,
+        const std::string          &spPlacement):
+    d(new Private(outputStream, titleFallback, defUrlTemplate, spPlacement))
 {
 }
 
@@ -389,5 +412,5 @@ void HtmlWriter::handleDef(const Defect &def) {
 
 void HtmlWriter::flush() {
     d->core.writeHeaderOnce(d->scanProps);
-    d->core.closeDocument();
+    d->core.closeDocument(d->scanProps);
 }

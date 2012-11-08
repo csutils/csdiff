@@ -29,7 +29,8 @@ class HtmlWriter: public AbstractWriter {
         HtmlWriter(
                 std::ostream                &outputStream,
                 const std::string           &titleFallback,
-                const std::string           &defUrlTemplate);
+                const std::string           &defUrlTemplate,
+                const std::string           &spPlacement);
 
         virtual ~HtmlWriter();
 

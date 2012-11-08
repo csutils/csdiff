@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
             + " [options] proj.js, where options are");
 
     typedef std::vector<string> TStringList;
-    string defUrlTemplate, fnBase;
+    string defUrlTemplate, fnBase, spPosition;
 
     try {
         desc.add_options()
@@ -57,6 +57,9 @@ int main(int argc, char *argv[])
              "e.g. http://localhost/index.php?proj=%d&defect=%d")
             ("diff-base", po::value(&fnBase),
              "use the given list of defects as diff base")
+            ("scan-props-placement",
+             po::value<string>(&spPosition)->default_value("top"),
+             "placement of the table with scan properties: top, bottom, none")
             ("quiet,q", "do not report any parsing errors")
             ("help", "produce help message");
 
@@ -121,7 +124,7 @@ int main(int argc, char *argv[])
 
         // initialize HTML writer
         const std::string titleFallback = titleFromFileName(fnInput);
-        HtmlWriter writer(std::cout, titleFallback, defUrlTemplate);
+        HtmlWriter writer(std::cout, titleFallback, defUrlTemplate, spPosition);
         writer.setScanProps(pInput.getScanProps());
         if (!fnBase.empty()) {
             const std::string diffTitleFallback = titleFromFileName(fnBase);
