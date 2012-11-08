@@ -197,7 +197,7 @@ int main(int argc, char *argv[])
         p.add("input-file", -1);
 
         po::store(po::parse_command_line(argc, argv, desc), vm);
-        po::notify(vm);    
+        po::notify(vm);
 
         po::options_description opts;
         opts.add(desc).add(hidden);
