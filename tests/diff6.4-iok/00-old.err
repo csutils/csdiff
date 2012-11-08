@@ -1,0 +1,13 @@
+Error: STRING_OVERFLOW (CWE-120):
+/builddir/build/BUILD/iok-1.3.13/src/interface.c:3161: cond_true: Condition "selection_data != NULL", taking true branch
+/builddir/build/BUILD/iok-1.3.13/src/interface.c:3161: cond_true: Condition "selection_data->length >= 0", taking true branch
+/builddir/build/BUILD/iok-1.3.13/src/interface.c:3163: cond_true: Condition "context->action == GDK_ACTION_ASK", taking true branch
+/builddir/build/BUILD/iok-1.3.13/src/interface.c:3168: cond_false: Condition "context->action == GDK_ACTION_MOVE", taking false branch
+/builddir/build/BUILD/iok-1.3.13/src/interface.c:3169: if_end: End of if statement
+/builddir/build/BUILD/iok-1.3.13/src/interface.c:3171: switch: Switch case value "0U"
+/builddir/build/BUILD/iok-1.3.13/src/interface.c:3173: switch_case: Reached case "0U"
+/builddir/build/BUILD/iok-1.3.13/src/interface.c:3179: cond_true: Condition "ii < mapcnt", taking true branch
+/builddir/build/BUILD/iok-1.3.13/src/interface.c:3181: cond_true: Condition "__coverity_strcmp(map[ii].keyvalue, _sdata) == 0", taking true branch
+/builddir/build/BUILD/iok-1.3.13/src/interface.c:3185: cond_true: Condition "gtk_toggle_button_get_active((GtkToggleButton *)caps_btn)", taking true branch
+/builddir/build/BUILD/iok-1.3.13/src/interface.c:3187: cond_true: Condition "__coverity_strcmp(map[ii].keyname, "!") == 0", taking true branch
+/builddir/build/BUILD/iok-1.3.13/src/interface.c:3189: fixed_size_dest: You might overrun the 3 byte fixed-size string "map[ii].keyvalue" by copying "_sdata" without checking the length.
