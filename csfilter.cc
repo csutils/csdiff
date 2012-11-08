@@ -45,7 +45,8 @@ struct MsgFilter::Private {
     bool ignorePath;
     const std::string strKrn;
     const boost::regex reKrn;
-    const boost::regex reMsg;
+    const boost::regex reMsgUnused;
+    const boost::regex reMsgStrOflow;
     const boost::regex reDir;
     const boost::regex rePath;
 
@@ -53,7 +54,8 @@ struct MsgFilter::Private {
         ignorePath(false),
         strKrn("[a-zA-Z]"),
         reKrn(strKrn),
-        reMsg("[0-9][0-9]* out of [0-9][0-9]* times"),
+        reMsgUnused("[0-9][0-9]* out of [0-9][0-9]* times"),
+        reMsgStrOflow("You might overrun the [0-9][0-9]* byte"),
         reDir("^[^:]*/"),
         rePath("^(?:/builddir/build/BUILD/)?([^/]+/)(.*)(\\.[ly])?$")
     {
@@ -74,7 +76,8 @@ void MsgFilter::setIgnorePath(bool enable) {
 }
 
 std::string MsgFilter::filterMsg(const std::string &msg) {
-    return regexReplaceWrap(msg, d->reMsg, "");
+    std::string filtered = regexReplaceWrap(msg, d->reMsgUnused, "");
+    return regexReplaceWrap(filtered, d->reMsgStrOflow, "Overrun on X. byte");
 }
 
 std::string MsgFilter::filterPath(const std::string &path) {
