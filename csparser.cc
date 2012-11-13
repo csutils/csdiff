@@ -132,7 +132,7 @@ bool KeyEventDigger::guessKeyEvent(Defect *def) {
         return false;
 
     // use the last event as key event by default
-    const unsigned evtCount = def->events.size();
+    const unsigned evtCount = evtList.size();
     def->keyEventIdx = evtCount - 1U;
 
     TMap::const_iterator it = hMap_.find(def->checker);
@@ -141,13 +141,14 @@ bool KeyEventDigger::guessKeyEvent(Defect *def) {
         return true;
 
     const TSet &keyEvents = it->second;
-    for (unsigned idx = 0; idx < evtCount; ++idx) {
+    for (int idx = evtCount - 1U; idx >= 0; --idx) {
         const DefEvent &evt = evtList[idx];
         if (!keyEvents.count(evt.event))
             continue;
 
         // matched
         def->keyEventIdx = idx;
+        break;
     }
 
     return true;
