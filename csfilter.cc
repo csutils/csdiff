@@ -50,6 +50,8 @@ struct MsgFilter::Private {
     const boost::regex reDir;
     const boost::regex rePath;
     const boost::regex reMsgConstExprRes;
+    const boost::regex reTmpPath;
+    const boost::regex reTmpCleaner;
 
     Private():
         ignorePath(false),
@@ -59,7 +61,9 @@ struct MsgFilter::Private {
         reMsgStrOflow("You might overrun the [0-9][0-9]* byte"),
         reDir("^[^:]*/"),
         rePath("^(?:/builddir/build/BUILD/)?([^/]+/)(.*)(\\.[ly])?$"),
-        reMsgConstExprRes("union __*C[0-9][0-9]*")
+        reMsgConstExprRes("union __*C[0-9][0-9]*"),
+        reTmpPath("^(/var)?/tmp/(.*)$"),
+        reTmpCleaner("([_A-Za-z-]+)[0-9]{3,}")
     {
     }
 };
@@ -86,6 +90,12 @@ std::string MsgFilter::filterMsg(const std::string &msg) {
 std::string MsgFilter::filterPath(const std::string &path) {
     if (d->ignorePath)
         return regexReplaceWrap(path, d->reDir, "");
+
+    if (boost::regex_match(path, d->reTmpPath)) {
+        // filter random numbers in names of temporary generated files
+        std::string tmpPath = boost::regex_replace(path, d->reTmpCleaner, "\\1");
+        return tmpPath;
+    }
 
     boost::smatch sm;
     if (!boost::regex_match(path, sm, d->rePath))
