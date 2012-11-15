@@ -1,0 +1,6 @@
+Error: ARRAY_VS_SINGLETON:
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/Fcov05600.c:180: address_of: Taking address with "&fd" yields a singleton pointer.
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/Fcov05600.c:180: callee_ptr_arith: Passing "&fd" to function "poll(struct pollfd *, nfds_t, int)" which uses it as an array. This might corrupt or misinterpret adjacent memory locations.
+
+Error: MISSING_RETURN:
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov015564.c:6: missing_return: Arriving at the end of a function without returning a value.

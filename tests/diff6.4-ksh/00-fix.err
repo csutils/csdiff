@@ -1,0 +1,55 @@
+Error: ARRAY_VS_SINGLETON:
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov020739.c:180: address_of: Taking address with "&fd" yields a singleton pointer.
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov020739.c:180: callee_ptr_arith: Passing "&fd" to function "poll(struct pollfd *, nfds_t, int)" which uses it as an array. This might corrupt or misinterpret adjacent memory locations.
+
+Error: MISSING_RETURN:
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov030798.c:6: missing_return: Arriving at the end of a function without returning a value.
+
+Error: UNINIT:
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:313: var_decl: Declaring variable "n" without initializer.
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:319: cond_true: Condition "map[i].name", taking true branch
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:320: cond_true: Condition "(j = map[i].value) > 0", taking true branch
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:320: cond_true: Condition "j < 1024UL /* sizeof (mapindex) / sizeof (mapindex[0]) */", taking true branch
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:320: cond_true: Condition "!mapindex[j]", taking true branch
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:322: cond_true: Condition "j > k", taking true branch
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:325: loop: Jumping back to the beginning of the loop
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:319: loop_begin: Jumped back to beginning of loop
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:319: cond_true: Condition "map[i].name", taking true branch
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:320: cond_true: Condition "(j = map[i].value) > 0", taking true branch
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:320: cond_true: Condition "j < 1024UL /* sizeof (mapindex) / sizeof (mapindex[0]) */", taking true branch
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:320: cond_true: Condition "!mapindex[j]", taking true branch
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:322: cond_true: Condition "j > k", taking true branch
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:325: loop: Jumping back to the beginning of the loop
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:319: loop_begin: Jumped back to beginning of loop
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:319: cond_true: Condition "map[i].name", taking true branch
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:320: cond_true: Condition "(j = map[i].value) > 0", taking true branch
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:320: cond_false: Condition "j < 1024UL /* sizeof (mapindex) / sizeof (mapindex[0]) */", taking false branch
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:325: if_end: End of if statement
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:325: loop: Jumping back to the beginning of the loop
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:319: loop_begin: Jumped back to beginning of loop
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:319: cond_true: Condition "map[i].name", taking true branch
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:320: cond_false: Condition "(j = map[i].value) > 0", taking false branch
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:325: if_end: End of if statement
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:325: loop: Jumping back to the beginning of the loop
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:319: loop_begin: Jumped back to beginning of loop
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:319: cond_false: Condition "map[i].name", taking false branch
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:325: loop_end: Reached end of loop
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:333: cond_true: Condition "j >= 1024UL /* sizeof (mapindex) / sizeof (mapindex[0]) */", taking true branch
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:335: cond_true: Condition "i <= j", taking true branch
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:335: cond_false: Condition "i > 0", taking false branch
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:344: if_end: End of if statement
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:351: cond_true: Condition "i <= k", taking true branch
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:352: cond_true: Condition "!(j = mapindex[i])", taking true branch
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:353: if_fallthrough: Falling through to end of if statement
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:370: if_end: End of if statement
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:370: loop: Jumping back to the beginning of the loop
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:351: loop_begin: Jumped back to beginning of loop
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:351: cond_true: Condition "i <= k", taking true branch
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:352: cond_false: Condition "!(j = mapindex[i])", taking false branch
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:354: else_branch: Reached else branch
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:354: cond_true: Condition "j & (4096 /* 1 << 12 */)", taking true branch
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:356: cond_false: Condition "j & (16384 /* 1 << 14 */)", taking false branch
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:358: else_branch: Reached else branch
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:358: cond_false: Condition "j & (8192 /* 1 << 13 */)", taking false branch
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:361: else_branch: Reached else branch
+/builddir/build/BUILD/ksh-20100621/arch/linux.i386-64/src/lib/libast/cov018699.c:363: uninit_use: Using uninitialized value "n".
