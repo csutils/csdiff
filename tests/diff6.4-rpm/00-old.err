@@ -1,0 +1,17 @@
+Error: CONSTANT_EXPRESSION_RESULT:
+/builddir/build/BUILD/rpm-4.8.0/build/pack.c:690: result_independent_of_operands: ((union __C15919({ .__in = xx}).__i & 0xff00) >> 8) == 0xffffffffffffffff is always false regardless of the values of its operands. This occurs as the logical first operand of '||'.
+
+Error: UNUSED_VALUE:
+/builddir/build/BUILD/rpm-4.8.0/rpmio/rpmio.c:1092: returned_pointer: Pointer "fd" returned by "fdFree(fd, "open (bzdClose) at: rpmio.c:1092")" is never used.
+
+Error: UNUSED_VALUE:
+/builddir/build/BUILD/rpm-4.8.0/rpmio/rpmio.c:950: returned_pointer: Pointer "fd" returned by "fdFree(fd, "open (gzdClose) at: rpmio.c:950")" is never used.
+
+Error: UNUSED_VALUE:
+/builddir/build/BUILD/rpm-4.8.0/rpmio/rpmio.c:1595: returned_pointer: Pointer "fd" returned by "fdFree(fd, "Fclose at: rpmio.c:1595")" is never used.
+
+Error: UNUSED_VALUE:
+/builddir/build/BUILD/rpm-4.8.0/rpmio/rpmpgp.c:985: returned_pointer: Pointer "p" returned by "pgpPrtPubkeyParams(v->pubkey_algo, p, h, hlen, _dig)" is never used.
+
+Error: UNUSED_VALUE:
+/builddir/build/BUILD/rpm-4.8.0/rpmio/rpmpgp.c:1006: returned_pointer: Pointer "p" returned by "pgpPrtSeckeyParams(v->pubkey_algo, p, h, hlen)" is never used.

@@ -1,0 +1,8 @@
+Error: UNUSED_VALUE:
+/builddir/build/BUILD/rpm-4.8.0/rpmio/rpmio.c:1107: returned_pointer: Pointer "fd" returned by "fdFree(fd, "open (bzdClose) at: rpmio.c:1107")" is never used.
+
+Error: UNUSED_VALUE:
+/builddir/build/BUILD/rpm-4.8.0/rpmio/rpmio.c:965: returned_pointer: Pointer "fd" returned by "fdFree(fd, "open (gzdClose) at: rpmio.c:965")" is never used.
+
+Error: UNUSED_VALUE:
+/builddir/build/BUILD/rpm-4.8.0/rpmio/rpmio.c:1610: returned_pointer: Pointer "fd" returned by "fdFree(fd, "Fclose at: rpmio.c:1610")" is never used.
