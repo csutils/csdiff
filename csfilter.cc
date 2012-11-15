@@ -49,6 +49,7 @@ struct MsgFilter::Private {
     const boost::regex reMsgStrOflow;
     const boost::regex reDir;
     const boost::regex rePath;
+    const boost::regex reMsgConstExprRes;
 
     Private():
         ignorePath(false),
@@ -57,7 +58,8 @@ struct MsgFilter::Private {
         reMsgUnused("[0-9][0-9]* out of [0-9][0-9]* times"),
         reMsgStrOflow("You might overrun the [0-9][0-9]* byte"),
         reDir("^[^:]*/"),
-        rePath("^(?:/builddir/build/BUILD/)?([^/]+/)(.*)(\\.[ly])?$")
+        rePath("^(?:/builddir/build/BUILD/)?([^/]+/)(.*)(\\.[ly])?$"),
+        reMsgConstExprRes("union __*C[0-9][0-9]*")
     {
     }
 };
@@ -77,6 +79,7 @@ void MsgFilter::setIgnorePath(bool enable) {
 
 std::string MsgFilter::filterMsg(const std::string &msg) {
     std::string filtered = regexReplaceWrap(msg, d->reMsgUnused, "");
+    filtered = regexReplaceWrap(filtered, d->reMsgConstExprRes, "union __ANON");
     return regexReplaceWrap(filtered, d->reMsgStrOflow, "Overrun on X. byte");
 }
 
