@@ -62,10 +62,12 @@ struct MsgFilter::Private {
     const boost::regex reKrn;
     const boost::regex reMsgConstExprRes;
     const boost::regex reDir;
+    const boost::regex reFile;
     const boost::regex rePath;
     const boost::regex reTmpPath;
     const boost::regex reTmpCleaner;
     TMsgFilterMap msgFilterMap;
+    TSubstMap fileSubsts;
 
     void addMsgFilter(
             const std::string          &checker,
@@ -75,12 +77,12 @@ struct MsgFilter::Private {
         struct MsgReplace *rpl = new MsgReplace(regexp, replacement);
         msgFilterMap[checker].push_back(rpl);
     }
-
     Private():
         ignorePath(false),
         strKrn("[a-zA-Z]"),
         reKrn(strKrn),
-        reDir("^[^:]*/"),
+        reDir("^([^:]*/)"),
+        reFile("[^/]+$"),
         rePath("^(?:/builddir/build/BUILD/)?([^/]+/)(.*)(\\.[ly])?$"),
         reTmpPath("^(/var)?/tmp/(.*)$"),
         reTmpCleaner("([_A-Za-z-]+)[0-9]{3,}")
@@ -109,6 +111,13 @@ void MsgFilter::setIgnorePath(bool enable) {
     d->ignorePath = enable;
 }
 
+void MsgFilter::setFileNameSubstitution(
+                const std::string      &oldFile,
+                const std::string      &newFile)
+{
+    d->fileSubsts[oldFile] = newFile;
+}
+
 std::string MsgFilter::filterMsg(
         const std::string &msg,
         const std::string &checker)
@@ -121,7 +130,19 @@ std::string MsgFilter::filterMsg(
     return filtered;
 }
 
-std::string MsgFilter::filterPath(const std::string &path) {
+std::string MsgFilter::filterPath(const std::string &origPath) {
+    std::string path = origPath;
+
+    TSubstMap &substMap = d->fileSubsts;
+    if (!substMap.empty()) {
+        std::string base = regexReplaceWrap(origPath, d->reDir, "");
+        std::string dir = regexReplaceWrap(origPath, d->reFile, "");
+        if (substMap.find(base) != substMap.end()) {
+            const std::string &substWith = substMap[base];
+            path = dir + substWith;
+        }
+    }
+
     if (d->ignorePath)
         return regexReplaceWrap(path, d->reDir, "");
 

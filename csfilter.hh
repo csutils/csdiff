@@ -20,7 +20,10 @@
 #ifndef H_GUARD_CSFILTER_H
 #define H_GUARD_CSFILTER_H
 
+#include <map>
 #include <string>
+
+typedef std::map<std::string, std::string> TSubstMap;
 
 class MsgFilter {
     public:
@@ -32,6 +35,9 @@ class MsgFilter {
         }
 
         void setIgnorePath(bool);
+        void setFileNameSubstitution(
+                const std::string      &oldFile,
+                const std::string      &newFile);
 
         std::string filterMsg(
                 const std::string &msg,

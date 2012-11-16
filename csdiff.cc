@@ -29,6 +29,7 @@
 #include <boost/foreach.hpp>
 #include <boost/program_options.hpp>
 #include <boost/shared_ptr.hpp>
+#include <boost/regex.hpp>
 
 // FIXME: some keys should be merge more intelligently if they already exist
 // TODO: define a nesting limit for keys like diffbase-diffbase-diffbase-...
@@ -63,6 +64,8 @@ int main(int argc, char *argv[])
             ("ignore-path,z", "ignore directory structure when matching")
             ("json-output,j", "write the result in JSON format")
             ("quiet,q", "do not report any parsing errors")
+            ("file-rename,s", po::value<TStringList>(),
+             "account the file base-name change, [OLD,NEW] (*testing*)")
             ("help", "produce help message");
 
         po::options_description hidden("");
@@ -97,6 +100,21 @@ int main(int argc, char *argv[])
         std::cerr << name << ": error: options --coverity-output(-c) "
             "and --json-output(-j) are mutually exclusive\n\n";
         return 1;
+    }
+
+    // there are probably better solutions for this (Custom Validations)
+    if (vm.count("file-rename")) {
+        const TStringList &substList = vm["file-rename"].as<TStringList>();
+        boost::smatch sm;
+        const boost::regex reSubst("([^,]+),(.*)");
+        BOOST_FOREACH(const string &subst, substList) {
+            if (!boost::regex_match(subst, sm, reSubst)) {
+                std::cerr << "bad substutution format: " << subst
+                    << std::endl << "use: -s OLD,NEW" << std::endl;
+                return 1;
+            }
+        }
+        MsgFilter::inst()->setFileNameSubstitution(sm[1], sm[2]);
     }
 
     if (!vm.count("input-file")) {
