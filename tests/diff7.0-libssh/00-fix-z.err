@@ -88,42 +88,6 @@ libssh-0.4.8/examples/sshnetcat.c:101: negative_returns: "lus" is passed to a pa
 libssh-0.4.8/libssh/channels.c:984: neg_sink_parm_call: Passing "len" to "channel_write_common", which cannot accept a negative.
 libssh-0.4.8/libssh/channels.c:918: parm_loop_bound: Using unsigned parameter "len" in a loop exit test.
 
-Error: NULL_RETURNS:
-libssh-0.4.8/libssh/kex.c:461: returned_null: Function "string_from_char" returns null (checked 74 out of 82 times).
-libssh-0.4.8/libssh/string.c:89: return_null: Explicitly returning NULL.
-libssh-0.4.8/libssh/auth.c:242: example_assign: Assigning: "user" = return value from "string_from_char(session->username)".
-libssh-0.4.8/libssh/auth.c:247: example_checked: "user" has its value checked in "user == NULL".
-libssh-0.4.8/libssh/auth.c:244: example_assign: Assigning: "user" = return value from "string_from_char(username)".
-libssh-0.4.8/libssh/auth.c:247: example_checked: "user" has its value checked in "user == NULL".
-libssh-0.4.8/libssh/auth.c:258: example_assign: Assigning: "method" = return value from "string_from_char("none")".
-libssh-0.4.8/libssh/auth.c:259: example_checked: "method" has its value checked in "method == NULL".
-libssh-0.4.8/libssh/auth.c:262: example_assign: Assigning: "service" = return value from "string_from_char("ssh-connection")".
-libssh-0.4.8/libssh/auth.c:263: example_checked: "service" has its value checked in "service == NULL".
-libssh-0.4.8/libssh/auth.c:348: example_assign: Assigning: "user" = return value from "string_from_char(session->username)".
-libssh-0.4.8/libssh/auth.c:353: example_checked: "user" has its value checked in "user == NULL".
-libssh-0.4.8/libssh/kex.c:461: var_assigned: Assigning: "rsa" = null return value from "string_from_char".
-libssh-0.4.8/libssh/kex.c:463: dereference: Dereferencing a pointer that might be null "rsa" when calling "buffer_add_ssh_string".
-libssh-0.4.8/libssh/buffer.c:171: deref_parm_in_call: Function "buffer_add_data" dereferences parameter "string".
-libssh-0.4.8/libssh/buffer.c:154: deref_parm_in_call: Function "memcpy" dereferences parameter "data". (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)
-
-Error: NULL_RETURNS:
-libssh-0.4.8/libssh/server.c:695: returned_null: Function "string_from_char" returns null (checked 74 out of 82 times).
-libssh-0.4.8/libssh/string.c:89: return_null: Explicitly returning NULL.
-libssh-0.4.8/libssh/auth.c:242: example_assign: Assigning: "user" = return value from "string_from_char(session->username)".
-libssh-0.4.8/libssh/auth.c:247: example_checked: "user" has its value checked in "user == NULL".
-libssh-0.4.8/libssh/auth.c:244: example_assign: Assigning: "user" = return value from "string_from_char(username)".
-libssh-0.4.8/libssh/auth.c:247: example_checked: "user" has its value checked in "user == NULL".
-libssh-0.4.8/libssh/auth.c:258: example_assign: Assigning: "method" = return value from "string_from_char("none")".
-libssh-0.4.8/libssh/auth.c:259: example_checked: "method" has its value checked in "method == NULL".
-libssh-0.4.8/libssh/auth.c:262: example_assign: Assigning: "service" = return value from "string_from_char("ssh-connection")".
-libssh-0.4.8/libssh/auth.c:263: example_checked: "service" has its value checked in "service == NULL".
-libssh-0.4.8/libssh/auth.c:348: example_assign: Assigning: "user" = return value from "string_from_char(session->username)".
-libssh-0.4.8/libssh/auth.c:353: example_checked: "user" has its value checked in "user == NULL".
-libssh-0.4.8/libssh/server.c:695: var_assigned: Assigning: "service" = null return value from "string_from_char".
-libssh-0.4.8/libssh/server.c:696: dereference: Dereferencing a pointer that might be null "service" when calling "buffer_add_ssh_string".
-libssh-0.4.8/libssh/buffer.c:171: deref_parm_in_call: Function "buffer_add_data" dereferences parameter "string".
-libssh-0.4.8/libssh/buffer.c:154: deref_parm_in_call: Function "memcpy" dereferences parameter "data". (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)
-
 Error: RESOURCE_LEAK:
 libssh-0.4.8/libssh/session.c:424: alloc_fn: Calling allocation function "buffer_get_ssh_string".
 libssh-0.4.8/libssh/buffer.c:418: alloc_fn: Storage is returned from allocation function "string_new".

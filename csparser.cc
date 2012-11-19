@@ -110,7 +110,6 @@ KeyEventDigger::KeyEventDigger() {
     hMap_["FORWARD_NULL"]           .insert("dereference");
     hMap_["FORWARD_NULL"]           .insert("var_deref_op");
     hMap_["FORWARD_NULL"]           .insert("var_deref_model");
-    hMap_["NULL_RETURNS"]           .insert("returned_null");
     hMap_["OVERRUN_STATIC"]         .insert("index_parm");
     hMap_["OVERRUN_STATIC"]         .insert("overrun-buffer-arg");
     hMap_["OVERRUN_STATIC"]         .insert("overrun-local");
