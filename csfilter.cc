@@ -126,7 +126,7 @@ std::string MsgFilter::filterMsg(
     BOOST_FOREACH(const struct MsgReplace *rpl, d->msgFilterMap[checker]) {
         filtered = regexReplaceWrap(filtered, *rpl->regex, rpl->replaceWith);
     }
-    std::cerr << filtered << std::endl;
+
     return filtered;
 }
 
