@@ -64,7 +64,7 @@ void DefLookup::hashDefect(const Defect &def) {
     const DefEvent &evt = def.events[def.keyEventIdx];
     MsgFilter *filter = MsgFilter::inst();
     TDefByMsg &col = row[filter->filterPath(evt.fileName)];
-    TDefList &cell = col[filter->filterMsg(evt.msg)];
+    TDefList &cell = col[filter->filterMsg(evt.msg, def.checker)];
 
     cell.push_back(def);
 }
@@ -87,7 +87,8 @@ bool DefLookup::lookup(const Defect &def) {
 
     // look by msg
     TDefByMsg &col = iCol->second;
-    TDefByMsg::iterator iCell = col.find(d->filt->filterMsg(evt.msg));
+    TDefByMsg::iterator iCell = col.find(
+            d->filt->filterMsg(evt.msg, def.checker));
     if (col.end() == iCell)
         return false;
 

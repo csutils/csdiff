@@ -33,7 +33,9 @@ class MsgFilter {
 
         void setIgnorePath(bool);
 
-        std::string filterMsg(const std::string &msg);
+        std::string filterMsg(
+                const std::string &msg,
+                const std::string &checker);
         std::string filterPath(const std::string &path);
 
     private:

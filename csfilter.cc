@@ -22,6 +22,7 @@
 #include <iostream>
 
 #include <boost/regex.hpp>
+#include <boost/foreach.hpp>
 
 // if 1, debug string substitutions while matching them
 #define DEBUG_SUBST 0
@@ -41,6 +42,9 @@ inline std::string regexReplaceWrap(
 
 MsgFilter* MsgFilter::self_;
 
+typedef std::vector<const boost::regex *>       TRegexList;
+typedef std::map<const std::string, TRegexList> TMsgFilterMap;
+
 struct MsgFilter::Private {
     bool ignorePath;
     const std::string strKrn;
@@ -52,6 +56,7 @@ struct MsgFilter::Private {
     const boost::regex rePath;
     const boost::regex reTmpPath;
     const boost::regex reTmpCleaner;
+    TMsgFilterMap msgFilterMap;
 
     Private():
         ignorePath(false),
@@ -65,6 +70,8 @@ struct MsgFilter::Private {
         reTmpPath("^(/var)?/tmp/(.*)$"),
         reTmpCleaner("([_A-Za-z-]+)[0-9]{3,}")
     {
+        msgFilterMap["UNUSED_VALUE"].push_back(
+                new boost::regex("\\(instance [0-9]+\\)"));
     }
 };
 
@@ -81,8 +88,16 @@ void MsgFilter::setIgnorePath(bool enable) {
     d->ignorePath = enable;
 }
 
-std::string MsgFilter::filterMsg(const std::string &msg) {
-    std::string filtered = regexReplaceWrap(msg, d->reMsgUnused, "");
+std::string MsgFilter::filterMsg(
+        const std::string &msg,
+        const std::string &checker)
+{
+    std::string filtered = msg;
+    BOOST_FOREACH(const boost::regex *re, d->msgFilterMap[checker]) {
+        filtered = regexReplaceWrap(filtered, *re, "");
+    }
+
+    filtered = regexReplaceWrap(filtered, d->reMsgUnused, "");
     filtered = regexReplaceWrap(filtered, d->reMsgConstExprRes, "union __ANON");
     return regexReplaceWrap(filtered, d->reMsgStrOflow, "Overrun on X. byte");
 }
