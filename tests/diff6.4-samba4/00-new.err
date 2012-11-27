@@ -1,0 +1,206 @@
+Error: BUFFER_SIZE_WARNING (CWE-170):
+samba-4.0.0rc4/source3/lib/conn_tdb.c:59: buffer_size_warning: Calling strncpy with a maximum size argument of 256 bytes on destination array "sess.addr" of size 256 bytes might leave the destination string unterminated.
+samba-4.0.0rc4/source3/lib/conn_tdb.c:65: cond_true: Condition "!!(status.v == 0)", taking true branch
+samba-4.0.0rc4/source3/lib/conn_tdb.c:65: cond_false: Condition "!!!(status.v == 0)", taking false branch
+samba-4.0.0rc4/source3/lib/conn_tdb.c:67: if_end: End of if statement
+
+Error: BUFFER_SIZE_WARNING (CWE-170):
+samba-4.0.0rc4/source3/lib/conn_tdb.c:58: buffer_size_warning: Calling strncpy with a maximum size argument of 256 bytes on destination array "sess.machine" of size 256 bytes might leave the destination string unterminated.
+samba-4.0.0rc4/source3/lib/conn_tdb.c:65: cond_true: Condition "!!(status.v == 0)", taking true branch
+samba-4.0.0rc4/source3/lib/conn_tdb.c:65: cond_false: Condition "!!!(status.v == 0)", taking false branch
+samba-4.0.0rc4/source3/lib/conn_tdb.c:67: if_end: End of if statement
+
+Error: BUFFER_SIZE_WARNING (CWE-170):
+samba-4.0.0rc4/source3/lib/conn_tdb.c:92: cond_true: Condition "!!(status.v == 0)", taking true branch
+samba-4.0.0rc4/source3/lib/conn_tdb.c:92: cond_true: Condition "!!(status.v == 0)", taking true branch
+samba-4.0.0rc4/source3/lib/conn_tdb.c:105: buffer_size_warning: Calling strncpy with a maximum size argument of 256 bytes on destination array "data.addr" of size 256 bytes might leave the destination string unterminated.
+
+Error: BUFFER_SIZE_WARNING (CWE-170):
+samba-4.0.0rc4/source3/lib/conn_tdb.c:92: cond_true: Condition "!!(status.v == 0)", taking true branch
+samba-4.0.0rc4/source3/lib/conn_tdb.c:92: cond_true: Condition "!!(status.v == 0)", taking true branch
+samba-4.0.0rc4/source3/lib/conn_tdb.c:106: buffer_size_warning: Calling strncpy with a maximum size argument of 256 bytes on destination array "data.machine" of size 256 bytes might leave the destination string unterminated.
+
+Error: BUFFER_SIZE_WARNING (CWE-170):
+samba-4.0.0rc4/source3/lib/conn_tdb.c:92: cond_true: Condition "!!(status.v == 0)", taking true branch
+samba-4.0.0rc4/source3/lib/conn_tdb.c:92: cond_true: Condition "!!(status.v == 0)", taking true branch
+samba-4.0.0rc4/source3/lib/conn_tdb.c:102: buffer_size_warning: Calling strncpy with a maximum size argument of 256 bytes on destination array "data.servicename" of size 256 bytes might leave the destination string unterminated.
+
+Error: BUFFER_SIZE_WARNING (CWE-170):
+samba-4.0.0rc4/source3/lib/conn_tdb.c:92: cond_true: Condition "!!(status.v == 0)", taking true branch
+samba-4.0.0rc4/source3/lib/conn_tdb.c:92: cond_true: Condition "!!(status.v == 0)", taking true branch
+samba-4.0.0rc4/source3/lib/conn_tdb.c:101: buffer_size_warning: Calling strncpy with a maximum size argument of 256 bytes on destination array "key.name" of size 256 bytes might leave the destination string unterminated.
+
+Error: NEGATIVE_RETURNS (CWE-394):
+samba-4.0.0rc4/source4/auth/gensec/socket.c:393: negative_return_fn: Function "socket_get_fd(sock)" returns a negative number.
+samba-4.0.0rc4/source4/lib/socket/socket.c:436:2: cond_true: Condition "!sock->ops->fn_get_fd", taking true branch
+samba-4.0.0rc4/source4/lib/socket/socket.c:437:3: return_negative_constant: Explicitly returning negative value "-1".
+samba-4.0.0rc4/source4/auth/gensec/socket.c:393: negative_returns: "socket_get_fd(sock)" is passed to a parameter that cannot be negative.
+samba-4.0.0rc4/lib/util/util_net.c:871:2: cond_false: Condition "next_token_talloc(ctx, &options, &tok, " \t,")", taking false branch
+samba-4.0.0rc4/lib/util/util_net.c:924:2: neg_sink_parm_call: Passing "fd" to "print_socket_options(int)", which cannot accept a negative number.
+samba-4.0.0rc4/lib/util/util_net.c:847:2: cond_true: Condition "DEBUGLEVEL_CLASS[0] >= 5", taking true branch
+samba-4.0.0rc4/lib/util/util_net.c:848:3: cond_true: Condition "1 /* 5 <= 1000 */", taking true branch
+samba-4.0.0rc4/lib/util/util_net.c:848:3: cond_true: Condition "!!(DEBUGLEVEL_CLASS[0] >= 5)", taking true branch
+samba-4.0.0rc4/lib/util/util_net.c:848:3: cond_true: Condition "!!(DEBUGLEVEL_CLASS[0] >= 5)", taking true branch
+samba-4.0.0rc4/lib/util/util_net.c:848:3: cond_true: Condition "dbghdrclass(5, 0, "../lib/util/util_net.c:848", <anonymous>)", taking true branch
+samba-4.0.0rc4/lib/util/util_net.c:848:3: cond_true: Condition "dbgtext("Socket options:\n")", taking true branch
+samba-4.0.0rc4/lib/util/util_net.c:849:3: cond_true: Condition "p->name != NULL", taking true branch
+samba-4.0.0rc4/lib/util/util_net.c:850:4: neg_sink_parm_call: Passing "s" to "getsockopt(int, int, int, void * restrict, socklen_t * restrict)", which cannot accept a negative number.
+
+Error: RESOURCE_LEAK (CWE-404):
+samba-4.0.0rc4/source3/utils/net_ads.c:1254: cond_true: Condition "hostname", taking true branch
+samba-4.0.0rc4/source3/utils/net_ads.c:1255: cond_true: Condition "_fstrcpy_src", taking true branch
+samba-4.0.0rc4/source3/utils/net_ads.c:1256: if_fallthrough: Falling through to end of if statement
+samba-4.0.0rc4/source3/utils/net_ads.c:1258: if_end: End of if statement
+samba-4.0.0rc4/source3/utils/net_ads.c:1259: cond_false: Condition "!strlower_m(machine_name)", taking false branch
+samba-4.0.0rc4/source3/utils/net_ads.c:1261: if_end: End of if statement
+samba-4.0.0rc4/source3/utils/net_ads.c:1263: cond_true: Condition "num_addrs == 0", taking true branch
+samba-4.0.0rc4/source3/utils/net_ads.c:1268: alloc_arg: "get_my_ip_address(struct sockaddr_storage **)" allocates memory that is stored into "iplist_alloc".
+samba-4.0.0rc4/source3/utils/net_dns.c:154:2: cond_false: Condition "n <= 0", taking false branch
+samba-4.0.0rc4/source3/utils/net_dns.c:156:2: if_end: End of if statement
+samba-4.0.0rc4/source3/utils/net_dns.c:158:2: alloc_fn: Storage is returned from allocation function "malloc_array(size_t, unsigned int)".
+samba-4.0.0rc4/lib/util/util.c:649:2: alloc_fn: Storage is returned from allocation function "realloc_array(void *, size_t, unsigned int, bool)".
+samba-4.0.0rc4/lib/util/util.c:631:2: cond_false: Condition "count == 0", taking false branch
+samba-4.0.0rc4/lib/util/util.c:631:2: cond_false: Condition "count >= 2147483647 / el_size", taking false branch
+samba-4.0.0rc4/lib/util/util.c:636:2: if_end: End of if statement
+samba-4.0.0rc4/lib/util/util.c:637:2: cond_true: Condition "!ptr", taking true branch
+samba-4.0.0rc4/lib/util/util.c:638:3: alloc_fn: Storage is returned from allocation function "malloc(size_t)".
+samba-4.0.0rc4/lib/util/util.c:638:3: return_alloc_fn: Directly returning storage allocated by "malloc(size_t)".
+samba-4.0.0rc4/lib/util/util.c:649:2: return_alloc_fn: Directly returning storage allocated by "realloc_array(void *, size_t, unsigned int, bool)".
+samba-4.0.0rc4/source3/utils/net_dns.c:158:2: var_assign: Assigning: "list" = "malloc_array(128UL, n)".
+samba-4.0.0rc4/source3/utils/net_dns.c:158:2: cond_false: Condition "(list = (struct sockaddr_storage *)malloc_array(128UL /* sizeof (struct sockaddr_storage) */, n)) == NULL", taking false branch
+samba-4.0.0rc4/source3/utils/net_dns.c:160:2: if_end: End of if statement
+samba-4.0.0rc4/source3/utils/net_dns.c:162:2: cond_true: Condition "i < n", taking true branch
+samba-4.0.0rc4/source3/utils/net_dns.c:165:3: cond_false: Condition "(nic_sa_storage = iface_n_sockaddr_storage(i)) == NULL", taking false branch
+samba-4.0.0rc4/source3/utils/net_dns.c:166:4: if_end: End of if statement
+samba-4.0.0rc4/source3/utils/net_dns.c:169:3: cond_true: Condition "is_loopback_addr((struct sockaddr const *)nic_sa_storage)", taking true branch
+samba-4.0.0rc4/source3/utils/net_dns.c:170:4: continue: Continuing loop
+samba-4.0.0rc4/source3/utils/net_dns.c:162:2: cond_true: Condition "i < n", taking true branch
+samba-4.0.0rc4/source3/utils/net_dns.c:165:3: cond_false: Condition "(nic_sa_storage = iface_n_sockaddr_storage(i)) == NULL", taking false branch
+samba-4.0.0rc4/source3/utils/net_dns.c:166:4: if_end: End of if statement
+samba-4.0.0rc4/source3/utils/net_dns.c:169:3: cond_true: Condition "is_loopback_addr((struct sockaddr const *)nic_sa_storage)", taking true branch
+samba-4.0.0rc4/source3/utils/net_dns.c:170:4: continue: Continuing loop
+samba-4.0.0rc4/source3/utils/net_dns.c:162:2: cond_true: Condition "i < n", taking true branch
+samba-4.0.0rc4/source3/utils/net_dns.c:165:3: cond_false: Condition "(nic_sa_storage = iface_n_sockaddr_storage(i)) == NULL", taking false branch
+samba-4.0.0rc4/source3/utils/net_dns.c:166:4: if_end: End of if statement
+samba-4.0.0rc4/source3/utils/net_dns.c:169:3: cond_false: Condition "is_loopback_addr((struct sockaddr const *)nic_sa_storage)", taking false branch
+samba-4.0.0rc4/source3/utils/net_dns.c:171:3: if_end: End of if statement
+samba-4.0.0rc4/source3/utils/net_dns.c:174:3: cond_false: Condition "is_linklocal_addr(nic_sa_storage)", taking false branch
+samba-4.0.0rc4/source3/utils/net_dns.c:176:3: if_end: End of if statement
+samba-4.0.0rc4/source3/utils/net_dns.c:162:2: loop_begin: Jumped back to beginning of loop
+samba-4.0.0rc4/source3/utils/net_dns.c:162:2: cond_true: Condition "i < n", taking true branch
+samba-4.0.0rc4/source3/utils/net_dns.c:165:3: cond_false: Condition "(nic_sa_storage = iface_n_sockaddr_storage(i)) == NULL", taking false branch
+samba-4.0.0rc4/source3/utils/net_dns.c:166:4: if_end: End of if statement
+samba-4.0.0rc4/source3/utils/net_dns.c:169:3: cond_false: Condition "is_loopback_addr((struct sockaddr const *)nic_sa_storage)", taking false branch
+samba-4.0.0rc4/source3/utils/net_dns.c:171:3: if_end: End of if statement
+samba-4.0.0rc4/source3/utils/net_dns.c:174:3: cond_false: Condition "is_linklocal_addr(nic_sa_storage)", taking false branch
+samba-4.0.0rc4/source3/utils/net_dns.c:176:3: if_end: End of if statement
+samba-4.0.0rc4/source3/utils/net_dns.c:162:2: loop_begin: Jumped back to beginning of loop
+samba-4.0.0rc4/source3/utils/net_dns.c:162:2: cond_true: Condition "i < n", taking true branch
+samba-4.0.0rc4/source3/utils/net_dns.c:165:3: cond_false: Condition "(nic_sa_storage = iface_n_sockaddr_storage(i)) == NULL", taking false branch
+samba-4.0.0rc4/source3/utils/net_dns.c:166:4: if_end: End of if statement
+samba-4.0.0rc4/source3/utils/net_dns.c:169:3: cond_false: Condition "is_loopback_addr((struct sockaddr const *)nic_sa_storage)", taking false branch
+samba-4.0.0rc4/source3/utils/net_dns.c:171:3: if_end: End of if statement
+samba-4.0.0rc4/source3/utils/net_dns.c:174:3: cond_false: Condition "is_linklocal_addr(nic_sa_storage)", taking false branch
+samba-4.0.0rc4/source3/utils/net_dns.c:176:3: if_end: End of if statement
+samba-4.0.0rc4/source3/utils/net_dns.c:162:2: loop_begin: Jumped back to beginning of loop
+samba-4.0.0rc4/source3/utils/net_dns.c:162:2: cond_true: Condition "i < n", taking true branch
+samba-4.0.0rc4/source3/utils/net_dns.c:165:3: cond_true: Condition "(nic_sa_storage = iface_n_sockaddr_storage(i)) == NULL", taking true branch
+samba-4.0.0rc4/source3/utils/net_dns.c:166:4: continue: Continuing loop
+samba-4.0.0rc4/source3/utils/net_dns.c:162:2: cond_false: Condition "i < n", taking false branch
+samba-4.0.0rc4/source3/utils/net_dns.c:180:2: var_assign: Assigning: "*pp_ss" = "list".
+samba-4.0.0rc4/source3/utils/net_ads.c:1269: cond_true: Condition "num_addrs <= 0", taking true branch
+samba-4.0.0rc4/source3/utils/net_ads.c:1270: cond_true: Condition "1 /* 4 <= 1000 */", taking true branch
+samba-4.0.0rc4/source3/utils/net_ads.c:1270: cond_true: Condition "!!(DEBUGLEVEL_CLASS[0] >= 4)", taking true branch
+samba-4.0.0rc4/source3/utils/net_ads.c:1270: cond_true: Condition "!!(DEBUGLEVEL_CLASS[0] >= 4)", taking true branch
+samba-4.0.0rc4/source3/utils/net_ads.c:1270: cond_true: Condition "dbghdrclass(4, 0, "../source3/utils/net_ads.c:1271", <anonymous>)", taking true branch
+samba-4.0.0rc4/source3/utils/net_ads.c:1270: cond_true: Condition "dbgtext("net_update_dns_ext: Failed to find my non-loopback IP addresses!\n")", taking true branch
+samba-4.0.0rc4/source3/utils/net_ads.c:1272: leaked_storage: Variable "iplist_alloc" going out of scope leaks the storage it points to.
+
+Error: UNINIT (CWE-457):
+samba-4.0.0rc4/source3/torture/pdbtest.c:269: var_decl: Declaring variable "server_info" without initializer.
+samba-4.0.0rc4/source3/torture/pdbtest.c:276: cond_false: Condition "_tsocket_address_inet_from_strings(NULL, "ip", NULL, 0, &tsocket_address, "../source3/torture/pdbtest.c:276") != 0", taking false branch
+samba-4.0.0rc4/source3/torture/pdbtest.c:278: if_end: End of if statement
+samba-4.0.0rc4/source3/torture/pdbtest.c:284: cond_true: Condition "!!(status.v == 0)", taking true branch
+samba-4.0.0rc4/source3/torture/pdbtest.c:284: cond_false: Condition "!!!(status.v == 0)", taking false branch
+samba-4.0.0rc4/source3/torture/pdbtest.c:287: if_end: End of if statement
+samba-4.0.0rc4/source3/torture/pdbtest.c:290: cond_true: Condition "!!(status.v == 0)", taking true branch
+samba-4.0.0rc4/source3/torture/pdbtest.c:290: cond_false: Condition "!!!(status.v == 0)", taking false branch
+samba-4.0.0rc4/source3/torture/pdbtest.c:293: if_end: End of if statement
+samba-4.0.0rc4/source3/torture/pdbtest.c:295: cond_false: Condition "memcmp(info3_sam->base.key.key, local_nt_session_key, 16) != 0", taking false branch
+samba-4.0.0rc4/source3/torture/pdbtest.c:298: if_end: End of if statement
+samba-4.0.0rc4/source3/torture/pdbtest.c:302: cond_true: Condition "!!(status.v == 0)", taking true branch
+samba-4.0.0rc4/source3/torture/pdbtest.c:302: cond_false: Condition "!!!(status.v == 0)", taking false branch
+samba-4.0.0rc4/source3/torture/pdbtest.c:305: if_end: End of if statement
+samba-4.0.0rc4/source3/torture/pdbtest.c:307: uninit_use_in_call: Using uninitialized value "server_info" when calling "auth_check_ntlm_password(struct auth_context const *, struct auth_usersupplied_info const *, struct auth_serversupplied_info **)".
+samba-4.0.0rc4/source3/auth/auth.c:173:2: cond_false: Condition "!user_info", taking false branch
+samba-4.0.0rc4/source3/auth/auth.c:173:2: cond_false: Condition "!auth_context", taking false branch
+samba-4.0.0rc4/source3/auth/auth.c:173:2: cond_false: Condition "!server_info", taking false branch
+samba-4.0.0rc4/source3/auth/auth.c:174:3: if_end: End of if statement
+samba-4.0.0rc4/source3/auth/auth.c:176:2: cond_true: Condition "1 /* 3 <= 1000 */", taking true branch
+samba-4.0.0rc4/source3/auth/auth.c:176:2: cond_true: Condition "!!(DEBUGLEVEL_CLASS[10] >= 3)", taking true branch
+samba-4.0.0rc4/source3/auth/auth.c:176:2: cond_true: Condition "!!(DEBUGLEVEL_CLASS[10] >= 3)", taking true branch
+samba-4.0.0rc4/source3/auth/auth.c:176:2: cond_true: Condition "dbghdrclass(3, 10, "../source3/auth/auth.c:177", <anonymous>)", taking true branch
+samba-4.0.0rc4/source3/auth/auth.c:176:2: cond_true: Condition "dbgtext("check_ntlm_password:  Checking password for unmapped user [%s]\\[%s]@[%s] with the new password interface\n", user_info->client.domain_name, user_info->client.account_name, user_info->workstation_name)", taking true branch
+samba-4.0.0rc4/source3/auth/auth.c:179:2: cond_true: Condition "1 /* 3 <= 1000 */", taking true branch
+samba-4.0.0rc4/source3/auth/auth.c:179:2: cond_true: Condition "!!(DEBUGLEVEL_CLASS[10] >= 3)", taking true branch
+samba-4.0.0rc4/source3/auth/auth.c:179:2: cond_true: Condition "!!(DEBUGLEVEL_CLASS[10] >= 3)", taking true branch
+samba-4.0.0rc4/source3/auth/auth.c:179:2: cond_true: Condition "dbghdrclass(3, 10, "../source3/auth/auth.c:180", <anonymous>)", taking true branch
+samba-4.0.0rc4/source3/auth/auth.c:179:2: cond_true: Condition "dbgtext("check_ntlm_password:  mapped user is: [%s]\\[%s]@[%s]\n", user_info->mapped.domain_name, user_info->mapped.account_name, user_info->workstation_name)", taking true branch
+samba-4.0.0rc4/source3/auth/auth.c:182:2: cond_false: Condition "auth_context->challenge.length != 8", taking false branch
+samba-4.0.0rc4/source3/auth/auth.c:185:2: if_end: End of if statement
+samba-4.0.0rc4/source3/auth/auth.c:187:2: cond_true: Condition "auth_context->challenge_set_by", taking true branch
+samba-4.0.0rc4/source3/auth/auth.c:188:3: cond_true: Condition "1 /* 10 <= 1000 */", taking true branch
+samba-4.0.0rc4/source3/auth/auth.c:188:3: cond_true: Condition "!!(DEBUGLEVEL_CLASS[10] >= 10)", taking true branch
+samba-4.0.0rc4/source3/auth/auth.c:188:3: cond_true: Condition "!!(DEBUGLEVEL_CLASS[10] >= 10)", taking true branch
+samba-4.0.0rc4/source3/auth/auth.c:188:3: cond_true: Condition "dbghdrclass(10, 10, "../source3/auth/auth.c:189", <anonymous>)", taking true branch
+samba-4.0.0rc4/source3/auth/auth.c:188:3: cond_true: Condition "dbgtext("check_ntlm_password: auth_context challenge created by %s\n", auth_context->challenge_set_by)", taking true branch
+samba-4.0.0rc4/source3/auth/auth.c:191:2: cond_true: Condition "1 /* 10 <= 1000 */", taking true branch
+samba-4.0.0rc4/source3/auth/auth.c:191:2: cond_true: Condition "!!(DEBUGLEVEL_CLASS[10] >= 10)", taking true branch
+samba-4.0.0rc4/source3/auth/auth.c:191:2: cond_true: Condition "!!(DEBUGLEVEL_CLASS[10] >= 10)", taking true branch
+samba-4.0.0rc4/source3/auth/auth.c:191:2: cond_true: Condition "dbghdrclass(10, 10, "../source3/auth/auth.c:191", <anonymous>)", taking true branch
+samba-4.0.0rc4/source3/auth/auth.c:191:2: cond_true: Condition "dbgtext("challenge is: \n")", taking true branch
+samba-4.0.0rc4/source3/auth/auth.c:204:2: cond_false: Condition "!check_domain_match(user_info->client.account_name, user_info->mapped.domain_name)", taking false branch
+samba-4.0.0rc4/source3/auth/auth.c:205:3: if_end: End of if statement
+samba-4.0.0rc4/source3/auth/auth.c:207:2: cond_false: Condition "auth_method", taking false branch
+samba-4.0.0rc4/source3/auth/auth.c:242:2: cond_true: Condition "!!(nt_status.v == 0)", taking true branch
+samba-4.0.0rc4/source3/auth/auth.c:242:2: cond_true: Condition "!!(nt_status.v == 0)", taking true branch
+samba-4.0.0rc4/source3/auth/auth.c:243:3: read_parm: Reading a parameter value.
+
+Error: UNUSED_VALUE (CWE-563):
+samba-4.0.0rc4/source4/torture/rpc/drsuapi.c:863: returned_pointer: Pointer "test" returned by "torture_tcase_add_simple_test(tcase, "DsCrackNames", (torture_rpc_drsuapi_tcase::run_func (instance 5893))test_DsCrackNames(struct torture_context *, struct DsPrivate *))" is never used.
+
+Error: UNUSED_VALUE (CWE-563):
+samba-4.0.0rc4/source4/torture/rpc/drsuapi.c:861: returned_pointer: Pointer "test" returned by "torture_tcase_add_simple_test(tcase, "DsGetDomainControllerInfo", (torture_rpc_drsuapi_tcase::run_func (instance 5893))test_DsGetDomainControllerInfo(struct torture_context *, struct DsPrivate *))" is never used.
+
+Error: UNUSED_VALUE (CWE-563):
+samba-4.0.0rc4/source4/torture/rpc/drsuapi.c:873: returned_pointer: Pointer "test" returned by "torture_tcase_add_simple_test(tcase, "DsGetNCChanges", (torture_rpc_drsuapi_tcase::run_func (instance 5893))test_DsGetNCChanges(struct torture_context *, struct DsPrivate *))" is never used.
+
+Error: UNUSED_VALUE (CWE-563):
+samba-4.0.0rc4/source4/torture/rpc/drsuapi.c:867: returned_pointer: Pointer "test" returned by "torture_tcase_add_simple_test(tcase, "DsReplicaGetInfo", (torture_rpc_drsuapi_tcase::run_func (instance 5893))test_DsReplicaGetInfo(struct torture_context *, struct DsPrivate *))" is never used.
+
+Error: UNUSED_VALUE (CWE-563):
+samba-4.0.0rc4/source4/torture/rpc/drsuapi.c:869: returned_pointer: Pointer "test" returned by "torture_tcase_add_simple_test(tcase, "DsReplicaSync", (torture_rpc_drsuapi_tcase::run_func (instance 5893))test_DsReplicaSync(struct torture_context *, struct DsPrivate *))" is never used.
+
+Error: UNUSED_VALUE (CWE-563):
+samba-4.0.0rc4/source4/torture/rpc/drsuapi.c:871: returned_pointer: Pointer "test" returned by "torture_tcase_add_simple_test(tcase, "DsReplicaUpdateRefs", (torture_rpc_drsuapi_tcase::run_func (instance 5893))test_DsReplicaUpdateRefs(struct torture_context *, struct DsPrivate *))" is never used.
+
+Error: UNUSED_VALUE (CWE-563):
+samba-4.0.0rc4/source4/torture/rpc/drsuapi.c:865: returned_pointer: Pointer "test" returned by "torture_tcase_add_simple_test(tcase, "DsWriteAccountSpn", (torture_rpc_drsuapi_tcase::run_func (instance 5893))test_DsWriteAccountSpn(struct torture_context *, struct DsPrivate *))" is never used.
+
+Error: UNUSED_VALUE (CWE-563):
+samba-4.0.0rc4/source4/torture/drs/rpc/msds_intid.c:732: returned_pointer: Pointer "test" returned by "torture_tcase_add_simple_test(tcase, "Configuration", (torture_drs_rpc_dsintid_tcase::run_func (instance 7201))test_dsintid_configuration(struct torture_context *, struct DsIntIdTestCtx *))" is never used.
+
+Error: UNUSED_VALUE (CWE-563):
+samba-4.0.0rc4/source4/torture/drs/rpc/msds_intid.c:733: returned_pointer: Pointer "test" returned by "torture_tcase_add_simple_test(tcase, "Domain", (torture_drs_rpc_dsintid_tcase::run_func (instance 7201))test_dsintid_domain(struct torture_context *, struct DsIntIdTestCtx *))" is never used.
+
+Error: UNUSED_VALUE (CWE-563):
+samba-4.0.0rc4/source4/torture/drs/rpc/msds_intid.c:731: returned_pointer: Pointer "test" returned by "torture_tcase_add_simple_test(tcase, "Schema", (torture_drs_rpc_dsintid_tcase::run_func (instance 7201))test_dsintid_schema(struct torture_context *, struct DsIntIdTestCtx *))" is never used.
+
+Error: UNUSED_VALUE (CWE-563):
+samba-4.0.0rc4/source4/torture/drs/rpc/dssync.c:1046: returned_pointer: Pointer "test" returned by "torture_tcase_add_simple_test(tcase, "DC_FetchData", (torture_drs_rpc_dssync_tcase::run_func (instance 7247))test_FetchData(struct torture_context *, struct DsSyncTest *))" is never used.
+
+Error: UNUSED_VALUE (CWE-563):
+samba-4.0.0rc4/source4/torture/drs/rpc/dssync.c:1047: returned_pointer: Pointer "test" returned by "torture_tcase_add_simple_test(tcase, "FetchNT4Data", (torture_drs_rpc_dssync_tcase::run_func (instance 7247))test_FetchNT4Data(struct torture_context *, struct DsSyncTest *))" is never used.
+
+Error: UNUSED_VALUE (CWE-563):
+samba-4.0.0rc4/source4/torture/rpc/dsgetinfo.c:429: returned_pointer: Pointer "test" returned by "torture_tcase_add_simple_test(tcase, "DsGetReplicaInfo", (torture_drs_rpc_dsgetinfo_tcase::run_func (instance 6998))test_getinfo(struct torture_context *, struct DsGetinfoTest *))" is never used.

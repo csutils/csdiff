@@ -1,0 +1,9 @@
+Error: CONSTANT_EXPRESSION_RESULT:
+/builddir/build/BUILD/samba-4.0.0rc3/source3/smbd/connection.c:48: result_independent_of_operands: ((status.v == NTSTATUS({3221226021U /* 0xc0000000U | 549 */}).v) ? 3 : 0) <= 1000 is always true regardless of the values of its operands. This occurs as the logical first operand of '&&'.
+
+Error: UNINIT:
+/builddir/build/BUILD/samba-4.0.0rc3/source3/utils/net_connections.c:197: var_decl: Declaring variable "ret" without initializer.
+/builddir/build/BUILD/samba-4.0.0rc3/source3/utils/net_connections.c:199: cond_true: Condition "ctx == NULL", taking true branch
+/builddir/build/BUILD/samba-4.0.0rc3/source3/utils/net_connections.c:201: goto: Jumping to label "done"
+/builddir/build/BUILD/samba-4.0.0rc3/source3/utils/net_connections.c:236: label: Reached label "done"
+/builddir/build/BUILD/samba-4.0.0rc3/source3/utils/net_connections.c:238: uninit_use: Using uninitialized value "ret".

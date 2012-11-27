@@ -1,0 +1,48 @@
+Error: CONSTANT_EXPRESSION_RESULT:
+/builddir/build/BUILD/samba-4.0.0rc3/source3/smbd/connection.c:48: result_independent_of_operands: ((status.v == NTSTATUS({3221226021U /* 0xc0000000U | 549 */}).v) ? 3 : 0) <= 1000 is always true regardless of the values of its operands. This occurs as the logical first operand of '&&'.
+
+Error: UNINIT:
+/builddir/build/BUILD/samba-4.0.0rc3/source3/utils/net_connections.c:197: var_decl: Declaring variable "ret" without initializer.
+/builddir/build/BUILD/samba-4.0.0rc3/source3/utils/net_connections.c:199: cond_true: Condition "ctx == NULL", taking true branch
+/builddir/build/BUILD/samba-4.0.0rc3/source3/utils/net_connections.c:201: goto: Jumping to label "done"
+/builddir/build/BUILD/samba-4.0.0rc3/source3/utils/net_connections.c:236: label: Reached label "done"
+/builddir/build/BUILD/samba-4.0.0rc3/source3/utils/net_connections.c:238: uninit_use: Using uninitialized value "ret".
+
+Error: UNUSED_VALUE:
+/builddir/build/BUILD/samba-4.0.0rc3/source4/torture/rpc/drsuapi.c:863: returned_pointer: Pointer "test" returned by "torture_tcase_add_simple_test(tcase, "DsCrackNames", (torture_rpc_drsuapi_tcase::run_func (instance 5897))test_DsCrackNames(struct torture_context *, struct DsPrivate *))" is never used.
+
+Error: UNUSED_VALUE:
+/builddir/build/BUILD/samba-4.0.0rc3/source4/torture/rpc/drsuapi.c:861: returned_pointer: Pointer "test" returned by "torture_tcase_add_simple_test(tcase, "DsGetDomainControllerInfo", (torture_rpc_drsuapi_tcase::run_func (instance 5897))test_DsGetDomainControllerInfo(struct torture_context *, struct DsPrivate *))" is never used.
+
+Error: UNUSED_VALUE:
+/builddir/build/BUILD/samba-4.0.0rc3/source4/torture/rpc/drsuapi.c:873: returned_pointer: Pointer "test" returned by "torture_tcase_add_simple_test(tcase, "DsGetNCChanges", (torture_rpc_drsuapi_tcase::run_func (instance 5897))test_DsGetNCChanges(struct torture_context *, struct DsPrivate *))" is never used.
+
+Error: UNUSED_VALUE:
+/builddir/build/BUILD/samba-4.0.0rc3/source4/torture/rpc/drsuapi.c:867: returned_pointer: Pointer "test" returned by "torture_tcase_add_simple_test(tcase, "DsReplicaGetInfo", (torture_rpc_drsuapi_tcase::run_func (instance 5897))test_DsReplicaGetInfo(struct torture_context *, struct DsPrivate *))" is never used.
+
+Error: UNUSED_VALUE:
+/builddir/build/BUILD/samba-4.0.0rc3/source4/torture/rpc/drsuapi.c:869: returned_pointer: Pointer "test" returned by "torture_tcase_add_simple_test(tcase, "DsReplicaSync", (torture_rpc_drsuapi_tcase::run_func (instance 5897))test_DsReplicaSync(struct torture_context *, struct DsPrivate *))" is never used.
+
+Error: UNUSED_VALUE:
+/builddir/build/BUILD/samba-4.0.0rc3/source4/torture/rpc/drsuapi.c:871: returned_pointer: Pointer "test" returned by "torture_tcase_add_simple_test(tcase, "DsReplicaUpdateRefs", (torture_rpc_drsuapi_tcase::run_func (instance 5897))test_DsReplicaUpdateRefs(struct torture_context *, struct DsPrivate *))" is never used.
+
+Error: UNUSED_VALUE:
+/builddir/build/BUILD/samba-4.0.0rc3/source4/torture/rpc/drsuapi.c:865: returned_pointer: Pointer "test" returned by "torture_tcase_add_simple_test(tcase, "DsWriteAccountSpn", (torture_rpc_drsuapi_tcase::run_func (instance 5897))test_DsWriteAccountSpn(struct torture_context *, struct DsPrivate *))" is never used.
+
+Error: UNUSED_VALUE:
+/builddir/build/BUILD/samba-4.0.0rc3/source4/torture/drs/rpc/msds_intid.c:732: returned_pointer: Pointer "test" returned by "torture_tcase_add_simple_test(tcase, "Configuration", (torture_drs_rpc_dsintid_tcase::run_func (instance 7205))test_dsintid_configuration(struct torture_context *, struct DsIntIdTestCtx *))" is never used.
+
+Error: UNUSED_VALUE:
+/builddir/build/BUILD/samba-4.0.0rc3/source4/torture/drs/rpc/msds_intid.c:733: returned_pointer: Pointer "test" returned by "torture_tcase_add_simple_test(tcase, "Domain", (torture_drs_rpc_dsintid_tcase::run_func (instance 7205))test_dsintid_domain(struct torture_context *, struct DsIntIdTestCtx *))" is never used.
+
+Error: UNUSED_VALUE:
+/builddir/build/BUILD/samba-4.0.0rc3/source4/torture/drs/rpc/msds_intid.c:731: returned_pointer: Pointer "test" returned by "torture_tcase_add_simple_test(tcase, "Schema", (torture_drs_rpc_dsintid_tcase::run_func (instance 7205))test_dsintid_schema(struct torture_context *, struct DsIntIdTestCtx *))" is never used.
+
+Error: UNUSED_VALUE:
+/builddir/build/BUILD/samba-4.0.0rc3/source4/torture/drs/rpc/dssync.c:1046: returned_pointer: Pointer "test" returned by "torture_tcase_add_simple_test(tcase, "DC_FetchData", (torture_drs_rpc_dssync_tcase::run_func (instance 7251))test_FetchData(struct torture_context *, struct DsSyncTest *))" is never used.
+
+Error: UNUSED_VALUE:
+/builddir/build/BUILD/samba-4.0.0rc3/source4/torture/drs/rpc/dssync.c:1047: returned_pointer: Pointer "test" returned by "torture_tcase_add_simple_test(tcase, "FetchNT4Data", (torture_drs_rpc_dssync_tcase::run_func (instance 7251))test_FetchNT4Data(struct torture_context *, struct DsSyncTest *))" is never used.
+
+Error: UNUSED_VALUE:
+/builddir/build/BUILD/samba-4.0.0rc3/source4/torture/rpc/dsgetinfo.c:429: returned_pointer: Pointer "test" returned by "torture_tcase_add_simple_test(tcase, "DsGetReplicaInfo", (torture_drs_rpc_dsgetinfo_tcase::run_func (instance 7002))test_getinfo(struct torture_context *, struct DsGetinfoTest *))" is never used.
