@@ -49,8 +49,6 @@ struct MsgFilter::Private {
     bool ignorePath;
     const std::string strKrn;
     const boost::regex reKrn;
-    const boost::regex reMsgUnused;
-    const boost::regex reMsgStrOflow;
     const boost::regex reMsgConstExprRes;
     const boost::regex reDir;
     const boost::regex rePath;
@@ -62,16 +60,19 @@ struct MsgFilter::Private {
         ignorePath(false),
         strKrn("[a-zA-Z]"),
         reKrn(strKrn),
-        reMsgUnused("[0-9][0-9]* out of [0-9][0-9]* times"),
-        reMsgStrOflow("You might overrun the [0-9][0-9]* byte"),
-        reMsgConstExprRes("union __*C[0-9][0-9]*"),
         reDir("^[^:]*/"),
         rePath("^(?:/builddir/build/BUILD/)?([^/]+/)(.*)(\\.[ly])?$"),
         reTmpPath("^(/var)?/tmp/(.*)$"),
         reTmpCleaner("([_A-Za-z-]+)[0-9]{3,}")
     {
         msgFilterMap["UNUSED_VALUE"].push_back(
+                new boost::regex("[0-9][0-9]* out of [0-9][0-9]* times"));
+        msgFilterMap["UNUSED_VALUE"].push_back(
                 new boost::regex("\\(instance [0-9]+\\)"));
+        msgFilterMap["STRING_OVERFLOW"].push_back(
+                new boost::regex("You might overrun the [0-9][0-9]* byte"));
+        msgFilterMap["CONSTANT_EXPRESSION_RESULT"].push_back(
+                new boost::regex("union __*C[0-9][0-9]*"));
     }
 };
 
@@ -96,10 +97,7 @@ std::string MsgFilter::filterMsg(
     BOOST_FOREACH(const boost::regex *re, d->msgFilterMap[checker]) {
         filtered = regexReplaceWrap(filtered, *re, "");
     }
-
-    filtered = regexReplaceWrap(filtered, d->reMsgUnused, "");
-    filtered = regexReplaceWrap(filtered, d->reMsgConstExprRes, "union __ANON");
-    return regexReplaceWrap(filtered, d->reMsgStrOflow, "Overrun on X. byte");
+    return filtered;
 }
 
 std::string MsgFilter::filterPath(const std::string &path) {
