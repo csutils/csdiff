@@ -123,6 +123,7 @@ KeyEventDigger::KeyEventDigger() {
     hMap_["USE_AFTER_FREE"]         .insert("use_after_free");
     hMap_["TAINTED_STRING"]         .insert("tainted_string");
     hMap_["TOCTOU"]                 .insert("toctou");
+    hMap_["BUFFER_SIZE_WARNING"]    .insert("buffer_size_warning");
 }
 
 bool KeyEventDigger::guessKeyEvent(Defect *def) {
