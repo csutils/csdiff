@@ -47,9 +47,9 @@ struct MsgFilter::Private {
     const boost::regex reKrn;
     const boost::regex reMsgUnused;
     const boost::regex reMsgStrOflow;
+    const boost::regex reMsgConstExprRes;
     const boost::regex reDir;
     const boost::regex rePath;
-    const boost::regex reMsgConstExprRes;
     const boost::regex reTmpPath;
     const boost::regex reTmpCleaner;
 
@@ -59,9 +59,9 @@ struct MsgFilter::Private {
         reKrn(strKrn),
         reMsgUnused("[0-9][0-9]* out of [0-9][0-9]* times"),
         reMsgStrOflow("You might overrun the [0-9][0-9]* byte"),
+        reMsgConstExprRes("union __*C[0-9][0-9]*"),
         reDir("^[^:]*/"),
         rePath("^(?:/builddir/build/BUILD/)?([^/]+/)(.*)(\\.[ly])?$"),
-        reMsgConstExprRes("union __*C[0-9][0-9]*"),
         reTmpPath("^(/var)?/tmp/(.*)$"),
         reTmpCleaner("([_A-Za-z-]+)[0-9]{3,}")
     {
