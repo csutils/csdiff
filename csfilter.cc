@@ -42,7 +42,18 @@ inline std::string regexReplaceWrap(
 
 MsgFilter* MsgFilter::self_;
 
-typedef std::vector<const boost::regex *>       TRegexList;
+struct MsgReplace {
+    const boost::regex         *regex;
+    const std::string           replaceWith;
+
+    MsgReplace(const std::string &regex_, const std::string &rpl) :
+        regex(new boost::regex(regex_)),
+        replaceWith(rpl)
+    {
+    }
+};
+
+typedef std::vector<MsgReplace *>               TRegexList;
 typedef std::map<const std::string, TRegexList> TMsgFilterMap;
 
 struct MsgFilter::Private {
@@ -56,6 +67,15 @@ struct MsgFilter::Private {
     const boost::regex reTmpCleaner;
     TMsgFilterMap msgFilterMap;
 
+    void addMsgFilter(
+            const std::string          &checker,
+            const std::string          &regexp,
+            const std::string          &replacement = "")
+    {
+        struct MsgReplace *rpl = new MsgReplace(regexp, replacement);
+        msgFilterMap[checker].push_back(rpl);
+    }
+
     Private():
         ignorePath(false),
         strKrn("[a-zA-Z]"),
@@ -65,14 +85,14 @@ struct MsgFilter::Private {
         reTmpPath("^(/var)?/tmp/(.*)$"),
         reTmpCleaner("([_A-Za-z-]+)[0-9]{3,}")
     {
-        msgFilterMap["UNUSED_VALUE"].push_back(
-                new boost::regex("[0-9][0-9]* out of [0-9][0-9]* times"));
-        msgFilterMap["UNUSED_VALUE"].push_back(
-                new boost::regex("\\(instance [0-9]+\\)"));
-        msgFilterMap["STRING_OVERFLOW"].push_back(
-                new boost::regex("You might overrun the [0-9][0-9]* byte"));
-        msgFilterMap["CONSTANT_EXPRESSION_RESULT"].push_back(
-                new boost::regex("union __*C[0-9][0-9]*"));
+        addMsgFilter("UNUSED_VALUE",
+                "[0-9][0-9]* out of [0-9][0-9]* times");
+        addMsgFilter("UNUSED_VALUE",
+                "\\(instance [0-9]+\\)");
+        addMsgFilter("STRING_OVERFLOW",
+                "You might overrun the [0-9][0-9]* byte");
+        addMsgFilter("CONSTANT_EXPRESSION_RESULT",
+                "union __*C[0-9][0-9]*");
     }
 };
 
@@ -94,9 +114,10 @@ std::string MsgFilter::filterMsg(
         const std::string &checker)
 {
     std::string filtered = msg;
-    BOOST_FOREACH(const boost::regex *re, d->msgFilterMap[checker]) {
-        filtered = regexReplaceWrap(filtered, *re, "");
+    BOOST_FOREACH(const struct MsgReplace *rpl, d->msgFilterMap[checker]) {
+        filtered = regexReplaceWrap(filtered, *rpl->regex, rpl->replaceWith);
     }
+    std::cerr << filtered << std::endl;
     return filtered;
 }
 
