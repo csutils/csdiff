@@ -1,0 +1,17 @@
+Error: BUFFER_SIZE_WARNING (CWE-170):
+/builddir/build/BUILD/papi-4.1.3/src/papi_internal.c:1764: cond_true: Condition "(_papi_hwi_presets.info + i).symbol", taking true branch
+/builddir/build/BUILD/papi-4.1.3/src/papi_internal.c:1770: cond_true: Condition "(_papi_hwi_presets.info + i).short_descr != NULL", taking true branch
+/builddir/build/BUILD/papi-4.1.3/src/papi_internal.c:1773: cond_true: Condition "(_papi_hwi_presets.info + i).long_descr != NULL", taking true branch
+/builddir/build/BUILD/papi-4.1.3/src/papi_internal.c:1778: cond_true: Condition "_papi_hwi_presets.data[i]", taking true branch
+/builddir/build/BUILD/papi-4.1.3/src/papi_internal.c:1779: buffer_size_warning: Calling strncpy with a maximum size argument of 64 bytes on destination array "info->postfix" of size 64 bytes might leave the destination string unterminated.
+/builddir/build/BUILD/papi-4.1.3/src/papi_internal.c:1783: cond_true: Condition "j < (int)info->count", taking true branch
+/builddir/build/BUILD/papi-4.1.3/src/papi_internal.c:1788: loop: Jumping back to the beginning of the loop
+/builddir/build/BUILD/papi-4.1.3/src/papi_internal.c:1783: loop_begin: Jumped back to beginning of loop
+/builddir/build/BUILD/papi-4.1.3/src/papi_internal.c:1783: cond_true: Condition "j < (int)info->count", taking true branch
+/builddir/build/BUILD/papi-4.1.3/src/papi_internal.c:1788: loop: Jumping back to the beginning of the loop
+/builddir/build/BUILD/papi-4.1.3/src/papi_internal.c:1783: loop_begin: Jumped back to beginning of loop
+/builddir/build/BUILD/papi-4.1.3/src/papi_internal.c:1783: cond_false: Condition "j < (int)info->count", taking false branch
+/builddir/build/BUILD/papi-4.1.3/src/papi_internal.c:1788: loop_end: Reached end of loop
+/builddir/build/BUILD/papi-4.1.3/src/papi_internal.c:1790: cond_true: Condition "_papi_hwi_presets.dev_note[i]", taking true branch
+/builddir/build/BUILD/papi-4.1.3/src/papi_internal.c:1793: if_fallthrough: Falling through to end of if statement
+/builddir/build/BUILD/papi-4.1.3/src/papi_internal.c:1794: if_end: End of if statement

@@ -1,0 +1,15 @@
+Error: BUFFER_SIZE_WARNING (CWE-170):
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2038: cond_true: Condition "_papi_hwi_presets[i].symbol", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2046: cond_true: Condition "_papi_hwi_presets[i].short_descr != NULL", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2050: cond_true: Condition "_papi_hwi_presets[i].long_descr != NULL", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2051: buffer_size_warning: Calling strncpy with a maximum size argument of 1024 bytes on destination array "info->long_descr" of size 1024 bytes might leave the destination string unterminated.
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2060: cond_true: Condition "_papi_hwi_presets[i].postfix != NULL", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2064: cond_true: Condition "j < info->count", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2068: loop: Jumping back to the beginning of the loop
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2064: loop_begin: Jumped back to beginning of loop
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2064: cond_true: Condition "j < info->count", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2068: loop: Jumping back to the beginning of the loop
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2064: loop_begin: Jumped back to beginning of loop
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2064: cond_false: Condition "j < info->count", taking false branch
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2068: loop_end: Reached end of loop
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2070: cond_true: Condition "_papi_hwi_presets[i].note != NULL", taking true branch

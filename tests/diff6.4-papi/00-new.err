@@ -1,0 +1,149 @@
+Error: BUFFER_SIZE_WARNING (CWE-170):
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2038: cond_true: Condition "_papi_hwi_presets[i].symbol", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2046: cond_true: Condition "_papi_hwi_presets[i].short_descr != NULL", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2050: cond_true: Condition "_papi_hwi_presets[i].long_descr != NULL", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2051: buffer_size_warning: Calling strncpy with a maximum size argument of 1024 bytes on destination array "info->long_descr" of size 1024 bytes might leave the destination string unterminated.
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2060: cond_true: Condition "_papi_hwi_presets[i].postfix != NULL", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2064: cond_true: Condition "j < info->count", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2068: loop: Jumping back to the beginning of the loop
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2064: loop_begin: Jumped back to beginning of loop
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2064: cond_true: Condition "j < info->count", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2068: loop: Jumping back to the beginning of the loop
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2064: loop_begin: Jumped back to beginning of loop
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2064: cond_false: Condition "j < info->count", taking false branch
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2068: loop_end: Reached end of loop
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2070: cond_true: Condition "_papi_hwi_presets[i].note != NULL", taking true branch
+
+Error: BUFFER_SIZE_WARNING (CWE-170):
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2038: cond_true: Condition "_papi_hwi_presets[i].symbol", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2046: cond_true: Condition "_papi_hwi_presets[i].short_descr != NULL", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2050: cond_true: Condition "_papi_hwi_presets[i].long_descr != NULL", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2060: cond_true: Condition "_papi_hwi_presets[i].postfix != NULL", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2064: cond_true: Condition "j < info->count", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2068: loop: Jumping back to the beginning of the loop
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2064: loop_begin: Jumped back to beginning of loop
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2064: cond_true: Condition "j < info->count", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2068: loop: Jumping back to the beginning of the loop
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2064: loop_begin: Jumped back to beginning of loop
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2064: cond_false: Condition "j < info->count", taking false branch
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2068: loop_end: Reached end of loop
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2070: cond_true: Condition "_papi_hwi_presets[i].note != NULL", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2071: buffer_size_warning: Calling strncpy with a maximum size argument of 1024 bytes on destination array "info->note" of size 1024 bytes might leave the destination string unterminated.
+
+Error: BUFFER_SIZE_WARNING (CWE-170):
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2038: cond_true: Condition "_papi_hwi_presets[i].symbol", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2046: cond_true: Condition "_papi_hwi_presets[i].short_descr != NULL", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2047: buffer_size_warning: Calling strncpy with a maximum size argument of 64 bytes on destination array "info->short_descr" of size 64 bytes might leave the destination string unterminated.
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2050: cond_true: Condition "_papi_hwi_presets[i].long_descr != NULL", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2060: cond_true: Condition "_papi_hwi_presets[i].postfix != NULL", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2064: cond_true: Condition "j < info->count", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2068: loop: Jumping back to the beginning of the loop
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2064: loop_begin: Jumped back to beginning of loop
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2064: cond_true: Condition "j < info->count", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2068: loop: Jumping back to the beginning of the loop
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2064: loop_begin: Jumped back to beginning of loop
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2064: cond_false: Condition "j < info->count", taking false branch
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2068: loop_end: Reached end of loop
+/builddir/build/BUILD/papi-5.0.1/src/papi_internal.c:2070: cond_true: Condition "_papi_hwi_presets[i].note != NULL", taking true branch
+
+Error: BUFFER_SIZE_WARNING (CWE-170):
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:149: cond_true: Condition "i < argc", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:150: cond_true: Condition "strstr(argv[i], "-i")", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:151: if_fallthrough: Falling through to end of if statement
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:170: if_end: End of if statement
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:171: loop: Jumping back to the beginning of the loop
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:149: loop_begin: Jumped back to beginning of loop
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:149: cond_true: Condition "i < argc", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:150: cond_true: Condition "strstr(argv[i], "-i")", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:151: if_fallthrough: Falling through to end of if statement
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:170: if_end: End of if statement
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:171: loop: Jumping back to the beginning of the loop
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:149: loop_begin: Jumped back to beginning of loop
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:149: cond_true: Condition "i < argc", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:150: cond_false: Condition "strstr(argv[i], "-i")", taking false branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:152: else_branch: Reached else branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:152: cond_true: Condition "strstr(argv[i], "-f")", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:153: if_fallthrough: Falling through to end of if statement
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:170: if_end: End of if statement
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:171: loop: Jumping back to the beginning of the loop
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:149: loop_begin: Jumped back to beginning of loop
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:149: cond_true: Condition "i < argc", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:150: cond_false: Condition "strstr(argv[i], "-i")", taking false branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:152: else_branch: Reached else branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:152: cond_false: Condition "strstr(argv[i], "-f")", taking false branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:154: else_branch: Reached else branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:154: cond_true: Condition "strstr(argv[i], "-v")", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:155: if_fallthrough: Falling through to end of if statement
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:170: if_end: End of if statement
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:171: loop: Jumping back to the beginning of the loop
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:149: loop_begin: Jumped back to beginning of loop
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:149: cond_true: Condition "i < argc", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:150: cond_false: Condition "strstr(argv[i], "-i")", taking false branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:152: else_branch: Reached else branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:152: cond_false: Condition "strstr(argv[i], "-f")", taking false branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:154: else_branch: Reached else branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:154: cond_false: Condition "strstr(argv[i], "-v")", taking false branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:156: else_branch: Reached else branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:156: cond_true: Condition "strstr(argv[i], "-m")", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:157: if_fallthrough: Falling through to end of if statement
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:170: if_end: End of if statement
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:171: loop: Jumping back to the beginning of the loop
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:149: loop_begin: Jumped back to beginning of loop
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:149: cond_true: Condition "i < argc", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:150: cond_false: Condition "strstr(argv[i], "-i")", taking false branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:152: else_branch: Reached else branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:152: cond_false: Condition "strstr(argv[i], "-f")", taking false branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:154: else_branch: Reached else branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:154: cond_false: Condition "strstr(argv[i], "-v")", taking false branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:156: else_branch: Reached else branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:156: cond_false: Condition "strstr(argv[i], "-m")", taking false branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:158: else_branch: Reached else branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:158: cond_true: Condition "strstr(argv[i], "-e")", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:159: cond_false: Condition "argv[i + 1] == NULL", taking false branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:159: cond_false: Condition "strlen(argv[i + 1]) == 0", taking false branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:162: if_end: End of if statement
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:163: buffer_size_warning: Calling strncpy with a maximum size argument of 64 bytes on destination array "papi_event_str" of size 64 bytes might leave the destination string unterminated.
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:165: if_fallthrough: Falling through to end of if statement
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:170: if_end: End of if statement
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:171: loop: Jumping back to the beginning of the loop
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:149: loop_begin: Jumped back to beginning of loop
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:149: cond_true: Condition "i < argc", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:150: cond_false: Condition "strstr(argv[i], "-i")", taking false branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:152: else_branch: Reached else branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:152: cond_false: Condition "strstr(argv[i], "-f")", taking false branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:154: else_branch: Reached else branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:154: cond_false: Condition "strstr(argv[i], "-v")", taking false branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:156: else_branch: Reached else branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:156: cond_false: Condition "strstr(argv[i], "-m")", taking false branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:158: else_branch: Reached else branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:158: cond_false: Condition "strstr(argv[i], "-e")", taking false branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:165: else_branch: Reached else branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:165: cond_true: Condition "strstr(argv[i], "-d")", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:166: if_fallthrough: Falling through to end of if statement
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:170: if_end: End of if statement
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:171: loop: Jumping back to the beginning of the loop
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:149: loop_begin: Jumped back to beginning of loop
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:149: cond_true: Condition "i < argc", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:150: cond_false: Condition "strstr(argv[i], "-i")", taking false branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:152: else_branch: Reached else branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:152: cond_false: Condition "strstr(argv[i], "-f")", taking false branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:154: else_branch: Reached else branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:154: cond_false: Condition "strstr(argv[i], "-v")", taking false branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:156: else_branch: Reached else branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:156: cond_false: Condition "strstr(argv[i], "-m")", taking false branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:158: else_branch: Reached else branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:158: cond_false: Condition "strstr(argv[i], "-e")", taking false branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:165: else_branch: Reached else branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:165: cond_false: Condition "strstr(argv[i], "-d")", taking false branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:167: else_branch: Reached else branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:167: cond_false: Condition "strstr(argv[i], "-h")", taking false branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:170: if_end: End of if statement
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:171: loop: Jumping back to the beginning of the loop
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:149: loop_begin: Jumped back to beginning of loop
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:149: cond_false: Condition "i < argc", taking false branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:171: loop_end: Reached end of loop
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:174: cond_false: Condition "inner + vector + matrix == 0", taking false branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:175: if_end: End of if statement
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:180: cond_true: Condition "!TESTS_QUIET", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:181: cond_true: Condition "!TESTS_QUIET", taking true branch
+/builddir/build/BUILD/papi-5.0.1/src/ctests/calibrate.c:185: cond_true: Condition "retval != (83886080U /* ((((5 << 24) | (0 << 16)) | (1 << 8)) | 0) & 0xffff0000U */)", taking true branch
