@@ -95,6 +95,10 @@ struct MsgFilter::Private {
                 "You might overrun the [0-9][0-9]* byte");
         addMsgFilter("CONSTANT_EXPRESSION_RESULT",
                 "union __*C[0-9][0-9]*");
+        // ignore changes in parameters -> it is still the same UNCHECKED_ERROR
+        addMsgFilter("UNUSED_VALUE",
+                "returned by \"([^\\(]+)\\(.*\\)\"",
+                "returned by \"\\1\\(\\)\"");
     }
 };
 
@@ -127,6 +131,9 @@ std::string MsgFilter::filterMsg(
         filtered = regexReplaceWrap(filtered, *rpl->regex, rpl->replaceWith);
     }
 
+#if DEBUG_SUBST
+    std::cerr << "filterMsg: " << filtered << std::cout;
+#endif
     return filtered;
 }
 
