@@ -85,7 +85,7 @@ struct MsgFilter::Private {
         reFile("[^/]+$"),
         rePath("^(?:/builddir/build/BUILD/)?([^/]+/)(.*)(\\.[ly])?$"),
         reTmpPath("^(/var)?/tmp/(.*)$"),
-        reTmpCleaner("([_A-Za-z-]+)[0-9]{3,}")
+        reTmpCleaner("(.*)")
     {
         addMsgFilter("UNUSED_VALUE",
                 "[0-9][0-9]* out of [0-9][0-9]* times");
@@ -148,7 +148,7 @@ std::string MsgFilter::filterPath(const std::string &origPath) {
 
     if (boost::regex_match(path, d->reTmpPath)) {
         // filter random numbers in names of temporary generated files
-        std::string tmpPath = boost::regex_replace(path, d->reTmpCleaner, "\\1");
+        std::string tmpPath = boost::regex_replace(path, d->reTmpCleaner, "/tmp/tmp.c");
         return tmpPath;
     }
 
