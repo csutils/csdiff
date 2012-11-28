@@ -78,29 +78,38 @@ namespace HtmlLib {
 } // namespace HtmlLib
 
 namespace CsLib {
-
-#define RETURN_IF_FOUND(props, key) do {                \
-    TScanProps::const_iterator it = props.find(key);    \
-    if (props.end() != it)                              \
-        return it->second;                              \
-} while (0)
-
     std::string digTitle(const TScanProps &props) {
-        RETURN_IF_FOUND(props, "title");
-        RETURN_IF_FOUND(props, "project-name");
+        const TScanProps::const_iterator NA = props.end();
+        TScanProps::const_iterator it = props.find("title");
+        if (NA != it)
+            return it->second;
 
-        TScanProps::const_iterator it = props.find("tool-args");
-        if (props.end() == it)
-            return "";
+        std::string title;
+        it = props.find("project-name");
+        if (NA == it) {
+            it = props.find("tool-args");
+            if (props.end() == it)
+                return "";
 
-        const std::string &args = it->second;
-        const boost::regex reSrpm("^.*[ /]([^ /]*)\\.src\\.rpm.*$");
+            const std::string &args = it->second;
+            const boost::regex reSrpm("^.*[ /]([^ /]*)\\.src\\.rpm.*$");
 
-        boost::smatch sm;
-        if (!boost::regex_match(args, sm, reSrpm))
-            return "";
+            boost::smatch sm;
+            if (!boost::regex_match(args, sm, reSrpm))
+                return "";
 
-        return sm[/* NVR */ 1];
+            title = sm[/* NVR */ 1];
+        }
+        else
+            title = it->second;
+
+        it = props.find("diffbase-project-name");
+        if (NA != it) {
+            title += " - defects not occurring in ";
+            title += it->second;
+        }
+
+        return title;
     }
 
     void writeParseWarnings(std::ostream &str, const TScanProps &props) {
