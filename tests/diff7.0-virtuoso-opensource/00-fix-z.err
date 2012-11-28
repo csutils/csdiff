@@ -1503,9 +1503,6 @@ virtuoso-opensource-6.1.2/libsrc/Wi/rdfinf.c:2028: returned_pointer: Pointer "co
 Error: UNUSED_VALUE:
 virtuoso-opensource-6.1.2/libsrc/Wi/replsri.c:608: returned_pointer: Pointer "err" returned by "qr_rec_exec(tp_item, cli, &lc_item, qi, NULL, 3L, ":0", db_name, 1L, ":1", obj_name, 1L, ":2", (long)obj_type, 0L)" is never used.
 
-Error: UNUSED_VALUE:
-virtuoso-opensource-6.1.2/libsrc/Wi/sparql2sql.c:489: returned_pointer: Pointer "retval" returned by "spartlist(sparp, 4L, 1001L, retval, name, (struct qm_format_s *)0x350)" is never used.
-
 Error: USE_AFTER_FREE:
 virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:12161: freed_arg: "lc_free" frees "lc".
 virtuoso-opensource-6.1.2/libsrc/Wi/sqlrun.c:3838: freed_arg: "dk_free" frees parameter "lc".

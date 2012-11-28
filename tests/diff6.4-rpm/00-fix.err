@@ -1,13 +1,4 @@
 Error: UNUSED_VALUE:
-/builddir/build/BUILD/rpm-4.8.0/rpmio/rpmio.c:1092: returned_pointer: Pointer "fd" returned by "fdFree(fd, "open (bzdClose) at: rpmio.c:1092")" is never used.
-
-Error: UNUSED_VALUE:
-/builddir/build/BUILD/rpm-4.8.0/rpmio/rpmio.c:950: returned_pointer: Pointer "fd" returned by "fdFree(fd, "open (gzdClose) at: rpmio.c:950")" is never used.
-
-Error: UNUSED_VALUE:
-/builddir/build/BUILD/rpm-4.8.0/rpmio/rpmio.c:1595: returned_pointer: Pointer "fd" returned by "fdFree(fd, "Fclose at: rpmio.c:1595")" is never used.
-
-Error: UNUSED_VALUE:
 /builddir/build/BUILD/rpm-4.8.0/rpmio/rpmpgp.c:985: returned_pointer: Pointer "p" returned by "pgpPrtPubkeyParams(v->pubkey_algo, p, h, hlen, _dig)" is never used.
 
 Error: UNUSED_VALUE:

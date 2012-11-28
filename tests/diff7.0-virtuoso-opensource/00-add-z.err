@@ -2096,9 +2096,6 @@ Error: UNUSED_VALUE:
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/rdfbox.c:3902: returned_pointer: Pointer "err" returned by "qr_exec(qi->qi_client, geo_qr, qi, NULL, NULL, NULL, (caddr_t *)params, NULL, 0)" is never used.
 
 Error: UNUSED_VALUE:
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/sparql2sql.c:489: returned_pointer: Pointer "retval" returned by "spartlist(sparp, 4L, 1001L, retval, name, (struct qm_format_s *)0x360)" is never used.
-
-Error: UNUSED_VALUE:
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/sqlbif.c:11500: returned_pointer: Pointer "proc_qr" returned by "sql_compile(text, cli, &err, -1)" is never used.
 
 Error: USE_AFTER_FREE:
