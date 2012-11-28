@@ -46,6 +46,8 @@ class HtmlWriter: public AbstractWriter {
                 const TScanProps            &baseProps,
                 const std::string           &baseTitleFallback);
 
+        void setPlainTextUrl(const std::string &);
+
     private:
         struct Private;
         Private *d;

@@ -58,6 +58,14 @@ namespace HtmlLib {
 <body>\n<h1>" << title << "</h1>\n";
     }
 
+    void writeLink(
+            std::ostream           &str,
+            const std::string      &url,
+            const std::string      &name)
+    {
+        str << "<a href='" << url << "'>" << name << "</a>\n";
+    }
+
     void finalizeHtml(std::ostream &str) {
         str << "</body>\n</html>\n";
     }
@@ -177,7 +185,11 @@ class HtmlWriterCore {
             return headerWritten_;
         }
 
-        void writeHeaderOnce(const TScanProps &);
+        // FIXME: the API needs to be improved
+        void writeHeaderOnce(
+                const TScanProps   &props,
+                const std::string  &plainTextUrl);
+
         void closeDocument(const TScanProps &props);
 
     private:
@@ -208,7 +220,10 @@ HtmlWriterCore::HtmlWriterCore(
             << spPlacement << "\n";
 }
 
-void HtmlWriterCore::writeHeaderOnce(const TScanProps &props) {
+void HtmlWriterCore::writeHeaderOnce(
+        const TScanProps           &props,
+        const std::string          &plainTextUrl)
+{
     assert(!documentClosed_);
     if (headerWritten_)
         // header already out
@@ -221,6 +236,8 @@ void HtmlWriterCore::writeHeaderOnce(const TScanProps &props) {
 
     // initialize a HTML document
     HtmlLib::initHtml(str_, title);
+    if (!plainTextUrl.empty())
+        HtmlLib::writeLink(str_, plainTextUrl, "[Show plain-text results]");
 
     // write scan properties
     CsLib::writeParseWarnings(str_, props);
@@ -258,6 +275,7 @@ struct HtmlWriter::Private {
     unsigned                        defCnt;
     DefLookup                      *baseLookup;
     std::string                     newDefMsg;
+    std::string                     plainTextUrl;
 
     Private(
             std::ostream           &str_,
@@ -333,6 +351,10 @@ void HtmlWriter::setDiffBase(
     d->newDefMsg += "</b>";
 }
 
+void HtmlWriter::setPlainTextUrl(const std::string &url) {
+    d->plainTextUrl = url;
+}
+
 void HtmlWriter::Private::writeLinkToDetails(const Defect &def) {
     const int defId = def.defectId;
     if (!defId)
@@ -366,7 +388,7 @@ void HtmlWriter::Private::writeNewDefWarning(const Defect &def) {
 }
 
 void HtmlWriter::handleDef(const Defect &def) {
-    d->core.writeHeaderOnce(d->scanProps);
+    d->core.writeHeaderOnce(d->scanProps, d->plainTextUrl);
 
     // HTML anchor
     d->str << "<a name='def" << ++(d->defCnt) << "'/>";
@@ -420,6 +442,6 @@ void HtmlWriter::handleDef(const Defect &def) {
 }
 
 void HtmlWriter::flush() {
-    d->core.writeHeaderOnce(d->scanProps);
+    d->core.writeHeaderOnce(d->scanProps, d->plainTextUrl);
     d->core.closeDocument(d->scanProps);
 }
