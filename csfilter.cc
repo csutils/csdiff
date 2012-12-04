@@ -95,7 +95,7 @@ struct MsgFilter::Private {
                 "You might overrun the [0-9][0-9]* byte");
         addMsgFilter("CONSTANT_EXPRESSION_RESULT",
                 "union __*C[0-9][0-9]*");
-        // ignore changes in parameters -> it is still the same UNCHECKED_ERROR
+        // ignore changes in parameters -> it is still the same UNUSED_VALUE
         addMsgFilter("UNUSED_VALUE",
                 "returned by \"([^\\(]+)\\(.*\\)\"",
                 "returned by \"\\1\\(\\)\"");
