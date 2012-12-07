@@ -20,9 +20,9 @@ project(csdiff CXX)
 enable_testing()
 add_definitions(-Wall -Wextra -fPIC)
 
-# read PYTHON_INCLUDE_DIR
+# read PYTHON_INCLUDE_PATH (rnamed to PYTHON_INCLUDE_DIRS in CMake 2.8)
 find_package(PythonLibs)
-message(STATUS "PYTHON_INCLUDE_DIR: ${PYTHON_INCLUDE_DIR}")
+message(STATUS "PYTHON_INCLUDE_PATH: ${PYTHON_INCLUDE_PATH}")
 
 # we keep a local instance of FindFLEX.cmake (it was introduced in CMake 2.8)
 include(cmake-modules-2.8/CMakeParseArguments.cmake)
@@ -57,9 +57,9 @@ add_library(cs STATIC
     abstract-filter.cc
     abstract-parser.cc
     abstract-writer.cc
+    csdiff-core.cc
     csfilter.cc
     csparser.cc
-    csdiff-core.cc
     cstat-core.cc
     cswriter.cc
     deflookup.cc
@@ -100,13 +100,13 @@ install(TARGETS
     DESTINATION bin)
 
 # pycsdiff - python binding of csdiff [experimental]
-if (EXISTS "${PYTHON_INCLUDE_DIR}/pyconfig.h")
+if (EXISTS "${PYTHON_INCLUDE_PATH}/pyconfig.h")
     find_library(BOOST_PYTHON boost_python PATHS /usr/lib /usr/lib64)
     if (BOOST_PYTHON)
-        message(WARNING "\nThe python binding of csdiff is experimental!")
+        message(STATUS "WARNING: The python binding of csdiff is experimental!")
         add_library(pycsdiff SHARED pycsdiff.cc)
         set_target_properties(pycsdiff PROPERTIES
-            COMPILE_FLAGS "-I${PYTHON_INCLUDE_DIR}")
+            COMPILE_FLAGS "-I${PYTHON_INCLUDE_PATH}")
         target_link_libraries(pycsdiff boost_python)
         install(TARGETS pycsdiff DESTINATION lib)
     endif()

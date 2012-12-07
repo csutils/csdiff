@@ -47,6 +47,8 @@ git archive --prefix="$NV/" --format="tar" HEAD -- . | xz -c > "$SRC"
 
 SPEC="./$PKG.spec"
 cat > "$SPEC" << EOF
+%{!?python_sitearch: %define python_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib(1)")}
+
 Name:       $PKG
 Version:    $VER
 Release:    1%{?dist}
@@ -77,11 +79,9 @@ make %{?_smp_mflags} CMAKE='cmake -D CMAKE_INSTALL_PREFIX=/usr' VERBOSE=yes
 %install
 rm -rf "\$RPM_BUILD_ROOT"
 make install DESTDIR="\$RPM_BUILD_ROOT"
-%if (0%{?fedora} >= 12 || 0%{?rhel} >= 6)
-install -d "\$RPM_BUILD_ROOT%{python_sitelib}/"
+install -d "\$RPM_BUILD_ROOT%{python_sitearch}/"
 mv -v "\$RPM_BUILD_ROOT/usr/lib/libpycsdiff.so" \
-    "\$RPM_BUILD_ROOT%{python_sitelib}/pycsdiff.so"
-%endif
+    "\$RPM_BUILD_ROOT%{python_sitearch}/pycsdiff.so"
 
 %check
 make check CTEST='ctest %{?_smp_mflags}'
@@ -99,9 +99,7 @@ rm -rf "\$RPM_BUILD_ROOT"
 %{_bindir}/cslinker
 %{_bindir}/cssort
 %{_bindir}/cstat
-%if (0%{?fedora} >= 12 || 0%{?rhel} >= 6)
-%{python_sitelib}/pycsdiff.so
-%endif
+%{python_sitearch}/pycsdiff.so
 %doc COPYING README
 EOF
 

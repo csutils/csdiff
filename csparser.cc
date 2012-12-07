@@ -163,7 +163,7 @@ struct CovParser::Private {
     KeyEventDigger          keDigger;
 
     Private(std::istream &input_, std::string fileName_, bool silent_):
-        lexer(input_, fileName_, silent),
+        lexer(input_, fileName_, silent_),
         fileName(fileName_),
         silent(silent_),
         hasError(false),
