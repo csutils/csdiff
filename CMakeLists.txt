@@ -18,7 +18,11 @@
 cmake_minimum_required(VERSION 2.6)
 project(csdiff CXX)
 enable_testing()
-add_definitions(-Wall -Wextra)
+add_definitions(-Wall -Wextra -fPIC)
+
+# read PYTHON_INCLUDE_DIR
+find_package(PythonLibs)
+message(STATUS "PYTHON_INCLUDE_DIR: ${PYTHON_INCLUDE_DIR}")
 
 # we keep a local instance of FindFLEX.cmake (it was introduced in CMake 2.8)
 include(cmake-modules-2.8/CMakeParseArguments.cmake)
@@ -94,3 +98,16 @@ install(TARGETS
     cssort
     cstat
     DESTINATION bin)
+
+# pycsdiff - python binding of csdiff [experimental]
+if (EXISTS "${PYTHON_INCLUDE_DIR}/pyconfig.h")
+    find_library(BOOST_PYTHON boost_python PATHS /usr/lib /usr/lib64)
+    if (BOOST_PYTHON)
+        message(WARNING "\nThe python binding of csdiff is experimental!")
+        add_library(pycsdiff SHARED pycsdiff.cc)
+        set_target_properties(pycsdiff PROPERTIES
+            COMPILE_FLAGS "-I${PYTHON_INCLUDE_DIR}")
+        target_link_libraries(pycsdiff boost_python)
+        install(TARGETS pycsdiff DESTINATION lib)
+    endif()
+endif()

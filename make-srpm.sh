@@ -44,7 +44,6 @@ make -j5 distcheck CTEST='ctest -j5'    || die "'make distcheck' has failed"
 NV="${PKG}-$VER"
 SRC="${PKG}.tar.xz"
 git archive --prefix="$NV/" --format="tar" HEAD -- . | xz -c > "$SRC"
-tar tf "$SRC"
 
 SPEC="./$PKG.spec"
 cat > "$SPEC" << EOF
@@ -59,9 +58,10 @@ URL:        http://git.fedorahosted.org/cgit/codescan-diff.git
 Source0:    $SRC
 BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
+BuildRequires: boost-devel
 BuildRequires: cmake
 BuildRequires: flex
-BuildRequires: boost-devel
+BuildRequires: python-devel
 
 %description
 This package contains the csdiff tool for comparing code scan defect lists in
@@ -77,6 +77,11 @@ make %{?_smp_mflags} CMAKE='cmake -D CMAKE_INSTALL_PREFIX=/usr' VERBOSE=yes
 %install
 rm -rf "\$RPM_BUILD_ROOT"
 make install DESTDIR="\$RPM_BUILD_ROOT"
+%if (0%{?fedora} >= 12 || 0%{?rhel} >= 6)
+install -d "\$RPM_BUILD_ROOT%{python_sitelib}/"
+mv -v "\$RPM_BUILD_ROOT/usr/lib/libpycsdiff.so" \
+    "\$RPM_BUILD_ROOT%{python_sitelib}/pycsdiff.so"
+%endif
 
 %check
 make check CTEST='ctest %{?_smp_mflags}'
@@ -94,6 +99,9 @@ rm -rf "\$RPM_BUILD_ROOT"
 %{_bindir}/cslinker
 %{_bindir}/cssort
 %{_bindir}/cstat
+%if (0%{?fedora} >= 12 || 0%{?rhel} >= 6)
+%{python_sitelib}/pycsdiff.so
+%endif
 %doc COPYING README
 EOF
 
