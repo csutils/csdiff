@@ -55,6 +55,7 @@ add_library(cs STATIC
     abstract-writer.cc
     csfilter.cc
     csparser.cc
+    csdiff-core.cc
     cstat-core.cc
     cswriter.cc
     deflookup.cc

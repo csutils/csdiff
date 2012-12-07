@@ -17,32 +17,15 @@
  * along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "abstract-parser.hh"
+#include "csdiff-core.hh"
 #include "csfilter.hh"
-#include "cswriter.hh"
-#include "deflookup.hh"
 #include "instream.hh"
-#include "json-writer.hh"
 
 #include <cstdlib>
 
 #include <boost/foreach.hpp>
 #include <boost/program_options.hpp>
-#include <boost/shared_ptr.hpp>
 #include <boost/regex.hpp>
-
-// FIXME: some keys should be merge more intelligently if they already exist
-// TODO: define a nesting limit for keys like diffbase-diffbase-diffbase-...
-void mergeScanProps(TScanProps &props, const TScanProps &oldProps)
-{
-    BOOST_FOREACH(TScanProps::const_reference item, oldProps) {
-        const std::string &oldKey = item.first;
-        const std::string &oldVal = item.second;
-        std::string key("diffbase-");
-        key += oldKey;
-        props[key] = oldVal;
-    }
-}
 
 int main(int argc, char *argv[])
 {
@@ -142,45 +125,9 @@ int main(int argc, char *argv[])
         InStream strOld(fnOld.c_str());
         InStream strNew(fnNew.c_str());
 
-        // create Parsers
-        Parser pOld(strOld.str(), fnOld, silent);
-        Parser pNew(strNew.str(), fnNew, silent);
-
-        // decide which format use for the output
-        const bool json = forceJson
-            || (!forceCov && pNew.isJson());
-
-        // create the appropriate writer
-        boost::shared_ptr<AbstractWriter> writer;
-        if (json)
-            writer.reset(new JsonWriter(std::cout));
-        else
-            writer.reset(new CovWriter(std::cout));
-
-        // propagate scan properties if available
-        TScanProps props = pNew.getScanProps();
-        mergeScanProps(props, pOld.getScanProps());
-        writer->setScanProps(props);
-
-        // read old
-        DefLookup stor;
-        Defect def;
-        while (pOld.getNext(&def))
-            stor.hashDefect(def);
-
-        // read new
-        while (pNew.getNext(&def)) {
-            if (stor.lookup(def))
-                continue;
-
-            // a newly added defect found
-            writer->handleDef(def);
-        }
-
-        writer->flush();
-
-        return pOld.hasError()
-            || pNew.hasError();
+        // run the core
+        return diffScans(std::cout, strOld.str(), strNew.str(),
+                fnOld, fnNew, silent, forceJson, forceCov);
     }
     catch (const InFileException &e) {
         std::cerr << e.fileName << ": failed to open input file\n";
