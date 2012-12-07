@@ -22,9 +22,11 @@
 
 #include "abstract-filter.hh"
 
+#include <iostream>
+
 class CovWriter: public AbstractWriter {
     public:
-        CovWriter();
+        CovWriter(std::ostream &);
         virtual ~CovWriter();
 
         virtual void handleDef(const Defect &def);

@@ -191,7 +191,7 @@ int main(int argc, char *argv[])
         Parser pErr(strErr.str(), fnErr, silent);
 
         // initialize JSON writer
-        JsonWriter writer;
+        JsonWriter writer(std::cout);
         writer.setScanProps(pErr.getScanProps());
 
         bool hasError = false;

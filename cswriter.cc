@@ -32,8 +32,8 @@ struct CovWriter::Private {
     }
 };
 
-CovWriter::CovWriter():
-    d(new Private(std::cout))
+CovWriter::CovWriter(std::ostream &str):
+    d(new Private(str))
 {
 }
 

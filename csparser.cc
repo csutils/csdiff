@@ -157,13 +157,15 @@ bool KeyEventDigger::guessKeyEvent(Defect *def) {
 struct CovParser::Private {
     FlexLexerWrap           lexer;
     std::string             fileName;
+    const bool              silent;
     bool                    hasError;
     EToken                  code;
     KeyEventDigger          keDigger;
 
-    Private(std::istream &input_, std::string fileName_, bool silent):
+    Private(std::istream &input_, std::string fileName_, bool silent_):
         lexer(input_, fileName_, silent),
         fileName(fileName_),
+        silent(silent_),
         hasError(false),
         code(T_NULL)
     {
@@ -196,6 +198,9 @@ bool CovParser::hasError() const {
 
 void CovParser::Private::wrongToken() {
     this->hasError = true;
+    if (this->silent)
+        return;
+
     std::cerr << this->fileName
         << ":" << this->lexer.lineno()
         << ": parse error: wrong token: "

@@ -25,12 +25,18 @@
 #include <boost/property_tree/json_parser.hpp>
 
 struct JsonWriter::Private {
+    std::ostream                   &str;
     boost::property_tree::ptree     defList;
     TScanProps                      scanProps;
+
+    Private(std::ostream &str_):
+        str(str_)
+    {
+    }
 };
 
-JsonWriter::JsonWriter():
-    d(new Private)
+JsonWriter::JsonWriter(std::ostream &str):
+    d(new Private(str))
 {
 }
 
@@ -93,7 +99,7 @@ void JsonWriter::flush() {
     boost::iostreams::basic_regex_filter<char> reFilter(re, ": \\1,");
     boost::iostreams::filtering_ostream str;
     str.push(reFilter);
-    str.push(std::cout);
+    str.push(d->str);
 
     // encode scan properties if we have some
     boost::property_tree::ptree root;

@@ -80,11 +80,11 @@ AbstractWriter* createWriter(
     switch (format) {
         case FF_INVALID:
         case FF_COVERITY:
-            writer = new CovWriter;
+            writer = new CovWriter(std::cout);
             break;
 
         case FF_JSON:
-            writer = new JsonWriter;
+            writer = new JsonWriter(std::cout);
             break;
     }
 

@@ -65,7 +65,8 @@ class GroupPrinter: public AbstractWriter {
                 file_.clear();
             }
 
-            CovWriter().handleDef(def);
+            CovWriter writer(std::cout);
+            writer.handleDef(def);
         }
 };
 
@@ -269,11 +270,17 @@ class WriterFactory {
         TTable tbl_;
 
         static AbstractWriter* createFiles()    { return new FilePrinter;   }
-        static AbstractWriter* createGrep()     { return new CovWriter;     }
         static AbstractWriter* createGrouped()  { return new GroupPrinter;  }
         static AbstractWriter* createStat()     { return new DefCounter;    }
         static AbstractWriter* createFileStat() { return new FileDefCounter;}
-        static AbstractWriter* createJson()     { return new JsonWriter;    }
+
+        static AbstractWriter* createGrep() {
+            return new CovWriter(std::cout);
+        }
+
+        static AbstractWriter* createJson() {
+            return new JsonWriter(std::cout);
+        }
 
     public:
         WriterFactory() {

@@ -22,9 +22,11 @@
 
 #include "abstract-writer.hh"
 
+#include <iostream>
+
 class JsonWriter: public AbstractWriter {
     public:
-        JsonWriter();
+        JsonWriter(std::ostream &);
         virtual ~JsonWriter();
 
         virtual const TScanProps& getScanProps() const;

@@ -153,9 +153,9 @@ int main(int argc, char *argv[])
         // create the appropriate writer
         boost::shared_ptr<AbstractWriter> writer;
         if (json)
-            writer.reset(new JsonWriter);
+            writer.reset(new JsonWriter(std::cout));
         else
-            writer.reset(new CovWriter);
+            writer.reset(new CovWriter(std::cout));
 
         // propagate scan properties if available
         TScanProps props = pNew.getScanProps();
