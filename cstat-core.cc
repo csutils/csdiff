@@ -70,6 +70,14 @@ class GroupPrinter: public AbstractWriter {
         }
 };
 
+class KeyEventPrinter: public AbstractWriter {
+    protected:
+        virtual void handleDef(const Defect &def) {
+            const DefEvent &keyEvent = def.events[def.keyEventIdx];
+            std::cout << def.checker << "\t" << keyEvent.event << "\n";
+        }
+};
+
 class DefCounter: public AbstractWriter {
     private:
         typedef std::map<std::string, int> TMap;
@@ -282,14 +290,19 @@ class WriterFactory {
             return new JsonWriter(std::cout);
         }
 
+        static AbstractWriter* createKeyEventPrinter() {
+            return new KeyEventPrinter;
+        }
+
     public:
         WriterFactory() {
-            tbl_["files"]   = createFiles;
-            tbl_["grep"]    = createGrep;
-            tbl_["grouped"] = createGrouped;
-            tbl_["stat"]    = createStat;
-            tbl_["filestat"]= createFileStat;
-            tbl_["json"]    = createJson;
+            tbl_["dig_key_events"]  = createKeyEventPrinter;
+            tbl_["files"]           = createFiles;
+            tbl_["filestat"]        = createFileStat;
+            tbl_["grep"]            = createGrep;
+            tbl_["grouped"]         = createGrouped;
+            tbl_["json"]            = createJson;
+            tbl_["stat"]            = createStat;
         }
 
         AbstractWriter* create(const std::string &mode) const {
@@ -374,17 +387,19 @@ void printUsage(TStream &str, const TDesc &desc) {
 DESCRIPTION OF AVAILABLE MODES\n\
 ------------------------------\n\
 \n\
-stat - print overall statistics of the matched defects in given error files\n\
+dig_key_events - for each defect, print only the checker and key event\n\
+\n\
+files - print only names of error files that contain the matched defects\n\
 \n\
 filestat - print statistics of matched defects per individual source files\n\
 \n\
 grep - print matched defects using the same format as expected on the input\n\
 \n\
-files - print only names of error files that contain the matched defects\n\
-\n\
 grouped - print matched defects, grouped by error files they originate from\n\
 \n\
-json - print matched defects in a JSON format\n\n";
+json - print matched defects in a JSON format\n\
+\n\
+stat - print overall statistics of the matched defects in given error files\n\n";
 }
 
 int cStatCore(int argc, char *argv[], const char *defMode)
@@ -413,7 +428,7 @@ int cStatCore(int argc, char *argv[], const char *defMode)
             ("invert-match,v", "select defects that do not match the regex")
             ("invert-regex,n", "invert all given regexes before matching them")
             ("mode", po::value<string>(&mode)->default_value(defMode),
-             "stat, filestat, grep, files, grouped, or json")
+             "dig_key_events, files, filestat, grep, grouped, json, or stat")
             ("msg", po::value<string>(), "match messages by the given regex")
             ("path", po::value<string>(),
              "match source path by the given regex")
