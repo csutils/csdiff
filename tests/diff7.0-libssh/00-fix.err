@@ -115,13 +115,6 @@ libssh-0.4.8/libssh/sftpserver.c:178: unterminated_case: This case (value 3) is 
 libssh-0.4.8/libssh/sftpserver.c:196: fallthrough: The above case falls through to this one.
 
 Error: NEGATIVE_RETURNS:
-libssh-0.4.8/examples/sample.c:329: negative_return_fn: Function "read(0, buffer, sizeof (buffer) /*4096*/)" returns a negative number.
-libssh-0.4.8/examples/sample.c:329: var_assign: Assigning: signed variable "lus" = "read".
-libssh-0.4.8/examples/sample.c:331: negative_returns: "lus" is passed to a parameter that cannot be negative.
-libssh-0.4.8/libssh/channels.c:984: neg_sink_parm_call: Passing "len" to "channel_write_common", which cannot accept a negative.
-libssh-0.4.8/libssh/channels.c:918: parm_loop_bound: Using unsigned parameter "len" in a loop exit test.
-
-Error: NEGATIVE_RETURNS:
 libssh-0.4.8/examples/sshnetcat.c:99: negative_return_fn: Function "read(0, buffer, sizeof (buffer) /*4096*/)" returns a negative number.
 libssh-0.4.8/examples/sshnetcat.c:99: var_assign: Assigning: signed variable "lus" = "read".
 libssh-0.4.8/examples/sshnetcat.c:101: negative_returns: "lus" is passed to a parameter that cannot be negative.

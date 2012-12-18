@@ -28,6 +28,7 @@
 #include <map>
 #include <set>
 
+#include <boost/algorithm/string.hpp>
 #include <boost/iostreams/device/null.hpp>
 #include <boost/iostreams/stream.hpp>
 #include <boost/lexical_cast.hpp>
@@ -121,9 +122,6 @@ KeyEventDigger::KeyEventDigger() {
     hMap_["USE_AFTER_FREE"]         .insert("double_free");
     hMap_["USE_AFTER_FREE"]         .insert("pass_freed_arg");
     hMap_["USE_AFTER_FREE"]         .insert("use_after_free");
-    hMap_["TAINTED_STRING"]         .insert("tainted_string");
-    hMap_["TOCTOU"]                 .insert("toctou");
-    hMap_["BUFFER_SIZE_WARNING"]    .insert("buffer_size_warning");
 }
 
 bool KeyEventDigger::guessKeyEvent(Defect *def) {
@@ -135,15 +133,23 @@ bool KeyEventDigger::guessKeyEvent(Defect *def) {
     const unsigned evtCount = evtList.size();
     def->keyEventIdx = evtCount - 1U;
 
-    TMap::const_iterator it = hMap_.find(def->checker);
-    if (hMap_.end() == it)
-        // no overrides for this checker
-        return true;
+    TSet defKeyEvent;
+    const TSet *pKeyEvents = &defKeyEvent;
 
-    const TSet &keyEvents = it->second;
+    TMap::const_iterator it = hMap_.find(def->checker);
+    if (hMap_.end() == it) {
+        // no override for the checker -> match the lowered checker name
+        std::string str(def->checker);
+        boost::algorithm::to_lower(str);
+        defKeyEvent.insert(str);
+    }
+    else
+        // use the corresponding set of events from KeyEventDigger::hMap_
+        pKeyEvents = &it->second;
+
     for (int idx = evtCount - 1U; idx >= 0; --idx) {
         const DefEvent &evt = evtList[idx];
-        if (!keyEvents.count(evt.event))
+        if (!pKeyEvents->count(evt.event))
             continue;
 
         // matched

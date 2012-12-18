@@ -205,13 +205,6 @@ Error: MISSING_BREAK:
 /builddir/build/BUILD/libssh-0.5.0/src/sftpserver.c:218: fallthrough: The above case falls through to this one.
 
 Error: NEGATIVE_RETURNS:
-/builddir/build/BUILD/libssh-0.5.0/examples/sample.c:332: negative_return_fn: Function "read(0, buffer, sizeof (buffer) /*4096*/)" returns a negative number.
-/builddir/build/BUILD/libssh-0.5.0/examples/sample.c:332: var_assign: Assigning: signed variable "lus" = "read".
-/builddir/build/BUILD/libssh-0.5.0/examples/sample.c:334: negative_returns: "lus" is passed to a parameter that cannot be negative.
-/builddir/build/BUILD/libssh-0.5.0/src/channels.c:1230: neg_sink_parm_call: Passing "len" to "channel_write_common", which cannot accept a negative.
-/builddir/build/BUILD/libssh-0.5.0/src/channels.c:1152: parm_loop_bound: Using unsigned parameter "len" in a loop exit test.
-
-Error: NEGATIVE_RETURNS:
 /builddir/build/BUILD/libssh-0.5.0/src/channels.c:2611: var_tested_neg: Assigning: "max_fd" = a negative value.
 /builddir/build/BUILD/libssh-0.5.0/src/channels.c:2696: negative_returns: "max_fd" is passed to a parameter that cannot be negative.
 
