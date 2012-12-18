@@ -112,6 +112,7 @@ KeyEventDigger::KeyEventDigger() {
     hMap_["FORWARD_NULL"]           .insert("dereference");
     hMap_["FORWARD_NULL"]           .insert("var_deref_op");
     hMap_["FORWARD_NULL"]           .insert("var_deref_model");
+    hMap_["ORDER_REVERSAL"]         .insert("lock_acquire");
     hMap_["OVERRUN_STATIC"]         .insert("index_parm");
     hMap_["OVERRUN_STATIC"]         .insert("overrun-buffer-arg");
     hMap_["OVERRUN_STATIC"]         .insert("overrun-local");
@@ -123,12 +124,15 @@ KeyEventDigger::KeyEventDigger() {
     hMap_["USE_AFTER_FREE"]         .insert("double_free");
     hMap_["USE_AFTER_FREE"]         .insert("pass_freed_arg");
     hMap_["USE_AFTER_FREE"]         .insert("use_after_free");
-    hMap_["ORDER_REVERSAL"]         .insert("lock_acquire");
+
+    // do not match the lowered checker name of the following checkers
+    hMap_["LOCK"];
 
     // events that should never be used as key events
     blackList_.insert("break");
     blackList_.insert("cond_false");
     blackList_.insert("cond_true");
+    blackList_.insert("continue");
     blackList_.insert("else_branch");
     blackList_.insert("end_of_path");
     blackList_.insert("goto");
@@ -138,6 +142,9 @@ KeyEventDigger::KeyEventDigger() {
     blackList_.insert("loop");
     blackList_.insert("loop_begin");
     blackList_.insert("loop_end");
+    blackList_.insert("switch");
+    blackList_.insert("switch_case");
+    blackList_.insert("switch_default");
     blackList_.insert("switch_end");
     blackList_.insert("return");
 }
