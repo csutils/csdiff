@@ -99,6 +99,7 @@ class KeyEventDigger {
         typedef std::set<std::string>               TSet;
         typedef std::map<std::string, TSet>         TMap;
         TMap hMap_;
+        TSet blackList_;
 
     public:
         KeyEventDigger();
@@ -122,6 +123,23 @@ KeyEventDigger::KeyEventDigger() {
     hMap_["USE_AFTER_FREE"]         .insert("double_free");
     hMap_["USE_AFTER_FREE"]         .insert("pass_freed_arg");
     hMap_["USE_AFTER_FREE"]         .insert("use_after_free");
+    hMap_["ORDER_REVERSAL"]         .insert("lock_acquire");
+
+    // events that should never be used as key events
+    blackList_.insert("break");
+    blackList_.insert("cond_false");
+    blackList_.insert("cond_true");
+    blackList_.insert("else_branch");
+    blackList_.insert("end_of_path");
+    blackList_.insert("goto");
+    blackList_.insert("if_end");
+    blackList_.insert("if_fallthrough");
+    blackList_.insert("label");
+    blackList_.insert("loop");
+    blackList_.insert("loop_begin");
+    blackList_.insert("loop_end");
+    blackList_.insert("switch_end");
+    blackList_.insert("return");
 }
 
 bool KeyEventDigger::guessKeyEvent(Defect *def) {
@@ -129,10 +147,7 @@ bool KeyEventDigger::guessKeyEvent(Defect *def) {
     if (evtList.empty())
         return false;
 
-    // use the last event as key event by default
     const unsigned evtCount = evtList.size();
-    def->keyEventIdx = evtCount - 1U;
-
     TSet defKeyEvent;
     const TSet *pKeyEvents = &defKeyEvent;
 
@@ -154,7 +169,15 @@ bool KeyEventDigger::guessKeyEvent(Defect *def) {
 
         // matched
         def->keyEventIdx = idx;
-        break;
+        return true;
+    }
+
+    // use the last event as key event by default (unless black-listed)
+    for (int idx = evtCount - 1U; idx >= 0; --idx) {
+        def->keyEventIdx = idx;
+        const DefEvent &evt = evtList[idx];
+        if (!blackList_.count(evt.event))
+            break;
     }
 
     return true;
