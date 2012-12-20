@@ -100,6 +100,8 @@ struct MsgFilter::Private {
         addMsgFilter("UNUSED_VALUE",
                 "returned by \"([^\\(]+)\\(.*\\)\"",
                 "returned by \"\\1\\(\\)\"");
+        addMsgFilter("MISSING_LOCK",
+                "held [0-9][0-9]* out of [0-9][0-9]* times");
     }
 };
 
