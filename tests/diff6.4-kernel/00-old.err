@@ -1,0 +1,15 @@
+Error: MISSING_LOCK (CWE-366):
+kernel-2.6.32-343.el6/linux-2.6.32-343.el6.x86_64/drivers/scsi/lpfc/lpfc_nportdisc.c:2001: cond_true: Condition "!(ndlp->nlp_flag & 131072)", taking true branch
+kernel-2.6.32-343.el6/linux-2.6.32-343.el6.x86_64/drivers/scsi/lpfc/lpfc_nportdisc.c:2001: cond_true: Condition "!(ndlp->nlp_flag & 262144)", taking true branch
+kernel-2.6.32-343.el6/linux-2.6.32-343.el6.x86_64/drivers/scsi/lpfc/lpfc_nportdisc.c:2003: cond_true: Condition "ndlp->nlp_flag & 33554432", taking true branch
+kernel-2.6.32-343.el6/linux-2.6.32-343.el6.x86_64/drivers/scsi/lpfc/lpfc_nportdisc.c:2004: missing_lock: Accessing "ndlp->nlp_flag" without holding lock "Scsi_Host.host_lock". Elsewhere, "ndlp->nlp_flag" is accessed with "Scsi_Host.host_lock" held 149 out of 98 times.
+kernel-2.6.32-343.el6/linux-2.6.32-343.el6.x86_64/drivers/scsi/lpfc/lpfc_els.c:2355: example_lock: Locking "Scsi_Host.host_lock".
+kernel-2.6.32-343.el6/linux-2.6.32-343.el6.x86_64/drivers/scsi/lpfc/lpfc_els.c:2356: example_access: "lpfc_nodelist.nlp_flag" is accessed with lock "Scsi_Host.host_lock" held.
+kernel-2.6.32-343.el6/linux-2.6.32-343.el6.x86_64/drivers/scsi/lpfc/lpfc_hbadisc.c:3981: example_lock: Locking "Scsi_Host.host_lock".
+kernel-2.6.32-343.el6/linux-2.6.32-343.el6.x86_64/drivers/scsi/lpfc/lpfc_hbadisc.c:3982: example_access: "lpfc_nodelist.nlp_flag" is accessed with lock "Scsi_Host.host_lock" held.
+kernel-2.6.32-343.el6/linux-2.6.32-343.el6.x86_64/drivers/scsi/lpfc/lpfc_hbadisc.c:4743: example_lock: Locking "Scsi_Host.host_lock".
+kernel-2.6.32-343.el6/linux-2.6.32-343.el6.x86_64/drivers/scsi/lpfc/lpfc_hbadisc.c:4744: example_access: "lpfc_nodelist.nlp_flag" is accessed with lock "Scsi_Host.host_lock" held.
+kernel-2.6.32-343.el6/linux-2.6.32-343.el6.x86_64/drivers/scsi/lpfc/lpfc_init.c:4062: example_lock: Locking "Scsi_Host.host_lock".
+kernel-2.6.32-343.el6/linux-2.6.32-343.el6.x86_64/drivers/scsi/lpfc/lpfc_init.c:4063: example_access: "lpfc_nodelist.nlp_flag" is accessed with lock "Scsi_Host.host_lock" held.
+kernel-2.6.32-343.el6/linux-2.6.32-343.el6.x86_64/drivers/scsi/lpfc/lpfc_sli.c:8507: example_lock: Locking "Scsi_Host.host_lock".
+kernel-2.6.32-343.el6/linux-2.6.32-343.el6.x86_64/drivers/scsi/lpfc/lpfc_sli.c:8508: example_access: "lpfc_nodelist.nlp_flag" is accessed with lock "Scsi_Host.host_lock" held.

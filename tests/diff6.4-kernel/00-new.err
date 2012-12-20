@@ -1,0 +1,15 @@
+Error: MISSING_LOCK (CWE-366):
+kernel-2.6.32-348.el6/linux-2.6.32-348.el6.x86_64/drivers/scsi/lpfc/lpfc_nportdisc.c:2112: cond_true: Condition "!(ndlp->nlp_flag & 131072)", taking true branch
+kernel-2.6.32-348.el6/linux-2.6.32-348.el6.x86_64/drivers/scsi/lpfc/lpfc_nportdisc.c:2112: cond_true: Condition "!(ndlp->nlp_flag & 262144)", taking true branch
+kernel-2.6.32-348.el6/linux-2.6.32-348.el6.x86_64/drivers/scsi/lpfc/lpfc_nportdisc.c:2114: cond_true: Condition "ndlp->nlp_flag & 33554432", taking true branch
+kernel-2.6.32-348.el6/linux-2.6.32-348.el6.x86_64/drivers/scsi/lpfc/lpfc_nportdisc.c:2115: missing_lock: Accessing "ndlp->nlp_flag" without holding lock "Scsi_Host.host_lock". Elsewhere, "ndlp->nlp_flag" is accessed with "Scsi_Host.host_lock" held 156 out of 102 times.
+kernel-2.6.32-348.el6/linux-2.6.32-348.el6.x86_64/drivers/scsi/lpfc/lpfc_els.c:2361: example_lock: Locking "Scsi_Host.host_lock".
+kernel-2.6.32-348.el6/linux-2.6.32-348.el6.x86_64/drivers/scsi/lpfc/lpfc_els.c:2362: example_access: "lpfc_nodelist.nlp_flag" is accessed with lock "Scsi_Host.host_lock" held.
+kernel-2.6.32-348.el6/linux-2.6.32-348.el6.x86_64/drivers/scsi/lpfc/lpfc_hbadisc.c:3981: example_lock: Locking "Scsi_Host.host_lock".
+kernel-2.6.32-348.el6/linux-2.6.32-348.el6.x86_64/drivers/scsi/lpfc/lpfc_hbadisc.c:3982: example_access: "lpfc_nodelist.nlp_flag" is accessed with lock "Scsi_Host.host_lock" held.
+kernel-2.6.32-348.el6/linux-2.6.32-348.el6.x86_64/drivers/scsi/lpfc/lpfc_hbadisc.c:4777: example_lock: Locking "Scsi_Host.host_lock".
+kernel-2.6.32-348.el6/linux-2.6.32-348.el6.x86_64/drivers/scsi/lpfc/lpfc_hbadisc.c:4778: example_access: "lpfc_nodelist.nlp_flag" is accessed with lock "Scsi_Host.host_lock" held.
+kernel-2.6.32-348.el6/linux-2.6.32-348.el6.x86_64/drivers/scsi/lpfc/lpfc_hbadisc.c:4785: example_lock: Locking "Scsi_Host.host_lock".
+kernel-2.6.32-348.el6/linux-2.6.32-348.el6.x86_64/drivers/scsi/lpfc/lpfc_hbadisc.c:4786: example_access: "lpfc_nodelist.nlp_flag" is accessed with lock "Scsi_Host.host_lock" held.
+kernel-2.6.32-348.el6/linux-2.6.32-348.el6.x86_64/drivers/scsi/lpfc/lpfc_init.c:4188: example_lock: Locking "Scsi_Host.host_lock".
+kernel-2.6.32-348.el6/linux-2.6.32-348.el6.x86_64/drivers/scsi/lpfc/lpfc_init.c:4189: example_access: "lpfc_nodelist.nlp_flag" is accessed with lock "Scsi_Host.host_lock" held.
