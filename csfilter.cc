@@ -24,7 +24,8 @@
 #include <boost/regex.hpp>
 #include <boost/foreach.hpp>
 
-// if 1, debug string substitutions while matching them
+// Setup verbosity for debugging string substitions while matching them.
+// Verbosity levels are from 0 to 3 (0 is off)
 #define DEBUG_SUBST 0
 
 inline std::string regexReplaceWrap(
@@ -33,7 +34,7 @@ inline std::string regexReplaceWrap(
         const std::string       &fmt)
 {
     std::string output(boost::regex_replace(input, re, fmt));
-#if DEBUG_SUBST
+#if DEBUG_SUBST > 1
     if (input != output)
         std::cerr << "regex_replace: " << input << " -> " << output << "\n";
 #endif
@@ -131,8 +132,8 @@ std::string MsgFilter::filterMsg(
         filtered = regexReplaceWrap(filtered, *rpl->regex, rpl->replaceWith);
     }
 
-#if DEBUG_SUBST
-    std::cerr << "filterMsg: " << filtered << std::cout;
+#if DEBUG_SUBST > 1
+    std::cerr << "filterMsg: " << filtered << "\n";
 #endif
     return filtered;
 }
@@ -170,7 +171,15 @@ std::string MsgFilter::filterPath(const std::string &origPath) {
     // try to kill the multiple version strings in paths (kernel, OpenLDAP, ...)
     nvr.resize(nvr.size() - 1);
     std::string ver(boost::regex_replace(nvr, d->reKrn, ""));
-    const boost::regex reKill(d->strKrn + ver + "[^/]*/");
+    const std::string krnPattern = d->strKrn + ver + "[^/]*/";
+
+#if DEBUG_SUBST > 2
+    std::cerr << "nvr: " << nvr << "\n";
+    std::cerr << "ver: " << ver << "\n";
+    std::cerr << "krnPattern: " << krnPattern << "\n";
+#endif
+
+    const boost::regex reKill(krnPattern);
     core = boost::regex_replace(core, reKill, "");
 
     // quirk for Coverity inconsistency in handling bison-generated file names
