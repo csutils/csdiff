@@ -83,6 +83,9 @@ AbstractWriter* createWriter(
             writer = new CovWriter(std::cout);
             break;
 
+        case FF_GCC:
+            // TODO
+
         case FF_JSON:
             writer = new JsonWriter(std::cout);
             break;

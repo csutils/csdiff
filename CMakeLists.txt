@@ -64,6 +64,7 @@ add_library(cs STATIC
     cswriter.cc
     deflookup.cc
     defqueue.cc
+    gcc-parser.cc
     html-writer.cc
     instream.cc
     json-parser.cc

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011-2012 Red Hat, Inc.
+ * Copyright (C) 2011-2013 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -20,6 +20,7 @@
 #include "abstract-parser.hh"
 
 #include "csparser.hh"
+#include "gcc-parser.hh"
 #include "json-parser.hh"
 
 #include <boost/foreach.hpp>
@@ -29,28 +30,36 @@ AbstractParser* createParser(
         const std::string   &fileName,
         const bool          silent)
 {
-    bool jsonDetected = false;
-
     // sniff the first char from the input
-    char c;
-    if (input >> c) {
-        if ('{' == c)
-            jsonDetected = true;
-
-        // now put the char back to the input stream
+    unsigned char c = 'E';
+    if (input >> c)
+        // ... and put the char back to the input stream
         input.putback(c);
+
+    switch (c) {
+        case '{':
+            // JSON
+            return new JsonParser(input, fileName, silent);
+
+        case 'E':
+            // Coverity
+            return new CovParser(input, fileName, silent);
+
+        default:
+            // GCC
+            return new GccParser(input, fileName, silent);
     }
-
-    if (jsonDetected)
-        // create a JSON parser
-        return new JsonParser(input, fileName, silent);
-
-    // fall-back to default
-    return new CovParser(input, fileName, silent);
 }
 
 EFileFormat Parser::inputFormat() const {
-    return (dynamic_cast<JsonParser *>(parser_))\
-        ? FF_JSON
-        : FF_COVERITY;
+    if (dynamic_cast<JsonParser *>(parser_))
+        return FF_JSON;
+
+    if (dynamic_cast<CovParser *>(parser_))
+        return FF_COVERITY;
+
+    if (dynamic_cast<GccParser *>(parser_))
+        return FF_GCC;
+
+    return FF_INVALID;
 }
