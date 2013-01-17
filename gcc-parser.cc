@@ -71,6 +71,9 @@ bool GccParser::Private::parseLine(Defect *def, const std::string &line) {
         return false;
     }
 
+    // make sure the Defect structure is properly initialized
+    (*def) = Defect();
+
     // append a single event
     def->events.resize(1U);
     DefEvent &evt = def->events.front();
