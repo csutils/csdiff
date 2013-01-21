@@ -1,19 +1,22 @@
-#!/bin/sh
-export MIRROR="http://ftp.fi.muni.cz/pub/linux/gentoo/distfiles"
+#!/bin/bash
+export MIRROR="http://sourceforge.net/projects/boost/files"
 
 import_from()
 {
-    version="$1"
+    ver="$1"
     shift
-    curl "${MIRROR}/boost_${version}.tar.bz2" | bzip2 -cd | tar -xv "$@"
+    curl -L "${MIRROR}/boost/${ver}/boost_${ver//./_}.tar.bz2/download" \
+        | bzip2 -cd                                                     \
+        | tar -xv "$@"
 }
 
-import_from 1_34_1                                      \
-    boost_1_34_1/LICENSE_1_0.txt                        \
-    boost_1_34_1/boost/foreach.hpp                      \
+import_from 1.34.1                                                      \
+    boost_1_34_1/LICENSE_1_0.txt                                        \
+    boost_1_34_1/boost/algorithm/string/std/slist_traits.hpp            \
+    boost_1_34_1/boost/foreach.hpp                                      \
     boost_1_34_1/boost/iostreams/filter/regex.hpp
 
-import_from 1_41_0                                      \
+import_from 1.41.0                                      \
     boost_1_41_0/LICENSE_1_0.txt                        \
     boost_1_41_0/boost/config/                          \
     boost_1_41_0/boost/optional/                        \
