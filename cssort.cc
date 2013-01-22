@@ -18,6 +18,7 @@
  */
 
 #include "abstract-writer.hh"
+#include "version.hh"
 
 #include <boost/foreach.hpp>
 #include <boost/program_options.hpp>
@@ -188,7 +189,8 @@ int main(int argc, char *argv[])
             ("key", po::value<string>(&key)->default_value("path"),
              "checker, path")
             ("help", "produce help message")
-            ("quiet,q", "do not report any parsing errors");
+            ("quiet,q", "do not report any parsing errors")
+            ("version", "print version");
 
         po::options_description hidden("");
         hidden.add_options()
@@ -213,6 +215,11 @@ int main(int argc, char *argv[])
 
     if (vm.count("help")) {
         printUsage(std::cout, desc);
+        return 0;
+    }
+
+    if (vm.count("version")) {
+        std::cout << CS_VERSION << "\n";
         return 0;
     }
 

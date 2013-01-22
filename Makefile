@@ -27,12 +27,12 @@ CMAKE_BUILD_TYPE ?= RelWithDebInfo
 
 .PHONY: all check clean cppcheck distclean distcheck fast install
 
-all:
+all: version.cc
 	mkdir -p csdiff_build
 	cd csdiff_build && $(CMAKE) -D 'CMAKE_BUILD_TYPE=$(CMAKE_BUILD_TYPE)' ..
 	$(MAKE) -C csdiff_build
 
-fast:
+fast: version.cc
 	$(MAKE) -sC csdiff_build
 
 check: all
@@ -43,6 +43,7 @@ cppcheck: all
 
 clean:
 	if test -e csdiff_build/Makefile; then $(MAKE) clean -C csdiff_build; fi
+	if test -e .git; then rm -f version.cc; fi
 
 distclean:
 	rm -rf csdiff_build
@@ -52,3 +53,12 @@ distcheck: distclean
 
 install: all
 	$(MAKE) -C csdiff_build install
+
+version.cc:
+	@if test -e .git; then \
+		printf "#include \"version.hh\"\nconst char *CS_VERSION = \"%s\";\n" \
+			"0.`git log --pretty="%cd_%h" --date=short -1 | tr -d -`" \
+			> $@.tmp \
+			&& install -m0644 -C -v $@.tmp $@ \
+			&& rm -f $@.tmp; \
+		fi

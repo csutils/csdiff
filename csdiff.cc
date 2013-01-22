@@ -20,6 +20,7 @@
 #include "csdiff-core.hh"
 #include "csfilter.hh"
 #include "instream.hh"
+#include "version.hh"
 
 #include <cstdlib>
 
@@ -49,7 +50,8 @@ int main(int argc, char *argv[])
             ("quiet,q", "do not report any parsing errors")
             ("file-rename,s", po::value<TStringList>(),
              "account the file base-name change, [OLD,NEW] (*testing*)")
-            ("help", "produce help message");
+            ("help", "produce help message")
+            ("version", "print version");
 
         po::options_description hidden("");
         hidden.add_options()
@@ -74,6 +76,11 @@ int main(int argc, char *argv[])
 
     if (vm.count("help")) {
         desc.print(std::cout);
+        return 0;
+    }
+
+    if (vm.count("version")) {
+        std::cout << CS_VERSION << "\n";
         return 0;
     }
 

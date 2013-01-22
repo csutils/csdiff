@@ -23,6 +23,7 @@
 #include "abstract-filter.hh"
 #include "cswriter.hh"
 #include "json-writer.hh"
+#include "version.hh"
 
 #include <cstdlib>
 #include <fstream>
@@ -434,7 +435,8 @@ int cStatCore(int argc, char *argv[], const char *defMode)
              "match source path by the given regex")
             ("quiet,q", "do not report any parsing errors")
             ("src-annot", po::value<string>(),
-             "match annotations in the _source_ file by the given regex");
+             "match annotations in the _source_ file by the given regex")
+            ("version", "print version");
 
         po::options_description hidden("");
         hidden.add_options()
@@ -459,6 +461,11 @@ int cStatCore(int argc, char *argv[], const char *defMode)
 
     if (vm.count("help")) {
         printUsage(std::cout, desc);
+        return 0;
+    }
+
+    if (vm.count("version")) {
+        std::cout << CS_VERSION << "\n";
         return 0;
     }
 

@@ -21,6 +21,7 @@
 #include "deflookup.hh"
 #include "html-writer.hh"
 #include "instream.hh"
+#include "version.hh"
 
 #include <boost/program_options.hpp>
 #include <boost/regex.hpp>
@@ -63,7 +64,8 @@ int main(int argc, char *argv[])
              po::value<string>(&spPosition)->default_value("top"),
              "placement of the table with scan properties: top, bottom, none")
             ("quiet,q", "do not report any parsing errors")
-            ("help", "produce help message");
+            ("help", "produce help message")
+            ("version", "print version");
 
         po::options_description hidden("");
         hidden.add_options()
@@ -88,6 +90,11 @@ int main(int argc, char *argv[])
 
     if (vm.count("help")) {
         desc.print(std::cout);
+        return 0;
+    }
+
+    if (vm.count("version")) {
+        std::cout << CS_VERSION << "\n";
         return 0;
     }
 

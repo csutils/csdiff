@@ -21,6 +21,7 @@
 #include "defqueue.hh"
 #include "instream.hh"
 #include "json-writer.hh"
+#include "version.hh"
 
 #include <boost/program_options.hpp>
 #include <boost/property_tree/ini_parser.hpp>
@@ -139,7 +140,8 @@ int main(int argc, char *argv[])
     try {
         desc.add_options()
             ("quiet,q", "do not report any parsing errors")
-            ("help", "produce help message");
+            ("help", "produce help message")
+            ("version", "print version");
 
         po::options_description hidden("");
         hidden.add_options()
@@ -164,6 +166,11 @@ int main(int argc, char *argv[])
 
     if (vm.count("help")) {
         desc.print(std::cout);
+        return 0;
+    }
+
+    if (vm.count("version")) {
+        std::cout << CS_VERSION << "\n";
         return 0;
     }
 

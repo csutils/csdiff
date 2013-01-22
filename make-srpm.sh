@@ -41,9 +41,16 @@ cd "$PKG"                               || die "git clone failed"
 
 make -j5 distcheck CTEST='ctest -j5'    || die "'make distcheck' has failed"
 
-NV="${PKG}-$VER"
-SRC="${PKG}.tar.xz"
-git archive --prefix="$NV/" --format="tar" HEAD -- . | xz -c > "$SRC"
+NV="${PKG}-${VER}"
+mkdir "${NV}"
+mv version.cc "${NV}/"                  || die "failed to copy version.cc"
+
+SRC_TAR="${PKG}.tar"
+SRC="${SRC_TAR}.xz"
+git archive --prefix="$NV/" --format="tar" HEAD -- . > "$SRC_TAR"
+tar -rf "$SRC_TAR" "${NV}/version.cc"
+
+xz -c "$SRC_TAR" > "$SRC"               || die "failed to compress sources"
 
 SPEC="./$PKG.spec"
 cat > "$SPEC" << EOF

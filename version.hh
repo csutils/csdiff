@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012 Red Hat, Inc.
+ * Copyright (C) 2013 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -17,31 +17,9 @@
  * along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "csdiff-core.hh"
-#include "version.hh"
+#ifndef H_GUARD_VERSION_H
+#define H_GUARD_VERSION_H
 
-#include <sstream>
+extern const char *CS_VERSION;
 
-#include <boost/python.hpp>
-
-std::string diff_scans(
-        const std::string          &oldScan,
-        const std::string          &newScan)
-{
-    std::istringstream strOld(oldScan);
-    std::istringstream strNew(newScan);
-    std::ostringstream strDst;
-    (void) diffScans(strDst, strOld, strNew);
-    return strDst.str();
-}
-
-std::string get_version(void)
-{
-    return CS_VERSION;
-}
-
-BOOST_PYTHON_MODULE(pycsdiff)
-{
-    boost::python::def("diff_scans",        diff_scans);
-    boost::python::def("get_version",       get_version);
-}
+#endif /* H_GUARD_VERSION_H */
