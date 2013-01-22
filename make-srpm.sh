@@ -70,6 +70,7 @@ BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildRequires: boost-devel
 BuildRequires: cmake
 BuildRequires: flex
+BuildRequires: help2man
 BuildRequires: python-devel
 
 %description
@@ -106,6 +107,11 @@ rm -rf "\$RPM_BUILD_ROOT"
 %{_bindir}/cslinker
 %{_bindir}/cssort
 %{_bindir}/cstat
+%{_mandir}/man1/csdiff.1.gz
+%{_mandir}/man1/csgrep.1.gz
+%{_mandir}/man1/cshtml.1.gz
+%{_mandir}/man1/cslinker.1.gz
+%{_mandir}/man1/cssort.1.gz
 %{python_sitearch}/pycsdiff.so
 %doc COPYING README
 EOF

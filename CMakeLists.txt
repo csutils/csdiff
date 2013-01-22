@@ -113,3 +113,25 @@ if (EXISTS "${PYTHON_INCLUDE_PATH}/pyconfig.h")
         install(TARGETS pycsdiff DESTINATION lib)
     endif()
 endif()
+
+# macro to generate a man page from the corresponding binary
+macro(create_manpage BINARY)
+    add_custom_command(TARGET ${BINARY} POST_BUILD
+        COMMAND ${HELP2MAN} --no-info --section 1
+            ${CMAKE_CURRENT_BINARY_DIR}/${BINARY}
+            | gzip > ${BINARY}.1.gz
+        COMMENT "Generating ${BINARY} man page"
+        VERBATIM)
+    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${BINARY}.1.gz
+        DESTINATION share/man/man1)
+endmacro(create_manpage)
+
+# generate man pages using help2man if available
+find_program(HELP2MAN help2man)
+if(HELP2MAN)
+    create_manpage(csdiff)
+    create_manpage(csgrep)
+    create_manpage(cshtml)
+    create_manpage(cslinker)
+    create_manpage(cssort)
+endif()
