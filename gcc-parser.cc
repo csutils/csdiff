@@ -37,7 +37,9 @@ struct GccParser::Private {
         input(input_),
         fileName(fileName_),
         silent(silent_),
-        reLine("^([^:]+)(?::([0-9]+))?(?::([0-9]+))?: ([a-z]+): (.*)$"),
+        reLine(
+                /* location */ "^([^:]+)(?::([0-9]+))?(?::([0-9]+))?:"
+                /* chk/mesg */ " ([a-z]+)(?:: ([A-Za-z]+))?: (.*)$"),
         lineNo(0),
         hasError(false)
     {
@@ -74,6 +76,9 @@ bool GccParser::Private::parseLine(Defect *def, const std::string &line) {
     // make sure the Defect structure is properly initialized
     (*def) = Defect();
 
+    // use cppcheck's ID as the checker string if available
+    def->checker = sm[/* id */ 5];
+
     // append a single event
     def->events.resize(1U);
     DefEvent &evt = def->events.front();
@@ -81,7 +86,7 @@ bool GccParser::Private::parseLine(Defect *def, const std::string &line) {
     // read file name, event, and msg
     evt.fileName    = sm[/* file */ 1];
     evt.event       = sm[/* evt  */ 4];
-    evt.msg         = sm[/* msg  */ 5];
+    evt.msg         = sm[/* msg  */ 6];
 
     // parse line number
     try {
