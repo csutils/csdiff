@@ -37,8 +37,7 @@
 std::ostream& operator<<(std::ostream &str, EToken code) {
     switch (code) {
         case T_NULL:    str << "T_NULL";    break;
-        case T_INIT:    str << "T_INIT";    break;
-        case T_DEFECT:  str << "T_DEFECT";  break;
+        case T_CHECKER: str << "T_CHECKER"; break;
         case T_FILE:    str << "T_FILE";    break;
         case T_LINE:    str << "T_LINE";    break;
         case T_MSG:     str << "T_MSG";     break;
@@ -264,15 +263,24 @@ bool CovParser::Private::seekForToken(const EToken token) {
 
         this->wrongToken();
     }
-    while (T_INIT != code);
+    while (T_CHECKER != code);
 
     return false;
 }
 
 bool CovParser::Private::parseCheckerHeader(Defect *def) {
-    char *ann, *end;
-    char *text = strdup(lexer.YYText());
-    if (!text || !isupper((unsigned char) text[0]))
+    char *ptr = strdup(lexer.YYText());
+    char *ann, *end, *text = ptr;
+    static const char CHK_HDR[] = "Error:";
+    static const size_t CHK_HDR_LEN = sizeof(CHK_HDR) - 1U;
+    if (!text || strncmp(text, CHK_HDR, CHK_HDR_LEN))
+        goto fail;
+
+    text += CHK_HDR_LEN;
+    while (isspace((unsigned char) *text))
+        ++ text;
+
+    if (!isupper((unsigned char) *text))
         goto fail;
 
     end = strchr(text, ':');
@@ -293,11 +301,11 @@ bool CovParser::Private::parseCheckerHeader(Defect *def) {
 
     def->checker = text;
     def->events.clear();
-    free(text);
+    free(ptr);
     return true;
 
 fail:
-    free(text);
+    free(ptr);
     return false;
 }
 
@@ -374,7 +382,7 @@ bool CovParser::Private::parseMsg(DefEvent *evt) {
         code = lexer.readNext();
         switch (code) {
             case T_NULL:
-            case T_INIT:
+            case T_CHECKER:
             case T_FILE:
                 // all OK
                 return true;
@@ -396,21 +404,18 @@ fail:
 
 bool CovParser::Private::parseNext(Defect *def) {
     // parse defect header
-    if (!seekForToken(T_INIT))
+    if (!seekForToken(T_CHECKER))
         return false;
-
-    if (!seekForToken(T_DEFECT)) {
-        this->wrongToken();
-        return false;
-    }
 
     if (!parseCheckerHeader(def)) {
         this->parseError("invalid checker header");
+        code = lexer.readNext();
         return false;
     }
 
     // parse defect body
-    while (T_NULL != code && T_INIT != code) {
+    code = lexer.readNext();
+    while (T_NULL != code && T_CHECKER != code) {
         DefEvent evt;
         if (!parseMsg(&evt))
             return false;
