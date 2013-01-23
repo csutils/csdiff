@@ -27,6 +27,7 @@
 #include <cstring>
 #include <map>
 #include <set>
+#include <sstream>
 
 #include <boost/algorithm/string.hpp>
 #include <boost/iostreams/device/null.hpp>
@@ -207,9 +208,10 @@ struct CovParser::Private {
     {
     }
 
+    void parseError(const std::string &msg);
     void wrongToken();
     bool seekForToken(const EToken);
-    bool parseClass(Defect *);
+    bool parseCheckerHeader(Defect *);
     bool parseLine(DefEvent *);
     bool parseMsg(DefEvent *);
     bool parseNext(Defect *);
@@ -232,15 +234,20 @@ bool CovParser::hasError() const {
         || d->hasError;
 }
 
-void CovParser::Private::wrongToken() {
+void CovParser::Private::parseError(const std::string &msg) {
     this->hasError = true;
     if (this->silent)
         return;
 
     std::cerr << this->fileName
         << ":" << this->lexer.lineno()
-        << ": parse error: wrong token: "
-        << this->code << "\n";
+        << ": parse error: " << msg << "\n";
+}
+
+void CovParser::Private::wrongToken() {
+    std::ostringstream str;
+    str << "wrong token: " << this->code;
+    this->parseError(str.str());
 }
 
 bool CovParser::Private::seekForToken(const EToken token) {
@@ -262,7 +269,7 @@ bool CovParser::Private::seekForToken(const EToken token) {
     return false;
 }
 
-bool CovParser::Private::parseClass(Defect *def) {
+bool CovParser::Private::parseCheckerHeader(Defect *def) {
     char *ann, *end;
     char *text = strdup(lexer.YYText());
     if (!text || !isupper((unsigned char) text[0]))
@@ -392,8 +399,15 @@ bool CovParser::Private::parseNext(Defect *def) {
     if (!seekForToken(T_INIT))
         return false;
 
-    if (!seekForToken(T_DEFECT) || !parseClass(def))
-        goto fail;
+    if (!seekForToken(T_DEFECT)) {
+        this->wrongToken();
+        return false;
+    }
+
+    if (!parseCheckerHeader(def)) {
+        this->parseError("invalid checker header");
+        return false;
+    }
 
     // parse defect body
     while (T_NULL != code && T_INIT != code) {
@@ -409,7 +423,6 @@ bool CovParser::Private::parseNext(Defect *def) {
         // all OK
         return true;
 
-fail:
     this->wrongToken();
     return false;
 }
