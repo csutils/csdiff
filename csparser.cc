@@ -280,7 +280,7 @@ bool CovParser::Private::parseCheckerHeader(Defect *def) {
     while (isspace((unsigned char) *text))
         ++ text;
 
-    if (!isupper((unsigned char) *text))
+    if (!isalpha((unsigned char) *text))
         goto fail;
 
     end = strchr(text, ':');

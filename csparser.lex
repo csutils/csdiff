@@ -33,7 +33,7 @@
 spaces              [ \t\n]*
 nocolons            [^:]+
 
-checker             ^Error:{spaces}[A-Z][A-Z_.]+[ ]*([(][^\n)]*[)])?[ ]*:$
+checker             ^Error:{spaces}[A-Za-z][A-Za-z_.]+[ ]*([(][^\n)]*[)])?[ ]*:$
 file                ^{nocolons}\/{nocolons}
 line                :[0-9:]+{spaces}
 mesg                [a-z][a-z_-]+:\ .*$
