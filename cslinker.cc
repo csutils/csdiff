@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012 Red Hat, Inc.
+ * Copyright (C) 2012 - 2013 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -125,6 +125,14 @@ bool writeMappedDefects(
     return defQueue.walk(visitor);
 }
 
+template <class TVal, class TVar>
+inline TVal valueOf(const TVar &var) {
+    if (var.empty())
+        return TVal();
+    else
+        return var.template as<TVal>();
+}
+
 int main(int argc, char *argv[])
 {
     using std::string;
@@ -133,12 +141,16 @@ int main(int argc, char *argv[])
     namespace po = boost::program_options;
     po::variables_map vm;
     po::options_description desc(string("Usage: ") + name
-            + " [options] proj.err [proj.ini [proj.map]], where options are");
+            + " [options] proj.err [...], where options are");
 
     typedef std::vector<string> TStringList;
 
     try {
         desc.add_options()
+            ("inifile", po::value<string>(),
+             "load scan properties from the given INI file")
+            ("mapfile", po::value<string>(),
+             "load defect IDs from comma-separated mapfile")
             ("quiet,q", "do not report any parsing errors")
             ("help", "produce help message")
             ("version", "print version");
@@ -179,63 +191,75 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    TStringList files = vm["input-file"].as<TStringList>();
-    if (3 < files.size() || files.size() < 1) {
+    const TStringList files = vm["input-file"].as<TStringList>();
+    const unsigned filesCnt = files.size();
+    if (!filesCnt) {
         desc.print(std::cerr);
         return 1;
     }
 
-    files.resize(3, string());
-    const string &fnErr = files[0];
-    const string &fnIni = files[1];
-    const string &fnMap = files[2];
-
+    const string fnIni = valueOf<string>(vm["inifile"]);
+    const string fnMap = valueOf<string>(vm["mapfile"]);
     const bool silent = vm.count("quiet");
 
-    try {
-        // initialize parser for .err
-        InStream strErr(fnErr.c_str());
-        Parser pErr(strErr.str(), fnErr, silent);
+    JsonWriter writer(std::cout);
 
-        // initialize JSON writer
-        JsonWriter writer(std::cout);
-        writer.setScanProps(pErr.getScanProps());
+    DefQueue defQueue;
 
-        bool hasError = false;
+    bool hasError = false;
 
-        // load .ini if available
-        if (!fnIni.empty()) {
-            InStream strIni(fnIni.c_str());
-            if (!loadPropsFromIniFile(writer, strIni.str(), fnIni))
-                hasError = true;
+    for (unsigned i = 0U; i < filesCnt; ++i) {
+        const string &fnErr = files[i];
+
+        try {
+            // initialize parser for .err
+            InStream strErr(fnErr.c_str());
+            Parser pErr(strErr.str(), fnErr, silent);
+
+            if (!i) {
+                // try to load scan properties from the first input file
+                writer.setScanProps(pErr.getScanProps());
+
+                // load .ini if available
+                if (!fnIni.empty()) {
+                    InStream strIni(fnIni.c_str());
+                    if (!loadPropsFromIniFile(writer, strIni.str(), fnIni))
+                        hasError = true;
+                }
+            }
+
+            if (fnMap.empty()) {
+                // no .map file given
+                writer.handleFile(pErr, fnErr);
+            }
+            else {
+                // load defects from .err
+                Defect def;
+                while (pErr.getNext(&def))
+                    defQueue.hashDefect(def);
+            }
+
+            hasError |= pErr.hasError();
         }
+        catch (const InFileException &e) {
+            std::cerr << e.fileName << ": failed to open input file\n";
+            hasError = true;
+        }
+    }
 
-        if (fnMap.empty())
-            // no .map file given
-            writer.handleFile(pErr, fnErr);
-
-        else {
-            // open the given .map file
-            InStream strMap(fnMap.c_str());
-
-            // load defects from .err
-            DefQueue defQueue;
-            Defect def;
-            while (pErr.getNext(&def))
-                defQueue.hashDefect(def);
-
+    if (!fnMap.empty()) {
+        try {
             // process the given .map file
+            InStream strMap(fnMap.c_str());
             if (!writeMappedDefects(writer, defQueue, strMap.str(), fnMap))
                 hasError = true;
         }
-
-        writer.flush();
-
-        return hasError
-            || pErr.hasError();
+        catch (const InFileException &e) {
+            std::cerr << e.fileName << ": failed to open input file\n";
+            hasError = true;
+        }
     }
-    catch (const InFileException &e) {
-        std::cerr << e.fileName << ": failed to open input file\n";
-        return EXIT_FAILURE;
-    }
+
+    writer.flush();
+    return hasError;
 }
