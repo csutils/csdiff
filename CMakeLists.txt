@@ -60,7 +60,6 @@ add_library(cs STATIC
     csdiff-core.cc
     csfilter.cc
     csparser.cc
-    cstat-core.cc
     cswriter.cc
     deflookup.cc
     defqueue.cc
