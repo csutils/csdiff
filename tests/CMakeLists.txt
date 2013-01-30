@@ -19,9 +19,9 @@
 set(csannot     "${csdiff_BINARY_DIR}/csannot")
 set(csdiff      "${csdiff_BINARY_DIR}/csdiff")
 set(csgrep      "${csdiff_BINARY_DIR}/csgrep")
-set(csjson      "${csdiff_BINARY_DIR}/csjson")
 set(cssort      "${csdiff_BINARY_DIR}/cssort")
 set(testdir     "${csdiff_SOURCE_DIR}/tests")
+set(csjson      "${csgrep} --mode=json")
 set(diffcmd     "diff -up")
 
 # new versions of Boost tend to escape '/' in JSON strings, no idea why

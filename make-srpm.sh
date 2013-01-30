@@ -103,10 +103,8 @@ rm -rf "\$RPM_BUILD_ROOT"
 %{_bindir}/csdiff
 %{_bindir}/csgrep
 %{_bindir}/cshtml
-%{_bindir}/csjson
 %{_bindir}/cslinker
 %{_bindir}/cssort
-%{_bindir}/cstat
 %{_mandir}/man1/csdiff.1.gz
 %{_mandir}/man1/csgrep.1.gz
 %{_mandir}/man1/cshtml.1.gz
