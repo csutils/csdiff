@@ -50,43 +50,43 @@ bool /* anyError */ diffScans(
         const bool                  forceJson,
         const bool                  forceCov)
 {
-        // create Parsers
-        Parser pOld(strOld, fnOld, silent);
-        Parser pNew(strNew, fnNew, silent);
+    // create Parsers
+    Parser pOld(strOld, fnOld, silent);
+    Parser pNew(strNew, fnNew, silent);
 
-        // decide which format use for the output
-        const bool json = forceJson
-            || (!forceCov && pNew.isJson());
+    // decide which format use for the output
+    const bool json = forceJson
+        || (!forceCov && pNew.isJson());
 
-        // create the appropriate writer
-        boost::shared_ptr<AbstractWriter> writer;
-        if (json)
-            writer.reset(new JsonWriter(strDst));
-        else
-            writer.reset(new CovWriter(strDst));
+    // create the appropriate writer
+    boost::shared_ptr<AbstractWriter> writer;
+    if (json)
+        writer.reset(new JsonWriter(strDst));
+    else
+        writer.reset(new CovWriter(strDst));
 
-        // propagate scan properties if available
-        TScanProps props = pNew.getScanProps();
-        mergeScanProps(props, pOld.getScanProps());
-        writer->setScanProps(props);
+    // propagate scan properties if available
+    TScanProps props = pNew.getScanProps();
+    mergeScanProps(props, pOld.getScanProps());
+    writer->setScanProps(props);
 
-        // read old
-        DefLookup stor;
-        Defect def;
-        while (pOld.getNext(&def))
-            stor.hashDefect(def);
+    // read old
+    DefLookup stor;
+    Defect def;
+    while (pOld.getNext(&def))
+        stor.hashDefect(def);
 
-        // read new
-        while (pNew.getNext(&def)) {
-            if (stor.lookup(def))
-                continue;
+    // read new
+    while (pNew.getNext(&def)) {
+        if (stor.lookup(def))
+            continue;
 
-            // a newly added defect found
-            writer->handleDef(def);
-        }
+        // a newly added defect found
+        writer->handleDef(def);
+    }
 
-        writer->flush();
+    writer->flush();
 
-        return pOld.hasError()
-            || pNew.hasError();
+    return pOld.hasError()
+        || pNew.hasError();
 }
