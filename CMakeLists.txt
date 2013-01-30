@@ -61,6 +61,7 @@ add_library(cs STATIC
     csfilter.cc
     csparser.cc
     cswriter.cc
+    cwe-mapper.cc
     deflookup.cc
     defqueue.cc
     gcc-parser.cc

@@ -18,6 +18,7 @@
  */
 
 #include "abstract-parser.hh"
+#include "cwe-mapper.hh"
 #include "defqueue.hh"
 #include "instream.hh"
 #include "json-writer.hh"
@@ -133,8 +134,11 @@ inline TVal valueOf(const TVar &var) {
         return var.template as<TVal>();
 }
 
-int main(int argc, char *argv[])
-{
+void printError(const InFileException &e) {
+    std::cerr << e.fileName << ": failed to open input file\n";
+}
+
+int main(int argc, char *argv[]) {
     using std::string;
     const char *name = argv[0];
 
@@ -147,6 +151,8 @@ int main(int argc, char *argv[])
 
     try {
         desc.add_options()
+            ("cwelist", po::value<string>(),
+             "(re)assign CWE numbers to defects by the given CSV list")
             ("inifile", po::value<string>(),
              "load scan properties from the given INI file")
             ("mapfile", po::value<string>(),
@@ -198,15 +204,29 @@ int main(int argc, char *argv[])
         return 1;
     }
 
+    const string fnCwe = valueOf<string>(vm["cwelist"]);
     const string fnIni = valueOf<string>(vm["inifile"]);
     const string fnMap = valueOf<string>(vm["mapfile"]);
     const bool silent = vm.count("quiet");
 
-    JsonWriter writer(std::cout);
+    CweMapDecorator writer(new JsonWriter(std::cout));
 
     DefQueue defQueue;
 
     bool hasError = false;
+
+    if (!fnCwe.empty()) {
+        try {
+            // load CWE mapping from the given file
+            InStream strCwe(fnCwe.c_str());
+            if (!writer.cweMap().loadCweMap(strCwe.str(), fnCwe))
+                hasError = true;
+        }
+        catch (const InFileException &e) {
+            printError(e);
+            hasError = true;
+        }
+    }
 
     for (unsigned i = 0U; i < filesCnt; ++i) {
         const string &fnErr = files[i];
@@ -242,7 +262,7 @@ int main(int argc, char *argv[])
             hasError |= pErr.hasError();
         }
         catch (const InFileException &e) {
-            std::cerr << e.fileName << ": failed to open input file\n";
+            printError(e);
             hasError = true;
         }
     }
@@ -255,7 +275,7 @@ int main(int argc, char *argv[])
                 hasError = true;
         }
         catch (const InFileException &e) {
-            std::cerr << e.fileName << ": failed to open input file\n";
+            printError(e);
             hasError = true;
         }
     }
