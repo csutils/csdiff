@@ -31,6 +31,7 @@ class CweMap {
 
         bool loadCweMap(std::istream &, const std::string &fileName);
         bool assignCwe(Defect &def) const;
+        bool empty() const;
 
     private:
         struct Private;
