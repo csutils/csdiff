@@ -99,7 +99,6 @@ rm -rf "\$RPM_BUILD_ROOT"
 
 %files
 %defattr(-,root,root,-)
-%{_bindir}/csannot
 %{_bindir}/csdiff
 %{_bindir}/csgrep
 %{_bindir}/cshtml

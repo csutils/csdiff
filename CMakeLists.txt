@@ -77,7 +77,6 @@ add_library(cs STATIC
 link_libraries(cs boost_regex boost_program_options)
 
 # the list of executables
-add_executable(csannot      csannot.cc)
 add_executable(csdiff       csdiff.cc)
 add_executable(csgrep       csgrep.cc)
 add_executable(cshtml       cshtml.cc)
@@ -89,7 +88,6 @@ add_subdirectory(tests)
 
 # declare what 'make install' should install
 install(TARGETS
-    csannot
     csdiff
     csgrep
     cshtml
