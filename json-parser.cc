@@ -126,14 +126,14 @@ void JsonParser::Private::readNode(
         Defect                      *def,
         const pt::ptree             &defNode)
 {
+    // make sure the Defect structure is properly initialized
+    (*def) = Defect();
+
     // the checker field is mandatory
     def->checker = defNode.get<std::string>("checker");
 
-    // wipe the previous event list
-    TEvtList &evtListDst = def->events;
-    evtListDst.clear();
-
     // read the events
+    TEvtList &evtListDst = def->events;
     const pt::ptree &evtListSrc = defNode.get_child("events");
     BOOST_FOREACH(const pt::ptree::value_type &evtItem, evtListSrc) {
         const pt::ptree &evtNode = evtItem.second;
@@ -148,8 +148,9 @@ void JsonParser::Private::readNode(
         evtListDst.push_back(evt);
     }
 
-    // read "defect_id" and "function" if available
+    // read "defect_id", "cwe", and "function" if available
     def->defectId = valueOf<int>        (defNode, "defect_id", 0);
+    def->cwe      = valueOf<int>        (defNode, "cwe"      , 0);
     def->function = valueOf<std::string>(defNode, "function", "");
 
     // assume the last event is the key event if not specified otherwise

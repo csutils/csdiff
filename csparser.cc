@@ -407,6 +407,9 @@ bool CovParser::Private::parseNext(Defect *def) {
     if (!seekForToken(T_CHECKER))
         return false;
 
+    // make sure the Defect structure is properly initialized
+    (*def) = Defect();
+
     if (!parseCheckerHeader(def)) {
         this->parseError("invalid checker header");
         code = lexer.readNext();

@@ -46,11 +46,13 @@ struct Defect {
     std::string             annotation;
     TEvtList                events;
     unsigned                keyEventIdx;    ///< in range 0..(events.size()-1)
+    int                     cwe;            ///< CWE number, 0 means unused
     int                     defectId;       ///< used only by the JSON format
     std::string             function;       ///< used only by the JSON format
 
     Defect():
         keyEventIdx(0U),
+        cwe(0),
         defectId(0)
     {
     }

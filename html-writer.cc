@@ -394,9 +394,12 @@ void HtmlWriter::handleDef(const Defect &def) {
     d->str << "<a name='def" << ++(d->defCnt) << "'/>";
 
     d->str << "<b>Error: <span style='background: #C0FF00;'>"
-        << HtmlLib::escapeTextInline(def.checker) << "</span>"
-        << HtmlLib::escapeTextInline(def.annotation)
-        << ":</b>";
+        << HtmlLib::escapeTextInline(def.checker) << "</span>";
+    if (def.cwe)
+        d->str << " (CWE-" << def.cwe << ")";
+    else
+        d->str << HtmlLib::escapeTextInline(def.annotation);
+    d->str << ":</b>";
 
     d->writeLinkToDetails(def);
 
