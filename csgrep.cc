@@ -147,23 +147,19 @@ class MsgPredicate: public IPredicate {
         }
 };
 
-class EventPredicate: public IPredicate {
+class KeyEventPredicate: public IPredicate {
     private:
         boost::regex re_;
 
     public:
-        EventPredicate(const boost::regex &re):
+        KeyEventPredicate(const boost::regex &re):
             re_(re)
         {
         }
 
         virtual bool matchDef(const Defect &def) const {
-            BOOST_FOREACH(const DefEvent &evt, def.events) {
-                if (boost::regex_search(evt.event, re_))
-                    return true;
-            }
-
-            return false;
+            const DefEvent &keyEvent = def.events[def.keyEventIdx];
+            return boost::regex_search(keyEvent.event, re_);
         }
 };
 
@@ -374,7 +370,7 @@ bool chainFilters(
         && appendPredIfNeeded<SrcAnnotPredicate>  (pEng, vm, flags, "src-annot")
         && appendPredIfNeeded<AnnotPredicate>     (pEng, vm, flags, "annot")
         && appendPredIfNeeded<ErrorPredicate>     (pEng, vm, flags, "error")
-        && appendPredIfNeeded<EventPredicate>     (pEng, vm, flags, "event")
+        && appendPredIfNeeded<KeyEventPredicate>  (pEng, vm, flags, "event")
         && appendPredIfNeeded<MsgPredicate>       (pEng, vm, flags, "msg")
         && appendPredIfNeeded<PathPredicate>      (pEng, vm, flags, "path");
 }
@@ -421,7 +417,7 @@ int main(int argc, char *argv[])
             ("checker", po::value<string>(),
              "match checkers by the given regex")
             ("error", po::value<string>(), "match errors by the given regex")
-            ("event", po::value<string>(), "match events by the given regex")
+            ("event", po::value<string>(), "match key event by the given regex")
             ("help", "produce help message")
             ("ignore-case,i", "ignore case when matching regular expressions")
             ("invert-match,v", "select defects that do not match the regex")
