@@ -22,6 +22,12 @@
 #include <boost/foreach.hpp>
 #include <boost/property_tree/json_parser.hpp>
 
+// suppress strict-aliasing warnings in <boost/optional/optional.hpp> coming
+// with gcc-4.4.x <http://gcc.gnu.org/bugzilla/show_bug.cgi?id=41874>
+#if defined(__GNUC_MINOR__) && (__GNUC__ == 4) && (__GNUC_MINOR__ == 4)
+#   pragma GCC diagnostic ignored "-Wstrict-aliasing"
+#endif
+
 namespace pt = boost::property_tree;
 
 struct JsonParser::Private {
@@ -119,7 +125,8 @@ const TScanProps& JsonParser::getScanProps() const {
 template <typename T>
 inline T valueOf(const pt::ptree &node, const char *path, const T &defVal)
 {
-    return node.get_optional<T>(path).get_value_or(defVal);
+    const boost::optional<T> &opt = node.get_optional<T>(path);
+    return opt.get_value_or(defVal);
 }
 
 void JsonParser::Private::readNode(

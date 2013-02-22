@@ -84,7 +84,6 @@ class PredicateFilter: public AbstractFilter {
         /// takes ownership of pred and will call delete on it on destruction
         void append(IPredicate *);
 
-        // cppcheck-suppress functionConst
         void setInvertEachMatch(bool enabled = true);
 
     protected:
