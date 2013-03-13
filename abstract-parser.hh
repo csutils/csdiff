@@ -31,10 +31,12 @@ struct DefEvent {
     int                     column;
     std::string             event;
     std::string             msg;
+    int                     verbosityLevel; ///< 0 - key event, 2 - trace event
 
     DefEvent():
         line(0),
-        column(0)
+        column(0),
+        verbosityLevel(0)
     {
     }
 };

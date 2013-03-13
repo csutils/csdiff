@@ -69,6 +69,7 @@ void JsonWriter::handleDef(const Defect &def) {
         // describe the event
         evtNode.put<string>("event", evt.event);
         evtNode.put<string>("message", evt.msg);
+        evtNode.put<int>("verbosity_level", evt.verbosityLevel);
 
         // append the event to the list
         evtList.push_back(std::make_pair("", evtNode));

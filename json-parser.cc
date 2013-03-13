@@ -151,6 +151,7 @@ void JsonParser::Private::readNode(
         evt.column      = valueOf<int           >(evtNode, "column"     , 0);
         evt.event       = valueOf<std::string   >(evtNode, "event"      , "");
         evt.msg         = valueOf<std::string   >(evtNode, "message"    , "");
+        evt.verbosityLevel = valueOf<int>(evtNode, "verbosity_level"    , 1);
 
         evtListDst.push_back(evt);
     }
@@ -168,6 +169,8 @@ void JsonParser::Private::readNode(
         def->keyEventIdx = defKeyEvent;
     else
         throw pt::ptree_error("key event out of range");
+
+    evtListDst.at(defKeyEvent).verbosityLevel = /* key event */ 0;
 
     // read annotation if available
     def->annotation = valueOf<std::string>(defNode, "annotation", "");

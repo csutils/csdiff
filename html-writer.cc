@@ -416,9 +416,15 @@ void HtmlWriter::handleDef(const Defect &def) {
     for (unsigned idx = 0; idx < cntEvents; ++idx) {
         const DefEvent &evt = def.events[idx];
 
-        const bool isKeyEvent = (def.keyEventIdx == idx);
-        if (!isKeyEvent)
-            d->str << "<span style='color: #808080;'>";
+        switch (evt.verbosityLevel) {
+            case 1:
+                d->str << "<span style='color: #808080;'>";
+                break;
+
+            case 2:
+                d->str << "<span style='color: #C0C0C0;'>";
+                break;
+        }
 
         d->str << boost::regex_replace(evt.fileName, d->rePath, "") << ":";
         
@@ -435,8 +441,11 @@ void HtmlWriter::handleDef(const Defect &def) {
 
         d->str << HtmlLib::escapeTextInline(evt.msg);
 
-        if (!isKeyEvent)
-            d->str << "</span>";
+        switch (evt.verbosityLevel) {
+            case 1:
+            case 2:
+                d->str << "</span>";
+        }
 
         d->str << "\n";
     }

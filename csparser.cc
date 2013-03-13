@@ -104,6 +104,7 @@ class KeyEventDigger {
     public:
         KeyEventDigger();
         bool guessKeyEvent(Defect *);
+        void initVerbosity(Defect *);
 };
 
 KeyEventDigger::KeyEventDigger() {
@@ -188,6 +189,18 @@ bool KeyEventDigger::guessKeyEvent(Defect *def) {
     }
 
     return true;
+}
+
+void KeyEventDigger::initVerbosity(Defect *def) {
+    TEvtList &evtList = def->events;
+    const unsigned evtCount = evtList.size();
+    for (unsigned idx = 0U; idx < evtCount; ++idx) {
+        DefEvent &evt = evtList[idx];
+        evt.verbosityLevel = (idx == def->keyEventIdx)
+            ? /* key event */ 0
+            : 1 + /* trace event */ !!blackList_.count(evt.event);
+    }
+
 }
 
 struct CovParser::Private {
@@ -427,9 +440,12 @@ bool CovParser::Private::parseNext(Defect *def) {
         def->events.push_back(evt);
     }
 
-    if (this->keDigger.guessKeyEvent(def))
+    if (this->keDigger.guessKeyEvent(def)) {
+        this->keDigger.initVerbosity(def);
+
         // all OK
         return true;
+    }
 
     this->wrongToken();
     return false;
