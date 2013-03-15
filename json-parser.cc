@@ -19,6 +19,8 @@
 
 #include "json-parser.hh"
 
+#include "csparser.hh"              // for KeyEventDigger
+
 #include <boost/foreach.hpp>
 #include <boost/property_tree/json_parser.hpp>
 
@@ -39,6 +41,7 @@ struct JsonParser::Private {
     pt::ptree::const_iterator       defIter;
     int                             defNumber;
     TScanProps                      scanProps;
+    KeyEventDigger                  keDigger;
 
     Private(const std::string &fileName_, bool silent_):
         fileName(fileName_),
@@ -139,6 +142,8 @@ void JsonParser::Private::readNode(
     // the checker field is mandatory
     def->checker = defNode.get<std::string>("checker");
 
+    bool verbosityLevelNeedsInit = false;
+
     // read the events
     TEvtList &evtListDst = def->events;
     const pt::ptree &evtListSrc = defNode.get_child("events");
@@ -151,7 +156,9 @@ void JsonParser::Private::readNode(
         evt.column      = valueOf<int           >(evtNode, "column"     , 0);
         evt.event       = valueOf<std::string   >(evtNode, "event"      , "");
         evt.msg         = valueOf<std::string   >(evtNode, "message"    , "");
-        evt.verbosityLevel = valueOf<int>(evtNode, "verbosity_level"    , 1);
+        evt.verbosityLevel = valueOf<int>(evtNode, "verbosity_level"    , -1);
+        if (-1 == evt.verbosityLevel)
+            verbosityLevelNeedsInit = true;
 
         evtListDst.push_back(evt);
     }
@@ -161,16 +168,24 @@ void JsonParser::Private::readNode(
     def->cwe      = valueOf<int>        (defNode, "cwe"      , 0);
     def->function = valueOf<std::string>(defNode, "function", "");
 
-    // assume the last event is the key event if not specified otherwise
-    const int cntEvents = evtListDst.size();
-    int defKeyEvent = cntEvents - 1;
-    defKeyEvent = valueOf<int>(defNode, "key_event_idx", defKeyEvent);
-    if (0 <= defKeyEvent && defKeyEvent < cntEvents)
-        def->keyEventIdx = defKeyEvent;
-    else
-        throw pt::ptree_error("key event out of range");
+    if (defNode.not_found() == defNode.find("key_event_idx")) {
+        // key event not specified, try to guess it
+        if (!this->keDigger.guessKeyEvent(def))
+            throw pt::ptree_error("failed to guess key event");
+    }
+    else {
+        // use the provided key_event_idx unless it is out of range
+        const int cntEvents = evtListDst.size();
+        const int defKeyEvent = defNode.get<int>("key_event_idx");
+        if (0 <= defKeyEvent && defKeyEvent < cntEvents)
+            def->keyEventIdx = defKeyEvent;
+        else
+            throw pt::ptree_error("key event out of range");
+    }
 
-    evtListDst.at(defKeyEvent).verbosityLevel = /* key event */ 0;
+    if (verbosityLevelNeedsInit)
+        // missing or incomplete verbosity_level, initialize it over
+        this->keDigger.initVerbosity(def);
 
     // read annotation if available
     def->annotation = valueOf<std::string>(defNode, "annotation", "");
