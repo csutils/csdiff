@@ -41,4 +41,23 @@ class CovParser: public AbstractParser {
         Private *d;
 };
 
+class KeyEventDigger {
+    public:
+        KeyEventDigger();
+        ~KeyEventDigger();
+
+        /// initialize def->keyEventIdx, return true on success
+        bool guessKeyEvent(Defect *def);
+
+        /// initialize def->verbosityLevel
+        void initVerbosity(Defect *def);
+
+    private:
+        KeyEventDigger(const KeyEventDigger &);
+        KeyEventDigger& operator=(const KeyEventDigger &);
+
+        struct Private;
+        Private *d;
+};
+
 #endif /* H_GUARD_CSPARSER_H */

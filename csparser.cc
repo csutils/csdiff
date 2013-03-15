@@ -94,60 +94,60 @@ class FlexLexerWrap: public yyFlexLexer {
         bool                silent_;
 };
 
-class KeyEventDigger {
-    private:
-        typedef std::set<std::string>               TSet;
-        typedef std::map<std::string, TSet>         TMap;
-        TMap hMap_;
-        TSet blackList_;
-
-    public:
-        KeyEventDigger();
-        bool guessKeyEvent(Defect *);
-        void initVerbosity(Defect *);
+struct KeyEventDigger::Private {
+    typedef std::set<std::string>                   TSet;
+    typedef std::map<std::string, TSet>             TMap;
+    TMap hMap;
+    TSet blackList;
 };
 
-KeyEventDigger::KeyEventDigger() {
+KeyEventDigger::KeyEventDigger():
+    d(new Private)
+{
     // register checker-specific key events
-    hMap_["FORWARD_NULL"]           .insert("deref_parm");
-    hMap_["FORWARD_NULL"]           .insert("dereference");
-    hMap_["FORWARD_NULL"]           .insert("var_deref_op");
-    hMap_["FORWARD_NULL"]           .insert("var_deref_model");
-    hMap_["ORDER_REVERSAL"]         .insert("lock_acquire");
-    hMap_["OVERRUN_STATIC"]         .insert("index_parm");
-    hMap_["OVERRUN_STATIC"]         .insert("overrun-buffer-arg");
-    hMap_["OVERRUN_STATIC"]         .insert("overrun-local");
-    hMap_["UNINIT"]                 .insert("uninit_use");
-    hMap_["UNINIT"]                 .insert("uninit_use_in_call");
-    hMap_["UNINIT_CTOR"]            .insert("uninit_member");
-    hMap_["USE_AFTER_FREE"]         .insert("deref_after_free");
-    hMap_["USE_AFTER_FREE"]         .insert("deref_arg");
-    hMap_["USE_AFTER_FREE"]         .insert("double_free");
-    hMap_["USE_AFTER_FREE"]         .insert("pass_freed_arg");
-    hMap_["USE_AFTER_FREE"]         .insert("use_after_free");
+    d->hMap["FORWARD_NULL"]         .insert("deref_parm");
+    d->hMap["FORWARD_NULL"]         .insert("dereference");
+    d->hMap["FORWARD_NULL"]         .insert("var_deref_op");
+    d->hMap["FORWARD_NULL"]         .insert("var_deref_model");
+    d->hMap["ORDER_REVERSAL"]       .insert("lock_acquire");
+    d->hMap["OVERRUN_STATIC"]       .insert("index_parm");
+    d->hMap["OVERRUN_STATIC"]       .insert("overrun-buffer-arg");
+    d->hMap["OVERRUN_STATIC"]       .insert("overrun-local");
+    d->hMap["UNINIT"]               .insert("uninit_use");
+    d->hMap["UNINIT"]               .insert("uninit_use_in_call");
+    d->hMap["UNINIT_CTOR"]          .insert("uninit_member");
+    d->hMap["USE_AFTER_FREE"]       .insert("deref_after_free");
+    d->hMap["USE_AFTER_FREE"]       .insert("deref_arg");
+    d->hMap["USE_AFTER_FREE"]       .insert("double_free");
+    d->hMap["USE_AFTER_FREE"]       .insert("pass_freed_arg");
+    d->hMap["USE_AFTER_FREE"]       .insert("use_after_free");
 
     // do not match the lowered checker name of the following checkers
-    hMap_["LOCK"];
+    d->hMap["LOCK"];
 
     // events that should never be used as key events
-    blackList_.insert("break");
-    blackList_.insert("cond_false");
-    blackList_.insert("cond_true");
-    blackList_.insert("continue");
-    blackList_.insert("else_branch");
-    blackList_.insert("end_of_path");
-    blackList_.insert("goto");
-    blackList_.insert("if_end");
-    blackList_.insert("if_fallthrough");
-    blackList_.insert("label");
-    blackList_.insert("loop");
-    blackList_.insert("loop_begin");
-    blackList_.insert("loop_end");
-    blackList_.insert("switch");
-    blackList_.insert("switch_case");
-    blackList_.insert("switch_default");
-    blackList_.insert("switch_end");
-    blackList_.insert("return");
+    d->blackList.insert("break");
+    d->blackList.insert("cond_false");
+    d->blackList.insert("cond_true");
+    d->blackList.insert("continue");
+    d->blackList.insert("else_branch");
+    d->blackList.insert("end_of_path");
+    d->blackList.insert("goto");
+    d->blackList.insert("if_end");
+    d->blackList.insert("if_fallthrough");
+    d->blackList.insert("label");
+    d->blackList.insert("loop");
+    d->blackList.insert("loop_begin");
+    d->blackList.insert("loop_end");
+    d->blackList.insert("switch");
+    d->blackList.insert("switch_case");
+    d->blackList.insert("switch_default");
+    d->blackList.insert("switch_end");
+    d->blackList.insert("return");
+}
+
+KeyEventDigger::~KeyEventDigger() {
+    delete d;
 }
 
 bool KeyEventDigger::guessKeyEvent(Defect *def) {
@@ -156,18 +156,18 @@ bool KeyEventDigger::guessKeyEvent(Defect *def) {
         return false;
 
     const unsigned evtCount = evtList.size();
-    TSet defKeyEvent;
-    const TSet *pKeyEvents = &defKeyEvent;
+    Private::TSet defKeyEvent;
+    const Private::TSet *pKeyEvents = &defKeyEvent;
 
-    TMap::const_iterator it = hMap_.find(def->checker);
-    if (hMap_.end() == it) {
+    Private::TMap::const_iterator it = d->hMap.find(def->checker);
+    if (d->hMap.end() == it) {
         // no override for the checker -> match the lowered checker name
         std::string str(def->checker);
         boost::algorithm::to_lower(str);
         defKeyEvent.insert(str);
     }
     else
-        // use the corresponding set of events from KeyEventDigger::hMap_
+        // use the corresponding set of events from d->hMap
         pKeyEvents = &it->second;
 
     for (int idx = evtCount - 1U; idx >= 0; --idx) {
@@ -184,7 +184,7 @@ bool KeyEventDigger::guessKeyEvent(Defect *def) {
     for (int idx = evtCount - 1U; idx >= 0; --idx) {
         def->keyEventIdx = idx;
         const DefEvent &evt = evtList[idx];
-        if (!blackList_.count(evt.event))
+        if (!d->blackList.count(evt.event))
             break;
     }
 
@@ -198,7 +198,7 @@ void KeyEventDigger::initVerbosity(Defect *def) {
         DefEvent &evt = evtList[idx];
         evt.verbosityLevel = (idx == def->keyEventIdx)
             ? /* key event */ 0
-            : 1 + /* trace event */ !!blackList_.count(evt.event);
+            : 1 + /* trace event */ !!d->blackList.count(evt.event);
     }
 
 }
