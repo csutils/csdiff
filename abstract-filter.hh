@@ -60,6 +60,21 @@ class GenericAbstractFilter: public AbstractWriter {
 };
 
 /// decorator
+class EventPrunner: public GenericAbstractFilter {
+    private:
+        int thr_;
+
+    public:
+        EventPrunner(AbstractWriter *slave, unsigned thr):
+            GenericAbstractFilter(slave),
+            thr_(thr)
+        {
+        }
+
+        virtual void handleDef(const Defect &defOrig);
+};
+
+/// decorator
 class AbstractFilter: public GenericAbstractFilter {
     private:
         bool neg_;

@@ -71,3 +71,23 @@ bool PredicateFilter::matchDef(const Defect &def) const {
 
     return true;
 }
+
+// /////////////////////////////////////////////////////////////////////////////
+// implementation of EventPrunner
+
+void EventPrunner::handleDef(const Defect &defOrig) {
+    Defect def(defOrig);
+    def.events.clear();
+
+    const unsigned cnt = defOrig.events.size();
+    for (unsigned i = 0; i < cnt; ++i) {
+        const DefEvent &evt = defOrig.events[i];
+
+        if (evt.verbosityLevel <= thr_)
+            def.events.push_back(evt);
+        else if (i < defOrig.keyEventIdx)
+            def.keyEventIdx--;
+    }
+
+    slave_->handleDef(def);
+}

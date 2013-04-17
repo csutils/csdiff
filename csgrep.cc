@@ -427,6 +427,8 @@ int main(int argc, char *argv[])
             ("msg", po::value<string>(), "match messages by the given regex")
             ("path", po::value<string>(),
              "match source path by the given regex")
+            ("prune-events", po::value<int>(),
+             "prune events with greater or equal verbosity level")
             ("quiet,q", "do not report any parsing errors")
             ("src-annot", po::value<string>(),
              "match annotations in the _source_ file by the given regex")
@@ -478,6 +480,19 @@ int main(int argc, char *argv[])
 
     const bool silent = vm.count("quiet");
     bool hasError = false;
+
+    if (vm.count("prune-events")) {
+        const int thr = vm["prune-events"].as<int>();
+        if (thr < 0) {
+            std::cerr << name << ": error: invalid value for --prune-events: "
+                << thr << "\n";
+            delete eng;
+            return 1;
+        }
+
+        // chain event prunner
+        eng = new EventPrunner(eng, thr);
+    }
 
     if (!vm.count("input-file")) {
         hasError = !eng->handleFile("-", silent);
