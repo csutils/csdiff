@@ -23,38 +23,27 @@
 #include "abstract-writer.hh"
 
 /// decorator
-class AbstractFilter: public AbstractWriter {
+class GenericAbstractFilter: public AbstractWriter {
     private:
         bool neg_;
 
     protected:
         AbstractWriter *slave_;
-        virtual bool matchDef(const Defect &def) const = 0;
+        virtual void handleDef(const Defect &def) = 0;
 
     public:
         virtual void notifyFile(const std::string &fileName) {
             slave_->notifyFile(fileName);
         }
 
-        AbstractFilter(AbstractWriter *slave):
+        GenericAbstractFilter(AbstractWriter *slave):
             neg_(false),
             slave_(slave)
         {
         }
 
-        ~AbstractFilter() {
+        ~GenericAbstractFilter() {
             delete slave_;
-        }
-
-        void setInvertMatch(bool enabled = true) {
-            neg_ = enabled;
-        }
-
-        virtual void handleDef(const Defect &def) {
-            if (neg_ == matchDef(def))
-                return;
-
-            slave_->handleDef(def);
         }
 
         virtual void flush() {
@@ -67,6 +56,33 @@ class AbstractFilter: public AbstractWriter {
 
         virtual void setScanProps(const TScanProps &scanProps) {
             slave_->setScanProps(scanProps);
+        }
+};
+
+/// decorator
+class AbstractFilter: public GenericAbstractFilter {
+    private:
+        bool neg_;
+
+    protected:
+        virtual bool matchDef(const Defect &def) const = 0;
+
+    public:
+        AbstractFilter(AbstractWriter *slave):
+            GenericAbstractFilter(slave),
+            neg_(false)
+        {
+        }
+
+        void setInvertMatch(bool enabled = true) {
+            neg_ = enabled;
+        }
+
+        virtual void handleDef(const Defect &def) {
+            if (neg_ == matchDef(def))
+                return;
+
+            slave_->handleDef(def);
         }
 };
 
