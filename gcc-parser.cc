@@ -78,6 +78,8 @@ bool GccParser::Private::parseLine(Defect *def, const std::string &line) {
 
     // use cppcheck's ID as the checker string if available
     def->checker = sm[/* id */ 5];
+    if (def->checker.empty())
+        def->checker = "COMPILER_WARNING";
 
     // append a single event
     def->events.resize(1U);
