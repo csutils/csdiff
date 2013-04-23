@@ -31,10 +31,10 @@
 %}
 
 spaces              [ \t\n]*
-nocolons            [^:]+
+nocolons            [^: \t\n]+
 
 checker             ^Error:{spaces}[A-Za-z][A-Za-z_.]+[ ]*([(][^\n)]*[)])?[ ]*:$
-file                ^{nocolons}\/{nocolons}
+file                ^{nocolons}[./]{nocolons}
 line                :[0-9:]+{spaces}
 mesg                [a-z][a-z_-]+:\ .*$
 mesg_extra1         ^\ +.*$
