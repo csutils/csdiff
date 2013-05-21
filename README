@@ -48,17 +48,13 @@ List of Utilities
 
     csgrep - filter the list of defects by the specified regex-based predicates
 
-    cssort - sort the given defect list by the selected key
+    cshtml - format the input list of defects as a human-readable HTML document
 
-    NOTE: All other utilities are experimental and can be changed/removed later.
+    cslinker - extend the list of defects by CWE numbers, scan properties, etc.
+
+    cssort - sort the given defect list by the selected key
 
 
 Documentation
 -------------
-We have no man pages for now, but all utilities recognize the --help option:
-
-    csdiff --help
-
-    csgrep --help
-
-    cssort --help
+See the corresponding man pages in Section 1.
