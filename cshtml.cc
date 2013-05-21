@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
     namespace po = boost::program_options;
     po::variables_map vm;
     po::options_description desc(string("Usage: ") + name
-            + " [options] proj.js, where options are");
+            + " [options] proj.js, where options are", /* line_length */ 0x80);
 
     typedef std::vector<string> TStringList;
     string defUrlTemplate, fnBase, plainTextUrl, spPosition;
