@@ -18,6 +18,7 @@
  */
 
 #include "csdiff-core.hh"
+#include "csfilter.hh"
 #include "version.hh"
 
 #include <sstream>
@@ -31,6 +32,10 @@ std::string diff_scans(
     std::istringstream strOld(oldScan);
     std::istringstream strNew(newScan);
     std::ostringstream strDst;
+
+    // FIXME: we need a better API to configure this
+    MsgFilter::inst()->setIgnorePath(true);
+
     (void) diffScans(strDst, strOld, strNew);
     return strDst.str();
 }
