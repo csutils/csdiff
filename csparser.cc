@@ -434,7 +434,7 @@ bool CovParser::Private::parseNext(Defect *def) {
     while (T_NULL != code && T_CHECKER != code) {
         DefEvent evt;
         if (!parseMsg(&evt))
-            return false;
+            continue;
 
         // append single event
         def->events.push_back(evt);
