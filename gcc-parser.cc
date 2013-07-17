@@ -148,6 +148,7 @@ struct GccParser::Private {
     const bool                  silent;
     const boost::regex          reChecker;
     bool                        hasError;
+    Defect                      defCurrent;
 
     Private(
             std::istream       &input_,
@@ -161,6 +162,8 @@ struct GccParser::Private {
         hasError(false)
     {
     }
+
+    void exportAndReset(Defect *pDef);
 };
 
 GccParser::GccParser(
@@ -175,21 +178,38 @@ GccParser::~GccParser() {
     delete d;
 }
 
-bool GccParser::getNext(Defect *def) {
-    // make sure the Defect structure is properly initialized
-    (*def) = Defect();
-    def->events.resize(1U);
-    DefEvent &evt = def->events.front();
+void GccParser::Private::exportAndReset(Defect *pDef) {
+    Defect &def = this->defCurrent;
+    DefEvent &evt = def.events[def.keyEventIdx];
+
+    // use cppcheck's ID as the checker string if available
+    boost::smatch sm;
+    if (boost::regex_match(evt.msg, sm, this->reChecker)) {
+        def.checker = sm[/* id  */ 1];
+        evt.msg     = sm[/* msg */ 2];
+    }
+    else
+        def.checker = "COMPILER_WARNING";
+
+    // export the current state and clear the data for next iteration
+    *pDef = def;
+    def = Defect();
+}
+
+bool GccParser::getNext(Defect *pDef) {
 
     // error recovery loop
     for (;;) {
+        DefEvent evt;
         const EToken tok = d->tokenizer.readNext(&evt);
         switch (tok) {
             case T_NULL:
                 return false;
 
             case T_MSG:
-                break;
+                d->defCurrent.events.push_back(evt);
+                d->exportAndReset(pDef);
+                return true;
 
             // TODO
             default:
@@ -199,15 +219,6 @@ bool GccParser::getNext(Defect *def) {
                         << ": error: invalid syntax\n";
                 continue;
         }
-
-        // use cppcheck's ID as the checker string if available
-        boost::smatch sm;
-        if (boost::regex_match(evt.msg, sm, d->reChecker)) {
-            def->checker = sm[/* id  */ 1];
-            evt.msg      = sm[/* msg */ 2];
-        }
-        else
-            def->checker = "COMPILER_WARNING";
 
         return true;
     }
