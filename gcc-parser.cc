@@ -22,30 +22,93 @@
 #include <boost/lexical_cast.hpp>
 #include <boost/regex.hpp>
 
+enum EToken {
+    T_NULL = 0,
+    T_UNKNOWN,
+
+    T_INC,
+    T_SCOPE,
+    T_MSG,
+    T_MSG_EXTRA,
+    T_MARKER
+};
+
+class Tokenizer {
+    public:
+        Tokenizer(std::istream &input):
+            input_(input),
+            lineNo_(0),
+            reMsg_(
+                    /* location */ "^([^:]+)(?::([0-9]+))?(?::([0-9]+))?:"
+                    /* evt/mesg */ " ([a-z]+): (.*)$")
+        {
+        }
+
+        int lineNo() const {
+            return lineNo_;
+        }
+
+        EToken readNext(DefEvent *pEvt);
+
+    private:
+        std::istream           &input_;
+        int                     lineNo_;
+        const boost::regex      reMsg_;
+};
+
+EToken Tokenizer::readNext(DefEvent *pEvt) {
+    std::string line;
+    if (!std::getline(input_, line))
+        return T_NULL;
+
+    lineNo_++;
+
+    boost::smatch sm;
+    if (!boost::regex_match(line, sm, reMsg_))
+        return T_UNKNOWN;
+
+    // read file name, event, and msg
+    pEvt->fileName    = sm[/* file */ 1];
+    pEvt->event       = sm[/* evt  */ 4];
+    pEvt->msg         = sm[/* msg  */ 5];
+
+    // parse line number
+    try {
+        pEvt->line = boost::lexical_cast<int>(sm[/* line */ 2]);
+    }
+    catch (boost::bad_lexical_cast &) {
+        pEvt->line = 0;
+    }
+
+    // parse column number
+    try {
+        pEvt->column = boost::lexical_cast<int>(sm[/* col */ 3]);
+    }
+    catch (boost::bad_lexical_cast &) {
+        pEvt->column = 0;
+    }
+
+    return T_MSG;
+}
+
 struct GccParser::Private {
-    std::istream               &input;
+    Tokenizer                   tokenizer;
     const std::string           fileName;
     const bool                  silent;
-    const boost::regex          reLine;
-    int                         lineNo;
+    const boost::regex          reChecker;
     bool                        hasError;
 
     Private(
             std::istream       &input_,
             const std::string  &fileName_,
             const bool          silent_):
-        input(input_),
+        tokenizer(input_),
         fileName(fileName_),
         silent(silent_),
-        reLine(
-                /* location */ "^([^:]+)(?::([0-9]+))?(?::([0-9]+))?:"
-                /* chk/mesg */ " ([a-z]+)(?:: ([A-Za-z]+))?: (.*)$"),
-        lineNo(0),
+        reChecker("^([A-Za-z]+): (.*)$"),
         hasError(false)
     {
     }
-
-    bool parseLine(Defect *def, const std::string &line);
 };
 
 GccParser::GccParser(
@@ -60,64 +123,41 @@ GccParser::~GccParser() {
     delete d;
 }
 
-bool GccParser::Private::parseLine(Defect *def, const std::string &line) {
-    this->lineNo++;
-
-    boost::smatch sm;
-    if (!boost::regex_match(line, sm, this->reLine)) {
-        this->hasError = true;
-        if (!this->silent)
-            std::cerr << this->fileName << ":" << this->lineNo
-                << ": error: invalid syntax\n";
-
-        return false;
-    }
-
+bool GccParser::getNext(Defect *def) {
     // make sure the Defect structure is properly initialized
     (*def) = Defect();
-
-    // use cppcheck's ID as the checker string if available
-    def->checker = sm[/* id */ 5];
-    if (def->checker.empty())
-        def->checker = "COMPILER_WARNING";
-
-    // append a single event
     def->events.resize(1U);
     DefEvent &evt = def->events.front();
 
-    // read file name, event, and msg
-    evt.fileName    = sm[/* file */ 1];
-    evt.event       = sm[/* evt  */ 4];
-    evt.msg         = sm[/* msg  */ 6];
-
-    // parse line number
-    try {
-        evt.line = boost::lexical_cast<int>(sm[/* line */ 2]);
-    }
-    catch (boost::bad_lexical_cast &) {
-        evt.line = 0;
-    }
-
-    // parse column number
-    try {
-        evt.column = boost::lexical_cast<int>(sm[/* col */ 3]);
-    }
-    catch (boost::bad_lexical_cast &) {
-        evt.column = 0;
-    }
-
-    return true;
-}
-
-bool GccParser::getNext(Defect *def) {
     // error recovery loop
     for (;;) {
-        std::string line;
-        if (!std::getline(d->input, line))
-            return false;
+        const EToken tok = d->tokenizer.readNext(&evt);
+        switch (tok) {
+            case T_NULL:
+                return false;
 
-        if (d->parseLine(def, line))
-            return true;
+            case T_MSG:
+                break;
+
+            // TODO
+            default:
+                d->hasError = true;
+                if (!d->silent)
+                    std::cerr << d->fileName << ":" << d->tokenizer.lineNo()
+                        << ": error: invalid syntax\n";
+                continue;
+        }
+
+        // use cppcheck's ID as the checker string if available
+        boost::smatch sm;
+        if (boost::regex_match(evt.msg, sm, d->reChecker)) {
+            def->checker = sm[/* id  */ 1];
+            evt.msg      = sm[/* msg */ 2];
+        }
+        else
+            def->checker = "COMPILER_WARNING";
+
+        return true;
     }
 }
 
