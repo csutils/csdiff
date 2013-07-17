@@ -33,26 +33,51 @@ enum EToken {
     T_MARKER
 };
 
-class Tokenizer {
+class ITokenizer {
+    public:
+        virtual ~ITokenizer() { }
+        virtual EToken readNext(DefEvent *pEvt) = 0;
+        virtual int lineNo() const = 0;
+};
+
+class AbstractTokenFilter: public ITokenizer {
+    public:
+        virtual int lineNo() const {
+            return slave_->lineNo();
+        }
+
+    protected:
+        /// @param slave the object will NOT be deleted on destruction
+        AbstractTokenFilter(ITokenizer *slave):
+            slave_(slave)
+        {
+        }
+
+        ITokenizer *slave_;
+};
+
+class Tokenizer: public ITokenizer {
     public:
         Tokenizer(std::istream &input):
             input_(input),
             lineNo_(0),
+            reMarker_("^ *\\^$"),
             reMsg_(
                     /* location */ "^([^:]+)(?::([0-9]+))?(?::([0-9]+))?:"
                     /* evt/mesg */ " ([a-z]+): (.*)$")
         {
         }
 
-        int lineNo() const {
+        virtual int lineNo() const {
             return lineNo_;
         }
 
-        EToken readNext(DefEvent *pEvt);
+        virtual EToken readNext(DefEvent *pEvt);
 
     private:
         std::istream           &input_;
         int                     lineNo_;
+        const boost::regex      reMarker_;
         const boost::regex      reMsg_;
 };
 
@@ -62,6 +87,9 @@ EToken Tokenizer::readNext(DefEvent *pEvt) {
         return T_NULL;
 
     lineNo_++;
+
+    if (boost::regex_match(line, reMarker_))
+        return T_MARKER;
 
     boost::smatch sm;
     if (!boost::regex_match(line, sm, reMsg_))
@@ -91,8 +119,31 @@ EToken Tokenizer::readNext(DefEvent *pEvt) {
     return T_MSG;
 }
 
+class MarkerRemover: public AbstractTokenFilter {
+    public:
+        MarkerRemover(ITokenizer *slave):
+            AbstractTokenFilter(slave)
+        {
+        }
+
+        virtual EToken readNext(DefEvent *pEvt);
+};
+
+EToken MarkerRemover::readNext(DefEvent *pEvt) {
+    EToken tok = slave_->readNext(pEvt);
+    if (T_UNKNOWN != tok)
+        return tok;
+
+    tok = slave_->readNext(pEvt);
+    if (T_MARKER != tok)
+        return tok;
+
+    return slave_->readNext(pEvt);
+}
+
 struct GccParser::Private {
-    Tokenizer                   tokenizer;
+    Tokenizer                   rawTokenizer;
+    MarkerRemover               tokenizer;
     const std::string           fileName;
     const bool                  silent;
     const boost::regex          reChecker;
@@ -102,7 +153,8 @@ struct GccParser::Private {
             std::istream       &input_,
             const std::string  &fileName_,
             const bool          silent_):
-        tokenizer(input_),
+        rawTokenizer(input_),
+        tokenizer(&rawTokenizer),
         fileName(fileName_),
         silent(silent_),
         reChecker("^([A-Za-z]+): (.*)$"),
