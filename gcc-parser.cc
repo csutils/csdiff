@@ -56,15 +56,16 @@ class AbstractTokenFilter: public ITokenizer {
         ITokenizer *slave_;
 };
 
+#define RE_LOCATION "^([^:]+)(?::([0-9]+))?(?::([0-9]+))?:"
+
 class Tokenizer: public ITokenizer {
     public:
         Tokenizer(std::istream &input):
             input_(input),
             lineNo_(0),
             reMarker_("^ *\\^$"),
-            reMsg_(
-                    /* location */ "^([^:]+)(?::([0-9]+))?(?::([0-9]+))?:"
-                    /* evt/mesg */ " ([a-z]+): (.*)$")
+            reScope_(RE_LOCATION " ([A-Z].+):$"),
+            reMsg_(RE_LOCATION /* evt/mesg */ " ([a-z]+): (.*)$")
         {
         }
 
@@ -78,6 +79,7 @@ class Tokenizer: public ITokenizer {
         std::istream           &input_;
         int                     lineNo_;
         const boost::regex      reMarker_;
+        const boost::regex      reScope_;
         const boost::regex      reMsg_;
 };
 
@@ -91,14 +93,24 @@ EToken Tokenizer::readNext(DefEvent *pEvt) {
     if (boost::regex_match(line, reMarker_))
         return T_MARKER;
 
+    EToken tok;
     boost::smatch sm;
-    if (!boost::regex_match(line, sm, reMsg_))
+
+    if (boost::regex_match(line, sm, reMsg_)) {
+        tok = T_MSG;
+        pEvt->event = sm[/* evt  */ 4];
+        pEvt->msg   = sm[/* msg  */ 5];
+    }
+    else if (boost::regex_match(line, sm, reScope_)) {
+        tok = T_SCOPE;
+        pEvt->event = "scope_hint";
+        pEvt->msg   = sm[/* msg  */ 4];
+    }
+    else
         return T_UNKNOWN;
 
     // read file name, event, and msg
     pEvt->fileName    = sm[/* file */ 1];
-    pEvt->event       = sm[/* evt  */ 4];
-    pEvt->msg         = sm[/* msg  */ 5];
 
     // parse line number
     try {
@@ -116,7 +128,7 @@ EToken Tokenizer::readNext(DefEvent *pEvt) {
         pEvt->column = 0;
     }
 
-    return T_MSG;
+    return tok;
 }
 
 class MarkerRemover: public AbstractTokenFilter {
@@ -147,6 +159,7 @@ struct GccParser::Private {
     const std::string           fileName;
     const bool                  silent;
     const boost::regex          reChecker;
+    bool                        hasKeyEvent;
     bool                        hasError;
     Defect                      defCurrent;
 
@@ -159,11 +172,13 @@ struct GccParser::Private {
         fileName(fileName_),
         silent(silent_),
         reChecker("^([A-Za-z]+): (.*)$"),
+        hasKeyEvent(false),
         hasError(false)
     {
     }
 
-    void exportAndReset(Defect *pDef);
+    void handleError();
+    bool exportAndReset(Defect *pDef);
 };
 
 GccParser::GccParser(
@@ -178,8 +193,25 @@ GccParser::~GccParser() {
     delete d;
 }
 
-void GccParser::Private::exportAndReset(Defect *pDef) {
+void GccParser::Private::handleError() {
+    this->hasError = true;
+    if (this->silent)
+        return;
+
+    std::cerr << this->fileName << ":" << this->tokenizer.lineNo()
+        << ": error: invalid syntax\n";
+}
+
+bool GccParser::Private::exportAndReset(Defect *pDef) {
     Defect &def = this->defCurrent;
+    if (def.events.empty())
+        return false;
+
+    if (!this->hasKeyEvent) {
+        this->handleError();
+        return false;
+    }
+
     DefEvent &evt = def.events[def.keyEventIdx];
 
     // use cppcheck's ID as the checker string if available
@@ -194,34 +226,40 @@ void GccParser::Private::exportAndReset(Defect *pDef) {
     // export the current state and clear the data for next iteration
     *pDef = def;
     def = Defect();
+    this->hasKeyEvent = false;
+    return true;
 }
 
 bool GccParser::getNext(Defect *pDef) {
-
-    // error recovery loop
-    for (;;) {
+    bool done = false;
+    while (!done) {
         DefEvent evt;
+
         const EToken tok = d->tokenizer.readNext(&evt);
         switch (tok) {
             case T_NULL:
-                return false;
+                return d->exportAndReset(pDef);
+
+            case T_SCOPE:
+                done = d->hasKeyEvent && d->exportAndReset(pDef);
+                d->defCurrent.events.push_back(evt);
+                break;
 
             case T_MSG:
+                done = d->hasKeyEvent && d->exportAndReset(pDef);
+                d->defCurrent.keyEventIdx = d->defCurrent.events.size();
                 d->defCurrent.events.push_back(evt);
-                d->exportAndReset(pDef);
-                return true;
+                d->hasKeyEvent = true;
+                break;
 
             // TODO
             default:
-                d->hasError = true;
-                if (!d->silent)
-                    std::cerr << d->fileName << ":" << d->tokenizer.lineNo()
-                        << ": error: invalid syntax\n";
+                d->handleError();
                 continue;
         }
-
-        return true;
     }
+
+    return true;
 }
 
 bool GccParser::hasError() const {
