@@ -29,7 +29,6 @@ enum EToken {
     T_INC,
     T_SCOPE,
     T_MSG,
-    T_MSG_EXTRA,
     T_MARKER
 };
 
@@ -160,9 +159,92 @@ EToken MarkerRemover::readNext(DefEvent *pEvt) {
     return slave_->readNext(pEvt);
 }
 
+class MultilineConcatenator: public AbstractTokenFilter {
+    public:
+        MultilineConcatenator(ITokenizer *slave):
+            AbstractTokenFilter(slave),
+            lastTok_(T_NULL),
+            reBase_("^([^ ].+)( \\[[^\\]]+\\])$"),
+            reExtra_("^ *( [^ ].+)( \\[[^\\]]+\\])$")
+        {
+        }
+
+        virtual EToken readNext(DefEvent *pEvt);
+
+    private:
+        EToken                  lastTok_;
+        DefEvent                lastEvt_;
+        const boost::regex      reBase_;
+        const boost::regex      reExtra_;
+
+        bool tryMerge(DefEvent *pEvt);
+};
+
+bool MultilineConcatenator::tryMerge(DefEvent *pEvt) {
+    if (pEvt->event != lastEvt_.event)
+        return false;
+
+    // TODO: compare also the location info?
+
+    boost::smatch smBase;
+    if (!boost::regex_match(pEvt->msg, smBase, reBase_))
+        return false;
+
+    boost::smatch smExtra;
+    if (!boost::regex_match(lastEvt_.msg, smExtra, reExtra_))
+        return false;
+
+    // we need to drop the [-Wreason] suffix from the first message if same
+    if (smBase[/* -W suffix */ 2] != smExtra[/* -W suffix */ 2])
+        return false;
+
+    // concatenate both messages together
+    pEvt->msg = smBase[/* msg */ 1] + smExtra[/* msg */1] + smExtra[/* suf */2];
+
+    // clear the already merged token
+    lastTok_ = T_NULL;
+    return true;
+}
+
+EToken MultilineConcatenator::readNext(DefEvent *pEvt) {
+    EToken tok;
+    switch (lastTok_) {
+        case T_NULL:
+            // no last token --> we have to read a new one
+            tok = slave_->readNext(pEvt);
+            break;
+
+        case T_MSG:
+            // reuse the last T_MSG token
+            tok = lastTok_;
+            *pEvt = lastEvt_;
+            break;
+
+        default:
+            // flush the last token and bail out
+            tok = lastTok_;
+            *pEvt = lastEvt_;
+            lastTok_ = T_NULL;
+            return tok;
+    }
+
+    if (T_MSG == tok) {
+        do
+            // read one token ahead
+            lastTok_ = slave_->readNext(&lastEvt_);
+
+        while
+            // try to merge it with the previous one
+            (this->tryMerge(pEvt));
+    }
+
+    return tok;
+}
+
 struct GccParser::Private {
     Tokenizer                   rawTokenizer;
-    MarkerRemover               tokenizer;
+    MarkerRemover               markerRemover;
+    MultilineConcatenator       tokenizer;
     const std::string           fileName;
     const bool                  silent;
     const boost::regex          reChecker;
@@ -175,7 +257,8 @@ struct GccParser::Private {
             const std::string  &fileName_,
             const bool          silent_):
         rawTokenizer(input_),
-        tokenizer(&rawTokenizer),
+        markerRemover(&rawTokenizer),
+        tokenizer(&markerRemover),
         fileName(fileName_),
         silent(silent_),
         reChecker("^([A-Za-z]+): (.*)$"),
@@ -260,8 +343,8 @@ bool GccParser::getNext(Defect *pDef) {
                 d->hasKeyEvent = true;
                 break;
 
-            // TODO
-            default:
+            case T_MARKER:
+            case T_UNKNOWN:
                 d->handleError();
                 continue;
         }
