@@ -19,6 +19,8 @@
 
 #include "gcc-parser.hh"
 
+#include <algorithm>
+
 #include <boost/lexical_cast.hpp>
 #include <boost/regex.hpp>
 
@@ -352,6 +354,7 @@ bool BasicGccParser::hasError() const {
 
 struct GccParser::Private {
     BasicGccParser              core;
+    Defect                      lastDef;
 
     Private(
             std::istream       &input_,
@@ -360,6 +363,8 @@ struct GccParser::Private {
         core(input_, fileName_, silent_)
     {
     }
+
+    bool tryMerge(Defect *pDef);
 };
 
 GccParser::GccParser(
@@ -374,8 +379,43 @@ GccParser::~GccParser() {
     delete d;
 }
 
+bool GccParser::Private::tryMerge(Defect *pDef) {
+    if (pDef->checker != this->lastDef.checker)
+        return false;
+
+    TEvtList &lastEvts = this->lastDef.events;
+    const DefEvent &lastKeyEvt = lastEvts[this->lastDef.keyEventIdx];
+    if (lastKeyEvt.event != "note")
+        // we try to merge only "note" events for now
+        return false;
+
+    TEvtList &evts = pDef->events;
+    const DefEvent &keyEvt = evts[pDef->keyEventIdx];
+    if (keyEvt.event == "note")
+        // avoid using "note" as the key event
+        return false;
+
+    // concatenate the events and purge the last defect
+    std::copy(lastEvts.begin(), lastEvts.end(), std::back_inserter(evts));
+    lastEvts.clear();
+    return true;
+}
+
 bool GccParser::getNext(Defect *pDef) {
-    return d->core.getNext(pDef);
+    // pick the last defect and clear the stash
+    *pDef = d->lastDef;
+    d->lastDef.events.clear();
+    if (pDef->events.size() <= pDef->keyEventIdx
+        // no valid last defect --> read a new one
+            && !d->core.getNext(pDef))
+        // no valid current defect either
+        return false;
+
+    // defect merging loop
+    while (d->core.getNext(&d->lastDef) && d->tryMerge(pDef))
+        ;
+
+    return true;
 }
 
 bool GccParser::hasError() const {
