@@ -56,7 +56,7 @@ class AbstractTokenFilter: public ITokenizer {
         ITokenizer *slave_;
 };
 
-#define RE_LOCATION "^([^:]+)(?::([0-9]+))?(?::([0-9]+))?:"
+#define RE_LOCATION "([^:]+)(?::([0-9]+))?(?::([0-9]+))?"
 
 class Tokenizer: public ITokenizer {
     public:
@@ -64,8 +64,9 @@ class Tokenizer: public ITokenizer {
             input_(input),
             lineNo_(0),
             reMarker_("^ *\\^$"),
-            reScope_(RE_LOCATION " ([A-Z].+):$"),
-            reMsg_(RE_LOCATION /* evt/mesg */ " ([a-z]+): (.*)$")
+            reInc_("^(?:In file included| +) from " RE_LOCATION "[:,]"),
+            reScope_("^" RE_LOCATION ": ([A-Z].+):$"),
+            reMsg_("^" RE_LOCATION /* evt/mesg */ ": ([a-z]+): (.*)$")
         {
         }
 
@@ -79,6 +80,7 @@ class Tokenizer: public ITokenizer {
         std::istream           &input_;
         int                     lineNo_;
         const boost::regex      reMarker_;
+        const boost::regex      reInc_;
         const boost::regex      reScope_;
         const boost::regex      reMsg_;
 };
@@ -105,6 +107,11 @@ EToken Tokenizer::readNext(DefEvent *pEvt) {
         tok = T_SCOPE;
         pEvt->event = "scope_hint";
         pEvt->msg   = sm[/* msg  */ 4];
+    }
+    else if (boost::regex_match(line, sm, reInc_)) {
+        tok = T_INC;
+        pEvt->event = "included_from";
+        pEvt->msg   = "Included from here.";
     }
     else
         return T_UNKNOWN;
@@ -240,6 +247,7 @@ bool GccParser::getNext(Defect *pDef) {
             case T_NULL:
                 return d->exportAndReset(pDef);
 
+            case T_INC:
             case T_SCOPE:
                 done = d->hasKeyEvent && d->exportAndReset(pDef);
                 d->defCurrent.events.push_back(evt);
