@@ -241,34 +241,125 @@ EToken MultilineConcatenator::readNext(DefEvent *pEvt) {
     return tok;
 }
 
+class BasicGccParser {
+    public:
+        BasicGccParser(
+                std::istream       &input,
+                const std::string  &fileName,
+                const bool          silent):
+            rawTokenizer_(input),
+            markerRemover_(&rawTokenizer_),
+            tokenizer_(&markerRemover_),
+            fileName_(fileName),
+            silent_(silent),
+            reChecker_("^([A-Za-z]+): (.*)$"),
+            hasKeyEvent_(false),
+            hasError_(false)
+        {
+        }
+
+        bool getNext(Defect *);
+        bool hasError() const;
+
+    private:
+        Tokenizer               rawTokenizer_;
+        MarkerRemover           markerRemover_;
+        MultilineConcatenator   tokenizer_;
+        const std::string       fileName_;
+        const bool              silent_;
+        const boost::regex      reChecker_;
+        bool                    hasKeyEvent_;
+        bool                    hasError_;
+        Defect                  defCurrent_;
+
+        void handleError();
+        bool exportAndReset(Defect *pDef);
+};
+
+void BasicGccParser::handleError() {
+    hasError_ = true;
+    if (silent_)
+        return;
+
+    std::cerr << fileName_ << ":" << tokenizer_.lineNo()
+        << ": error: invalid syntax\n";
+}
+
+bool BasicGccParser::exportAndReset(Defect *pDef) {
+    Defect &def = defCurrent_;
+    if (def.events.empty())
+        return false;
+
+    if (!hasKeyEvent_) {
+        this->handleError();
+        return false;
+    }
+
+    DefEvent &evt = def.events[def.keyEventIdx];
+
+    // use cppcheck's ID as the checker string if available
+    boost::smatch sm;
+    if (boost::regex_match(evt.msg, sm, reChecker_)) {
+        def.checker = sm[/* id  */ 1];
+        evt.msg     = sm[/* msg */ 2];
+    }
+    else
+        def.checker = "COMPILER_WARNING";
+
+    // export the current state and clear the data for next iteration
+    *pDef = def;
+    def = Defect();
+    hasKeyEvent_ = false;
+    return true;
+}
+
+bool BasicGccParser::getNext(Defect *pDef) {
+    bool done = false;
+    while (!done) {
+        DefEvent evt;
+
+        const EToken tok = tokenizer_.readNext(&evt);
+        switch (tok) {
+            case T_NULL:
+                return this->exportAndReset(pDef);
+
+            case T_INC:
+            case T_SCOPE:
+                done = hasKeyEvent_ && this->exportAndReset(pDef);
+                defCurrent_.events.push_back(evt);
+                break;
+
+            case T_MSG:
+                done = hasKeyEvent_ && this->exportAndReset(pDef);
+                defCurrent_.keyEventIdx = defCurrent_.events.size();
+                defCurrent_.events.push_back(evt);
+                hasKeyEvent_ = true;
+                break;
+
+            case T_MARKER:
+            case T_UNKNOWN:
+                this->handleError();
+                continue;
+        }
+    }
+
+    return true;
+}
+
+bool BasicGccParser::hasError() const {
+    return hasError_;
+}
+
 struct GccParser::Private {
-    Tokenizer                   rawTokenizer;
-    MarkerRemover               markerRemover;
-    MultilineConcatenator       tokenizer;
-    const std::string           fileName;
-    const bool                  silent;
-    const boost::regex          reChecker;
-    bool                        hasKeyEvent;
-    bool                        hasError;
-    Defect                      defCurrent;
+    BasicGccParser              core;
 
     Private(
             std::istream       &input_,
             const std::string  &fileName_,
             const bool          silent_):
-        rawTokenizer(input_),
-        markerRemover(&rawTokenizer),
-        tokenizer(&markerRemover),
-        fileName(fileName_),
-        silent(silent_),
-        reChecker("^([A-Za-z]+): (.*)$"),
-        hasKeyEvent(false),
-        hasError(false)
+        core(input_, fileName_, silent_)
     {
     }
-
-    void handleError();
-    bool exportAndReset(Defect *pDef);
 };
 
 GccParser::GccParser(
@@ -283,76 +374,10 @@ GccParser::~GccParser() {
     delete d;
 }
 
-void GccParser::Private::handleError() {
-    this->hasError = true;
-    if (this->silent)
-        return;
-
-    std::cerr << this->fileName << ":" << this->tokenizer.lineNo()
-        << ": error: invalid syntax\n";
-}
-
-bool GccParser::Private::exportAndReset(Defect *pDef) {
-    Defect &def = this->defCurrent;
-    if (def.events.empty())
-        return false;
-
-    if (!this->hasKeyEvent) {
-        this->handleError();
-        return false;
-    }
-
-    DefEvent &evt = def.events[def.keyEventIdx];
-
-    // use cppcheck's ID as the checker string if available
-    boost::smatch sm;
-    if (boost::regex_match(evt.msg, sm, this->reChecker)) {
-        def.checker = sm[/* id  */ 1];
-        evt.msg     = sm[/* msg */ 2];
-    }
-    else
-        def.checker = "COMPILER_WARNING";
-
-    // export the current state and clear the data for next iteration
-    *pDef = def;
-    def = Defect();
-    this->hasKeyEvent = false;
-    return true;
-}
-
 bool GccParser::getNext(Defect *pDef) {
-    bool done = false;
-    while (!done) {
-        DefEvent evt;
-
-        const EToken tok = d->tokenizer.readNext(&evt);
-        switch (tok) {
-            case T_NULL:
-                return d->exportAndReset(pDef);
-
-            case T_INC:
-            case T_SCOPE:
-                done = d->hasKeyEvent && d->exportAndReset(pDef);
-                d->defCurrent.events.push_back(evt);
-                break;
-
-            case T_MSG:
-                done = d->hasKeyEvent && d->exportAndReset(pDef);
-                d->defCurrent.keyEventIdx = d->defCurrent.events.size();
-                d->defCurrent.events.push_back(evt);
-                d->hasKeyEvent = true;
-                break;
-
-            case T_MARKER:
-            case T_UNKNOWN:
-                d->handleError();
-                continue;
-        }
-    }
-
-    return true;
+    return d->core.getNext(pDef);
 }
 
 bool GccParser::hasError() const {
-    return d->hasError;
+    return d->core.hasError();
 }
