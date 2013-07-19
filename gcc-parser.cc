@@ -183,6 +183,10 @@ class MultilineConcatenator: public AbstractTokenFilter {
 };
 
 bool MultilineConcatenator::tryMerge(DefEvent *pEvt) {
+    if (T_MSG != lastTok_)
+        // only messages can be merged together
+        return false;
+
     if (pEvt->event != lastEvt_.event)
         return false;
 
