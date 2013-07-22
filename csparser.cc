@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011-2012 Red Hat, Inc.
+ * Copyright (C) 2011-2013 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -18,7 +18,6 @@
  */
 
 #include "csparser.hh"
-#include "csparser-priv.hh"
 
 #include <cctype>
 #include <cstdlib>
@@ -31,15 +30,19 @@
 #include <boost/lexical_cast.hpp>
 #include <boost/regex.hpp>
 
+enum EToken {
+    T_NULL = 0,
+    T_UNKNOWN,
+    T_CHECKER,
+    T_EVENT
+};
+
 std::ostream& operator<<(std::ostream &str, EToken code) {
     switch (code) {
         case T_NULL:    str << "T_NULL";    break;
+        case T_UNKNOWN: str << "T_UNKNOWN"; break;
         case T_CHECKER: str << "T_CHECKER"; break;
         case T_EVENT:   str << "T_EVENT";   break;
-        case T_FILE:    str << "T_FILE";    break;
-        case T_LINE:    str << "T_LINE";    break;
-        case T_MSG:     str << "T_MSG";     break;
-        case T_MSG_EX:  str << "T_MSG_EX";  break;
     }
 
     return str;
@@ -108,7 +111,7 @@ EToken ErrFileLexer::readNext() {
 
         if (!boost::regex_match(line, sm, reEvent_)) {
             text_ = sm[0];
-            return T_MSG_EX;
+            return T_UNKNOWN;
         }
 
         // read file name, event, and msg
@@ -376,12 +379,11 @@ bool CovParser::Private::parseMsg(DefEvent *evt) {
         switch (code) {
             case T_NULL:
             case T_CHECKER:
-            case T_FILE:
             case T_EVENT:
                 // all OK
                 return true;
 
-            case T_MSG_EX:
+            case T_UNKNOWN:
                 evt->msg += "\n";
                 evt->msg += this->lexer.text();
                 continue;
