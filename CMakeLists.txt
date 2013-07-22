@@ -24,17 +24,6 @@ add_definitions(-Wall -Wextra -fPIC)
 find_package(PythonLibs)
 message(STATUS "PYTHON_INCLUDE_PATH: ${PYTHON_INCLUDE_PATH}")
 
-# we keep a local instance of FindFLEX.cmake (it was introduced in CMake 2.8)
-include(cmake-modules-2.8/CMakeParseArguments.cmake)
-include(cmake-modules-2.8/FindPackageHandleStandardArgs.cmake)
-set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake-modules-2.8)
-
-# Flex
-find_package(FLEX REQUIRED)
-set(flex_scanner ${CMAKE_CURRENT_BINARY_DIR}/csparser.yy.cc)
-flex_target(csparser csparser.lex ${flex_scanner})
-add_definitions(-iquote ${CMAKE_CURRENT_SOURCE_DIR})
-
 # Boost libraries
 find_package(Boost 1.41)
 if(Boost_FOUND)
@@ -70,7 +59,6 @@ add_library(cs STATIC
     json-parser.cc
     json-writer.cc
     version.cc
-    ${flex_scanner}
 )
 
 # link cslib.a and boost libraries

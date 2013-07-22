@@ -69,7 +69,6 @@ BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires: boost-devel
 BuildRequires: cmake
-BuildRequires: flex
 BuildRequires: help2man
 BuildRequires: python-devel
 
