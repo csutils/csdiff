@@ -55,7 +55,7 @@ class ErrFileLexer {
             hasError_(false),
             lineNo_(0),
             reEmpty_("^ *$"),
-            reChecker_("^Error: *[A-Za-z][A-Za-z_.]+ *(\\([^)]+\\))? *:$"),
+            reChecker_("^Error: *([A-Za-z][A-Za-z_.]+)( *\\([^)]+\\))? *:$"),
             reEvent_(
                     /* location */ "^([^:]+)(?::([0-9]+))?(?::([0-9]+))?"
                     /* evt/mesg */ ": ([a-z][a-z_-]+): (.*)$")
@@ -70,8 +70,8 @@ class ErrFileLexer {
             return lineNo_;
         }
 
-        const std::string& text() const {
-            return text_;
+        const Defect& def() const {
+            return def_;
         }
 
         const DefEvent& evt() const {
@@ -84,7 +84,7 @@ class ErrFileLexer {
         std::istream               &input_;
         bool                        hasError_;
         int                         lineNo_;
-        std::string                 text_;
+        Defect                      def_;
         DefEvent                    evt_;
         const boost::regex          reEmpty_;
         const boost::regex          reChecker_;
@@ -105,12 +105,14 @@ EToken ErrFileLexer::readNext() {
         boost::smatch sm;
 
         if (boost::regex_match(line, sm, reChecker_)) {
-            text_ = sm[0];
+            def_ = Defect();
+            def_.checker    = sm[/* checker */ 1];
+            def_.annotation = sm[/* annotat */ 2];
             return T_CHECKER;
         }
 
         if (!boost::regex_match(line, sm, reEvent_)) {
-            text_ = sm[0];
+            evt_.msg = line;
             return T_UNKNOWN;
         }
 
@@ -268,7 +270,6 @@ struct CovParser::Private {
     void parseError(const std::string &msg);
     void wrongToken();
     bool seekForToken(const EToken);
-    bool parseCheckerHeader(Defect *);
     bool parseMsg(DefEvent *);
     bool parseNext(Defect *);
 };
@@ -325,47 +326,6 @@ bool CovParser::Private::seekForToken(const EToken token) {
     return false;
 }
 
-bool CovParser::Private::parseCheckerHeader(Defect *def) {
-    char *ptr = strdup(this->lexer.text().c_str());
-    char *ann, *end, *text = ptr;
-    static const char CHK_HDR[] = "Error:";
-    static const size_t CHK_HDR_LEN = sizeof(CHK_HDR) - 1U;
-    if (!text || strncmp(text, CHK_HDR, CHK_HDR_LEN))
-        goto fail;
-
-    text += CHK_HDR_LEN;
-    while (isspace((unsigned char) *text))
-        ++ text;
-
-    if (!isalpha((unsigned char) *text))
-        goto fail;
-
-    end = strchr(text, ':');
-    if (!end || end[1])
-        goto fail;
-
-    // OK
-    *end = '\0';
-
-    // look for annotation
-    ann = strpbrk(text, " (");
-    if (ann) {
-        def->annotation = ann;
-        *ann = '\0';
-    }
-    else
-        def->annotation.clear();
-
-    def->checker = text;
-    def->events.clear();
-    free(ptr);
-    return true;
-
-fail:
-    free(ptr);
-    return false;
-}
-
 bool CovParser::Private::parseMsg(DefEvent *evt) {
     // parse event
     if (seekForToken(T_EVENT))
@@ -385,7 +345,7 @@ bool CovParser::Private::parseMsg(DefEvent *evt) {
 
             case T_UNKNOWN:
                 evt->msg += "\n";
-                evt->msg += this->lexer.text();
+                evt->msg += this->lexer.evt().msg;
                 continue;
 
             default:
@@ -403,14 +363,7 @@ bool CovParser::Private::parseNext(Defect *def) {
     if (!seekForToken(T_CHECKER))
         return false;
 
-    // make sure the Defect structure is properly initialized
-    (*def) = Defect();
-
-    if (!parseCheckerHeader(def)) {
-        this->parseError("invalid checker header");
-        code = lexer.readNext();
-        return false;
-    }
+    *def = this->lexer.def();
 
     // parse defect body
     code = lexer.readNext();
