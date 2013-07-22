@@ -20,8 +20,6 @@
 #include "csparser.hh"
 #include "csparser-priv.hh"
 
-#include <FlexLexer.h>
-
 #include <cctype>
 #include <cstdlib>
 #include <cstring>
@@ -30,14 +28,14 @@
 #include <sstream>
 
 #include <boost/algorithm/string.hpp>
-#include <boost/iostreams/device/null.hpp>
-#include <boost/iostreams/stream.hpp>
 #include <boost/lexical_cast.hpp>
+#include <boost/regex.hpp>
 
 std::ostream& operator<<(std::ostream &str, EToken code) {
     switch (code) {
         case T_NULL:    str << "T_NULL";    break;
         case T_CHECKER: str << "T_CHECKER"; break;
+        case T_EVENT:   str << "T_EVENT";   break;
         case T_FILE:    str << "T_FILE";    break;
         case T_LINE:    str << "T_LINE";    break;
         case T_MSG:     str << "T_MSG";     break;
@@ -47,52 +45,96 @@ std::ostream& operator<<(std::ostream &str, EToken code) {
     return str;
 }
 
-class FlexLexerWrap: public yyFlexLexer {
-    private:
-        typedef boost::iostreams::basic_null_sink<char> TSink;
-        TSink                           sinkPriv_;
-        boost::iostreams::stream<TSink> sink_;
-
+class ErrFileLexer {
     public:
-        FlexLexerWrap(std::istream &input, std::string fileName, bool silent):
-            yyFlexLexer(&input, (silent) ? &sink_ : &std::cerr),
-            sink_(sinkPriv_),
-            fileName_(fileName),
+        ErrFileLexer(std::istream &input):
+            input_(input),
             hasError_(false),
-            silent_(false)
+            lineNo_(0),
+            reEmpty_("^ *$"),
+            reChecker_("^Error: *[A-Za-z][A-Za-z_.]+ *(\\([^)]+\\))? *:$"),
+            reEvent_(
+                    /* location */ "^([^:]+)(?::([0-9]+))?(?::([0-9]+))?"
+                    /* evt/mesg */ ": ([a-z][a-z_-]+): (.*)$")
         {
         }
 
-        bool hasError() const   { return hasError_; }
-        EToken readNext() {
-            silent_ = false;
-            return static_cast<EToken>(this->yylex());
+        bool hasError() const {
+            return hasError_;
         }
 
-    protected:
-        /// override default output behavior
-        virtual void LexerOutput(const char *buf, int size) {
-            std::string msg(buf, size);
-            this->LexerError(msg.c_str());
+        int lineNo() const {
+            return lineNo_;
         }
 
-        /// override default error behavior
-        virtual void LexerError(const char *msg) {
-            if (silent_)
-                return;
-
-            silent_ = true;
-            hasError_ = true;
-            std::ostream &str = *(this->yyout);
-            str << fileName_ << ":" << this->lineno()
-                << ": lexical error: " << msg << "\n";
+        const std::string& text() const {
+            return text_;
         }
+
+        const DefEvent& evt() const {
+            return evt_;
+        }
+
+        EToken readNext();
 
     private:
-        std::string         fileName_;
-        bool                hasError_;
-        bool                silent_;
+        std::istream               &input_;
+        bool                        hasError_;
+        int                         lineNo_;
+        std::string                 text_;
+        DefEvent                    evt_;
+        const boost::regex          reEmpty_;
+        const boost::regex          reChecker_;
+        const boost::regex          reEvent_;
 };
+
+EToken ErrFileLexer::readNext() {
+    for (;;) {
+        std::string line;
+        if (!std::getline(input_, line))
+            return T_NULL;
+
+        lineNo_++;
+
+        if (boost::regex_match(line, reEmpty_))
+            continue;
+
+        boost::smatch sm;
+
+        if (boost::regex_match(line, sm, reChecker_)) {
+            text_ = sm[0];
+            return T_CHECKER;
+        }
+
+        if (!boost::regex_match(line, sm, reEvent_)) {
+            text_ = sm[0];
+            return T_MSG_EX;
+        }
+
+        // read file name, event, and msg
+        evt_.fileName   = sm[/* file  */ 1];
+        evt_.event      = sm[/* event */ 4];
+        evt_.msg        = sm[/* msg   */ 5];
+
+        // parse line number
+        try {
+            evt_.line = boost::lexical_cast<int>(sm[/* line */ 2]);
+        }
+        catch (boost::bad_lexical_cast &) {
+            evt_.line = 0;
+        }
+
+        // parse column number
+        try {
+            evt_.column = boost::lexical_cast<int>(sm[/* col */ 3]);
+        }
+        catch (boost::bad_lexical_cast &) {
+            evt_.column = 0;
+        }
+
+        return T_EVENT;
+    }
+}
 
 struct KeyEventDigger::Private {
     typedef std::set<std::string>                   TSet;
@@ -204,7 +246,7 @@ void KeyEventDigger::initVerbosity(Defect *def) {
 }
 
 struct CovParser::Private {
-    FlexLexerWrap           lexer;
+    ErrFileLexer            lexer;
     std::string             fileName;
     const bool              silent;
     bool                    hasError;
@@ -212,7 +254,7 @@ struct CovParser::Private {
     KeyEventDigger          keDigger;
 
     Private(std::istream &input_, std::string fileName_, bool silent_):
-        lexer(input_, fileName_, silent_),
+        lexer(input_),
         fileName(fileName_),
         silent(silent_),
         hasError(false),
@@ -224,7 +266,6 @@ struct CovParser::Private {
     void wrongToken();
     bool seekForToken(const EToken);
     bool parseCheckerHeader(Defect *);
-    bool parseLine(DefEvent *);
     bool parseMsg(DefEvent *);
     bool parseNext(Defect *);
 };
@@ -252,7 +293,7 @@ void CovParser::Private::parseError(const std::string &msg) {
         return;
 
     std::cerr << this->fileName
-        << ":" << this->lexer.lineno()
+        << ":" << this->lexer.lineNo()
         << ": parse error: " << msg << "\n";
 }
 
@@ -267,7 +308,7 @@ bool CovParser::Private::seekForToken(const EToken token) {
         return true;
 
     do {
-        code = lexer.readNext();
+        code = this->lexer.readNext();
         if (T_NULL == code)
             return false;
 
@@ -282,7 +323,7 @@ bool CovParser::Private::seekForToken(const EToken token) {
 }
 
 bool CovParser::Private::parseCheckerHeader(Defect *def) {
-    char *ptr = strdup(lexer.YYText());
+    char *ptr = strdup(this->lexer.text().c_str());
     char *ann, *end, *text = ptr;
     static const char CHK_HDR[] = "Error:";
     static const size_t CHK_HDR_LEN = sizeof(CHK_HDR) - 1U;
@@ -322,73 +363,12 @@ fail:
     return false;
 }
 
-bool CovParser::Private::parseLine(DefEvent *evt) {
-    char *beg, *end;
-    char *text = strdup(lexer.YYText());
-    if (!text || ':' != text[0])
-        goto fail;
-
-    // parse line
-    beg = text + 1;
-    end = strchr(beg, ':');
-    if (!end)
-        goto fail;
-
-    *end = '\0';
-    evt->line = boost::lexical_cast<int>(beg);
-
-    // parse column
-    beg = end + 1;
-    end = strchr(beg, ':');
-    if (end) {
-        *end = '\0';
-        evt->column = boost::lexical_cast<int>(beg);
-    }
-    else
-        evt->column = 0;
-
-    free(text);
-    return true;
-
-fail:
-    free(text);
-    return false;
-}
-
 bool CovParser::Private::parseMsg(DefEvent *evt) {
-    char *text;
-
-    // parse file
-    if (seekForToken(T_FILE))
-        evt->fileName = lexer.YYText();
+    // parse event
+    if (seekForToken(T_EVENT))
+        *evt = this->lexer.evt();
     else
         goto fail;
-
-    // parse line/column
-    if (!seekForToken(T_LINE) || !parseLine(evt))
-        goto fail;
-
-    // parse basic msg
-    if (!seekForToken(T_MSG))
-        goto fail;
-
-    text = const_cast<char *>(lexer.YYText());
-    if (!text)
-        goto fail;
-
-    // parse event name (if any)
-    if (!isupper((unsigned char) text[0])) {
-        char *pos = strchr(text, ':');
-        if (pos && pos[1]) {
-            *pos = '\0';
-            evt->event = text;
-            *pos = ':';
-            text = pos /* skip ": " */ + 2;
-        }
-    }
-
-    // store basic msg
-    evt->msg = text;
 
     // parse extra msg
     for (;;) {
@@ -397,12 +377,13 @@ bool CovParser::Private::parseMsg(DefEvent *evt) {
             case T_NULL:
             case T_CHECKER:
             case T_FILE:
+            case T_EVENT:
                 // all OK
                 return true;
 
             case T_MSG_EX:
                 evt->msg += "\n";
-                evt->msg += lexer.YYText();
+                evt->msg += this->lexer.text();
                 continue;
 
             default:

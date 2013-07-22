@@ -24,6 +24,7 @@ enum EToken {
     T_NULL = 0,
 
     T_CHECKER,
+    T_EVENT,
     T_FILE,
     T_LINE,
     T_MSG,
