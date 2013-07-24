@@ -54,7 +54,7 @@ class ErrFileLexer {
             input_(input),
             hasError_(false),
             lineNo_(0),
-            reEmpty_("^ *$"),
+            reEmpty_("^ *|#.*$"),
             reChecker_("^Error: *([A-Za-z][A-Za-z_.]+)( *\\([^)]+\\))? *:$"),
             reEvent_(
                     /* location */ "^([^:]+)(?::([0-9]+))?(?::([0-9]+))?"
