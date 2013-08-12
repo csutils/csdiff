@@ -190,7 +190,7 @@ class PathPredicate: public IPredicate {
         }
 
         virtual bool matchDef(const Defect &def) const {
-            const DefEvent &evt = def.events.front();
+            const DefEvent &evt = def.events[def.keyEventIdx];
             return boost::regex_search(evt.fileName, re_);
         }
 };
