@@ -80,6 +80,17 @@ macro(test_csparser dir num)
     add_test_wrap("${dir}-${num}-stderr" "${cmd}")
 endmacro()
 
+# a generic template for csgrep test-cases
+macro(test_csgrep dir num)
+    set(tst "${testdir}/${dir}/${num}")
+
+    file(READ ${tst}-args.txt args)
+    string(REPLACE "\n" "" args ${args})
+    set(cmd "${csgrep} ${args} ${tst}-stdin.txt")
+    set(cmd "${cmd} | ${diffcmd} ${tst}-stdout.txt -")
+    add_test_wrap("${dir}-${num}" "${cmd}")
+endmacro()
+
 # a generic template for cssort test-cases
 macro(test_cssort dir num)
     set(tst "${testdir}/${dir}/${num}")
@@ -94,6 +105,7 @@ macro(test_cssort dir num)
 endmacro()
 
 # csgrep tests
+test_csgrep(csgrep                                  00)
 test_csparser(csparser-5.8                          00)
 test_csparser(csparser-5.8                          01)
 test_csparser(csparser-5.8                          02)

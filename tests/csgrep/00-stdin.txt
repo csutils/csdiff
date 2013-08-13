@@ -1,0 +1,19 @@
+Error: COMPILER_WARNING:
+/tmp/ccFyyMHD.o: scope_hint: In function `main'
+curl-7.32.0/conftest.c: scope_hint: In function 'main'
+curl-7.32.0/conftest.c:78:15: warning: unused variable 'res' [-Wunused-variable]
+/usr/bin/ld.bfd: note: 'ber_init' is defined in DSO /lib64/liblber-2.4.so.2 so try adding it to the linker command line
+
+Error: COMPILER_WARNING:
+curl-7.32.0/lib/version.c:122:3: warning: Value stored to 'left' is never read
+
+Error: COMPILER_WARNING:
+curl-7.32.0/lib/version.c:123:3: warning: Value stored to 'ptr' is never read
+
+Error: COMPILER_WARNING:
+curl-7.32.0/lib/krb5.c:305:7: warning: Function call argument is an uninitialized value
+curl-7.32.0/lib/curl_memory.h:114:19: note: expanded from macro 'free'
+
+Error: COMPILER_WARNING:
+curl-7.32.0/src/tool_metalink.c:776:7: warning: Potential leak of memory pointed to by 'mlfile'
+curl-7.32.0/src/tool_metalink.c:118:12: note: expanded from macro 'GetStr'

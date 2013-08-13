@@ -169,6 +169,9 @@ KeyEventDigger::KeyEventDigger():
     d->hMap["USE_AFTER_FREE"]       .insert("pass_freed_arg");
     d->hMap["USE_AFTER_FREE"]       .insert("use_after_free");
 
+    // we use this magic pair for compiler warnings presented in this format
+    d->hMap["COMPILER_WARNING"]     .insert("warning");
+
     // do not match the lowered checker name of the following checkers
     d->hMap["LOCK"];
 
