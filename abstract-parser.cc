@@ -42,6 +42,7 @@ AbstractParser* createParser(
             return new JsonParser(input, fileName, silent);
 
         case 'E':
+        case '#':
             // Coverity
             return new CovParser(input, fileName, silent);
 
