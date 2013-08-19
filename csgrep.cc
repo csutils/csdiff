@@ -267,6 +267,24 @@ fail:
         }
 };
 
+class DuplicateFilter: public AbstractFilter {
+    public:
+        DuplicateFilter(AbstractWriter *slave):
+            AbstractFilter(slave)
+        {
+        }
+
+    protected:
+        virtual bool matchDef(const Defect &def) {
+            const DefEvent &evt = def.events[def.keyEventIdx];
+            return lookup_.insert(evt)./* inserted */second;
+        }
+
+    private:
+        typedef std::set<DefEvent> TLookup;
+        TLookup lookup_;
+};
+
 class WriterFactory {
     private:
         typedef std::map<std::string, AbstractWriter* (*)(void)> TTable;
@@ -430,6 +448,7 @@ int main(int argc, char *argv[])
             ("prune-events", po::value<int>(),
              "prune events with greater or equal verbosity level")
             ("quiet,q", "do not report any parsing errors")
+            ("remove-duplicates,u", "remove defects with repeated key events")
             ("src-annot", po::value<string>(),
              "match annotations in the _source_ file by the given regex")
             ("version", "print version");
@@ -477,6 +496,9 @@ int main(int argc, char *argv[])
     if (!chainFilters(&eng, vm))
         // an error message already printed out
         return 1;
+
+    if (vm.count("remove-duplicates"))
+        eng = new DuplicateFilter(eng);
 
     const bool silent = vm.count("quiet");
     bool hasError = false;

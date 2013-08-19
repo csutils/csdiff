@@ -24,6 +24,15 @@
 #include <string>
 #include <vector>
 
+// FIXME: move this to a separate header file?
+#define RETURN_IF_COMPARED(a, b, member) do {   \
+    if (a.member < b.member)                    \
+        return true;                            \
+    if (b.member < a.member)                    \
+        return false;                           \
+} while (0)
+
+
 struct DefEvent {
     std::string             fileName;
     int                     line;
@@ -39,6 +48,16 @@ struct DefEvent {
     {
     }
 };
+
+inline bool operator<(const DefEvent &a, const DefEvent &b) {
+    RETURN_IF_COMPARED(a, b, fileName);
+    RETURN_IF_COMPARED(a, b, line);
+    RETURN_IF_COMPARED(a, b, column);
+    RETURN_IF_COMPARED(a, b, event);
+    RETURN_IF_COMPARED(a, b, msg);
+    RETURN_IF_COMPARED(a, b, verbosityLevel);
+    return false;
+}
 
 typedef std::vector<DefEvent> TEvtList;
 

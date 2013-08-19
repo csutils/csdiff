@@ -61,7 +61,7 @@ void PredicateFilter::setInvertEachMatch(bool enabled) {
     d->invertEach_ = enabled;
 }
 
-bool PredicateFilter::matchDef(const Defect &def) const {
+bool PredicateFilter::matchDef(const Defect &def) {
     const bool neg = d->invertEach_;
 
     BOOST_FOREACH(const IPredicate *pred, d->preds_) {

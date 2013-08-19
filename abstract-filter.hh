@@ -80,7 +80,7 @@ class AbstractFilter: public GenericAbstractFilter {
         bool neg_;
 
     protected:
-        virtual bool matchDef(const Defect &def) const = 0;
+        virtual bool matchDef(const Defect &def) = 0;
 
     public:
         AbstractFilter(AbstractWriter *slave):
@@ -118,7 +118,7 @@ class PredicateFilter: public AbstractFilter {
         void setInvertEachMatch(bool enabled = true);
 
     protected:
-        virtual bool matchDef(const Defect &def) const;
+        virtual bool matchDef(const Defect &def);
 
     private:
         struct Private;
