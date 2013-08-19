@@ -20,45 +20,9 @@
 #ifndef H_GUARD_ABSTRACT_PARSER_H
 #define H_GUARD_ABSTRACT_PARSER_H
 
+#include "defect.hh"
+
 #include <iostream>
-#include <map>
-#include <string>
-#include <vector>
-
-struct DefEvent {
-    std::string             fileName;
-    int                     line;
-    int                     column;
-    std::string             event;
-    std::string             msg;
-    int                     verbosityLevel; ///< 0 - key event, 2 - trace event
-
-    DefEvent():
-        line(0),
-        column(0),
-        verbosityLevel(0)
-    {
-    }
-};
-
-typedef std::vector<DefEvent> TEvtList;
-
-struct Defect {
-    std::string             checker;
-    std::string             annotation;
-    TEvtList                events;
-    unsigned                keyEventIdx;    ///< in range 0..(events.size()-1)
-    int                     cwe;            ///< CWE number, 0 means unused
-    int                     defectId;       ///< used only by the JSON format
-    std::string             function;       ///< used only by the JSON format
-
-    Defect():
-        keyEventIdx(0U),
-        cwe(0),
-        defectId(0)
-    {
-    }
-};
 
 /// used only by the JSON format
 typedef std::map<std::string, std::string> TScanProps;
