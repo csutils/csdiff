@@ -30,6 +30,11 @@ std::string titleFromFileName(const std::string &fileName) {
     if (!fileName.compare("-"))
         return "";
 
+    const boost::regex reNoVer("^(.*/)?[^/0-9]*$");
+    if (boost::regex_match(fileName, reNoVer))
+        // no version information -> bailing out
+        return "";
+
     const boost::regex reTitle("^(?:.*/)?([^/]*)\\.(?:err|js)$");
 
     boost::smatch sm;
