@@ -106,6 +106,7 @@ endmacro()
 
 # csgrep tests
 test_csgrep(csgrep                                  00)
+test_csgrep(csgrep      "remove-duplicates"           )
 test_csparser(csparser-5.8                          00)
 test_csparser(csparser-5.8                          01)
 test_csparser(csparser-5.8                          02)
