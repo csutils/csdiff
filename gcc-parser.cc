@@ -359,15 +359,18 @@ bool BasicGccParser::hasError() const {
 struct GccParser::Private {
     BasicGccParser              core;
     Defect                      lastDef;
+    const boost::regex          reLocation;
 
     Private(
             std::istream       &input_,
             const std::string  &fileName_,
             const bool          silent_):
-        core(input_, fileName_, silent_)
+        core(input_, fileName_, silent_),
+        reLocation("^this is the location.*$")
     {
     }
 
+    bool checkMerge(DefEvent &keyEvt);
     bool tryMerge(Defect *pDef);
 };
 
@@ -383,14 +386,32 @@ GccParser::~GccParser() {
     delete d;
 }
 
+bool GccParser::Private::checkMerge(DefEvent &keyEvt) {
+    if (keyEvt.event == "note")
+        // can merge a "note" event
+        return true;
+
+    if (keyEvt.event != "warning")
+        // we know to merge only notes and warnings
+        return false;
+
+    // check whether the warning comes with a location only
+    if (!boost::regex_match(keyEvt.msg, this->reLocation))
+        return false;
+
+    // translate "warning" -> "note" so that we have an unambiguous key event
+    keyEvt.event = "note";
+    return true;
+}
+
 bool GccParser::Private::tryMerge(Defect *pDef) {
     if (pDef->checker != this->lastDef.checker)
         return false;
 
     TEvtList &lastEvts = this->lastDef.events;
-    const DefEvent &lastKeyEvt = lastEvts[this->lastDef.keyEventIdx];
-    if (lastKeyEvt.event != "note")
-        // we try to merge only "note" events for now
+    DefEvent &lastKeyEvt = lastEvts[this->lastDef.keyEventIdx];
+    if (!this->checkMerge(lastKeyEvt))
+        // not something we can merge
         return false;
 
     TEvtList &evts = pDef->events;
