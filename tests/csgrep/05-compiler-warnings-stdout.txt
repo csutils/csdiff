@@ -1,0 +1,108 @@
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/lib/file.c:91: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/include/curl/mprintf.h:43:1: warning: "printf" redefined
+/usr/include/stdio.h:838: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/lib/setup.h:151: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/lib/file.c:24: included_from: Included from here.
+/usr/include/bits/stdio2.h:65:1: note: this is the location of the previous definition
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/lib/file.c:91: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/include/curl/mprintf.h:44:1: warning: "fprintf" redefined
+/usr/include/stdio.h:838: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/lib/setup.h:151: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/lib/file.c:24: included_from: Included from here.
+/usr/include/bits/stdio2.h:67:1: note: this is the location of the previous definition
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/lib/file.c:91: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/include/curl/mprintf.h:51:1: warning: "sprintf" redefined
+/usr/include/stdio.h:838: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/lib/setup.h:151: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/lib/file.c:24: included_from: Included from here.
+/usr/include/bits/stdio2.h:30:1: note: this is the location of the previous definition
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/lib/file.c:91: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/include/curl/mprintf.h:52:1: warning: "vsprintf" redefined
+/usr/include/stdio.h:838: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/lib/setup.h:151: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/lib/file.c:24: included_from: Included from here.
+/usr/include/bits/stdio2.h:33:1: note: this is the location of the previous definition
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/lib/file.c:91: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/include/curl/mprintf.h:54:1: warning: "snprintf" redefined
+/usr/include/stdio.h:838: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/lib/setup.h:151: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/lib/file.c:24: included_from: Included from here.
+/usr/include/bits/stdio2.h:45:1: note: this is the location of the previous definition
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/lib/file.c:91: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/include/curl/mprintf.h:55:1: warning: "vprintf" redefined
+/usr/include/stdio.h:838: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/lib/setup.h:151: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/lib/file.c:24: included_from: Included from here.
+/usr/include/bits/stdio2.h:69:1: note: this is the location of the previous definition
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/lib/file.c:91: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/include/curl/mprintf.h:56:1: warning: "vfprintf" redefined
+/usr/include/stdio.h:838: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/lib/setup.h:151: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/lib/file.c:24: included_from: Included from here.
+/usr/include/bits/stdio2.h:71:1: note: this is the location of the previous definition
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/lib/file.c:91: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/include/curl/mprintf.h:57:1: warning: "vsnprintf" redefined
+/usr/include/stdio.h:838: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/lib/setup.h:151: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/lib/file.c:24: included_from: Included from here.
+/usr/include/bits/stdio2.h:48:1: note: this is the location of the previous definition
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/lib/sendf.c: scope_hint: In function 'showit'
+/builddir/build/BUILD/curl-7.15.5/lib/sendf.c:520: warning: ignoring return value of 'fwrite', declared with attribute warn_unused_result
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/lib/sendf.c:521: warning: ignoring return value of 'fwrite', declared with attribute warn_unused_result
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/lib/ftp.c: scope_hint: In function 'ftp_perform'
+/builddir/build/BUILD/curl-7.15.5/lib/ftp.c:3286: warning: empty body in an if-statement
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/lib/ldap.c: scope_hint: In function 'DynaGetFunction'
+/builddir/build/BUILD/curl-7.15.5/lib/ldap.c:201: warning: dereferencing type-punned pointer will break strict-aliasing rules
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/lib/ssluse.c: scope_hint: In function 'verifyhost'
+/builddir/build/BUILD/curl-7.15.5/lib/ssluse.c:956: warning: comparison between signed and unsigned
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/lib/connect.c: scope_hint: In function 'bindlocal'
+/builddir/build/BUILD/curl-7.15.5/lib/connect.c:389: warning: dereferencing type-punned pointer will break strict-aliasing rules
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/lib/http_negotiate.c: scope_hint: In function 'Curl_input_negotiate'
+/builddir/build/BUILD/curl-7.15.5/lib/http_negotiate.c:181: warning: dereferencing type-punned pointer will break strict-aliasing rules
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/src/main.c: scope_hint: In function 'warnf'
+/builddir/build/BUILD/curl-7.15.5/src/main.c:392: warning: ignoring return value of 'fwrite', declared with attribute warn_unused_result
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/src/main.c: scope_hint: In function 'my_trace'
+/builddir/build/BUILD/curl-7.15.5/src/main.c:3052: warning: ignoring return value of 'fwrite', declared with attribute warn_unused_result
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/src/main.c:3059: warning: ignoring return value of 'fwrite', declared with attribute warn_unused_result
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/src/main.c:3065: warning: ignoring return value of 'fwrite', declared with attribute warn_unused_result
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/src/main.c: scope_hint: In function 'operate'
+/builddir/build/BUILD/curl-7.15.5/src/main.c:4149: warning: ignoring return value of 'ftruncate', declared with attribute warn_unused_result
