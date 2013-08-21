@@ -105,8 +105,8 @@ macro(test_cssort dir num)
 endmacro()
 
 # csgrep tests
-test_csgrep(csgrep                                  00)
-test_csgrep(csgrep      "remove-duplicates"           )
+test_csgrep(csgrep      "00-exclude-conftest"         )
+test_csgrep(csgrep      "01-remove-duplicates"        )
 test_csparser(csparser-5.8                          00)
 test_csparser(csparser-5.8                          01)
 test_csparser(csparser-5.8                          02)
