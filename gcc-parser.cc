@@ -293,13 +293,9 @@ void BasicGccParser::handleError() {
 
 bool BasicGccParser::exportAndReset(Defect *pDef) {
     Defect &def = defCurrent_;
-    if (def.events.empty())
+    if (!hasKeyEvent_)
+        // nothing to export yet
         return false;
-
-    if (!hasKeyEvent_) {
-        this->handleError();
-        return false;
-    }
 
     DefEvent &evt = def.events[def.keyEventIdx];
 
@@ -327,16 +323,20 @@ bool BasicGccParser::getNext(Defect *pDef) {
         const EToken tok = tokenizer_.readNext(&evt);
         switch (tok) {
             case T_NULL:
+                if (!hasKeyEvent_ && !defCurrent_.events.empty())
+                    // some events read prior to EOF, but we have no key event
+                    this->handleError();
+
                 return this->exportAndReset(pDef);
 
             case T_INC:
             case T_SCOPE:
-                done = hasKeyEvent_ && this->exportAndReset(pDef);
+                done = this->exportAndReset(pDef);
                 defCurrent_.events.push_back(evt);
                 break;
 
             case T_MSG:
-                done = hasKeyEvent_ && this->exportAndReset(pDef);
+                done = this->exportAndReset(pDef);
                 defCurrent_.keyEventIdx = defCurrent_.events.size();
                 defCurrent_.events.push_back(evt);
                 hasKeyEvent_ = true;
