@@ -272,6 +272,7 @@ struct HtmlWriter::Private {
     TScanProps                      scanProps;
     const std::string               defUrlTemplate;
     const boost::regex              rePath;
+    const boost::regex              reEvent;
     unsigned                        defCnt;
     DefLookup                      *baseLookup;
     std::string                     newDefMsg;
@@ -286,6 +287,7 @@ struct HtmlWriter::Private {
         core(str_, titleFallback_, spPlacement_),
         defUrlTemplate(defUrlTemplate_),
         rePath("^/builddir/build/BUILD/"),
+        reEvent("^([^\\[]*\\[)?([^\\]]+)(])?$"),
         defCnt(0),
         baseLookup(0)
     {
@@ -436,10 +438,17 @@ void HtmlWriter::handleDef(const Defect &def) {
 
         d->str << " ";
 
-        if (!evt.event.empty())
-            d->str << "<b>" << HtmlLib::escapeTextInline(evt.event) << "</b>: ";
+        boost::smatch sm;
+        const std::string &evtName = evt.event;
+        if (boost::regex_match(evtName, sm, d->reEvent))
+            d->str
+                << HtmlLib::escapeTextInline(sm[1]) << "<b>"
+                << HtmlLib::escapeTextInline(sm[2]) << "</b>"
+                << HtmlLib::escapeTextInline(sm[3]);
+        else
+            d->str << "<b>" << HtmlLib::escapeTextInline(evtName) << "</b>";
 
-        d->str << HtmlLib::escapeTextInline(evt.msg);
+        d->str << ": " << HtmlLib::escapeTextInline(evt.msg);
 
         switch (evt.verbosityLevel) {
             case 1:

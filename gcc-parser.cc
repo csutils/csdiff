@@ -299,10 +299,13 @@ bool BasicGccParser::exportAndReset(Defect *pDef) {
 
     DefEvent &evt = def.events[def.keyEventIdx];
 
-    // use cppcheck's ID as the checker string if available
+    // embed cppcheck's ID in the event ID (if available)
     boost::smatch sm;
     if (boost::regex_match(evt.msg, sm, reChecker_)) {
-        def.checker = sm[/* id  */ 1];
+        def.checker = "CPPCHECK_WARNING";
+        evt.event  += "[";
+        evt.event  += sm[/* id  */ 1];
+        evt.event  += "]";
         evt.msg     = sm[/* msg */ 2];
     }
     else
