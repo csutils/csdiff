@@ -333,7 +333,7 @@ namespace po = boost::program_options;
 
 template <class TPred>
 bool appendPredIfNeeded(
-        AbstractWriter                                  **pEng,
+        PredicateFilter                                 *pf,
         const po::variables_map                         &vm,
         boost::regex_constants::syntax_option_type      flags,
         const char                                      *key)
@@ -352,17 +352,27 @@ bool appendPredIfNeeded(
             << key << " '" << reStr << "'\n";
     }
 
-    if (!pred) {
-        delete *pEng;
-        *pEng = 0;
+    if (!pred)
         return false;
-    }
 
     // append a predicate
-    PredicateFilter *pf = dynamic_cast<PredicateFilter *>(*pEng);
     pf->append(pred);
-
     return true;
+}
+
+template <typename TFlags>
+bool chainFiltersCore(
+        PredicateFilter                                 *pf,
+        const po::variables_map                         &vm,
+        const TFlags                                    flags)
+{
+    return appendPredIfNeeded<DefClassPredicate>  (pf, vm, flags, "checker")
+        && appendPredIfNeeded<SrcAnnotPredicate>  (pf, vm, flags, "src-annot")
+        && appendPredIfNeeded<AnnotPredicate>     (pf, vm, flags, "annot")
+        && appendPredIfNeeded<ErrorPredicate>     (pf, vm, flags, "error")
+        && appendPredIfNeeded<KeyEventPredicate>  (pf, vm, flags, "event")
+        && appendPredIfNeeded<MsgPredicate>       (pf, vm, flags, "msg")
+        && appendPredIfNeeded<PathPredicate>      (pf, vm, flags, "path");
 }
 
 bool chainFilters(
@@ -384,13 +394,13 @@ bool chainFilters(
     if (vm.count("invert-regex"))
         pf->setInvertEachMatch();
 
-    return appendPredIfNeeded<DefClassPredicate>  (pEng, vm, flags, "checker")
-        && appendPredIfNeeded<SrcAnnotPredicate>  (pEng, vm, flags, "src-annot")
-        && appendPredIfNeeded<AnnotPredicate>     (pEng, vm, flags, "annot")
-        && appendPredIfNeeded<ErrorPredicate>     (pEng, vm, flags, "error")
-        && appendPredIfNeeded<KeyEventPredicate>  (pEng, vm, flags, "event")
-        && appendPredIfNeeded<MsgPredicate>       (pEng, vm, flags, "msg")
-        && appendPredIfNeeded<PathPredicate>      (pEng, vm, flags, "path");
+    if (chainFiltersCore(pf, vm, flags))
+        return true;
+
+    // failed to create the chain of filters
+    delete pf;
+    *pEng = 0;
+    return false;
 }
 
 template <class TDesc, class TStream>
