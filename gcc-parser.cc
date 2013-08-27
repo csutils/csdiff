@@ -142,15 +142,24 @@ EToken Tokenizer::readNext(DefEvent *pEvt) {
 class MarkerRemover: public AbstractTokenFilter {
     public:
         MarkerRemover(ITokenizer *slave):
-            AbstractTokenFilter(slave)
+            AbstractTokenFilter(slave),
+            lineNo_(0)
         {
         }
 
+        virtual int lineNo() const {
+            return lineNo_;
+        }
+
         virtual EToken readNext(DefEvent *pEvt);
+
+    private:
+        int                     lineNo_;
 };
 
 EToken MarkerRemover::readNext(DefEvent *pEvt) {
     EToken tok = slave_->readNext(pEvt);
+    lineNo_ = slave_->lineNo();
     if (T_UNKNOWN != tok)
         return tok;
 
@@ -158,7 +167,9 @@ EToken MarkerRemover::readNext(DefEvent *pEvt) {
     if (T_MARKER != tok)
         return tok;
 
-    return slave_->readNext(pEvt);
+    tok = slave_->readNext(pEvt);
+    lineNo_ = slave_->lineNo();
+    return tok;
 }
 
 class MultilineConcatenator: public AbstractTokenFilter {
