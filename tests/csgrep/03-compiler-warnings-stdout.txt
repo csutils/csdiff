@@ -41,7 +41,6 @@ Error: COMPILER_WARNING:
 /builddir/build/BUILD/curl-7.15.5/conftest.c:38: warning: implicit declaration of function 'GdiFlush'
 
 Error: COMPILER_WARNING:
-/tmp/ccXoSoA1.o: scope_hint: In function `main'
 /builddir/build/BUILD/curl-7.15.5/conftest.c: scope_hint: In function 'main'
 /builddir/build/BUILD/curl-7.15.5/conftest.c:71: warning: initialization makes pointer from integer without a cast
 
@@ -91,42 +90,30 @@ Error: COMPILER_WARNING:
 /builddir/build/BUILD/curl-7.15.5/conftest.c:162: warning: conflicting types for built-in function 'strstr'
 
 Error: COMPILER_WARNING:
-/tmp/ccCiu0OL.o: scope_hint: In function `main'
 /builddir/build/BUILD/curl-7.15.5/conftest.c: scope_hint: In function 'main'
 /builddir/build/BUILD/curl-7.15.5/conftest.c:146: warning: implicit declaration of function 'stricmp'
 
 Error: COMPILER_WARNING:
-/tmp/ccPx8NCS.o: scope_hint: In function `main'
-/tmp/ccFXPfxT.o: scope_hint: In function `main'
 /builddir/build/BUILD/curl-7.15.5/conftest.c: scope_hint: In function 'main'
 /builddir/build/BUILD/curl-7.15.5/conftest.c:146: warning: implicit declaration of function 'strcmpi'
 
 Error: COMPILER_WARNING:
-/tmp/ccsfZpoX.o: scope_hint: In function `main'
-/tmp/ccvzDuZh.o: scope_hint: In function `main'
 /builddir/build/BUILD/curl-7.15.5/conftest.c: scope_hint: In function 'main'
 /builddir/build/BUILD/curl-7.15.5/conftest.c:152: warning: implicit declaration of function 'closesocket'
 
 Error: COMPILER_WARNING:
-/tmp/ccyodmlm.o: scope_hint: In function `main'
-/tmp/cclAzYJC.o: scope_hint: In function `main'
 /builddir/build/BUILD/curl-7.15.5/conftest.c: scope_hint: In function 'main'
 /builddir/build/BUILD/curl-7.15.5/conftest.c:155: warning: implicit declaration of function 'getpass_r'
 
 Error: COMPILER_WARNING:
-/tmp/ccoB5cmI.o: scope_hint: In function `main'
-/tmp/ccKJyViK.o: scope_hint: In function `main'
 /builddir/build/BUILD/curl-7.15.5/conftest.c: scope_hint: In function 'main'
 /builddir/build/BUILD/curl-7.15.5/conftest.c:155: warning: implicit declaration of function 'strlcat'
 
 Error: COMPILER_WARNING:
-/tmp/cctwzo2P.o: scope_hint: In function `main'
-/tmp/ccbsBMu9.o: scope_hint: In function `main'
 /builddir/build/BUILD/curl-7.15.5/conftest.c: scope_hint: In function 'main'
 /builddir/build/BUILD/curl-7.15.5/conftest.c:159: warning: implicit declaration of function 'sigsetjmp'
 
 Error: COMPILER_WARNING:
-/tmp/cc2WXj8e.o: scope_hint: In function `main'
 /builddir/build/BUILD/curl-7.15.5/conftest.c:187: warning: conflicting types for built-in function 'fork'
 
 Error: COMPILER_WARNING:

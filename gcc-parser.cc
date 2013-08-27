@@ -294,6 +294,10 @@ class BasicGccParser {
 };
 
 void BasicGccParser::handleError() {
+    if (!hasKeyEvent_)
+        // drop the events captured up to now
+        defCurrent_ = Defect();
+
     hasError_ = true;
     if (silent_)
         return;
