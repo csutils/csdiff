@@ -19,14 +19,14 @@
 
 #include "instream.hh"
 
-InStream::InStream(const char *fileName) throw (InFileException):
-    fileName_(fileName),
+InStream::InStream(const char *fName) throw (InFileException):
+    fileName_(fName),
     str_((!fileName_.compare("-"))
                 ? std::cin
                 : fileStr_)
 {
     if (&str_ == &fileStr_)
-        fileStr_.open(fileName, std::ios::in);
+        fileStr_.open(fName, std::ios::in);
 
     if (!fileStr_)
         throw InFileException(fileName_);
