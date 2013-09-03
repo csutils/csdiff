@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
             ("plain-text-url", po::value(&plainTextUrl),
              "generate a link to plain-text version")
             ("scan-props-placement",
-             po::value<string>(&spPosition)->default_value("top"),
+             po::value<string>(&spPosition)->default_value("bottom"),
              "placement of the table with scan properties: top, bottom, none")
             ("quiet,q", "do not report any parsing errors")
             ("help", "produce help message")
