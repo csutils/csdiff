@@ -1,0 +1,128 @@
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/coreconf/mkdepend/main.c:269: error[memleakOnRealloc]: Common realloc mistake: 'undeflist' nulled but not freed upon failure
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/cmd/atob/atob.c:148: error[resourceLeak]: Resource leak: inFile
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/cmd/btoa/btoa.c:181: error[resourceLeak]: Resource leak: inFile
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/cmd/crlutil/crlutil.c:971: error[memleak]: Memory leak: pwdata.data
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/cmd/crlutil/crlutil.c:1045: error[memleak]: Memory leak: pwdata.data
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/cmd/certutil/certutil.c:1952: error[nullPointer]: Null pointer dereference
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/cmd/bltest/blapitest.c:2995: error[resourceLeak]: Resource leak: file
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/cmd/libpkix/pkix/certsel/test_certselector.c:1683: error[syntaxError]: syntax error
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/cmd/lib/secutil.c:82: error[resourceLeak]: Resource leak: input
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/cmd/lib/secutil.c:280: error[resourceLeak]: Resource leak: input
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/cmd/libpkix/pkix_pl/system/test_rwlock.c:35: error[uninitvar]: Uninitialized variable: errorResult
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/cmd/libpkix/pkix_pl/system/test_rwlock.c:65: error[uninitvar]: Uninitialized variable: errorResult
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/cmd/libpkix/pkixutil/pkixutil.c:204: error[nullPointer]: Possible null pointer dereference: fnName
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/cmd/smimetools/cmsutil.c:1361: error[memleak]: Memory leak: signOptions.nickname
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/cmd/smimetools/cmsutil.c:1361: error[memleak]: Memory leak: signOptions.encryptionKeyPreferenceNick
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/cmd/smimetools/cmsutil.c:1361: error[memleak]: Memory leak: options.password
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/cmd/smimetools/cmsutil.c:1361: error[memleak]: Memory leak: options.pwfile
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/cmd/tests/remtest.c:94: error[memleak]: Memory leak: tokenName
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/lib/certdb/certv3.c:361: error[nullPointer]: Null pointer dereference
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/lib/ckfw/dbm/db.c:145: error[uninitvar]: Uninitialized variable: rv
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/lib/ckfw/nssmkey/mobject.c:1443: error[uninitvar]: Uninitialized variable: itemRef
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/lib/ckfw/nssmkey/mobject.c:1446: error[uninitvar]: Uninitialized variable: keychainRef
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/lib/ckfw/nssmkey/mobject.c:1923: error[uninitvar]: Uninitialized variable: io
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/lib/freebl/desblapi.c:84: error[uninitvar]: Uninitialized variable: vec
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/lib/freebl/desblapi.c:121: error[uninitvar]: Uninitialized variable: vec
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/lib/freebl/pqg.c:1212: error[uninitvar]: Uninitialized variable: hashobj
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/lib/libpkix/pkix_pl_nss/pki/pkix_pl_crldp.h:16: error[syntaxError]: Invalid number of character ({) when these macros are defined: '__cplusplus'.
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/lib/freebl/sha512.c:204: error[uninitvar]: Uninitialized variable: t1
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/lib/freebl/sha512.c:204: error[uninitvar]: Uninitialized variable: t2
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/lib/smime/smimeutil.c:448: error[uninitvar]: Uninitialized variable: key_type
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/lib/softoken/sftkdb.c:564: error[nullPointer]: Possible null pointer dereference: keyTarget
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/lib/ssl/unix_err.c:445: error[syntaxError]: syntax error
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/lib/ssl/unix_err.c:452: error[syntaxError]: syntax error
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/lib/ssl/unix_err.c:455: error[syntaxError]: syntax error
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/lib/ssl/unix_err.c:471: error[syntaxError]: syntax error
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/lib/ssl/unix_err.c:483: error[syntaxError]: syntax error
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/lib/ssl/unix_err.c:489: error[syntaxError]: syntax error
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/lib/ssl/unix_err.c:56: error[syntaxError]: syntax error
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/lib/ssl/unix_err.c:502: error[syntaxError]: syntax error
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/lib/sqlite/sqlite3.c:79862: error[cppcheckError]: Internal error. Token::Match called with varid 0. Please report this to Cppcheck developers
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/lib/sqlite/sqlite3.c:23630: error[syntaxError]: syntax error
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/lib/zlib/gzwrite.c:80: error[uninitvar]: Uninitialized variable: got
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/nss-3.14.3/mozilla/security/nss/lib/sqlite/sqlite3.c:23642: error[syntaxError]: syntax error

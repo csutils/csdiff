@@ -58,7 +58,7 @@ class ErrFileLexer {
             reChecker_("^Error: *([A-Za-z][A-Za-z_.]+)( *\\([^)]+\\))? *:$"),
             reEvent_(
                     /* location */ "^([^:]+)(?::([0-9]+))?(?::([0-9]+))?"
-                    /* evt/mesg */ ": ([a-z][\\[\\]a-z_-]+): (.*)$")
+                    /* evt/mesg */ ": ([a-z][\\[\\]A-Za-z_-]+): (.*)$")
         {
         }
 
