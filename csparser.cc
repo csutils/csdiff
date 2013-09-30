@@ -409,8 +409,13 @@ bool CovParser::Private::parseNext(Defect *def) {
             case T_NULL:
             case T_EMPTY:
             case T_CHECKER:
-            case T_COMMENT:
                 goto done;
+
+            case T_COMMENT:
+                // capture a comment event
+                def->events.push_back(this->lexer.evt());
+                code = lexer.readNext();
+                continue;
 
             default:
                 break;
