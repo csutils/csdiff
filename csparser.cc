@@ -32,6 +32,8 @@
 
 enum EToken {
     T_NULL = 0,
+    T_EMPTY,
+    T_COMMENT,
     T_UNKNOWN,
     T_CHECKER,
     T_EVENT
@@ -40,6 +42,8 @@ enum EToken {
 std::ostream& operator<<(std::ostream &str, EToken code) {
     switch (code) {
         case T_NULL:    str << "T_NULL";    break;
+        case T_EMPTY:   str << "T_EMPTY";   break;
+        case T_COMMENT: str << "T_COMMENT"; break;
         case T_UNKNOWN: str << "T_UNKNOWN"; break;
         case T_CHECKER: str << "T_CHECKER"; break;
         case T_EVENT:   str << "T_EVENT";   break;
@@ -54,7 +58,8 @@ class ErrFileLexer {
             input_(input),
             hasError_(false),
             lineNo_(0),
-            reEmpty_("^ *|#.*$"),
+            reEmpty_("^ *$"),
+            reComment_("^(#)(.*)$"),
             reChecker_("^Error: *([A-Za-z][A-Za-z_.]+)( *\\([^)]+\\))? *:$"),
             reEvent_(
                     /* location */ "^([^:]+)(?::([0-9]+))?(?::([0-9]+))?"
@@ -87,58 +92,64 @@ class ErrFileLexer {
         Defect                      def_;
         DefEvent                    evt_;
         const boost::regex          reEmpty_;
+        const boost::regex          reComment_;
         const boost::regex          reChecker_;
         const boost::regex          reEvent_;
 };
 
 EToken ErrFileLexer::readNext() {
-    for (;;) {
-        std::string line;
-        if (!std::getline(input_, line))
-            return T_NULL;
+    std::string line;
+    if (!std::getline(input_, line))
+        return T_NULL;
 
-        lineNo_++;
+    lineNo_++;
 
-        if (boost::regex_match(line, reEmpty_))
-            continue;
+    if (boost::regex_match(line, reEmpty_))
+        return T_EMPTY;
 
-        boost::smatch sm;
+    boost::smatch sm;
 
-        if (boost::regex_match(line, sm, reChecker_)) {
-            def_ = Defect();
-            def_.checker    = sm[/* checker */ 1];
-            def_.annotation = sm[/* annotat */ 2];
-            return T_CHECKER;
-        }
-
-        if (!boost::regex_match(line, sm, reEvent_)) {
-            evt_.msg = line;
-            return T_UNKNOWN;
-        }
-
-        // read file name, event, and msg
-        evt_.fileName   = sm[/* file  */ 1];
-        evt_.event      = sm[/* event */ 4];
-        evt_.msg        = sm[/* msg   */ 5];
-
-        // parse line number
-        try {
-            evt_.line = boost::lexical_cast<int>(sm[/* line */ 2]);
-        }
-        catch (boost::bad_lexical_cast &) {
-            evt_.line = 0;
-        }
-
-        // parse column number
-        try {
-            evt_.column = boost::lexical_cast<int>(sm[/* col */ 3]);
-        }
-        catch (boost::bad_lexical_cast &) {
-            evt_.column = 0;
-        }
-
-        return T_EVENT;
+    if (boost::regex_match(line, sm, reChecker_)) {
+        def_ = Defect();
+        def_.checker    = sm[/* checker */ 1];
+        def_.annotation = sm[/* annotat */ 2];
+        return T_CHECKER;
     }
+
+    if (boost::regex_match(line, sm, reComment_)) {
+        evt_ = DefEvent();
+        evt_.event  = sm[/* #     */ 1];
+        evt_.msg    = sm[/* msg   */ 2];
+        return T_COMMENT;
+    }
+
+    if (!boost::regex_match(line, sm, reEvent_)) {
+        evt_.msg = line;
+        return T_UNKNOWN;
+    }
+
+    // read file name, event, and msg
+    evt_.fileName   = sm[/* file  */ 1];
+    evt_.event      = sm[/* event */ 4];
+    evt_.msg        = sm[/* msg   */ 5];
+
+    // parse line number
+    try {
+        evt_.line = boost::lexical_cast<int>(sm[/* line */ 2]);
+    }
+    catch (boost::bad_lexical_cast &) {
+        evt_.line = 0;
+    }
+
+    // parse column number
+    try {
+        evt_.column = boost::lexical_cast<int>(sm[/* col */ 3]);
+    }
+    catch (boost::bad_lexical_cast &) {
+        evt_.column = 0;
+    }
+
+    return T_EVENT;
 }
 
 struct KeyEventDigger::Private {
@@ -315,19 +326,24 @@ bool CovParser::Private::seekForToken(const EToken token) {
     if (token == code)
         return true;
 
-    do {
+    for (;;) {
         code = this->lexer.readNext();
-        if (T_NULL == code)
-            return false;
-
         if (token == code)
             return true;
 
-        this->wrongToken();
-    }
-    while (T_CHECKER != code);
+        switch (code) {
+            case T_NULL:
+            case T_EMPTY:
+            case T_CHECKER:
+                return false;
 
-    return false;
+            case T_COMMENT:
+                continue;
+
+            default:
+                this->wrongToken();
+        }
+    }
 }
 
 bool CovParser::Private::parseMsg(DefEvent *evt) {
@@ -342,10 +358,14 @@ bool CovParser::Private::parseMsg(DefEvent *evt) {
         code = lexer.readNext();
         switch (code) {
             case T_NULL:
+            case T_EMPTY:
             case T_CHECKER:
             case T_EVENT:
                 // all OK
                 return true;
+
+            case T_COMMENT:
+                continue;
 
             case T_UNKNOWN:
                 evt->msg += "\n";
@@ -371,7 +391,18 @@ bool CovParser::Private::parseNext(Defect *def) {
 
     // parse defect body
     code = lexer.readNext();
-    while (T_NULL != code && T_CHECKER != code) {
+    for (;;) {
+        switch (code) {
+            case T_NULL:
+            case T_EMPTY:
+            case T_CHECKER:
+            case T_COMMENT:
+                goto done;
+
+            default:
+                break;
+        }
+
         DefEvent evt;
         if (!parseMsg(&evt))
             continue;
@@ -380,6 +411,7 @@ bool CovParser::Private::parseNext(Defect *def) {
         def->events.push_back(evt);
     }
 
+done:
     if (this->keDigger.guessKeyEvent(def)) {
         this->keDigger.initVerbosity(def);
 
