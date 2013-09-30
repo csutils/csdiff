@@ -57,7 +57,8 @@ void CovWriter::handleDef(const Defect &def) {
     str << ":\n";
 
     BOOST_FOREACH(const DefEvent &evt, def.events) {
-        str << evt.fileName << ":";
+        if (!evt.fileName.empty())
+            str << evt.fileName << ":";
         
         if (0 < evt.line)
             str << evt.line << ":";
@@ -65,10 +66,14 @@ void CovWriter::handleDef(const Defect &def) {
         if (0 < evt.column)
             str << evt.column << ":";
 
-        str << " ";
+        if (evt.event == "#")
+            str << "#";
 
-        if (!evt.event.empty())
-            str << evt.event << ": ";
+        else {
+            str << " ";
+            if (!evt.event.empty())
+                str << evt.event << ": ";
+        }
 
         str << evt.msg << "\n";
     }

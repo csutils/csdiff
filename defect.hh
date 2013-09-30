@@ -39,7 +39,9 @@ struct DefEvent {
     int                     column;
     std::string             event;
     std::string             msg;
-    int                     verbosityLevel; ///< 0 - key event, 2 - trace event
+
+    /// 0 = key event,  2 = trace event,  3 = comment
+    int                     verbosityLevel;
 
     DefEvent():
         line(0),

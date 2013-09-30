@@ -258,6 +258,12 @@ void KeyEventDigger::initVerbosity(Defect *def) {
     const unsigned evtCount = evtList.size();
     for (unsigned idx = 0U; idx < evtCount; ++idx) {
         DefEvent &evt = evtList[idx];
+        if (evt.fileName.empty() && evt.event == "#") {
+            // comment event --> verbosityLevel = 3
+            evt.verbosityLevel = 3;
+            continue;
+        }
+
         evt.verbosityLevel = (idx == def->keyEventIdx)
             ? /* key event */ 0
             : 1 + /* trace event */ !!d->blackList.count(evt.event);
@@ -284,8 +290,8 @@ struct CovParser::Private {
 
     void parseError(const std::string &msg);
     void wrongToken();
-    bool seekForToken(const EToken);
-    bool parseMsg(DefEvent *);
+    bool seekForToken(const EToken, TEvtList *pEvtList);
+    bool parseMsg(DefEvent *, TEvtList *pEvtList);
     bool parseNext(Defect *);
 };
 
@@ -322,7 +328,7 @@ void CovParser::Private::wrongToken() {
     this->parseError(str.str());
 }
 
-bool CovParser::Private::seekForToken(const EToken token) {
+bool CovParser::Private::seekForToken(const EToken token, TEvtList *pEvtList) {
     if (token == code)
         return true;
 
@@ -338,6 +344,8 @@ bool CovParser::Private::seekForToken(const EToken token) {
                 return false;
 
             case T_COMMENT:
+                // capture a comment event
+                pEvtList->push_back(this->lexer.evt());
                 continue;
 
             default:
@@ -346,9 +354,9 @@ bool CovParser::Private::seekForToken(const EToken token) {
     }
 }
 
-bool CovParser::Private::parseMsg(DefEvent *evt) {
+bool CovParser::Private::parseMsg(DefEvent *evt, TEvtList *pEvtList) {
     // parse event
-    if (seekForToken(T_EVENT))
+    if (seekForToken(T_EVENT, pEvtList))
         *evt = this->lexer.evt();
     else
         goto fail;
@@ -365,6 +373,8 @@ bool CovParser::Private::parseMsg(DefEvent *evt) {
                 return true;
 
             case T_COMMENT:
+                // capture a comment event
+                pEvtList->push_back(this->lexer.evt());
                 continue;
 
             case T_UNKNOWN:
@@ -384,10 +394,13 @@ fail:
 
 bool CovParser::Private::parseNext(Defect *def) {
     // parse defect header
-    if (!seekForToken(T_CHECKER))
-        return false;
+    TEvtList evtList;
+    while (!seekForToken(T_CHECKER, &evtList))
+        if (T_EMPTY != code)
+            return false;
 
     *def = this->lexer.def();
+    def->events.swap(evtList);
 
     // parse defect body
     code = lexer.readNext();
@@ -404,7 +417,7 @@ bool CovParser::Private::parseNext(Defect *def) {
         }
 
         DefEvent evt;
-        if (!parseMsg(&evt))
+        if (!parseMsg(&evt, &def->events))
             continue;
 
         // append single event
