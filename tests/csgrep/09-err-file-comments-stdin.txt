@@ -1,0 +1,212 @@
+# These pieces:  After reaching DateTimeParseError the program "exists" and
+# never returns to time_in function
+
+# Defect #1
+Error: UNINIT (CWE-457):
+postgresql-9.2.4/src/backend/utils/adt/date.c:1044: var_decl: Declaring variable "fsec" without initializer.
+postgresql-9.2.4/src/backend/utils/adt/date.c:1062: uninit_use_in_call: Using uninitialized value "fsec" when calling "tm2time(struct pg_tm *, fsec_t, TimeADT *)".
+postgresql-9.2.4/src/backend/utils/adt/date.c:1075:2: read_parm: Reading a parameter value.
+
+# Defect #4
+Error: UNINIT (CWE-457):
+postgresql-9.2.4/src/backend/utils/adt/nabstime.c:232: var_decl: Declaring variable "dtype" without initializer.
+postgresql-9.2.4/src/backend/utils/adt/nabstime.c:243: uninit_use: Using uninitialized value "dtype".
+
+# Defect #12
+Error: UNINIT (CWE-457):
+postgresql-9.2.4/src/backend/utils/adt/date.c:122: var_decl: Declaring variable "dtype" without initializer.
+postgresql-9.2.4/src/backend/utils/adt/date.c:136: uninit_use: Using uninitialized value "dtype".
+
+# Defect #13
+Error: UNINIT (CWE-457):
+postgresql-9.2.4/src/backend/utils/adt/date.c:1882: var_decl: Declaring variable "fsec" without initializer.
+postgresql-9.2.4/src/backend/utils/adt/date.c:1901: uninit_use_in_call: Using uninitialized value "fsec" when calling "tm2timetz(struct pg_tm *, fsec_t, int, TimeTzADT *)".
+postgresql-9.2.4/src/backend/utils/adt/date.c:1862:2: read_parm: Reading a parameter value.
+
+# Defect #14
+Error: UNINIT (CWE-457):
+postgresql-9.2.4/src/backend/utils/adt/date.c:1885: var_decl: Declaring variable "tz" without initializer.
+postgresql-9.2.4/src/backend/utils/adt/date.c:1901: uninit_use_in_call: Using uninitialized value "tz" when calling "tm2timetz(struct pg_tm *, fsec_t, int, TimeTzADT *)".
+postgresql-9.2.4/src/backend/utils/adt/date.c:1867:2: read_parm: Reading a parameter value.
+
+# the structure is memcpy'ed, coverity does not detect ereport(FATAL,...) as
+# "exit's sister"
+# Defect #17
+Error: UNINIT (CWE-457):
+postgresql-9.2.4/src/backend/access/transam/xlog.c:6236: var_decl: Declaring variable "checkPoint" without initializer.
+postgresql-9.2.4/src/backend/access/transam/xlog.c:6528: uninit_use_in_call: Using uninitialized value "checkPoint.nextMulti" when calling "MultiXactSetNextMXact(MultiXactId, MultiXactOffset)".
+postgresql-9.2.4/src/backend/access/transam/multixact.c:1669:2: read_parm: Reading a parameter value.
+postgresql-9.2.4/src/backend/access/transam/xlog.c:6528: uninit_use_in_call: Using uninitialized value "checkPoint.nextMultiOffset" when calling "MultiXactSetNextMXact(MultiXactId, MultiXactOffset)".
+postgresql-9.2.4/src/backend/access/transam/multixact.c:1670:2: read_parm: Reading a parameter value.
+
+# Defect #18
+Error: UNINIT (CWE-457):
+postgresql-9.2.4/src/backend/access/transam/xlog.c:6236: var_decl: Declaring variable "checkPoint" without initializer.
+postgresql-9.2.4/src/backend/access/transam/xlog.c:6514: uninit_use_in_call: Using uninitialized value "checkPoint.nextMulti" when calling "errmsg(char const *, ...)".
+
+# Defect #19
+Error: UNINIT (CWE-457):
+postgresql-9.2.4/src/backend/access/transam/xlog.c:6236: var_decl: Declaring variable "checkPoint" without initializer.
+postgresql-9.2.4/src/backend/access/transam/xlog.c:6514: uninit_use_in_call: Using uninitialized value "checkPoint.nextMultiOffset" when calling "errmsg(char const *, ...)".
+
+# Defect #20
+Error: UNINIT (CWE-457):
+postgresql-9.2.4/src/backend/access/transam/xlog.c:6236: var_decl: Declaring variable "checkPoint" without initializer.
+postgresql-9.2.4/src/backend/access/transam/xlog.c:6510: uninit_use_in_call: Using uninitialized value "checkPoint.nextOid" when calling "errmsg(char const *, ...)".
+
+# Defect #21
+Error: UNINIT (CWE-457):
+postgresql-9.2.4/src/backend/access/transam/xlog.c:6236: var_decl: Declaring variable "checkPoint" without initializer.
+postgresql-9.2.4/src/backend/access/transam/xlog.c:6510: uninit_use_in_call: Using uninitialized value "checkPoint.nextXid" when calling "errmsg(char const *, ...)".
+
+# Defect #22
+Error: UNINIT (CWE-457):
+postgresql-9.2.4/src/backend/access/transam/xlog.c:6236: var_decl: Declaring variable "checkPoint" without initializer.
+postgresql-9.2.4/src/backend/access/transam/xlog.c:6510: uninit_use_in_call: Using uninitialized value "checkPoint.nextXidEpoch" when calling "errmsg(char const *, ...)".
+
+# Defect #23
+Error: UNINIT (CWE-457):
+postgresql-9.2.4/src/backend/access/transam/xlog.c:6236: var_decl: Declaring variable "checkPoint" without initializer.
+postgresql-9.2.4/src/backend/access/transam/xlog.c:6529: uninit_use_in_call: Using uninitialized value "checkPoint.oldestXid" when calling "SetTransactionIdLimit(TransactionId, Oid)".
+postgresql-9.2.4/src/backend/access/transam/varsup.c:272:2: read_parm: Reading a parameter value.
+postgresql-9.2.4/src/backend/access/transam/xlog.c:6529: uninit_use_in_call: Using uninitialized value "checkPoint.oldestXidDB" when calling "SetTransactionIdLimit(TransactionId, Oid)".
+postgresql-9.2.4/src/backend/access/transam/varsup.c:327:2: read_parm: Reading a parameter value.
+
+# Defect #24
+Error: UNINIT (CWE-457):
+postgresql-9.2.4/src/backend/access/transam/xlog.c:6236: var_decl: Declaring variable "checkPoint" without initializer.
+postgresql-9.2.4/src/backend/access/transam/xlog.c:6517: uninit_use_in_call: Using uninitialized value "checkPoint.oldestXid" when calling "errmsg(char const *, ...)".
+
+# Defect #25
+Error: UNINIT (CWE-457):
+postgresql-9.2.4/src/backend/access/transam/xlog.c:6236: var_decl: Declaring variable "checkPoint" without initializer.
+postgresql-9.2.4/src/backend/access/transam/xlog.c:6517: uninit_use_in_call: Using uninitialized value "checkPoint.oldestXidDB" when calling "errmsg(char const *, ...)".
+
+# Defect #26
+Error: UNINIT (CWE-457):
+postgresql-9.2.4/src/backend/access/transam/xlog.c:6236: var_decl: Declaring variable "checkPoint" without initializer.
+postgresql-9.2.4/src/backend/access/transam/xlog.c:6538: uninit_use: Using uninitialized value "checkPoint.ThisTimeLineID".
+
+# Defect #27
+Error: UNINIT (CWE-457):
+postgresql-9.2.4/src/backend/access/transam/xlog.c:6236: var_decl: Declaring variable "checkPoint" without initializer.
+postgresql-9.2.4/src/backend/access/transam/xlog.c:6540: uninit_use: Using uninitialized value "checkPoint.fullPageWrites".
+
+# Defect #28
+Error: UNINIT (CWE-457):
+postgresql-9.2.4/src/backend/access/transam/xlog.c:6236: var_decl: Declaring variable "checkPoint" without initializer.
+postgresql-9.2.4/src/backend/access/transam/xlog.c:6526: uninit_use: Using uninitialized value "checkPoint.nextOid".
+
+# Defect #29
+Error: UNINIT (CWE-457):
+postgresql-9.2.4/src/backend/access/transam/xlog.c:6236: var_decl: Declaring variable "checkPoint" without initializer.
+postgresql-9.2.4/src/backend/access/transam/xlog.c:6520: uninit_use: Using uninitialized value "checkPoint.nextXid".
+
+# Defect #30
+Error: UNINIT (CWE-457):
+postgresql-9.2.4/src/backend/access/transam/xlog.c:6236: var_decl: Declaring variable "checkPoint" without initializer.
+postgresql-9.2.4/src/backend/access/transam/xlog.c:6530: uninit_use: Using uninitialized value "checkPoint.nextXidEpoch".
+
+# Defect #31
+Error: UNINIT (CWE-457):
+postgresql-9.2.4/src/backend/access/transam/xlog.c:6236: var_decl: Declaring variable "checkPoint" without initializer.
+postgresql-9.2.4/src/backend/access/transam/xlog.c:6594: uninit_use: Using uninitialized value "checkPoint": field "checkPoint"."oldestActiveXid" is uninitialized.
+
+# Defect #32
+Error: UNINIT (CWE-457):
+postgresql-9.2.4/src/backend/access/transam/xlog.c:6236: var_decl: Declaring variable "checkPoint" without initializer.
+postgresql-9.2.4/src/backend/access/transam/xlog.c:6542: uninit_use: Using uninitialized value "checkPoint.redo": field "checkPoint.redo"."xrecoff" is uninitialized.
+
+# negative values (which t_tableOid is) are handled before going to this
+# branch..
+
+# Defect #33
+Error: UNINIT (CWE-457):
+postgresql-9.2.4/src/backend/executor/execQual.c:3967: var_decl: Declaring variable "tmptup" without initializer.
+postgresql-9.2.4/src/backend/executor/execQual.c:4017: uninit_use_in_call: Using uninitialized value "tmptup.t_tableOid" when calling "heap_getsysattr(HeapTuple, int, TupleDesc, bool *)".
+postgresql-9.2.4/src/backend/access/common/heaptuple.c:559:4: read_parm_fld: Reading a parameter field.
+
+# again, ereport(ERROR,...)
+# Defect #34
+Error: UNINIT (CWE-457):
+postgresql-9.2.4/src/backend/utils/adt/timestamp.c:152: var_decl: Declaring variable "dtype" without initializer.
+postgresql-9.2.4/src/backend/utils/adt/timestamp.c:166: uninit_use: Using uninitialized value "dtype".
+
+# Defect #35
+Error: UNINIT (CWE-457):
+postgresql-9.2.4/src/backend/utils/adt/timestamp.c:148: var_decl: Declaring variable "fsec" without initializer.
+postgresql-9.2.4/src/backend/utils/adt/timestamp.c:169: uninit_use_in_call: Using uninitialized value "fsec" when calling "tm2timestamp(struct pg_tm *, fsec_t, int *, Timestamp *)".
+postgresql-9.2.4/src/backend/utils/adt/timestamp.c:1638:2: read_parm: Reading a parameter value.
+
+# Initialized in #ifndef -> and readed only if that #ifndef is run (after
+# memcpy)
+# Defect #36
+Error: UNINIT (CWE-457):
+postgresql-9.2.4/src/backend/utils/adt/geo_ops.c:2988: var_decl: Declaring variable "seg" without initializer.
+postgresql-9.2.4/src/backend/utils/adt/geo_ops.c:3008: uninit_use_in_call: Using uninitialized value "seg": field "seg"."m" is uninitialized when calling "memcpy(void * restrict, void const * restrict, size_t)".
+
+# again -> this will never happen due to ereport(ERROR,..)
+
+# Defect #42
+Error: UNINIT (CWE-457):
+postgresql-9.2.4/src/backend/utils/adt/timestamp.c:426: var_decl: Declaring variable "dtype" without initializer.
+postgresql-9.2.4/src/backend/utils/adt/timestamp.c:440: uninit_use: Using uninitialized value "dtype".
+
+# Defect #43
+Error: UNINIT (CWE-457):
+postgresql-9.2.4/src/backend/utils/adt/timestamp.c:422: var_decl: Declaring variable "fsec" without initializer.
+postgresql-9.2.4/src/backend/utils/adt/timestamp.c:443: uninit_use_in_call: Using uninitialized value "fsec" when calling "tm2timestamp(struct pg_tm *, fsec_t, int *, Timestamp *)".
+postgresql-9.2.4/src/backend/utils/adt/timestamp.c:1638:2: read_parm: Reading a parameter value.
+
+# Defect #44
+Error: UNINIT (CWE-457):
+postgresql-9.2.4/src/backend/utils/adt/timestamp.c:425: var_decl: Declaring variable "tz" without initializer.
+postgresql-9.2.4/src/backend/utils/adt/timestamp.c:443: uninit_use_in_call: Using uninitialized value "tz" when calling "tm2timestamp(struct pg_tm *, fsec_t, int *, Timestamp *)".
+postgresql-9.2.4/src/backend/utils/adt/timestamp.c:1660:3: read_parm: Reading a parameter value.
+
+# Defect #49
+Error: UNINIT (CWE-457):
+postgresql-9.2.4/src/backend/utils/adt/tid.c:55: var_decl: Declaring variable "coord" without initializer.
+postgresql-9.2.4/src/backend/utils/adt/tid.c:74: uninit_use_in_call: Using uninitialized value "coord[0]" when calling "strtoul(char const * restrict, char ** restrict, int)".
+
+# rettup is always initialized (missed due to elog() again probably)
+
+# Defect #50
+Error: UNINIT (CWE-457):
+postgresql-9.2.4/src/pl/tcl/pltcl.c:820: var_decl: Declaring variable "rettup" without initializer.
+postgresql-9.2.4/src/pl/tcl/pltcl.c:1104: uninit_use_in_call: Using uninitialized value "rettup" when calling "SPI_modifytuple(Relation, HeapTuple, int, int *, Datum *, char const *)".
+postgresql-9.2.4/src/backend/executor/spi.c:761:2: read_parm: Reading a parameter value.
+
+# Defect #51
+Error: UNINIT (CWE-457):
+postgresql-9.2.4/src/pl/tcl/pltcl.c:820: var_decl: Declaring variable "rettup" without initializer.
+postgresql-9.2.4/src/pl/tcl/pltcl.c:1013: uninit_use: Using uninitialized value "rettup".
+
+# iacls.objtype is always initialized or elog() is called
+
+# Defect #52
+Error: UNINIT (CWE-457):
+postgresql-9.2.4/src/backend/catalog/aclchk.c:1304: var_decl: Declaring variable "iacls" without initializer.
+postgresql-9.2.4/src/backend/catalog/aclchk.c:1364: uninit_use_in_call: Using uninitialized value "iacls.objtype" when calling "SetDefaultACL(InternalDefaultACL *)".
+postgresql-9.2.4/src/backend/catalog/aclchk.c:1101:2: read_parm_fld: Reading a parameter field.
+
+# Defect #53
+Error: UNINIT (CWE-457):
+postgresql-9.2.4/src/backend/catalog/aclchk.c:1368: var_decl: Declaring variable "istmt" without initializer.
+postgresql-9.2.4/src/backend/catalog/aclchk.c:1416: uninit_use_in_call: Using uninitialized value "istmt.objtype" when calling "ExecGrantStmt_oids(InternalGrant *)".
+postgresql-9.2.4/src/backend/catalog/aclchk.c:560:2: read_parm_fld: Reading a parameter field.
+
+# The 'leftids' pointer is always initialized (even if it is somethimes NULL,
+# this should not hurt).  (caused again because of elog())
+
+# Defect #54
+Error: UNINIT (CWE-457):
+postgresql-9.2.4/src/backend/optimizer/plan/initsplan.c:359: var_decl: Declaring variable "leftids" without initializer.
+postgresql-9.2.4/src/backend/optimizer/plan/initsplan.c:452: uninit_use_in_call: Using uninitialized value "leftids" when calling "make_outerjoininfo(PlannerInfo *, Relids, Relids, Relids, JoinType, List *)".
+postgresql-9.2.4/src/backend/optimizer/plan/initsplan.c:595:2: read_parm: Reading a parameter value.
+
+# Defect #55
+Error: UNINIT (CWE-457):
+postgresql-9.2.4/src/backend/optimizer/plan/initsplan.c:360: var_decl: Declaring variable "rightids" without initializer.
+postgresql-9.2.4/src/backend/optimizer/plan/initsplan.c:452: uninit_use_in_call: Using uninitialized value "rightids" when calling "make_outerjoininfo(PlannerInfo *, Relids, Relids, Relids, JoinType, List *)".
+postgresql-9.2.4/src/backend/optimizer/plan/initsplan.c:588:3: read_parm: Reading a parameter value.

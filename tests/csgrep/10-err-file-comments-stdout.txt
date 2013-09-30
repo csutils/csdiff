@@ -1,0 +1,917 @@
+{
+    "defects":
+    [
+        {
+            "checker": "UNINIT",
+            "annotation": " (CWE-457)",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/utils/adt/date.c",
+                    "line": 1044,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"fsec\" without initializer.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/utils/adt/date.c",
+                    "line": 1062,
+                    "event": "uninit_use_in_call",
+                    "message": "Using uninitialized value \"fsec\" when calling \"tm2time(struct pg_tm *, fsec_t, TimeADT *)\".",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/utils/adt/date.c",
+                    "line": 1075,
+                    "column": 2,
+                    "event": "read_parm",
+                    "message": "Reading a parameter value.",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "annotation": " (CWE-457)",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/utils/adt/nabstime.c",
+                    "line": 232,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"dtype\" without initializer.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/utils/adt/nabstime.c",
+                    "line": 243,
+                    "event": "uninit_use",
+                    "message": "Using uninitialized value \"dtype\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "annotation": " (CWE-457)",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/utils/adt/date.c",
+                    "line": 122,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"dtype\" without initializer.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/utils/adt/date.c",
+                    "line": 136,
+                    "event": "uninit_use",
+                    "message": "Using uninitialized value \"dtype\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "annotation": " (CWE-457)",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/utils/adt/date.c",
+                    "line": 1882,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"fsec\" without initializer.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/utils/adt/date.c",
+                    "line": 1901,
+                    "event": "uninit_use_in_call",
+                    "message": "Using uninitialized value \"fsec\" when calling \"tm2timetz(struct pg_tm *, fsec_t, int, TimeTzADT *)\".",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/utils/adt/date.c",
+                    "line": 1862,
+                    "column": 2,
+                    "event": "read_parm",
+                    "message": "Reading a parameter value.",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "annotation": " (CWE-457)",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/utils/adt/date.c",
+                    "line": 1885,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"tz\" without initializer.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/utils/adt/date.c",
+                    "line": 1901,
+                    "event": "uninit_use_in_call",
+                    "message": "Using uninitialized value \"tz\" when calling \"tm2timetz(struct pg_tm *, fsec_t, int, TimeTzADT *)\".",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/utils/adt/date.c",
+                    "line": 1867,
+                    "column": 2,
+                    "event": "read_parm",
+                    "message": "Reading a parameter value.",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "annotation": " (CWE-457)",
+            "key_event_idx": 3,
+            "events":
+            [
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
+                    "line": 6236,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"checkPoint\" without initializer.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
+                    "line": 6528,
+                    "event": "uninit_use_in_call",
+                    "message": "Using uninitialized value \"checkPoint.nextMulti\" when calling \"MultiXactSetNextMXact(MultiXactId, MultiXactOffset)\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/access/transam/multixact.c",
+                    "line": 1669,
+                    "column": 2,
+                    "event": "read_parm",
+                    "message": "Reading a parameter value.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
+                    "line": 6528,
+                    "event": "uninit_use_in_call",
+                    "message": "Using uninitialized value \"checkPoint.nextMultiOffset\" when calling \"MultiXactSetNextMXact(MultiXactId, MultiXactOffset)\".",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/access/transam/multixact.c",
+                    "line": 1670,
+                    "column": 2,
+                    "event": "read_parm",
+                    "message": "Reading a parameter value.",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "annotation": " (CWE-457)",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
+                    "line": 6236,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"checkPoint\" without initializer.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
+                    "line": 6514,
+                    "event": "uninit_use_in_call",
+                    "message": "Using uninitialized value \"checkPoint.nextMulti\" when calling \"errmsg(char const *, ...)\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "annotation": " (CWE-457)",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
+                    "line": 6236,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"checkPoint\" without initializer.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
+                    "line": 6514,
+                    "event": "uninit_use_in_call",
+                    "message": "Using uninitialized value \"checkPoint.nextMultiOffset\" when calling \"errmsg(char const *, ...)\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "annotation": " (CWE-457)",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
+                    "line": 6236,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"checkPoint\" without initializer.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
+                    "line": 6510,
+                    "event": "uninit_use_in_call",
+                    "message": "Using uninitialized value \"checkPoint.nextOid\" when calling \"errmsg(char const *, ...)\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "annotation": " (CWE-457)",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
+                    "line": 6236,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"checkPoint\" without initializer.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
+                    "line": 6510,
+                    "event": "uninit_use_in_call",
+                    "message": "Using uninitialized value \"checkPoint.nextXid\" when calling \"errmsg(char const *, ...)\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "annotation": " (CWE-457)",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
+                    "line": 6236,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"checkPoint\" without initializer.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
+                    "line": 6510,
+                    "event": "uninit_use_in_call",
+                    "message": "Using uninitialized value \"checkPoint.nextXidEpoch\" when calling \"errmsg(char const *, ...)\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "annotation": " (CWE-457)",
+            "key_event_idx": 3,
+            "events":
+            [
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
+                    "line": 6236,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"checkPoint\" without initializer.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
+                    "line": 6529,
+                    "event": "uninit_use_in_call",
+                    "message": "Using uninitialized value \"checkPoint.oldestXid\" when calling \"SetTransactionIdLimit(TransactionId, Oid)\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/access/transam/varsup.c",
+                    "line": 272,
+                    "column": 2,
+                    "event": "read_parm",
+                    "message": "Reading a parameter value.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
+                    "line": 6529,
+                    "event": "uninit_use_in_call",
+                    "message": "Using uninitialized value \"checkPoint.oldestXidDB\" when calling \"SetTransactionIdLimit(TransactionId, Oid)\".",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/access/transam/varsup.c",
+                    "line": 327,
+                    "column": 2,
+                    "event": "read_parm",
+                    "message": "Reading a parameter value.",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "annotation": " (CWE-457)",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
+                    "line": 6236,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"checkPoint\" without initializer.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
+                    "line": 6517,
+                    "event": "uninit_use_in_call",
+                    "message": "Using uninitialized value \"checkPoint.oldestXid\" when calling \"errmsg(char const *, ...)\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "annotation": " (CWE-457)",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
+                    "line": 6236,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"checkPoint\" without initializer.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
+                    "line": 6517,
+                    "event": "uninit_use_in_call",
+                    "message": "Using uninitialized value \"checkPoint.oldestXidDB\" when calling \"errmsg(char const *, ...)\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "annotation": " (CWE-457)",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
+                    "line": 6236,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"checkPoint\" without initializer.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
+                    "line": 6538,
+                    "event": "uninit_use",
+                    "message": "Using uninitialized value \"checkPoint.ThisTimeLineID\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "annotation": " (CWE-457)",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
+                    "line": 6236,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"checkPoint\" without initializer.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
+                    "line": 6540,
+                    "event": "uninit_use",
+                    "message": "Using uninitialized value \"checkPoint.fullPageWrites\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "annotation": " (CWE-457)",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
+                    "line": 6236,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"checkPoint\" without initializer.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
+                    "line": 6526,
+                    "event": "uninit_use",
+                    "message": "Using uninitialized value \"checkPoint.nextOid\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "annotation": " (CWE-457)",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
+                    "line": 6236,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"checkPoint\" without initializer.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
+                    "line": 6520,
+                    "event": "uninit_use",
+                    "message": "Using uninitialized value \"checkPoint.nextXid\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "annotation": " (CWE-457)",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
+                    "line": 6236,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"checkPoint\" without initializer.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
+                    "line": 6530,
+                    "event": "uninit_use",
+                    "message": "Using uninitialized value \"checkPoint.nextXidEpoch\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "annotation": " (CWE-457)",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
+                    "line": 6236,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"checkPoint\" without initializer.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
+                    "line": 6594,
+                    "event": "uninit_use",
+                    "message": "Using uninitialized value \"checkPoint\": field \"checkPoint\".\"oldestActiveXid\" is uninitialized.",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "annotation": " (CWE-457)",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
+                    "line": 6236,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"checkPoint\" without initializer.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
+                    "line": 6542,
+                    "event": "uninit_use",
+                    "message": "Using uninitialized value \"checkPoint.redo\": field \"checkPoint.redo\".\"xrecoff\" is uninitialized.",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "annotation": " (CWE-457)",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/executor/execQual.c",
+                    "line": 3967,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"tmptup\" without initializer.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/executor/execQual.c",
+                    "line": 4017,
+                    "event": "uninit_use_in_call",
+                    "message": "Using uninitialized value \"tmptup.t_tableOid\" when calling \"heap_getsysattr(HeapTuple, int, TupleDesc, bool *)\".",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/access/common/heaptuple.c",
+                    "line": 559,
+                    "column": 4,
+                    "event": "read_parm_fld",
+                    "message": "Reading a parameter field.",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "annotation": " (CWE-457)",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/utils/adt/timestamp.c",
+                    "line": 152,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"dtype\" without initializer.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/utils/adt/timestamp.c",
+                    "line": 166,
+                    "event": "uninit_use",
+                    "message": "Using uninitialized value \"dtype\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "annotation": " (CWE-457)",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/utils/adt/timestamp.c",
+                    "line": 148,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"fsec\" without initializer.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/utils/adt/timestamp.c",
+                    "line": 169,
+                    "event": "uninit_use_in_call",
+                    "message": "Using uninitialized value \"fsec\" when calling \"tm2timestamp(struct pg_tm *, fsec_t, int *, Timestamp *)\".",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/utils/adt/timestamp.c",
+                    "line": 1638,
+                    "column": 2,
+                    "event": "read_parm",
+                    "message": "Reading a parameter value.",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "annotation": " (CWE-457)",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/utils/adt/geo_ops.c",
+                    "line": 2988,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"seg\" without initializer.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/utils/adt/geo_ops.c",
+                    "line": 3008,
+                    "event": "uninit_use_in_call",
+                    "message": "Using uninitialized value \"seg\": field \"seg\".\"m\" is uninitialized when calling \"memcpy(void * restrict, void const * restrict, size_t)\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "annotation": " (CWE-457)",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/utils/adt/timestamp.c",
+                    "line": 426,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"dtype\" without initializer.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/utils/adt/timestamp.c",
+                    "line": 440,
+                    "event": "uninit_use",
+                    "message": "Using uninitialized value \"dtype\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "annotation": " (CWE-457)",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/utils/adt/timestamp.c",
+                    "line": 422,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"fsec\" without initializer.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/utils/adt/timestamp.c",
+                    "line": 443,
+                    "event": "uninit_use_in_call",
+                    "message": "Using uninitialized value \"fsec\" when calling \"tm2timestamp(struct pg_tm *, fsec_t, int *, Timestamp *)\".",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/utils/adt/timestamp.c",
+                    "line": 1638,
+                    "column": 2,
+                    "event": "read_parm",
+                    "message": "Reading a parameter value.",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "annotation": " (CWE-457)",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/utils/adt/timestamp.c",
+                    "line": 425,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"tz\" without initializer.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/utils/adt/timestamp.c",
+                    "line": 443,
+                    "event": "uninit_use_in_call",
+                    "message": "Using uninitialized value \"tz\" when calling \"tm2timestamp(struct pg_tm *, fsec_t, int *, Timestamp *)\".",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/utils/adt/timestamp.c",
+                    "line": 1660,
+                    "column": 3,
+                    "event": "read_parm",
+                    "message": "Reading a parameter value.",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "annotation": " (CWE-457)",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/utils/adt/tid.c",
+                    "line": 55,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"coord\" without initializer.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/utils/adt/tid.c",
+                    "line": 74,
+                    "event": "uninit_use_in_call",
+                    "message": "Using uninitialized value \"coord[0]\" when calling \"strtoul(char const * restrict, char ** restrict, int)\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "annotation": " (CWE-457)",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "postgresql-9.2.4/src/pl/tcl/pltcl.c",
+                    "line": 820,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"rettup\" without initializer.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/pl/tcl/pltcl.c",
+                    "line": 1104,
+                    "event": "uninit_use_in_call",
+                    "message": "Using uninitialized value \"rettup\" when calling \"SPI_modifytuple(Relation, HeapTuple, int, int *, Datum *, char const *)\".",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/executor/spi.c",
+                    "line": 761,
+                    "column": 2,
+                    "event": "read_parm",
+                    "message": "Reading a parameter value.",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "annotation": " (CWE-457)",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "postgresql-9.2.4/src/pl/tcl/pltcl.c",
+                    "line": 820,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"rettup\" without initializer.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/pl/tcl/pltcl.c",
+                    "line": 1013,
+                    "event": "uninit_use",
+                    "message": "Using uninitialized value \"rettup\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "annotation": " (CWE-457)",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/catalog/aclchk.c",
+                    "line": 1304,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"iacls\" without initializer.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/catalog/aclchk.c",
+                    "line": 1364,
+                    "event": "uninit_use_in_call",
+                    "message": "Using uninitialized value \"iacls.objtype\" when calling \"SetDefaultACL(InternalDefaultACL *)\".",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/catalog/aclchk.c",
+                    "line": 1101,
+                    "column": 2,
+                    "event": "read_parm_fld",
+                    "message": "Reading a parameter field.",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "annotation": " (CWE-457)",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/catalog/aclchk.c",
+                    "line": 1368,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"istmt\" without initializer.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/catalog/aclchk.c",
+                    "line": 1416,
+                    "event": "uninit_use_in_call",
+                    "message": "Using uninitialized value \"istmt.objtype\" when calling \"ExecGrantStmt_oids(InternalGrant *)\".",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/catalog/aclchk.c",
+                    "line": 560,
+                    "column": 2,
+                    "event": "read_parm_fld",
+                    "message": "Reading a parameter field.",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "annotation": " (CWE-457)",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/optimizer/plan/initsplan.c",
+                    "line": 359,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"leftids\" without initializer.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/optimizer/plan/initsplan.c",
+                    "line": 452,
+                    "event": "uninit_use_in_call",
+                    "message": "Using uninitialized value \"leftids\" when calling \"make_outerjoininfo(PlannerInfo *, Relids, Relids, Relids, JoinType, List *)\".",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/optimizer/plan/initsplan.c",
+                    "line": 595,
+                    "column": 2,
+                    "event": "read_parm",
+                    "message": "Reading a parameter value.",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "annotation": " (CWE-457)",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/optimizer/plan/initsplan.c",
+                    "line": 360,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"rightids\" without initializer.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/optimizer/plan/initsplan.c",
+                    "line": 452,
+                    "event": "uninit_use_in_call",
+                    "message": "Using uninitialized value \"rightids\" when calling \"make_outerjoininfo(PlannerInfo *, Relids, Relids, Relids, JoinType, List *)\".",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "postgresql-9.2.4/src/backend/optimizer/plan/initsplan.c",
+                    "line": 588,
+                    "column": 3,
+                    "event": "read_parm",
+                    "message": "Reading a parameter value.",
+                    "verbosity_level": "1"
+                }
+            ]
+        }
+    ]
+}
