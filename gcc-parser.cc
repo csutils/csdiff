@@ -93,6 +93,9 @@ EToken Tokenizer::readNext(DefEvent *pEvt) {
 
     lineNo_++;
 
+    *pEvt = DefEvent();
+    pEvt->msg = line;
+
     if (boost::regex_match(line, reMarker_))
         return T_MARKER;
 
@@ -154,22 +157,35 @@ class MarkerConverter: public AbstractTokenFilter {
         virtual EToken readNext(DefEvent *pEvt);
 
     private:
+        EToken                  lastTok_;
+        DefEvent                lastEvt_;
         int                     lineNo_;
 };
 
 EToken MarkerConverter::readNext(DefEvent *pEvt) {
-    EToken tok = slave_->readNext(pEvt);
+    EToken tok = lastTok_;
+    if (T_NULL != tok) {
+        *pEvt = lastEvt_;
+        lineNo_ = slave_->lineNo();
+        lastTok_ = T_NULL;
+        return tok;
+    }
+
+    tok = slave_->readNext(pEvt);
     lineNo_ = slave_->lineNo();
     if (T_UNKNOWN != tok)
         return tok;
 
-    tok = slave_->readNext(pEvt);
-    if (T_MARKER != tok)
+    lastTok_ = slave_->readNext(&lastEvt_);
+    if (T_MARKER != lastTok_)
         return tok;
 
-    tok = slave_->readNext(pEvt);
-    lineNo_ = slave_->lineNo();
-    return tok;
+    // translate both events to comments
+    lastEvt_.event = pEvt->event = "#";
+
+    // translate both tokens to T_MSG
+    lastTok_ = T_MSG;
+    return T_MSG;
 }
 
 class MultilineConcatenator: public AbstractTokenFilter {
@@ -405,8 +421,8 @@ GccParser::~GccParser() {
 }
 
 bool GccParser::Private::checkMerge(DefEvent &keyEvt) {
-    if (keyEvt.event == "note")
-        // can merge a "note" event
+    if (keyEvt.event == "note" || keyEvt.event == "#")
+        // can merge a "note" event or comment
         return true;
 
     if (keyEvt.event != "warning")
