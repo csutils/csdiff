@@ -426,9 +426,14 @@ void HtmlWriter::handleDef(const Defect &def) {
             case 2:
                 d->str << "<span style='color: #C0C0C0;'>";
                 break;
+
+            case 3:
+                d->str << "<span style='color: #00C0C0;'>";
+                break;
         }
 
-        d->str << boost::regex_replace(evt.fileName, d->rePath, "") << ":";
+        if (!evt.fileName.empty())
+            d->str << boost::regex_replace(evt.fileName, d->rePath, "") << ":";
         
         if (0 < evt.line)
             d->str << evt.line << ":";
@@ -436,23 +441,31 @@ void HtmlWriter::handleDef(const Defect &def) {
         if (0 < evt.column)
             d->str << evt.column << ":";
 
-        d->str << " ";
+        if (evt.event == "#") {
+            d->str << "#";
+        }
+        else {
+            d->str << " ";
 
-        boost::smatch sm;
-        const std::string &evtName = evt.event;
-        if (boost::regex_match(evtName, sm, d->reEvent))
-            d->str
-                << HtmlLib::escapeTextInline(sm[1]) << "<b>"
-                << HtmlLib::escapeTextInline(sm[2]) << "</b>"
-                << HtmlLib::escapeTextInline(sm[3]);
-        else
-            d->str << "<b>" << HtmlLib::escapeTextInline(evtName) << "</b>";
+            boost::smatch sm;
+            const std::string &evtName = evt.event;
+            if (boost::regex_match(evtName, sm, d->reEvent))
+                d->str
+                    << HtmlLib::escapeTextInline(sm[1]) << "<b>"
+                    << HtmlLib::escapeTextInline(sm[2]) << "</b>"
+                    << HtmlLib::escapeTextInline(sm[3]);
+            else
+                d->str << "<b>" << HtmlLib::escapeTextInline(evtName) << "</b>";
 
-        d->str << ": " << HtmlLib::escapeTextInline(evt.msg);
+            d->str << ": ";
+        }
+
+        d->str << HtmlLib::escapeTextInline(evt.msg);
 
         switch (evt.verbosityLevel) {
             case 1:
             case 2:
+            case 3:
                 d->str << "</span>";
         }
 
