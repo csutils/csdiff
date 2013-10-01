@@ -291,7 +291,7 @@ struct CovParser::Private {
     void parseError(const std::string &msg);
     void wrongToken();
     bool seekForToken(const EToken, TEvtList *pEvtList);
-    bool parseMsg(DefEvent *, TEvtList *pEvtList);
+    bool parseMsg(TEvtList *pEvtList);
     bool parseNext(Defect *);
 };
 
@@ -354,12 +354,14 @@ bool CovParser::Private::seekForToken(const EToken token, TEvtList *pEvtList) {
     }
 }
 
-bool CovParser::Private::parseMsg(DefEvent *evt, TEvtList *pEvtList) {
+bool CovParser::Private::parseMsg(TEvtList *pEvtList) {
+    bool anyComment = false;
+
     // parse event
-    if (seekForToken(T_EVENT, pEvtList))
-        *evt = this->lexer.evt();
-    else
+    if (!seekForToken(T_EVENT, pEvtList))
         goto fail;
+
+    pEvtList->push_back(this->lexer.evt());
 
     // parse extra msg
     for (;;) {
@@ -375,11 +377,16 @@ bool CovParser::Private::parseMsg(DefEvent *evt, TEvtList *pEvtList) {
             case T_COMMENT:
                 // capture a comment event
                 pEvtList->push_back(this->lexer.evt());
+                anyComment = true;
                 continue;
 
             case T_UNKNOWN:
-                evt->msg += "\n";
-                evt->msg += this->lexer.evt().msg;
+                if (anyComment)
+                    // interleaving of multi-line msgs with comments not allowed
+                    goto fail;
+
+                pEvtList->back().msg += "\n";
+                pEvtList->back().msg += this->lexer.evt().msg;
                 continue;
 
             default:
@@ -418,15 +425,8 @@ bool CovParser::Private::parseNext(Defect *def) {
                 continue;
 
             default:
-                break;
+                parseMsg(&def->events);
         }
-
-        DefEvent evt;
-        if (!parseMsg(&evt, &def->events))
-            continue;
-
-        // append single event
-        def->events.push_back(evt);
     }
 
 done:
