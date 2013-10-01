@@ -64,7 +64,7 @@ class Tokenizer: public ITokenizer {
         Tokenizer(std::istream &input):
             input_(input),
             lineNo_(0),
-            reMarker_("^ *\\^$"),
+            reMarker_("^ *[ ~^]+$"),
             reInc_("^(?:In file included| +) from " RE_LOCATION "[:,]"),
             reScope_("^" RE_LOCATION ": ([A-Z].+):$"),
             reMsg_("^" RE_LOCATION /* evt/mesg */ ": ([a-z]+): (.*)$")
@@ -139,9 +139,9 @@ EToken Tokenizer::readNext(DefEvent *pEvt) {
     return tok;
 }
 
-class MarkerRemover: public AbstractTokenFilter {
+class MarkerConverter: public AbstractTokenFilter {
     public:
-        MarkerRemover(ITokenizer *slave):
+        MarkerConverter(ITokenizer *slave):
             AbstractTokenFilter(slave),
             lineNo_(0)
         {
@@ -157,7 +157,7 @@ class MarkerRemover: public AbstractTokenFilter {
         int                     lineNo_;
 };
 
-EToken MarkerRemover::readNext(DefEvent *pEvt) {
+EToken MarkerConverter::readNext(DefEvent *pEvt) {
     EToken tok = slave_->readNext(pEvt);
     lineNo_ = slave_->lineNo();
     if (T_UNKNOWN != tok)
@@ -265,8 +265,8 @@ class BasicGccParser {
                 const std::string  &fileName,
                 const bool          silent):
             rawTokenizer_(input),
-            markerRemover_(&rawTokenizer_),
-            tokenizer_(&markerRemover_),
+            markerConverter_(&rawTokenizer_),
+            tokenizer_(&markerConverter_),
             fileName_(fileName),
             silent_(silent),
             reChecker_("^([A-Za-z]+): (.*)$"),
@@ -280,7 +280,7 @@ class BasicGccParser {
 
     private:
         Tokenizer               rawTokenizer_;
-        MarkerRemover           markerRemover_;
+        MarkerConverter         markerConverter_;
         MultilineConcatenator   tokenizer_;
         const std::string       fileName_;
         const bool              silent_;
