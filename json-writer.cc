@@ -97,11 +97,18 @@ void JsonWriter::handleDef(const Defect &def) {
 }
 
 void JsonWriter::flush() {
+    boost::iostreams::filtering_ostream str;
+
     // create a regex-based filter to restore integral values wrapped as strings
     const boost::regex re(": \"([0-9]+)\",$");
     boost::iostreams::basic_regex_filter<char> reFilter(re, ": \\1,");
-    boost::iostreams::filtering_ostream str;
     str.push(reFilter);
+
+    // create a regex-based filter to replace \/ (produced by newer boost) by /
+    const boost::regex reSlash("([^\\\\]*)\\\\/");
+    boost::iostreams::basic_regex_filter<char> reFilterSlash(reSlash, "\\1/");
+    str.push(reFilterSlash);
+
     str.push(d->str);
 
     // encode scan properties if we have some
