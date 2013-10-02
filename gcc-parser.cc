@@ -474,6 +474,14 @@ bool GccParser::getNext(Defect *pDef) {
     while (d->core.getNext(&d->lastDef) && d->tryMerge(pDef))
         ;
 
+    // initialize verbosityLevel 
+    // FIXME: similar code to KeyEventDigger::initVerbosity()
+    TEvtList &evtList = pDef->events;
+    const unsigned evtCount = evtList.size();
+    const unsigned keyEventIdx = pDef->keyEventIdx;
+    for (unsigned idx = 0U; idx < evtCount; ++idx)
+        evtList[idx].verbosityLevel = (keyEventIdx != idx);
+
     return true;
 }
 

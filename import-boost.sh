@@ -27,6 +27,3 @@ import_from 1.41.0                                      \
     boost_1_41_0/boost/spirit/include/classic.hpp       \
     boost_1_41_0/boost/spirit/home/classic.hpp          \
     boost_1_41_0/boost/spirit/home/classic/
-
-sed 's/fmt_flags_(fmt_flags_)/fmt_flags_(fmt_flags)/'   \
-    -i boost_1_34_1/boost/iostreams/filter/regex.hpp
