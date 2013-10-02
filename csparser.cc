@@ -258,17 +258,10 @@ void KeyEventDigger::initVerbosity(Defect *def) {
     const unsigned evtCount = evtList.size();
     for (unsigned idx = 0U; idx < evtCount; ++idx) {
         DefEvent &evt = evtList[idx];
-        if (evt.fileName.empty() && evt.event == "#") {
-            // comment event --> verbosityLevel = 3
-            evt.verbosityLevel = 3;
-            continue;
-        }
-
         evt.verbosityLevel = (idx == def->keyEventIdx)
             ? /* key event */ 0
             : 1 + /* trace event */ !!d->blackList.count(evt.event);
     }
-
 }
 
 struct CovParser::Private {

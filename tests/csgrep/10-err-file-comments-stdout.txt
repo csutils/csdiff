@@ -12,21 +12,21 @@
                     "line": 0,
                     "event": "#",
                     "message": " These pieces:  After reaching DateTimeParseError the program \"exists\" and",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": " never returns to time_in function",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": " Defect #1",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/date.c",
@@ -63,7 +63,7 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #4",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/nabstime.c",
@@ -92,7 +92,7 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #12",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/date.c",
@@ -121,7 +121,7 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #13",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/date.c",
@@ -158,7 +158,7 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #14",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/date.c",
@@ -195,21 +195,21 @@
                     "line": 0,
                     "event": "#",
                     "message": " the structure is memcpy'ed, coverity does not detect ereport(FATAL,...) as",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": " \"exit's sister\"",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": " Defect #17",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
@@ -261,7 +261,7 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #18",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
@@ -290,7 +290,7 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #19",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
@@ -319,7 +319,7 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #20",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
@@ -348,7 +348,7 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #21",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
@@ -377,7 +377,7 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #22",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
@@ -406,7 +406,7 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #23",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
@@ -458,7 +458,7 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #24",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
@@ -487,7 +487,7 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #25",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
@@ -516,7 +516,7 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #26",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
@@ -545,7 +545,7 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #27",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
@@ -574,7 +574,7 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #28",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
@@ -603,7 +603,7 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #29",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
@@ -632,7 +632,7 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #30",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
@@ -661,7 +661,7 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #31",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
@@ -690,7 +690,7 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #32",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
@@ -719,21 +719,21 @@
                     "line": 0,
                     "event": "#",
                     "message": " negative values (which t_tableOid is) are handled before going to this",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": " branch..",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": " Defect #33",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/executor/execQual.c",
@@ -770,14 +770,14 @@
                     "line": 0,
                     "event": "#",
                     "message": " again, ereport(ERROR,...)",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": " Defect #34",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/timestamp.c",
@@ -806,7 +806,7 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #35",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/timestamp.c",
@@ -843,21 +843,21 @@
                     "line": 0,
                     "event": "#",
                     "message": " Initialized in #ifndef -> and readed only if that #ifndef is run (after",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": " memcpy)",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": " Defect #36",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/geo_ops.c",
@@ -886,14 +886,14 @@
                     "line": 0,
                     "event": "#",
                     "message": " again -> this will never happen due to ereport(ERROR,..)",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": " Defect #42",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/timestamp.c",
@@ -922,7 +922,7 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #43",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/timestamp.c",
@@ -959,7 +959,7 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #44",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/timestamp.c",
@@ -996,7 +996,7 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #49",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/tid.c",
@@ -1025,14 +1025,14 @@
                     "line": 0,
                     "event": "#",
                     "message": " rettup is always initialized (missed due to elog() again probably)",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": " Defect #50",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/pl/tcl/pltcl.c",
@@ -1069,7 +1069,7 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #51",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/pl/tcl/pltcl.c",
@@ -1098,14 +1098,14 @@
                     "line": 0,
                     "event": "#",
                     "message": " iacls.objtype is always initialized or elog() is called",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": " Defect #52",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/catalog/aclchk.c",
@@ -1142,7 +1142,7 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #53",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/catalog/aclchk.c",
@@ -1179,21 +1179,21 @@
                     "line": 0,
                     "event": "#",
                     "message": " The 'leftids' pointer is always initialized (even if it is somethimes NULL,",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": " this should not hurt).  (caused again because of elog())",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": " Defect #54",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/optimizer/plan/initsplan.c",
@@ -1230,7 +1230,7 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #55",
-                    "verbosity_level": "3"
+                    "verbosity_level": "1"
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/optimizer/plan/initsplan.c",

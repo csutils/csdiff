@@ -40,7 +40,7 @@ struct DefEvent {
     std::string             event;
     std::string             msg;
 
-    /// 0 = key event,  2 = trace event,  3 = comment
+    /// 0 = key event,  1 = info event,  2 = trace event
     int                     verbosityLevel;
 
     DefEvent():
