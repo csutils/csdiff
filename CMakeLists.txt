@@ -35,6 +35,7 @@ else()
     message(STATUS "WARNING: System Boost libraries are tool old, using local!")
     set(boost_incs_tmp ${Boost_INCLUDE_DIRS}
         ${CMAKE_CURRENT_SOURCE_DIR}/boost_1_34_1
+        ${CMAKE_CURRENT_SOURCE_DIR}/boost_1_35_0
         ${CMAKE_CURRENT_SOURCE_DIR}/boost_1_41_0)
 endif()
 set(BOOST_INCS ${boost_incs_tmp} CACHE STRING "boost include directories")

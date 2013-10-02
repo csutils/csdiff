@@ -13,8 +13,11 @@ import_from()
 import_from 1.34.1                                                      \
     boost_1_34_1/LICENSE_1_0.txt                                        \
     boost_1_34_1/boost/algorithm/string/std/slist_traits.hpp            \
-    boost_1_34_1/boost/foreach.hpp                                      \
-    boost_1_34_1/boost/iostreams/filter/regex.hpp
+    boost_1_34_1/boost/foreach.hpp
+
+import_from 1.35.0                                                      \
+    boost_1_35_0/LICENSE_1_0.txt                                        \
+    boost_1_35_0/boost/iostreams/filter/regex.hpp
 
 import_from 1.41.0                                      \
     boost_1_41_0/LICENSE_1_0.txt                        \
