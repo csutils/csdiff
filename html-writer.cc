@@ -417,18 +417,18 @@ void HtmlWriter::handleDef(const Defect &def) {
     const unsigned cntEvents = def.events.size();
     for (unsigned idx = 0; idx < cntEvents; ++idx) {
         const DefEvent &evt = def.events[idx];
+        const bool isComment = (evt.event == "#");
 
         switch (evt.verbosityLevel) {
             case 1:
-                d->str << "<span style='color: #808080;'>";
+                if (isComment)
+                    d->str << "<span style='color: #00C0C0;'>";
+                else
+                    d->str << "<span style='color: #808080;'>";
                 break;
 
             case 2:
                 d->str << "<span style='color: #C0C0C0;'>";
-                break;
-
-            case 3:
-                d->str << "<span style='color: #00C0C0;'>";
                 break;
         }
 
@@ -441,7 +441,7 @@ void HtmlWriter::handleDef(const Defect &def) {
         if (0 < evt.column)
             d->str << evt.column << ":";
 
-        if (evt.event == "#") {
+        if (isComment) {
             d->str << "#";
         }
         else {
@@ -465,7 +465,6 @@ void HtmlWriter::handleDef(const Defect &def) {
         switch (evt.verbosityLevel) {
             case 1:
             case 2:
-            case 3:
                 d->str << "</span>";
         }
 
