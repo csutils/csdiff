@@ -91,6 +91,11 @@ EToken Tokenizer::readNext(DefEvent *pEvt) {
     if (!std::getline(input_, line))
         return T_NULL;
 
+    // drop CR at end of the line, coming from GCC in source code snippets
+    // NOTE: std::string::back/push_back() would look better but requires C++11
+    if (!line.empty() && '\r' == *line.rbegin())
+        line.resize(line.size() - 1U);
+
     lineNo_++;
 
     *pEvt = DefEvent();
