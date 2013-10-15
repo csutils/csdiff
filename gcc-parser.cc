@@ -290,7 +290,7 @@ class BasicGccParser {
             tokenizer_(&markerConverter_),
             fileName_(fileName),
             silent_(silent),
-            reChecker_("^([A-Za-z]+): (.*)$"),
+            reChecker_("^([A-Za-z_]+): (.*)$"),
             hasKeyEvent_(false),
             hasError_(false)
         {
