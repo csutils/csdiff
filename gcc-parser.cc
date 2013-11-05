@@ -199,7 +199,7 @@ class MultilineConcatenator: public AbstractTokenFilter {
             AbstractTokenFilter(slave),
             lastTok_(T_NULL),
             reBase_("^([^ ].+)( \\[[^\\]]+\\])?$"),
-            reExtra_("^ *( [^ ].+)( \\[[^\\]]+\\])?$")
+            reExtra_("^ *((?: [^ ].+)|(?:\\(.+\\)))( \\[[^\\]]+\\])?$")
         {
         }
 
@@ -240,8 +240,11 @@ bool MultilineConcatenator::tryMerge(DefEvent *pEvt) {
     if (smBase[/* -W suffix */ 2] != smExtra[/* -W suffix */ 2])
         return false;
 
+    assert(!smExtra[/* msg */ 1].str().empty());
+    const char *gap = (' ' == *smExtra[/* msg */ 1].str().begin()) ? "" : " ";
+
     // concatenate both messages together
-    pEvt->msg = smBase[/* msg */ 1]
+    pEvt->msg = smBase[/* msg */ 1] + gap
         + smExtra[/* msg */1] + smExtra[/* suf */2];
 
     // clear the already merged token
