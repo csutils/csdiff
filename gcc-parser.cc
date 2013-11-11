@@ -21,6 +21,7 @@
 
 #include <algorithm>
 
+#include <boost/foreach.hpp>
 #include <boost/lexical_cast.hpp>
 #include <boost/regex.hpp>
 
@@ -300,6 +301,7 @@ class BasicGccParser {
             fileName_(fileName),
             silent_(silent),
             reChecker_("^([A-Za-z_]+): (.*)$"),
+            reTool_("^(.*) <--\\[([^\\]]+)\\]$"),
             hasKeyEvent_(false),
             hasError_(false)
         {
@@ -315,6 +317,7 @@ class BasicGccParser {
         const std::string       fileName_;
         const bool              silent_;
         const boost::regex      reChecker_;
+        const boost::regex      reTool_;
         bool                    hasKeyEvent_;
         bool                    hasError_;
         Defect                  defCurrent_;
@@ -342,19 +345,24 @@ bool BasicGccParser::exportAndReset(Defect *pDef) {
         // nothing to export yet
         return false;
 
-    DefEvent &evt = def.events[def.keyEventIdx];
+    DefEvent &keyEvt = def.events[def.keyEventIdx];
 
     // embed cppcheck's ID in the event ID (if available)
     boost::smatch sm;
-    if (boost::regex_match(evt.msg, sm, reChecker_)) {
+    if (boost::regex_match(keyEvt.msg, sm, reChecker_)) {
         def.checker = "CPPCHECK_WARNING";
-        evt.event  += "[";
-        evt.event  += sm[/* id  */ 1];
-        evt.event  += "]";
-        evt.msg     = sm[/* msg */ 2];
+        keyEvt.event += "[";
+        keyEvt.event += sm[/* id  */ 1];
+        keyEvt.event += "]";
+        keyEvt.msg = sm[/* msg */ 2];
     }
     else
         def.checker = "COMPILER_WARNING";
+
+    // drop the " <--[tool]" suffixes
+    BOOST_FOREACH(DefEvent &evt, def.events)
+        if (boost::regex_match(evt.msg, sm, reTool_))
+            evt.msg = sm[/* msg */ 1];
 
     // export the current state and clear the data for next iteration
     *pDef = def;
