@@ -1,0 +1,47 @@
+/home/kdudka/git/coverity-scan/abscc/abscc.c: In function ‘find_exe_in_dir’: <--[gcc]
+/home/kdudka/git/coverity-scan/abscc/abscc.c:151: warning: ISO C90 forbids mixed declarations and code <--[gcc]
+/home/kdudka/git/coverity-scan/abscc/abscc.c: In function ‘find_tool_in_path’: <--[gcc]
+/home/kdudka/git/coverity-scan/abscc/abscc.c:187: warning: ISO C90 forbids mixed declarations and code <--[gcc]
+/home/kdudka/git/coverity-scan/abscc/abscc.c:203: warning: ISO C90 forbids mixed declarations and code <--[gcc]
+/home/kdudka/git/coverity-scan/abscc/abscc.c: In function ‘handle_flag’: <--[gcc]
+/home/kdudka/git/coverity-scan/abscc/abscc.c:264: warning: ISO C90 forbids mixed declarations and code <--[gcc]
+/home/kdudka/git/coverity-scan/abscc/abscc.c: In function ‘handle_cvar’: <--[gcc]
+/home/kdudka/git/coverity-scan/abscc/abscc.c:288: warning: ISO C90 forbids mixed declarations and code <--[gcc]
+/home/kdudka/git/coverity-scan/abscc/abscc.c: In function ‘write_out’: <--[gcc]
+/home/kdudka/git/coverity-scan/abscc/abscc.c:359: warning: ISO C90 forbids mixed declarations and code <--[gcc]
+/home/kdudka/git/coverity-scan/abscc/abscc.c: In function ‘handle_line’: <--[gcc]
+/home/kdudka/git/coverity-scan/abscc/abscc.c:385: warning: ISO C90 forbids mixed declarations and code <--[gcc]
+/home/kdudka/git/coverity-scan/abscc/abscc.c:406: warning: ISO C90 forbids mixed declarations and code <--[gcc]
+/home/kdudka/git/coverity-scan/abscc/abscc.c: In function ‘trans_paths_to_abs’: <--[gcc]
+/home/kdudka/git/coverity-scan/abscc/abscc.c:429: warning: ISO C90 forbids mixed declarations and code <--[gcc]
+/home/kdudka/git/coverity-scan/abscc/abscc.c: In function ‘main’: <--[gcc]
+/home/kdudka/git/coverity-scan/abscc/abscc.c:460: warning: ISO C90 forbids mixed declarations and code <--[gcc]
+/home/kdudka/git/coverity-scan/abscc/abscc.c:465: warning: ISO C90 forbids mixed declarations and code <--[gcc]
+/home/kdudka/git/coverity-scan/abscc/abscc.c:485: warning: ISO C90 forbids mixed declarations and code <--[gcc]
+/home/kdudka/git/coverity-scan/abscc/abscc.c:492: warning: ISO C90 forbids mixed declarations and code <--[gcc]
+clang version 2.8 (branches/release_28)
+Target: x86_64-redhat-linux-gnu
+Thread model: posix
+ "/usr/bin/clang" "-cc1" "-triple" "x86_64-redhat-linux-gnu" "-fsyntax-only" "-disable-free" "-disable-llvm-verifier" "-main-file-name" "abscc.c" "-mrelocation-model" "static" "-mdisable-fp-elim" "-mconstructor-aliases" "-munwind-tables" "-target-cpu" "x86-64" "-target-linker-version" "2.20.51.0.2" "-resource-dir" "/usr/lib/clang/2.8" "-ferror-limit" "19" "-fmessage-length" "0" "-fgnu-runtime" "-fdiagnostics-show-option" "-x" "c" "abscc.c"
+ANALYZE: abscc.c fail
+ANALYZE: abscc.c init_cap_file_name
+ANALYZE: abscc.c unlock_cap_file
+ANALYZE: abscc.c close_cap_file_lock
+ANALYZE: abscc.c init_cap_file_once
+ANALYZE: abscc.c release_cap_file
+ANALYZE: abscc.c find_exe_in_dir
+ANALYZE: abscc.c find_tool_in_path
+ANALYZE: abscc.c clone_argv
+ANALYZE: abscc.c del_arg
+ANALYZE: abscc.c handle_flag
+ANALYZE: abscc.c handle_cvar
+ANALYZE: abscc.c translate_args
+ANALYZE: abscc.c find_conftest_in_args
+ANALYZE: abscc.c write_out
+ANALYZE: abscc.c handle_line
+ANALYZE: abscc.c trans_paths_to_abs
+ANALYZE: abscc.c main
+/home/kdudka/git/coverity-scan/abscc/abscc.c:531:26: warning: Pass-by-value argument in function call is undefined <--[clang]
+                status = fail("unexpected child status: %s", status);
+                         ^                                   ~~~~~~
+1 warning generated.

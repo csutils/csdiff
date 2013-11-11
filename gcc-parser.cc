@@ -301,6 +301,7 @@ class BasicGccParser {
             fileName_(fileName),
             silent_(silent),
             reChecker_("^([A-Za-z_]+): (.*)$"),
+            reClang_("^clang.*$"),
             reTool_("^(.*) <--\\[([^\\]]+)\\]$"),
             hasKeyEvent_(false),
             hasError_(false)
@@ -317,6 +318,7 @@ class BasicGccParser {
         const std::string       fileName_;
         const bool              silent_;
         const boost::regex      reChecker_;
+        const boost::regex      reClang_;
         const boost::regex      reTool_;
         bool                    hasKeyEvent_;
         bool                    hasError_;
@@ -349,7 +351,12 @@ bool BasicGccParser::exportAndReset(Defect *pDef) {
 
     // embed cppcheck's ID in the event ID (if available)
     boost::smatch sm;
-    if (boost::regex_match(keyEvt.msg, sm, reChecker_)) {
+    if (boost::regex_match(keyEvt.msg, sm, reTool_)
+            && boost::regex_match(sm[/* tool */ 2].str(), reClang_))
+    {
+        def.checker = "CLANG_WARNING";
+    }
+    else if (boost::regex_match(keyEvt.msg, sm, reChecker_)) {
         def.checker = "CPPCHECK_WARNING";
         keyEvt.event += "[";
         keyEvt.event += sm[/* id  */ 1];
@@ -461,13 +468,14 @@ bool GccParser::Private::checkMerge(DefEvent &keyEvt) {
 }
 
 bool GccParser::Private::tryMerge(Defect *pDef) {
-    if (pDef->checker != this->lastDef.checker)
-        return false;
-
     TEvtList &lastEvts = this->lastDef.events;
     DefEvent &lastKeyEvt = lastEvts[this->lastDef.keyEventIdx];
     if (!this->checkMerge(lastKeyEvt))
         // not something we can merge
+        return false;
+
+    if (pDef->checker != this->lastDef.checker && lastKeyEvt.event != "#")
+        // do not merge events of incompatible checkers
         return false;
 
     TEvtList &evts = pDef->events;
