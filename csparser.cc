@@ -183,6 +183,9 @@ KeyEventDigger::KeyEventDigger():
     // we use COMPILER_WARNING as checker for compiler errors/warnings
     d->hMap["COMPILER_WARNING"]     .insert("error");
     d->hMap["COMPILER_WARNING"]     .insert("warning");
+    // likewise for clang
+    d->hMap["CLANG_WARNING"]        .insert("error");
+    d->hMap["CLANG_WARNING"]        .insert("warning");
 
     // do not match the lowered checker name of the following checkers
     d->hMap["LOCK"];

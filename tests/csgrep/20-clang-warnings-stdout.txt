@@ -1,0 +1,216 @@
+{
+    "defects":
+    [
+        {
+            "checker": "COMPILER_WARNING",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "/home/kdudka/git/coverity-scan/abscc/abscc.c",
+                    "line": 151,
+                    "event": "warning",
+                    "message": "ISO C90 forbids mixed declarations and code",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "/home/kdudka/git/coverity-scan/abscc/abscc.c",
+                    "line": 187,
+                    "event": "warning",
+                    "message": "ISO C90 forbids mixed declarations and code",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "/home/kdudka/git/coverity-scan/abscc/abscc.c",
+                    "line": 203,
+                    "event": "warning",
+                    "message": "ISO C90 forbids mixed declarations and code",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "/home/kdudka/git/coverity-scan/abscc/abscc.c",
+                    "line": 264,
+                    "event": "warning",
+                    "message": "ISO C90 forbids mixed declarations and code",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "/home/kdudka/git/coverity-scan/abscc/abscc.c",
+                    "line": 288,
+                    "event": "warning",
+                    "message": "ISO C90 forbids mixed declarations and code",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "/home/kdudka/git/coverity-scan/abscc/abscc.c",
+                    "line": 359,
+                    "event": "warning",
+                    "message": "ISO C90 forbids mixed declarations and code",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "/home/kdudka/git/coverity-scan/abscc/abscc.c",
+                    "line": 385,
+                    "event": "warning",
+                    "message": "ISO C90 forbids mixed declarations and code",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "/home/kdudka/git/coverity-scan/abscc/abscc.c",
+                    "line": 406,
+                    "event": "warning",
+                    "message": "ISO C90 forbids mixed declarations and code",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "/home/kdudka/git/coverity-scan/abscc/abscc.c",
+                    "line": 429,
+                    "event": "warning",
+                    "message": "ISO C90 forbids mixed declarations and code",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "/home/kdudka/git/coverity-scan/abscc/abscc.c",
+                    "line": 460,
+                    "event": "warning",
+                    "message": "ISO C90 forbids mixed declarations and code",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "/home/kdudka/git/coverity-scan/abscc/abscc.c",
+                    "line": 465,
+                    "event": "warning",
+                    "message": "ISO C90 forbids mixed declarations and code",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "/home/kdudka/git/coverity-scan/abscc/abscc.c",
+                    "line": 485,
+                    "event": "warning",
+                    "message": "ISO C90 forbids mixed declarations and code",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "/home/kdudka/git/coverity-scan/abscc/abscc.c",
+                    "line": 492,
+                    "event": "warning",
+                    "message": "ISO C90 forbids mixed declarations and code",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "CLANG_WARNING",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "/home/kdudka/git/coverity-scan/abscc/abscc.c",
+                    "line": 531,
+                    "column": 26,
+                    "event": "warning",
+                    "message": "Pass-by-value argument in function call is undefined",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                status = fail(\"unexpected child status: %s\", status);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                         ^                                   ~~~~~~",
+                    "verbosity_level": "1"
+                }
+            ]
+        }
+    ]
+}
