@@ -1,0 +1,163 @@
+{
+    "defects":
+    [
+        {
+            "checker": "COMPILER_WARNING",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/autofs-5.0.8/lib/mounts.c",
+                    "line": 0,
+                    "event": "scope_hint",
+                    "message": "In function 'remount_active_mount'",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/autofs-5.0.8/lib/mounts.c",
+                    "line": 1550,
+                    "column": 7,
+                    "event": "warning",
+                    "message": "variable 'ret' set but not used [-Wunused-but-set-variable]",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   int ret;",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "       ^",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/autofs-5.0.8/lib/master_tok.l",
+                    "line": 424,
+                    "event": "included_from",
+                    "message": "Included from here.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/autofs-5.0.8/include/automount.h",
+                    "line": 119,
+                    "event": "note",
+                    "message": "this is the location of the previous definition",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " #define min(a, b) (a <= b ? a : b)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/autofs-5.0.8/lib/master_tok.c",
+                    "line": 2491,
+                    "column": 16,
+                    "event": "warning",
+                    "message": "'input' defined but not used [-Wunused-function]",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "     static int input  (void)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/autofs-5.0.8/lib/nss_tok.c",
+                    "line": 1288,
+                    "column": 16,
+                    "event": "warning",
+                    "message": "'input' defined but not used [-Wunused-function]",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "     static int input  (void)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "key_event_idx": 1,
+            "events":
+            [
+                {
+                    "file_name": "/builddir/build/BUILD/autofs-5.0.8/lib/defaults.c",
+                    "line": 27,
+                    "event": "included_from",
+                    "message": "Included from here.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/autofs-5.0.8/include/lookup_ldap.h",
+                    "line": 7,
+                    "column": 25,
+                    "event": "fatal error",
+                    "message": "openssl/ssl.h: No such file or directory",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " #include <openssl/ssl.h>",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                         ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        }
+    ]
+}

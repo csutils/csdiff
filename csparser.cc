@@ -63,7 +63,7 @@ class ErrFileLexer {
             reChecker_("^Error: *([A-Za-z][A-Za-z_.]+)( *\\([^)]+\\))? *:$"),
             reEvent_(
                     /* location */ "^([^:]+)(?::([0-9]+))?(?::([0-9]+))?"
-                    /* evt/mesg */ ": ([a-z][\\[\\]A-Za-z_-]+): (.*)$")
+                    /* evt/mesg */ ": ((?:fatal )?[a-z][\\[\\]A-Za-z_-]+): (.*)$")
         {
         }
 
@@ -183,6 +183,7 @@ KeyEventDigger::KeyEventDigger():
     // we use COMPILER_WARNING as checker for compiler errors/warnings
     d->hMap["COMPILER_WARNING"]     .insert("error");
     d->hMap["COMPILER_WARNING"]     .insert("warning");
+    d->hMap["COMPILER_WARNING"]     .insert("fatal error");
     // likewise for clang
     d->hMap["CLANG_WARNING"]        .insert("error");
     d->hMap["CLANG_WARNING"]        .insert("warning");
