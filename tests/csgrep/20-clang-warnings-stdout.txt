@@ -3,9 +3,16 @@
     [
         {
             "checker": "COMPILER_WARNING",
-            "key_event_idx": 0,
+            "key_event_idx": 1,
             "events":
             [
+                {
+                    "file_name": "/home/kdudka/git/coverity-scan/abscc/abscc.c",
+                    "line": 0,
+                    "event": "scope_hint",
+                    "message": "In function \uFFFF\uFFFF\uFFFFfind_exe_in_dir\uFFFF\uFFFF\uFFFF",
+                    "verbosity_level": "1"
+                },
                 {
                     "file_name": "/home/kdudka/git/coverity-scan/abscc/abscc.c",
                     "line": 151,
@@ -17,9 +24,16 @@
         },
         {
             "checker": "COMPILER_WARNING",
-            "key_event_idx": 0,
+            "key_event_idx": 1,
             "events":
             [
+                {
+                    "file_name": "/home/kdudka/git/coverity-scan/abscc/abscc.c",
+                    "line": 0,
+                    "event": "scope_hint",
+                    "message": "In function \uFFFF\uFFFF\uFFFFfind_tool_in_path\uFFFF\uFFFF\uFFFF",
+                    "verbosity_level": "1"
+                },
                 {
                     "file_name": "/home/kdudka/git/coverity-scan/abscc/abscc.c",
                     "line": 187,
@@ -45,9 +59,16 @@
         },
         {
             "checker": "COMPILER_WARNING",
-            "key_event_idx": 0,
+            "key_event_idx": 1,
             "events":
             [
+                {
+                    "file_name": "/home/kdudka/git/coverity-scan/abscc/abscc.c",
+                    "line": 0,
+                    "event": "scope_hint",
+                    "message": "In function \uFFFF\uFFFF\uFFFFhandle_flag\uFFFF\uFFFF\uFFFF",
+                    "verbosity_level": "1"
+                },
                 {
                     "file_name": "/home/kdudka/git/coverity-scan/abscc/abscc.c",
                     "line": 264,
@@ -59,9 +80,16 @@
         },
         {
             "checker": "COMPILER_WARNING",
-            "key_event_idx": 0,
+            "key_event_idx": 1,
             "events":
             [
+                {
+                    "file_name": "/home/kdudka/git/coverity-scan/abscc/abscc.c",
+                    "line": 0,
+                    "event": "scope_hint",
+                    "message": "In function \uFFFF\uFFFF\uFFFFhandle_cvar\uFFFF\uFFFF\uFFFF",
+                    "verbosity_level": "1"
+                },
                 {
                     "file_name": "/home/kdudka/git/coverity-scan/abscc/abscc.c",
                     "line": 288,
@@ -73,9 +101,16 @@
         },
         {
             "checker": "COMPILER_WARNING",
-            "key_event_idx": 0,
+            "key_event_idx": 1,
             "events":
             [
+                {
+                    "file_name": "/home/kdudka/git/coverity-scan/abscc/abscc.c",
+                    "line": 0,
+                    "event": "scope_hint",
+                    "message": "In function \uFFFF\uFFFF\uFFFFwrite_out\uFFFF\uFFFF\uFFFF",
+                    "verbosity_level": "1"
+                },
                 {
                     "file_name": "/home/kdudka/git/coverity-scan/abscc/abscc.c",
                     "line": 359,
@@ -87,9 +122,16 @@
         },
         {
             "checker": "COMPILER_WARNING",
-            "key_event_idx": 0,
+            "key_event_idx": 1,
             "events":
             [
+                {
+                    "file_name": "/home/kdudka/git/coverity-scan/abscc/abscc.c",
+                    "line": 0,
+                    "event": "scope_hint",
+                    "message": "In function \uFFFF\uFFFF\uFFFFhandle_line\uFFFF\uFFFF\uFFFF",
+                    "verbosity_level": "1"
+                },
                 {
                     "file_name": "/home/kdudka/git/coverity-scan/abscc/abscc.c",
                     "line": 385,
@@ -115,9 +157,16 @@
         },
         {
             "checker": "COMPILER_WARNING",
-            "key_event_idx": 0,
+            "key_event_idx": 1,
             "events":
             [
+                {
+                    "file_name": "/home/kdudka/git/coverity-scan/abscc/abscc.c",
+                    "line": 0,
+                    "event": "scope_hint",
+                    "message": "In function \uFFFF\uFFFF\uFFFFtrans_paths_to_abs\uFFFF\uFFFF\uFFFF",
+                    "verbosity_level": "1"
+                },
                 {
                     "file_name": "/home/kdudka/git/coverity-scan/abscc/abscc.c",
                     "line": 429,
@@ -129,9 +178,16 @@
         },
         {
             "checker": "COMPILER_WARNING",
-            "key_event_idx": 0,
+            "key_event_idx": 1,
             "events":
             [
+                {
+                    "file_name": "/home/kdudka/git/coverity-scan/abscc/abscc.c",
+                    "line": 0,
+                    "event": "scope_hint",
+                    "message": "In function \uFFFF\uFFFF\uFFFFmain\uFFFF\uFFFF\uFFFF",
+                    "verbosity_level": "1"
+                },
                 {
                     "file_name": "/home/kdudka/git/coverity-scan/abscc/abscc.c",
                     "line": 460,

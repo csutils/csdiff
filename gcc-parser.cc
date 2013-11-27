@@ -59,6 +59,7 @@ class AbstractTokenFilter: public ITokenizer {
 };
 
 #define RE_LOCATION "([^:]+)(?::([0-9]+))?(?::([0-9]+))?"
+#define RE_TOOL_SUFFIX "(?: <--\\[[^\\]]+\\])?$"
 
 class Tokenizer: public ITokenizer {
     public:
@@ -66,8 +67,9 @@ class Tokenizer: public ITokenizer {
             input_(input),
             lineNo_(0),
             reMarker_("^ *[ ~^]+$"),
-            reInc_("^(?:In file included| +) from " RE_LOCATION "[:,]"),
-            reScope_("^" RE_LOCATION ": ([A-Z].+):$"),
+            reInc_("^(?:In file included| +) from " RE_LOCATION "[:,]"
+                    RE_TOOL_SUFFIX),
+            reScope_("^" RE_LOCATION ": ([A-Z].+):" RE_TOOL_SUFFIX),
             reMsg_("^" RE_LOCATION /* evt/mesg */ ": ([a-z]+): (.*)$")
         {
         }
