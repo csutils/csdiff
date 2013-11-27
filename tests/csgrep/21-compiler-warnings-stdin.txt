@@ -1,0 +1,18 @@
+/builddir/build/BUILD/autofs-5.0.8/lib/mounts.c: In function 'remount_active_mount': <--[gcc]
+/builddir/build/BUILD/autofs-5.0.8/lib/mounts.c:1550:7: warning: variable 'ret' set but not used [-Wunused-but-set-variable] <--[gcc]
+   int ret;
+       ^
+In file included from /builddir/build/BUILD/autofs-5.0.8/lib/master_tok.l:424:0: <--[gcc]
+/builddir/build/BUILD/autofs-5.0.8/include/automount.h:119:0: note: this is the location of the previous definition <--[gcc]
+ #define min(a, b) (a <= b ? a : b)
+ ^
+/builddir/build/BUILD/autofs-5.0.8/lib/master_tok.c:2491:16: warning: 'input' defined but not used [-Wunused-function] <--[gcc]
+     static int input  (void)
+                ^
+/builddir/build/BUILD/autofs-5.0.8/lib/nss_tok.c:1288:16: warning: 'input' defined but not used [-Wunused-function] <--[gcc]
+     static int input  (void)
+                ^
+In file included from /builddir/build/BUILD/autofs-5.0.8/lib/defaults.c:27:0: <--[gcc]
+/builddir/build/BUILD/autofs-5.0.8/include/lookup_ldap.h:7:25: fatal error: openssl/ssl.h: No such file or directory <--[gcc]
+ #include <openssl/ssl.h>
+                         ^

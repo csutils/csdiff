@@ -70,7 +70,7 @@ class Tokenizer: public ITokenizer {
             reInc_("^(?:In file included| +) from " RE_LOCATION "[:,]"
                     RE_TOOL_SUFFIX),
             reScope_("^" RE_LOCATION ": ([A-Z].+):" RE_TOOL_SUFFIX),
-            reMsg_("^" RE_LOCATION /* evt/mesg */ ": ([a-z]+): (.*)$")
+            reMsg_("^" RE_LOCATION /* evt/msg */ ": ((?:fatal )?[a-z]+): (.*)$")
         {
         }
 
