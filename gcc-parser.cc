@@ -154,6 +154,7 @@ class MarkerConverter: public AbstractTokenFilter {
     public:
         MarkerConverter(ITokenizer *slave):
             AbstractTokenFilter(slave),
+            lastTok_(T_NULL),
             lineNo_(0)
         {
         }
