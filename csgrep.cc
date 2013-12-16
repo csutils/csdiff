@@ -25,6 +25,7 @@
 
 #include <cstdlib>
 #include <fstream>
+#include <iomanip>
 #include <map>
 
 #include <boost/foreach.hpp>
@@ -89,7 +90,13 @@ class DefCounter: public AbstractWriter {
 
         virtual void flush() {
             BOOST_FOREACH(TMap::const_reference item, cnt_) {
-                std::cout << item.second << "\t" << item.first << "\n";
+                using namespace std;
+                const ios_base::fmtflags oldFlags = cout.flags();
+                const int oldWidth = cout.width();
+                cout << fixed << setw(7) << item.second;
+                cout.width(oldWidth);
+                cout.flags(oldFlags);
+                cout << "\t" << item.first << "\n";
             }
         }
 };
