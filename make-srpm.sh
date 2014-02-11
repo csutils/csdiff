@@ -1,35 +1,62 @@
 #/bin/bash
+
+# Copyright (C) 2014 Red Hat, Inc.
+#
+# This file is part of csdiff.
+#
+# csdiff is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# csdiff is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
+
 SELF="$0"
 
 PKG="csdiff"
 
-die(){
+die() {
     echo "$SELF: error: $1" >&2
     exit 1
 }
 
+match() {
+    grep "$@" > /dev/null
+}
+
 DST="`readlink -f "$PWD"`"
 
-REPO="`git rev-parse --show-toplevel`" \
-    || die "not in a git repo"
+REPO="`git rev-parse --show-toplevel`"
+test -d "$REPO" || die "not in a git repo"
 
-printf "%s: considering release of %s using %s...\n" \
-    "$SELF" "$PKG" "$REPO"
+NV="`git describe --tags`"
+echo "$NV" | match "^$PKG-" || die "release tag not found"
 
-branch="`git status | head -1 | sed 's/^#.* //'`" \
-    || die "unable to read git branch"
+VER="`echo "$NV" | sed "s/^$PKG-//"`"
 
-test xmaster = "x$branch" \
-    || die "not in master branch"
+TIMESTAMP="`git log --pretty="%cd" --date=iso -1 \
+    | tr -d ':-' | tr ' ' . | cut -d. -f 1,2`"
 
-test -z "`git diff HEAD`" \
-    || die "HEAD dirty"
+VER="`echo "$VER" | sed "s/-.*-/.$TIMESTAMP./"`"
 
-test -z "`git diff origin/master`" \
-    || die "not synced with origin/master"
+BRANCH="`git rev-parse --abbrev-ref HEAD`"
+test -n "$BRANCH" || die "failed to get current branch name"
+test master = "${BRANCH}" || VER="${VER}.${BRANCH}"
 
-VER="0.`git log --pretty="%cd_%h" --date=short -1 | tr -d -`" \
-    || die "git log failed"
+TBRANCH="`git rev-parse --abbrev-ref --symbolic-full-name @{u}`"
+if test -z "$TBRANCH" || test @ == "${TBRANCH:0:1}"; then
+    die "failed to get tracking branch name"
+fi
+test -z "`git diff $TBRANCH`" || VER="${VER}.dirty"
+
+NV="${PKG}-${VER}"
+printf "\n%s: preparing a release of \033[1;32m%s\033[0m\n\n" "$SELF" "$NV"
 
 TMP="`mktemp -d`"
 trap "echo --- $SELF: removing $TMP... 2>&1; rm -rf '$TMP'" EXIT
@@ -41,14 +68,10 @@ cd "$PKG"                               || die "git clone failed"
 
 make -j5 distcheck CTEST='ctest -j5'    || die "'make distcheck' has failed"
 
-NV="${PKG}-${VER}"
-mkdir "${NV}"
-mv version.cc "${NV}/"                  || die "failed to copy version.cc"
-
-SRC_TAR="${PKG}.tar"
+SRC_TAR="${NV}.tar"
 SRC="${SRC_TAR}.xz"
-git archive --prefix="$NV/" --format="tar" HEAD -- . > "$SRC_TAR"
-tar -rf "$SRC_TAR" "${NV}/version.cc"
+git archive --prefix="$NV/" --format="tar" HEAD -- . > "$SRC_TAR" \
+                                        || die "failed to export sources"
 
 xz -c "$SRC_TAR" > "$SRC"               || die "failed to compress sources"
 
@@ -63,8 +86,8 @@ Summary:    Non-interactive tools for processing code scan results in plain-text
 
 Group:      Applications/Text
 License:    GPLv3+
-URL:        http://git.fedorahosted.org/cgit/codescan-diff.git
-Source0:    $SRC
+URL:        https://git.fedorahosted.org/cgit/codescan-diff.git
+Source0:    https://git.fedorahosted.org/cgit/codescan-diff.git/snapshot/$SRC
 BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires: boost-devel

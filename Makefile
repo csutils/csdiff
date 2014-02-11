@@ -25,7 +25,7 @@ CPPCHECK = cppcheck -j5 \
 
 CMAKE_BUILD_TYPE ?= RelWithDebInfo
 
-.PHONY: all check clean cppcheck distclean distcheck fast install
+.PHONY: all check clean cppcheck distclean distcheck fast install version.cc
 
 all: version.cc
 	mkdir -p csdiff_build
@@ -56,9 +56,11 @@ install: all
 
 version.cc:
 	@if test -e .git; then \
-		printf "#include \"version.hh\"\nconst char *CS_VERSION = \"%s\";\n" \
-			"0.`git log --pretty="%cd_%h" --date=short -1 | tr -d -`" \
-			> $@.tmp \
-			&& install -m0644 -C -v $@.tmp $@ \
-			&& rm -f $@.tmp; \
-		fi
+		cmd='git log --pretty="0.%cd_%h" --date=short -1 | tr -d -'; \
+	else \
+		cmd='basename $$(readlink -f .) | cut -f2 -d-'; \
+	fi \
+		&& printf "#include \"version.hh\"\nconst char *CS_VERSION = \"%s\";\n" \
+			"`eval "$$cmd"`" > $@.tmp \
+		&& install -m0644 -C -v $@.tmp $@ \
+		&& rm -f $@.tmp
