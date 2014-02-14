@@ -104,7 +104,11 @@ defect lists using various filtering predicates.
 %setup -q
 
 %build
-make %{?_smp_mflags} CMAKE='cmake -D CMAKE_INSTALL_PREFIX=/usr' VERBOSE=yes
+make version.cc
+mkdir csdiff_build
+cd csdiff_build
+%cmake ..
+make %{?_smp_mflags} VERBOSE=yes
 
 %install
 rm -rf "\$RPM_BUILD_ROOT"
