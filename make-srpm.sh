@@ -48,12 +48,7 @@ VER="`echo "$VER" | sed "s/-.*-/.$TIMESTAMP./"`"
 BRANCH="`git rev-parse --abbrev-ref HEAD`"
 test -n "$BRANCH" || die "failed to get current branch name"
 test master = "${BRANCH}" || VER="${VER}.${BRANCH}"
-
-TBRANCH="`git rev-parse --abbrev-ref --symbolic-full-name @{u}`"
-if test -z "$TBRANCH" || test @ == "${TBRANCH:0:1}"; then
-    die "failed to get tracking branch name"
-fi
-test -z "`git diff $TBRANCH`" || VER="${VER}.dirty"
+test -z "`git diff HEAD`" || VER="${VER}.dirty"
 
 NV="${PKG}-${VER}"
 printf "\n%s: preparing a release of \033[1;32m%s\033[0m\n\n" "$SELF" "$NV"
@@ -107,7 +102,7 @@ defect lists using various filtering predicates.
 make version.cc
 mkdir csdiff_build
 cd csdiff_build
-%cmake ..
+%cmake .. -DBUILD_PYCSDIFF=ON
 make %{?_smp_mflags} VERBOSE=yes
 
 %install

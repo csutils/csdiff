@@ -85,7 +85,8 @@ install(TARGETS
     DESTINATION bin)
 
 # pycsdiff - python binding of csdiff [experimental]
-if (EXISTS "${PYTHON_INCLUDE_PATH}/pyconfig.h")
+option(BUILD_PYCSDIFF "Set to ON to enable python binding" OFF)
+if (BUILD_PYCSDIFF AND EXISTS "${PYTHON_INCLUDE_PATH}/pyconfig.h")
     find_library(BOOST_PYTHON boost_python PATHS /usr/lib /usr/lib64)
     if (BOOST_PYTHON)
         message(STATUS "WARNING: The python binding of csdiff is experimental!")
