@@ -112,13 +112,15 @@ make %{?_smp_mflags} VERBOSE=yes
 
 %install
 rm -rf "\$RPM_BUILD_ROOT"
+cd csdiff_build
 make install DESTDIR="\$RPM_BUILD_ROOT"
 install -d "\$RPM_BUILD_ROOT%{python_sitearch}/"
 mv -v "\$RPM_BUILD_ROOT/usr/lib/libpycsdiff.so" \
     "\$RPM_BUILD_ROOT%{python_sitearch}/pycsdiff.so"
 
 %check
-make check CTEST='ctest %{?_smp_mflags}'
+cd csdiff_build
+ctest %{?_smp_mflags} --output-on-failure
 
 %clean
 rm -rf "\$RPM_BUILD_ROOT"
