@@ -127,11 +127,11 @@ rm -rf "\$RPM_BUILD_ROOT"
 %{_bindir}/cshtml
 %{_bindir}/cslinker
 %{_bindir}/cssort
-%{_mandir}/man1/csdiff.1.gz
-%{_mandir}/man1/csgrep.1.gz
-%{_mandir}/man1/cshtml.1.gz
-%{_mandir}/man1/cslinker.1.gz
-%{_mandir}/man1/cssort.1.gz
+%{_mandir}/man1/csdiff.1*
+%{_mandir}/man1/csgrep.1*
+%{_mandir}/man1/cshtml.1*
+%{_mandir}/man1/cslinker.1*
+%{_mandir}/man1/cssort.1*
 %{python_sitearch}/pycsdiff.so
 %doc COPYING README
 EOF

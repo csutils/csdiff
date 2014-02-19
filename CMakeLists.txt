@@ -103,10 +103,10 @@ macro(create_manpage BINARY)
     add_custom_command(TARGET ${BINARY} POST_BUILD
         COMMAND ${HELP2MAN} --no-info --section 1
             ${CMAKE_CURRENT_BINARY_DIR}/${BINARY}
-            | gzip > ${BINARY}.1.gz
+            > ${BINARY}.1
         COMMENT "Generating ${BINARY} man page"
         VERBATIM)
-    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${BINARY}.1.gz
+    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${BINARY}.1
         DESTINATION share/man/man1)
 endmacro(create_manpage)
 
