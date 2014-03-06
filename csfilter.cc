@@ -78,6 +78,7 @@ struct MsgFilter::Private {
         struct MsgReplace *rpl = new MsgReplace(regexp, replacement);
         msgFilterMap[checker].push_back(rpl);
     }
+
     Private():
         ignorePath(false),
         strKrn("^[a-zA-Z]+"),
@@ -111,6 +112,10 @@ MsgFilter::MsgFilter():
 }
 
 MsgFilter::~MsgFilter() {
+    BOOST_FOREACH(TMsgFilterMap::const_reference item, d->msgFilterMap)
+        BOOST_FOREACH(struct MsgReplace *rpl, item.second)
+            delete rpl;
+
     delete d;
 }
 
