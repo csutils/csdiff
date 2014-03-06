@@ -1,0 +1,11 @@
+Error: FORWARD_NULL (CWE-476):
+libchewing-0.3.4/src/pinyin.c:104: assign_zero: Assigning: "final" = "NULL".
+libchewing-0.3.4/src/pinyin.c:281: var_deref_model: Passing null pointer "final" to function "strcmp(char const *, char const *)", which dereferences it.
+
+Error: FORWARD_NULL (CWE-476):
+libchewing-0.3.4/src/pinyin.c:103: assign_zero: Assigning: "initial" = "NULL".
+libchewing-0.3.4/src/pinyin.c:289: var_deref_model: Passing null pointer "initial" to function "strcmp(char const *, char const *)", which dereferences it.
+
+Error: FORWARD_NULL (CWE-476):
+libchewing-0.3.4/src/pinyin.c:103: assign_zero: Assigning: "initial" = "NULL".
+libchewing-0.3.4/src/pinyin.c:305: var_deref_model: Passing null pointer "initial" to function "strcmp(char const *, char const *)", which dereferences it.

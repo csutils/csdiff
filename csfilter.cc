@@ -103,6 +103,9 @@ struct MsgFilter::Private {
                 "returned by \"\\1\\(\\)\"");
         addMsgFilter("MISSING_LOCK",
                 "held [0-9][0-9]* out of [0-9][0-9]* times");
+
+        // "__coverity_strcmp" -> "strcmp", etc.
+        addMsgFilter("", "__coverity_", "");
     }
 };
 
@@ -136,6 +139,11 @@ std::string MsgFilter::filterMsg(
 {
     std::string filtered = msg;
     BOOST_FOREACH(const struct MsgReplace *rpl, d->msgFilterMap[checker]) {
+        filtered = regexReplaceWrap(filtered, *rpl->regex, rpl->replaceWith);
+    }
+
+    // these substitutions are common for all checkers
+    BOOST_FOREACH(const struct MsgReplace *rpl, d->msgFilterMap[""]) {
         filtered = regexReplaceWrap(filtered, *rpl->regex, rpl->replaceWith);
     }
 
