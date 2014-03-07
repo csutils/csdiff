@@ -104,6 +104,10 @@ struct MsgFilter::Private {
         addMsgFilter("MISSING_LOCK",
                 "held [0-9][0-9]* out of [0-9][0-9]* times");
 
+        // ignore embeded declaration location
+        addMsgFilter("COMPILER_WARNING",
+                "(declared at [^)]*)", "");
+
         // "__coverity_strcmp" -> "strcmp", etc.
         addMsgFilter("", "__coverity_", "");
     }

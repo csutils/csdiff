@@ -1,0 +1,11 @@
+Error: COMPILER_WARNING:
+libteam-1.9/binding/python/team/capi_wrap.c: scope_hint: In function '_wrap_team_get_eventfd_fd'
+libteam-1.9/binding/python/team/capi_wrap.c:4740:3: warning: 'team_get_eventfd_fd' is deprecated (declared at team/../../../include/team.h:98) [-Wdeprecated-declarations]
+#   result = (int)team_get_eventfd_fd(arg1,(struct team_eventfd const *)arg2);
+#   ^
+
+Error: COMPILER_WARNING:
+libteam-1.9/binding/python/team/capi_wrap.c: scope_hint: In function '_wrap_team_call_eventfd_handler'
+libteam-1.9/binding/python/team/capi_wrap.c:4770:3: warning: 'team_call_eventfd_handler' is deprecated (declared at team/../../../include/team.h:101) [-Wdeprecated-declarations]
+#   result = (int)team_call_eventfd_handler(arg1,(struct team_eventfd const *)arg2);
+#   ^
