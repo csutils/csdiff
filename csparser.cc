@@ -187,6 +187,7 @@ KeyEventDigger::KeyEventDigger():
     // likewise for clang
     d->hMap["CLANG_WARNING"]        .insert("error");
     d->hMap["CLANG_WARNING"]        .insert("warning");
+    d->hMap["CLANG_WARNING"]        .insert("fatal error");
 
     // do not match the lowered checker name of the following checkers
     d->hMap["LOCK"];
@@ -250,6 +251,10 @@ bool KeyEventDigger::guessKeyEvent(Defect *def) {
     for (int idx = evtCount - 1U; idx >= 0; --idx) {
         def->keyEventIdx = idx;
         const DefEvent &evt = evtList[idx];
+        if (evt.event == "#")
+            // never use comment as the key event
+            continue;
+
         if (!d->blackList.count(evt.event))
             break;
     }

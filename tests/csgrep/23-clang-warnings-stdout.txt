@@ -1,0 +1,135 @@
+Error: CLANG_WARNING:
+systemd-208/src/cgroups-agent/cgroups-agent.c:22:10: fatal error: 'dbus/dbus.h' file not found
+##include <dbus/dbus.h>
+#         ^
+
+Error: CLANG_WARNING:
+systemd-208/src/core/dbus-cgroup.c:22:10: fatal error: 'dbus/dbus.h' file not found
+##include <dbus/dbus.h>
+#         ^
+
+Error: CLANG_WARNING:
+systemd-208/src/core/dbus-execute.c:23:10: fatal error: 'dbus/dbus.h' file not found
+##include <dbus/dbus.h>
+#         ^
+
+Error: CLANG_WARNING:
+systemd-208/src/core/dbus-kill.c:23:10: fatal error: 'dbus/dbus.h' file not found
+##include <dbus/dbus.h>
+#         ^
+
+Error: CLANG_WARNING:
+systemd-208/src/core/dbus-manager.c:25: included_from: Included from here.
+systemd-208/src/core/dbus.h:24:10: fatal error: 'dbus/dbus.h' file not found
+##include <dbus/dbus.h>
+#         ^
+
+Error: CLANG_WARNING:
+systemd-208/src/core/dbus-timer.c:24: included_from: Included from here.
+systemd-208/src/core/dbus-unit.h:24:10: fatal error: 'dbus/dbus.h' file not found
+##include <dbus/dbus.h>
+#         ^
+
+Error: CLANG_WARNING:
+systemd-208/src/core/dbus.c:26:10: fatal error: 'dbus/dbus.h' file not found
+##include <dbus/dbus.h>
+#         ^
+
+Error: CLANG_WARNING:
+systemd-208/src/core/main.c:22:10: fatal error: 'dbus/dbus.h' file not found
+##include <dbus/dbus.h>
+#         ^
+
+Error: CLANG_WARNING:
+systemd-208/src/core/unit-printf.c:23: included_from: Included from here.
+systemd-208/src/core/unit.h:39: included_from: Included from here.
+systemd-208/src/core/execute.h:163: included_from: Included from here.
+systemd-208/src/core/cgroup.h:86: included_from: Included from here.
+systemd-208/src/core/manager.h:27:10: fatal error: 'dbus/dbus.h' file not found
+##include <dbus/dbus.h>
+#         ^
+
+Error: CLANG_WARNING:
+systemd-208/src/fsck/fsck.c:31:10: fatal error: 'dbus/dbus.h' file not found
+##include <dbus/dbus.h>
+#         ^
+
+Error: CLANG_WARNING:
+systemd-208/src/gpt-auto-generator/gpt-auto-generator.c:27:10: fatal error: 'blkid.h' file not found
+##include <blkid.h>
+#         ^
+
+Error: CLANG_WARNING:
+systemd-208/src/hostname/hostnamed.c:22:10: fatal error: 'dbus/dbus.h' file not found
+##include <dbus/dbus.h>
+#         ^
+
+Error: CLANG_WARNING:
+systemd-208/src/initctl/initctl.c:36:10: fatal error: 'dbus/dbus.h' file not found
+##include <dbus/dbus.h>
+#         ^
+
+Error: CLANG_WARNING:
+systemd-208/src/locale/localed.c:22:10: fatal error: 'dbus/dbus.h' file not found
+##include <dbus/dbus.h>
+#         ^
+
+Error: CLANG_WARNING:
+systemd-208/src/login/loginctl.c:22:10: fatal error: 'dbus/dbus.h' file not found
+##include <dbus/dbus.h>
+#         ^
+
+Error: CLANG_WARNING:
+systemd-208/src/login/logind-core.c:30: included_from: Included from here.
+systemd-208/src/login/logind.h:26:10: fatal error: 'dbus/dbus.h' file not found
+##include <dbus/dbus.h>
+#         ^
+
+Error: CLANG_WARNING:
+systemd-208/src/login/test-inhibit.c:24:10: fatal error: 'dbus/dbus.h' file not found
+##include <dbus/dbus.h>
+#         ^
+
+Error: CLANG_WARNING:
+systemd-208/src/machine/machinectl.c:22:10: fatal error: 'dbus/dbus.h' file not found
+##include <dbus/dbus.h>
+#         ^
+
+Error: CLANG_WARNING:
+systemd-208/src/machine/test-machine-tables.c:20: included_from: Included from here.
+systemd-208/src/machine/machine.h:29: included_from: Included from here.
+systemd-208/src/machine/machined.h:26:10: fatal error: 'dbus/dbus.h' file not found
+##include <dbus/dbus.h>
+#         ^
+
+Error: CLANG_WARNING:
+systemd-208/src/shared/dbus-common.c:28:10: fatal error: 'dbus/dbus.h' file not found
+##include <dbus/dbus.h>
+#         ^
+
+Error: CLANG_WARNING:
+systemd-208/src/shared/dbus-loop.c:30: included_from: Included from here.
+systemd-208/src/shared/dbus-loop.h:24:10: fatal error: 'dbus/dbus.h' file not found
+##include <dbus/dbus.h>
+#         ^
+
+Error: CLANG_WARNING:
+systemd-208/src/shared/polkit.c:27: included_from: Included from here.
+systemd-208/src/shared/dbus-common.h:24:10: fatal error: 'dbus/dbus.h' file not found
+##include <dbus/dbus.h>
+#         ^
+
+Error: CLANG_WARNING:
+systemd-208/src/systemctl/systemctl.c:37:10: fatal error: 'dbus/dbus.h' file not found
+##include <dbus/dbus.h>
+#         ^
+
+Error: CLANG_WARNING:
+systemd-208/src/timedate/timedated.c:22:10: fatal error: 'dbus/dbus.h' file not found
+##include <dbus/dbus.h>
+#         ^
+
+Error: CLANG_WARNING:
+systemd-208/src/update-utmp/update-utmp.c:28:10: fatal error: 'dbus/dbus.h' file not found
+##include <dbus/dbus.h>
+#         ^
