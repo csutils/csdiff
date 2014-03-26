@@ -303,7 +303,7 @@ class BasicGccParser {
             tokenizer_(&markerConverter_),
             fileName_(fileName),
             silent_(silent),
-            reChecker_("^([A-Za-z_]+): (.*)$"),
+            reCppcheck_("^([A-Za-z_]+): (.*)$"),
             reClang_("^clang.*$"),
             reTool_("^(.*) <--\\[([^\\]]+)\\]$"),
             hasKeyEvent_(false),
@@ -320,7 +320,7 @@ class BasicGccParser {
         MultilineConcatenator   tokenizer_;
         const std::string       fileName_;
         const bool              silent_;
-        const boost::regex      reChecker_;
+        const boost::regex      reCppcheck_;
         const boost::regex      reClang_;
         const boost::regex      reTool_;
         bool                    hasKeyEvent_;
@@ -328,6 +328,7 @@ class BasicGccParser {
         Defect                  defCurrent_;
 
         void handleError();
+        bool digCppcheckEvt(Defect *pDef);
         bool exportAndReset(Defect *pDef);
 };
 
@@ -344,30 +345,47 @@ void BasicGccParser::handleError() {
         << ": error: invalid syntax\n";
 }
 
+bool BasicGccParser::digCppcheckEvt(Defect *pDef) {
+    DefEvent &keyEvt = pDef->events[pDef->keyEventIdx];
+
+    boost::smatch sm;
+    if (!boost::regex_match(keyEvt.msg, sm, reCppcheck_))
+        return false;
+
+    // format produced by cscppc, embed cppcheck checker's ID into the event
+    pDef->checker = "CPPCHECK_WARNING";
+    keyEvt.event += "[";
+    keyEvt.event += sm[/* id  */ 1];
+    keyEvt.event += "]";
+    keyEvt.msg = sm[/* msg */ 2];
+    return true;
+}
+
 bool BasicGccParser::exportAndReset(Defect *pDef) {
     Defect &def = defCurrent_;
     if (!hasKeyEvent_)
         // nothing to export yet
         return false;
 
+    // assume COMPILER_WARNING by default
+    def.checker = "COMPILER_WARNING";
+
     DefEvent &keyEvt = def.events[def.keyEventIdx];
 
-    // embed cppcheck's ID in the event ID (if available)
     boost::smatch sm;
-    if (boost::regex_match(keyEvt.msg, sm, reTool_)
-            && boost::regex_match(sm[/* tool */ 2].str(), reClang_))
-    {
-        def.checker = "CLANG_WARNING";
-    }
-    else if (boost::regex_match(keyEvt.msg, sm, reChecker_)) {
-        def.checker = "CPPCHECK_WARNING";
-        keyEvt.event += "[";
-        keyEvt.event += sm[/* id  */ 1];
-        keyEvt.event += "]";
-        keyEvt.msg = sm[/* msg */ 2];
+    if (boost::regex_match(keyEvt.msg, sm, reTool_)) {
+        const std::string tool = sm[/* tool */ 2].str();
+        if (boost::regex_match(tool, reClang_))
+            // <--[clang] or <--[clang++]
+            def.checker = "CLANG_WARNING";
+
+        else if (tool == "cppcheck" && !this->digCppcheckEvt(&def))
+            // <--[cppcheck] ... assume cppcheck running with --template=gcc
+            def.checker = "CPPCHECK_WARNING";
     }
     else
-        def.checker = "COMPILER_WARNING";
+        // no <--[TOOL] suffix given
+        this->digCppcheckEvt(&def);
 
     // drop the " <--[tool]" suffixes
     BOOST_FOREACH(DefEvent &evt, def.events)
