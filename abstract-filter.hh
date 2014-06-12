@@ -24,9 +24,6 @@
 
 /// decorator
 class GenericAbstractFilter: public AbstractWriter {
-    private:
-        bool neg_;
-
     protected:
         AbstractWriter *slave_;
         virtual void handleDef(const Defect &def) = 0;
@@ -37,7 +34,6 @@ class GenericAbstractFilter: public AbstractWriter {
         }
 
         GenericAbstractFilter(AbstractWriter *slave):
-            neg_(false),
             slave_(slave)
         {
         }

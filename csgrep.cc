@@ -274,6 +274,40 @@ fail:
         }
 };
 
+class PathStripper: public GenericAbstractFilter {
+    public:
+        PathStripper(AbstractWriter *slave, const std::string &prefix):
+            GenericAbstractFilter(slave),
+            prefStr_(prefix),
+            prefSize_(prefix.size())
+        {
+        }
+
+        virtual void handleDef(const Defect &defOrig) {
+            Defect def(defOrig);
+
+            // iterate through all events
+            BOOST_FOREACH(DefEvent &evt, def.events) {
+                std::string &path = evt.fileName;
+                if (path.size() < prefSize_)
+                    continue;
+
+                const std::string str(path, /* pos */ 0U, prefSize_);
+                if (str != prefStr_)
+                    continue;
+
+                // strip path prefix in this event
+                path.erase(/* pos */ 0U, prefSize_);
+            }
+
+            slave_->handleDef(def);
+        }
+
+    private:
+        const std::string           prefStr_;
+        const size_t                prefSize_;
+};
+
 class DuplicateFilter: public AbstractFilter {
     public:
         DuplicateFilter(AbstractWriter *slave):
@@ -468,6 +502,8 @@ int main(int argc, char *argv[])
             ("remove-duplicates,u", "remove defects with repeated key events")
             ("src-annot", po::value<string>(),
              "match annotations in the _source_ file by the given regex")
+            ("strip-path-prefix", po::value<string>(),
+             "string prefix to strip from path (applied after all filters)")
             ("version", "print version");
 
         po::options_description hidden("");
@@ -508,6 +544,11 @@ int main(int argc, char *argv[])
         printUsage(std::cerr, desc);
         return 1;
     }
+
+    const po::variables_map::const_iterator it = vm.find("strip-path-prefix");
+    if (it != vm.end())
+        // insert PathStripper into the chain
+        eng = new PathStripper(eng, it->second.as<std::string>());
 
     // chain all filters
     if (!chainFilters(&eng, vm))
