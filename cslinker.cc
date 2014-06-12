@@ -227,6 +227,12 @@ int main(int argc, char *argv[]) {
     }
 
     const unsigned filesCnt = files.size();
+    if (!filesCnt) {
+        InStream strIni(fnIni.c_str());
+        if (!loadPropsFromIniFile(writer, strIni.str(), fnIni))
+            hasError = true;
+    }
+
     for (unsigned i = 0U; i < filesCnt; ++i) {
         const string &fnErr = files[i];
 
