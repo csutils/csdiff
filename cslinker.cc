@@ -192,22 +192,20 @@ int main(int argc, char *argv[]) {
         return 0;
     }
 
-    if (!vm.count("input-file")) {
-        desc.print(std::cerr);
-        return 1;
-    }
-
-    const TStringList files = vm["input-file"].as<TStringList>();
-    const unsigned filesCnt = files.size();
-    if (!filesCnt) {
-        desc.print(std::cerr);
-        return 1;
-    }
-
     const string fnCwe = valueOf<string>(vm["cwelist"]);
     const string fnIni = valueOf<string>(vm["inifile"]);
     const string fnMap = valueOf<string>(vm["mapfile"]);
     const bool silent = vm.count("quiet");
+
+    const po::variables_map::const_iterator it = vm.find("input-file");
+    TStringList files;
+    if (it != vm.end())
+        files = it->second.as<TStringList>();
+    else if (fnIni.empty()) {
+        // nor list of defects, neither ini-file was given, this looks bogus
+        desc.print(std::cerr);
+        return 1;
+    }
 
     CweMapDecorator writer(new JsonWriter(std::cout));
 
@@ -228,6 +226,7 @@ int main(int argc, char *argv[]) {
         }
     }
 
+    const unsigned filesCnt = files.size();
     for (unsigned i = 0U; i < filesCnt; ++i) {
         const string &fnErr = files[i];
 
