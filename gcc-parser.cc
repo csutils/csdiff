@@ -202,7 +202,7 @@ class MultilineConcatenator: public AbstractTokenFilter {
         MultilineConcatenator(ITokenizer *slave):
             AbstractTokenFilter(slave),
             lastTok_(T_NULL),
-#define REASON_SUFFIX "( \\[[^\\]]+\\])?$"
+#define REASON_SUFFIX "( \\[[^\\]]+\\])?" RE_TOOL_SUFFIX
             reBase_("^([^ ].*[^\\]])" REASON_SUFFIX),
             reExtra_("^ *((?: [^ ].*[^\\]])|(?:\\(.+\\)))" REASON_SUFFIX)
         {

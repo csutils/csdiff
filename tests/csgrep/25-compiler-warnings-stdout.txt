@@ -1,0 +1,3 @@
+Error: COMPILER_WARNING:
+virt-viewer-0.6.0/src/virt-viewer-window.c: scope_hint: In function 'virt_viewer_window_update_title'
+virt-viewer-0.6.0/src/virt-viewer-window.c:1149: warning: missing initializer (near initialization for 'key.accel_mods')
