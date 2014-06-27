@@ -30,6 +30,33 @@
 #include <boost/lexical_cast.hpp>
 #include <boost/regex.hpp>
 
+class LineReader {
+    public:
+        LineReader(std::istream &input):
+            input_(input),
+            lineNo_(0)
+        {
+        }
+
+        int lineNo() const {
+            return lineNo_;
+        }
+
+        bool getLine(std::string *pDst);
+
+    private:
+        std::istream               &input_;
+        int                         lineNo_;
+};
+
+bool LineReader::getLine(std::string *pDst) {
+    if (!std::getline(input_, *pDst))
+        return false;
+
+    lineNo_++;
+    return true;
+}
+
 enum EToken {
     T_NULL = 0,
     T_EMPTY,
@@ -55,9 +82,8 @@ std::ostream& operator<<(std::ostream &str, EToken code) {
 class ErrFileLexer {
     public:
         ErrFileLexer(std::istream &input):
-            input_(input),
+            lineReader_(input),
             hasError_(false),
-            lineNo_(0),
             reEmpty_("^ *$"),
             reComment_("^(#)(.*)$"),
             reChecker_("^Error: *([A-Za-z][A-Za-z_.]+)( *\\([^)]+\\))? *:$"),
@@ -72,7 +98,7 @@ class ErrFileLexer {
         }
 
         int lineNo() const {
-            return lineNo_;
+            return lineReader_.lineNo();
         }
 
         const Defect& def() const {
@@ -86,9 +112,8 @@ class ErrFileLexer {
         EToken readNext();
 
     private:
-        std::istream               &input_;
+        LineReader                  lineReader_;
         bool                        hasError_;
-        int                         lineNo_;
         Defect                      def_;
         DefEvent                    evt_;
         const boost::regex          reEmpty_;
@@ -99,10 +124,8 @@ class ErrFileLexer {
 
 EToken ErrFileLexer::readNext() {
     std::string line;
-    if (!std::getline(input_, line))
+    if (!lineReader_.getLine(&line))
         return T_NULL;
-
-    lineNo_++;
 
     if (boost::regex_match(line, reEmpty_))
         return T_EMPTY;
