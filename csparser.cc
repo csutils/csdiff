@@ -34,7 +34,9 @@ class LineReader {
     public:
         LineReader(std::istream &input):
             input_(input),
-            lineNo_(0)
+            lineNo_(0),
+            reTrailLoc_("[0-9>]:$"),
+            rePathPref_("^path:")
         {
         }
 
@@ -47,13 +49,37 @@ class LineReader {
     private:
         std::istream               &input_;
         int                         lineNo_;
+        const boost::regex          reTrailLoc_;
+        const boost::regex          rePathPref_;
+
+        bool getLinePriv(std::string *pDst);
 };
 
-bool LineReader::getLine(std::string *pDst) {
+bool LineReader::getLinePriv(std::string *pDst) {
     if (!std::getline(input_, *pDst))
         return false;
 
     lineNo_++;
+    return true;
+}
+
+bool LineReader::getLine(std::string *pDst) {
+    std::string line;
+    if (!this->getLinePriv(&line))
+        return false;
+
+    std::string nextLine;
+    while (boost::regex_search(line, reTrailLoc_)
+            && this->getLinePriv(&nextLine))
+    {
+        // merge the current line with the next line
+        nextLine.insert(/* pos */ 0U, " ");
+        line += nextLine;
+    }
+
+    // remove the "path:" prefix if matched
+    *pDst = boost::regex_replace(line, rePathPref_, "");
+
     return true;
 }
 

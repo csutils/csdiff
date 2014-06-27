@@ -1,0 +1,424 @@
+Error: FORWARD_NULL:
+path:/builddir/build/BUILD/units-2.11/units.c:4467:
+cond_true: Condition "-1 != (optchar = getopt_long(argc, argv, shortoptions, longoptions, &optindex))", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:4470:
+switch: Switch case value "109"
+path:/builddir/build/BUILD/units-2.11/units.c:4471:
+switch_case: Reached case "109"
+path:/builddir/build/BUILD/units-2.11/units.c:4473:
+break: Breaking from switch
+path:/builddir/build/BUILD/units-2.11/units.c:4566:
+switch_end: Reached end of switch
+path:/builddir/build/BUILD/units-2.11/units.c:4567:
+loop: Jumping back to the beginning of the loop
+path:/builddir/build/BUILD/units-2.11/units.c:4467:
+loop_begin: Jumped back to beginning of loop
+path:/builddir/build/BUILD/units-2.11/units.c:4467:
+cond_true: Condition "-1 != (optchar = getopt_long(argc, argv, shortoptions, longoptions, &optindex))", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:4470:
+switch: Switch case value "100"
+path:/builddir/build/BUILD/units-2.11/units.c:4485:
+switch_case: Reached case "100"
+path:/builddir/build/BUILD/units-2.11/units.c:4486:
+cond_false: Condition "checksigdigits(optarg) < 0", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:4489:
+else_branch: Reached else branch
+path:/builddir/build/BUILD/units-2.11/units.c:4490:
+break: Breaking from switch
+path:/builddir/build/BUILD/units-2.11/units.c:4566:
+switch_end: Reached end of switch
+path:/builddir/build/BUILD/units-2.11/units.c:4567:
+loop: Jumping back to the beginning of the loop
+path:/builddir/build/BUILD/units-2.11/units.c:4467:
+loop_begin: Jumped back to beginning of loop
+path:/builddir/build/BUILD/units-2.11/units.c:4467:
+cond_true: Condition "-1 != (optchar = getopt_long(argc, argv, shortoptions, longoptions, &optindex))", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:4470:
+switch: Switch case value "102"
+path:/builddir/build/BUILD/units-2.11/units.c:4502:
+switch_case: Reached case "102"
+path:/builddir/build/BUILD/units-2.11/units.c:4503:
+cond_true: Condition "unitsfiles[ind]", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:4503:
+loop: Jumping back to the beginning of the loop
+path:/builddir/build/BUILD/units-2.11/units.c:4503:
+loop_begin: Jumped back to beginning of loop
+path:/builddir/build/BUILD/units-2.11/units.c:4503:
+cond_true: Condition "unitsfiles[ind]", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:4503:
+loop: Jumping back to the beginning of the loop
+path:/builddir/build/BUILD/units-2.11/units.c:4503:
+loop_begin: Jumped back to beginning of loop
+path:/builddir/build/BUILD/units-2.11/units.c:4503:
+cond_false: Condition "unitsfiles[ind]", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:4503:
+loop_end: Reached end of loop
+path:/builddir/build/BUILD/units-2.11/units.c:4504:
+cond_false: Condition "ind == 25", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:4508:
+if_end: End of if statement
+path:/builddir/build/BUILD/units-2.11/units.c:4509:
+cond_false: Condition "optarg", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:4511:
+else_branch: Reached else branch
+/builddir/build/BUILD/units-2.11/units.c:4509:
+var_compare_op: Comparing "optarg" to null implies that "optarg" might be null.
+path:/builddir/build/BUILD/units-2.11/units.c:4514:
+cond_false: Condition "!unitsfile", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:4518:
+else_branch: Reached else branch
+path:/builddir/build/BUILD/units-2.11/units.c:4521:
+break: Breaking from switch
+path:/builddir/build/BUILD/units-2.11/units.c:4566:
+switch_end: Reached end of switch
+path:/builddir/build/BUILD/units-2.11/units.c:4567:
+loop: Jumping back to the beginning of the loop
+path:/builddir/build/BUILD/units-2.11/units.c:4467:
+loop_begin: Jumped back to beginning of loop
+path:/builddir/build/BUILD/units-2.11/units.c:4467:
+cond_true: Condition "-1 != (optchar = getopt_long(argc, argv, shortoptions, longoptions, &optindex))", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:4470:
+switch: Switch case value "100"
+path:/builddir/build/BUILD/units-2.11/units.c:4485:
+switch_case: Reached case "100"
+/builddir/build/BUILD/units-2.11/units.c:4486:
+var_deref_model: Passing null pointer "optarg" to "checksigdigits", which dereferences it.
+/builddir/build/BUILD/units-2.11/units.c:2903:3:
+deref_parm_in_call: Function "strcmp" dereferences "arg".
+Error: NULL_RETURNS:
+path:/builddir/build/BUILD/units-2.11/units.c:4704:
+cond_true: Condition "unitstr", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:4705:
+cond_true: Condition "(nextunitstr = strchr(unitstr, 59)) != NULL", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:4708:
+cond_false: Condition "!unitstr[strspn(unitstr, " \t\n")]", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:4721:
+if_end: End of if statement
+path:/builddir/build/BUILD/units-2.11/units.c:4725:
+cond_true: Condition "printerror", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:4725:
+cond_false: Condition "processunit(&unit[unitidx], unitstr, promptlen)", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:4725:
+cond_false: Condition "!printerror", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:4735:
+if_end: End of if statement
+path:/builddir/build/BUILD/units-2.11/units.c:4737:
+cond_true: Condition "unitidx == 0", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:4738:
+if_fallthrough: Falling through to end of if statement
+path:/builddir/build/BUILD/units-2.11/units.c:4756:
+if_end: End of if statement
+path:/builddir/build/BUILD/units-2.11/units.c:4758:
+cond_true: Condition "nextunitstr", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:4759:
+cond_true: Condition "promptlen >= 0", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:4763:
+loop: Jumping back to the beginning of the loop
+path:/builddir/build/BUILD/units-2.11/units.c:4704:
+loop_begin: Jumped back to beginning of loop
+path:/builddir/build/BUILD/units-2.11/units.c:4704:
+cond_true: Condition "unitstr", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:4705:
+cond_false: Condition "(nextunitstr = strchr(unitstr, 59)) != NULL", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:4706:
+if_end: End of if statement
+path:/builddir/build/BUILD/units-2.11/units.c:4708:
+cond_false: Condition "!unitstr[strspn(unitstr, " \t\n")]", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:4721:
+if_end: End of if statement
+path:/builddir/build/BUILD/units-2.11/units.c:4725:
+cond_true: Condition "printerror", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:4725:
+cond_false: Condition "processunit(&unit[unitidx], unitstr, promptlen)", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:4725:
+cond_false: Condition "!printerror", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:4735:
+if_end: End of if statement
+path:/builddir/build/BUILD/units-2.11/units.c:4737:
+cond_false: Condition "unitidx == 0", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:4739:
+else_branch: Reached else branch
+path:/builddir/build/BUILD/units-2.11/units.c:4740:
+cond_true: Condition "compareunits(unit, &unit[1], ignore_dimless)", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:4741:
+cond_true: Condition "printerror", taking true branch
+/builddir/build/BUILD/units-2.11/units.c:4744:
+returned_null: "strchr" returns null (checked 44 out of 48 times).
+/builddir/build/BUILD/units-2.11/units.c:2121:
+example_checked: Example 1: "strchr(toadd, 33)" has its value checked in "strchr(toadd, 33)".
+/builddir/build/BUILD/units-2.11/units.c:3464:
+example_checked: Example 2: "strchr(def, 33)" has its value checked in "strchr(def, 33)".
+/builddir/build/BUILD/units-2.11/units.c:4636:
+example_checked: Example 3: "strchr(unitstr, 59)" has its value checked in "strchr(unitstr, 59)".
+/builddir/build/BUILD/units-2.11/units.c:640:
+example_checked: Example 4: "strchr(" \t\n", *endptr)" has its value checked in "strchr(" \t\n", *endptr)".
+/builddir/build/BUILD/units-2.11/units.c:4705:
+example_checked: Example 5: "strchr(unitstr, 59)" has its value checked in "(nextunitstr = strchr(unitstr, 59)) != NULL".
+/builddir/build/BUILD/units-2.11/units.c:4744:
+dereference: Dereferencing a null pointer "strchr(firstunitstr, 59)".
+Error: RESOURCE_LEAK:
+path:/builddir/build/BUILD/units-2.11/units.c:4318:
+cond_false: Condition "flags.verbose == 0", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:4321:
+if_end: End of if statement
+path:/builddir/build/BUILD/units-2.11/units.c:4329:
+cond_true: Condition "flags.verbose == 2", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:4330:
+cond_true: Condition "!fullprogname", taking true branch
+/builddir/build/BUILD/units-2.11/units.c:4331:
+alloc_fn: Storage is returned from allocation function "getprogdir".
+path:/builddir/build/BUILD/units-2.11/units.c:3870:3:
+cond_true: Condition "!progdir", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:3870:3:
+cond_true: Condition "isfullpath(progname)", taking true branch
+/builddir/build/BUILD/units-2.11/units.c:3871:5:
+alloc_fn: Storage is returned from allocation function "dupstr".
+/builddir/build/BUILD/units-2.11/units.c:483:4:
+alloc_fn: Storage is returned from allocation function "mymalloc".
+/builddir/build/BUILD/units-2.11/units.c:467:4:
+alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/units-2.11/units.c:467:4:
+var_assign: Assigning: "pointer" = "malloc(bytes)".
+path:/builddir/build/BUILD/units-2.11/units.c:468:4:
+cond_false: Condition "!pointer", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:471:4:
+if_end: End of if statement
+/builddir/build/BUILD/units-2.11/units.c:472:4:
+return_alloc: Returning allocated memory "pointer".
+/builddir/build/BUILD/units-2.11/units.c:483:4:
+var_assign: Assigning: "ret" = "mymalloc(strlen(str) + 1UL, "(dupstr)")".
+/builddir/build/BUILD/units-2.11/units.c:484:4:
+noescape: Resource "ret" is not freed or pointed-to in function "strcpy". [Note: The source code implementation of the function has been overridden by a builtin model.]
+/builddir/build/BUILD/units-2.11/units.c:485:4:
+return_alloc: Returning allocated memory "ret".
+/builddir/build/BUILD/units-2.11/units.c:3871:5:
+var_assign: Assigning: "progdir" = "dupstr(progname)".
+path:/builddir/build/BUILD/units-2.11/units.c:3889:3:
+cond_false: Condition "!progdir", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:3936:3:
+if_end: End of if statement
+path:/builddir/build/BUILD/units-2.11/units.c:3938:3:
+cond_false: Condition "!progdir", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:3941:3:
+if_end: End of if statement
+/builddir/build/BUILD/units-2.11/units.c:3943:3:
+noescape: Resource "progdir" is not freed or pointed-to in function "dupstr".
+/builddir/build/BUILD/units-2.11/units.c:479:20:
+noescape: "dupstr(char const *)" does not free or save its pointer parameter "str".
+/builddir/build/BUILD/units-2.11/units.c:3944:3:
+identity_transfer: Passing "progdir" as argument 1 to function "pathend", which returns an offset off that argument.
+/builddir/build/BUILD/units-2.11/units.c:1451:7:
+var_assign_parm: Assigning: "pointer" = "filename".
+path:/builddir/build/BUILD/units-2.11/units.c:1451:3:
+cond_true: Condition "pointer > filename", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:1452:5:
+cond_true: Condition "*pointer == '/'", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:1454:7:
+break: Breaking from loop
+path:/builddir/build/BUILD/units-2.11/units.c:1456:3:
+loop_end: Reached end of loop
+/builddir/build/BUILD/units-2.11/units.c:1457:3:
+return_var: Returning "pointer", which is a copy of a parameter.
+/builddir/build/BUILD/units-2.11/units.c:3944:3:
+noescape: Resource "progdir" is not freed or pointed-to in function "pathend".
+/builddir/build/BUILD/units-2.11/units.c:1447:15:
+noescape: "pathend(char *)" does not free or save its pointer parameter "filename".
+/builddir/build/BUILD/units-2.11/units.c:3944:3:
+var_assign: Assigning: "p" = "pathend(progdir)".
+/builddir/build/BUILD/units-2.11/units.c:3947:3:
+return_alloc: Returning allocated memory "progdir".
+/builddir/build/BUILD/units-2.11/units.c:4331:
+leaked_storage: Ignoring storage allocated by "getprogdir(progname, &fullprogname)" leaks it.
+Error: RESOURCE_LEAK:
+path:/builddir/build/BUILD/units-2.11/units.c:4318:
+cond_false: Condition "flags.verbose == 0", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:4321:
+if_end: End of if statement
+path:/builddir/build/BUILD/units-2.11/units.c:4329:
+cond_true: Condition "flags.verbose == 2", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:4330:
+cond_true: Condition "!fullprogname", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:4332:
+cond_true: Condition "fullprogname", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:4337:
+cond_true: Condition "flags.verbose == 2", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:4340:
+cond_true: Condition "unitsfile", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:4341:
+if_fallthrough: Falling through to end of if statement
+path:/builddir/build/BUILD/units-2.11/units.c:4343:
+if_end: End of if statement
+path:/builddir/build/BUILD/units-2.11/units.c:4345:
+cond_true: Condition "isfullpath("/usr/share/units/definitions.units")", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:4346:
+if_fallthrough: Falling through to end of if statement
+path:/builddir/build/BUILD/units-2.11/units.c:4348:
+if_end: End of if statement
+path:/builddir/build/BUILD/units-2.11/units.c:4353:
+cond_true: Condition "unitsfile", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:4353:
+cond_true: Condition "flags.verbose == 2", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:4353:
+cond_false: Condition "!isfullpath("/usr/share/units/definitions.units")", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:4355:
+cond_true: Condition "unitsfile", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:4356:
+if_fallthrough: Falling through to end of if statement
+path:/builddir/build/BUILD/units-2.11/units.c:4358:
+if_end: End of if statement
+path:/builddir/build/BUILD/units-2.11/units.c:4361:
+cond_true: Condition "flags.verbose == 2", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:4364:
+cond_true: Condition "unitsfile", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:4365:
+if_fallthrough: Falling through to end of if statement
+path:/builddir/build/BUILD/units-2.11/units.c:4367:
+if_end: End of if statement
+/builddir/build/BUILD/units-2.11/units.c:4370:
+alloc_fn: Storage is returned from allocation function "personalunitsfile".
+path:/builddir/build/BUILD/units-2.11/units.c:4179:3:
+cond_true: Condition "filename", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:4179:3:
+cond_false: Condition "*filename", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:4193:3:
+if_end: End of if statement
+path:/builddir/build/BUILD/units-2.11/units.c:4219:3:
+cond_false: Condition "!homedir", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:4223:8:
+else_branch: Reached else branch
+/builddir/build/BUILD/units-2.11/units.c:4224:5:
+alloc_fn: Storage is returned from allocation function "mymalloc".
+/builddir/build/BUILD/units-2.11/units.c:467:4:
+alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/units-2.11/units.c:467:4:
+var_assign: Assigning: "pointer" = "malloc(bytes)".
+path:/builddir/build/BUILD/units-2.11/units.c:468:4:
+cond_false: Condition "!pointer", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:471:4:
+if_end: End of if statement
+/builddir/build/BUILD/units-2.11/units.c:472:4:
+return_alloc: Returning allocated memory "pointer".
+/builddir/build/BUILD/units-2.11/units.c:4224:5:
+var_assign: Assigning: "filename" = "mymalloc(strlen(homedir) + strlen(homeunitsfile) + 2UL, "(personalunitsfile)")".
+/builddir/build/BUILD/units-2.11/units.c:4226:5:
+noescape: Resource "filename" is not freed or pointed-to in function "strcpy". [Note: The source code implementation of the function has been overridden by a builtin model.]
+/builddir/build/BUILD/units-2.11/units.c:4228:3:
+noescape: Resource "filename" is not freed or pointed-to in function "strcat". [Note: The source code implementation of the function has been overridden by a builtin model.]
+/builddir/build/BUILD/units-2.11/units.c:4229:3:
+noescape: Resource "filename" is not freed or pointed-to in function "strcat". [Note: The source code implementation of the function has been overridden by a builtin model.]
+/builddir/build/BUILD/units-2.11/units.c:4231:3:
+noescape: Resource "filename" is not freed or pointed-to in function "fopen".
+path:/builddir/build/BUILD/units-2.11/units.c:4232:3:
+cond_true: Condition "testfile", taking true branch
+/builddir/build/BUILD/units-2.11/units.c:4235:5:
+return_alloc: Returning allocated memory "filename".
+/builddir/build/BUILD/units-2.11/units.c:4370:
+var_assign: Assigning: "unitsfile" = storage returned from "personalunitsfile(1, &exists)".
+path:/builddir/build/BUILD/units-2.11/units.c:4371:
+cond_true: Condition "unitsfile", taking true branch
+/builddir/build/BUILD/units-2.11/units.c:4372:
+noescape: Resource "unitsfile" is not freed or pointed-to in "printf".
+path:/builddir/build/BUILD/units-2.11/units.c:4373:
+cond_true: Condition "!exists", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:4374:
+if_fallthrough: Falling through to end of if statement
+path:/builddir/build/BUILD/units-2.11/units.c:4376:
+if_end: End of if statement
+path:/builddir/build/BUILD/units-2.11/units.c:4377:
+if_fallthrough: Falling through to end of if statement
+path:/builddir/build/BUILD/units-2.11/units.c:4379:
+if_end: End of if statement
+/builddir/build/BUILD/units-2.11/units.c:4408:
+leaked_storage: Variable "unitsfile" going out of scope leaks the storage it points to.
+Error: UNINIT:
+/builddir/build/BUILD/units-2.11/units.c:1043:
+var_decl: Declaring variable "first" without initializer.
+path:/builddir/build/BUILD/units-2.11/units.c:1050:
+cond_false: Condition "*unitname == '('", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:1055:
+if_end: End of if statement
+path:/builddir/build/BUILD/units-2.11/units.c:1061:
+cond_false: Condition "checkunitname(unitname, linenum, file, errfile)", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:1062:
+if_end: End of if statement
+path:/builddir/build/BUILD/units-2.11/units.c:1064:
+cond_false: Condition "start == end", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:1065:
+if_end: End of if statement
+path:/builddir/build/BUILD/units-2.11/units.c:1067:
+cond_false: Condition "!end", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:1067:
+cond_false: Condition "strlen(end) > 1", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:1072:
+if_end: End of if statement
+path:/builddir/build/BUILD/units-2.11/units.c:1085:
+cond_true: Condition "looking_for_keywords", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:1087:
+cond_true: Condition "fnkeywords[i].word", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:1088:
+cond_true: Condition "!strncmp(fnkeywords[i].word, unitdef, strlen(fnkeywords[i].word))", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:1091:
+cond_false: Condition "fnkeywords[i].checkopen != -1", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:1100:
+if_end: End of if statement
+path:/builddir/build/BUILD/units-2.11/units.c:1101:
+cond_false: Condition "i == 3", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:1102:
+if_end: End of if statement
+path:/builddir/build/BUILD/units-2.11/units.c:1103:
+cond_true: Condition "i == 0", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:1104:
+cond_false: Condition "forward_dim", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:1104:
+cond_false: Condition "inverse_dim", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:1107:
+if_end: End of if statement
+/builddir/build/BUILD/units-2.11/units.c:1108:
+uninit_use_in_call: Using uninitialized value "first" when calling "dupstr".
+/builddir/build/BUILD/units-2.11/units.c:483:4:
+read_parm: Reading a parameter value.
+Error: UNINIT:
+/builddir/build/BUILD/units-2.11/units.c:1043:
+var_decl: Declaring variable "second" without initializer.
+path:/builddir/build/BUILD/units-2.11/units.c:1050:
+cond_false: Condition "*unitname == '('", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:1055:
+if_end: End of if statement
+path:/builddir/build/BUILD/units-2.11/units.c:1061:
+cond_false: Condition "checkunitname(unitname, linenum, file, errfile)", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:1062:
+if_end: End of if statement
+path:/builddir/build/BUILD/units-2.11/units.c:1064:
+cond_false: Condition "start == end", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:1065:
+if_end: End of if statement
+path:/builddir/build/BUILD/units-2.11/units.c:1067:
+cond_false: Condition "!end", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:1067:
+cond_false: Condition "strlen(end) > 1", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:1072:
+if_end: End of if statement
+path:/builddir/build/BUILD/units-2.11/units.c:1085:
+cond_true: Condition "looking_for_keywords", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:1087:
+cond_true: Condition "fnkeywords[i].word", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:1088:
+cond_true: Condition "!strncmp(fnkeywords[i].word, unitdef, strlen(fnkeywords[i].word))", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:1091:
+cond_false: Condition "fnkeywords[i].checkopen != -1", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:1100:
+if_end: End of if statement
+path:/builddir/build/BUILD/units-2.11/units.c:1101:
+cond_false: Condition "i == 3", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:1102:
+if_end: End of if statement
+path:/builddir/build/BUILD/units-2.11/units.c:1103:
+cond_true: Condition "i == 0", taking true branch
+path:/builddir/build/BUILD/units-2.11/units.c:1104:
+cond_false: Condition "forward_dim", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:1104:
+cond_false: Condition "inverse_dim", taking false branch
+path:/builddir/build/BUILD/units-2.11/units.c:1107:
+if_end: End of if statement
+/builddir/build/BUILD/units-2.11/units.c:1109:
+uninit_use: Using uninitialized value "second".

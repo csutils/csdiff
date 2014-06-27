@@ -1,0 +1,60 @@
+Error: FORWARD_NULL:
+/builddir/build/BUILD/units-2.11/units.c:4509: var_compare_op: Comparing "optarg" to null implies that "optarg" might be null.
+/builddir/build/BUILD/units-2.11/units.c:4486: var_deref_model: Passing null pointer "optarg" to "checksigdigits", which dereferences it.
+/builddir/build/BUILD/units-2.11/units.c:2903:3: deref_parm_in_call: Function "strcmp" dereferences "arg".
+
+Error: NULL_RETURNS:
+/builddir/build/BUILD/units-2.11/units.c:4744: returned_null: "strchr" returns null (checked 44 out of 48 times).
+/builddir/build/BUILD/units-2.11/units.c:2121: example_checked: Example 1: "strchr(toadd, 33)" has its value checked in "strchr(toadd, 33)".
+/builddir/build/BUILD/units-2.11/units.c:3464: example_checked: Example 2: "strchr(def, 33)" has its value checked in "strchr(def, 33)".
+/builddir/build/BUILD/units-2.11/units.c:4636: example_checked: Example 3: "strchr(unitstr, 59)" has its value checked in "strchr(unitstr, 59)".
+/builddir/build/BUILD/units-2.11/units.c:640: example_checked: Example 4: "strchr(" \t\n", *endptr)" has its value checked in "strchr(" \t\n", *endptr)".
+/builddir/build/BUILD/units-2.11/units.c:4705: example_checked: Example 5: "strchr(unitstr, 59)" has its value checked in "(nextunitstr = strchr(unitstr, 59)) != NULL".
+/builddir/build/BUILD/units-2.11/units.c:4744: dereference: Dereferencing a null pointer "strchr(firstunitstr, 59)".
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/units-2.11/units.c:4331: alloc_fn: Storage is returned from allocation function "getprogdir".
+/builddir/build/BUILD/units-2.11/units.c:3871:5: alloc_fn: Storage is returned from allocation function "dupstr".
+/builddir/build/BUILD/units-2.11/units.c:483:4: alloc_fn: Storage is returned from allocation function "mymalloc".
+/builddir/build/BUILD/units-2.11/units.c:467:4: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/units-2.11/units.c:467:4: var_assign: Assigning: "pointer" = "malloc(bytes)".
+/builddir/build/BUILD/units-2.11/units.c:472:4: return_alloc: Returning allocated memory "pointer".
+/builddir/build/BUILD/units-2.11/units.c:483:4: var_assign: Assigning: "ret" = "mymalloc(strlen(str) + 1UL, "(dupstr)")".
+/builddir/build/BUILD/units-2.11/units.c:484:4: noescape: Resource "ret" is not freed or pointed-to in function "strcpy". [Note: The source code implementation of the function has been overridden by a builtin model.]
+/builddir/build/BUILD/units-2.11/units.c:485:4: return_alloc: Returning allocated memory "ret".
+/builddir/build/BUILD/units-2.11/units.c:3871:5: var_assign: Assigning: "progdir" = "dupstr(progname)".
+/builddir/build/BUILD/units-2.11/units.c:3943:3: noescape: Resource "progdir" is not freed or pointed-to in function "dupstr".
+/builddir/build/BUILD/units-2.11/units.c:479:20: noescape: "dupstr(char const *)" does not free or save its pointer parameter "str".
+/builddir/build/BUILD/units-2.11/units.c:3944:3: identity_transfer: Passing "progdir" as argument 1 to function "pathend", which returns an offset off that argument.
+/builddir/build/BUILD/units-2.11/units.c:1451:7: var_assign_parm: Assigning: "pointer" = "filename".
+/builddir/build/BUILD/units-2.11/units.c:1457:3: return_var: Returning "pointer", which is a copy of a parameter.
+/builddir/build/BUILD/units-2.11/units.c:3944:3: noescape: Resource "progdir" is not freed or pointed-to in function "pathend".
+/builddir/build/BUILD/units-2.11/units.c:1447:15: noescape: "pathend(char *)" does not free or save its pointer parameter "filename".
+/builddir/build/BUILD/units-2.11/units.c:3944:3: var_assign: Assigning: "p" = "pathend(progdir)".
+/builddir/build/BUILD/units-2.11/units.c:3947:3: return_alloc: Returning allocated memory "progdir".
+/builddir/build/BUILD/units-2.11/units.c:4331: leaked_storage: Ignoring storage allocated by "getprogdir(progname, &fullprogname)" leaks it.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/units-2.11/units.c:4370: alloc_fn: Storage is returned from allocation function "personalunitsfile".
+/builddir/build/BUILD/units-2.11/units.c:4224:5: alloc_fn: Storage is returned from allocation function "mymalloc".
+/builddir/build/BUILD/units-2.11/units.c:467:4: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/units-2.11/units.c:467:4: var_assign: Assigning: "pointer" = "malloc(bytes)".
+/builddir/build/BUILD/units-2.11/units.c:472:4: return_alloc: Returning allocated memory "pointer".
+/builddir/build/BUILD/units-2.11/units.c:4224:5: var_assign: Assigning: "filename" = "mymalloc(strlen(homedir) + strlen(homeunitsfile) + 2UL, "(personalunitsfile)")".
+/builddir/build/BUILD/units-2.11/units.c:4226:5: noescape: Resource "filename" is not freed or pointed-to in function "strcpy". [Note: The source code implementation of the function has been overridden by a builtin model.]
+/builddir/build/BUILD/units-2.11/units.c:4228:3: noescape: Resource "filename" is not freed or pointed-to in function "strcat". [Note: The source code implementation of the function has been overridden by a builtin model.]
+/builddir/build/BUILD/units-2.11/units.c:4229:3: noescape: Resource "filename" is not freed or pointed-to in function "strcat". [Note: The source code implementation of the function has been overridden by a builtin model.]
+/builddir/build/BUILD/units-2.11/units.c:4231:3: noescape: Resource "filename" is not freed or pointed-to in function "fopen".
+/builddir/build/BUILD/units-2.11/units.c:4235:5: return_alloc: Returning allocated memory "filename".
+/builddir/build/BUILD/units-2.11/units.c:4370: var_assign: Assigning: "unitsfile" = storage returned from "personalunitsfile(1, &exists)".
+/builddir/build/BUILD/units-2.11/units.c:4372: noescape: Resource "unitsfile" is not freed or pointed-to in "printf".
+/builddir/build/BUILD/units-2.11/units.c:4408: leaked_storage: Variable "unitsfile" going out of scope leaks the storage it points to.
+
+Error: UNINIT:
+/builddir/build/BUILD/units-2.11/units.c:1043: var_decl: Declaring variable "first" without initializer.
+/builddir/build/BUILD/units-2.11/units.c:1108: uninit_use_in_call: Using uninitialized value "first" when calling "dupstr".
+/builddir/build/BUILD/units-2.11/units.c:483:4: read_parm: Reading a parameter value.
+
+Error: UNINIT:
+/builddir/build/BUILD/units-2.11/units.c:1043: var_decl: Declaring variable "second" without initializer.
+/builddir/build/BUILD/units-2.11/units.c:1109: uninit_use: Using uninitialized value "second".
