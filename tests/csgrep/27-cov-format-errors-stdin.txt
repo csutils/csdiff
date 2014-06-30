@@ -1,0 +1,644 @@
+Error: RESOURCE_LEAK:
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/cib/cib_remote.c:214:
+cond_true: Condition "event_channel", taking true branch
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/cib/cib_remote.c:222:
+open_fn: Returning handle opened by "crm_remote_tcp_connect".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:906:5:
+open_fn: Returning handle opened by "crm_remote_tcp_connect_async".
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:831:5:
+cond_true: Condition "trace_cs == NULL", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:831:5:
+cond_false: Condition "crm_is_callsite_active(trace_cs, 7, 0)", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:831:5:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:833:5:
+cond_false: Condition "ret_ga", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:836:5:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:838:5:
+cond_false: Condition "!res", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:838:5:
+cond_false: Condition "!res->ai_addr", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:841:5:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:843:5:
+cond_true: Condition "rp != NULL", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:846:9:
+cond_false: Condition "!addr", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:848:9:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:850:9:
+cond_true: Condition "rp->ai_canonname", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:853:9:
+cond_true: Condition "trace_cs == NULL", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:853:9:
+cond_false: Condition "crm_is_callsite_active(trace_cs, 7, 0)", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:853:9:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:857:9:
+cond_true: Condition "sock == -1", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:859:13:
+continue: Continuing loop
+path:<unknown>:
+loop: Looping back
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:843:5:
+cond_true: Condition "rp != NULL", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:846:9:
+cond_false: Condition "!addr", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:848:9:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:850:9:
+cond_true: Condition "rp->ai_canonname", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:853:9:
+cond_false: Condition "trace_cs == NULL", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:853:9:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:853:9:
+cond_false: Condition "crm_is_callsite_active(trace_cs, 7, 0)", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:853:9:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:857:9:
+cond_false: Condition "sock == -1", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:860:9:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:863:9:
+cond_true: Condition "addr->sa_family == 10", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:866:34:
+cond_false: Condition "0", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:866:34:
+else_branch: Reached else branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:869:9:
+if_fallthrough: Falling through to end of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:874:9:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:878:9:
+cond_false: Condition "callback", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:885:16:
+else_branch: Reached else branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:886:13:
+cond_false: Condition "internal_tcp_connect(sock, rp->ai_addr, rp->ai_addrlen) == 0", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:888:13:
+if_end: End of if statement
+path:<unknown>:
+loop: Jumping back to the beginning of the loop
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:843:5:
+loop_begin: Jumped back to beginning of loop
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:843:5:
+cond_true: Condition "rp != NULL", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:846:9:
+cond_false: Condition "!addr", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:848:9:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:850:9:
+cond_true: Condition "rp->ai_canonname", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:853:9:
+cond_false: Condition "trace_cs == NULL", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:853:9:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:853:9:
+cond_false: Condition "crm_is_callsite_active(trace_cs, 7, 0)", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:853:9:
+if_end: End of if statement
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:856:9:
+open_fn: Returning handle opened by "socket".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:856:9:
+var_assign: Assigning: "sock" = "socket(rp->ai_family, SOCK_STREAM, IPPROTO_TCP)".
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:857:9:
+cond_false: Condition "sock == -1", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:860:9:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:863:9:
+cond_true: Condition "addr->sa_family == 10", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:866:34:
+cond_false: Condition "0", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:866:34:
+else_branch: Reached else branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:869:9:
+if_fallthrough: Falling through to end of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:874:9:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:878:9:
+cond_false: Condition "callback", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:885:16:
+else_branch: Reached else branch
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:886:13:
+noescape: Resource "sock" is not freed or pointed-to in function "internal_tcp_connect".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:791:26:
+noescape: "internal_tcp_connect(int, struct sockaddr const *, socklen_t)" does not free or save its handle parameter "sock".
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:886:13:
+cond_true: Condition "internal_tcp_connect(sock, rp->ai_addr, rp->ai_addrlen) == 0", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:887:17:
+break: Breaking from loop
+path:<unknown>:
+loop_end: Reached end of loop
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:897:5:
+cond_true: Condition "res", taking true branch
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:900:5:
+return_handle: Returning opened handle "sock".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:906:5:
+return_handle_fn: Directly returning handle opened by "crm_remote_tcp_connect_async".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/cib/cib_remote.c:222:
+var_assign: Assigning: "sock" = handle returned from "crm_remote_tcp_connect(private->server, private->port)".
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/cib/cib_remote.c:223:
+cond_false: Condition "sock < 0", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/cib/cib_remote.c:227:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/cib/cib_remote.c:229:
+cond_true: Condition "private->encrypted", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/cib/cib_remote.c:232:
+cond_true: Condition "remote_gnutls_credentials_init == 0", taking true branch
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/cib/cib_remote.c:239:
+noescape: Resource "sock" is not freed or pointed-to in "crm_create_anon_tls_session".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:169:33:
+noescape: "crm_create_anon_tls_session(int, int, void *)" does not free or save its handle parameter "csock".
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/cib/cib_remote.c:241:
+cond_true: Condition "crm_initiate_client_tls_handshake(connection, 5000) != 0", taking true branch
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/cib/cib_remote.c:248:
+leaked_handle: Handle variable "sock" going out of scope leaks the handle.
+Error: RESOURCE_LEAK:
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/cib/cib_remote.c:214:
+cond_true: Condition "event_channel", taking true branch
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/cib/cib_remote.c:222:
+open_fn: Returning handle opened by "crm_remote_tcp_connect".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:906:5:
+open_fn: Returning handle opened by "crm_remote_tcp_connect_async".
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:831:5:
+cond_true: Condition "trace_cs == NULL", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:831:5:
+cond_false: Condition "crm_is_callsite_active(trace_cs, 7, 0)", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:831:5:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:833:5:
+cond_false: Condition "ret_ga", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:836:5:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:838:5:
+cond_false: Condition "!res", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:838:5:
+cond_false: Condition "!res->ai_addr", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:841:5:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:843:5:
+cond_true: Condition "rp != NULL", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:846:9:
+cond_false: Condition "!addr", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:848:9:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:850:9:
+cond_true: Condition "rp->ai_canonname", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:853:9:
+cond_true: Condition "trace_cs == NULL", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:853:9:
+cond_false: Condition "crm_is_callsite_active(trace_cs, 7, 0)", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:853:9:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:857:9:
+cond_true: Condition "sock == -1", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:859:13:
+continue: Continuing loop
+path:<unknown>:
+loop: Looping back
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:843:5:
+cond_true: Condition "rp != NULL", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:846:9:
+cond_false: Condition "!addr", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:848:9:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:850:9:
+cond_true: Condition "rp->ai_canonname", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:853:9:
+cond_false: Condition "trace_cs == NULL", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:853:9:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:853:9:
+cond_false: Condition "crm_is_callsite_active(trace_cs, 7, 0)", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:853:9:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:857:9:
+cond_false: Condition "sock == -1", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:860:9:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:863:9:
+cond_true: Condition "addr->sa_family == 10", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:866:34:
+cond_false: Condition "0", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:866:34:
+else_branch: Reached else branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:869:9:
+if_fallthrough: Falling through to end of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:874:9:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:878:9:
+cond_false: Condition "callback", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:885:16:
+else_branch: Reached else branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:886:13:
+cond_false: Condition "internal_tcp_connect(sock, rp->ai_addr, rp->ai_addrlen) == 0", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:888:13:
+if_end: End of if statement
+path:<unknown>:
+loop: Jumping back to the beginning of the loop
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:843:5:
+loop_begin: Jumped back to beginning of loop
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:843:5:
+cond_true: Condition "rp != NULL", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:846:9:
+cond_false: Condition "!addr", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:848:9:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:850:9:
+cond_true: Condition "rp->ai_canonname", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:853:9:
+cond_false: Condition "trace_cs == NULL", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:853:9:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:853:9:
+cond_false: Condition "crm_is_callsite_active(trace_cs, 7, 0)", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:853:9:
+if_end: End of if statement
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:856:9:
+open_fn: Returning handle opened by "socket".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:856:9:
+var_assign: Assigning: "sock" = "socket(rp->ai_family, SOCK_STREAM, IPPROTO_TCP)".
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:857:9:
+cond_false: Condition "sock == -1", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:860:9:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:863:9:
+cond_true: Condition "addr->sa_family == 10", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:866:34:
+cond_false: Condition "0", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:866:34:
+else_branch: Reached else branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:869:9:
+if_fallthrough: Falling through to end of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:874:9:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:878:9:
+cond_false: Condition "callback", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:885:16:
+else_branch: Reached else branch
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:886:13:
+noescape: Resource "sock" is not freed or pointed-to in function "internal_tcp_connect".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:791:26:
+noescape: "internal_tcp_connect(int, struct sockaddr const *, socklen_t)" does not free or save its handle parameter "sock".
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:886:13:
+cond_true: Condition "internal_tcp_connect(sock, rp->ai_addr, rp->ai_addrlen) == 0", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:887:17:
+break: Breaking from loop
+path:<unknown>:
+loop_end: Reached end of loop
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:897:5:
+cond_true: Condition "res", taking true branch
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:900:5:
+return_handle: Returning opened handle "sock".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:906:5:
+return_handle_fn: Directly returning handle opened by "crm_remote_tcp_connect_async".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/cib/cib_remote.c:222:
+var_assign: Assigning: "sock" = handle returned from "crm_remote_tcp_connect(private->server, private->port)".
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/cib/cib_remote.c:223:
+cond_false: Condition "sock < 0", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/cib/cib_remote.c:227:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/cib/cib_remote.c:229:
+cond_true: Condition "private->encrypted", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/cib/cib_remote.c:232:
+cond_true: Condition "remote_gnutls_credentials_init == 0", taking true branch
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/cib/cib_remote.c:239:
+noescape: Resource "sock" is not freed or pointed-to in "crm_create_anon_tls_session".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:169:33:
+noescape: "crm_create_anon_tls_session(int, int, void *)" does not free or save its handle parameter "csock".
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/cib/cib_remote.c:241:
+cond_false: Condition "crm_initiate_client_tls_handshake(connection, 5000) != 0", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/cib/cib_remote.c:249:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/cib/cib_remote.c:253:
+if_fallthrough: Falling through to end of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/cib/cib_remote.c:255:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/cib/cib_remote.c:269:
+cond_true: Condition "disconnected", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/cib/cib_remote.c:275:
+cond_true: Condition "xml_cs == NULL", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/cib/cib_remote.c:275:
+cond_false: Condition "crm_is_callsite_active(xml_cs, 8 /* 7 + 1 */, 0)", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/cib/cib_remote.c:275:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/cib/cib_remote.c:276:
+cond_true: Condition "answer == NULL", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/cib/cib_remote.c:279:
+if_fallthrough: Falling through to end of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/cib/cib_remote.c:294:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/cib/cib_remote.c:298:
+cond_true: Condition "rc != 0", taking true branch
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/cib/cib_remote.c:300:
+leaked_handle: Handle variable "sock" going out of scope leaks the handle.
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/tools/crm_resource.c:981:
+alloc_fn: Storage is returned from allocation function "parse_cli_lifetime".
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/tools/crm_resource.c:856:5:
+cond_false: Condition "input == NULL", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/tools/crm_resource.c:858:5:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/tools/crm_resource.c:861:5:
+cond_false: Condition "duration == NULL", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/tools/crm_resource.c:867:5:
+if_end: End of if statement
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/tools/crm_resource.c:876:5:
+alloc_fn: Storage is returned from allocation function "crm_time_as_string".
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/iso8601.c:414:5:
+cond_true: Condition "date_time == NULL", taking true branch
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/iso8601.c:415:9:
+alloc_fn: Storage is returned from allocation function "strdup".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/iso8601.c:415:9:
+return_alloc_fn: Directly returning storage allocated by "strdup".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/tools/crm_resource.c:876:5:
+var_assign: Assigning: "later_s" = "crm_time_as_string(later, 3)".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/tools/crm_resource.c:882:5:
+return_alloc: Returning allocated memory "later_s".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/tools/crm_resource.c:981:
+var_assign: Assigning: "later_s" = storage returned from "parse_cli_lifetime(move_lifetime)".
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/tools/crm_resource.c:987:
+cond_true: Condition "move_lifetime", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/tools/crm_resource.c:987:
+cond_false: Condition "later_s == NULL", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/tools/crm_resource.c:989:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/tools/crm_resource.c:991:
+cond_true: Condition "cib_conn == NULL", taking true branch
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/tools/crm_resource.c:992:
+leaked_storage: Variable "later_s" going out of scope leaks the storage it points to.
+Error: RESOURCE_LEAK:
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/flatten.c:123:
+cond_false: Condition "conf_open() < 0", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/flatten.c:126:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/flatten.c:128:
+cond_true: Condition "argc >= 2", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/flatten.c:130:
+cond_true: Condition "!strcmp(argv[0], "-r")", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/flatten.c:131:
+cond_true: Condition "!new_rb", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/flatten.c:133:
+if_fallthrough: Falling through to end of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/flatten.c:136:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/flatten.c:137:
+loop: Jumping back to the beginning of the loop
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/flatten.c:128:
+loop_begin: Jumped back to beginning of loop
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/flatten.c:128:
+cond_true: Condition "argc >= 2", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/flatten.c:130:
+cond_true: Condition "!strcmp(argv[0], "-r")", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/flatten.c:131:
+cond_false: Condition "!new_rb", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/flatten.c:132:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/flatten.c:133:
+if_fallthrough: Falling through to end of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/flatten.c:136:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/flatten.c:137:
+loop: Jumping back to the beginning of the loop
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/flatten.c:128:
+loop_begin: Jumped back to beginning of loop
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/flatten.c:128:
+cond_true: Condition "argc >= 2", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/flatten.c:130:
+cond_false: Condition "!strcmp(argv[0], "-r")", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/flatten.c:133:
+else_branch: Reached else branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/flatten.c:134:
+cond_true: Condition "f == stdout", taking true branch
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/flatten.c:135:
+alloc_fn: Storage is returned from allocation function "fopen".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/flatten.c:135:
+var_assign: Assigning: "f" = storage returned from "fopen(argv[0], "w+")".
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/flatten.c:137:
+loop: Jumping back to the beginning of the loop
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/flatten.c:128:
+loop_begin: Jumped back to beginning of loop
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/flatten.c:128:
+cond_false: Condition "argc >= 2", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/flatten.c:137:
+loop_end: Reached end of loop
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/flatten.c:143:
+cond_true: Condition "!rulelist", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/flatten.c:145:
+goto: Jumping to label "out"
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/flatten.c:193:
+label: Reached label "out"
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/flatten.c:194:
+cond_false: Condition "ret < 0", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/flatten.c:196:
+else_branch: Reached else branch
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/flatten.c:204:
+leaked_storage: Variable "f" going out of scope leaks the storage it points to.
+Error: RESOURCE_LEAK:
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/ais/plugin.c:1028:
+start: Starting defect path here.
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/ais/plugin.c:1028:
+cond_true: Condition "type > crm_msg_none", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/ais/plugin.c:1028:
+cond_true: Condition "type < 10UL /* sizeof (pcmk_children) / sizeof (pcmk_children[0]) */", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/ais/plugin.c:1043:
+cond_true: Condition "transient == 0", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/ais/plugin.c:1043:
+cond_true: Condition "type > crm_msg_none", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/ais/plugin.c:1043:
+cond_true: Condition "mutable->host.local", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/ais/plugin.c:1043:
+cond_true: Condition "pcmk_children[type].conn == NULL", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/ais/plugin.c:1043:
+cond_true: Condition "mutable->host.type == crm_msg_ais", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/ais/plugin.c:1047:
+cond_true: Condition "mutable->sender.type != mutable->sender.pid", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/ais/plugin.c:1047:
+cond_false: Condition "(mutable->sender.type != mutable->sender.pid) == 0", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/ais/plugin.c:1047:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/ais/plugin.c:1050:
+cond_true: Condition "plugin_log_level < 6", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/ais/plugin.c:1050:
+continue: Continuing loop
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/ais/plugin.c:1050:
+loop: Looping back
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/ais/plugin.c:1056:
+cond_true: Condition "pcmk_children[type].flags & 1", taking true branch
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/ais/plugin.c:1057:
+alloc_fn: Storage is returned from allocation function "pcmk_generate_membership_data".
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/ais/plugin.c:1202:5:
+cond_false: Condition "data.string == NULL", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/ais/plugin.c:1202:5:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/ais/plugin.c:1209:5:
+cond_false: Condition "plugin_has_votes > plugin_expected_votes", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/ais/plugin.c:1211:5:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/ais/plugin.c:1213:5:
+cond_true: Condition "plugin_has_quorum()", taking true branch
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/ais/plugin.c:1220:5:
+alloc_fn: Storage is returned from allocation function "realloc".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/ais/plugin.c:1220:5:
+var_assign: Assigning: "data.string" = "realloc(data.string, size + 9)".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/ais/plugin.c:1222:5:
+return_alloc: Returning allocated memory "data.string".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/ais/plugin.c:1057:
+var_assign: Assigning: "update" = storage returned from "pcmk_generate_membership_data()".
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/ais/plugin.c:1060:
+cond_true: Condition "plugin_log_level < 6", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/ais/plugin.c:1060:
+continue: Continuing loop
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/ais/plugin.c:1060:
+loop: Looping back
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/ais/plugin.c:1062:
+noescape: Resource "update" is not freed or pointed-to in "send_client_msg".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/ais/utils.c:551:29:
+noescape: "send_client_msg(void *, enum crm_ais_msg_class, enum crm_ais_msg_types, char const *)" does not free or save its pointer parameter "data".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/ais/plugin.c:1063:
+leaked_storage: Variable "update" going out of scope leaks the storage it points to.
+Error: REVERSE_INULL:
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/pengine/constraints.c:202:
+deref_ptr: Directly dereferencing pointer "tag".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/pengine/constraints.c:214:
+check_after_deref: Null-checking "tag" suggests that it may be null, but it has already been dereferenced on all paths leading to the check.
+Error: REVERSE_INULL:
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/pengine/constraints.c:202:
+deref_ptr: Directly dereferencing pointer "tag".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/pengine/constraints.c:219:
+check_after_deref: Null-checking "tag" suggests that it may be null, but it has already been dereferenced on all paths leading to the check.
+Error: REVERSE_INULL:
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/xml.c:959:
+deref_ptr_in_call: Dereferencing pointer "target".
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/xml.c:787:5:
+cond_true: Condition "xml_acl_enabled(xml) == 0", taking true branch
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/xml.c:788:9:
+deref_parm: Directly dereferencing parameter "xml".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/xml.c:961:
+check_after_deref: Null-checking "target" suggests that it may be null, but it has already been dereferenced on all paths leading to the check.
+Error: REVERSE_INULL:
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:209:
+alias: Assigning: "curr" = "*reslist".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:211:
+deref_ptr: Directly dereferencing pointer "curr".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:245:
+check_after_deref: Null-checking "curr" suggests that it may be null, but it has already been dereferenced on all paths leading to the check.
+Error: REVERSE_INULL:
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:165:
+alias: Assigning: "curr" = "*reslist".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:166:
+deref_ptr: Directly dereferencing pointer "curr".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:182:
+check_after_deref: Null-checking "curr" suggests that it may be null, but it has already been dereferenced on all paths leading to the check.
+Error: REVERSE_INULL:
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/resrules.c:49:
+alias: Assigning: "curr" = "*rulelist".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/resrules.c:50:
+deref_ptr: Directly dereferencing pointer "curr".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/resrules.c:56:
+check_after_deref: Null-checking "curr" suggests that it may be null, but it has already been dereferenced on all paths leading to the check.
+Error: REVERSE_INULL:
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:496:
+alias: Assigning: "currule" = "*rulelist".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:499:
+deref_ptr: Directly dereferencing pointer "currule".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:515:
+check_after_deref: Null-checking "currule" suggests that it may be null, but it has already been dereferenced on all paths leading to the check.
+Error: REVERSE_INULL:
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/pengine/unpack.c:3150:
+deref_ptr_in_call: Dereferencing pointer "this_node".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/pengine/utils.c:1962:5:
+deref_parm: Directly dereferencing parameter "node".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/pengine/unpack.c:3156:
+check_after_deref: Null-checking "this_node" suggests that it may be null, but it has already been dereferenced on all paths leading to the check.
+Error: REVERSE_INULL:
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/flatten.c:159:
+alias: Assigning: "rn" = "tree".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/flatten.c:162:
+deref_ptr: Directly dereferencing pointer "rn".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/flatten.c:182:
+check_after_deref: Null-checking "rn" suggests that it may be null, but it has already been dereferenced on all paths leading to the check.
+Error: REVERSE_INULL:
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/resrules.c:964:
+alias: Assigning: "curr" = "*rulelist".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/resrules.c:965:
+deref_ptr: Directly dereferencing pointer "curr".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/resrules.c:968:
+check_after_deref: Null-checking "curr" suggests that it may be null, but it has already been dereferenced on all paths leading to the check.
+Error: USE_AFTER_FREE:
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:496:
+cond_true: Condition "*rulelist", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:496:
+cond_true: Condition "currule = *rulelist", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:498:
+cond_true: Condition "true", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:502:
+cond_false: Condition "!newres", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:503:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:505:
+cond_false: Condition "store_resource(reslist, newres) != 0", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:509:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:513:
+loop: Jumping back to the beginning of the loop
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:498:
+loop_begin: Jumped back to beginning of loop
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:498:
+cond_true: Condition "true", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:502:
+cond_false: Condition "!newres", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:503:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:505:
+cond_false: Condition "store_resource(reslist, newres) != 0", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:509:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:513:
+loop: Jumping back to the beginning of the loop
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:498:
+loop_begin: Jumped back to beginning of loop
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:498:
+cond_true: Condition "true", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:502:
+cond_false: Condition "!newres", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:503:
+if_end: End of if statement
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:505:
+cond_true: Condition "store_resource(reslist, newres) != 0", taking true branch
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:508:
+freed_arg: "destroy_resource" frees "newres".
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:261:5:
+cond_true: Condition "res->r_name", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:264:5:
+cond_true: Condition "res->r_attrs", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:265:9:
+cond_true: Condition "res->r_attrs", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:265:9:
+cond_true: Condition "(res->r_attrs + x).ra_name", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:268:9:
+loop: Jumping back to the beginning of the loop
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:265:9:
+loop_begin: Jumped back to beginning of loop
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:265:9:
+cond_true: Condition "res->r_attrs", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:265:9:
+cond_true: Condition "(res->r_attrs + x).ra_name", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:268:9:
+loop: Jumping back to the beginning of the loop
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:265:9:
+loop_begin: Jumped back to beginning of loop
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:265:9:
+cond_true: Condition "res->r_attrs", taking true branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:265:9:
+cond_false: Condition "(res->r_attrs + x).ra_name", taking false branch
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:268:9:
+loop_end: Reached end of loop
+path:/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:273:5:
+cond_true: Condition "res->r_actions", taking true branch
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:278:5:
+freed_arg: "free" frees parameter "res".
+/builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/extra/rgmanager/reslist.c:512:
+deref_after_free: Dereferencing freed pointer "newres".
