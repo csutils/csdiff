@@ -43,15 +43,21 @@ void parseError(
     std::cerr << ": parse error: " << msg << "\n";
 }
 
+void printError(const InFileException &e) {
+    std::cerr << e.fileName << ": failed to open input file\n";
+}
+
 bool loadPropsFromIniFile(
         AbstractWriter             &writer,
-        std::istream               &input,
         const std::string          &fName)
 {
     try {
+        // open the input file
+        InStream input(fName.c_str());
+
         // parse .ini
         pt::ptree root;
-        read_ini(input, root);
+        read_ini(input.str(), root);
 
         // read the old scan properties from writer (if any)
         TScanProps props(writer.getScanProps());
@@ -64,6 +70,10 @@ bool loadPropsFromIniFile(
         // write the updated scan properties back to the writer
         writer.setScanProps(props);
         return true;
+    }
+    catch (const InFileException &e) {
+        printError(e);
+        return false;
     }
     catch (pt::file_parser_error &e) {
         parseError(e.message(), fName, e.line());
@@ -132,10 +142,6 @@ inline TVal valueOf(const TVar &var) {
         return TVal();
     else
         return var.template as<TVal>();
-}
-
-void printError(const InFileException &e) {
-    std::cerr << e.fileName << ": failed to open input file\n";
 }
 
 int main(int argc, char *argv[]) {
@@ -227,11 +233,8 @@ int main(int argc, char *argv[]) {
     }
 
     const unsigned filesCnt = files.size();
-    if (!filesCnt) {
-        InStream strIni(fnIni.c_str());
-        if (!loadPropsFromIniFile(writer, strIni.str(), fnIni))
-            hasError = true;
-    }
+    if (!filesCnt && !fnIni.empty() && !loadPropsFromIniFile(writer, fnIni))
+        hasError = true;
 
     for (unsigned i = 0U; i < filesCnt; ++i) {
         const string &fnErr = files[i];
@@ -246,11 +249,8 @@ int main(int argc, char *argv[]) {
                 writer.setScanProps(pErr.getScanProps());
 
                 // load .ini if available
-                if (!fnIni.empty()) {
-                    InStream strIni(fnIni.c_str());
-                    if (!loadPropsFromIniFile(writer, strIni.str(), fnIni))
-                        hasError = true;
-                }
+                if (!fnIni.empty() && !loadPropsFromIniFile(writer, fnIni))
+                    hasError = true;
             }
 
             if (fnMap.empty()) {
