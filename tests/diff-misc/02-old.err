@@ -1,0 +1,7 @@
+Error: CHECKED_RETURN (CWE-252):
+coreutils-8.4/src/su.c:608: check_return: Calling function "sigaddset(sigset_t *, int)" without checking return value (as is done elsewhere 4 out of 5 times).
+coreutils-8.4/src/su.c:578: example_checked: Example 1: "sigaddset(&ourset, 2)" has its value checked in "sigaddset(&ourset, 2)".
+coreutils-8.4/src/su.c:578: example_checked: Example 2: "sigaddset(&ourset, 3)" has its value checked in "sigaddset(&ourset, 3)".
+coreutils-8.4/src/su.c:584: example_checked: Example 3: "sigaddset(&ourset, 14)" has its value checked in "sigaddset(&ourset, 14)".
+coreutils-8.4/src/su.c:584: example_checked: Example 4: "sigaddset(&ourset, 15)" has its value checked in "sigaddset(&ourset, 15)".
+coreutils-8.4/src/su.c:608: unchecked_value: No check of the return value of "sigaddset(&blockset, (union __C8648({ .__in = status}).__i & 0xff00) >> 8)".

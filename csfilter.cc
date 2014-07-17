@@ -110,6 +110,9 @@ struct MsgFilter::Private {
 
         // "__coverity_strcmp" -> "strcmp", etc.
         addMsgFilter("", "__coverity_", "");
+
+        // artificial names of anonymous unions that Coverity produces
+        addMsgFilter("", "union __C[0-9]+");
     }
 };
 
