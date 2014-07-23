@@ -32,6 +32,7 @@ class CweMap {
         bool loadCweMap(std::istream &, const std::string &fileName);
         bool assignCwe(Defect &def) const;
         bool empty() const;
+        void setSilent(bool);
 
     private:
         struct Private;
@@ -41,7 +42,7 @@ class CweMap {
 class CweMapDecorator: public GenericAbstractFilter {
     public:
         /// @param writer the instance will be deleted on destruction
-        CweMapDecorator(AbstractWriter *writer);
+        CweMapDecorator(AbstractWriter *writer, bool silent);
         virtual ~CweMapDecorator();
 
         virtual void handleDef(const Defect &def);

@@ -163,7 +163,7 @@ int main(int argc, char *argv[]) {
              "load scan properties from the given INI file")
             ("mapfile", po::value<string>(),
              "load defect IDs from comma-separated mapfile")
-            ("quiet,q", "do not report any parsing errors")
+            ("quiet,q", "do not report non-fatal errors")
             ("help", "produce help message")
             ("version", "print version");
 
@@ -213,7 +213,7 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    CweMapDecorator writer(new JsonWriter(std::cout));
+    CweMapDecorator writer(new JsonWriter(std::cout), silent);
 
     DefQueue defQueue;
 

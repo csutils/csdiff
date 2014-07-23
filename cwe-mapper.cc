@@ -32,6 +32,7 @@ struct CweMap::Private {
     std::string         fileName;
     std::string         line;
     int                 lineno;
+    bool                silent;
     bool                hasError;
     TMapByChk           mapByChk;
 
@@ -42,6 +43,7 @@ struct CweMap::Private {
 CweMap::CweMap():
     d(new Private)
 {
+    d->silent = false;
     d->hasError = false;
 }
 
@@ -53,8 +55,14 @@ bool CweMap::empty() const {
     return d->mapByChk.empty();
 }
 
+void CweMap::setSilent(bool silent) {
+    d->silent = silent;
+}
+
 void CweMap::Private::parseError(const std::string &msg) {
     this->hasError = true;
+    if (this->silent)
+        return;
     std::cerr
         << this->fileName << ":"
         << this->lineno << ": error: "
@@ -113,7 +121,9 @@ bool CweMap::assignCwe(Defect &def) const {
     // lookup by checker
     Private::TMapByChk::const_iterator rowIt = d->mapByChk.find(def.checker);
     if (d->mapByChk.end() == rowIt) {
-        std::cerr << "warning: CWE not found: checker = " << def.checker <<"\n";
+        if (!d->silent)
+            std::cerr << "warning: CWE not found: checker = "
+                << def.checker <<"\n";
         return false;
     }
 
@@ -122,8 +132,9 @@ bool CweMap::assignCwe(Defect &def) const {
     const DefEvent &evt = def.events[def.keyEventIdx];
     Private::TNumByEvent::const_iterator cweIt = row.find(evt.event);
     if (row.end() == cweIt) {
-        std::cerr << "warning: CWE not found: checker = " << def.checker
-            << ", event = " << evt.event << "\n";
+        if (!d->silent)
+            std::cerr << "warning: CWE not found: checker = " << def.checker
+                << ", event = " << evt.event << "\n";
         cweIt = row.begin();
     }
 
@@ -133,7 +144,7 @@ bool CweMap::assignCwe(Defect &def) const {
         // already assigned
         return true;
 
-    if (cweDst)
+    if (cweDst && !d->silent)
         // we are rewriting the CWE
         std::cerr << "warning: CWE overriden: "
             << cweSrc << " -> "
@@ -151,10 +162,11 @@ struct CweMapDecorator::Private {
     CweMap              cweMap;
 };
 
-CweMapDecorator::CweMapDecorator(AbstractWriter *writer):
+CweMapDecorator::CweMapDecorator(AbstractWriter *writer, bool silent):
     GenericAbstractFilter(writer),
     d(new Private)
 {
+    d->cweMap.setSilent(silent);
 }
 
 CweMapDecorator::~CweMapDecorator() {
