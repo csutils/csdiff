@@ -148,43 +148,29 @@ bool CweMap::assignCwe(Defect &def) const {
 // /////////////////////////////////////////////////////////////////////////////
 // implementation of CweMapDecorator
 struct CweMapDecorator::Private {
-    AbstractWriter     *slave;
     CweMap              cweMap;
 };
 
 CweMapDecorator::CweMapDecorator(AbstractWriter *writer):
+    GenericAbstractFilter(writer),
     d(new Private)
 {
-    d->slave = writer;
 }
 
 CweMapDecorator::~CweMapDecorator() {
-    delete d->slave;
     delete d;
-}
-
-const TScanProps& CweMapDecorator::getScanProps() const {
-    return d->slave->getScanProps();
-}
-
-void CweMapDecorator::setScanProps(const TScanProps &props) {
-    d->slave->setScanProps(props);
 }
 
 void CweMapDecorator::handleDef(const Defect &orig) {
     if (d->cweMap.empty()) {
         // CweMap not populated
-        d->slave->handleDef(orig);
+        slave_->handleDef(orig);
         return;
     }
 
     Defect def(orig);
     d->cweMap.assignCwe(def);
-    d->slave->handleDef(def);
-}
-
-void CweMapDecorator::flush() {
-    d->slave->flush();
+    slave_->handleDef(def);
 }
 
 CweMap& CweMapDecorator::cweMap() {

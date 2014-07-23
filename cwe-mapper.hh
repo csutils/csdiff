@@ -20,7 +20,7 @@
 #ifndef H_GUARD_CWE_MAPPER_H
 #define H_GUARD_CWE_MAPPER_H
 
-#include "abstract-writer.hh"
+#include "abstract-filter.hh"
 
 #include <iostream>
 
@@ -38,17 +38,13 @@ class CweMap {
         Private *d;
 };
 
-class CweMapDecorator: public AbstractWriter {
+class CweMapDecorator: public GenericAbstractFilter {
     public:
         /// @param writer the instance will be deleted on destruction
         CweMapDecorator(AbstractWriter *writer);
         virtual ~CweMapDecorator();
 
-        virtual const TScanProps& getScanProps() const;
-        virtual void setScanProps(const TScanProps &);
-
         virtual void handleDef(const Defect &def);
-        virtual void flush();
 
         CweMap& cweMap();
 
