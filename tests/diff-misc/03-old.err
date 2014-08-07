@@ -1,0 +1,2 @@
+Error: SIZEOF_MISMATCH (CWE-398):
+xf86-video-i740-1.3.4/src/i740_video.c:1181: suspicious_sizeof: Passing argument "264" to function calloc(size_t, size_t) that returns a pointer of type "XF86VideoAdaptorPtr" is suspicious because a multiple of sizeof(struct __C17818) /*192*/ is expected.

@@ -95,8 +95,6 @@ struct MsgFilter::Private {
                 "\\(instance [0-9]+\\)");
         addMsgFilter("STRING_OVERFLOW",
                 "You might overrun the [0-9][0-9]* byte");
-        addMsgFilter("CONSTANT_EXPRESSION_RESULT",
-                "union __*C[0-9][0-9]*");
         // ignore changes in parameters -> it is still the same UNUSED_VALUE
         addMsgFilter("UNUSED_VALUE",
                 "returned by \"([^\\(]+)\\(.*\\)\"",
@@ -111,8 +109,8 @@ struct MsgFilter::Private {
         // "__coverity_strcmp" -> "strcmp", etc.
         addMsgFilter("", "__coverity_", "");
 
-        // artificial names of anonymous unions that Coverity produces
-        addMsgFilter("", "union __C[0-9]+");
+        // artificial field names of anonymous unions that Coverity produces
+        addMsgFilter("", "__C[0-9]+");
     }
 };
 
