@@ -100,7 +100,7 @@ namespace CsLib {
                 return "";
 
             const std::string &args = it->second;
-            const boost::regex reSrpm("^.*[ /]([^ /]*)\\.src\\.rpm.*$");
+            const boost::regex reSrpm("^.*[ /']([^ /']*)\\.src\\.rpm.*$");
 
             boost::smatch sm;
             if (!boost::regex_match(args, sm, reSrpm))
