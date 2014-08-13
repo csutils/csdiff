@@ -387,28 +387,39 @@ void CovParser::Private::wrongToken(const EToken expected) {
 }
 
 bool CovParser::Private::seekForToken(const EToken token, TEvtList *pEvtList) {
-    if (token == this->code)
-        return true;
-
     for (;;) {
-        this->code = this->lexer.readNext();
         if (token == this->code)
             return true;
 
+        bool stopReached = false;
+
         switch (this->code) {
             case T_NULL:
+                // read the first defect from the input stream
+                break;
+
             case T_EMPTY:
-            case T_CHECKER:
-                return false;
+                // skip empty lines while seeking for a token
+                break;
 
             case T_COMMENT:
                 // capture a comment event
                 pEvtList->push_back(this->lexer.evt());
-                continue;
+                break;
+
+            case T_CHECKER:
+                // stop the seek now (to allow recovery in higher levels)
+                stopReached = true;
+                // fall through!
 
             default:
                 this->wrongToken(token);
         }
+
+        this->code = this->lexer.readNext();
+
+        if (stopReached || (T_NULL == this->code))
+            return false;
     }
 }
 
@@ -462,9 +473,8 @@ fail:
 bool CovParser::Private::parseNext(Defect *def) {
     // parse defect header
     TEvtList evtList;
-    while (!this->seekForToken(T_CHECKER, &evtList))
-        if (T_EMPTY != this->code)
-            return false;
+    if (!this->seekForToken(T_CHECKER, &evtList))
+        return false;
 
     *def = this->lexer.def();
     def->events.swap(evtList);
