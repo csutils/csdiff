@@ -1,0 +1,18 @@
+Error: SWAPPED_ARGUMENTS:
+/builddir/build/BUILD/tog-pegasus/src/Clients/tomof/clientRepositoryInterface.cpp:206: swapped_arguments: The positions of arguments in the call to "enumerateInstances" do not match the ordering of the parameters:
+* "includeQualifiers" is passed to "localOnly" rather than to "includeQualifiers"
+* "includeClassOrigin" is passed to "includeQualifiers" rather than to "includeClassOrigin"
+/builddir/build/BUILD/tog-pegasus/src/Pegasus/Client/CIMClient.cpp:277:1: param_names: The parameters are called: "nameSpace", "className", "deepInheritance", "localOnly", "includeQualifiers", "includeClassOrigin" and "propertyList".
+
+Error: TAINTED_SCALAR:
+/builddir/build/BUILD/tog-pegasus/src/Pegasus/Client/CIMClientRep.cpp:1300: tainted_data_return: Function "getenv" returns tainted data.
+/builddir/build/BUILD/tog-pegasus/src/Pegasus/Client/CIMClientRep.cpp:1300: var_assign: Assigning: "envVar" = "getenv", which taints "envVar".
+/builddir/build/BUILD/tog-pegasus/src/Pegasus/Client/CIMClientRep.cpp:1302: tainted_data: Passing tainted variable "envVar" to a tainted sink.
+/builddir/build/BUILD/tog-pegasus/src/Pegasus/Common/StringInline.h:132:5: data_index: Passing tainted variable "str" to a tainted data index sink.
+/builddir/build/BUILD/tog-pegasus/src/Pegasus/Common/StringInline.h:143:5: data_index: Passing tainted variable "str" to a tainted data index sink.
+/builddir/build/BUILD/tog-pegasus/src/Pegasus/Common/String.cpp:643:5: data_index: Passing tainted variable "str" to a tainted data index sink.
+/builddir/build/BUILD/tog-pegasus/src/Pegasus/Common/StringRep.h:271:5: data_index: Passing tainted variable "q" to a tainted data index sink.
+/builddir/build/BUILD/tog-pegasus/src/Pegasus/Common/StringRep.h:174:20: parm_assign_alias: Assigning: "q" = "src", which taints "q".
+/builddir/build/BUILD/tog-pegasus/src/Pegasus/Common/StringRep.h:247:9: else_branch: Reached else branch
+/builddir/build/BUILD/tog-pegasus/src/Pegasus/Common/StringRep.h:241:9: lower_bounds: Checking lower bounds of unsigned scalar "*q" by "*q < 128".
+/builddir/build/BUILD/tog-pegasus/src/Pegasus/Common/StringRep.h:248:21: data_index: Using tainted variable "(Pegasus::Uint8)*q" as an index to array "Pegasus::trailingBytesForUTF8".

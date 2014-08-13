@@ -483,8 +483,17 @@ bool CovParser::Private::parseNext(Defect *def) {
     this->code = this->lexer.readNext();
     for (;;) {
         switch (this->code) {
-            case T_NULL:
             case T_EMPTY:
+                // unless T_EVENT follows, we are done with this defect
+                do {
+                    this->code = this->lexer.readNext();
+                }
+                while (T_EMPTY == this->code);
+                if (T_EVENT == this->code)
+                    continue;
+                // fall through!
+
+            case T_NULL:
             case T_CHECKER:
                 goto done;
 
