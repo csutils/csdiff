@@ -345,8 +345,8 @@ struct CovParser::Private {
     }
 
     void parseError(const std::string &msg);
-    void wrongToken();
-    bool seekForToken(const EToken, TEvtList *pEvtList);
+    void wrongToken(EToken expected = T_NULL);
+    bool seekForToken(EToken, TEvtList *pEvtList);
     bool parseMsg(TEvtList *pEvtList);
     bool parseNext(Defect *);
 };
@@ -378,9 +378,11 @@ void CovParser::Private::parseError(const std::string &msg) {
         << ": parse error: " << msg << "\n";
 }
 
-void CovParser::Private::wrongToken() {
+void CovParser::Private::wrongToken(const EToken expected) {
     std::ostringstream str;
     str << "wrong token: " << this->code;
+    if (T_NULL != expected)
+        str << " (expected " << expected << ")";
     this->parseError(str.str());
 }
 
@@ -405,7 +407,7 @@ bool CovParser::Private::seekForToken(const EToken token, TEvtList *pEvtList) {
                 continue;
 
             default:
-                this->wrongToken();
+                this->wrongToken(token);
         }
     }
 }
@@ -414,8 +416,10 @@ bool CovParser::Private::parseMsg(TEvtList *pEvtList) {
     bool anyComment = false;
 
     // parse event
-    if (!this->seekForToken(T_EVENT, pEvtList))
-        goto fail;
+    if (!this->seekForToken(T_EVENT, pEvtList)) {
+        this->wrongToken(T_EVENT);
+        return false;
+    }
 
     pEvtList->push_back(this->lexer.evt());
 
@@ -493,7 +497,7 @@ done:
         return true;
     }
 
-    this->wrongToken();
+    this->parseError("failed to guess key event");
     return false;
 }
 
