@@ -385,15 +385,15 @@ void CovParser::Private::wrongToken() {
 }
 
 bool CovParser::Private::seekForToken(const EToken token, TEvtList *pEvtList) {
-    if (token == code)
+    if (token == this->code)
         return true;
 
     for (;;) {
-        code = this->lexer.readNext();
-        if (token == code)
+        this->code = this->lexer.readNext();
+        if (token == this->code)
             return true;
 
-        switch (code) {
+        switch (this->code) {
             case T_NULL:
             case T_EMPTY:
             case T_CHECKER:
@@ -414,15 +414,15 @@ bool CovParser::Private::parseMsg(TEvtList *pEvtList) {
     bool anyComment = false;
 
     // parse event
-    if (!seekForToken(T_EVENT, pEvtList))
+    if (!this->seekForToken(T_EVENT, pEvtList))
         goto fail;
 
     pEvtList->push_back(this->lexer.evt());
 
     // parse extra msg
     for (;;) {
-        code = lexer.readNext();
-        switch (code) {
+        this->code = this->lexer.readNext();
+        switch (this->code) {
             case T_NULL:
             case T_EMPTY:
             case T_CHECKER:
@@ -458,17 +458,17 @@ fail:
 bool CovParser::Private::parseNext(Defect *def) {
     // parse defect header
     TEvtList evtList;
-    while (!seekForToken(T_CHECKER, &evtList))
-        if (T_EMPTY != code)
+    while (!this->seekForToken(T_CHECKER, &evtList))
+        if (T_EMPTY != this->code)
             return false;
 
     *def = this->lexer.def();
     def->events.swap(evtList);
 
     // parse defect body
-    code = lexer.readNext();
+    this->code = this->lexer.readNext();
     for (;;) {
-        switch (code) {
+        switch (this->code) {
             case T_NULL:
             case T_EMPTY:
             case T_CHECKER:
@@ -477,11 +477,11 @@ bool CovParser::Private::parseNext(Defect *def) {
             case T_COMMENT:
                 // capture a comment event
                 def->events.push_back(this->lexer.evt());
-                code = lexer.readNext();
+                this->code = this->lexer.readNext();
                 continue;
 
             default:
-                parseMsg(&def->events);
+                this->parseMsg(&def->events);
         }
     }
 
