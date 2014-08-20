@@ -83,7 +83,6 @@ Group:      Applications/Text
 License:    GPLv3+
 URL:        https://git.fedorahosted.org/cgit/codescan-diff.git
 Source0:    https://git.fedorahosted.org/cgit/codescan-diff.git/snapshot/$SRC
-BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires: boost-devel
 BuildRequires: cmake
@@ -106,7 +105,6 @@ cd csdiff_build
 make %{?_smp_mflags} VERBOSE=yes
 
 %install
-rm -rf "\$RPM_BUILD_ROOT"
 cd csdiff_build
 make install DESTDIR="\$RPM_BUILD_ROOT"
 install -d "\$RPM_BUILD_ROOT%{python_sitearch}/"
@@ -117,11 +115,7 @@ mv -v "\$RPM_BUILD_ROOT/usr/lib/libpycsdiff.so" \
 cd csdiff_build
 ctest %{?_smp_mflags} --output-on-failure
 
-%clean
-rm -rf "\$RPM_BUILD_ROOT"
-
 %files
-%defattr(-,root,root,-)
 %{_bindir}/csdiff
 %{_bindir}/csgrep
 %{_bindir}/cshtml
@@ -140,6 +134,4 @@ set -v
 rpmbuild -bs "$SPEC"                            \
     --define "_sourcedir ."                     \
     --define "_specdir ."                       \
-    --define "_srcrpmdir $DST"                  \
-    --define "_source_filedigest_algorithm md5" \
-    --define "_binary_filedigest_algorithm md5"
+    --define "_srcrpmdir $DST"
