@@ -72,8 +72,6 @@ xz -c "$SRC_TAR" > "$SRC"               || die "failed to compress sources"
 
 SPEC="./$PKG.spec"
 cat > "$SPEC" << EOF
-%{!?python_sitearch: %define python_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib(1)")}
-
 Name:       $PKG
 Version:    $VER
 Release:    1%{?dist}
@@ -94,6 +92,11 @@ This package contains the csdiff tool for comparing code scan defect lists in
 order to find out added or fixed defects, and the csgrep utility for filtering
 defect lists using various filtering predicates. 
 
+%if 0%{?rhel} && 0%{?rhel} <= 6
+%{!?__python2: %global __python2 /usr/bin/python2}
+%{!?python2_sitearch: %global python2_sitearch %(%{__python2} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib(1))")}
+%endif
+
 %prep
 %setup -q
 
@@ -107,9 +110,9 @@ make %{?_smp_mflags} VERBOSE=yes
 %install
 cd csdiff_build
 make install DESTDIR="\$RPM_BUILD_ROOT"
-install -d "\$RPM_BUILD_ROOT%{python_sitearch}/"
+install -d "\$RPM_BUILD_ROOT%{python2_sitearch}/"
 mv -v "\$RPM_BUILD_ROOT/usr/lib/libpycsdiff.so" \
-    "\$RPM_BUILD_ROOT%{python_sitearch}/pycsdiff.so"
+    "\$RPM_BUILD_ROOT%{python2_sitearch}/pycsdiff.so"
 
 %check
 cd csdiff_build
@@ -126,7 +129,7 @@ ctest %{?_smp_mflags} --output-on-failure
 %{_mandir}/man1/cshtml.1*
 %{_mandir}/man1/cslinker.1*
 %{_mandir}/man1/cssort.1*
-%{python_sitearch}/pycsdiff.so
+%{python2_sitearch}/pycsdiff.so
 %doc COPYING README
 EOF
 
