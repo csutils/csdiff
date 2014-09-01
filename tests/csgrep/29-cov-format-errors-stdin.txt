@@ -1,0 +1,144 @@
+Error: OVERRUN:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/libs/jobmanager/job_manager.c:2127:
+assignment: Assigning: "i" = "0".
+path:/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/libs/jobmanager/job_manager.c:2127:
+cond_true: Condition "i < IND_SENDER_STATIC_FILTER_ENUM_LAST", taking true branch
+path:/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/libs/jobmanager/job_manager.c:2129:
+cond_true: Condition "(filters[i].query = g_strdup_printf(_filter_queries[i], _profile_name, cim_class_name)) == NULL", taking true branch
+path:/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/libs/jobmanager/job_manager.c:2134:
+goto: Jumping to label "err"
+path:/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/libs/jobmanager/job_manager.c:2142:
+label: Reached label "err"
+path:/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/libs/jobmanager/job_manager.c:2143:
+cond_true: Condition "i >= 0", taking true branch
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/libs/jobmanager/job_manager.c:2144:
+decr: Decrementing "i". The value of "i" is now -1.
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/libs/jobmanager/job_manager.c:2144:
+underrun-local: Underrunning array "filters" at element index -1 (byte offset -16) using index "--i" (which evaluates to -1).
+Error: PW.BRANCH_PAST_INITIALIZATION:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_AccountManagementServiceProvider.c:276:
+branch_past_initialization: transfer of control bypasses initialization of:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_AccountManagementServiceProvider.c:276:
+caretline:         ^
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_AccountManagementServiceProvider.c:276:
+name_at_decl_position: variable "userlock" (declared at line 279)
+Error: PW.BRANCH_PAST_INITIALIZATION:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_AccountManagementServiceProvider.c:420:
+branch_past_initialization: transfer of control bypasses initialization of:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_AccountManagementServiceProvider.c:420:
+caretline:         ^
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_AccountManagementServiceProvider.c:420:
+name_at_decl_position: variable "userlock" (declared at line 423)
+Error: PW.BRANCH_PAST_INITIALIZATION:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_AccountProvider.c:770:
+branch_past_initialization: transfer of control bypasses initialization of:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_AccountProvider.c:770:
+caretline:         ^
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_AccountProvider.c:770:
+name_at_decl_position: variable "userlock" (declared at line 773)
+Error: PW.BRANCH_PAST_INITIALIZATION:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/hardware/dmidecode.c:815:
+branch_past_initialization: transfer of control bypasses initialization of:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/hardware/dmidecode.c:815:
+caretline:         ^
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/hardware/dmidecode.c:815:
+name_at_decl_position: variable "first_array" (declared at line 1041)
+Error: PW.BRANCH_PAST_INITIALIZATION:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/hardware/dmidecode.c:829:
+branch_past_initialization: transfer of control bypasses initialization of:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/hardware/dmidecode.c:829:
+caretline:         ^
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/hardware/dmidecode.c:829:
+name_at_decl_position: variable "first_array" (declared at line 1041)
+Error: PW.BRANCH_PAST_INITIALIZATION:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/hardware/dmidecode.c:837:
+branch_past_initialization: transfer of control bypasses initialization of:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/hardware/dmidecode.c:837:
+caretline:         ^
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/hardware/dmidecode.c:837:
+name_at_decl_position: variable "first_array" (declared at line 1041)
+Error: PW.BRANCH_PAST_INITIALIZATION:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/hardware/dmidecode.c:885:
+branch_past_initialization: transfer of control bypasses initialization of:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/hardware/dmidecode.c:885:
+caretline:                     ^
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/hardware/dmidecode.c:885:
+name_at_decl_position: variable "first_array" (declared at line 1041)
+Error: PW.BRANCH_PAST_INITIALIZATION:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/hardware/dmidecode.c:915:
+branch_past_initialization: transfer of control bypasses initialization of:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/hardware/dmidecode.c:915:
+caretline:                     ^
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/hardware/dmidecode.c:915:
+name_at_decl_position: variable "first_array" (declared at line 1041)
+Error: PW.BRANCH_PAST_INITIALIZATION:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/hardware/dmidecode.c:980:
+branch_past_initialization: transfer of control bypasses initialization of:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/hardware/dmidecode.c:980:
+caretline:         ^
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/hardware/dmidecode.c:980:
+name_at_decl_position: variable "first_array" (declared at line 1041)
+Error: PW.BRANCH_PAST_INITIALIZATION:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/hardware/dmidecode.c:995:
+branch_past_initialization: transfer of control bypasses initialization of:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/hardware/dmidecode.c:995:
+caretline:         ^
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/hardware/dmidecode.c:995:
+name_at_decl_position: variable "first_array" (declared at line 1041)
+Error: USE_AFTER_FREE:
+path:/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_IdentityProvider.c:74:
+cond_false: Condition "!luc", taking false branch
+path:/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_IdentityProvider.c:78:
+if_end: End of if statement
+path:/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_IdentityProvider.c:83:
+cond_true: Condition "accounts != NULL", taking true branch
+path:/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_IdentityProvider.c:83:
+cond_true: Condition "i < accounts->len", taking true branch
+path:/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_IdentityProvider.c:94:
+cond_false: Condition "!KOkay(status)", taking false branch
+path:/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_IdentityProvider.c:94:
+if_end: End of if statement
+path:/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_IdentityProvider.c:96:
+loop: Jumping back to the beginning of the loop
+path:/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_IdentityProvider.c:83:
+loop_begin: Jumped back to beginning of loop
+path:/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_IdentityProvider.c:83:
+cond_true: Condition "accounts != NULL", taking true branch
+path:/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_IdentityProvider.c:83:
+cond_true: Condition "i < accounts->len", taking true branch
+path:/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_IdentityProvider.c:94:
+cond_false: Condition "!KOkay(status)", taking false branch
+path:/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_IdentityProvider.c:94:
+if_end: End of if statement
+path:/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_IdentityProvider.c:96:
+loop: Jumping back to the beginning of the loop
+path:/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_IdentityProvider.c:83:
+loop_begin: Jumped back to beginning of loop
+path:/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_IdentityProvider.c:83:
+cond_true: Condition "accounts != NULL", taking true branch
+path:/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_IdentityProvider.c:83:
+cond_false: Condition "i < accounts->len", taking false branch
+path:/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_IdentityProvider.c:96:
+loop_end: Reached end of loop
+path:/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_IdentityProvider.c:98:
+cond_true: Condition "accounts", taking true branch
+path:/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_IdentityProvider.c:105:
+cond_true: Condition "accounts != NULL", taking true branch
+path:/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_IdentityProvider.c:105:
+cond_true: Condition "i < accounts->len", taking true branch
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_IdentityProvider.c:114:
+freed_arg: "free" frees "instanceid".
+path:/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_IdentityProvider.c:116:
+cond_false: Condition "!KOkay(status)", taking false branch
+path:/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_IdentityProvider.c:116:
+if_end: End of if statement
+path:/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_IdentityProvider.c:118:
+loop: Jumping back to the beginning of the loop
+path:/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_IdentityProvider.c:105:
+loop_begin: Jumped back to beginning of loop
+path:/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_IdentityProvider.c:105:
+cond_true: Condition "accounts != NULL", taking true branch
+path:/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_IdentityProvider.c:105:
+cond_true: Condition "i < accounts->len", taking true branch
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_IdentityProvider.c:113:
+pass_freed_arg: Passing freed pointer "instanceid" as an argument to "LMI_Identity_Set_InstanceID".

@@ -248,6 +248,7 @@ KeyEventDigger::KeyEventDigger():
 
     // events that should never be used as key events
     d->blackList.insert("break");
+    d->blackList.insert("caretline");
     d->blackList.insert("cond_false");
     d->blackList.insert("cond_true");
     d->blackList.insert("continue");

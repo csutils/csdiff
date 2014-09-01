@@ -1,0 +1,48 @@
+Error: OVERRUN:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/libs/jobmanager/job_manager.c:2127: assignment: Assigning: "i" = "0".
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/libs/jobmanager/job_manager.c:2144: decr: Decrementing "i". The value of "i" is now -1.
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/libs/jobmanager/job_manager.c:2144: underrun-local: Underrunning array "filters" at element index -1 (byte offset -16) using index "--i" (which evaluates to -1).
+
+Error: PW.BRANCH_PAST_INITIALIZATION:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_AccountManagementServiceProvider.c:276: branch_past_initialization: transfer of control bypasses initialization of:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_AccountManagementServiceProvider.c:276: name_at_decl_position: variable "userlock" (declared at line 279)
+
+Error: PW.BRANCH_PAST_INITIALIZATION:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_AccountManagementServiceProvider.c:420: branch_past_initialization: transfer of control bypasses initialization of:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_AccountManagementServiceProvider.c:420: name_at_decl_position: variable "userlock" (declared at line 423)
+
+Error: PW.BRANCH_PAST_INITIALIZATION:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_AccountProvider.c:770: branch_past_initialization: transfer of control bypasses initialization of:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_AccountProvider.c:770: name_at_decl_position: variable "userlock" (declared at line 773)
+
+Error: PW.BRANCH_PAST_INITIALIZATION:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/hardware/dmidecode.c:815: branch_past_initialization: transfer of control bypasses initialization of:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/hardware/dmidecode.c:815: name_at_decl_position: variable "first_array" (declared at line 1041)
+
+Error: PW.BRANCH_PAST_INITIALIZATION:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/hardware/dmidecode.c:829: branch_past_initialization: transfer of control bypasses initialization of:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/hardware/dmidecode.c:829: name_at_decl_position: variable "first_array" (declared at line 1041)
+
+Error: PW.BRANCH_PAST_INITIALIZATION:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/hardware/dmidecode.c:837: branch_past_initialization: transfer of control bypasses initialization of:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/hardware/dmidecode.c:837: name_at_decl_position: variable "first_array" (declared at line 1041)
+
+Error: PW.BRANCH_PAST_INITIALIZATION:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/hardware/dmidecode.c:885: branch_past_initialization: transfer of control bypasses initialization of:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/hardware/dmidecode.c:885: name_at_decl_position: variable "first_array" (declared at line 1041)
+
+Error: PW.BRANCH_PAST_INITIALIZATION:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/hardware/dmidecode.c:915: branch_past_initialization: transfer of control bypasses initialization of:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/hardware/dmidecode.c:915: name_at_decl_position: variable "first_array" (declared at line 1041)
+
+Error: PW.BRANCH_PAST_INITIALIZATION:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/hardware/dmidecode.c:980: branch_past_initialization: transfer of control bypasses initialization of:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/hardware/dmidecode.c:980: name_at_decl_position: variable "first_array" (declared at line 1041)
+
+Error: PW.BRANCH_PAST_INITIALIZATION:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/hardware/dmidecode.c:995: branch_past_initialization: transfer of control bypasses initialization of:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/hardware/dmidecode.c:995: name_at_decl_position: variable "first_array" (declared at line 1041)
+
+Error: USE_AFTER_FREE:
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_IdentityProvider.c:114: freed_arg: "free" frees "instanceid".
+/builddir/build/BUILD/openlmi-providers-0.4.1_449_gcf8592a/src/account/LMI_IdentityProvider.c:113: pass_freed_arg: Passing freed pointer "instanceid" as an argument to "LMI_Identity_Set_InstanceID".
