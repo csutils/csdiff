@@ -121,9 +121,14 @@ namespace CsLib {
     }
 
     void writeParseWarnings(std::ostream &str, const TScanProps &props) {
-        typedef TScanProps::const_iterator TIter;
-        TIter itCount = props.find("compilation-unit-count");
-        TIter itRatio = props.find("compilation-unit-ratio");
+        TScanProps::const_iterator itCount, itRatio;
+        itCount = props.find("cov-compilation-unit-count");
+        itRatio = props.find("cov-compilation-unit-ratio");
+        if (props.end() == itCount || props.end() == itRatio) {
+            // fallback to deprecated format produced by cov-mockbuild
+            itCount = props.find("compilation-unit-count");
+            itRatio = props.find("compilation-unit-ratio");
+        }
         if (props.end() == itCount || props.end() == itRatio)
             return;
 
@@ -133,8 +138,13 @@ namespace CsLib {
             str << "<p><b style='color: #FF0000;'>warning:</b> "
                 "low parsing ratio: " << ratio << "%</p>\n";
 
-        itCount = props.find("diffbase-compilation-unit-count");
-        itRatio = props.find("diffbase-compilation-unit-ratio");
+        itCount = props.find("diffbase-cov-compilation-unit-count");
+        itRatio = props.find("diffbase-cov-compilation-unit-ratio");
+        if (props.end() == itCount || props.end() == itRatio) {
+            // fallback to deprecated format produced by cov-mockbuild
+            itCount = props.find("diffbase-compilation-unit-count");
+            itRatio = props.find("diffbase-compilation-unit-ratio");
+        }
         if (props.end() == itCount || props.end() == itRatio)
             return;
 
@@ -331,12 +341,12 @@ void HtmlWriter::setDiffBase(
     d->baseLookup = baseLookup;
 
     // TODO: merge with already existing metadata stomping on the same keys
-    TScanProps::const_iterator it = baseProps.find("compilation-unit-count");
+    TScanProps::const_iterator it = baseProps.find("cov-compilation-unit-count");
     if (baseProps.end() != it)
-        d->scanProps["diffbase-compilation-unit-count"] = it->second;
-    it = baseProps.find("compilation-unit-ratio");
+        d->scanProps["diffbase-cov-compilation-unit-count"] = it->second;
+    it = baseProps.find("cov-compilation-unit-ratio");
     if (baseProps.end() != it)
-        d->scanProps["diffbase-compilation-unit-ratio"] = it->second;
+        d->scanProps["diffbase-cov-compilation-unit-ratio"] = it->second;
 
     it = baseProps.find("project-name");
     const std::string projName = (baseProps.end() == it)
