@@ -1,0 +1,30 @@
+prospector/__pkginfo__.py:4:1: E302[pep8]: expected 2 blank lines, found 1
+prospector/config.py:162:0: C0330[pylint]: Wrong continued indentation.
+            ' default, the following tools will be run: %s' % (
+            ^       |
+prospector/config.py:102:21: E126[pep8]: continuation line over-indented for hanging indent
+prospector/tools/pylint/__init__.py:135:4: R0201[pylint]: Method could be a function
+prospector/tools/pylint/__init__.py:171:1: W293[pep8]: blank line contains whitespace
+prospector/tools/pylint/__init__.py:171:0: C0303[pylint]: Trailing whitespace
+prospector/tools/pylint/__init__.py:143:8: W0201[pylint]: Attribute '_streams' defined outside __init__
+prospector/tools/pylint/__init__.py:176:1: W293[pep8]: blank line contains whitespace
+prospector/tools/pylint/__init__.py:180:1: W293[pep8]: blank line contains whitespace
+prospector/tools/pylint/__init__.py:180:0: C0303[pylint]: Trailing whitespace
+prospector/tools/pylint/__init__.py:29:0: MC0001[mccabe]: _find_package_paths is too complex (11)
+prospector/tools/frosted/__init__.py:79:8: W0201[pylint]: Attribute '_rootpath' defined outside __init__
+prospector/tools/pyflakes/__init__.py:75:9: N802[pep8]: function name should be lowercase
+prospector/tools/pyflakes/__init__.py:67:9: N802[pep8]: function name should be lowercase
+prospector/message.py:6:4: R0913[pylint]: Too many arguments (7/5)
+prospector/run.py:180:9: E1101[pylint]: Instance of 'ConfigurationManager' has no 'arguments' member
+prospector/run.py:4:0: W0404[pylint]: Reimport 'sys' (imported line 2)
+prospector/run.py:4:1: FL0002[pyflakes]: redefinition of unused 'sys' from line 2
+prospector/run.py:4:1: FL0002[pyflakes]: redefinition of unused 'sys' from line 2
+prospector/run.py:181:16: E1101[pylint]: Instance of 'ConfigurationManager' has no 'arguments' member
+prospector/tools/dodgy/__init__.py:19:8: W0201[pylint]: Attribute 'rootpath' defined outside __init__
+prospector/tools/dodgy/__init__.py:20:8: W0201[pylint]: Attribute 'ignore' defined outside __init__
+prospector/tools/pep8/__init__.py:105:44: C0103[pylint]: Invalid variable name "f"
+prospector/tools/pep8/__init__.py:91:0: MC0001[mccabe]: Pep8Tool.prepare is too complex (12)
+prospector/formatters/csdiff.py:3:0: W0611[pylint]: Unused import json
+prospector/formatters/csdiff.py:36:12: W0612[pylint]: Unused variable 'message_dict'
+prospector/formatters/csdiff.py:5:0: W0611[pylint]: Unused import datetime
+prospector/formatters/csdiff.py:47:1: W391[pep8]: blank line at end of file

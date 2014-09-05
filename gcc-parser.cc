@@ -60,17 +60,20 @@ class AbstractTokenFilter: public ITokenizer {
 
 #define RE_LOCATION "([^:]+)(?::([0-9]+))?(?::([0-9]+))?"
 #define RE_TOOL_SUFFIX "(?: <--\\[[^\\]]+\\])?$"
+#define RE_EVENT_GCC "(?:(?:fatal )?[a-z]+)"
+#define RE_EVENT_PROSPECTOR "(?:[A-Z]+[0-9]+\\[[a-z0-9]+\\])"
+#define RE_EVENT RE_EVENT_GCC "|" RE_EVENT_PROSPECTOR
 
 class Tokenizer: public ITokenizer {
     public:
         Tokenizer(std::istream &input):
             input_(input),
             lineNo_(0),
-            reMarker_("^ *[ ~^]+$"),
+            reMarker_("^ *[ ~^|]+$"),
             reInc_("^(?:In file included| +) from " RE_LOCATION "[:,]"
                     RE_TOOL_SUFFIX),
             reScope_("^" RE_LOCATION ": ([A-Z].+):" RE_TOOL_SUFFIX),
-            reMsg_("^" RE_LOCATION /* evt/msg */ ": ((?:fatal )?[a-z]+): (.*)$")
+            reMsg_("^" RE_LOCATION /* evt/msg */ ": (" RE_EVENT "): (.*)$")
         {
         }
 
@@ -305,6 +308,7 @@ class BasicGccParser {
             silent_(silent),
             reCppcheck_("^([A-Za-z_]+): (.*)$"),
             reClang_("^clang.*$"),
+            reProspector_(RE_EVENT_PROSPECTOR),
             reTool_("^(.*) <--\\[([^\\]]+)\\]$"),
             hasKeyEvent_(false),
             hasError_(false)
@@ -322,6 +326,7 @@ class BasicGccParser {
         const bool              silent_;
         const boost::regex      reCppcheck_;
         const boost::regex      reClang_;
+        const boost::regex      reProspector_;
         const boost::regex      reTool_;
         bool                    hasKeyEvent_;
         bool                    hasError_;
@@ -383,6 +388,8 @@ bool BasicGccParser::exportAndReset(Defect *pDef) {
             // <--[cppcheck] ... assume cppcheck running with --template=gcc
             def.checker = "CPPCHECK_WARNING";
     }
+    else if (boost::regex_match(keyEvt.event, reProspector_))
+        def.checker = "PROSPECTOR_WARNING";
     else
         // no <--[TOOL] suffix given
         this->digCppcheckEvt(&def);
