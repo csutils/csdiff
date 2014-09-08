@@ -110,6 +110,10 @@ std::ostream& operator<<(std::ostream &str, EToken code) {
     return str;
 }
 
+#define RE_EVENT_GCC_LIKE "(?:fatal )?[a-z][\\[\\]A-Za-z_-]+"
+#define RE_EVENT_PROSPECTOR "(?:[A-Z]+[0-9]+\\[[a-z0-9]+\\])"
+#define RE_EVENT RE_EVENT_GCC_LIKE "|" RE_EVENT_PROSPECTOR
+
 class ErrFileLexer {
     public:
         ErrFileLexer(std::istream &input):
@@ -120,7 +124,7 @@ class ErrFileLexer {
             reChecker_("^Error: *([A-Za-z][A-Za-z_.]+)( *\\([^)]+\\))? *:$"),
             reEvent_(
                     /* location */ "^([^:]+)(?::([0-9]+))?(?::([0-9]+))?"
-                    /* evt/mesg */ ": ((?:fatal )?[a-z][\\[\\]A-Za-z_-]+): (.*)$")
+                    /* evt/mesg */ ": (" RE_EVENT "): (.*)$")
         {
         }
 
