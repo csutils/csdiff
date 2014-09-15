@@ -384,6 +384,10 @@ bool BasicGccParser::exportAndReset(Defect *pDef) {
             // <--[clang] or <--[clang++]
             def.checker = "CLANG_WARNING";
 
+        else if (tool == "shellcheck")
+            // <--[shellcheck]
+            def.checker = "SHELLCHECK_WARNING";
+
         else if (tool == "cppcheck" && !this->digCppcheckEvt(&def))
             // <--[cppcheck] ... assume cppcheck running with --template=gcc
             def.checker = "CPPCHECK_WARNING";
@@ -478,8 +482,14 @@ GccParser::~GccParser() {
 }
 
 bool GccParser::Private::checkMerge(DefEvent &keyEvt) {
-    if (keyEvt.event == "note" || keyEvt.event == "#")
-        // can merge a "note" event or comment
+    if (keyEvt.event == "#")
+        // can merge a comment
+        return true;
+
+    if (keyEvt.event == "note"
+            // shellcheck emits "note" always as key event with no context info
+            && this->lastDef.checker != "SHELLCHECK_WARNING")
+        // can merge a "note" event
         return true;
 
     if (keyEvt.event != "warning")
