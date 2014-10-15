@@ -1,0 +1,55 @@
+{
+    "defects":
+    [
+        {
+            "checker": "CHECKED_RETURN",
+            "annotation": " (CWE-252)",
+            "key_event_idx": 0,
+            "events":
+            [
+                {
+                    "file_name": "linuxptp-1.4/clock.c",
+                    "line": 974,
+                    "event": "check_return",
+                    "message": "Calling \"msg_pre_send\" without checking return value (as is done elsewhere 4 out of 5 times).",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "linuxptp-1.4/pmc_common.c",
+                    "line": 148,
+                    "event": "example_assign",
+                    "message": "Example 1: Assigning: \"err\" = return value from \"msg_pre_send(msg)\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "linuxptp-1.4/pmc_common.c",
+                    "line": 149,
+                    "event": "example_checked",
+                    "message": "Example 1 (cont.): \"err\" has its value checked in \"err\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "linuxptp-1.4/port.c",
+                    "line": 2394,
+                    "event": "example_checked",
+                    "message": "Example 2: \"msg_pre_send(msg)\" has its value checked in \"msg_pre_send(msg)\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "linuxptp-1.4/port.c",
+                    "line": 2220,
+                    "event": "example_checked",
+                    "message": "Example 3: \"msg_pre_send(msg)\" has its value checked in \"msg_pre_send(msg)\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "linuxptp-1.4/port.c",
+                    "line": 467,
+                    "event": "example_checked",
+                    "message": "Example 4: \"msg_pre_send(msg)\" has its value checked in \"msg_pre_send(msg)\".",
+                    "verbosity_level": "1"
+                }
+            ]
+        }
+    ]
+}

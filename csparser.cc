@@ -221,6 +221,7 @@ KeyEventDigger::KeyEventDigger():
     d(new Private)
 {
     // register checker-specific key events
+    d->hMap["CHECKED_RETURN"]       .insert("check_return");
     d->hMap["FORWARD_NULL"]         .insert("deref_parm");
     d->hMap["FORWARD_NULL"]         .insert("dereference");
     d->hMap["FORWARD_NULL"]         .insert("var_deref_op");

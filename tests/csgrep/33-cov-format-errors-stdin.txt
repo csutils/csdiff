@@ -1,0 +1,7 @@
+Error: CHECKED_RETURN (CWE-252):
+linuxptp-1.4/clock.c:974: check_return: Calling "msg_pre_send" without checking return value (as is done elsewhere 4 out of 5 times).
+linuxptp-1.4/pmc_common.c:148: example_assign: Example 1: Assigning: "err" = return value from "msg_pre_send(msg)".
+linuxptp-1.4/pmc_common.c:149: example_checked: Example 1 (cont.): "err" has its value checked in "err".
+linuxptp-1.4/port.c:2394: example_checked: Example 2: "msg_pre_send(msg)" has its value checked in "msg_pre_send(msg)".
+linuxptp-1.4/port.c:2220: example_checked: Example 3: "msg_pre_send(msg)" has its value checked in "msg_pre_send(msg)".
+linuxptp-1.4/port.c:467: example_checked: Example 4: "msg_pre_send(msg)" has its value checked in "msg_pre_send(msg)".
