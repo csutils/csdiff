@@ -89,8 +89,7 @@ struct MsgFilter::Private {
         reTmpPath("^(/var)?/tmp/(.*)$"),
         reTmpCleaner("(.*)")
     {
-        addMsgFilter("UNUSED_VALUE",
-                "[0-9][0-9]* out of [0-9][0-9]* times");
+        addMsgFilter("", "[0-9][0-9]* out of [0-9][0-9]* times");
         addMsgFilter("UNUSED_VALUE",
                 "\\(instance [0-9]+\\)");
         addMsgFilter("STRING_OVERFLOW",
@@ -99,8 +98,6 @@ struct MsgFilter::Private {
         addMsgFilter("UNUSED_VALUE",
                 "returned by \"([^\\(]+)\\(.*\\)\"",
                 "returned by \"\\1\\(\\)\"");
-        addMsgFilter("MISSING_LOCK",
-                "held [0-9][0-9]* out of [0-9][0-9]* times");
 
         // ignore embeded declaration location
         addMsgFilter("COMPILER_WARNING",
