@@ -1,0 +1,11 @@
+language: cpp
+
+compiler:
+    - gcc
+    - clang
+
+before_install: sudo apt-get update
+
+install: sudo apt-get install cmake help2man libboost1.46-dev libboost-program-options1.46-dev libboost-regex1.46-dev valgrind
+
+script: make -j9 distcheck CTEST='ctest -j9'
