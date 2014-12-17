@@ -100,8 +100,10 @@ struct MsgFilter::Private {
                 "returned by \"\\1\\(\\)\"");
 
         // ignore embeded declaration location
-        addMsgFilter("COMPILER_WARNING",
-                "(declared at [^)]*)", "");
+        addMsgFilter("COMPILER_WARNING", "(declared at [^)]*)", "");
+
+        // unify (per build random) names of temporary variables
+        addMsgFilter("COMPILER_WARNING", "_tmp[0-9]+_", "_tmp_");
 
         // "__coverity_strcmp" -> "strcmp", etc.
         addMsgFilter("", "__coverity_", "");

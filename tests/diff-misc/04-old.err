@@ -1,0 +1,10 @@
+Error: COMPILER_WARNING:
+gnome-contacts-3.8.2/src/contacts-new-contact-dialog.c:756:13: warning: variable '_tmp9_' set but not used [-Wunused-but-set-variable]
+#     gchar** _tmp9_;
+#             ^
+
+Error: COMPILER_WARNING:
+gnome-contacts-3.8.2/src/contacts-new-contact-dialog.c: scope_hint: In function 'contacts_new_contact_dialog_pack_address_combo'
+gnome-contacts-3.8.2/src/contacts-new-contact-dialog.c:762:10: warning: variable '_tmp12__length1' set but not used [-Wunused-but-set-variable]
+#     gint _tmp12__length1;
+#          ^
