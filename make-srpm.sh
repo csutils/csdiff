@@ -96,7 +96,6 @@ defect lists using various filtering predicates.
 %{!?__python2: %global __python2 /usr/bin/python2}
 %{!?python2_sitearch: %global python2_sitearch %(%{__python2} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib(1))")}
 %endif
-%global python2_version %(%{__python2} -c 'import sys; print "%s.%s" % sys.version_info[:2]')
 
 %prep
 %setup -q
@@ -105,15 +104,12 @@ defect lists using various filtering predicates.
 make version.cc
 mkdir csdiff_build
 cd csdiff_build
-%cmake .. -DBUILD_PYCSDIFF=ON -DPYTHON_INCLUDE_DIR=/usr/include/python%{python2_version}
+%cmake ..
 make %{?_smp_mflags} VERBOSE=yes
 
 %install
 cd csdiff_build
 make install DESTDIR="\$RPM_BUILD_ROOT"
-install -d "\$RPM_BUILD_ROOT%{python2_sitearch}/"
-mv -v "\$RPM_BUILD_ROOT/usr/lib/libpycsdiff.so" \
-    "\$RPM_BUILD_ROOT%{python2_sitearch}/pycsdiff.so"
 
 %check
 cd csdiff_build

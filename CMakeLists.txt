@@ -1,4 +1,4 @@
-# Copyright (C) 2011 Red Hat, Inc.
+# Copyright (C) 2011 - 2014 Red Hat, Inc.
 #
 # This file is part of csdiff.
 #
@@ -15,14 +15,10 @@
 # You should have received a copy of the GNU General Public License
 # along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
 
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 2.8)
 project(csdiff CXX)
 enable_testing()
 add_definitions(-Wall -Wextra -fPIC)
-
-# read PYTHON_INCLUDE_PATH (rnamed to PYTHON_INCLUDE_DIRS in CMake 2.8)
-find_package(PythonLibs)
-message(STATUS "PYTHON_INCLUDE_PATH: ${PYTHON_INCLUDE_PATH}")
 
 # Boost libraries
 find_package(Boost 1.41)
@@ -84,18 +80,41 @@ install(TARGETS
     cssort
     DESTINATION bin)
 
-# pycsdiff - python binding of csdiff [experimental]
-option(BUILD_PYCSDIFF "Set to ON to enable python binding" OFF)
-if (BUILD_PYCSDIFF AND EXISTS "${PYTHON_INCLUDE_PATH}/pyconfig.h")
-    find_library(BOOST_PYTHON boost_python PATHS /usr/lib /usr/lib64)
-    if (BOOST_PYTHON)
-        message(STATUS "WARNING: The python binding of csdiff is experimental!")
-        add_library(pycsdiff SHARED pycsdiff.cc)
-        set_target_properties(pycsdiff PROPERTIES
-            COMPILE_FLAGS "-I${PYTHON_INCLUDE_PATH}")
-        target_link_libraries(pycsdiff boost_python)
-        install(TARGETS pycsdiff DESTINATION lib)
+# pycsdiff - python binding of csdiff
+option(BUILD_PYCSDIFF "Set to ON to enable python binding" ON)
+if (BUILD_PYCSDIFF)
+    find_library(BOOST_PYTHON boost_python REQUIRED)
+
+    # query PYTHON_INCLUDE_DIRS
+    find_package(PythonInterp REQUIRED)
+    find_package(PythonLibs   REQUIRED)
+    message(STATUS "PYTHON_INCLUDE_DIRS: ${PYTHON_INCLUDE_DIRS}")
+    if(NOT EXISTS "${PYTHON_INCLUDE_DIRS}/pyconfig.h")
+        message(FATAL_ERROR "
+${PYTHON_INCLUDE_DIRS}/pyconfig.h does not exits")
     endif()
+
+    # query PYTHON_SITEARCH
+    execute_process(COMMAND ${PYTHON_EXECUTABLE}
+        -c "from distutils.sysconfig import get_python_lib
+print(get_python_lib(1))"
+        RESULT_VARIABLE PYTHON_SITEARCH_STATUS
+        OUTPUT_VARIABLE PYTHON_SITEARCH
+        OUTPUT_STRIP_TRAILING_WHITESPACE)
+    if("${PYTHON_SITEARCH_STATUS}" EQUAL 0)
+        message(STATUS "PYTHON_SITEARCH: ${PYTHON_SITEARCH}")
+    else()
+        message(FATAL_ERROR "
+failed to query PYTHON_SITEARCH")
+    endif()
+
+    message(STATUS "python binding enabled, the pycsdiff module will be built!")
+    add_library(pycsdiff SHARED pycsdiff.cc)
+    set_target_properties(pycsdiff PROPERTIES
+        COMPILE_FLAGS "-I${PYTHON_INCLUDE_DIRS}"
+        PREFIX "")
+    target_link_libraries(pycsdiff boost_python)
+    install(TARGETS pycsdiff DESTINATION ${PYTHON_SITEARCH})
 endif()
 
 # macro to generate a man page from the corresponding binary

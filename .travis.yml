@@ -6,6 +6,6 @@ compiler:
 
 before_install: sudo apt-get update
 
-install: sudo apt-get install cmake help2man libboost1.46-dev libboost-program-options1.46-dev libboost-regex1.46-dev valgrind
+install: sudo apt-get install cmake help2man libboost1.46-dev libboost-program-options1.46-dev libboost-python1.46-dev libboost-regex1.46-dev
 
 script: make -j9 distcheck CTEST='ctest -j9'
