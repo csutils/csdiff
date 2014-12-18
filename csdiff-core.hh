@@ -17,6 +17,8 @@
  * along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include "abstract-parser.hh"
+
 #include <iostream>
 #include <string>
 
@@ -26,6 +28,5 @@ bool /* anyError */ diffScans(
         std::istream               &strNew,
         const std::string          &fnOld       = std::string(),
         const std::string          &fnNew       = std::string(),
-        const bool                  silent      = true,
-        const bool                  forceJson   = false,
-        const bool                  forceCov    = false);
+        bool                        silent      = true,
+        EFileFormat                 format      = FF_AUTO);

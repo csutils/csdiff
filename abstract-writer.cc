@@ -86,6 +86,9 @@ AbstractWriter* createWriter(
         case FF_GCC:
             // TODO
 
+        case FF_AUTO:
+            // TODO
+
         case FF_JSON:
             writer = new JsonWriter(std::cout);
             break;

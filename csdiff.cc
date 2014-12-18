@@ -92,6 +92,14 @@ int main(int argc, char *argv[])
         return 1;
     }
 
+    EFileFormat format;
+    if (forceCov)
+        format = FF_COVERITY;
+    else if (forceJson)
+        format = FF_JSON;
+    else
+        format = FF_AUTO;
+
     // there are probably better solutions for this (Custom Validations)
     if (vm.count("file-rename")) {
         const TStringList &substList = vm["file-rename"].as<TStringList>();
@@ -134,7 +142,7 @@ int main(int argc, char *argv[])
 
         // run the core
         return diffScans(std::cout, strOld.str(), strNew.str(),
-                fnOld, fnNew, silent, forceJson, forceCov);
+                fnOld, fnNew, silent, format);
     }
     catch (const InFileException &e) {
         std::cerr << e.fileName << ": failed to open input file\n";

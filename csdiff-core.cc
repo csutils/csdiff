@@ -19,7 +19,6 @@
 
 #include "csdiff-core.hh"
 
-#include "abstract-parser.hh"
 #include "cswriter.hh"
 #include "deflookup.hh"
 #include "json-writer.hh"
@@ -47,20 +46,19 @@ bool /* anyError */ diffScans(
         const std::string          &fnOld,
         const std::string          &fnNew,
         const bool                  silent,
-        const bool                  forceJson,
-        const bool                  forceCov)
+        EFileFormat                 format)
 {
     // create Parsers
     Parser pOld(strOld, fnOld, silent);
     Parser pNew(strNew, fnNew, silent);
 
     // decide which format use for the output
-    const bool json = forceJson
-        || (!forceCov && pNew.isJson());
+    if (format == FF_AUTO)
+        format = pNew.inputFormat();
 
     // create the appropriate writer
     boost::shared_ptr<AbstractWriter> writer;
-    if (json)
+    if (format == FF_JSON)
         writer.reset(new JsonWriter(strDst));
     else
         writer.reset(new CovWriter(strDst));

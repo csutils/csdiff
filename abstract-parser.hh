@@ -29,6 +29,7 @@ typedef std::map<std::string, std::string> TScanProps;
 
 enum EFileFormat {
     FF_INVALID = 0,                         ///< for signalling errors
+    FF_AUTO,                                ///< choose format automatically
     FF_COVERITY,                            ///< what cov-format-errors produces
     FF_GCC,                                 ///< GCC format
     FF_JSON                                 ///< JSON format
@@ -83,10 +84,6 @@ class Parser {
         }
 
         EFileFormat inputFormat() const;
-
-        bool isJson() const {
-            return FF_JSON == this->inputFormat();
-        }
 
     private:
         Parser(const Parser &);
