@@ -481,24 +481,29 @@ int main(int argc, char *argv[])
 
     try {
         desc.add_options()
-            ("annot",               po::value<string>(),        "match annotations by the given regex")
-            ("checker",             po::value<string>(),        "match checkers by the given regex")
-            ("error",               po::value<string>(),        "match errors by the given regex")
-            ("event",               po::value<string>(),        "match key event by the given regex")
-            ("help",                                            "produce help message")
-            ("ignore-case,i",                                   "ignore case when matching regular expressions")
-            ("invert-match,v",                                  "select defects that do not match the regex")
-            ("invert-regex,n",                                  "invert all given regexes before matching them")
-            ("mode",                po::value<string>(&mode)
-                                    ->default_value("grep"),    "dig_key_events, files, filestat, grep, grouped, json, or stat")
-            ("msg",                 po::value<string>(),        "match messages by the given regex")
-            ("path",                po::value<string>(),        "match source path by the given regex")
-            ("prune-events",        po::value<int>(),           "prune events with greater or equal verbosity level")
-            ("quiet,q",                                         "do not report any parsing errors")
-            ("remove-duplicates,u",                             "remove defects with repeated key events")
-            ("src-annot",           po::value<string>(),        "match annotations in the _source_ file by the given regex")
+            ("checker",             po::value<string>(),        "defect matches if its checker matches the given regex")
+            ("path",                po::value<string>(),        "defect matches if the path of its key event matches the given regex")
+            ("event",               po::value<string>(),        "defect matches if its key event matches the given regex")
+            ("error",               po::value<string>(),        "defect matches if the message of its key event matches the given regex")
+            ("msg",                 po::value<string>(),        "defect matches if any of its messages matches the given regex")
+            ("annot",               po::value<string>(),        "defect matches if its annotation matches the given regex")
+            ("src-annot",           po::value<string>(),        "defect matches if an annotation in the _source_ file matches the given regex")
+
+            ("prune-events",        po::value<int>(),           "event is preserved if its verbosity level is below the given number")
+            ("remove-duplicates,u",                             "remove defects that are not unique by their key event")
             ("strip-path-prefix",   po::value<string>(),        "string prefix to strip from path (applied after all filters)")
-            ("version",                                         "print version");
+
+            ("ignore-case,i",                                   "ignore case when matching regular expressions")
+            ("invert-match,v",                                  "select defects that do not match the selected criteria")
+            ("invert-regex,n",                                  "invert regular expressions in all predicates")
+
+            ("quiet,q",                                         "do not report any parsing errors")
+
+            ("mode",                po::value<string>(&mode)
+                                    ->default_value("grep"),    "grep, json, stat, grouped, files, filestat, or dig_key_events")
+
+            ("help",                                            "print the usage of csgrep")
+            ("version",                                         "print the version of csgrep");
 
         po::options_description hidden("");
         hidden.add_options()
