@@ -481,34 +481,28 @@ int main(int argc, char *argv[])
 
     try {
         desc.add_options()
-            ("annot", po::value<string>(),
-             "match annotations by the given regex")
-            ("checker", po::value<string>(),
-             "match checkers by the given regex")
-            ("error", po::value<string>(), "match errors by the given regex")
-            ("event", po::value<string>(), "match key event by the given regex")
-            ("help", "produce help message")
-            ("ignore-case,i", "ignore case when matching regular expressions")
-            ("invert-match,v", "select defects that do not match the regex")
-            ("invert-regex,n", "invert all given regexes before matching them")
-            ("mode", po::value<string>(&mode)->default_value("grep"),
-             "dig_key_events, files, filestat, grep, grouped, json, or stat")
-            ("msg", po::value<string>(), "match messages by the given regex")
-            ("path", po::value<string>(),
-             "match source path by the given regex")
-            ("prune-events", po::value<int>(),
-             "prune events with greater or equal verbosity level")
-            ("quiet,q", "do not report any parsing errors")
-            ("remove-duplicates,u", "remove defects with repeated key events")
-            ("src-annot", po::value<string>(),
-             "match annotations in the _source_ file by the given regex")
-            ("strip-path-prefix", po::value<string>(),
-             "string prefix to strip from path (applied after all filters)")
-            ("version", "print version");
+            ("annot",               po::value<string>(),        "match annotations by the given regex")
+            ("checker",             po::value<string>(),        "match checkers by the given regex")
+            ("error",               po::value<string>(),        "match errors by the given regex")
+            ("event",               po::value<string>(),        "match key event by the given regex")
+            ("help",                                            "produce help message")
+            ("ignore-case,i",                                   "ignore case when matching regular expressions")
+            ("invert-match,v",                                  "select defects that do not match the regex")
+            ("invert-regex,n",                                  "invert all given regexes before matching them")
+            ("mode",                po::value<string>(&mode)
+                                    ->default_value("grep"),    "dig_key_events, files, filestat, grep, grouped, json, or stat")
+            ("msg",                 po::value<string>(),        "match messages by the given regex")
+            ("path",                po::value<string>(),        "match source path by the given regex")
+            ("prune-events",        po::value<int>(),           "prune events with greater or equal verbosity level")
+            ("quiet,q",                                         "do not report any parsing errors")
+            ("remove-duplicates,u",                             "remove defects with repeated key events")
+            ("src-annot",           po::value<string>(),        "match annotations in the _source_ file by the given regex")
+            ("strip-path-prefix",   po::value<string>(),        "string prefix to strip from path (applied after all filters)")
+            ("version",                                         "print version");
 
         po::options_description hidden("");
         hidden.add_options()
-            ("input-file", po::value<TStringList>(), "input file");
+            ("input-file",          po::value<TStringList>(),   "input file");
         po::positional_options_description p;
         p.add("input-file", -1);
 
