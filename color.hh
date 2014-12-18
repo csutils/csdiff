@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012 Red Hat, Inc.
+ * Copyright (C) 2014 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -17,23 +17,33 @@
  * along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef H_GUARD_CSWRITER_H
-#define H_GUARD_CSWRITER_H
+#ifndef H_GUARD_COLOR_H
+#define H_GUARD_COLOR_H
 
-#include "abstract-filter.hh"
-#include "color.hh"
+#include <iostream>
 
-class CovWriter: public AbstractWriter {
-    public:
-        CovWriter(std::ostream &, EColorMode cm = CM_AUTO);
-        virtual ~CovWriter();
-
-        virtual void handleDef(const Defect &def);
-        virtual void flush();
-
-    private:
-        struct Private;
-        Private *d;
+enum EColorMode {
+    CM_AUTO,
+    CM_NEVER,
+    CM_ALWAYS
 };
 
-#endif /* H_GUARD_CSWRITER_H */
+enum EColor {
+    C_NO_COLOR,
+    C_DARK_GRAY,
+    C_LIGHT_GREEN,
+    C_LIGHT_CYAN,
+    C_WHITE
+};
+
+class ColorWriter {
+    public:
+        ColorWriter(const std::ostream &str, EColorMode);
+        const char* setColor(EColor);
+        const char* setColorIf(bool, EColor);
+
+    private:
+        bool enabled_;
+};
+
+#endif /* H_GUARD_COLOR_H */

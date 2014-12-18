@@ -25,6 +25,7 @@ add_library(cs STATIC
     abstract-filter.cc
     abstract-parser.cc
     abstract-writer.cc
+    color.cc
     csdiff-core.cc
     csfilter.cc
     csparser.cc
