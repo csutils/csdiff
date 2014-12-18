@@ -503,10 +503,10 @@ int main(int argc, char *argv[])
 
             ("ignore-case,i",                                   "ignore case when matching regular expressions")
             ("invert-match,v",                                  "select defects that do not match the selected criteria")
-            ("invert-regex,n",                                  "invert regular expressions in all predicates")
+            ("invert-regex,n",                                  "invert regular expressions in all predicates");
 
-            ("color",                                           "use colorized console output (default if connected to a terminal)")
-            ("no-color",                                        "do not use colorized console output")
+        addColorOptions(&desc);
+        desc.add_options()
             ("quiet,q",                                         "do not report any parsing errors")
 
             ("mode",                po::value<string>(&mode)
@@ -547,17 +547,14 @@ int main(int argc, char *argv[])
     }
 
     // handle --[no-]color options
-    const bool color_always = vm.count("color");
-    const bool color_never = vm.count("no-color");
-    if (color_always && color_never) {
-        std::cerr << name << ": error: "
-            "options --color and --no-color are mutually exclusive\n";
+    EColorMode cm;
+    const char *err;
+    if (readColorOptions(&cm, &err, vm))
+        WriterFactory::setColorMode(cm);
+    else {
+        std::cerr << name << ": error: " << err << std::endl;
         return 1;
     }
-    if (color_always)
-        WriterFactory::setColorMode(CM_ALWAYS);
-    if (color_never)
-        WriterFactory::setColorMode(CM_NEVER);
 
     // create a writer according to the selected mode
     WriterFactory factory;

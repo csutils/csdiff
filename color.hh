@@ -46,4 +46,32 @@ class ColorWriter {
         bool enabled_;
 };
 
+template <class TOptDesc>
+void addColorOptions(TOptDesc *desc) {
+    desc->add_options()
+        ("color",
+         "use colorized console output (default if connected to a terminal)")
+        ("no-color",
+         "do not use colorized console output");
+}
+
+template <class TValMap>
+bool readColorOptions(EColorMode *pDst, const char **pErr, const TValMap &vm) {
+    const bool colorAlways = vm.count("color");
+    const bool colorNever = vm.count("no-color");
+    if (colorAlways && colorNever) {
+        *pErr = "options --color and --no-color are mutually exclusive";
+        return false;
+    }
+
+    if (colorAlways)
+        *pDst = CM_ALWAYS;
+    else if (colorNever)
+        *pDst = CM_NEVER;
+    else
+        *pDst = CM_AUTO;
+
+    return true;
+}
+
 #endif /* H_GUARD_COLOR_H */
