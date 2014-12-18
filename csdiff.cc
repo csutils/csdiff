@@ -49,7 +49,11 @@ int main(int argc, char *argv[])
             ("json-output,j", "write the result in JSON format")
             ("quiet,q", "do not report any parsing errors")
             ("file-rename,s", po::value<TStringList>(),
-             "account the file base-name change, [OLD,NEW] (*testing*)")
+             "account the file base-name change, [OLD,NEW] (*testing*)");
+
+        addColorOptions(&desc);
+
+        desc.add_options()
             ("help", "produce help message")
             ("version", "print version");
 
@@ -100,6 +104,13 @@ int main(int argc, char *argv[])
     else
         format = FF_AUTO;
 
+    EColorMode cm;
+    const char *err;
+    if (!readColorOptions(&cm, &err, vm)) {
+        std::cerr << name << ": error: " << err << std::endl;
+        return 1;
+    }
+
     // there are probably better solutions for this (Custom Validations)
     if (vm.count("file-rename")) {
         const TStringList &substList = vm["file-rename"].as<TStringList>();
@@ -142,7 +153,7 @@ int main(int argc, char *argv[])
 
         // run the core
         return diffScans(std::cout, strOld.str(), strNew.str(),
-                fnOld, fnNew, silent, format);
+                fnOld, fnNew, silent, format, cm);
     }
     catch (const InFileException &e) {
         std::cerr << e.fileName << ": failed to open input file\n";

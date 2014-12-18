@@ -18,6 +18,7 @@
  */
 
 #include "abstract-parser.hh"
+#include "color.hh"
 
 #include <iostream>
 #include <string>
@@ -29,4 +30,5 @@ bool /* anyError */ diffScans(
         const std::string          &fnOld       = std::string(),
         const std::string          &fnNew       = std::string(),
         bool                        silent      = true,
-        EFileFormat                 format      = FF_AUTO);
+        EFileFormat                 format      = FF_AUTO,
+        EColorMode                  cm          = CM_AUTO);

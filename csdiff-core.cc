@@ -46,7 +46,8 @@ bool /* anyError */ diffScans(
         const std::string          &fnOld,
         const std::string          &fnNew,
         const bool                  silent,
-        EFileFormat                 format)
+        EFileFormat                 format,
+        const EColorMode            cm)
 {
     // create Parsers
     Parser pOld(strOld, fnOld, silent);
@@ -61,7 +62,7 @@ bool /* anyError */ diffScans(
     if (format == FF_JSON)
         writer.reset(new JsonWriter(strDst));
     else
-        writer.reset(new CovWriter(strDst));
+        writer.reset(new CovWriter(strDst, cm));
 
     // propagate scan properties if available
     TScanProps props = pNew.getScanProps();
