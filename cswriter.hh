@@ -24,9 +24,15 @@
 
 #include <iostream>
 
+enum EColorMode {
+    CM_AUTO,
+    CM_NEVER,
+    CM_ALWAYS
+};
+
 class CovWriter: public AbstractWriter {
     public:
-        CovWriter(std::ostream &);
+        CovWriter(std::ostream &, EColorMode cm = CM_AUTO);
         virtual ~CovWriter();
 
         virtual void handleDef(const Defect &def);

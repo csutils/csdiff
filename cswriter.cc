@@ -33,7 +33,7 @@ enum EColor {
 
 class ColorWriter {
     public:
-        ColorWriter(const std::ostream &str);
+        ColorWriter(const std::ostream &str, EColorMode);
         const char* setColor(EColor);
         const char* setColorIf(bool, EColor);
 
@@ -41,9 +41,21 @@ class ColorWriter {
         bool enabled_;
 };
 
-ColorWriter::ColorWriter(const std::ostream &str):
-    enabled_((&str == &std::cout) && isatty(STDOUT_FILENO))
-{
+ColorWriter::ColorWriter(const std::ostream &str, const EColorMode cm) {
+    switch (cm) {
+        case CM_NEVER:
+            enabled_ = false;
+            break;
+
+        case CM_ALWAYS:
+            enabled_ = true;
+            break;
+
+        case CM_AUTO:
+        default:
+            enabled_ = (&str == &std::cout)
+                && isatty(STDOUT_FILENO);
+    }
 }
 
 const char* ColorWriter::setColor(const EColor color) {
@@ -70,16 +82,16 @@ struct CovWriter::Private {
     ColorWriter         cw;
     bool                writing;
 
-    Private(std::ostream &str_):
+    Private(std::ostream &str_, const EColorMode cm_):
         str(str_),
-        cw(str_),
+        cw(str_, cm_),
         writing(false)
     {
     }
 };
 
-CovWriter::CovWriter(std::ostream &str):
-    d(new Private(str))
+CovWriter::CovWriter(std::ostream &str, const EColorMode cm):
+    d(new Private(str, cm))
 {
 }
 

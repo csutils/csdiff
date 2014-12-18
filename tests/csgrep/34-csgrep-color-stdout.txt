@@ -1,0 +1,587 @@
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+cc1: [1;37mwarning[0m: command line option "-fno-rtti" is valid for C++/ObjC++ but not for C[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+cc1: [1;37merror[0m: unrecognized command line option "-Wcpp"[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+cc1: [1;37merror[0m: unrecognized command line option "-Wdouble-promotion"[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+cc1: [1;37merror[0m: unrecognized command line option "-Wfree-nonheap-object"[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+cc1: [1;37merror[0m: unrecognized command line option "-Winvalid-memory-model"[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+cc1: [1;37merror[0m: unrecognized command line option "-Wjump-misses-init"[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+cc1: [1;37merror[0m: unrecognized command line option "-Wmaybe-uninitialized"[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+cc1: [1;37merror[0m: unrecognized command line option "-Wnarrowing"[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+cc1: [1;37merror[0m: unrecognized command line option "-Wsizeof-pointer-memaccess"[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+cc1: [1;37merror[0m: unrecognized command line option "-Wsuggest-attribute=const"[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+cc1: [1;37merror[0m: unrecognized command line option "-Wsuggest-attribute=format"[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+cc1: [1;37merror[0m: unrecognized command line option "-Wsuggest-attribute=noreturn"[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+cc1: [1;37merror[0m: unrecognized command line option "-Wsuggest-attribute=pure"[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+cc1: [1;37merror[0m: unrecognized command line option "-Wtrampolines"[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+cc1: [1;37merror[0m: unrecognized command line option "-Wunused-local-typedefs"[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+cc1: [1;37merror[0m: unrecognized command line option "-Wunused-result"[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+cc1: [1;37merror[0m: unrecognized command line option "-Wvarargs"[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+cc1: [1;37merror[0m: unrecognized command line option "-Wvector-operation-performance"[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/gnulib/lib/vasnprintf.c:1883:17: [1;37mwarning[0m: Null pointer passed as an argument to a 'nonnull' parameter[0m
+[1;30m[1;36m#                DCHAR_CPY (result + length, (const DCHAR_T *) cp, n);[0m
+[1;30m[1;36m#                ^          ~~~~~~~~~~~~~~~[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/gnulib/lib/vasnprintf.c:143:21: note: instantiated from:[0m
+[1;30m[1;36m##  define DCHAR_CPY memcpy[0m
+[1;30m[1;36m#                    ^[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/gnulib/lib/vasnprintf.c:5548:5: [1;37mwarning[0m: Dereference of null pointer[0m
+[1;30m[1;36m#    result[length] = '\0';[0m
+[1;30m[1;36m#    ^[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/gnulib/lib/vasnprintf.c:1905:13: [1;37mwarning[0m: Dereference of null pointer[0m
+[1;30m[1;36m#            result[length] = '%';[0m
+[1;30m[1;36m#            ^[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/util/processinfo.c:64:13: [1;37mwarning[0m: expression result unused [-Wunused-value][0m
+[1;30m[1;36m#            CPU_SET_S(i, masklen, mask);[0m
+[1;30m[1;36m#            ^~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/util/processinfo.c:24: included_from: Included from here.[0m
+[1;30m/usr/include/sched.h:87:45: note: instantiated from:[0m
+[1;30m[1;36m## define CPU_SET_S(cpu, setsize, cpusetp)   __CPU_SET_S (cpu, setsize, cpusetp)[0m
+[1;30m[1;36m#                                            ^[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/util/processinfo.c:24: included_from: Included from here.[0m
+[1;30m/usr/include/sched.h:43: included_from: Included from here.[0m
+[1;30m/usr/include/bits/sched.h:148:9: note: instantiated from:[0m
+[1;30m[1;36m#      : 0; }))[0m
+[1;30m[1;36m#        ^[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/util/util.c:960:32: [1;37mwarning[0m: Although the value stored to 'ret' is used in the enclosing expression, the value is never actually read from 'ret'[0m
+[1;30m[1;36m#    if (!WIFEXITED(status) || (ret = -WEXITSTATUS(status)) == -EACCES ||[0m
+[1;30m[1;36m#                               ^     ~~~~~~~~~~~~[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/util/virnetdevmacvlan.c:582:9: [1;37mwarning[0m: Branch condition evaluates to a garbage value[0m
+[1;30m[1;36m#        if (tb_vfinfo[IFLA_VF_MAC]) {[0m
+[1;30m[1;36m#        ^   ~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/util/virnetlink.c:635:5: [1;37mwarning[0m: Value stored to 'r' is never read[0m
+[1;30m[1;36m#    r = 0;[0m
+[1;30m[1;36m#    ^   ~[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/util/virstring.c:102:12: [1;37mwarning[0m: Value stored to 'ntokens' is never read[0m
+[1;30m[1;36m#    tokens[ntokens++] = NULL;[0m
+[1;30m[1;36m#           ^~~~~~~~~[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/conf/domain_conf.c:15807:9: [1;37mwarning[0m: Dereference of null pointer (loaded from variable 'domains')[0m
+[1;30m[1;36m#        *domains = data.domains;[0m
+[1;30m[1;36m#        ^~~~~~~~[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/conf/snapshot_conf.c:844:13: [1;37mwarning[0m: Null pointer passed as an argument to a 'nonnull' parameter[0m
+[1;30m[1;36m#            VIR_FREE(names[i]);[0m
+[1;30m[1;36m#            ^~~~~~~~~~~~~~~~~~[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/conf/snapshot_conf.c:38: included_from: Included from here.[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/util/memory.h:368:24: note: instantiated from:[0m
+[1;30m[1;36m## define VIR_FREE(ptr) virFree((void *) (1 ? (const void *) &(ptr) : (ptr)))[0m
+[1;30m[1;36m#                       ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/nodeinfo.c:254:9: [1;37mwarning[0m: expression result unused [-Wunused-value][0m
+[1;30m[1;36m#        CPU_SET(sock, &sock_map);[0m
+[1;30m[1;36m#        ^~~~~~~~~~~~~~~~~~~~~~~~[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/nodeinfo.c:33: included_from: Included from here.[0m
+[1;30m/usr/include/sched.h:80:33: note: instantiated from:[0m
+[1;30m[1;36m## define CPU_SET(cpu, cpusetp)   __CPU_SET_S (cpu, sizeof (cpu_set_t), cpusetp)[0m
+[1;30m[1;36m#                                 ^[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/nodeinfo.c:33: included_from: Included from here.[0m
+[1;30m/usr/include/sched.h:43: included_from: Included from here.[0m
+[1;30m/usr/include/bits/sched.h:148:9: note: instantiated from:[0m
+[1;30m[1;36m#      : 0; }))[0m
+[1;30m[1;36m#        ^[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/nodeinfo.c:312:9: [1;37mwarning[0m: expression result unused [-Wunused-value][0m
+[1;30m[1;36m#        CPU_SET(core, &core_maps[sock]);[0m
+[1;30m[1;36m#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/nodeinfo.c:33: included_from: Included from here.[0m
+[1;30m/usr/include/sched.h:80:33: note: instantiated from:[0m
+[1;30m[1;36m## define CPU_SET(cpu, cpusetp)   __CPU_SET_S (cpu, sizeof (cpu_set_t), cpusetp)[0m
+[1;30m[1;36m#                                 ^[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/nodeinfo.c:33: included_from: Included from here.[0m
+[1;30m/usr/include/sched.h:43: included_from: Included from here.[0m
+[1;30m/usr/include/bits/sched.h:148:9: note: instantiated from:[0m
+[1;30m[1;36m#      : 0; }))[0m
+[1;30m[1;36m#        ^[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c:4968:21: [1;37mwarning[0m: Null pointer passed as an argument to a 'nonnull' parameter[0m
+[1;30m[1;36m#    if (!(tempuri = virURIParse(dconnuri))) {[0m
+[1;30m[1;36m#                    ^           ~~~~~~~~[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c:14209:10: [1;37mwarning[0m: Field access results in a dereference of a null pointer (loaded from variable 'dev')[0m
+[1;30m[1;36m#    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {[0m
+[1;30m[1;36m#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c:46: included_from: Included from here.[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h:74:33: note: instantiated from:[0m
+[1;30m[1;36m#    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))[0m
+[1;30m[1;36m#                                ^[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c:14209:10: note: instantiated from:[0m
+[1;30m[1;36m#    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {[0m
+[1;30m[1;36m#         ^[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c:46: included_from: Included from here.[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h:74:55: note: instantiated from:[0m
+[1;30m[1;36m#    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))[0m
+[1;30m[1;36m#                                               ~~~~~  ^[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c:14243:10: [1;37mwarning[0m: Field access results in a dereference of a null pointer (loaded from variable 'dev')[0m
+[1;30m[1;36m#    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {[0m
+[1;30m[1;36m#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c:46: included_from: Included from here.[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h:74:33: note: instantiated from:[0m
+[1;30m[1;36m#    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))[0m
+[1;30m[1;36m#                                ^[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c:14243:10: note: instantiated from:[0m
+[1;30m[1;36m#    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {[0m
+[1;30m[1;36m#         ^[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c:46: included_from: Included from here.[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h:74:55: note: instantiated from:[0m
+[1;30m[1;36m#    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))[0m
+[1;30m[1;36m#                                               ~~~~~  ^[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c:14267:10: [1;37mwarning[0m: Field access results in a dereference of a null pointer (loaded from variable 'dev')[0m
+[1;30m[1;36m#    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {[0m
+[1;30m[1;36m#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c:46: included_from: Included from here.[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h:74:33: note: instantiated from:[0m
+[1;30m[1;36m#    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))[0m
+[1;30m[1;36m#                                ^[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c:14267:10: note: instantiated from:[0m
+[1;30m[1;36m#    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {[0m
+[1;30m[1;36m#         ^[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c:46: included_from: Included from here.[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h:74:55: note: instantiated from:[0m
+[1;30m[1;36m#    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))[0m
+[1;30m[1;36m#                                               ~~~~~  ^[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c:14299:10: [1;37mwarning[0m: Field access results in a dereference of a null pointer (loaded from variable 'dev')[0m
+[1;30m[1;36m#    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {[0m
+[1;30m[1;36m#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c:46: included_from: Included from here.[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h:74:33: note: instantiated from:[0m
+[1;30m[1;36m#    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))[0m
+[1;30m[1;36m#                                ^[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c:14299:10: note: instantiated from:[0m
+[1;30m[1;36m#    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {[0m
+[1;30m[1;36m#         ^[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c:46: included_from: Included from here.[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h:74:55: note: instantiated from:[0m
+[1;30m[1;36m#    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))[0m
+[1;30m[1;36m#                                               ~~~~~  ^[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c:14339:10: [1;37mwarning[0m: Field access results in a dereference of a null pointer (loaded from variable 'dev')[0m
+[1;30m[1;36m#    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {[0m
+[1;30m[1;36m#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c:46: included_from: Included from here.[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h:74:33: note: instantiated from:[0m
+[1;30m[1;36m#    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))[0m
+[1;30m[1;36m#                                ^[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c:14339:10: note: instantiated from:[0m
+[1;30m[1;36m#    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {[0m
+[1;30m[1;36m#         ^[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c:46: included_from: Included from here.[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h:74:55: note: instantiated from:[0m
+[1;30m[1;36m#    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))[0m
+[1;30m[1;36m#                                               ~~~~~  ^[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c:14379:10: [1;37mwarning[0m: Field access results in a dereference of a null pointer (loaded from variable 'dev')[0m
+[1;30m[1;36m#    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {[0m
+[1;30m[1;36m#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c:46: included_from: Included from here.[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h:74:33: note: instantiated from:[0m
+[1;30m[1;36m#    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))[0m
+[1;30m[1;36m#                                ^[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c:14379:10: note: instantiated from:[0m
+[1;30m[1;36m#    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {[0m
+[1;30m[1;36m#         ^[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c:46: included_from: Included from here.[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h:74:55: note: instantiated from:[0m
+[1;30m[1;36m#    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))[0m
+[1;30m[1;36m#                                               ~~~~~  ^[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c:14445:10: [1;37mwarning[0m: Field access results in a dereference of a null pointer (loaded from variable 'dev')[0m
+[1;30m[1;36m#    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {[0m
+[1;30m[1;36m#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c:46: included_from: Included from here.[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h:74:33: note: instantiated from:[0m
+[1;30m[1;36m#    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))[0m
+[1;30m[1;36m#                                ^[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c:14445:10: note: instantiated from:[0m
+[1;30m[1;36m#    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {[0m
+[1;30m[1;36m#         ^[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c:46: included_from: Included from here.[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h:74:55: note: instantiated from:[0m
+[1;30m[1;36m#    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))[0m
+[1;30m[1;36m#                                               ~~~~~  ^[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c:14493:10: [1;37mwarning[0m: Field access results in a dereference of a null pointer (loaded from variable 'dev')[0m
+[1;30m[1;36m#    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {[0m
+[1;30m[1;36m#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c:46: included_from: Included from here.[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h:74:33: note: instantiated from:[0m
+[1;30m[1;36m#    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))[0m
+[1;30m[1;36m#                                ^[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c:14493:10: note: instantiated from:[0m
+[1;30m[1;36m#    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {[0m
+[1;30m[1;36m#         ^[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c:46: included_from: Included from here.[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h:74:55: note: instantiated from:[0m
+[1;30m[1;36m#    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))[0m
+[1;30m[1;36m#                                               ~~~~~  ^[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c:14543:10: [1;37mwarning[0m: Field access results in a dereference of a null pointer (loaded from variable 'dev')[0m
+[1;30m[1;36m#    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {[0m
+[1;30m[1;36m#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c:46: included_from: Included from here.[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h:74:33: note: instantiated from:[0m
+[1;30m[1;36m#    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))[0m
+[1;30m[1;36m#                                ^[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c:14543:10: note: instantiated from:[0m
+[1;30m[1;36m#    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {[0m
+[1;30m[1;36m#         ^[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c:46: included_from: Included from here.[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h:74:55: note: instantiated from:[0m
+[1;30m[1;36m#    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))[0m
+[1;30m[1;36m#                                               ~~~~~  ^[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/remote/remote_driver.c:4982:10: [1;37mwarning[0m: Although the value stored to 'eventID' is used in the enclosing expression, the value is never actually read from 'eventID'[0m
+[1;30m[1;36m#    if ((eventID = virDomainEventStateEventID(conn,[0m
+[1;30m[1;36m#         ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/rpc/virnetclient.c:1822:18: [1;37mwarning[0m: Field access results in a dereference of a null pointer (loaded from variable 'client')[0m
+[1;30m[1;36m#    if (!client->sock)[0m
+[1;30m[1;36m#         ~~~~~~  ^[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/esx/esx_driver.c:5170:21: [1;37mwarning[0m: Pass-by-value argument in function call is undefined[0m
+[1;30m[1;36m#            state = esxVI_VirtualMachinePowerState_ConvertToLibvirt(powerState);[0m
+[1;30m[1;36m#                    ^                                               ~~~~~~~~~~[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/esx/esx_driver.c:5126:27: [1;37mwarning[0m: The left operand of '==' is a garbage value[0m
+[1;30m[1;36m#               powerState == esxVI_VirtualMachinePowerState_PoweredOff)))[0m
+[1;30m[1;36m#               ~~~~~~~~~~ ^[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/esx/esx_driver.c:5124:27: [1;37mwarning[0m: The left operand of '!=' is a garbage value[0m
+[1;30m[1;36m#               powerState != esxVI_VirtualMachinePowerState_PoweredOff) ||[0m
+[1;30m[1;36m#               ~~~~~~~~~~ ^[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/esx/esx_driver.c:5149:36: [1;37mwarning[0m: Field access results in a dereference of a null pointer (loaded from variable 'autoStartDefaults')[0m
+[1;30m[1;36m#            if (autoStartDefaults->enabled == esxVI_Boolean_True) {[0m
+[1;30m[1;36m#                ~~~~~~~~~~~~~~~~~  ^[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/security/security_selinux.c:1996:5: [1;37mwarning[0m: Field access results in a dereference of a null pointer (loaded from variable 'secdef')[0m
+[1;30m[1;36m#    VIR_DEBUG("imageLabel=%s opts=%s", secdef->imagelabel, opts);[0m
+[1;30m[1;36m#    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/security/security_selinux.c:39: included_from: Included from here.[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/util/logging.h:59:9: note: instantiated from:[0m
+[1;30m[1;36m#        VIR_DEBUG_INT("file." __FILE__, __func__, __LINE__, __VA_ARGS__)[0m
+[1;30m[1;36m#        ^[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/security/security_selinux.c:1996:5: note: instantiated from:[0m
+[1;30m[1;36m#    VIR_DEBUG("imageLabel=%s opts=%s", secdef->imagelabel, opts);[0m
+[1;30m[1;36m#    ^                                  ~~~~~~[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/security/security_selinux.c:1996:48: note: instantiated from:[0m
+[1;30m[1;36m#    VIR_DEBUG("imageLabel=%s opts=%s", secdef->imagelabel, opts);[0m
+[1;30m[1;36m#                                       ~~~~~~  ^[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/tmp/tmpjF4UBX.c:1: [1;37mwarning[0m: return type defaults to 'int'[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/tmp/tmpjF4UBX.c:1: [1;37mwarning[0m: '__dtrace' defined but not used[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/tmp/tmpjF4UBX.c:1:8: [1;37mwarning[0m: type specifier missing, defaults to 'int' [-Wimplicit-int][0m
+[1;30m[1;36m#static __dtrace () {}[0m
+[1;30m[1;36m#~~~~~~ ^[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/tmp/tmpjF4UBX.c:1:21: [1;37mwarning[0m: control reaches end of non-void function [-Wreturn-type][0m
+[1;30m[1;36m#static __dtrace () {}[0m
+[1;30m[1;36m#                    ^[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_capabilities.c:735:14: [1;37mwarning[0m: Although the value stored to 'dom' is used in the enclosing expression, the value is never actually read from 'dom'[0m
+[1;30m[1;36m#        if ((dom = virCapabilitiesAddGuestDomain(guest,[0m
+[1;30m[1;36m#             ^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_command.c:4476:13: [1;37mwarning[0m: Value stored to 'have_cpu' is never read[0m
+[1;30m[1;36m#            have_cpu = true;[0m
+[1;30m[1;36m#            ^          ~~~~[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_command.c:7291:22: [1;37mwarning[0m: Field access results in a dereference of a null pointer (loaded from variable 'def')[0m
+[1;30m[1;36m#                def->src = values[i];[0m
+[1;30m[1;36m#                ~~~  ^[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_command.c:7398:22: [1;37mwarning[0m: Field access results in a dereference of a null pointer (loaded from variable 'def')[0m
+[1;30m[1;36m#                def->type = VIR_DOMAIN_DISK_TYPE_FILE;[0m
+[1;30m[1;36m#                ~~~  ^[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_command.c:7518:14: [1;37mwarning[0m: Field access results in a dereference of a null pointer (loaded from variable 'def')[0m
+[1;30m[1;36m#    if (def->rerror_policy == def->error_policy)[0m
+[1;30m[1;36m#        ~~~  ^[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_command.c:7411:22: [1;37mwarning[0m: Field access results in a dereference of a null pointer (loaded from variable 'def')[0m
+[1;30m[1;36m#                def->device = VIR_DOMAIN_DISK_DEVICE_CDROM;[0m
+[1;30m[1;36m#                ~~~  ^[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_command.c:7402:22: [1;37mwarning[0m: Field access results in a dereference of a null pointer (loaded from variable 'def')[0m
+[1;30m[1;36m#                def->bus = VIR_DOMAIN_DISK_BUS_IDE;[0m
+[1;30m[1;36m#                ~~~  ^[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_command.c:7416:18: [1;37mwarning[0m: Field access results in a dereference of a null pointer (loaded from variable 'def')[0m
+[1;30m[1;36m#            def->driverName = strdup("qemu");[0m
+[1;30m[1;36m#            ~~~  ^[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_command.c:7404:22: [1;37mwarning[0m: Field access results in a dereference of a null pointer (loaded from variable 'def')[0m
+[1;30m[1;36m#                def->bus = VIR_DOMAIN_DISK_BUS_SCSI;[0m
+[1;30m[1;36m#                ~~~  ^[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_monitor.c:2902:15: [1;37mwarning[0m: Null pointer passed as an argument to a 'nonnull' parameter[0m
+[1;30m[1;36m#        ret = qemuMonitorJSONBlockCommit(mon, device, top, base, speed);[0m
+[1;30m[1;36m#              ^                                       ~~~[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/tmp/tmpObFhPl.c:1: [1;37mwarning[0m: return type defaults to 'int'[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/tmp/tmpObFhPl.c:1: [1;37mwarning[0m: '__dtrace' defined but not used[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_driver.c:8587:22: [1;37mwarning[0m: Although the value stored to 'rc' is used in the enclosing expression, the value is never actually read from 'rc'[0m
+[1;30m[1;36m#                if ((rc = qemuSetEmulatorBandwidthLive(vm, group, value_ul, 0)))[0m
+[1;30m[1;36m#                     ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_driver.c:8601:22: [1;37mwarning[0m: Although the value stored to 'rc' is used in the enclosing expression, the value is never actually read from 'rc'[0m
+[1;30m[1;36m#                if ((rc = qemuSetEmulatorBandwidthLive(vm, group, 0, value_l)))[0m
+[1;30m[1;36m#                     ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_driver.c:8573:22: [1;37mwarning[0m: Although the value stored to 'rc' is used in the enclosing expression, the value is never actually read from 'rc'[0m
+[1;30m[1;36m#                if ((rc = qemuSetVcpusBWLive(vm, group, 0, value_l)))[0m
+[1;30m[1;36m#                     ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_driver.c:8559:22: [1;37mwarning[0m: Although the value stored to 'rc' is used in the enclosing expression, the value is never actually read from 'rc'[0m
+[1;30m[1;36m#                if ((rc = qemuSetVcpusBWLive(vm, group, value_ul, 0)))[0m
+[1;30m[1;36m#                     ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_driver.c:9419:19: [1;37mwarning[0m: Field access results in a dereference of a null pointer (loaded from variable 'net')[0m
+[1;30m[1;36m#            (net->bandwidth && net->bandwidth->in)) {[0m
+[1;30m[1;36m#             ~~~  ^[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_driver.c:9441:40: [1;37mwarning[0m: Field access results in a dereference of a null pointer (loaded from variable 'net')[0m
+[1;30m[1;36m#        if (virNetDevBandwidthSet(net->ifname, newBandwidth, false) < 0) {[0m
+[1;30m[1;36m#                                  ~~~  ^[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_driver.c:9430:19: [1;37mwarning[0m: Field access results in a dereference of a null pointer (loaded from variable 'net')[0m
+[1;30m[1;36m#            (net->bandwidth && net->bandwidth->out)) {[0m
+[1;30m[1;36m#             ~~~  ^[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_driver.c:9453:29: [1;37mwarning[0m: Field access results in a dereference of a null pointer (loaded from variable 'persistentNet')[0m
+[1;30m[1;36m#        if (!persistentNet->bandwidth) {[0m
+[1;30m[1;36m#             ~~~~~~~~~~~~~  ^[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_driver.c:12570:11: [1;37mwarning[0m: Although the value stored to 'snap' is used in the enclosing expression, the value is never actually read from 'snap'[0m
+[1;30m[1;36m#    if (!(snap = qemuSnapObjFromSnapshot(vm, snapshot)))[0m
+[1;30m[1;36m#          ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_driver.c:12596:11: [1;37mwarning[0m: Although the value stored to 'snap' is used in the enclosing expression, the value is never actually read from 'snap'[0m
+[1;30m[1;36m#    if (!(snap = qemuSnapObjFromSnapshot(vm, snapshot)))[0m
+[1;30m[1;36m#          ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_driver.c:14421:17: [1;37mwarning[0m: Pass-by-value argument in function call is undefined[0m
+[1;30m[1;36m#            if (virTypedParameterAssign(param,[0m
+[1;30m[1;36m#                ^[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/lxc/lxc_container.c:1435:5: [1;37mwarning[0m: Null pointer passed as an argument to a 'nonnull' parameter[0m
+[1;30m[1;36m#    closedir(dh);[0m
+[1;30m[1;36m#    ^        ~~[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/lxc/lxc_container.c:1382:16: [1;37mwarning[0m: Null pointer passed as an argument to a 'nonnull' parameter[0m
+[1;30m[1;36m#    if (!(dh = opendir(*root))) {[0m
+[1;30m[1;36m#               ^       ~~~~~[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/tmp/tmpObFhPl.c:1:8: [1;37mwarning[0m: type specifier missing, defaults to 'int' [-Wimplicit-int][0m
+[1;30m[1;36m#static __dtrace () {}[0m
+[1;30m[1;36m#~~~~~~ ^[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/tmp/tmpObFhPl.c:1:21: [1;37mwarning[0m: control reaches end of non-void function [-Wreturn-type][0m
+[1;30m[1;36m#static __dtrace () {}[0m
+[1;30m[1;36m#                    ^[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/lxc/lxc_process.c:466:17: [1;37mwarning[0m: Value stored to 'fail' is never read[0m
+[1;30m[1;36m#                fail = true;[0m
+[1;30m[1;36m#                ^      ~~~~[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/nwfilter/nwfilter_dhcpsnoop.c:900:5: [1;37mwarning[0m: expression result unused [-Wunused-value][0m
+[1;30m[1;36m#    virAtomicIntDecAndTest(&virNWFilterSnoopState.nLeases);[0m
+[1;30m[1;36m#    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/nwfilter/nwfilter_dhcpsnoop.c:67: included_from: Included from here.[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/util/viratomic.h:183:47: note: instantiated from:[0m
+[1;30m[1;36m#            __sync_fetch_and_sub((atomic), 1) == 1;                     \[0m
+[1;30m[1;36m#            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^  ~[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/nwfilter/nwfilter_dhcpsnoop.c:1182:5: [1;37mwarning[0m: expression result unused [-Wunused-value][0m
+[1;30m[1;36m#    virAtomicIntDecAndTest(job->qCtr);[0m
+[1;30m[1;36m#    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/nwfilter/nwfilter_dhcpsnoop.c:67: included_from: Included from here.[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/util/viratomic.h:183:47: note: instantiated from:[0m
+[1;30m[1;36m#            __sync_fetch_and_sub((atomic), 1) == 1;                     \[0m
+[1;30m[1;36m#            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^  ~[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/nwfilter/nwfilter_dhcpsnoop.c:1576:5: [1;37mwarning[0m: expression result unused [-Wunused-value][0m
+[1;30m[1;36m#    virAtomicIntDecAndTest(&virNWFilterSnoopState.nThreads);[0m
+[1;30m[1;36m#    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/nwfilter/nwfilter_dhcpsnoop.c:67: included_from: Included from here.[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/util/viratomic.h:183:47: note: instantiated from:[0m
+[1;30m[1;36m#            __sync_fetch_and_sub((atomic), 1) == 1;                     \[0m
+[1;30m[1;36m#            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^  ~[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/nwfilter/nwfilter_dhcpsnoop.c:577:9: [1;37mwarning[0m: Null pointer passed as an argument to a 'nonnull' parameter[0m
+[1;30m[1;36m#        virReportError(VIR_ERR_INTERNAL_ERROR,[0m
+[1;30m[1;36m#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/src/nwfilter/nwfilter_dhcpsnoop.c:581:24: note: instantiated from:[0m
+[1;30m[1;36m#                       strlen(ifkey));[0m
+[1;30m[1;36m#                       ^      ~~~~~[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/src/nwfilter/nwfilter_gentech_driver.c:723:17: [1;37mwarning[0m: Value stored to 'rc' is never read[0m
+[1;30m[1;36m#                rc = -1;[0m
+[1;30m[1;36m#                ^    ~~[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/tools/virsh-interface.c:966:11: [1;37mwarning[0m: Although the value stored to 'br_node' is used in the enclosing expression, the value is never actually read from 'br_node'[0m
+[1;30m[1;36m#    if (!(br_node = virXPathNode("./bridge", ctxt))) {[0m
+[1;30m[1;36m#          ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/tools/virsh-interface.c:971:10: [1;37mwarning[0m: Although the value stored to 'if_node' is used in the enclosing expression, the value is never actually read from 'if_node'[0m
+[1;30m[1;36m#    if ((if_node = virXPathNode("./bridge/interface[2]", ctxt))) {[0m
+[1;30m[1;36m#         ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/tools/virsh-host.c:943:49: [1;37mwarning[0m: Value stored to 'i' is never read[0m
+[1;30m[1;36m#            if (virTypedParameterAssign(&params[i++],[0m
+[1;30m[1;36m#                                                ^~~[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/tools/virsh-volume.c:1045:9: [1;37mwarning[0m: Value stored to 'success' is never read[0m
+[1;30m[1;36m#        success = true;[0m
+[1;30m[1;36m#        ^         ~~~~[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/tools/virsh-domain.c:984:45: [1;37mwarning[0m: Value stored to 'i' is never read[0m
+[1;30m[1;36m#            virTypedParameterAssign(&params[i++],[0m
+[1;30m[1;36m#                                            ^~~[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/tools/virsh-domain.c:2281:13: [1;37mwarning[0m: Value stored to 'i' is never read[0m
+[1;30m[1;36m#            i++;[0m
+[1;30m[1;36m#            ^~~[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/tools/virsh-domain.c:5713:10: [1;37mwarning[0m: Although the value stored to 'state' is used in the enclosing expression, the value is never actually read from 'state'[0m
+[1;30m[1;36m#    if ((state = vshDomainState(ctl, dom, NULL)) < 0)[0m
+[1;30m[1;36m#         ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/tools/virsh-domain.c:7143:13: [1;37mwarning[0m: Value stored to 'params' is never read[0m
+[1;30m[1;36m#            params = true;[0m
+[1;30m[1;36m#            ^        ~~~~[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/tools/virsh-snapshot.c:509: included_from: Included from here.[0m
+/builddir/build/BUILD/libvirt-0.10.2/tools/virsh-edit.c:118:19: [1;37mwarning[0m: expression result unused [-Wunused-value][0m
+[1;30m[1;36m#    if (!msg && !(EDIT_DEFINE)) {[0m
+[1;30m[1;36m#                  ^~~~~~~~~~~[0m
+[1;30m/builddir/build/BUILD/libvirt-0.10.2/tools/virsh-snapshot.c:504:60: note: instantiated from:[0m
+[1;30m[1;36m#    define_flags |= VIR_DOMAIN_SNAPSHOT_CREATE_DISK_ONLY : 0), \[0m
+[1;30m[1;36m#                                                           ^[0m
+
+[1;37mError: [1;32mCOMPILER_WARNING[1;37m[0m:
+/builddir/build/BUILD/libvirt-0.10.2/tools/virsh.c:1854:24: [1;37mwarning[0m: Value stored to 'tmpopt' during its initialization is never read[0m
+[1;30m[1;36m#            vshCmdOpt *tmpopt = first;[0m
+[1;30m[1;36m#                       ^        ~~~~~[0m

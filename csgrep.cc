@@ -331,13 +331,15 @@ class WriterFactory {
         typedef std::map<std::string, AbstractWriter* (*)(void)> TTable;
         TTable tbl_;
 
+        static EColorMode cm_;
+
         static AbstractWriter* createFiles()    { return new FilePrinter;   }
         static AbstractWriter* createGrouped()  { return new GroupPrinter;  }
         static AbstractWriter* createStat()     { return new DefCounter;    }
         static AbstractWriter* createFileStat() { return new FileDefCounter;}
 
         static AbstractWriter* createGrep() {
-            return new CovWriter(std::cout);
+            return new CovWriter(std::cout, cm_);
         }
 
         static AbstractWriter* createJson() {
@@ -349,6 +351,10 @@ class WriterFactory {
         }
 
     public:
+        static void setColorMode(const EColorMode cm) {
+            cm_ = cm;
+        }
+
         WriterFactory() {
             tbl_["dig_key_events"]  = createKeyEventPrinter;
             tbl_["files"]           = createFiles;
@@ -367,6 +373,8 @@ class WriterFactory {
             return it->second();
         }
 };
+
+EColorMode WriterFactory::cm_;
 
 static std::string name;
 
@@ -497,6 +505,8 @@ int main(int argc, char *argv[])
             ("invert-match,v",                                  "select defects that do not match the selected criteria")
             ("invert-regex,n",                                  "invert regular expressions in all predicates")
 
+            ("color",                                           "use colorized console output (default if connected to a terminal)")
+            ("no-color",                                        "do not use colorized console output")
             ("quiet,q",                                         "do not report any parsing errors")
 
             ("mode",                po::value<string>(&mode)
@@ -536,6 +546,20 @@ int main(int argc, char *argv[])
         return 0;
     }
 
+    // handle --[no-]color options
+    const bool color_always = vm.count("color");
+    const bool color_never = vm.count("no-color");
+    if (color_always && color_never) {
+        std::cerr << name << ": error: "
+            "options --color and --no-color are mutually exclusive\n";
+        return 1;
+    }
+    if (color_always)
+        WriterFactory::setColorMode(CM_ALWAYS);
+    if (color_never)
+        WriterFactory::setColorMode(CM_NEVER);
+
+    // create a writer according to the selected mode
     WriterFactory factory;
     AbstractWriter *eng = factory.create(mode);
     if (!eng) {
