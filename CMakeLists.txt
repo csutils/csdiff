@@ -20,24 +20,6 @@ project(csdiff CXX)
 enable_testing()
 add_definitions(-Wall -Wextra -fPIC)
 
-# Boost libraries
-find_package(Boost 1.41)
-if(Boost_FOUND)
-    # boost >= 1.41 ... use everything from system
-    set(boost_incs_tmp ${Boost_INCLUDE_DIRS})
-else()
-    # boost < 1.41 ... use local overrides
-    find_package(Boost 1.33 REQUIRED)
-    message(STATUS "WARNING: System Boost libraries are tool old, using local!")
-    set(boost_incs_tmp ${Boost_INCLUDE_DIRS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/boost_1_34_1
-        ${CMAKE_CURRENT_SOURCE_DIR}/boost_1_35_0
-        ${CMAKE_CURRENT_SOURCE_DIR}/boost_1_41_0)
-endif()
-set(BOOST_INCS ${boost_incs_tmp} CACHE STRING "boost include directories")
-include_directories(SYSTEM ${BOOST_INCS})
-link_directories(${Boost_LIBRARY_DIRS})
-
 # cslib.a
 add_library(cs STATIC
     abstract-filter.cc
@@ -59,7 +41,11 @@ add_library(cs STATIC
 )
 
 # link cslib.a and boost libraries
-link_libraries(cs boost_regex boost_program_options)
+find_library(BOOST_REGEX                boost_regex                 REQUIRED)
+find_library(BOOST_PROGRAM_OPTIONS      boost_program_options       REQUIRED)
+link_libraries(cs
+    boost_regex
+    boost_program_options)
 
 # the list of executables
 add_executable(csdiff       csdiff.cc)
