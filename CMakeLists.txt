@@ -72,13 +72,13 @@ option(BUILD_PYCSDIFF "Set to ON to enable python binding" ON)
 if (BUILD_PYCSDIFF)
     find_library(BOOST_PYTHON boost_python REQUIRED)
 
-    # query PYTHON_INCLUDE_DIRS
+    # query PYTHON_INCLUDE_DIR
     find_package(PythonInterp REQUIRED)
     find_package(PythonLibs   REQUIRED)
-    message(STATUS "PYTHON_INCLUDE_DIRS: ${PYTHON_INCLUDE_DIRS}")
-    if(NOT EXISTS "${PYTHON_INCLUDE_DIRS}/pyconfig.h")
+    message(STATUS "PYTHON_INCLUDE_DIR: ${PYTHON_INCLUDE_DIR}")
+    if(NOT EXISTS "${PYTHON_INCLUDE_DIR}/pyconfig.h")
         message(FATAL_ERROR "
-${PYTHON_INCLUDE_DIRS}/pyconfig.h does not exits")
+${PYTHON_INCLUDE_DIR}/pyconfig.h does not exits")
     endif()
 
     # query PYTHON_SITEARCH
@@ -98,7 +98,7 @@ failed to query PYTHON_SITEARCH")
     message(STATUS "python binding enabled, the pycsdiff module will be built!")
     add_library(pycsdiff SHARED pycsdiff.cc)
     set_target_properties(pycsdiff PROPERTIES
-        COMPILE_FLAGS "-I${PYTHON_INCLUDE_DIRS}"
+        COMPILE_FLAGS "-I${PYTHON_INCLUDE_DIR}"
         PREFIX "")
     target_link_libraries(pycsdiff boost_python)
     install(TARGETS pycsdiff DESTINATION ${PYTHON_SITEARCH})
