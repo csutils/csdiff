@@ -4,8 +4,15 @@ compiler:
     - gcc
     - clang
 
-before_install: sudo apt-get update
+before_install:
+    - echo "deb https://kdudka.fedorapeople.org/csbuild precise contrib" | sudo tee -a /etc/apt/sources.list
+    - sudo apt-get install apt-transport-https
+    - sudo apt-get update
 
-install: sudo apt-get install cmake help2man libboost1.46-dev libboost-program-options1.46-dev libboost-python1.46-dev libboost-regex1.46-dev
+install:
+    - sudo apt-get install cmake help2man libboost1.46-dev libboost-program-options1.46-dev libboost-python1.46-dev libboost-regex1.46-dev
+    - sudo apt-get install -y --force-yes csbuild
 
-script: make -j9 distcheck CTEST='ctest -j9'
+script:
+    - make -j9 distcheck CTEST='ctest -j9'
+    - csbuild -g "$TRAVIS_COMMIT_RANGE" --git-bisect --added-exit-code=7 --print-fixed -c "make distclean && make -j9"
