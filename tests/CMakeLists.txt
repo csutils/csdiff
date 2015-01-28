@@ -24,8 +24,9 @@ set(csjson      "${csgrep} --mode=json")
 set(diffcmd     "diff -up")
 
 # new versions of Boost tend to escape '/' in JSON strings, no idea why
-set(jsfilter    "sed -e 's|\\\\\\\\\\\\\\\\/|/|g' \
-                     -e ':a;N;$!ba;s|:\\\\\\\\n *\\\\\\\\[|: [|g'")
+set(jsfilter "sed")
+set(jsfilter "${jsfilter} -e 's|\\\\\\\\\\\\\\\\/|/|g'")
+set(jsfilter "${jsfilter} -e ':a;N;$!ba;s|:\\\\\\\\n *\\\\\\\\[|: [|g'")
 
 macro(add_test_wrap test_name cmd)
     add_test("${test_name}" sh -c "${cmd}")
