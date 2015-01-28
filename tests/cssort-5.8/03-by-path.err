@@ -1,11 +1,9 @@
 {
-    "defects":
-    [
+    "defects": [
         {
             "checker": "CONSTANT_EXPRESSION_RESULT",
             "key_event_idx": 0,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/bmptopnm.c",
                     "line": 893,
@@ -18,8 +16,7 @@
         {
             "checker": "CHAR_IO",
             "key_event_idx": 0,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/cameratopam/camera.c",
                     "line": 896,
@@ -32,8 +29,7 @@
         {
             "checker": "CHAR_IO",
             "key_event_idx": 0,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/cameratopam/camera.c",
                     "line": 958,
@@ -46,8 +42,7 @@
         {
             "checker": "CHECKED_RETURN",
             "key_event_idx": 6,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/cameratopam/camera.c",
                     "line": 1261,
@@ -102,8 +97,7 @@
         {
             "checker": "CHECKED_RETURN",
             "key_event_idx": 6,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/cameratopam/camera.c",
                     "line": 1263,
@@ -158,8 +152,7 @@
         {
             "checker": "CHAR_IO",
             "key_event_idx": 0,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/cameratopam/canon.c",
                     "line": 147,
@@ -172,8 +165,7 @@
         {
             "checker": "CHAR_IO",
             "key_event_idx": 1,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/cameratopam/util.c",
                     "line": 21,
@@ -193,8 +185,7 @@
         {
             "checker": "CHAR_IO",
             "key_event_idx": 3,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/cameratopam/util.c",
                     "line": 37,
@@ -228,8 +219,7 @@
         {
             "checker": "DEADCODE",
             "key_event_idx": 9,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/fiasco/codec/mwfa.c",
                     "line": 482,
@@ -305,8 +295,7 @@
         {
             "checker": "DEADCODE",
             "key_event_idx": 11,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/fiasco/lib/dither.c",
                     "line": 125,
@@ -396,8 +385,7 @@
         {
             "checker": "CHECKED_RETURN",
             "key_event_idx": 6,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c",
                     "line": 922,
@@ -452,8 +440,7 @@
         {
             "checker": "CHECKED_RETURN",
             "key_event_idx": 6,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c",
                     "line": 926,
@@ -508,8 +495,7 @@
         {
             "checker": "CHECKED_RETURN",
             "key_event_idx": 6,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c",
                     "line": 945,
@@ -564,8 +550,7 @@
         {
             "checker": "CHECKED_RETURN",
             "key_event_idx": 6,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c",
                     "line": 986,
@@ -620,8 +605,7 @@
         {
             "checker": "CONSTANT_EXPRESSION_RESULT",
             "key_event_idx": 0,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c",
                     "line": 1012,
@@ -634,8 +618,7 @@
         {
             "checker": "CHECKED_RETURN",
             "key_event_idx": 6,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c",
                     "line": 1014,
@@ -690,8 +673,7 @@
         {
             "checker": "CHECKED_RETURN",
             "key_event_idx": 6,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c",
                     "line": 1037,
@@ -746,8 +728,7 @@
         {
             "checker": "BAD_SIZEOF",
             "key_event_idx": 0,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_enc.c",
                     "line": 2109,
@@ -760,8 +741,7 @@
         {
             "checker": "DEADCODE",
             "key_event_idx": 8,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c",
                     "line": 360,
@@ -830,8 +810,7 @@
         {
             "checker": "DEADCODE",
             "key_event_idx": 8,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c",
                     "line": 375,
@@ -900,8 +879,7 @@
         {
             "checker": "DEADCODE",
             "key_event_idx": 4,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c",
                     "line": 390,
@@ -942,8 +920,7 @@
         {
             "checker": "DEADCODE",
             "key_event_idx": 5,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c",
                     "line": 398,
@@ -991,8 +968,7 @@
         {
             "checker": "DEADCODE",
             "key_event_idx": 6,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c",
                     "line": 406,
@@ -1047,8 +1023,7 @@
         {
             "checker": "DEADCODE",
             "key_event_idx": 6,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c",
                     "line": 431,
@@ -1103,8 +1078,7 @@
         {
             "checker": "DEADCODE",
             "key_event_idx": 5,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c",
                     "line": 455,
@@ -1152,8 +1126,7 @@
         {
             "checker": "DEADCODE",
             "key_event_idx": 5,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c",
                     "line": 460,
@@ -1201,8 +1174,7 @@
         {
             "checker": "DEADCODE",
             "key_event_idx": 6,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c",
                     "line": 462,
@@ -1257,8 +1229,7 @@
         {
             "checker": "DEADCODE",
             "key_event_idx": 6,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c",
                     "line": 459,
@@ -1313,8 +1284,7 @@
         {
             "checker": "CHECKED_RETURN",
             "key_event_idx": 6,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t2enc.c",
                     "line": 387,
@@ -1369,8 +1339,7 @@
         {
             "checker": "DEADCODE",
             "key_event_idx": 3,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/pnmtojpeg.c",
                     "line": 298,
@@ -1404,8 +1373,7 @@
         {
             "checker": "CHAR_IO",
             "key_event_idx": 0,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/xwdtopnm.c",
                     "line": 887,
@@ -1418,8 +1386,7 @@
         {
             "checker": "CHAR_IO",
             "key_event_idx": 0,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/macptopbm.c",
                     "line": 130,
@@ -1432,8 +1399,7 @@
         {
             "checker": "CHAR_IO",
             "key_event_idx": 0,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/mgrtopbm.c",
                     "line": 90,
@@ -1446,8 +1412,7 @@
         {
             "checker": "CHECKED_RETURN",
             "key_event_idx": 6,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/pbm/pbmtolps.c",
                     "line": 118,
@@ -1502,8 +1467,7 @@
         {
             "checker": "CHAR_IO",
             "key_event_idx": 0,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/pgm/lispmtopgm.c",
                     "line": 91,
@@ -1516,8 +1480,7 @@
         {
             "checker": "CHAR_IO",
             "key_event_idx": 3,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/pgm/spottopgm.c",
                     "line": 208,
@@ -1551,8 +1514,7 @@
         {
             "checker": "CHECKED_RETURN",
             "key_event_idx": 6,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/imgtoppm.c",
                     "line": 72,
@@ -1607,8 +1569,7 @@
         {
             "checker": "CHAR_IO",
             "key_event_idx": 0,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/leaftoppm.c",
                     "line": 64,
@@ -1621,8 +1582,7 @@
         {
             "checker": "CHAR_IO",
             "key_event_idx": 1,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/pc1toppm.c",
                     "line": 76,
@@ -1642,8 +1602,7 @@
         {
             "checker": "CHECKED_RETURN",
             "key_event_idx": 6,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtoarbtxt.c",
                     "line": 294,
@@ -1698,8 +1657,7 @@
         {
             "checker": "BAD_FREE",
             "key_event_idx": 1,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/readframe.c",
                     "line": 327,
@@ -1719,8 +1677,7 @@
         {
             "checker": "CHECKED_RETURN",
             "key_event_idx": 6,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/param.c",
                     "line": 178,
@@ -1775,8 +1732,7 @@
         {
             "checker": "CHECKED_RETURN",
             "key_event_idx": 6,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/param.c",
                     "line": 231,
@@ -1831,8 +1787,7 @@
         {
             "checker": "CHECKED_RETURN",
             "key_event_idx": 6,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/param.c",
                     "line": 237,
@@ -1887,8 +1842,7 @@
         {
             "checker": "CHECKED_RETURN",
             "key_event_idx": 6,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/param.c",
                     "line": 265,
@@ -1943,8 +1897,7 @@
         {
             "checker": "BAD_FREE",
             "key_event_idx": 1,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/param.c",
                     "line": 352,
@@ -1964,8 +1917,7 @@
         {
             "checker": "CHECKED_RETURN",
             "key_event_idx": 6,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/param.c",
                     "line": 759,
@@ -2020,8 +1972,7 @@
         {
             "checker": "CHECKED_RETURN",
             "key_event_idx": 6,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/param.c",
                     "line": 858,
@@ -2076,8 +2027,7 @@
         {
             "checker": "CHECKED_RETURN",
             "key_event_idx": 6,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/param.c",
                     "line": 883,
@@ -2132,8 +2082,7 @@
         {
             "checker": "CHECKED_RETURN",
             "key_event_idx": 6,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/param.c",
                     "line": 915,
@@ -2188,8 +2137,7 @@
         {
             "checker": "CHECKED_RETURN",
             "key_event_idx": 6,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/param.c",
                     "line": 922,
@@ -2244,8 +2192,7 @@
         {
             "checker": "DEADCODE",
             "key_event_idx": 2,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/postdct.c",
                     "line": 238,
@@ -2272,8 +2219,7 @@
         {
             "checker": "CHECKED_RETURN",
             "key_event_idx": 6,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/specifics.c",
                     "line": 264,
@@ -2328,8 +2274,7 @@
         {
             "checker": "CHECKED_RETURN",
             "key_event_idx": 6,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/specifics.c",
                     "line": 277,
@@ -2384,8 +2329,7 @@
         {
             "checker": "CHECKED_RETURN",
             "key_event_idx": 6,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/specifics.c",
                     "line": 325,
@@ -2440,8 +2384,7 @@
         {
             "checker": "CHECKED_RETURN",
             "key_event_idx": 6,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/specifics.c",
                     "line": 338,
@@ -2496,8 +2439,7 @@
         {
             "checker": "CHAR_IO",
             "key_event_idx": 1,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/spctoppm.c",
                     "line": 52,
@@ -2517,8 +2459,7 @@
         {
             "checker": "CHAR_IO",
             "key_event_idx": 2,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/spctoppm.c",
                     "line": 137,
@@ -2545,8 +2486,7 @@
         {
             "checker": "BUFFER_SIZE_WARNING",
             "key_event_idx": 0,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/xpmtoppm.c",
                     "line": 154,
@@ -2559,8 +2499,7 @@
         {
             "checker": "DEADCODE",
             "key_event_idx": 18,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c",
                     "line": 220,
@@ -2699,8 +2638,7 @@
         {
             "checker": "DEADCODE",
             "key_event_idx": 3,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamscale.c",
                     "line": 644,
@@ -2734,8 +2672,7 @@
         {
             "checker": "CHECKED_RETURN",
             "key_event_idx": 6,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/lib/libpm.c",
                     "line": 521,
@@ -2790,8 +2727,7 @@
         {
             "checker": "DEADCODE",
             "key_event_idx": 6,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/lib/libpm.c",
                     "line": 528,
@@ -2846,8 +2782,7 @@
         {
             "checker": "CHAR_IO",
             "key_event_idx": 2,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/lib/ppmdfont.c",
                     "line": 17,
@@ -2874,8 +2809,7 @@
         {
             "checker": "CHAR_IO",
             "key_event_idx": 1,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/lib/ppmdfont.c",
                     "line": 29,
@@ -2895,8 +2829,7 @@
         {
             "checker": "CHAR_IO",
             "key_event_idx": 2,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/lib/ppmdfont.c",
                     "line": 67,
@@ -2923,8 +2856,7 @@
         {
             "checker": "BUFFER_SIZE_WARNING",
             "key_event_idx": 0,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/other/pamx/window.c",
                     "line": 499,
@@ -2937,8 +2869,7 @@
         {
             "checker": "CHAR_IO",
             "key_event_idx": 1,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/urt/rle_getrow.c",
                     "line": 397,
@@ -2958,8 +2889,7 @@
         {
             "checker": "CHAR_IO",
             "key_event_idx": 1,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/urt/rle_getskip.c",
                     "line": 77,

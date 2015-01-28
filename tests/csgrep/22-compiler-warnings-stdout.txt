@@ -1,11 +1,9 @@
 {
-    "defects":
-    [
+    "defects": [
         {
             "checker": "COMPILER_WARNING",
             "key_event_idx": 1,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/autofs-5.0.8/lib/mounts.c",
                     "line": 0,
@@ -68,8 +66,7 @@
         {
             "checker": "COMPILER_WARNING",
             "key_event_idx": 0,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/autofs-5.0.8/lib/master_tok.c",
                     "line": 2491,
@@ -97,8 +94,7 @@
         {
             "checker": "COMPILER_WARNING",
             "key_event_idx": 0,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/autofs-5.0.8/lib/nss_tok.c",
                     "line": 1288,
@@ -126,8 +122,7 @@
         {
             "checker": "COMPILER_WARNING",
             "key_event_idx": 1,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "/builddir/build/BUILD/autofs-5.0.8/lib/defaults.c",
                     "line": 27,

@@ -1,12 +1,10 @@
 {
-    "defects":
-    [
+    "defects": [
         {
             "checker": "CHECKED_RETURN",
             "annotation": " (CWE-252)",
             "key_event_idx": 0,
-            "events":
-            [
+            "events": [
                 {
                     "file_name": "linuxptp-1.4/clock.c",
                     "line": 974,
