@@ -30,8 +30,8 @@ Manual Installation
     make install
 
 
-RPM-based Installation (tested on Fedora and RHEL-6)
-----------------------------------------------------
+RPM-based Installation
+----------------------
     ./make-srpm.sh
 
     rpmbuild --rebuild ./csdiff-*.src.rpm
