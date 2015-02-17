@@ -70,7 +70,10 @@ install(TARGETS
 # pycsdiff - python binding of csdiff
 option(BUILD_PYCSDIFF "Set to ON to enable python binding" ON)
 if (BUILD_PYCSDIFF)
-    find_library(BOOST_PYTHON boost_python REQUIRED)
+    find_library(BOOST_PYTHON NAMES boost_python
+        boost_python-3.2
+        boost_python-3.3
+        boost_python-3.4)
 
     # query PYTHON_INCLUDE_DIR
     find_package(PythonInterp REQUIRED)
@@ -100,7 +103,7 @@ failed to query PYTHON_SITEARCH")
     set_target_properties(pycsdiff PROPERTIES
         COMPILE_FLAGS "-I${PYTHON_INCLUDE_DIR}"
         PREFIX "")
-    target_link_libraries(pycsdiff boost_python)
+    target_link_libraries(pycsdiff ${BOOST_PYTHON})
     install(TARGETS pycsdiff DESTINATION ${PYTHON_SITEARCH})
 endif()
 
