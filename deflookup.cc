@@ -26,7 +26,8 @@
 
 typedef std::vector<Defect>                     TDefList;
 typedef std::map<std::string, TDefList>         TDefByMsg;
-typedef std::map<std::string, TDefByMsg>        TDefByFile;
+typedef std::map<std::string, TDefByMsg>        TDefByEvt;
+typedef std::map<std::string, TDefByEvt>        TDefByFile;
 typedef std::map<std::string, TDefByFile>       TDefByChecker;
 
 struct DefLookup::Private {
@@ -63,8 +64,9 @@ void DefLookup::hashDefect(const Defect &def) {
 
     const DefEvent &evt = def.events[def.keyEventIdx];
     MsgFilter *filter = MsgFilter::inst();
-    TDefByMsg &col = row[filter->filterPath(evt.fileName)];
-    TDefList &cell = col[filter->filterMsg(evt.msg, def.checker)];
+    TDefByEvt &col = row[filter->filterPath(evt.fileName)];
+    TDefByMsg &zCol = col[evt.event];
+    TDefList &cell = zCol[filter->filterMsg(evt.msg, def.checker)];
 
     cell.push_back(def);
 }
@@ -85,11 +87,18 @@ bool DefLookup::lookup(const Defect &def) {
     if (row.end() == iCol)
         return false;
 
+    TDefByEvt &col = iCol->second;
+
+    // look by key event
+    TDefByEvt::iterator iZCol = col.find(evt.event);
+    if (col.end() == iZCol)
+        return false;
+
     // look by msg
-    TDefByMsg &col = iCol->second;
-    TDefByMsg::iterator iCell = col.find(
+    TDefByMsg &zCol = iZCol->second;
+    TDefByMsg::iterator iCell = zCol.find(
             d->filt->filterMsg(evt.msg, def.checker));
-    if (col.end() == iCell)
+    if (zCol.end() == iCell)
         return false;
 
     // FIXME: nasty over-approximation
