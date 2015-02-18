@@ -73,6 +73,7 @@ void AbstractWriter::setScanProps(const TScanProps &scanProps) {
 
 AbstractWriter* createWriter(
         const EFileFormat           format,
+        const EColorMode            cm,
         const TScanProps           &scanProps)
 {
     AbstractWriter *writer = 0;
@@ -80,7 +81,7 @@ AbstractWriter* createWriter(
     switch (format) {
         case FF_INVALID:
         case FF_COVERITY:
-            writer = new CovWriter(std::cout);
+            writer = new CovWriter(std::cout, cm);
             break;
 
         case FF_GCC:

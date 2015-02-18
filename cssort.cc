@@ -25,7 +25,7 @@
 
 class SortFactory {
     public:
-        AbstractWriter* create(const std::string &key);
+        AbstractWriter* create(const std::string &key, EColorMode cm);
 };
 
 template <class TItem>
@@ -35,14 +35,20 @@ class GenericSort: public AbstractWriter {
 
         TCont           cont_;
         TScanProps      scanProps_;
+        EColorMode      cm_;
 
     public:
+        GenericSort(const EColorMode cm):
+            cm_(cm)
+        {
+        }
+
         virtual void flush() {
             // sort the container
             std::sort(cont_.begin(), cont_.end());
 
             // use the same output format is the input format
-            AbstractWriter *writer = createWriter(this->inputFormat());
+            AbstractWriter *writer = createWriter(this->inputFormat(), cm_);
             writer->setScanProps(scanProps_);
 
             // write the data
@@ -150,12 +156,13 @@ bool operator<(const DefByPath &a, const DefByPath &b) {
     return cmpFileNames(a, b);
 }
 
-AbstractWriter* SortFactory::create(const std::string &key) {
+AbstractWriter* SortFactory::create(const std::string &key, const EColorMode cm)
+{
     if (!key.compare("checker"))
-        return new GenericSort<DefByChecker>;
+        return new GenericSort<DefByChecker>(cm);
 
     if (!key.compare("path"))
-        return new GenericSort<DefByPath>;
+        return new GenericSort<DefByPath>(cm);
 
     // no comparator matched
     return 0;
@@ -188,8 +195,12 @@ int main(int argc, char *argv[])
         desc.add_options()
             ("key", po::value<string>(&key)->default_value("path"),
              "checker, path")
+            ("quiet,q", "do not report any parsing errors");
+
+        addColorOptions(&desc);
+
+        desc.add_options()
             ("help", "produce help message")
-            ("quiet,q", "do not report any parsing errors")
             ("version", "print version");
 
         po::options_description hidden("");
@@ -223,8 +234,15 @@ int main(int argc, char *argv[])
         return 0;
     }
 
+    EColorMode cm;
+    const char *err;
+    if (!readColorOptions(&cm, &err, vm)) {
+        std::cerr << name << ": error: " << err << std::endl;
+        return 1;
+    }
+
     SortFactory factory;
-    AbstractWriter *eng = factory.create(key);
+    AbstractWriter *eng = factory.create(key, cm);
     if (!eng) {
         std::cerr << name << ": error: unknown key: " << key << "\n\n";
         printUsage(std::cerr, desc);

@@ -21,6 +21,7 @@
 #define H_GUARD_ABSTRACT_WRITER_H
 
 #include "abstract-parser.hh"
+#include "color.hh"
 
 // FIXME: misleading class name
 class AbstractWriter {
@@ -68,6 +69,7 @@ class AbstractWriter {
 
 AbstractWriter* createWriter(
         const EFileFormat           format,
+        const EColorMode            cm        = CM_AUTO,
         const TScanProps           &scanProps = TScanProps());
 
 #endif /* H_GUARD_ABSTRACT_WRITER_H */

@@ -21,7 +21,6 @@
 #define H_GUARD_CSWRITER_H
 
 #include "abstract-filter.hh"
-#include "color.hh"
 
 class CovWriter: public AbstractWriter {
     public:
