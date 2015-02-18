@@ -45,6 +45,7 @@ bool /* anyError */ diffScans(
         std::istream               &strNew,
         const std::string          &fnOld,
         const std::string          &fnNew,
+        const bool                  showInternal,
         const bool                  silent,
         EFileFormat                 format,
         const EColorMode            cm)
@@ -70,7 +71,7 @@ bool /* anyError */ diffScans(
     writer->setScanProps(props);
 
     // read old
-    DefLookup stor;
+    DefLookup stor(/* TODO: document this side effect */ showInternal);
     Defect def;
     while (pOld.getNext(&def))
         stor.hashDefect(def);
@@ -79,6 +80,13 @@ bool /* anyError */ diffScans(
     while (pNew.getNext(&def)) {
         if (stor.lookup(def))
             continue;
+
+        if (!showInternal) {
+            const DefEvent &keyEvt = def.events[def.keyEventIdx];
+            if (keyEvt.event == "internal warning")
+                // we suppress internal warnings by default
+                continue;
+        }
 
         // a newly added defect found
         writer->handleDef(def);

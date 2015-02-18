@@ -29,6 +29,7 @@ bool /* anyError */ diffScans(
         std::istream               &strNew,
         const std::string          &fnOld       = std::string(),
         const std::string          &fnNew       = std::string(),
+        bool                        showInternal= false,
         bool                        silent      = true,
         EFileFormat                 format      = FF_AUTO,
         EColorMode                  cm          = CM_AUTO);

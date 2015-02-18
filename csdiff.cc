@@ -43,11 +43,12 @@ int main(int argc, char *argv[])
 
     try {
         desc.add_options()
-            ("coverity-output,c", "write the result in Coverity format")
             ("fixed,x", "print fixed defects (just swaps the arguments)")
             ("ignore-path,z", "ignore directory structure when matching")
-            ("json-output,j", "write the result in JSON format")
+            ("show-internal,i", "include internal warnings in the output")
             ("quiet,q", "do not report any parsing errors")
+            ("coverity-output,c", "write the result in Coverity format")
+            ("json-output,j", "write the result in JSON format")
             ("file-rename,s", po::value<TStringList>(),
              "account the file base-name change, [OLD,NEW] (*testing*)");
 
@@ -144,7 +145,8 @@ int main(int argc, char *argv[])
     const string &fnOld = files[swap];
     const string &fnNew = files[!swap];
 
-    const bool silent = vm.count("quiet");
+    const bool showInternal = vm.count("show-internal");
+    const bool silent       = vm.count("quiet");
 
     try {
         // open streams
@@ -153,7 +155,7 @@ int main(int argc, char *argv[])
 
         // run the core
         return diffScans(std::cout, strOld.str(), strNew.str(),
-                fnOld, fnNew, silent, format, cm);
+                fnOld, fnNew, showInternal, silent, format, cm);
     }
     catch (const InFileException &e) {
         std::cerr << e.fileName << ": failed to open input file\n";
