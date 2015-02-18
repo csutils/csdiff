@@ -24,7 +24,7 @@ struct Defect;
 
 class DefLookup {
     public:
-        DefLookup();
+        DefLookup(bool usePartialResults = false);
         ~DefLookup();
 
         DefLookup(const DefLookup &);

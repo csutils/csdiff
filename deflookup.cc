@@ -32,12 +32,14 @@ typedef std::map<std::string, TDefByFile>       TDefByChecker;
 
 struct DefLookup::Private {
     TDefByChecker                    stor;
+    bool                             usePartialResults;
     MsgFilter                       *filt;
 };
 
-DefLookup::DefLookup():
+DefLookup::DefLookup(const bool usePartialResults):
     d(new Private)
 {
+    d->usePartialResults = usePartialResults;
     d->filt = MsgFilter::inst();
 }
 
@@ -88,6 +90,12 @@ bool DefLookup::lookup(const Defect &def) {
         return false;
 
     TDefByEvt &col = iCol->second;
+    if (!d->usePartialResults && col.end() != col.find("internal warning"))
+        // if the analyzer produced an "internal warning" diagnostic message,
+        // we assume partial results, which cannot be reliably used for
+        // differential scan ==> pretend we found what we had been looking
+        // for, but do not remove anything from the store
+        return true;
 
     // look by key event
     TDefByEvt::iterator iZCol = col.find(evt.event);
