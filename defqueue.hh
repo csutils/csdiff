@@ -32,9 +32,9 @@ class DefQueue {
     private:
         typedef std::list<Defect>                       TDefList;
         typedef std::map<std::string, TDefList>         TDefByFile;
-        typedef std::map<std::string, TDefByFile>       TDefByClass;
+        typedef std::map<std::string, TDefByFile>       TDefByChecker;
 
-        TDefByClass                     stor_;
+        TDefByChecker                   stor_;
         MsgFilter                      *filt_;
 
     public:
@@ -55,7 +55,7 @@ class DefQueue {
 };
 
 template <class TVisitor> bool DefQueue::walk(TVisitor &visitor) {
-    BOOST_FOREACH(const TDefByClass::const_reference iRow, stor_)
+    BOOST_FOREACH(const TDefByChecker::const_reference iRow, stor_)
         BOOST_FOREACH(const TDefByFile::const_reference iCol, iRow.second)
             BOOST_FOREACH(const Defect &def, iCol.second)
                 if (! /* continue */ visitor(def))

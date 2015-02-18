@@ -27,10 +27,10 @@
 typedef std::vector<Defect>                     TDefList;
 typedef std::map<std::string, TDefList>         TDefByMsg;
 typedef std::map<std::string, TDefByMsg>        TDefByFile;
-typedef std::map<std::string, TDefByFile>       TDefByClass;
+typedef std::map<std::string, TDefByFile>       TDefByChecker;
 
 struct DefLookup::Private {
-    TDefByClass                      stor;
+    TDefByChecker                    stor;
     MsgFilter                       *filt;
 };
 
@@ -71,7 +71,7 @@ void DefLookup::hashDefect(const Defect &def) {
 
 bool DefLookup::lookup(const Defect &def) {
     // look for defect class
-    TDefByClass::iterator iRow = d->stor.find(def.checker);
+    TDefByChecker::iterator iRow = d->stor.find(def.checker);
     if (d->stor.end() == iRow)
         return false;
 

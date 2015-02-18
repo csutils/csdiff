@@ -49,7 +49,7 @@ bool DefQueue::lookup(
         const std::string       &fileName)
 {
     // look for the given defect class
-    TDefByClass::iterator iRow = stor_.find(checker);
+    TDefByChecker::iterator iRow = stor_.find(checker);
     if (stor_.end() == iRow) {
 #if DEBUG_DEF_MATCH
         std::cerr << checker << ": not found\n";

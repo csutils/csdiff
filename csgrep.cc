@@ -202,12 +202,12 @@ class PathPredicate: public IPredicate {
         }
 };
 
-class DefClassPredicate: public IPredicate {
+class CheckerPredicate: public IPredicate {
     private:
         boost::regex re_;
 
     public:
-        DefClassPredicate(const boost::regex &re):
+        CheckerPredicate(const boost::regex &re):
             re_(re)
         {
         }
@@ -415,7 +415,7 @@ bool chainFiltersCore(
         const po::variables_map                         &vm,
         const TFlags                                    flags)
 {
-    return appendPredIfNeeded<DefClassPredicate>  (pf, vm, flags, "checker")
+    return appendPredIfNeeded<CheckerPredicate>   (pf, vm, flags, "checker")
         && appendPredIfNeeded<SrcAnnotPredicate>  (pf, vm, flags, "src-annot")
         && appendPredIfNeeded<AnnotPredicate>     (pf, vm, flags, "annot")
         && appendPredIfNeeded<ErrorPredicate>     (pf, vm, flags, "error")
