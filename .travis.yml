@@ -1,8 +1,5 @@
 language: cpp
-
-compiler:
-    - gcc
-    - clang
+compiler: gcc
 
 before_install:
     - sudo apt-get update
@@ -16,4 +13,4 @@ install:
 
 script:
     - make -j9 distcheck CTEST='ctest -j9'
-    - csbuild -g "$TRAVIS_COMMIT_RANGE" --git-bisect --added-exit-code=7 --print-fixed -c "make distclean && make -j9"
+    - test -z "$TRAVIS_COMMIT_RANGE" || csbuild --git-commit-range "$TRAVIS_COMMIT_RANGE" -c "make distclean && make -j9" --git-bisect --print-fixed
