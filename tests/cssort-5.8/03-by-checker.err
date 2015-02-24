@@ -1887,10 +1887,10 @@
             "key_event_idx": 0,
             "events": [
                 {
-                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/bmptopnm.c",
-                    "line": 893,
-                    "event": "operator_confusion",
-                    "message": "(ptr[i + 1U] << 4) & (ptr[i + 2U] >> 4) is always 0 regardless of the values of its operands. This occurs as the non-specific operand of assignment. Did you intend to use right-shift ('>>') in ptr[i + 1U] << 4?",
+                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c",
+                    "line": 1012,
+                    "event": "missing_parentheses",
+                    "message": "(tmp >> 3) & -32 /* ~0x1f */ is always 0 regardless of the values of its operands. This occurs as the logical operand of '!'. Did you intend to apply '&' to 3 and -32 /* ~0x1f */? If so, parentheses would be required to force this interpretation.",
                     "verbosity_level": "0"
                 }
             ]
@@ -1900,10 +1900,10 @@
             "key_event_idx": 0,
             "events": [
                 {
-                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c",
-                    "line": 1012,
-                    "event": "missing_parentheses",
-                    "message": "(tmp >> 3) & -32 /* ~0x1f */ is always 0 regardless of the values of its operands. This occurs as the logical operand of '!'. Did you intend to apply '&' to 3 and -32 /* ~0x1f */? If so, parentheses would be required to force this interpretation.",
+                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/bmptopnm.c",
+                    "line": 893,
+                    "event": "operator_confusion",
+                    "message": "(ptr[i + 1U] << 4) & (ptr[i + 2U] >> 4) is always 0 regardless of the values of its operands. This occurs as the non-specific operand of assignment. Did you intend to use right-shift ('>>') in ptr[i + 1U] << 4?",
                     "verbosity_level": "0"
                 }
             ]
@@ -2070,6 +2070,193 @@
                     "line": 139,
                     "event": "dead_error_begin",
                     "message": "Execution cannot reach this statement \"default:\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "DEADCODE",
+            "key_event_idx": 5,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c",
+                    "line": 455,
+                    "event": "dead_error_condition",
+                    "message": "On this path, the condition \"hc < 0\" cannot be true.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c",
+                    "line": 454,
+                    "event": "const",
+                    "message": "After this line, the value of \"hc\" is equal to 0.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c",
+                    "line": 448,
+                    "event": "assignment",
+                    "message": "Assigning: \"hc\" = \"((((f & 0x220) == 0x20) + ((f & 0x880) == 0x80) < 1) ? ((f & 0x220) == 0x20) + ((f & 0x880) == 0x80) : 1) - ((((f & 0x220) == 0x220) + ((f & 0x880) == 0x880) < 1) ? ((f & 0x220) == 0x220) + ((f & 0x880) == 0x880) : 1)\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c",
+                    "line": 454,
+                    "event": "new_values",
+                    "message": "Noticing condition \"hc <= 1\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c",
+                    "line": 454,
+                    "event": "new_values",
+                    "message": "Noticing condition \"hc >= -1\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c",
+                    "line": 456,
+                    "event": "dead_error_begin",
+                    "message": "Execution cannot reach this statement \"hc = -hc;\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "DEADCODE",
+            "key_event_idx": 18,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c",
+                    "line": 220,
+                    "event": "dead_error_condition",
+                    "message": "On this path, the switch value \"(format == 20531 || format == 20534) ? 20531 : ((format == 20530 || format == 20533) ? 20530 : ((format == 20529 || format == 20532) ? 20529 : -1))\" cannot be \"20535\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c",
+                    "line": 216,
+                    "event": "const",
+                    "message": "After this line, the value of \"format\" is equal to 20529.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c",
+                    "line": 216,
+                    "event": "const",
+                    "message": "After this line, the value of \"format\" is equal to 20530.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c",
+                    "line": 216,
+                    "event": "const",
+                    "message": "After this line, the value of \"format\" is equal to 20531.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c",
+                    "line": 216,
+                    "event": "const",
+                    "message": "After this line, the value of \"format\" is equal to 20532.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c",
+                    "line": 216,
+                    "event": "const",
+                    "message": "After this line, the value of \"format\" is equal to 20533.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c",
+                    "line": 216,
+                    "event": "const",
+                    "message": "After this line, the value of \"format\" is equal to 20534.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c",
+                    "line": 216,
+                    "event": "equality_cond",
+                    "message": "Condition \"format == 20529\" is evaluated as false.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c",
+                    "line": 216,
+                    "event": "equality_cond",
+                    "message": "Condition \"format == 20530\" is evaluated as false.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c",
+                    "line": 216,
+                    "event": "equality_cond",
+                    "message": "Condition \"format == 20531\" is evaluated as false.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c",
+                    "line": 216,
+                    "event": "equality_cond",
+                    "message": "Condition \"format == 20533\" is evaluated as false.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c",
+                    "line": 216,
+                    "event": "equality_cond",
+                    "message": "Condition \"format == 20534\" is evaluated as false.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c",
+                    "line": 216,
+                    "event": "new_values",
+                    "message": "Noticing condition \"format == 20529\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c",
+                    "line": 216,
+                    "event": "new_values",
+                    "message": "Noticing condition \"format == 20530\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c",
+                    "line": 216,
+                    "event": "new_values",
+                    "message": "Noticing condition \"format == 20531\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c",
+                    "line": 216,
+                    "event": "new_values",
+                    "message": "Noticing condition \"format == 20532\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c",
+                    "line": 216,
+                    "event": "new_values",
+                    "message": "Noticing condition \"format == 20533\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c",
+                    "line": 216,
+                    "event": "new_values",
+                    "message": "Noticing condition \"format == 20534\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c",
+                    "line": 220,
+                    "event": "dead_error_begin",
+                    "message": "Execution cannot reach this statement \"case 20535:\".",
                     "verbosity_level": "0"
                 }
             ]
@@ -2417,54 +2604,6 @@
             "events": [
                 {
                     "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c",
-                    "line": 455,
-                    "event": "dead_error_condition",
-                    "message": "On this path, the condition \"hc < 0\" cannot be true.",
-                    "verbosity_level": "1"
-                },
-                {
-                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c",
-                    "line": 454,
-                    "event": "const",
-                    "message": "After this line, the value of \"hc\" is equal to 0.",
-                    "verbosity_level": "1"
-                },
-                {
-                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c",
-                    "line": 448,
-                    "event": "assignment",
-                    "message": "Assigning: \"hc\" = \"((((f & 0x220) == 0x20) + ((f & 0x880) == 0x80) < 1) ? ((f & 0x220) == 0x20) + ((f & 0x880) == 0x80) : 1) - ((((f & 0x220) == 0x220) + ((f & 0x880) == 0x880) < 1) ? ((f & 0x220) == 0x220) + ((f & 0x880) == 0x880) : 1)\".",
-                    "verbosity_level": "1"
-                },
-                {
-                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c",
-                    "line": 454,
-                    "event": "new_values",
-                    "message": "Noticing condition \"hc <= 1\".",
-                    "verbosity_level": "1"
-                },
-                {
-                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c",
-                    "line": 454,
-                    "event": "new_values",
-                    "message": "Noticing condition \"hc >= -1\".",
-                    "verbosity_level": "1"
-                },
-                {
-                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c",
-                    "line": 456,
-                    "event": "dead_error_begin",
-                    "message": "Execution cannot reach this statement \"hc = -hc;\".",
-                    "verbosity_level": "0"
-                }
-            ]
-        },
-        {
-            "checker": "DEADCODE",
-            "key_event_idx": 5,
-            "events": [
-                {
-                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c",
                     "line": 460,
                     "event": "dead_error_condition",
                     "message": "On this path, the condition \"vc == -1\" cannot be true.",
@@ -2674,145 +2813,6 @@
                     "line": 239,
                     "event": "dead_error_line",
                     "message": "Execution cannot reach this statement \"coeff = 0;\".",
-                    "verbosity_level": "0"
-                }
-            ]
-        },
-        {
-            "checker": "DEADCODE",
-            "key_event_idx": 18,
-            "events": [
-                {
-                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c",
-                    "line": 220,
-                    "event": "dead_error_condition",
-                    "message": "On this path, the switch value \"(format == 20531 || format == 20534) ? 20531 : ((format == 20530 || format == 20533) ? 20530 : ((format == 20529 || format == 20532) ? 20529 : -1))\" cannot be \"20535\".",
-                    "verbosity_level": "1"
-                },
-                {
-                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c",
-                    "line": 216,
-                    "event": "const",
-                    "message": "After this line, the value of \"format\" is equal to 20529.",
-                    "verbosity_level": "1"
-                },
-                {
-                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c",
-                    "line": 216,
-                    "event": "const",
-                    "message": "After this line, the value of \"format\" is equal to 20530.",
-                    "verbosity_level": "1"
-                },
-                {
-                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c",
-                    "line": 216,
-                    "event": "const",
-                    "message": "After this line, the value of \"format\" is equal to 20531.",
-                    "verbosity_level": "1"
-                },
-                {
-                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c",
-                    "line": 216,
-                    "event": "const",
-                    "message": "After this line, the value of \"format\" is equal to 20532.",
-                    "verbosity_level": "1"
-                },
-                {
-                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c",
-                    "line": 216,
-                    "event": "const",
-                    "message": "After this line, the value of \"format\" is equal to 20533.",
-                    "verbosity_level": "1"
-                },
-                {
-                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c",
-                    "line": 216,
-                    "event": "const",
-                    "message": "After this line, the value of \"format\" is equal to 20534.",
-                    "verbosity_level": "1"
-                },
-                {
-                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c",
-                    "line": 216,
-                    "event": "equality_cond",
-                    "message": "Condition \"format == 20529\" is evaluated as false.",
-                    "verbosity_level": "1"
-                },
-                {
-                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c",
-                    "line": 216,
-                    "event": "equality_cond",
-                    "message": "Condition \"format == 20530\" is evaluated as false.",
-                    "verbosity_level": "1"
-                },
-                {
-                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c",
-                    "line": 216,
-                    "event": "equality_cond",
-                    "message": "Condition \"format == 20531\" is evaluated as false.",
-                    "verbosity_level": "1"
-                },
-                {
-                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c",
-                    "line": 216,
-                    "event": "equality_cond",
-                    "message": "Condition \"format == 20533\" is evaluated as false.",
-                    "verbosity_level": "1"
-                },
-                {
-                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c",
-                    "line": 216,
-                    "event": "equality_cond",
-                    "message": "Condition \"format == 20534\" is evaluated as false.",
-                    "verbosity_level": "1"
-                },
-                {
-                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c",
-                    "line": 216,
-                    "event": "new_values",
-                    "message": "Noticing condition \"format == 20529\".",
-                    "verbosity_level": "1"
-                },
-                {
-                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c",
-                    "line": 216,
-                    "event": "new_values",
-                    "message": "Noticing condition \"format == 20530\".",
-                    "verbosity_level": "1"
-                },
-                {
-                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c",
-                    "line": 216,
-                    "event": "new_values",
-                    "message": "Noticing condition \"format == 20531\".",
-                    "verbosity_level": "1"
-                },
-                {
-                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c",
-                    "line": 216,
-                    "event": "new_values",
-                    "message": "Noticing condition \"format == 20532\".",
-                    "verbosity_level": "1"
-                },
-                {
-                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c",
-                    "line": 216,
-                    "event": "new_values",
-                    "message": "Noticing condition \"format == 20533\".",
-                    "verbosity_level": "1"
-                },
-                {
-                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c",
-                    "line": 216,
-                    "event": "new_values",
-                    "message": "Noticing condition \"format == 20534\".",
-                    "verbosity_level": "1"
-                },
-                {
-                    "file_name": "/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c",
-                    "line": 220,
-                    "event": "dead_error_begin",
-                    "message": "Execution cannot reach this statement \"case 20535:\".",
                     "verbosity_level": "0"
                 }
             ]

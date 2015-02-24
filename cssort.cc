@@ -134,6 +134,11 @@ bool operator<(const DefByChecker &a, const DefByChecker &b) {
     // compare checker names
     RETURN_IF_COMPARED(a, b, checker);
 
+    // compare name of the key events
+    const DefEvent &ea = a.events[a.keyEventIdx];
+    const DefEvent &eb = b.events[b.keyEventIdx];
+    RETURN_IF_COMPARED(ea, eb, event);
+
     return cmpFileNames(a, b);
 }
 

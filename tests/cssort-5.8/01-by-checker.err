@@ -325,10 +325,10 @@ Error: CHECKED_RETURN:
 /builddir/build/BUILD/netpbm-10.35.58/lib/libpm.c:521: unchecked_value: No check of the return value of "sscanf(line, "docurl=%s", docurl)".
 
 Error: CONSTANT_EXPRESSION_RESULT:
-/builddir/build/BUILD/netpbm-10.35.58/converter/other/bmptopnm.c:893: operator_confusion: (ptr[i + 1U] << 4) & (ptr[i + 2U] >> 4) is always 0 regardless of the values of its operands. This occurs as the non-specific operand of assignment. Did you intend to use right-shift ('>>') in ptr[i + 1U] << 4?
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:1012: missing_parentheses: (tmp >> 3) & -32 /* ~0x1f */ is always 0 regardless of the values of its operands. This occurs as the logical operand of '!'. Did you intend to apply '&' to 3 and -32 /* ~0x1f */? If so, parentheses would be required to force this interpretation.
 
 Error: CONSTANT_EXPRESSION_RESULT:
-/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_cs.c:1012: missing_parentheses: (tmp >> 3) & -32 /* ~0x1f */ is always 0 regardless of the values of its operands. This occurs as the logical operand of '!'. Did you intend to apply '&' to 3 and -32 /* ~0x1f */? If so, parentheses would be required to force this interpretation.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/bmptopnm.c:893: operator_confusion: (ptr[i + 1U] << 4) & (ptr[i + 2U] >> 4) is always 0 regardless of the values of its operands. This occurs as the non-specific operand of assignment. Did you intend to use right-shift ('>>') in ptr[i + 1U] << 4?
 
 Error: DEADCODE:
 /builddir/build/BUILD/netpbm-10.35.58/converter/other/fiasco/codec/mwfa.c:482: dead_error_condition: On this path, the switch value "mctype" cannot reach the default case.
@@ -355,6 +355,35 @@ Error: DEADCODE:
 /builddir/build/BUILD/netpbm-10.35.58/converter/other/fiasco/lib/dither.c:108: new_values: Noticing condition "bpp != 32U".
 /builddir/build/BUILD/netpbm-10.35.58/converter/other/fiasco/lib/dither.c:117: new_values: Noticing condition "bpp == 16U".
 /builddir/build/BUILD/netpbm-10.35.58/converter/other/fiasco/lib/dither.c:139: dead_error_begin: Execution cannot reach this statement "default:".
+
+Error: DEADCODE:
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:455: dead_error_condition: On this path, the condition "hc < 0" cannot be true.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:454: const: After this line, the value of "hc" is equal to 0.
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:448: assignment: Assigning: "hc" = "((((f & 0x220) == 0x20) + ((f & 0x880) == 0x80) < 1) ? ((f & 0x220) == 0x20) + ((f & 0x880) == 0x80) : 1) - ((((f & 0x220) == 0x220) + ((f & 0x880) == 0x880) < 1) ? ((f & 0x220) == 0x220) + ((f & 0x880) == 0x880) : 1)".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:454: new_values: Noticing condition "hc <= 1".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:454: new_values: Noticing condition "hc >= -1".
+/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:456: dead_error_begin: Execution cannot reach this statement "hc = -hc;".
+
+Error: DEADCODE:
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:220: dead_error_condition: On this path, the switch value "(format == 20531 || format == 20534) ? 20531 : ((format == 20530 || format == 20533) ? 20530 : ((format == 20529 || format == 20532) ? 20529 : -1))" cannot be "20535".
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: const: After this line, the value of "format" is equal to 20529.
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: const: After this line, the value of "format" is equal to 20530.
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: const: After this line, the value of "format" is equal to 20531.
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: const: After this line, the value of "format" is equal to 20532.
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: const: After this line, the value of "format" is equal to 20533.
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: const: After this line, the value of "format" is equal to 20534.
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: equality_cond: Condition "format == 20529" is evaluated as false.
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: equality_cond: Condition "format == 20530" is evaluated as false.
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: equality_cond: Condition "format == 20531" is evaluated as false.
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: equality_cond: Condition "format == 20533" is evaluated as false.
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: equality_cond: Condition "format == 20534" is evaluated as false.
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: new_values: Noticing condition "format == 20529".
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: new_values: Noticing condition "format == 20530".
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: new_values: Noticing condition "format == 20531".
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: new_values: Noticing condition "format == 20532".
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: new_values: Noticing condition "format == 20533".
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: new_values: Noticing condition "format == 20534".
+/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:220: dead_error_begin: Execution cannot reach this statement "case 20535:".
 
 Error: DEADCODE:
 /builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:360: dead_error_condition: On this path, the condition "h" cannot be false.
@@ -427,14 +456,6 @@ Error: DEADCODE:
 /builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:434: dead_error_line: Execution cannot reach this expression "n" inside statement "n = !(hc > 0 || (!hc && vc ...".
 
 Error: DEADCODE:
-/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:455: dead_error_condition: On this path, the condition "hc < 0" cannot be true.
-/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:454: const: After this line, the value of "hc" is equal to 0.
-/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:448: assignment: Assigning: "hc" = "((((f & 0x220) == 0x20) + ((f & 0x880) == 0x80) < 1) ? ((f & 0x220) == 0x20) + ((f & 0x880) == 0x80) : 1) - ((((f & 0x220) == 0x220) + ((f & 0x880) == 0x880) < 1) ? ((f & 0x220) == 0x220) + ((f & 0x880) == 0x880) : 1)".
-/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:454: new_values: Noticing condition "hc <= 1".
-/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:454: new_values: Noticing condition "hc >= -1".
-/builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:456: dead_error_begin: Execution cannot reach this statement "hc = -hc;".
-
-Error: DEADCODE:
 /builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:460: dead_error_condition: On this path, the condition "vc == -1" cannot be true.
 /builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:454: const: After this line, the value of "vc" is equal to 0.
 /builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_t1cod.c:451: assignment: Assigning: "vc" = "((((f & 0x110) == 0x10) + ((f & 0x440) == 0x40) < 1) ? ((f & 0x110) == 0x10) + ((f & 0x440) == 0x40) : 1) - ((((f & 0x110) == 0x110) + ((f & 0x440) == 0x440) < 1) ? ((f & 0x110) == 0x110) + ((f & 0x440) == 0x440) : 1)".
@@ -471,27 +492,6 @@ Error: DEADCODE:
 /builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/postdct.c:238: dead_error_condition: On this path, the condition "level == 0" cannot be true.
 /builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/postdct.c:220: cannot_single: After this line (or expression), the value of "level" cannot be 0.
 /builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/postdct.c:239: dead_error_line: Execution cannot reach this statement "coeff = 0;".
-
-Error: DEADCODE:
-/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:220: dead_error_condition: On this path, the switch value "(format == 20531 || format == 20534) ? 20531 : ((format == 20530 || format == 20533) ? 20530 : ((format == 20529 || format == 20532) ? 20529 : -1))" cannot be "20535".
-/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: const: After this line, the value of "format" is equal to 20529.
-/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: const: After this line, the value of "format" is equal to 20530.
-/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: const: After this line, the value of "format" is equal to 20531.
-/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: const: After this line, the value of "format" is equal to 20532.
-/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: const: After this line, the value of "format" is equal to 20533.
-/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: const: After this line, the value of "format" is equal to 20534.
-/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: equality_cond: Condition "format == 20529" is evaluated as false.
-/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: equality_cond: Condition "format == 20530" is evaluated as false.
-/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: equality_cond: Condition "format == 20531" is evaluated as false.
-/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: equality_cond: Condition "format == 20533" is evaluated as false.
-/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: equality_cond: Condition "format == 20534" is evaluated as false.
-/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: new_values: Noticing condition "format == 20529".
-/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: new_values: Noticing condition "format == 20530".
-/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: new_values: Noticing condition "format == 20531".
-/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: new_values: Noticing condition "format == 20532".
-/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: new_values: Noticing condition "format == 20533".
-/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:216: new_values: Noticing condition "format == 20534".
-/builddir/build/BUILD/netpbm-10.35.58/editor/pamdice.c:220: dead_error_begin: Execution cannot reach this statement "case 20535:".
 
 Error: DEADCODE:
 /builddir/build/BUILD/netpbm-10.35.58/editor/pamscale.c:644: dead_error_condition: On this path, the condition "xsize == 0" cannot be true.
