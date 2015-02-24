@@ -74,42 +74,33 @@ class GenericSort: public AbstractWriter {
         }
 };
 
-#define RETURN_CMP_RESULT(result) do {  \
-    *pResult = (result);                \
-    return true;                        \
+// FIXME: move this to a separate header file?
+#define RETURN_BY_REF_IF_COMPARED(a, b, member) do {    \
+    if (a.member < b.member)                            \
+        *pResult = true;                                \
+    else if (b.member < a.member)                       \
+        *pResult = false;                               \
+    else                                                \
+        break;                                          \
+    return true;                                        \
 } while (0)
 
 inline bool cmpEvents(bool *pResult, const DefEvent &ea, const DefEvent &eb)
 {
     // compare path
-    if (ea.fileName < eb.fileName)
-        RETURN_CMP_RESULT(true);
-    if (eb.fileName < ea.fileName)
-        RETURN_CMP_RESULT(false);
+    RETURN_BY_REF_IF_COMPARED(ea, eb, fileName);
 
     // compare line numbers
-    if (ea.line < eb.line)
-        RETURN_CMP_RESULT(true);
-    if (eb.line < ea.line)
-        RETURN_CMP_RESULT(false);
+    RETURN_BY_REF_IF_COMPARED(ea, eb, line);
 
     // compare column numbers
-    if (ea.column < eb.column)
-        RETURN_CMP_RESULT(true);
-    if (eb.column < ea.column)
-        RETURN_CMP_RESULT(false);
+    RETURN_BY_REF_IF_COMPARED(ea, eb, column);
 
     // compare events
-    if (ea.event < eb.event)
-        RETURN_CMP_RESULT(true);
-    if (eb.event < ea.event)
-        RETURN_CMP_RESULT(false);
+    RETURN_BY_REF_IF_COMPARED(ea, eb, event);
 
     // compare messages
-    if (ea.msg < eb.msg)
-        RETURN_CMP_RESULT(true);
-    if (eb.msg < ea.msg)
-        RETURN_CMP_RESULT(false);
+    RETURN_BY_REF_IF_COMPARED(ea, eb, msg);
 
     // incomparable events
     return false;
@@ -140,13 +131,8 @@ inline bool cmpFileNames(const Defect &a, const Defect &b) {
 
 struct DefByChecker: public Defect { };
 bool operator<(const DefByChecker &a, const DefByChecker &b) {
-    const std::string &ca = a.checker;
-    const std::string &cb = b.checker;
-
-    if (ca < cb)
-        return true;
-    if (cb < ca)
-        return false;
+    // compare checker names
+    RETURN_IF_COMPARED(a, b, checker);
 
     return cmpFileNames(a, b);
 }
