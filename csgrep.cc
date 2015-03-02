@@ -101,6 +101,36 @@ class DefCounter: public AbstractWriter {
         }
 };
 
+class EvtCounter: public AbstractWriter {
+    private:
+        typedef std::pair<std::string, std::string>     TKey;
+        typedef std::map<TKey, int>                     TMap;
+        TMap cnt_;
+
+    public:
+        virtual void handleDef(const Defect &def) {
+            const DefEvent &evt = def.events[def.keyEventIdx];
+            const TKey key(def.checker, evt.event);
+            ++cnt_[key];
+        }
+
+        virtual void flush() {
+            BOOST_FOREACH(TMap::const_reference item, cnt_) {
+                using namespace std;
+                const ios_base::fmtflags oldFlags = cout.flags();
+                const int oldWidth = cout.width();
+                cout << fixed << setw(7) << item.second;
+                cout.width(oldWidth);
+                cout.flags(oldFlags);
+
+                const TKey &key = item.first;
+                cout << "\t" << key.first
+                    << "\t" << key.second
+                    << "\n";
+            }
+        }
+};
+
 class FileDefCounter: public AbstractWriter {
     private:
         typedef std::map<std::string, DefCounter *> TMap;
@@ -336,6 +366,7 @@ class WriterFactory {
         static AbstractWriter* createFiles()    { return new FilePrinter;   }
         static AbstractWriter* createGrouped()  { return new GroupPrinter;  }
         static AbstractWriter* createStat()     { return new DefCounter;    }
+        static AbstractWriter* createEvtStat()  { return new EvtCounter;    }
         static AbstractWriter* createFileStat() { return new FileDefCounter;}
 
         static AbstractWriter* createGrep() {
@@ -357,6 +388,7 @@ class WriterFactory {
 
         WriterFactory() {
             tbl_["dig_key_events"]  = createKeyEventPrinter;
+            tbl_["evtstat"]         = createEvtStat;
             tbl_["files"]           = createFiles;
             tbl_["filestat"]        = createFileStat;
             tbl_["grep"]            = createGrep;
@@ -460,6 +492,8 @@ DESCRIPTION OF AVAILABLE MODES\n\
 ------------------------------\n\
 \n\
 dig_key_events - for each defect, print only the checker and key event\n\
+\n\
+evtstat - print overall checker/key_event statistics for the matched defects\n\
 \n\
 files - print only names of error files that contain the matched defects\n\
 \n\
