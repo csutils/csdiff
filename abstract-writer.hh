@@ -72,4 +72,16 @@ AbstractWriter* createWriter(
         const EColorMode            cm        = CM_AUTO,
         const TScanProps           &scanProps = TScanProps());
 
+class CtxEventDetector {
+    public:
+        CtxEventDetector();
+        ~CtxEventDetector();
+
+        bool isAnyCtxLine(const DefEvent &evt) const;
+
+    private:
+        struct Private;
+        Private *d;
+};
+
 #endif /* H_GUARD_ABSTRACT_WRITER_H */

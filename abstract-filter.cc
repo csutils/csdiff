@@ -99,6 +99,20 @@ void EventPrunner::handleDef(const Defect &defOrig) {
 // /////////////////////////////////////////////////////////////////////////////
 // implementation of CtxEmbedder
 
+void dropCtxLines(TEvtList *pEvtList) {
+    static CtxEventDetector detector;
+
+    TEvtList dst;
+    BOOST_FOREACH(const DefEvent &evt, *pEvtList) {
+        if (detector.isAnyCtxLine(evt))
+            continue;
+
+        dst.push_back(evt);
+    }
+
+    pEvtList->swap(dst);
+}
+
 void appendCtxLines(
         TEvtList       *pDst,
         std::istream   &inStr,
@@ -156,6 +170,7 @@ void CtxEmbedder::handleDef(const Defect &defOrig) {
 
     // clone defOrig and append the context lines
     Defect def(defOrig);
+    dropCtxLines(&def.events);
     appendCtxLines(&def.events, fstr, evt.line, ctxLines_ - 1);
 
     // close the file stream and forward the result

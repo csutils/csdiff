@@ -23,6 +23,8 @@
 #include "instream.hh"
 #include "json-writer.hh"
 
+#include <boost/regex.hpp>
+
 // /////////////////////////////////////////////////////////////////////////////
 // implementation of AbstractWriter
 
@@ -99,4 +101,31 @@ AbstractWriter* createWriter(
         writer->setScanProps(scanProps);
 
     return writer;
+}
+
+
+// /////////////////////////////////////////////////////////////////////////////
+// implementation of CtxEventDetector
+
+struct CtxEventDetector::Private {
+    boost::regex reAnyCtxLine;
+    
+    Private():
+        reAnyCtxLine("^ *[0-9]+\\|(?:->)? .*$")
+    {
+    }
+};
+
+CtxEventDetector::CtxEventDetector():
+    d(new Private)
+{
+}
+
+CtxEventDetector::~CtxEventDetector() {
+    delete d;
+}
+
+bool CtxEventDetector::isAnyCtxLine(const DefEvent &evt) const {
+    return (evt.event == "#")
+        && boost::regex_match(evt.msg, d->reAnyCtxLine);
 }
