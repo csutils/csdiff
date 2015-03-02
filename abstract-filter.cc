@@ -22,6 +22,8 @@
 #include "instream.hh"
 
 #include <fstream>
+#include <iomanip>
+#include <sstream>
 #include <vector>
 
 #include <boost/foreach.hpp>
@@ -72,6 +74,7 @@ bool PredicateFilter::matchDef(const Defect &def) {
     return true;
 }
 
+
 // /////////////////////////////////////////////////////////////////////////////
 // implementation of EventPrunner
 
@@ -89,5 +92,73 @@ void EventPrunner::handleDef(const Defect &defOrig) {
             def.keyEventIdx--;
     }
 
+    slave_->handleDef(def);
+}
+
+
+// /////////////////////////////////////////////////////////////////////////////
+// implementation of CtxEmbedder
+
+void appendCtxLines(
+        TEvtList       *pDst,
+        std::istream   &inStr,
+        const int       defLine,
+        const int       ctxLines)
+{
+    if (ctxLines < 0)
+        return;
+
+    const int firstLine = defLine - ctxLines;
+    const int lastLine  = defLine + ctxLines;
+
+    int line = 1;
+    std::string text;
+    for (; line <= lastLine; ++line) {
+        if (!std::getline(inStr, text))
+            // premature end of input
+            break;
+
+        if (line < firstLine)
+            // skip lines before the context lines
+            continue;
+
+        // format a single line of the comment
+        std::ostringstream str;
+        str << std::fixed << std::setw(5) << line;
+        if (defLine == line)
+            str << "|-> ";
+        else
+            str << "|   ";
+        str << text;
+
+        // append the comment as a new event
+        DefEvent evt;
+        evt.event = "#";
+        evt.msg = str.str();
+        pDst->push_back(evt);
+    }
+}
+
+void CtxEmbedder::handleDef(const Defect &defOrig) {
+    const DefEvent &evt = defOrig.events[defOrig.keyEventIdx];
+    if (!evt.line) {
+        // no line number for the key event
+        slave_->handleDef(defOrig);
+        return;
+    }
+
+    std::fstream fstr(evt.fileName.c_str(), std::ios::in);
+    if (!fstr) {
+        // failed to open input file
+        slave_->handleDef(defOrig);
+        return;
+    }
+
+    // clone defOrig and append the context lines
+    Defect def(defOrig);
+    appendCtxLines(&def.events, fstr, evt.line, ctxLines_ - 1);
+
+    // close the file stream and forward the result
+    fstr.close();
     slave_->handleDef(def);
 }

@@ -555,6 +555,7 @@ int main(int argc, char *argv[])
             ("annot",               po::value<string>(),        "defect matches if its annotation matches the given regex")
             ("src-annot",           po::value<string>(),        "defect matches if an annotation in the _source_ file matches the given regex")
 
+            ("embed-context,U",     po::value<int>(),           "embed a number of lines of context from the source file for the key event")
             ("prune-events",        po::value<int>(),           "event is preserved if its verbosity level is below the given number")
             ("remove-duplicates,u",                             "remove defects that are not unique by their key event")
             ("strip-path-prefix",   po::value<string>(),        "string prefix to strip from path (applied after all filters)")
@@ -639,7 +640,8 @@ int main(int argc, char *argv[])
     const bool silent = vm.count("quiet");
     bool hasError = false;
 
-    if (!chainDecorator<EventPrunner>(&eng, vm, "prune-events"))
+    if (!chainDecorator<EventPrunner>(&eng, vm, "prune-events")
+            || !chainDecorator<CtxEmbedder>(&eng, vm, "embed-context"))
         // error message already printed, eng already feeed
         return 1;
 

@@ -71,6 +71,21 @@ class EventPrunner: public GenericAbstractFilter {
 };
 
 /// decorator
+class CtxEmbedder: public GenericAbstractFilter {
+    private:
+        int ctxLines_;
+
+    public:
+        CtxEmbedder(AbstractWriter *slave, const int ctxLines):
+            GenericAbstractFilter(slave),
+            ctxLines_(ctxLines)
+        {
+        }
+
+        virtual void handleDef(const Defect &defOrig);
+};
+
+/// decorator
 class AbstractFilter: public GenericAbstractFilter {
     private:
         bool neg_;
