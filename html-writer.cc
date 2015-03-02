@@ -470,7 +470,19 @@ void HtmlWriter::handleDef(const Defect &def) {
             d->str << ": ";
         }
 
+        static CtxEventDetector detector;
+        const bool isCtxLine = detector.isAnyCtxLine(evt);
+        if (isCtxLine) {
+            const char *color = (detector.isKeyCtxLine(evt))
+                ? "000000"
+                : "C0C0C0";
+            d->str << "<span style='color: #" << color << ";'>";
+        }
+
         d->str << HtmlLib::escapeTextInline(evt.msg);
+
+        if (isCtxLine)
+            d->str << "</span>";
 
         switch (evt.verbosityLevel) {
             case 1:
