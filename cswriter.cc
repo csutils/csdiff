@@ -74,9 +74,17 @@ void CovWriter::handleDef(const Defect &def) {
         if (0 < evt.column)
             str << evt.column << ":";
 
-        if (evt.event == "#")
+        if (evt.event == "#") {
             str << d->cw.setColor(C_LIGHT_CYAN) << "#";
 
+            static CtxEventDetector detector;
+            if (detector.isAnyCtxLine(evt)) {
+                const EColor color = detector.isKeyCtxLine(evt)
+                    ? C_WHITE
+                    : C_DARK_GRAY;
+                str << d->cw.setColor(color);
+            }
+        }
         else {
             str << " ";
             if (!evt.event.empty())

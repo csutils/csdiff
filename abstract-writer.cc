@@ -109,9 +109,11 @@ AbstractWriter* createWriter(
 
 struct CtxEventDetector::Private {
     boost::regex reAnyCtxLine;
+    boost::regex reKeyCtxLine;
     
     Private():
-        reAnyCtxLine("^ *[0-9]+\\|(?:->)? .*$")
+        reAnyCtxLine("^ *[0-9]+\\|(?:->)? .*$"),
+        reKeyCtxLine("^ *[0-9]+\\|-> .*$")
     {
     }
 };
@@ -128,4 +130,9 @@ CtxEventDetector::~CtxEventDetector() {
 bool CtxEventDetector::isAnyCtxLine(const DefEvent &evt) const {
     return (evt.event == "#")
         && boost::regex_match(evt.msg, d->reAnyCtxLine);
+}
+
+bool CtxEventDetector::isKeyCtxLine(const DefEvent &evt) const {
+    return (evt.event == "#")
+        && boost::regex_match(evt.msg, d->reKeyCtxLine);
 }

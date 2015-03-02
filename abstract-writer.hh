@@ -78,6 +78,7 @@ class CtxEventDetector {
         ~CtxEventDetector();
 
         bool isAnyCtxLine(const DefEvent &evt) const;
+        bool isKeyCtxLine(const DefEvent &evt) const;
 
     private:
         struct Private;
