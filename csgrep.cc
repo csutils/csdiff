@@ -508,6 +508,30 @@ json - print matched defects in a JSON format\n\
 stat - print overall statistics of the matched defects in given error files\n\n";
 }
 
+template <class TDecorator>
+bool chainDecorator(
+        AbstractWriter            **pEng,
+        const po::variables_map    &vm,
+        const char                 *key)
+{
+    if (!vm.count(key))
+        // nothing to chain
+        return true;
+
+    const int val = vm[key].as<int>();
+    if (val < 0) {
+        std::cerr << name << ": error: invalid value for --"
+            << key << ": " << val << "\n";
+        delete *pEng;
+        *pEng = 0;
+        return false;
+    }
+
+    // chain the decorator
+    *pEng = new TDecorator(*pEng, val);
+    return true;
+}
+
 int main(int argc, char *argv[])
 {
     using std::string;
@@ -615,18 +639,9 @@ int main(int argc, char *argv[])
     const bool silent = vm.count("quiet");
     bool hasError = false;
 
-    if (vm.count("prune-events")) {
-        const int thr = vm["prune-events"].as<int>();
-        if (thr < 0) {
-            std::cerr << name << ": error: invalid value for --prune-events: "
-                << thr << "\n";
-            delete eng;
-            return 1;
-        }
-
-        // chain event prunner
-        eng = new EventPrunner(eng, thr);
-    }
+    if (!chainDecorator<EventPrunner>(&eng, vm, "prune-events"))
+        // error message already printed, eng already feeed
+        return 1;
 
     if (!vm.count("input-file")) {
         hasError = !eng->handleFile("-", silent);
