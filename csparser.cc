@@ -222,6 +222,13 @@ KeyEventDigger::KeyEventDigger():
 {
     // register checker-specific key events
     d->hMap["CHECKED_RETURN"]       .insert("check_return");
+    d->hMap["CONSTANT_EXPRESSION_RESULT"].insert("extra_high_bits");
+    d->hMap["CONSTANT_EXPRESSION_RESULT"].insert("logical_vs_bitwise");
+    d->hMap["CONSTANT_EXPRESSION_RESULT"].insert("missing_parentheses");
+    d->hMap["CONSTANT_EXPRESSION_RESULT"].insert("operator_confusion");
+    d->hMap["CONSTANT_EXPRESSION_RESULT"].insert("pointless_expression");
+    d->hMap["CONSTANT_EXPRESSION_RESULT"].insert("result_independent_of_operands");
+    d->hMap["CONSTANT_EXPRESSION_RESULT"].insert("same_on_both_sides");
     d->hMap["FORWARD_NULL"]         .insert("deref_parm");
     d->hMap["FORWARD_NULL"]         .insert("dereference");
     d->hMap["FORWARD_NULL"]         .insert("var_deref_op");
