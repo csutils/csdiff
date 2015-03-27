@@ -399,6 +399,14 @@ void HtmlWriter::Private::writeNewDefWarning(const Defect &def) {
         << this->newDefMsg << "]</span>";
 }
 
+void linkifyShellCheckMsg(std::string *pMgs) {
+    static boost::regex reShellCheckMsg(" \\[SC([0-9]+)\\]$");
+    *pMgs = boost::regex_replace(*pMgs, reShellCheckMsg,
+            " <a href=\"https://github.com/koalaman/shellcheck/wiki/SC\\1\""
+            " title=\"description of ShellCheck's checker SC\\1\">"
+            "[SC\\1]</a>");
+}
+
 void HtmlWriter::handleDef(const Defect &def) {
     d->core.writeHeaderOnce(d->scanProps, d->plainTextUrl);
 
@@ -479,7 +487,11 @@ void HtmlWriter::handleDef(const Defect &def) {
             d->str << "<span style='color: #" << color << ";'>";
         }
 
-        d->str << HtmlLib::escapeTextInline(evt.msg);
+        // translate message text
+        std::string msgText = HtmlLib::escapeTextInline(evt.msg);
+        if (def.checker == "SHELLCHECK_WARNING")
+            linkifyShellCheckMsg(&msgText);
+        d->str << msgText;
 
         if (isCtxLine)
             d->str << "</span>";
