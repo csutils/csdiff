@@ -149,6 +149,7 @@ void appendCtxLines(
         DefEvent evt;
         evt.event = "#";
         evt.msg = str.str();
+        evt.verbosityLevel = /* not a key event */ 1;
         pDst->push_back(evt);
     }
 }
