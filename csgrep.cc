@@ -487,25 +487,6 @@ bool chainFilters(
 template <class TDesc, class TStream>
 void printUsage(TStream &str, const TDesc &desc) {
     desc.print(str);
-    str << "\n\n\
-DESCRIPTION OF AVAILABLE MODES\n\
-------------------------------\n\
-\n\
-dig_key_events - for each defect, print only the checker and key event\n\
-\n\
-evtstat - print overall checker/key_event statistics for the matched defects\n\
-\n\
-files - print only names of error files that contain the matched defects\n\
-\n\
-filestat - print statistics of matched defects per individual source files\n\
-\n\
-grep - print matched defects using the same format as expected on the input\n\
-\n\
-grouped - print matched defects, grouped by error files they originate from\n\
-\n\
-json - print matched defects in a JSON format\n\
-\n\
-stat - print overall statistics of the matched defects in given error files\n\n";
 }
 
 template <class TDecorator>
@@ -547,9 +528,9 @@ int main(int argc, char *argv[])
 
     try {
         desc.add_options()
-            ("checker",             po::value<string>(),        "defect matches if its checker matches the given regex")
+            ("checker",             po::value<string>(),        "defect matches if its checker matches the given regex (each defect has assigned exactly one checker)")
             ("path",                po::value<string>(),        "defect matches if the path of its key event matches the given regex")
-            ("event",               po::value<string>(),        "defect matches if its key event matches the given regex")
+            ("event",               po::value<string>(),        "defect matches if its key event matches the given regex (each defect has exactly one key event, which determines its location in the code)")
             ("error",               po::value<string>(),        "defect matches if the message of its key event matches the given regex")
             ("msg",                 po::value<string>(),        "defect matches if any of its messages matches the given regex")
             ("annot",               po::value<string>(),        "defect matches if its annotation matches the given regex")

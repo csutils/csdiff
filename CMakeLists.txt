@@ -109,10 +109,16 @@ endif()
 
 # macro to generate a man page from the corresponding binary
 macro(create_manpage BINARY)
+    set(H2M_INCLUDE "${CMAKE_CURRENT_SOURCE_DIR}/${BINARY}.h2m")
+    if(EXISTS "${H2M_INCLUDE}")
+        set(H2M_ARGS --include ${H2M_INCLUDE})
+    else()
+        set(H2M_ARGS "")
+    endif()
     add_custom_command(TARGET ${BINARY} POST_BUILD
-        COMMAND ${HELP2MAN} --no-info --section 1
+        COMMAND ${HELP2MAN} --no-info --section 1 ${H2M_ARGS}
             ${CMAKE_CURRENT_BINARY_DIR}/${BINARY}
-            > ${BINARY}.1
+            > ${BINARY}.1 || rm -f ${BINARY}.1
         COMMENT "Generating ${BINARY} man page"
         VERBATIM)
     install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${BINARY}.1

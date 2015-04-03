@@ -1,0 +1,44 @@
+[NAME]
+csgrep - filter the list of defects by the specified regex-based predicates
+
+[EXAMPLE - CHECKERS, EVENTS, MESSAGES]
+.nf
+Error: FORWARD_NULL (CWE-476):
+libhsm.c:1168: assign_zero: Assigning: key_handles = NULL.
+libhsm.c:1210: var_deref_op: Dereferencing null pointer key_handles.
+.fi
+
+In the above example, FORWARD_NULL is the
+.B checker
+, assign_zero and var_deref_op are
+.B events
+, where var_deref_op is the key event and
+"Dereferencing null pointer key_handles." is the
+.B message
+associated with the key event.
+
+[DESCRIPTION OF AVAILABLE MODES]
+
+.B dig_key_events
+- for each defect, print only the checker and key event
+
+.B evtstat
+- print overall checker/key_event statistics for the matched defects
+
+.B files
+- print only names of error files that contain the matched defects
+
+.B filestat
+- print statistics of matched defects per individual source files
+
+.B grep
+- print matched defects using the same format as expected on the input
+
+.B grouped
+- print matched defects, grouped by error files they originate from
+
+.B json
+- print matched defects in a JSON format
+
+.B stat
+- print overall statistics of the matched defects in given error files
