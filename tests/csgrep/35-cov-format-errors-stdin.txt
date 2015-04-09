@@ -1,0 +1,116 @@
+Error: IDENTICAL_BRANCHES:
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/filter/ssl/SslHandler.java:336:
+identical_branches: The same code is executed regardless of whether "!isOutboundDone()" is true, because the 'then' and 'else' branches are identical. Should one of the branches be modified, or the entire 'if' statement replaced?
+Error: LOCK_EVASION:
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/core/polling/AbstractPollingIoProcessor.java:183:
+thread1_checks_field: Thread1 uses the value read from field "disposing" in the condition "disposing". It sees that the condition is false. Control is switched to Thread2.
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/core/polling/AbstractPollingIoProcessor.java:183:
+thread2_checks_field: Thread2 uses the value read from field "disposing" in the condition "disposing". It sees that the condition is false.
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/core/polling/AbstractPollingIoProcessor.java:187:
+thread2_acquires_lock: Thread2 acquires lock "AbstractPollingIoProcessor.disposalLock".
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/core/polling/AbstractPollingIoProcessor.java:188:
+thread2_modifies_field: Thread2 sets "disposing" to a new value. After Thread2 leaves the critical section, control is switched back to Thread1.
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/core/polling/AbstractPollingIoProcessor.java:187:
+thread1_acquires_lock: Thread1 acquires lock "AbstractPollingIoProcessor.disposalLock".
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/core/polling/AbstractPollingIoProcessor.java:188:
+thread1_overwrites_value_in_field: Thread1 sets "disposing" to a new value. Now the two threads have an inconsistent view of "disposing" and updates to fields correlated with "disposing" may be lost.
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/core/polling/AbstractPollingIoProcessor.java:183:
+use_same_locks_for_read_and_modify: Guard the modification of "disposing" and the read used to decide whether to modify "disposing" with the same set of locks.
+Error: LOCK_EVASION:
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/util/ExpiringMap.java:345:
+thread1_acquires_lock: Thread1 acquires lock "Expirer.stateLock".
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/util/ExpiringMap.java:347:
+thread1_checks_field: Thread1 uses the value read from field "running" in the condition "running". It sees that the condition is false. Control is switched to Thread2.
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/util/ExpiringMap.java:345:
+thread2_acquires_lock: Thread2 acquires lock "Expirer.stateLock".
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/util/ExpiringMap.java:347:
+thread2_checks_field: Thread2 uses the value read from field "running" in the condition "running". It sees that the condition is false.
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/util/ExpiringMap.java:354:
+thread2_acquires_lock: Thread2 acquires lock "stateLock.writeLock()".
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/util/ExpiringMap.java:357:
+thread2_modifies_field: Thread2 sets "running" to a new value. Note that this write can be reordered at runtime to occur before instructions that do not access this field, even into (but not to the other side of) preceding locked regions. Control is switched back to Thread1.
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/util/ExpiringMap.java:354:
+thread1_acquires_lock: Thread1 acquires lock "stateLock.writeLock()".
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/util/ExpiringMap.java:357:
+thread1_overwrites_value_in_field: Thread1 sets "running" to a new value. Now the two threads have an inconsistent view of "running" and updates to fields correlated with "running" may be lost.
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/util/ExpiringMap.java:357:
+use_same_locks_for_read_and_modify: Guard the modification of "running" and the read used to decide whether to modify "running" with the same set of locks.
+Error: LOCK_EVASION:
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/util/ExpiringMap.java:345:
+thread1_acquires_lock: Thread1 acquires lock "stateLock.readLock()".
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/util/ExpiringMap.java:347:
+thread1_checks_field: Thread1 uses the value read from field "running" in the condition "running". It sees that the condition is false. Control is switched to Thread2.
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/util/ExpiringMap.java:345:
+thread2_acquires_lock: Thread2 acquires lock "stateLock.readLock()".
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/util/ExpiringMap.java:347:
+thread2_checks_field: Thread2 uses the value read from field "running" in the condition "running". It sees that the condition is false.
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/util/ExpiringMap.java:354:
+thread2_acquires_lock: Thread2 acquires lock "Expirer.stateLock".
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/util/ExpiringMap.java:357:
+thread2_modifies_field: Thread2 sets "running" to a new value. Note that this write can be reordered at runtime to occur before instructions that do not access this field, even into (but not to the other side of) preceding locked regions. Control is switched back to Thread1.
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/util/ExpiringMap.java:354:
+thread1_acquires_lock: Thread1 acquires lock "Expirer.stateLock".
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/util/ExpiringMap.java:357:
+thread1_overwrites_value_in_field: Thread1 sets "running" to a new value. Now the two threads have an inconsistent view of "running" and updates to fields correlated with "running" may be lost.
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/util/ExpiringMap.java:357:
+use_same_locks_for_read_and_modify: Guard the modification of "running" and the read used to decide whether to modify "running" with the same set of locks.
+Error: LOCK_EVASION:
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/util/ExpiringMap.java:345:
+thread1_acquires_lock: Thread1 acquires lock "stateLock.readLock()".
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/util/ExpiringMap.java:347:
+thread1_checks_field: Thread1 uses the value read from field "running" in the condition "running". It sees that the condition is false. Control is switched to Thread2.
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/util/ExpiringMap.java:345:
+thread2_acquires_lock: Thread2 acquires lock "stateLock.readLock()".
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/util/ExpiringMap.java:347:
+thread2_checks_field: Thread2 uses the value read from field "running" in the condition "running". It sees that the condition is false.
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/util/ExpiringMap.java:354:
+thread2_acquires_lock: Thread2 acquires lock "stateLock.writeLock()".
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/util/ExpiringMap.java:357:
+thread2_modifies_field: Thread2 sets "running" to a new value. Note that this write can be reordered at runtime to occur before instructions that do not access this field, even into (but not to the other side of) preceding locked regions. Control is switched back to Thread1.
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/util/ExpiringMap.java:354:
+thread1_acquires_lock: Thread1 acquires lock "stateLock.writeLock()".
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/util/ExpiringMap.java:357:
+thread1_overwrites_value_in_field: Thread1 sets "running" to a new value. Now the two threads have an inconsistent view of "running" and updates to fields correlated with "running" may be lost.
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/util/ExpiringMap.java:357:
+use_same_locks_for_read_and_modify: Guard the modification of "running" and the read used to decide whether to modify "running" with the same set of locks.
+Error: LOCK_EVASION:
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/core/service/SimpleIoProcessorPool.java:286:
+thread1_checks_field: Thread1 uses the value read from field "disposed" in the condition "disposed". It sees that the condition is false. Control is switched to Thread2.
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/core/service/SimpleIoProcessorPool.java:286:
+thread2_checks_field: Thread2 uses the value read from field "disposed" in the condition "disposed". It sees that the condition is false.
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/core/service/SimpleIoProcessorPool.java:290:
+thread2_acquires_lock: Thread2 acquires lock "SimpleIoProcessorPool.disposalLock".
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/core/service/SimpleIoProcessorPool.java:317:
+thread2_modifies_field: Thread2 sets "disposed" to a new value. After Thread2 leaves the critical section, control is switched back to Thread1.
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/core/service/SimpleIoProcessorPool.java:290:
+thread1_acquires_lock: Thread1 acquires lock "SimpleIoProcessorPool.disposalLock".
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/core/service/SimpleIoProcessorPool.java:317:
+thread1_overwrites_value_in_field: Thread1 sets "disposed" to a new value. Now the two threads have an inconsistent view of "disposed" and updates to fields correlated with "disposed" may be lost.
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/core/service/SimpleIoProcessorPool.java:286:
+use_same_locks_for_read_and_modify: Guard the modification of "disposed" and the read used to decide whether to modify "disposed" with the same set of locks.
+Error: LOCK_EVASION:
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/handler/stream/IoSessionInputStream.java:64:
+thread1_checks_field: Thread1 uses the value read from field "closed" in the condition "closed". It sees that the condition is false. Control is switched to Thread2.
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/handler/stream/IoSessionInputStream.java:64:
+thread2_checks_field: Thread2 uses the value read from field "closed" in the condition "closed". It sees that the condition is false.
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/handler/stream/IoSessionInputStream.java:68:
+thread2_acquires_lock: Thread2 acquires lock "IoSessionInputStream.mutex".
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/handler/stream/IoSessionInputStream.java:69:
+thread2_modifies_field: Thread2 sets "closed" to a new value. After Thread2 leaves the critical section, control is switched back to Thread1.
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/handler/stream/IoSessionInputStream.java:68:
+thread1_acquires_lock: Thread1 acquires lock "IoSessionInputStream.mutex".
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/handler/stream/IoSessionInputStream.java:69:
+thread1_overwrites_value_in_field: Thread1 sets "closed" to a new value. Now the two threads have an inconsistent view of "closed" and updates to fields correlated with "closed" may be lost.
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/handler/stream/IoSessionInputStream.java:64:
+use_same_locks_for_read_and_modify: Guard the modification of "closed" and the read used to decide whether to modify "closed" with the same set of locks.
+Error: NULL_RETURNS:
+path:/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/util/byteaccess/CompositeByteArrayRelativeWriter.java:162:
+cond_true: Condition "autoFlush", taking true branch
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/util/byteaccess/CompositeByteArrayRelativeWriter.java:163:
+returned_null: "getFirst" returns null (checked 0 out of 1 times).
+path:/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/util/byteaccess/CompositeByteArray.java:109:9:
+cond_true: Condition "bas.isEmpty()", taking true branch
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/util/byteaccess/CompositeByteArray.java:110:13:
+return_null: Explicitly returning null.
+/builddir/build/BUILD/apache-mina-2.0.7/mina-core/src/main/java/org/apache/mina/util/byteaccess/CompositeByteArrayRelativeWriter.java:163:
+null_method_call: Calling a method on null object "cba.getFirst()".
