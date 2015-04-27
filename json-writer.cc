@@ -105,8 +105,8 @@ void JsonWriter::flush() {
     str.push(reFilter);
 
     // create a regex-based filter to replace \/ (produced by newer boost) by /
-    const boost::regex reSlash("([^\\\\]*)\\\\/");
-    boost::iostreams::basic_regex_filter<char> reFilterSlash(reSlash, "\\1/");
+    const boost::regex reSlash("([^\\\\]*(?:\\\\\\\\)*)(?:\\\\(/))?");
+    boost::iostreams::basic_regex_filter<char> reFilterSlash(reSlash, "\\1\\2");
     str.push(reFilterSlash);
 
     str.push(d->str);
