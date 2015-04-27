@@ -109,6 +109,11 @@ void JsonWriter::flush() {
     boost::iostreams::basic_regex_filter<char> reFilterSlash(reSlash, "\\1\\2");
     str.push(reFilterSlash);
 
+    // create a regex-based filter to replace \u0009 by \t
+    const boost::regex reTab("\\\\u0009");
+    boost::iostreams::basic_regex_filter<char> reFilterTab(reTab, "\\\\t");
+    str.push(reFilterTab);
+
     str.push(d->str);
 
     // encode scan properties if we have some
