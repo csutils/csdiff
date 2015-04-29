@@ -55,7 +55,7 @@ namespace HtmlLib {
 'http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd'>\n\
 <html xmlns='http://www.w3.org/1999/xhtml'>\n\
 <head><title>" << title << "</title></head>\n\
-<body>\n<h1>" << title << "</h1>\n";
+<body style='background: white;'>\n<h1>" << title << "</h1>\n";
     }
 
     void writeLink(
