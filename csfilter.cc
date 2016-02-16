@@ -44,11 +44,11 @@ inline std::string regexReplaceWrap(
 MsgFilter* MsgFilter::self_;
 
 struct MsgReplace {
-    const boost::regex         *regex;
+    const boost::regex          regex;
     const std::string           replaceWith;
 
     MsgReplace(const std::string &regex_, const std::string &rpl) :
-        regex(new boost::regex(regex_)),
+        regex(regex_),
         replaceWith(rpl)
     {
     }
@@ -143,12 +143,12 @@ std::string MsgFilter::filterMsg(
 {
     std::string filtered = msg;
     BOOST_FOREACH(const struct MsgReplace *rpl, d->msgFilterMap[checker]) {
-        filtered = regexReplaceWrap(filtered, *rpl->regex, rpl->replaceWith);
+        filtered = regexReplaceWrap(filtered, rpl->regex, rpl->replaceWith);
     }
 
     // these substitutions are common for all checkers
     BOOST_FOREACH(const struct MsgReplace *rpl, d->msgFilterMap[""]) {
-        filtered = regexReplaceWrap(filtered, *rpl->regex, rpl->replaceWith);
+        filtered = regexReplaceWrap(filtered, rpl->regex, rpl->replaceWith);
     }
 
 #if DEBUG_SUBST > 1
