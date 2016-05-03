@@ -132,33 +132,38 @@ namespace CsLib {
         if (props.end() == itCount || props.end() == itRatio)
             return;
 
-        const int count = boost::lexical_cast<int>(itCount->second);
-        const int ratio = boost::lexical_cast<int>(itRatio->second);
-        if (ratio < parsingRatioThr)
-            str << "<p><b style='color: #FF0000;'>warning:</b> "
-                "low parsing ratio: " << ratio << "%</p>\n";
+        try {
+            const int count = boost::lexical_cast<int>(itCount->second);
+            const int ratio = boost::lexical_cast<int>(itRatio->second);
+            if (ratio < parsingRatioThr)
+                str << "<p><b style='color: #FF0000;'>warning:</b> "
+                    "low parsing ratio: " << ratio << "%</p>\n";
 
-        itCount = props.find("diffbase-cov-compilation-unit-count");
-        itRatio = props.find("diffbase-cov-compilation-unit-ratio");
-        if (props.end() == itCount || props.end() == itRatio) {
-            // fallback to deprecated format produced by cov-mockbuild
-            itCount = props.find("diffbase-compilation-unit-count");
-            itRatio = props.find("diffbase-compilation-unit-ratio");
+            itCount = props.find("diffbase-cov-compilation-unit-count");
+            itRatio = props.find("diffbase-cov-compilation-unit-ratio");
+            if (props.end() == itCount || props.end() == itRatio) {
+                // fallback to deprecated format produced by cov-mockbuild
+                itCount = props.find("diffbase-compilation-unit-count");
+                itRatio = props.find("diffbase-compilation-unit-ratio");
+            }
+            if (props.end() == itCount || props.end() == itRatio)
+                return;
+
+            const int baseCount = boost::lexical_cast<int>(itCount->second);
+            const int baseRatio = boost::lexical_cast<int>(itRatio->second);
+            if (baseRatio < parsingRatioThr && baseRatio < ratio)
+                str << "<p><b style='color: #FF0000;'>warning:</b> "
+                    "low parsing ratio in diff base: "
+                    << baseRatio << "%</p>\n";
+
+            if (!count || 100 * baseCount / count < parsingOldToNewRatioThr)
+                str << "<p><b style='color: #FF0000;'>warning:</b> "
+                    "low count of parsed units in diff base: "
+                    << baseCount << "</p>\n";
         }
-        if (props.end() == itCount || props.end() == itRatio)
-            return;
-
-        const int baseCount = boost::lexical_cast<int>(itCount->second);
-        const int baseRatio = boost::lexical_cast<int>(itRatio->second);
-        if (baseRatio < parsingRatioThr && baseRatio < ratio)
-            str << "<p><b style='color: #FF0000;'>warning:</b> "
-                "low parsing ratio in diff base: "
-                << baseRatio << "%</p>\n";
-
-        if (!count || 100 * baseCount / count < parsingOldToNewRatioThr)
-            str << "<p><b style='color: #FF0000;'>warning:</b> "
-                "low count of parsed units in diff base: "
-                << baseCount << "</p>\n";
+        catch (boost::bad_lexical_cast &) {
+            // failed to parse count/ratio
+        }
     }
 
     void writeScanProps(std::ostream &str, const TScanProps &props) {
@@ -382,12 +387,17 @@ void HtmlWriter::Private::writeLinkToDetails(const Defect &def) {
         // no project ID
         return;
 
-    const int projId = boost::lexical_cast<int>(it->second);
+    try {
+        const int projId = boost::lexical_cast<int>(it->second);
 
-    // write the link
-    this->str << " <a href ='"
-        << boost::format(this->defUrlTemplate) % projId % defId
-        << "'>[Show Details]</a>";
+        // write the link
+        this->str << " <a href ='"
+            << boost::format(this->defUrlTemplate) % projId % defId
+            << "'>[Show Details]</a>";
+    }
+    catch (boost::bad_lexical_cast &) {
+        // failed to parse project ID
+    }
 }
 
 void HtmlWriter::Private::writeNewDefWarning(const Defect &def) {
