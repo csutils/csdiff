@@ -106,6 +106,20 @@ code scan defect lists to find out added or fixed defects.
 %{!?python2_sitearch: %global python2_sitearch %(%{__python2} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib(1))")}
 %endif
 
+# build the python3-csdiff package on Fedora 23+
+%global py3_support ((7 < 0%{?rhel}) || (22 < 0%{?fedora}))
+%if %{py3_support}
+%package -n python3-%{name}
+Summary:        Python interface to csdiff for Python 3
+BuildRequires:  boost-python3-devel
+BuildRequires:  python3-devel
+%{?python_provide:%python_provide python3-%{name}}
+
+%description -n python3-%{name}
+This package contains the Python 3 binding for the csdiff tool for comparing
+code scan defect lists to find out added or fixed defects.
+%endif
+
 %prep
 %setup -q
 
@@ -116,7 +130,19 @@ cd csdiff_build
 %cmake .. -DPYTHON_EXECUTABLE=%{__python2}
 make %{?_smp_mflags} VERBOSE=yes
 
+# build the python3-csdiff package on Fedora 23+
+%if %{py3_support}
+mkdir ../csdiff_build_py3
+cd ../csdiff_build_py3
+%cmake .. -DPYTHON_EXECUTABLE=%{__python3} -DBOOST_PYTHON_LIB_NAME=boost_python3
+make %{?_smp_mflags} VERBOSE=yes pycsdiff
+%endif
+
 %install
+%if %{py3_support}
+mkdir -vp %{buildroot}%{python3_sitearch}
+install -vm0644 csdiff_build_py3/pycsdiff.so %{buildroot}%{python3_sitearch}
+%endif
 cd csdiff_build
 make install DESTDIR="\$RPM_BUILD_ROOT"
 
@@ -140,6 +166,12 @@ ctest %{?_smp_mflags} --output-on-failure
 %files -n python2-%{name}
 %{python2_sitearch}/pycsdiff.so
 %doc COPYING
+
+%if %{py3_support}
+%files -n python3-%{name}
+%{python3_sitearch}/pycsdiff.so
+%doc COPYING
+%endif
 EOF
 
 set -v

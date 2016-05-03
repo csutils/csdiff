@@ -70,7 +70,9 @@ install(TARGETS
 # pycsdiff - python binding of csdiff
 option(BUILD_PYCSDIFF "Set to ON to enable python binding" ON)
 if (BUILD_PYCSDIFF)
-    find_library(BOOST_PYTHON NAMES boost_python
+    set(BOOST_PYTHON_LIB_NAME "boost_python"
+        CACHE STRING "Name of the boost_python library")
+    find_library(BOOST_PYTHON NAMES ${BOOST_PYTHON_LIB_NAME}
         boost_python-3.2
         boost_python-3.3
         boost_python-3.4)
