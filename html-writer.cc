@@ -134,7 +134,7 @@ namespace CsLib {
 
         try {
             const int count = boost::lexical_cast<int>(itCount->second);
-            const int ratio = boost::lexical_cast<int>(itRatio->second);
+            const int ratio = boost::lexical_cast<float>(itRatio->second);
             if (ratio < parsingRatioThr)
                 str << "<p><b style='color: #FF0000;'>warning:</b> "
                     "low parsing ratio: " << ratio << "%</p>\n";
@@ -150,7 +150,7 @@ namespace CsLib {
                 return;
 
             const int baseCount = boost::lexical_cast<int>(itCount->second);
-            const int baseRatio = boost::lexical_cast<int>(itRatio->second);
+            const int baseRatio = boost::lexical_cast<float>(itRatio->second);
             if (baseRatio < parsingRatioThr && baseRatio < ratio)
                 str << "<p><b style='color: #FF0000;'>warning:</b> "
                     "low parsing ratio in diff base: "
