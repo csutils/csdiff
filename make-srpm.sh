@@ -85,12 +85,21 @@ Source0:    https://git.fedorahosted.org/cgit/codescan-diff.git/snapshot/$SRC
 BuildRequires: boost-devel
 BuildRequires: cmake
 BuildRequires: help2man
-BuildRequires: python-devel
 
 %description
 This package contains the csdiff tool for comparing code scan defect lists in
 order to find out added or fixed defects, and the csgrep utility for filtering
 defect lists using various filtering predicates. 
+
+%package -n python2-%{name}
+Summary:        Python interface to csdiff for Python 2
+Conflicts:      %{name} <= 1.2.3
+BuildRequires:  python2-devel
+%{?python_provide:%python_provide python2-%{name}}
+
+%description -n python2-%{name}
+This package contains the Python 2 binding for the csdiff tool for comparing
+code scan defect lists to find out added or fixed defects.
 
 %if 0%{?rhel} && 0%{?rhel} <= 6
 %{!?__python2: %global __python2 /usr/bin/python2}
@@ -104,7 +113,7 @@ defect lists using various filtering predicates.
 make version.cc
 mkdir csdiff_build
 cd csdiff_build
-%cmake ..
+%cmake .. -DPYTHON_EXECUTABLE=%{__python2}
 make %{?_smp_mflags} VERBOSE=yes
 
 %install
@@ -126,8 +135,11 @@ ctest %{?_smp_mflags} --output-on-failure
 %{_mandir}/man1/cshtml.1*
 %{_mandir}/man1/cslinker.1*
 %{_mandir}/man1/cssort.1*
-%{python2_sitearch}/pycsdiff.so
 %doc COPYING README
+
+%files -n python2-%{name}
+%{python2_sitearch}/pycsdiff.so
+%doc COPYING
 EOF
 
 set -v
