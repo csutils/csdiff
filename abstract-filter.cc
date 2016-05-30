@@ -26,6 +26,7 @@
 #include <sstream>
 #include <vector>
 
+#include <boost/algorithm/string/replace.hpp>
 #include <boost/foreach.hpp>
 
 // /////////////////////////////////////////////////////////////////////////////
@@ -135,6 +136,11 @@ void appendCtxLines(
         if (line < firstLine)
             // skip lines before the context lines
             continue;
+
+        // quote embedded NULs as they cause problems to some JSON parsers
+        std::string nul;
+        nul.push_back('\0');
+        boost::algorithm::replace_all(text, nul, "[NUL]");
 
         // format a single line of the comment
         std::ostringstream str;
