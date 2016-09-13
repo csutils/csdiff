@@ -110,6 +110,9 @@ struct MsgFilter::Private {
 
         // artificial field names of anonymous unions that Coverity produces
         addMsgFilter("", "__C[0-9]+");
+
+        // used by IDENTIFIER_TYPO (but applies generally)
+        addMsgFilter("", "at least [0-9][0-9]* times.$");
     }
 };
 

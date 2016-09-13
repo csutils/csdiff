@@ -1,0 +1,15 @@
+Error: IDENTIFIER_TYPO:
+anaconda-21.48.22.90/pyanaconda/ui/gui/spokes/source.py:1388: identifier_typo: Using "mirorlist" appears to be a typo:
+* Identifier "mirorlist" is only known to be referenced here, or in copies of this code.
+* Identifier "mirrorlist" is referenced elsewhere at least 27 times.
+anaconda-21.48.22.90/pyanaconda/packaging/__init__.py:1046: identifier_use: Example 1: Using identifier "mirrorlist".
+anaconda-21.48.22.90/pyanaconda/packaging/yumpayload.py:732: identifier_use: Example 2: Using identifier "mirrorlist".
+anaconda-21.48.22.90/pyanaconda/packaging/yumpayload.py:879: identifier_use: Example 3: Using identifier "mirrorlist".
+anaconda-21.48.22.90/pyanaconda/packaging/yumpayload.py:726: identifier_use: Example 4: Using identifier "mirrorlist".
+anaconda-21.48.22.90/pyanaconda/packaging/yumpayload.py:335: identifier_use: Example 5: Using identifier "mirrorlist" (2 total uses in this function).
+anaconda-21.48.22.90/pyanaconda/ui/gui/spokes/source.py:1388: remediation: Should identifier "mirorlist" be replaced by "mirrorlist"?
+# 1386|           url = self._repoUrlEntry.get_text().strip()
+# 1387|           if self._repoMirrorlistCheckbox.get_active():
+# 1388|->             repo.mirorlist = proto + url
+# 1389|           else:
+# 1390|               repo.baseurl = proto + url
