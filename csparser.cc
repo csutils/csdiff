@@ -214,7 +214,7 @@ struct KeyEventDigger::Private {
     typedef std::set<std::string>                   TSet;
     typedef std::map<std::string, TSet>             TMap;
     TMap hMap;
-    TSet blackList;
+    TSet blackList, traceEvts;
 };
 
 KeyEventDigger::KeyEventDigger():
@@ -258,26 +258,29 @@ KeyEventDigger::KeyEventDigger():
     // do not match the lowered checker name of the following checkers
     d->hMap["LOCK"];
 
-    // events that should never be used as key events
-    d->blackList.insert("break");
-    d->blackList.insert("caretline");
-    d->blackList.insert("cond_false");
-    d->blackList.insert("cond_true");
-    d->blackList.insert("continue");
-    d->blackList.insert("else_branch");
-    d->blackList.insert("end_of_path");
-    d->blackList.insert("goto");
-    d->blackList.insert("if_end");
-    d->blackList.insert("if_fallthrough");
-    d->blackList.insert("label");
-    d->blackList.insert("loop");
-    d->blackList.insert("loop_begin");
-    d->blackList.insert("loop_end");
-    d->blackList.insert("switch");
-    d->blackList.insert("switch_case");
-    d->blackList.insert("switch_default");
-    d->blackList.insert("switch_end");
-    d->blackList.insert("return");
+    // events that should never be used as key events (excluding trace events)
+    d->blackList.insert("remediation");
+
+    // trace events
+    d->traceEvts.insert("break");
+    d->traceEvts.insert("caretline");
+    d->traceEvts.insert("cond_false");
+    d->traceEvts.insert("cond_true");
+    d->traceEvts.insert("continue");
+    d->traceEvts.insert("else_branch");
+    d->traceEvts.insert("end_of_path");
+    d->traceEvts.insert("goto");
+    d->traceEvts.insert("if_end");
+    d->traceEvts.insert("if_fallthrough");
+    d->traceEvts.insert("label");
+    d->traceEvts.insert("loop");
+    d->traceEvts.insert("loop_begin");
+    d->traceEvts.insert("loop_end");
+    d->traceEvts.insert("switch");
+    d->traceEvts.insert("switch_case");
+    d->traceEvts.insert("switch_default");
+    d->traceEvts.insert("switch_end");
+    d->traceEvts.insert("return");
 }
 
 KeyEventDigger::~KeyEventDigger() {
@@ -322,7 +325,9 @@ bool KeyEventDigger::guessKeyEvent(Defect *def) {
             // never use comment as the key event
             continue;
 
-        if (!d->blackList.count(evt.event))
+        const std::string &evtName = evt.event;
+        if (!d->traceEvts.count(evtName) && !d->blackList.count(evtName))
+            // never use trace or black-listed event as the key event
             break;
     }
 
@@ -336,7 +341,7 @@ void KeyEventDigger::initVerbosity(Defect *def) {
         DefEvent &evt = evtList[idx];
         evt.verbosityLevel = (idx == def->keyEventIdx)
             ? /* key event */ 0
-            : 1 + /* trace event */ !!d->blackList.count(evt.event);
+            : 1 + /* trace event */ !!d->traceEvts.count(evt.event);
     }
 }
 

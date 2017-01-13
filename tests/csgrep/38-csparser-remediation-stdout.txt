@@ -1,0 +1,5 @@
+Error: NO_EFFECT:
+/home/kdudka/git/csa-sdk/memset_noop/tests/memset_noop-tests.c:7: bad_memset: Calling "memset" with size 0: "memset(buf, 4096, 0UL)" does nothing.
+
+Error: memset_noop:
+/home/kdudka/git/csa-sdk/memset_noop/tests/memset_noop-tests.c:7: memset_noop: "memset(buf, 4096, 0UL)" does nothing because the "size" argument of memset() evaluates to zero. Did you swap its arguments?
