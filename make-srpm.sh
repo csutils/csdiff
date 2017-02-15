@@ -80,7 +80,7 @@ Summary:    Non-interactive tools for processing code scan results in plain-text
 Group:      Applications/Text
 License:    GPLv3+
 URL:        https://github.com/kdudka/csdiff
-Source0:    https://github.com/kdudka/csdiff/releases/download/%{version}/$SRC
+Source0:    https://github.com/kdudka/csdiff/releases/download/%{name}-%{version}/%{name}-%{version}.tar.xz
 
 BuildRequires: boost-devel
 BuildRequires: cmake
