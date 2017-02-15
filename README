@@ -5,13 +5,10 @@ scan defect lists in order to find out added or fixed defects, and the csgrep
 utility for filtering defect lists using various filtering predicates.  You
 can find the up2date sources in the following repository:
 
-    https://git.fedorahosted.org/cgit/codescan-diff.git
-
-Please report bugs and feature requests to the following mailing-list:
-
-    https://fedorahosted.org/mailman/listinfo/codescan-diff
+    https://github.com/kdudka/csdiff
 
 The codescan-diff utilities are licensed under GPLv3+, see COPYING for details.
+Please report bugs and feature requests on GitHub using the above URL.
 
 
 Dependences
