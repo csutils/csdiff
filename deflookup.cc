@@ -33,14 +33,12 @@ typedef std::map<std::string, TDefByFile>       TDefByChecker;
 struct DefLookup::Private {
     TDefByChecker                    stor;
     bool                             usePartialResults;
-    MsgFilter                       *filt;
 };
 
 DefLookup::DefLookup(const bool usePartialResults):
     d(new Private)
 {
     d->usePartialResults = usePartialResults;
-    d->filt = MsgFilter::inst();
 }
 
 DefLookup::DefLookup(const DefLookup &ref):
@@ -80,8 +78,9 @@ bool DefLookup::lookup(const Defect &def) {
         return false;
 
     // simplify path
+    MsgFilter *filter = MsgFilter::inst();
     const DefEvent &evt = def.events[def.keyEventIdx];
-    const std::string path(d->filt->filterPath(evt.fileName));
+    const std::string path(filter->filterPath(evt.fileName));
 
     // look for file name
     TDefByFile &row = iRow->second;
@@ -105,7 +104,7 @@ bool DefLookup::lookup(const Defect &def) {
     // look by msg
     TDefByMsg &zCol = iZCol->second;
     TDefByMsg::iterator iCell = zCol.find(
-            d->filt->filterMsg(evt.msg, def.checker));
+            filter->filterMsg(evt.msg, def.checker));
     if (zCol.end() == iCell)
         return false;
 
