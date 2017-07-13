@@ -20,6 +20,7 @@
 SELF="$0"
 
 PKG="csdiff"
+: ${MAKEOPTS=-j9}
 
 die() {
     echo "$SELF: error: $1" >&2
@@ -61,7 +62,8 @@ cd "$TMP" >/dev/null || die "mktemp failed"
 git clone "$REPO" "$PKG"                || die "git clone failed"
 cd "$PKG"                               || die "git clone failed"
 
-make -j5 distcheck CTEST='ctest -j5'    || die "'make distcheck' has failed"
+make $MAKEOPTS distcheck CTEST="ctest $MAKEOPTS" \
+    || die "'make distcheck' has failed"
 
 SRC_TAR="${NV}.tar"
 SRC="${SRC_TAR}.xz"
