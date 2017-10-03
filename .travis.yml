@@ -4,11 +4,11 @@ compiler: gcc
 before_install:
     - sudo apt-get update
     - sudo apt-get install apt-transport-https
-    - echo "deb https://kdudka.fedorapeople.org/csbuild precise contrib" | sudo tee -a /etc/apt/sources.list
+    - echo "deb https://kdudka.fedorapeople.org/csbuild trusty contrib" | sudo tee -a /etc/apt/sources.list
     - sudo apt-get update
 
 install:
-    - sudo apt-get install cmake help2man libboost1.46-dev libboost-program-options1.46-dev libboost-python1.46-dev libboost-regex1.46-dev
+    - sudo apt-get install cmake help2man libboost-dev libboost-program-options-dev libboost-python-dev libboost-regex-dev
     - sudo apt-get install -y --force-yes csbuild
 
 script:
