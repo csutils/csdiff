@@ -19,7 +19,7 @@
 
 #include "instream.hh"
 
-InStream::InStream(const char *fName) throw (InFileException):
+InStream::InStream(const char *fName):
     fileName_(fName),
     str_((!fileName_.compare("-"))
                 ? std::cin

@@ -36,7 +36,7 @@ struct InFileException {
 
 class InStream {
     public:
-        InStream(const char *fileName) throw (InFileException);
+        InStream(const char *fileName);
         ~InStream();
 
         const std::string& fileName()   const { return fileName_;   }
