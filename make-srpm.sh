@@ -86,6 +86,7 @@ Source0:    https://github.com/kdudka/csdiff/releases/download/%{name}-%{version
 
 BuildRequires: boost-devel
 BuildRequires: cmake
+BuildRequires: gcc-c++
 BuildRequires: help2man
 
 %description
