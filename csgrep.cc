@@ -32,7 +32,13 @@
 #include <boost/program_options.hpp>
 #include <boost/regex.hpp>
 
-class FilePrinter: public AbstractWriter {
+class StatWriter: public AbstractWriter {
+    public:
+        /// silently drop scan properties when printing stats only
+        virtual void setScanProps(const TScanProps &) { }
+};
+
+class FilePrinter: public StatWriter {
     private:
         std::string file_;
 
@@ -50,7 +56,7 @@ class FilePrinter: public AbstractWriter {
         }
 };
 
-class GroupPrinter: public AbstractWriter {
+class GroupPrinter: public StatWriter {
     private:
         std::string file_;
 
@@ -70,7 +76,7 @@ class GroupPrinter: public AbstractWriter {
         }
 };
 
-class KeyEventPrinter: public AbstractWriter {
+class KeyEventPrinter: public StatWriter {
     protected:
         virtual void handleDef(const Defect &def) {
             const DefEvent &keyEvent = def.events[def.keyEventIdx];
@@ -78,7 +84,7 @@ class KeyEventPrinter: public AbstractWriter {
         }
 };
 
-class DefCounter: public AbstractWriter {
+class DefCounter: public StatWriter {
     private:
         typedef std::map<std::string, int> TMap;
         TMap cnt_;
@@ -101,7 +107,7 @@ class DefCounter: public AbstractWriter {
         }
 };
 
-class EvtCounter: public AbstractWriter {
+class EvtCounter: public StatWriter {
     private:
         typedef std::pair<std::string, std::string>     TKey;
         typedef std::map<TKey, int>                     TMap;
@@ -131,7 +137,7 @@ class EvtCounter: public AbstractWriter {
         }
 };
 
-class FileDefCounter: public AbstractWriter {
+class FileDefCounter: public StatWriter {
     private:
         typedef std::map<std::string, DefCounter *> TMap;
         TMap cntMap_;
