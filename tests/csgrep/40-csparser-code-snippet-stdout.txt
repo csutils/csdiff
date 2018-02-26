@@ -1,0 +1,31 @@
+Error: PROSPECTOR_WARNING:
+/opt/calamari/venv/lib/python2.7/site-packages/graphite/thirdparty/pyparsing.py:724:30: W0212[pylint]: Access to a protected member _originalParseMethod of a client class
+#  722|           else:
+#  723|               if hasattr(self._parse,"_originalParseMethod"):
+#  724|->                 self._parse = self._parse._originalParseMethod
+#  725|           return self
+#  726|   
+
+Error: PROSPECTOR_WARNING:
+/opt/calamari/venv/lib/python2.7/site-packages/graphite/thirdparty/pyparsing.py:795:24: W0613[pylint]: Unused argument 's'
+#  793|                       return f(f.__call__.__self__, s,l,t)
+#  794|               if numargs == 2:
+#  795|->                 def tmp(s,l,t):
+#  796|                       return f(l,t)
+#  797|               elif numargs == 1:
+
+Error: PROSPECTOR_WARNING:
+/opt/calamari/venv/lib/python2.7/site-packages/graphite/thirdparty/pyparsing.py:798:24: W0613[pylint]: Unused argument 's'
+#  796|                       return f(l,t)
+#  797|               elif numargs == 1:
+#  798|->                 def tmp(s,l,t):
+#  799|                       return f(t)
+#  800|               else: #~ numargs == 0:
+
+Error: PROSPECTOR_WARNING:
+/opt/calamari/venv/lib/python2.7/site-packages/graphite/thirdparty/pyparsing.py:798:26: W0613[pylint]: Unused argument 'l'
+#  796|                       return f(l,t)
+#  797|               elif numargs == 1:
+#  798|->                 def tmp(s,l,t):
+#  799|                       return f(t)
+#  800|               else: #~ numargs == 0:

@@ -35,7 +35,7 @@ class LineReader {
         LineReader(std::istream &input):
             input_(input),
             lineNo_(0),
-            reTrailLoc_("[0-9>]:$"),
+            reTrailLoc_("^(path:|/).*(:[0-9]+|<.*>):$"),
             rePathPref_("^path:"),
             reUnkownLoc_("^<unknown>")
         {
