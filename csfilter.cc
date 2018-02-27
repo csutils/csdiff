@@ -81,7 +81,7 @@ struct MsgFilter::Private {
 
     Private():
         ignorePath(false),
-        strKrn("^[a-zA-Z]+"),
+        strKrn("^[a-zA-Z+]+"),
         reKrn(strKrn),
         reDir("^([^:]*/)"),
         reFile("[^/]+$"),

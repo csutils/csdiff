@@ -1,0 +1,441 @@
+{
+    "scan": {
+        "analyzer-version-clang": "3.4.2",
+        "analyzer-version-coverity": "2017.07-SP2",
+        "analyzer-version-cppcheck": "1.80",
+        "analyzer-version-gcc": "4.8.5",
+        "analyzer-version-shellcheck": "0.3.5",
+        "cov-compilation-unit-count": 430,
+        "cov-compilation-unit-ratio": 100,
+        "cov-lines-processed": 157991,
+        "cov-time-elapsed-analysis": "00:00:04",
+        "exit-code": 0,
+        "host": "cov04.lab.eng.brq.redhat.com",
+        "label": "libsigc++20-2.10.0-1.el7",
+        "mock-config": "rhel-7.4.z-x86_64",
+        "project-name": "libsigc++20-2.10.0-1.el7",
+        "store-results-to": "/tmp/tmpQsW5Xk/libsigc++20-2.10.0-1.el7.tar.xz",
+        "time-created": "2018-01-23 22:57:05",
+        "time-finished": "2018-01-23 23:02:04",
+        "tool": "csmock",
+        "tool-args": "'/bin/csmock' '-t' 'cppcheck,gcc,shellcheck,clang,coverity' '-o' '/tmp/tmpQsW5Xk/libsigc++20-2.10.0-1.el7.tar.xz' '-r' 'rhel-7.4.z-x86_64' '--cov-analyze-java' '--cov-analyze-opts=--security --concurrency' '--cov-use-version' 'cov-sa-2017.07' '--cov-fs-capture' '--use-host-cppcheck' '/tmp/tmpQsW5Xk/libsigc++20-2.10.0-1.el7.src.rpm'",
+        "tool-version": "csmock-2.0.4.20171219.151739.g1ebea2c-1.el7.centos"
+    },
+    "defects": [
+        {
+            "checker": "CLANG_WARNING",
+            "key_event_idx": 2,
+            "events": [
+                {
+                    "file_name": "libsigc++-2.10.0/examples/member_method.cc",
+                    "line": 10,
+                    "event": "included_from",
+                    "message": "Included from here.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "libsigc++-2.10.0/sigc++/sigc++.h",
+                    "line": 104,
+                    "event": "included_from",
+                    "message": "Included from here.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "libsigc++-2.10.0/sigc++/signal.h",
+                    "line": 2951,
+                    "column": 14,
+                    "event": "warning",
+                    "message": "Use of memory after it is freed",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    { return emitter_type::emit(impl_, _A_a1); }",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "             ^",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "libsigc++-2.10.0/examples/member_method.cc",
+                    "line": 44,
+                    "column": 13,
+                    "event": "note",
+                    "message": "Calling default constructor for 'Something'",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  Something something;  ",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "            ^~~~~~~~~",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "libsigc++-2.10.0/examples/member_method.cc",
+                    "line": 30,
+                    "column": 3,
+                    "event": "note",
+                    "message": "Calling 'signal1::emit'",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  signal_print.emit(2);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  ^~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "libsigc++-2.10.0/sigc++/signal.h",
+                    "line": 2951,
+                    "column": 14,
+                    "event": "note",
+                    "message": "Calling 'signal_emit1::emit'",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    { return emitter_type::emit(impl_, _A_a1); }",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "libsigc++-2.10.0/sigc++/signal.h",
+                    "line": 1033,
+                    "column": 11,
+                    "event": "note",
+                    "message": "Assuming 'impl' is non-null",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      if (!impl || impl->slots_.empty()) return;",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "          ^~~~~",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "libsigc++-2.10.0/sigc++/signal.h",
+                    "line": 1033,
+                    "column": 11,
+                    "event": "note",
+                    "message": "Left side of '||' is false",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "libsigc++-2.10.0/sigc++/signal.h",
+                    "line": 1033,
+                    "column": 7,
+                    "event": "note",
+                    "message": "Taking false branch",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      if (!impl || impl->slots_.empty()) return;",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      ^",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "libsigc++-2.10.0/sigc++/signal.h",
+                    "line": 1043,
+                    "column": 5,
+                    "event": "note",
+                    "message": "Calling '~signal_exec'",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    }",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    ^",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "libsigc++-2.10.0/sigc++/signal_base.h",
+                    "line": 204,
+                    "column": 7,
+                    "event": "note",
+                    "message": "Calling 'signal_impl::unreference_exec'",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    { sig_->unreference_exec(); }",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      ^~~~~~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "libsigc++-2.10.0/sigc++/signal_base.h",
+                    "line": 86,
+                    "column": 7,
+                    "event": "note",
+                    "message": "Taking true branch",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      if (!(--ref_count_)) delete this;",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      ^",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "libsigc++-2.10.0/sigc++/signal_base.h",
+                    "line": 86,
+                    "column": 28,
+                    "event": "note",
+                    "message": "Memory is released",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      if (!(--ref_count_)) delete this;",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                           ^~~~~~~~~~~",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "libsigc++-2.10.0/sigc++/signal_base.h",
+                    "line": 204,
+                    "column": 7,
+                    "event": "note",
+                    "message": "Returning; memory was released",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    { sig_->unreference_exec(); }",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      ^~~~~~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "libsigc++-2.10.0/sigc++/signal.h",
+                    "line": 1043,
+                    "column": 5,
+                    "event": "note",
+                    "message": "Returning from '~signal_exec'",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    }",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    ^",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "libsigc++-2.10.0/sigc++/signal.h",
+                    "line": 2951,
+                    "column": 14,
+                    "event": "note",
+                    "message": "Returning; memory was released via 1st parameter",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    { return emitter_type::emit(impl_, _A_a1); }",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "libsigc++-2.10.0/examples/member_method.cc",
+                    "line": 30,
+                    "column": 3,
+                    "event": "note",
+                    "message": "Returning; memory was released",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  signal_print.emit(2);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  ^~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "libsigc++-2.10.0/examples/member_method.cc",
+                    "line": 34,
+                    "column": 3,
+                    "event": "note",
+                    "message": "Calling 'signal1::emit'",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  signal_print.emit(3); //Prove that it is no longer connected.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  ^~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "libsigc++-2.10.0/sigc++/signal.h",
+                    "line": 2951,
+                    "column": 14,
+                    "event": "note",
+                    "message": "Use of memory after it is freed",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    { return emitter_type::emit(impl_, _A_a1); }",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "             ^                  ~~~~~",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2949|      */",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2950|     result_type emit(type_trait_take_t<T_arg1> _A_a1) const",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2951|->     { return emitter_type::emit(impl_, _A_a1); }",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2952|   ",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2953|   #ifndef SIGCXX_DISABLE_DEPRECATED",
+                    "verbosity_level": "1"
+                }
+            ]
+        }
+    ]
+}
