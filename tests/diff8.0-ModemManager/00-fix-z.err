@@ -1,0 +1,1458 @@
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/cli/mmcli-common.c: scope_hint: In function 'manager_new_ready'
+ModemManager-1.6.0/cli/mmcli-common.c:56:5: warning: 'g_simple_async_result_set_op_res_gpointer' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:75) [-Wdeprecated-declarations]
+#     g_simple_async_result_set_op_res_gpointer (simple, manager, NULL);
+#     ^
+#   54|   
+#   55|   
+#   56|->     g_simple_async_result_set_op_res_gpointer (simple, manager, NULL);
+#   57|       g_simple_async_result_complete (simple);
+#   58|       g_object_unref (simple);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/cli/mmcli-common.c:57:5: warning: 'g_simple_async_result_complete' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:104) [-Wdeprecated-declarations]
+#     g_simple_async_result_complete (simple);
+#     ^
+#   55|   
+#   56|       g_simple_async_result_set_op_res_gpointer (simple, manager, NULL);
+#   57|->     g_simple_async_result_complete (simple);
+#   58|       g_object_unref (simple);
+#   59|   }
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/cli/mmcli-common.c: scope_hint: In function 'mmcli_get_manager_finish'
+ModemManager-1.6.0/cli/mmcli-common.c:64:5: warning: 'g_simple_async_result_get_op_res_gpointer' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:79) [-Wdeprecated-declarations]
+#     return g_simple_async_result_get_op_res_gpointer (G_SIMPLE_ASYNC_RESULT (res));
+#     ^
+#   62|   mmcli_get_manager_finish (GAsyncResult *res)
+#   63|   {
+#   64|->     return g_simple_async_result_get_op_res_gpointer (G_SIMPLE_ASYNC_RESULT (res));
+#   65|   }
+#   66|   
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/cli/mmcli-common.c: scope_hint: In function 'mmcli_get_manager'
+ModemManager-1.6.0/cli/mmcli-common.c:75:5: warning: 'g_simple_async_result_new' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:51): Use 'g_task_new' instead [-Wdeprecated-declarations]
+#     result = g_simple_async_result_new (G_OBJECT (connection),
+#     ^
+#   73|       GSimpleAsyncResult *result;
+#   74|   
+#   75|->     result = g_simple_async_result_new (G_OBJECT (connection),
+#   76|                                           callback,
+#   77|                                           user_data,
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/cli/mmcli-common.c: scope_hint: In function 'get_modem_context_complete_and_free'
+ModemManager-1.6.0/cli/mmcli-common.c:166:5: warning: 'g_simple_async_result_complete' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:104) [-Wdeprecated-declarations]
+#     g_simple_async_result_complete (ctx->result);
+#     ^
+#  164|   get_modem_context_complete_and_free (GetModemContext *ctx)
+#  165|   {
+#  166|->     g_simple_async_result_complete (ctx->result);
+#  167|       g_object_unref (ctx->result);
+#  168|       if (ctx->cancellable)
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/cli/mmcli-common.c: scope_hint: In function 'mmcli_get_modem_finish'
+ModemManager-1.6.0/cli/mmcli-common.c:180:5: warning: 'g_simple_async_result_get_op_res_gpointer' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:79) [-Wdeprecated-declarations]
+#     results = g_simple_async_result_get_op_res_gpointer (G_SIMPLE_ASYNC_RESULT (res));
+#     ^
+#  178|       GetModemResults *results;
+#  179|   
+#  180|->     results = g_simple_async_result_get_op_res_gpointer (G_SIMPLE_ASYNC_RESULT (res));
+#  181|       if (o_manager)
+#  182|           *o_manager = g_object_ref (results->manager);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/cli/mmcli-common.c: scope_hint: In function 'get_manager_ready'
+ModemManager-1.6.0/cli/mmcli-common.c:199:5: warning: 'g_simple_async_result_set_op_res_gpointer' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:75) [-Wdeprecated-declarations]
+#     g_simple_async_result_set_op_res_gpointer (
+#     ^
+#  197|   
+#  198|       /* Set operation results */
+#  199|->     g_simple_async_result_set_op_res_gpointer (
+#  200|           ctx->result,
+#  201|           results,
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/cli/mmcli-common.c: scope_hint: In function 'mmcli_get_modem'
+ModemManager-1.6.0/cli/mmcli-common.c:246:5: warning: 'g_simple_async_result_new' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:51): Use 'g_task_new' instead [-Wdeprecated-declarations]
+#     ctx->result = g_simple_async_result_new (G_OBJECT (connection),
+#     ^
+#  244|       ctx = g_new0 (GetModemContext, 1);
+#  245|       ctx->modem_path = get_modem_path (path_or_index);
+#  246|->     ctx->result = g_simple_async_result_new (G_OBJECT (connection),
+#  247|                                                callback,
+#  248|                                                user_data,
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/cli/mmcli-common.c: scope_hint: In function 'get_bearer_context_complete'
+ModemManager-1.6.0/cli/mmcli-common.c:308:5: warning: 'g_simple_async_result_complete' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:104) [-Wdeprecated-declarations]
+#     g_simple_async_result_complete (ctx->result);
+#     ^
+#  306|   get_bearer_context_complete (GetBearerContext *ctx)
+#  307|   {
+#  308|->     g_simple_async_result_complete (ctx->result);
+#  309|       g_object_unref (ctx->result);
+#  310|       ctx->result = NULL;
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/cli/mmcli-common.c: scope_hint: In function 'mmcli_get_bearer_finish'
+ModemManager-1.6.0/cli/mmcli-common.c:320:5: warning: 'g_simple_async_result_get_op_res_gpointer' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:79) [-Wdeprecated-declarations]
+#     ctx = g_simple_async_result_get_op_res_gpointer (G_SIMPLE_ASYNC_RESULT (res));
+#     ^
+#  318|       GetBearerContext *ctx;
+#  319|   
+#  320|->     ctx = g_simple_async_result_get_op_res_gpointer (G_SIMPLE_ASYNC_RESULT (res));
+#  321|       if (o_manager)
+#  322|           *o_manager = g_object_ref (ctx->manager);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/cli/mmcli-common.c: scope_hint: In function 'list_bearers_ready'
+ModemManager-1.6.0/cli/mmcli-common.c:369:9: warning: 'g_simple_async_result_set_op_res_gpointer' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:75) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gpointer (
+#         ^
+#  367|       /* Found! */
+#  368|       if (ctx->bearer) {
+#  369|->         g_simple_async_result_set_op_res_gpointer (
+#  370|               ctx->result,
+#  371|               ctx,
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/cli/mmcli-common.c: scope_hint: In function 'mmcli_get_bearer'
+ModemManager-1.6.0/cli/mmcli-common.c:476:5: warning: 'g_simple_async_result_new' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:51): Use 'g_task_new' instead [-Wdeprecated-declarations]
+#     ctx->result = g_simple_async_result_new (G_OBJECT (connection),
+#     ^
+#  474|       if (cancellable)
+#  475|           ctx->cancellable = g_object_ref (cancellable);
+#  476|->     ctx->result = g_simple_async_result_new (G_OBJECT (connection),
+#  477|                                                callback,
+#  478|                                                user_data,
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/cli/mmcli-common.c: scope_hint: In function 'get_sim_context_complete'
+ModemManager-1.6.0/cli/mmcli-common.c:587:5: warning: 'g_simple_async_result_complete' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:104) [-Wdeprecated-declarations]
+#     g_simple_async_result_complete (ctx->result);
+#     ^
+#  585|   get_sim_context_complete (GetSimContext *ctx)
+#  586|   {
+#  587|->     g_simple_async_result_complete (ctx->result);
+#  588|       g_object_unref (ctx->result);
+#  589|       ctx->result = NULL;
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/cli/mmcli-common.c: scope_hint: In function 'mmcli_get_sim_finish'
+ModemManager-1.6.0/cli/mmcli-common.c:599:5: warning: 'g_simple_async_result_get_op_res_gpointer' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:79) [-Wdeprecated-declarations]
+#     ctx = g_simple_async_result_get_op_res_gpointer (G_SIMPLE_ASYNC_RESULT (res));
+#     ^
+#  597|       GetSimContext *ctx;
+#  598|   
+#  599|->     ctx = g_simple_async_result_get_op_res_gpointer (G_SIMPLE_ASYNC_RESULT (res));
+#  600|       if (o_manager)
+#  601|           *o_manager = g_object_ref (ctx->manager);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/cli/mmcli-common.c: scope_hint: In function 'get_sim_ready'
+ModemManager-1.6.0/cli/mmcli-common.c:623:5: warning: 'g_simple_async_result_set_op_res_gpointer' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:75) [-Wdeprecated-declarations]
+#     g_simple_async_result_set_op_res_gpointer (
+#     ^
+#  621|       }
+#  622|   
+#  623|->     g_simple_async_result_set_op_res_gpointer (
+#  624|           ctx->result,
+#  625|           ctx,
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/cli/mmcli-common.c: scope_hint: In function 'mmcli_get_sim'
+ModemManager-1.6.0/cli/mmcli-common.c:714:5: warning: 'g_simple_async_result_new' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:51): Use 'g_task_new' instead [-Wdeprecated-declarations]
+#     ctx->result = g_simple_async_result_new (G_OBJECT (connection),
+#     ^
+#  712|       if (cancellable)
+#  713|           ctx->cancellable = g_object_ref (cancellable);
+#  714|->     ctx->result = g_simple_async_result_new (G_OBJECT (connection),
+#  715|                                                callback,
+#  716|                                                user_data,
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/cli/mmcli-common.c: scope_hint: In function 'get_sms_context_complete'
+ModemManager-1.6.0/cli/mmcli-common.c:815:5: warning: 'g_simple_async_result_complete' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:104) [-Wdeprecated-declarations]
+#     g_simple_async_result_complete (ctx->result);
+#     ^
+#  813|   get_sms_context_complete (GetSmsContext *ctx)
+#  814|   {
+#  815|->     g_simple_async_result_complete (ctx->result);
+#  816|       g_object_unref (ctx->result);
+#  817|       ctx->result = NULL;
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/cli/mmcli-common.c: scope_hint: In function 'mmcli_get_sms_finish'
+ModemManager-1.6.0/cli/mmcli-common.c:827:5: warning: 'g_simple_async_result_get_op_res_gpointer' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:79) [-Wdeprecated-declarations]
+#     ctx = g_simple_async_result_get_op_res_gpointer (G_SIMPLE_ASYNC_RESULT (res));
+#     ^
+#  825|       GetSmsContext *ctx;
+#  826|   
+#  827|->     ctx = g_simple_async_result_get_op_res_gpointer (G_SIMPLE_ASYNC_RESULT (res));
+#  828|       if (o_manager)
+#  829|           *o_manager = g_object_ref (ctx->manager);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/cli/mmcli-common.c: scope_hint: In function 'list_sms_ready'
+ModemManager-1.6.0/cli/mmcli-common.c:876:9: warning: 'g_simple_async_result_set_op_res_gpointer' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:75) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gpointer (
+#         ^
+#  874|       /* Found! */
+#  875|       if (ctx->sms) {
+#  876|->         g_simple_async_result_set_op_res_gpointer (
+#  877|               ctx->result,
+#  878|               ctx,
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/cli/mmcli-common.c: scope_hint: In function 'mmcli_get_sms'
+ModemManager-1.6.0/cli/mmcli-common.c:977:5: warning: 'g_simple_async_result_new' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:51): Use 'g_task_new' instead [-Wdeprecated-declarations]
+#     ctx->result = g_simple_async_result_new (G_OBJECT (connection),
+#     ^
+#  975|       if (cancellable)
+#  976|           ctx->cancellable = g_object_ref (cancellable);
+#  977|->     ctx->result = g_simple_async_result_new (G_OBJECT (connection),
+#  978|                                                callback,
+#  979|                                                user_data,
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/cli/mmcli-common.c: scope_hint: In function 'get_voice_context_complete'
+ModemManager-1.6.0/cli/mmcli-common.c:1103:5: warning: 'g_simple_async_result_complete' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:104) [-Wdeprecated-declarations]
+#     g_simple_async_result_complete (ctx->result);
+#     ^
+# 1101|   get_voice_context_complete (GetVoiceContext *ctx)
+# 1102|   {
+# 1103|->     g_simple_async_result_complete (ctx->result);
+# 1104|       g_object_unref (ctx->result);
+# 1105|       ctx->result = NULL;
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/cli/mmcli-common.c: scope_hint: In function 'list_call_ready'
+ModemManager-1.6.0/cli/mmcli-common.c:1150:9: warning: 'g_simple_async_result_set_op_res_gpointer' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:75) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gpointer (
+#         ^
+# 1148|       /* Found! */
+# 1149|       if (ctx->call) {
+# 1150|->         g_simple_async_result_set_op_res_gpointer (
+# 1151|               ctx->result,
+# 1152|               ctx,
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/cli/mmcli-common.c: scope_hint: In function 'mmcli_get_call_finish'
+ModemManager-1.6.0/cli/mmcli-common.c:1245:5: warning: 'g_simple_async_result_get_op_res_gpointer' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:79) [-Wdeprecated-declarations]
+#     ctx = g_simple_async_result_get_op_res_gpointer (G_SIMPLE_ASYNC_RESULT (res));
+#     ^
+# 1243|       GetVoiceContext *ctx;
+# 1244|   
+# 1245|->     ctx = g_simple_async_result_get_op_res_gpointer (G_SIMPLE_ASYNC_RESULT (res));
+# 1246|       if (o_manager)
+# 1247|           *o_manager = g_object_ref (ctx->manager);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/cli/mmcli-common.c: scope_hint: In function 'mmcli_get_call'
+ModemManager-1.6.0/cli/mmcli-common.c:1266:5: warning: 'g_simple_async_result_new' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:51): Use 'g_task_new' instead [-Wdeprecated-declarations]
+#     ctx->result = g_simple_async_result_new (G_OBJECT (connection),
+#     ^
+# 1264|       if (cancellable)
+# 1265|           ctx->cancellable = g_object_ref (cancellable);
+# 1266|->     ctx->result = g_simple_async_result_new (G_OBJECT (connection),
+# 1267|                                                callback,
+# 1268|                                                user_data,
+
+Error: CLANG_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-cdma-manual-activation-properties.c:413:12: warning: Access to field 'data' results in a dereference of a null pointer (loaded from field 'prl')
+#    return self->priv->prl->data;
+#           ^           ~~~
+ModemManager-1.6.0/libmm-glib/mm-cdma-manual-activation-properties.c:410:9: note: Assuming pointer value is null
+#    if (self->priv->prl && prl_len)
+#        ^~~~~~~~~~~~~~~
+ModemManager-1.6.0/libmm-glib/mm-cdma-manual-activation-properties.c:410:25: note: Left side of '&&' is false
+#    if (self->priv->prl && prl_len)
+#                        ^
+ModemManager-1.6.0/libmm-glib/mm-cdma-manual-activation-properties.c:413:12: note: Access to field 'data' results in a dereference of a null pointer (loaded from field 'prl')
+#    return self->priv->prl->data;
+#           ^           ~~~
+#  411|           *prl_len = self->priv->prl->len;
+#  412|   
+#  413|->     return self->priv->prl->data;
+#  414|   }
+#  415|   
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-manager.c: scope_hint: In function 'mm_manager_set_logging_finish'
+ModemManager-1.6.0/libmm-glib/mm-manager.c:279:5: warning: 'g_simple_async_result_propagate_error' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:119) [-Wdeprecated-declarations]
+#     return !g_simple_async_result_propagate_error (G_SIMPLE_ASYNC_RESULT (res), error);
+#     ^
+#  277|                                  GError       **error)
+#  278|   {
+#  279|->     return !g_simple_async_result_propagate_error (G_SIMPLE_ASYNC_RESULT (res), error);
+#  280|   }
+#  281|   
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-manager.c: scope_hint: In function 'set_logging_ready'
+ModemManager-1.6.0/libmm-glib/mm-manager.c:293:9: warning: 'g_simple_async_result_take_error' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:116) [-Wdeprecated-declarations]
+#         g_simple_async_result_take_error (simple, error);
+#         ^
+#  291|               res,
+#  292|               &error))
+#  293|->         g_simple_async_result_take_error (simple, error);
+#  294|       else
+#  295|           g_simple_async_result_set_op_res_gboolean (simple, TRUE);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-manager.c:295:9: warning: 'g_simple_async_result_set_op_res_gboolean' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gboolean (simple, TRUE);
+#         ^
+#  293|           g_simple_async_result_take_error (simple, error);
+#  294|       else
+#  295|->         g_simple_async_result_set_op_res_gboolean (simple, TRUE);
+#  296|   
+#  297|       g_simple_async_result_complete (simple);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-manager.c:297:5: warning: 'g_simple_async_result_complete' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:104) [-Wdeprecated-declarations]
+#     g_simple_async_result_complete (simple);
+#     ^
+#  295|           g_simple_async_result_set_op_res_gboolean (simple, TRUE);
+#  296|   
+#  297|->     g_simple_async_result_complete (simple);
+#  298|       g_object_unref (simple);
+#  299|   }
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-manager.c: scope_hint: In function 'mm_manager_set_logging'
+ModemManager-1.6.0/libmm-glib/mm-manager.c:330:5: warning: 'g_simple_async_result_new' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:51): Use 'g_task_new' instead [-Wdeprecated-declarations]
+#     result = g_simple_async_result_new (G_OBJECT (manager),
+#     ^
+#  328|       g_return_if_fail (MM_IS_MANAGER (manager));
+#  329|   
+#  330|->     result = g_simple_async_result_new (G_OBJECT (manager),
+#  331|                                           callback,
+#  332|                                           user_data,
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-manager.c:336:9: warning: 'g_simple_async_result_take_error' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:116) [-Wdeprecated-declarations]
+#         g_simple_async_result_take_error (result, inner_error);
+#         ^
+#  334|   
+#  335|       if (!ensure_modem_manager1_proxy (manager, &inner_error)) {
+#  336|->         g_simple_async_result_take_error (result, inner_error);
+#  337|           g_simple_async_result_complete_in_idle (result);
+#  338|           g_object_unref (result);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-manager.c:337:9: warning: 'g_simple_async_result_complete_in_idle' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:106) [-Wdeprecated-declarations]
+#         g_simple_async_result_complete_in_idle (result);
+#         ^
+#  335|       if (!ensure_modem_manager1_proxy (manager, &inner_error)) {
+#  336|           g_simple_async_result_take_error (result, inner_error);
+#  337|->         g_simple_async_result_complete_in_idle (result);
+#  338|           g_object_unref (result);
+#  339|           return;
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-manager.c: scope_hint: In function 'mm_manager_scan_devices_finish'
+ModemManager-1.6.0/libmm-glib/mm-manager.c:400:5: warning: 'g_simple_async_result_propagate_error' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:119) [-Wdeprecated-declarations]
+#     return !g_simple_async_result_propagate_error (G_SIMPLE_ASYNC_RESULT (res), error);
+#     ^
+#  398|                                   GError       **error)
+#  399|   {
+#  400|->     return !g_simple_async_result_propagate_error (G_SIMPLE_ASYNC_RESULT (res), error);
+#  401|   }
+#  402|   
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-manager.c: scope_hint: In function 'scan_devices_ready'
+ModemManager-1.6.0/libmm-glib/mm-manager.c:414:9: warning: 'g_simple_async_result_take_error' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:116) [-Wdeprecated-declarations]
+#         g_simple_async_result_take_error (simple, error);
+#         ^
+#  412|               res,
+#  413|               &error))
+#  414|->         g_simple_async_result_take_error (simple, error);
+#  415|       else
+#  416|           g_simple_async_result_set_op_res_gboolean (simple, TRUE);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-manager.c:416:9: warning: 'g_simple_async_result_set_op_res_gboolean' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gboolean (simple, TRUE);
+#         ^
+#  414|           g_simple_async_result_take_error (simple, error);
+#  415|       else
+#  416|->         g_simple_async_result_set_op_res_gboolean (simple, TRUE);
+#  417|   
+#  418|       g_simple_async_result_complete (simple);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-manager.c:418:5: warning: 'g_simple_async_result_complete' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:104) [-Wdeprecated-declarations]
+#     g_simple_async_result_complete (simple);
+#     ^
+#  416|           g_simple_async_result_set_op_res_gboolean (simple, TRUE);
+#  417|   
+#  418|->     g_simple_async_result_complete (simple);
+#  419|       g_object_unref (simple);
+#  420|   }
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-manager.c: scope_hint: In function 'mm_manager_scan_devices'
+ModemManager-1.6.0/libmm-glib/mm-manager.c:449:5: warning: 'g_simple_async_result_new' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:51): Use 'g_task_new' instead [-Wdeprecated-declarations]
+#     result = g_simple_async_result_new (G_OBJECT (manager),
+#     ^
+#  447|       g_return_if_fail (MM_IS_MANAGER (manager));
+#  448|   
+#  449|->     result = g_simple_async_result_new (G_OBJECT (manager),
+#  450|                                           callback,
+#  451|                                           user_data,
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-manager.c:455:9: warning: 'g_simple_async_result_take_error' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:116) [-Wdeprecated-declarations]
+#         g_simple_async_result_take_error (result, inner_error);
+#         ^
+#  453|   
+#  454|       if (!ensure_modem_manager1_proxy (manager, &inner_error)) {
+#  455|->         g_simple_async_result_take_error (result, inner_error);
+#  456|           g_simple_async_result_complete_in_idle (result);
+#  457|           g_object_unref (result);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-manager.c:456:9: warning: 'g_simple_async_result_complete_in_idle' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:106) [-Wdeprecated-declarations]
+#         g_simple_async_result_complete_in_idle (result);
+#         ^
+#  454|       if (!ensure_modem_manager1_proxy (manager, &inner_error)) {
+#  455|           g_simple_async_result_take_error (result, inner_error);
+#  456|->         g_simple_async_result_complete_in_idle (result);
+#  457|           g_object_unref (result);
+#  458|           return;
+
+Error: CLANG_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem-firmware.c:131:44: warning: Array access (from variable 'unique_id') results in a null pointer dereference
+#    g_return_if_fail (unique_id != NULL || unique_id[0] == '\0');
+#                                           ^
+/usr/include/glib-2.0/glib/gmessages.h:577:18: note: expanded from macro 'g_return_if_fail'
+#     if G_LIKELY(expr) { } else                                         \
+#                 ^
+/usr/include/glib-2.0/glib/gmacros.h:376:60: note: expanded from macro 'G_LIKELY'
+##define G_LIKELY(expr) (__builtin_expect (_G_BOOLEAN_EXPR((expr)), 1))
+#                                                           ^
+/usr/include/glib-2.0/glib/gmacros.h:370:8: note: expanded from macro '_G_BOOLEAN_EXPR'
+#   if (expr)                                    \
+#       ^
+ModemManager-1.6.0/libmm-glib/mm-modem-firmware.c:131:23: note: Assuming 'unique_id' is equal to null
+#    g_return_if_fail (unique_id != NULL || unique_id[0] == '\0');
+#                      ^
+/usr/include/glib-2.0/glib/gmessages.h:577:18: note: expanded from macro 'g_return_if_fail'
+#     if G_LIKELY(expr) { } else                                         \
+#                 ^
+/usr/include/glib-2.0/glib/gmacros.h:376:60: note: expanded from macro 'G_LIKELY'
+##define G_LIKELY(expr) (__builtin_expect (_G_BOOLEAN_EXPR((expr)), 1))
+#                                                           ^
+/usr/include/glib-2.0/glib/gmacros.h:370:8: note: expanded from macro '_G_BOOLEAN_EXPR'
+#   if (expr)                                    \
+#       ^
+ModemManager-1.6.0/libmm-glib/mm-modem-firmware.c:131:23: note: Assuming pointer value is null
+#    g_return_if_fail (unique_id != NULL || unique_id[0] == '\0');
+#                      ^
+/usr/include/glib-2.0/glib/gmessages.h:577:18: note: expanded from macro 'g_return_if_fail'
+#     if G_LIKELY(expr) { } else                                         \
+#                 ^
+/usr/include/glib-2.0/glib/gmacros.h:376:60: note: expanded from macro 'G_LIKELY'
+##define G_LIKELY(expr) (__builtin_expect (_G_BOOLEAN_EXPR((expr)), 1))
+#                                                           ^
+/usr/include/glib-2.0/glib/gmacros.h:370:8: note: expanded from macro '_G_BOOLEAN_EXPR'
+#   if (expr)                                    \
+#       ^
+ModemManager-1.6.0/libmm-glib/mm-modem-firmware.c:131:23: note: Left side of '||' is false
+/usr/include/glib-2.0/glib/gmessages.h:577:18: note: expanded from macro 'g_return_if_fail'
+#     if G_LIKELY(expr) { } else                                         \
+#                 ^
+/usr/include/glib-2.0/glib/gmacros.h:376:60: note: expanded from macro 'G_LIKELY'
+##define G_LIKELY(expr) (__builtin_expect (_G_BOOLEAN_EXPR((expr)), 1))
+#                                                           ^
+/usr/include/glib-2.0/glib/gmacros.h:370:8: note: expanded from macro '_G_BOOLEAN_EXPR'
+#   if (expr)                                    \
+#       ^
+ModemManager-1.6.0/libmm-glib/mm-modem-firmware.c:131:44: note: Array access (from variable 'unique_id') results in a null pointer dereference
+#    g_return_if_fail (unique_id != NULL || unique_id[0] == '\0');
+#                                           ^~~~~~~~~
+/usr/include/glib-2.0/glib/gmessages.h:577:18: note: expanded from macro 'g_return_if_fail'
+#     if G_LIKELY(expr) { } else                                         \
+#                 ^
+/usr/include/glib-2.0/glib/gmacros.h:376:60: note: expanded from macro 'G_LIKELY'
+##define G_LIKELY(expr) (__builtin_expect (_G_BOOLEAN_EXPR((expr)), 1))
+#                                                           ^
+/usr/include/glib-2.0/glib/gmacros.h:370:8: note: expanded from macro '_G_BOOLEAN_EXPR'
+#   if (expr)                                    \
+#       ^
+#  129|   {
+#  130|       g_return_if_fail (MM_IS_MODEM_FIRMWARE (self));
+#  131|->     g_return_if_fail (unique_id != NULL || unique_id[0] == '\0');
+#  132|   
+#  133|       mm_gdbus_modem_firmware_call_select (MM_GDBUS_MODEM_FIRMWARE (self), unique_id, cancellable, callback, user_data);
+
+Error: CLANG_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem-firmware.c:160:48: warning: Array access (from variable 'unique_id') results in a null pointer dereference
+#    g_return_val_if_fail (unique_id != NULL || unique_id[0] == '\0', FALSE);
+#                                               ^
+/usr/include/glib-2.0/glib/gmessages.h:586:18: note: expanded from macro 'g_return_val_if_fail'
+#     if G_LIKELY(expr) { } else                                         \
+#                 ^
+/usr/include/glib-2.0/glib/gmacros.h:376:60: note: expanded from macro 'G_LIKELY'
+##define G_LIKELY(expr) (__builtin_expect (_G_BOOLEAN_EXPR((expr)), 1))
+#                                                           ^
+/usr/include/glib-2.0/glib/gmacros.h:370:8: note: expanded from macro '_G_BOOLEAN_EXPR'
+#   if (expr)                                    \
+#       ^
+ModemManager-1.6.0/libmm-glib/mm-modem-firmware.c:160:27: note: Assuming 'unique_id' is equal to null
+#    g_return_val_if_fail (unique_id != NULL || unique_id[0] == '\0', FALSE);
+#                          ^
+/usr/include/glib-2.0/glib/gmessages.h:586:18: note: expanded from macro 'g_return_val_if_fail'
+#     if G_LIKELY(expr) { } else                                         \
+#                 ^
+/usr/include/glib-2.0/glib/gmacros.h:376:60: note: expanded from macro 'G_LIKELY'
+##define G_LIKELY(expr) (__builtin_expect (_G_BOOLEAN_EXPR((expr)), 1))
+#                                                           ^
+/usr/include/glib-2.0/glib/gmacros.h:370:8: note: expanded from macro '_G_BOOLEAN_EXPR'
+#   if (expr)                                    \
+#       ^
+ModemManager-1.6.0/libmm-glib/mm-modem-firmware.c:160:27: note: Assuming pointer value is null
+#    g_return_val_if_fail (unique_id != NULL || unique_id[0] == '\0', FALSE);
+#                          ^
+/usr/include/glib-2.0/glib/gmessages.h:586:18: note: expanded from macro 'g_return_val_if_fail'
+#     if G_LIKELY(expr) { } else                                         \
+#                 ^
+/usr/include/glib-2.0/glib/gmacros.h:376:60: note: expanded from macro 'G_LIKELY'
+##define G_LIKELY(expr) (__builtin_expect (_G_BOOLEAN_EXPR((expr)), 1))
+#                                                           ^
+/usr/include/glib-2.0/glib/gmacros.h:370:8: note: expanded from macro '_G_BOOLEAN_EXPR'
+#   if (expr)                                    \
+#       ^
+ModemManager-1.6.0/libmm-glib/mm-modem-firmware.c:160:27: note: Left side of '||' is false
+/usr/include/glib-2.0/glib/gmessages.h:586:18: note: expanded from macro 'g_return_val_if_fail'
+#     if G_LIKELY(expr) { } else                                         \
+#                 ^
+/usr/include/glib-2.0/glib/gmacros.h:376:60: note: expanded from macro 'G_LIKELY'
+##define G_LIKELY(expr) (__builtin_expect (_G_BOOLEAN_EXPR((expr)), 1))
+#                                                           ^
+/usr/include/glib-2.0/glib/gmacros.h:370:8: note: expanded from macro '_G_BOOLEAN_EXPR'
+#   if (expr)                                    \
+#       ^
+ModemManager-1.6.0/libmm-glib/mm-modem-firmware.c:160:48: note: Array access (from variable 'unique_id') results in a null pointer dereference
+#    g_return_val_if_fail (unique_id != NULL || unique_id[0] == '\0', FALSE);
+#                                               ^~~~~~~~~
+/usr/include/glib-2.0/glib/gmessages.h:586:18: note: expanded from macro 'g_return_val_if_fail'
+#     if G_LIKELY(expr) { } else                                         \
+#                 ^
+/usr/include/glib-2.0/glib/gmacros.h:376:60: note: expanded from macro 'G_LIKELY'
+##define G_LIKELY(expr) (__builtin_expect (_G_BOOLEAN_EXPR((expr)), 1))
+#                                                           ^
+/usr/include/glib-2.0/glib/gmacros.h:370:8: note: expanded from macro '_G_BOOLEAN_EXPR'
+#   if (expr)                                    \
+#       ^
+#  158|   {
+#  159|       g_return_val_if_fail (MM_IS_MODEM_FIRMWARE (self), FALSE);
+#  160|->     g_return_val_if_fail (unique_id != NULL || unique_id[0] == '\0', FALSE);
+#  161|   
+#  162|       return mm_gdbus_modem_firmware_call_select_sync (MM_GDBUS_MODEM_FIRMWARE (self), unique_id, cancellable, error);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem-messaging.c: scope_hint: In function 'list_sms_context_complete_and_free'
+ModemManager-1.6.0/libmm-glib/mm-modem-messaging.c:239:5: warning: 'g_simple_async_result_complete_in_idle' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:106) [-Wdeprecated-declarations]
+#     g_simple_async_result_complete_in_idle (ctx->result);
+#     ^
+#  237|   list_sms_context_complete_and_free (ListSmsContext *ctx)
+#  238|   {
+#  239|->     g_simple_async_result_complete_in_idle (ctx->result);
+#  240|   
+#  241|       g_strfreev (ctx->sms_paths);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem-messaging.c: scope_hint: In function 'mm_modem_messaging_list_finish'
+ModemManager-1.6.0/libmm-glib/mm-modem-messaging.c:269:5: warning: 'g_simple_async_result_propagate_error' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:119) [-Wdeprecated-declarations]
+#     if (g_simple_async_result_propagate_error (G_SIMPLE_ASYNC_RESULT (res), error))
+#     ^
+#  267|       g_return_val_if_fail (MM_IS_MODEM_MESSAGING (self), FALSE);
+#  268|   
+#  269|->     if (g_simple_async_result_propagate_error (G_SIMPLE_ASYNC_RESULT (res), error))
+#  270|           return NULL;
+#  271|   
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem-messaging.c:272:5: warning: 'g_simple_async_result_get_op_res_gpointer' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:79) [-Wdeprecated-declarations]
+#     list = g_simple_async_result_get_op_res_gpointer (G_SIMPLE_ASYNC_RESULT (res));
+#     ^
+#  270|           return NULL;
+#  271|   
+#  272|->     list = g_simple_async_result_get_op_res_gpointer (G_SIMPLE_ASYNC_RESULT (res));
+#  273|   
+#  274|       /* The list we got, including the objects within, is owned by the async result;
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem-messaging.c: scope_hint: In function 'list_build_object_ready'
+ModemManager-1.6.0/libmm-glib/mm-modem-messaging.c:296:9: warning: 'g_simple_async_result_take_error' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:116) [-Wdeprecated-declarations]
+#         g_simple_async_result_take_error (ctx->result, error);
+#         ^
+#  294|   
+#  295|       if (error) {
+#  296|->         g_simple_async_result_take_error (ctx->result, error);
+#  297|           list_sms_context_complete_and_free (ctx);
+#  298|           return;
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem-messaging.c:306:9: warning: 'g_simple_async_result_set_op_res_gpointer' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:75) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gpointer (ctx->result,
+#         ^
+#  304|       /* If no more smss, just end here. */
+#  305|       if (!ctx->sms_paths[++ctx->i]) {
+#  306|->         g_simple_async_result_set_op_res_gpointer (ctx->result,
+#  307|                                                      ctx->sms_objects,
+#  308|                                                      (GDestroyNotify)sms_object_list_free);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem-messaging.c: scope_hint: In function 'mm_modem_messaging_list'
+ModemManager-1.6.0/libmm-glib/mm-modem-messaging.c:360:5: warning: 'g_simple_async_result_new' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:51): Use 'g_task_new' instead [-Wdeprecated-declarations]
+#     ctx->result = g_simple_async_result_new (G_OBJECT (self),
+#     ^
+#  358|       ctx = g_slice_new0 (ListSmsContext);
+#  359|       ctx->self = g_object_ref (self);
+#  360|->     ctx->result = g_simple_async_result_new (G_OBJECT (self),
+#  361|                                                callback,
+#  362|                                                user_data,
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem-messaging.c:371:9: warning: 'g_simple_async_result_set_op_res_gpointer' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:75) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gpointer (ctx->result, NULL, NULL);
+#         ^
+#  369|       /* If no SMS, just end here. */
+#  370|       if (!ctx->sms_paths || !ctx->sms_paths[0]) {
+#  371|->         g_simple_async_result_set_op_res_gpointer (ctx->result, NULL, NULL);
+#  372|           list_sms_context_complete_and_free (ctx);
+#  373|           return;
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem-messaging.c: scope_hint: In function 'create_sms_context_complete_and_free'
+ModemManager-1.6.0/libmm-glib/mm-modem-messaging.c:447:5: warning: 'g_simple_async_result_complete' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:104) [-Wdeprecated-declarations]
+#     g_simple_async_result_complete (ctx->result);
+#     ^
+#  445|   create_sms_context_complete_and_free (CreateSmsContext *ctx)
+#  446|   {
+#  447|->     g_simple_async_result_complete (ctx->result);
+#  448|       g_object_unref (ctx->result);
+#  449|       if (ctx->cancellable)
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem-messaging.c: scope_hint: In function 'mm_modem_messaging_create_finish'
+ModemManager-1.6.0/libmm-glib/mm-modem-messaging.c:471:5: warning: 'g_simple_async_result_propagate_error' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:119) [-Wdeprecated-declarations]
+#     if (g_simple_async_result_propagate_error (G_SIMPLE_ASYNC_RESULT (res), error))
+#     ^
+#  469|       g_return_val_if_fail (MM_IS_MODEM_MESSAGING (self), NULL);
+#  470|   
+#  471|->     if (g_simple_async_result_propagate_error (G_SIMPLE_ASYNC_RESULT (res), error))
+#  472|           return NULL;
+#  473|   
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem-messaging.c:474:5: warning: 'g_simple_async_result_get_op_res_gpointer' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:79) [-Wdeprecated-declarations]
+#     return g_object_ref (g_simple_async_result_get_op_res_gpointer (G_SIMPLE_ASYNC_RESULT (res)));
+#     ^
+#  472|           return NULL;
+#  473|   
+#  474|->     return g_object_ref (g_simple_async_result_get_op_res_gpointer (G_SIMPLE_ASYNC_RESULT (res)));
+#  475|   }
+#  476|   
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem-messaging.c: scope_hint: In function 'new_sms_object_ready'
+ModemManager-1.6.0/libmm-glib/mm-modem-messaging.c:491:9: warning: 'g_simple_async_result_take_error' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:116) [-Wdeprecated-declarations]
+#         g_simple_async_result_take_error (ctx->result, error);
+#         ^
+#  489|   
+#  490|       if (error)
+#  491|->         g_simple_async_result_take_error (ctx->result, error);
+#  492|       else
+#  493|           g_simple_async_result_set_op_res_gpointer (ctx->result,
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem-messaging.c:493:9: warning: 'g_simple_async_result_set_op_res_gpointer' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:75) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gpointer (ctx->result,
+#         ^
+#  491|           g_simple_async_result_take_error (ctx->result, error);
+#  492|       else
+#  493|->         g_simple_async_result_set_op_res_gpointer (ctx->result,
+#  494|                                                      sms,
+#  495|                                                      (GDestroyNotify)g_object_unref);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem-messaging.c: scope_hint: In function 'create_sms_ready'
+ModemManager-1.6.0/libmm-glib/mm-modem-messaging.c:512:9: warning: 'g_simple_async_result_take_error' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:116) [-Wdeprecated-declarations]
+#         g_simple_async_result_take_error (ctx->result, error);
+#         ^
+#  510|                                                         res,
+#  511|                                                         &error)) {
+#  512|->         g_simple_async_result_take_error (ctx->result, error);
+#  513|           create_sms_context_complete_and_free (ctx);
+#  514|           g_free (sms_path);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem-messaging.c: scope_hint: In function 'mm_modem_messaging_create'
+ModemManager-1.6.0/libmm-glib/mm-modem-messaging.c:560:5: warning: 'g_simple_async_result_new' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:51): Use 'g_task_new' instead [-Wdeprecated-declarations]
+#     ctx->result = g_simple_async_result_new (G_OBJECT (self),
+#     ^
+#  558|   
+#  559|       ctx = g_slice_new0 (CreateSmsContext);
+#  560|->     ctx->result = g_simple_async_result_new (G_OBJECT (self),
+#  561|                                                callback,
+#  562|                                                user_data,
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem-simple.c: scope_hint: In function 'connect_context_complete_and_free'
+ModemManager-1.6.0/libmm-glib/mm-modem-simple.c:93:5: warning: 'g_simple_async_result_complete' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:104) [-Wdeprecated-declarations]
+#     g_simple_async_result_complete (ctx->result);
+#     ^
+#   91|   connect_context_complete_and_free (ConnectContext *ctx)
+#   92|   {
+#   93|->     g_simple_async_result_complete (ctx->result);
+#   94|       g_object_unref (ctx->result);
+#   95|       if (ctx->cancellable)
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem-simple.c: scope_hint: In function 'mm_modem_simple_connect_finish'
+ModemManager-1.6.0/libmm-glib/mm-modem-simple.c:117:5: warning: 'g_simple_async_result_propagate_error' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:119) [-Wdeprecated-declarations]
+#     if (g_simple_async_result_propagate_error (G_SIMPLE_ASYNC_RESULT (res), error))
+#     ^
+#  115|       g_return_val_if_fail (MM_IS_MODEM_SIMPLE (self), NULL);
+#  116|   
+#  117|->     if (g_simple_async_result_propagate_error (G_SIMPLE_ASYNC_RESULT (res), error))
+#  118|           return NULL;
+#  119|   
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem-simple.c:120:5: warning: 'g_simple_async_result_get_op_res_gpointer' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:79) [-Wdeprecated-declarations]
+#     return g_object_ref (g_simple_async_result_get_op_res_gpointer (G_SIMPLE_ASYNC_RESULT (res)));
+#     ^
+#  118|           return NULL;
+#  119|   
+#  120|->     return g_object_ref (g_simple_async_result_get_op_res_gpointer (G_SIMPLE_ASYNC_RESULT (res)));
+#  121|   }
+#  122|   
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem-simple.c: scope_hint: In function 'new_bearer_ready'
+ModemManager-1.6.0/libmm-glib/mm-modem-simple.c:137:9: warning: 'g_simple_async_result_take_error' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:116) [-Wdeprecated-declarations]
+#         g_simple_async_result_take_error (ctx->result, error);
+#         ^
+#  135|   
+#  136|       if (error)
+#  137|->         g_simple_async_result_take_error (ctx->result, error);
+#  138|       else
+#  139|           g_simple_async_result_set_op_res_gpointer (ctx->result,
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem-simple.c:139:9: warning: 'g_simple_async_result_set_op_res_gpointer' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:75) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gpointer (ctx->result,
+#         ^
+#  137|           g_simple_async_result_take_error (ctx->result, error);
+#  138|       else
+#  139|->         g_simple_async_result_set_op_res_gpointer (ctx->result,
+#  140|                                                      bearer,
+#  141|                                                      (GDestroyNotify)g_object_unref);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem-simple.c: scope_hint: In function 'simple_connect_ready'
+ModemManager-1.6.0/libmm-glib/mm-modem-simple.c:158:9: warning: 'g_simple_async_result_take_error' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:116) [-Wdeprecated-declarations]
+#         g_simple_async_result_take_error (ctx->result, error);
+#         ^
+#  156|                                                       res,
+#  157|                                                       &error)) {
+#  158|->         g_simple_async_result_take_error (ctx->result, error);
+#  159|           connect_context_complete_and_free (ctx);
+#  160|           return;
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem-simple.c: scope_hint: In function 'mm_modem_simple_connect'
+ModemManager-1.6.0/libmm-glib/mm-modem-simple.c:204:5: warning: 'g_simple_async_result_new' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:51): Use 'g_task_new' instead [-Wdeprecated-declarations]
+#     ctx->result = g_simple_async_result_new (G_OBJECT (self),
+#     ^
+#  202|   
+#  203|       ctx = g_slice_new0 (ConnectContext);
+#  204|->     ctx->result = g_simple_async_result_new (G_OBJECT (self),
+#  205|                                                callback,
+#  206|                                                user_data,
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem-voice.c: scope_hint: In function 'list_call_context_complete_and_free'
+ModemManager-1.6.0/libmm-glib/mm-modem-voice.c:104:5: warning: 'g_simple_async_result_complete_in_idle' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:106) [-Wdeprecated-declarations]
+#     g_simple_async_result_complete_in_idle (ctx->result);
+#     ^
+#  102|   list_call_context_complete_and_free (ListCallsContext *ctx)
+#  103|   {
+#  104|->     g_simple_async_result_complete_in_idle (ctx->result);
+#  105|   
+#  106|       g_strfreev (ctx->call_paths);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem-voice.c: scope_hint: In function 'mm_modem_voice_list_calls_finish'
+ModemManager-1.6.0/libmm-glib/mm-modem-voice.c:134:5: warning: 'g_simple_async_result_propagate_error' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:119) [-Wdeprecated-declarations]
+#     if (g_simple_async_result_propagate_error (G_SIMPLE_ASYNC_RESULT (res), error))
+#     ^
+#  132|       g_return_val_if_fail (MM_IS_MODEM_VOICE (self), FALSE);
+#  133|   
+#  134|->     if (g_simple_async_result_propagate_error (G_SIMPLE_ASYNC_RESULT (res), error))
+#  135|           return NULL;
+#  136|   
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem-voice.c:137:5: warning: 'g_simple_async_result_get_op_res_gpointer' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:79) [-Wdeprecated-declarations]
+#     list = g_simple_async_result_get_op_res_gpointer (G_SIMPLE_ASYNC_RESULT (res));
+#     ^
+#  135|           return NULL;
+#  136|   
+#  137|->     list = g_simple_async_result_get_op_res_gpointer (G_SIMPLE_ASYNC_RESULT (res));
+#  138|   
+#  139|       /* The list we got, including the objects within, is owned by the async result;
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem-voice.c: scope_hint: In function 'list_build_object_ready'
+ModemManager-1.6.0/libmm-glib/mm-modem-voice.c:161:9: warning: 'g_simple_async_result_take_error' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:116) [-Wdeprecated-declarations]
+#         g_simple_async_result_take_error (ctx->result, error);
+#         ^
+#  159|   
+#  160|       if (error) {
+#  161|->         g_simple_async_result_take_error (ctx->result, error);
+#  162|           list_call_context_complete_and_free (ctx);
+#  163|           return;
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem-voice.c:171:9: warning: 'g_simple_async_result_set_op_res_gpointer' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:75) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gpointer (ctx->result,
+#         ^
+#  169|       /* If no more calls, just end here. */
+#  170|       if (!ctx->call_paths[++ctx->i]) {
+#  171|->         g_simple_async_result_set_op_res_gpointer (ctx->result,
+#  172|                                                      ctx->call_objects,
+#  173|                                                      (GDestroyNotify)call_object_list_free);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem-voice.c: scope_hint: In function 'mm_modem_voice_list_calls'
+ModemManager-1.6.0/libmm-glib/mm-modem-voice.c:225:5: warning: 'g_simple_async_result_new' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:51): Use 'g_task_new' instead [-Wdeprecated-declarations]
+#     ctx->result = g_simple_async_result_new (G_OBJECT (self),
+#     ^
+#  223|       ctx = g_slice_new0 (ListCallsContext);
+#  224|       ctx->self = g_object_ref (self);
+#  225|->     ctx->result = g_simple_async_result_new (G_OBJECT (self),
+#  226|                                                callback,
+#  227|                                                user_data,
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem-voice.c:236:9: warning: 'g_simple_async_result_set_op_res_gpointer' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:75) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gpointer (ctx->result, NULL, NULL);
+#         ^
+#  234|       /* If no CALL, just end here. */
+#  235|       if (!ctx->call_paths || !ctx->call_paths[0]) {
+#  236|->         g_simple_async_result_set_op_res_gpointer (ctx->result, NULL, NULL);
+#  237|           list_call_context_complete_and_free (ctx);
+#  238|           return;
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem-voice.c: scope_hint: In function 'create_call_context_complete_and_free'
+ModemManager-1.6.0/libmm-glib/mm-modem-voice.c:312:5: warning: 'g_simple_async_result_complete' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:104) [-Wdeprecated-declarations]
+#     g_simple_async_result_complete (ctx->result);
+#     ^
+#  310|   create_call_context_complete_and_free (CreateCallContext *ctx)
+#  311|   {
+#  312|->     g_simple_async_result_complete (ctx->result);
+#  313|       g_object_unref (ctx->result);
+#  314|       if (ctx->cancellable)
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem-voice.c: scope_hint: In function 'mm_modem_voice_create_call_finish'
+ModemManager-1.6.0/libmm-glib/mm-modem-voice.c:336:5: warning: 'g_simple_async_result_propagate_error' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:119) [-Wdeprecated-declarations]
+#     if (g_simple_async_result_propagate_error (G_SIMPLE_ASYNC_RESULT (res), error))
+#     ^
+#  334|       g_return_val_if_fail (MM_IS_MODEM_VOICE (self), NULL);
+#  335|   
+#  336|->     if (g_simple_async_result_propagate_error (G_SIMPLE_ASYNC_RESULT (res), error))
+#  337|           return NULL;
+#  338|   
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem-voice.c:339:5: warning: 'g_simple_async_result_get_op_res_gpointer' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:79) [-Wdeprecated-declarations]
+#     return g_object_ref (g_simple_async_result_get_op_res_gpointer (G_SIMPLE_ASYNC_RESULT (res)));
+#     ^
+#  337|           return NULL;
+#  338|   
+#  339|->     return g_object_ref (g_simple_async_result_get_op_res_gpointer (G_SIMPLE_ASYNC_RESULT (res)));
+#  340|   }
+#  341|   
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem-voice.c: scope_hint: In function 'new_call_object_ready'
+ModemManager-1.6.0/libmm-glib/mm-modem-voice.c:356:9: warning: 'g_simple_async_result_take_error' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:116) [-Wdeprecated-declarations]
+#         g_simple_async_result_take_error (ctx->result, error);
+#         ^
+#  354|   
+#  355|       if (error)
+#  356|->         g_simple_async_result_take_error (ctx->result, error);
+#  357|       else
+#  358|           g_simple_async_result_set_op_res_gpointer (ctx->result,
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem-voice.c:358:9: warning: 'g_simple_async_result_set_op_res_gpointer' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:75) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gpointer (ctx->result,
+#         ^
+#  356|           g_simple_async_result_take_error (ctx->result, error);
+#  357|       else
+#  358|->         g_simple_async_result_set_op_res_gpointer (ctx->result,
+#  359|                                                      call,
+#  360|                                                      (GDestroyNotify)g_object_unref);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem-voice.c: scope_hint: In function 'create_call_ready'
+ModemManager-1.6.0/libmm-glib/mm-modem-voice.c:377:9: warning: 'g_simple_async_result_take_error' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:116) [-Wdeprecated-declarations]
+#         g_simple_async_result_take_error (ctx->result, error);
+#         ^
+#  375|                                                          res,
+#  376|                                                          &error)) {
+#  377|->         g_simple_async_result_take_error (ctx->result, error);
+#  378|           create_call_context_complete_and_free (ctx);
+#  379|           g_free (call_path);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem-voice.c: scope_hint: In function 'mm_modem_voice_create_call'
+ModemManager-1.6.0/libmm-glib/mm-modem-voice.c:425:5: warning: 'g_simple_async_result_new' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:51): Use 'g_task_new' instead [-Wdeprecated-declarations]
+#     ctx->result = g_simple_async_result_new (G_OBJECT (self),
+#     ^
+#  423|   
+#  424|       ctx = g_slice_new0 (CreateCallContext);
+#  425|->     ctx->result = g_simple_async_result_new (G_OBJECT (self),
+#  426|                                                callback,
+#  427|                                                user_data,
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem.c: scope_hint: In function 'list_bearers_context_complete_and_free'
+ModemManager-1.6.0/libmm-glib/mm-modem.c:1772:5: warning: 'g_simple_async_result_complete_in_idle' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:106) [-Wdeprecated-declarations]
+#     g_simple_async_result_complete_in_idle (ctx->result);
+#     ^
+# 1770|   list_bearers_context_complete_and_free (ListBearersContext *ctx)
+# 1771|   {
+# 1772|->     g_simple_async_result_complete_in_idle (ctx->result);
+# 1773|   
+# 1774|       g_strfreev (ctx->bearer_paths);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem.c: scope_hint: In function 'mm_modem_list_bearers_finish'
+ModemManager-1.6.0/libmm-glib/mm-modem.c:1802:5: warning: 'g_simple_async_result_propagate_error' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:119) [-Wdeprecated-declarations]
+#     if (g_simple_async_result_propagate_error (G_SIMPLE_ASYNC_RESULT (res), error))
+#     ^
+# 1800|       g_return_val_if_fail (MM_IS_MODEM (self), NULL);
+# 1801|   
+# 1802|->     if (g_simple_async_result_propagate_error (G_SIMPLE_ASYNC_RESULT (res), error))
+# 1803|           return NULL;
+# 1804|   
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem.c:1805:5: warning: 'g_simple_async_result_get_op_res_gpointer' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:79) [-Wdeprecated-declarations]
+#     list = g_simple_async_result_get_op_res_gpointer (G_SIMPLE_ASYNC_RESULT (res));
+#     ^
+# 1803|           return NULL;
+# 1804|   
+# 1805|->     list = g_simple_async_result_get_op_res_gpointer (G_SIMPLE_ASYNC_RESULT (res));
+# 1806|   
+# 1807|       /* The list we got, including the objects within, is owned by the async result;
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem.c: scope_hint: In function 'modem_list_bearers_build_object_ready'
+ModemManager-1.6.0/libmm-glib/mm-modem.c:1829:9: warning: 'g_simple_async_result_take_error' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:116) [-Wdeprecated-declarations]
+#         g_simple_async_result_take_error (ctx->result, error);
+#         ^
+# 1827|   
+# 1828|       if (error) {
+# 1829|->         g_simple_async_result_take_error (ctx->result, error);
+# 1830|           list_bearers_context_complete_and_free (ctx);
+# 1831|           return;
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem.c:1839:9: warning: 'g_simple_async_result_set_op_res_gpointer' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:75) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gpointer (ctx->result,
+#         ^
+# 1837|       /* If no more bearers, just end here. */
+# 1838|       if (!ctx->bearer_paths[++ctx->i]) {
+# 1839|->         g_simple_async_result_set_op_res_gpointer (ctx->result,
+# 1840|                                                      ctx->bearer_objects,
+# 1841|                                                      (GDestroyNotify)bearer_object_list_free);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem.c: scope_hint: In function 'mm_modem_list_bearers'
+ModemManager-1.6.0/libmm-glib/mm-modem.c:1893:5: warning: 'g_simple_async_result_new' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:51): Use 'g_task_new' instead [-Wdeprecated-declarations]
+#     ctx->result = g_simple_async_result_new (G_OBJECT (self),
+#     ^
+# 1891|       ctx = g_slice_new0 (ListBearersContext);
+# 1892|       ctx->self = g_object_ref (self);
+# 1893|->     ctx->result = g_simple_async_result_new (G_OBJECT (self),
+# 1894|                                                callback,
+# 1895|                                                user_data,
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem.c:1905:9: warning: 'g_simple_async_result_set_op_res_gpointer' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:75) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gpointer (ctx->result, NULL, NULL);
+#         ^
+# 1903|       /* If no bearers, just end here. */
+# 1904|       if (!ctx->bearer_paths || !ctx->bearer_paths[0]) {
+# 1905|->         g_simple_async_result_set_op_res_gpointer (ctx->result, NULL, NULL);
+# 1906|           list_bearers_context_complete_and_free (ctx);
+# 1907|           return;
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem.c: scope_hint: In function 'create_bearer_context_complete_and_free'
+ModemManager-1.6.0/libmm-glib/mm-modem.c:1982:5: warning: 'g_simple_async_result_complete' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:104) [-Wdeprecated-declarations]
+#     g_simple_async_result_complete (ctx->result);
+#     ^
+# 1980|   create_bearer_context_complete_and_free (CreateBearerContext *ctx)
+# 1981|   {
+# 1982|->     g_simple_async_result_complete (ctx->result);
+# 1983|       g_object_unref (ctx->result);
+# 1984|       if (ctx->cancellable)
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem.c: scope_hint: In function 'mm_modem_create_bearer_finish'
+ModemManager-1.6.0/libmm-glib/mm-modem.c:2006:5: warning: 'g_simple_async_result_propagate_error' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:119) [-Wdeprecated-declarations]
+#     if (g_simple_async_result_propagate_error (G_SIMPLE_ASYNC_RESULT (res), error))
+#     ^
+# 2004|       g_return_val_if_fail (MM_IS_MODEM (self), NULL);
+# 2005|   
+# 2006|->     if (g_simple_async_result_propagate_error (G_SIMPLE_ASYNC_RESULT (res), error))
+# 2007|           return NULL;
+# 2008|   
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem.c:2009:5: warning: 'g_simple_async_result_get_op_res_gpointer' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:79) [-Wdeprecated-declarations]
+#     return g_object_ref (g_simple_async_result_get_op_res_gpointer (G_SIMPLE_ASYNC_RESULT (res)));
+#     ^
+# 2007|           return NULL;
+# 2008|   
+# 2009|->     return g_object_ref (g_simple_async_result_get_op_res_gpointer (G_SIMPLE_ASYNC_RESULT (res)));
+# 2010|   }
+# 2011|   
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem.c: scope_hint: In function 'modem_new_bearer_ready'
+ModemManager-1.6.0/libmm-glib/mm-modem.c:2026:9: warning: 'g_simple_async_result_take_error' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:116) [-Wdeprecated-declarations]
+#         g_simple_async_result_take_error (ctx->result, error);
+#         ^
+# 2024|   
+# 2025|       if (error)
+# 2026|->         g_simple_async_result_take_error (ctx->result, error);
+# 2027|       else
+# 2028|           g_simple_async_result_set_op_res_gpointer (ctx->result,
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem.c:2028:9: warning: 'g_simple_async_result_set_op_res_gpointer' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:75) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gpointer (ctx->result,
+#         ^
+# 2026|           g_simple_async_result_take_error (ctx->result, error);
+# 2027|       else
+# 2028|->         g_simple_async_result_set_op_res_gpointer (ctx->result,
+# 2029|                                                      bearer,
+# 2030|                                                      (GDestroyNotify)g_object_unref);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem.c: scope_hint: In function 'modem_create_bearer_ready'
+ModemManager-1.6.0/libmm-glib/mm-modem.c:2047:9: warning: 'g_simple_async_result_take_error' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:116) [-Wdeprecated-declarations]
+#         g_simple_async_result_take_error (ctx->result, error);
+#         ^
+# 2045|                                                      res,
+# 2046|                                                      &error)) {
+# 2047|->         g_simple_async_result_take_error (ctx->result, error);
+# 2048|           create_bearer_context_complete_and_free (ctx);
+# 2049|           g_free (bearer_path);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem.c: scope_hint: In function 'mm_modem_create_bearer'
+ModemManager-1.6.0/libmm-glib/mm-modem.c:2100:5: warning: 'g_simple_async_result_new' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:51): Use 'g_task_new' instead [-Wdeprecated-declarations]
+#     ctx->result = g_simple_async_result_new (G_OBJECT (self),
+#     ^
+# 2098|   
+# 2099|       ctx = g_slice_new0 (CreateBearerContext);
+# 2100|->     ctx->result = g_simple_async_result_new (G_OBJECT (self),
+# 2101|                                                callback,
+# 2102|                                                user_data,
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem.c: scope_hint: In function 'mm_modem_get_sim_finish'
+ModemManager-1.6.0/libmm-glib/mm-modem.c:2844:5: warning: 'g_simple_async_result_propagate_error' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:119) [-Wdeprecated-declarations]
+#     if (g_simple_async_result_propagate_error (G_SIMPLE_ASYNC_RESULT (res), error))
+#     ^
+# 2842|       g_return_val_if_fail (MM_IS_MODEM (self), NULL);
+# 2843|   
+# 2844|->     if (g_simple_async_result_propagate_error (G_SIMPLE_ASYNC_RESULT (res), error))
+# 2845|           return NULL;
+# 2846|   
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem.c:2847:5: warning: 'g_simple_async_result_get_op_res_gpointer' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:79) [-Wdeprecated-declarations]
+#     sim = g_simple_async_result_get_op_res_gpointer (G_SIMPLE_ASYNC_RESULT (res));
+#     ^
+# 2845|           return NULL;
+# 2846|   
+# 2847|->     sim = g_simple_async_result_get_op_res_gpointer (G_SIMPLE_ASYNC_RESULT (res));
+# 2848|       g_return_val_if_fail (sim != NULL, NULL);
+# 2849|   
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem.c: scope_hint: In function 'modem_get_sim_ready'
+ModemManager-1.6.0/libmm-glib/mm-modem.c:2867:9: warning: 'g_simple_async_result_take_error' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:116) [-Wdeprecated-declarations]
+#         g_simple_async_result_take_error (simple, error);
+#         ^
+# 2865|   
+# 2866|       if (error)
+# 2867|->         g_simple_async_result_take_error (simple, error);
+# 2868|       else
+# 2869|           g_simple_async_result_set_op_res_gpointer (simple,
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem.c:2869:9: warning: 'g_simple_async_result_set_op_res_gpointer' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:75) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gpointer (simple,
+#         ^
+# 2867|           g_simple_async_result_take_error (simple, error);
+# 2868|       else
+# 2869|->         g_simple_async_result_set_op_res_gpointer (simple,
+# 2870|                                                      sim,
+# 2871|                                                      (GDestroyNotify)g_object_unref);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem.c:2873:5: warning: 'g_simple_async_result_complete' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:104) [-Wdeprecated-declarations]
+#     g_simple_async_result_complete (simple);
+#     ^
+# 2871|                                                      (GDestroyNotify)g_object_unref);
+# 2872|   
+# 2873|->     g_simple_async_result_complete (simple);
+# 2874|       g_object_unref (simple);
+# 2875|   }
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem.c: scope_hint: In function 'mm_modem_get_sim'
+ModemManager-1.6.0/libmm-glib/mm-modem.c:2902:5: warning: 'g_simple_async_result_new' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:51): Use 'g_task_new' instead [-Wdeprecated-declarations]
+#     result = g_simple_async_result_new (G_OBJECT (self),
+#     ^
+# 2900|       g_return_if_fail (MM_IS_MODEM (self));
+# 2901|   
+# 2902|->     result = g_simple_async_result_new (G_OBJECT (self),
+# 2903|                                           callback,
+# 2904|                                           user_data,
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem.c:2909:9: warning: 'g_simple_async_result_set_error' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:122) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_error (result,
+#         ^
+# 2907|       sim_path = mm_modem_get_sim_path (self);
+# 2908|       if (!sim_path || g_str_equal (sim_path, "/")) {
+# 2909|->         g_simple_async_result_set_error (result,
+# 2910|                                            MM_CORE_ERROR,
+# 2911|                                            MM_CORE_ERROR_NOT_FOUND,
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-modem.c:2913:9: warning: 'g_simple_async_result_complete_in_idle' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:106) [-Wdeprecated-declarations]
+#         g_simple_async_result_complete_in_idle (result);
+#         ^
+# 2911|                                            MM_CORE_ERROR_NOT_FOUND,
+# 2912|                                            "No SIM object available");
+# 2913|->         g_simple_async_result_complete_in_idle (result);
+# 2914|           g_object_unref (result);
+# 2915|           return;
+
+Error: CLANG_WARNING:
+ModemManager-1.6.0/libmm-glib/mm-sms-properties.c:163:12: warning: Access to field 'data' results in a dereference of a null pointer (loaded from field 'data')
+#    return self->priv->data->data;
+#           ^           ~~~~
+ModemManager-1.6.0/libmm-glib/mm-sms-properties.c:160:9: note: Assuming pointer value is null
+#    if (self->priv->data && data_len)
+#        ^~~~~~~~~~~~~~~~
+ModemManager-1.6.0/libmm-glib/mm-sms-properties.c:160:26: note: Left side of '&&' is false
+#    if (self->priv->data && data_len)
+#                         ^
+ModemManager-1.6.0/libmm-glib/mm-sms-properties.c:163:12: note: Access to field 'data' results in a dereference of a null pointer (loaded from field 'data')
+#    return self->priv->data->data;
+#           ^           ~~~~
+#  161|           *data_len = self->priv->data->len;
+#  162|   
+#  163|->     return self->priv->data->data;
+#  164|   }
+#  165|   
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/plugins/cinterion/mm-broadband-modem-cinterion.c:1303:9: warning: 'g_simple_async_result_set_error' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:122) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_error (simple,
+#         ^
+# 1301|       bandstr = mm_broadband_modem_take_and_convert_to_current_charset (MM_BROADBAND_MODEM (self), bandstr);
+# 1302|       if (!bandstr) {
+# 1303|->         g_simple_async_result_set_error (simple,
+# 1304|                                            MM_CORE_ERROR,
+# 1305|                                            MM_CORE_ERROR_UNSUPPORTED,
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/plugins/cinterion/mm-broadband-modem-cinterion.c: scope_hint: In function 'after_sim_unlock_context_complete_and_free'
+ModemManager-1.6.0/plugins/cinterion/mm-broadband-modem-cinterion.c:1546:5: warning: 'g_simple_async_result_complete' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:104) [-Wdeprecated-declarations]
+#     g_simple_async_result_complete (ctx->result);
+#     ^
+# 1544|   {
+# 1545|       g_assert (ctx->timeout_id == 0);
+# 1546|->     g_simple_async_result_complete (ctx->result);
+# 1547|       g_object_unref (ctx->result);
+# 1548|       g_object_unref (ctx->self);
+
+Error: CLANG_WARNING:
+ModemManager-1.6.0/src/mm-bearer-mbim.c:1134:13: warning: Function call argument is an uninitialized value
+#            mm_dbg ("Session ID '%u' already disconnected.", session_id);
+#            ^
+ModemManager-1.6.0/src/mm-log.h:39:5: note: expanded from macro 'mm_dbg'
+#    _mm_log (G_STRLOC, G_STRFUNC, LOGL_DEBUG, ## __VA_ARGS__ )
+#    ^
+ModemManager-1.6.0/src/mm-bearer-mbim.c:1100:5: note: 'session_id' declared without an initial value
+#    guint32 session_id;
+#    ^~~~~~~~~~~~~~~~~~
+ModemManager-1.6.0/src/mm-bearer-mbim.c:1105:9: note: Assuming 'response' is non-null
+#    if (response) {
+#        ^~~~~~~~
+ModemManager-1.6.0/src/mm-bearer-mbim.c:1105:5: note: Taking true branch
+#    if (response) {
+#    ^
+ModemManager-1.6.0/src/mm-bearer-mbim.c:1111:13: note: Left side of '||' is false
+#        if (result ||
+#            ^
+ModemManager-1.6.0/src/mm-bearer-mbim.c:1111:13: note: Left side of '||' is false
+ModemManager-1.6.0/src/mm-bearer-mbim.c:1111:9: note: Taking false branch
+#        if (result ||
+#        ^
+ModemManager-1.6.0/src/mm-bearer-mbim.c:1127:20: note: Left side of '&&' is false
+#        if (result && parsed_result) {
+#                   ^
+ModemManager-1.6.0/src/mm-bearer-mbim.c:1131:16: note: Taking true branch
+#        } else if (g_error_matches (error,
+#               ^
+ModemManager-1.6.0/src/mm-bearer-mbim.c:1134:13: note: Function call argument is an uninitialized value
+#            mm_dbg ("Session ID '%u' already disconnected.", session_id);
+#            ^                                                ~~~~~~~~~~
+ModemManager-1.6.0/src/mm-log.h:39:5: note: expanded from macro 'mm_dbg'
+#    _mm_log (G_STRLOC, G_STRFUNC, LOGL_DEBUG, ## __VA_ARGS__ )
+#    ^
+# 1132|                                       MBIM_STATUS_ERROR,
+# 1133|                                       MBIM_STATUS_ERROR_CONTEXT_NOT_ACTIVATED)) {
+# 1134|->             mm_dbg ("Session ID '%u' already disconnected.", session_id);
+# 1135|               g_clear_error (&error);
+# 1136|               g_clear_error (&inner_error);
+
+Error: CLANG_WARNING:
+ModemManager-1.6.0/src/mm-bearer-mbim.c:1138:17: warning: Branch condition evaluates to a garbage value
+#            if (nw_error) {
+#                ^~~~~~~~
+ModemManager-1.6.0/src/mm-bearer-mbim.c:1102:5: note: 'nw_error' declared without an initial value
+#    guint32 nw_error;
+#    ^~~~~~~~~~~~~~~~
+ModemManager-1.6.0/src/mm-bearer-mbim.c:1105:9: note: Assuming 'response' is non-null
+#    if (response) {
+#        ^~~~~~~~
+ModemManager-1.6.0/src/mm-bearer-mbim.c:1105:5: note: Taking true branch
+#    if (response) {
+#    ^
+ModemManager-1.6.0/src/mm-bearer-mbim.c:1111:13: note: Left side of '||' is false
+#        if (result ||
+#            ^
+ModemManager-1.6.0/src/mm-bearer-mbim.c:1111:13: note: Left side of '||' is false
+ModemManager-1.6.0/src/mm-bearer-mbim.c:1111:9: note: Taking false branch
+#        if (result ||
+#        ^
+ModemManager-1.6.0/src/mm-bearer-mbim.c:1127:20: note: Left side of '&&' is false
+#        if (result && parsed_result) {
+#                   ^
+ModemManager-1.6.0/src/mm-bearer-mbim.c:1131:16: note: Taking false branch
+#        } else if (g_error_matches (error,
+#               ^
+ModemManager-1.6.0/src/mm-bearer-mbim.c:1137:16: note: Taking true branch
+#        } else if (g_error_matches (error, MBIM_STATUS_ERROR, MBIM_STATUS_ERROR_FAILURE)) {
+#               ^
+ModemManager-1.6.0/src/mm-bearer-mbim.c:1138:17: note: Branch condition evaluates to a garbage value
+#            if (nw_error) {
+#                ^~~~~~~~
+# 1136|               g_clear_error (&inner_error);
+# 1137|           } else if (g_error_matches (error, MBIM_STATUS_ERROR, MBIM_STATUS_ERROR_FAILURE)) {
+# 1138|->             if (nw_error) {
+# 1139|                   g_error_free (error);
+# 1140|                   error = mm_mobile_equipment_error_from_mbim_nw_error (nw_error);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/src/mm-broadband-modem.c: scope_hint: In function 'register_in_cdma_network_context_complete_and_free'
+ModemManager-1.6.0/src/mm-broadband-modem.c:7723:5: warning: 'g_simple_async_result_complete' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:104) [-Wdeprecated-declarations]
+#     g_simple_async_result_complete (ctx->result);
+#     ^
+# 7721|           g_timer_destroy (ctx->timer);
+# 7722|   
+# 7723|->     g_simple_async_result_complete (ctx->result);
+# 7724|       g_object_unref (ctx->result);
+# 7725|       g_object_unref (ctx->cancellable);
+
+Error: CLANG_WARNING:
+ModemManager-1.6.0/src/mm-device.c:215:17: warning: Dereference of null pointer (loaded from variable 'vendor')
+#        *vendor = 0;
+#         ~~~~~~ ^
+ModemManager-1.6.0/src/mm-device.c:146:9: note: Assuming 'parent' is null
+#    if (parent) {
+#        ^~~~~~
+ModemManager-1.6.0/src/mm-device.c:146:5: note: Taking false branch
+#    if (parent) {
+#    ^
+ModemManager-1.6.0/src/mm-device.c:197:5: note: Taking true branch
+#    if (!vid)
+#    ^
+ModemManager-1.6.0/src/mm-device.c:199:9: note: Assuming 'vid' is non-null
+#    if (!vid)
+#        ^~~~
+ModemManager-1.6.0/src/mm-device.c:199:5: note: Taking false branch
+#    if (!vid)
+#    ^
+ModemManager-1.6.0/src/mm-device.c:202:5: note: Taking false branch
+#    if (strncmp (vid, "0x", 2) == 0)
+#    ^
+ModemManager-1.6.0/src/mm-device.c:204:5: note: Taking false branch
+#    if (strlen (vid) != 4)
+#    ^
+ModemManager-1.6.0/src/mm-device.c:207:9: note: Assuming 'vendor' is null
+#    if (vendor) {
+#        ^~~~~~
+ModemManager-1.6.0/src/mm-device.c:207:5: note: Taking false branch
+#    if (vendor) {
+#    ^
+ModemManager-1.6.0/src/mm-device.c:212:5: note: Taking true branch
+#    if (!pid)
+#    ^
+ModemManager-1.6.0/src/mm-device.c:214:9: note: Assuming 'pid' is null
+#    if (!pid) {
+#        ^~~~
+ModemManager-1.6.0/src/mm-device.c:214:5: note: Taking true branch
+#    if (!pid) {
+#    ^
+ModemManager-1.6.0/src/mm-device.c:215:17: note: Dereference of null pointer (loaded from variable 'vendor')
+#        *vendor = 0;
+#         ~~~~~~ ^
+#  213|           pid = g_udev_device_get_property (device, "ID_MODEL_ID");
+#  214|       if (!pid) {
+#  215|->         *vendor = 0;
+#  216|           goto out;
+#  217|       }
+
+Error: CLANG_WARNING:
+ModemManager-1.6.0/src/mm-device.c:222:17: warning: Dereference of null pointer (loaded from variable 'vendor')
+#        *vendor = 0;
+#         ~~~~~~ ^
+ModemManager-1.6.0/src/mm-device.c:146:9: note: Assuming 'parent' is null
+#    if (parent) {
+#        ^~~~~~
+ModemManager-1.6.0/src/mm-device.c:146:5: note: Taking false branch
+#    if (parent) {
+#    ^
+ModemManager-1.6.0/src/mm-device.c:197:5: note: Taking true branch
+#    if (!vid)
+#    ^
+ModemManager-1.6.0/src/mm-device.c:199:9: note: Assuming 'vid' is non-null
+#    if (!vid)
+#        ^~~~
+ModemManager-1.6.0/src/mm-device.c:199:5: note: Taking false branch
+#    if (!vid)
+#    ^
+ModemManager-1.6.0/src/mm-device.c:202:5: note: Taking false branch
+#    if (strncmp (vid, "0x", 2) == 0)
+#    ^
+ModemManager-1.6.0/src/mm-device.c:204:5: note: Taking false branch
+#    if (strlen (vid) != 4)
+#    ^
+ModemManager-1.6.0/src/mm-device.c:207:9: note: Assuming 'vendor' is null
+#    if (vendor) {
+#        ^~~~~~
+ModemManager-1.6.0/src/mm-device.c:207:5: note: Taking false branch
+#    if (vendor) {
+#    ^
+ModemManager-1.6.0/src/mm-device.c:212:5: note: Taking true branch
+#    if (!pid)
+#    ^
+ModemManager-1.6.0/src/mm-device.c:214:9: note: Assuming 'pid' is non-null
+#    if (!pid) {
+#        ^~~~
+ModemManager-1.6.0/src/mm-device.c:214:5: note: Taking false branch
+#    if (!pid) {
+#    ^
+ModemManager-1.6.0/src/mm-device.c:219:5: note: Taking false branch
+#    if (strncmp (pid, "0x", 2) == 0)
+#    ^
+ModemManager-1.6.0/src/mm-device.c:221:5: note: Taking true branch
+#    if (strlen (pid) != 4) {
+#    ^
+ModemManager-1.6.0/src/mm-device.c:222:17: note: Dereference of null pointer (loaded from variable 'vendor')
+#        *vendor = 0;
+#         ~~~~~~ ^
+#  220|           pid += 2;
+#  221|       if (strlen (pid) != 4) {
+#  222|->         *vendor = 0;
+#  223|           goto out;
+#  224|       }
+
+Error: CLANG_WARNING:
+ModemManager-1.6.0/src/mm-plugin.c:539:54: warning: Dereference of null pointer
+#                casefolded_vendor = g_utf8_casefold (self->priv->product_strings[i].l, -1);
+#                                                     ^
+ModemManager-1.6.0/src/mm-plugin.c:607:5: note: Taking false branch
+#    if (!mm_port_probe_run_finish (probe, probe_result, &error)) {
+#    ^
+ModemManager-1.6.0/src/mm-plugin.c:634:10: note: Calling 'apply_post_probing_filters'
+#    if (!apply_post_probing_filters (ctx->self, ctx->flags, probe)) {
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ModemManager-1.6.0/src/mm-plugin.c:449:43: note: Left side of '&&' is false
+#    if ((flags & MM_PORT_PROBE_AT_VENDOR) &&
+#                                          ^
+ModemManager-1.6.0/src/mm-plugin.c:490:9: note: Left side of '&&' is true
+#    if ((flags & MM_PORT_PROBE_AT_PRODUCT) &&
+#        ^
+ModemManager-1.6.0/src/mm-plugin.c:491:10: note: Assuming pointer value is null
+#        (self->priv->product_strings ||
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+ModemManager-1.6.0/src/mm-plugin.c:491:10: note: Left side of '||' is false
+ModemManager-1.6.0/src/mm-plugin.c:490:5: note: Taking true branch
+#    if ((flags & MM_PORT_PROBE_AT_PRODUCT) &&
+#    ^
+ModemManager-1.6.0/src/mm-plugin.c:499:9: note: Taking false branch
+#        if (self->priv->product_strings) {
+#        ^
+ModemManager-1.6.0/src/mm-plugin.c:533:13: note: Left side of '&&' is true
+#        if (self->priv->forbidden_product_strings && vendor && product) {
+#            ^
+ModemManager-1.6.0/src/mm-plugin.c:533:13: note: Left side of '&&' is true
+ModemManager-1.6.0/src/mm-plugin.c:533:9: note: Taking true branch
+#        if (self->priv->forbidden_product_strings && vendor && product) {
+#        ^
+ModemManager-1.6.0/src/mm-plugin.c:534:13: note: Loop condition is true.  Entering loop body
+#            for (i = 0; self->priv->forbidden_product_strings[i].l; i++) {
+#            ^
+ModemManager-1.6.0/src/mm-plugin.c:539:54: note: Dereference of null pointer
+#                casefolded_vendor = g_utf8_casefold (self->priv->product_strings[i].l, -1);
+#                                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  537|                   gchar *casefolded_product;
+#  538|   
+#  539|->                 casefolded_vendor = g_utf8_casefold (self->priv->product_strings[i].l, -1);
+#  540|                   casefolded_product = g_utf8_casefold (self->priv->product_strings[i].r, -1);
+#  541|                   found = (!!strstr (vendor, casefolded_vendor) &&
+
+Error: MISSING_BREAK (CWE-484):
+ModemManager-1.6.0/src/mm-sms-part-cdma.c:274: unterminated_case: The case for value "ERROR_CLASS_TEMPORARY" is not terminated by a 'break' statement.
+ModemManager-1.6.0/src/mm-sms-part-cdma.c:276: fallthrough: The above case falls through to this one.
+#  274|       case ERROR_CLASS_TEMPORARY:
+#  275|           delivery_state += 0x300;
+#  276|->     case ERROR_CLASS_PERMANENT:
+#  277|           delivery_state += 0x200;
+#  278|       default:
+
+Error: UNREACHABLE (CWE-561):
+ModemManager-1.6.0/src/mm-sms-part-cdma.c:284: unreachable: This code cannot be reached: "if (cause_code >= 6 && caus...".
+#  282|       /* Fixes for unknown cause codes */
+#  283|   
+#  284|->     if (cause_code >= 6 && cause_code <= 31)
+#  285|           /* 6 to 31 reserved, treat as CAUSE_CODE_NETWORK_PROBLEM_OTHER */
+#  286|           delivery_state += CAUSE_CODE_NETWORK_PROBLEM_OTHER;

@@ -1,0 +1,710 @@
+Error: CHECKED_RETURN (CWE-252):
+ModemManager-1.6.10/plugins/huawei/mm-modem-helpers-huawei.c:1390: check_return: Calling "mm_get_uint_from_match_info" without checking return value (as is done elsewhere 89 out of 109 times).
+ModemManager-1.6.10/libmm-glib/mm-location-gps-nmea.c:64: example_checked: Example 1: "mm_get_uint_from_match_info(match_info, 2U, &index)" has its value checked in "mm_get_uint_from_match_info(match_info, 2U, &index)".
+ModemManager-1.6.10/plugins/altair/mm-modem-helpers-altair-lte.c:175: example_checked: Example 2: "mm_get_uint_from_match_info(match_info, 1U, &pco_value)" has its value checked in "mm_get_uint_from_match_info(match_info, 1U, &pco_value)".
+ModemManager-1.6.10/plugins/anydata/mm-broadband-modem-anydata.c:133: example_checked: Example 3: "mm_get_uint_from_match_info(match_info, 1U, &val)" has its value checked in "mm_get_uint_from_match_info(match_info, 1U, &val)".
+ModemManager-1.6.10/plugins/cinterion/mm-modem-helpers-cinterion.c:265: example_checked: Example 4: "mm_get_uint_from_match_info(match_info, 1U, &aux)" has its value checked in "mm_get_uint_from_match_info(match_info, 1U, &aux)".
+ModemManager-1.6.10/plugins/via/mm-broadband-modem-via.c:245: example_checked: Example 5: "mm_get_uint_from_match_info(match_info, 4U, &val)" has its value checked in "mm_get_uint_from_match_info(match_info, 4U, &val)".
+# 1388|   
+# 1389|       if (out_value1)
+# 1390|->         mm_get_uint_from_match_info (match_info, 2, out_value1);
+# 1391|       if (out_value2)
+# 1392|           mm_get_uint_from_match_info (match_info, 3, out_value2);
+
+Error: CHECKED_RETURN (CWE-252):
+ModemManager-1.6.10/plugins/huawei/mm-modem-helpers-huawei.c:1392: check_return: Calling "mm_get_uint_from_match_info" without checking return value (as is done elsewhere 89 out of 109 times).
+ModemManager-1.6.10/libmm-glib/mm-location-gps-nmea.c:64: example_checked: Example 1: "mm_get_uint_from_match_info(match_info, 2U, &index)" has its value checked in "mm_get_uint_from_match_info(match_info, 2U, &index)".
+ModemManager-1.6.10/plugins/altair/mm-modem-helpers-altair-lte.c:175: example_checked: Example 2: "mm_get_uint_from_match_info(match_info, 1U, &pco_value)" has its value checked in "mm_get_uint_from_match_info(match_info, 1U, &pco_value)".
+ModemManager-1.6.10/plugins/anydata/mm-broadband-modem-anydata.c:133: example_checked: Example 3: "mm_get_uint_from_match_info(match_info, 1U, &val)" has its value checked in "mm_get_uint_from_match_info(match_info, 1U, &val)".
+ModemManager-1.6.10/plugins/cinterion/mm-modem-helpers-cinterion.c:265: example_checked: Example 4: "mm_get_uint_from_match_info(match_info, 1U, &aux)" has its value checked in "mm_get_uint_from_match_info(match_info, 1U, &aux)".
+ModemManager-1.6.10/plugins/via/mm-broadband-modem-via.c:245: example_checked: Example 5: "mm_get_uint_from_match_info(match_info, 4U, &val)" has its value checked in "mm_get_uint_from_match_info(match_info, 4U, &val)".
+# 1390|           mm_get_uint_from_match_info (match_info, 2, out_value1);
+# 1391|       if (out_value2)
+# 1392|->         mm_get_uint_from_match_info (match_info, 3, out_value2);
+# 1393|       if (out_value3)
+# 1394|           mm_get_uint_from_match_info (match_info, 4, out_value3);
+
+Error: CHECKED_RETURN (CWE-252):
+ModemManager-1.6.10/plugins/huawei/mm-modem-helpers-huawei.c:1394: check_return: Calling "mm_get_uint_from_match_info" without checking return value (as is done elsewhere 89 out of 109 times).
+ModemManager-1.6.10/libmm-glib/mm-location-gps-nmea.c:64: example_checked: Example 1: "mm_get_uint_from_match_info(match_info, 2U, &index)" has its value checked in "mm_get_uint_from_match_info(match_info, 2U, &index)".
+ModemManager-1.6.10/plugins/altair/mm-modem-helpers-altair-lte.c:175: example_checked: Example 2: "mm_get_uint_from_match_info(match_info, 1U, &pco_value)" has its value checked in "mm_get_uint_from_match_info(match_info, 1U, &pco_value)".
+ModemManager-1.6.10/plugins/anydata/mm-broadband-modem-anydata.c:133: example_checked: Example 3: "mm_get_uint_from_match_info(match_info, 1U, &val)" has its value checked in "mm_get_uint_from_match_info(match_info, 1U, &val)".
+ModemManager-1.6.10/plugins/cinterion/mm-modem-helpers-cinterion.c:265: example_checked: Example 4: "mm_get_uint_from_match_info(match_info, 1U, &aux)" has its value checked in "mm_get_uint_from_match_info(match_info, 1U, &aux)".
+ModemManager-1.6.10/plugins/via/mm-broadband-modem-via.c:245: example_checked: Example 5: "mm_get_uint_from_match_info(match_info, 4U, &val)" has its value checked in "mm_get_uint_from_match_info(match_info, 4U, &val)".
+# 1392|           mm_get_uint_from_match_info (match_info, 3, out_value2);
+# 1393|       if (out_value3)
+# 1394|->         mm_get_uint_from_match_info (match_info, 4, out_value3);
+# 1395|       if (out_value4)
+# 1396|           mm_get_uint_from_match_info (match_info, 5, out_value4);
+
+Error: CHECKED_RETURN (CWE-252):
+ModemManager-1.6.10/plugins/huawei/mm-modem-helpers-huawei.c:1396: check_return: Calling "mm_get_uint_from_match_info" without checking return value (as is done elsewhere 89 out of 109 times).
+ModemManager-1.6.10/libmm-glib/mm-location-gps-nmea.c:64: example_checked: Example 1: "mm_get_uint_from_match_info(match_info, 2U, &index)" has its value checked in "mm_get_uint_from_match_info(match_info, 2U, &index)".
+ModemManager-1.6.10/plugins/altair/mm-modem-helpers-altair-lte.c:175: example_checked: Example 2: "mm_get_uint_from_match_info(match_info, 1U, &pco_value)" has its value checked in "mm_get_uint_from_match_info(match_info, 1U, &pco_value)".
+ModemManager-1.6.10/plugins/anydata/mm-broadband-modem-anydata.c:133: example_checked: Example 3: "mm_get_uint_from_match_info(match_info, 1U, &val)" has its value checked in "mm_get_uint_from_match_info(match_info, 1U, &val)".
+ModemManager-1.6.10/plugins/cinterion/mm-modem-helpers-cinterion.c:265: example_checked: Example 4: "mm_get_uint_from_match_info(match_info, 1U, &aux)" has its value checked in "mm_get_uint_from_match_info(match_info, 1U, &aux)".
+ModemManager-1.6.10/plugins/via/mm-broadband-modem-via.c:245: example_checked: Example 5: "mm_get_uint_from_match_info(match_info, 4U, &val)" has its value checked in "mm_get_uint_from_match_info(match_info, 4U, &val)".
+# 1394|           mm_get_uint_from_match_info (match_info, 4, out_value3);
+# 1395|       if (out_value4)
+# 1396|->         mm_get_uint_from_match_info (match_info, 5, out_value4);
+# 1397|       if (out_value5)
+# 1398|           mm_get_uint_from_match_info (match_info, 6, out_value5);
+
+Error: CHECKED_RETURN (CWE-252):
+ModemManager-1.6.10/plugins/huawei/mm-modem-helpers-huawei.c:1398: check_return: Calling "mm_get_uint_from_match_info" without checking return value (as is done elsewhere 89 out of 109 times).
+ModemManager-1.6.10/libmm-glib/mm-location-gps-nmea.c:64: example_checked: Example 1: "mm_get_uint_from_match_info(match_info, 2U, &index)" has its value checked in "mm_get_uint_from_match_info(match_info, 2U, &index)".
+ModemManager-1.6.10/plugins/altair/mm-modem-helpers-altair-lte.c:175: example_checked: Example 2: "mm_get_uint_from_match_info(match_info, 1U, &pco_value)" has its value checked in "mm_get_uint_from_match_info(match_info, 1U, &pco_value)".
+ModemManager-1.6.10/plugins/anydata/mm-broadband-modem-anydata.c:133: example_checked: Example 3: "mm_get_uint_from_match_info(match_info, 1U, &val)" has its value checked in "mm_get_uint_from_match_info(match_info, 1U, &val)".
+ModemManager-1.6.10/plugins/cinterion/mm-modem-helpers-cinterion.c:265: example_checked: Example 4: "mm_get_uint_from_match_info(match_info, 1U, &aux)" has its value checked in "mm_get_uint_from_match_info(match_info, 1U, &aux)".
+ModemManager-1.6.10/plugins/via/mm-broadband-modem-via.c:245: example_checked: Example 5: "mm_get_uint_from_match_info(match_info, 4U, &val)" has its value checked in "mm_get_uint_from_match_info(match_info, 4U, &val)".
+# 1396|           mm_get_uint_from_match_info (match_info, 5, out_value4);
+# 1397|       if (out_value5)
+# 1398|->         mm_get_uint_from_match_info (match_info, 6, out_value5);
+# 1399|   
+# 1400|       ret = TRUE;
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.10/plugins/telit/mm-broadband-modem-telit.c: scope_hint: In function 'parent_load_supported_modes_ready'
+ModemManager-1.6.10/plugins/telit/mm-broadband-modem-telit.c:972:9: warning: 'g_simple_async_result_take_error' is deprecated [-Wdeprecated-declarations]
+#         g_simple_async_result_take_error (simple, error);
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/gio/gio.h:117: included_from: Included from here.
+ModemManager-1.6.10/libmm-glib/generated/mm-gdbus-manager.h:10: included_from: Included from here.
+ModemManager-1.6.10/libmm-glib/libmm-glib.h:79: included_from: Included from here.
+ModemManager-1.6.10/src/mm-modem-helpers.h:24: included_from: Included from here.
+ModemManager-1.6.10/plugins/telit/mm-broadband-modem-telit.c:29: included_from: Included from here.
+/usr/include/glib-2.0/gio/gsimpleasyncresult.h:116:21: note: declared here
+# void                g_simple_async_result_take_error       (GSimpleAsyncResult      *simple,
+#                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  970|       all = iface_modem_parent->load_supported_modes_finish (self, res, &error);
+#  971|       if (!all) {
+#  972|->         g_simple_async_result_take_error (simple, error);
+#  973|           g_simple_async_result_complete (simple);
+#  974|           g_object_unref (simple);
+
+Error: CLANG_WARNING:
+ModemManager-1.6.10/src/mm-auth-provider.c:38:12: warning: Access to field 'authorize_finish' results in a dereference of a null pointer (loaded from field 'g_class')
+#    return MM_AUTH_PROVIDER_GET_CLASS (self)->authorize_finish (self, res, error);
+#           ^
+ModemManager-1.6.10/src/mm-auth-provider.h:27:42: note: expanded from macro 'MM_AUTH_PROVIDER_GET_CLASS'
+##define MM_AUTH_PROVIDER_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj),  MM_TYPE_AUTH_PROVIDER, MMAuthProviderClass))
+#                                         ^
+ModemManager-1.6.10/src/mm-auth-provider.c:36:27: note: Assuming '__inst' is non-null
+#    g_return_val_if_fail (MM_IS_AUTH_PROVIDER (self), FALSE);
+#                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+ModemManager-1.6.10/src/mm-auth-provider.h:25:43: note: expanded from macro 'MM_IS_AUTH_PROVIDER'
+##define MM_IS_AUTH_PROVIDER(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), MM_TYPE_AUTH_PROVIDER))
+#                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/gobject/gtype.h:495:66: note: expanded from macro 'G_TYPE_CHECK_INSTANCE_TYPE'
+##define G_TYPE_CHECK_INSTANCE_TYPE(instance, g_type)            (_G_TYPE_CIT ((instance), (g_type)))
+#                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/gobject/gtype.h:2239:7: note: expanded from macro '_G_TYPE_CIT'
+#  if (!__inst) \
+#      ^~~~~~~
+/usr/include/glib-2.0/glib/gmessages.h:593:18: note: expanded from macro 'g_return_val_if_fail'
+#     if G_LIKELY(expr) { } else                                         \
+#                 ^~~~
+/usr/include/glib-2.0/glib/gmacros.h:376:60: note: expanded from macro 'G_LIKELY'
+##define G_LIKELY(expr) (__builtin_expect (_G_BOOLEAN_EXPR((expr)), 1))
+#                                                           ^~~~
+/usr/include/glib-2.0/glib/gmacros.h:370:8: note: expanded from macro '_G_BOOLEAN_EXPR'
+#   if (expr)                                    \
+#       ^~~~
+ModemManager-1.6.10/src/mm-auth-provider.c:36:27: note: Taking false branch
+ModemManager-1.6.10/src/mm-auth-provider.h:25:43: note: expanded from macro 'MM_IS_AUTH_PROVIDER'
+##define MM_IS_AUTH_PROVIDER(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), MM_TYPE_AUTH_PROVIDER))
+#                                          ^
+/usr/include/glib-2.0/gobject/gtype.h:495:66: note: expanded from macro 'G_TYPE_CHECK_INSTANCE_TYPE'
+##define G_TYPE_CHECK_INSTANCE_TYPE(instance, g_type)            (_G_TYPE_CIT ((instance), (g_type)))
+#                                                                 ^
+/usr/include/glib-2.0/gobject/gtype.h:2239:3: note: expanded from macro '_G_TYPE_CIT'
+#  if (!__inst) \
+#  ^
+ModemManager-1.6.10/src/mm-auth-provider.c:36:27: note: Assuming pointer value is null
+#    g_return_val_if_fail (MM_IS_AUTH_PROVIDER (self), FALSE);
+#                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+ModemManager-1.6.10/src/mm-auth-provider.h:25:43: note: expanded from macro 'MM_IS_AUTH_PROVIDER'
+##define MM_IS_AUTH_PROVIDER(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), MM_TYPE_AUTH_PROVIDER))
+#                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/gobject/gtype.h:495:66: note: expanded from macro 'G_TYPE_CHECK_INSTANCE_TYPE'
+##define G_TYPE_CHECK_INSTANCE_TYPE(instance, g_type)            (_G_TYPE_CIT ((instance), (g_type)))
+#                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/gobject/gtype.h:2241:12: note: expanded from macro '_G_TYPE_CIT'
+#  else if (__inst->g_class && __inst->g_class->g_type == __t) \
+#           ^~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib/gmessages.h:593:18: note: expanded from macro 'g_return_val_if_fail'
+#     if G_LIKELY(expr) { } else                                         \
+#                 ^~~~
+/usr/include/glib-2.0/glib/gmacros.h:376:60: note: expanded from macro 'G_LIKELY'
+##define G_LIKELY(expr) (__builtin_expect (_G_BOOLEAN_EXPR((expr)), 1))
+#                                                           ^~~~
+/usr/include/glib-2.0/glib/gmacros.h:370:8: note: expanded from macro '_G_BOOLEAN_EXPR'
+#   if (expr)                                    \
+#       ^~~~
+ModemManager-1.6.10/src/mm-auth-provider.c:36:27: note: Left side of '&&' is false
+ModemManager-1.6.10/src/mm-auth-provider.h:25:43: note: expanded from macro 'MM_IS_AUTH_PROVIDER'
+##define MM_IS_AUTH_PROVIDER(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), MM_TYPE_AUTH_PROVIDER))
+#                                          ^
+/usr/include/glib-2.0/gobject/gtype.h:495:66: note: expanded from macro 'G_TYPE_CHECK_INSTANCE_TYPE'
+##define G_TYPE_CHECK_INSTANCE_TYPE(instance, g_type)            (_G_TYPE_CIT ((instance), (g_type)))
+#                                                                 ^
+/usr/include/glib-2.0/gobject/gtype.h:2241:28: note: expanded from macro '_G_TYPE_CIT'
+#  else if (__inst->g_class && __inst->g_class->g_type == __t) \
+#                           ^
+ModemManager-1.6.10/src/mm-auth-provider.c:36:5: note: Assuming the condition is true
+#    g_return_val_if_fail (MM_IS_AUTH_PROVIDER (self), FALSE);
+#    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib/gmessages.h:593:9: note: expanded from macro 'g_return_val_if_fail'
+#     if G_LIKELY(expr) { } else                                         \
+#        ^~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib/gmacros.h:376:59: note: expanded from macro 'G_LIKELY'
+##define G_LIKELY(expr) (__builtin_expect (_G_BOOLEAN_EXPR((expr)), 1))
+#                                          ~~~~~~~~~~~~~~~~^~~~~~~
+/usr/include/glib-2.0/glib/gmacros.h:370:8: note: expanded from macro '_G_BOOLEAN_EXPR'
+#   if (expr)                                    \
+#       ^~~~
+ModemManager-1.6.10/src/mm-auth-provider.c:36:5: note: Taking true branch
+/usr/include/glib-2.0/glib/gmessages.h:593:9: note: expanded from macro 'g_return_val_if_fail'
+#     if G_LIKELY(expr) { } else                                         \
+#        ^
+/usr/include/glib-2.0/glib/gmacros.h:376:43: note: expanded from macro 'G_LIKELY'
+##define G_LIKELY(expr) (__builtin_expect (_G_BOOLEAN_EXPR((expr)), 1))
+#                                          ^
+/usr/include/glib-2.0/glib/gmacros.h:370:4: note: expanded from macro '_G_BOOLEAN_EXPR'
+#   if (expr)                                    \
+#   ^
+ModemManager-1.6.10/src/mm-auth-provider.c:36:5: note: Taking true branch
+/usr/include/glib-2.0/glib/gmessages.h:593:6: note: expanded from macro 'g_return_val_if_fail'
+#     if G_LIKELY(expr) { } else                                         \
+#     ^
+ModemManager-1.6.10/src/mm-auth-provider.c:36:5: note: Loop condition is false.  Exiting loop
+/usr/include/glib-2.0/glib/gmessages.h:592:40: note: expanded from macro 'g_return_val_if_fail'
+##define g_return_val_if_fail(expr,val)  G_STMT_START{                   \
+#                                        ^
+/usr/include/glib-2.0/glib/gmacros.h:337:23: note: expanded from macro 'G_STMT_START'
+##define G_STMT_START  do
+#                      ^
+ModemManager-1.6.10/src/mm-auth-provider.c:38:12: note: Access to field 'authorize_finish' results in a dereference of a null pointer (loaded from field 'g_class')
+#    return MM_AUTH_PROVIDER_GET_CLASS (self)->authorize_finish (self, res, error);
+#           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ModemManager-1.6.10/src/mm-auth-provider.h:27:42: note: expanded from macro 'MM_AUTH_PROVIDER_GET_CLASS'
+##define MM_AUTH_PROVIDER_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj),  MM_TYPE_AUTH_PROVIDER, MMAuthProviderClass))
+#                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   36|       g_return_val_if_fail (MM_IS_AUTH_PROVIDER (self), FALSE);
+#   37|   
+#   38|->     return MM_AUTH_PROVIDER_GET_CLASS (self)->authorize_finish (self, res, error);
+#   39|   }
+#   40|   
+
+Error: CLANG_WARNING:
+ModemManager-1.6.10/src/mm-auth-provider.c:51:5: warning: Access to field 'authorize' results in a dereference of a null pointer (loaded from field 'g_class')
+#    MM_AUTH_PROVIDER_GET_CLASS (self)->authorize (self,
+#    ^
+ModemManager-1.6.10/src/mm-auth-provider.h:27:42: note: expanded from macro 'MM_AUTH_PROVIDER_GET_CLASS'
+##define MM_AUTH_PROVIDER_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj),  MM_TYPE_AUTH_PROVIDER, MMAuthProviderClass))
+#                                         ^
+ModemManager-1.6.10/src/mm-auth-provider.c:49:23: note: Assuming '__inst' is non-null
+#    g_return_if_fail (MM_IS_AUTH_PROVIDER (self));
+#                      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+ModemManager-1.6.10/src/mm-auth-provider.h:25:43: note: expanded from macro 'MM_IS_AUTH_PROVIDER'
+##define MM_IS_AUTH_PROVIDER(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), MM_TYPE_AUTH_PROVIDER))
+#                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/gobject/gtype.h:495:66: note: expanded from macro 'G_TYPE_CHECK_INSTANCE_TYPE'
+##define G_TYPE_CHECK_INSTANCE_TYPE(instance, g_type)            (_G_TYPE_CIT ((instance), (g_type)))
+#                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/gobject/gtype.h:2239:7: note: expanded from macro '_G_TYPE_CIT'
+#  if (!__inst) \
+#      ^~~~~~~
+/usr/include/glib-2.0/glib/gmessages.h:584:18: note: expanded from macro 'g_return_if_fail'
+#     if G_LIKELY(expr) { } else                                         \
+#                 ^~~~
+/usr/include/glib-2.0/glib/gmacros.h:376:60: note: expanded from macro 'G_LIKELY'
+##define G_LIKELY(expr) (__builtin_expect (_G_BOOLEAN_EXPR((expr)), 1))
+#                                                           ^~~~
+/usr/include/glib-2.0/glib/gmacros.h:370:8: note: expanded from macro '_G_BOOLEAN_EXPR'
+#   if (expr)                                    \
+#       ^~~~
+ModemManager-1.6.10/src/mm-auth-provider.c:49:23: note: Taking false branch
+ModemManager-1.6.10/src/mm-auth-provider.h:25:43: note: expanded from macro 'MM_IS_AUTH_PROVIDER'
+##define MM_IS_AUTH_PROVIDER(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), MM_TYPE_AUTH_PROVIDER))
+#                                          ^
+/usr/include/glib-2.0/gobject/gtype.h:495:66: note: expanded from macro 'G_TYPE_CHECK_INSTANCE_TYPE'
+##define G_TYPE_CHECK_INSTANCE_TYPE(instance, g_type)            (_G_TYPE_CIT ((instance), (g_type)))
+#                                                                 ^
+/usr/include/glib-2.0/gobject/gtype.h:2239:3: note: expanded from macro '_G_TYPE_CIT'
+#  if (!__inst) \
+#  ^
+ModemManager-1.6.10/src/mm-auth-provider.c:49:23: note: Assuming pointer value is null
+#    g_return_if_fail (MM_IS_AUTH_PROVIDER (self));
+#                      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+ModemManager-1.6.10/src/mm-auth-provider.h:25:43: note: expanded from macro 'MM_IS_AUTH_PROVIDER'
+##define MM_IS_AUTH_PROVIDER(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), MM_TYPE_AUTH_PROVIDER))
+#                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/gobject/gtype.h:495:66: note: expanded from macro 'G_TYPE_CHECK_INSTANCE_TYPE'
+##define G_TYPE_CHECK_INSTANCE_TYPE(instance, g_type)            (_G_TYPE_CIT ((instance), (g_type)))
+#                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/gobject/gtype.h:2241:12: note: expanded from macro '_G_TYPE_CIT'
+#  else if (__inst->g_class && __inst->g_class->g_type == __t) \
+#           ^~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib/gmessages.h:584:18: note: expanded from macro 'g_return_if_fail'
+#     if G_LIKELY(expr) { } else                                         \
+#                 ^~~~
+/usr/include/glib-2.0/glib/gmacros.h:376:60: note: expanded from macro 'G_LIKELY'
+##define G_LIKELY(expr) (__builtin_expect (_G_BOOLEAN_EXPR((expr)), 1))
+#                                                           ^~~~
+/usr/include/glib-2.0/glib/gmacros.h:370:8: note: expanded from macro '_G_BOOLEAN_EXPR'
+#   if (expr)                                    \
+#       ^~~~
+ModemManager-1.6.10/src/mm-auth-provider.c:49:23: note: Left side of '&&' is false
+ModemManager-1.6.10/src/mm-auth-provider.h:25:43: note: expanded from macro 'MM_IS_AUTH_PROVIDER'
+##define MM_IS_AUTH_PROVIDER(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), MM_TYPE_AUTH_PROVIDER))
+#                                          ^
+/usr/include/glib-2.0/gobject/gtype.h:495:66: note: expanded from macro 'G_TYPE_CHECK_INSTANCE_TYPE'
+##define G_TYPE_CHECK_INSTANCE_TYPE(instance, g_type)            (_G_TYPE_CIT ((instance), (g_type)))
+#                                                                 ^
+/usr/include/glib-2.0/gobject/gtype.h:2241:28: note: expanded from macro '_G_TYPE_CIT'
+#  else if (__inst->g_class && __inst->g_class->g_type == __t) \
+#                           ^
+ModemManager-1.6.10/src/mm-auth-provider.c:49:5: note: Assuming the condition is true
+#    g_return_if_fail (MM_IS_AUTH_PROVIDER (self));
+#    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib/gmessages.h:584:9: note: expanded from macro 'g_return_if_fail'
+#     if G_LIKELY(expr) { } else                                         \
+#        ^~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib/gmacros.h:376:59: note: expanded from macro 'G_LIKELY'
+##define G_LIKELY(expr) (__builtin_expect (_G_BOOLEAN_EXPR((expr)), 1))
+#                                          ~~~~~~~~~~~~~~~~^~~~~~~
+/usr/include/glib-2.0/glib/gmacros.h:370:8: note: expanded from macro '_G_BOOLEAN_EXPR'
+#   if (expr)                                    \
+#       ^~~~
+ModemManager-1.6.10/src/mm-auth-provider.c:49:5: note: Taking true branch
+/usr/include/glib-2.0/glib/gmessages.h:584:9: note: expanded from macro 'g_return_if_fail'
+#     if G_LIKELY(expr) { } else                                         \
+#        ^
+/usr/include/glib-2.0/glib/gmacros.h:376:43: note: expanded from macro 'G_LIKELY'
+##define G_LIKELY(expr) (__builtin_expect (_G_BOOLEAN_EXPR((expr)), 1))
+#                                          ^
+/usr/include/glib-2.0/glib/gmacros.h:370:4: note: expanded from macro '_G_BOOLEAN_EXPR'
+#   if (expr)                                    \
+#   ^
+ModemManager-1.6.10/src/mm-auth-provider.c:49:5: note: Taking true branch
+/usr/include/glib-2.0/glib/gmessages.h:584:6: note: expanded from macro 'g_return_if_fail'
+#     if G_LIKELY(expr) { } else                                         \
+#     ^
+ModemManager-1.6.10/src/mm-auth-provider.c:49:5: note: Loop condition is false.  Exiting loop
+/usr/include/glib-2.0/glib/gmessages.h:583:33: note: expanded from macro 'g_return_if_fail'
+##define g_return_if_fail(expr)          G_STMT_START{                   \
+#                                        ^
+/usr/include/glib-2.0/glib/gmacros.h:337:23: note: expanded from macro 'G_STMT_START'
+##define G_STMT_START  do
+#                      ^
+ModemManager-1.6.10/src/mm-auth-provider.c:51:5: note: Access to field 'authorize' results in a dereference of a null pointer (loaded from field 'g_class')
+#    MM_AUTH_PROVIDER_GET_CLASS (self)->authorize (self,
+#    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ModemManager-1.6.10/src/mm-auth-provider.h:27:42: note: expanded from macro 'MM_AUTH_PROVIDER_GET_CLASS'
+##define MM_AUTH_PROVIDER_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj),  MM_TYPE_AUTH_PROVIDER, MMAuthProviderClass))
+#                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#   49|       g_return_if_fail (MM_IS_AUTH_PROVIDER (self));
+#   50|   
+#   51|->     MM_AUTH_PROVIDER_GET_CLASS (self)->authorize (self,
+#   52|                                                     invocation,
+#   53|                                                     authorization,
+
+Error: CLANG_WARNING:
+ModemManager-1.6.10/src/mm-base-modem.c:353:15: warning: Access to field 'initialize' results in a dereference of a null pointer (loaded from field 'g_class')
+#    g_assert (MM_BASE_MODEM_GET_CLASS (self)->initialize != NULL);
+#              ^
+ModemManager-1.6.10/src/mm-base-modem.h:50:39: note: expanded from macro 'MM_BASE_MODEM_GET_CLASS'
+##define MM_BASE_MODEM_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj),  MM_TYPE_BASE_MODEM, MMBaseModemClass))
+#                                      ^
+ModemManager-1.6.10/src/mm-base-modem.c:905:27: note: Assuming '__inst' is non-null
+#    g_return_val_if_fail (MM_IS_BASE_MODEM (self), FALSE);
+#                          ^~~~~~~~~~~~~~~~~~~~~~~
+ModemManager-1.6.10/src/mm-base-modem.h:48:40: note: expanded from macro 'MM_IS_BASE_MODEM'
+##define MM_IS_BASE_MODEM(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), MM_TYPE_BASE_MODEM))
+#                                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/gobject/gtype.h:495:66: note: expanded from macro 'G_TYPE_CHECK_INSTANCE_TYPE'
+##define G_TYPE_CHECK_INSTANCE_TYPE(instance, g_type)            (_G_TYPE_CIT ((instance), (g_type)))
+#                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/gobject/gtype.h:2239:7: note: expanded from macro '_G_TYPE_CIT'
+#  if (!__inst) \
+#      ^~~~~~~
+/usr/include/glib-2.0/glib/gmessages.h:593:18: note: expanded from macro 'g_return_val_if_fail'
+#     if G_LIKELY(expr) { } else                                         \
+#                 ^~~~
+/usr/include/glib-2.0/glib/gmacros.h:376:60: note: expanded from macro 'G_LIKELY'
+##define G_LIKELY(expr) (__builtin_expect (_G_BOOLEAN_EXPR((expr)), 1))
+#                                                           ^~~~
+/usr/include/glib-2.0/glib/gmacros.h:370:8: note: expanded from macro '_G_BOOLEAN_EXPR'
+#   if (expr)                                    \
+#       ^~~~
+ModemManager-1.6.10/src/mm-base-modem.c:905:27: note: Taking false branch
+ModemManager-1.6.10/src/mm-base-modem.h:48:40: note: expanded from macro 'MM_IS_BASE_MODEM'
+##define MM_IS_BASE_MODEM(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), MM_TYPE_BASE_MODEM))
+#                                       ^
+/usr/include/glib-2.0/gobject/gtype.h:495:66: note: expanded from macro 'G_TYPE_CHECK_INSTANCE_TYPE'
+##define G_TYPE_CHECK_INSTANCE_TYPE(instance, g_type)            (_G_TYPE_CIT ((instance), (g_type)))
+#                                                                 ^
+/usr/include/glib-2.0/gobject/gtype.h:2239:3: note: expanded from macro '_G_TYPE_CIT'
+#  if (!__inst) \
+#  ^
+ModemManager-1.6.10/src/mm-base-modem.c:905:27: note: Assuming pointer value is null
+#    g_return_val_if_fail (MM_IS_BASE_MODEM (self), FALSE);
+#                          ^~~~~~~~~~~~~~~~~~~~~~~
+ModemManager-1.6.10/src/mm-base-modem.h:48:40: note: expanded from macro 'MM_IS_BASE_MODEM'
+##define MM_IS_BASE_MODEM(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), MM_TYPE_BASE_MODEM))
+#                                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/gobject/gtype.h:495:66: note: expanded from macro 'G_TYPE_CHECK_INSTANCE_TYPE'
+##define G_TYPE_CHECK_INSTANCE_TYPE(instance, g_type)            (_G_TYPE_CIT ((instance), (g_type)))
+#                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/gobject/gtype.h:2241:12: note: expanded from macro '_G_TYPE_CIT'
+#  else if (__inst->g_class && __inst->g_class->g_type == __t) \
+#           ^~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib/gmessages.h:593:18: note: expanded from macro 'g_return_val_if_fail'
+#     if G_LIKELY(expr) { } else                                         \
+#                 ^~~~
+/usr/include/glib-2.0/glib/gmacros.h:376:60: note: expanded from macro 'G_LIKELY'
+##define G_LIKELY(expr) (__builtin_expect (_G_BOOLEAN_EXPR((expr)), 1))
+#                                                           ^~~~
+/usr/include/glib-2.0/glib/gmacros.h:370:8: note: expanded from macro '_G_BOOLEAN_EXPR'
+#   if (expr)                                    \
+#       ^~~~
+ModemManager-1.6.10/src/mm-base-modem.c:905:27: note: Left side of '&&' is false
+ModemManager-1.6.10/src/mm-base-modem.h:48:40: note: expanded from macro 'MM_IS_BASE_MODEM'
+##define MM_IS_BASE_MODEM(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), MM_TYPE_BASE_MODEM))
+#                                       ^
+/usr/include/glib-2.0/gobject/gtype.h:495:66: note: expanded from macro 'G_TYPE_CHECK_INSTANCE_TYPE'
+##define G_TYPE_CHECK_INSTANCE_TYPE(instance, g_type)            (_G_TYPE_CIT ((instance), (g_type)))
+#                                                                 ^
+/usr/include/glib-2.0/gobject/gtype.h:2241:28: note: expanded from macro '_G_TYPE_CIT'
+#  else if (__inst->g_class && __inst->g_class->g_type == __t) \
+#                           ^
+ModemManager-1.6.10/src/mm-base-modem.c:905:5: note: Assuming the condition is true
+#    g_return_val_if_fail (MM_IS_BASE_MODEM (self), FALSE);
+#    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib/gmessages.h:593:9: note: expanded from macro 'g_return_val_if_fail'
+#     if G_LIKELY(expr) { } else                                         \
+#        ^~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib/gmacros.h:376:59: note: expanded from macro 'G_LIKELY'
+##define G_LIKELY(expr) (__builtin_expect (_G_BOOLEAN_EXPR((expr)), 1))
+#                                          ~~~~~~~~~~~~~~~~^~~~~~~
+/usr/include/glib-2.0/glib/gmacros.h:370:8: note: expanded from macro '_G_BOOLEAN_EXPR'
+#   if (expr)                                    \
+#       ^~~~
+ModemManager-1.6.10/src/mm-base-modem.c:905:5: note: Taking true branch
+/usr/include/glib-2.0/glib/gmessages.h:593:9: note: expanded from macro 'g_return_val_if_fail'
+#     if G_LIKELY(expr) { } else                                         \
+#        ^
+/usr/include/glib-2.0/glib/gmacros.h:376:43: note: expanded from macro 'G_LIKELY'
+##define G_LIKELY(expr) (__builtin_expect (_G_BOOLEAN_EXPR((expr)), 1))
+#                                          ^
+/usr/include/glib-2.0/glib/gmacros.h:370:4: note: expanded from macro '_G_BOOLEAN_EXPR'
+#   if (expr)                                    \
+#   ^
+ModemManager-1.6.10/src/mm-base-modem.c:905:5: note: Taking true branch
+/usr/include/glib-2.0/glib/gmessages.h:593:6: note: expanded from macro 'g_return_val_if_fail'
+#     if G_LIKELY(expr) { } else                                         \
+#     ^
+ModemManager-1.6.10/src/mm-base-modem.c:905:5: note: Loop condition is false.  Exiting loop
+/usr/include/glib-2.0/glib/gmessages.h:592:40: note: expanded from macro 'g_return_val_if_fail'
+##define g_return_val_if_fail(expr,val)  G_STMT_START{                   \
+#                                        ^
+/usr/include/glib-2.0/glib/gmacros.h:337:23: note: expanded from macro 'G_STMT_START'
+##define G_STMT_START  do
+#                      ^
+ModemManager-1.6.10/src/mm-base-modem.c:908:9: note: Assuming the condition is false
+#    if (self->priv->primary)
+#        ^~~~~~~~~~~~~~~~~~~
+ModemManager-1.6.10/src/mm-base-modem.c:908:5: note: Taking false branch
+#    if (self->priv->primary)
+#    ^
+ModemManager-1.6.10/src/mm-base-modem.c:912:5: note: Loop condition is true.  Entering loop body
+#    while (g_hash_table_iter_next (&iter, NULL, (gpointer *) &candidate)) {
+#    ^
+ModemManager-1.6.10/src/mm-base-modem.c:913:9: note: Control jumps to the 'default' case at line 1003
+#        switch (mm_port_get_port_type (candidate)) {
+#        ^
+ModemManager-1.6.10/src/mm-base-modem.c:1005:13: note:  Execution continues on line 912
+#            break;
+#            ^
+ModemManager-1.6.10/src/mm-base-modem.c:912:5: note: Loop condition is true.  Entering loop body
+#    while (g_hash_table_iter_next (&iter, NULL, (gpointer *) &candidate)) {
+#    ^
+ModemManager-1.6.10/src/mm-base-modem.c:913:9: note: Control jumps to the 'default' case at line 1003
+#        switch (mm_port_get_port_type (candidate)) {
+#        ^
+ModemManager-1.6.10/src/mm-base-modem.c:1005:13: note:  Execution continues on line 912
+#            break;
+#            ^
+ModemManager-1.6.10/src/mm-base-modem.c:912:5: note: Loop condition is true.  Entering loop body
+#    while (g_hash_table_iter_next (&iter, NULL, (gpointer *) &candidate)) {
+#    ^
+ModemManager-1.6.10/src/mm-base-modem.c:913:9: note: Control jumps to 'case MM_PORT_TYPE_NET:'  at line 964
+#        switch (mm_port_get_port_type (candidate)) {
+#        ^
+ModemManager-1.6.10/src/mm-base-modem.c:965:13: note: Taking true branch
+#            if (!data_primary)
+#            ^
+ModemManager-1.6.10/src/mm-base-modem.c:975:13: note:  Execution continues on line 912
+#            break;
+#            ^
+ModemManager-1.6.10/src/mm-base-modem.c:912:5: note: Loop condition is false. Execution continues on line 1009
+#    while (g_hash_table_iter_next (&iter, NULL, (gpointer *) &candidate)) {
+#    ^
+ModemManager-1.6.10/src/mm-base-modem.c:1009:5: note: Taking true branch
+#    if (!primary) {
+#    ^
+ModemManager-1.6.10/src/mm-base-modem.c:1011:9: note: Taking false branch
+#        if (secondary) {
+#        ^
+ModemManager-1.6.10/src/mm-base-modem.c:1016:18: note: Assuming 'data_primary' is non-null
+#        else if (data_primary && MM_IS_PORT_SERIAL_AT (data_primary)) {
+#                 ^~~~~~~~~~~~
+ModemManager-1.6.10/src/mm-base-modem.c:1016:18: note: Left side of '&&' is true
+ModemManager-1.6.10/src/mm-base-modem.c:1016:14: note: Taking true branch
+#        else if (data_primary && MM_IS_PORT_SERIAL_AT (data_primary)) {
+#             ^
+ModemManager-1.6.10/src/mm-base-modem.c:1046:5: note: Taking true branch
+#    if (!secondary)
+#    ^
+ModemManager-1.6.10/src/mm-base-modem.c:1047:21: note: '?' condition is false
+#        secondary = backup_primary ? backup_primary : backup_secondary;
+#                    ^
+ModemManager-1.6.10/src/mm-base-modem.c:1051:21: note: Left side of '&&' is false
+#    if (qmi_primary && !data_primary) {
+#                    ^
+ModemManager-1.6.10/src/mm-base-modem.c:1062:22: note: Left side of '&&' is false
+#    if (mbim_primary && !data_primary) {
+#                     ^
+ModemManager-1.6.10/src/mm-base-modem.c:1072:5: note: Taking true branch
+#    if (!data_primary)
+#    ^
+ModemManager-1.6.10/src/mm-base-modem.c:1079:5: note: Taking false branch
+#    if (MM_IS_PORT_SERIAL_AT (data_primary))
+#    ^
+ModemManager-1.6.10/src/mm-base-modem.c:1082:9: note: Assuming 'primary' is null
+#    if (primary)
+#        ^~~~~~~
+ModemManager-1.6.10/src/mm-base-modem.c:1082:5: note: Taking false branch
+#    if (primary)
+#    ^
+ModemManager-1.6.10/src/mm-base-modem.c:1084:5: note: Taking false branch
+#    if (secondary)
+#    ^
+ModemManager-1.6.10/src/mm-base-modem.c:1087:5: note: Taking false branch
+#    if (MM_IS_PORT_SERIAL_AT (data_primary)) {
+#    ^
+ModemManager-1.6.10/src/mm-base-modem.c:1095:5: note: Loop condition is false. Execution continues on line 1097
+#    for (l = data; l; l = g_list_next (l))
+#    ^
+ModemManager-1.6.10/src/mm-base-modem.c:1102:5: note: Loop condition is false. Execution continues on line 1106
+#    for (l = qmi; l; l = g_list_next (l))
+#    ^
+ModemManager-1.6.10/src/mm-base-modem.c:1107:5: note: Loop condition is false. Execution continues on line 1112
+#    for (l = mbim; l; l = g_list_next (l))
+#    ^
+ModemManager-1.6.10/src/mm-base-modem.c:1112:28: note: '?' condition is false
+#    self->priv->primary = (primary ? g_object_ref (primary) : NULL);
+#                           ^
+ModemManager-1.6.10/src/mm-base-modem.c:1113:30: note: '?' condition is false
+#    self->priv->secondary = (secondary ? g_object_ref (secondary) : NULL);
+#                             ^
+ModemManager-1.6.10/src/mm-base-modem.c:1114:25: note: '?' condition is false
+#    self->priv->qcdm = (qcdm ? g_object_ref (qcdm) : NULL);
+#                        ^
+ModemManager-1.6.10/src/mm-base-modem.c:1115:32: note: '?' condition is false
+#    self->priv->gps_control = (gps_control ? g_object_ref (gps_control) : NULL);
+#                               ^
+ModemManager-1.6.10/src/mm-base-modem.c:1116:24: note: '?' condition is false
+#    self->priv->gps = (gps ? g_object_ref (gps) : NULL);
+#                       ^
+ModemManager-1.6.10/src/mm-base-modem.c:1125:5: note: Taking false branch
+#    if (qmi_primary) {
+#    ^
+ModemManager-1.6.10/src/mm-base-modem.c:1134:5: note: Taking false branch
+#    if (mbim_primary) {
+#    ^
+ModemManager-1.6.10/src/mm-base-modem.c:1142:5: note: Calling 'mm_base_modem_initialize'
+#    mm_base_modem_initialize (self,
+#    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ModemManager-1.6.10/src/mm-base-modem.c:353:15: note: Access to field 'initialize' results in a dereference of a null pointer (loaded from field 'g_class')
+#    g_assert (MM_BASE_MODEM_GET_CLASS (self)->initialize != NULL);
+#              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ModemManager-1.6.10/src/mm-base-modem.h:50:39: note: expanded from macro 'MM_BASE_MODEM_GET_CLASS'
+##define MM_BASE_MODEM_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj),  MM_TYPE_BASE_MODEM, MMBaseModemClass))
+#                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib/gtestutils.h:116:59: note: expanded from macro 'g_assert'
+#                                             if G_LIKELY (expr) ; else \
+#                                                          ^~~~
+/usr/include/glib-2.0/glib/gmacros.h:376:60: note: expanded from macro 'G_LIKELY'
+##define G_LIKELY(expr) (__builtin_expect (_G_BOOLEAN_EXPR((expr)), 1))
+#                                                           ^~~~
+/usr/include/glib-2.0/glib/gmacros.h:370:8: note: expanded from macro '_G_BOOLEAN_EXPR'
+#   if (expr)                                    \
+#       ^~~~
+#  351|                             gpointer user_data)
+#  352|   {
+#  353|->     g_assert (MM_BASE_MODEM_GET_CLASS (self)->initialize != NULL);
+#  354|       g_assert (MM_BASE_MODEM_GET_CLASS (self)->initialize_finish != NULL);
+#  355|   
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.10/src/mm-bearer-mbim.c: scope_hint: In function 'disconnect_context_step'
+ModemManager-1.6.10/src/mm-bearer-mbim.c:1242:13: warning: 'g_simple_async_result_take_error' is deprecated [-Wdeprecated-declarations]
+#             g_simple_async_result_take_error (ctx->result, error);
+#             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/gio/gio.h:117: included_from: Included from here.
+ModemManager-1.6.10/libmm-glib/generated/mm-gdbus-manager.h:10: included_from: Included from here.
+ModemManager-1.6.10/libmm-glib/libmm-glib.h:79: included_from: Included from here.
+ModemManager-1.6.10/src/mm-bearer-mbim.c:27: included_from: Included from here.
+/usr/include/glib-2.0/gio/gsimpleasyncresult.h:116:21: note: declared here
+# void                g_simple_async_result_take_error       (GSimpleAsyncResult      *simple,
+#                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1240|                          &error));
+# 1241|           if (!message) {
+# 1242|->             g_simple_async_result_take_error (ctx->result, error);
+# 1243|               disconnect_context_complete_and_free (ctx);
+# 1244|               return;
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.10/src/mm-broadband-modem.c: scope_hint: In function 'modem_cdma_get_call_manager_state'
+ModemManager-1.6.10/src/mm-broadband-modem.c:6961:9: warning: 'g_simple_async_report_error_in_idle' is deprecated: Use 'g_task_report_error' instead [-Wdeprecated-declarations]
+#         g_simple_async_report_error_in_idle (G_OBJECT (self),
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/gio/gio.h:117: included_from: Included from here.
+ModemManager-1.6.10/libmm-glib/generated/mm-gdbus-manager.h:10: included_from: Included from here.
+ModemManager-1.6.10/libmm-glib/libmm-glib.h:79: included_from: Included from here.
+ModemManager-1.6.10/src/mm-broadband-modem.c:28: included_from: Included from here.
+/usr/include/glib-2.0/gio/gsimpleasyncresult.h:140:6: note: declared here
+# void g_simple_async_report_error_in_idle  (GObject            *object,
+#      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 6959|       qcdm = mm_base_modem_peek_port_qcdm (MM_BASE_MODEM (self));
+# 6960|       if (!qcdm) {
+# 6961|->         g_simple_async_report_error_in_idle (G_OBJECT (self),
+# 6962|                                                callback,
+# 6963|                                                user_data,
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.10/src/mm-broadband-modem.c:9968:9: warning: 'g_simple_async_result_set_error' is deprecated [-Wdeprecated-declarations]
+#         g_simple_async_result_set_error (result,
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/gio/gio.h:117: included_from: Included from here.
+ModemManager-1.6.10/libmm-glib/generated/mm-gdbus-manager.h:10: included_from: Included from here.
+ModemManager-1.6.10/libmm-glib/libmm-glib.h:79: included_from: Included from here.
+ModemManager-1.6.10/src/mm-broadband-modem.c:28: included_from: Included from here.
+/usr/include/glib-2.0/gio/gsimpleasyncresult.h:122:21: note: declared here
+# void                g_simple_async_result_set_error        (GSimpleAsyncResult      *simple,
+#                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 9966|   
+# 9967|       case MM_MODEM_STATE_INITIALIZING:
+# 9968|->         g_simple_async_result_set_error (result,
+# 9969|                                            MM_CORE_ERROR,
+# 9970|                                            MM_CORE_ERROR_IN_PROGRESS,
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.10/src/mm-broadband-modem.c:9989:5: warning: 'g_simple_async_result_complete_in_idle' is deprecated [-Wdeprecated-declarations]
+#     g_simple_async_result_complete_in_idle (result);
+#     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/gio/gio.h:117: included_from: Included from here.
+ModemManager-1.6.10/libmm-glib/generated/mm-gdbus-manager.h:10: included_from: Included from here.
+ModemManager-1.6.10/libmm-glib/libmm-glib.h:79: included_from: Included from here.
+ModemManager-1.6.10/src/mm-broadband-modem.c:28: included_from: Included from here.
+/usr/include/glib-2.0/gio/gsimpleasyncresult.h:106:21: note: declared here
+# void                g_simple_async_result_complete_in_idle (GSimpleAsyncResult      *simple);
+#                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 9987|       }
+# 9988|   
+# 9989|->     g_simple_async_result_complete_in_idle (result);
+# 9990|       g_object_unref (result);
+# 9991|   }
+
+Error: CHECKED_RETURN (CWE-252):
+ModemManager-1.6.10/src/mm-modem-helpers.c:1673: check_return: Calling "g_regex_match_full" without checking return value (as is done elsewhere 53 out of 63 times).
+ModemManager-1.6.10/plugins/altair/mm-modem-helpers-altair-lte.c:163: example_checked: Example 1: "g_regex_match_full(regex, pco_payload, strlen(pco_payload), 0, (enum [unnamed type (instance 137)])0, &match_info, error)" has its value checked in "g_regex_match_full(regex, pco_payload, strlen(pco_payload), 0, (enum [unnamed type (instance 137)])0, &match_info, error)".
+ModemManager-1.6.10/plugins/cinterion/mm-broadband-modem-cinterion.c:705: example_checked: Example 2: "g_regex_match_full(regex, response, strlen(response), 0, (enum [unnamed type (instance 148)])0, &match_info, NULL)" has its value checked in "g_regex_match_full(regex, response, strlen(response), 0, (enum [unnamed type (instance 148)])0, &match_info, NULL)".
+ModemManager-1.6.10/plugins/cinterion/mm-modem-helpers-cinterion.c:187: example_checked: Example 3: "g_regex_match_full(r, response, strlen(response), 0, (enum [unnamed type (instance 139)])0, &match_info, NULL)" has its value checked in "g_regex_match_full(r, response, strlen(response), 0, (enum [unnamed type (instance 139)])0, &match_info, NULL)".
+ModemManager-1.6.10/plugins/huawei/mm-broadband-modem-huawei.c:659: example_checked: Example 4: "g_regex_match_full(r, result, strlen(result), 0, (enum [unnamed type (instance 104)])0, &match_info, &match_error)" has its value checked in "g_regex_match_full(r, result, strlen(result), 0, (enum [unnamed type (instance 104)])0, &match_info, &match_error)".
+ModemManager-1.6.10/plugins/huawei/mm-modem-helpers-huawei.c:236: example_assign: Example 5: Assigning: "matched" = return value from "g_regex_match_full(r, reply, -1L, 0, (enum [unnamed type (instance 141)])0, &match_info, &match_error)".
+ModemManager-1.6.10/plugins/huawei/mm-modem-helpers-huawei.c:237: example_checked: Example 5 (cont.): "matched" has its value checked in "matched".
+# 1671|       g_assert (r != NULL);
+# 1672|   
+# 1673|->     g_regex_match_full (r, response, strlen (response), 0, 0, &match_info, &inner_error);
+# 1674|       if (!inner_error && g_match_info_matches (match_info)) {
+# 1675|           if (!mm_get_uint_from_match_info (match_info, 1, &rxlev)) {
+
+Error: CHECKED_RETURN (CWE-252):
+ModemManager-1.6.10/src/mm-modem-helpers.c:2490: check_return: Calling "g_regex_match_full" without checking return value (as is done elsewhere 53 out of 63 times).
+ModemManager-1.6.10/plugins/altair/mm-modem-helpers-altair-lte.c:163: example_checked: Example 1: "g_regex_match_full(regex, pco_payload, strlen(pco_payload), 0, (enum [unnamed type (instance 137)])0, &match_info, error)" has its value checked in "g_regex_match_full(regex, pco_payload, strlen(pco_payload), 0, (enum [unnamed type (instance 137)])0, &match_info, error)".
+ModemManager-1.6.10/plugins/cinterion/mm-broadband-modem-cinterion.c:705: example_checked: Example 2: "g_regex_match_full(regex, response, strlen(response), 0, (enum [unnamed type (instance 148)])0, &match_info, NULL)" has its value checked in "g_regex_match_full(regex, response, strlen(response), 0, (enum [unnamed type (instance 148)])0, &match_info, NULL)".
+ModemManager-1.6.10/plugins/cinterion/mm-modem-helpers-cinterion.c:187: example_checked: Example 3: "g_regex_match_full(r, response, strlen(response), 0, (enum [unnamed type (instance 139)])0, &match_info, NULL)" has its value checked in "g_regex_match_full(r, response, strlen(response), 0, (enum [unnamed type (instance 139)])0, &match_info, NULL)".
+ModemManager-1.6.10/plugins/huawei/mm-broadband-modem-huawei.c:659: example_checked: Example 4: "g_regex_match_full(r, result, strlen(result), 0, (enum [unnamed type (instance 104)])0, &match_info, &match_error)" has its value checked in "g_regex_match_full(r, result, strlen(result), 0, (enum [unnamed type (instance 104)])0, &match_info, &match_error)".
+ModemManager-1.6.10/plugins/huawei/mm-modem-helpers-huawei.c:236: example_assign: Example 5: Assigning: "matched" = return value from "g_regex_match_full(r, reply, -1L, 0, (enum [unnamed type (instance 141)])0, &match_info, &match_error)".
+ModemManager-1.6.10/plugins/huawei/mm-modem-helpers-huawei.c:237: example_checked: Example 5 (cont.): "matched" has its value checked in "matched".
+# 2488|       g_assert (r != NULL);
+# 2489|   
+# 2490|->     g_regex_match_full (r, str, strlen (str), 0, 0, &match_info, &inner_error);
+# 2491|       while (!inner_error && g_match_info_matches (match_info)) {
+# 2492|           MM3gppPduInfo *info;
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.10/src/mm-port-qmi.c:146:9: warning: 'g_simple_async_report_error_in_idle' is deprecated: Use 'g_task_report_error' instead [-Wdeprecated-declarations]
+#         g_simple_async_report_error_in_idle (G_OBJECT (self),
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/gio/gio.h:117: included_from: Included from here.
+/usr/include/libqmi-glib/qmi-device.h:31: included_from: Included from here.
+/usr/include/libqmi-glib/libqmi-glib.h:32: included_from: Included from here.
+ModemManager-1.6.10/src/mm-port-qmi.c:19: included_from: Included from here.
+/usr/include/glib-2.0/gio/gsimpleasyncresult.h:140:6: note: declared here
+# void g_simple_async_report_error_in_idle  (GObject            *object,
+#      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  144|   
+#  145|       if (!!mm_port_qmi_peek_client (self, service, flag)) {
+#  146|->         g_simple_async_report_error_in_idle (G_OBJECT (self),
+#  147|                                                callback,
+#  148|                                                user_data,
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.10/src/mm-port-qmi.c:486:9: warning: 'qmi_device_close' is deprecated [-Wdeprecated-declarations]
+#         if (!qmi_device_close (ctx->device, &ctx->error)) {
+#         ^~
+/usr/include/libqmi-glib/libqmi-glib.h:32: included_from: Included from here.
+ModemManager-1.6.10/src/mm-port-qmi.c:19: included_from: Included from here.
+/usr/include/libqmi-glib/qmi-device.h:328:10: note: declared here
+# gboolean qmi_device_close (QmiDevice  *self,
+#          ^~~~~~~~~~~~~~~~
+#  484|           /* Need to reopen setting 802.3 using CTL */
+#  485|           mm_dbg ("Closing device to reopen it right away...");
+#  486|->         if (!qmi_device_close (ctx->device, &ctx->error)) {
+#  487|               mm_warn ("Couldn't close QMI device to reopen it");
+#  488|               ctx->step = PORT_OPEN_STEP_LAST;
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.10/src/mm-port-qmi.c:514:17: warning: 'qmi_device_close' is deprecated [-Wdeprecated-declarations]
+#                 qmi_device_close (ctx->device, NULL);
+#                 ^~~~~~~~~~~~~~~~
+/usr/include/libqmi-glib/libqmi-glib.h:32: included_from: Included from here.
+ModemManager-1.6.10/src/mm-port-qmi.c:19: included_from: Included from here.
+/usr/include/libqmi-glib/qmi-device.h:328:10: note: declared here
+# gboolean qmi_device_close (QmiDevice  *self,
+#          ^~~~~~~~~~~~~~~~
+#  512|               /* Propagate error */
+#  513|               if (ctx->device)
+#  514|->                 qmi_device_close (ctx->device, NULL);
+#  515|               g_simple_async_result_take_error (ctx->result, ctx->error);
+#  516|               ctx->error = NULL;
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.10/src/mm-port-qmi.c: scope_hint: In function 'mm_port_qmi_close'
+ModemManager-1.6.10/src/mm-port-qmi.c:589:5: warning: 'qmi_device_close' is deprecated [-Wdeprecated-declarations]
+#     if (!qmi_device_close (self->priv->qmi_device, &error)) {
+#     ^~
+/usr/include/libqmi-glib/libqmi-glib.h:32: included_from: Included from here.
+ModemManager-1.6.10/src/mm-port-qmi.c:19: included_from: Included from here.
+/usr/include/libqmi-glib/qmi-device.h:328:10: note: declared here
+# gboolean qmi_device_close (QmiDevice  *self,
+#          ^~~~~~~~~~~~~~~~
+#  587|   
+#  588|       /* Close and release the device */
+#  589|->     if (!qmi_device_close (self->priv->qmi_device, &error)) {
+#  590|           mm_warn ("Couldn't properly close QMI device: %s",
+#  591|                    error->message);
