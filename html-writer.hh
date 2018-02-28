@@ -43,6 +43,7 @@ class HtmlWriter: public AbstractWriter {
         /// @attention baseLookup needs to stay valid long enough (no deep copy)
         void setDiffBase(
                 DefLookup                   *baseLookup,
+                const std::string           &checkerIgnRegex,
                 const TScanProps            &baseProps,
                 const std::string           &baseTitleFallback);
 

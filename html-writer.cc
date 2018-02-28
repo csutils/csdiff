@@ -290,6 +290,7 @@ struct HtmlWriter::Private {
     const boost::regex              reEvent;
     unsigned                        defCnt;
     DefLookup                      *baseLookup;
+    boost::regex                    checkerIgnRegex;
     std::string                     newDefMsg;
     std::string                     plainTextUrl;
 
@@ -339,11 +340,13 @@ void HtmlWriter::setScanProps(const TScanProps &scanProps) {
 
 void HtmlWriter::setDiffBase(
         DefLookup                   *baseLookup,
+        const std::string           &checkerIgnRegex,
         const TScanProps            &baseProps,
         const std::string           &baseTitleFallback)
 {
     assert(baseLookup);
     d->baseLookup = baseLookup;
+    d->checkerIgnRegex = checkerIgnRegex;
 
     // TODO: merge with already existing metadata stomping on the same keys
     TScanProps::const_iterator it = baseProps.find("cov-compilation-unit-count");
@@ -401,7 +404,16 @@ void HtmlWriter::Private::writeLinkToDetails(const Defect &def) {
 }
 
 void HtmlWriter::Private::writeNewDefWarning(const Defect &def) {
-    if (!this->baseLookup || this->baseLookup->lookup(def))
+    if (!this->baseLookup)
+        // not lookup set
+        return;
+
+    if (boost::regex_match(def.checker, this->checkerIgnRegex))
+        // user requested to ignore this checker for lookup
+        return;
+
+    if (this->baseLookup->lookup(def))
+        // defect found in the lookup
         return;
 
     // a newly introduced defect

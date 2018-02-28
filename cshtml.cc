@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
             + " [options] proj.js, where options are", /* line_length */ 0x80);
 
     typedef std::vector<string> TStringList;
-    string defUrlTemplate, fnBase, plainTextUrl, spPosition;
+    string defUrlTemplate, fnBase, checkerIgnRegex, plainTextUrl, spPosition;
 
     try {
         desc.add_options()
@@ -63,6 +63,8 @@ int main(int argc, char *argv[])
              "e.g. http://localhost/index.php?proj=%d&defect=%d")
             ("diff-base", po::value(&fnBase),
              "use the given list of defects as diff base")
+            ("diff-base-ignore-checkers", po::value(&checkerIgnRegex),
+             "do not diff base for checkers matching the given regex")
             ("plain-text-url", po::value(&plainTextUrl),
              "generate a link to plain-text version")
             ("scan-props-placement",
@@ -145,7 +147,8 @@ int main(int argc, char *argv[])
 
         if (!fnBase.empty()) {
             const std::string diffTitleFallback = titleFromFileName(fnBase);
-            writer.setDiffBase(&baseLookup, baseProps, diffTitleFallback);
+            writer.setDiffBase(&baseLookup, checkerIgnRegex, baseProps,
+                    diffTitleFallback);
         }
 
         // write HTML
