@@ -156,6 +156,7 @@ test_cssort(cssort-5.8                              00)
 test_cssort(cssort-5.8                              01)
 test_cssort(cssort-5.8                              02)
 test_cssort(cssort-5.8                              03)
+test_cssort(cssort-misc                             00)
 
 # csdiff tests
 test_csdiff(diff5.9-kernel                          00)

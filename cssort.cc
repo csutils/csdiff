@@ -22,6 +22,7 @@
 
 #include <boost/foreach.hpp>
 #include <boost/program_options.hpp>
+#include <boost/regex.hpp>
 
 class SortFactory {
     public:
@@ -134,9 +135,26 @@ bool operator<(const DefByChecker &a, const DefByChecker &b) {
     // compare checker names
     RETURN_IF_COMPARED(a, b, checker);
 
-    // compare name of the key events
+    // resolve key events
     const DefEvent &ea = a.events[a.keyEventIdx];
     const DefEvent &eb = b.events[b.keyEventIdx];
+
+    if ("SHELLCHECK_WARNING" == a.checker /* == b.checker */) {
+        // sort ShellCheck warnings by the [SC1234] suffixes
+        const boost::regex reCode("^.* \\[SC([0-9]+)\\]$");
+        std::string aCode, bCode;
+        boost::smatch sm;
+        if (boost::regex_match(ea.msg, sm, reCode))
+            aCode = sm[1];
+        if (boost::regex_match(eb.msg, sm, reCode))
+            bCode = sm[1];
+        if (aCode < bCode)
+            return true;
+        if (bCode < aCode)
+            return false;
+    }
+
+    // compare name of the key events
     RETURN_IF_COMPARED(ea, eb, event);
 
     return cmpFileNames(a, b);
