@@ -32,6 +32,17 @@
         return false;                           \
 } while (0)
 
+// FIXME: move this to a separate header file?
+#define RETURN_BY_REF_IF_COMPARED(a, b, member) do {    \
+    if (a.member < b.member)                            \
+        *pResult = true;                                \
+    else if (b.member < a.member)                       \
+        *pResult = false;                               \
+    else                                                \
+        break;                                          \
+    return true;                                        \
+} while (0)
+
 
 struct DefEvent {
     std::string             fileName;
@@ -51,14 +62,24 @@ struct DefEvent {
     }
 };
 
-inline bool operator<(const DefEvent &a, const DefEvent &b) {
-    RETURN_IF_COMPARED(a, b, fileName);
-    RETURN_IF_COMPARED(a, b, line);
-    RETURN_IF_COMPARED(a, b, column);
-    RETURN_IF_COMPARED(a, b, event);
-    RETURN_IF_COMPARED(a, b, msg);
-    RETURN_IF_COMPARED(a, b, verbosityLevel);
+inline bool cmpEvents(bool *pResult, const DefEvent &a, const DefEvent &b)
+{
+    RETURN_BY_REF_IF_COMPARED(a, b, fileName);
+    RETURN_BY_REF_IF_COMPARED(a, b, line);
+    RETURN_BY_REF_IF_COMPARED(a, b, column);
+    RETURN_BY_REF_IF_COMPARED(a, b, event);
+    RETURN_BY_REF_IF_COMPARED(a, b, msg);
+    RETURN_BY_REF_IF_COMPARED(a, b, verbosityLevel);
+
+    // incomparable events
     return false;
+}
+
+inline bool operator<(const DefEvent &a, const DefEvent &b)
+{
+    bool result;
+    return cmpEvents(&result, a, b)
+        && result;
 }
 
 typedef std::vector<DefEvent> TEvtList;

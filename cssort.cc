@@ -75,38 +75,6 @@ class GenericSort: public AbstractWriter {
         }
 };
 
-// FIXME: move this to a separate header file?
-#define RETURN_BY_REF_IF_COMPARED(a, b, member) do {    \
-    if (a.member < b.member)                            \
-        *pResult = true;                                \
-    else if (b.member < a.member)                       \
-        *pResult = false;                               \
-    else                                                \
-        break;                                          \
-    return true;                                        \
-} while (0)
-
-inline bool cmpEvents(bool *pResult, const DefEvent &ea, const DefEvent &eb)
-{
-    // compare path
-    RETURN_BY_REF_IF_COMPARED(ea, eb, fileName);
-
-    // compare line numbers
-    RETURN_BY_REF_IF_COMPARED(ea, eb, line);
-
-    // compare column numbers
-    RETURN_BY_REF_IF_COMPARED(ea, eb, column);
-
-    // compare events
-    RETURN_BY_REF_IF_COMPARED(ea, eb, event);
-
-    // compare messages
-    RETURN_BY_REF_IF_COMPARED(ea, eb, msg);
-
-    // incomparable events
-    return false;
-}
-
 inline bool cmpFileNames(const Defect &a, const Defect &b) {
     const TEvtList &ea = a.events;
     const TEvtList &eb = b.events;
