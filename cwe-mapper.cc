@@ -128,6 +128,7 @@ bool CweMap::assignCwe(Defect &def) const {
     }
 
     // lookup by event
+    int &cweDst = def.cwe;
     const Private::TNumByEvent &row = rowIt->second;
     const DefEvent &evt = def.events[def.keyEventIdx];
     Private::TNumByEvent::const_iterator cweIt = row.find(evt.event);
@@ -135,11 +136,17 @@ bool CweMap::assignCwe(Defect &def) const {
         if (!d->silent)
             std::cerr << "warning: CWE not found: checker = " << def.checker
                 << ", event = " << evt.event << "\n";
+
+        if (def.checker == "CPPCHECK_WARNING") {
+            // we cannot fallback to a random CWE that Cppcheck has mapping for
+            cweDst = 0;
+            return false;
+        }
+
         cweIt = row.begin();
     }
 
     const int cweSrc = cweIt->second;
-    int &cweDst = def.cwe;
     if (cweSrc == cweDst)
         // already assigned
         return true;
