@@ -74,6 +74,20 @@ xz -c "$SRC_TAR" > "$SRC"               || die "failed to compress sources"
 
 SPEC="./$PKG.spec"
 cat > "$SPEC" << EOF
+# python3 is not available on RHEL <= 7
+%if 0%{?fedora} || 0%{?rhel} > 7
+%bcond_without python3
+%else
+%bcond_with python3
+%endif
+
+# python2 is not available on RHEL > 7 and not needed on Fedora > 29
+%if 0%{?rhel} > 7 || 0%{?fedora} > 29
+%bcond_with python2
+%else
+%bcond_without python2
+%endif
+
 Name:       $PKG
 Version:    $VER
 Release:    1%{?dist}
@@ -94,9 +108,13 @@ This package contains the csdiff tool for comparing code scan defect lists in
 order to find out added or fixed defects, and the csgrep utility for filtering
 defect lists using various filtering predicates. 
 
+%if %{with python2}
 %package -n python2-%{name}
 Summary:        Python interface to csdiff for Python 2
 Conflicts:      %{name} <= 1.2.3
+%if 0%{?fedora} > 28
+BuildRequires:  boost-python2-devel
+%endif
 BuildRequires:  python2-devel
 %{?python_provide:%python_provide python2-%{name}}
 
@@ -108,10 +126,9 @@ code scan defect lists to find out added or fixed defects.
 %{!?__python2: %global __python2 /usr/bin/python2}
 %{!?python2_sitearch: %global python2_sitearch %(%{__python2} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib(1))")}
 %endif
+%endif
 
-# build the python3-csdiff package on Fedora 23+
-%global py3_support ((7 < 0%{?rhel}) || (22 < 0%{?fedora}))
-%if %{py3_support}
+%if %{with python3}
 %package -n python3-%{name}
 Summary:        Python interface to csdiff for Python 3
 BuildRequires:  boost-python3-devel
@@ -130,11 +147,17 @@ code scan defect lists to find out added or fixed defects.
 make version.cc
 mkdir csdiff_build
 cd csdiff_build
-%cmake .. -DPYTHON_EXECUTABLE=%{__python2}
+%cmake .. -DBUILD_PYCSDIFF=OFF
 make %{?_smp_mflags} VERBOSE=yes
 
-# build the python3-csdiff package on Fedora 23+
-%if %{py3_support}
+%if %{with python2}
+mkdir ../csdiff_build_py2
+cd ../csdiff_build_py2
+%cmake .. -DPYTHON_EXECUTABLE=%{__python2}
+make %{?_smp_mflags} VERBOSE=yes
+%endif
+
+%if %{with python3}
 mkdir ../csdiff_build_py3
 cd ../csdiff_build_py3
 %cmake .. -DPYTHON_EXECUTABLE=%{__python3} -DBOOST_PYTHON_LIB_NAME=boost_python3
@@ -142,10 +165,16 @@ make %{?_smp_mflags} VERBOSE=yes pycsdiff
 %endif
 
 %install
-%if %{py3_support}
+%if %{with python2}
+mkdir -vp %{buildroot}%{python2_sitearch}
+install -vm0644 csdiff_build_py2/pycsdiff.so %{buildroot}%{python2_sitearch}
+%endif
+
+%if %{with python3}
 mkdir -vp %{buildroot}%{python3_sitearch}
 install -vm0644 csdiff_build_py3/pycsdiff.so %{buildroot}%{python3_sitearch}
 %endif
+
 cd csdiff_build
 make install DESTDIR="\$RPM_BUILD_ROOT"
 
@@ -166,11 +195,13 @@ ctest %{?_smp_mflags} --output-on-failure
 %{_mandir}/man1/cssort.1*
 %doc COPYING README
 
+%if %{with python2}
 %files -n python2-%{name}
 %{python2_sitearch}/pycsdiff.so
 %doc COPYING
+%endif
 
-%if %{py3_support}
+%if %{with python3}
 %files -n python3-%{name}
 %{python3_sitearch}/pycsdiff.so
 %doc COPYING
