@@ -1,0 +1,1102 @@
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-adapter.c: scope_hint: In function open_callback
+gom-0.3.3/gom/gom-adapter.c:195:7: warning: g_simple_async_result_set_error is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:122) [-Wdeprecated-declarations]
+#       g_simple_async_result_set_error(simple, GOM_ERROR,
+#       ^
+#  193|      ret = sqlite3_open_v2(uri, &adapter->priv->db, flags, NULL);
+#  194|      if (ret != SQLITE_OK) {
+#  195|->       g_simple_async_result_set_error(simple, GOM_ERROR,
+#  196|                                         GOM_ERROR_ADAPTER_OPEN,
+#  197|                                         "Failed to open database at %s", uri);
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-adapter.c:199:4: warning: g_simple_async_result_set_op_res_gboolean is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#    g_simple_async_result_set_op_res_gboolean(simple, ret == SQLITE_OK);
+#    ^
+#  197|                                         "Failed to open database at %s", uri);
+#  198|      }
+#  199|->    g_simple_async_result_set_op_res_gboolean(simple, ret == SQLITE_OK);
+#  200|      if (!queue)
+#  201|         g_simple_async_result_complete_in_idle(simple);
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-adapter.c:201:7: warning: g_simple_async_result_complete_in_idle is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:106) [-Wdeprecated-declarations]
+#       g_simple_async_result_complete_in_idle(simple);
+#       ^
+#  199|      g_simple_async_result_set_op_res_gboolean(simple, ret == SQLITE_OK);
+#  200|      if (!queue)
+#  201|->       g_simple_async_result_complete_in_idle(simple);
+#  202|      else
+#  203|         g_async_queue_push(queue, GINT_TO_POINTER(TRUE));
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-adapter.c: scope_hint: In function gom_adapter_open_sync
+gom-0.3.3/gom/gom-adapter.c:241:4: warning: g_simple_async_result_new is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:51): Use 'g_task_new' instead [-Wdeprecated-declarations]
+#    simple = g_simple_async_result_new(G_OBJECT(adapter), NULL, NULL,
+#    ^
+#  239|      queue = g_async_queue_new();
+#  240|   
+#  241|->    simple = g_simple_async_result_new(G_OBJECT(adapter), NULL, NULL,
+#  242|                                         gom_adapter_open_sync);
+#  243|      g_object_set_data_full(G_OBJECT(simple), "uri",
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-adapter.c:253:4: warning: g_simple_async_result_get_op_res_gboolean is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:91) [-Wdeprecated-declarations]
+#    if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#    ^
+#  251|      g_async_queue_unref(queue);
+#  252|   
+#  253|->    if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#  254|         g_simple_async_result_propagate_error(simple, error);
+#  255|      }
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-adapter.c:254:7: warning: g_simple_async_result_propagate_error is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:119) [-Wdeprecated-declarations]
+#       g_simple_async_result_propagate_error(simple, error);
+#       ^
+#  252|   
+#  253|      if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#  254|->       g_simple_async_result_propagate_error(simple, error);
+#  255|      }
+#  256|      g_object_unref(simple);
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-adapter.c: scope_hint: In function gom_adapter_open_async
+gom-0.3.3/gom/gom-adapter.c:305:4: warning: g_simple_async_result_new is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:51): Use 'g_task_new' instead [-Wdeprecated-declarations]
+#    simple = g_simple_async_result_new(G_OBJECT(adapter), callback, user_data,
+#    ^
+#  303|   #endif
+#  304|   
+#  305|->    simple = g_simple_async_result_new(G_OBJECT(adapter), callback, user_data,
+#  306|                                         gom_adapter_open_async);
+#  307|      g_object_set_data_full(G_OBJECT(simple), "uri",
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-adapter.c: scope_hint: In function gom_adapter_open_finish
+gom-0.3.3/gom/gom-adapter.c:326:4: warning: g_simple_async_result_get_op_res_gboolean is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:91) [-Wdeprecated-declarations]
+#    if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#    ^
+#  324|      g_return_val_if_fail(G_IS_SIMPLE_ASYNC_RESULT(simple), FALSE);
+#  325|   
+#  326|->    if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#  327|         g_simple_async_result_propagate_error(simple, error);
+#  328|      }
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-adapter.c:327:7: warning: g_simple_async_result_propagate_error is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:119) [-Wdeprecated-declarations]
+#       g_simple_async_result_propagate_error(simple, error);
+#       ^
+#  325|   
+#  326|      if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#  327|->       g_simple_async_result_propagate_error(simple, error);
+#  328|      }
+#  329|      g_object_unref(simple);
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-adapter.c: scope_hint: In function close_callback
+gom-0.3.3/gom/gom-adapter.c:346:4: warning: g_simple_async_result_set_op_res_gboolean is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#    g_simple_async_result_set_op_res_gboolean(simple, TRUE);
+#    ^
+#  344|      adapter->priv->db = NULL;
+#  345|   
+#  346|->    g_simple_async_result_set_op_res_gboolean(simple, TRUE);
+#  347|      if (!queue)
+#  348|         g_simple_async_result_complete_in_idle(simple);
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-adapter.c:348:7: warning: g_simple_async_result_complete_in_idle is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:106) [-Wdeprecated-declarations]
+#       g_simple_async_result_complete_in_idle(simple);
+#       ^
+#  346|      g_simple_async_result_set_op_res_gboolean(simple, TRUE);
+#  347|      if (!queue)
+#  348|->       g_simple_async_result_complete_in_idle(simple);
+#  349|      else
+#  350|         g_async_queue_push(queue, GINT_TO_POINTER(TRUE));
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-adapter.c: scope_hint: In function gom_adapter_close_sync
+gom-0.3.3/gom/gom-adapter.c:373:4: warning: g_simple_async_result_new is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:51): Use 'g_task_new' instead [-Wdeprecated-declarations]
+#    simple = g_simple_async_result_new(G_OBJECT(adapter), NULL, NULL,
+#    ^
+#  371|      queue = g_async_queue_new();
+#  372|   
+#  373|->    simple = g_simple_async_result_new(G_OBJECT(adapter), NULL, NULL,
+#  374|                                         gom_adapter_close_sync);
+#  375|      g_object_set_data(G_OBJECT(simple), "queue", queue);
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-adapter.c:383:4: warning: g_simple_async_result_get_op_res_gboolean is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:91) [-Wdeprecated-declarations]
+#    if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#    ^
+#  381|      g_async_queue_unref(queue);
+#  382|   
+#  383|->    if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#  384|         g_simple_async_result_propagate_error(simple, error);
+#  385|      }
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-adapter.c:384:7: warning: g_simple_async_result_propagate_error is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:119) [-Wdeprecated-declarations]
+#       g_simple_async_result_propagate_error(simple, error);
+#       ^
+#  382|   
+#  383|      if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#  384|->       g_simple_async_result_propagate_error(simple, error);
+#  385|      }
+#  386|      g_object_unref(simple);
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-adapter.c: scope_hint: In function gom_adapter_close_async
+gom-0.3.3/gom/gom-adapter.c:405:4: warning: g_simple_async_result_new is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:51): Use 'g_task_new' instead [-Wdeprecated-declarations]
+#    simple = g_simple_async_result_new(G_OBJECT(adapter), callback, user_data,
+#    ^
+#  403|      priv = adapter->priv;
+#  404|   
+#  405|->    simple = g_simple_async_result_new(G_OBJECT(adapter), callback, user_data,
+#  406|                                         gom_adapter_close_async);
+#  407|   
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-adapter.c:409:7: warning: g_simple_async_result_set_op_res_gboolean is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#       g_simple_async_result_set_op_res_gboolean(simple, TRUE);
+#       ^
+#  407|   
+#  408|      if (!priv->db) {
+#  409|->       g_simple_async_result_set_op_res_gboolean(simple, TRUE);
+#  410|         g_simple_async_result_complete_in_idle(simple);
+#  411|         g_object_unref(simple);
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-adapter.c:410:7: warning: g_simple_async_result_complete_in_idle is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:106) [-Wdeprecated-declarations]
+#       g_simple_async_result_complete_in_idle(simple);
+#       ^
+#  408|      if (!priv->db) {
+#  409|         g_simple_async_result_set_op_res_gboolean(simple, TRUE);
+#  410|->       g_simple_async_result_complete_in_idle(simple);
+#  411|         g_object_unref(simple);
+#  412|         return;
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-adapter.c: scope_hint: In function gom_adapter_close_finish
+gom-0.3.3/gom/gom-adapter.c:431:4: warning: g_simple_async_result_get_op_res_gboolean is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:91) [-Wdeprecated-declarations]
+#    if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#    ^
+#  429|      g_return_val_if_fail(G_IS_SIMPLE_ASYNC_RESULT(simple), FALSE);
+#  430|   
+#  431|->    if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#  432|         g_simple_async_result_propagate_error(simple, error);
+#  433|      }
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-adapter.c:432:7: warning: g_simple_async_result_propagate_error is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:119) [-Wdeprecated-declarations]
+#       g_simple_async_result_propagate_error(simple, error);
+#       ^
+#  430|   
+#  431|      if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#  432|->       g_simple_async_result_propagate_error(simple, error);
+#  433|      }
+#  434|      g_object_unref(simple);
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-repository.c: scope_hint: In function gom_repository_migrate_cb
+gom-0.3.3/gom/gom-repository.c:172:7: warning: g_simple_async_result_set_op_res_gboolean is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#       g_simple_async_result_set_op_res_gboolean(simple, TRUE);
+#       ^
+#  170|   
+#  171|      if (version == current) {
+#  172|->       g_simple_async_result_set_op_res_gboolean(simple, TRUE);
+#  173|         goto out;
+#  174|      }
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-repository.c:203:4: warning: g_simple_async_result_set_op_res_gboolean is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#    g_simple_async_result_set_op_res_gboolean(simple, TRUE);
+#    ^
+#  201|      EXECUTE_OR_GOTO(adapter, "COMMIT;", &error, rollback);
+#  202|   
+#  203|->    g_simple_async_result_set_op_res_gboolean(simple, TRUE);
+#  204|      goto out;
+#  205|   
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-repository.c:211:4: warning: g_simple_async_result_take_error is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:116) [-Wdeprecated-declarations]
+#    g_simple_async_result_take_error(simple, error);
+#    ^
+#  209|   error:
+#  210|      g_assert(error);
+#  211|->    g_simple_async_result_take_error(simple, error);
+#  212|   
+#  213|   out:
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-repository.c:216:7: warning: g_simple_async_result_complete_in_idle is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:106) [-Wdeprecated-declarations]
+#       g_simple_async_result_complete_in_idle(simple);
+#       ^
+#  214|      g_object_unref(repository);
+#  215|      if (!queue)
+#  216|->       g_simple_async_result_complete_in_idle(simple);
+#  217|      else
+#  218|         g_async_queue_push(queue, GINT_TO_POINTER(TRUE));
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-repository.c: scope_hint: In function gom_repository_migrate_sync
+gom-0.3.3/gom/gom-repository.c:254:4: warning: g_simple_async_result_new is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:51): Use 'g_task_new' instead [-Wdeprecated-declarations]
+#    simple = g_simple_async_result_new(G_OBJECT(repository), NULL, NULL,
+#    ^
+#  252|      queue = g_async_queue_new();
+#  253|   
+#  254|->    simple = g_simple_async_result_new(G_OBJECT(repository), NULL, NULL,
+#  255|                                         gom_repository_migrate_sync);
+#  256|      g_object_set_data(G_OBJECT(simple), "version", GINT_TO_POINTER(version));
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-repository.c:267:4: warning: g_simple_async_result_get_op_res_gboolean is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:91) [-Wdeprecated-declarations]
+#    if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#    ^
+#  265|      g_async_queue_unref(queue);
+#  266|   
+#  267|->    if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#  268|         g_simple_async_result_propagate_error(simple, error);
+#  269|      }
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-repository.c:268:7: warning: g_simple_async_result_propagate_error is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:119) [-Wdeprecated-declarations]
+#       g_simple_async_result_propagate_error(simple, error);
+#       ^
+#  266|   
+#  267|      if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#  268|->       g_simple_async_result_propagate_error(simple, error);
+#  269|      }
+#  270|   
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-repository.c: scope_hint: In function gom_repository_migrate_async
+gom-0.3.3/gom/gom-repository.c:309:4: warning: g_simple_async_result_new is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:51): Use 'g_task_new' instead [-Wdeprecated-declarations]
+#    simple = g_simple_async_result_new(G_OBJECT(repository), callback, user_data,
+#    ^
+#  307|      priv = repository->priv;
+#  308|   
+#  309|->    simple = g_simple_async_result_new(G_OBJECT(repository), callback, user_data,
+#  310|                                         gom_repository_migrate_async);
+#  311|      g_object_set_data(G_OBJECT(simple), "version", GINT_TO_POINTER(version));
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-repository.c: scope_hint: In function gom_repository_migrate_finish
+gom-0.3.3/gom/gom-repository.c:331:4: warning: g_simple_async_result_get_op_res_gboolean is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:91) [-Wdeprecated-declarations]
+#    if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#    ^
+#  329|      g_return_val_if_fail(G_IS_SIMPLE_ASYNC_RESULT(result), FALSE);
+#  330|   
+#  331|->    if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#  332|         g_simple_async_result_propagate_error(simple, error);
+#  333|      }
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-repository.c:332:7: warning: g_simple_async_result_propagate_error is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:119) [-Wdeprecated-declarations]
+#       g_simple_async_result_propagate_error(simple, error);
+#       ^
+#  330|   
+#  331|      if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#  332|->       g_simple_async_result_propagate_error(simple, error);
+#  333|      }
+#  334|      g_object_unref(simple);
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-repository.c: scope_hint: In function gom_repository_find_cb
+gom-0.3.3/gom/gom-repository.c:503:7: warning: g_simple_async_result_take_error is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:116) [-Wdeprecated-declarations]
+#       g_simple_async_result_take_error(simple, error);
+#       ^
+#  501|   
+#  502|      if (!gom_command_execute(command, &cursor, &error)) {
+#  503|->       g_simple_async_result_take_error(simple, error);
+#  504|         goto out;
+#  505|      }
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-repository.c:521:4: warning: g_simple_async_result_set_op_res_gpointer is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:75) [-Wdeprecated-declarations]
+#    g_simple_async_result_set_op_res_gpointer(simple, ret, g_object_unref);
+#    ^
+#  519|                         "resource-type", resource_type,
+#  520|                         NULL);
+#  521|->    g_simple_async_result_set_op_res_gpointer(simple, ret, g_object_unref);
+#  522|   
+#  523|   out:
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-repository.c:525:7: warning: g_simple_async_result_complete_in_idle is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:106) [-Wdeprecated-declarations]
+#       g_simple_async_result_complete_in_idle(simple);
+#       ^
+#  523|   out:
+#  524|      if (!queue)
+#  525|->       g_simple_async_result_complete_in_idle(simple);
+#  526|      else
+#  527|         g_async_queue_push(queue, GINT_TO_POINTER(TRUE));
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-repository.c: scope_hint: In function gom_repository_find_sorted_sync
+gom-0.3.3/gom/gom-repository.c:594:4: warning: g_simple_async_result_new is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:51): Use 'g_task_new' instead [-Wdeprecated-declarations]
+#    simple = g_simple_async_result_new(G_OBJECT(repository), NULL, NULL,
+#    ^
+#  592|      queue = g_async_queue_new();
+#  593|   
+#  594|->    simple = g_simple_async_result_new(G_OBJECT(repository), NULL, NULL,
+#  595|                                         gom_repository_find_sync);
+#  596|      g_object_set_data(G_OBJECT(simple), "resource-type",
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-repository.c:610:4: warning: g_simple_async_result_get_op_res_gpointer is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:79) [-Wdeprecated-declarations]
+#    if (!(ret = g_simple_async_result_get_op_res_gpointer(simple))) {
+#    ^
+#  608|      g_async_queue_unref(queue);
+#  609|   
+#  610|->    if (!(ret = g_simple_async_result_get_op_res_gpointer(simple))) {
+#  611|         g_simple_async_result_propagate_error(simple, error);
+#  612|      } else {
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-repository.c:611:7: warning: g_simple_async_result_propagate_error is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:119) [-Wdeprecated-declarations]
+#       g_simple_async_result_propagate_error(simple, error);
+#       ^
+#  609|   
+#  610|      if (!(ret = g_simple_async_result_get_op_res_gpointer(simple))) {
+#  611|->       g_simple_async_result_propagate_error(simple, error);
+#  612|      } else {
+#  613|         ret = g_object_ref(ret);
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-repository.c: scope_hint: In function gom_repository_find_sorted_async
+gom-0.3.3/gom/gom-repository.c:652:4: warning: g_simple_async_result_new is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:51): Use 'g_task_new' instead [-Wdeprecated-declarations]
+#    simple = g_simple_async_result_new(G_OBJECT(repository), callback, user_data,
+#    ^
+#  650|      priv = repository->priv;
+#  651|   
+#  652|->    simple = g_simple_async_result_new(G_OBJECT(repository), callback, user_data,
+#  653|                                         gom_repository_find_sorted_async);
+#  654|      g_object_set_data(G_OBJECT(simple), "resource-type",
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-repository.c: scope_hint: In function gom_repository_find_finish
+gom-0.3.3/gom/gom-repository.c:687:4: warning: g_simple_async_result_get_op_res_gpointer is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:79) [-Wdeprecated-declarations]
+#    if (!(ret = g_simple_async_result_get_op_res_gpointer(simple))) {
+#    ^
+#  685|      g_return_val_if_fail(G_IS_SIMPLE_ASYNC_RESULT(simple), NULL);
+#  686|   
+#  687|->    if (!(ret = g_simple_async_result_get_op_res_gpointer(simple))) {
+#  688|         g_simple_async_result_propagate_error(simple, error);
+#  689|      }
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-repository.c:688:7: warning: g_simple_async_result_propagate_error is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:119) [-Wdeprecated-declarations]
+#       g_simple_async_result_propagate_error(simple, error);
+#       ^
+#  686|   
+#  687|      if (!(ret = g_simple_async_result_get_op_res_gpointer(simple))) {
+#  688|->       g_simple_async_result_propagate_error(simple, error);
+#  689|      }
+#  690|      g_object_unref(simple);
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-repository.c: scope_hint: In function gom_repository_find_one_fetch_cb
+gom-0.3.3/gom/gom-repository.c:709:7: warning: g_simple_async_result_take_error is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:116) [-Wdeprecated-declarations]
+#       g_simple_async_result_take_error(simple, error);
+#       ^
+#  707|   
+#  708|      if (!gom_resource_group_fetch_finish(group, result, &error)) {
+#  709|->       g_simple_async_result_take_error(simple, error);
+#  710|         g_simple_async_result_complete_in_idle(simple);
+#  711|         g_object_unref(simple);
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-repository.c:710:7: warning: g_simple_async_result_complete_in_idle is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:106) [-Wdeprecated-declarations]
+#       g_simple_async_result_complete_in_idle(simple);
+#       ^
+#  708|      if (!gom_resource_group_fetch_finish(group, result, &error)) {
+#  709|         g_simple_async_result_take_error(simple, error);
+#  710|->       g_simple_async_result_complete_in_idle(simple);
+#  711|         g_object_unref(simple);
+#  712|         return;
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-repository.c:716:4: warning: g_simple_async_result_set_op_res_gpointer is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:75) [-Wdeprecated-declarations]
+#    g_simple_async_result_set_op_res_gpointer(simple,
+#    ^
+#  714|   
+#  715|      resource = gom_resource_group_get_index(group, 0);
+#  716|->    g_simple_async_result_set_op_res_gpointer(simple,
+#  717|                                                g_object_ref(resource),
+#  718|                                                g_object_unref);
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-repository.c:719:4: warning: g_simple_async_result_complete_in_idle is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:106) [-Wdeprecated-declarations]
+#    g_simple_async_result_complete_in_idle(simple);
+#    ^
+#  717|                                                g_object_ref(resource),
+#  718|                                                g_object_unref);
+#  719|->    g_simple_async_result_complete_in_idle(simple);
+#  720|      g_object_unref(simple);
+#  721|   }
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-repository.c: scope_hint: In function gom_repository_find_one_cb
+gom-0.3.3/gom/gom-repository.c:737:7: warning: g_simple_async_result_take_error is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:116) [-Wdeprecated-declarations]
+#       g_simple_async_result_take_error(simple, error);
+#       ^
+#  735|   
+#  736|      if (!(group = gom_repository_find_finish(repository, result, &error))) {
+#  737|->       g_simple_async_result_take_error(simple, error);
+#  738|         g_simple_async_result_complete_in_idle(simple);
+#  739|         g_object_unref(simple);
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-repository.c:738:7: warning: g_simple_async_result_complete_in_idle is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:106) [-Wdeprecated-declarations]
+#       g_simple_async_result_complete_in_idle(simple);
+#       ^
+#  736|      if (!(group = gom_repository_find_finish(repository, result, &error))) {
+#  737|         g_simple_async_result_take_error(simple, error);
+#  738|->       g_simple_async_result_complete_in_idle(simple);
+#  739|         g_object_unref(simple);
+#  740|         return;
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-repository.c:744:7: warning: g_simple_async_result_set_error is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:122) [-Wdeprecated-declarations]
+#       g_simple_async_result_set_error(simple, GOM_ERROR,
+#       ^
+#  742|   
+#  743|      if (!gom_resource_group_get_count(group)) {
+#  744|->       g_simple_async_result_set_error(simple, GOM_ERROR,
+#  745|                                         GOM_ERROR_REPOSITORY_EMPTY_RESULT,
+#  746|                                         "No resources were found.");
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-repository.c:747:7: warning: g_simple_async_result_complete_in_idle is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:106) [-Wdeprecated-declarations]
+#       g_simple_async_result_complete_in_idle(simple);
+#       ^
+#  745|                                         GOM_ERROR_REPOSITORY_EMPTY_RESULT,
+#  746|                                         "No resources were found.");
+#  747|->       g_simple_async_result_complete_in_idle(simple);
+#  748|         g_object_unref(simple);
+#  749|         g_object_unref(group);
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-repository.c: scope_hint: In function gom_repository_find_one_async
+gom-0.3.3/gom/gom-repository.c:822:4: warning: g_simple_async_result_new is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:51): Use 'g_task_new' instead [-Wdeprecated-declarations]
+#    simple = g_simple_async_result_new(G_OBJECT(repository), callback, user_data,
+#    ^
+#  820|      g_return_if_fail(callback != NULL);
+#  821|   
+#  822|->    simple = g_simple_async_result_new(G_OBJECT(repository), callback, user_data,
+#  823|                                         gom_repository_find_one_async);
+#  824|      gom_repository_find_async(repository, resource_type, filter,
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-repository.c: scope_hint: In function gom_repository_find_one_finish
+gom-0.3.3/gom/gom-repository.c:851:4: warning: g_simple_async_result_get_op_res_gpointer is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:79) [-Wdeprecated-declarations]
+#    if (!(ret = g_simple_async_result_get_op_res_gpointer(simple))) {
+#    ^
+#  849|      g_return_val_if_fail(G_IS_SIMPLE_ASYNC_RESULT(simple), NULL);
+#  850|   
+#  851|->    if (!(ret = g_simple_async_result_get_op_res_gpointer(simple))) {
+#  852|         g_simple_async_result_propagate_error(simple, error);
+#  853|      }
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-repository.c:852:7: warning: g_simple_async_result_propagate_error is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:119) [-Wdeprecated-declarations]
+#       g_simple_async_result_propagate_error(simple, error);
+#       ^
+#  850|   
+#  851|      if (!(ret = g_simple_async_result_get_op_res_gpointer(simple))) {
+#  852|->       g_simple_async_result_propagate_error(simple, error);
+#  853|      }
+#  854|   
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource-group.c: scope_hint: In function gom_resource_group_write_cb
+gom-0.3.3/gom/gom-resource-group.c:153:4: warning: g_simple_async_result_set_op_res_gboolean is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#    g_simple_async_result_set_op_res_gboolean(simple, TRUE);
+#    ^
+#  151|      EXECUTE_OR_GOTO(adapter, "COMMIT;", &error, rollback);
+#  152|   
+#  153|->    g_simple_async_result_set_op_res_gboolean(simple, TRUE);
+#  154|      goto out;
+#  155|   
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource-group.c:161:4: warning: g_simple_async_result_take_error is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:116) [-Wdeprecated-declarations]
+#    g_simple_async_result_take_error(simple, error);
+#    ^
+#  159|   error:
+#  160|      g_assert(error);
+#  161|->    g_simple_async_result_take_error(simple, error);
+#  162|   
+#  163|   out:
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource-group.c:166:7: warning: g_simple_async_result_complete_in_idle is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:106) [-Wdeprecated-declarations]
+#       g_simple_async_result_complete_in_idle(simple);
+#       ^
+#  164|      g_object_unref(group);
+#  165|      if (!queue)
+#  166|->       g_simple_async_result_complete_in_idle(simple);
+#  167|      else
+#  168|         g_async_queue_push(queue, GINT_TO_POINTER(TRUE));
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource-group.c: scope_hint: In function gom_resource_group_write_sync
+gom-0.3.3/gom/gom-resource-group.c:187:4: warning: g_simple_async_result_new is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:51): Use 'g_task_new' instead [-Wdeprecated-declarations]
+#    simple = g_simple_async_result_new(G_OBJECT(group), NULL, NULL,
+#    ^
+#  185|      queue = g_async_queue_new();
+#  186|   
+#  187|->    simple = g_simple_async_result_new(G_OBJECT(group), NULL, NULL,
+#  188|                                         gom_resource_group_write_sync);
+#  189|      if (!group->priv->to_write)
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource-group.c:202:4: warning: g_simple_async_result_get_op_res_gboolean is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:91) [-Wdeprecated-declarations]
+#    if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#    ^
+#  200|      g_async_queue_unref(queue);
+#  201|   
+#  202|->    if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#  203|         g_simple_async_result_propagate_error(simple, error);
+#  204|      } else {
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource-group.c:203:7: warning: g_simple_async_result_propagate_error is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:119) [-Wdeprecated-declarations]
+#       g_simple_async_result_propagate_error(simple, error);
+#       ^
+#  201|   
+#  202|      if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#  203|->       g_simple_async_result_propagate_error(simple, error);
+#  204|      } else {
+#  205|         for (i=0; i < items->len; i++) {
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource-group.c: scope_hint: In function gom_resource_group_write_async
+gom-0.3.3/gom/gom-resource-group.c:232:4: warning: g_simple_async_result_new is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:51): Use 'g_task_new' instead [-Wdeprecated-declarations]
+#    simple = g_simple_async_result_new(G_OBJECT(group), callback, user_data,
+#    ^
+#  230|      priv = group->priv;
+#  231|   
+#  232|->    simple = g_simple_async_result_new(G_OBJECT(group), callback, user_data,
+#  233|                                         gom_resource_group_write_async);
+#  234|      if (!group->priv->to_write) {
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource-group.c:235:7: warning: g_simple_async_result_set_op_res_gboolean is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#       g_simple_async_result_set_op_res_gboolean(simple, TRUE);
+#       ^
+#  233|                                         gom_resource_group_write_async);
+#  234|      if (!group->priv->to_write) {
+#  235|->       g_simple_async_result_set_op_res_gboolean(simple, TRUE);
+#  236|         g_simple_async_result_complete_in_idle(simple);
+#  237|         return;
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource-group.c:236:7: warning: g_simple_async_result_complete_in_idle is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:106) [-Wdeprecated-declarations]
+#       g_simple_async_result_complete_in_idle(simple);
+#       ^
+#  234|      if (!group->priv->to_write) {
+#  235|         g_simple_async_result_set_op_res_gboolean(simple, TRUE);
+#  236|->       g_simple_async_result_complete_in_idle(simple);
+#  237|         return;
+#  238|      }
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource-group.c: scope_hint: In function gom_resource_group_write_finish
+gom-0.3.3/gom/gom-resource-group.c:261:4: warning: g_simple_async_result_get_op_res_gboolean is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:91) [-Wdeprecated-declarations]
+#    if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#    ^
+#  259|      g_return_val_if_fail(group->priv->is_writable, FALSE);
+#  260|   
+#  261|->    if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#  262|         g_simple_async_result_propagate_error(simple, error);
+#  263|      } else {
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource-group.c:262:7: warning: g_simple_async_result_propagate_error is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:119) [-Wdeprecated-declarations]
+#       g_simple_async_result_propagate_error(simple, error);
+#       ^
+#  260|   
+#  261|      if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#  262|->       g_simple_async_result_propagate_error(simple, error);
+#  263|      } else {
+#  264|         items = g_object_get_data(G_OBJECT(simple), "items");
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource-group.c: scope_hint: In function gom_resource_group_delete_cb
+gom-0.3.3/gom/gom-resource-group.c:318:4: warning: g_simple_async_result_set_op_res_gboolean is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#    g_simple_async_result_set_op_res_gboolean(simple, TRUE);
+#    ^
+#  316|      EXECUTE_OR_GOTO(adapter, "COMMIT;", &error, rollback);
+#  317|   
+#  318|->    g_simple_async_result_set_op_res_gboolean(simple, TRUE);
+#  319|      goto out;
+#  320|   
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource-group.c:326:4: warning: g_simple_async_result_take_error is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:116) [-Wdeprecated-declarations]
+#    g_simple_async_result_take_error(simple, error);
+#    ^
+#  324|   error:
+#  325|      g_assert(error);
+#  326|->    g_simple_async_result_take_error(simple, error);
+#  327|   
+#  328|   out:
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource-group.c:331:7: warning: g_simple_async_result_complete_in_idle is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:106) [-Wdeprecated-declarations]
+#       g_simple_async_result_complete_in_idle(simple);
+#       ^
+#  329|      g_object_unref(group);
+#  330|      if (!queue)
+#  331|->       g_simple_async_result_complete_in_idle(simple);
+#  332|      else
+#  333|         g_async_queue_push(queue, GINT_TO_POINTER(TRUE));
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource-group.c: scope_hint: In function gom_resource_group_delete_sync
+gom-0.3.3/gom/gom-resource-group.c:350:4: warning: g_simple_async_result_new is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:51): Use 'g_task_new' instead [-Wdeprecated-declarations]
+#    simple = g_simple_async_result_new(G_OBJECT(group), NULL, NULL,
+#    ^
+#  348|      queue = g_async_queue_new();
+#  349|   
+#  350|->    simple = g_simple_async_result_new(G_OBJECT(group), NULL, NULL,
+#  351|                                         gom_resource_group_delete_sync);
+#  352|      if (!group->priv->to_write)
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource-group.c:364:4: warning: g_simple_async_result_get_op_res_gboolean is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:91) [-Wdeprecated-declarations]
+#    if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#    ^
+#  362|      g_async_queue_unref(queue);
+#  363|   
+#  364|->    if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#  365|         g_simple_async_result_propagate_error(simple, error);
+#  366|      }
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource-group.c:365:7: warning: g_simple_async_result_propagate_error is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:119) [-Wdeprecated-declarations]
+#       g_simple_async_result_propagate_error(simple, error);
+#       ^
+#  363|   
+#  364|      if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#  365|->       g_simple_async_result_propagate_error(simple, error);
+#  366|      }
+#  367|      g_object_unref(simple);
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource-group.c: scope_hint: In function gom_resource_group_delete_async
+gom-0.3.3/gom/gom-resource-group.c:387:4: warning: g_simple_async_result_new is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:51): Use 'g_task_new' instead [-Wdeprecated-declarations]
+#    simple = g_simple_async_result_new(G_OBJECT(group), callback, user_data,
+#    ^
+#  385|      priv = group->priv;
+#  386|   
+#  387|->    simple = g_simple_async_result_new(G_OBJECT(group), callback, user_data,
+#  388|                                         gom_resource_group_delete_async);
+#  389|      if (!group->priv->to_write) {
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource-group.c:390:7: warning: g_simple_async_result_set_op_res_gboolean is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#       g_simple_async_result_set_op_res_gboolean(simple, TRUE);
+#       ^
+#  388|                                         gom_resource_group_delete_async);
+#  389|      if (!group->priv->to_write) {
+#  390|->       g_simple_async_result_set_op_res_gboolean(simple, TRUE);
+#  391|         g_simple_async_result_complete_in_idle(simple);
+#  392|         return;
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource-group.c:391:7: warning: g_simple_async_result_complete_in_idle is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:106) [-Wdeprecated-declarations]
+#       g_simple_async_result_complete_in_idle(simple);
+#       ^
+#  389|      if (!group->priv->to_write) {
+#  390|         g_simple_async_result_set_op_res_gboolean(simple, TRUE);
+#  391|->       g_simple_async_result_complete_in_idle(simple);
+#  392|         return;
+#  393|      }
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource-group.c: scope_hint: In function gom_resource_group_delete_finish
+gom-0.3.3/gom/gom-resource-group.c:414:4: warning: g_simple_async_result_get_op_res_gboolean is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:91) [-Wdeprecated-declarations]
+#    if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#    ^
+#  412|      g_return_val_if_fail(group->priv->is_writable, FALSE);
+#  413|   
+#  414|->    if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#  415|         g_simple_async_result_propagate_error(simple, error);
+#  416|      }
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource-group.c:415:7: warning: g_simple_async_result_propagate_error is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:119) [-Wdeprecated-declarations]
+#       g_simple_async_result_propagate_error(simple, error);
+#       ^
+#  413|   
+#  414|      if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#  415|->       g_simple_async_result_propagate_error(simple, error);
+#  416|      }
+#  417|      g_object_unref(simple);
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource-group.c: scope_hint: In function gom_resource_group_fetch_cb
+gom-0.3.3/gom/gom-resource-group.c:712:7: warning: g_simple_async_result_take_error is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:116) [-Wdeprecated-declarations]
+#       g_simple_async_result_take_error(simple, error);
+#       ^
+#  710|   
+#  711|      if (!gom_command_execute(command, &cursor, &error)) {
+#  712|->       g_simple_async_result_take_error(simple, error);
+#  713|         goto out;
+#  714|      }
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource-group.c:737:4: warning: g_simple_async_result_set_op_res_gboolean is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#    g_simple_async_result_set_op_res_gboolean(simple, TRUE);
+#    ^
+#  735|      }
+#  736|   
+#  737|->    g_simple_async_result_set_op_res_gboolean(simple, TRUE);
+#  738|   
+#  739|   out:
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource-group.c:748:7: warning: g_simple_async_result_complete_in_idle is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:106) [-Wdeprecated-declarations]
+#       g_simple_async_result_complete_in_idle(simple);
+#       ^
+#  746|      g_clear_object(&repository);
+#  747|      if (!queue)
+#  748|->       g_simple_async_result_complete_in_idle(simple);
+#  749|      else
+#  750|         g_async_queue_push(queue, GINT_TO_POINTER(TRUE));
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource-group.c: scope_hint: In function gom_resource_group_fetch_sync
+gom-0.3.3/gom/gom-resource-group.c:782:4: warning: g_simple_async_result_new is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:51): Use 'g_task_new' instead [-Wdeprecated-declarations]
+#    simple = g_simple_async_result_new(G_OBJECT(group), NULL, NULL,
+#    ^
+#  780|      queue = g_async_queue_new();
+#  781|   
+#  782|->    simple = g_simple_async_result_new(G_OBJECT(group), NULL, NULL,
+#  783|                                         gom_resource_group_fetch_sync);
+#  784|      g_object_set_data(G_OBJECT(simple), "offset", GINT_TO_POINTER(index_));
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource-group.c:793:4: warning: g_simple_async_result_get_op_res_gboolean is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:91) [-Wdeprecated-declarations]
+#    if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#    ^
+#  791|      g_async_queue_unref(queue);
+#  792|   
+#  793|->    if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#  794|         g_simple_async_result_propagate_error(simple, error);
+#  795|      }
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource-group.c:794:7: warning: g_simple_async_result_propagate_error is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:119) [-Wdeprecated-declarations]
+#       g_simple_async_result_propagate_error(simple, error);
+#       ^
+#  792|   
+#  793|      if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#  794|->       g_simple_async_result_propagate_error(simple, error);
+#  795|      }
+#  796|      g_object_unref(simple);
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource-group.c: scope_hint: In function gom_resource_group_fetch_async
+gom-0.3.3/gom/gom-resource-group.c:818:4: warning: g_simple_async_result_new is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:51): Use 'g_task_new' instead [-Wdeprecated-declarations]
+#    simple = g_simple_async_result_new(G_OBJECT(group), callback, user_data,
+#    ^
+#  816|      priv = group->priv;
+#  817|   
+#  818|->    simple = g_simple_async_result_new(G_OBJECT(group), callback, user_data,
+#  819|                                         gom_resource_group_fetch_async);
+#  820|      g_object_set_data(G_OBJECT(simple), "offset", GINT_TO_POINTER(index_));
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource-group.c: scope_hint: In function gom_resource_group_fetch_finish
+gom-0.3.3/gom/gom-resource-group.c:839:4: warning: g_simple_async_result_get_op_res_gboolean is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:91) [-Wdeprecated-declarations]
+#    if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#    ^
+#  837|      g_return_val_if_fail(!group->priv->is_writable, FALSE);
+#  838|   
+#  839|->    if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#  840|         g_simple_async_result_propagate_error(simple, error);
+#  841|      }
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource-group.c:840:7: warning: g_simple_async_result_propagate_error is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:119) [-Wdeprecated-declarations]
+#       g_simple_async_result_propagate_error(simple, error);
+#       ^
+#  838|   
+#  839|      if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#  840|->       g_simple_async_result_propagate_error(simple, error);
+#  841|      }
+#  842|      g_object_unref(simple);
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource.c: scope_hint: In function gom_resource_delete_cb
+gom-0.3.3/gom/gom-resource.c:369:7: warning: g_simple_async_result_take_error is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:116) [-Wdeprecated-declarations]
+#       g_simple_async_result_take_error(simple, error);
+#       ^
+#  367|   
+#  368|      if (!(ret = gom_resource_do_delete(resource, adapter, &error))) {
+#  369|->       g_simple_async_result_take_error(simple, error);
+#  370|      }
+#  371|   
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource.c:372:4: warning: g_simple_async_result_set_op_res_gboolean is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#    g_simple_async_result_set_op_res_gboolean(simple, ret);
+#    ^
+#  370|      }
+#  371|   
+#  372|->    g_simple_async_result_set_op_res_gboolean(simple, ret);
+#  373|      if (!queue)
+#  374|         g_simple_async_result_complete_in_idle(simple);
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource.c:374:7: warning: g_simple_async_result_complete_in_idle is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:106) [-Wdeprecated-declarations]
+#       g_simple_async_result_complete_in_idle(simple);
+#       ^
+#  372|      g_simple_async_result_set_op_res_gboolean(simple, ret);
+#  373|      if (!queue)
+#  374|->       g_simple_async_result_complete_in_idle(simple);
+#  375|      else
+#  376|         g_async_queue_push(queue, GINT_TO_POINTER(TRUE));
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource.c: scope_hint: In function gom_resource_delete_sync
+gom-0.3.3/gom/gom-resource.c:411:4: warning: g_simple_async_result_new is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:51): Use 'g_task_new' instead [-Wdeprecated-declarations]
+#    simple = g_simple_async_result_new(G_OBJECT(resource), NULL, NULL,
+#    ^
+#  409|      queue = g_async_queue_new();
+#  410|   
+#  411|->    simple = g_simple_async_result_new(G_OBJECT(resource), NULL, NULL,
+#  412|                                         gom_resource_delete_sync);
+#  413|      adapter = gom_repository_get_adapter(priv->repository);
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource.c:421:4: warning: g_simple_async_result_get_op_res_gboolean is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:91) [-Wdeprecated-declarations]
+#    if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#    ^
+#  419|      g_async_queue_unref(queue);
+#  420|   
+#  421|->    if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#  422|         g_simple_async_result_propagate_error(simple, error);
+#  423|      }
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource.c:422:7: warning: g_simple_async_result_propagate_error is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:119) [-Wdeprecated-declarations]
+#       g_simple_async_result_propagate_error(simple, error);
+#       ^
+#  420|   
+#  421|      if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#  422|->       g_simple_async_result_propagate_error(simple, error);
+#  423|      }
+#  424|      g_object_unref(simple);
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource.c: scope_hint: In function gom_resource_delete_async
+gom-0.3.3/gom/gom-resource.c:447:4: warning: g_simple_async_result_new is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:51): Use 'g_task_new' instead [-Wdeprecated-declarations]
+#    simple = g_simple_async_result_new(G_OBJECT(resource), callback, user_data,
+#    ^
+#  445|      }
+#  446|   
+#  447|->    simple = g_simple_async_result_new(G_OBJECT(resource), callback, user_data,
+#  448|                                         gom_resource_delete_async);
+#  449|      adapter = gom_repository_get_adapter(priv->repository);
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource.c: scope_hint: In function gom_resource_delete_finish
+gom-0.3.3/gom/gom-resource.c:465:4: warning: g_simple_async_result_get_op_res_gboolean is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:91) [-Wdeprecated-declarations]
+#    if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#    ^
+#  463|      g_return_val_if_fail(G_IS_SIMPLE_ASYNC_RESULT(simple), FALSE);
+#  464|   
+#  465|->    if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#  466|         g_simple_async_result_propagate_error(simple, error);
+#  467|      }
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource.c:466:7: warning: g_simple_async_result_propagate_error is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:119) [-Wdeprecated-declarations]
+#       g_simple_async_result_propagate_error(simple, error);
+#       ^
+#  464|   
+#  465|      if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#  466|->       g_simple_async_result_propagate_error(simple, error);
+#  467|      }
+#  468|      g_object_unref(simple);
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource.c: scope_hint: In function gom_resource_save_cb
+gom-0.3.3/gom/gom-resource.c:709:7: warning: g_simple_async_result_take_error is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:116) [-Wdeprecated-declarations]
+#       g_simple_async_result_take_error(simple, error);
+#       ^
+#  707|   
+#  708|      if (!(ret = gom_resource_do_save(resource, adapter, &error))) {
+#  709|->       g_simple_async_result_take_error(simple, error);
+#  710|      } else {
+#  711|        g_object_set_data(G_OBJECT(resource), "is-from-table", GINT_TO_POINTER(TRUE));
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource.c:714:4: warning: g_simple_async_result_set_op_res_gboolean is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#    g_simple_async_result_set_op_res_gboolean(simple, ret);
+#    ^
+#  712|      }
+#  713|   
+#  714|->    g_simple_async_result_set_op_res_gboolean(simple, ret);
+#  715|      if (!queue)
+#  716|         g_simple_async_result_complete_in_idle(simple);
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource.c:716:7: warning: g_simple_async_result_complete_in_idle is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:106) [-Wdeprecated-declarations]
+#       g_simple_async_result_complete_in_idle(simple);
+#       ^
+#  714|      g_simple_async_result_set_op_res_gboolean(simple, ret);
+#  715|      if (!queue)
+#  716|->       g_simple_async_result_complete_in_idle(simple);
+#  717|      else
+#  718|         g_async_queue_push(queue, GINT_TO_POINTER(TRUE));
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource.c: scope_hint: In function gom_resource_save_sync
+gom-0.3.3/gom/gom-resource.c:751:4: warning: g_simple_async_result_new is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:51): Use 'g_task_new' instead [-Wdeprecated-declarations]
+#    simple = g_simple_async_result_new(G_OBJECT(resource), NULL, NULL,
+#    ^
+#  749|      queue = g_async_queue_new();
+#  750|   
+#  751|->    simple = g_simple_async_result_new(G_OBJECT(resource), NULL, NULL,
+#  752|                                         gom_resource_save_sync);
+#  753|      adapter = gom_repository_get_adapter(priv->repository);
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource.c:763:4: warning: g_simple_async_result_get_op_res_gboolean is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:91) [-Wdeprecated-declarations]
+#    if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#    ^
+#  761|      g_async_queue_unref(queue);
+#  762|   
+#  763|->    if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#  764|         g_simple_async_result_propagate_error(simple, error);
+#  765|      }
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource.c:764:7: warning: g_simple_async_result_propagate_error is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:119) [-Wdeprecated-declarations]
+#       g_simple_async_result_propagate_error(simple, error);
+#       ^
+#  762|   
+#  763|      if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#  764|->       g_simple_async_result_propagate_error(simple, error);
+#  765|      }
+#  766|   
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource.c: scope_hint: In function gom_resource_save_async
+gom-0.3.3/gom/gom-resource.c:794:4: warning: g_simple_async_result_new is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:51): Use 'g_task_new' instead [-Wdeprecated-declarations]
+#    simple = g_simple_async_result_new(G_OBJECT(resource), callback, user_data,
+#    ^
+#  792|      }
+#  793|   
+#  794|->    simple = g_simple_async_result_new(G_OBJECT(resource), callback, user_data,
+#  795|                                         gom_resource_save_async);
+#  796|      adapter = gom_repository_get_adapter(priv->repository);
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource.c: scope_hint: In function gom_resource_save_finish
+gom-0.3.3/gom/gom-resource.c:813:4: warning: g_simple_async_result_get_op_res_gboolean is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:91) [-Wdeprecated-declarations]
+#    if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#    ^
+#  811|      g_return_val_if_fail(G_IS_SIMPLE_ASYNC_RESULT(simple), FALSE);
+#  812|   
+#  813|->    if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#  814|         g_simple_async_result_propagate_error(simple, error);
+#  815|      }
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource.c:814:7: warning: g_simple_async_result_propagate_error is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:119) [-Wdeprecated-declarations]
+#       g_simple_async_result_propagate_error(simple, error);
+#       ^
+#  812|   
+#  813|      if (!(ret = g_simple_async_result_get_op_res_gboolean(simple))) {
+#  814|->       g_simple_async_result_propagate_error(simple, error);
+#  815|      }
+#  816|   
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource.c: scope_hint: In function gom_resource_fetch_m2m_cb
+gom-0.3.3/gom/gom-resource.c:868:7: warning: g_simple_async_result_take_error is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:116) [-Wdeprecated-declarations]
+#       g_simple_async_result_take_error(simple, error);
+#       ^
+#  866|   
+#  867|      if (!gom_command_execute(command, &cursor, &error)) {
+#  868|->       g_simple_async_result_take_error(simple, error);
+#  869|         goto out;
+#  870|      }
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource.c:873:7: warning: g_simple_async_result_set_error is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:122) [-Wdeprecated-declarations]
+#       g_simple_async_result_set_error(simple, GOM_ERROR,
+#       ^
+#  871|   
+#  872|      if (!gom_cursor_next(cursor)) {
+#  873|->       g_simple_async_result_set_error(simple, GOM_ERROR,
+#  874|                                         GOM_ERROR_RESOURCE_CURSOR,
+#  875|                                         "No result was returned from the cursor.");
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource.c:889:4: warning: g_simple_async_result_set_op_res_gpointer is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:75) [-Wdeprecated-declarations]
+#    g_simple_async_result_set_op_res_gpointer(simple, group, g_object_unref);
+#    ^
+#  887|                           NULL);
+#  888|   
+#  889|->    g_simple_async_result_set_op_res_gpointer(simple, group, g_object_unref);
+#  890|   
+#  891|   out:
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource.c:897:4: warning: g_simple_async_result_complete_in_idle is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:106) [-Wdeprecated-declarations]
+#    g_simple_async_result_complete_in_idle(simple);
+#    ^
+#  895|      g_clear_object(&builder);
+#  896|   
+#  897|->    g_simple_async_result_complete_in_idle(simple);
+#  898|      g_object_unref(simple);
+#  899|   }
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource.c: scope_hint: In function gom_resource_fetch_m2m_async
+gom-0.3.3/gom/gom-resource.c:924:4: warning: g_simple_async_result_new is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:51): Use 'g_task_new' instead [-Wdeprecated-declarations]
+#    simple = g_simple_async_result_new(G_OBJECT(resource), callback, user_data,
+#    ^
+#  922|      g_assert(GOM_IS_ADAPTER(adapter));
+#  923|   
+#  924|->    simple = g_simple_async_result_new(G_OBJECT(resource), callback, user_data,
+#  925|                                         gom_resource_fetch_m2m_async);
+#  926|      g_object_set_data(G_OBJECT(simple), "resource-type",
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource.c: scope_hint: In function gom_resource_fetch_m2m_finish
+gom-0.3.3/gom/gom-resource.c:962:4: warning: g_simple_async_result_get_op_res_gpointer is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:79) [-Wdeprecated-declarations]
+#    if (!(group = g_simple_async_result_get_op_res_gpointer(simple))) {
+#    ^
+#  960|      g_return_val_if_fail(G_IS_SIMPLE_ASYNC_RESULT(result), NULL);
+#  961|   
+#  962|->    if (!(group = g_simple_async_result_get_op_res_gpointer(simple))) {
+#  963|         g_simple_async_result_propagate_error(simple, error);
+#  964|      }
+
+Error: COMPILER_WARNING:
+gom-0.3.3/gom/gom-resource.c:963:7: warning: g_simple_async_result_propagate_error is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:119) [-Wdeprecated-declarations]
+#       g_simple_async_result_propagate_error(simple, error);
+#       ^
+#  961|   
+#  962|      if (!(group = g_simple_async_result_get_op_res_gpointer(simple))) {
+#  963|->       g_simple_async_result_propagate_error(simple, error);
+#  964|      }
+#  965|   
+
+Error: COMPILER_WARNING:
+gom-0.3.3/tests/test-gom-stress.c:375:1: warning: stress_time defined but not used [-Wunused-function]
+# stress_time(void)
+# ^
+#  373|   
+#  374|   static void
+#  375|-> stress_time(void)
+#  376|   {
+#  377|      GTimer *timer;

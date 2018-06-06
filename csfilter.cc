@@ -99,6 +99,11 @@ struct MsgFilter::Private {
                 "returned by \"([^\\(]+)\\(.*\\)\"",
                 "returned by \"\\1\\(\\)\"");
 
+        // unify the format of glib/gnome dprecation warnings
+        // NOTE: "\u007f\u007f\u007f" does not compile on el6
+        static const char uniApos[] = { 0x7f, 0x7f, 0x7f, 0x00 };
+        addMsgFilter("COMPILER_WARNING", uniApos, "'");
+
         // ignore embeded declaration location
         addMsgFilter("COMPILER_WARNING", " \\(declared at [^)]*\\)", "");
 
