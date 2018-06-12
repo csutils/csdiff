@@ -1,0 +1,15 @@
+Error: PROSPECTOR_WARNING:
+/builddir/build/BUILDROOT/hplip-3.18.4-1.el8+7.x86_64/usr/share/hplip/base/vcard.py:69: C0326[pylint]: No space allowed before bracket
+#     _boms.append( (codecs.BOM_UTF16_LE, "utf_16_le") )
+#                                                      ^
+
+Error: PROSPECTOR_WARNING:
+/builddir/build/BUILDROOT/hplip-3.18.4-1.el8+7.x86_64/usr/share/hplip/base/vcard.py:70: C0326[pylint]: Exactly one space required after :
+#except:  pass
+#      ^
+
+Error: PROSPECTOR_WARNING:
+/builddir/build/BUILDROOT/hplip-3.18.4-1.el8+7.x86_64/usr/share/hplip/base/vcard.py:74: W0311[pylint]: Bad indentation. Found 5 spaces, expected 4
+
+Error: PROSPECTOR_WARNING:
+/builddir/build/BUILDROOT/hplip-3.18.4-1.el8+7.x86_64/usr/share/hplip/base/vcard.py:75: W0311[pylint]: Bad indentation. Found 5 spaces, expected 4

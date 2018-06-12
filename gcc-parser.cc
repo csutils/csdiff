@@ -352,6 +352,9 @@ void BasicGccParser::handleError() {
 
 bool BasicGccParser::digCppcheckEvt(Defect *pDef) {
     DefEvent &keyEvt = pDef->events[pDef->keyEventIdx];
+    if (keyEvt.event == "#")
+        // this is just a comment, do not look for real events
+        return false;
 
     boost::smatch sm;
     if (!boost::regex_match(keyEvt.msg, sm, reCppcheck_))
