@@ -320,6 +320,7 @@ class BasicGccParser {
             reCppcheck_("^([A-Za-z_]+): (.*)$"),
             reClang_("^clang.*$"),
             reProspector_(RE_EVENT_PROSPECTOR),
+            reSmatchMsg_("^" RE_FNC_SMATCH ": .*$"),
             reTool_("^(.*) <--\\[([^\\]]+)\\]$"),
             hasKeyEvent_(false),
             hasError_(false)
@@ -338,6 +339,7 @@ class BasicGccParser {
         const boost::regex      reCppcheck_;
         const boost::regex      reClang_;
         const boost::regex      reProspector_;
+        const boost::regex      reSmatchMsg_;
         const boost::regex      reTool_;
         bool                    hasKeyEvent_;
         bool                    hasError_;
@@ -412,6 +414,8 @@ bool BasicGccParser::exportAndReset(Defect *pDef) {
     }
     else if (boost::regex_match(keyEvt.event, reProspector_))
         def.checker = "PROSPECTOR_WARNING";
+    else if (boost::regex_match(keyEvt.msg, reSmatchMsg_))
+        def.checker = "SMATCH_WARNING";
     else
         // no <--[TOOL] suffix given
         this->digCppcheckEvt(&def);
