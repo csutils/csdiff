@@ -1,0 +1,647 @@
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.h:13:11: error: unable to open 'gtk/gtk.h'
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.h:45:25: error: expected ; at end of declaration
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.h:45:25: error: Expected } at end of struct-union-enum-specifier
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.h:45:25: error: got base
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.h:49:21: error: Expected ; at end of declaration
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.h:49:21: error: got *
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.h:52:16: error: Expected ; at end of declaration
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.h:52:16: error: got *
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.h:53:14: error: Expected ; at end of declaration
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.h:53:14: error: got stamp
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.h:54:1: error: Expected ; at the end of type declaration
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.h:54:1: error: got }
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.h:62:22: error: expected ; at end of declaration
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.h:62:22: error: Expected } at end of struct-union-enum-specifier
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.h:62:22: error: got base_class
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.h:63:1: error: Expected ; at the end of type declaration
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.h:63:1: error: got }
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.h:66:7: error: Expected ; at end of declaration
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.h:66:7: error: got ast_get_type
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.h:13:11: error: unable to open 'gtk/gtk.h'
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.h:45:25: error: expected ; at end of declaration
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.h:45:25: error: Expected } at end of struct-union-enum-specifier
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.h:45:25: error: got base
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.h:49:21: error: Expected ; at end of declaration
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.h:49:21: error: got *
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.h:52:16: error: Expected ; at end of declaration
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.h:52:16: error: got *
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.h:53:14: error: Expected ; at end of declaration
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.h:53:14: error: got stamp
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.h:54:1: error: Expected ; at the end of type declaration
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.h:54:1: error: got }
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.h:62:22: error: expected ; at end of declaration
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.h:62:22: error: Expected } at end of struct-union-enum-specifier
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.h:62:22: error: got base_class
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.h:63:1: error: Expected ; at the end of type declaration
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.h:63:1: error: got }
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.h:66:7: error: Expected ; at end of declaration
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.h:66:7: error: got ast_get_type
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:19:51: error: Expected ) in function declarator
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:19:51: error: got *
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:20:34: error: Expected ) in function declarator
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:20:34: error: got *
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:21:26: error: Expected ; at end of declaration
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:21:26: error: got ast_get_flags
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:22:13: error: Expected ; at end of declaration
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:22:13: error: got ast_get_n_columns
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:23:14: error: Expected ; at end of declaration
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:23:14: error: got ast_get_column_type
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:24:17: error: Expected ; at end of declaration
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:24:17: error: got ast_get_iter
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:26:20: error: Expected ; at end of declaration
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:26:20: error: got *
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:27:40: error: Expected ) in function declarator
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:27:40: error: got *
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:29:17: error: Expected ; at end of declaration
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:29:17: error: got ast_iter_next
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:30:17: error: Expected ; at end of declaration
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:30:17: error: got ast_iter_children
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:33:17: error: Expected ; at end of declaration
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:33:17: error: got ast_iter_has_child
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:34:13: error: Expected ; at end of declaration
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:34:13: error: got ast_iter_n_children
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:35:17: error: Expected ; at end of declaration
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:35:17: error: got ast_iter_nth_child
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:37:17: error: Expected ; at end of declaration
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:37:17: error: got ast_iter_parent
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:41:21: error: Expected ; at end of declaration
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:41:21: error: got *
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:63:48: error: typename in expression
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:63:57: error: No right hand side of '*'-expression
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:68:10: error: Expected ; at end of declaration
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:68:10: error: got ast_set_iter
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:71:13: error: Expected ; at end of declaration
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:71:13: error: got ->
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:72:9: error: Trying to use reserved word 'return' as identifier
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:72:16: error: Expected ; at end of declaration
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:72:16: error: got node
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:73:1: error: Expected ; at the end of type declaration
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:73:1: error: got }
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:89:32: error: Expected ; at end of declaration
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:89:32: error: got ast_info
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:100:37: error: Expected ; at end of declaration
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:100:37: error: got tree_model_info
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:108:9: error: Trying to use reserved word 'if' as identifier
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:109:17: error: Expected ; at end of declaration
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:109:17: error: got return
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:113:72: error: Expected ) in function call
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:113:72: error: got 0
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:116:66: error: Expected ) in function declarator
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:116:66: error: got ,
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:118:9: error: Trying to use reserved word 'return' as identifier
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:118:16: error: Expected ; at end of declaration
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:118:16: error: got ast_type
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:119:1: error: Expected ; at the end of type declaration
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:119:1: error: got }
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:135:38: error: No right hand side of '*'-expression
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:135:40: error: Expected ; at end of declaration
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:135:40: error: got g_type_class_peek_parent
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:136:38: error: No right hand side of '*'-expression
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:136:40: error: Expected ; at end of declaration
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:136:40: error: got klass
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/ast-model.c:138:21: error: too many errors
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/allocate.c:107: error: allocate(): we previously assumed 'newblob' could be null (see line 104)
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/builtin.c:76: warn: arguments_choose(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/check_assigned_expr.c:101: warn: record_param_assignment(): variable dereferenced before check 'expr' (see line 99)
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/check_double_checking.c:247: info: after_loop(): ignoring unreachable code.
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/check_uninitialized.c:209: info: match_call_struct_members(): ignoring unreachable code.
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/check_zero_to_err_ptr.c:66: warn: next_line_checks_IS_ERR(): variable dereferenced before check 'next' (see line 64)
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/compat-solaris.c:13: warn: string_to_ld(): statement has no effect 3
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/compat-solaris.c:15: warn: string_to_ld(): statement has no effect 3
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/compat-solaris.c:16: warn: string_to_ld(): statement has no effect 3
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/compile-i386.c:426: warn: stor_sym_init(): double check that we're allocating correct size: 8 vs 56
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/compile-i386.c:432: error: stor_sym_init(): we previously assumed 'priv' could be null (see line 427)
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/compile-i386.c:478: error: new_atom(): we previously assumed 'atom' could be null (see line 475)
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/compile-i386.c:518: error: new_storage(): we previously assumed 'stor' could be null (see line 515)
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/compile-i386.c:587: error: textbuf_push(): we previously assumed 'tmp' could be null (see line 584)
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/compile-i386.c:1019: error: sort_array(): we previously assumed 'list' could be null (see line 1006)
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/compile-i386.c:1694: warn: emit_regular_preop(): missing break? reassigning '*opname'
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/cse.c:166: info: phi_list_compare(): ignoring unreachable code.
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/evaluate.c:451: warn: restricted_unop(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/evaluate.c:662: warn: type_difference(): variable dereferenced before check 't1' (see line 655)
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/evaluate.c:670: warn: type_difference(): variable dereferenced before check 't2' (see line 656)
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/evaluate.c:2043: warn: evaluate_member_dereference(): variable dereferenced before check 'ctype' (see line 2040)
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/example.c:522: error: target_reg(): we previously assumed 'reg->contains' could be null (see line 500)
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/example.c:1634: error: final_pseudo_flush(): we previously assumed 'dst->contains' could be null (see line 1603)
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/expand.c:893: warn: bit_offset(): variable dereferenced before check 'expr' (see line 889)
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/expression.c:207: warn: builtin_offsetof_expr(): missing break? reassigning 'e->type'
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/expression.c:544: warn: postfix_expression(): missing break? reassigning 'expr->type'
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/flow.c:420: error: find_dominating_parents(): we previously assumed 'dominators' could be null (see line 414)
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/graph.c:132: error: graph_calls(): we previously assumed 'bb->insns' could be null (see line 129)
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/linearize.c:1033: warn: linearize_inc_dec(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/liveness.c:77: warn: track_instruction_usage(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/liveness.c:119: warn: track_instruction_usage(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/memops.c:103: info: simplify_loads(): ignoring unreachable code.
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/memops.c:163: info: kill_dominated_stores(): ignoring unreachable code.
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/pre-process.c:384: error: show_token_sequence(): we previously assumed 'token' could be null (see line 377)
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/simplify.c:613: debug: simplify_constant_binop(): sval_binop_signed: invalid divide LLONG_MIN/-1
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/simplify.c:922: warn: get_cast_value(): should '1 << (old_size - 1)' be a 64 bit type?
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/simplify.c:926: warn: get_cast_value(): should '1 << (new_size - 1)' be a 64 bit type?
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/smatch_comparison.c:1729: info: get_all_possible_not_equal_comparisons(): ignoring unreachable code.
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/smatch_constraints.c:143: info: merge_func(): ignoring unreachable code.
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/smatch_db.c:535: warn: sql_select_caller_info(): this array is probably non-NULL. 'sym->ident->name'
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/smatch_db.c:1808: error: strip_expr_statement(): we previously assumed 'last_stmt' could be null (see line 1807)
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/smatch_estate.c:171: info: rlists_equiv(): ignoring unreachable code.
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/smatch_extra.c:1944: debug: handle_MOD_condition(): sval_binop_signed: invalid divide LLONG_MIN/-1
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/smatch_function_hooks.c:772: warn: fake_a_param_assignment(): variable dereferenced before check 'right' (see line 770)
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/smatch_math.c:895: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/smatch_math.c:907: info: (null)(): ignoring unreachable code.
+
+Error: SMATCH_WARNING:
+/home/kdudka/git/smatch/smatch_math.c:951: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/include/bits/sysmacros.h:27: warn: match_end_func(): statement has no effect 5
+
+Error: SMATCH_WARNING:
+/usr/lib/gcc/x86_64-redhat-linux/7/include/stddef.h:32: warn: match_assign(): statement has no effect 3
+
+Error: SMATCH_WARNING:
+/usr/include/bits/types/__sigset_t.h:64: warn: match_array_assignment(): statement has no effect 3
+
+Error: SMATCH_WARNING:
+/usr/include/bits/thread-shared-types.h:170: warn: read_var_num(): statement has no effect 3
+
+Error: SMATCH_WARNING:
+/usr/include/bits/wordsize.h:24: warn: find_param_eq(): statement has no effect 3
+
+Error: SMATCH_WARNING:
+/usr/lib/gcc/x86_64-redhat-linux/7/include/stddef.h:291: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/lib/gcc/x86_64-redhat-linux/7/include/stddef.h:292: info: (null)(): ignoring unreachable code.
+
+Error: SMATCH_WARNING:
+/usr/lib/gcc/x86_64-redhat-linux/7/include/stddef.h:296: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/lib/gcc/x86_64-redhat-linux/7/include/stddef.h:299: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/lib/gcc/x86_64-redhat-linux/7/include/stddef.h:304: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/lib/gcc/x86_64-redhat-linux/7/include/stddef.h:308: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/lib/gcc/x86_64-redhat-linux/7/include/stddef.h:312: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/lib/gcc/x86_64-redhat-linux/7/include/stddef.h:315: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/lib/gcc/x86_64-redhat-linux/7/include/stddef.h:1765: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/lib/gcc/x86_64-redhat-linux/7/include/stddef.h:1773: info: (null)(): ignoring unreachable code.
+
+Error: SMATCH_WARNING:
+/usr/lib/gcc/x86_64-redhat-linux/7/include/stddef.h:1777: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/lib/gcc/x86_64-redhat-linux/7/include/stddef.h:1790: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/lib/gcc/x86_64-redhat-linux/7/include/stddef.h:1801: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/lib/gcc/x86_64-redhat-linux/7/include/stddef.h:1815: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/lib/gcc/x86_64-redhat-linux/7/include/stddef.h:1824: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/lib/gcc/x86_64-redhat-linux/7/include/stddef.h:1833: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/include/bits/waitstatus.h:92: warn: match_assign(): statement has no effect 3
+
+Error: SMATCH_WARNING:
+/usr/include/stdc-predef.h:714: warn: __merge_stree(): statement has no effect 3
+
+Error: SMATCH_WARNING:
+/usr/include/stdc-predef.h:715: warn: __merge_stree(): statement has no effect 3
+
+Error: SMATCH_WARNING:
+/usr/include/stdc-predef.h:811: warn: merge_fake_stree(): statement has no effect 3
+
+Error: SMATCH_WARNING:
+/usr/include/stdc-predef.h:812: warn: merge_fake_stree(): statement has no effect 3
+
+Error: SMATCH_WARNING:
+/usr/include/bits/uintn-identity.h:280: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/include/bits/uintn-identity.h:281: info: (null)(): ignoring unreachable code.
+
+Error: SMATCH_WARNING:
+/usr/include/bits/uintn-identity.h:283: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/include/bits/select.h:311: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/include/bits/select.h:312: info: (null)(): ignoring unreachable code.
+
+Error: SMATCH_WARNING:
+/usr/include/bits/select.h:319: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/include/bits/select.h:322: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/include/bits/select.h:325: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/include/bits/select.h:333: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/include/bits/select.h:336: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/include/bits/select.h:339: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/include/bits/select.h:342: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/include/bits/select.h:345: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/include/bits/select.h:348: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/include/bits/select.h:352: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/include/bits/select.h:366: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/include/bits/select.h:367: info: (null)(): ignoring unreachable code.
+
+Error: SMATCH_WARNING:
+/usr/include/bits/select.h:377: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/include/bits/select.h:380: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/include/bits/select.h:383: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/include/bits/select.h:391: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/include/bits/select.h:394: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/include/bits/select.h:397: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/include/bits/select.h:400: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/include/bits/select.h:403: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/include/bits/select.h:406: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/include/bits/select.h:410: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/include/bits/select.h:473: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/include/bits/select.h:478: info: (null)(): ignoring unreachable code.
+
+Error: SMATCH_WARNING:
+/usr/include/bits/select.h:489: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/include/bits/select.h:496: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/include/bits/select.h:516: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/include/bits/select.h:526: warn: (null)(): right shift assign to zero
+
+Error: SMATCH_WARNING:
+/usr/include/bits/types/struct_timeval.h:703: warn: type_str_helper(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/include/bits/types/struct_timeval.h:705: warn: type_str_helper(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/include/bits/pthreadtypes.h:512: warn: asm_expr(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/include/bits/pthreadtypes.h:512: info: asm_expr(): ignoring unreachable code.
+
+Error: SMATCH_WARNING:
+/usr/include/bits/stdlib-float.h:117: warn: add_var_sym(): statement has no effect 3
+
+Error: SMATCH_WARNING:
+/usr/include/bits/libc-header-start.h:191: warn: check_call_instruction(): statement has no effect 3
+
+Error: SMATCH_WARNING:
+/usr/include/stdlib.h:323: warn: (null)(): inconsistent indenting
+
+Error: SMATCH_WARNING:
+/usr/include/sqlite3.h:293: warn: hash_stream(): statement has no effect 3

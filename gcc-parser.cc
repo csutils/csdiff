@@ -63,6 +63,7 @@ class AbstractTokenFilter: public ITokenizer {
 #define RE_EVENT_GCC "(?:(?:(?:fatal|internal) )?[a-z]+)"
 #define RE_EVENT_PROSPECTOR "(?:[A-Z]+[0-9]+\\[[a-z0-9]+\\])"
 #define RE_EVENT RE_EVENT_GCC "|" RE_EVENT_PROSPECTOR
+#define RE_FNC_SMATCH "(\\(null\\)|[_A-Za-z][_A-Za-z0-9]*)\\(\\)"
 
 class Tokenizer: public ITokenizer {
     public:
@@ -73,7 +74,10 @@ class Tokenizer: public ITokenizer {
             reInc_("^(?:In file included| +) from " RE_LOCATION "[:,]"
                     RE_TOOL_SUFFIX),
             reScope_("^" RE_LOCATION ": ([A-Z].+):" RE_TOOL_SUFFIX),
-            reMsg_("^" RE_LOCATION /* evt/msg */ ": (" RE_EVENT "): (.*)$")
+            reMsg_("^" RE_LOCATION /* evt/msg */ ": (" RE_EVENT "): (.*)$"),
+            reSmatch_("^([^:]+):([0-9]+)() "    /* file:line */
+                    RE_FNC_SMATCH               /* fnc       */
+                    " ([a-z]+): (.*)$")         /* evt: msg  */
         {
         }
 
@@ -90,6 +94,7 @@ class Tokenizer: public ITokenizer {
         const boost::regex      reInc_;
         const boost::regex      reScope_;
         const boost::regex      reMsg_;
+        const boost::regex      reSmatch_;
 };
 
 EToken Tokenizer::readNext(DefEvent *pEvt) {
@@ -127,6 +132,12 @@ EToken Tokenizer::readNext(DefEvent *pEvt) {
         tok = T_INC;
         pEvt->event = "included_from";
         pEvt->msg   = "Included from here.";
+    }
+    else if (boost::regex_match(line, sm, reSmatch_)) {
+        tok = T_MSG;
+        pEvt->event = sm[/* evt */ 5];
+        pEvt->msg   = sm[/* fnc */ 4] + "(): ";
+        pEvt->msg  += sm[/* msg */ 6];
     }
     else
         return T_UNKNOWN;
@@ -390,6 +401,10 @@ bool BasicGccParser::exportAndReset(Defect *pDef) {
         else if (tool == "shellcheck")
             // <--[shellcheck]
             def.checker = "SHELLCHECK_WARNING";
+
+        else if (tool == "smatch")
+            // <--[smatch]
+            def.checker = "SMATCH_WARNING";
 
         else if (tool == "cppcheck" && !this->digCppcheckEvt(&def))
             // <--[cppcheck] ... assume cppcheck running with --template=gcc
