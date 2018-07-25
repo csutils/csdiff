@@ -471,7 +471,7 @@ void HtmlWriter::handleDef(const Defect &def) {
         }
 
         if (!evt.fileName.empty())
-            d->str << evt.fileName << ":";
+            d->str << HtmlLib::escapeTextInline(evt.fileName) << ":";
         
         if (0 < evt.line)
             d->str << evt.line << ":";
