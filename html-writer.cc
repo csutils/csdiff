@@ -286,7 +286,6 @@ struct HtmlWriter::Private {
     HtmlWriterCore                  core;
     TScanProps                      scanProps;
     const std::string               defUrlTemplate;
-    const boost::regex              rePath;
     const boost::regex              reEvent;
     unsigned                        defCnt;
     DefLookup                      *baseLookup;
@@ -302,7 +301,6 @@ struct HtmlWriter::Private {
         str(str_),
         core(str_, titleFallback_, spPlacement_),
         defUrlTemplate(defUrlTemplate_),
-        rePath("^/builddir/build/BUILD/"),
         reEvent("^([^\\[]*\\[)?([^\\]]+)(])?$"),
         defCnt(0),
         baseLookup(0)
@@ -473,7 +471,7 @@ void HtmlWriter::handleDef(const Defect &def) {
         }
 
         if (!evt.fileName.empty())
-            d->str << boost::regex_replace(evt.fileName, d->rePath, "") << ":";
+            d->str << evt.fileName << ":";
         
         if (0 < evt.line)
             d->str << evt.line << ":";
