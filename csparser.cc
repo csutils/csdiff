@@ -267,8 +267,12 @@ KeyEventDigger::KeyEventDigger():
     d->traceEvts.insert("cond_false");
     d->traceEvts.insert("cond_true");
     d->traceEvts.insert("continue");
+    d->traceEvts.insert("destructor");
     d->traceEvts.insert("else_branch");
     d->traceEvts.insert("end_of_path");
+    d->traceEvts.insert("finally");
+    d->traceEvts.insert("finally_jump");
+    d->traceEvts.insert("for_loop");
     d->traceEvts.insert("goto");
     d->traceEvts.insert("if_end");
     d->traceEvts.insert("if_fallthrough");
@@ -276,11 +280,13 @@ KeyEventDigger::KeyEventDigger():
     d->traceEvts.insert("loop");
     d->traceEvts.insert("loop_begin");
     d->traceEvts.insert("loop_end");
+    d->traceEvts.insert("return");
     d->traceEvts.insert("switch");
     d->traceEvts.insert("switch_case");
     d->traceEvts.insert("switch_default");
     d->traceEvts.insert("switch_end");
-    d->traceEvts.insert("return");
+    d->traceEvts.insert("try_end");
+    d->traceEvts.insert("try_fallthrough");
 }
 
 KeyEventDigger::~KeyEventDigger() {
