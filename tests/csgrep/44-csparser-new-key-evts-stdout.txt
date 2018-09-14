@@ -1,0 +1,56 @@
+Error: BAD_CHECK_OF_WAIT_COND:
+commons-pool-1.6-src/src/java/org/apache/commons/pool/impl/GenericKeyedObjectPool.java:1151: wait_cond_improperly_checked: The wait condition prompting the wait upon "this.new org.apache.commons.pool.impl.GenericKeyedObjectPool.Latch(key)" is not checked correctly. This code can wait for a condition that has already been satisfied, which can cause a never-ending wait.
+
+Error: BAD_CHECK_OF_WAIT_COND:
+icedtea-web-1.7.1/plugin/icedteanp/java/netscape/javascript/JSRunnable.java:56: wait_cond_improperly_checked: The wait condition prompting the wait upon "JSRunnable.this" is not checked correctly. This code can wait for a condition that has already been satisfied, which can cause a never-ending wait.
+
+Error: BAD_LOCK_OBJECT:
+tigervnc-1.8.0/java/com/tigervnc/vncviewer/Viewport.java:287: boxed_lock: Boxing a primitive may or may not return a canonical boxed representation depending upon the value of the primitive being boxed. Thus, using a boxed primitive as a lock is dangerous.
+
+Error: BAD_LOCK_OBJECT:
+tigervnc-1.8.0/java/com/jcraft/jsch/Session.java:1751: lock_on_assigned_field: Locking on the object referenced by field "proxy". This lock acquisition may race with another thread assigning to this field. The contents of "proxy" may change while a thread is inside the critical section, allowing two threads to enter the critical section simultaneously.
+
+Error: BAD_LOCK_OBJECT:
+icedtea-web-1.7.1/netx/net/sourceforge/jnlp/cache/ResourceTracker.java:390: single_thread_lock: Locking on an object which cannot be accessed from outside the current thread. Locking on this object will have no effect.
+
+Error: CALL_SUPER:
+proguard5.3.3/src/proguard/evaluation/value/ParticularLongValue.java:260: missing_super_call: Missing call to "proguard.evaluation.value.SpecificLongValue.hashCode()" (as is done elsewhere 4 out of 5 times).
+
+Error: CALL_SUPER:
+relaxngcc-20031218/src/relaxngcc/parser/TextSyntaxInternalizer.java:30: missing_super_call: Missing call to "org.xml.sax.helpers.XMLFilterImpl.characters(char[], int, int)" (as is done elsewhere 2 out of 3 times).
+
+Error: EXPLICIT_THIS_EXPECTED:
+esc-1.1.1/esc/src/xulrunner/xulrunner-45.9.0/firefox-45.9.0esr/browser/extensions/shumway/content/shumway.gfx.js:10840: implicit_this_used: Calling function "a" with implicit 'this' argument when explicit 'this' is expected.
+
+Error: FB.BC_UNCONFIRMED_CAST:
+ecj-4.7.3a/org/eclipse/jdt/internal/compiler/problem/ProblemReporter.java:4395: defect: Unchecked/unconfirmed cast from org.eclipse.jdt.internal.compiler.lookup.MethodBinding to org.eclipse.jdt.internal.compiler.lookup.ProblemMethodBinding.
+
+Error: GUARDED_BY_VIOLATION:
+pentaho-reporting-flow-engine-0.9.4/source/org/jfree/report/util/MemoryByteArrayOutputStream.java:185: missing_lock: Accessing "cursor" without holding lock "MemoryByteArrayOutputStream.this". Elsewhere, "org.jfree.report.util.MemoryByteArrayOutputStream.cursor" is accessed with "MemoryByteArrayOutputStream.this" held 5 out of 7 times.
+
+Error: LOCK_INVERSION:
+ldapjdk-4.19/java-sdk/ldapjdk/netscape/ldap/LDAPConnThread.java:254:9: getlock: Acquiring lock named "LDAPConnThread.m_sendRequestLock".
+
+Error: NESTING_INDENT_MISMATCH:
+qtbase-everywhere-src-5.11.1/qmake/library/qmakeevaluator.cpp:810: dangling_else: The indentation of this "else" clause to column 9 suggests that it was intended to go with the "if" statement indicated by the "intended_if" event, but it actually goes with the "if" indicated by the "actual_if" event because that "if" does not have any other "else" clause.
+
+Error: NESTING_INDENT_MISMATCH:
+mutt-1.9.3/sort.c:207: multi_stmt_macro: The macro on this line expands into multiple statements, only the first of which is nested within the preceding parent while the rest are not.
+
+Error: NESTING_INDENT_MISMATCH:
+net-tools-2.0/ifconfig.c:970: on_same_line: The two statements on this line, indented to columns 17 and 113, appear to be nested within the preceding parent statement, but only the first actually is.
+
+Error: NESTING_INDENT_MISMATCH:
+qt-everywhere-opensource-src-4.8.7/tools/qdoc3/doc.cpp:2482: uncle: This  statement is indented to column 13, as if it were nested within the preceding parent statement, but it is not.
+
+Error: STREAM_FORMAT_STATE:
+nss-3.36.1/nss/cpputil/databuffer.h:92: format_changed: "setfill" changes the format state of "stream" for category fill.
+
+Error: UNINTENDED_INTEGER_DIVISION:
+xfig-3.2.6a/src/e_scale.c:315: integer_division: Dividing integer expressions "fix_y + y" and "2", and then converting the integer quotient to type "double". Any remainder, or fractional part of the quotient, is ignored.
+
+Error: UNINTENDED_INTEGER_DIVISION:
+webrtc-audio-processing-0.3/webrtc/modules/audio_processing/beamformer/nonlinear_beamformer.cc:241: integer_division: Dividing integer expressions "51200UL" and "this->sample_rate_hz_", and then converting the integer quotient to type "float". Any remainder, or fractional part of the quotient, is ignored.
+
+Error: VOLATILE_ATOMICITY:
+apache-tomcat-9.0.7.redhat-10-src/java/org/apache/tomcat/websocket/WsFrameBase.java:951: stale_update: Updating "payloadWritten" based on a stale value. Any intervening update in another thread is overwritten.

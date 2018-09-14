@@ -221,6 +221,11 @@ KeyEventDigger::KeyEventDigger():
     d(new Private)
 {
     // register checker-specific key events
+    d->hMap["BAD_CHECK_OF_WAIT_COND"].insert("wait_cond_improperly_checked");
+    d->hMap["BAD_LOCK_OBJECT"]      .insert("boxed_lock");
+    d->hMap["BAD_LOCK_OBJECT"]      .insert("lock_on_assigned_field");
+    d->hMap["BAD_LOCK_OBJECT"]      .insert("single_thread_lock");
+    d->hMap["CALL_SUPER"]           .insert("missing_super_call");
     d->hMap["CHECKED_RETURN"]       .insert("check_return");
     d->hMap["CONSTANT_EXPRESSION_RESULT"].insert("extra_high_bits");
     d->hMap["CONSTANT_EXPRESSION_RESULT"].insert("logical_vs_bitwise");
@@ -229,14 +234,20 @@ KeyEventDigger::KeyEventDigger():
     d->hMap["CONSTANT_EXPRESSION_RESULT"].insert("pointless_expression");
     d->hMap["CONSTANT_EXPRESSION_RESULT"].insert("result_independent_of_operands");
     d->hMap["CONSTANT_EXPRESSION_RESULT"].insert("same_on_both_sides");
+    d->hMap["EXPLICIT_THIS_EXPECTED"].insert("implicit_this_used");
     d->hMap["FORWARD_NULL"]         .insert("deref_parm");
     d->hMap["FORWARD_NULL"]         .insert("dereference");
     d->hMap["FORWARD_NULL"]         .insert("var_deref_op");
     d->hMap["FORWARD_NULL"]         .insert("var_deref_model");
+    d->hMap["NESTING_INDENT_MISMATCH"].insert("dangling_else");
+    d->hMap["NESTING_INDENT_MISMATCH"].insert("multi_stmt_macro");
+    d->hMap["NESTING_INDENT_MISMATCH"].insert("on_same_line");
+    d->hMap["NESTING_INDENT_MISMATCH"].insert("uncle");
     d->hMap["ORDER_REVERSAL"]       .insert("lock_acquire");
     d->hMap["OVERRUN_STATIC"]       .insert("index_parm");
     d->hMap["OVERRUN_STATIC"]       .insert("overrun-buffer-arg");
     d->hMap["OVERRUN_STATIC"]       .insert("overrun-local");
+    d->hMap["STREAM_FORMAT_STATE"]  .insert("format_changed");
     d->hMap["UNINIT"]               .insert("uninit_use");
     d->hMap["UNINIT"]               .insert("uninit_use_in_call");
     d->hMap["UNINIT_CTOR"]          .insert("uninit_member");
@@ -259,7 +270,13 @@ KeyEventDigger::KeyEventDigger():
     d->hMap["LOCK"];
 
     // events that should never be used as key events (excluding trace events)
+    d->blackList.insert("another_instance");
+    d->blackList.insert("comparison_remediation");
+    d->blackList.insert("example_access");
+    d->blackList.insert("example_comparison");
+    d->blackList.insert("example_lock");
     d->blackList.insert("remediation");
+    d->blackList.insert("rounding_remediation");
 
     // trace events
     d->traceEvts.insert("break");

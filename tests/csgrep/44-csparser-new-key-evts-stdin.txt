@@ -1,0 +1,124 @@
+Error: BAD_CHECK_OF_WAIT_COND:
+commons-pool-1.6-src/src/java/org/apache/commons/pool/impl/GenericKeyedObjectPool.java:1094: lock_alias: Assigning: "latch" = "this.new org.apache.commons.pool.impl.GenericKeyedObjectPool.Latch(key)"; both now point to the same lock.
+commons-pool-1.6-src/src/java/org/apache/commons/pool/impl/GenericKeyedObjectPool.java:1146: lock_acquire: Acquiring lock "this.new org.apache.commons.pool.impl.GenericKeyedObjectPool.Latch(key)".
+commons-pool-1.6-src/src/java/org/apache/commons/pool/impl/GenericKeyedObjectPool.java:1151: wait_cond_improperly_checked: The wait condition prompting the wait upon "this.new org.apache.commons.pool.impl.GenericKeyedObjectPool.Latch(key)" is not checked correctly. This code can wait for a condition that has already been satisfied, which can cause a never-ending wait.
+commons-pool-1.6-src/src/java/org/apache/commons/pool/impl/GenericKeyedObjectPool.java:1151: add_loop_check_inside_lock: Refactor the code to protect the call to wait with a loop that rechecks the wait condition inside the locked region.
+
+Error: BAD_CHECK_OF_WAIT_COND:
+icedtea-web-1.7.1/plugin/icedteanp/java/netscape/javascript/JSRunnable.java:53: lock_acquire: Acquiring lock "JSRunnable.this".
+icedtea-web-1.7.1/plugin/icedteanp/java/netscape/javascript/JSRunnable.java:56: wait_cond_improperly_checked: The wait condition prompting the wait upon "JSRunnable.this" is not checked correctly. This code can wait for a condition that has already been satisfied, which can cause a never-ending wait.
+icedtea-web-1.7.1/plugin/icedteanp/java/netscape/javascript/JSRunnable.java:56: add_loop_check_inside_lock: Refactor the code to protect the call to wait with a loop that rechecks the wait condition inside the locked region.
+
+Error: BAD_LOCK_OBJECT:
+tigervnc-1.8.0/java/com/tigervnc/vncviewer/Viewport.java:287: canonical_origin: The field "com.tigervnc.vncviewer.Viewport.keyEventLock" can get its value from a canonical representation of a boxed primitive value.
+tigervnc-1.8.0/java/com/tigervnc/vncviewer/Viewport.java:280: numeric_literal: Example 1: The numeric literal "0" refers to a primitive which is later boxed.
+tigervnc-1.8.0/java/com/tigervnc/vncviewer/Viewport.java:280: box_primitive: Example 1 (cont.): "0", a primitive of type "int", is boxed here.
+tigervnc-1.8.0/java/com/tigervnc/vncviewer/Viewport.java:280: assign: Example 1 (cont.): Assigning: "com.tigervnc.vncviewer.Viewport.keyEventLock" = "0".
+tigervnc-1.8.0/java/com/tigervnc/vncviewer/Viewport.java:287: boxed_lock: Boxing a primitive may or may not return a canonical boxed representation depending upon the value of the primitive being boxed. Thus, using a boxed primitive as a lock is dangerous.
+tigervnc-1.8.0/java/com/tigervnc/vncviewer/Viewport.java:287: use_immutable_object_lock: Instead of using "com.tigervnc.vncviewer.Viewport.keyEventLock" as a lock, create a final field of type Object which is only used as a lock.
+
+Error: BAD_LOCK_OBJECT:
+tigervnc-1.8.0/java/com/jcraft/jsch/Session.java:1751: lock_acquire: Acquiring lock "Session.proxy".
+tigervnc-1.8.0/java/com/jcraft/jsch/Session.java:1751: lock_on_assigned_field: Locking on the object referenced by field "proxy". This lock acquisition may race with another thread assigning to this field. The contents of "proxy" may change while a thread is inside the critical section, allowing two threads to enter the critical section simultaneously.
+tigervnc-1.8.0/java/com/jcraft/jsch/Session.java:1751: use_immutable_object_lock: Instead of using "proxy" as a lock, create a final field of type Object which is only used as a lock.
+tigervnc-1.8.0/java/com/jcraft/jsch/Session.java:1754: assign_to_field: The expression "proxy = null" assigns a new value to "proxy", a field whose contents are used as a lock. The locking behavior of this function may allow this assignment to occur multiple times.
+
+Error: BAD_LOCK_OBJECT:
+icedtea-web-1.7.1/netx/net/sourceforge/jnlp/cache/ResourceTracker.java:388: new_object: The object generated using "new net.sourceforge.jnlp.cache.Resource[urls.length]" is created here. It does not reach a field where it can be accessed by another thread.
+icedtea-web-1.7.1/netx/net/sourceforge/jnlp/cache/ResourceTracker.java:388: assign: Assigning: "lresources" = "new net.sourceforge.jnlp.cache.Resource[urls.length]".
+icedtea-web-1.7.1/netx/net/sourceforge/jnlp/cache/ResourceTracker.java:390: single_thread_lock: Locking on an object which cannot be accessed from outside the current thread. Locking on this object will have no effect.
+icedtea-web-1.7.1/netx/net/sourceforge/jnlp/cache/ResourceTracker.java:390: use_immutable_object_lock: Instead of using "lresources" as a lock, create a final field of type Object which is only used as a lock.
+
+Error: CALL_SUPER:
+proguard5.3.3/src/proguard/evaluation/value/ParticularLongValue.java:260: missing_super_call: Missing call to "proguard.evaluation.value.SpecificLongValue.hashCode()" (as is done elsewhere 4 out of 5 times).
+proguard5.3.3/src/proguard/evaluation/value/CompositeLongValue.java:75: called_super: Example 1: "proguard.evaluation.value.CompositeLongValue.hashCode()" calls superclass implementation "proguard.evaluation.value.SpecificLongValue.hashCode()".
+proguard5.3.3/src/proguard/evaluation/value/ConvertedLongValue.java:53: called_super: Example 2: "proguard.evaluation.value.ConvertedLongValue.hashCode()" calls superclass implementation "proguard.evaluation.value.SpecificLongValue.hashCode()".
+proguard5.3.3/src/proguard/evaluation/value/IdentifiedLongValue.java:55: called_super: Example 3: "proguard.evaluation.value.IdentifiedLongValue.hashCode()" calls superclass implementation "proguard.evaluation.value.SpecificLongValue.hashCode()".
+proguard5.3.3/src/proguard/evaluation/value/NegatedLongValue.java:60: called_super: Example 4: "proguard.evaluation.value.NegatedLongValue.hashCode()" calls superclass implementation "proguard.evaluation.value.SpecificLongValue.hashCode()".
+proguard5.3.3/src/proguard/evaluation/value/SpecificLongValue.java:255: superclass_implementation: Implementation of "proguard.evaluation.value.SpecificLongValue.hashCode()".
+
+Error: CALL_SUPER:
+relaxngcc-20031218/src/relaxngcc/parser/TextSyntaxInternalizer.java:30: missing_super_call: Missing call to "org.xml.sax.helpers.XMLFilterImpl.characters(char[], int, int)" (as is done elsewhere 2 out of 3 times).
+relaxngcc-20031218/src/relaxngcc/parser/ForeignElementFilter.java:53: called_super: Example 1: "relaxngcc.parser.ForeignElementFilter.characters(char[], int, int)" calls superclass implementation "org.xml.sax.helpers.XMLFilterImpl.characters(char[], int, int)".
+relaxngcc-20031218/src/relaxngcc/parser/TextSyntaxInternalizer.java:30: called_super: Example 2: "org.iso_relax.verifier.impl.VerifierFilterImpl.characters(char[], int, int)" calls superclass implementation "org.xml.sax.helpers.XMLFilterImpl.characters(char[], int, int)".
+
+Error: EXPLICIT_THIS_EXPECTED:
+esc-1.1.1/esc/src/xulrunner/xulrunner-45.9.0/firefox-45.9.0esr/browser/extensions/shumway/content/shumway.gfx.js:10840: implicit_this_used: Calling function "a" with implicit 'this' argument when explicit 'this' is expected.
+esc-1.1.1/esc/src/xulrunner/xulrunner-45.9.0/firefox-45.9.0esr/browser/extensions/shumway/content/shumway.gfx.js:10709:9: explicit_this_parameter: Explicit use of 'this'.
+
+Error: FB.BC_UNCONFIRMED_CAST:
+ecj-4.7.3a/org/eclipse/jdt/internal/compiler/problem/ProblemReporter.java:4308: another_instance: Another occurrence here
+ecj-4.7.3a/org/eclipse/jdt/internal/compiler/problem/ProblemReporter.java:4352: another_instance: Another occurrence here
+ecj-4.7.3a/org/eclipse/jdt/internal/compiler/problem/ProblemReporter.java:4395: defect: Unchecked/unconfirmed cast from org.eclipse.jdt.internal.compiler.lookup.MethodBinding to org.eclipse.jdt.internal.compiler.lookup.ProblemMethodBinding.
+ecj-4.7.3a/org/eclipse/jdt/internal/compiler/problem/ProblemReporter.java:4425: another_instance: Another occurrence here
+ecj-4.7.3a/org/eclipse/jdt/internal/compiler/problem/ProblemReporter.java:4462: another_instance: Another occurrence here
+ecj-4.7.3a/org/eclipse/jdt/internal/compiler/problem/ProblemReporter.java:4482: another_instance: Another occurrence here
+ecj-4.7.3a/org/eclipse/jdt/internal/compiler/problem/ProblemReporter.java:4501: another_instance: Another occurrence here
+ecj-4.7.3a/org/eclipse/jdt/internal/compiler/problem/ProblemReporter.java:4535: another_instance: Another occurrence here
+ecj-4.7.3a/org/eclipse/jdt/internal/compiler/problem/ProblemReporter.java:4558: another_instance: Another occurrence here
+ecj-4.7.3a/org/eclipse/jdt/internal/compiler/problem/ProblemReporter.java:4578: another_instance: Another occurrence here
+
+Error: GUARDED_BY_VIOLATION:
+pentaho-reporting-flow-engine-0.9.4/source/org/jfree/report/util/MemoryByteArrayOutputStream.java:185: missing_lock: Accessing "cursor" without holding lock "MemoryByteArrayOutputStream.this". Elsewhere, "org.jfree.report.util.MemoryByteArrayOutputStream.cursor" is accessed with "MemoryByteArrayOutputStream.this" held 5 out of 7 times.
+pentaho-reporting-flow-engine-0.9.4/source/org/jfree/report/util/MemoryByteArrayOutputStream.java:177: example_lock: Example 1: Locking "MemoryByteArrayOutputStream.this".
+pentaho-reporting-flow-engine-0.9.4/source/org/jfree/report/util/MemoryByteArrayOutputStream.java:178: example_access: Example 1 (cont.): "MemoryByteArrayOutputStream.cursor" is accessed with lock "MemoryByteArrayOutputStream.this" held.
+pentaho-reporting-flow-engine-0.9.4/source/org/jfree/report/util/MemoryByteArrayOutputStream.java:177: example_lock: Example 2: Locking "MemoryByteArrayOutputStream.this".
+pentaho-reporting-flow-engine-0.9.4/source/org/jfree/report/util/MemoryByteArrayOutputStream.java:179: example_access: Example 2 (cont.): "MemoryByteArrayOutputStream.cursor" is accessed with lock "MemoryByteArrayOutputStream.this" held.
+pentaho-reporting-flow-engine-0.9.4/source/org/jfree/report/util/MemoryByteArrayOutputStream.java:81: example_lock: Example 3: Locking "MemoryByteArrayOutputStream.this".
+pentaho-reporting-flow-engine-0.9.4/source/org/jfree/report/util/MemoryByteArrayOutputStream.java:99: example_access: Example 3 (cont.): "MemoryByteArrayOutputStream.cursor" is accessed with lock "MemoryByteArrayOutputStream.this" held.
+pentaho-reporting-flow-engine-0.9.4/source/org/jfree/report/util/MemoryByteArrayOutputStream.java:81: example_lock: Example 4: Locking "MemoryByteArrayOutputStream.this".
+pentaho-reporting-flow-engine-0.9.4/source/org/jfree/report/util/MemoryByteArrayOutputStream.java:101: example_access: Example 4 (cont.): "MemoryByteArrayOutputStream.cursor" is accessed with lock "MemoryByteArrayOutputStream.this" held.
+pentaho-reporting-flow-engine-0.9.4/source/org/jfree/report/util/MemoryByteArrayOutputStream.java:81: example_lock: Example 5: Locking "MemoryByteArrayOutputStream.this".
+pentaho-reporting-flow-engine-0.9.4/source/org/jfree/report/util/MemoryByteArrayOutputStream.java:102: example_access: Example 5 (cont.): "MemoryByteArrayOutputStream.cursor" is accessed with lock "MemoryByteArrayOutputStream.this" held.
+
+Error: LOCK_INVERSION:
+ldapjdk-4.19/java-sdk/ldapjdk/netscape/ldap/LDAPConnThread.java:296: lock_acquire: Acquiring lock "LDAPConnThread.m_sendRequestLock".
+ldapjdk-4.19/java-sdk/ldapjdk/netscape/ldap/LDAPConnThread.java:302: throw: Throwing "java.io.IOException" (or subclass) from call to "flush". (The virtual call resolves to "java.io.FilterOutputStream.flush".)
+ldapjdk-4.19/java-sdk/ldapjdk/netscape/ldap/LDAPConnThread.java:305: catch: Catching exception.
+ldapjdk-4.19/java-sdk/ldapjdk/netscape/ldap/LDAPConnThread.java:307: lock_order: Acquiring lock "LDAPConnThread.this" while holding "LDAPConnThread.m_sendRequestLock" conflicts with the lock order established elsewhere.
+ldapjdk-4.19/java-sdk/ldapjdk/netscape/ldap/LDAPConnThread.java:778:58: getlock: Acquiring lock named "LDAPConnThread.this".
+ldapjdk-4.19/java-sdk/ldapjdk/netscape/ldap/LDAPConnThread.java:118: lock_acquire: Example 1: Acquiring lock "LDAPConnThread.this".
+ldapjdk-4.19/java-sdk/ldapjdk/netscape/ldap/LDAPConnThread.java:140: example_lock_order: Example 1 (cont.): Calling "logTraceMessage" acquires lock "LDAPConnThread.m_sendRequestLock" while holding "LDAPConnThread.this".
+ldapjdk-4.19/java-sdk/ldapjdk/netscape/ldap/LDAPConnThread.java:225:9: getlock: Acquiring lock named "LDAPConnThread.m_sendRequestLock".
+ldapjdk-4.19/java-sdk/ldapjdk/netscape/ldap/LDAPConnThread.java:361: lock_acquire: Example 2: Acquiring lock "LDAPConnThread.this".
+ldapjdk-4.19/java-sdk/ldapjdk/netscape/ldap/LDAPConnThread.java:376: example_lock_order: Example 2 (cont.): Calling "sendUnbindRequest" acquires lock "LDAPConnThread.m_sendRequestLock" while holding "LDAPConnThread.this".
+ldapjdk-4.19/java-sdk/ldapjdk/netscape/ldap/LDAPConnThread.java:323:9: getlock: Acquiring lock named "LDAPConnThread.m_sendRequestLock".
+ldapjdk-4.19/java-sdk/ldapjdk/netscape/ldap/LDAPConnThread.java:254:9: getlock: Acquiring lock named "LDAPConnThread.m_sendRequestLock".
+
+Error: NESTING_INDENT_MISMATCH:
+qtbase-everywhere-src-5.11.1/qmake/library/qmakeevaluator.cpp:810: dangling_else: The indentation of this "else" clause to column 9 suggests that it was intended to go with the "if" statement indicated by the "intended_if" event, but it actually goes with the "if" indicated by the "actual_if" event because that "if" does not have any other "else" clause.
+qtbase-everywhere-src-5.11.1/qmake/library/qmakeevaluator.cpp:809: intended_if: The indentation of the "else" clause indicated by the "dangling_else" event suggests it was intended to go with this "if" statement.
+qtbase-everywhere-src-5.11.1/qmake/library/qmakeevaluator.cpp:810: actual_if: The "else" clause indicated by the "dangling_else" event actually goes with this "if" statement, contrary to what its indentation suggests.
+
+Error: NESTING_INDENT_MISMATCH:
+mutt-1.9.3/sort.c:206: parent: This 'if'  statement is the parent, indented to column 5.
+mutt-1.9.3/sort.c:207: multi_stmt_macro: The macro on this line expands into multiple statements, only the first of which is nested within the preceding parent while the rest are not.
+mutt-1.9.3/sort.c:207: remediation: If all statements resulting from the macro expansion are intended to be nested under the parent then either braces ('{' '}') need to be used around the macro use here or braces need to be added to the macro definition.
+
+Error: NESTING_INDENT_MISMATCH:
+net-tools-2.0/ifconfig.c:967: parent: This 'if'  statement is the parent, indented to column 13.
+net-tools-2.0/ifconfig.c:970: on_same_line: The two statements on this line, indented to columns 17 and 113, appear to be nested within the preceding parent statement, but only the first actually is.
+
+Error: NESTING_INDENT_MISMATCH:
+qt-everywhere-opensource-src-4.8.7/tools/qdoc3/doc.cpp:2480: parent: This 'if'  statement is the parent, indented to column 9.
+qt-everywhere-opensource-src-4.8.7/tools/qdoc3/doc.cpp:2481: nephew: This  statement is nested within its parent, indented to column 13.
+qt-everywhere-opensource-src-4.8.7/tools/qdoc3/doc.cpp:2482: uncle: This  statement is indented to column 13, as if it were nested within the preceding parent statement, but it is not.
+
+Error: STREAM_FORMAT_STATE:
+nss-3.36.1/nss/cpputil/databuffer.h:92: format_changed: "hex" changes the format state of "stream" for category basefield.
+nss-3.36.1/nss/cpputil/databuffer.h:92: format_changed: "setfill" changes the format state of "stream" for category fill.
+nss-3.36.1/nss/cpputil/databuffer.h:95: format_restored: "dec" changes the format state of "stream" for category basefield.
+
+Error: UNINTENDED_INTEGER_DIVISION:
+xfig-3.2.6a/src/e_scale.c:315: integer_division: Dividing integer expressions "fix_y + y" and "2", and then converting the integer quotient to type "double". Any remainder, or fractional part of the quotient, is ignored.
+xfig-3.2.6a/src/e_scale.c:315: comparison_remediation: For the comparison to take into account any fractional part of the quotient, change or cast either division operand to type "double".
+
+Error: UNINTENDED_INTEGER_DIVISION:
+webrtc-audio-processing-0.3/webrtc/modules/audio_processing/beamformer/nonlinear_beamformer.cc:241: integer_division: Dividing integer expressions "51200UL" and "this->sample_rate_hz_", and then converting the integer quotient to type "float". Any remainder, or fractional part of the quotient, is ignored.
+webrtc-audio-processing-0.3/webrtc/modules/audio_processing/beamformer/nonlinear_beamformer.cc:241: rounding_remediation: For the rounding operation to work as intended, change or cast either division operand to type "float".
+
+Error: VOLATILE_ATOMICITY:
+apache-tomcat-9.0.7.redhat-10-src/java/org/apache/tomcat/websocket/WsFrameBase.java:951: read_volatile: Reading "payloadWritten", a volatile field, without any lock held.
+apache-tomcat-9.0.7.redhat-10-src/java/org/apache/tomcat/websocket/WsFrameBase.java:951: intervening_update: Another thread writes to "payloadWritten".
+apache-tomcat-9.0.7.redhat-10-src/java/org/apache/tomcat/websocket/WsFrameBase.java:951: stale_update: Updating "payloadWritten" based on a stale value. Any intervening update in another thread is overwritten.
+apache-tomcat-9.0.7.redhat-10-src/java/org/apache/tomcat/websocket/WsFrameBase.java:953: example_comparison: Example 1: Example comparison of "payloadWritten" to value, suggesting a semantically meaningful use.
