@@ -19,6 +19,8 @@
 
 #include "json-writer.hh"
 
+#include <queue>
+
 #include <boost/foreach.hpp>
 #include <boost/iostreams/filtering_stream.hpp>
 #include <boost/iostreams/filter/regex.hpp>
@@ -26,7 +28,7 @@
 
 struct JsonWriter::Private {
     std::ostream                   &str;
-    boost::property_tree::ptree     defList;
+    std::queue<Defect>              defQueue;
     TScanProps                      scanProps;
 
     Private(std::ostream &str_):
@@ -97,7 +99,7 @@ void appendDefectNode(boost::property_tree::ptree &dst, const Defect &def) {
 }
 
 void JsonWriter::handleDef(const Defect &def) {
-    appendDefectNode(d->defList, def);
+    d->defQueue.push(def);
 }
 
 void JsonWriter::flush() {
@@ -130,7 +132,14 @@ void JsonWriter::flush() {
         root.put_child("scan", scan);
     }
 
-    // append the list of defects and stream it out
-    root.put_child("defects", d->defList);
+    // node representing the list of defects
+    root.put_child("defects", boost::property_tree::ptree());
+    boost::property_tree::ptree &defects = root.get_child("defects");
+
+    // go through the queue and move defects one by one to the property tree
+    for (; !d->defQueue.empty(); d->defQueue.pop())
+        appendDefectNode(defects, d->defQueue.front());
+
+    // finally encode the tree as JSON
     write_json(str, root);
 }
