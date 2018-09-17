@@ -52,7 +52,7 @@ void JsonWriter::setScanProps(const TScanProps &scanProps) {
     d->scanProps = scanProps;
 }
 
-void JsonWriter::handleDef(const Defect &def) {
+void appendDefectNode(boost::property_tree::ptree &dst, const Defect &def) {
     using std::string;
 
     // go through events
@@ -93,7 +93,11 @@ void JsonWriter::handleDef(const Defect &def) {
     defNode.put_child("events", evtList);
 
     // append the node to the list
-    d->defList.push_back(std::make_pair("", defNode));
+    dst.push_back(std::make_pair("", defNode));
+}
+
+void JsonWriter::handleDef(const Defect &def) {
+    appendDefectNode(d->defList, def);
 }
 
 void JsonWriter::flush() {
