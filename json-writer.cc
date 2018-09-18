@@ -19,12 +19,16 @@
 
 #include "json-writer.hh"
 
+#include "shared-string-ptree.hh"
+
 #include <queue>
 
 #include <boost/foreach.hpp>
 #include <boost/iostreams/filtering_stream.hpp>
 #include <boost/iostreams/filter/regex.hpp>
 #include <boost/property_tree/json_parser.hpp>
+
+typedef SharedStringPTree PTree;
 
 struct JsonWriter::Private {
     std::ostream                   &str;
@@ -54,13 +58,13 @@ void JsonWriter::setScanProps(const TScanProps &scanProps) {
     d->scanProps = scanProps;
 }
 
-void appendDefectNode(boost::property_tree::ptree &dst, const Defect &def) {
+void appendDefectNode(PTree &dst, const Defect &def) {
     using std::string;
 
     // go through events
-    boost::property_tree::ptree evtList;
+    PTree evtList;
     BOOST_FOREACH(const DefEvent &evt, def.events) {
-        boost::property_tree::ptree evtNode;
+        PTree evtNode;
 
         // describe the location
         evtNode.put<string>("file_name", evt.fileName);
@@ -78,7 +82,7 @@ void appendDefectNode(boost::property_tree::ptree &dst, const Defect &def) {
     }
 
     // create a node for a single defect
-    boost::property_tree::ptree defNode;
+    PTree defNode;
     defNode.put<string>("checker", def.checker);
     if (!def.annotation.empty())
         defNode.put<string>("annotation", def.annotation);
@@ -123,9 +127,9 @@ void JsonWriter::flush() {
     str.push(d->str);
 
     // encode scan properties if we have some
-    boost::property_tree::ptree root;
+    PTree root;
     if (!d->scanProps.empty()) {
-        boost::property_tree::ptree scan;
+        PTree scan;
         BOOST_FOREACH(TScanProps::const_reference prop, d->scanProps)
             scan.put<std::string>(prop.first, prop.second);
 
@@ -133,8 +137,8 @@ void JsonWriter::flush() {
     }
 
     // node representing the list of defects
-    root.put_child("defects", boost::property_tree::ptree());
-    boost::property_tree::ptree &defects = root.get_child("defects");
+    root.put_child("defects", PTree());
+    PTree &defects = root.get_child("defects");
 
     // go through the queue and move defects one by one to the property tree
     for (; !d->defQueue.empty(); d->defQueue.pop())

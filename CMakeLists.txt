@@ -38,6 +38,7 @@ add_library(cs STATIC
     instream.cc
     json-parser.cc
     json-writer.cc
+    shared-string.cc
     version.cc
 )
 
