@@ -37,7 +37,8 @@ struct JsonParser::Private {
     const bool                      silent;
     bool                            jsonValid;
     bool                            hasError;
-    pt::ptree                       defList;
+    pt::ptree                       root;
+    pt::ptree                      *defList;
     pt::ptree::const_iterator       defIter;
     int                             defNumber;
     TScanProps                      scanProps;
@@ -91,17 +92,17 @@ JsonParser::JsonParser(
 {
     try {
         // parse JSON
-        pt::ptree root;
-        read_json(input, root);
+        read_json(input, d->root);
 
         // get the defect list
-        d->defList = root.get_child("defects");
-        d->defIter = d->defList.begin();
+        d->defList = &d->root.get_child("defects");
+        d->defIter = d->defList->begin();
         d->jsonValid = true;
 
         // read scan properties if available
         pt::ptree emp;
-        pt::ptree scanNode = root.get_child_optional("scan").get_value_or(emp);
+        pt::ptree scanNode =
+            d->root.get_child_optional("scan").get_value_or(emp);
         BOOST_FOREACH(const pt::ptree::value_type &item, scanNode)
             d->scanProps[item.first] = item.second.data();
     }
@@ -214,7 +215,7 @@ bool JsonParser::getNext(Defect *def) {
 
     // error recovery loop
     for (;;) {
-        if (d->defList.end() == d->defIter)
+        if (d->defList->end() == d->defIter)
             return false;
 
         if (d->readNext(def))
