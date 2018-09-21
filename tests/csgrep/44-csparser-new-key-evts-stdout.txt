@@ -54,3 +54,6 @@ webrtc-audio-processing-0.3/webrtc/modules/audio_processing/beamformer/nonlinear
 
 Error: VOLATILE_ATOMICITY:
 apache-tomcat-9.0.7.redhat-10-src/java/org/apache/tomcat/websocket/WsFrameBase.java:951: stale_update: Updating "payloadWritten" based on a stale value. Any intervening update in another thread is overwritten.
+
+Error: BAD_FREE (CWE-763):
+bind-9.11.3/lib/isc-pkcs11/mem.c:1608: incorrect_free: "mem_put" frees incorrect pointer "si".

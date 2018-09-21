@@ -275,6 +275,7 @@ KeyEventDigger::KeyEventDigger():
     d->blackList.insert("example_access");
     d->blackList.insert("example_comparison");
     d->blackList.insert("example_lock");
+    d->blackList.insert("function_annotation");
     d->blackList.insert("remediation");
     d->blackList.insert("rounding_remediation");
 
