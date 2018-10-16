@@ -239,6 +239,7 @@ KeyEventDigger::KeyEventDigger():
     d->hMap["FORWARD_NULL"]         .insert("dereference");
     d->hMap["FORWARD_NULL"]         .insert("var_deref_op");
     d->hMap["FORWARD_NULL"]         .insert("var_deref_model");
+    d->hMap["LOCK"]                 .insert("double_lock");
     d->hMap["LOCK"]                 .insert("double_unlock");
     d->hMap["NESTING_INDENT_MISMATCH"].insert("dangling_else");
     d->hMap["NESTING_INDENT_MISMATCH"].insert("multi_stmt_macro");

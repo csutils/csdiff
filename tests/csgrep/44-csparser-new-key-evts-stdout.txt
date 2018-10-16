@@ -60,3 +60,6 @@ bind-9.11.3/lib/isc-pkcs11/mem.c:1608: incorrect_free: "mem_put" frees incorrect
 
 Error: LOCK (CWE-667):
 389-ds-base-1.3.8.4/ldap/servers/plugins/replication/repl5_ruv.c:1428: double_unlock: "slapi_rwlock_unlock" unlocks "ruv->lock" while it is unlocked.
+
+Error: LOCK (CWE-667):
+389-ds-base-1.3.8.4/src/nunc-stans/ns/ns_thrpool.c:1221: double_lock: "internal_ns_job_rearm" locks "job->monitor" while it is locked.
