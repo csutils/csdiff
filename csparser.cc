@@ -239,6 +239,7 @@ KeyEventDigger::KeyEventDigger():
     d->hMap["FORWARD_NULL"]         .insert("dereference");
     d->hMap["FORWARD_NULL"]         .insert("var_deref_op");
     d->hMap["FORWARD_NULL"]         .insert("var_deref_model");
+    d->hMap["LOCK"]                 .insert("double_unlock");
     d->hMap["NESTING_INDENT_MISMATCH"].insert("dangling_else");
     d->hMap["NESTING_INDENT_MISMATCH"].insert("multi_stmt_macro");
     d->hMap["NESTING_INDENT_MISMATCH"].insert("on_same_line");
@@ -265,9 +266,6 @@ KeyEventDigger::KeyEventDigger():
     d->hMap["CLANG_WARNING"]        .insert("error");
     d->hMap["CLANG_WARNING"]        .insert("warning");
     d->hMap["CLANG_WARNING"]        .insert("fatal error");
-
-    // do not match the lowered checker name of the following checkers
-    d->hMap["LOCK"];
 
     // events that should never be used as key events (excluding trace events)
     d->blackList.insert("another_instance");
