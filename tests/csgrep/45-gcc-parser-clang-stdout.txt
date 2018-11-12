@@ -1,0 +1,45 @@
+Error: CLANG_WARNING:
+/builddir/build/BUILD/coreutils-8.30/src/cut.c:967:3: warning: 1st function call argument is an uninitialized value
+#  set_fields (spec_list_string,
+#  ^           ~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/coreutils-8.30/src/cut.c:926:38: note: Assuming the condition is true
+#          output_delimiter_length = (optarg[0] == '\0'
+#                                     ^~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/coreutils-8.30/src/cut.c:926:38: note: '?' condition is true
+/builddir/build/BUILD/coreutils-8.30/src/cut.c:929:11: note:  Execution continues on line 857
+#          break;
+#          ^
+/builddir/build/BUILD/coreutils-8.30/src/cut.c:857:10: note: Assuming the condition is false
+#  while ((optc = getopt_long (argc, argv, "b:c:d:f:nsz", longopts, NULL)) != -1)
+#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/coreutils-8.30/src/cut.c:857:3: note: Loop condition is false. Execution continues on line 956
+#  while ((optc = getopt_long (argc, argv, "b:c:d:f:nsz", longopts, NULL)) != -1)
+#  ^
+/builddir/build/BUILD/coreutils-8.30/src/cut.c:956:7: note: Assuming 'operating_mode' is not equal to undefined_mode
+#  if (operating_mode == undefined_mode)
+#      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/coreutils-8.30/src/cut.c:956:3: note: Taking false branch
+#  if (operating_mode == undefined_mode)
+#  ^
+/builddir/build/BUILD/coreutils-8.30/src/cut.c:959:23: note: Left side of '&&' is false
+#  if (delim_specified && operating_mode != field_mode)
+#                      ^
+/builddir/build/BUILD/coreutils-8.30/src/cut.c:963:7: note: Assuming 'suppress_non_delimited' is 0
+#  if (suppress_non_delimited && operating_mode != field_mode)
+#      ^~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/coreutils-8.30/src/cut.c:963:30: note: Left side of '&&' is false
+#  if (suppress_non_delimited && operating_mode != field_mode)
+#                             ^
+/builddir/build/BUILD/coreutils-8.30/src/cut.c:968:18: note: Assuming 'operating_mode' is not equal to field_mode
+#              ( (operating_mode == field_mode) ? 0 : SETFLD_ERRMSG_USE_POS)
+#                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/coreutils-8.30/src/cut.c:968:17: note: '?' condition is false
+#              ( (operating_mode == field_mode) ? 0 : SETFLD_ERRMSG_USE_POS)
+#                ^
+/builddir/build/BUILD/coreutils-8.30/src/cut.c:969:18: note: Assuming 'complement' is 0
+#              | (complement ? SETFLD_COMPLEMENT : 0) );
+#                 ^~~~~~~~~~
+/builddir/build/BUILD/coreutils-8.30/src/cut.c:969:18: note: '?' condition is false
+/builddir/build/BUILD/coreutils-8.30/src/cut.c:967:3: note: 1st function call argument is an uninitialized value
+#  set_fields (spec_list_string,
+#  ^           ~~~~~~~~~~~~~~~~

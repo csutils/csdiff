@@ -269,9 +269,14 @@ bool MultilineConcatenator::tryMerge(DefEvent *pEvt) {
         return false;
 
     if (pEvt->event != lastEvt_.event)
+        // different kind of event
         return false;
 
-    // TODO: compare also the location info?
+    if (pEvt->fileName != lastEvt_.fileName
+            || pEvt->line != lastEvt_.line
+            || pEvt->column != lastEvt_.column)
+        // different location info
+        return false;
 
     boost::smatch smBase;
     if (!boost::regex_match(pEvt->msg, smBase, reBase_))
