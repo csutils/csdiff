@@ -164,6 +164,32 @@ EToken Tokenizer::readNext(DefEvent *pEvt) {
     return tok;
 }
 
+class NoiseFilter: public AbstractTokenFilter {
+    public:
+        NoiseFilter(ITokenizer *slave):
+            AbstractTokenFilter(slave),
+            reClangWarnCnt_("^((1 warning)|([0-9]+ warnings)) generated\\.$")
+        {
+        }
+
+        virtual EToken readNext(DefEvent *);
+
+    private:
+        const boost::regex      reClangWarnCnt_;
+};
+
+EToken NoiseFilter::readNext(DefEvent *pEvt)
+{
+    for (;;) {
+        const EToken tok = slave_->readNext(pEvt);
+        if (T_UNKNOWN != tok)
+            return tok;
+
+        if (!boost::regex_match(pEvt->msg, reClangWarnCnt_))
+            return tok;
+    }
+}
+
 class MarkerConverter: public AbstractTokenFilter {
     public:
         MarkerConverter(ITokenizer *slave):
@@ -313,7 +339,8 @@ class BasicGccParser {
                 const std::string  &fileName,
                 const bool          silent):
             rawTokenizer_(input),
-            markerConverter_(&rawTokenizer_),
+            noiseFilter_(&rawTokenizer_),
+            markerConverter_(&noiseFilter_),
             tokenizer_(&markerConverter_),
             fileName_(fileName),
             silent_(silent),
@@ -332,6 +359,7 @@ class BasicGccParser {
 
     private:
         Tokenizer               rawTokenizer_;
+        NoiseFilter             noiseFilter_;
         MarkerConverter         markerConverter_;
         MultilineConcatenator   tokenizer_;
         const std::string       fileName_;
