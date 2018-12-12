@@ -50,6 +50,12 @@ class SimpleTreeDecoder: public AbstractTreeDecoder {
         KeyEventDigger              keDigger;
 };
 
+/// tree decoder of the Coverity JSON format
+class CovTreeDecoder: public AbstractTreeDecoder {
+    public:
+        virtual void readNode(Defect *def, const pt::ptree &node);
+};
+
 struct JsonParser::Private {
     const std::string               fileName;
     const bool                      silent;
@@ -107,6 +113,15 @@ void JsonParser::Private::dataError(const std::string &msg) {
         << this->defNumber << ": " << msg << "\n";
 }
 
+bool findChildOf(pt::ptree **pDst, pt::ptree &node, const char *key)
+{
+    if (node.not_found() == node.find(key))
+        return false;
+
+    *pDst = &node.get_child(key);
+    return true;
+}
+
 JsonParser::JsonParser(
         std::istream                &input,
         const std::string           &fileName,
@@ -117,18 +132,25 @@ JsonParser::JsonParser(
         // parse JSON
         read_json(input, d->root);
 
-        // get the defect list
-        d->decoder = new SimpleTreeDecoder;
-        d->defList = &d->root.get_child("defects");
-        d->defIter = d->defList->begin();
-        d->jsonValid = true;
-
-        // read scan properties if available
+        // read scan properties if available (csdiff-native JSON format only)
         pt::ptree emp;
         pt::ptree scanNode =
             d->root.get_child_optional("scan").get_value_or(emp);
         BOOST_FOREACH(const pt::ptree::value_type &item, scanNode)
             d->scanProps[item.first] = item.second.data();
+
+        if (findChildOf(&d->defList, d->root, "defects"))
+            // csdiff-native JSON format
+            d->decoder = new SimpleTreeDecoder;
+        else if (findChildOf(&d->defList, d->root, "issues"))
+            // Coverity JSON format
+            d->decoder = new CovTreeDecoder;
+        else
+            throw pt::ptree_error("unknown JSON format");
+
+        // initialize the traversal through the list of defects/issues
+        d->defIter = d->defList->begin();
+        d->jsonValid = true;
     }
     catch (pt::file_parser_error &e) {
         d->parseError(e.message(), e.line());
@@ -245,4 +267,16 @@ void SimpleTreeDecoder::readNode(
 
     // read annotation if available
     def->annotation = valueOf<std::string>(defNode, "annotation", "");
+}
+
+void CovTreeDecoder::readNode(
+        Defect                      *def,
+        const pt::ptree             &defNode)
+{
+    // make sure the Defect structure is properly initialized
+    (*def) = Defect();
+
+    def->checker = defNode.get<std::string>("checkerName");
+
+    throw pt::ptree_error("CovTreeDecoder has not yet been implemented");
 }
