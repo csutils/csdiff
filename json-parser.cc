@@ -49,7 +49,7 @@ struct JsonParser::Private {
         silent(silent_),
         jsonValid(false),
         hasError(false),
-        defNumber(-1)
+        defNumber(0)
     {
     }
 
