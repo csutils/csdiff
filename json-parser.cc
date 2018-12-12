@@ -32,30 +32,53 @@
 
 namespace pt = boost::property_tree;
 
+/// abstraction for higher-level decoders for various JSON-based tree formats
+class AbstractTreeDecoder {
+    public:
+        virtual ~AbstractTreeDecoder() { }
+
+        /// read the given ptree node, decode, and store the result into def
+        virtual void readNode(Defect *def, const pt::ptree &node) = 0;
+};
+
+/// tree decoder of the native JSON format of csdiff
+class SimpleTreeDecoder: public AbstractTreeDecoder {
+    public:
+        virtual void readNode(Defect *def, const pt::ptree &node);
+
+    private:
+        KeyEventDigger              keDigger;
+};
+
 struct JsonParser::Private {
     const std::string               fileName;
     const bool                      silent;
     bool                            jsonValid;
     bool                            hasError;
+    AbstractTreeDecoder            *decoder;
     pt::ptree                       root;
     pt::ptree                      *defList;
     pt::ptree::const_iterator       defIter;
     int                             defNumber;
     TScanProps                      scanProps;
-    KeyEventDigger                  keDigger;
 
     Private(const std::string &fileName_, bool silent_):
         fileName(fileName_),
         silent(silent_),
         jsonValid(false),
         hasError(false),
+        decoder(0),
         defNumber(0)
     {
     }
 
+    ~Private()
+    {
+        delete this->decoder;
+    }
+
     void parseError(const std::string &msg, unsigned long line = 0UL);
     void dataError(const std::string &msg);
-    void readNode(Defect *def, const pt::ptree &defNode);
     bool readNext(Defect *def);
 };
 
@@ -95,6 +118,7 @@ JsonParser::JsonParser(
         read_json(input, d->root);
 
         // get the defect list
+        d->decoder = new SimpleTreeDecoder;
         d->defList = &d->root.get_child("defects");
         d->defIter = d->defList->begin();
         d->jsonValid = true;
@@ -133,7 +157,38 @@ inline T valueOf(const pt::ptree &node, const char *path, const T &defVal)
     return opt.get_value_or(defVal);
 }
 
-void JsonParser::Private::readNode(
+bool JsonParser::Private::readNext(Defect *def) {
+    try {
+        // get the current node and move to the next one
+        const pt::ptree &defNode = this->defIter->second;
+        this->defIter++;
+        this->defNumber++;
+
+        // read the current node
+        this->decoder->readNode(def, defNode);
+        return true;
+    }
+    catch (pt::ptree_error &e) {
+        this->dataError(e.what());
+        return false;
+    }
+}
+
+bool JsonParser::getNext(Defect *def) {
+    if (!d->jsonValid)
+        return false;
+
+    // error recovery loop
+    for (;;) {
+        if (d->defList->end() == d->defIter)
+            return false;
+
+        if (d->readNext(def))
+            return true;
+    }
+}
+
+void SimpleTreeDecoder::readNode(
         Defect                      *def,
         const pt::ptree             &defNode)
 {
@@ -190,35 +245,4 @@ void JsonParser::Private::readNode(
 
     // read annotation if available
     def->annotation = valueOf<std::string>(defNode, "annotation", "");
-}
-
-bool JsonParser::Private::readNext(Defect *def) {
-    try {
-        // get the current node and move to the next one
-        const pt::ptree &defNode = this->defIter->second;
-        this->defIter++;
-        this->defNumber++;
-
-        // read the current node
-        this->readNode(def, defNode);
-        return true;
-    }
-    catch (pt::ptree_error &e) {
-        this->dataError(e.what());
-        return false;
-    }
-}
-
-bool JsonParser::getNext(Defect *def) {
-    if (!d->jsonValid)
-        return false;
-
-    // error recovery loop
-    for (;;) {
-        if (d->defList->end() == d->defIter)
-            return false;
-
-        if (d->readNext(def))
-            return true;
-    }
 }
