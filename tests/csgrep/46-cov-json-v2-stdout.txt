@@ -1,0 +1,2146 @@
+{
+    "defects": [
+        {
+            "checker": "DEADCODE",
+            "function": "base64_encode",
+            "key_event_idx": 3,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/base64.c",
+                    "line": 182,
+                    "event": "assignment",
+                    "message": "Assigning: \"convbuf\" = \"NULL\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/base64.c",
+                    "line": 212,
+                    "event": "null",
+                    "message": "At condition \"convbuf\", the value of \"convbuf\" must be \"NULL\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/base64.c",
+                    "line": 212,
+                    "event": "dead_error_condition",
+                    "message": "The condition \"convbuf\" cannot be true.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/base64.c",
+                    "line": 213,
+                    "event": "dead_error_line",
+                    "message": "Execution cannot reach this statement: \"indata = (char *)convbuf;\".",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/base64.c",
+                    "line": 213,
+                    "event": "effectively_constant",
+                    "message": "Local variable \"convbuf\" is assigned only once, to a constant value, making it effectively constant throughout its scope. If this is not the intent, examine the logic to see if there is a missing assignment that would make \"convbuf\" not remain constant.",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "OVERRUN",
+            "function": "Curl_socket",
+            "key_event_idx": 4,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/connect.c",
+                    "line": 1351,
+                    "event": "path",
+                    "message": "Condition \"!addr\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/connect.c",
+                    "line": 1365,
+                    "event": "path",
+                    "message": "Condition \"conn->socktype == SOCK_DGRAM\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/connect.c",
+                    "line": 1368,
+                    "event": "path",
+                    "message": "Condition \"addr->addrlen > 128UL /* sizeof (struct Curl_sockaddr_storage) */\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/connect.c",
+                    "line": 1369,
+                    "event": "assignment",
+                    "message": "Assigning: \"addr->addrlen\" = \"128U\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/connect.c",
+                    "line": 1370,
+                    "event": "overrun-buffer-arg",
+                    "message": "Overrunning struct type sockaddr of 16 bytes by passing it to a function which accesses it at byte offset 127 using argument \"addr->addrlen\" (which evaluates to 128). [Note: The source code implementation of the function has been overridden by a builtin model.]",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "DEADCODE",
+            "function": "Curl_ntlm_core_mk_lm_hash",
+            "key_event_idx": 3,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/curl_ntlm_core.c",
+                    "line": 479,
+                    "event": "assignment",
+                    "message": "Assigning: \"result\" = \"((void)data) , CURLE_OK\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/curl_ntlm_core.c",
+                    "line": 480,
+                    "event": "const",
+                    "message": "At condition \"result\", the value of \"result\" must be equal to 0.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/curl_ntlm_core.c",
+                    "line": 480,
+                    "event": "dead_error_condition",
+                    "message": "The condition \"result\" cannot be true.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/curl_ntlm_core.c",
+                    "line": 481,
+                    "event": "dead_error_line",
+                    "message": "Execution cannot reach this statement: \"return result;\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "DEADCODE",
+            "function": "Curl_ntlm_core_mk_nt_hash",
+            "key_event_idx": 3,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/curl_ntlm_core.c",
+                    "line": 574,
+                    "event": "assignment",
+                    "message": "Assigning: \"result\" = \"((void)data) , CURLE_OK\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/curl_ntlm_core.c",
+                    "line": 575,
+                    "event": "const",
+                    "message": "At condition \"result\", the value of \"result\" must be equal to 0.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/curl_ntlm_core.c",
+                    "line": 575,
+                    "event": "dead_error_condition",
+                    "message": "The condition \"result\" cannot be true.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/curl_ntlm_core.c",
+                    "line": 576,
+                    "event": "dead_error_line",
+                    "message": "Execution cannot reach this statement: \"return result;\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "DEADCODE",
+            "function": "Curl_ftpsend",
+            "key_event_idx": 3,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/ftp.c",
+                    "line": 3974,
+                    "event": "assignment",
+                    "message": "Assigning: \"result\" = \"((void)conn->data) , CURLE_OK\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/ftp.c",
+                    "line": 3976,
+                    "event": "const",
+                    "message": "At condition \"result\", the value of \"result\" must be equal to 0.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/ftp.c",
+                    "line": 3976,
+                    "event": "dead_error_condition",
+                    "message": "The condition \"result\" cannot be true.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/ftp.c",
+                    "line": 3977,
+                    "event": "dead_error_line",
+                    "message": "Execution cannot reach this statement: \"return result;\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "CONSTANT_EXPRESSION_RESULT",
+            "function": "getinfo_long",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/getinfo.c",
+                    "line": 159,
+                    "event": "result_independent_of_operands",
+                    "message": "\"data->info.filetime > 9223372036854775807L\" is always false regardless of the values of its operands. This occurs as the logical operand of \"if\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "CONSTANT_EXPRESSION_RESULT",
+            "function": "getinfo_long",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/getinfo.c",
+                    "line": 161,
+                    "event": "result_independent_of_operands",
+                    "message": "\"data->info.filetime < -9223372036854775808L /* -9223372036854775807L - 1L */\" is always false regardless of the values of its operands. This occurs as the logical operand of \"if\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "DEADCODE",
+            "function": "Curl_add_buffer_send",
+            "key_event_idx": 3,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/http.c",
+                    "line": 1147,
+                    "event": "assignment",
+                    "message": "Assigning: \"result\" = \"((void)data) , CURLE_OK\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/http.c",
+                    "line": 1149,
+                    "event": "const",
+                    "message": "At condition \"result\", the value of \"result\" must be equal to 0.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/http.c",
+                    "line": 1149,
+                    "event": "dead_error_condition",
+                    "message": "The condition \"result\" cannot be true.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/http.c",
+                    "line": 1151,
+                    "event": "dead_error_begin",
+                    "message": "Execution cannot reach this statement: \"Curl_add_buffer_free(in);\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "DEADCODE",
+            "function": "Curl_http_readwrite_headers",
+            "key_event_idx": 3,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/http.c",
+                    "line": 3653,
+                    "event": "assignment",
+                    "message": "Assigning: \"result\" = \"((void)data) , CURLE_OK\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/http.c",
+                    "line": 3655,
+                    "event": "const",
+                    "message": "At condition \"result\", the value of \"result\" must be equal to 0.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/http.c",
+                    "line": 3655,
+                    "event": "dead_error_condition",
+                    "message": "The condition \"result\" cannot be true.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/http.c",
+                    "line": 3656,
+                    "event": "dead_error_line",
+                    "message": "Execution cannot reach this statement: \"return result;\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "DEADCODE",
+            "function": "Curl_httpchunk_read",
+            "key_event_idx": 3,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/http_chunks.c",
+                    "line": 157,
+                    "event": "assignment",
+                    "message": "Assigning: \"result\" = \"((void)conn->data) , CURLE_OK\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/http_chunks.c",
+                    "line": 159,
+                    "event": "const",
+                    "message": "At condition \"result\", the value of \"result\" must be equal to 0.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/http_chunks.c",
+                    "line": 159,
+                    "event": "dead_error_condition",
+                    "message": "The condition \"result\" cannot be true.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/http_chunks.c",
+                    "line": 162,
+                    "event": "dead_error_line",
+                    "message": "Execution cannot reach this statement: \"return CHUNKE_ILLEGAL_HEX;\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "DEADCODE",
+            "function": "Curl_httpchunk_read",
+            "key_event_idx": 3,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/http_chunks.c",
+                    "line": 237,
+                    "event": "assignment",
+                    "message": "Assigning: \"result\" = \"((void)conn->data) , CURLE_OK\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/http_chunks.c",
+                    "line": 239,
+                    "event": "const",
+                    "message": "At condition \"result\", the value of \"result\" must be equal to 0.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/http_chunks.c",
+                    "line": 239,
+                    "event": "dead_error_condition",
+                    "message": "The condition \"result\" cannot be true.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/http_chunks.c",
+                    "line": 242,
+                    "event": "dead_error_line",
+                    "message": "Execution cannot reach this statement: \"return CHUNKE_BAD_CHUNK;\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "DEADCODE",
+            "function": "CONNECT",
+            "key_event_idx": 3,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/http_proxy.c",
+                    "line": 412,
+                    "event": "assignment",
+                    "message": "Assigning: \"result\" = \"((void)data) , CURLE_OK\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/http_proxy.c",
+                    "line": 415,
+                    "event": "const",
+                    "message": "At condition \"result\", the value of \"result\" must be equal to 0.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/http_proxy.c",
+                    "line": 415,
+                    "event": "dead_error_condition",
+                    "message": "The condition \"result\" cannot be true.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/http_proxy.c",
+                    "line": 416,
+                    "event": "dead_error_line",
+                    "message": "Execution cannot reach this statement: \"return result;\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "FORWARD_NULL",
+            "function": "curl_multi_wait",
+            "key_event_idx": 62,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1000,
+                    "event": "assign_zero",
+                    "message": "Assigning: \"ufds\" = \"NULL\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1006,
+                    "event": "path",
+                    "message": "Condition \"multi\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1006,
+                    "event": "path",
+                    "message": "Condition \"multi->type == 764702\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1009,
+                    "event": "path",
+                    "message": "Condition \"multi->in_callback\", taking false branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1016,
+                    "event": "path",
+                    "message": "Condition \"timeout_internal >= 0\", taking false branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1021,
+                    "event": "path",
+                    "message": "Condition \"data\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1024,
+                    "event": "path",
+                    "message": "Condition \"i < 5\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1027,
+                    "event": "path",
+                    "message": "Condition \"bitmap & (1 << i)\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1031,
+                    "event": "path",
+                    "message": "Condition \"bitmap & (1 << 16 + i)\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1035,
+                    "event": "path",
+                    "message": "Condition \"s == -1\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1036,
+                    "event": "path",
+                    "message": "Breaking from loop.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1041,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1021,
+                    "event": "path",
+                    "message": "Condition \"data\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1024,
+                    "event": "path",
+                    "message": "Condition \"i < 5\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1027,
+                    "event": "path",
+                    "message": "Condition \"bitmap & (1 << i)\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1031,
+                    "event": "path",
+                    "message": "Condition \"bitmap & (1 << 16 + i)\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1035,
+                    "event": "path",
+                    "message": "Condition \"s == -1\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1036,
+                    "event": "path",
+                    "message": "Breaking from loop.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1041,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1021,
+                    "event": "path",
+                    "message": "Condition \"data\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1024,
+                    "event": "path",
+                    "message": "Condition \"i < 5\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1027,
+                    "event": "path",
+                    "message": "Condition \"bitmap & (1 << i)\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1031,
+                    "event": "path",
+                    "message": "Condition \"bitmap & (1 << 16 + i)\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1035,
+                    "event": "path",
+                    "message": "Condition \"s == -1\", taking false branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1038,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1024,
+                    "event": "path",
+                    "message": "Condition \"i < 5\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1027,
+                    "event": "path",
+                    "message": "Condition \"bitmap & (1 << i)\", taking false branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1031,
+                    "event": "path",
+                    "message": "Condition \"bitmap & (1 << 16 + i)\", taking false branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1035,
+                    "event": "path",
+                    "message": "Condition \"s == -1\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1036,
+                    "event": "path",
+                    "message": "Breaking from loop.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1041,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1021,
+                    "event": "path",
+                    "message": "Condition \"data\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1024,
+                    "event": "path",
+                    "message": "Condition \"i < 5\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1027,
+                    "event": "path",
+                    "message": "Condition \"bitmap & (1 << i)\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1031,
+                    "event": "path",
+                    "message": "Condition \"bitmap & (1 << 16 + i)\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1035,
+                    "event": "path",
+                    "message": "Condition \"s == -1\", taking false branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1038,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1024,
+                    "event": "path",
+                    "message": "Condition \"i < 5\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1027,
+                    "event": "path",
+                    "message": "Condition \"bitmap & (1 << i)\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1031,
+                    "event": "path",
+                    "message": "Condition \"bitmap & (1 << 16 + i)\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1035,
+                    "event": "path",
+                    "message": "Condition \"s == -1\", taking false branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1038,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1024,
+                    "event": "path",
+                    "message": "Condition \"i < 5\", taking false branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1041,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1021,
+                    "event": "path",
+                    "message": "Condition \"data\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1024,
+                    "event": "path",
+                    "message": "Condition \"i < 5\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1027,
+                    "event": "path",
+                    "message": "Condition \"bitmap & (1 << i)\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1031,
+                    "event": "path",
+                    "message": "Condition \"bitmap & (1 << 16 + i)\", taking false branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1035,
+                    "event": "path",
+                    "message": "Condition \"s == -1\", taking false branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1038,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1024,
+                    "event": "path",
+                    "message": "Condition \"i < 5\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1027,
+                    "event": "path",
+                    "message": "Condition \"bitmap & (1 << i)\", taking false branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1031,
+                    "event": "path",
+                    "message": "Condition \"bitmap & (1 << 16 + i)\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1035,
+                    "event": "path",
+                    "message": "Condition \"s == -1\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1036,
+                    "event": "path",
+                    "message": "Breaking from loop.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1041,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1021,
+                    "event": "path",
+                    "message": "Condition \"data\", taking false branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1046,
+                    "event": "path",
+                    "message": "Condition \"nfds\", taking false branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1065,
+                    "event": "path",
+                    "message": "Condition \"curlfds\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1068,
+                    "event": "path",
+                    "message": "Condition \"data\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1071,
+                    "event": "path",
+                    "message": "Condition \"i < 5\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1074,
+                    "event": "path",
+                    "message": "Condition \"bitmap & (1 << i)\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1075,
+                    "event": "var_deref_op",
+                    "message": "Dereferencing null pointer \"ufds\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "FORWARD_NULL",
+            "function": "curl_multi_wait",
+            "key_event_idx": 60,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1000,
+                    "event": "assign_zero",
+                    "message": "Assigning: \"ufds\" = \"NULL\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1006,
+                    "event": "path",
+                    "message": "Condition \"multi\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1006,
+                    "event": "path",
+                    "message": "Condition \"multi->type == 764702\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1009,
+                    "event": "path",
+                    "message": "Condition \"multi->in_callback\", taking false branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1016,
+                    "event": "path",
+                    "message": "Condition \"timeout_internal >= 0\", taking false branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1021,
+                    "event": "path",
+                    "message": "Condition \"data\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1024,
+                    "event": "path",
+                    "message": "Condition \"i < 5\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1027,
+                    "event": "path",
+                    "message": "Condition \"bitmap & (1 << i)\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1031,
+                    "event": "path",
+                    "message": "Condition \"bitmap & (1 << 16 + i)\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1035,
+                    "event": "path",
+                    "message": "Condition \"s == -1\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1036,
+                    "event": "path",
+                    "message": "Breaking from loop.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1041,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1021,
+                    "event": "path",
+                    "message": "Condition \"data\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1024,
+                    "event": "path",
+                    "message": "Condition \"i < 5\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1027,
+                    "event": "path",
+                    "message": "Condition \"bitmap & (1 << i)\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1031,
+                    "event": "path",
+                    "message": "Condition \"bitmap & (1 << 16 + i)\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1035,
+                    "event": "path",
+                    "message": "Condition \"s == -1\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1036,
+                    "event": "path",
+                    "message": "Breaking from loop.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1041,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1021,
+                    "event": "path",
+                    "message": "Condition \"data\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1024,
+                    "event": "path",
+                    "message": "Condition \"i < 5\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1027,
+                    "event": "path",
+                    "message": "Condition \"bitmap & (1 << i)\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1031,
+                    "event": "path",
+                    "message": "Condition \"bitmap & (1 << 16 + i)\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1035,
+                    "event": "path",
+                    "message": "Condition \"s == -1\", taking false branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1038,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1024,
+                    "event": "path",
+                    "message": "Condition \"i < 5\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1027,
+                    "event": "path",
+                    "message": "Condition \"bitmap & (1 << i)\", taking false branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1031,
+                    "event": "path",
+                    "message": "Condition \"bitmap & (1 << 16 + i)\", taking false branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1035,
+                    "event": "path",
+                    "message": "Condition \"s == -1\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1036,
+                    "event": "path",
+                    "message": "Breaking from loop.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1041,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1021,
+                    "event": "path",
+                    "message": "Condition \"data\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1024,
+                    "event": "path",
+                    "message": "Condition \"i < 5\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1027,
+                    "event": "path",
+                    "message": "Condition \"bitmap & (1 << i)\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1031,
+                    "event": "path",
+                    "message": "Condition \"bitmap & (1 << 16 + i)\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1035,
+                    "event": "path",
+                    "message": "Condition \"s == -1\", taking false branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1038,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1024,
+                    "event": "path",
+                    "message": "Condition \"i < 5\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1027,
+                    "event": "path",
+                    "message": "Condition \"bitmap & (1 << i)\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1031,
+                    "event": "path",
+                    "message": "Condition \"bitmap & (1 << 16 + i)\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1035,
+                    "event": "path",
+                    "message": "Condition \"s == -1\", taking false branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1038,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1024,
+                    "event": "path",
+                    "message": "Condition \"i < 5\", taking false branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1041,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1021,
+                    "event": "path",
+                    "message": "Condition \"data\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1024,
+                    "event": "path",
+                    "message": "Condition \"i < 5\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1027,
+                    "event": "path",
+                    "message": "Condition \"bitmap & (1 << i)\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1031,
+                    "event": "path",
+                    "message": "Condition \"bitmap & (1 << 16 + i)\", taking false branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1035,
+                    "event": "path",
+                    "message": "Condition \"s == -1\", taking false branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1038,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1024,
+                    "event": "path",
+                    "message": "Condition \"i < 5\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1027,
+                    "event": "path",
+                    "message": "Condition \"bitmap & (1 << i)\", taking false branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1031,
+                    "event": "path",
+                    "message": "Condition \"bitmap & (1 << 16 + i)\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1035,
+                    "event": "path",
+                    "message": "Condition \"s == -1\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1036,
+                    "event": "path",
+                    "message": "Breaking from loop.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1041,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1021,
+                    "event": "path",
+                    "message": "Condition \"data\", taking false branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1046,
+                    "event": "path",
+                    "message": "Condition \"nfds\", taking false branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1065,
+                    "event": "path",
+                    "message": "Condition \"curlfds\", taking false branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1096,
+                    "event": "path",
+                    "message": "Condition \"i < extra_nfds\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/multi.c",
+                    "line": 1097,
+                    "event": "var_deref_op",
+                    "message": "Dereferencing null pointer \"ufds\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "DEADCODE",
+            "function": "Curl_recv_plain",
+            "key_event_idx": 3,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/sendf.c",
+                    "line": 441,
+                    "event": "assignment",
+                    "message": "Assigning: \"nread\" = \"0L\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/sendf.c",
+                    "line": 442,
+                    "event": "const",
+                    "message": "At condition \"nread > 0L\", the value of \"nread\" must be equal to 0.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/sendf.c",
+                    "line": 442,
+                    "event": "dead_error_condition",
+                    "message": "The condition \"nread > 0L\" cannot be true.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/sendf.c",
+                    "line": 443,
+                    "event": "dead_error_begin",
+                    "message": "Execution cannot reach this statement: \"*code = CURLE_OK;\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "DEADCODE",
+            "function": "Curl_client_write",
+            "key_event_idx": 3,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/sendf.c",
+                    "line": 657,
+                    "event": "assignment",
+                    "message": "Assigning: \"result\" = \"((void)data) , CURLE_OK\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/sendf.c",
+                    "line": 659,
+                    "event": "const",
+                    "message": "At condition \"result\", the value of \"result\" must be equal to 0.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/sendf.c",
+                    "line": 659,
+                    "event": "dead_error_condition",
+                    "message": "The condition \"result\" cannot be true.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/sendf.c",
+                    "line": 660,
+                    "event": "dead_error_line",
+                    "message": "Execution cannot reach this statement: \"return result;\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "DEADCODE",
+            "function": "smb_request_state",
+            "key_event_idx": 10,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/smb.c",
+                    "line": 742,
+                    "event": "assignment",
+                    "message": "Assigning: \"next_state\" = \"SMB_DONE\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/smb.c",
+                    "line": 781,
+                    "event": "assignment",
+                    "message": "Assigning: \"next_state\" = \"SMB_OPEN\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/smb.c",
+                    "line": 787,
+                    "event": "assignment",
+                    "message": "Assigning: \"next_state\" = \"SMB_TREE_DISCONNECT\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/smb.c",
+                    "line": 796,
+                    "event": "assignment",
+                    "message": "Assigning: \"next_state\" = \"SMB_UPLOAD\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/smb.c",
+                    "line": 803,
+                    "event": "assignment",
+                    "message": "Assigning: \"next_state\" = \"SMB_CLOSE\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/smb.c",
+                    "line": 809,
+                    "event": "assignment",
+                    "message": "Assigning: \"next_state\" = \"SMB_DOWNLOAD\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/smb.c",
+                    "line": 835,
+                    "event": "assignment",
+                    "message": "Assigning: \"next_state\" = \"SMB_CLOSE\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/smb.c",
+                    "line": 842,
+                    "event": "assignment",
+                    "message": "Assigning: \"next_state\" = \"(len < 32768) ? SMB_CLOSE : SMB_DOWNLOAD\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/smb.c",
+                    "line": 878,
+                    "event": "between",
+                    "message": "When switching on \"next_state\", the value of \"next_state\" must be between 2 and 7.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/smb.c",
+                    "line": 878,
+                    "event": "dead_error_condition",
+                    "message": "The \"switch\" governing value \"next_state\" cannot reach the \"default\" case.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/smb.c",
+                    "line": 904,
+                    "event": "dead_error_begin",
+                    "message": "Execution cannot reach this statement: \"default:\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "DEADCODE",
+            "function": "Curl_auth_create_ntlm_type3_message",
+            "key_event_idx": 3,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/vauth/ntlm.c",
+                    "line": 833,
+                    "event": "assignment",
+                    "message": "Assigning: \"result\" = \"((void)data) , CURLE_OK\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/vauth/ntlm.c",
+                    "line": 835,
+                    "event": "const",
+                    "message": "At condition \"result\", the value of \"result\" must be equal to 0.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/vauth/ntlm.c",
+                    "line": 835,
+                    "event": "dead_error_condition",
+                    "message": "The condition \"result\" cannot be true.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/vauth/ntlm.c",
+                    "line": 836,
+                    "event": "dead_error_line",
+                    "message": "Execution cannot reach this statement: \"return CURLE_CONV_FAILED;\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "DEADCODE",
+            "function": "ossl_connect_step1",
+            "key_event_idx": 8,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/vtls/openssl.c",
+                    "line": 2232,
+                    "event": "equality_cond",
+                    "message": "Jumping to case \"CURL_SSLVERSION_DEFAULT\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/vtls/openssl.c",
+                    "line": 2233,
+                    "event": "equality_cond",
+                    "message": "Jumping to case \"CURL_SSLVERSION_TLSv1\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/vtls/openssl.c",
+                    "line": 2234,
+                    "event": "equality_cond",
+                    "message": "Jumping to case \"CURL_SSLVERSION_TLSv1_0\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/vtls/openssl.c",
+                    "line": 2235,
+                    "event": "equality_cond",
+                    "message": "Jumping to case \"CURL_SSLVERSION_TLSv1_1\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/vtls/openssl.c",
+                    "line": 2236,
+                    "event": "equality_cond",
+                    "message": "Jumping to case \"CURL_SSLVERSION_TLSv1_2\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/vtls/openssl.c",
+                    "line": 2237,
+                    "event": "equality_cond",
+                    "message": "Jumping to case \"CURL_SSLVERSION_TLSv1_3\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/vtls/openssl.c",
+                    "line": 2357,
+                    "event": "intervals",
+                    "message": "When switching on \"ssl_version\", the value of \"ssl_version\" must be in one of the following intervals: {[0,1], [4,7]}.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/vtls/openssl.c",
+                    "line": 2358,
+                    "event": "dead_error_condition",
+                    "message": "The \"switch\" governing value \"ssl_version\" cannot be \"CURL_SSLVERSION_SSLv3\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/vtls/openssl.c",
+                    "line": 2358,
+                    "event": "dead_error_begin",
+                    "message": "Execution cannot reach this statement: \"case CURL_SSLVERSION_SSLv3:\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "DEADCODE",
+            "function": "ossl_connect_step1",
+            "key_event_idx": 8,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/vtls/openssl.c",
+                    "line": 2232,
+                    "event": "equality_cond",
+                    "message": "Jumping to case \"CURL_SSLVERSION_DEFAULT\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/vtls/openssl.c",
+                    "line": 2233,
+                    "event": "equality_cond",
+                    "message": "Jumping to case \"CURL_SSLVERSION_TLSv1\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/vtls/openssl.c",
+                    "line": 2234,
+                    "event": "equality_cond",
+                    "message": "Jumping to case \"CURL_SSLVERSION_TLSv1_0\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/vtls/openssl.c",
+                    "line": 2235,
+                    "event": "equality_cond",
+                    "message": "Jumping to case \"CURL_SSLVERSION_TLSv1_1\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/vtls/openssl.c",
+                    "line": 2236,
+                    "event": "equality_cond",
+                    "message": "Jumping to case \"CURL_SSLVERSION_TLSv1_2\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/vtls/openssl.c",
+                    "line": 2237,
+                    "event": "equality_cond",
+                    "message": "Jumping to case \"CURL_SSLVERSION_TLSv1_3\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/vtls/openssl.c",
+                    "line": 2357,
+                    "event": "intervals",
+                    "message": "When switching on \"ssl_version\", the value of \"ssl_version\" must be in one of the following intervals: {[0,1], [4,7]}.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/vtls/openssl.c",
+                    "line": 2385,
+                    "event": "dead_error_condition",
+                    "message": "The \"switch\" governing value \"ssl_version\" cannot be \"CURL_SSLVERSION_SSLv2\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/vtls/openssl.c",
+                    "line": 2385,
+                    "event": "dead_error_begin",
+                    "message": "Execution cannot reach this statement: \"case CURL_SSLVERSION_SSLv2:\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "DEADCODE",
+            "function": "ossl_connect_step1",
+            "key_event_idx": 8,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/vtls/openssl.c",
+                    "line": 2232,
+                    "event": "equality_cond",
+                    "message": "Jumping to case \"CURL_SSLVERSION_DEFAULT\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/vtls/openssl.c",
+                    "line": 2233,
+                    "event": "equality_cond",
+                    "message": "Jumping to case \"CURL_SSLVERSION_TLSv1\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/vtls/openssl.c",
+                    "line": 2234,
+                    "event": "equality_cond",
+                    "message": "Jumping to case \"CURL_SSLVERSION_TLSv1_0\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/vtls/openssl.c",
+                    "line": 2235,
+                    "event": "equality_cond",
+                    "message": "Jumping to case \"CURL_SSLVERSION_TLSv1_1\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/vtls/openssl.c",
+                    "line": 2236,
+                    "event": "equality_cond",
+                    "message": "Jumping to case \"CURL_SSLVERSION_TLSv1_2\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/vtls/openssl.c",
+                    "line": 2237,
+                    "event": "equality_cond",
+                    "message": "Jumping to case \"CURL_SSLVERSION_TLSv1_3\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/vtls/openssl.c",
+                    "line": 2357,
+                    "event": "intervals",
+                    "message": "When switching on \"ssl_version\", the value of \"ssl_version\" must be in one of the following intervals: {[0,1], [4,7]}.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/vtls/openssl.c",
+                    "line": 2357,
+                    "event": "dead_error_condition",
+                    "message": "The \"switch\" governing value \"ssl_version\" cannot reach the \"default\" case.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/lib/vtls/openssl.c",
+                    "line": 2397,
+                    "event": "dead_error_begin",
+                    "message": "Execution cannot reach this statement: \"default:\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "CHECKED_RETURN",
+            "function": "tool_header_cb",
+            "key_event_idx": 34,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/src/tool_cb_hdr.c",
+                    "line": 73,
+                    "event": "path",
+                    "message": "Condition \"!heads->config\", taking false branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/src/tool_cb_hdr.c",
+                    "line": 88,
+                    "event": "path",
+                    "message": "Condition \"heads->config->headerfile\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/src/tool_cb_hdr.c",
+                    "line": 88,
+                    "event": "path",
+                    "message": "Condition \"heads->stream\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/src/tool_cb_hdr.c",
+                    "line": 90,
+                    "event": "path",
+                    "message": "Condition \"rc != cb\", taking false branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/src/tool_cb_hdr.c",
+                    "line": 103,
+                    "event": "path",
+                    "message": "Condition \"0\", taking false branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/src/tool_cb_hdr.c",
+                    "line": 104,
+                    "event": "path",
+                    "message": "Condition \"hdrcbdata->honor_cd_filename\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/src/tool_cb_hdr.c",
+                    "line": 104,
+                    "event": "path",
+                    "message": "Condition \"cb > 20\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/src/tool_cb_hdr.c",
+                    "line": 104,
+                    "event": "path",
+                    "message": "Condition \"curl_strnequal(\"Content-disposition:\", str, strlen(\"Content-disposition:\"))\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/src/tool_cb_hdr.c",
+                    "line": 104,
+                    "event": "path",
+                    "message": "Condition \"protocol & (3L /* (1 << 1) | (1 << 0) */)\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/src/tool_cb_hdr.c",
+                    "line": 111,
+                    "event": "path",
+                    "message": "Condition \"true\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/src/tool_cb_hdr.c",
+                    "line": 115,
+                    "event": "path",
+                    "message": "Condition \"*p\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/src/tool_cb_hdr.c",
+                    "line": 115,
+                    "event": "path",
+                    "message": "Condition \"p < end\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/src/tool_cb_hdr.c",
+                    "line": 115,
+                    "event": "path",
+                    "message": "Condition \"!Curl_isalpha((int)(unsigned char)*p)\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/src/tool_cb_hdr.c",
+                    "line": 116,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/src/tool_cb_hdr.c",
+                    "line": 115,
+                    "event": "path",
+                    "message": "Condition \"*p\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/src/tool_cb_hdr.c",
+                    "line": 115,
+                    "event": "path",
+                    "message": "Condition \"p < end\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/src/tool_cb_hdr.c",
+                    "line": 115,
+                    "event": "path",
+                    "message": "Condition \"!Curl_isalpha((int)(unsigned char)*p)\", taking false branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/src/tool_cb_hdr.c",
+                    "line": 117,
+                    "event": "path",
+                    "message": "Condition \"p > end - 9\", taking false branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/src/tool_cb_hdr.c",
+                    "line": 120,
+                    "event": "path",
+                    "message": "Condition \"memcmp(p, \"filename=\", 9)\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/src/tool_cb_hdr.c",
+                    "line": 122,
+                    "event": "path",
+                    "message": "Condition \"p < end\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/src/tool_cb_hdr.c",
+                    "line": 122,
+                    "event": "path",
+                    "message": "Condition \"*p != ';'\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/src/tool_cb_hdr.c",
+                    "line": 123,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/src/tool_cb_hdr.c",
+                    "line": 122,
+                    "event": "path",
+                    "message": "Condition \"p < end\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/src/tool_cb_hdr.c",
+                    "line": 122,
+                    "event": "path",
+                    "message": "Condition \"*p != ';'\", taking false branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/src/tool_cb_hdr.c",
+                    "line": 124,
+                    "event": "path",
+                    "message": "Continuing loop.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/src/tool_cb_hdr.c",
+                    "line": 111,
+                    "event": "path",
+                    "message": "Condition \"true\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/src/tool_cb_hdr.c",
+                    "line": 115,
+                    "event": "path",
+                    "message": "Condition \"*p\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/src/tool_cb_hdr.c",
+                    "line": 115,
+                    "event": "path",
+                    "message": "Condition \"p < end\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/src/tool_cb_hdr.c",
+                    "line": 115,
+                    "event": "path",
+                    "message": "Condition \"!Curl_isalpha((int)(unsigned char)*p)\", taking false branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/src/tool_cb_hdr.c",
+                    "line": 117,
+                    "event": "path",
+                    "message": "Condition \"p > end - 9\", taking false branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/src/tool_cb_hdr.c",
+                    "line": 120,
+                    "event": "path",
+                    "message": "Condition \"memcmp(p, \"filename=\", 9)\", taking false branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/src/tool_cb_hdr.c",
+                    "line": 133,
+                    "event": "path",
+                    "message": "Condition \"filename\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/src/tool_cb_hdr.c",
+                    "line": 134,
+                    "event": "path",
+                    "message": "Condition \"outs->stream\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/src/tool_cb_hdr.c",
+                    "line": 136,
+                    "event": "path",
+                    "message": "Condition \"outs->fopened\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/src/tool_cb_hdr.c",
+                    "line": 141,
+                    "event": "check_return",
+                    "message": "Calling \"rename(outs->filename, filename)\" without checking return value. This library function may fail and return an error code.",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "CONSTANT_EXPRESSION_RESULT",
+            "function": "fread",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/usr/include/bits/stdio2.h",
+                    "line": 289,
+                    "event": "pointless_expression",
+                    "message": "The expression \"1 /* !0 */ || 1 /* !0 */\" does not accomplish anything because it evaluates to either of its identical operands, \"1 /* !0 */\".",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "/usr/include/bits/stdio2.h",
+                    "line": 289,
+                    "event": "remediation",
+                    "message": "Did you intend the operands to be different?",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COPY_PASTE_ERROR",
+            "function": "getNTLMSSPType3",
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/tests/python_dependencies/impacket/ntlm.py",
+                    "line": 595,
+                    "event": "original",
+                    "message": "\"user.decode\" looks like the original copy.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/tests/python_dependencies/impacket/ntlm.py",
+                    "line": 603,
+                    "event": "copy_paste_error",
+                    "message": "\"user\" in \"user.decode\" looks like a copy-paste error.",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/tests/python_dependencies/impacket/ntlm.py",
+                    "line": 603,
+                    "event": "remediation",
+                    "message": "Should it say \"domain\" instead?",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "FORWARD_NULL",
+            "function": "read_andx",
+            "key_event_idx": 11,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/tests/python_dependencies/impacket/smb.py",
+                    "line": 3504,
+                    "event": "assign_undefined",
+                    "message": "Assigning: \"readAndX\" = \"undefined\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/tests/python_dependencies/impacket/smb.py",
+                    "line": 3504,
+                    "event": "path",
+                    "message": "Condition \"!max_size\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/tests/python_dependencies/impacket/smb.py",
+                    "line": 3505,
+                    "event": "path",
+                    "message": "Condition \"self._dialects_parameters[\"Capabilities\"] & SMB.CAP_LARGE_READX\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/tests/python_dependencies/impacket/smb.py",
+                    "line": 3505,
+                    "event": "path",
+                    "message": "Condition \"self._SignatureEnabled === False\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/tests/python_dependencies/impacket/smb.py",
+                    "line": 3505,
+                    "event": "path",
+                    "message": "Condition \"(self._dialects_parameters[\"Capabilities\"] & SMB.CAP_LARGE_READX) && (self._SignatureEnabled === False)\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/tests/python_dependencies/impacket/smb.py",
+                    "line": 3506,
+                    "event": "path",
+                    "message": "Falling through to end of if statement.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/tests/python_dependencies/impacket/smb.py",
+                    "line": 3512,
+                    "event": "path",
+                    "message": "Condition \"smb_packet === None\", taking false branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/tests/python_dependencies/impacket/smb.py",
+                    "line": 3525,
+                    "event": "path",
+                    "message": "Condition \"wait_answer\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/tests/python_dependencies/impacket/smb.py",
+                    "line": 3527,
+                    "event": "path",
+                    "message": "Condition \"1\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/tests/python_dependencies/impacket/smb.py",
+                    "line": 3531,
+                    "event": "path",
+                    "message": "Condition \"ans.isValidAnswer(SMB.SMB_COM_READ_ANDX)\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/tests/python_dependencies/impacket/smb.py",
+                    "line": 3539,
+                    "event": "path",
+                    "message": "Condition \"!ans.isMoreData()\", taking false branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/tests/python_dependencies/impacket/smb.py",
+                    "line": 3542,
+                    "event": "property_access",
+                    "message": "Accessing a property of null-like value \"readAndX\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "IDENTICAL_BRANCHES",
+            "function": "list_path",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/tests/python_dependencies/impacket/smb.py",
+                    "line": 3775,
+                    "event": "identical_branches",
+                    "message": "Ternary expression on condition \"self.__flags2 & SMB.FLAGS2_UNICODE\" has identical then and else expressions: \"\"\"\". Should one of the expressions be modified, or the entire ternary expression replaced?",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "IDENTICAL_BRANCHES",
+            "function": "list_path",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/tests/python_dependencies/impacket/smb.py",
+                    "line": 3818,
+                    "event": "identical_branches",
+                    "message": "Ternary expression on condition \"self.__flags2 & SMB.FLAGS2_UNICODE\" has identical then and else expressions: \"\"\"\". Should one of the expressions be modified, or the entire ternary expression replaced?",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "FORWARD_NULL",
+            "function": "smbComOpenAndX",
+            "key_event_idx": 5,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/tests/python_dependencies/impacket/smbserver.py",
+                    "line": 2066,
+                    "event": "assign_undefined",
+                    "message": "Assigning: \"mode\" = \"undefined\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/tests/python_dependencies/impacket/smbserver.py",
+                    "line": 2077,
+                    "event": "path",
+                    "message": "Condition \"connData[\"ConnectedShares\"].has_key(recvPacket[\"Tid\"])\", taking false branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/tests/python_dependencies/impacket/smbserver.py",
+                    "line": 2087,
+                    "event": "path",
+                    "message": "Condition \"errorCode == STATUS_SUCCESS\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/tests/python_dependencies/impacket/smbserver.py",
+                    "line": 2090,
+                    "event": "path",
+                    "message": "Condition \"len(connData[\"OpenedFiles\"]) == 0\", taking true branch.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/tests/python_dependencies/impacket/smbserver.py",
+                    "line": 2091,
+                    "event": "path",
+                    "message": "Falling through to end of if statement.",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/curl-7.61.1/tests/python_dependencies/impacket/smbserver.py",
+                    "line": 2095,
+                    "event": "invalid_operation",
+                    "message": "Invalid operation on null-like value \"mode\".",
+                    "verbosity_level": "0"
+                }
+            ]
+        }
+    ]
+}

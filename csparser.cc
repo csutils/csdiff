@@ -297,6 +297,7 @@ KeyEventDigger::KeyEventDigger():
     d->traceEvts.insert("loop");
     d->traceEvts.insert("loop_begin");
     d->traceEvts.insert("loop_end");
+    d->traceEvts.insert("path");
     d->traceEvts.insert("return");
     d->traceEvts.insert("switch");
     d->traceEvts.insert("switch_case");

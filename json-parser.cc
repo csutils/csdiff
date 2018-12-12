@@ -54,6 +54,9 @@ class SimpleTreeDecoder: public AbstractTreeDecoder {
 class CovTreeDecoder: public AbstractTreeDecoder {
     public:
         virtual void readNode(Defect *def, const pt::ptree &node);
+
+    private:
+        KeyEventDigger              keDigger;
 };
 
 struct JsonParser::Private {
@@ -276,7 +279,34 @@ void CovTreeDecoder::readNode(
     // make sure the Defect structure is properly initialized
     (*def) = Defect();
 
+    // read per-defect properties
+    // TODO: read/propagate more properties from the Coverity JSON format
     def->checker = defNode.get<std::string>("checkerName");
+    def->function = valueOf<std::string>(defNode, "functionDisplayName", "");
 
-    throw pt::ptree_error("CovTreeDecoder has not yet been implemented");
+    // count the events and allocate dst array
+    const pt::ptree &evtList = defNode.get_child("events");
+    def->events.resize(evtList.size());
+
+    // decode events one by one
+    unsigned idx = 0;
+    pt::ptree::const_iterator it;
+    for (it = evtList.begin(); it != evtList.end(); ++it, ++idx) {
+        const pt::ptree &evtNode = it->second;
+        DefEvent &evt = def->events[idx];
+
+        evt.fileName    = valueOf<std::string>(evtNode, "filePathname"    , "");
+        evt.line        = valueOf<int>        (evtNode, "lineNumber"      , 0 );
+        // TODO: read column?
+        evt.event       = valueOf<std::string>(evtNode, "eventTag"        , "");
+        evt.msg         = valueOf<std::string>(evtNode, "eventDescription", "");
+
+        if (evtNode.get<bool>("main"))
+            // this is a key event
+            // TODO: detect and report re-definitions of key events
+            def->keyEventIdx = idx;
+    }
+
+    // initialize verbosity level of all events
+    this->keDigger.initVerbosity(def);
 }
