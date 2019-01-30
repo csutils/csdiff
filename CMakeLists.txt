@@ -74,6 +74,7 @@ if (BUILD_PYCSDIFF)
     set(BOOST_PYTHON_LIB_NAME "boost_python"
         CACHE STRING "Name of the boost_python library")
     find_library(BOOST_PYTHON NAMES ${BOOST_PYTHON_LIB_NAME}
+        boost_python37
         boost_python-3.2
         boost_python-3.3
         boost_python-3.4)
