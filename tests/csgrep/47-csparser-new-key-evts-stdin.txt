@@ -1,0 +1,38 @@
+Error: NULL_RETURNS:
+/builddir/build/BUILD/dbus-1.10.24/dbus/dbus-connection.c:637: returned_null: "_dbus_list_get_last_link" returns null (checked 7 out of 8 times).
+/builddir/build/BUILD/dbus-1.10.24/dbus/dbus-connection.c:637: var_assigned: Assigning: "link" = null return value from "_dbus_list_get_last_link".
+/builddir/build/BUILD/dbus-1.10.24/dbus/dbus-connection.c:641: dereference: Dereferencing a pointer that might be null "link" when calling "_dbus_list_unlink".
+/builddir/build/BUILD/dbus-1.10.24/bus/bus.c:549: example_assign: Example 1: Assigning: "link" = return value from "_dbus_list_get_last_link(&context->servers)".
+/builddir/build/BUILD/dbus-1.10.24/bus/bus.c:550: example_checked: Example 1 (cont.): "link" has its value checked in "link != NULL".
+/builddir/build/BUILD/dbus-1.10.24/bus/connection.c:2505: example_assign: Example 2: Assigning: "link" = return value from "_dbus_list_get_last_link(&d->transaction_messages)".
+/builddir/build/BUILD/dbus-1.10.24/bus/connection.c:2506: example_checked: Example 2 (cont.): "link" has its value checked in "link != NULL".
+/builddir/build/BUILD/dbus-1.10.24/bus/signals.c:1631: example_assign: Example 3: Assigning: "link" = return value from "_dbus_list_get_last_link(rules)".
+/builddir/build/BUILD/dbus-1.10.24/bus/signals.c:1632: example_checked: Example 3 (cont.): "link" has its value checked in "link != NULL".
+/builddir/build/BUILD/dbus-1.10.24/dbus/dbus-connection.c:4217: example_checked: Example 4: "_dbus_list_get_last_link(&connection->outgoing_messages)" has its value checked in "link = _dbus_list_get_last_link(&connection->outgoing_messages)".
+/builddir/build/BUILD/dbus-1.10.24/dbus/dbus-list.c:477: example_assign: Example 5: Assigning: "link" = return value from "_dbus_list_get_last_link(list)".
+/builddir/build/BUILD/dbus-1.10.24/dbus/dbus-list.c:479: example_checked: Example 5 (cont.): "link" has its value checked in "link != NULL".
+
+Error: NULL_RETURNS:
+/builddir/build/BUILD/dbus-1.10.24/dbus/dbus-connection.c:3981: path: Condition "connection->n_incoming > 0", taking true branch.
+/builddir/build/BUILD/dbus-1.10.24/dbus/dbus-connection.c:3985: returned_null: "_dbus_list_pop_first_link" returns null (checked 10 out of 12 times).
+/builddir/build/BUILD/dbus-1.10.24/dbus/dbus-connection.c:3985: var_assigned: Assigning: "link" = null return value from "_dbus_list_pop_first_link".
+/builddir/build/BUILD/dbus-1.10.24/dbus/dbus-connection.c:4007: dereference: Dereferencing a null pointer "link".
+/builddir/build/BUILD/dbus-1.10.24/bus/config-parser-trivial.c:183: example_checked: Example 1: "_dbus_list_pop_first_link(&dirs)" has its value checked in "link = _dbus_list_pop_first_link(&dirs)".
+/builddir/build/BUILD/dbus-1.10.24/bus/config-parser.c:348: example_checked: Example 2: "_dbus_list_pop_first_link(&included->conf_dirs)" has its value checked in "link = _dbus_list_pop_first_link(&included->conf_dirs)".
+/builddir/build/BUILD/dbus-1.10.24/bus/config-parser.c:854: example_checked: Example 3: "_dbus_list_pop_first_link(&dirs)" has its value checked in "link = _dbus_list_pop_first_link(&dirs)".
+/builddir/build/BUILD/dbus-1.10.24/bus/config-parser.c:880: example_checked: Example 4: "_dbus_list_pop_first_link(&dirs)" has its value checked in "link = _dbus_list_pop_first_link(&dirs)".
+/builddir/build/BUILD/dbus-1.10.24/bus/policy.c:624: example_checked: Example 5: "_dbus_list_pop_first_link(&tmp_list)" has its value checked in "link = _dbus_list_pop_first_link(&tmp_list)".
+
+Error: NULL_RETURNS:
+/builddir/build/BUILD/dbus-1.10.24/dbus/dbus-mainloop.c:245: path: Condition "watches == NULL", taking true branch.
+/builddir/build/BUILD/dbus-1.10.24/dbus/dbus-mainloop.c:246: returned_null: "_dbus_hash_table_lookup_pollable" returns null (checked 4 out of 5 times).
+/builddir/build/BUILD/dbus-1.10.24/dbus/dbus-mainloop.c:246: var_assigned: Assigning: "watches" = null return value from "_dbus_hash_table_lookup_pollable".
+/builddir/build/BUILD/dbus-1.10.24/dbus/dbus-mainloop.c:252: dereference: Dereferencing a pointer that might be null "watches" when calling "_dbus_list_get_first_link".
+/builddir/build/BUILD/dbus-1.10.24/dbus/dbus-mainloop.c:176: example_assign: Example 1: Assigning: "watches" = return value from "_dbus_hash_table_lookup_pollable(loop->watches, fd)".
+/builddir/build/BUILD/dbus-1.10.24/dbus/dbus-mainloop.c:178: example_checked: Example 1 (cont.): "watches" has its value checked in "watches == NULL".
+/builddir/build/BUILD/dbus-1.10.24/dbus/dbus-mainloop.c:335: example_assign: Example 2: Assigning: "watches" = return value from "_dbus_hash_table_lookup_pollable(loop->watches, fd)".
+/builddir/build/BUILD/dbus-1.10.24/dbus/dbus-mainloop.c:337: example_checked: Example 2 (cont.): "watches" has its value checked in "watches != NULL".
+/builddir/build/BUILD/dbus-1.10.24/dbus/dbus-mainloop.c:204: example_assign: Example 3: Assigning: "watches" = return value from "_dbus_hash_table_lookup_pollable(loop->watches, fd)".
+/builddir/build/BUILD/dbus-1.10.24/dbus/dbus-mainloop.c:206: example_checked: Example 3 (cont.): "watches" has its value checked in "watches != NULL".
+/builddir/build/BUILD/dbus-1.10.24/dbus/dbus-mainloop.c:799: example_assign: Example 4: Assigning: "watches" = return value from "_dbus_hash_table_lookup_pollable(loop->watches, ready_fds[i].fd)".
+/builddir/build/BUILD/dbus-1.10.24/dbus/dbus-mainloop.c:802: example_checked: Example 4 (cont.): "watches" has its value checked in "watches == NULL".
