@@ -594,12 +594,12 @@ Error: MISSING_BREAK:
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:1193: fallthrough: The above case falls through to this one.
 
 Error: MISSING_BREAK:
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/sparql2sql.c:1133: unterminated_case: This case (value 1011) is not terminated by a 'break' statement.
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/sparql2sql.c:1167: fallthrough: The above case falls through to this one.
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/sqlbif.c:8968: unterminated_case: This case (value 238) is not terminated by a 'break' statement.
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/sqlbif.c:8970: fallthrough: The above case falls through to this one.
 
 Error: MISSING_BREAK:
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/sqlbif.c:6872: unterminated_case: This case (value 212) is not terminated by a 'break' statement.
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/sqlbif.c:6883: fallthrough: The above case falls through to this one.
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/sparql2sql.c:1133: unterminated_case: This case (value 1011) is not terminated by a 'break' statement.
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/sparql2sql.c:1167: fallthrough: The above case falls through to this one.
 
 Error: NO_EFFECT:
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/sparul2sql.c:491: self_assign: Assignment operation "sc_ret[0]->sc_super = sc_ret[0]->sc_super" has no effect.

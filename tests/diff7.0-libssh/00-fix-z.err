@@ -70,6 +70,10 @@ libssh-0.4.8/libssh/dh.c:837: var_compare_op: Comparing "session->current_crypto
 libssh-0.4.8/libssh/dh.c:853: var_deref_op: Dereferencing null variable "session->current_crypto".
 
 Error: MISSING_BREAK:
+libssh-0.4.8/libssh/client.c:247: unterminated_case: This case (value 0) is not terminated by a 'break' statement.
+libssh-0.4.8/libssh/client.c:277: fallthrough: The above case falls through to this one.
+
+Error: MISSING_BREAK:
 libssh-0.4.8/libssh/client.c:277: unterminated_case: This case (value 1) is not terminated by a 'break' statement.
 libssh-0.4.8/libssh/client.c:283: fallthrough: The above case falls through to this one.
 

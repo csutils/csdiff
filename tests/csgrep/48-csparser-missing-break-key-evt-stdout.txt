@@ -1,0 +1,5 @@
+Error: COMPILER_WARNING:
+libssh2-1.8.0/example/x11.c:213:14: warning: ignoring return value of 'write', declared with attribute warn_unused_result [-Wunused-result]
+
+Error: MISSING_BREAK (CWE-484):
+libssh2-1.8.0/src/sftp.c:1287: unterminated_case: The case for value "libssh2_NB_state_idle" is not terminated by a 'break' statement.

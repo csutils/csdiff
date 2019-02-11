@@ -1,0 +1,14 @@
+Error: COMPILER_WARNING:
+libssh2-1.8.0/example/x11.c: scope_hint: In function 'x11_send_receive'
+libssh2-1.8.0/example/x11.c:213:14: warning: ignoring return value of 'write', declared with attribute warn_unused_result [-Wunused-result]
+#         write(sock, buf, rc);
+#              ^
+
+Error: MISSING_BREAK (CWE-484):
+libssh2-1.8.0/src/sftp.c:1287: unterminated_case: The case for value "libssh2_NB_state_idle" is not terminated by a 'break' statement.
+libssh2-1.8.0/src/sftp.c:1414: fallthrough: The above case falls through to this one.
+# 1285|   
+# 1286|       switch (sftp->read_state) {
+# 1287|->     case libssh2_NB_state_idle:
+# 1288|   
+# 1289|           /* Some data may already have been read from the server in the

@@ -171,6 +171,10 @@ Error: FORWARD_NULL:
 /builddir/build/BUILD/libssh-0.5.0/src/socket.c:300: var_deref_model: Passing null variable "p" to function "ssh_poll_set_events", which dereferences it.
 /builddir/build/BUILD/libssh-0.5.0/src/poll.c:334: deref_parm: Directly dereferencing parameter "p".
 
+Error: MISSING_BREAK:
+/builddir/build/BUILD/libssh-0.5.0/src/client.c:556: unterminated_case: This case (value 5) is not terminated by a 'break' statement.
+/builddir/build/BUILD/libssh-0.5.0/src/client.c:570: fallthrough: The above case falls through to this one.
+
 Error: NULL_RETURNS:
 /builddir/build/BUILD/libssh-0.5.0/src/messages.c:908: returned_null: Function "ssh_message_new" returns null (checked 4 out of 5 times).
 /builddir/build/BUILD/libssh-0.5.0/src/messages.c:65: return_null: Explicitly returning NULL.
