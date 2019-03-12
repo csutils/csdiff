@@ -1,0 +1,57 @@
+Error: FB.REC_CATCH_EXCEPTION:
+apache-tomcat-7.0.76-src/java/org/apache/catalina/core/NamingContextListener.java:932: defect: Catching RuntimeExceptions, perhaps unintentionally, with a catch block for Exception.
+#  930|                   // Ignore
+#  931|               }
+#  932|->         } catch (Exception e) {
+#  933|               // Ignore
+#  934|           }
+
+Error: FB.JLM_JSR166_UTILCONCURRENT_MONITORENTER:
+apache-tomcat-7.0.76-src/java/org/apache/catalina/core/StandardContext.java:3347: defect: Synchronization performed on java.util.concurrent.ConcurrentMap.
+# 3345|   
+# 3346|           // Add this parameter to our defined set
+# 3347|->         synchronized (parameters) {
+# 3348|               parameters.put(name, value);
+# 3349|           }
+
+Error: FB.JLM_JSR166_UTILCONCURRENT_MONITORENTER:
+apache-tomcat-7.0.76-src/java/org/apache/catalina/core/StandardContext.java:3877: defect: Synchronization performed on java.util.concurrent.ConcurrentMap.
+# 3875|       public String findParameter(String name) {
+# 3876|   
+# 3877|->         synchronized (parameters) {
+# 3878|               return (parameters.get(name));
+# 3879|           }
+
+Error: FB.JLM_JSR166_UTILCONCURRENT_MONITORENTER:
+apache-tomcat-7.0.76-src/java/org/apache/catalina/core/StandardContext.java:3892: defect: Synchronization performed on java.util.concurrent.ConcurrentMap.
+# 3890|       public String[] findParameters() {
+# 3891|   
+# 3892|->         synchronized (parameters) {
+# 3893|               String results[] = new String[parameters.size()];
+# 3894|               return (parameters.keySet().toArray(results));
+
+Error: GUARDED_BY_VIOLATION (CWE-366):
+apache-tomcat-7.0.76-src/java/org/apache/catalina/core/StandardContext.java:3997: missing_lock: Accessing "statusPages" without holding lock "StandardContext.statusPages". Elsewhere, "org.apache.catalina.core.StandardContext.statusPages" is accessed with "StandardContext.statusPages" held 6 out of 8 times.
+apache-tomcat-7.0.76-src/java/org/apache/catalina/core/StandardContext.java:3148: example_lock: Example 1: Locking "StandardContext.statusPages".
+apache-tomcat-7.0.76-src/java/org/apache/catalina/core/StandardContext.java:3152: example_access: Example 1 (cont.): "StandardContext.statusPages" is accessed with lock "StandardContext.statusPages" held.
+apache-tomcat-7.0.76-src/java/org/apache/catalina/core/StandardContext.java:3700: example_lock: Example 2: Locking "StandardContext.statusPages".
+apache-tomcat-7.0.76-src/java/org/apache/catalina/core/StandardContext.java:3703: example_access: Example 2 (cont.): "StandardContext.statusPages" is accessed with lock "StandardContext.statusPages" held.
+apache-tomcat-7.0.76-src/java/org/apache/catalina/core/StandardContext.java:4311: example_lock: Example 3: Locking "StandardContext.statusPages".
+apache-tomcat-7.0.76-src/java/org/apache/catalina/core/StandardContext.java:4315: example_access: Example 3 (cont.): "StandardContext.statusPages" is accessed with lock "StandardContext.statusPages" held.
+apache-tomcat-7.0.76-src/java/org/apache/catalina/core/StandardContext.java:4014: example_lock: Example 4: Locking "StandardContext.statusPages".
+apache-tomcat-7.0.76-src/java/org/apache/catalina/core/StandardContext.java:4015: example_access: Example 4 (cont.): "StandardContext.statusPages" is accessed with lock "StandardContext.statusPages" held.
+apache-tomcat-7.0.76-src/java/org/apache/catalina/core/StandardContext.java:4014: example_lock: Example 5: Locking "StandardContext.statusPages".
+apache-tomcat-7.0.76-src/java/org/apache/catalina/core/StandardContext.java:4016: example_access: Example 5 (cont.): "StandardContext.statusPages" is accessed with lock "StandardContext.statusPages" held.
+# 3995|       public String findStatusPage(int status) {
+# 3996|   
+# 3997|->         ErrorPage errorPage = statusPages.get(Integer.valueOf(status));
+# 3998|           if (errorPage!=null) {
+# 3999|               return errorPage.getLocation();
+
+Error: FB.JLM_JSR166_UTILCONCURRENT_MONITORENTER:
+apache-tomcat-7.0.76-src/java/org/apache/catalina/core/StandardContext.java:4446: defect: Synchronization performed on java.util.concurrent.ConcurrentMap.
+# 4444|       public void removeParameter(String name) {
+# 4445|   
+# 4446|->         synchronized (parameters) {
+# 4447|               parameters.remove(name);
+# 4448|           }

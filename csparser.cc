@@ -121,7 +121,7 @@ class ErrFileLexer {
             hasError_(false),
             reEmpty_("^ *$"),
             reComment_("^(#)(.*)$"),
-            reChecker_("^Error: *([A-Za-z][A-Za-z_.]+)( *\\([^)]+\\))? *:$"),
+            reChecker_("^Error: *([A-Za-z][0-9A-Za-z_.]+)( *\\([^)]+\\))? *:$"),
             reEvent_(
                     /* location */ "^([^:]+)(?::([0-9]+))?(?::([0-9]+))?"
                     /* evt/mesg */ ": (" RE_EVENT "): (.*)$")
