@@ -159,7 +159,9 @@ make %{?_smp_mflags} VERBOSE=yes
 %if %{with python3}
 mkdir ../csdiff_build_py3
 cd ../csdiff_build_py3
-%cmake .. -DPYTHON_EXECUTABLE=%{__python3} -DBOOST_PYTHON_LIB_NAME=boost_python3
+%cmake .. \\
+    -DPYTHON_EXECUTABLE=%{__python3} \\
+    -DBOOST_PYTHON_LIB_NAME=boost_python%{python3_version_nodots}
 make %{?_smp_mflags} VERBOSE=yes pycsdiff
 %endif
 
