@@ -48,7 +48,7 @@ VER="`echo "$VER" | sed "s/-.*-/.$TIMESTAMP./"`"
 
 BRANCH="`git rev-parse --abbrev-ref HEAD`"
 test -n "$BRANCH" || die "failed to get current branch name"
-test master = "${BRANCH}" || VER="${VER}.${BRANCH}"
+test master = "${BRANCH}" || VER="${VER}.${BRANCH//-/_}"
 test -z "`git diff HEAD`" || VER="${VER}.dirty"
 
 NV="${PKG}-${VER}"
@@ -189,11 +189,13 @@ ctest %{?_smp_mflags} --output-on-failure
 %{_bindir}/cshtml
 %{_bindir}/cslinker
 %{_bindir}/cssort
+%{_bindir}/cstrans-df-run
 %{_mandir}/man1/csdiff.1*
 %{_mandir}/man1/csgrep.1*
 %{_mandir}/man1/cshtml.1*
 %{_mandir}/man1/cslinker.1*
 %{_mandir}/man1/cssort.1*
+%{_mandir}/man1/cstrans-df-run.1*
 %doc COPYING README
 
 %if %{with python2}
