@@ -1,4 +1,4 @@
-# Copyright (C) 2011 - 2014 Red Hat, Inc.
+# Copyright (C) 2011 - 2019 Red Hat, Inc.
 #
 # This file is part of csdiff.
 #
@@ -56,6 +56,9 @@ add_executable(cshtml       cshtml.cc)
 add_executable(cslinker     cslinker.cc)
 add_executable(cssort       cssort.cc)
 
+# experimental
+add_executable(cstrans-df-run cstrans-df-run.cc)
+
 # load regression tests
 add_subdirectory(tests)
 
@@ -66,6 +69,7 @@ install(TARGETS
     cshtml
     cslinker
     cssort
+    cstrans-df-run
     DESTINATION bin)
 
 # pycsdiff - python binding of csdiff
@@ -145,4 +149,5 @@ if(HELP2MAN)
     create_manpage(cshtml)
     create_manpage(cslinker)
     create_manpage(cssort)
+    create_manpage(cstrans-df-run)
 endif()
