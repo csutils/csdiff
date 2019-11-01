@@ -105,6 +105,16 @@ macro(test_cssort dir num)
     add_test_wrap("${dir}-${num}-by-path" "${cmd}")
 endmacro()
 
+# a generic template for cstrans-df-run tests
+macro(tests_cstrans_df_run tst)
+    set(test_data_prefix "${testdir}/cstrans-df-run/${tst}")
+    set(cmd "${csdiff_BINARY_DIR}/cstrans-df-run")
+    set(cmd "${cmd} -- /opt/cov-sa-2019.09/bin/cov-build --dir=/cov --append-log")
+    set(cmd "${cmd} <${test_data_prefix}-stdin.txt")
+    set(cmd "${cmd} | ${diffcmd} ${test_data_prefix}-stdout.txt -")
+    add_test_wrap("cstrans-df-run-${tst}" "${cmd}")
+endmacro()
+
 # csgrep tests
 test_csgrep(csgrep      "00-exclude-conftest"         )
 test_csgrep(csgrep      "01-remove-duplicates"        )
@@ -192,3 +202,11 @@ test_csdiff(diff-misc                               05)
 test_csdiff(diff-misc                               06)
 test_csdiff(diff-misc                               07)
 test_csdiff(diff-misc                               08)
+
+# cstrans-df-run tests
+tests_cstrans_df_run(0001)
+tests_cstrans_df_run(0002)
+tests_cstrans_df_run(0003)
+tests_cstrans_df_run(0004)
+tests_cstrans_df_run(0005)
+tests_cstrans_df_run(0006)

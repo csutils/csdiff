@@ -1,0 +1,41 @@
+FROM openshift/golang-builder:1.11 AS builder
+ENV SOURCE_GIT_COMMIT=39c2c111ea818cd16dbd11e31cc682cf2b4042d3 SOURCE_GIT_TAG=golang-github-prometheus-alertmanager-4.0.0-0.100.0-115-g39c2c11
+
+ARG ALERTMANAGER_GOPATH=/go/src/github.com/prometheus/alertmanager
+ARG BUILD_PROMU=false
+COPY . ${ALERTMANAGER_GOPATH}
+RUN cd ${ALERTMANAGER_GOPATH} && \
+    yum install -y prometheus-promu && \
+    make build && \
+    yum clean all
+
+FROM ubi7:7.6-159
+ENV SOURCE_GIT_COMMIT=39c2c111ea818cd16dbd11e31cc682cf2b4042d3 SOURCE_GIT_TAG=golang-github-prometheus-alertmanager-4.0.0-0.100.0-115-g39c2c11
+
+ARG ALERTMANAGER_GOPATH=/go/src/github.com/prometheus/alertmanager
+COPY --from=builder ${ALERTMANAGER_GOPATH}/amtool                       /bin/amtool
+COPY --from=builder ${ALERTMANAGER_GOPATH}/alertmanager                 /bin/alertmanager
+COPY --from=builder ${ALERTMANAGER_GOPATH}/examples/ha/alertmanager.yml /etc/alertmanager/alertmanager.yml
+
+EXPOSE     9093
+RUN mkdir -p /alertmanager
+VOLUME     [ "/alertmanager" ]
+WORKDIR    /etc/alertmanager
+ENTRYPOINT [ "/bin/alertmanager" ]
+CMD        [ "--storage.path=/alertmanager" ]
+
+LABEL \
+        io.k8s.description="This is the Prometheus Alert Manager image." \
+        com.redhat.component="golang-github-prometheus-alertmanager-container" \
+        maintainer="OpenShift Development <dev@lists.openshift.redhat.com>" \
+        name="openshift/ose-prometheus-alertmanager" \
+        License="ASL 2.0" \
+        io.k8s.display-name="Prometheus Alert Manager" \
+        io.openshift.build.source-location="https://github.com/openshift/prometheus-alertmanager" \
+        io.openshift.build.commit.url="https://github.com/openshift/prometheus-alertmanager/commit/39c2c111ea818cd16dbd11e31cc682cf2b4042d3" \
+        version="v4.1.0" \
+        io.openshift.build.commit.id="39c2c111ea818cd16dbd11e31cc682cf2b4042d3" \
+        release="201905191700" \
+        vendor="Red Hat" \
+        io.openshift.tags="openshift,prometheus"
+
