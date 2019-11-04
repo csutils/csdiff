@@ -129,6 +129,7 @@ std::string runQuoteArg(std::string arg)
 {
     boost::algorithm::replace_all(arg, "\\", "\\\\");
     boost::algorithm::replace_all(arg, "\"", "\\\"");
+    boost::algorithm::replace_all(arg, "\t", "\\t");
     return arg;
 }
 
