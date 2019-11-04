@@ -83,7 +83,13 @@ void appendExecArgs(TStringList *pExecList, const std::string &str)
 
             case ES_BACK_SLASH:
                 // one back-slash has been consumed
-                arg.push_back(c);
+                if ('n' == c)
+                    arg.push_back('\n');
+                else if ('t' == c)
+                    arg.push_back('\t');
+                else
+                    // FIXME: this works for back-slash and quote only
+                    arg.push_back(c);
                 state = ES_SEEK_QUOT_CLOSE;
                 continue;
 
@@ -130,6 +136,7 @@ std::string runQuoteArg(std::string arg)
 {
     boost::algorithm::replace_all(arg, "\\", "\\\\");
     boost::algorithm::replace_all(arg, "\"", "\\\"");
+    boost::algorithm::replace_all(arg, "\n", "\\n");
     boost::algorithm::replace_all(arg, "\t", "\\t");
     return arg;
 }
