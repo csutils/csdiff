@@ -1,5 +1,6 @@
 language: cpp
 compiler: gcc
+dist: trusty
 
 before_install:
     - sudo apt-get update
