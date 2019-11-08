@@ -32,6 +32,7 @@ enum EToken {
     T_INC,
     T_SCOPE,
     T_MSG,
+    T_SIDEBAR,
     T_MARKER
 };
 
@@ -70,6 +71,7 @@ class Tokenizer: public ITokenizer {
         Tokenizer(std::istream &input):
             input_(input),
             lineNo_(0),
+            reSideBar_("^ *((([0-9]+)? \\| )|(\\+\\+\\+ \\|\\+)).*$"),
             reMarker_("^ *[ ~^|]+$"),
             reInc_("^(?:In file included| +) from " RE_LOCATION "[:,]"
                     RE_TOOL_SUFFIX),
@@ -90,6 +92,7 @@ class Tokenizer: public ITokenizer {
     private:
         std::istream           &input_;
         int                     lineNo_;
+        const boost::regex      reSideBar_;
         const boost::regex      reMarker_;
         const boost::regex      reInc_;
         const boost::regex      reScope_;
@@ -111,6 +114,14 @@ EToken Tokenizer::readNext(DefEvent *pEvt) {
 
     *pEvt = DefEvent();
     pEvt->msg = line;
+
+    // check for line markers produced by gcc-9.2.1 (a.k.a. sidebar)
+    if (boost::regex_match(pEvt->msg, reSideBar_))
+        //  xxx.c:2:1: note: include '<stdlib.h>' or provide a declaration...
+        //    1 | #include <stdio.h>
+        //  +++ |+#include <stdlib.h>
+        //    2 |
+        return T_SIDEBAR;
 
     if (boost::regex_match(line, reMarker_))
         return T_MARKER;
@@ -222,12 +233,28 @@ EToken MarkerConverter::readNext(DefEvent *pEvt) {
 
     tok = slave_->readNext(pEvt);
     lineNo_ = slave_->lineNo();
-    if (T_UNKNOWN != tok)
-        return tok;
+    switch (tok) {
+        case T_SIDEBAR:
+            pEvt->event = "#";
+            tok = T_MSG;
+            break;
+
+        case T_UNKNOWN:
+            break;
+
+        default:
+            return tok;
+    }
 
     lastTok_ = slave_->readNext(&lastEvt_);
-    if (T_MARKER != lastTok_)
-        return tok;
+    switch (lastTok_) {
+        case T_SIDEBAR:
+        case T_MARKER:
+            break;
+
+        default:
+            return tok;
+    }
 
     // translate both events to comments
     lastEvt_.event = pEvt->event = "#";
@@ -492,6 +519,7 @@ bool BasicGccParser::getNext(Defect *pDef) {
                 hasKeyEvent_ = true;
                 break;
 
+            case T_SIDEBAR:
             case T_MARKER:
             case T_UNKNOWN:
                 this->handleError();

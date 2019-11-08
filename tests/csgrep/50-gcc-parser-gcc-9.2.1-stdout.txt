@@ -1,0 +1,11 @@
+Error: COMPILER_WARNING:
+test2.c: scope_hint: In function ‘foo’
+test2.c:1:14: warning: implicit declaration of function ‘abort’ [-Wimplicit-function-declaration]
+#    1 | void foo() { abort(); }
+#      |              ^~~~~
+
+Error: COMPILER_WARNING:
+test2.c:1:14: warning: incompatible implicit declaration of built-in function ‘abort’
+test2.c:1:1: note: include ‘<stdlib.h>’ or provide a declaration of ‘abort’
+#  +++ |+#include <stdlib.h>
+#    1 | void foo() { abort(); }
