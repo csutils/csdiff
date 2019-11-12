@@ -58,6 +58,9 @@ add_executable(cssort       cssort.cc)
 
 # experimental
 add_executable(cstrans-df-run cstrans-df-run.cc)
+target_link_libraries(cstrans-df-run
+    boost_filesystem
+    boost_system)
 
 # load regression tests
 add_subdirectory(tests)

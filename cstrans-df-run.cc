@@ -20,12 +20,14 @@
 #include "version.hh"
 
 #include <boost/algorithm/string/replace.hpp>
+#include <boost/filesystem.hpp>
 #include <boost/foreach.hpp>
 #include <boost/program_options.hpp>
 #include <boost/regex.hpp>
 #include <boost/tokenizer.hpp>
 
 #include <cctype>
+#include <fstream>
 #include <iostream>
 
 typedef std::vector<std::string> TStringList;
@@ -243,6 +245,30 @@ bool DockerFileTransformer::transform(std::istream &in, std::ostream &out)
     return !anyError;
 }
 
+bool transformInPlace(DockerFileTransformer &dft, const std::string &fileName)
+{
+    using namespace boost::filesystem;
+
+    // open input file and temporary output file
+    std::fstream fin(fileName, std::ios::in);
+    path tmpFileName = unique_path();
+    std::fstream fout(tmpFileName.native(), std::ios::out);
+
+    // transform fin -> fout and close the streams
+    const bool ok = dft.transform(fin, fout);
+    fin.close();
+    fout.close();
+
+    if (ok)
+        // rewrite input file by the temporary file
+        rename(tmpFileName, fileName);
+    else
+        // something failed, drop the temporary file
+        remove(tmpFileName);
+
+    return ok;
+}
+
 int main(int argc, char *argv[])
 {
     // used also in diagnostic messages
@@ -251,10 +277,12 @@ int main(int argc, char *argv[])
     namespace po = boost::program_options;
     po::variables_map vm;
     po::options_description desc(std::string("Usage: ") + prog_name
-            + " [--verbose] cmd [arg1 [arg2 [...]]]");
+            + " [--in-place Dockerfile] [--verbose] cmd [arg1 [arg2 [...]]]");
 
     try {
         desc.add_options()
+            ("in-place,i", po::value<std::string>(),
+             "modify the specified file in-place")
             ("verbose", "print transformations to standard error output");
 
         desc.add_options()
@@ -307,6 +335,10 @@ int main(int argc, char *argv[])
 
     // pass cmd-line args to DockerFileTransformer
     DockerFileTransformer dft(prefixCmd, verbose);
+
+    if (vm.count("in-place"))
+        // transform Dockerfile in-place
+        return !transformInPlace(dft, vm["in-place"].as<std::string>());
 
     // transform Dockerfile on stdin and write to stdout
     return !dft.transform(std::cin, std::cout);
