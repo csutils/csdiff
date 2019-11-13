@@ -250,9 +250,9 @@ bool transformInPlace(DockerFileTransformer &dft, const std::string &fileName)
     using namespace boost::filesystem;
 
     // open input file and temporary output file
-    std::fstream fin(fileName, std::ios::in);
+    std::fstream fin(fileName.c_str(), std::ios::in);
     path tmpFileName = unique_path();
-    std::fstream fout(tmpFileName.native(), std::ios::out);
+    std::fstream fout(tmpFileName.native().c_str(), std::ios::out);
 
     // transform fin -> fout and close the streams
     const bool ok = dft.transform(fin, fout);
