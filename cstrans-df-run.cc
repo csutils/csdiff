@@ -42,6 +42,7 @@ class DockerFileTransformer {
             reLineRun_("^RUN (.*)$"),
             reLineRunExec_("^RUN  *\\[(.*)\\] *$"),
             reLineCont_("(^.*[^\\\\])\\\\$"),
+            reComment_("^ *#.*$"),
             lineNum_(0)
         {
         }
@@ -55,6 +56,7 @@ class DockerFileTransformer {
         const boost::regex  reLineRun_;         ///< match ... in RUN ...
         const boost::regex  reLineRunExec_;     ///< match ... in RUN [...]
         const boost::regex  reLineCont_;        ///< match ... in ... BS-NL
+        const boost::regex  reComment_;         ///< match in-line comments
         int                 lineNum_;           ///< line number being read
 
         bool transformRunLine(std::string *);
@@ -190,7 +192,7 @@ bool DockerFileTransformer::transformRunLine(std::string *pRunLine)
         std::cerr << prog_name << " >>> " << newRunLine << std::endl;
     }
 
-    // return the result of a successful tranformation
+    // return the result of a successful transformation
     *pRunLine = newRunLine;
     return true;
 }
@@ -208,7 +210,12 @@ bool DockerFileTransformer::transform(std::istream &in, std::ostream &out)
     while (std::getline(in, line)) {
         lineNum_++;
 
-        if (!readingRunLine && !boost::regex_match(line, reLineRun_)) {
+        if (readingRunLine) {
+            // check for comment because it does not need to end with back-slash
+            if (boost::regex_match(line, reComment_))
+                continue;
+        }
+        else if (!boost::regex_match(line, reLineRun_)) {
             // pass unrelated contents of Dockerfile unchanged
             out << line << std::endl;
             continue;
