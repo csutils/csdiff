@@ -59,7 +59,7 @@ class AbstractTokenFilter: public ITokenizer {
         ITokenizer *slave_;
 };
 
-#define RE_LOCATION "([^:]+)(?::([0-9]+))?(?::([0-9]+))?"
+#define RE_LOCATION "([^ :\"][^:\"]+)(?::([0-9]+))?(?::([0-9]+))?"
 #define RE_TOOL_SUFFIX "(?: <--\\[[^\\]]+\\])?$"
 #define RE_EVENT_GCC "(?:(?:(?:fatal|internal) )?[a-z]+)"
 #define RE_EVENT_PROSPECTOR "(?:[A-Z]+[0-9]+\\[[a-z0-9]+\\])"

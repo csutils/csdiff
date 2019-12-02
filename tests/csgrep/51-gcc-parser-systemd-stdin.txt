@@ -1,0 +1,230 @@
+/builddir/build/BUILD/systemd-239/src/machine/machine-dbus.c:1173:17: warning: Value stored to 'containerfd' is never read <--[clang]
+                containerfd = safe_close(containerfd);
+                ^             ~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/systemd-239/src/machine/machine-dbus.c:1173:17: note: Value stored to 'containerfd' is never read <--[clang]
+                containerfd = safe_close(containerfd);
+                ^             ~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/systemd-239/src/machine/machine-dbus.c:1261:25: warning: Value stored to 'dfd' is never read <--[clang]
+                        dfd = safe_close(dfd);
+                        ^     ~~~~~~~~~~~~~~~
+/builddir/build/BUILD/systemd-239/src/machine/machine-dbus.c:1261:25: note: Value stored to 'dfd' is never read <--[clang]
+                        dfd = safe_close(dfd);
+                        ^     ~~~~~~~~~~~~~~~
+6 warnings generated.
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:807:39: warning: The left operand of '&' is a garbage value <--[clang]
+                is_data_track = (p[1] & 0x04) != 0;
+                                      ^
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:859:13: note: Assuming 'udev' is not equal to NULL <--[clang]
+        if (udev == NULL)
+            ^~~~~~~~~~~~
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:859:9: note: Taking false branch <--[clang]
+        if (udev == NULL)
+        ^
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:862:9: note: Loop condition is true.  Entering loop body <--[clang]
+        for (;;) {
+        ^
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:866:21: note: Assuming the condition is true <--[clang]
+                if (option == -1)
+                    ^~~~~~~~~~~~
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:866:17: note: Taking true branch <--[clang]
+                if (option == -1)
+                ^
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:867:25: note:  Execution continues on line 898 <--[clang]
+                        break;
+                        ^
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:899:13: note: Assuming 'node' is non-null <--[clang]
+        if (!node) {
+            ^~~~~
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:899:9: note: Taking false branch <--[clang]
+        if (!node) {
+        ^
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:907:9: note: Loop condition is true.  Entering loop body <--[clang]
+        for (cnt = 20; cnt > 0; cnt--) {
+        ^
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:910:64: note: '?' condition is false <--[clang]
+                fd = open(node, O_RDONLY|O_NONBLOCK|O_CLOEXEC|(is_mounted(node) ? 0 : O_EXCL));
+                                                               ^
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:911:21: note: Assuming 'fd' is >= 0 <--[clang]
+                if (fd >= 0 || errno != EBUSY)
+                    ^~~~~~~
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:911:29: note: Left side of '||' is true <--[clang]
+                if (fd >= 0 || errno != EBUSY)
+                            ^
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:912:25: note:  Execution continues on line 917 <--[clang]
+                        break;
+                        ^
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:917:13: note: 'fd' is >= 0 <--[clang]
+        if (fd < 0) {
+            ^~~~~~
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:917:9: note: Taking false branch <--[clang]
+        if (fd < 0) {
+        ^
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:923:9: note: Assuming the condition is false <--[clang]
+        log_debug("probing: '%s'", node);
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/systemd-239/src/basic/log.h:218:28: note: expanded from macro 'log_debug' <--[clang]
+#define log_debug(...)     log_full(LOG_DEBUG,   __VA_ARGS__)
+                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/systemd-239/src/basic/log.h:213:30: note: expanded from macro 'log_full' <--[clang]
+#define log_full(level, ...) log_full_errno((level), 0, __VA_ARGS__)
+                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/systemd-239/src/basic/log.h:211:9: note: expanded from macro 'log_full_errno' <--[clang]
+        log_full_errno_realm(LOG_REALM, (level), (error), __VA_ARGS__)
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/systemd-239/src/basic/log.h:204:18: note: expanded from macro 'log_full_errno_realm' <--[clang]
+                (log_get_max_level_realm(_realm) >= LOG_PRI(_level))   \
+                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:923:9: note: '?' condition is false <--[clang]
+/builddir/build/BUILD/systemd-239/src/basic/log.h:218:28: note: expanded from macro 'log_debug' <--[clang]
+#define log_debug(...)     log_full(LOG_DEBUG,   __VA_ARGS__)
+                           ^
+/builddir/build/BUILD/systemd-239/src/basic/log.h:213:30: note: expanded from macro 'log_full' <--[clang]
+#define log_full(level, ...) log_full_errno((level), 0, __VA_ARGS__)
+                             ^
+/builddir/build/BUILD/systemd-239/src/basic/log.h:211:9: note: expanded from macro 'log_full_errno' <--[clang]
+        log_full_errno_realm(LOG_REALM, (level), (error), __VA_ARGS__)
+        ^
+/builddir/build/BUILD/systemd-239/src/basic/log.h:204:17: note: expanded from macro 'log_full_errno_realm' <--[clang]
+                (log_get_max_level_realm(_realm) >= LOG_PRI(_level))   \
+                ^
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:926:9: note: Taking false branch <--[clang]
+        if (cd_capability_compat(udev, fd) < 0) {
+        ^
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:936:9: note: Taking false branch <--[clang]
+        if (cd_inquiry(udev, fd) < 0)
+        ^
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:940:9: note: Taking false branch <--[clang]
+        if (cd_profiles(udev, fd) != 0)
+        ^
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:946:9: note: Calling 'cd_media_toc' <--[clang]
+        cd_media_toc(udev, fd);
+        ^~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:770:14: note: 'err' is equal to 0 <--[clang]
+        if ((err != 0)) {
+             ^~~~~~~~
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:770:9: note: Taking false branch <--[clang]
+        if ((err != 0)) {
+        ^
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:776:9: note: Assuming the condition is false <--[clang]
+        log_debug("READ TOC: len: %d, start track: %d, end track: %d", len, header[2], header[3]);
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/systemd-239/src/basic/log.h:218:28: note: expanded from macro 'log_debug' <--[clang]
+#define log_debug(...)     log_full(LOG_DEBUG,   __VA_ARGS__)
+                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/systemd-239/src/basic/log.h:213:30: note: expanded from macro 'log_full' <--[clang]
+#define log_full(level, ...) log_full_errno((level), 0, __VA_ARGS__)
+                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/systemd-239/src/basic/log.h:211:9: note: expanded from macro 'log_full_errno' <--[clang]
+        log_full_errno_realm(LOG_REALM, (level), (error), __VA_ARGS__)
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/systemd-239/src/basic/log.h:204:18: note: expanded from macro 'log_full_errno_realm' <--[clang]
+                (log_get_max_level_realm(_realm) >= LOG_PRI(_level))   \
+                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:776:9: note: '?' condition is false <--[clang]
+/builddir/build/BUILD/systemd-239/src/basic/log.h:218:28: note: expanded from macro 'log_debug' <--[clang]
+#define log_debug(...)     log_full(LOG_DEBUG,   __VA_ARGS__)
+                           ^
+/builddir/build/BUILD/systemd-239/src/basic/log.h:213:30: note: expanded from macro 'log_full' <--[clang]
+#define log_full(level, ...) log_full_errno((level), 0, __VA_ARGS__)
+                             ^
+/builddir/build/BUILD/systemd-239/src/basic/log.h:211:9: note: expanded from macro 'log_full_errno' <--[clang]
+        log_full_errno_realm(LOG_REALM, (level), (error), __VA_ARGS__)
+        ^
+/builddir/build/BUILD/systemd-239/src/basic/log.h:204:17: note: expanded from macro 'log_full_errno_realm' <--[clang]
+                (log_get_max_level_realm(_realm) >= LOG_PRI(_level))   \
+                ^
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:777:13: note: Assuming the condition is false <--[clang]
+        if (len > sizeof(toc))
+            ^~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:777:9: note: Taking false branch <--[clang]
+        if (len > sizeof(toc))
+        ^
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:779:13: note: Assuming 'len' is >= 2 <--[clang]
+        if (len < 2)
+            ^~~~~~~
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:779:9: note: Taking false branch <--[clang]
+        if (len < 2)
+        ^
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:785:13: note: Assuming 'len' is >= 8 <--[clang]
+        if (len < 8)
+            ^~~~~~~
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:785:9: note: Taking false branch <--[clang]
+        if (len < 8)
+        ^
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:794:15: note: Calling 'scsi_cmd_run' <--[clang]
+        err = scsi_cmd_run(udev, &sc, fd, toc, len);
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:156:13: note: Assuming 'bufsize' is <= 0 <--[clang]
+        if (bufsize > 0) {
+            ^~~~~~~~~~~
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:156:9: note: Taking false branch <--[clang]
+        if (bufsize > 0) {
+        ^
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:163:13: note: Assuming the condition is false <--[clang]
+        if (ioctl(fd, SG_IO, &cmd->sg_io))
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:163:9: note: Taking false branch <--[clang]
+        if (ioctl(fd, SG_IO, &cmd->sg_io))
+        ^
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:166:13: note: Assuming the condition is false <--[clang]
+        if ((cmd->sg_io.info & SG_INFO_OK_MASK) != SG_INFO_OK) {
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:166:9: note: Taking false branch <--[clang]
+        if ((cmd->sg_io.info & SG_INFO_OK_MASK) != SG_INFO_OK) {
+        ^
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:794:15: note: Returning from 'scsi_cmd_run' <--[clang]
+        err = scsi_cmd_run(udev, &sc, fd, toc, len);
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:795:14: note: 'err' is equal to 0 <--[clang]
+        if ((err != 0)) {
+             ^~~~~~~~
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:795:9: note: Taking false branch <--[clang]
+        if ((err != 0)) {
+        ^
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:803:32: note: Left side of '&&' is true <--[clang]
+        for (p = toc+4, i = 4; i < len-8 && num_tracks > 0; i += 8, p += 8, --num_tracks) {
+                               ^
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:803:45: note: Assuming 'num_tracks' is > 0 <--[clang]
+        for (p = toc+4, i = 4; i < len-8 && num_tracks > 0; i += 8, p += 8, --num_tracks) {
+                                            ^~~~~~~~~~~~~~
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:803:9: note: Loop condition is true.  Entering loop body <--[clang]
+        for (p = toc+4, i = 4; i < len-8 && num_tracks > 0; i += 8, p += 8, --num_tracks) {
+        ^
+/builddir/build/BUILD/systemd-239/src/udev/cdrom_id/cdrom_id.c:807:39: note: The left operand of '&' is a garbage value <--[clang]
+                is_data_track = (p[1] & 0x04) != 0;
+                                 ~~~~ ^
+1 warning generated.
+/builddir/build/BUILD/systemd-239/src/udev/mtd_probe/probe_smartmedia.c:53:17: warning: Potential leak of memory pointed to by 'cis_buffer' <--[clang]
+                log_debug("Not marked MTD_NANDFLASH.");
+                ^
+/builddir/build/BUILD/systemd-239/src/basic/log.h:218:37: note: expanded from macro 'log_debug' <--[clang]
+#define log_debug(...)     log_full(LOG_DEBUG,   __VA_ARGS__)
+                                    ^
+/usr/include/sys/syslog.h:58:19: note: expanded from macro 'LOG_DEBUG' <--[clang]
+#define LOG_DEBUG       7       /* debug-level messages */
+                        ^
+/builddir/build/BUILD/systemd-239/src/udev/mtd_probe/probe_smartmedia.c:48:22: note: Memory is allocated <--[clang]
+        cis_buffer = malloc(SM_SECTOR_SIZE);
+                     ^~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/systemd-239/src/udev/mtd_probe/probe_smartmedia.c:49:13: note: Assuming 'cis_buffer' is non-null <--[clang]
+        if (!cis_buffer)
+            ^~~~~~~~~~~
+/builddir/build/BUILD/systemd-239/src/udev/mtd_probe/probe_smartmedia.c:49:9: note: Taking false branch <--[clang]
+        if (!cis_buffer)
+        ^
+/builddir/build/BUILD/systemd-239/src/udev/mtd_probe/probe_smartmedia.c:52:13: note: Assuming field 'type' is not equal to MTD_NANDFLASH <--[clang]
+        if (info->type != MTD_NANDFLASH) {
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/systemd-239/src/udev/mtd_probe/probe_smartmedia.c:52:9: note: Taking true branch <--[clang]
+        if (info->type != MTD_NANDFLASH) {
+        ^
+/builddir/build/BUILD/systemd-239/src/udev/mtd_probe/probe_smartmedia.c:53:17: note: Potential leak of memory pointed to by 'cis_buffer' <--[clang]
+                log_debug("Not marked MTD_NANDFLASH.");
+                ^
+/builddir/build/BUILD/systemd-239/src/basic/log.h:218:37: note: expanded from macro 'log_debug' <--[clang]
+#define log_debug(...)     log_full(LOG_DEBUG,   __VA_ARGS__)
+                                    ^
+/usr/include/sys/syslog.h:58:19: note: expanded from macro 'LOG_DEBUG' <--[clang]
+#define LOG_DEBUG       7       /* debug-level messages */
+                        ^
+1 warning generated.
