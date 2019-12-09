@@ -1,0 +1,198 @@
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/internal/gtest-port.h:2587: error: shiftTooManyBitsSigned: Shifting signed 64-bit value by 63 bits is undefined behaviour <--[cppcheck]
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/internal/gtest-port.h:2587: error: shiftTooManyBitsSigned: Shifting signed 64-bit value by 63 bits is undefined behaviour <--[cppcheck]
+/builddir/build/BUILD/nss-3.44/nss/gtests/pk11_gtest/pk11_import_unittest.cc:58:20: warning: 8th function call argument is an uninitialized value <--[clang++]
+    SECStatus rv = PK11_ImportEncryptedPrivateKeyInfoAndReturnKey(
+                   ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/pk11_gtest/pk11_import_unittest.cc:377:53: note: Calling 'Pk11KeyImportTestBase::Test' <--[clang++]
+TEST_P(Pk11KeyImportTestEC, GenerateExportImport) { Test(); }
+                                                    ^~~~~~
+/builddir/build/BUILD/nss-3.44/nss/gtests/pk11_gtest/pk11_import_unittest.cc:47:5: note: 'key_type' declared without an initial value <--[clang++]
+    KeyType key_type;
+    ^~~~~~~~~~~~~~~~
+/builddir/build/BUILD/nss-3.44/nss/gtests/pk11_gtest/pk11_import_unittest.cc:50:5: note: Calling 'Pk11KeyImportTestBase::GenerateAndExport' <--[clang++]
+    GenerateAndExport(&key_type, &key_info, &public_value);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/nss-3.44/nss/gtests/pk11_gtest/pk11_import_unittest.cc:203:5: note: Control jumps to 'case 0:'  at line 203 <--[clang++]
+    ASSERT_NE(nullptr, params);
+    ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest.h:2004:32: note: expanded from macro 'ASSERT_NE' <--[clang++]
+# define ASSERT_NE(val1, val2) GTEST_ASSERT_NE(val1, val2)
+                               ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest.h:1986:3: note: expanded from macro 'GTEST_ASSERT_NE' <--[clang++]
+  ASSERT_PRED_FORMAT2(::testing::internal::CmpHelperNE, val1, val2)
+  ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest_pred_impl.h:165:3: note: expanded from macro 'ASSERT_PRED_FORMAT2' <--[clang++]
+  GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_FATAL_FAILURE_)
+  ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest_pred_impl.h:146:3: note: expanded from macro 'GTEST_PRED_FORMAT2_' <--[clang++]
+  GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+  ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest_pred_impl.h:75:3: note: expanded from macro 'GTEST_ASSERT_' <--[clang++]
+  GTEST_AMBIGUOUS_ELSE_BLOCKER_ \
+  ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/internal/gtest-port.h:876:40: note: expanded from macro 'GTEST_AMBIGUOUS_ELSE_BLOCKER_' <--[clang++]
+# define GTEST_AMBIGUOUS_ELSE_BLOCKER_ switch (0) case 0: default:  // NOLINT
+                                       ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/pk11_gtest/pk11_import_unittest.cc:203:5: note: Assuming the condition is false <--[clang++]
+    ASSERT_NE(nullptr, params);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest.h:2004:32: note: expanded from macro 'ASSERT_NE' <--[clang++]
+# define ASSERT_NE(val1, val2) GTEST_ASSERT_NE(val1, val2)
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest.h:1986:3: note: expanded from macro 'GTEST_ASSERT_NE' <--[clang++]
+  ASSERT_PRED_FORMAT2(::testing::internal::CmpHelperNE, val1, val2)
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest_pred_impl.h:165:3: note: expanded from macro 'ASSERT_PRED_FORMAT2' <--[clang++]
+  GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_FATAL_FAILURE_)
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest_pred_impl.h:146:3: note: expanded from macro 'GTEST_PRED_FORMAT2_' <--[clang++]
+  GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest_pred_impl.h:76:40: note: expanded from macro 'GTEST_ASSERT_' <--[clang++]
+  if (const ::testing::AssertionResult gtest_ar = (expression)) \
+                                       ^~~~~~~~
+/builddir/build/BUILD/nss-3.44/nss/gtests/pk11_gtest/pk11_import_unittest.cc:203:5: note: Taking false branch <--[clang++]
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest.h:2004:32: note: expanded from macro 'ASSERT_NE' <--[clang++]
+# define ASSERT_NE(val1, val2) GTEST_ASSERT_NE(val1, val2)
+                               ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest.h:1986:3: note: expanded from macro 'GTEST_ASSERT_NE' <--[clang++]
+  ASSERT_PRED_FORMAT2(::testing::internal::CmpHelperNE, val1, val2)
+  ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest_pred_impl.h:165:3: note: expanded from macro 'ASSERT_PRED_FORMAT2' <--[clang++]
+  GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_FATAL_FAILURE_)
+  ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest_pred_impl.h:146:3: note: expanded from macro 'GTEST_PRED_FORMAT2_' <--[clang++]
+  GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+  ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest_pred_impl.h:76:3: note: expanded from macro 'GTEST_ASSERT_' <--[clang++]
+  if (const ::testing::AssertionResult gtest_ar = (expression)) \
+  ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/pk11_gtest/pk11_import_unittest.cc:203:5: note: Returning without writing to '*key_type' <--[clang++]
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest.h:2004:32: note: expanded from macro 'ASSERT_NE' <--[clang++]
+# define ASSERT_NE(val1, val2) GTEST_ASSERT_NE(val1, val2)
+                               ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest.h:1986:3: note: expanded from macro 'GTEST_ASSERT_NE' <--[clang++]
+  ASSERT_PRED_FORMAT2(::testing::internal::CmpHelperNE, val1, val2)
+  ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest_pred_impl.h:165:44: note: expanded from macro 'ASSERT_PRED_FORMAT2' <--[clang++]
+  GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_FATAL_FAILURE_)
+                                           ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/pk11_gtest/pk11_import_unittest.cc:50:5: note: Returning from 'Pk11KeyImportTestBase::GenerateAndExport' <--[clang++]
+    GenerateAndExport(&key_type, &key_info, &public_value);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/nss-3.44/nss/gtests/pk11_gtest/pk11_import_unittest.cc:51:5: note: Control jumps to 'case 0:'  at line 51 <--[clang++]
+    ASSERT_NE(nullptr, key_info);
+    ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest.h:2004:32: note: expanded from macro 'ASSERT_NE' <--[clang++]
+# define ASSERT_NE(val1, val2) GTEST_ASSERT_NE(val1, val2)
+                               ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest.h:1986:3: note: expanded from macro 'GTEST_ASSERT_NE' <--[clang++]
+  ASSERT_PRED_FORMAT2(::testing::internal::CmpHelperNE, val1, val2)
+  ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest_pred_impl.h:165:3: note: expanded from macro 'ASSERT_PRED_FORMAT2' <--[clang++]
+  GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_FATAL_FAILURE_)
+  ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest_pred_impl.h:146:3: note: expanded from macro 'GTEST_PRED_FORMAT2_' <--[clang++]
+  GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+  ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest_pred_impl.h:75:3: note: expanded from macro 'GTEST_ASSERT_' <--[clang++]
+  GTEST_AMBIGUOUS_ELSE_BLOCKER_ \
+  ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/internal/gtest-port.h:876:40: note: expanded from macro 'GTEST_AMBIGUOUS_ELSE_BLOCKER_' <--[clang++]
+# define GTEST_AMBIGUOUS_ELSE_BLOCKER_ switch (0) case 0: default:  // NOLINT
+                                       ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/pk11_gtest/pk11_import_unittest.cc:51:5: note: Assuming the condition is true <--[clang++]
+    ASSERT_NE(nullptr, key_info);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest.h:2004:32: note: expanded from macro 'ASSERT_NE' <--[clang++]
+# define ASSERT_NE(val1, val2) GTEST_ASSERT_NE(val1, val2)
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest.h:1986:3: note: expanded from macro 'GTEST_ASSERT_NE' <--[clang++]
+  ASSERT_PRED_FORMAT2(::testing::internal::CmpHelperNE, val1, val2)
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest_pred_impl.h:165:3: note: expanded from macro 'ASSERT_PRED_FORMAT2' <--[clang++]
+  GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_FATAL_FAILURE_)
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest_pred_impl.h:146:3: note: expanded from macro 'GTEST_PRED_FORMAT2_' <--[clang++]
+  GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest_pred_impl.h:76:40: note: expanded from macro 'GTEST_ASSERT_' <--[clang++]
+  if (const ::testing::AssertionResult gtest_ar = (expression)) \
+                                       ^~~~~~~~
+/builddir/build/BUILD/nss-3.44/nss/gtests/pk11_gtest/pk11_import_unittest.cc:51:5: note: Taking true branch <--[clang++]
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest.h:2004:32: note: expanded from macro 'ASSERT_NE' <--[clang++]
+# define ASSERT_NE(val1, val2) GTEST_ASSERT_NE(val1, val2)
+                               ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest.h:1986:3: note: expanded from macro 'GTEST_ASSERT_NE' <--[clang++]
+  ASSERT_PRED_FORMAT2(::testing::internal::CmpHelperNE, val1, val2)
+  ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest_pred_impl.h:165:3: note: expanded from macro 'ASSERT_PRED_FORMAT2' <--[clang++]
+  GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_FATAL_FAILURE_)
+  ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest_pred_impl.h:146:3: note: expanded from macro 'GTEST_PRED_FORMAT2_' <--[clang++]
+  GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+  ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest_pred_impl.h:76:3: note: expanded from macro 'GTEST_ASSERT_' <--[clang++]
+  if (const ::testing::AssertionResult gtest_ar = (expression)) \
+  ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/pk11_gtest/pk11_import_unittest.cc:52:5: note: Control jumps to 'case 0:'  at line 52 <--[clang++]
+    ASSERT_NE(nullptr, public_value);
+    ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest.h:2004:32: note: expanded from macro 'ASSERT_NE' <--[clang++]
+# define ASSERT_NE(val1, val2) GTEST_ASSERT_NE(val1, val2)
+                               ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest.h:1986:3: note: expanded from macro 'GTEST_ASSERT_NE' <--[clang++]
+  ASSERT_PRED_FORMAT2(::testing::internal::CmpHelperNE, val1, val2)
+  ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest_pred_impl.h:165:3: note: expanded from macro 'ASSERT_PRED_FORMAT2' <--[clang++]
+  GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_FATAL_FAILURE_)
+  ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest_pred_impl.h:146:3: note: expanded from macro 'GTEST_PRED_FORMAT2_' <--[clang++]
+  GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+  ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest_pred_impl.h:75:3: note: expanded from macro 'GTEST_ASSERT_' <--[clang++]
+  GTEST_AMBIGUOUS_ELSE_BLOCKER_ \
+  ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/internal/gtest-port.h:876:40: note: expanded from macro 'GTEST_AMBIGUOUS_ELSE_BLOCKER_' <--[clang++]
+# define GTEST_AMBIGUOUS_ELSE_BLOCKER_ switch (0) case 0: default:  // NOLINT
+                                       ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/pk11_gtest/pk11_import_unittest.cc:52:5: note: Assuming the condition is true <--[clang++]
+    ASSERT_NE(nullptr, public_value);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest.h:2004:32: note: expanded from macro 'ASSERT_NE' <--[clang++]
+# define ASSERT_NE(val1, val2) GTEST_ASSERT_NE(val1, val2)
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest.h:1986:3: note: expanded from macro 'GTEST_ASSERT_NE' <--[clang++]
+  ASSERT_PRED_FORMAT2(::testing::internal::CmpHelperNE, val1, val2)
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest_pred_impl.h:165:3: note: expanded from macro 'ASSERT_PRED_FORMAT2' <--[clang++]
+  GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_FATAL_FAILURE_)
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest_pred_impl.h:146:3: note: expanded from macro 'GTEST_PRED_FORMAT2_' <--[clang++]
+  GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest_pred_impl.h:76:40: note: expanded from macro 'GTEST_ASSERT_' <--[clang++]
+  if (const ::testing::AssertionResult gtest_ar = (expression)) \
+                                       ^~~~~~~~
+/builddir/build/BUILD/nss-3.44/nss/gtests/pk11_gtest/pk11_import_unittest.cc:52:5: note: Taking true branch <--[clang++]
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest.h:2004:32: note: expanded from macro 'ASSERT_NE' <--[clang++]
+# define ASSERT_NE(val1, val2) GTEST_ASSERT_NE(val1, val2)
+                               ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest.h:1986:3: note: expanded from macro 'GTEST_ASSERT_NE' <--[clang++]
+  ASSERT_PRED_FORMAT2(::testing::internal::CmpHelperNE, val1, val2)
+  ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest_pred_impl.h:165:3: note: expanded from macro 'ASSERT_PRED_FORMAT2' <--[clang++]
+  GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_FATAL_FAILURE_)
+  ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest_pred_impl.h:146:3: note: expanded from macro 'GTEST_PRED_FORMAT2_' <--[clang++]
+  GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+  ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/gtest_pred_impl.h:76:3: note: expanded from macro 'GTEST_ASSERT_' <--[clang++]
+  if (const ::testing::AssertionResult gtest_ar = (expression)) \
+  ^
+/builddir/build/BUILD/nss-3.44/nss/gtests/pk11_gtest/pk11_import_unittest.cc:58:20: note: 8th function call argument is an uninitialized value <--[clang++]
+    SECStatus rv = PK11_ImportEncryptedPrivateKeyInfoAndReturnKey(
+                   ^
+1 warning generated.
+/builddir/build/BUILD/nss-3.44/nss/gtests/google_test/gtest/include/gtest/internal/gtest-port.h:2587: error: shiftTooManyBitsSigned: Shifting signed 64-bit value by 63 bits is undefined behaviour <--[cppcheck]
+/builddir/build/BUILD/nss-3.44/nss/gtests/pk11_gtest/pk11_import_unittest.cc: internal warning: child 8741 timed out after 30s <--[cppcheck]
