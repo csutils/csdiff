@@ -15,8 +15,10 @@
 # You should have received a copy of the GNU General Public License
 # along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
 
+NUM_CPU ?= $(shell getconf _NPROCESSORS_ONLN 2>/dev/null || echo 1)
+
 CMAKE ?= cmake
-CTEST ?= ctest
+CTEST ?= ctest -j$(NUM_CPU)
 
 CMAKE_BUILD_TYPE ?= RelWithDebInfo
 
@@ -25,7 +27,7 @@ CMAKE_BUILD_TYPE ?= RelWithDebInfo
 all: version.cc
 	mkdir -p csdiff_build
 	cd csdiff_build && $(CMAKE) -D 'CMAKE_BUILD_TYPE=$(CMAKE_BUILD_TYPE)' ..
-	$(MAKE) -C csdiff_build
+	$(MAKE) -C csdiff_build -j$(NUM_CPU)
 
 fast: version.cc
 	$(MAKE) -sC csdiff_build
