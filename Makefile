@@ -18,7 +18,7 @@
 NUM_CPU ?= $(shell getconf _NPROCESSORS_ONLN 2>/dev/null || echo 1)
 
 CMAKE ?= cmake
-CTEST ?= ctest -j$(NUM_CPU)
+CTEST ?= ctest -j$(NUM_CPU) --progress
 
 CMAKE_BUILD_TYPE ?= RelWithDebInfo
 
@@ -27,7 +27,7 @@ CMAKE_BUILD_TYPE ?= RelWithDebInfo
 all: version.cc
 	mkdir -p csdiff_build
 	cd csdiff_build && $(CMAKE) -D 'CMAKE_BUILD_TYPE=$(CMAKE_BUILD_TYPE)' ..
-	$(MAKE) -C csdiff_build -j$(NUM_CPU)
+	$(MAKE) -sC csdiff_build -j$(NUM_CPU)
 
 fast: version.cc
 	$(MAKE) -sC csdiff_build
@@ -43,7 +43,7 @@ distclean:
 	rm -rf csdiff_build
 
 distcheck: distclean
-	$(MAKE) check
+	$(MAKE) -s check
 
 install: all
 	$(MAKE) -C csdiff_build install
