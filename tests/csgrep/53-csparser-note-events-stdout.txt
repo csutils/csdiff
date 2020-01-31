@@ -1,0 +1,197 @@
+Error: CLANG_WARNING:
+./fwnull-0001.c:5:8: warning: Dereference of null pointer (loaded from variable 'x')
+
+Error: CLANG_WARNING:
+./fwnull-0001.c:12:10: warning: Dereference of null pointer (loaded from variable 'ptr')
+
+Error: COMPILER_WARNING:
+./test-0001.c:16: error: DIVINE ERROR: FAULT: ./test-0001.c:16: int main(void): assertion 'array_A[5] != array_B[5]' failed
+
+Error: COMPILER_WARNING:
+./test-0001.c:16: error: assertion : assertion array_A[5] != array_B[5]
+
+Error: COMPILER_WARNING:
+./test-0002.c:6: error: DIVINE ERROR: FAULT: /opt/divine/include/dios/libc/string/memcpy.c:16: void *memcpy(void *restrict, const void *restrict, size_t): assertion 's1 < s2 ? s1 + n <= s2 : s2 + n <= s1' failed
+
+Error: COMPILER_WARNING:
+./test-0002.c:6: error: precondition_instance : memcpy src/dst overlap
+
+Error: COMPILER_WARNING:
+./test-0002.c:10: error: pointer_dereference : dereference failure: pointer uninitialized in *undef
+
+Error: CLANG_WARNING:
+./test-0002.c:10:22: warning: Dereference of undefined pointer value
+
+Error: COMPILER_WARNING:
+./test-0002.c:12: error: DIVINE ERROR: FAULT: null pointer dereference: [global* 0 0 ddn]
+
+Error: COMPILER_WARNING:
+./test-0002.c:12: error: pointer_dereference : dereference failure: dead object in *null_value
+
+Error: COMPILER_WARNING:
+./test-0002.c:12: error: pointer_dereference : dereference failure: deallocated dynamic object in *null_value
+
+Error: COMPILER_WARNING:
+./test-0002.c:12: error: pointer_dereference : dereference failure: invalid integer address in *null_value
+
+Error: COMPILER_WARNING:
+./test-0002.c:12: error: pointer_dereference : dereference failure: pointer NULL in *null_value
+
+Error: COMPILER_WARNING:
+./test-0002.c:12: error: pointer_dereference : dereference failure: pointer invalid in *null_value
+
+Error: COMPILER_WARNING:
+./test-0002.c:12: error: pointer_dereference : dereference failure: pointer outside dynamic object bounds in *null_value
+
+Error: COMPILER_WARNING:
+./test-0002.c:12: error: pointer_dereference : dereference failure: pointer outside object bounds in *null_value
+
+Error: CLANG_WARNING:
+./test-0002.c:12:12: warning: Value stored to 'err' during its initialization is never read
+
+Error: CLANG_WARNING:
+./test-0002.c:12:18: warning: Dereference of null pointer (loaded from variable 'null_value')
+
+Error: COMPILER_WARNING:
+./test-0002.c:18: error: DIVINE ERROR: FAULT: ./test-0002.c:18: int main(void): assertion 'x % 2' failed
+
+Error: COMPILER_WARNING:
+./test-0002.c:18: error: assertion : assertion x % 2
+
+Error: COMPILER_WARNING:
+./test-0003.c:12: error: DIVINE ERROR: FAULT:  conditional jump depends on an undefined value
+
+Error: COMPILER_WARNING:
+./test-0003.c:12: error: precondition_instance : free argument has offset zero
+
+Error: COMPILER_WARNING:
+./test-0003.c:12: error: precondition_instance : free argument must be dynamic object
+
+Error: CLANG_WARNING:
+./test-0003.c:12:13: warning: 1st function call argument is an uninitialized value
+
+Error: COMPILER_WARNING:
+./test-0003.c:20: error: precondition_instance : free argument must be dynamic object
+
+Error: CLANG_WARNING:
+./test-0003.c:20:13: warning: Argument to free() is the address of the local variable 'val', which is not memory allocated by malloc()
+
+Error: COMPILER_WARNING:
+./test-0003.c:29: error: precondition_instance : double free
+
+Error: CLANG_WARNING:
+./test-0003.c:29:5: warning: Attempt to free released memory
+
+Error: COMPILER_WARNING:
+./test-0006.c:6: error: DIVINE ERROR: FAULT: /opt/divine/include/dios/libc/string/strcpy.c:22: char *strcpy(char *restrict, const char *restrict): assertion 's1 <= old' failed
+
+Error: COMPILER_WARNING:
+./test-0006.c:6: error: precondition_instance : strcpy src/dst overlap
+
+Error: COMPILER_WARNING:
+./test-0006.c:12: error: DIVINE ERROR: FAULT: access of size 4 at [alloca* 8ba7f02 60h ddp] is 1 bytes out of bounds
+
+Error: COMPILER_WARNING:
+./test-0006.c:12: error: pointer_dereference : dereference failure: pointer outside dynamic object bounds in arr[(signed long int)i]
+
+Error: COMPILER_WARNING:
+./test-0006.c:16: error: pointer_dereference : dereference failure: pointer outside dynamic object bounds in arr[(signed long int)i]
+
+Error: COMPILER_WARNING:
+./test-0006.c:20: error: pointer_dereference : dereference failure: pointer outside dynamic object bounds in arr[(signed long int)(length / 2 + 1)]
+
+Error: COMPILER_WARNING:
+./test-0006.c:24: error: pointer_dereference : dereference failure: pointer outside dynamic object bounds in *a
+
+Error: COMPILER_WARNING:
+./test-0006.c:24: error: pointer_dereference : dereference failure: pointer outside dynamic object bounds in *b
+
+Error: COMPILER_WARNING:
+./test-0006.c:25: error: pointer_dereference : dereference failure: pointer outside dynamic object bounds in *a
+
+Error: COMPILER_WARNING:
+./test-0006.c:26: error: pointer_dereference : dereference failure: pointer outside dynamic object bounds in *b
+
+Error: COMPILER_WARNING:
+./test-0006.c:27: error: pointer_dereference : dereference failure: pointer outside dynamic object bounds in *b
+
+Error: COMPILER_WARNING:
+./test-0008.c:6: error: DIVINE ERROR: FAULT: /opt/divine/include/dios/libc/string/strncpy.c:35: char *strncpy(char *restrict, const char *restrict, size_t): assertion 's1 < old' failed
+
+Error: COMPILER_WARNING:
+./test-0008.c:6: error: precondition_instance : strncpy src/dst overlap
+
+Error: CLANG_WARNING:
+./test-0009.c:6:12: warning: Value stored to 'ok' during its initialization is never read
+
+Error: CLANG_WARNING:
+./test-0009.c:9:5: warning: Potential leak of memory pointed to by 'ok'
+
+Error: CLANG_WARNING:
+./test-0009.c:9:11: warning: Value stored to 'warn' during its initialization is never read
+
+Error: CLANG_WARNING:
+./test-0009.c:12:5: warning: Potential leak of memory pointed to by 'warn'
+
+Error: COMPILER_WARNING:
+./test-0009.c:15: error: DIVINE ERROR: FAULT: access of size 8 at [heap* 114e0004 0 ddp] is 7 bytes out of bounds
+
+Error: COMPILER_WARNING:
+./test-0009.c:15: error: pointer_dereference : dereference failure: pointer outside dynamic object bounds in *err
+
+Error: CLANG_WARNING:
+./test-0009.c:17:5: warning: Potential leak of memory pointed to by 'err'
+
+Error: CLANG_WARNING:
+./test0003.c:10:5: warning: Value stored to 'a' is never read
+
+Error: CPPCHECK_WARNING:
+fwnull-0001.c:5: error[nullPointer]: Null pointer dereference: x
+
+Error: CPPCHECK_WARNING:
+test-0001.c:8: error[uninitvar]: Uninitialized variable: arr2
+
+Error: SYMBIOTIC_ERROR:
+test-0001.c:16: error: ASSERTION FAIL: array_A[5] != array_B[5]
+
+Error: CPPCHECK_WARNING:
+test-0002.c:10: error[uninitvar]: Uninitialized variable: undef
+
+Error: SYMBIOTIC_ERROR:
+test-0002.c:10: error: memory error: out of bound pointer
+
+Error: SYMBIOTIC_ERROR:
+test-0002.c:12: error: memory error: out of bound pointer
+
+Error: CPPCHECK_WARNING:
+test-0002.c:12: warning[nullPointer]: Possible null pointer dereference: null_value
+
+Error: SYMBIOTIC_ERROR:
+test-0002.c:18: error: ASSERTION FAIL: x % 2
+
+Error: SYMBIOTIC_ERROR:
+test-0003.c:12: error: memory error: invalid pointer: free
+
+Error: SYMBIOTIC_ERROR:
+test-0003.c:20: error: free of alloca
+
+Error: SYMBIOTIC_ERROR:
+test-0003.c:29: error: memory error: invalid pointer: free
+
+Error: SYMBIOTIC_ERROR:
+test-0006.c:12: error: memory error: out of bound pointer
+
+Error: SYMBIOTIC_ERROR:
+test-0010.c:77: error: memory error: memory leak detected
+
+Error: CPPCHECK_WARNING:
+test0003.c:10: error[uninitStructMember]: Uninitialized struct member: b.c
+
+Error: CPPCHECK_WARNING:
+test0003.c:10: error[uninitvar]: Uninitialized variable: b
+
+Error: CPPCHECK_WARNING:
+test0004.c:6: error[uninitStructMember]: Uninitialized struct member: a.c
+
+Error: CPPCHECK_WARNING:
+test0004.c:6: error[uninitvar]: Uninitialized variable: a
