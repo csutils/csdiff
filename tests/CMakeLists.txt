@@ -206,6 +206,7 @@ test_csdiff(diff-misc                               05)
 test_csdiff(diff-misc                               06)
 test_csdiff(diff-misc                               07)
 test_csdiff(diff-misc                               08)
+test_csdiff(diff-misc 09-shellcheck-raw)
 
 # cstrans-df-run tests
 tests_cstrans_df_run(0001)
