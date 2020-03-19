@@ -118,7 +118,7 @@ class ErrFileLexer {
             reComment_("^(#)(.*)$"),
             reChecker_("^Error: *([A-Za-z][0-9A-Za-z_.]+)( *\\([^)]+\\))? *:$"),
             reEvent_(
-                    /* location */ "^([^:]+)(?::([0-9]+))?(?::([0-9]+))?"
+                    /* location */ "^([^:]+)(?::([0-9]+|<unknown>))?(?::([0-9]+))?"
                     /* evt/mesg */ ": (" RE_EVENT "): (.*)$")
         {
         }
