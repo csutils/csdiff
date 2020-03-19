@@ -19,6 +19,7 @@ Error: RESOURCE_LEAK:
 /builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:853:9: if_end: End of if statement
 /builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:857:9: cond_true: Condition "sock == -1", taking true branch
 /builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:859:13: continue: Continuing loop
+<unknown>: loop: Looping back
 /builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:843:5: cond_true: Condition "rp != NULL", taking true branch
 /builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:846:9: cond_false: Condition "!addr", taking false branch
 /builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:848:9: if_end: End of if statement
@@ -38,6 +39,7 @@ Error: RESOURCE_LEAK:
 /builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:885:16: else_branch: Reached else branch
 /builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:886:13: cond_false: Condition "internal_tcp_connect(sock, rp->ai_addr, rp->ai_addrlen) == 0", taking false branch
 /builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:888:13: if_end: End of if statement
+<unknown>: loop: Jumping back to the beginning of the loop
 /builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:843:5: loop_begin: Jumped back to beginning of loop
 /builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:843:5: cond_true: Condition "rp != NULL", taking true branch
 /builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:846:9: cond_false: Condition "!addr", taking false branch
@@ -62,6 +64,7 @@ Error: RESOURCE_LEAK:
 /builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:791:26: noescape: "internal_tcp_connect(int, struct sockaddr const *, socklen_t)" does not free or save its handle parameter "sock".
 /builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:886:13: cond_true: Condition "internal_tcp_connect(sock, rp->ai_addr, rp->ai_addrlen) == 0", taking true branch
 /builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:887:17: break: Breaking from loop
+<unknown>: loop_end: Reached end of loop
 /builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:897:5: cond_true: Condition "res", taking true branch
 /builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:900:5: return_handle: Returning opened handle "sock".
 /builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:906:5: return_handle_fn: Directly returning handle opened by "crm_remote_tcp_connect_async".
@@ -96,6 +99,7 @@ Error: RESOURCE_LEAK:
 /builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:853:9: if_end: End of if statement
 /builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:857:9: cond_true: Condition "sock == -1", taking true branch
 /builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:859:13: continue: Continuing loop
+<unknown>: loop: Looping back
 /builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:843:5: cond_true: Condition "rp != NULL", taking true branch
 /builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:846:9: cond_false: Condition "!addr", taking false branch
 /builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:848:9: if_end: End of if statement
@@ -115,6 +119,7 @@ Error: RESOURCE_LEAK:
 /builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:885:16: else_branch: Reached else branch
 /builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:886:13: cond_false: Condition "internal_tcp_connect(sock, rp->ai_addr, rp->ai_addrlen) == 0", taking false branch
 /builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:888:13: if_end: End of if statement
+<unknown>: loop: Jumping back to the beginning of the loop
 /builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:843:5: loop_begin: Jumped back to beginning of loop
 /builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:843:5: cond_true: Condition "rp != NULL", taking true branch
 /builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:846:9: cond_false: Condition "!addr", taking false branch
@@ -139,6 +144,7 @@ Error: RESOURCE_LEAK:
 /builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:791:26: noescape: "internal_tcp_connect(int, struct sockaddr const *, socklen_t)" does not free or save its handle parameter "sock".
 /builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:886:13: cond_true: Condition "internal_tcp_connect(sock, rp->ai_addr, rp->ai_addrlen) == 0", taking true branch
 /builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:887:17: break: Breaking from loop
+<unknown>: loop_end: Reached end of loop
 /builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:897:5: cond_true: Condition "res", taking true branch
 /builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:900:5: return_handle: Returning opened handle "sock".
 /builddir/build/BUILD/pacemaker-97629ded958f76652350569a54303b3cd25d1d7e/lib/common/remote.c:906:5: return_handle_fn: Directly returning handle opened by "crm_remote_tcp_connect_async".

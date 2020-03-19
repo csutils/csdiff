@@ -36,8 +36,7 @@ class LineReader {
             input_(input),
             lineNo_(0),
             reTrailLoc_("^(path:|/).*(:[0-9]+|<.*>):$"),
-            rePathPref_("^path:"),
-            reUnkownLoc_("^<unknown>")
+            rePathPref_("^path:")
         {
         }
 
@@ -52,7 +51,6 @@ class LineReader {
         int                         lineNo_;
         const boost::regex          reTrailLoc_;
         const boost::regex          rePathPref_;
-        const boost::regex          reUnkownLoc_;
 
         bool getLinePriv(std::string *pDst);
 };
@@ -66,24 +64,21 @@ bool LineReader::getLinePriv(std::string *pDst) {
 }
 
 bool LineReader::getLine(std::string *pDst) {
-    do {
-        std::string line;
-        if (!this->getLinePriv(&line))
-            return false;
+    std::string line;
+    if (!this->getLinePriv(&line))
+        return false;
 
-        std::string nextLine;
-        while (boost::regex_search(line, reTrailLoc_)
-                && this->getLinePriv(&nextLine))
-        {
-            // merge the current line with the next line
-            nextLine.insert(/* pos */ 0U, " ");
-            line += nextLine;
-        }
-
-        // remove the "path:" prefix if matched
-        *pDst = boost::regex_replace(line, rePathPref_, "");
+    std::string nextLine;
+    while (boost::regex_search(line, reTrailLoc_)
+            && this->getLinePriv(&nextLine))
+    {
+        // merge the current line with the next line
+        nextLine.insert(/* pos */ 0U, " ");
+        line += nextLine;
     }
-    while (boost::regex_search(*pDst, reUnkownLoc_));
+
+    // remove the "path:" prefix if matched
+    *pDst = boost::regex_replace(line, rePathPref_, "");
 
     return true;
 }
