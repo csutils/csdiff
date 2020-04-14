@@ -1,2 +1,6 @@
 [NAME]
 csdiff - take two lists of defects and output either added or fixed ones
+
+[EXIT STATUS]
+csdiff exits with status 0 if arguments are valid and input files are parsed
+successfully.  It does not matter whether any defects were matched or not.
