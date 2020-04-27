@@ -113,8 +113,18 @@ struct MsgFilter::Private {
         // unify (per build random) names of temporary variables
         addMsgFilter("COMPILER_WARNING", "_tmp[0-9]+_", "_tmp_");
 
-        // pylint: "Too many lines in module (1152/1000)" etc.
-        addMsgFilter("PROSPECTOR_WARNING", " \\([0-9]+/[0-9]+\\)$", "");
+        // pylint reports, either raw, or prospector-wrapped
+        const std::vector<std::string> pylintCheckers= {
+            "PROSPECTOR_WARNING",
+            "PYLINT_WARNING"
+        };
+        BOOST_FOREACH(const std::string &checker, pylintCheckers) {
+            // "Too many lines in module (1152/1000)" etc.
+            addMsgFilter(checker, " \\([0-9]+/[0-9]+\\)$", "");
+
+            // "... Redefining name 'desc' from outer scope (line 10)" etc.
+            addMsgFilter(checker, " \\(line [0-9]+\\)$", "");
+        }
 
         // "__coverity_strcmp" -> "strcmp", etc.
         addMsgFilter("", "__coverity_", "");

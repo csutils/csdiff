@@ -1,0 +1,10 @@
+Error: PYLINT_WARNING:
+coprs_frontend/commands/rawhide_to_release.py:8: W0611(unused-import): Unused builds_logic imported from coprs.logic
+
+Error: PYLINT_WARNING:
+coprs_frontend/coprs/logic/complex_logic.py:325: C0301(line-too-long): Line too long (139/120)
+
+Error: PYLINT_WARNING:
+coprs_frontend/coprs/models.py:294: C0330(bad-continuation): Wrong continued indentation (add 12 spaces).
+            nullable=False, primary_key=True)
+            ^           |

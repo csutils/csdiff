@@ -209,6 +209,7 @@ test_csdiff(diff-misc                               07)
 test_csdiff(diff-misc                               08)
 test_csdiff(diff-misc 09-shellcheck-raw)
 test_csdiff(diff-misc 10-pylint-copr)
+test_csdiff(diff-misc 11-pylint-copr-json)
 
 # cstrans-df-run tests
 tests_cstrans_df_run(0001)
