@@ -18,7 +18,7 @@
 cmake_minimum_required(VERSION 2.8)
 project(csdiff CXX)
 enable_testing()
-add_definitions(-Wall -Wextra -fPIC)
+add_definitions(-Wall -Wextra -fPIC -std=c++11)
 
 # cslib.a
 add_library(cs STATIC
