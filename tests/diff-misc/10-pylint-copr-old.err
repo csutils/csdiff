@@ -1,0 +1,506 @@
+/coprs_frontend/commands/rawhide_to_release.py:1:0: C0114[pylint]: Missing module docstring
+/coprs_frontend/commands/rawhide_to_release.py:35:0: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/commands/rawhide_to_release.py:51:16: C0121[pylint]: Comparison to True should be just 'expr'
+/coprs_frontend/commands/rawhide_to_release.py:87:11: C1801[pylint]: Do not use `len(SEQUENCE)` without comparison to determine if a sequence is empty
+/coprs_frontend/commands/rawhide_to_release.py:115:11: C1801[pylint]: Do not use `len(SEQUENCE)` without comparison to determine if a sequence is empty
+/coprs_frontend/commands/rawhide_to_release.py:120:0: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/commands/rawhide_to_release.py:8:0: W0611[pylint]: Unused builds_logic imported from coprs.logic
+/coprs_frontend/commands/rawhide_to_release.py:8:0: W0611[pylint]: Unused packages_logic imported from coprs.logic
+/coprs_frontend/coprs/logic/builds_logic.py:15:32: C0326[pylint]: Exactly one space required after comma
+from sqlalchemy.sql import false,true
+                                ^
+/coprs_frontend/coprs/logic/builds_logic.py:88:0: C0330[pylint]: Wrong continued indentation (add 8 spaces).
+            .join(models.Build)
+            ^       |
+/coprs_frontend/coprs/logic/builds_logic.py:89:0: C0330[pylint]: Wrong continued indentation (add 8 spaces).
+            .group_by(*group_by_args)
+            ^       |
+/coprs_frontend/coprs/logic/builds_logic.py:90:0: C0330[pylint]: Wrong continued indentation (add 8 spaces).
+            .having(func.count() == func.count(models.BuildChroot.ended_on))
+            ^       |
+/coprs_frontend/coprs/logic/builds_logic.py:91:0: C0330[pylint]: Wrong continued indentation (add 8 spaces).
+            .having(models.Build.submitted_on > time.time() - 3600*24*period_days)
+            ^       |
+/coprs_frontend/coprs/logic/builds_logic.py:92:0: C0330[pylint]: Wrong continued indentation.
+        )
+        ^          ||
+/coprs_frontend/coprs/logic/builds_logic.py:244:21: C0326[pylint]: No space allowed around keyword argument assignment
+                time = time,
+                     ^
+/coprs_frontend/coprs/logic/builds_logic.py:245:26: C0326[pylint]: No space allowed around keyword argument assignment
+                stat_type = type,
+                          ^
+/coprs_frontend/coprs/logic/builds_logic.py:246:24: C0326[pylint]: No space allowed around keyword argument assignment
+                running = running,
+                        ^
+/coprs_frontend/coprs/logic/builds_logic.py:247:24: C0326[pylint]: No space allowed around keyword argument assignment
+                pending = pending
+                        ^
+/coprs_frontend/coprs/logic/builds_logic.py:270:0: C0330[pylint]: Wrong continued indentation (add 1 space).
+                .filter(models.Build.canceled == false())
+                ^|
+/coprs_frontend/coprs/logic/builds_logic.py:271:0: C0330[pylint]: Wrong continued indentation (add 1 space).
+                .filter(models.Build.source_status == StatusEnum("pending"))
+                ^|
+/coprs_frontend/coprs/logic/builds_logic.py:272:0: C0330[pylint]: Wrong continued indentation (add 1 space).
+                .order_by(models.Build.is_background.asc(), models.Build.id.asc()))
+                ^|
+/coprs_frontend/coprs/logic/builds_logic.py:280:0: C0330[pylint]: Wrong continued indentation (remove 3 spaces).
+                    .outerjoin(models.Build)
+                 |  ^
+/coprs_frontend/coprs/logic/builds_logic.py:281:0: C0330[pylint]: Wrong continued indentation (remove 3 spaces).
+                    .outerjoin(models.CoprDir)
+                 |  ^
+/coprs_frontend/coprs/logic/builds_logic.py:282:0: C0330[pylint]: Wrong continued indentation (remove 3 spaces).
+                    .outerjoin(models.Package, models.Package.id == models.Build.package_id)
+                 |  ^
+/coprs_frontend/coprs/logic/builds_logic.py:283:0: C0330[pylint]: Wrong continued indentation (remove 3 spaces).
+                    .options(joinedload('build').joinedload('copr_dir'),
+                 |  ^
+/coprs_frontend/coprs/logic/builds_logic.py:285:0: C0330[pylint]: Wrong continued indentation (add 1 space).
+                .filter(models.Build.canceled == false())
+                ^|
+/coprs_frontend/coprs/logic/builds_logic.py:286:0: C0330[pylint]: Wrong continued indentation (add 1 space).
+                .filter(or_(
+                ^|
+/coprs_frontend/coprs/logic/builds_logic.py:294:0: C0330[pylint]: Wrong continued indentation (add 1 space).
+                .order_by(models.Build.is_background.asc(), models.Build.id.asc()))
+                ^|
+/coprs_frontend/coprs/logic/builds_logic.py:333:62: C0326[pylint]: Exactly one space required around comparison
+        query = models.Build.query.filter(models.Build.copr_id==copr.id)
+                                                              ^^
+/coprs_frontend/coprs/logic/builds_logic.py:338:53: C0326[pylint]: Exactly one space required around comparison
+        query = query.filter(models.Build.copr_dir_id==copr_dir.id)
+                                                     ^^
+/coprs_frontend/coprs/logic/builds_logic.py:422:0: C0301[pylint]: Line too long (125/120)
+/coprs_frontend/coprs/logic/builds_logic.py:443:0: C0301[pylint]: Line too long (125/120)
+/coprs_frontend/coprs/logic/builds_logic.py:457:0: C0301[pylint]: Line too long (125/120)
+/coprs_frontend/coprs/logic/builds_logic.py:586:0: C0330[pylint]: Wrong continued indentation (remove 11 spaces).
+                                                        "with bad characters. Forgot to split?")
+                                             |          ^
+/coprs_frontend/coprs/logic/builds_logic.py:700:47: C0326[pylint]: Exactly one space required around comparison
+            .filter(models.BuildChroot.build_id==build_id)
+                                               ^^
+/coprs_frontend/coprs/logic/builds_logic.py:701:57: C0326[pylint]: Exactly one space required around comparison
+            .filter(models.MockChroot.distgit_branch_name==branch)
+                                                         ^^
+/coprs_frontend/coprs/logic/builds_logic.py:775:29: C0326[pylint]: Exactly one space required around assignment
+                chroot_status=StatusEnum("waiting")
+                             ^
+/coprs_frontend/coprs/logic/builds_logic.py:1025:56: C0326[pylint]: Exactly one space required around comparison
+            .join(models.Build, models.Build.copr_dir_id==models.CoprDir.id)
+                                                        ^^
+/coprs_frontend/coprs/logic/builds_logic.py:1038:44: C0326[pylint]: Exactly one space required around comparison
+                    models.Build.copr_dir_id==dir_id,
+                                            ^^
+/coprs_frontend/coprs/logic/builds_logic.py:1039:43: C0326[pylint]: Exactly one space required around comparison
+                    models.Build.package_id==package_id)
+                                           ^^
+/coprs_frontend/coprs/logic/builds_logic.py:1:0: C0302[pylint]: Too many lines in module (1152/1000)
+/coprs_frontend/coprs/logic/builds_logic.py:1:0: C0114[pylint]: Missing module docstring
+/coprs_frontend/coprs/logic/builds_logic.py:40:0: C0115[pylint]: Missing class docstring
+/coprs_frontend/coprs/logic/builds_logic.py:40:0: R0205[pylint]: Class 'BuildsLogic' inherits from object, can be safely removed from bases in python3
+/coprs_frontend/coprs/logic/builds_logic.py:42:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:71:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:102:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:108:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:117:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:139:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:158:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:173:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:191:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:191:33: W0622[pylint]: Redefining built-in 'type'
+/coprs_frontend/coprs/logic/builds_logic.py:219:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:219:34: W0622[pylint]: Redefining built-in 'type'
+/coprs_frontend/coprs/logic/builds_logic.py:235:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:235:30: W0622[pylint]: Redefining built-in 'type'
+/coprs_frontend/coprs/logic/builds_logic.py:235:36: W0621[pylint]: Redefining name 'time' from outer scope (line 6)
+/coprs_frontend/coprs/logic/builds_logic.py:268:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:278:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:300:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:310:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:314:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:332:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:343:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:347:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:356:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:360:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:364:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:404:4: R0913[pylint]: Too many arguments (11/10)
+/coprs_frontend/coprs/logic/builds_logic.py:520:4: R0913[pylint]: Too many arguments (13/10)
+/coprs_frontend/coprs/logic/builds_logic.py:566:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:566:4: R0913[pylint]: Too many arguments (16/10)
+/coprs_frontend/coprs/logic/builds_logic.py:566:4: R0914[pylint]: Too many local variables (23/20)
+/coprs_frontend/coprs/logic/builds_logic.py:643:4: W0102[pylint]: Dangerous default value {} as argument
+/coprs_frontend/coprs/logic/builds_logic.py:643:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:718:12: W0702[pylint]: No exception type(s) specified
+/coprs_frontend/coprs/logic/builds_logic.py:758:20: E1101[pylint]: Method 'logger' has no 'exception' member
+/coprs_frontend/coprs/logic/builds_logic.py:723:4: R0912[pylint]: Too many branches (21/12)
+/coprs_frontend/coprs/logic/builds_logic.py:723:4: R0915[pylint]: Too many statements (52/50)
+/coprs_frontend/coprs/logic/builds_logic.py:836:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:841:8: R1705[pylint]: Unnecessary "elif" after "return"
+/coprs_frontend/coprs/logic/builds_logic.py:836:4: R1710[pylint]: Either all return statements in a function should return an expression, or none of them should.
+/coprs_frontend/coprs/logic/builds_logic.py:852:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:896:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:996:8: R1705[pylint]: Unnecessary "else" after "return"
+/coprs_frontend/coprs/logic/builds_logic.py:1002:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:1005:8: R1705[pylint]: Unnecessary "else" after "return"
+/coprs_frontend/coprs/logic/builds_logic.py:1011:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:1015:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:1019:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:1053:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:1056:20: C0121[pylint]: Comparison to True should be just 'expr'
+/coprs_frontend/coprs/logic/builds_logic.py:40:0: R0904[pylint]: Too many public methods (52/20)
+/coprs_frontend/coprs/logic/builds_logic.py:1070:0: C0115[pylint]: Missing class docstring
+/coprs_frontend/coprs/logic/builds_logic.py:1070:0: R0205[pylint]: Class 'BuildChrootsLogic' inherits from object, can be safely removed from bases in python3
+/coprs_frontend/coprs/logic/builds_logic.py:1072:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:1082:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:1094:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:1098:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:1102:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:1106:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:1110:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:1114:0: C0115[pylint]: Missing class docstring
+/coprs_frontend/coprs/logic/builds_logic.py:1114:0: R0205[pylint]: Class 'BuildsMonitorLogic' inherits from object, can be safely removed from bases in python3
+/coprs_frontend/coprs/logic/builds_logic.py:1116:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/builds_logic.py:10:0: W0611[pylint]: Unused not_ imported from sqlalchemy.sql.expression
+/coprs_frontend/coprs/logic/builds_logic.py:17:0: W0611[pylint]: Unused bindparam imported from sqlalchemy
+/coprs_frontend/coprs/logic/builds_logic.py:17:0: W0611[pylint]: Unused Integer imported from sqlalchemy
+/coprs_frontend/coprs/logic/builds_logic.py:17:0: W0611[pylint]: Unused String imported from sqlalchemy
+/coprs_frontend/coprs/logic/builds_logic.py:34:0: C0411[pylint]: first party import "from coprs.logic.packages_logic import PackagesLogic" should be placed before "from .coprs_logic import MockChrootsLogic"
+/coprs_frontend/coprs/logic/builds_logic.py:17:0: C0412[pylint]: Imports from package sqlalchemy are not grouped
+/coprs_frontend/coprs/logic/coprs_logic.py:459:0: C0330[pylint]: Wrong continued indentation (add 43 spaces).
+                    '|'.join(allowed)))
+                    ^                                          |
+/coprs_frontend/coprs/logic/coprs_logic.py:500:0: C0330[pylint]: Wrong continued indentation (add 28 spaces).
+                                 req_bool))
+                                 ^                           |
+/coprs_frontend/coprs/logic/coprs_logic.py:508:0: C0330[pylint]: Wrong hanging indentation (remove 17 spaces).
+                                 permission, copr.full_name))
+                |                ^
+/coprs_frontend/coprs/logic/coprs_logic.py:538:38: C0326[pylint]: Exactly one space required around comparison
+                .filter(models.Copr.id==copr.id)
+                                      ^^
+/coprs_frontend/coprs/logic/coprs_logic.py:539:43: C0326[pylint]: Exactly one space required around comparison
+                .filter(models.CoprDir.name==dirname))
+                                           ^^
+/coprs_frontend/coprs/logic/coprs_logic.py:544:43: C0326[pylint]: Exactly one space required around comparison
+                .filter(models.CoprDir.name==dirname)
+                                           ^^
+/coprs_frontend/coprs/logic/coprs_logic.py:545:48: C0326[pylint]: Exactly one space required around comparison
+                .filter(models.CoprDir.ownername==ownername))
+                                                ^^
+/coprs_frontend/coprs/logic/coprs_logic.py:1:0: C0114[pylint]: Missing module docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:27:0: R0205[pylint]: Class 'CoprsLogic' inherits from object, can be safely removed from bases in python3
+/coprs_frontend/coprs/logic/coprs_logic.py:41:25: C0121[pylint]: Comparison to False should be 'not expr'
+/coprs_frontend/coprs/logic/coprs_logic.py:45:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:49:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:56:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:65:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:83:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:101:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:107:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:113:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:130:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:130:36: W0621[pylint]: Redefining name 'desc' from outer scope (line 7)
+/coprs_frontend/coprs/logic/coprs_logic.py:139:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:144:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:148:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:153:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:158:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:162:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:166:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:172:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:180:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:181:36: C0121[pylint]: Comparison to True should be just 'expr'
+/coprs_frontend/coprs/logic/coprs_logic.py:184:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:187:12: W0107[pylint]: Unnecessary pass statement
+/coprs_frontend/coprs/logic/coprs_logic.py:193:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:196:25: C0121[pylint]: Comparison to False should be 'not expr'
+/coprs_frontend/coprs/logic/coprs_logic.py:217:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:217:4: R0913[pylint]: Too many arguments (13/10)
+/coprs_frontend/coprs/logic/coprs_logic.py:264:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:266:12: R1720[pylint]: Unnecessary "elif" after "raise"
+/coprs_frontend/coprs/logic/coprs_logic.py:276:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:309:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:316:39: C0121[pylint]: Comparison to False should be 'not expr'
+/coprs_frontend/coprs/logic/coprs_logic.py:321:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:328:39: C0121[pylint]: Comparison to False should be 'not expr'
+/coprs_frontend/coprs/logic/coprs_logic.py:333:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:346:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:370:4: R1710[pylint]: Either all return statements in a function should return an expression, or none of them should.
+/coprs_frontend/coprs/logic/coprs_logic.py:27:0: R0904[pylint]: Too many public methods (31/20)
+/coprs_frontend/coprs/logic/coprs_logic.py:388:0: C0115[pylint]: Missing class docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:388:0: R0205[pylint]: Class 'CoprPermissionsLogic' inherits from object, can be safely removed from bases in python3
+/coprs_frontend/coprs/logic/coprs_logic.py:390:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:398:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:405:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:410:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:414:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:428:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:450:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:454:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:472:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:490:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:518:0: C0115[pylint]: Missing class docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:518:0: R0205[pylint]: Class 'CoprDirsLogic' inherits from object, can be safely removed from bases in python3
+/coprs_frontend/coprs/logic/coprs_logic.py:520:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:535:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:542:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:548:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:552:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:558:69: W0613[pylint]: Unused argument 'initiator'
+/coprs_frontend/coprs/logic/coprs_logic.py:568:0: C0115[pylint]: Missing class docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:568:0: R0205[pylint]: Class 'BranchesLogic' inherits from object, can be safely removed from bases in python3
+/coprs_frontend/coprs/logic/coprs_logic.py:570:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:581:0: C0115[pylint]: Missing class docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:581:0: R0205[pylint]: Class 'CoprChrootsLogic' inherits from object, can be safely removed from bases in python3
+/coprs_frontend/coprs/logic/coprs_logic.py:583:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:590:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:601:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:621:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:625:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:634:4: R0913[pylint]: Too many arguments (13/10)
+/coprs_frontend/coprs/logic/coprs_logic.py:655:4: R0913[pylint]: Too many arguments (12/10)
+/coprs_frontend/coprs/logic/coprs_logic.py:670:4: R0913[pylint]: Too many arguments (11/10)
+/coprs_frontend/coprs/logic/coprs_logic.py:701:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:733:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:755:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:759:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:763:0: C0115[pylint]: Missing class docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:763:0: R0205[pylint]: Class 'MockChrootsLogic' inherits from object, can be safely removed from bases in python3
+/coprs_frontend/coprs/logic/coprs_logic.py:765:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:765:47: W0613[pylint]: Unused argument 'active_only'
+/coprs_frontend/coprs/logic/coprs_logic.py:790:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:793:33: C0121[pylint]: Comparison to True should be just 'expr'
+/coprs_frontend/coprs/logic/coprs_logic.py:797:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:809:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:813:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:817:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:821:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:833:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:837:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:847:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:876:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:886:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:889:22: E1133[pylint]: Non-iterable value query is used in an iterating context
+/coprs_frontend/coprs/logic/coprs_logic.py:896:0: C0115[pylint]: Missing class docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:896:0: R0205[pylint]: Class 'PinnedCoprsLogic' inherits from object, can be safely removed from bases in python3
+/coprs_frontend/coprs/logic/coprs_logic.py:899:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:903:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:907:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:913:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:917:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:921:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:928:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/logic/coprs_logic.py:935:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:70:0: C0330[pylint]: Wrong continued indentation (add 12 spaces).
+            nullable=False)
+            ^           |
+/coprs_frontend/coprs/models.py:323:0: C0330[pylint]: Wrong continued indentation (add 22 spaces).
+            remote_side=_CoprPublic.id,
+            ^                     |
+/coprs_frontend/coprs/models.py:324:0: C0330[pylint]: Wrong continued indentation (add 22 spaces).
+            foreign_keys=[_CoprPublic.forked_from_id],
+            ^                     |
+/coprs_frontend/coprs/models.py:325:0: C0330[pylint]: Wrong continued indentation (add 22 spaces).
+            backref=db.backref("all_forks"))
+            ^                     |
+/coprs_frontend/coprs/models.py:336:51: C0326[pylint]: Exactly one space required around comparison
+        return CoprDir.query.filter(CoprDir.copr_id==self.id).filter(CoprDir.main==True).one()
+                                                   ^^
+/coprs_frontend/coprs/models.py:336:81: C0326[pylint]: Exactly one space required around comparison
+        return CoprDir.query.filter(CoprDir.copr_id==self.id).filter(CoprDir.main==True).one()
+                                                                                 ^^
+/coprs_frontend/coprs/models.py:604:52: C0326[pylint]: Exactly one space required around comparison
+                 unique=True, postgresql_where=(main==True)),
+                                                    ^^
+/coprs_frontend/coprs/models.py:772:0: C0330[pylint]: Wrong hanging indentation (remove 4 spaces).
+                name=self.name,
+            |   ^
+/coprs_frontend/coprs/models.py:773:0: C0330[pylint]: Wrong hanging indentation (remove 4 spaces).
+                copr_dir_id=self.copr.main_dir.id
+            |   ^
+/coprs_frontend/coprs/models.py:803:0: C0301[pylint]: Line too long (136/120)
+/coprs_frontend/coprs/models.py:951:0: C0330[pylint]: Wrong continued indentation (remove 19 spaces).
+                                    else "builder-live.log.gz"]
+                 |                  ^
+/coprs_frontend/coprs/models.py:1216:25: C0326[pylint]: Exactly one space required before assignment
+    distgit_branch_name  = db.Column(db.String(50),
+                         ^
+/coprs_frontend/coprs/models.py:1221:0: C0330[pylint]: Wrong continued indentation (add 25 spaces).
+            backref=db.backref("chroots"))
+            ^                        |
+/coprs_frontend/coprs/models.py:1426:0: C0330[pylint]: Wrong continued indentation (add 7 spaces).
+                                                copr_dirname,
+                                                ^      |
+/coprs_frontend/coprs/models.py:1427:0: C0330[pylint]: Wrong continued indentation (add 7 spaces).
+                                                self.build.package.name,
+                                                ^      |
+/coprs_frontend/coprs/models.py:1428:0: C0330[pylint]: Wrong continued indentation (add 7 spaces).
+                                                self.git_hash)
+                                                ^      |
+/coprs_frontend/coprs/models.py:1664:19: C0326[pylint]: No space allowed after bracket
+            return { BackendResultEnum("success"): ModuleStatusEnum("succeeded"),
+                   ^
+/coprs_frontend/coprs/models.py:1:0: C0302[pylint]: Too many lines in module (1738/1000)
+/coprs_frontend/coprs/models.py:1:0: C0114[pylint]: Missing module docstring
+/coprs_frontend/coprs/models.py:31:0: C0413[pylint]: Import "from gi.repository import Modulemd" should be placed at the top of the module
+/coprs_frontend/coprs/models.py:34:0: C0115[pylint]: Missing class docstring
+/coprs_frontend/coprs/models.py:34:0: R0205[pylint]: Class 'CoprSearchRelatedData' inherits from object, can be safely removed from bases in python3
+/coprs_frontend/coprs/models.py:35:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:35:4: R0201[pylint]: Method could be a function
+/coprs_frontend/coprs/models.py:45:4: C0103[pylint]: Class attribute name "id" doesn't conform to '([A-Za-z_][A-Za-z0-9_]{2,42}|(__.*__))$' pattern
+/coprs_frontend/coprs/models.py:85:0: C0115[pylint]: Missing class docstring
+/coprs_frontend/coprs/models.py:87:4: C0103[pylint]: Class attribute name "id" doesn't conform to '([A-Za-z_][A-Za-z0-9_]{2,42}|(__.*__))$' pattern
+/coprs_frontend/coprs/models.py:133:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:134:8: R1705[pylint]: Unnecessary "else" after "return"
+/coprs_frontend/coprs/models.py:140:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:147:8: R1703[pylint]: The if statement can be replaced with 'return bool(test)'
+/coprs_frontend/coprs/models.py:147:8: R1705[pylint]: Unnecessary "else" after "return"
+/coprs_frontend/coprs/models.py:105:12: W0201[pylint]: Attribute '_permissions_for_copr' defined outside __init__
+/coprs_frontend/coprs/models.py:203:4: C0103[pylint]: Class attribute name "id" doesn't conform to '([A-Za-z_][A-Za-z0-9_]{2,42}|(__.*__))$' pattern
+/coprs_frontend/coprs/models.py:227:4: C0103[pylint]: Class attribute name "id" doesn't conform to '([A-Za-z_][A-Za-z0-9_]{2,42}|(__.*__))$' pattern
+/coprs_frontend/coprs/models.py:313:4: C0103[pylint]: Class attribute name "id" doesn't conform to '([A-Za-z_][A-Za-z0-9_]{2,42}|(__.*__))$' pattern
+/coprs_frontend/coprs/models.py:328:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:336:69: C0121[pylint]: Comparison to True should be just 'expr'
+/coprs_frontend/coprs/models.py:339:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:416:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:427:12: W0621[pylint]: Redefining name 'os' from outer scope (line 3)
+/coprs_frontend/coprs/models.py:440:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:448:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:464:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:471:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:475:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:479:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:485:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:489:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:492:4: W0221[pylint]: Parameters differ from overridden 'to_dict' method
+/coprs_frontend/coprs/models.py:492:22: W0613[pylint]: Unused argument 'private'
+/coprs_frontend/coprs/models.py:492:37: W0613[pylint]: Unused argument 'show_builds'
+/coprs_frontend/coprs/models.py:492:55: W0613[pylint]: Unused argument 'show_chroots'
+/coprs_frontend/coprs/models.py:500:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:505:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:509:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:516:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:520:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:538:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:544:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:517:8: W0201[pylint]: Attribute 'webhook_secret' defined outside __init__
+/coprs_frontend/coprs/models.py:304:0: R0904[pylint]: Too many public methods (31/20)
+/coprs_frontend/coprs/models.py:569:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:577:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:589:4: C0103[pylint]: Class attribute name "id" doesn't conform to '([A-Za-z_][A-Za-z0-9_]{2,42}|(__.*__))$' pattern
+/coprs_frontend/coprs/models.py:604:48: C0121[pylint]: Comparison to True should be just 'expr'
+/coprs_frontend/coprs/models.py:616:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:620:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:624:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:629:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:630:8: R1705[pylint]: Unnecessary "else" after "return"
+/coprs_frontend/coprs/models.py:652:4: C0103[pylint]: Class attribute name "id" doesn't conform to '([A-Za-z_][A-Za-z0-9_]{2,42}|(__.*__))$' pattern
+/coprs_frontend/coprs/models.py:667:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:667:34: W0613[pylint]: Unused argument 'field'
+/coprs_frontend/coprs/models.py:667:4: R0201[pylint]: Method could be a function
+/coprs_frontend/coprs/models.py:684:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:688:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:694:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:706:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:712:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:713:8: R1705[pylint]: Unnecessary "else" after "return"
+/coprs_frontend/coprs/models.py:718:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:724:4: W0221[pylint]: Parameters differ from overridden 'to_dict' method
+/coprs_frontend/coprs/models.py:744:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:759:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:767:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:779:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:821:4: C0103[pylint]: Class attribute name "id" doesn't conform to '([A-Za-z_][A-Za-z0-9_]{2,42}|(__.*__))$' pattern
+/coprs_frontend/coprs/models.py:895:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:899:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:903:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:907:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:911:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:915:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:919:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:920:8: R1705[pylint]: Unnecessary "else" after "return"
+/coprs_frontend/coprs/models.py:926:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:930:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:933:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:940:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:947:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:956:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:962:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:966:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:969:8: R1705[pylint]: Unnecessary "else" after "return"
+/coprs_frontend/coprs/models.py:975:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:979:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:987:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:991:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:995:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:999:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:1009:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:1029:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:1076:11: C0121[pylint]: Comparison to None should be 'expr is not None'
+/coprs_frontend/coprs/models.py:1111:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:1124:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:1127:8: W0702[pylint]: No exception type(s) specified
+/coprs_frontend/coprs/models.py:1130:4: W0221[pylint]: Parameters differ from overridden 'to_dict' method
+/coprs_frontend/coprs/models.py:1180:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:1184:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:792:0: R0904[pylint]: Too many public methods (37/20)
+/coprs_frontend/coprs/models.py:1206:4: C0103[pylint]: Class attribute name "id" doesn't conform to '([A-Za-z_][A-Za-z0-9_]{2,42}|(__.*__))$' pattern
+/coprs_frontend/coprs/models.py:1234:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:1236:24: C0121[pylint]: Comparison to True should be just 'expr'
+/coprs_frontend/coprs/models.py:1267:8: E1101[pylint]: Instance of 'map' has no 'extend' member
+/coprs_frontend/coprs/models.py:1303:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:1311:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:1315:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:1319:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:1319:4: R1710[pylint]: Either all return statements in a function should return an expression, or none of them should.
+/coprs_frontend/coprs/models.py:1324:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:1325:8: R1705[pylint]: Unnecessary "else" after "return"
+/coprs_frontend/coprs/models.py:1331:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:1335:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:1339:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:1347:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:1356:4: W0221[pylint]: Parameters differ from overridden 'to_dict' method
+/coprs_frontend/coprs/models.py:1409:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:1413:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:1417:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:1432:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:1439:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:1453:0: C0115[pylint]: Missing class docstring
+/coprs_frontend/coprs/models.py:1454:4: C0103[pylint]: Class attribute name "id" doesn't conform to '([A-Za-z_][A-Za-z0-9_]{2,42}|(__.*__))$' pattern
+/coprs_frontend/coprs/models.py:1492:4: C0103[pylint]: Class attribute name "id" doesn't conform to '([A-Za-z_][A-Za-z0-9_]{2,42}|(__.*__))$' pattern
+/coprs_frontend/coprs/models.py:1521:8: R1705[pylint]: Unnecessary "elif" after "return"
+/coprs_frontend/coprs/models.py:1529:4: W0221[pylint]: Parameters differ from overridden 'to_dict' method
+/coprs_frontend/coprs/models.py:1529:0: W0613[pylint]: Unused argument 'kwargs'
+/coprs_frontend/coprs/models.py:1543:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:1584:4: C0103[pylint]: Class attribute name "id" doesn't conform to '([A-Za-z_][A-Za-z0-9_]{2,42}|(__.*__))$' pattern
+/coprs_frontend/coprs/models.py:1591:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:1601:0: C0115[pylint]: Missing class docstring
+/coprs_frontend/coprs/models.py:1602:4: C0103[pylint]: Class attribute name "id" doesn't conform to '([A-Za-z_][A-Za-z0-9_]{2,42}|(__.*__))$' pattern
+/coprs_frontend/coprs/models.py:1607:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:1611:0: C0115[pylint]: Missing class docstring
+/coprs_frontend/coprs/models.py:1612:4: C0103[pylint]: Class attribute name "id" doesn't conform to '([A-Za-z_][A-Za-z0-9_]{2,42}|(__.*__))$' pattern
+/coprs_frontend/coprs/models.py:1637:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:1641:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:1647:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:1651:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:1655:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:1682:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:1686:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:1690:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:1694:0: C0115[pylint]: Missing class docstring
+/coprs_frontend/coprs/models.py:1694:0: R0903[pylint]: Too few public methods (0/1)
+/coprs_frontend/coprs/models.py:1700:0: C0115[pylint]: Missing class docstring
+/coprs_frontend/coprs/models.py:1700:0: R0903[pylint]: Too few public methods (0/1)
+/coprs_frontend/coprs/models.py:1712:4: C0103[pylint]: Class attribute name "id" doesn't conform to '([A-Za-z_][A-Za-z0-9_]{2,42}|(__.*__))$' pattern
+/coprs_frontend/coprs/models.py:1726:4: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:1732:0: C0116[pylint]: Missing function or method docstring
+/coprs_frontend/coprs/models.py:1732:0: W0613[pylint]: Unused argument 'args'
+/coprs_frontend/coprs/models.py:1732:0: W0613[pylint]: Unused argument 'kwargs'
+/coprs_frontend/coprs/models.py:15:0: C0411[pylint]: standard import "import zlib" should be placed before "from sqlalchemy import outerjoin"
+/coprs_frontend/coprs/models.py:25:0: C0411[pylint]: standard import "import itertools" should be placed before "from sqlalchemy import outerjoin"
+/coprs_frontend/coprs/models.py:26:0: C0411[pylint]: standard import "import operator" should be placed before "from sqlalchemy import outerjoin"
+/coprs_frontend/coprs/models.py:29:0: C0411[pylint]: third party import "import gi" should be placed before "from copr_common.enums import ActionTypeEnum, BackendResultEnum, FailTypeEnum, ModuleStatusEnum, StatusEnum, DefaultActionPriorityEnum"
+/coprs_frontend/coprs/models.py:31:0: C0411[pylint]: third party import "from gi.repository import Modulemd" should be placed before "from copr_common.enums import ActionTypeEnum, BackendResultEnum, FailTypeEnum, ModuleStatusEnum, StatusEnum, DefaultActionPriorityEnum"
