@@ -123,7 +123,7 @@ struct MsgFilter::Private {
             addMsgFilter(checker, " \\([0-9]+/[0-9]+\\)$", "");
 
             // "... Redefining name 'desc' from outer scope (line 10)" etc.
-            addMsgFilter(checker, " \\(line [0-9]+\\)$", "");
+            addMsgFilter(checker, " \\((?:imported )?line [0-9]+\\)$", "");
         }
 
         // "__coverity_strcmp" -> "strcmp", etc.

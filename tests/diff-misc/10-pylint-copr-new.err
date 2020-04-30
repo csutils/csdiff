@@ -503,3 +503,4 @@ from sqlalchemy.sql import false,true
 /coprs_frontend/coprs/models.py:26:0: C0411[pylint]: standard import "import operator" should be placed before "from sqlalchemy import outerjoin"
 /coprs_frontend/coprs/models.py:29:0: C0411[pylint]: third party import "import gi" should be placed before "from copr_common.enums import ActionTypeEnum, BackendResultEnum, FailTypeEnum, ModuleStatusEnum, StatusEnum, DefaultActionPriorityEnum"
 /coprs_frontend/coprs/models.py:31:0: C0411[pylint]: third party import "from gi.repository import Modulemd" should be placed before "from copr_common.enums import ActionTypeEnum, BackendResultEnum, FailTypeEnum, ModuleStatusEnum, StatusEnum, DefaultActionPriorityEnum"
+/coprs_frontend/tests/test_views/test_coprs_ns/test_coprs_general.py:706:8: W0404[pylint]: TestCoprRepoGeneration.test_works_on_older_builds: Reimport 'app' (imported line 13)
