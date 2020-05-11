@@ -1,0 +1,64 @@
+Error: PYLINT_WARNING:
+coprs_frontend/commands/rawhide_to_release.py:8: W0611[unused-import]: Unused builds_logic imported from coprs.logic
+
+Error: PYLINT_WARNING:
+coprs_frontend/coprs/exceptions.py:72: C0115[missing-class-docstring]: RequestCannotBeExecuted: Missing class docstring
+
+Error: PYLINT_WARNING:
+coprs_frontend/coprs/logic/actions_logic.py:382:19: E0602[undefined-variable]: ActionsLogic.cache_action_graph_data: Undefined variable 'action'
+
+Error: PYLINT_WARNING:
+coprs_frontend/coprs/logic/actions_logic.py:383:15: E0602[undefined-variable]: ActionsLogic.cache_action_graph_data: Undefined variable 'IntegrityError'
+
+Error: PYLINT_WARNING:
+coprs_frontend/coprs/logic/actions_logic.py:365:4: R1710[inconsistent-return-statements]: ActionsLogic.cache_action_graph_data: Either all return statements in a function should return an expression, or none of them should.
+
+Error: PYLINT_WARNING:
+coprs_frontend/coprs/logic/actions_logic.py:11: C0411[wrong-import-order]: third party import "from sqlalchemy import and_, or_" should be placed before "from copr_common.enums import ActionTypeEnum, BackendResultEnum"
+
+Error: PYLINT_WARNING:
+coprs_frontend/coprs/logic/builds_logic.py:280: C0330[bad-continuation]: Wrong continued indentation (remove 3 spaces).
+                    .outerjoin(models.Build)
+                 |  ^
+
+Error: PYLINT_WARNING:
+coprs_frontend/coprs/logic/builds_logic.py:281: C0330[bad-continuation]: Wrong continued indentation (remove 3 spaces).
+                    .outerjoin(models.CoprDir)
+                 |  ^
+
+Error: PYLINT_WARNING:
+coprs_frontend/coprs/logic/builds_logic.py:282: C0330[bad-continuation]: Wrong continued indentation (remove 3 spaces).
+                    .outerjoin(models.Package, models.Package.id == models.Build.package_id)
+                 |  ^
+
+Error: PYLINT_WARNING:
+coprs_frontend/coprs/logic/builds_logic.py:283: C0330[bad-continuation]: Wrong continued indentation (remove 3 spaces).
+                    .options(joinedload('build').joinedload('copr_dir'),
+                 |  ^
+
+Error: PYLINT_WARNING:
+coprs_frontend/coprs/logic/builds_logic.py:285: C0330[bad-continuation]: Wrong continued indentation (add 1 space).
+                .filter(models.Build.canceled == false())
+                ^|
+
+Error: PYLINT_WARNING:
+coprs_frontend/coprs/logic/builds_logic.py:286: C0330[bad-continuation]: Wrong continued indentation (add 1 space).
+                .filter(or_(
+                ^|
+
+Error: PYLINT_WARNING:
+coprs_frontend/coprs/logic/builds_logic.py:294: C0330[bad-continuation]: Wrong continued indentation (add 1 space).
+                .order_by(models.Build.is_background.asc(), models.Build.id.asc()))
+                ^|
+
+Error: PYLINT_WARNING:
+coprs_frontend/coprs/logic/builds_logic.py:278:4: C0116[missing-function-docstring]: BuildsLogic.get_pending_build_tasks: Missing function or method docstring
+
+Error: PYLINT_WARNING:
+coprs_frontend/coprs/logic/complex_logic.py:325: C0301[line-too-long]: Line too long (139/120)
+
+Error: PYLINT_WARNING:
+coprs_frontend/coprs/logic/coprs_logic.py:590:4: C0116[missing-function-docstring]: CoprChrootsLogic.mock_chroots_from_names: Missing function or method docstring
+
+Error: PYLINT_WARNING:
+coprs_frontend/coprs/logic/coprs_logic.py:701:4: C0116[missing-function-docstring]: CoprChrootsLogic.update_from_names: Missing function or method docstring

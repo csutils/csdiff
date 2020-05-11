@@ -21,7 +21,7 @@
 #define H_GUARD_PARSER_COMMON_H
 
 #define RE_EVENT_GCC "(?:(?:(?:fatal|internal) )?[a-z][\\[\\]A-Za-z0-9_-]+)"
-#define RE_EVENT_PROSPECTOR "(?:[A-Z]+[0-9]+\\[[a-z0-9]+\\])"
+#define RE_EVENT_PROSPECTOR "(?:[A-Z]+[0-9]+\\[[a-z0-9-]+\\])"
 #define RE_EVENT RE_EVENT_GCC "|" RE_EVENT_PROSPECTOR
 
 #endif /* H_GUARD_PARSER_COMMON_H */
