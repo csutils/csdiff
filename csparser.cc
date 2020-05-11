@@ -19,6 +19,8 @@
 
 #include "csparser.hh"
 
+#include "parser-common.hh"
+
 #include <cctype>
 #include <cstdlib>
 #include <cstring>
@@ -104,10 +106,6 @@ std::ostream& operator<<(std::ostream &str, EToken code) {
 
     return str;
 }
-
-#define RE_EVENT_GCC_LIKE "(?:(?:fatal|internal) )?[a-z][\\[\\]A-Za-z0-9_-]+"
-#define RE_EVENT_PROSPECTOR "(?:[A-Z]+[0-9]+\\[[a-z0-9]+\\])"
-#define RE_EVENT RE_EVENT_GCC_LIKE "|" RE_EVENT_PROSPECTOR
 
 class ErrFileLexer {
     public:

@@ -19,6 +19,8 @@
 
 #include "gcc-parser.hh"
 
+#include "parser-common.hh"
+
 #include <algorithm>
 
 #include <boost/foreach.hpp>
@@ -61,9 +63,6 @@ class AbstractTokenFilter: public ITokenizer {
 
 #define RE_LOCATION "([^ #:\"][^:\"]+)(?::([0-9]+))?(?::([0-9]+))?"
 #define RE_TOOL_SUFFIX "(?: <--\\[[^\\]]+\\])?$"
-#define RE_EVENT_GCC "(?:(?:(?:fatal|internal) )?[a-z]+)"
-#define RE_EVENT_PROSPECTOR "(?:[A-Z]+[0-9]+\\[[a-z0-9]+\\])"
-#define RE_EVENT RE_EVENT_GCC "|" RE_EVENT_PROSPECTOR
 #define RE_FNC_SMATCH "(\\(null\\)|[_A-Za-z][_A-Za-z0-9]*)\\(\\)"
 
 class Tokenizer: public ITokenizer {
