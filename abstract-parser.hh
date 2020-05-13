@@ -47,6 +47,9 @@ class AbstractParser {
             return emptyProps_;
         }
 
+    protected:
+        AbstractParser() { }
+
     private:
         const TScanProps emptyProps_;
 };
