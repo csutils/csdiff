@@ -55,8 +55,8 @@ class DefQueue {
 };
 
 template <class TVisitor> bool DefQueue::walk(TVisitor &visitor) {
-    BOOST_FOREACH(const TDefByChecker::const_reference iRow, stor_)
-        BOOST_FOREACH(const TDefByFile::const_reference iCol, iRow.second)
+    BOOST_FOREACH(TDefByChecker::const_reference iRow, stor_)
+        BOOST_FOREACH(TDefByFile::const_reference iCol, iRow.second)
             BOOST_FOREACH(const Defect &def, iCol.second)
                 if (! /* continue */ visitor(def))
                     return false;
