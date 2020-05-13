@@ -174,11 +174,15 @@ EToken Tokenizer::readNext(DefEvent *pEvt) {
     return tok;
 }
 
+#define RE_CLANG_EVT "(?:error|warning)"
+#define RE_CLANG_CNT_EVTS "(?:(?:1 " RE_CLANG_EVT \
+    ")|(?:[0-9]+ " RE_CLANG_EVT "s))"
+
 class NoiseFilter: public AbstractTokenFilter {
     public:
         NoiseFilter(ITokenizer *slave):
             AbstractTokenFilter(slave),
-            reClangWarnCnt_("^((1 warning)|([0-9]+ warnings)) generated\\.$")
+            reClangWarnCnt_("^" RE_CLANG_CNT_EVTS " generated\\.$")
         {
         }
 
