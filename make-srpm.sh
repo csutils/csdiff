@@ -117,11 +117,6 @@ BuildRequires:  python2-devel
 %description -n python2-%{name}
 This package contains the Python 2 binding for the csdiff tool for comparing
 code scan defect lists to find out added or fixed defects.
-
-%if 0%{?rhel} && 0%{?rhel} <= 6
-%{!?__python2: %global __python2 /usr/bin/python2}
-%{!?python2_sitearch: %global python2_sitearch %(%{__python2} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib(1))")}
-%endif
 %endif
 
 %if %{with python3}
