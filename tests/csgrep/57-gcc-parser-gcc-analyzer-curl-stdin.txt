@@ -1,0 +1,845 @@
+Using built-in specs.
+COLLECT_GCC=gcc
+COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/10/lto-wrapper
+OFFLOAD_TARGET_NAMES=nvptx-none
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-redhat-linux
+Configured with: ../configure --enable-bootstrap --enable-languages=c,c++,fortran,objc,obj-c++,ada,go,d,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 10.1.1 20200507 (Red Hat 10.1.1-1) (GCC) 
+gcc: error: unrecognized command-line option '-V'
+gcc: fatal error: no input files
+compilation terminated.
+gcc: error: unrecognized command-line option '-qversion'; did you mean '--version'?
+gcc: fatal error: no input files
+compilation terminated.
+gcc: error: unrecognized command-line option '-V'
+gcc: fatal error: no input files
+compilation terminated.
+Using built-in specs.
+COLLECT_GCC=gcc
+COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/10/lto-wrapper
+OFFLOAD_TARGET_NAMES=nvptx-none
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-redhat-linux
+Configured with: ../configure --enable-bootstrap --enable-languages=c,c++,fortran,objc,obj-c++,ada,go,d,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 10.1.1 20200507 (Red Hat 10.1.1-1) (GCC) 
+COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/10/:/usr/libexec/gcc/x86_64-redhat-linux/10/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/10/:/usr/lib/gcc/x86_64-redhat-linux/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/10/:/usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/10/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-shared' '-fPIC' '-D' 'PIC' '-v' '-o' 'conftest' '-Wno-unknown-pragmas' '-mtune=generic' '-march=x86-64'
+ /usr/libexec/gcc/x86_64-redhat-linux/10/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/10/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/10/lto-wrapper -plugin-opt=-fresolution=/tmp/ccdTh3qI.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -shared -o conftest /usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/10/crtbeginS.o -L/usr/lib/gcc/x86_64-redhat-linux/10 -L/usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/10/../../.. conftest.o -soname conftest -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-redhat-linux/10/crtendS.o /usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crtn.o
+COLLECT_GCC_OPTIONS='-shared' '-fPIC' '-D' 'PIC' '-v' '-o' 'conftest' '-Wno-unknown-pragmas' '-mtune=generic' '-march=x86-64'
+Using built-in specs.
+COLLECT_AS_OPTIONS='--help'
+COLLECT_GCC=gcc
+COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/10/lto-wrapper
+OFFLOAD_TARGET_NAMES=nvptx-none
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-redhat-linux
+Configured with: ../configure --enable-bootstrap --enable-languages=c,c++,fortran,objc,obj-c++,ada,go,d,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 10.1.1 20200507 (Red Hat 10.1.1-1) (GCC) 
+COLLECT_GCC_OPTIONS='--help' '-v' '-Wno-unknown-pragmas' '-mtune=generic' '-march=x86-64'
+
+ /usr/libexec/gcc/x86_64-redhat-linux/10/cc1 -quiet -v help-dummy -quiet -dumpbase help-dummy -mtune=generic -march=x86-64 -auxbase help-dummy -Wno-unknown-pragmas -version --help -o /tmp/ccul1gA5.s
+GNU C17 (GCC) version 10.1.1 20200507 (Red Hat 10.1.1-1) (x86_64-redhat-linux)
+	compiled by GNU C version 10.1.1 20200507 (Red Hat 10.1.1-1), GMP version 6.2.0, MPFR version 4.0.2-p7, MPC version 1.1.0, isl version isl-0.16.1-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+COLLECT_GCC_OPTIONS='--help' '-v' '-Wno-unknown-pragmas' '-mtune=generic' '-march=x86-64'
+
+ as -v --64 --help -o /tmp/ccfjh5H4.o /tmp/ccul1gA5.s
+GNU assembler version 2.34.0 (x86_64-redhat-linux) using BFD version version 2.34.0.20200522
+COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/10/:/usr/libexec/gcc/x86_64-redhat-linux/10/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/10/:/usr/lib/gcc/x86_64-redhat-linux/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/10/:/usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/10/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='--help' '-v' '-Wno-unknown-pragmas' '-mtune=generic' '-march=x86-64'
+
+ /usr/libexec/gcc/x86_64-redhat-linux/10/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/10/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/10/lto-wrapper -plugin-opt=-fresolution=/tmp/ccJGpKA5.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 --help /usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/10/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/10 -L/usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/10/../../.. /tmp/ccfjh5H4.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-redhat-linux/10/crtend.o /usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crtn.o
+COLLECT_GCC_OPTIONS='--help' '-v' '-Wno-unknown-pragmas' '-mtune=generic' '-march=x86-64'
+Using built-in specs.
+COLLECT_GCC=gcc
+COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/10/lto-wrapper
+OFFLOAD_TARGET_NAMES=nvptx-none
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-redhat-linux
+Configured with: ../configure --enable-bootstrap --enable-languages=c,c++,fortran,objc,obj-c++,ada,go,d,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 10.1.1 20200507 (Red Hat 10.1.1-1) (GCC) 
+gcc: error: unrecognized command-line option '-V'
+gcc: fatal error: no input files
+compilation terminated.
+gcc: error: unrecognized command-line option '-qversion'; did you mean '--version'?
+gcc: fatal error: no input files
+compilation terminated.
+gcc: error: unrecognized command-line option '-V'
+gcc: fatal error: no input files
+compilation terminated.
+Using built-in specs.
+COLLECT_AS_OPTIONS='--help'
+COLLECT_GCC=gcc
+COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/10/lto-wrapper
+OFFLOAD_TARGET_NAMES=nvptx-none
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-redhat-linux
+Configured with: ../configure --enable-bootstrap --enable-languages=c,c++,fortran,objc,obj-c++,ada,go,d,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 10.1.1 20200507 (Red Hat 10.1.1-1) (GCC) 
+COLLECT_GCC_OPTIONS='--help' '-v' '-Wno-unknown-pragmas' '-mtune=generic' '-march=x86-64'
+
+ /usr/libexec/gcc/x86_64-redhat-linux/10/cc1 -quiet -v help-dummy -quiet -dumpbase help-dummy -mtune=generic -march=x86-64 -auxbase help-dummy -Wno-unknown-pragmas -version --help -o /tmp/ccXcBf40.s
+GNU C17 (GCC) version 10.1.1 20200507 (Red Hat 10.1.1-1) (x86_64-redhat-linux)
+	compiled by GNU C version 10.1.1 20200507 (Red Hat 10.1.1-1), GMP version 6.2.0, MPFR version 4.0.2-p7, MPC version 1.1.0, isl version isl-0.16.1-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+COLLECT_GCC_OPTIONS='--help' '-v' '-Wno-unknown-pragmas' '-mtune=generic' '-march=x86-64'
+
+ as -v --64 --help -o /tmp/ccbwhiZ1.o /tmp/ccXcBf40.s
+GNU assembler version 2.34.0 (x86_64-redhat-linux) using BFD version version 2.34.0.20200522
+COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/10/:/usr/libexec/gcc/x86_64-redhat-linux/10/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/10/:/usr/lib/gcc/x86_64-redhat-linux/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/10/:/usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/10/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='--help' '-v' '-Wno-unknown-pragmas' '-mtune=generic' '-march=x86-64'
+
+ /usr/libexec/gcc/x86_64-redhat-linux/10/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/10/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/10/lto-wrapper -plugin-opt=-fresolution=/tmp/ccbWjhJ3.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 --help /usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/10/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/10 -L/usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/10/../../.. /tmp/ccbwhiZ1.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-redhat-linux/10/crtend.o /usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64/crtn.o
+COLLECT_GCC_OPTIONS='--help' '-v' '-Wno-unknown-pragmas' '-mtune=generic' '-march=x86-64'
+/builddir/build/BUILD/curl-7.70.0/lib/vtls/openssl.c: In function 'ossl_connect_step1': <--[gcc]
+/builddir/build/BUILD/curl-7.70.0/lib/vtls/openssl.c:2472:5: warning: 'SSLv3_client_method' is deprecated [-Wdeprecated-declarations] <--[gcc]
+ 2472 |     req_method = SSLv3_client_method();
+      |     ^~~~~~~~~~
+In file included from /usr/include/openssl/opensslconf.h:42, <--[gcc]
+                 from /usr/include/openssl/e_os2.h:13, <--[gcc]
+                 from /usr/include/openssl/ssl.h:15, <--[gcc]
+                 from /builddir/build/BUILD/curl-7.70.0/lib/vtls/openssl.c:49: <--[gcc]
+/usr/include/openssl/ssl.h:1869:1: note: declared here <--[gcc]
+ 1869 | DEPRECATEDIN_1_1_0(__owur const SSL_METHOD *SSLv3_client_method(void))
+      | ^~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/vtls/openssl.c: In function 'ossl_connect_step1': <--[gcc]
+/builddir/build/BUILD/curl-7.70.0/lib/vtls/openssl.c:2472:5: warning: 'SSLv3_client_method' is deprecated [-Wdeprecated-declarations] <--[gcc]
+ 2472 |     req_method = SSLv3_client_method();
+      |     ^~~~~~~~~~
+In file included from /usr/include/openssl/opensslconf.h:42, <--[gcc]
+                 from /usr/include/openssl/e_os2.h:13, <--[gcc]
+                 from /usr/include/openssl/ssl.h:15, <--[gcc]
+                 from /builddir/build/BUILD/curl-7.70.0/lib/vtls/openssl.c:49: <--[gcc]
+/usr/include/openssl/ssl.h:1869:1: note: declared here <--[gcc]
+ 1869 | DEPRECATEDIN_1_1_0(__owur const SSL_METHOD *SSLv3_client_method(void))
+      | ^~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c: In function 'multi_runsingle': <--[gcc]
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1701:54: warning: dereference of NULL 'conn' [CWE-690] [-Wanalyzer-null-dereference] <--[gcc]
+ 1701 |       dns = Curl_fetch_addr(conn, hostname, (int)conn->port);
+      |                                                  ~~~~^~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2962:11: note: (1) entry to 'curl_multi_socket_all' <--[gcc]
+ 2962 | CURLMcode curl_multi_socket_all(struct Curl_multi *multi, int *running_handles)
+      |           ^~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2966:5: note: (2) following 'false' branch... <--[gcc]
+ 2966 |   if(multi->in_callback)
+      |     ^
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2968:12: note: (3) ...to here <--[gcc]
+ 2968 |   result = multi_socket(multi, TRUE, CURL_SOCKET_BAD, 0, running_handles);
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2968:12: note: (4) calling 'multi_socket' from 'curl_multi_socket_all' <--[gcc]
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2746:18: note: (5) entry to 'multi_socket' <--[gcc]
+ 2746 | static CURLMcode multi_socket(struct Curl_multi *multi,
+      |                  ^~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2757:5: note: (6) following 'true' branch (when 'checkall != 0')... <--[gcc]
+ 2757 |   if(checkall) {
+      |     ^
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2759:14: note: (7) ...to here <--[gcc]
+ 2759 |     result = curl_multi_perform(multi, running_handles);
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2759:14: note: (8) calling 'curl_multi_perform' from 'multi_socket' <--[gcc]
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2344:11: note: (9) entry to 'curl_multi_perform' <--[gcc]
+ 2344 | CURLMcode curl_multi_perform(struct Curl_multi *multi, int *running_handles)
+      |           ^~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2351:5: note: (10) following 'false' branch (when 'multi' is non-NULL)... <--[gcc]
+ 2351 |   if(!GOOD_MULTI_HANDLE(multi))
+      |     ^
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:72:14: note: (11) ...to here <--[gcc]
+   72 |   ((x) && (x)->type == CURL_MULTI_HANDLE)
+      |           ~~~^~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2351:7: note: in expansion of macro 'GOOD_MULTI_HANDLE' <--[gcc]
+ 2351 |   if(!GOOD_MULTI_HANDLE(multi))
+      |       ^~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2351:6: note: (12) following 'false' branch... <--[gcc]
+ 2351 |   if(!GOOD_MULTI_HANDLE(multi))
+      |      ^
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2354:11: note: (13) ...to here <--[gcc]
+ 2354 |   if(multi->in_callback)
+      |      ~~~~~^~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2354:5: note: (14) following 'false' branch... <--[gcc]
+ 2354 |   if(multi->in_callback)
+      |     ^
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2357:8: note: (15) ...to here <--[gcc]
+ 2357 |   data = multi->easyp;
+      |   ~~~~~^~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2358:8: note: (16) following 'true' branch (when 'data' is non-NULL)... <--[gcc]
+ 2358 |   while(data) {
+      |        ^
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2362:5: note: (17) ...to here <--[gcc]
+ 2362 |     sigpipe_ignore(data, &pipe_st);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2362:5: note: (18) calling 'sigpipe_ignore' from 'curl_multi_perform' <--[gcc]
+In file included from /builddir/build/BUILD/curl-7.70.0/lib/multi.c:44: <--[gcc]
+/builddir/build/BUILD/curl-7.70.0/lib/sigpipe.h:42:13: note: (19) entry to 'sigpipe_ignore' <--[gcc]
+   42 | static void sigpipe_ignore(struct Curl_easy *data,
+      |             ^~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/sigpipe.h:48:5: note: (20) following 'false' branch... <--[gcc]
+   48 |   if(!data->set.no_signal) {
+      |     ^
+/builddir/build/BUILD/curl-7.70.0/lib/sigpipe.h:58:1: note: (21) ...to here <--[gcc]
+   58 | }
+      | ^
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2362:5: note: (22) returning to 'curl_multi_perform' from 'sigpipe_ignore' <--[gcc]
+ 2362 |     sigpipe_ignore(data, &pipe_st);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2363:14: note: (23) calling 'multi_runsingle' from 'curl_multi_perform' <--[gcc]
+ 2363 |     result = multi_runsingle(multi, now, data);
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1517:18: note: (24) entry to 'multi_runsingle' <--[gcc]
+ 1517 | static CURLMcode multi_runsingle(struct Curl_multi *multi,
+      |                  ^~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1534:5: note: (25) following 'false' branch (when 'data' is non-NULL)... <--[gcc]
+ 1534 |   if(!GOOD_EASY_HANDLE(data))
+      |     ^
+In file included from /builddir/build/BUILD/curl-7.70.0/lib/multi.c:27: <--[gcc]
+/builddir/build/BUILD/curl-7.70.0/lib/urldata.h:161:15: note: (26) ...to here <--[gcc]
+  161 |   ((x) && ((x)->magic == CURLEASY_MAGIC_NUMBER))
+      |            ~~~^~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1534:7: note: in expansion of macro 'GOOD_EASY_HANDLE' <--[gcc]
+ 1534 |   if(!GOOD_EASY_HANDLE(data))
+      |       ^~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1534:6: note: (27) following 'true' branch... <--[gcc]
+ 1534 |   if(!GOOD_EASY_HANDLE(data))
+cc1: note: (28) ...to here
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2363:14: note: (29) returning to 'curl_multi_perform' from 'multi_runsingle' <--[gcc]
+ 2363 |     result = multi_runsingle(multi, now, data);
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2366:7: note: (30) following 'true' branch (when 'result != 0')... <--[gcc]
+ 2366 |     if(result)
+      |       ^
+cc1: note: (31) ...to here
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2358:8: note: (32) following 'true' branch (when 'data' is non-NULL)... <--[gcc]
+ 2358 |   while(data) {
+      |        ^
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2362:5: note: (33) ...to here <--[gcc]
+ 2362 |     sigpipe_ignore(data, &pipe_st);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2362:5: note: (34) calling 'sigpipe_ignore' from 'curl_multi_perform' <--[gcc]
+In file included from /builddir/build/BUILD/curl-7.70.0/lib/multi.c:44: <--[gcc]
+/builddir/build/BUILD/curl-7.70.0/lib/sigpipe.h:42:13: note: (35) entry to 'sigpipe_ignore' <--[gcc]
+   42 | static void sigpipe_ignore(struct Curl_easy *data,
+      |             ^~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/sigpipe.h:48:5: note: (36) following 'false' branch... <--[gcc]
+   48 |   if(!data->set.no_signal) {
+      |     ^
+/builddir/build/BUILD/curl-7.70.0/lib/sigpipe.h:58:1: note: (37) ...to here <--[gcc]
+   58 | }
+      | ^
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2362:5: note: (38) returning to 'curl_multi_perform' from 'sigpipe_ignore' <--[gcc]
+ 2362 |     sigpipe_ignore(data, &pipe_st);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2363:14: note: (39) calling 'multi_runsingle' from 'curl_multi_perform' <--[gcc]
+ 2363 |     result = multi_runsingle(multi, now, data);
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1517:18: note: (40) entry to 'multi_runsingle' <--[gcc]
+ 1517 | static CURLMcode multi_runsingle(struct Curl_multi *multi,
+      |                  ^~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1534:5: note: (41) following 'false' branch (when 'data' is non-NULL)... <--[gcc]
+ 1534 |   if(!GOOD_EASY_HANDLE(data))
+      |     ^
+In file included from /builddir/build/BUILD/curl-7.70.0/lib/multi.c:27: <--[gcc]
+/builddir/build/BUILD/curl-7.70.0/lib/urldata.h:161:15: note: (42) ...to here <--[gcc]
+  161 |   ((x) && ((x)->magic == CURLEASY_MAGIC_NUMBER))
+      |            ~~~^~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1534:7: note: in expansion of macro 'GOOD_EASY_HANDLE' <--[gcc]
+ 1534 |   if(!GOOD_EASY_HANDLE(data))
+      |       ^~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1534:6: note: (43) following 'false' branch... <--[gcc]
+ 1534 |   if(!GOOD_EASY_HANDLE(data))
+cc1: note: (44) ...to here
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1546:7: note: (45) following 'true' branch... <--[gcc]
+ 1546 |     if(!data->conn &&
+      |       ^
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1547:12: note: (46) ...to here <--[gcc]
+ 1547 |        data->mstate > CURLM_STATE_CONNECT &&
+      |        ~~~~^~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1546:20: note: (47) following 'false' branch... <--[gcc]
+ 1546 |     if(!data->conn &&
+      |        ~~~~~~~~~~~~^~
+ 1547 |        data->mstate > CURLM_STATE_CONNECT &&
+      |        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1326:8: note: (48) ...to here <--[gcc]
+ 1326 |   bool retval = multi->recheckstate;
+      |        ^~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1556:7: note: (49) following 'false' branch (when 'retval == 0')... <--[gcc]
+ 1556 |     if(multi_ischanged(multi, TRUE)) {
+      |       ^
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1561:12: note: (50) ...to here <--[gcc]
+ 1561 |     if(data->conn && data->mstate > CURLM_STATE_CONNECT &&
+      |        ~~~~^~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1561:7: note: (51) following 'false' branch... <--[gcc]
+ 1561 |     if(data->conn && data->mstate > CURLM_STATE_CONNECT &&
+      |       ^
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1567:7: note: (52) ...to here <--[gcc]
+ 1567 |     if(data->conn &&
+      |       ^
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1567:7: note: (53) following 'false' branch... <--[gcc]
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1616:16: note: (54) ...to here <--[gcc]
+ 1616 |     switch(data->mstate) {
+      |            ~~~~^~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1616:5: note: (55) following 'case 3:' branch... <--[gcc]
+ 1616 |     switch(data->mstate) {
+      |     ^~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1685:5: note: (56) ...to here <--[gcc]
+ 1685 |     case CURLM_STATE_WAITRESOLVE:
+      |     ^~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1689:27: note: (57) 'conn' is NULL <--[gcc]
+ 1689 |       struct connectdata *conn = data->conn;
+      |                           ^~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1693:9: note: (58) following 'true' branch... <--[gcc]
+ 1693 |       if(conn->bits.httpproxy)
+      |         ^
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1694:18: note: (59) ...to here <--[gcc]
+ 1694 |         hostname = conn->http_proxy.host.name;
+      |         ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1701:54: note: (60) dereference of NULL 'conn' <--[gcc]
+ 1701 |       dns = Curl_fetch_addr(conn, hostname, (int)conn->port);
+      |                                                  ~~~~^~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c: In function 'tool_header_cb': <--[gcc]
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:241:7: warning: use of NULL '<unknown>' where non-null expected [CWE-690] [-Wanalyzer-null-argument] <--[gcc]
+  241 |       fwrite(ptr, cb, 1, outs->stream);
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:56:8: note: (1) entry to 'tool_header_cb' <--[gcc]
+   56 | size_t tool_header_cb(char *ptr, size_t size, size_t nmemb, void *userdata)
+      |        ^~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:76:5: note: (2) following 'false' branch... <--[gcc]
+   76 |   if(!per->config)
+      |     ^
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:91:17: note: (3) ...to here <--[gcc]
+   91 |   if(per->config->headerfile && heads->stream) {
+      |      ~~~~~~~~~~~^~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:158:5: note: (4) following 'true' branch... <--[gcc]
+  158 |   if(hdrcbdata->honor_cd_filename &&
+      |     ^
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:158:35: note: (5) ...to here <--[gcc]
+  158 |   if(hdrcbdata->honor_cd_filename &&
+      |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+  159 |      (cb > 20) && checkprefix("Content-disposition:", str) &&
+      |      ~~~~~~~~~                     
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:158:35: note: (6) following 'true' branch (when 'cb > 20')... <--[gcc]
+In file included from /builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:24: <--[gcc]
+/builddir/build/BUILD/curl-7.70.0/lib/strcase.h:46:29: note: (7) ...to here <--[gcc]
+   46 | #define checkprefix(a,b)    curl_strnequal(a,b,strlen(a))
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:159:19: note: in expansion of macro 'checkprefix' <--[gcc]
+  159 |      (cb > 20) && checkprefix("Content-disposition:", str) &&
+      |                   ^~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:159:16: note: (8) following 'true' branch... <--[gcc]
+  159 |      (cb > 20) && checkprefix("Content-disposition:", str) &&
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:160:16: note: (9) ...to here <--[gcc]
+  160 |      (protocol & (CURLPROTO_HTTPS|CURLPROTO_HTTP))) {
+      |      ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:159:60: note: (10) following 'true' branch... <--[gcc]
+  158 |   if(hdrcbdata->honor_cd_filename &&
+      |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                        
+  159 |      (cb > 20) && checkprefix("Content-disposition:", str) &&
+      |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+  160 |      (protocol & (CURLPROTO_HTTPS|CURLPROTO_HTTP))) {
+      |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~          
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:161:17: note: (11) ...to here <--[gcc]
+  161 |     const char *p = str + 20;
+      |                 ^
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:171:9: note: (12) following 'false' branch... <--[gcc]
+  171 |       if(p > end - 9)
+      |         ^
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:174:10: note: (13) ...to here <--[gcc]
+  174 |       if(memcmp(p, "filename=", 9)) {
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:186:18: note: (14) calling 'parse_filename' from 'tool_header_cb' <--[gcc]
+  186 |       filename = parse_filename(p, len);
+      |                  ^~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:249:14: note: (15) entry to 'parse_filename' <--[gcc]
+  249 | static char *parse_filename(const char *ptr, size_t len)
+      |              ^~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:258:5: note: (16) following 'false' branch (when 'copy' is non-NULL)... <--[gcc]
+  258 |   if(!copy)
+      |     ^
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:260:3: note: (17) ...to here <--[gcc]
+  260 |   memcpy(copy, ptr, len);
+      |   ^~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:186:18: note: (18) returning to 'tool_header_cb' from 'parse_filename' <--[gcc]
+  186 |       filename = parse_filename(p, len);
+      |                  ^~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:187:9: note: (19) following 'true' branch (when 'filename' is non-NULL)... <--[gcc]
+  187 |       if(filename) {
+      |         ^
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:188:16: note: (20) ...to here <--[gcc]
+  188 |         if(outs->stream) {
+      |            ~~~~^~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:188:11: note: (21) following 'true' branch... <--[gcc]
+  188 |         if(outs->stream) {
+      |           ^
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:191:18: note: (22) ...to here <--[gcc]
+  191 |           if(outs->fopened)
+      |              ~~~~^~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:191:13: note: (23) following 'false' branch... <--[gcc]
+  191 |           if(outs->fopened)
+      |             ^
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:193:24: note: (24) ...to here <--[gcc]
+  193 |           outs->stream = NULL;
+      |                        ^
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:197:13: note: (25) following 'false' branch (when 'rc == 0')... <--[gcc]
+  197 |           if(rc != 0) {
+      |             ^
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:201:18: note: (26) ...to here <--[gcc]
+  201 |           if(outs->alloc_filename)
+      |              ~~~~^~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:201:13: note: (27) following 'true' branch... <--[gcc]
+  201 |           if(outs->alloc_filename)
+      |             ^
+In file included from /builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:37: <--[gcc]
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:202:31: note: (28) ...to here <--[gcc]
+  202 |             Curl_safefree(outs->filename);
+/builddir/build/BUILD/curl-7.70.0/lib/memdebug.h:172:14: note: in definition of macro 'Curl_safefree' <--[gcc]
+  172 |   do { free((ptr)); (ptr) = NULL;} while(0)
+      |              ^~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:203:13: note: (29) following 'false' branch (when 'rc == 0')... <--[gcc]
+  203 |           if(rc != 0) {
+      |             ^
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:208:30: note: (30) ...to here <--[gcc]
+  208 |         outs->is_cd_filename = TRUE;
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:214:11: note: (31) following 'true' branch... <--[gcc]
+  214 |         if(!tool_create_output_file(outs, per->config))
+      |           ^
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:219:13: note: (32) ...to here <--[gcc]
+  219 |     if(!outs->stream && !tool_create_output_file(outs, per->config))
+      |         ~~~~^~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:219:7: note: (33) following 'true' branch... <--[gcc]
+  219 |     if(!outs->stream && !tool_create_output_file(outs, per->config))
+      |       ^
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:219:26: note: (34) ...to here <--[gcc]
+  219 |     if(!outs->stream && !tool_create_output_file(outs, per->config))
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:219:22: note: (35) following 'true' branch... <--[gcc]
+  219 |     if(!outs->stream && !tool_create_output_file(outs, per->config))
+      |        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:223:15: note: (36) ...to here <--[gcc]
+  223 |   if(hdrcbdata->config->show_headers &&
+      |      ~~~~~~~~~^~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:223:5: note: (37) following 'true' branch... <--[gcc]
+  223 |   if(hdrcbdata->config->show_headers &&
+      |     ^
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:224:15: note: (38) ...to here <--[gcc]
+  224 |     (protocol &
+      |     ~~~~~~~~~~^
+  225 |      (CURLPROTO_HTTP|CURLPROTO_HTTPS|CURLPROTO_RTSP|CURLPROTO_FILE))) {
+      |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:223:38: note: (39) following 'true' branch... <--[gcc]
+  223 |   if(hdrcbdata->config->show_headers &&
+      |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+  224 |     (protocol &
+      |     ~~~~~~~~~~~                       
+  225 |      (CURLPROTO_HTTP|CURLPROTO_HTTPS|CURLPROTO_RTSP|CURLPROTO_FILE))) {
+      |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:229:13: note: (40) ...to here <--[gcc]
+  229 |     if(!outs->stream && !tool_create_output_file(outs, per->config))
+      |         ~~~~^~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:229:7: note: (41) following 'true' branch... <--[gcc]
+  229 |     if(!outs->stream && !tool_create_output_file(outs, per->config))
+      |       ^
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:229:26: note: (42) ...to here <--[gcc]
+  229 |     if(!outs->stream && !tool_create_output_file(outs, per->config))
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:229:22: note: (43) following 'true' branch... <--[gcc]
+  229 |     if(!outs->stream && !tool_create_output_file(outs, per->config))
+      |        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:232:17: note: (44) ...to here <--[gcc]
+  232 |     if(hdrcbdata->global->isatty && hdrcbdata->global->styled_output)
+      |        ~~~~~~~~~^~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:232:7: note: (45) following 'false' branch... <--[gcc]
+  232 |     if(hdrcbdata->global->isatty && hdrcbdata->global->styled_output)
+      |       ^
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:241:7: note: (46) ...to here <--[gcc]
+  241 |       fwrite(ptr, cb, 1, outs->stream);
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:241:7: note: (47) argument 4 ('<unknown>') NULL where non-null expected <--[gcc]
+In file included from /builddir/build/BUILD/curl-7.70.0/include/curl/curl.h:49, <--[gcc]
+                 from /builddir/build/BUILD/curl-7.70.0/lib/curl_setup.h:157, <--[gcc]
+                 from /builddir/build/BUILD/curl-7.70.0/src/tool_setup.h:36, <--[gcc]
+                 from /builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:22: <--[gcc]
+/usr/include/stdio.h:657:15: note: argument 4 of 'fwrite' must be non-null <--[gcc]
+  657 | extern size_t fwrite (const void *__restrict __ptr, size_t __size,
+      |               ^~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/vtls/openssl.c: In function 'ossl_connect_step1': <--[gcc]
+/builddir/build/BUILD/curl-7.70.0/lib/vtls/openssl.c:2472:5: warning: 'SSLv3_client_method' is deprecated [-Wdeprecated-declarations] <--[gcc]
+ 2472 |     req_method = SSLv3_client_method();
+      |     ^~~~~~~~~~
+In file included from /usr/include/openssl/opensslconf.h:42, <--[gcc]
+                 from /usr/include/openssl/e_os2.h:13, <--[gcc]
+                 from /usr/include/openssl/ssl.h:15, <--[gcc]
+                 from /builddir/build/BUILD/curl-7.70.0/lib/vtls/openssl.c:49: <--[gcc]
+/usr/include/openssl/ssl.h:1869:1: note: declared here <--[gcc]
+ 1869 | DEPRECATEDIN_1_1_0(__owur const SSL_METHOD *SSLv3_client_method(void))
+      | ^~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/vtls/openssl.c: In function 'ossl_connect_step1': <--[gcc]
+/builddir/build/BUILD/curl-7.70.0/lib/vtls/openssl.c:2472:5: warning: 'SSLv3_client_method' is deprecated [-Wdeprecated-declarations] <--[gcc]
+ 2472 |     req_method = SSLv3_client_method();
+      |     ^~~~~~~~~~
+In file included from /usr/include/openssl/opensslconf.h:42, <--[gcc]
+                 from /usr/include/openssl/e_os2.h:13, <--[gcc]
+                 from /usr/include/openssl/ssl.h:15, <--[gcc]
+                 from /builddir/build/BUILD/curl-7.70.0/lib/vtls/openssl.c:49: <--[gcc]
+/usr/include/openssl/ssl.h:1869:1: note: declared here <--[gcc]
+ 1869 | DEPRECATEDIN_1_1_0(__owur const SSL_METHOD *SSLv3_client_method(void))
+      | ^~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c: In function 'multi_runsingle': <--[gcc]
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1701:54: warning: dereference of NULL 'conn' [CWE-690] [-Wanalyzer-null-dereference] <--[gcc]
+ 1701 |       dns = Curl_fetch_addr(conn, hostname, (int)conn->port);
+      |                                                  ~~~~^~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2962:11: note: (1) entry to 'curl_multi_socket_all' <--[gcc]
+ 2962 | CURLMcode curl_multi_socket_all(struct Curl_multi *multi, int *running_handles)
+      |           ^~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2966:5: note: (2) following 'false' branch... <--[gcc]
+ 2966 |   if(multi->in_callback)
+      |     ^
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2968:12: note: (3) ...to here <--[gcc]
+ 2968 |   result = multi_socket(multi, TRUE, CURL_SOCKET_BAD, 0, running_handles);
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2968:12: note: (4) calling 'multi_socket' from 'curl_multi_socket_all' <--[gcc]
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2746:18: note: (5) entry to 'multi_socket' <--[gcc]
+ 2746 | static CURLMcode multi_socket(struct Curl_multi *multi,
+      |                  ^~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2757:5: note: (6) following 'true' branch (when 'checkall != 0')... <--[gcc]
+ 2757 |   if(checkall) {
+      |     ^
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2759:14: note: (7) ...to here <--[gcc]
+ 2759 |     result = curl_multi_perform(multi, running_handles);
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2759:14: note: (8) calling 'curl_multi_perform' from 'multi_socket' <--[gcc]
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2344:11: note: (9) entry to 'curl_multi_perform' <--[gcc]
+ 2344 | CURLMcode curl_multi_perform(struct Curl_multi *multi, int *running_handles)
+      |           ^~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2351:5: note: (10) following 'false' branch (when 'multi' is non-NULL)... <--[gcc]
+ 2351 |   if(!GOOD_MULTI_HANDLE(multi))
+      |     ^
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:72:14: note: (11) ...to here <--[gcc]
+   72 |   ((x) && (x)->type == CURL_MULTI_HANDLE)
+      |           ~~~^~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2351:7: note: in expansion of macro 'GOOD_MULTI_HANDLE' <--[gcc]
+ 2351 |   if(!GOOD_MULTI_HANDLE(multi))
+      |       ^~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2351:6: note: (12) following 'false' branch... <--[gcc]
+ 2351 |   if(!GOOD_MULTI_HANDLE(multi))
+      |      ^
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2354:11: note: (13) ...to here <--[gcc]
+ 2354 |   if(multi->in_callback)
+      |      ~~~~~^~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2354:5: note: (14) following 'false' branch... <--[gcc]
+ 2354 |   if(multi->in_callback)
+      |     ^
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2357:8: note: (15) ...to here <--[gcc]
+ 2357 |   data = multi->easyp;
+      |   ~~~~~^~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2358:8: note: (16) following 'true' branch (when 'data' is non-NULL)... <--[gcc]
+ 2358 |   while(data) {
+      |        ^
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2362:5: note: (17) ...to here <--[gcc]
+ 2362 |     sigpipe_ignore(data, &pipe_st);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2362:5: note: (18) calling 'sigpipe_ignore' from 'curl_multi_perform' <--[gcc]
+In file included from /builddir/build/BUILD/curl-7.70.0/lib/multi.c:44: <--[gcc]
+/builddir/build/BUILD/curl-7.70.0/lib/sigpipe.h:42:13: note: (19) entry to 'sigpipe_ignore' <--[gcc]
+   42 | static void sigpipe_ignore(struct Curl_easy *data,
+      |             ^~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/sigpipe.h:48:5: note: (20) following 'false' branch... <--[gcc]
+   48 |   if(!data->set.no_signal) {
+      |     ^
+/builddir/build/BUILD/curl-7.70.0/lib/sigpipe.h:58:1: note: (21) ...to here <--[gcc]
+   58 | }
+      | ^
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2362:5: note: (22) returning to 'curl_multi_perform' from 'sigpipe_ignore' <--[gcc]
+ 2362 |     sigpipe_ignore(data, &pipe_st);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2363:14: note: (23) calling 'multi_runsingle' from 'curl_multi_perform' <--[gcc]
+ 2363 |     result = multi_runsingle(multi, now, data);
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1517:18: note: (24) entry to 'multi_runsingle' <--[gcc]
+ 1517 | static CURLMcode multi_runsingle(struct Curl_multi *multi,
+      |                  ^~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1534:5: note: (25) following 'false' branch (when 'data' is non-NULL)... <--[gcc]
+ 1534 |   if(!GOOD_EASY_HANDLE(data))
+      |     ^
+In file included from /builddir/build/BUILD/curl-7.70.0/lib/multi.c:27: <--[gcc]
+/builddir/build/BUILD/curl-7.70.0/lib/urldata.h:161:15: note: (26) ...to here <--[gcc]
+  161 |   ((x) && ((x)->magic == CURLEASY_MAGIC_NUMBER))
+      |            ~~~^~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1534:7: note: in expansion of macro 'GOOD_EASY_HANDLE' <--[gcc]
+ 1534 |   if(!GOOD_EASY_HANDLE(data))
+      |       ^~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1534:6: note: (27) following 'true' branch... <--[gcc]
+ 1534 |   if(!GOOD_EASY_HANDLE(data))
+cc1: note: (28) ...to here
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2363:14: note: (29) returning to 'curl_multi_perform' from 'multi_runsingle' <--[gcc]
+ 2363 |     result = multi_runsingle(multi, now, data);
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2366:7: note: (30) following 'true' branch (when 'result != 0')... <--[gcc]
+ 2366 |     if(result)
+      |       ^
+cc1: note: (31) ...to here
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2358:8: note: (32) following 'true' branch (when 'data' is non-NULL)... <--[gcc]
+ 2358 |   while(data) {
+      |        ^
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2362:5: note: (33) ...to here <--[gcc]
+ 2362 |     sigpipe_ignore(data, &pipe_st);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2362:5: note: (34) calling 'sigpipe_ignore' from 'curl_multi_perform' <--[gcc]
+In file included from /builddir/build/BUILD/curl-7.70.0/lib/multi.c:44: <--[gcc]
+/builddir/build/BUILD/curl-7.70.0/lib/sigpipe.h:42:13: note: (35) entry to 'sigpipe_ignore' <--[gcc]
+   42 | static void sigpipe_ignore(struct Curl_easy *data,
+      |             ^~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/sigpipe.h:48:5: note: (36) following 'false' branch... <--[gcc]
+   48 |   if(!data->set.no_signal) {
+      |     ^
+/builddir/build/BUILD/curl-7.70.0/lib/sigpipe.h:58:1: note: (37) ...to here <--[gcc]
+   58 | }
+      | ^
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2362:5: note: (38) returning to 'curl_multi_perform' from 'sigpipe_ignore' <--[gcc]
+ 2362 |     sigpipe_ignore(data, &pipe_st);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:2363:14: note: (39) calling 'multi_runsingle' from 'curl_multi_perform' <--[gcc]
+ 2363 |     result = multi_runsingle(multi, now, data);
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1517:18: note: (40) entry to 'multi_runsingle' <--[gcc]
+ 1517 | static CURLMcode multi_runsingle(struct Curl_multi *multi,
+      |                  ^~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1534:5: note: (41) following 'false' branch (when 'data' is non-NULL)... <--[gcc]
+ 1534 |   if(!GOOD_EASY_HANDLE(data))
+      |     ^
+In file included from /builddir/build/BUILD/curl-7.70.0/lib/multi.c:27: <--[gcc]
+/builddir/build/BUILD/curl-7.70.0/lib/urldata.h:161:15: note: (42) ...to here <--[gcc]
+  161 |   ((x) && ((x)->magic == CURLEASY_MAGIC_NUMBER))
+      |            ~~~^~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1534:7: note: in expansion of macro 'GOOD_EASY_HANDLE' <--[gcc]
+ 1534 |   if(!GOOD_EASY_HANDLE(data))
+      |       ^~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1534:6: note: (43) following 'false' branch... <--[gcc]
+ 1534 |   if(!GOOD_EASY_HANDLE(data))
+cc1: note: (44) ...to here
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1546:7: note: (45) following 'true' branch... <--[gcc]
+ 1546 |     if(!data->conn &&
+      |       ^
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1547:12: note: (46) ...to here <--[gcc]
+ 1547 |        data->mstate > CURLM_STATE_CONNECT &&
+      |        ~~~~^~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1546:20: note: (47) following 'false' branch... <--[gcc]
+ 1546 |     if(!data->conn &&
+      |        ~~~~~~~~~~~~^~
+ 1547 |        data->mstate > CURLM_STATE_CONNECT &&
+      |        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1326:8: note: (48) ...to here <--[gcc]
+ 1326 |   bool retval = multi->recheckstate;
+      |        ^~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1556:7: note: (49) following 'false' branch (when 'retval == 0')... <--[gcc]
+ 1556 |     if(multi_ischanged(multi, TRUE)) {
+      |       ^
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1561:12: note: (50) ...to here <--[gcc]
+ 1561 |     if(data->conn && data->mstate > CURLM_STATE_CONNECT &&
+      |        ~~~~^~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1561:7: note: (51) following 'false' branch... <--[gcc]
+ 1561 |     if(data->conn && data->mstate > CURLM_STATE_CONNECT &&
+      |       ^
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1567:7: note: (52) ...to here <--[gcc]
+ 1567 |     if(data->conn &&
+      |       ^
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1567:7: note: (53) following 'false' branch... <--[gcc]
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1616:16: note: (54) ...to here <--[gcc]
+ 1616 |     switch(data->mstate) {
+      |            ~~~~^~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1616:5: note: (55) following 'case 3:' branch... <--[gcc]
+ 1616 |     switch(data->mstate) {
+      |     ^~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1685:5: note: (56) ...to here <--[gcc]
+ 1685 |     case CURLM_STATE_WAITRESOLVE:
+      |     ^~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1689:27: note: (57) 'conn' is NULL <--[gcc]
+ 1689 |       struct connectdata *conn = data->conn;
+      |                           ^~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1693:9: note: (58) following 'true' branch... <--[gcc]
+ 1693 |       if(conn->bits.httpproxy)
+      |         ^
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1694:18: note: (59) ...to here <--[gcc]
+ 1694 |         hostname = conn->http_proxy.host.name;
+      |         ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1701:54: note: (60) dereference of NULL 'conn' <--[gcc]
+ 1701 |       dns = Curl_fetch_addr(conn, hostname, (int)conn->port);
+      |                                                  ~~~~^~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c: In function 'tool_header_cb': <--[gcc]
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:241:7: warning: use of NULL '<unknown>' where non-null expected [CWE-690] [-Wanalyzer-null-argument] <--[gcc]
+  241 |       fwrite(ptr, cb, 1, outs->stream);
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:56:8: note: (1) entry to 'tool_header_cb' <--[gcc]
+   56 | size_t tool_header_cb(char *ptr, size_t size, size_t nmemb, void *userdata)
+      |        ^~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:76:5: note: (2) following 'false' branch... <--[gcc]
+   76 |   if(!per->config)
+      |     ^
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:91:17: note: (3) ...to here <--[gcc]
+   91 |   if(per->config->headerfile && heads->stream) {
+      |      ~~~~~~~~~~~^~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:158:5: note: (4) following 'true' branch... <--[gcc]
+  158 |   if(hdrcbdata->honor_cd_filename &&
+      |     ^
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:158:35: note: (5) ...to here <--[gcc]
+  158 |   if(hdrcbdata->honor_cd_filename &&
+      |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+  159 |      (cb > 20) && checkprefix("Content-disposition:", str) &&
+      |      ~~~~~~~~~                     
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:158:35: note: (6) following 'true' branch (when 'cb > 20')... <--[gcc]
+In file included from /builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:24: <--[gcc]
+/builddir/build/BUILD/curl-7.70.0/lib/strcase.h:46:29: note: (7) ...to here <--[gcc]
+   46 | #define checkprefix(a,b)    curl_strnequal(a,b,strlen(a))
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:159:19: note: in expansion of macro 'checkprefix' <--[gcc]
+  159 |      (cb > 20) && checkprefix("Content-disposition:", str) &&
+      |                   ^~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:159:16: note: (8) following 'true' branch... <--[gcc]
+  159 |      (cb > 20) && checkprefix("Content-disposition:", str) &&
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:160:16: note: (9) ...to here <--[gcc]
+  160 |      (protocol & (CURLPROTO_HTTPS|CURLPROTO_HTTP))) {
+      |      ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:159:60: note: (10) following 'true' branch... <--[gcc]
+  158 |   if(hdrcbdata->honor_cd_filename &&
+      |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                        
+  159 |      (cb > 20) && checkprefix("Content-disposition:", str) &&
+      |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+  160 |      (protocol & (CURLPROTO_HTTPS|CURLPROTO_HTTP))) {
+      |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~          
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:161:17: note: (11) ...to here <--[gcc]
+  161 |     const char *p = str + 20;
+      |                 ^
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:171:9: note: (12) following 'false' branch... <--[gcc]
+  171 |       if(p > end - 9)
+      |         ^
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:174:10: note: (13) ...to here <--[gcc]
+  174 |       if(memcmp(p, "filename=", 9)) {
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:186:18: note: (14) calling 'parse_filename' from 'tool_header_cb' <--[gcc]
+  186 |       filename = parse_filename(p, len);
+      |                  ^~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:249:14: note: (15) entry to 'parse_filename' <--[gcc]
+  249 | static char *parse_filename(const char *ptr, size_t len)
+      |              ^~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:258:5: note: (16) following 'false' branch (when 'copy' is non-NULL)... <--[gcc]
+  258 |   if(!copy)
+      |     ^
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:260:3: note: (17) ...to here <--[gcc]
+  260 |   memcpy(copy, ptr, len);
+      |   ^~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:186:18: note: (18) returning to 'tool_header_cb' from 'parse_filename' <--[gcc]
+  186 |       filename = parse_filename(p, len);
+      |                  ^~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:187:9: note: (19) following 'true' branch (when 'filename' is non-NULL)... <--[gcc]
+  187 |       if(filename) {
+      |         ^
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:188:16: note: (20) ...to here <--[gcc]
+  188 |         if(outs->stream) {
+      |            ~~~~^~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:188:11: note: (21) following 'true' branch... <--[gcc]
+  188 |         if(outs->stream) {
+      |           ^
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:191:18: note: (22) ...to here <--[gcc]
+  191 |           if(outs->fopened)
+      |              ~~~~^~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:191:13: note: (23) following 'false' branch... <--[gcc]
+  191 |           if(outs->fopened)
+      |             ^
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:193:24: note: (24) ...to here <--[gcc]
+  193 |           outs->stream = NULL;
+      |                        ^
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:197:13: note: (25) following 'false' branch (when 'rc == 0')... <--[gcc]
+  197 |           if(rc != 0) {
+      |             ^
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:201:18: note: (26) ...to here <--[gcc]
+  201 |           if(outs->alloc_filename)
+      |              ~~~~^~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:201:13: note: (27) following 'true' branch... <--[gcc]
+  201 |           if(outs->alloc_filename)
+      |             ^
+In file included from /builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:37: <--[gcc]
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:202:31: note: (28) ...to here <--[gcc]
+  202 |             Curl_safefree(outs->filename);
+/builddir/build/BUILD/curl-7.70.0/lib/memdebug.h:172:14: note: in definition of macro 'Curl_safefree' <--[gcc]
+  172 |   do { free((ptr)); (ptr) = NULL;} while(0)
+      |              ^~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:203:13: note: (29) following 'false' branch (when 'rc == 0')... <--[gcc]
+  203 |           if(rc != 0) {
+      |             ^
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:208:30: note: (30) ...to here <--[gcc]
+  208 |         outs->is_cd_filename = TRUE;
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:214:11: note: (31) following 'true' branch... <--[gcc]
+  214 |         if(!tool_create_output_file(outs, per->config))
+      |           ^
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:219:13: note: (32) ...to here <--[gcc]
+  219 |     if(!outs->stream && !tool_create_output_file(outs, per->config))
+      |         ~~~~^~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:219:7: note: (33) following 'true' branch... <--[gcc]
+  219 |     if(!outs->stream && !tool_create_output_file(outs, per->config))
+      |       ^
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:219:26: note: (34) ...to here <--[gcc]
+  219 |     if(!outs->stream && !tool_create_output_file(outs, per->config))
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:219:22: note: (35) following 'true' branch... <--[gcc]
+  219 |     if(!outs->stream && !tool_create_output_file(outs, per->config))
+      |        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:223:15: note: (36) ...to here <--[gcc]
+  223 |   if(hdrcbdata->config->show_headers &&
+      |      ~~~~~~~~~^~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:223:5: note: (37) following 'true' branch... <--[gcc]
+  223 |   if(hdrcbdata->config->show_headers &&
+      |     ^
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:224:15: note: (38) ...to here <--[gcc]
+  224 |     (protocol &
+      |     ~~~~~~~~~~^
+  225 |      (CURLPROTO_HTTP|CURLPROTO_HTTPS|CURLPROTO_RTSP|CURLPROTO_FILE))) {
+      |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:223:38: note: (39) following 'true' branch... <--[gcc]
+  223 |   if(hdrcbdata->config->show_headers &&
+      |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+  224 |     (protocol &
+      |     ~~~~~~~~~~~                       
+  225 |      (CURLPROTO_HTTP|CURLPROTO_HTTPS|CURLPROTO_RTSP|CURLPROTO_FILE))) {
+      |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:229:13: note: (40) ...to here <--[gcc]
+  229 |     if(!outs->stream && !tool_create_output_file(outs, per->config))
+      |         ~~~~^~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:229:7: note: (41) following 'true' branch... <--[gcc]
+  229 |     if(!outs->stream && !tool_create_output_file(outs, per->config))
+      |       ^
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:229:26: note: (42) ...to here <--[gcc]
+  229 |     if(!outs->stream && !tool_create_output_file(outs, per->config))
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:229:22: note: (43) following 'true' branch... <--[gcc]
+  229 |     if(!outs->stream && !tool_create_output_file(outs, per->config))
+      |        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:232:17: note: (44) ...to here <--[gcc]
+  232 |     if(hdrcbdata->global->isatty && hdrcbdata->global->styled_output)
+      |        ~~~~~~~~~^~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:232:7: note: (45) following 'false' branch... <--[gcc]
+  232 |     if(hdrcbdata->global->isatty && hdrcbdata->global->styled_output)
+      |       ^
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:241:7: note: (46) ...to here <--[gcc]
+  241 |       fwrite(ptr, cb, 1, outs->stream);
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:241:7: note: (47) argument 4 ('<unknown>') NULL where non-null expected <--[gcc]
+In file included from /builddir/build/BUILD/curl-7.70.0/include/curl/curl.h:49, <--[gcc]
+                 from /builddir/build/BUILD/curl-7.70.0/lib/curl_setup.h:157, <--[gcc]
+                 from /builddir/build/BUILD/curl-7.70.0/src/tool_setup.h:36, <--[gcc]
+                 from /builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:22: <--[gcc]
+/usr/include/stdio.h:657:15: note: argument 4 of 'fwrite' must be non-null <--[gcc]
+  657 | extern size_t fwrite (const void *__restrict __ptr, size_t __size,
+      |               ^~~~~~

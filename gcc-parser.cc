@@ -541,8 +541,56 @@ bool BasicGccParser::hasError() const {
     return hasError_;
 }
 
+class PostProcessor {
+    public:
+        PostProcessor():
+            reGccAnalCoreEvt_("^(.*) \\[-Wanalyzer-[A-Za-z0-9-]+\\]$"),
+            reGccAnalCwe_("^.* \\[CWE-([0-9]+)\\]$")
+        {
+        }
+
+        /// apply final transformations on a successfully parsed defect
+        void apply(Defect *pDef);
+
+    private:
+        const boost::regex reGccAnalCoreEvt_;
+        const boost::regex reGccAnalCwe_;
+
+        void transGccAnal(Defect *pDef);
+};
+
+void PostProcessor::transGccAnal(Defect *pDef) {
+    if ("COMPILER_WARNING" != pDef->checker)
+        return;
+
+    // check for [-Wanalyzer-...] suffix in message of the key event
+    DefEvent &keyEvt = pDef->events[pDef->keyEventIdx];
+    boost::smatch sm;
+    if (!boost::regex_match(keyEvt.msg, sm, reGccAnalCoreEvt_))
+        return;
+
+    // COMPILER_WARNING -> GCC_ANALYZER_WARNING
+    pDef->checker = "GCC_ANALYZER_WARNING";
+
+    // pick CWE number if available
+    const std::string rawMsg = sm[/* msg */ 1];
+    if (boost::regex_match(rawMsg, sm, reGccAnalCwe_)) {
+        try {
+            pDef->cwe = boost::lexical_cast<int>(sm[/* cwe */ 1]);
+        }
+        catch (boost::bad_lexical_cast &) {
+            pDef->cwe = 0;
+        }
+    }
+}
+
+void PostProcessor::apply(Defect *pDef) {
+    this->transGccAnal(pDef);
+}
+
 struct GccParser::Private {
     BasicGccParser              core;
+    PostProcessor               postProc;
     Defect                      lastDef;
     const boost::regex          reLocation;
 
@@ -639,6 +687,9 @@ bool GccParser::getNext(Defect *pDef) {
     const unsigned keyEventIdx = pDef->keyEventIdx;
     for (unsigned idx = 0U; idx < evtCount; ++idx)
         evtList[idx].verbosityLevel = (keyEventIdx != idx);
+
+    // apply final transformations
+    d->postProc.apply(pDef);
 
     return true;
 }
