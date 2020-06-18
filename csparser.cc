@@ -271,9 +271,11 @@ KeyEventDigger::KeyEventDigger():
     d->blackList.insert("example_comparison");
     d->blackList.insert("example_lock");
     d->blackList.insert("function_annotation");
+    d->blackList.insert("included_from");
     d->blackList.insert("note");
     d->blackList.insert("remediation");
     d->blackList.insert("rounding_remediation");
+    d->blackList.insert("scope_hint");
 
     // trace events
     d->traceEvts.insert("break");
