@@ -138,20 +138,20 @@ code scan defect lists to find out added or fixed defects.
 make version.cc
 mkdir csdiff_build
 cd csdiff_build
-%cmake .. -DBUILD_PYCSDIFF=OFF
+%cmake .. -B. -DBUILD_PYCSDIFF=OFF
 make %{?_smp_mflags} VERBOSE=yes
 
 %if %{with python2}
 mkdir ../csdiff_build_py2
 cd ../csdiff_build_py2
-%cmake .. -DPYTHON_EXECUTABLE=%{__python2}
+%cmake .. -B. -DPYTHON_EXECUTABLE=%{__python2}
 make %{?_smp_mflags} VERBOSE=yes
 %endif
 
 %if %{with python3}
 mkdir ../csdiff_build_py3
 cd ../csdiff_build_py3
-%cmake .. \\
+%cmake .. -B. \\
     -DPYTHON_EXECUTABLE=%{__python3} \\
     -DBOOST_PYTHON_LIB_NAME=boost_python%{python3_version_nodots}
 make %{?_smp_mflags} VERBOSE=yes pycsdiff
