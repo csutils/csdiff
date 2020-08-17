@@ -118,9 +118,15 @@ bool CweMap::loadCweMap(std::istream &str, const std::string &fileName) {
 }
 
 bool CweMap::assignCwe(Defect &def) const {
+    int &cweDst = def.cwe;
+
     // lookup by checker
     Private::TMapByChk::const_iterator rowIt = d->mapByChk.find(def.checker);
     if (d->mapByChk.end() == rowIt) {
+        if (cweDst)
+            // CWE already assigned, stay silent
+            return true;
+
         if (!d->silent)
             std::cerr << "warning: CWE not found: checker = "
                 << def.checker <<"\n";
@@ -128,11 +134,14 @@ bool CweMap::assignCwe(Defect &def) const {
     }
 
     // lookup by event
-    int &cweDst = def.cwe;
     const Private::TNumByEvent &row = rowIt->second;
     const DefEvent &evt = def.events[def.keyEventIdx];
     Private::TNumByEvent::const_iterator cweIt = row.find(evt.event);
     if (row.end() == cweIt) {
+        if (cweDst)
+            // CWE already assigned, stay silent
+            return true;
+
         if (!d->silent)
             std::cerr << "warning: CWE not found: checker = " << def.checker
                 << ", event = " << evt.event << "\n";
@@ -148,7 +157,7 @@ bool CweMap::assignCwe(Defect &def) const {
 
     const int cweSrc = cweIt->second;
     if (cweSrc == cweDst)
-        // already assigned
+        // already assigned to the requested value
         return true;
 
     if (cweDst && !d->silent)
