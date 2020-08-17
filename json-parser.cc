@@ -116,7 +116,8 @@ void JsonParser::Private::dataError(const std::string &msg) {
         << this->defNumber << ": " << msg << "\n";
 }
 
-bool findChildOf(pt::ptree **pDst, pt::ptree &node, const char *key)
+template <typename TNode>
+bool findChildOf(TNode **pDst, TNode &node, const char *key)
 {
     if (node.not_found() == node.find(key))
         return false;
@@ -283,6 +284,11 @@ void CovTreeDecoder::readNode(
     // TODO: read/propagate more properties from the Coverity JSON format
     def->checker = defNode.get<std::string>("checkerName");
     def->function = valueOf<std::string>(defNode, "functionDisplayName", "");
+
+    // read CWE if available
+    const pt::ptree *checkerProps;
+    if (findChildOf(&checkerProps, defNode, "checkerProperties"))
+        def->cwe = valueOf<int>(*checkerProps, "cweCategory", 0);
 
     // count the events and allocate dst array
     const pt::ptree &evtList = defNode.get_child("events");
