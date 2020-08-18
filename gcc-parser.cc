@@ -24,7 +24,6 @@
 #include <algorithm>
 
 #include <boost/foreach.hpp>
-#include <boost/lexical_cast.hpp>
 #include <boost/regex.hpp>
 
 enum EToken {
@@ -156,20 +155,10 @@ EToken Tokenizer::readNext(DefEvent *pEvt) {
     pEvt->fileName    = sm[/* file */ 1];
 
     // parse line number
-    try {
-        pEvt->line = boost::lexical_cast<int>(sm[/* line */ 2]);
-    }
-    catch (boost::bad_lexical_cast &) {
-        pEvt->line = 0;
-    }
+    pEvt->line = parse_int(sm[/* line */ 2]);
 
     // parse column number
-    try {
-        pEvt->column = boost::lexical_cast<int>(sm[/* col */ 3]);
-    }
-    catch (boost::bad_lexical_cast &) {
-        pEvt->column = 0;
-    }
+    pEvt->column = parse_int(sm[/* col */ 3]);
 
     return tok;
 }
@@ -574,14 +563,8 @@ void PostProcessor::transGccAnal(Defect *pDef) {
 
     // pick CWE number if available
     const std::string rawMsg = sm[/* msg */ 1];
-    if (boost::regex_match(rawMsg, sm, reGccAnalCwe_)) {
-        try {
-            pDef->cwe = boost::lexical_cast<int>(sm[/* cwe */ 1]);
-        }
-        catch (boost::bad_lexical_cast &) {
-            pDef->cwe = 0;
-        }
-    }
+    if (boost::regex_match(rawMsg, sm, reGccAnalCwe_))
+        pDef->cwe = parse_int(sm[/* cwe */ 1]);
 }
 
 void PostProcessor::apply(Defect *pDef) {

@@ -29,7 +29,6 @@
 #include <sstream>
 
 #include <boost/algorithm/string.hpp>
-#include <boost/lexical_cast.hpp>
 #include <boost/regex.hpp>
 
 class LineReader {
@@ -185,20 +184,10 @@ EToken ErrFileLexer::readNext() {
     evt_.msg        = sm[/* msg   */ 5];
 
     // parse line number
-    try {
-        evt_.line = boost::lexical_cast<int>(sm[/* line */ 2]);
-    }
-    catch (boost::bad_lexical_cast &) {
-        evt_.line = 0;
-    }
+    evt_.line = parse_int(sm[/* line */ 2]);
 
     // parse column number
-    try {
-        evt_.column = boost::lexical_cast<int>(sm[/* col */ 3]);
-    }
-    catch (boost::bad_lexical_cast &) {
-        evt_.column = 0;
-    }
+    evt_.column = parse_int(sm[/* col */ 3]);
 
     return T_EVENT;
 }

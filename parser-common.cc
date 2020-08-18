@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011-2020 Red Hat, Inc.
+ * Copyright (C) 2020 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -17,15 +17,15 @@
  * along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef H_GUARD_PARSER_COMMON_H
-#define H_GUARD_PARSER_COMMON_H
+#include "parser-common.hh"
 
-#include <string>
+#include <boost/lexical_cast.hpp>
 
-#define RE_EVENT_GCC "(?:(?:(?:fatal|internal) )?[a-z][\\[\\]A-Za-z0-9_-]+)"
-#define RE_EVENT_PROSPECTOR "(?:[A-Z]+[0-9]+\\[[a-z0-9-]+\\])"
-#define RE_EVENT RE_EVENT_GCC "|" RE_EVENT_PROSPECTOR
-
-int parse_int(const std::string &, int fallback = 0);
-
-#endif /* H_GUARD_PARSER_COMMON_H */
+int parse_int(const std::string &str, const int fallback) {
+    try {
+        return boost::lexical_cast<int>(str);
+    }
+    catch (boost::bad_lexical_cast &) {
+        return fallback;
+    }
+}
