@@ -1,0 +1,35 @@
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/curl-7.66.0/lib/ftp.c:2416: error[nullPointerArithmetic]: Pointer addition with NULL pointer.
+
+Error: CPPCHECK_WARNING (CWE-908):
+/builddir/build/BUILD/curl-7.66.0/lib/curl_ntlm_core.c:394: error[uninitvar]: Uninitialized variable: ks
+
+Error: CPPCHECK_WARNING (CWE-908):
+/builddir/build/BUILD/curl-7.66.0/lib/curl_ntlm_core.c:469: error[uninitvar]: Uninitialized variable: ks
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.66.0/lib/vtls/openssl.c: scope_hint: In function 'ossl_connect_step1'
+/builddir/build/BUILD/curl-7.66.0/lib/vtls/openssl.c:2461:5: warning: 'SSLv3_client_method' is deprecated [-Wdeprecated-declarations]
+# 2461 |     req_method = SSLv3_client_method();
+#      |     ^~~~~~~~~~
+/usr/include/openssl/opensslconf.h:42: included_from: Included from here.
+/usr/include/openssl/e_os2.h:13: included_from: Included from here.
+/usr/include/openssl/ssl.h:15: included_from: Included from here.
+/builddir/build/BUILD/curl-7.66.0/lib/vtls/openssl.c:48: included_from: Included from here.
+/usr/include/openssl/ssl.h:1869:1: note: declared here
+# 1869 | DEPRECATEDIN_1_1_0(__owur const SSL_METHOD *SSLv3_client_method(void))
+#      | ^~~~~~~~~~~~~~~~~~
+
+Error: CLANG_WARNING:
+/builddir/build/BUILD/curl-7.66.0/lib/vtls/openssl.c:2204:3: warning: Value stored to 'ossl_ssl_version_max' is never read
+#  ossl_ssl_version_max = 0;
+#  ^                      ~
+/builddir/build/BUILD/curl-7.66.0/lib/vtls/openssl.c:2204:3: note: Value stored to 'ossl_ssl_version_max' is never read
+#  ossl_ssl_version_max = 0;
+#  ^                      ~
+
+Error: COMPILER_WARNING:
+gcc: warning: '-x c' after last input file has no effect
+
+Error: COMPILER_WARNING:
+g++: warning: '-x c' after last input file has no effect

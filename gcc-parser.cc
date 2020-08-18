@@ -368,7 +368,7 @@ class BasicGccParser {
             tokenizer_(&markerConverter_),
             fileName_(fileName),
             silent_(silent),
-            reCppcheck_("^([A-Za-z_]+): (.*)$"),
+            reCppcheck_("^([A-Za-z_]+)(?:\\(CWE-([0-9]+)\\))?: (.*)$"),
             reClang_("^clang.*$"),
             reProspector_(RE_EVENT_PROSPECTOR),
             reShellCheckMsg_("^.* \\[SC[0-9]+\\]$"),
@@ -432,7 +432,13 @@ bool BasicGccParser::digCppcheckEvt(Defect *pDef) {
     keyEvt.event += "[";
     keyEvt.event += sm[/* id  */ 1];
     keyEvt.event += "]";
-    keyEvt.msg = sm[/* msg */ 2];
+
+    // store CWE if available
+    pDef->cwe = parse_int(sm[/* cwe */ 2]);
+
+    // this assignment invalidates sm!
+    keyEvt.msg = sm[/* msg */ 3];
+
     return true;
 }
 

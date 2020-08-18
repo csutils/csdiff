@@ -1,0 +1,23 @@
+/builddir/build/BUILD/curl-7.66.0/lib/ftp.c:2416: error: nullPointerArithmetic: Pointer addition with NULL pointer. <--[cppcheck]
+/builddir/build/BUILD/curl-7.66.0/lib/curl_ntlm_core.c:394: error: uninitvar(CWE-908): Uninitialized variable: ks <--[cppcheck]
+/builddir/build/BUILD/curl-7.66.0/lib/curl_ntlm_core.c:469: error: uninitvar(CWE-908): Uninitialized variable: ks <--[cppcheck]
+/builddir/build/BUILD/curl-7.66.0/lib/vtls/openssl.c: In function 'ossl_connect_step1': <--[gcc]
+/builddir/build/BUILD/curl-7.66.0/lib/vtls/openssl.c:2461:5: warning: 'SSLv3_client_method' is deprecated [-Wdeprecated-declarations] <--[gcc]
+ 2461 |     req_method = SSLv3_client_method();
+      |     ^~~~~~~~~~
+In file included from /usr/include/openssl/opensslconf.h:42, <--[gcc]
+                 from /usr/include/openssl/e_os2.h:13, <--[gcc]
+                 from /usr/include/openssl/ssl.h:15, <--[gcc]
+                 from /builddir/build/BUILD/curl-7.66.0/lib/vtls/openssl.c:48: <--[gcc]
+/usr/include/openssl/ssl.h:1869:1: note: declared here <--[gcc]
+ 1869 | DEPRECATEDIN_1_1_0(__owur const SSL_METHOD *SSLv3_client_method(void))
+      | ^~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/curl-7.66.0/lib/vtls/openssl.c:2204:3: warning: Value stored to 'ossl_ssl_version_max' is never read <--[clang]
+  ossl_ssl_version_max = 0;
+  ^                      ~
+/builddir/build/BUILD/curl-7.66.0/lib/vtls/openssl.c:2204:3: note: Value stored to 'ossl_ssl_version_max' is never read <--[clang]
+  ossl_ssl_version_max = 0;
+  ^                      ~
+1 warning generated.
+gcc: warning: '-x c' after last input file has no effect
+g++: warning: '-x c' after last input file has no effect
