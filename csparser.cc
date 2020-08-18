@@ -357,6 +357,27 @@ void KeyEventDigger::initVerbosity(Defect *def) {
     }
 }
 
+class AnnotHandler {
+    public:
+        AnnotHandler():
+            reCweAnnot_("^ *\\(CWE-([0-9]+)\\)$")
+        {
+        }
+
+        void handleDef(Defect *);
+
+    private:
+        boost::regex reCweAnnot_;
+};
+
+void AnnotHandler::handleDef(Defect *pDef) {
+    boost::smatch sm;
+    if (boost::regex_match(pDef->annotation, sm, reCweAnnot_)) {
+        pDef->cwe = parse_int(sm[/* cwe */ 1]);
+        pDef->annotation.clear();
+    }
+}
+
 struct CovParser::Private {
     ErrFileLexer            lexer;
     std::string             fileName;
@@ -364,6 +385,7 @@ struct CovParser::Private {
     bool                    hasError;
     EToken                  code;
     KeyEventDigger          keDigger;
+    AnnotHandler            annotHdl;
 
     Private(std::istream &input_, std::string fileName_, bool silent_):
         lexer(input_),
@@ -539,15 +561,16 @@ bool CovParser::Private::parseNext(Defect *def) {
     }
 
 done:
-    if (this->keDigger.guessKeyEvent(def)) {
-        this->keDigger.initVerbosity(def);
-
-        // all OK
-        return true;
+    if (!this->keDigger.guessKeyEvent(def)) {
+        this->parseError("failed to guess key event");
+        return false;
     }
 
-    this->parseError("failed to guess key event");
-    return false;
+    this->keDigger.initVerbosity(def);
+    this->annotHdl.handleDef(def);
+
+    // all OK
+    return true;
 }
 
 bool CovParser::getNext(Defect *def) {
