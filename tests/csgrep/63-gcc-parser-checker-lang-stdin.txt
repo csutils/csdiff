@@ -1,0 +1,83 @@
+/builddir/build/BUILDROOT/systemtap-4.4-0.20200805git82b8e1a07.eln103.x86_64/usr/bin/stap-report:125:39: note: read without -r will mangle backslashes. [SC2162] <--[shellcheck]
+/builddir/build/BUILDROOT/systemtap-4.4-0.20200805git82b8e1a07.eln103.x86_64/usr/bin/stap-report:143:6: error: Don't put spaces around the = in assignments (or quote to make it literal). [SC1068] <--[shellcheck]
+/builddir/build/BUILDROOT/systemtap-4.4-0.20200805git82b8e1a07.eln103.x86_64/usr/bin/stap-report:143:6: error: Unexpected ==. For assignment, use =. For comparison, use [/[[. [SC1097] <--[shellcheck]
+/builddir/build/BUILD/systemtap-4.4/staprun/mainloop.c:810: error: unknownMacro(CWE-0): There is an unknown macro here somewhere. Configuration is required. If _SDT_ASM_ARGS is a macro then please configure it. <--[cppcheck]
+/builddir/build/BUILD/systemtap-4.4/staprun/mainloop.c:810: error: unknownMacro(CWE-0): There is an unknown macro here somewhere. Configuration is required. If _SDT_ASM_ARGS is a macro then please configure it. <--[cppcheck]
+In function 'init_backlog':
+/builddir/build/BUILD/systemtap-4.4/staprun/relay.c:60:16: warning: leak of '<unknown>' [CWE-401] [-Wanalyzer-malloc-leak] <--[gcc]
+   60 |  backlog_order = order;
+      |  ~~~~~~~~~~~~~~^~~~~~~
+/builddir/build/BUILD/systemtap-4.4/staprun/relay.c:51:5: note: (1) following 'false' branch... <--[gcc]
+   51 |  if (!fnum_max)
+      |     ^
+cc1: note: (2) ...to here
+/builddir/build/BUILD/systemtap-4.4/staprun/relay.c:53:8: note: (3) following 'false' branch... <--[gcc]
+   53 |  while (fnum_max >> order) order++;
+      |        ^
+/builddir/build/BUILD/systemtap-4.4/staprun/relay.c:54:27: note: (4) ...to here <--[gcc]
+   54 |  if (fnum_max == 1<<(order-1)) order--;
+      |                     ~~~~~~^~~
+/builddir/build/BUILD/systemtap-4.4/staprun/relay.c:54:5: note: (5) following 'false' branch... <--[gcc]
+   54 |  if (fnum_max == 1<<(order-1)) order--;
+      |     ^
+/builddir/build/BUILD/systemtap-4.4/staprun/relay.c:55:40: note: (6) ...to here <--[gcc]
+   55 |  time_backlog[cpu] = (time_t *)calloc(1<<order, sizeof(time_t));
+      |                                       ~^~~~~~~
+/builddir/build/BUILD/systemtap-4.4/staprun/relay.c:55:40: note: (7) allocated here <--[gcc]
+/builddir/build/BUILD/systemtap-4.4/staprun/relay.c:56:5: note: (8) assuming '<unknown>' is non-NULL <--[gcc]
+   56 |  if (time_backlog[cpu] == NULL) {
+      |     ^
+/builddir/build/BUILD/systemtap-4.4/staprun/relay.c:56:5: note: (9) following 'false' branch... <--[gcc]
+/builddir/build/BUILD/systemtap-4.4/staprun/relay.c:60:16: note: (10) ...to here <--[gcc]
+   60 |  backlog_order = order;
+      |  ~~~~~~~~~~~~~~^~~~~~~
+/builddir/build/BUILD/systemtap-4.4/staprun/relay.c:60:16: note: (11) '<unknown>' leaks here; was allocated at (7) <--[gcc]
+/builddir/build/BUILD/systemtap-4.4/staprun/stap_merge.c:72:4: warning: Potential leak of memory pointed to by 'buf' <--[clang]
+                        fprintf(stderr, "error opening file %s.\n", argv[optind - 1]);
+                        ^
+/usr/include/bits/stdio2.h:116:3: note: expanded from macro 'fprintf' <--[clang]
+  __fprintf_chk (stream, __USE_FORTIFY_LEVEL - 1, __VA_ARGS__)
+  ^
+/builddir/build/BUILD/systemtap-4.4/staprun/stap_merge.c:46:8: note: Memory is allocated <--[clang]
+        buf = malloc(bufsize);
+              ^~~~~~~~~~~~~~~
+/builddir/build/BUILD/systemtap-4.4/staprun/stap_merge.c:47:6: note: Assuming 'buf' is not equal to NULL <--[clang]
+        if (buf == NULL) {
+            ^~~~~~~~~~~
+/builddir/build/BUILD/systemtap-4.4/staprun/stap_merge.c:47:2: note: Taking false branch <--[clang]
+        if (buf == NULL) {
+        ^
+/builddir/build/BUILD/systemtap-4.4/staprun/stap_merge.c:52:9: note: Assuming the condition is false <--[clang]
+        while ((c = getopt (argc, argv, "vo:")) != EOF)  {
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/systemtap-4.4/staprun/stap_merge.c:52:2: note: Loop condition is false. Execution continues on line 65 <--[clang]
+        while ((c = getopt (argc, argv, "vo:")) != EOF)  {
+        ^
+/builddir/build/BUILD/systemtap-4.4/staprun/stap_merge.c:65:6: note: Assuming 'optind' is not equal to 'argc' <--[clang]
+        if (optind == argc)
+            ^~~~~~~~~~~~~~
+/builddir/build/BUILD/systemtap-4.4/staprun/stap_merge.c:65:2: note: Taking false branch <--[clang]
+        if (optind == argc)
+        ^
+/builddir/build/BUILD/systemtap-4.4/staprun/stap_merge.c:69:9: note: Assuming 'optind' is < 'argc' <--[clang]
+        while (optind < argc) {
+               ^~~~~~~~~~~~~
+/builddir/build/BUILD/systemtap-4.4/staprun/stap_merge.c:69:2: note: Loop condition is true.  Entering loop body <--[clang]
+        while (optind < argc) {
+        ^
+/builddir/build/BUILD/systemtap-4.4/staprun/stap_merge.c:71:7: note: Assuming the condition is true <--[clang]
+                if (!fp[i]) {
+                    ^~~~~~
+/builddir/build/BUILD/systemtap-4.4/staprun/stap_merge.c:71:3: note: Taking true branch <--[clang]
+                if (!fp[i]) {
+                ^
+/builddir/build/BUILD/systemtap-4.4/staprun/stap_merge.c:72:4: note: Potential leak of memory pointed to by 'buf' <--[clang]
+                        fprintf(stderr, "error opening file %s.\n", argv[optind - 1]);
+                        ^
+/usr/include/bits/stdio2.h:116:3: note: expanded from macro 'fprintf' <--[clang]
+  __fprintf_chk (stream, __USE_FORTIFY_LEVEL - 1, __VA_ARGS__)
+  ^
+1 warning generated.
+/builddir/build/BUILDROOT/systemtap-4.4-0.20200805git82b8e1a07.eln103.x86_64/usr/bin/stap-server:17:5: note: Not following: /etc/rc.d/init.d/functions was not specified as input (see shellcheck -x). [SC1091] <--[shellcheck]
+/builddir/build/BUILDROOT/systemtap-4.4-0.20200805git82b8e1a07.eln103.x86_64/usr/bin/stap-server:29:3: note: Not following: /usr/libexec/systemtap/stap-env was not specified as input (see shellcheck -x). [SC1091] <--[shellcheck]
+/builddir/build/BUILDROOT/systemtap-4.4-0.20200805git82b8e1a07.eln103.x86_64/usr/bin/stap-server:34:19: warning: stap_pkglibexecdir is referenced but not assigned. [SC2154] <--[shellcheck]

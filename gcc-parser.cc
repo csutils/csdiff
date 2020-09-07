@@ -550,6 +550,7 @@ class PostProcessor {
     private:
         const boost::regex reGccAnalCoreEvt_;
         const boost::regex reGccAnalCwe_;
+        const LangDetector langDetector_;
 
         void transGccAnal(Defect *pDef);
 };
@@ -575,6 +576,7 @@ void PostProcessor::transGccAnal(Defect *pDef) {
 
 void PostProcessor::apply(Defect *pDef) {
     this->transGccAnal(pDef);
+    this->langDetector_.inferLangFromChecker(pDef);
 }
 
 struct GccParser::Private {
