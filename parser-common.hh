@@ -20,6 +20,8 @@
 #ifndef H_GUARD_PARSER_COMMON_H
 #define H_GUARD_PARSER_COMMON_H
 
+#include "defect.hh"
+
 #include <string>
 
 #define RE_EVENT_GCC "(?:(?:(?:fatal|internal) )?[a-z][\\[\\]A-Za-z0-9_-]+)"
@@ -27,5 +29,17 @@
 #define RE_EVENT RE_EVENT_GCC "|" RE_EVENT_PROSPECTOR
 
 int parse_int(const std::string &, int fallback = 0);
+
+class LangDetector {
+    public:
+        LangDetector();
+        ~LangDetector();
+
+        void inferLangFromChecker(Defect *, bool onlyIfMissing = true) const;
+
+    private:
+        struct Private;
+        Private *d;
+};
 
 #endif /* H_GUARD_PARSER_COMMON_H */

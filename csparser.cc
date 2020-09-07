@@ -386,6 +386,7 @@ struct CovParser::Private {
     EToken                  code;
     KeyEventDigger          keDigger;
     AnnotHandler            annotHdl;
+    LangDetector            langDetector;
 
     Private(std::istream &input_, std::string fileName_, bool silent_):
         lexer(input_),
@@ -568,6 +569,7 @@ done:
 
     this->keDigger.initVerbosity(def);
     this->annotHdl.handleDef(def);
+    this->langDetector.inferLangFromChecker(def);
 
     // all OK
     return true;

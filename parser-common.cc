@@ -29,3 +29,40 @@ int parse_int(const std::string &str, const int fallback) {
         return fallback;
     }
 }
+
+struct LangDetector::Private {
+    typedef std::map<std::string, std::string>      TMap;
+    TMap langByChecker;
+};
+
+LangDetector::LangDetector():
+    d(new Private)
+{
+    d->langByChecker["CLANG_WARNING"]           = "c/c++";
+    d->langByChecker["COMPILER_WARNING"]        = "c/c++";
+    d->langByChecker["CPPCHECK_WARNING"]        = "c/c++";
+    d->langByChecker["GCC_ANALYZER_WARNING"]    = "c/c++";
+    d->langByChecker["PROSPECTOR_WARNING"]      = "python";
+    d->langByChecker["SHELLCHECK_WARNING"]      = "shell";
+    d->langByChecker["SMATCH_WARNING"]          = "c/c++";
+}
+
+LangDetector::~LangDetector() {
+    delete d;
+}
+
+void LangDetector::inferLangFromChecker(Defect *pDef, const bool onlyIfMissing)
+    const
+{
+    if (onlyIfMissing && !pDef->language.empty())
+        // language already assigned
+        return;
+
+    Private::TMap::const_iterator it = d->langByChecker.find(pDef->checker);
+    if (d->langByChecker.end() == it)
+        // not found
+        return;
+
+    // found --> assign from map
+    pDef->language = it->second;
+}

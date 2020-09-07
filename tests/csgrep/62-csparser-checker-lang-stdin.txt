@@ -1,0 +1,101 @@
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/systemtap-4.4/staprun/staprun.c:273: error[unknownMacro]: There is an unknown macro here somewhere. Configuration is required. If _SDT_ASM_ARGS is a macro then please configure it.
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/systemtap-4.4/staprun/staprun_funcs.c:192: error[unknownMacro]: There is an unknown macro here somewhere. Configuration is required. If _SDT_ASM_ARGS is a macro then please configure it.
+
+Error: CPPCHECK_WARNING:
+/builddir/build/BUILD/systemtap-4.4/staprun/mainloop.c:810: error[unknownMacro]: There is an unknown macro here somewhere. Configuration is required. If _SDT_ASM_ARGS is a macro then please configure it.
+
+Error: GCC_ANALYZER_WARNING (CWE-401):
+/builddir/build/BUILD/systemtap-4.4/staprun/relay.c:60:16: warning: leak of '<unknown>' [CWE-401] [-Wanalyzer-malloc-leak]
+#   60 |  backlog_order = order;
+#      |  ~~~~~~~~~~~~~~^~~~~~~
+/builddir/build/BUILD/systemtap-4.4/staprun/relay.c:51:5: note: (1) following 'false' branch...
+#   51 |  if (!fnum_max)
+#      |     ^
+cc1: note: (2) ...to here
+/builddir/build/BUILD/systemtap-4.4/staprun/relay.c:53:8: note: (3) following 'false' branch...
+#   53 |  while (fnum_max >> order) order++;
+#      |        ^
+/builddir/build/BUILD/systemtap-4.4/staprun/relay.c:54:27: note: (4) ...to here
+#   54 |  if (fnum_max == 1<<(order-1)) order--;
+#      |                     ~~~~~~^~~
+/builddir/build/BUILD/systemtap-4.4/staprun/relay.c:54:5: note: (5) following 'false' branch...
+#   54 |  if (fnum_max == 1<<(order-1)) order--;
+#      |     ^
+/builddir/build/BUILD/systemtap-4.4/staprun/relay.c:55:40: note: (6) ...to here
+#   55 |  time_backlog[cpu] = (time_t *)calloc(1<<order, sizeof(time_t));
+#      |                                       ~^~~~~~~
+/builddir/build/BUILD/systemtap-4.4/staprun/relay.c:55:40: note: (7) allocated here
+/builddir/build/BUILD/systemtap-4.4/staprun/relay.c:56:5: note: (8) assuming '<unknown>' is non-NULL
+#   56 |  if (time_backlog[cpu] == NULL) {
+#      |     ^
+/builddir/build/BUILD/systemtap-4.4/staprun/relay.c:56:5: note: (9) following 'false' branch...
+/builddir/build/BUILD/systemtap-4.4/staprun/relay.c:60:16: note: (10) ...to here
+#   60 |  backlog_order = order;
+#      |  ~~~~~~~~~~~~~~^~~~~~~
+/builddir/build/BUILD/systemtap-4.4/staprun/relay.c:60:16: note: (11) '<unknown>' leaks here; was allocated at (7)
+
+Error: CLANG_WARNING:
+/builddir/build/BUILD/systemtap-4.4/staprun/stap_merge.c:72:4: warning: Potential leak of memory pointed to by 'buf'
+#                        fprintf(stderr, "error opening file %s.\n", argv[optind - 1]);
+#                        ^
+/usr/include/bits/stdio2.h:116:3: note: expanded from macro 'fprintf'
+#  __fprintf_chk (stream, __USE_FORTIFY_LEVEL - 1, __VA_ARGS__)
+#  ^
+/builddir/build/BUILD/systemtap-4.4/staprun/stap_merge.c:46:8: note: Memory is allocated
+#        buf = malloc(bufsize);
+#              ^~~~~~~~~~~~~~~
+/builddir/build/BUILD/systemtap-4.4/staprun/stap_merge.c:47:6: note: Assuming 'buf' is not equal to NULL
+#        if (buf == NULL) {
+#            ^~~~~~~~~~~
+/builddir/build/BUILD/systemtap-4.4/staprun/stap_merge.c:47:2: note: Taking false branch
+#        if (buf == NULL) {
+#        ^
+/builddir/build/BUILD/systemtap-4.4/staprun/stap_merge.c:52:9: note: Assuming the condition is false
+#        while ((c = getopt (argc, argv, "vo:")) != EOF)  {
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/systemtap-4.4/staprun/stap_merge.c:52:2: note: Loop condition is false. Execution continues on line 65
+#        while ((c = getopt (argc, argv, "vo:")) != EOF)  {
+#        ^
+/builddir/build/BUILD/systemtap-4.4/staprun/stap_merge.c:65:6: note: Assuming 'optind' is not equal to 'argc'
+#        if (optind == argc)
+#            ^~~~~~~~~~~~~~
+/builddir/build/BUILD/systemtap-4.4/staprun/stap_merge.c:65:2: note: Taking false branch
+#        if (optind == argc)
+#        ^
+/builddir/build/BUILD/systemtap-4.4/staprun/stap_merge.c:69:9: note: Assuming 'optind' is < 'argc'
+#        while (optind < argc) {
+#               ^~~~~~~~~~~~~
+/builddir/build/BUILD/systemtap-4.4/staprun/stap_merge.c:69:2: note: Loop condition is true.  Entering loop body
+#        while (optind < argc) {
+#        ^
+/builddir/build/BUILD/systemtap-4.4/staprun/stap_merge.c:71:7: note: Assuming the condition is true
+#                if (!fp[i]) {
+#                    ^~~~~~
+/builddir/build/BUILD/systemtap-4.4/staprun/stap_merge.c:71:3: note: Taking true branch
+#                if (!fp[i]) {
+#                ^
+/builddir/build/BUILD/systemtap-4.4/staprun/stap_merge.c:72:4: note: Potential leak of memory pointed to by 'buf'
+#                        fprintf(stderr, "error opening file %s.\n", argv[optind - 1]);
+#                        ^
+/usr/include/bits/stdio2.h:116:3: note: expanded from macro 'fprintf'
+#  __fprintf_chk (stream, __USE_FORTIFY_LEVEL - 1, __VA_ARGS__)
+#  ^
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/systemtap-4.4-0.20200805git82b8e1a07.eln103.x86_64/usr/share/systemtap/testsuite/buildok/two.stp:3:13: error: Double quote array expansions to avoid re-splitting elements. [SC2068]
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/systemtap-4.4-0.20200805git82b8e1a07.eln103.x86_64/usr/share/systemtap/testsuite/config.status:21:3: warning: NULLCMD appears unused. Verify use (or export if used externally). [SC2034]
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/systemtap-4.4-0.20200805git82b8e1a07.eln103.x86_64/usr/share/systemtap/testsuite/config.status:24:12: error: Aliases can't use positional parameters. Use a function. [SC2142]
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/systemtap-4.4-0.20200805git82b8e1a07.eln103.x86_64/usr/share/systemtap/testsuite/config.status:29:12: warning: In POSIX sh, set option posix is undefined. [SC2039]
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/systemtap-4.4-0.20200805git82b8e1a07.eln103.x86_64/usr/share/systemtap/testsuite/config.status:53:29: warning: In POSIX sh, echo flags are undefined. [SC2039]
+
