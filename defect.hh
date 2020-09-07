@@ -92,6 +92,7 @@ struct Defect {
     int                     cwe;            ///< CWE number, 0 means unused
     int                     defectId;       ///< used only by the JSON format
     std::string             function;       ///< used only by the JSON format
+    std::string             language;       ///< used only by the JSON format
 
     Defect():
         keyEventIdx(0U),

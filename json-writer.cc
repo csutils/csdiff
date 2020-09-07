@@ -94,6 +94,8 @@ void appendDefectNode(PTree &dst, const Defect &def) {
         defNode.put<int>("cwe", def.cwe);
     if (!def.function.empty())
         defNode.put<string>("function", def.function);
+    if (!def.language.empty())
+        defNode.put<string>("language", def.language);
 
     defNode.put<int>("key_event_idx", def.keyEventIdx);
     defNode.put_child("events", evtList);

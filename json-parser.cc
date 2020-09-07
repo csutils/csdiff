@@ -249,6 +249,7 @@ void SimpleTreeDecoder::readNode(
     def->defectId = valueOf<int>        (defNode, "defect_id", 0);
     def->cwe      = valueOf<int>        (defNode, "cwe"      , 0);
     def->function = valueOf<std::string>(defNode, "function", "");
+    def->language = valueOf<std::string>(defNode, "language", "");
 
     if (defNode.not_found() == defNode.find("key_event_idx")) {
         // key event not specified, try to guess it
@@ -281,9 +282,9 @@ void CovTreeDecoder::readNode(
     (*def) = Defect();
 
     // read per-defect properties
-    // TODO: read/propagate more properties from the Coverity JSON format
     def->checker = defNode.get<std::string>("checkerName");
     def->function = valueOf<std::string>(defNode, "functionDisplayName", "");
+    def->language = valueOf<std::string>(defNode, "code-language", "");
 
     // read CWE if available
     const pt::ptree *checkerProps;
