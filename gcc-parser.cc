@@ -540,7 +540,7 @@ class PostProcessor {
     public:
         PostProcessor():
             reGccAnalCoreEvt_("^(.*) (\\[-Wanalyzer-[A-Za-z0-9-]+\\])$"),
-            reGccAnalCwe_("^.* \\[CWE-([0-9]+)\\]$")
+            reGccAnalCwe_("^(.*) \\[CWE-([0-9]+)\\]$")
         {
         }
 
@@ -568,11 +568,16 @@ void PostProcessor::transGccAnal(Defect *pDef) {
     // COMPILER_WARNING -> GCC_ANALYZER_WARNING
     pDef->checker = "GCC_ANALYZER_WARNING";
     keyEvt.event += sm[/* id */ 2];
+    // this invalidates sm
+    keyEvt.msg = sm[/* msg */ 1];
 
     // pick CWE number if available
-    const std::string rawMsg = sm[/* msg */ 1];
-    if (boost::regex_match(rawMsg, sm, reGccAnalCwe_))
-        pDef->cwe = parse_int(sm[/* cwe */ 1]);
+    if (!boost::regex_match(keyEvt.msg, sm, reGccAnalCwe_))
+        return;
+
+    pDef->cwe = parse_int(sm[/* cwe */ 2]);
+    // this invalidates sm
+    keyEvt.msg = sm[/* msg */ 1];
 }
 
 void PostProcessor::apply(Defect *pDef) {
