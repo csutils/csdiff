@@ -420,11 +420,11 @@ void HtmlWriter::Private::writeNewDefWarning(const Defect &def) {
 }
 
 void linkifyShellCheckMsg(std::string *pMgs) {
-    static boost::regex reShellCheckMsg(" \\[SC([0-9]+)\\]$");
+    static boost::regex reShellCheckMsg("(\\[)?SC([0-9]+)(\\])?$");
     *pMgs = boost::regex_replace(*pMgs, reShellCheckMsg,
-            " <a href=\"https://github.com/koalaman/shellcheck/wiki/SC\\1\""
-            " title=\"description of ShellCheck's checker SC\\1\">"
-            "[SC\\1]</a>");
+            "<a href=\"https://github.com/koalaman/shellcheck/wiki/SC\\2\""
+            " title=\"description of ShellCheck's checker SC\\2\">"
+            "\\1SC\\2\\3</a>");
 }
 
 void HtmlWriter::handleDef(const Defect &def) {
@@ -487,11 +487,15 @@ void HtmlWriter::handleDef(const Defect &def) {
 
             boost::smatch sm;
             const std::string &evtName = evt.event;
-            if (boost::regex_match(evtName, sm, d->reEvent))
+            if (boost::regex_match(evtName, sm, d->reEvent)) {
+                std::string msgId = HtmlLib::escapeTextInline(sm[/* id */ 2]);
+                if (def.checker == "SHELLCHECK_WARNING")
+                    linkifyShellCheckMsg(&msgId);
                 d->str
-                    << HtmlLib::escapeTextInline(sm[1]) << "<b>"
-                    << HtmlLib::escapeTextInline(sm[2]) << "</b>"
+                    << HtmlLib::escapeTextInline(sm[1])
+                    << "<b>" << msgId << "</b>"
                     << HtmlLib::escapeTextInline(sm[3]);
+            }
             else
                 d->str << "<b>" << HtmlLib::escapeTextInline(evtName) << "</b>";
 
