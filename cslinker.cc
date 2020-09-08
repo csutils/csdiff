@@ -19,6 +19,7 @@
 
 #include "abstract-parser.hh"
 #include "cwe-mapper.hh"
+#include "deflookup.hh"
 #include "defqueue.hh"
 #include "instream.hh"
 #include "json-writer.hh"
@@ -82,6 +83,37 @@ bool loadPropsFromIniFile(
     catch (pt::ptree_error &e) {
         parseError(e.what(), fName);
         return false;
+    }
+}
+
+class ImpFlagDecorator: public GenericAbstractFilter {
+    public:
+        ImpFlagDecorator(AbstractWriter *writer):
+            GenericAbstractFilter(writer)
+        {
+        }
+
+        void hashImpDefect(const Defect &);
+
+        virtual void handleDef(const Defect &def);
+
+    private:
+        DefLookup impSet_;
+};
+
+void ImpFlagDecorator::hashImpDefect(const Defect &impDef) {
+    impSet_.hashDefect(impDef);
+}
+
+void ImpFlagDecorator::handleDef(const Defect &defOrig) {
+    if (impSet_.lookup(defOrig)) {
+        // found -> set "imp" flag to 1
+        Defect def = defOrig;
+        def.imp = 1;
+        slave_->handleDef(def);
+    }
+    else {
+        slave_->handleDef(defOrig);
     }
 }
 
@@ -159,6 +191,8 @@ int main(int argc, char *argv[]) {
         desc.add_options()
             ("cwelist", po::value<string>(),
              "(re)assign CWE numbers to defects by the given CSV list")
+            ("implist", po::value<string>(),
+             "mark reports from the specified list as important")
             ("inifile", po::value<string>(),
              "load scan properties from the given INI file")
             ("mapfile", po::value<string>(),
@@ -199,6 +233,7 @@ int main(int argc, char *argv[]) {
     }
 
     const string fnCwe = valueOf<string>(vm["cwelist"]);
+    const string fnImp = valueOf<string>(vm["implist"]);
     const string fnIni = valueOf<string>(vm["inifile"]);
     const string fnMap = valueOf<string>(vm["mapfile"]);
     const bool silent = vm.count("quiet");
@@ -213,7 +248,9 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    CweMapDecorator writer(new JsonWriter(std::cout), silent);
+    AbstractWriter *jsonWriter = new JsonWriter(std::cout);
+    ImpFlagDecorator *impDec = new ImpFlagDecorator(jsonWriter);
+    CweMapDecorator writer(impDec, silent);
 
     DefQueue defQueue;
 
@@ -225,6 +262,21 @@ int main(int argc, char *argv[]) {
             InStream strCwe(fnCwe.c_str());
             if (!writer.cweMap().loadCweMap(strCwe.str(), fnCwe))
                 hasError = true;
+        }
+        catch (const InFileException &e) {
+            printError(e);
+            hasError = true;
+        }
+    }
+
+    if (!fnImp.empty()) {
+        try {
+            // load list of important defects
+            InStream strImp(fnImp.c_str());
+            Parser pImp(strImp.str(), fnImp);
+            Defect defImp;
+            while (pImp.getNext(&defImp))
+                impDec->hashImpDefect(defImp);
         }
         catch (const InFileException &e) {
             printError(e);
