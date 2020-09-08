@@ -83,7 +83,7 @@
                     "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/relay.c",
                     "line": 60,
                     "column": 16,
-                    "event": "warning",
+                    "event": "warning[-Wanalyzer-malloc-leak]",
                     "message": "leak of '<unknown>' [CWE-401] [-Wanalyzer-malloc-leak]",
                     "verbosity_level": "0"
                 },

@@ -62,7 +62,7 @@ Error: COMPILER_WARNING:
 
 Error: GCC_ANALYZER_WARNING (CWE-690):
 /builddir/build/BUILD/curl-7.70.0/lib/multi.c: scope_hint: In function 'multi_runsingle'
-/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1701:54: warning: dereference of NULL 'conn' [CWE-690] [-Wanalyzer-null-dereference]
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1701:54: warning[-Wanalyzer-null-dereference]: dereference of NULL 'conn' [CWE-690] [-Wanalyzer-null-dereference]
 # 1701 |       dns = Curl_fetch_addr(conn, hostname, (int)conn->port);
 #      |                                                  ~~~~^~~~~~
 /builddir/build/BUILD/curl-7.70.0/lib/multi.c:2962:11: note: (1) entry to 'curl_multi_socket_all'
@@ -245,7 +245,7 @@ cc1: note: (44) ...to here
 
 Error: GCC_ANALYZER_WARNING (CWE-690):
 /builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c: scope_hint: In function 'tool_header_cb'
-/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:241:7: warning: use of NULL '<unknown>' where non-null expected [CWE-690] [-Wanalyzer-null-argument]
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:241:7: warning[-Wanalyzer-null-argument]: use of NULL '<unknown>' where non-null expected [CWE-690] [-Wanalyzer-null-argument]
 #  241 |       fwrite(ptr, cb, 1, outs->stream);
 #      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:56:8: note: (1) entry to 'tool_header_cb'
@@ -438,7 +438,7 @@ Error: COMPILER_WARNING:
 
 Error: GCC_ANALYZER_WARNING (CWE-690):
 /builddir/build/BUILD/curl-7.70.0/lib/multi.c: scope_hint: In function 'multi_runsingle'
-/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1701:54: warning: dereference of NULL 'conn' [CWE-690] [-Wanalyzer-null-dereference]
+/builddir/build/BUILD/curl-7.70.0/lib/multi.c:1701:54: warning[-Wanalyzer-null-dereference]: dereference of NULL 'conn' [CWE-690] [-Wanalyzer-null-dereference]
 # 1701 |       dns = Curl_fetch_addr(conn, hostname, (int)conn->port);
 #      |                                                  ~~~~^~~~~~
 /builddir/build/BUILD/curl-7.70.0/lib/multi.c:2962:11: note: (1) entry to 'curl_multi_socket_all'
@@ -621,7 +621,7 @@ cc1: note: (44) ...to here
 
 Error: GCC_ANALYZER_WARNING (CWE-690):
 /builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c: scope_hint: In function 'tool_header_cb'
-/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:241:7: warning: use of NULL '<unknown>' where non-null expected [CWE-690] [-Wanalyzer-null-argument]
+/builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:241:7: warning[-Wanalyzer-null-argument]: use of NULL '<unknown>' where non-null expected [CWE-690] [-Wanalyzer-null-argument]
 #  241 |       fwrite(ptr, cb, 1, outs->stream);
 #      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /builddir/build/BUILD/curl-7.70.0/src/tool_cb_hdr.c:56:8: note: (1) entry to 'tool_header_cb'

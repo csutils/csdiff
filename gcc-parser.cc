@@ -539,7 +539,7 @@ bool BasicGccParser::hasError() const {
 class PostProcessor {
     public:
         PostProcessor():
-            reGccAnalCoreEvt_("^(.*) \\[-Wanalyzer-[A-Za-z0-9-]+\\]$"),
+            reGccAnalCoreEvt_("^(.*) (\\[-Wanalyzer-[A-Za-z0-9-]+\\])$"),
             reGccAnalCwe_("^.* \\[CWE-([0-9]+)\\]$")
         {
         }
@@ -567,6 +567,7 @@ void PostProcessor::transGccAnal(Defect *pDef) {
 
     // COMPILER_WARNING -> GCC_ANALYZER_WARNING
     pDef->checker = "GCC_ANALYZER_WARNING";
+    keyEvt.event += sm[/* id */ 2];
 
     // pick CWE number if available
     const std::string rawMsg = sm[/* msg */ 1];
