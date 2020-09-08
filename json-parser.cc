@@ -248,6 +248,7 @@ void SimpleTreeDecoder::readNode(
     // read "defect_id", "cwe", and "function" if available
     def->defectId = valueOf<int>        (defNode, "defect_id", 0);
     def->cwe      = valueOf<int>        (defNode, "cwe"      , 0);
+    def->imp      = valueOf<int>        (defNode, "imp"      , 0);
     def->function = valueOf<std::string>(defNode, "function", "");
     def->language = valueOf<std::string>(defNode, "language", "");
 
