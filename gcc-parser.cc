@@ -540,7 +540,8 @@ class PostProcessor {
     public:
         PostProcessor():
             reGccAnalCoreEvt_("^(.*) (\\[-Wanalyzer-[A-Za-z0-9-]+\\])$"),
-            reGccAnalCwe_("^(.*) \\[CWE-([0-9]+)\\]$")
+            reGccAnalCwe_("^(.*) \\[CWE-([0-9]+)\\]$"),
+            reGccWarningEvt_("^(.*) (\\[-W[A-Za-z0-9-]+\\])$")
         {
         }
 
@@ -550,9 +551,11 @@ class PostProcessor {
     private:
         const boost::regex reGccAnalCoreEvt_;
         const boost::regex reGccAnalCwe_;
+        const boost::regex reGccWarningEvt_;
         const LangDetector langDetector_;
 
         void transGccAnal(Defect *pDef);
+        void transGccSuffix(Defect *pDef);
 };
 
 void PostProcessor::transGccAnal(Defect *pDef) {
@@ -580,8 +583,25 @@ void PostProcessor::transGccAnal(Defect *pDef) {
     keyEvt.msg = sm[/* msg */ 1];
 }
 
+void PostProcessor::transGccSuffix(Defect *pDef) {
+    if ("COMPILER_WARNING" != pDef->checker)
+        return;
+
+    // check for [-#...] suffix in message of the key event
+    DefEvent &keyEvt = pDef->events[pDef->keyEventIdx];
+    boost::smatch sm;
+    if (!boost::regex_match(keyEvt.msg, sm, reGccWarningEvt_))
+        return;
+
+    // append [-W...] to key event ID and remove it from event msg
+    keyEvt.event += sm[/* id */ 2];
+    // this invalidates sm
+    keyEvt.msg = sm[/* msg */ 1];
+}
+
 void PostProcessor::apply(Defect *pDef) {
     this->transGccAnal(pDef);
+    this->transGccSuffix(pDef);
     this->langDetector_.inferLangFromChecker(pDef);
 }
 

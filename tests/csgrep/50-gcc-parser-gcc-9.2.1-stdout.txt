@@ -1,6 +1,6 @@
 Error: COMPILER_WARNING:
 test2.c: scope_hint: In function ‘foo’
-test2.c:1:14: warning: implicit declaration of function ‘abort’ [-Wimplicit-function-declaration]
+test2.c:1:14: warning[-Wimplicit-function-declaration]: implicit declaration of function ‘abort’
 #    1 | void foo() { abort(); }
 #      |              ^~~~~
 

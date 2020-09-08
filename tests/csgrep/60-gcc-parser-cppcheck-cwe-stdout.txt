@@ -9,7 +9,7 @@ Error: CPPCHECK_WARNING (CWE-908):
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/curl-7.66.0/lib/vtls/openssl.c: scope_hint: In function 'ossl_connect_step1'
-/builddir/build/BUILD/curl-7.66.0/lib/vtls/openssl.c:2461:5: warning: 'SSLv3_client_method' is deprecated [-Wdeprecated-declarations]
+/builddir/build/BUILD/curl-7.66.0/lib/vtls/openssl.c:2461:5: warning[-Wdeprecated-declarations]: 'SSLv3_client_method' is deprecated
 # 2461 |     req_method = SSLv3_client_method();
 #      |     ^~~~~~~~~~
 /usr/include/openssl/opensslconf.h:42: included_from: Included from here.

@@ -1,183 +1,183 @@
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_alltoall.c: scope_hint: In function 'main'
-/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_alltoall.c:59:16: warning: unused variable 'status' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_alltoall.c:59:16: warning[-Wunused-variable]: unused variable 'status'
 #     MPI_Status status;
 #                ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_alltoall.c:57:45: warning: unused variable 'total' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_alltoall.c:57:45: warning[-Wunused-variable]: unused variable 'total'
 #     double tmp1 = 0, tmp2 = 0, latency = 0, total = 0;
 #                                             ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_alltoall.c:57:32: warning: unused variable 'latency' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_alltoall.c:57:32: warning[-Wunused-variable]: unused variable 'latency'
 #     double tmp1 = 0, tmp2 = 0, latency = 0, total = 0;
 #                                ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_alltoall.c:56:19: warning: unused variable 'recvcnt' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_alltoall.c:56:19: warning[-Wunused-variable]: unused variable 'recvcnt'
 #     int  sendcnt, recvcnt, skip, iterations, align_size;
 #                   ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_alltoall.c:56:10: warning: unused variable 'sendcnt' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_alltoall.c:56:10: warning[-Wunused-variable]: unused variable 'sendcnt'
 #     int  sendcnt, recvcnt, skip, iterations, align_size;
 #          ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_alltoall.c:55:39: warning: unused variable 'mpi_errno' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_alltoall.c:55:39: warning[-Wunused-variable]: unused variable 'mpi_errno'
 #     int i = 0, j = 0, rank = 0, size, mpi_errno = MPI_SUCCESS;
 #                                       ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_alltoall.c:55:16: warning: unused variable 'j' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_alltoall.c:55:16: warning[-Wunused-variable]: unused variable 'j'
 #     int i = 0, j = 0, rank = 0, size, mpi_errno = MPI_SUCCESS;
 #                ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_acc_latency.c: scope_hint: In function 'main'
-/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_acc_latency.c:103:67: warning: value computed is not used [-Wunused-value]
+/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_acc_latency.c:103:67: warning[-Wunused-value]: value computed is not used
 #     for(count = 0; count <= MAX_SIZE / sizeof(int); (count <<= 1) || (count += 1)) {
 #                                                                   ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_acc_latency.c:155:45: warning: 't_end' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_acc_latency.c:155:45: warning[-Wmaybe-uninitialized]: 't_end' may be used uninitialized in this function
 #                     FLOAT_PRECISION, (t_end - t_start) * 1e6 / loop / 2);
 #                                             ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_acc_latency.c:155:45: warning: 't_start' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_acc_latency.c:155:45: warning[-Wmaybe-uninitialized]: 't_start' may be used uninitialized in this function
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_get_latency.c: scope_hint: In function 'main'
-/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_get_latency.c:146:45: warning: 't_end' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_get_latency.c:146:45: warning[-Wmaybe-uninitialized]: 't_end' may be used uninitialized in this function
 #                     FLOAT_PRECISION, (t_end - t_start) * 1.0e6 / loop / 2);
 #                                             ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_get_latency.c:146:45: warning: 't_start' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_get_latency.c:146:45: warning[-Wmaybe-uninitialized]: 't_start' may be used uninitialized in this function
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c: scope_hint: In function 'recv_thread'
-/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:153:36: warning: unused variable 't' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:153:36: warning[-Wunused-variable]: unused variable 't'
 #     double t_start = 0, t_end = 0, t = 0;
 #                                    ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:153:25: warning: unused variable 't_end' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:153:25: warning[-Wunused-variable]: unused variable 't_end'
 #     double t_start = 0, t_end = 0, t = 0;
 #                         ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:153:12: warning: unused variable 't_start' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:153:12: warning[-Wunused-variable]: unused variable 't_start'
 #     double t_start = 0, t_end = 0, t = 0;
 #            ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:151:9: warning: unused variable 'messages_recv' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:151:9: warning[-Wunused-variable]: unused variable 'messages_recv'
 #     int messages_recv = 0, iter;
 #         ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:150:21: warning: unused variable 'send_size' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:150:21: warning[-Wunused-variable]: unused variable 'send_size'
 #     int start_send, send_size;
 #                     ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:150:9: warning: unused variable 'start_send' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:150:9: warning[-Wunused-variable]: unused variable 'start_send'
 #     int start_send, send_size;
 #         ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:149:28: warning: unused variable 'local_start' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:149:28: warning[-Wunused-variable]: unused variable 'local_start'
 #     int local_window_size, local_start;
 #                            ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:149:9: warning: unused variable 'local_window_size' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:149:9: warning[-Wunused-variable]: unused variable 'local_window_size'
 #     int local_window_size, local_start;
 #         ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:148:18: warning: unused variable 'j' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:148:18: warning[-Wunused-variable]: unused variable 'j'
 #     int size, i, j, val, align_size;
 #                  ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c: scope_hint: In function 'send_thread'
-/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:219:52: warning: unused variable 't_sum' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:219:52: warning[-Wunused-variable]: unused variable 't_sum'
 #     double t_start = 0, t_end = 0, t = 0, latency, t_sum;
 #                                                    ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:217:21: warning: unused variable 'send_size' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:217:21: warning[-Wunused-variable]: unused variable 'send_size'
 #     int start_send, send_size;
 #                     ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:217:9: warning: unused variable 'start_send' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:217:9: warning[-Wunused-variable]: unused variable 'start_send'
 #     int start_send, send_size;
 #         ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:216:22: warning: unused variable 'local_window_size' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:216:22: warning[-Wunused-variable]: unused variable 'local_window_size'
 #     int local_start, local_window_size;
 #                      ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:216:9: warning: unused variable 'local_start' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:216:9: warning[-Wunused-variable]: unused variable 'local_start'
 #     int local_start, local_window_size;
 #         ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:215:21: warning: unused variable 'k' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:215:21: warning[-Wunused-variable]: unused variable 'k'
 #     int size, i, j, k, val, align_size, iter;
 #                     ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:215:18: warning: unused variable 'j' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:215:18: warning[-Wunused-variable]: unused variable 'j'
 #     int size, i, j, k, val, align_size, iter;
 #                  ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_put_latency.c: scope_hint: In function 'main'
-/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_put_latency.c:147:45: warning: 't_end' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_put_latency.c:147:45: warning[-Wmaybe-uninitialized]: 't_end' may be used uninitialized in this function
 #                     FLOAT_PRECISION, (t_end - t_start) * 1.0e6 / loop / 2);
 #                                             ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_put_latency.c:147:45: warning: 't_start' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mpich-x86_64/osu_benchmarks-3.1.1/osu_put_latency.c:147:45: warning[-Wmaybe-uninitialized]: 't_start' may be used uninitialized in this function
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB.c: scope_hint: In function 'main'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB.c:125:5: warning: unused variable 'mem_ok' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB.c:125:5: warning[-Wunused-variable]: unused variable 'mem_ok'
 # int mem_ok;
 #     ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB.c:122:14: warning: unused variable 'n_sample' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB.c:122:14: warning[-Wunused-variable]: unused variable 'n_sample'
 # int x_sample,n_sample;            
 #              ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB.c:122:5: warning: unused variable 'x_sample' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB.c:122:5: warning[-Wunused-variable]: unused variable 'x_sample'
 # int x_sample,n_sample;            
 #     ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB.c:115:6: warning: unused variable 'i' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB.c:115:6: warning[-Wunused-variable]: unused variable 'i'
 # int  i,j,iter,imod,ierr;
 #      ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB.c:70: included_from: Included from here.
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB.c: scope_hint: At top level
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_declare.h:189:12: warning: 'asize' defined but not used [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_declare.h:189:12: warning[-Wunused-variable]: 'asize' defined but not used
 # static int asize = sizeof(assign_type);
 #            ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_declare.h:190:12: warning: 'ierr' defined but not used [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_declare.h:190:12: warning[-Wunused-variable]: 'ierr' defined but not used
 # static int ierr;
 #            ^
 
@@ -189,61 +189,61 @@ Error: COMPILER_WARNING:
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_mem_manager.c: scope_hint: In function 'IMB_alloc_buf'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_mem_manager.c:209:7: warning: variable 'ierr' set but not used [-Wunused-but-set-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_mem_manager.c:209:7: warning[-Wunused-but-set-variable]: variable 'ierr' set but not used
 #   int ierr;
 #       ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_strgs.c: scope_hint: In function 'IMB_str_atoi'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_strgs.c:166:24: warning: suggest parentheses around '&&' within '||' [-Wparentheses]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_strgs.c:166:24: warning[-Wparentheses]: suggest parentheses around '&&' within '||'
 #   for(i=0; s[i] >= '0' && s[i] <= '9' || s[i]==' '; ++i)
 #                        ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_g_info.c: scope_hint: In function 'IMB_make_sys_info'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_g_info.c:143:7: warning: variable 'dont_care' set but not used [-Wunused-but-set-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_g_info.c:143:7: warning[-Wunused-but-set-variable]: variable 'dont_care' set but not used
 #   int dont_care, mpi_subversion, mpi_version;
 #       ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_warm_up.c: scope_hint: In function 'IMB_warm_up'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_warm_up.c:125:16: warning: variable 'MD' set but not used [-Wunused-but-set-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_warm_up.c:125:16: warning[-Wunused-but-set-variable]: variable 'MD' set but not used
 #   struct cmode MD;
 #                ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_output.c: scope_hint: In function 'IMB_display_times'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_output.c:409:7: warning: suggest explicit braces to avoid ambiguous 'else' [-Wparentheses]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_output.c:409:7: warning[-Wparentheses]: suggest explicit braces to avoid ambiguous 'else'
 #     if( Bmark->RUN_MODES[0].NONBLOCKING )
 #       ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_output.c: scope_hint: In function 'IMB_show_procids'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_output.c:641:18: warning: unused variable 'k' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_output.c:641:18: warning[-Wunused-variable]: unused variable 'k'
 #   int ip, py, i, k, idle;
 #                  ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_output.c: scope_hint: In function 'IMB_print_array'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_output.c:727:7: warning: unused variable 'j' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_output.c:727:7: warning[-Wunused-variable]: unused variable 'j'
 # int i,j;
 #       ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_output.c: scope_hint: In function 'IMB_print_int_row'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_output.c:810:12: warning: variable 'irest' set but not used [-Wunused-but-set-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_output.c:810:12: warning[-Wunused-but-set-variable]: variable 'irest' set but not used
 # int i,j,i0,irest;
 #            ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_output.c: scope_hint: In function 'IMB_print_headlines'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_output.c:903:3: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_output.c:903:3: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
 #   while(token = strtok(help, "&") )
 #   ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_output.c: scope_hint: In function 'IMB_display_times'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_output.c:341:27: warning: 't_pure' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_output.c:341:27: warning[-Wmaybe-uninitialized]: 't_pure' may be used uninitialized in this function
 #   double tmax, tmin, tav, t_pure, throughput, overlap; 
 #                           ^
 
@@ -279,126 +279,126 @@ Error: COMPILER_WARNING:
 #                       ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_write.c:290:23: warning: unused variable 'Ioffs' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_write.c:290:23: warning[-Wunused-variable]: unused variable 'Ioffs'
 # int Locsize,Totalsize,Ioffs;
 #                       ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_write.c: scope_hint: In function 'IMB_iwrite_ij'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_write.c:433:23: warning: unused variable 'Ioffs' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_write.c:433:23: warning[-Wunused-variable]: unused variable 'Ioffs'
 # int Locsize,Totalsize,Ioffs;
 #                       ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_init_transfer.c: scope_hint: In function 'IMB_init_transfer'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_init_transfer.c:128:17: warning: unused variable 'mod' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_init_transfer.c:128:17: warning[-Wunused-variable]: unused variable 'mod'
 # int ne, baslen, mod;
 #                 ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_init_transfer.c:128:5: warning: unused variable 'ne' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_init_transfer.c:128:5: warning[-Wunused-variable]: unused variable 'ne'
 # int ne, baslen, mod;
 #     ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_chk_diff.c: scope_hint: In function 'IMB_show'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_chk_diff.c:267:1: warning: enumeration value 'nothing' not handled in switch [-Wswitch]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_chk_diff.c:267:1: warning[-Wswitch]: enumeration value 'nothing' not handled in switch
 # switch(fpos)
 # ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_chk_diff.c:267:1: warning: enumeration value 'indv_cyclic' not handled in switch [-Wswitch]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_chk_diff.c:267:1: warning[-Wswitch]: enumeration value 'indv_cyclic' not handled in switch
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_window.c: scope_hint: In function 'IMB_window'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_window.c:120:13: warning: unused variable 'dum' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_window.c:120:13: warning[-Wunused-variable]: unused variable 'dum'
 #   int    i, dum;
 #             ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c: scope_hint: In function 'IMB_unidir_put'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:141:14: warning: unused variable 'stat' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:141:14: warning[-Wunused-variable]: unused variable 'stat'
 #   MPI_Status stat;
 #              ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:140:13: warning: unused variable 'source' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:140:13: warning[-Wunused-variable]: unused variable 'source'
 #   int dest, source,sender;
 #             ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:136:14: warning: unused variable 't2' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:136:14: warning[-Wunused-variable]: unused variable 't2'
 #   double t1, t2;
 #              ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:136:10: warning: unused variable 't1' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:136:10: warning[-Wunused-variable]: unused variable 't1'
 #   double t1, t2;
 #          ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c: scope_hint: In function 'IMB_unidir_get'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:225:14: warning: unused variable 'stat' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:225:14: warning[-Wunused-variable]: unused variable 'stat'
 #   MPI_Status stat;
 #              ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:224:7: warning: unused variable 'ierr' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:224:7: warning[-Wunused-variable]: unused variable 'ierr'
 #   int ierr;
 #       ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:223:13: warning: unused variable 'source' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:223:13: warning[-Wunused-variable]: unused variable 'source'
 #   int dest, source,sender;
 #             ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:219:14: warning: unused variable 't2' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:219:14: warning[-Wunused-variable]: unused variable 't2'
 #   double t1, t2;
 #              ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:219:10: warning: unused variable 't1' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:219:10: warning[-Wunused-variable]: unused variable 't1'
 #   double t1, t2;
 #          ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c: scope_hint: In function 'IMB_ones_get'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:322:8: warning: variable 'ierr' set but not used [-Wunused-but-set-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:322:8: warning[-Wunused-but-set-variable]: variable 'ierr' set but not used
 # int i, ierr;
 #        ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c: scope_hint: In function 'IMB_ones_mget'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:442:8: warning: variable 'ierr' set but not used [-Wunused-but-set-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:442:8: warning[-Wunused-but-set-variable]: variable 'ierr' set but not used
 # int i, ierr;
 #        ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c: scope_hint: In function 'IMB_ones_put'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:552:7: warning: variable 'recv' set but not used [-Wunused-but-set-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:552:7: warning[-Wunused-but-set-variable]: variable 'recv' set but not used
 # char* recv;
 #       ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:551:8: warning: variable 'ierr' set but not used [-Wunused-but-set-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:551:8: warning[-Wunused-but-set-variable]: variable 'ierr' set but not used
 # int i, ierr, r_size;
 #        ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c: scope_hint: In function 'IMB_ones_mput'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:674:14: warning: variable 'recv' set but not used [-Wunused-but-set-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:674:14: warning[-Wunused-but-set-variable]: variable 'recv' set but not used
 # char* send, *recv;
 #              ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:673:8: warning: variable 'ierr' set but not used [-Wunused-but-set-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:673:8: warning[-Wunused-but-set-variable]: variable 'ierr' set but not used
 # int i, ierr;
 #        ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c: scope_hint: In function 'IMB_unidir_get'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:462:3: warning: 'sender' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:462:3: warning[-Wmaybe-uninitialized]: 'sender' may be used uninitialized in this function
 # if( !sender )
 #   ^
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:223:20: note: 'sender' was declared here
@@ -406,7 +406,7 @@ Error: COMPILER_WARNING:
 #                    ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:465:14: warning: 'dest' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:465:14: warning[-Wmaybe-uninitialized]: 'dest' may be used uninitialized in this function
 #         ierr = MPI_Get((void*)(recv+i%ITERATIONS->r_cache_iter*ITERATIONS->r_offs), 
 #              ^
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:223:7: note: 'dest' was declared here
@@ -414,7 +414,7 @@ Error: COMPILER_WARNING:
 #       ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:465:14: warning: 'r_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:465:14: warning[-Wmaybe-uninitialized]: 'r_num' may be used uninitialized in this function
 #         ierr = MPI_Get((void*)(recv+i%ITERATIONS->r_cache_iter*ITERATIONS->r_offs), 
 #              ^
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:222:14: note: 'r_num' was declared here
@@ -422,7 +422,7 @@ Error: COMPILER_WARNING:
 #              ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:465:14: warning: 's_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:465:14: warning[-Wmaybe-uninitialized]: 's_num' may be used uninitialized in this function
 #         ierr = MPI_Get((void*)(recv+i%ITERATIONS->r_cache_iter*ITERATIONS->r_offs), 
 #              ^
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:222:7: note: 's_num' was declared here
@@ -431,7 +431,7 @@ Error: COMPILER_WARNING:
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c: scope_hint: In function 'IMB_unidir_put'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:694:3: warning: 'sender' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:694:3: warning[-Wmaybe-uninitialized]: 'sender' may be used uninitialized in this function
 # if( sender )
 #   ^
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:140:20: note: 'sender' was declared here
@@ -439,7 +439,7 @@ Error: COMPILER_WARNING:
 #                    ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:697:16: warning: 'dest' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:697:16: warning[-Wmaybe-uninitialized]: 'dest' may be used uninitialized in this function
 #           ierr = MPI_Put((void*)(send+i%ITERATIONS->s_cache_iter*ITERATIONS->s_offs),
 #                ^
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:140:7: note: 'dest' was declared here
@@ -447,7 +447,7 @@ Error: COMPILER_WARNING:
 #       ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:697:16: warning: 'r_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:697:16: warning[-Wmaybe-uninitialized]: 'r_num' may be used uninitialized in this function
 #           ierr = MPI_Put((void*)(send+i%ITERATIONS->s_cache_iter*ITERATIONS->s_offs),
 #                ^
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:139:14: note: 'r_num' was declared here
@@ -455,7 +455,7 @@ Error: COMPILER_WARNING:
 #              ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:697:16: warning: 's_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:697:16: warning[-Wmaybe-uninitialized]: 's_num' may be used uninitialized in this function
 #           ierr = MPI_Put((void*)(send+i%ITERATIONS->s_cache_iter*ITERATIONS->s_offs),
 #                ^
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_unidir.c:139:7: note: 's_num' was declared here
@@ -464,459 +464,459 @@ Error: COMPILER_WARNING:
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_bidir.c: scope_hint: In function 'IMB_bidir_get'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_bidir.c:136:14: warning: unused variable 'stat' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_bidir.c:136:14: warning[-Wunused-variable]: unused variable 'stat'
 #   MPI_Status stat;
 #              ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_bidir.c:135:13: warning: unused variable 'source' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_bidir.c:135:13: warning[-Wunused-variable]: unused variable 'source'
 #   int dest, source,sender;
 #             ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_bidir.c:131:14: warning: unused variable 't2' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_bidir.c:131:14: warning[-Wunused-variable]: unused variable 't2'
 #   double t1, t2;
 #              ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_bidir.c:131:10: warning: unused variable 't1' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_bidir.c:131:10: warning[-Wunused-variable]: unused variable 't1'
 #   double t1, t2;
 #          ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_bidir.c: scope_hint: In function 'IMB_bidir_put'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_bidir.c:219:14: warning: unused variable 'stat' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_bidir.c:219:14: warning[-Wunused-variable]: unused variable 'stat'
 #   MPI_Status stat;
 #              ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_bidir.c:218:7: warning: unused variable 'ierr' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_bidir.c:218:7: warning[-Wunused-variable]: unused variable 'ierr'
 #   int ierr;
 #       ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_bidir.c:217:13: warning: unused variable 'source' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_bidir.c:217:13: warning[-Wunused-variable]: unused variable 'source'
 #   int dest, source,sender;
 #             ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_bidir.c:213:14: warning: unused variable 't2' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_bidir.c:213:14: warning[-Wunused-variable]: unused variable 't2'
 #   double t1, t2;
 #              ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_bidir.c:213:10: warning: unused variable 't1' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_bidir.c:213:10: warning[-Wunused-variable]: unused variable 't1'
 #   double t1, t2;
 #          ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_bidir.c: scope_hint: In function 'IMB_bidir_get'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_bidir.c:166:19: warning: 'dest' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_bidir.c:166:19: warning[-Wmaybe-uninitialized]: 'dest' may be used uninitialized in this function
 #      IMB_ones_mget( c_info,
 #                   ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_bidir.c:166:19: warning: 'r_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_bidir.c:166:19: warning[-Wmaybe-uninitialized]: 'r_num' may be used uninitialized in this function
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_bidir.c:166:19: warning: 's_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_bidir.c:166:19: warning[-Wmaybe-uninitialized]: 's_num' may be used uninitialized in this function
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_bidir.c: scope_hint: In function 'IMB_bidir_put'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_bidir.c:250:19: warning: 'dest' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_bidir.c:250:19: warning[-Wmaybe-uninitialized]: 'dest' may be used uninitialized in this function
 #      IMB_ones_mput( c_info,
 #                   ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_bidir.c:250:19: warning: 'r_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_bidir.c:250:19: warning[-Wmaybe-uninitialized]: 'r_num' may be used uninitialized in this function
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_bidir.c:250:19: warning: 's_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_bidir.c:250:19: warning[-Wmaybe-uninitialized]: 's_num' may be used uninitialized in this function
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_accu.c: scope_hint: In function 'IMB_accumulate'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_accu.c:143:14: warning: unused variable 'stat' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_accu.c:143:14: warning[-Wunused-variable]: unused variable 'stat'
 #   MPI_Status stat;
 #              ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_accu.c:141:21: warning: variable 'root' set but not used [-Wunused-but-set-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_accu.c:141:21: warning[-Wunused-but-set-variable]: variable 'root' set but not used
 #   int dest, source, root;
 #                     ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_accu.c:141:13: warning: unused variable 'source' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_accu.c:141:13: warning[-Wunused-variable]: unused variable 'source'
 #   int dest, source, root;
 #             ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_accu.c:141:7: warning: unused variable 'dest' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_accu.c:141:7: warning[-Wunused-variable]: unused variable 'dest'
 #   int dest, source, root;
 #       ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_accu.c:140:14: warning: unused variable 'r_tag' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_accu.c:140:14: warning[-Wunused-variable]: unused variable 'r_tag'
 #   int s_tag, r_tag;
 #              ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_accu.c:140:7: warning: unused variable 's_tag' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_accu.c:140:7: warning[-Wunused-variable]: unused variable 's_tag'
 #   int s_tag, r_tag;
 #       ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_accu.c:133:14: warning: unused variable 't2' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_accu.c:133:14: warning[-Wunused-variable]: unused variable 't2'
 #   double t1, t2;
 #              ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_accu.c:133:10: warning: unused variable 't1' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_ones_accu.c:133:10: warning[-Wunused-variable]: unused variable 't1'
 #   double t1, t2;
 #          ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_init_transfer.c: scope_hint: In function 'IMB_init_transfer'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_init_transfer.c:208:5: warning: variable 'ierr' set but not used [-Wunused-but-set-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_init_transfer.c:208:5: warning[-Wunused-but-set-variable]: variable 'ierr' set but not used
 # int ierr;
 #     ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_pingpong.c: scope_hint: In function 'IMB_pingpong'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_pingpong.c:194:19: warning: 'r_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_pingpong.c:194:19: warning[-Wmaybe-uninitialized]: 'r_num' may be used uninitialized in this function
 #    ierr = MPI_Recv((char*)c_info->r_buffer+i%ITERATIONS->r_cache_iter*ITERATIONS->r_offs,
 #                   ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_pingpong.c:166:19: warning: 's_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_pingpong.c:166:19: warning[-Wmaybe-uninitialized]: 's_num' may be used uninitialized in this function
 #    ierr = MPI_Send((char*)c_info->s_buffer+i%ITERATIONS->s_cache_iter*ITERATIONS->s_offs,
 #                   ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_pingping.c: scope_hint: In function 'IMB_pingping'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_pingping.c:176:19: warning: 'r_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_pingping.c:176:19: warning[-Wmaybe-uninitialized]: 'r_num' may be used uninitialized in this function
 #    ierr = MPI_Recv((char*)c_info->r_buffer+i%ITERATIONS->r_cache_iter*ITERATIONS->r_offs,
 #                   ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_pingping.c:171:19: warning: 's_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_pingping.c:171:19: warning[-Wmaybe-uninitialized]: 's_num' may be used uninitialized in this function
 #    ierr= MPI_Isend((char*)c_info->s_buffer+i%ITERATIONS->s_cache_iter*ITERATIONS->s_offs,
 #                   ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_allreduce.c: scope_hint: In function 'IMB_allreduce'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_allreduce.c:154:31: warning: 's_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_allreduce.c:154:31: warning[-Wmaybe-uninitialized]: 's_num' may be used uninitialized in this function
 #           ierr = MPI_Allreduce((char*)c_info->s_buffer+i%ITERATIONS->s_cache_iter*ITERATIONS->s_offs,
 #                               ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_reduce.c: scope_hint: In function 'IMB_reduce'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_reduce.c:170:6: warning: operation on 'i1' may be undefined [-Wsequence-point]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_reduce.c:170:6: warning[-Wsequence-point]: operation on 'i1' may be undefined
 #    i1=(++i1)%c_info->num_procs;
 #      ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_reduce.c: scope_hint: In function 'IMB_reduce'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_reduce.c:153:28: warning: 's_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_reduce.c:153:28: warning[-Wmaybe-uninitialized]: 's_num' may be used uninitialized in this function
 #           ierr = MPI_Reduce((char*)c_info->s_buffer+i%ITERATIONS->s_cache_iter*ITERATIONS->s_offs,
 #                            ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_exchange.c: scope_hint: In function 'IMB_exchange'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_exchange.c:179:22: warning: 'left' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_exchange.c:179:22: warning[-Wmaybe-uninitialized]: 'left' may be used uninitialized in this function
 #        ierr= MPI_Recv( (char*)c_info->r_buffer+i%ITERATIONS->r_cache_iter*ITERATIONS->r_offs,
 #                      ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_exchange.c:189:22: warning: 'r_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_exchange.c:189:22: warning[-Wmaybe-uninitialized]: 'r_num' may be used uninitialized in this function
 #        ierr= MPI_Recv( (char*)c_info->r_buffer+i%ITERATIONS->r_cache_iter*ITERATIONS->r_offs,
 #                      ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_exchange.c:170:23: warning: 's_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_exchange.c:170:23: warning[-Wmaybe-uninitialized]: 's_num' may be used uninitialized in this function
 #        ierr= MPI_Isend((char*)c_info->s_buffer+i%ITERATIONS->s_cache_iter*ITERATIONS->s_offs,
 #                       ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_bcast.c: scope_hint: In function 'IMB_bcast'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_bcast.c:168:6: warning: operation on 'i1' may be undefined [-Wsequence-point]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_bcast.c:168:6: warning[-Wsequence-point]: operation on 'i1' may be undefined
 #    i1=(++i1)%c_info->num_procs;
 #      ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_bcast.c: scope_hint: In function 'IMB_bcast'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_bcast.c:157:19: warning: 's_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_bcast.c:157:19: warning[-Wmaybe-uninitialized]: 's_num' may be used uninitialized in this function
 #    ierr= MPI_Bcast((char*)bc_buf+i%ITERATIONS->s_cache_iter*ITERATIONS->s_offs,
 #                   ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_allgather.c: scope_hint: In function 'IMB_allgather'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_allgather.c:151:31: warning: 'r_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_allgather.c:151:31: warning[-Wmaybe-uninitialized]: 'r_num' may be used uninitialized in this function
 #           ierr = MPI_Allgather((char*)c_info->s_buffer+i%ITERATIONS->s_cache_iter*ITERATIONS->s_offs,
 #                               ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_allgather.c:151:31: warning: 's_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_allgather.c:151:31: warning[-Wmaybe-uninitialized]: 's_num' may be used uninitialized in this function
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_allgatherv.c: scope_hint: In function 'IMB_allgatherv'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_allgatherv.c:132:14: warning: 'r_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_allgatherv.c:132:14: warning[-Wmaybe-uninitialized]: 'r_num' may be used uninitialized in this function
 #   int s_num, r_num;
 #              ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_allgatherv.c:164:32: warning: 's_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_allgatherv.c:164:32: warning[-Wmaybe-uninitialized]: 's_num' may be used uninitialized in this function
 #           ierr = MPI_Allgatherv((char*)c_info->s_buffer+i%ITERATIONS->s_cache_iter*ITERATIONS->s_offs,
 #                                ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_gather.c: scope_hint: In function 'IMB_gather'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_gather.c:150:29: warning: 'r_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_gather.c:150:29: warning[-Wmaybe-uninitialized]: 'r_num' may be used uninitialized in this function
 #           ierr = MPI_Gather ((char*)c_info->s_buffer+i%ITERATIONS->s_cache_iter*ITERATIONS->s_offs,
 #                             ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_gather.c:150:29: warning: 's_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_gather.c:150:29: warning[-Wmaybe-uninitialized]: 's_num' may be used uninitialized in this function
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_gatherv.c: scope_hint: In function 'IMB_gatherv'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_gatherv.c:127:14: warning: 'r_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_gatherv.c:127:14: warning[-Wmaybe-uninitialized]: 'r_num' may be used uninitialized in this function
 #   int s_num, r_num;
 #              ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_gatherv.c:159:29: warning: 's_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_gatherv.c:159:29: warning[-Wmaybe-uninitialized]: 's_num' may be used uninitialized in this function
 #           ierr = MPI_Gatherv((char*)c_info->s_buffer+i%ITERATIONS->s_cache_iter*ITERATIONS->s_offs,
 #                             ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_scatter.c: scope_hint: In function 'IMB_scatter'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_scatter.c:150:29: warning: 'r_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_scatter.c:150:29: warning[-Wmaybe-uninitialized]: 'r_num' may be used uninitialized in this function
 #           ierr = MPI_Scatter((char*)c_info->s_buffer+i%ITERATIONS->s_cache_iter*ITERATIONS->s_offs,
 #                             ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_scatter.c:150:29: warning: 's_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_scatter.c:150:29: warning[-Wmaybe-uninitialized]: 's_num' may be used uninitialized in this function
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_scatterv.c: scope_hint: In function 'IMB_scatterv'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_scatterv.c:159:30: warning: 'r_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_scatterv.c:159:30: warning[-Wmaybe-uninitialized]: 'r_num' may be used uninitialized in this function
 #           ierr = MPI_Scatterv((char*)c_info->s_buffer+i%ITERATIONS->s_cache_iter*ITERATIONS->s_offs,
 #                              ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_scatterv.c:127:7: warning: 's_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_scatterv.c:127:7: warning[-Wmaybe-uninitialized]: 's_num' may be used uninitialized in this function
 #   int s_num, r_num;
 #       ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_alltoall.c: scope_hint: In function 'IMB_alltoall'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_alltoall.c:157:30: warning: 'r_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_alltoall.c:157:30: warning[-Wmaybe-uninitialized]: 'r_num' may be used uninitialized in this function
 #           ierr = MPI_Alltoall((char*)c_info->s_buffer+i%ITERATIONS->s_cache_iter*ITERATIONS->s_offs,
 #                              ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_alltoall.c:157:30: warning: 's_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_alltoall.c:157:30: warning[-Wmaybe-uninitialized]: 's_num' may be used uninitialized in this function
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_alltoallv.c: scope_hint: In function 'IMB_alltoallv'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_alltoallv.c:132:14: warning: 'r_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_alltoallv.c:132:14: warning[-Wmaybe-uninitialized]: 'r_num' may be used uninitialized in this function
 #   int s_num, r_num;
 #              ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_alltoallv.c:132:7: warning: 's_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_alltoallv.c:132:7: warning[-Wmaybe-uninitialized]: 's_num' may be used uninitialized in this function
 #   int s_num, r_num;
 #       ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_sendrecv.c: scope_hint: In function 'IMB_sendrecv'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_sendrecv.c:164:22: warning: 'r_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_sendrecv.c:164:22: warning[-Wmaybe-uninitialized]: 'r_num' may be used uninitialized in this function
 #    ierr= MPI_Sendrecv((char*)c_info->s_buffer+i%ITERATIONS->s_cache_iter*ITERATIONS->s_offs,
 #                      ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_sendrecv.c:164:22: warning: 's_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_sendrecv.c:164:22: warning[-Wmaybe-uninitialized]: 's_num' may be used uninitialized in this function
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_alltoall.c: scope_hint: In function 'main'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_alltoall.c:59:16: warning: unused variable 'status' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_alltoall.c:59:16: warning[-Wunused-variable]: unused variable 'status'
 #     MPI_Status status;
 #                ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_alltoall.c:57:45: warning: unused variable 'total' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_alltoall.c:57:45: warning[-Wunused-variable]: unused variable 'total'
 #     double tmp1 = 0, tmp2 = 0, latency = 0, total = 0;
 #                                             ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_alltoall.c:57:32: warning: unused variable 'latency' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_alltoall.c:57:32: warning[-Wunused-variable]: unused variable 'latency'
 #     double tmp1 = 0, tmp2 = 0, latency = 0, total = 0;
 #                                ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_alltoall.c:56:19: warning: unused variable 'recvcnt' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_alltoall.c:56:19: warning[-Wunused-variable]: unused variable 'recvcnt'
 #     int  sendcnt, recvcnt, skip, iterations, align_size;
 #                   ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_alltoall.c:56:10: warning: unused variable 'sendcnt' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_alltoall.c:56:10: warning[-Wunused-variable]: unused variable 'sendcnt'
 #     int  sendcnt, recvcnt, skip, iterations, align_size;
 #          ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_alltoall.c:55:39: warning: unused variable 'mpi_errno' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_alltoall.c:55:39: warning[-Wunused-variable]: unused variable 'mpi_errno'
 #     int i = 0, j = 0, rank = 0, size, mpi_errno = MPI_SUCCESS;
 #                                       ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_alltoall.c:55:16: warning: unused variable 'j' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_alltoall.c:55:16: warning[-Wunused-variable]: unused variable 'j'
 #     int i = 0, j = 0, rank = 0, size, mpi_errno = MPI_SUCCESS;
 #                ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_acc_latency.c: scope_hint: In function 'main'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_acc_latency.c:103:67: warning: value computed is not used [-Wunused-value]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_acc_latency.c:103:67: warning[-Wunused-value]: value computed is not used
 #     for(count = 0; count <= MAX_SIZE / sizeof(int); (count <<= 1) || (count += 1)) {
 #                                                                   ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_acc_latency.c:155:45: warning: 't_end' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_acc_latency.c:155:45: warning[-Wmaybe-uninitialized]: 't_end' may be used uninitialized in this function
 #                     FLOAT_PRECISION, (t_end - t_start) * 1e6 / loop / 2);
 #                                             ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_acc_latency.c:155:45: warning: 't_start' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_acc_latency.c:155:45: warning[-Wmaybe-uninitialized]: 't_start' may be used uninitialized in this function
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_get_latency.c: scope_hint: In function 'main'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_get_latency.c:146:45: warning: 't_end' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_get_latency.c:146:45: warning[-Wmaybe-uninitialized]: 't_end' may be used uninitialized in this function
 #                     FLOAT_PRECISION, (t_end - t_start) * 1.0e6 / loop / 2);
 #                                             ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_get_latency.c:146:45: warning: 't_start' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_get_latency.c:146:45: warning[-Wmaybe-uninitialized]: 't_start' may be used uninitialized in this function
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c: scope_hint: In function 'recv_thread'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:153:36: warning: unused variable 't' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:153:36: warning[-Wunused-variable]: unused variable 't'
 #     double t_start = 0, t_end = 0, t = 0;
 #                                    ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:153:25: warning: unused variable 't_end' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:153:25: warning[-Wunused-variable]: unused variable 't_end'
 #     double t_start = 0, t_end = 0, t = 0;
 #                         ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:153:12: warning: unused variable 't_start' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:153:12: warning[-Wunused-variable]: unused variable 't_start'
 #     double t_start = 0, t_end = 0, t = 0;
 #            ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:151:9: warning: unused variable 'messages_recv' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:151:9: warning[-Wunused-variable]: unused variable 'messages_recv'
 #     int messages_recv = 0, iter;
 #         ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:150:21: warning: unused variable 'send_size' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:150:21: warning[-Wunused-variable]: unused variable 'send_size'
 #     int start_send, send_size;
 #                     ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:150:9: warning: unused variable 'start_send' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:150:9: warning[-Wunused-variable]: unused variable 'start_send'
 #     int start_send, send_size;
 #         ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:149:28: warning: unused variable 'local_start' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:149:28: warning[-Wunused-variable]: unused variable 'local_start'
 #     int local_window_size, local_start;
 #                            ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:149:9: warning: unused variable 'local_window_size' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:149:9: warning[-Wunused-variable]: unused variable 'local_window_size'
 #     int local_window_size, local_start;
 #         ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:148:18: warning: unused variable 'j' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:148:18: warning[-Wunused-variable]: unused variable 'j'
 #     int size, i, j, val, align_size;
 #                  ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c: scope_hint: In function 'send_thread'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:219:52: warning: unused variable 't_sum' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:219:52: warning[-Wunused-variable]: unused variable 't_sum'
 #     double t_start = 0, t_end = 0, t = 0, latency, t_sum;
 #                                                    ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:217:21: warning: unused variable 'send_size' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:217:21: warning[-Wunused-variable]: unused variable 'send_size'
 #     int start_send, send_size;
 #                     ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:217:9: warning: unused variable 'start_send' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:217:9: warning[-Wunused-variable]: unused variable 'start_send'
 #     int start_send, send_size;
 #         ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:216:22: warning: unused variable 'local_window_size' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:216:22: warning[-Wunused-variable]: unused variable 'local_window_size'
 #     int local_start, local_window_size;
 #                      ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:216:9: warning: unused variable 'local_start' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:216:9: warning[-Wunused-variable]: unused variable 'local_start'
 #     int local_start, local_window_size;
 #         ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:215:21: warning: unused variable 'k' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:215:21: warning[-Wunused-variable]: unused variable 'k'
 #     int size, i, j, k, val, align_size, iter;
 #                     ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:215:18: warning: unused variable 'j' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_latency_mt.c:215:18: warning[-Wunused-variable]: unused variable 'j'
 #     int size, i, j, k, val, align_size, iter;
 #                  ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_put_latency.c: scope_hint: In function 'main'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_put_latency.c:147:45: warning: 't_end' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_put_latency.c:147:45: warning[-Wmaybe-uninitialized]: 't_end' may be used uninitialized in this function
 #                     FLOAT_PRECISION, (t_end - t_start) * 1.0e6 / loop / 2);
 #                                             ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_put_latency.c:147:45: warning: 't_start' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/osu_benchmarks-3.1.1/osu_put_latency.c:147:45: warning[-Wmaybe-uninitialized]: 't_start' may be used uninitialized in this function
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB.c: scope_hint: In function 'main'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB.c:125:5: warning: unused variable 'mem_ok' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB.c:125:5: warning[-Wunused-variable]: unused variable 'mem_ok'
 # int mem_ok;
 #     ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB.c:122:14: warning: unused variable 'n_sample' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB.c:122:14: warning[-Wunused-variable]: unused variable 'n_sample'
 # int x_sample,n_sample;            
 #              ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB.c:122:5: warning: unused variable 'x_sample' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB.c:122:5: warning[-Wunused-variable]: unused variable 'x_sample'
 # int x_sample,n_sample;            
 #     ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB.c:115:6: warning: unused variable 'i' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB.c:115:6: warning[-Wunused-variable]: unused variable 'i'
 # int  i,j,iter,imod,ierr;
 #      ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB.c:70: included_from: Included from here.
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB.c: scope_hint: At top level
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_declare.h:189:12: warning: 'asize' defined but not used [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_declare.h:189:12: warning[-Wunused-variable]: 'asize' defined but not used
 # static int asize = sizeof(assign_type);
 #            ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_declare.h:190:12: warning: 'ierr' defined but not used [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_declare.h:190:12: warning[-Wunused-variable]: 'ierr' defined but not used
 # static int ierr;
 #            ^
 
@@ -928,61 +928,61 @@ Error: COMPILER_WARNING:
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_mem_manager.c: scope_hint: In function 'IMB_alloc_buf'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_mem_manager.c:209:7: warning: variable 'ierr' set but not used [-Wunused-but-set-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_mem_manager.c:209:7: warning[-Wunused-but-set-variable]: variable 'ierr' set but not used
 #   int ierr;
 #       ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_strgs.c: scope_hint: In function 'IMB_str_atoi'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_strgs.c:166:24: warning: suggest parentheses around '&&' within '||' [-Wparentheses]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_strgs.c:166:24: warning[-Wparentheses]: suggest parentheses around '&&' within '||'
 #   for(i=0; s[i] >= '0' && s[i] <= '9' || s[i]==' '; ++i)
 #                        ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_g_info.c: scope_hint: In function 'IMB_make_sys_info'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_g_info.c:143:7: warning: variable 'dont_care' set but not used [-Wunused-but-set-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_g_info.c:143:7: warning[-Wunused-but-set-variable]: variable 'dont_care' set but not used
 #   int dont_care, mpi_subversion, mpi_version;
 #       ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_warm_up.c: scope_hint: In function 'IMB_warm_up'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_warm_up.c:125:16: warning: variable 'MD' set but not used [-Wunused-but-set-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_warm_up.c:125:16: warning[-Wunused-but-set-variable]: variable 'MD' set but not used
 #   struct cmode MD;
 #                ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_output.c: scope_hint: In function 'IMB_display_times'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_output.c:409:7: warning: suggest explicit braces to avoid ambiguous 'else' [-Wparentheses]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_output.c:409:7: warning[-Wparentheses]: suggest explicit braces to avoid ambiguous 'else'
 #     if( Bmark->RUN_MODES[0].NONBLOCKING )
 #       ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_output.c: scope_hint: In function 'IMB_show_procids'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_output.c:641:18: warning: unused variable 'k' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_output.c:641:18: warning[-Wunused-variable]: unused variable 'k'
 #   int ip, py, i, k, idle;
 #                  ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_output.c: scope_hint: In function 'IMB_print_array'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_output.c:727:7: warning: unused variable 'j' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_output.c:727:7: warning[-Wunused-variable]: unused variable 'j'
 # int i,j;
 #       ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_output.c: scope_hint: In function 'IMB_print_int_row'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_output.c:810:12: warning: variable 'irest' set but not used [-Wunused-but-set-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_output.c:810:12: warning[-Wunused-but-set-variable]: variable 'irest' set but not used
 # int i,j,i0,irest;
 #            ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_output.c: scope_hint: In function 'IMB_print_headlines'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_output.c:903:3: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_output.c:903:3: warning[-Wparentheses]: suggest parentheses around assignment used as truth value
 #   while(token = strtok(help, "&") )
 #   ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_output.c: scope_hint: In function 'IMB_display_times'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_output.c:341:27: warning: 't_pure' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_output.c:341:27: warning[-Wmaybe-uninitialized]: 't_pure' may be used uninitialized in this function
 #   double tmax, tmin, tav, t_pure, throughput, overlap; 
 #                           ^
 
@@ -1018,126 +1018,126 @@ Error: COMPILER_WARNING:
 #                       ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_write.c:290:23: warning: unused variable 'Ioffs' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_write.c:290:23: warning[-Wunused-variable]: unused variable 'Ioffs'
 # int Locsize,Totalsize,Ioffs;
 #                       ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_write.c: scope_hint: In function 'IMB_iwrite_ij'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_write.c:433:23: warning: unused variable 'Ioffs' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_write.c:433:23: warning[-Wunused-variable]: unused variable 'Ioffs'
 # int Locsize,Totalsize,Ioffs;
 #                       ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_init_transfer.c: scope_hint: In function 'IMB_init_transfer'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_init_transfer.c:128:17: warning: unused variable 'mod' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_init_transfer.c:128:17: warning[-Wunused-variable]: unused variable 'mod'
 # int ne, baslen, mod;
 #                 ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_init_transfer.c:128:5: warning: unused variable 'ne' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_init_transfer.c:128:5: warning[-Wunused-variable]: unused variable 'ne'
 # int ne, baslen, mod;
 #     ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_chk_diff.c: scope_hint: In function 'IMB_show'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_chk_diff.c:267:1: warning: enumeration value 'nothing' not handled in switch [-Wswitch]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_chk_diff.c:267:1: warning[-Wswitch]: enumeration value 'nothing' not handled in switch
 # switch(fpos)
 # ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_chk_diff.c:267:1: warning: enumeration value 'indv_cyclic' not handled in switch [-Wswitch]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_chk_diff.c:267:1: warning[-Wswitch]: enumeration value 'indv_cyclic' not handled in switch
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_window.c: scope_hint: In function 'IMB_window'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_window.c:120:13: warning: unused variable 'dum' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_window.c:120:13: warning[-Wunused-variable]: unused variable 'dum'
 #   int    i, dum;
 #             ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c: scope_hint: In function 'IMB_unidir_put'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:141:14: warning: unused variable 'stat' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:141:14: warning[-Wunused-variable]: unused variable 'stat'
 #   MPI_Status stat;
 #              ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:140:13: warning: unused variable 'source' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:140:13: warning[-Wunused-variable]: unused variable 'source'
 #   int dest, source,sender;
 #             ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:136:14: warning: unused variable 't2' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:136:14: warning[-Wunused-variable]: unused variable 't2'
 #   double t1, t2;
 #              ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:136:10: warning: unused variable 't1' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:136:10: warning[-Wunused-variable]: unused variable 't1'
 #   double t1, t2;
 #          ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c: scope_hint: In function 'IMB_unidir_get'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:225:14: warning: unused variable 'stat' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:225:14: warning[-Wunused-variable]: unused variable 'stat'
 #   MPI_Status stat;
 #              ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:224:7: warning: unused variable 'ierr' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:224:7: warning[-Wunused-variable]: unused variable 'ierr'
 #   int ierr;
 #       ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:223:13: warning: unused variable 'source' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:223:13: warning[-Wunused-variable]: unused variable 'source'
 #   int dest, source,sender;
 #             ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:219:14: warning: unused variable 't2' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:219:14: warning[-Wunused-variable]: unused variable 't2'
 #   double t1, t2;
 #              ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:219:10: warning: unused variable 't1' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:219:10: warning[-Wunused-variable]: unused variable 't1'
 #   double t1, t2;
 #          ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c: scope_hint: In function 'IMB_ones_get'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:322:8: warning: variable 'ierr' set but not used [-Wunused-but-set-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:322:8: warning[-Wunused-but-set-variable]: variable 'ierr' set but not used
 # int i, ierr;
 #        ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c: scope_hint: In function 'IMB_ones_mget'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:442:8: warning: variable 'ierr' set but not used [-Wunused-but-set-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:442:8: warning[-Wunused-but-set-variable]: variable 'ierr' set but not used
 # int i, ierr;
 #        ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c: scope_hint: In function 'IMB_ones_put'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:552:7: warning: variable 'recv' set but not used [-Wunused-but-set-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:552:7: warning[-Wunused-but-set-variable]: variable 'recv' set but not used
 # char* recv;
 #       ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:551:8: warning: variable 'ierr' set but not used [-Wunused-but-set-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:551:8: warning[-Wunused-but-set-variable]: variable 'ierr' set but not used
 # int i, ierr, r_size;
 #        ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c: scope_hint: In function 'IMB_ones_mput'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:674:14: warning: variable 'recv' set but not used [-Wunused-but-set-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:674:14: warning[-Wunused-but-set-variable]: variable 'recv' set but not used
 # char* send, *recv;
 #              ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:673:8: warning: variable 'ierr' set but not used [-Wunused-but-set-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:673:8: warning[-Wunused-but-set-variable]: variable 'ierr' set but not used
 # int i, ierr;
 #        ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c: scope_hint: In function 'IMB_unidir_get'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:462:3: warning: 'sender' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:462:3: warning[-Wmaybe-uninitialized]: 'sender' may be used uninitialized in this function
 # if( !sender )
 #   ^
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:223:20: note: 'sender' was declared here
@@ -1145,7 +1145,7 @@ Error: COMPILER_WARNING:
 #                    ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:465:14: warning: 'dest' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:465:14: warning[-Wmaybe-uninitialized]: 'dest' may be used uninitialized in this function
 #         ierr = MPI_Get((void*)(recv+i%ITERATIONS->r_cache_iter*ITERATIONS->r_offs), 
 #              ^
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:223:7: note: 'dest' was declared here
@@ -1153,7 +1153,7 @@ Error: COMPILER_WARNING:
 #       ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:465:14: warning: 'r_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:465:14: warning[-Wmaybe-uninitialized]: 'r_num' may be used uninitialized in this function
 #         ierr = MPI_Get((void*)(recv+i%ITERATIONS->r_cache_iter*ITERATIONS->r_offs), 
 #              ^
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:222:14: note: 'r_num' was declared here
@@ -1161,7 +1161,7 @@ Error: COMPILER_WARNING:
 #              ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:465:14: warning: 's_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:465:14: warning[-Wmaybe-uninitialized]: 's_num' may be used uninitialized in this function
 #         ierr = MPI_Get((void*)(recv+i%ITERATIONS->r_cache_iter*ITERATIONS->r_offs), 
 #              ^
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:222:7: note: 's_num' was declared here
@@ -1170,7 +1170,7 @@ Error: COMPILER_WARNING:
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c: scope_hint: In function 'IMB_unidir_put'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:694:3: warning: 'sender' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:694:3: warning[-Wmaybe-uninitialized]: 'sender' may be used uninitialized in this function
 # if( sender )
 #   ^
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:140:20: note: 'sender' was declared here
@@ -1178,7 +1178,7 @@ Error: COMPILER_WARNING:
 #                    ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:697:16: warning: 'dest' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:697:16: warning[-Wmaybe-uninitialized]: 'dest' may be used uninitialized in this function
 #           ierr = MPI_Put((void*)(send+i%ITERATIONS->s_cache_iter*ITERATIONS->s_offs),
 #                ^
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:140:7: note: 'dest' was declared here
@@ -1186,7 +1186,7 @@ Error: COMPILER_WARNING:
 #       ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:697:16: warning: 'r_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:697:16: warning[-Wmaybe-uninitialized]: 'r_num' may be used uninitialized in this function
 #           ierr = MPI_Put((void*)(send+i%ITERATIONS->s_cache_iter*ITERATIONS->s_offs),
 #                ^
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:139:14: note: 'r_num' was declared here
@@ -1194,7 +1194,7 @@ Error: COMPILER_WARNING:
 #              ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:697:16: warning: 's_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:697:16: warning[-Wmaybe-uninitialized]: 's_num' may be used uninitialized in this function
 #           ierr = MPI_Put((void*)(send+i%ITERATIONS->s_cache_iter*ITERATIONS->s_offs),
 #                ^
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_unidir.c:139:7: note: 's_num' was declared here
@@ -1203,92 +1203,92 @@ Error: COMPILER_WARNING:
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_bidir.c: scope_hint: In function 'IMB_bidir_get'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_bidir.c:136:14: warning: unused variable 'stat' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_bidir.c:136:14: warning[-Wunused-variable]: unused variable 'stat'
 #   MPI_Status stat;
 #              ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_bidir.c:135:13: warning: unused variable 'source' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_bidir.c:135:13: warning[-Wunused-variable]: unused variable 'source'
 #   int dest, source,sender;
 #             ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_bidir.c:131:14: warning: unused variable 't2' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_bidir.c:131:14: warning[-Wunused-variable]: unused variable 't2'
 #   double t1, t2;
 #              ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_bidir.c:131:10: warning: unused variable 't1' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_bidir.c:131:10: warning[-Wunused-variable]: unused variable 't1'
 #   double t1, t2;
 #          ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_bidir.c: scope_hint: In function 'IMB_bidir_put'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_bidir.c:219:14: warning: unused variable 'stat' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_bidir.c:219:14: warning[-Wunused-variable]: unused variable 'stat'
 #   MPI_Status stat;
 #              ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_bidir.c:218:7: warning: unused variable 'ierr' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_bidir.c:218:7: warning[-Wunused-variable]: unused variable 'ierr'
 #   int ierr;
 #       ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_bidir.c:217:13: warning: unused variable 'source' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_bidir.c:217:13: warning[-Wunused-variable]: unused variable 'source'
 #   int dest, source,sender;
 #             ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_bidir.c:213:14: warning: unused variable 't2' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_bidir.c:213:14: warning[-Wunused-variable]: unused variable 't2'
 #   double t1, t2;
 #              ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_bidir.c:213:10: warning: unused variable 't1' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_bidir.c:213:10: warning[-Wunused-variable]: unused variable 't1'
 #   double t1, t2;
 #          ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_bidir.c: scope_hint: In function 'IMB_bidir_get'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_bidir.c:166:19: warning: 'dest' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_bidir.c:166:19: warning[-Wmaybe-uninitialized]: 'dest' may be used uninitialized in this function
 #      IMB_ones_mget( c_info,
 #                   ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_bidir.c:166:19: warning: 'r_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_bidir.c:166:19: warning[-Wmaybe-uninitialized]: 'r_num' may be used uninitialized in this function
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_bidir.c:166:19: warning: 's_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_bidir.c:166:19: warning[-Wmaybe-uninitialized]: 's_num' may be used uninitialized in this function
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_bidir.c: scope_hint: In function 'IMB_bidir_put'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_bidir.c:250:19: warning: 'dest' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_bidir.c:250:19: warning[-Wmaybe-uninitialized]: 'dest' may be used uninitialized in this function
 #      IMB_ones_mput( c_info,
 #                   ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_bidir.c:250:19: warning: 'r_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_bidir.c:250:19: warning[-Wmaybe-uninitialized]: 'r_num' may be used uninitialized in this function
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_bidir.c:250:19: warning: 's_num' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_bidir.c:250:19: warning[-Wmaybe-uninitialized]: 's_num' may be used uninitialized in this function
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_accu.c: scope_hint: In function 'IMB_accumulate'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_accu.c:143:14: warning: unused variable 'stat' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_accu.c:143:14: warning[-Wunused-variable]: unused variable 'stat'
 #   MPI_Status stat;
 #              ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_accu.c:141:21: warning: variable 'root' set but not used [-Wunused-but-set-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_accu.c:141:21: warning[-Wunused-but-set-variable]: variable 'root' set but not used
 #   int dest, source, root;
 #                     ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_accu.c:141:13: warning: unused variable 'source' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_accu.c:141:13: warning[-Wunused-variable]: unused variable 'source'
 #   int dest, source, root;
 #             ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_accu.c:141:7: warning: unused variable 'dest' [-Wunused-variable]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_ones_accu.c:141:7: warning[-Wunused-variable]: unused variable 'dest'
 #   int dest, source, root;
 #       ^

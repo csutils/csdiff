@@ -370,8 +370,8 @@
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/util/processinfo.c",
                     "line": 64,
                     "column": 13,
-                    "event": "warning",
-                    "message": "expression result unused [-Wunused-value]",
+                    "event": "warning[-Wunused-value]",
+                    "message": "expression result unused",
                     "verbosity_level": "0"
                 },
                 {
@@ -667,8 +667,8 @@
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/nodeinfo.c",
                     "line": 254,
                     "column": 9,
-                    "event": "warning",
-                    "message": "expression result unused [-Wunused-value]",
+                    "event": "warning[-Wunused-value]",
+                    "message": "expression result unused",
                     "verbosity_level": "0"
                 },
                 {
@@ -761,8 +761,8 @@
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/nodeinfo.c",
                     "line": 312,
                     "column": 9,
-                    "event": "warning",
-                    "message": "expression result unused [-Wunused-value]",
+                    "event": "warning[-Wunused-value]",
+                    "message": "expression result unused",
                     "verbosity_level": "0"
                 },
                 {
@@ -2169,8 +2169,8 @@
                     "file_name": "/tmp/tmpjF4UBX.c",
                     "line": 1,
                     "column": 8,
-                    "event": "warning",
-                    "message": "type specifier missing, defaults to 'int' [-Wimplicit-int]",
+                    "event": "warning[-Wimplicit-int]",
+                    "message": "type specifier missing, defaults to 'int'",
                     "verbosity_level": "0"
                 },
                 {
@@ -2198,8 +2198,8 @@
                     "file_name": "/tmp/tmpjF4UBX.c",
                     "line": 1,
                     "column": 21,
-                    "event": "warning",
-                    "message": "control reaches end of non-void function [-Wreturn-type]",
+                    "event": "warning[-Wreturn-type]",
+                    "message": "control reaches end of non-void function",
                     "verbosity_level": "0"
                 },
                 {
@@ -2922,8 +2922,8 @@
                     "file_name": "/tmp/tmpObFhPl.c",
                     "line": 1,
                     "column": 8,
-                    "event": "warning",
-                    "message": "type specifier missing, defaults to 'int' [-Wimplicit-int]",
+                    "event": "warning[-Wimplicit-int]",
+                    "message": "type specifier missing, defaults to 'int'",
                     "verbosity_level": "0"
                 },
                 {
@@ -2951,8 +2951,8 @@
                     "file_name": "/tmp/tmpObFhPl.c",
                     "line": 1,
                     "column": 21,
-                    "event": "warning",
-                    "message": "control reaches end of non-void function [-Wreturn-type]",
+                    "event": "warning[-Wreturn-type]",
+                    "message": "control reaches end of non-void function",
                     "verbosity_level": "0"
                 },
                 {
@@ -3009,8 +3009,8 @@
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/nwfilter/nwfilter_dhcpsnoop.c",
                     "line": 900,
                     "column": 5,
-                    "event": "warning",
-                    "message": "expression result unused [-Wunused-value]",
+                    "event": "warning[-Wunused-value]",
+                    "message": "expression result unused",
                     "verbosity_level": "0"
                 },
                 {
@@ -3067,8 +3067,8 @@
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/nwfilter/nwfilter_dhcpsnoop.c",
                     "line": 1182,
                     "column": 5,
-                    "event": "warning",
-                    "message": "expression result unused [-Wunused-value]",
+                    "event": "warning[-Wunused-value]",
+                    "message": "expression result unused",
                     "verbosity_level": "0"
                 },
                 {
@@ -3125,8 +3125,8 @@
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/nwfilter/nwfilter_dhcpsnoop.c",
                     "line": 1576,
                     "column": 5,
-                    "event": "warning",
-                    "message": "expression result unused [-Wunused-value]",
+                    "event": "warning[-Wunused-value]",
+                    "message": "expression result unused",
                     "verbosity_level": "0"
                 },
                 {
@@ -3502,8 +3502,8 @@
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/tools/virsh-edit.c",
                     "line": 118,
                     "column": 19,
-                    "event": "warning",
-                    "message": "expression result unused [-Wunused-value]",
+                    "event": "warning[-Wunused-value]",
+                    "message": "expression result unused",
                     "verbosity_level": "0"
                 },
                 {

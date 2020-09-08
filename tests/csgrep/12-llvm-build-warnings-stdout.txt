@@ -71,7 +71,7 @@ Error: COMPILER_WARNING:
 #            ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/libvirt-0.10.2/src/util/processinfo.c:64:13: warning: expression result unused [-Wunused-value]
+/builddir/build/BUILD/libvirt-0.10.2/src/util/processinfo.c:64:13: warning[-Wunused-value]: expression result unused
 #            CPU_SET_S(i, masklen, mask);
 #            ^~~~~~~~~~~~~~~~~~~~~~~~~~~
 /builddir/build/BUILD/libvirt-0.10.2/src/util/processinfo.c:24: included_from: Included from here.
@@ -119,7 +119,7 @@ Error: COMPILER_WARNING:
 #                       ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/libvirt-0.10.2/src/nodeinfo.c:254:9: warning: expression result unused [-Wunused-value]
+/builddir/build/BUILD/libvirt-0.10.2/src/nodeinfo.c:254:9: warning[-Wunused-value]: expression result unused
 #        CPU_SET(sock, &sock_map);
 #        ^~~~~~~~~~~~~~~~~~~~~~~~
 /builddir/build/BUILD/libvirt-0.10.2/src/nodeinfo.c:33: included_from: Included from here.
@@ -133,7 +133,7 @@ Error: COMPILER_WARNING:
 #        ^
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/libvirt-0.10.2/src/nodeinfo.c:312:9: warning: expression result unused [-Wunused-value]
+/builddir/build/BUILD/libvirt-0.10.2/src/nodeinfo.c:312:9: warning[-Wunused-value]: expression result unused
 #        CPU_SET(core, &core_maps[sock]);
 #        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /builddir/build/BUILD/libvirt-0.10.2/src/nodeinfo.c:33: included_from: Included from here.
@@ -347,12 +347,12 @@ Error: COMPILER_WARNING:
 /tmp/tmpjF4UBX.c:1: warning: '__dtrace' defined but not used
 
 Error: COMPILER_WARNING:
-/tmp/tmpjF4UBX.c:1:8: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+/tmp/tmpjF4UBX.c:1:8: warning[-Wimplicit-int]: type specifier missing, defaults to 'int'
 #static __dtrace () {}
 #~~~~~~ ^
 
 Error: COMPILER_WARNING:
-/tmp/tmpjF4UBX.c:1:21: warning: control reaches end of non-void function [-Wreturn-type]
+/tmp/tmpjF4UBX.c:1:21: warning[-Wreturn-type]: control reaches end of non-void function
 #static __dtrace () {}
 #                    ^
 
@@ -478,12 +478,12 @@ Error: COMPILER_WARNING:
 #               ^       ~~~~~
 
 Error: COMPILER_WARNING:
-/tmp/tmpObFhPl.c:1:8: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+/tmp/tmpObFhPl.c:1:8: warning[-Wimplicit-int]: type specifier missing, defaults to 'int'
 #static __dtrace () {}
 #~~~~~~ ^
 
 Error: COMPILER_WARNING:
-/tmp/tmpObFhPl.c:1:21: warning: control reaches end of non-void function [-Wreturn-type]
+/tmp/tmpObFhPl.c:1:21: warning[-Wreturn-type]: control reaches end of non-void function
 #static __dtrace () {}
 #                    ^
 
@@ -493,7 +493,7 @@ Error: COMPILER_WARNING:
 #                ^      ~~~~
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/libvirt-0.10.2/src/nwfilter/nwfilter_dhcpsnoop.c:900:5: warning: expression result unused [-Wunused-value]
+/builddir/build/BUILD/libvirt-0.10.2/src/nwfilter/nwfilter_dhcpsnoop.c:900:5: warning[-Wunused-value]: expression result unused
 #    virAtomicIntDecAndTest(&virNWFilterSnoopState.nLeases);
 #    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /builddir/build/BUILD/libvirt-0.10.2/src/nwfilter/nwfilter_dhcpsnoop.c:67: included_from: Included from here.
@@ -502,7 +502,7 @@ Error: COMPILER_WARNING:
 #            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^  ~
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/libvirt-0.10.2/src/nwfilter/nwfilter_dhcpsnoop.c:1182:5: warning: expression result unused [-Wunused-value]
+/builddir/build/BUILD/libvirt-0.10.2/src/nwfilter/nwfilter_dhcpsnoop.c:1182:5: warning[-Wunused-value]: expression result unused
 #    virAtomicIntDecAndTest(job->qCtr);
 #    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /builddir/build/BUILD/libvirt-0.10.2/src/nwfilter/nwfilter_dhcpsnoop.c:67: included_from: Included from here.
@@ -511,7 +511,7 @@ Error: COMPILER_WARNING:
 #            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^  ~
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/libvirt-0.10.2/src/nwfilter/nwfilter_dhcpsnoop.c:1576:5: warning: expression result unused [-Wunused-value]
+/builddir/build/BUILD/libvirt-0.10.2/src/nwfilter/nwfilter_dhcpsnoop.c:1576:5: warning[-Wunused-value]: expression result unused
 #    virAtomicIntDecAndTest(&virNWFilterSnoopState.nThreads);
 #    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /builddir/build/BUILD/libvirt-0.10.2/src/nwfilter/nwfilter_dhcpsnoop.c:67: included_from: Included from here.
@@ -574,7 +574,7 @@ Error: COMPILER_WARNING:
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/libvirt-0.10.2/tools/virsh-snapshot.c:509: included_from: Included from here.
-/builddir/build/BUILD/libvirt-0.10.2/tools/virsh-edit.c:118:19: warning: expression result unused [-Wunused-value]
+/builddir/build/BUILD/libvirt-0.10.2/tools/virsh-edit.c:118:19: warning[-Wunused-value]: expression result unused
 #    if (!msg && !(EDIT_DEFINE)) {
 #                  ^~~~~~~~~~~
 /builddir/build/BUILD/libvirt-0.10.2/tools/virsh-snapshot.c:504:60: note: instantiated from:

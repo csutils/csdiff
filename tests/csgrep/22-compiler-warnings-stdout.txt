@@ -16,8 +16,8 @@
                     "file_name": "/builddir/build/BUILD/autofs-5.0.8/lib/mounts.c",
                     "line": 1550,
                     "column": 7,
-                    "event": "warning",
-                    "message": "variable 'ret' set but not used [-Wunused-but-set-variable]",
+                    "event": "warning[-Wunused-but-set-variable]",
+                    "message": "variable 'ret' set but not used",
                     "verbosity_level": "0"
                 },
                 {
@@ -73,8 +73,8 @@
                     "file_name": "/builddir/build/BUILD/autofs-5.0.8/lib/master_tok.c",
                     "line": 2491,
                     "column": 16,
-                    "event": "warning",
-                    "message": "'input' defined but not used [-Wunused-function]",
+                    "event": "warning[-Wunused-function]",
+                    "message": "'input' defined but not used",
                     "verbosity_level": "0"
                 },
                 {
@@ -102,8 +102,8 @@
                     "file_name": "/builddir/build/BUILD/autofs-5.0.8/lib/nss_tok.c",
                     "line": 1288,
                     "column": 16,
-                    "event": "warning",
-                    "message": "'input' defined but not used [-Wunused-function]",
+                    "event": "warning[-Wunused-function]",
+                    "message": "'input' defined but not used",
                     "verbosity_level": "0"
                 },
                 {

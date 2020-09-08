@@ -1,199 +1,199 @@
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/Python-2.7.3/Parser/node.c: scope_hint: In function 'PyNode_AddChild'
-/builddir/build/BUILD/Python-2.7.3/Parser/node.c:94:31: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+/builddir/build/BUILD/Python-2.7.3/Parser/node.c:94:31: warning[-Wsign-compare]: comparison between signed and unsigned integer expressions
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/Python-2.7.3/Parser/pgen.c: scope_hint: In function 'compile_rule'
-/builddir/build/BUILD/Python-2.7.3/Parser/pgen.c:174:28: warning: suggest braces around empty body in an 'else' statement [-Wempty-body]
+/builddir/build/BUILD/Python-2.7.3/Parser/pgen.c:174:28: warning[-Wempty-body]: suggest braces around empty body in an 'else' statement
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/Python-2.7.3/Parser/pgen.c: scope_hint: In function 'compile_rhs'
-/builddir/build/BUILD/Python-2.7.3/Parser/pgen.c:195:15: warning: suggest braces around empty body in an 'else' statement [-Wempty-body]
+/builddir/build/BUILD/Python-2.7.3/Parser/pgen.c:195:15: warning[-Wempty-body]: suggest braces around empty body in an 'else' statement
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/Python-2.7.3/Parser/pgen.c:210:19: warning: suggest braces around empty body in an 'else' statement [-Wempty-body]
+/builddir/build/BUILD/Python-2.7.3/Parser/pgen.c:210:19: warning[-Wempty-body]: suggest braces around empty body in an 'else' statement
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/Python-2.7.3/Parser/pgen.c: scope_hint: In function 'compile_alt'
-/builddir/build/BUILD/Python-2.7.3/Parser/pgen.c:228:15: warning: suggest braces around empty body in an 'else' statement [-Wempty-body]
+/builddir/build/BUILD/Python-2.7.3/Parser/pgen.c:228:15: warning[-Wempty-body]: suggest braces around empty body in an 'else' statement
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/Python-2.7.3/Parser/pgen.c: scope_hint: In function 'compile_item'
-/builddir/build/BUILD/Python-2.7.3/Parser/pgen.c:250:15: warning: suggest braces around empty body in an 'else' statement [-Wempty-body]
+/builddir/build/BUILD/Python-2.7.3/Parser/pgen.c:250:15: warning[-Wempty-body]: suggest braces around empty body in an 'else' statement
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/Python-2.7.3/Parser/pgen.c:253:19: warning: suggest braces around empty body in an 'else' statement [-Wempty-body]
+/builddir/build/BUILD/Python-2.7.3/Parser/pgen.c:253:19: warning[-Wempty-body]: suggest braces around empty body in an 'else' statement
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/Python-2.7.3/Parser/pgen.c:262:19: warning: suggest braces around empty body in an 'else' statement [-Wempty-body]
+/builddir/build/BUILD/Python-2.7.3/Parser/pgen.c:262:19: warning[-Wempty-body]: suggest braces around empty body in an 'else' statement
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/Python-2.7.3/Parser/pgen.c: scope_hint: In function 'compile_atom'
-/builddir/build/BUILD/Python-2.7.3/Parser/pgen.c:286:15: warning: suggest braces around empty body in an 'else' statement [-Wempty-body]
+/builddir/build/BUILD/Python-2.7.3/Parser/pgen.c:286:15: warning[-Wempty-body]: suggest braces around empty body in an 'else' statement
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/Python-2.7.3/Parser/pgen.c:289:19: warning: suggest braces around empty body in an 'else' statement [-Wempty-body]
+/builddir/build/BUILD/Python-2.7.3/Parser/pgen.c:289:19: warning[-Wempty-body]: suggest braces around empty body in an 'else' statement
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/Python-2.7.3/Parser/parsetok.c: scope_hint: In function 'parsetok'
-/builddir/build/BUILD/Python-2.7.3/Parser/parsetok.c:134:43: warning: variable 'handling_with' set but not used [-Wunused-but-set-variable]
+/builddir/build/BUILD/Python-2.7.3/Parser/parsetok.c:134:43: warning[-Wunused-but-set-variable]: variable 'handling_with' set but not used
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:15:5: warning: missing initializer (near initialization for 'states_0[0].s_lower') [-Wmissing-field-initializers]
+/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:15:5: warning[-Wmissing-field-initializers]: missing initializer (near initialization for 'states_0[0].s_lower')
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:16:5: warning: missing initializer (near initialization for 'states_0[1].s_lower') [-Wmissing-field-initializers]
+/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:16:5: warning[-Wmissing-field-initializers]: missing initializer (near initialization for 'states_0[1].s_lower')
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:34:5: warning: missing initializer (near initialization for 'states_1[0].s_lower') [-Wmissing-field-initializers]
+/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:34:5: warning[-Wmissing-field-initializers]: missing initializer (near initialization for 'states_1[0].s_lower')
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:35:5: warning: missing initializer (near initialization for 'states_1[1].s_lower') [-Wmissing-field-initializers]
+/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:35:5: warning[-Wmissing-field-initializers]: missing initializer (near initialization for 'states_1[1].s_lower')
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:36:5: warning: missing initializer (near initialization for 'states_1[2].s_lower') [-Wmissing-field-initializers]
+/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:36:5: warning[-Wmissing-field-initializers]: missing initializer (near initialization for 'states_1[2].s_lower')
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:37:5: warning: missing initializer (near initialization for 'states_1[3].s_lower') [-Wmissing-field-initializers]
+/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:37:5: warning[-Wmissing-field-initializers]: missing initializer (near initialization for 'states_1[3].s_lower')
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:38:5: warning: missing initializer (near initialization for 'states_1[4].s_lower') [-Wmissing-field-initializers]
+/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:38:5: warning[-Wmissing-field-initializers]: missing initializer (near initialization for 'states_1[4].s_lower')
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:48:5: warning: missing initializer (near initialization for 'states_2[0].s_lower') [-Wmissing-field-initializers]
+/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:48:5: warning[-Wmissing-field-initializers]: missing initializer (near initialization for 'states_2[0].s_lower')
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:49:5: warning: missing initializer (near initialization for 'states_2[1].s_lower') [-Wmissing-field-initializers]
+/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:49:5: warning[-Wmissing-field-initializers]: missing initializer (near initialization for 'states_2[1].s_lower')
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:59:5: warning: missing initializer (near initialization for 'states_3[0].s_lower') [-Wmissing-field-initializers]
+/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:59:5: warning[-Wmissing-field-initializers]: missing initializer (near initialization for 'states_3[0].s_lower')
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:60:5: warning: missing initializer (near initialization for 'states_3[1].s_lower') [-Wmissing-field-initializers]
+/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:60:5: warning[-Wmissing-field-initializers]: missing initializer (near initialization for 'states_3[1].s_lower')
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:81:5: warning: missing initializer (near initialization for 'states_4[0].s_lower') [-Wmissing-field-initializers]
+/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:81:5: warning[-Wmissing-field-initializers]: missing initializer (near initialization for 'states_4[0].s_lower')
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:82:5: warning: missing initializer (near initialization for 'states_4[1].s_lower') [-Wmissing-field-initializers]
+/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:82:5: warning[-Wmissing-field-initializers]: missing initializer (near initialization for 'states_4[1].s_lower')
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:83:5: warning: missing initializer (near initialization for 'states_4[2].s_lower') [-Wmissing-field-initializers]
+/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:83:5: warning[-Wmissing-field-initializers]: missing initializer (near initialization for 'states_4[2].s_lower')
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:84:5: warning: missing initializer (near initialization for 'states_4[3].s_lower') [-Wmissing-field-initializers]
+/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:84:5: warning[-Wmissing-field-initializers]: missing initializer (near initialization for 'states_4[3].s_lower')
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:85:5: warning: missing initializer (near initialization for 'states_4[4].s_lower') [-Wmissing-field-initializers]
+/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:85:5: warning[-Wmissing-field-initializers]: missing initializer (near initialization for 'states_4[4].s_lower')
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:102:5: warning: missing initializer (near initialization for 'states_5[0].s_lower') [-Wmissing-field-initializers]
+/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:102:5: warning[-Wmissing-field-initializers]: missing initializer (near initialization for 'states_5[0].s_lower')
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:103:5: warning: missing initializer (near initialization for 'states_5[1].s_lower') [-Wmissing-field-initializers]
+/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:103:5: warning[-Wmissing-field-initializers]: missing initializer (near initialization for 'states_5[1].s_lower')
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:104:5: warning: missing initializer (near initialization for 'states_5[2].s_lower') [-Wmissing-field-initializers]
+/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:104:5: warning[-Wmissing-field-initializers]: missing initializer (near initialization for 'states_5[2].s_lower')
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:105:5: warning: missing initializer (near initialization for 'states_5[3].s_lower') [-Wmissing-field-initializers]
+/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:105:5: warning[-Wmissing-field-initializers]: missing initializer (near initialization for 'states_5[3].s_lower')
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:147:1: warning: missing initializer (near initialization for '_PyParser_Grammar.g_accel') [-Wmissing-field-initializers]
+/builddir/build/BUILD/Python-2.7.3/Parser/metagrammar.c:147:1: warning[-Wmissing-field-initializers]: missing initializer (near initialization for '_PyParser_Grammar.g_accel')
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/Python-2.7.3/Objects/boolobject.c: scope_hint: In function 'bool_print'
-/builddir/build/BUILD/Python-2.7.3/Objects/boolobject.c:8:46: warning: unused parameter 'flags' [-Wunused-parameter]
+/builddir/build/BUILD/Python-2.7.3/Objects/boolobject.c:8:46: warning[-Wunused-parameter]: unused parameter 'flags'
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/Python-2.7.3/Objects/boolobject.c: scope_hint: In function 'bool_new'
-/builddir/build/BUILD/Python-2.7.3/Objects/boolobject.c:53:24: warning: unused parameter 'type' [-Wunused-parameter]
+/builddir/build/BUILD/Python-2.7.3/Objects/boolobject.c:53:24: warning[-Wunused-parameter]: unused parameter 'type'
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/Python-2.7.3/Objects/boolobject.c: scope_hint: At top level
-/builddir/build/BUILD/Python-2.7.3/Objects/boolobject.c:146:1: warning: missing initializer (near initialization for 'bool_as_number.nb_index') [-Wmissing-field-initializers]
+/builddir/build/BUILD/Python-2.7.3/Objects/boolobject.c:146:1: warning[-Wmissing-field-initializers]: missing initializer (near initialization for 'bool_as_number.nb_index')
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/Python-2.7.3/Objects/boolobject.c:189:1: warning: missing initializer (near initialization for 'PyBool_Type.tp_free') [-Wmissing-field-initializers]
+/builddir/build/BUILD/Python-2.7.3/Objects/boolobject.c:189:1: warning[-Wmissing-field-initializers]: missing initializer (near initialization for 'PyBool_Type.tp_free')
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/Python-2.7.3/Objects/bufferobject.c: scope_hint: In function 'PyBuffer_New'
-/builddir/build/BUILD/Python-2.7.3/Objects/bufferobject.c:210:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+/builddir/build/BUILD/Python-2.7.3/Objects/bufferobject.c:210:20: warning[-Wsign-compare]: comparison between signed and unsigned integer expressions
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/Python-2.7.3/Objects/bufferobject.c: scope_hint: In function 'buffer_new'
-/builddir/build/BUILD/Python-2.7.3/Objects/bufferobject.c:233:26: warning: unused parameter 'type' [-Wunused-parameter]
+/builddir/build/BUILD/Python-2.7.3/Objects/bufferobject.c:233:26: warning[-Wunused-parameter]: unused parameter 'type'
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/Python-2.7.3/Objects/bufferobject.c: scope_hint: In function 'buffer_concat'
-/builddir/build/BUILD/Python-2.7.3/Objects/bufferobject.c:416:5: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+/builddir/build/BUILD/Python-2.7.3/Objects/bufferobject.c:416:5: warning[-Wsign-compare]: comparison between signed and unsigned integer expressions
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/Python-2.7.3/Objects/bufferobject.c: scope_hint: At top level
-/builddir/build/BUILD/Python-2.7.3/Objects/bufferobject.c:813:1: warning: missing initializer (near initialization for 'buffer_as_sequence.sq_contains') [-Wmissing-field-initializers]
+/builddir/build/BUILD/Python-2.7.3/Objects/bufferobject.c:813:1: warning[-Wmissing-field-initializers]: missing initializer (near initialization for 'buffer_as_sequence.sq_contains')
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/Python-2.7.3/Objects/bufferobject.c:826:1: warning: missing initializer (near initialization for 'buffer_as_buffer.bf_getbuffer') [-Wmissing-field-initializers]
+/builddir/build/BUILD/Python-2.7.3/Objects/bufferobject.c:826:1: warning[-Wmissing-field-initializers]: missing initializer (near initialization for 'buffer_as_buffer.bf_getbuffer')
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/Python-2.7.3/Objects/bufferobject.c:867:1: warning: missing initializer (near initialization for 'PyBuffer_Type.tp_free') [-Wmissing-field-initializers]
+/builddir/build/BUILD/Python-2.7.3/Objects/bufferobject.c:867:1: warning[-Wmissing-field-initializers]: missing initializer (near initialization for 'PyBuffer_Type.tp_free')
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/Python-2.7.3/Objects/bytearrayobject.c: scope_hint: In function 'bytearray_releasebuffer'
-/builddir/build/BUILD/Python-2.7.3/Objects/bytearrayobject.c:124:60: warning: unused parameter 'view' [-Wunused-parameter]
+/builddir/build/BUILD/Python-2.7.3/Objects/bytearrayobject.c:124:60: warning[-Wunused-parameter]: unused parameter 'view'
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/Python-2.7.3/Objects/bytearrayobject.c:1120: included_from: Included from here.
 /builddir/build/BUILD/Python-2.7.3/Objects/stringlib/partition.h: scope_hint: In function 'stringlib_partition'
-/builddir/build/BUILD/Python-2.7.3/Objects/stringlib/partition.h:11:31: warning: unused parameter 'str_obj' [-Wunused-parameter]
+/builddir/build/BUILD/Python-2.7.3/Objects/stringlib/partition.h:11:31: warning[-Wunused-parameter]: unused parameter 'str_obj'
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/Python-2.7.3/Objects/stringlib/partition.h: scope_hint: In function 'stringlib_rpartition'
-/builddir/build/BUILD/Python-2.7.3/Objects/stringlib/partition.h:61:32: warning: unused parameter 'str_obj' [-Wunused-parameter]
+/builddir/build/BUILD/Python-2.7.3/Objects/stringlib/partition.h:61:32: warning[-Wunused-parameter]: unused parameter 'str_obj'
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/Python-2.7.3/Objects/bytearrayobject.c:1121: included_from: Included from here.
 /builddir/build/BUILD/Python-2.7.3/Objects/stringlib/split.h: scope_hint: In function 'stringlib_split_whitespace'
-/builddir/build/BUILD/Python-2.7.3/Objects/stringlib/split.h:57:38: warning: unused parameter 'str_obj' [-Wunused-parameter]
+/builddir/build/BUILD/Python-2.7.3/Objects/stringlib/split.h:57:38: warning[-Wunused-parameter]: unused parameter 'str_obj'
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/Python-2.7.3/Objects/stringlib/split.h: scope_hint: In function 'stringlib_split_char'
-/builddir/build/BUILD/Python-2.7.3/Objects/stringlib/split.h:105:32: warning: unused parameter 'str_obj' [-Wunused-parameter]
+/builddir/build/BUILD/Python-2.7.3/Objects/stringlib/split.h:105:32: warning[-Wunused-parameter]: unused parameter 'str_obj'
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/Python-2.7.3/Objects/stringlib/split.h: scope_hint: In function 'stringlib_rsplit_whitespace'
-/builddir/build/BUILD/Python-2.7.3/Objects/stringlib/split.h:196:39: warning: unused parameter 'str_obj' [-Wunused-parameter]
+/builddir/build/BUILD/Python-2.7.3/Objects/stringlib/split.h:196:39: warning[-Wunused-parameter]: unused parameter 'str_obj'
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/Python-2.7.3/Objects/stringlib/split.h: scope_hint: In function 'stringlib_rsplit_char'
-/builddir/build/BUILD/Python-2.7.3/Objects/stringlib/split.h:246:33: warning: unused parameter 'str_obj' [-Wunused-parameter]
+/builddir/build/BUILD/Python-2.7.3/Objects/stringlib/split.h:246:33: warning[-Wunused-parameter]: unused parameter 'str_obj'
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/Python-2.7.3/Objects/stringlib/split.h: scope_hint: In function 'stringlib_splitlines'
-/builddir/build/BUILD/Python-2.7.3/Objects/stringlib/split.h:339:32: warning: unused parameter 'str_obj' [-Wunused-parameter]
+/builddir/build/BUILD/Python-2.7.3/Objects/stringlib/split.h:339:32: warning[-Wunused-parameter]: unused parameter 'str_obj'
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/Python-2.7.3/Objects/bytearrayobject.c: scope_hint: In function 'replace_substring_in_place'
-/builddir/build/BUILD/Python-2.7.3/Objects/bytearrayobject.c:1761:57: warning: unused parameter 'to_len' [-Wunused-parameter]
+/builddir/build/BUILD/Python-2.7.3/Objects/bytearrayobject.c:1761:57: warning[-Wunused-parameter]: unused parameter 'to_len'
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/Python-2.7.3/Objects/bytearrayobject.c: scope_hint: In function 'bytearray_reverse'
-/builddir/build/BUILD/Python-2.7.3/Objects/bytearrayobject.c:2187:54: warning: unused parameter 'unused' [-Wunused-parameter]
+/builddir/build/BUILD/Python-2.7.3/Objects/bytearrayobject.c:2187:54: warning[-Wunused-parameter]: unused parameter 'unused'
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/Python-2.7.3/Objects/bytearrayobject.c: scope_hint: In function 'bytearray_fromhex'
-/builddir/build/BUILD/Python-2.7.3/Objects/bytearrayobject.c:2690:29: warning: unused parameter 'cls' [-Wunused-parameter]
+/builddir/build/BUILD/Python-2.7.3/Objects/bytearrayobject.c:2690:29: warning[-Wunused-parameter]: unused parameter 'cls'
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/Python-2.7.3/Objects/bytearrayobject.c: scope_hint: At top level
-/builddir/build/BUILD/Python-2.7.3/Objects/bytearrayobject.c:2926:1: warning: missing initializer (near initialization for 'PyByteArray_Type.tp_is_gc') [-Wmissing-field-initializers]
+/builddir/build/BUILD/Python-2.7.3/Objects/bytearrayobject.c:2926:1: warning[-Wmissing-field-initializers]: missing initializer (near initialization for 'PyByteArray_Type.tp_is_gc')
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/Python-2.7.3/Objects/bytearrayobject.c:2991:5: warning: missing initializer (near initialization for 'bytearrayiter_methods[1].ml_flags') [-Wmissing-field-initializers]
+/builddir/build/BUILD/Python-2.7.3/Objects/bytearrayobject.c:2991:5: warning[-Wmissing-field-initializers]: missing initializer (near initialization for 'bytearrayiter_methods[1].ml_flags')
 
 Error: COMPILER_WARNING:
-/builddir/build/BUILD/Python-2.7.3/Objects/bytearrayobject.c:3025:1: warning: missing initializer (near initialization for 'PyByteArrayIter_Type.tp_getset') [-Wmissing-field-initializers]
+/builddir/build/BUILD/Python-2.7.3/Objects/bytearrayobject.c:3025:1: warning[-Wmissing-field-initializers]: missing initializer (near initialization for 'PyByteArrayIter_Type.tp_getset')
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/Python-2.7.3/Parser/tokenizer.c: scope_hint: In function 'check_bom'
-/builddir/build/BUILD/Python-2.7.3/Parser/tokenizer.c:311:15: warning: unused parameter 'set_readline' [-Wunused-parameter]
+/builddir/build/BUILD/Python-2.7.3/Parser/tokenizer.c:311:15: warning[-Wunused-parameter]: unused parameter 'set_readline'

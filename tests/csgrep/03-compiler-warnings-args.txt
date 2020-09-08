@@ -1,1 +1,1 @@
---quiet --path '^/builddir/build/BUILD/' --event=warning --remove-duplicates
+--quiet --path '^/builddir/build/BUILD/' --event='warning.*' --remove-duplicates
