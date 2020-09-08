@@ -9,8 +9,8 @@
                     "file_name": "/builddir/build/BUILDROOT/systemtap-4.4-0.20200805git82b8e1a07.eln103.x86_64/usr/bin/stap-report",
                     "line": 125,
                     "column": 39,
-                    "event": "note",
-                    "message": "read without -r will mangle backslashes. [SC2162]",
+                    "event": "note[SC2162]",
+                    "message": "read without -r will mangle backslashes.",
                     "verbosity_level": "0"
                 }
             ]
@@ -24,8 +24,8 @@
                     "file_name": "/builddir/build/BUILDROOT/systemtap-4.4-0.20200805git82b8e1a07.eln103.x86_64/usr/bin/stap-report",
                     "line": 143,
                     "column": 6,
-                    "event": "error",
-                    "message": "Don't put spaces around the = in assignments (or quote to make it literal). [SC1068]",
+                    "event": "error[SC1068]",
+                    "message": "Don't put spaces around the = in assignments (or quote to make it literal).",
                     "verbosity_level": "0"
                 }
             ]
@@ -39,8 +39,8 @@
                     "file_name": "/builddir/build/BUILDROOT/systemtap-4.4-0.20200805git82b8e1a07.eln103.x86_64/usr/bin/stap-report",
                     "line": 143,
                     "column": 6,
-                    "event": "error",
-                    "message": "Unexpected ==. For assignment, use =. For comparison, use [/[[. [SC1097]",
+                    "event": "error[SC1097]",
+                    "message": "Unexpected ==. For assignment, use =. For comparison, use [/[[.",
                     "verbosity_level": "0"
                 }
             ]
@@ -634,8 +634,8 @@
                     "file_name": "/builddir/build/BUILDROOT/systemtap-4.4-0.20200805git82b8e1a07.eln103.x86_64/usr/bin/stap-server",
                     "line": 17,
                     "column": 5,
-                    "event": "note",
-                    "message": "Not following: /etc/rc.d/init.d/functions was not specified as input (see shellcheck -x). [SC1091]",
+                    "event": "note[SC1091]",
+                    "message": "Not following: /etc/rc.d/init.d/functions was not specified as input (see shellcheck -x).",
                     "verbosity_level": "0"
                 }
             ]
@@ -649,8 +649,8 @@
                     "file_name": "/builddir/build/BUILDROOT/systemtap-4.4-0.20200805git82b8e1a07.eln103.x86_64/usr/bin/stap-server",
                     "line": 29,
                     "column": 3,
-                    "event": "note",
-                    "message": "Not following: /usr/libexec/systemtap/stap-env was not specified as input (see shellcheck -x). [SC1091]",
+                    "event": "note[SC1091]",
+                    "message": "Not following: /usr/libexec/systemtap/stap-env was not specified as input (see shellcheck -x).",
                     "verbosity_level": "0"
                 }
             ]
@@ -664,8 +664,8 @@
                     "file_name": "/builddir/build/BUILDROOT/systemtap-4.4-0.20200805git82b8e1a07.eln103.x86_64/usr/bin/stap-server",
                     "line": 34,
                     "column": 19,
-                    "event": "warning",
-                    "message": "stap_pkglibexecdir is referenced but not assigned. [SC2154]",
+                    "event": "warning[SC2154]",
+                    "message": "stap_pkglibexecdir is referenced but not assigned.",
                     "verbosity_level": "0"
                 }
             ]

@@ -5,12 +5,15 @@ export CSSORT="`readlink -f ../csdiff_build/cssort`"
 for i in diff*/; do (
     cd $i || exit $?
     basename "$PWD"
-    set -x
-    "$CSDIFF" -c 00-old.err 00-new.err > 00-add.err
-    "$CSDIFF" -cz 00-old.err 00-new.err > 00-add-z.err
-    "$CSDIFF" -cx 00-old.err 00-new.err > 00-fix.err
-    "$CSDIFF" -cxz 00-old.err 00-new.err > 00-fix-z.err
-    set +x
+    for j in [0-9][0-9]*-old.err; do
+        set -x
+        tst=${j%-old.err}
+        "$CSDIFF" -c   ${tst}-old.err ${tst}-new.err > ${tst}-add.err
+        "$CSDIFF" -cz  ${tst}-old.err ${tst}-new.err > ${tst}-add-z.err
+        "$CSDIFF" -cx  ${tst}-old.err ${tst}-new.err > ${tst}-fix.err
+        "$CSDIFF" -cxz ${tst}-old.err ${tst}-new.err > ${tst}-fix-z.err
+        set +x
+    done
     echo
 ) done
 

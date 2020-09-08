@@ -541,7 +541,8 @@ class PostProcessor {
         PostProcessor():
             reGccAnalCoreEvt_("^(.*) (\\[-Wanalyzer-[A-Za-z0-9-]+\\])$"),
             reGccAnalCwe_("^(.*) \\[CWE-([0-9]+)\\]$"),
-            reGccWarningEvt_("^(.*) (\\[-W[A-Za-z0-9-]+\\])$")
+            reGccWarningEvt_("^(.*) (\\[-W[A-Za-z0-9-]+\\])$"),
+            reShellCheckId_("(^.*) (\\[SC([0-9]+)\\])$")
         {
         }
 
@@ -552,10 +553,12 @@ class PostProcessor {
         const boost::regex reGccAnalCoreEvt_;
         const boost::regex reGccAnalCwe_;
         const boost::regex reGccWarningEvt_;
+        const boost::regex reShellCheckId_;
         const LangDetector langDetector_;
 
         void transGccAnal(Defect *pDef);
         void transGccSuffix(Defect *pDef);
+        void transShellCheckId(Defect *pDef);
 };
 
 void PostProcessor::transGccAnal(Defect *pDef) {
@@ -599,9 +602,26 @@ void PostProcessor::transGccSuffix(Defect *pDef) {
     keyEvt.msg = sm[/* msg */ 1];
 }
 
+void PostProcessor::transShellCheckId(Defect *pDef) {
+    if ("SHELLCHECK_WARNING" != pDef->checker)
+        return;
+
+    // check for [SC1234] suffix in message of the key event
+    DefEvent &keyEvt = pDef->events[pDef->keyEventIdx];
+    boost::smatch sm;
+    if (!boost::regex_match(keyEvt.msg, sm, reShellCheckId_))
+        return;
+
+    // append [SC1234] to key event ID and remove it from event msg
+    keyEvt.event += sm[/* id */ 2];
+    // this invalidates sm
+    keyEvt.msg = sm[/* msg */ 1];
+}
+
 void PostProcessor::apply(Defect *pDef) {
     this->transGccAnal(pDef);
     this->transGccSuffix(pDef);
+    this->transShellCheckId(pDef);
     this->langDetector_.inferLangFromChecker(pDef);
 }
 
