@@ -448,6 +448,12 @@ void HtmlWriter::handleDef(const Defect &def) {
         << d->defCnt << "'>[#def"
         << d->defCnt << "]</a>";
 
+    if (0 < def.imp) {
+        // highlight the "imp" flag
+        d->str << " <span style='color: #FF0000; font-weight: bold;'>"
+            "[important]</span>";
+    }
+
     d->writeNewDefWarning(def);
     
     d->str << "\n";
