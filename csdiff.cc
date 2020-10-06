@@ -49,6 +49,7 @@ int main(int argc, char *argv[])
             ("quiet,q", "do not report any parsing errors")
             ("coverity-output,c", "write the result in Coverity format")
             ("json-output,j", "write the result in JSON format")
+            ("html-output", "write the result in HTML format")
             ("file-rename,s", po::value<TStringList>(),
              "account the file base-name change, [OLD,NEW] (*testing*)");
 
@@ -91,9 +92,10 @@ int main(int argc, char *argv[])
 
     const bool forceCov  = !!vm.count("coverity-output");
     const bool forceJson = !!vm.count("json-output");
-    if (forceCov && forceJson) {
+    const bool useHtml = !!vm.count("html-output");
+    if (1 < static_cast<int>(forceCov) + forceJson + useHtml) {
         std::cerr << name << ": error: options --coverity-output(-c) "
-            "and --json-output(-j) are mutually exclusive\n\n";
+            "--json-output(-j), and --html-output are mutually exclusive\n\n";
         return 1;
     }
 
@@ -102,6 +104,8 @@ int main(int argc, char *argv[])
         format = FF_COVERITY;
     else if (forceJson)
         format = FF_JSON;
+    else if (useHtml)
+        format = FF_HTML;
     else
         format = FF_AUTO;
 

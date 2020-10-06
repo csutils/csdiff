@@ -22,6 +22,7 @@
 #include "cswriter.hh"
 #include "instream.hh"
 #include "json-writer.hh"
+#include "html-writer.hh"
 
 #include <boost/regex.hpp>
 
@@ -74,6 +75,7 @@ void AbstractWriter::setScanProps(const TScanProps &scanProps) {
 }
 
 AbstractWriter* createWriter(
+        std::ostream               &strDst,
         const EFileFormat           format,
         const EColorMode            cm,
         const TScanProps           &scanProps)
@@ -81,20 +83,28 @@ AbstractWriter* createWriter(
     AbstractWriter *writer = 0;
 
     switch (format) {
+        case FF_GCC:
+            // we have no writer for GCC format, fallback to Coverity
+            // fall through!
+
         case FF_INVALID:
         case FF_COVERITY:
-            writer = new CovWriter(std::cout, cm);
+            writer = new CovWriter(strDst, cm);
             break;
-
-        case FF_GCC:
-            // TODO
 
         case FF_AUTO:
             // TODO
 
         case FF_JSON:
-            writer = new JsonWriter(std::cout);
+            writer = new JsonWriter(strDst);
             break;
+
+        case FF_HTML: {
+            const std::string emp;
+            const std::string spPlacement = "bottom";
+            writer = new HtmlWriter(strDst, emp, emp, spPlacement);
+            break;
+        }
     }
 
     if (!scanProps.empty())

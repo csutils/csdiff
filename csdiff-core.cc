@@ -54,21 +54,17 @@ bool /* anyError */ diffScans(
     Parser pOld(strOld, fnOld, silent);
     Parser pNew(strNew, fnNew, silent);
 
+    // propagate scan properties if available
+    TScanProps props = pNew.getScanProps();
+    mergeScanProps(props, pOld.getScanProps());
+
     // decide which format use for the output
     if (format == FF_AUTO)
         format = pNew.inputFormat();
 
     // create the appropriate writer
-    boost::shared_ptr<AbstractWriter> writer;
-    if (format == FF_JSON)
-        writer.reset(new JsonWriter(strDst));
-    else
-        writer.reset(new CovWriter(strDst, cm));
-
-    // propagate scan properties if available
-    TScanProps props = pNew.getScanProps();
-    mergeScanProps(props, pOld.getScanProps());
-    writer->setScanProps(props);
+    typedef boost::shared_ptr<AbstractWriter> TWriterPtr;
+    TWriterPtr writer(createWriter(strDst, format, cm, props));
 
     // read old
     DefLookup stor(/* TODO: document this side effect */ showInternal);

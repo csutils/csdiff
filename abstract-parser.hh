@@ -32,7 +32,8 @@ enum EFileFormat {
     FF_AUTO,                                ///< choose format automatically
     FF_COVERITY,                            ///< what cov-format-errors produces
     FF_GCC,                                 ///< GCC format
-    FF_JSON                                 ///< JSON format
+    FF_JSON,                                ///< JSON format
+    FF_HTML                                 ///< HTML format (output only)
 };
 
 // abstract class with a factory method

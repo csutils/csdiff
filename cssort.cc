@@ -49,8 +49,8 @@ class GenericSort: public AbstractWriter {
             std::sort(cont_.begin(), cont_.end());
 
             // use the same output format is the input format
-            AbstractWriter *writer = createWriter(this->inputFormat(), cm_);
-            writer->setScanProps(scanProps_);
+            AbstractWriter *writer =
+                createWriter(std::cout, this->inputFormat(), cm_, scanProps_);
 
             // write the data
             BOOST_FOREACH(const Defect &def, cont_)

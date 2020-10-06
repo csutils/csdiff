@@ -68,6 +68,7 @@ class AbstractWriter {
 };
 
 AbstractWriter* createWriter(
+        std::ostream               &strDst,
         const EFileFormat           format,
         const EColorMode            cm        = CM_AUTO,
         const TScanProps           &scanProps = TScanProps());
