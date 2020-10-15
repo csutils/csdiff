@@ -21,6 +21,8 @@
 
 #include "csparser.hh"              // for KeyEventDigger
 
+#include <set>
+
 #include <boost/foreach.hpp>
 #include <boost/property_tree/json_parser.hpp>
 
@@ -44,10 +46,25 @@ class AbstractTreeDecoder {
 /// tree decoder of the native JSON format of csdiff
 class SimpleTreeDecoder: public AbstractTreeDecoder {
     public:
+        SimpleTreeDecoder(const std::string &fileName, bool silent);
         virtual void readNode(Defect *def, const pt::ptree &node);
 
     private:
-        KeyEventDigger              keDigger;
+        enum ENodeKind {
+            NK_DEFECT,
+            NK_EVENT,
+            NK_LAST
+        };
+
+        void reportUnknownNodes(ENodeKind, const pt::ptree &) const;
+
+        typedef std::set<std::string>       TNodeSet;
+        typedef std::vector<TNodeSet>       TNodeStore;
+
+        const std::string           fileName_;
+        const bool                  silent_;
+        TNodeStore                  nodeStore_;
+        KeyEventDigger              keDigger_;
 };
 
 /// tree decoder of the Coverity JSON format
@@ -145,7 +162,7 @@ JsonParser::JsonParser(
 
         if (findChildOf(&d->defList, d->root, "defects"))
             // csdiff-native JSON format
-            d->decoder = new SimpleTreeDecoder;
+            d->decoder = new SimpleTreeDecoder(fileName, silent);
         else if (findChildOf(&d->defList, d->root, "issues"))
             // Coverity JSON format
             d->decoder = new CovTreeDecoder;
@@ -214,12 +231,65 @@ bool JsonParser::getNext(Defect *def) {
     }
 }
 
+SimpleTreeDecoder::SimpleTreeDecoder(const std::string &fileName, bool silent):
+    fileName_(fileName),
+    silent_(silent)
+{
+    if (silent_)
+        // skip initialization of nodeStore_ because no lookup will ever happen
+        return;
+
+    nodeStore_.resize(NK_LAST);
+
+    // known per-defect subnodes
+    nodeStore_[NK_DEFECT] = {
+        "annotation",
+        "checker",
+        "cwe",
+        "defect_id",
+        "events",
+        "function",
+        "imp",
+        "key_event_idx",
+        "language",
+    };
+
+    // known per-event subnodes
+    nodeStore_[NK_EVENT] = {
+        "column",
+        "event",
+        "file_name",
+        "line",
+        "message",
+        "verbosity_level",
+    };
+}
+
+void SimpleTreeDecoder::reportUnknownNodes(ENodeKind nk, const pt::ptree &node)
+    const
+{
+    if (silent_)
+        return;
+
+    const TNodeSet &nodeSet = nodeStore_[nk];
+
+    BOOST_FOREACH(const pt::ptree::value_type &item, node) {
+        const std::string &name = item.first;
+        if (nodeSet.end() == nodeSet.find(name))
+            std::cerr << fileName_
+                << ": warning: unknown JSON node: " << name
+                << std::endl;
+    }
+}
+
 void SimpleTreeDecoder::readNode(
         Defect                      *def,
         const pt::ptree             &defNode)
 {
     // make sure the Defect structure is properly initialized
     (*def) = Defect();
+
+    this->reportUnknownNodes(NK_DEFECT, defNode);
 
     // the checker field is mandatory
     def->checker = defNode.get<std::string>("checker");
@@ -231,6 +301,7 @@ void SimpleTreeDecoder::readNode(
     const pt::ptree &evtListSrc = defNode.get_child("events");
     BOOST_FOREACH(const pt::ptree::value_type &evtItem, evtListSrc) {
         const pt::ptree &evtNode = evtItem.second;
+        this->reportUnknownNodes(NK_EVENT, evtNode);
 
         DefEvent evt;
         evt.fileName    = valueOf<std::string   >(evtNode, "file_name"  , "");
@@ -254,7 +325,7 @@ void SimpleTreeDecoder::readNode(
 
     if (defNode.not_found() == defNode.find("key_event_idx")) {
         // key event not specified, try to guess it
-        if (!this->keDigger.guessKeyEvent(def))
+        if (!keDigger_.guessKeyEvent(def))
             throw pt::ptree_error("failed to guess key event");
     }
     else {
@@ -269,7 +340,7 @@ void SimpleTreeDecoder::readNode(
 
     if (verbosityLevelNeedsInit)
         // missing or incomplete verbosity_level, initialize it over
-        this->keDigger.initVerbosity(def);
+        keDigger_.initVerbosity(def);
 
     // read annotation if available
     def->annotation = valueOf<std::string>(defNode, "annotation", "");

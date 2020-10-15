@@ -1,0 +1,64 @@
+{
+    "defects": [
+        {
+            "checker": "MISSING_MOVE_ASSIGNMENT",
+            "function": "null",
+            "lang": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/bpf-bitset.h",
+                    "line": 209,
+                    "event": "missing_move_assignment",
+                    "message": "Class \"bpf::bitset::set1\" may benefit from adding a move assignment operator. See other events which show the copy assignment operator being applied to rvalue(s), where a move assignment may be faster.",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/bpf-opt.cxx",
+                    "line": 633,
+                    "event": "copy_assignment",
+                    "message": "Example 1: Copy assignment is performed on an object (rvalue) of type \"bpf::bitset::set1\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/bpf-opt.cxx",
+                    "line": 528,
+                    "event": "copy_assignment",
+                    "message": "Example 2: Copy assignment is performed on an object (rvalue) of type \"bpf::bitset::set1\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/bpf-opt.cxx",
+                    "line": 533,
+                    "event": "copy_assignment",
+                    "message": "Example 3: Copy assignment is performed on an object (rvalue) of type \"bpf::bitset::set1\".",
+                    "verbosity_level": "1",
+                    "comment": "useless event"
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT_CTOR",
+            "cwe": 457,
+            "function": "bpf::life_data::life_data(unsigned long, unsigned long)",
+            "language": "c/c++",
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/bpf-opt.cxx",
+                    "line": 475,
+                    "event": "member_decl",
+                    "message": "Class member declaration for \"npartitions\".",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/bpf-opt.cxx",
+                    "line": 487,
+                    "event": "uninit_member",
+                    "message": "Non-static class member \"npartitions\" is not initialized in this constructor nor in any functions that it calls.",
+                    "verbosity_level": "0"
+                }
+            ]
+        }
+    ]
+}

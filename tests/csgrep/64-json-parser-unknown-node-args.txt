@@ -1,0 +1,1 @@
+--mode=json 2> >(sed "s|^.*/||") >/dev/null
