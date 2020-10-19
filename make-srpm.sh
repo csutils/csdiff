@@ -94,6 +94,10 @@ License:    GPLv3+
 URL:        https://github.com/kdudka/csdiff
 Source0:    https://github.com/kdudka/csdiff/releases/download/%{name}-%{version}/%{name}-%{version}.tar.xz
 
+# the following upstream commit is needed to work with up2date csdiff/csgrep
+# https://github.com/kdudka/csmock/commit/48b09b3a
+Conflicts:  csmock-plugin-shellcheck <= 2.5
+
 BuildRequires: boost-devel
 BuildRequires: cmake
 BuildRequires: gcc-c++
@@ -107,7 +111,6 @@ defect lists using various filtering predicates.
 %if %{with python2}
 %package -n python2-%{name}
 Summary:        Python interface to csdiff for Python 2
-Conflicts:      %{name} <= 1.2.3
 %if 0%{?fedora} > 28
 BuildRequires:  boost-python2-devel
 %endif
