@@ -536,39 +536,43 @@ bool BasicGccParser::hasError() const {
     return hasError_;
 }
 
-class PostProcessor {
-    public:
-        PostProcessor():
-            reGccAnalCoreEvt_("^(.*) (\\[-Wanalyzer-[^ \\]]+\\])$"),
-            reGccAnalCwe_("^(.*) \\[CWE-([0-9]+)\\]$"),
-            reGccWarningEvt_("^(.*) (\\[-W[^ \\]]+\\])$"),
-            reShellCheckId_("(^.*) (\\[SC([0-9]+)\\])$")
-        {
-        }
+struct GccPostProcessor::Private {
+    const boost::regex reGccAnalCoreEvt;
+    const boost::regex reGccAnalCwe;
+    const boost::regex reGccWarningEvt;
+    const boost::regex reShellCheckId;
+    const LangDetector langDetector;
 
-        /// apply final transformations on a successfully parsed defect
-        void apply(Defect *pDef);
+    Private():
+        reGccAnalCoreEvt("^(.*) (\\[-Wanalyzer-[^ \\]]+\\])$"),
+        reGccAnalCwe("^(.*) \\[CWE-([0-9]+)\\]$"),
+        reGccWarningEvt("^(.*) (\\[-W[^ \\]]+\\])$"),
+        reShellCheckId("(^.*) (\\[SC([0-9]+)\\])$")
+    {
+    }
 
-    private:
-        const boost::regex reGccAnalCoreEvt_;
-        const boost::regex reGccAnalCwe_;
-        const boost::regex reGccWarningEvt_;
-        const boost::regex reShellCheckId_;
-        const LangDetector langDetector_;
-
-        void transGccAnal(Defect *pDef);
-        void transGccSuffix(Defect *pDef);
-        void transShellCheckId(Defect *pDef);
+    void transGccAnal(Defect *pDef) const;
+    void transGccSuffix(Defect *pDef) const;
+    void transShellCheckId(Defect *pDef) const;
 };
 
-void PostProcessor::transGccAnal(Defect *pDef) {
+GccPostProcessor::GccPostProcessor():
+    d(new Private)
+{
+}
+
+GccPostProcessor::~GccPostProcessor() {
+    delete d;
+}
+
+void GccPostProcessor::Private::transGccAnal(Defect *pDef) const {
     if ("COMPILER_WARNING" != pDef->checker)
         return;
 
     // check for [-Wanalyzer-...] suffix in message of the key event
     DefEvent &keyEvt = pDef->events[pDef->keyEventIdx];
     boost::smatch sm;
-    if (!boost::regex_match(keyEvt.msg, sm, reGccAnalCoreEvt_))
+    if (!boost::regex_match(keyEvt.msg, sm, this->reGccAnalCoreEvt))
         return;
 
     // COMPILER_WARNING -> GCC_ANALYZER_WARNING
@@ -578,7 +582,7 @@ void PostProcessor::transGccAnal(Defect *pDef) {
     keyEvt.msg = sm[/* msg */ 1];
 
     // pick CWE number if available
-    if (!boost::regex_match(keyEvt.msg, sm, reGccAnalCwe_))
+    if (!boost::regex_match(keyEvt.msg, sm, this->reGccAnalCwe))
         return;
 
     pDef->cwe = parse_int(sm[/* cwe */ 2]);
@@ -586,14 +590,14 @@ void PostProcessor::transGccAnal(Defect *pDef) {
     keyEvt.msg = sm[/* msg */ 1];
 }
 
-void PostProcessor::transGccSuffix(Defect *pDef) {
+void GccPostProcessor::Private::transGccSuffix(Defect *pDef) const {
     if ("COMPILER_WARNING" != pDef->checker)
         return;
 
     // check for [-W...] suffix in message of the key event
     DefEvent &keyEvt = pDef->events[pDef->keyEventIdx];
     boost::smatch sm;
-    if (!boost::regex_match(keyEvt.msg, sm, reGccWarningEvt_))
+    if (!boost::regex_match(keyEvt.msg, sm, this->reGccWarningEvt))
         return;
 
     // append [-W...] to key event ID and remove it from event msg
@@ -602,14 +606,14 @@ void PostProcessor::transGccSuffix(Defect *pDef) {
     keyEvt.msg = sm[/* msg */ 1];
 }
 
-void PostProcessor::transShellCheckId(Defect *pDef) {
+void GccPostProcessor::Private::transShellCheckId(Defect *pDef) const {
     if ("SHELLCHECK_WARNING" != pDef->checker)
         return;
 
     // check for [SC1234] suffix in message of the key event
     DefEvent &keyEvt = pDef->events[pDef->keyEventIdx];
     boost::smatch sm;
-    if (!boost::regex_match(keyEvt.msg, sm, reShellCheckId_))
+    if (!boost::regex_match(keyEvt.msg, sm, this->reShellCheckId))
         return;
 
     // append [SC1234] to key event ID and remove it from event msg
@@ -618,16 +622,16 @@ void PostProcessor::transShellCheckId(Defect *pDef) {
     keyEvt.msg = sm[/* msg */ 1];
 }
 
-void PostProcessor::apply(Defect *pDef) {
-    this->transGccAnal(pDef);
-    this->transGccSuffix(pDef);
-    this->transShellCheckId(pDef);
-    this->langDetector_.inferLangFromChecker(pDef);
+void GccPostProcessor::apply(Defect *pDef) const {
+    d->transGccAnal(pDef);
+    d->transGccSuffix(pDef);
+    d->transShellCheckId(pDef);
+    d->langDetector.inferLangFromChecker(pDef);
 }
 
 struct GccParser::Private {
     BasicGccParser              core;
-    PostProcessor               postProc;
+    GccPostProcessor            postProc;
     Defect                      lastDef;
     const boost::regex          reLocation;
 

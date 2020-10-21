@@ -41,4 +41,21 @@ class GccParser: public AbstractParser {
         Private *d;
 };
 
+class GccPostProcessor {
+    public:
+        GccPostProcessor();
+        ~GccPostProcessor();
+
+        /// apply final transformations on a successfully parsed defect
+        void apply(Defect *pDef) const;
+
+    private:
+        GccPostProcessor(const GccPostProcessor &);
+        GccPostProcessor& operator=(const GccPostProcessor &);
+
+        struct Private;
+        Private *d;
+};
+
+
 #endif /* H_GUARD_GCC_PARSER_H */
