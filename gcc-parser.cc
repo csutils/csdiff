@@ -261,7 +261,7 @@ class MultilineConcatenator: public AbstractTokenFilter {
         MultilineConcatenator(ITokenizer *slave):
             AbstractTokenFilter(slave),
             lastTok_(T_NULL),
-#define REASON_SUFFIX "( \\[[^\\]]+\\])?" RE_TOOL_SUFFIX
+#define REASON_SUFFIX "( \\[[^ \\]]+\\])?" RE_TOOL_SUFFIX
             reBase_("^([^ ].*[^\\]])" REASON_SUFFIX),
             reExtra_("^ *((?: [^ ].*[^\\]])|(?:\\(.+\\)))" REASON_SUFFIX)
         {
@@ -539,9 +539,9 @@ bool BasicGccParser::hasError() const {
 class PostProcessor {
     public:
         PostProcessor():
-            reGccAnalCoreEvt_("^(.*) (\\[-Wanalyzer-[A-Za-z0-9-]+\\])$"),
+            reGccAnalCoreEvt_("^(.*) (\\[-Wanalyzer-[^ \\]]+\\])$"),
             reGccAnalCwe_("^(.*) \\[CWE-([0-9]+)\\]$"),
-            reGccWarningEvt_("^(.*) (\\[-W[A-Za-z0-9-]+\\])$"),
+            reGccWarningEvt_("^(.*) (\\[-W[^ \\]]+\\])$"),
             reShellCheckId_("(^.*) (\\[SC([0-9]+)\\])$")
         {
         }
@@ -590,7 +590,7 @@ void PostProcessor::transGccSuffix(Defect *pDef) {
     if ("COMPILER_WARNING" != pDef->checker)
         return;
 
-    // check for [-#...] suffix in message of the key event
+    // check for [-W...] suffix in message of the key event
     DefEvent &keyEvt = pDef->events[pDef->keyEventIdx];
     boost::smatch sm;
     if (!boost::regex_match(keyEvt.msg, sm, reGccWarningEvt_))

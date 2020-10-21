@@ -183,7 +183,7 @@ Error: COMPILER_WARNING:
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_init.c: scope_hint: In function 'IMB_basic_input'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_init.c:398:4: warning: format '%c' expects argument of type 'char *', but argument 4 has type 'int *' [-Wformat=]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-x86_64/IMB-3.2/src/IMB_init.c:398:4: warning[-Wformat=]: format '%c' expects argument of type 'char *', but argument 4 has type 'int *'
 #    ierr=sscanf((*argv)[iarg+1],"%d%c%d",&c_info->px,&i,&c_info->py);
 #    ^
 
@@ -922,7 +922,7 @@ Error: COMPILER_WARNING:
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_init.c: scope_hint: In function 'IMB_basic_input'
-/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_init.c:398:4: warning: format '%c' expects argument of type 'char *', but argument 4 has type 'int *' [-Wformat=]
+/builddir/build/BUILD/mpitests-3.2/.mvapich2-psm-x86_64/IMB-3.2/src/IMB_init.c:398:4: warning[-Wformat=]: format '%c' expects argument of type 'char *', but argument 4 has type 'int *'
 #    ierr=sscanf((*argv)[iarg+1],"%d%c%d",&c_info->px,&i,&c_info->py);
 #    ^
 
