@@ -197,7 +197,21 @@ struct KeyEventDigger::Private {
     typedef std::map<std::string, TSet>             TMap;
     TMap hMap;
     TSet blackList, traceEvts;
+    const boost::regex reEvtSuffix = boost::regex("^(.*)\\[[^ \\]]+\\]$");
+    const std::string stripEvtName(const std::string &) const;
 };
+
+/// strip the [-W...] suffix from event name
+const std::string KeyEventDigger::Private::stripEvtName(const std::string &evt)
+    const
+{
+    boost::smatch sm;
+    if (boost::regex_match(evt, sm, this->reEvtSuffix))
+        return sm[/* bare evt */ 1];
+
+    // no match
+    return evt;
+}
 
 KeyEventDigger::KeyEventDigger():
     d(new Private)
@@ -250,6 +264,10 @@ KeyEventDigger::KeyEventDigger():
     d->hMap["CLANG_WARNING"]        .insert("error");
     d->hMap["CLANG_WARNING"]        .insert("warning");
     d->hMap["CLANG_WARNING"]        .insert("fatal error");
+    // ... and `gcc -fanalyzer`
+    d->hMap["GCC_ANALYZER_WARNING"] .insert("error");
+    d->hMap["GCC_ANALYZER_WARNING"] .insert("warning");
+    d->hMap["GCC_ANALYZER_WARNING"] .insert("fatal error");
 
     // events that should never be used as key events (excluding trace events)
     d->blackList.insert("another_instance");
@@ -321,7 +339,8 @@ bool KeyEventDigger::guessKeyEvent(Defect *def) {
 
     for (int idx = evtCount - 1U; idx >= 0; --idx) {
         const DefEvent &evt = evtList[idx];
-        if (!pKeyEvents->count(evt.event))
+        const std::string evtName = d->stripEvtName(evt.event);
+        if (!pKeyEvents->count(evtName))
             continue;
 
         // matched
