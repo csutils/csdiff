@@ -21,6 +21,7 @@
 #include "cwe-mapper.hh"
 #include "deflookup.hh"
 #include "defqueue.hh"
+#include "gcc-parser.hh"
 #include "instream.hh"
 #include "json-writer.hh"
 #include "version.hh"
@@ -117,6 +118,25 @@ void ImpFlagDecorator::handleDef(const Defect &defOrig) {
     }
 }
 
+class ParsingRulesDecorator: public GenericAbstractFilter {
+    public:
+        ParsingRulesDecorator(AbstractWriter *writer):
+            GenericAbstractFilter(writer)
+        {
+        }
+
+        virtual void handleDef(const Defect &def);
+
+    private:
+        GccPostProcessor gccPostProc_;
+};
+
+void ParsingRulesDecorator::handleDef(const Defect &defOrig) {
+    Defect def = defOrig;
+    gccPostProc_.apply(&def);
+    slave_->handleDef(def);
+}
+
 class OrphanWriter {
     public:
         OrphanWriter(AbstractWriter &writer):
@@ -197,6 +217,8 @@ int main(int argc, char *argv[]) {
              "load scan properties from the given INI file")
             ("mapfile", po::value<string>(),
              "load defect IDs from comma-separated mapfile")
+            ("reapply-parsing-rules", "canonicalize data originally parsed "
+             "by an older version of the parser")
             ("quiet,q", "do not report non-fatal errors")
             ("help", "produce help message")
             ("version", "print version");
@@ -250,7 +272,10 @@ int main(int argc, char *argv[]) {
 
     AbstractWriter *jsonWriter = new JsonWriter(std::cout);
     ImpFlagDecorator *impDec = new ImpFlagDecorator(jsonWriter);
-    CweMapDecorator writer(impDec, silent);
+    CweMapDecorator *cweDec = new CweMapDecorator(impDec, silent);
+    AbstractWriter *writer = cweDec;
+    if (vm.count("reapply-parsing-rules"))
+        writer = new ParsingRulesDecorator(writer);
 
     DefQueue defQueue;
 
@@ -260,7 +285,7 @@ int main(int argc, char *argv[]) {
         try {
             // load CWE mapping from the given file
             InStream strCwe(fnCwe.c_str());
-            if (!writer.cweMap().loadCweMap(strCwe.str(), fnCwe))
+            if (!cweDec->cweMap().loadCweMap(strCwe.str(), fnCwe))
                 hasError = true;
         }
         catch (const InFileException &e) {
@@ -285,7 +310,7 @@ int main(int argc, char *argv[]) {
     }
 
     const unsigned filesCnt = files.size();
-    if (!filesCnt && !fnIni.empty() && !loadPropsFromIniFile(writer, fnIni))
+    if (!filesCnt && !fnIni.empty() && !loadPropsFromIniFile(*writer, fnIni))
         hasError = true;
 
     for (unsigned i = 0U; i < filesCnt; ++i) {
@@ -298,16 +323,16 @@ int main(int argc, char *argv[]) {
 
             if (!i) {
                 // try to load scan properties from the first input file
-                writer.setScanProps(pErr.getScanProps());
+                writer->setScanProps(pErr.getScanProps());
 
                 // load .ini if available
-                if (!fnIni.empty() && !loadPropsFromIniFile(writer, fnIni))
+                if (!fnIni.empty() && !loadPropsFromIniFile(*writer, fnIni))
                     hasError = true;
             }
 
             if (fnMap.empty()) {
                 // no .map file given
-                writer.handleFile(pErr, fnErr);
+                writer->handleFile(pErr, fnErr);
             }
             else {
                 // load defects from .err
@@ -328,7 +353,7 @@ int main(int argc, char *argv[]) {
         try {
             // process the given .map file
             InStream strMap(fnMap.c_str());
-            if (!writeMappedDefects(writer, defQueue, strMap.str(), fnMap))
+            if (!writeMappedDefects(*writer, defQueue, strMap.str(), fnMap))
                 hasError = true;
         }
         catch (const InFileException &e) {
@@ -337,6 +362,7 @@ int main(int argc, char *argv[]) {
         }
     }
 
-    writer.flush();
+    writer->flush();
+    delete writer;
     return hasError;
 }
