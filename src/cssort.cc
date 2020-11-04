@@ -75,7 +75,8 @@ class GenericSort: public AbstractWriter {
         }
 };
 
-inline bool cmpFileNames(const Defect &a, const Defect &b) {
+inline bool cmpFileNames(const Defect &a, const Defect &b)
+{
     const TEvtList &ea = a.events;
     const TEvtList &eb = b.events;
 
@@ -99,7 +100,8 @@ inline bool cmpFileNames(const Defect &a, const Defect &b) {
 }
 
 struct DefByChecker: public Defect { };
-bool operator<(const DefByChecker &a, const DefByChecker &b) {
+bool operator<(const DefByChecker &a, const DefByChecker &b)
+{
     // compare checker names
     RETURN_IF_COMPARED(a, b, checker);
 
@@ -129,7 +131,8 @@ bool operator<(const DefByChecker &a, const DefByChecker &b) {
 }
 
 struct DefByPath: public Defect { };
-bool operator<(const DefByPath &a, const DefByPath &b) {
+bool operator<(const DefByPath &a, const DefByPath &b)
+{
     return cmpFileNames(a, b);
 }
 
@@ -150,7 +153,8 @@ static std::string name;
 namespace po = boost::program_options;
 
 template <class TDesc, class TStream>
-void printUsage(TStream &str, const TDesc &desc) {
+void printUsage(TStream &str, const TDesc &desc)
+{
     desc.print(str);
     // TODO: output some additional documentation
 }

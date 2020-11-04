@@ -39,11 +39,13 @@ CovWriter::CovWriter(std::ostream &str, const EColorMode cm):
 {
 }
 
-CovWriter::~CovWriter() {
+CovWriter::~CovWriter()
+{
     delete d;
 }
 
-void CovWriter::handleDef(const Defect &def) {
+void CovWriter::handleDef(const Defect &def)
+{
     std::ostream &str = d->str;
 
     if (d->writing)
@@ -96,6 +98,7 @@ void CovWriter::handleDef(const Defect &def) {
     }
 }
 
-void CovWriter::flush() {
+void CovWriter::flush()
+{
     d->str.flush();
 }

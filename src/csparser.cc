@@ -56,7 +56,8 @@ class LineReader {
         bool getLinePriv(std::string *pDst);
 };
 
-bool LineReader::getLinePriv(std::string *pDst) {
+bool LineReader::getLinePriv(std::string *pDst)
+{
     if (!std::getline(input_, *pDst))
         return false;
 
@@ -64,7 +65,8 @@ bool LineReader::getLinePriv(std::string *pDst) {
     return true;
 }
 
-bool LineReader::getLine(std::string *pDst) {
+bool LineReader::getLine(std::string *pDst)
+{
     std::string line;
     if (!this->getLinePriv(&line))
         return false;
@@ -93,7 +95,8 @@ enum EToken {
     T_EVENT
 };
 
-std::ostream& operator<<(std::ostream &str, EToken code) {
+std::ostream& operator<<(std::ostream &str, EToken code)
+{
     switch (code) {
         case T_NULL:    str << "T_NULL";    break;
         case T_EMPTY:   str << "T_EMPTY";   break;
@@ -149,7 +152,8 @@ class ErrFileLexer {
         const boost::regex          reEvent_;
 };
 
-EToken ErrFileLexer::readNext() {
+EToken ErrFileLexer::readNext()
+{
     std::string line;
     if (!lineReader_.getLine(&line))
         return T_NULL;
@@ -313,11 +317,13 @@ KeyEventDigger::KeyEventDigger():
     d->traceEvts.insert("try_fallthrough");
 }
 
-KeyEventDigger::~KeyEventDigger() {
+KeyEventDigger::~KeyEventDigger()
+{
     delete d;
 }
 
-bool KeyEventDigger::guessKeyEvent(Defect *def) {
+bool KeyEventDigger::guessKeyEvent(Defect *def)
+{
     const std::vector<DefEvent> &evtList = def->events;
     if (evtList.empty())
         return false;
@@ -365,7 +371,8 @@ bool KeyEventDigger::guessKeyEvent(Defect *def) {
     return true;
 }
 
-void KeyEventDigger::initVerbosity(Defect *def) {
+void KeyEventDigger::initVerbosity(Defect *def)
+{
     TEvtList &evtList = def->events;
     const unsigned evtCount = evtList.size();
     for (unsigned idx = 0U; idx < evtCount; ++idx) {
@@ -389,7 +396,8 @@ class AnnotHandler {
         boost::regex reCweAnnot_;
 };
 
-void AnnotHandler::handleDef(Defect *pDef) {
+void AnnotHandler::handleDef(Defect *pDef)
+{
     boost::smatch sm;
     if (boost::regex_match(pDef->annotation, sm, reCweAnnot_)) {
         pDef->cwe = parse_int(sm[/* cwe */ 1]);
@@ -431,16 +439,19 @@ CovParser::CovParser(
 {
 }
 
-CovParser::~CovParser() {
+CovParser::~CovParser()
+{
     delete d;
 }
 
-bool CovParser::hasError() const {
+bool CovParser::hasError() const
+{
     return d->lexer.hasError()
         || d->hasError;
 }
 
-void CovParser::Private::parseError(const std::string &msg) {
+void CovParser::Private::parseError(const std::string &msg)
+{
     this->hasError = true;
     if (this->silent)
         return;
@@ -450,7 +461,8 @@ void CovParser::Private::parseError(const std::string &msg) {
         << ": parse error: " << msg << "\n";
 }
 
-void CovParser::Private::wrongToken(const EToken expected) {
+void CovParser::Private::wrongToken(const EToken expected)
+{
     std::ostringstream str;
     str << "wrong token: " << this->code;
     if (T_NULL != expected)
@@ -458,7 +470,8 @@ void CovParser::Private::wrongToken(const EToken expected) {
     this->parseError(str.str());
 }
 
-bool CovParser::Private::seekForToken(const EToken token, TEvtList *pEvtList) {
+bool CovParser::Private::seekForToken(const EToken token, TEvtList *pEvtList)
+{
     for (;;) {
         if (token == this->code)
             return true;
@@ -495,7 +508,8 @@ bool CovParser::Private::seekForToken(const EToken token, TEvtList *pEvtList) {
     }
 }
 
-bool CovParser::Private::parseMsg(TEvtList *pEvtList) {
+bool CovParser::Private::parseMsg(TEvtList *pEvtList)
+{
     bool anyComment = false;
 
     // parse event
@@ -542,7 +556,8 @@ fail:
     return false;
 }
 
-bool CovParser::Private::parseNext(Defect *def) {
+bool CovParser::Private::parseNext(Defect *def)
+{
     // parse defect header
     TEvtList evtList;
     if (!this->seekForToken(T_CHECKER, &evtList))
@@ -594,7 +609,8 @@ done:
     return true;
 }
 
-bool CovParser::getNext(Defect *def) {
+bool CovParser::getNext(Defect *def)
+{
     // error recovery loop
     do {
         if (d->parseNext(def))

@@ -26,7 +26,8 @@
 #include <boost/program_options.hpp>
 #include <boost/regex.hpp>
 
-std::string titleFromFileName(const std::string &fileName) {
+std::string titleFromFileName(const std::string &fileName)
+{
     if (!fileName.compare("-"))
         return "";
 

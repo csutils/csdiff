@@ -47,7 +47,8 @@ class ColorWriter {
 };
 
 template <class TOptDesc>
-void addColorOptions(TOptDesc *desc) {
+void addColorOptions(TOptDesc *desc)
+{
     desc->add_options()
         ("color",
          "use colorized console output (default if connected to a terminal)")
@@ -56,7 +57,8 @@ void addColorOptions(TOptDesc *desc) {
 }
 
 template <class TValMap>
-bool readColorOptions(EColorMode *pDst, const char **pErr, const TValMap &vm) {
+bool readColorOptions(EColorMode *pDst, const char **pErr, const TValMap &vm)
+{
     const bool colorAlways = vm.count("color");
     const bool colorNever = vm.count("no-color");
     if (colorAlways && colorNever) {

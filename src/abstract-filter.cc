@@ -49,22 +49,26 @@ PredicateFilter::PredicateFilter(AbstractWriter *slave):
 {
 }
 
-PredicateFilter::~PredicateFilter() {
+PredicateFilter::~PredicateFilter()
+{
     BOOST_FOREACH(IPredicate *pred, d->preds_)
         delete pred;
 
     delete d;
 }
 
-void PredicateFilter::append(IPredicate *pred) {
+void PredicateFilter::append(IPredicate *pred)
+{
     d->preds_.push_back(pred);
 }
 
-void PredicateFilter::setInvertEachMatch(bool enabled) {
+void PredicateFilter::setInvertEachMatch(bool enabled)
+{
     d->invertEach_ = enabled;
 }
 
-bool PredicateFilter::matchDef(const Defect &def) {
+bool PredicateFilter::matchDef(const Defect &def)
+{
     const bool neg = d->invertEach_;
 
     BOOST_FOREACH(const IPredicate *pred, d->preds_) {
@@ -79,7 +83,8 @@ bool PredicateFilter::matchDef(const Defect &def) {
 // /////////////////////////////////////////////////////////////////////////////
 // implementation of EventPrunner
 
-void EventPrunner::handleDef(const Defect &defOrig) {
+void EventPrunner::handleDef(const Defect &defOrig)
+{
     Defect def(defOrig);
     def.events.clear();
 
@@ -100,7 +105,8 @@ void EventPrunner::handleDef(const Defect &defOrig) {
 // /////////////////////////////////////////////////////////////////////////////
 // implementation of CtxEmbedder
 
-void dropCtxLines(TEvtList *pEvtList) {
+void dropCtxLines(TEvtList *pEvtList)
+{
     static CtxEventDetector detector;
 
     TEvtList dst;
@@ -160,7 +166,8 @@ void appendCtxLines(
     }
 }
 
-void CtxEmbedder::handleDef(const Defect &defOrig) {
+void CtxEmbedder::handleDef(const Defect &defOrig)
+{
     const DefEvent &evt = defOrig.events[defOrig.keyEventIdx];
     if (!evt.line) {
         // no line number for the key event

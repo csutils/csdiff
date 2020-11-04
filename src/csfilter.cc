@@ -142,7 +142,8 @@ MsgFilter::MsgFilter():
 {
 }
 
-MsgFilter::~MsgFilter() {
+MsgFilter::~MsgFilter()
+{
     BOOST_FOREACH(TMsgFilterMap::const_reference item, d->msgFilterMap)
         BOOST_FOREACH(struct MsgReplace *rpl, item.second)
             delete rpl;
@@ -150,7 +151,8 @@ MsgFilter::~MsgFilter() {
     delete d;
 }
 
-void MsgFilter::setIgnorePath(bool enable) {
+void MsgFilter::setIgnorePath(bool enable)
+{
     d->ignorePath = enable;
 }
 
@@ -181,7 +183,8 @@ std::string MsgFilter::filterMsg(
     return filtered;
 }
 
-std::string MsgFilter::filterPath(const std::string &origPath) {
+std::string MsgFilter::filterPath(const std::string &origPath)
+{
     std::string path = origPath;
 
     TSubstMap &substMap = d->fileSubsts;

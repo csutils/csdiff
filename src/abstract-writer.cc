@@ -29,7 +29,8 @@
 // /////////////////////////////////////////////////////////////////////////////
 // implementation of AbstractWriter
 
-bool AbstractWriter::handleFile(Parser &parser, const std::string &fileName) {
+bool AbstractWriter::handleFile(Parser &parser, const std::string &fileName)
+{
         this->notifyFile(fileName);
 
         // detect the input format and create the parser
@@ -56,7 +57,8 @@ bool AbstractWriter::handleFile(
     return this->handleFile(parser, fileName);
 }
 
-bool AbstractWriter::handleFile(const std::string &fileName, bool silent) {
+bool AbstractWriter::handleFile(const std::string &fileName, bool silent)
+{
     try {
         InStream str(fileName.c_str());
         return this->handleFile(str.str(), fileName, silent);
@@ -67,7 +69,8 @@ bool AbstractWriter::handleFile(const std::string &fileName, bool silent) {
     }
 }
 
-void AbstractWriter::setScanProps(const TScanProps &scanProps) {
+void AbstractWriter::setScanProps(const TScanProps &scanProps)
+{
     if (scanProps.empty())
         return;
 
@@ -133,16 +136,19 @@ CtxEventDetector::CtxEventDetector():
 {
 }
 
-CtxEventDetector::~CtxEventDetector() {
+CtxEventDetector::~CtxEventDetector()
+{
     delete d;
 }
 
-bool CtxEventDetector::isAnyCtxLine(const DefEvent &evt) const {
+bool CtxEventDetector::isAnyCtxLine(const DefEvent &evt) const
+{
     return (evt.event == "#")
         && boost::regex_match(evt.msg, d->reAnyCtxLine);
 }
 
-bool CtxEventDetector::isKeyCtxLine(const DefEvent &evt) const {
+bool CtxEventDetector::isKeyCtxLine(const DefEvent &evt) const
+{
     return (evt.event == "#")
         && boost::regex_match(evt.msg, d->reKeyCtxLine);
 }

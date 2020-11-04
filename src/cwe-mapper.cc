@@ -47,19 +47,23 @@ CweMap::CweMap():
     d->hasError = false;
 }
 
-CweMap::~CweMap() {
+CweMap::~CweMap()
+{
     delete d;
 }
 
-bool CweMap::empty() const {
+bool CweMap::empty() const
+{
     return d->mapByChk.empty();
 }
 
-void CweMap::setSilent(bool silent) {
+void CweMap::setSilent(bool silent)
+{
     d->silent = silent;
 }
 
-void CweMap::Private::parseError(const std::string &msg) {
+void CweMap::Private::parseError(const std::string &msg)
+{
     this->hasError = true;
     if (this->silent)
         return;
@@ -69,7 +73,8 @@ void CweMap::Private::parseError(const std::string &msg) {
         << msg << "\n";
 }
 
-void CweMap::Private::parseLine() {
+void CweMap::Private::parseLine()
+{
     // initialize tokenizer
     typedef boost::escaped_list_separator<char>     TSeparator;
     typedef boost::tokenizer<TSeparator>            TTokenizer;
@@ -105,7 +110,8 @@ void CweMap::Private::parseLine() {
     row[evt] = cwe;
 }
 
-bool CweMap::loadCweMap(std::istream &str, const std::string &fileName) {
+bool CweMap::loadCweMap(std::istream &str, const std::string &fileName)
+{
     d->fileName = fileName;
     d->lineno = 0;
 
@@ -117,7 +123,8 @@ bool CweMap::loadCweMap(std::istream &str, const std::string &fileName) {
     return !d->hasError;
 }
 
-bool CweMap::assignCwe(Defect &def) const {
+bool CweMap::assignCwe(Defect &def) const
+{
     int &cweDst = def.cwe;
 
     // lookup by checker
@@ -185,11 +192,13 @@ CweMapDecorator::CweMapDecorator(AbstractWriter *writer, bool silent):
     d->cweMap.setSilent(silent);
 }
 
-CweMapDecorator::~CweMapDecorator() {
+CweMapDecorator::~CweMapDecorator()
+{
     delete d;
 }
 
-void CweMapDecorator::handleDef(const Defect &orig) {
+void CweMapDecorator::handleDef(const Defect &orig)
+{
     if (d->cweMap.empty()) {
         // CweMap not populated
         slave_->handleDef(orig);
@@ -201,6 +210,7 @@ void CweMapDecorator::handleDef(const Defect &orig) {
     slave_->handleDef(def);
 }
 
-CweMap& CweMapDecorator::cweMap() {
+CweMap& CweMapDecorator::cweMap()
+{
     return d->cweMap;
 }

@@ -45,7 +45,8 @@ void parseError(
     std::cerr << ": parse error: " << msg << "\n";
 }
 
-void printError(const InFileException &e) {
+void printError(const InFileException &e)
+{
     std::cerr << e.fileName << ": failed to open input file\n";
 }
 
@@ -102,11 +103,13 @@ class ImpFlagDecorator: public GenericAbstractFilter {
         DefLookup impSet_;
 };
 
-void ImpFlagDecorator::hashImpDefect(const Defect &impDef) {
+void ImpFlagDecorator::hashImpDefect(const Defect &impDef)
+{
     impSet_.hashDefect(impDef);
 }
 
-void ImpFlagDecorator::handleDef(const Defect &defOrig) {
+void ImpFlagDecorator::handleDef(const Defect &defOrig)
+{
     if (impSet_.lookup(defOrig)) {
         // found -> set "imp" flag to 1
         Defect def = defOrig;
@@ -131,7 +134,8 @@ class ParsingRulesDecorator: public GenericAbstractFilter {
         GccPostProcessor gccPostProc_;
 };
 
-void ParsingRulesDecorator::handleDef(const Defect &defOrig) {
+void ParsingRulesDecorator::handleDef(const Defect &defOrig)
+{
     Defect def = defOrig;
     gccPostProc_.apply(&def);
     slave_->handleDef(def);
@@ -189,14 +193,16 @@ bool writeMappedDefects(
 }
 
 template <class TVal, class TVar>
-inline TVal valueOf(const TVar &var) {
+inline TVal valueOf(const TVar &var)
+{
     if (var.empty())
         return TVal();
     else
         return var.template as<TVal>();
 }
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[])
+{
     using std::string;
     const char *name = argv[0];
 

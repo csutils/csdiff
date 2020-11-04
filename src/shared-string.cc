@@ -50,7 +50,8 @@ SharedStr::SharedStr(const std::string &str)
     this->hashStr(str);
 }
 
-void SharedStr::writeOut(std::string *pDst) const {
+void SharedStr::writeOut(std::string *pDst) const
+{
     if (stor_.end() == iter_)
         pDst->clear();
     else

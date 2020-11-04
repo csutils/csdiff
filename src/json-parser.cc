@@ -123,7 +123,8 @@ void JsonParser::Private::parseError(const std::string &msg, unsigned long line)
     std::cerr << ": parse error: " << msg << "\n";
 }
 
-void JsonParser::Private::dataError(const std::string &msg) {
+void JsonParser::Private::dataError(const std::string &msg)
+{
     this->hasError = true;
     if (this->silent)
         return;
@@ -181,15 +182,18 @@ JsonParser::JsonParser(
     }
 }
 
-JsonParser::~JsonParser() {
+JsonParser::~JsonParser()
+{
     delete d;
 }
 
-bool JsonParser::hasError() const {
+bool JsonParser::hasError() const
+{
     return d->hasError;
 }
 
-const TScanProps& JsonParser::getScanProps() const {
+const TScanProps& JsonParser::getScanProps() const
+{
     return d->scanProps;
 }
 
@@ -200,7 +204,8 @@ inline T valueOf(const pt::ptree &node, const char *path, const T &defVal)
     return opt.get_value_or(defVal);
 }
 
-bool JsonParser::Private::readNext(Defect *def) {
+bool JsonParser::Private::readNext(Defect *def)
+{
     try {
         // get the current node and move to the next one
         const pt::ptree &defNode = this->defIter->second;
@@ -217,7 +222,8 @@ bool JsonParser::Private::readNext(Defect *def) {
     }
 }
 
-bool JsonParser::getNext(Defect *def) {
+bool JsonParser::getNext(Defect *def)
+{
     if (!d->jsonValid)
         return false;
 

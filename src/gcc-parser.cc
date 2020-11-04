@@ -98,7 +98,8 @@ class Tokenizer: public ITokenizer {
         const boost::regex      reSmatch_;
 };
 
-EToken Tokenizer::readNext(DefEvent *pEvt) {
+EToken Tokenizer::readNext(DefEvent *pEvt)
+{
     std::string line;
     if (!std::getline(input_, line))
         return T_NULL;
@@ -214,7 +215,8 @@ class MarkerConverter: public AbstractTokenFilter {
         int                     lineNo_;
 };
 
-EToken MarkerConverter::readNext(DefEvent *pEvt) {
+EToken MarkerConverter::readNext(DefEvent *pEvt)
+{
     EToken tok = lastTok_;
     if (T_NULL != tok) {
         *pEvt = lastEvt_;
@@ -278,7 +280,8 @@ class MultilineConcatenator: public AbstractTokenFilter {
         bool tryMerge(DefEvent *pEvt);
 };
 
-bool MultilineConcatenator::tryMerge(DefEvent *pEvt) {
+bool MultilineConcatenator::tryMerge(DefEvent *pEvt)
+{
     if (T_MSG != lastTok_)
         // only messages can be merged together
         return false;
@@ -321,7 +324,8 @@ bool MultilineConcatenator::tryMerge(DefEvent *pEvt) {
     return true;
 }
 
-EToken MultilineConcatenator::readNext(DefEvent *pEvt) {
+EToken MultilineConcatenator::readNext(DefEvent *pEvt)
+{
     EToken tok;
     switch (lastTok_) {
         case T_NULL:
@@ -404,7 +408,8 @@ class BasicGccParser {
         bool exportAndReset(Defect *pDef);
 };
 
-void BasicGccParser::handleError() {
+void BasicGccParser::handleError()
+{
     if (!hasKeyEvent_)
         // drop the events captured up to now
         defCurrent_ = Defect();
@@ -417,7 +422,8 @@ void BasicGccParser::handleError() {
         << ": error: invalid syntax\n";
 }
 
-bool BasicGccParser::digCppcheckEvt(Defect *pDef) {
+bool BasicGccParser::digCppcheckEvt(Defect *pDef)
+{
     DefEvent &keyEvt = pDef->events[pDef->keyEventIdx];
     if (keyEvt.event == "#")
         // this is just a comment, do not look for real events
@@ -442,7 +448,8 @@ bool BasicGccParser::digCppcheckEvt(Defect *pDef) {
     return true;
 }
 
-bool BasicGccParser::exportAndReset(Defect *pDef) {
+bool BasicGccParser::exportAndReset(Defect *pDef)
+{
     Defect &def = defCurrent_;
     if (!hasKeyEvent_)
         // nothing to export yet
@@ -494,7 +501,8 @@ bool BasicGccParser::exportAndReset(Defect *pDef) {
     return true;
 }
 
-bool BasicGccParser::getNext(Defect *pDef) {
+bool BasicGccParser::getNext(Defect *pDef)
+{
     bool done = false;
     while (!done) {
         DefEvent evt;
@@ -532,7 +540,8 @@ bool BasicGccParser::getNext(Defect *pDef) {
     return true;
 }
 
-bool BasicGccParser::hasError() const {
+bool BasicGccParser::hasError() const
+{
     return hasError_;
 }
 
@@ -561,11 +570,13 @@ GccPostProcessor::GccPostProcessor():
 {
 }
 
-GccPostProcessor::~GccPostProcessor() {
+GccPostProcessor::~GccPostProcessor()
+{
     delete d;
 }
 
-void GccPostProcessor::Private::transGccAnal(Defect *pDef) const {
+void GccPostProcessor::Private::transGccAnal(Defect *pDef) const
+{
     if ("COMPILER_WARNING" != pDef->checker)
         return;
 
@@ -590,7 +601,8 @@ void GccPostProcessor::Private::transGccAnal(Defect *pDef) const {
     keyEvt.msg = sm[/* msg */ 1];
 }
 
-void GccPostProcessor::Private::transGccSuffix(Defect *pDef) const {
+void GccPostProcessor::Private::transGccSuffix(Defect *pDef) const
+{
     if ("COMPILER_WARNING" != pDef->checker)
         return;
 
@@ -606,7 +618,8 @@ void GccPostProcessor::Private::transGccSuffix(Defect *pDef) const {
     keyEvt.msg = sm[/* msg */ 1];
 }
 
-void GccPostProcessor::Private::transShellCheckId(Defect *pDef) const {
+void GccPostProcessor::Private::transShellCheckId(Defect *pDef) const
+{
     if ("SHELLCHECK_WARNING" != pDef->checker)
         return;
 
@@ -622,7 +635,8 @@ void GccPostProcessor::Private::transShellCheckId(Defect *pDef) const {
     keyEvt.msg = sm[/* msg */ 1];
 }
 
-void GccPostProcessor::apply(Defect *pDef) const {
+void GccPostProcessor::apply(Defect *pDef) const
+{
     d->transGccAnal(pDef);
     d->transGccSuffix(pDef);
     d->transShellCheckId(pDef);
@@ -656,11 +670,13 @@ GccParser::GccParser(
 {
 }
 
-GccParser::~GccParser() {
+GccParser::~GccParser()
+{
     delete d;
 }
 
-bool GccParser::Private::checkMerge(DefEvent &keyEvt) {
+bool GccParser::Private::checkMerge(DefEvent &keyEvt)
+{
     if (keyEvt.event == "#")
         // can merge a comment
         return true;
@@ -684,7 +700,8 @@ bool GccParser::Private::checkMerge(DefEvent &keyEvt) {
     return true;
 }
 
-bool GccParser::Private::tryMerge(Defect *pDef) {
+bool GccParser::Private::tryMerge(Defect *pDef)
+{
     TEvtList &lastEvts = this->lastDef.events;
     DefEvent &lastKeyEvt = lastEvts[this->lastDef.keyEventIdx];
     if (!this->checkMerge(lastKeyEvt))
@@ -707,7 +724,8 @@ bool GccParser::Private::tryMerge(Defect *pDef) {
     return true;
 }
 
-bool GccParser::getNext(Defect *pDef) {
+bool GccParser::getNext(Defect *pDef)
+{
     // pick the last defect and clear the stash
     *pDef = d->lastDef;
     d->lastDef.events.clear();
@@ -735,6 +753,7 @@ bool GccParser::getNext(Defect *pDef) {
     return true;
 }
 
-bool GccParser::hasError() const {
+bool GccParser::hasError() const
+{
     return d->core.hasError();
 }

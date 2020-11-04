@@ -32,7 +32,8 @@ InStream::InStream(const char *fName):
         throw InFileException(fileName_);
 }
 
-InStream::~InStream() {
+InStream::~InStream()
+{
     if (&str_ == &fileStr_)
         fileStr_.close();
 }

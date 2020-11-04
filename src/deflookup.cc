@@ -46,7 +46,8 @@ DefLookup::DefLookup(const DefLookup &ref):
 {
 }
 
-DefLookup& DefLookup::operator=(const DefLookup &ref) {
+DefLookup& DefLookup::operator=(const DefLookup &ref)
+{
     if (&ref == this)
         return *this;
 
@@ -55,11 +56,13 @@ DefLookup& DefLookup::operator=(const DefLookup &ref) {
     return *this;
 }
 
-DefLookup::~DefLookup() {
+DefLookup::~DefLookup()
+{
     delete d;
 }
 
-void DefLookup::hashDefect(const Defect &def) {
+void DefLookup::hashDefect(const Defect &def)
+{
     TDefByFile &row = d->stor[def.checker];
 
     const DefEvent &evt = def.events[def.keyEventIdx];
@@ -71,7 +74,8 @@ void DefLookup::hashDefect(const Defect &def) {
     cell.push_back(def);
 }
 
-bool DefLookup::lookup(const Defect &def) {
+bool DefLookup::lookup(const Defect &def)
+{
     // look for defect class
     TDefByChecker::iterator iRow = d->stor.find(def.checker);
     if (d->stor.end() == iRow)

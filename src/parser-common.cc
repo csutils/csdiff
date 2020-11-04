@@ -21,7 +21,8 @@
 
 #include <boost/lexical_cast.hpp>
 
-int parse_int(const std::string &str, const int fallback) {
+int parse_int(const std::string &str, const int fallback)
+{
     try {
         return boost::lexical_cast<int>(str);
     }
@@ -47,7 +48,8 @@ LangDetector::LangDetector():
     d->langByChecker["SMATCH_WARNING"]          = "c/c++";
 }
 
-LangDetector::~LangDetector() {
+LangDetector::~LangDetector()
+{
     delete d;
 }
 

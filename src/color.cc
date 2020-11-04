@@ -21,7 +21,8 @@
 
 #include <unistd.h>
 
-ColorWriter::ColorWriter(const std::ostream &str, const EColorMode cm) {
+ColorWriter::ColorWriter(const std::ostream &str, const EColorMode cm)
+{
     switch (cm) {
         case CM_NEVER:
             enabled_ = false;
@@ -38,7 +39,8 @@ ColorWriter::ColorWriter(const std::ostream &str, const EColorMode cm) {
     }
 }
 
-const char* ColorWriter::setColor(const EColor color) {
+const char* ColorWriter::setColor(const EColor color)
+{
     if (!enabled_)
         return "";
 
@@ -53,6 +55,7 @@ const char* ColorWriter::setColor(const EColor color) {
     return "";
 }
 
-const char* ColorWriter::setColorIf(bool cond, const EColor color) {
+const char* ColorWriter::setColorIf(bool cond, const EColor color)
+{
     return (cond) ? this->setColor(color) : "";
 }

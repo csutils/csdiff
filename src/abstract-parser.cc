@@ -52,7 +52,8 @@ AbstractParser* createParser(
     }
 }
 
-EFileFormat Parser::inputFormat() const {
+EFileFormat Parser::inputFormat() const
+{
     if (dynamic_cast<JsonParser *>(parser_))
         return FF_JSON;
 

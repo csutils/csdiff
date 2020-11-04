@@ -54,7 +54,8 @@ class DefQueue {
         template <class TVisitor> bool walk(TVisitor &);
 };
 
-template <class TVisitor> bool DefQueue::walk(TVisitor &visitor) {
+template <class TVisitor> bool DefQueue::walk(TVisitor &visitor)
+{
     BOOST_FOREACH(TDefByChecker::const_reference iRow, stor_)
         BOOST_FOREACH(TDefByFile::const_reference iCol, iRow.second)
             BOOST_FOREACH(const Defect &def, iCol.second)

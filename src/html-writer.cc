@@ -266,7 +266,8 @@ void HtmlWriterCore::writeHeaderOnce(
     headerWritten_ = true;
 }
 
-void HtmlWriterCore::closeDocument(const TScanProps &props) {
+void HtmlWriterCore::closeDocument(const TScanProps &props)
+{
     assert(headerWritten_);
     assert(!documentClosed_);
 
@@ -323,15 +324,18 @@ HtmlWriter::HtmlWriter(
 {
 }
 
-HtmlWriter::~HtmlWriter() {
+HtmlWriter::~HtmlWriter()
+{
     delete d;
 }
 
-const TScanProps& HtmlWriter::getScanProps() const {
+const TScanProps& HtmlWriter::getScanProps() const
+{
     return d->scanProps;
 }
 
-void HtmlWriter::setScanProps(const TScanProps &scanProps) {
+void HtmlWriter::setScanProps(const TScanProps &scanProps)
+{
     assert(!d->core.headerWritten());
     d->scanProps = scanProps;
 }
@@ -369,11 +373,13 @@ void HtmlWriter::setDiffBase(
     d->newDefMsg += "</b>";
 }
 
-void HtmlWriter::setPlainTextUrl(const std::string &url) {
+void HtmlWriter::setPlainTextUrl(const std::string &url)
+{
     d->plainTextUrl = url;
 }
 
-void HtmlWriter::Private::writeLinkToDetails(const Defect &def) {
+void HtmlWriter::Private::writeLinkToDetails(const Defect &def)
+{
     const int defId = def.defectId;
     if (!defId)
         // no defect ID
@@ -401,7 +407,8 @@ void HtmlWriter::Private::writeLinkToDetails(const Defect &def) {
     }
 }
 
-void HtmlWriter::Private::writeNewDefWarning(const Defect &def) {
+void HtmlWriter::Private::writeNewDefWarning(const Defect &def)
+{
     if (!this->baseLookup)
         // not lookup set
         return;
@@ -419,7 +426,8 @@ void HtmlWriter::Private::writeNewDefWarning(const Defect &def) {
         << this->newDefMsg << "]</span>";
 }
 
-void linkifyShellCheckMsg(std::string *pMgs) {
+void linkifyShellCheckMsg(std::string *pMgs)
+{
     static boost::regex reShellCheckMsg("(\\[)?SC([0-9]+)(\\])?$");
     *pMgs = boost::regex_replace(*pMgs, reShellCheckMsg,
             "<a href=\"https://github.com/koalaman/shellcheck/wiki/SC\\2\""
@@ -427,7 +435,8 @@ void linkifyShellCheckMsg(std::string *pMgs) {
             "\\1SC\\2\\3</a>");
 }
 
-void HtmlWriter::handleDef(const Defect &def) {
+void HtmlWriter::handleDef(const Defect &def)
+{
     d->core.writeHeaderOnce(d->scanProps, d->plainTextUrl);
 
     // HTML anchor
@@ -538,7 +547,8 @@ void HtmlWriter::handleDef(const Defect &def) {
     d->str << "\n";
 }
 
-void HtmlWriter::flush() {
+void HtmlWriter::flush()
+{
     d->core.writeHeaderOnce(d->scanProps, d->plainTextUrl);
     d->core.closeDocument(d->scanProps);
 }

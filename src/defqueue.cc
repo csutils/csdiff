@@ -110,7 +110,8 @@ bool DefQueue::lookup(
 // /////////////////////////////////////////////////////////////////////////////
 // implementation of DefQueryParser
 
-bool DefQueryParser::parse(DefQueryParser::QRow &dst) {
+bool DefQueryParser::parse(DefQueryParser::QRow &dst)
+{
     // read one line from stdin
     std::string line;
     if (!std::getline(input_, line))
@@ -147,7 +148,8 @@ bool DefQueryParser::parse(DefQueryParser::QRow &dst) {
     return true;
 }
 
-bool DefQueryParser::getNext(DefQueryParser::QRow &dst) {
+bool DefQueryParser::getNext(DefQueryParser::QRow &dst)
+{
     // error recovery loop
     while (input_) {
         if (this->parse(dst))

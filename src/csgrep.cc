@@ -491,7 +491,8 @@ bool chainFilters(
 }
 
 template <class TDesc, class TStream>
-void printUsage(TStream &str, const TDesc &desc) {
+void printUsage(TStream &str, const TDesc &desc)
+{
     desc.print(str);
 }
 

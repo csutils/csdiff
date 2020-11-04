@@ -46,19 +46,23 @@ JsonWriter::JsonWriter(std::ostream &str):
 {
 }
 
-JsonWriter::~JsonWriter() {
+JsonWriter::~JsonWriter()
+{
     delete d;
 }
 
-const TScanProps& JsonWriter::getScanProps() const {
+const TScanProps& JsonWriter::getScanProps() const
+{
     return d->scanProps;
 }
 
-void JsonWriter::setScanProps(const TScanProps &scanProps) {
+void JsonWriter::setScanProps(const TScanProps &scanProps)
+{
     d->scanProps = scanProps;
 }
 
-void appendDefectNode(PTree &dst, const Defect &def) {
+void appendDefectNode(PTree &dst, const Defect &def)
+{
     using std::string;
 
     // go through events
@@ -106,11 +110,13 @@ void appendDefectNode(PTree &dst, const Defect &def) {
     dst.push_back(std::make_pair("", defNode));
 }
 
-void JsonWriter::handleDef(const Defect &def) {
+void JsonWriter::handleDef(const Defect &def)
+{
     d->defQueue.push(def);
 }
 
-void JsonWriter::flush() {
+void JsonWriter::flush()
+{
     boost::iostreams::filtering_ostream str;
 
     // create a regex-based filter to restore integral values wrapped as strings
