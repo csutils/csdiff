@@ -20,6 +20,7 @@
 #include "csparser.hh"
 
 #include "parser-common.hh"
+#include "regex.hh"
 
 #include <cctype>
 #include <cstdlib>
@@ -29,15 +30,11 @@
 #include <sstream>
 
 #include <boost/algorithm/string.hpp>
-#include <boost/regex.hpp>
 
 class LineReader {
     public:
         LineReader(std::istream &input):
-            input_(input),
-            lineNo_(0),
-            reTrailLoc_("^(path:|/).*(:[0-9]+|<.*>):$"),
-            rePathPref_("^path:")
+            input_(input)
         {
         }
 
@@ -49,9 +46,10 @@ class LineReader {
 
     private:
         std::istream               &input_;
-        int                         lineNo_;
-        const boost::regex          reTrailLoc_;
-        const boost::regex          rePathPref_;
+        int                         lineNo_ = 0;
+
+        const RE reTrailLoc_ = RE("^(path:|/).*(:[0-9]+|<.*>):$");
+        const RE rePathPref_ = RE("^path:");
 
         bool getLinePriv(std::string *pDst);
 };
@@ -113,13 +111,7 @@ class ErrFileLexer {
     public:
         ErrFileLexer(std::istream &input):
             lineReader_(input),
-            hasError_(false),
-            reEmpty_("^ *$"),
-            reComment_("^(#)(.*)$"),
-            reChecker_("^Error: *([A-Za-z][0-9A-Za-z_.]+)( *\\([^)]+\\))? *:$"),
-            reEvent_(
-                    /* location */ "^([^:]+)(?::([0-9]+|<unknown>))?(?::([0-9]+))?"
-                    /* evt/mesg */ ": (" RE_EVENT "): (.*)$")
+            hasError_(false)
         {
         }
 
@@ -146,10 +138,19 @@ class ErrFileLexer {
         bool                        hasError_;
         Defect                      def_;
         DefEvent                    evt_;
-        const boost::regex          reEmpty_;
-        const boost::regex          reComment_;
-        const boost::regex          reChecker_;
-        const boost::regex          reEvent_;
+
+        const RE reEmpty_ =
+            RE("^ *$");
+
+        const RE reComment_ =
+            RE("^(#)(.*)$");
+
+        const RE reChecker_ =
+            RE("^Error: *([A-Za-z][0-9A-Za-z_.]+)( *\\([^)]+\\))? *:$");
+
+        const RE reEvent_ =
+            RE(/* location */ "^([^:]+)(?::([0-9]+|<unknown>))?(?::([0-9]+))?"
+               /* evt/mesg */ ": (" RE_EVENT "): (.*)$");
 };
 
 EToken ErrFileLexer::readNext()
@@ -201,7 +202,7 @@ struct KeyEventDigger::Private {
     typedef std::map<std::string, TSet>             TMap;
     TMap hMap;
     TSet blackList, traceEvts;
-    const boost::regex reEvtSuffix = boost::regex("^(.*)\\[[^ \\]]+\\]$");
+    const RE reEvtSuffix = RE("^(.*)\\[[^ \\]]+\\]$");
     const std::string stripEvtName(const std::string &) const;
 };
 
@@ -385,15 +386,10 @@ void KeyEventDigger::initVerbosity(Defect *def)
 
 class AnnotHandler {
     public:
-        AnnotHandler():
-            reCweAnnot_("^ *\\(CWE-([0-9]+)\\)$")
-        {
-        }
-
         void handleDef(Defect *);
 
     private:
-        boost::regex reCweAnnot_;
+        const RE reCweAnnot_ = RE("^ *\\(CWE-([0-9]+)\\)$");
 };
 
 void AnnotHandler::handleDef(Defect *pDef)

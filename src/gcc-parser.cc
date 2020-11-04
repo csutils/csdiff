@@ -20,10 +20,9 @@
 #include "gcc-parser.hh"
 
 #include "parser-common.hh"
+#include "regex.hh"
 
 #include <algorithm>
-
-#include <boost/regex.hpp>
 
 enum EToken {
     T_NULL = 0,
@@ -67,16 +66,7 @@ class Tokenizer: public ITokenizer {
     public:
         Tokenizer(std::istream &input):
             input_(input),
-            lineNo_(0),
-            reSideBar_("^ *((([0-9]+)? \\| )|(\\+\\+\\+ \\|\\+)).*$"),
-            reMarker_("^ *[ ~^|]+$"),
-            reInc_("^(?:In file included| +) from " RE_LOCATION "[:,]"
-                    RE_TOOL_SUFFIX),
-            reScope_("^" RE_LOCATION ": ([A-Z].+):" RE_TOOL_SUFFIX),
-            reMsg_("^" RE_LOCATION /* evt/msg */ ": (" RE_EVENT "): (.*)$"),
-            reSmatch_("^([^:]+):([0-9]+)() "    /* file:line */
-                    RE_FNC_SMATCH               /* fnc       */
-                    " ([a-z]+): (.*)$")         /* evt: msg  */
+            lineNo_(0)
         {
         }
 
@@ -89,12 +79,27 @@ class Tokenizer: public ITokenizer {
     private:
         std::istream           &input_;
         int                     lineNo_;
-        const boost::regex      reSideBar_;
-        const boost::regex      reMarker_;
-        const boost::regex      reInc_;
-        const boost::regex      reScope_;
-        const boost::regex      reMsg_;
-        const boost::regex      reSmatch_;
+
+        const RE reSideBar_ =
+            RE("^ *((([0-9]+)? \\| )|(\\+\\+\\+ \\|\\+)).*$");
+
+        const RE reMarker_ =
+            RE("^ *[ ~^|]+$");
+
+        const RE reInc_ =
+            RE("^(?:In file included| +) from " RE_LOCATION "[:,]"
+                RE_TOOL_SUFFIX);
+
+        const RE reScope_ =
+            RE("^" RE_LOCATION ": ([A-Z].+):" RE_TOOL_SUFFIX);
+
+        const RE reMsg_ =
+            RE("^" RE_LOCATION /* evt/msg */ ": (" RE_EVENT "): (.*)$");
+
+        const RE reSmatch_ =
+            RE("^([^:]+):([0-9]+)() "       /* file:line */
+                RE_FNC_SMATCH               /* fnc       */
+                " ([a-z]+): (.*)$")         /* evt: msg  */;
 };
 
 EToken Tokenizer::readNext(DefEvent *pEvt)
@@ -170,15 +175,15 @@ EToken Tokenizer::readNext(DefEvent *pEvt)
 class NoiseFilter: public AbstractTokenFilter {
     public:
         NoiseFilter(ITokenizer *slave):
-            AbstractTokenFilter(slave),
-            reClangWarnCnt_("^" RE_CLANG_CNT_EVTS " generated\\.$")
+            AbstractTokenFilter(slave)
         {
         }
 
         virtual EToken readNext(DefEvent *);
 
     private:
-        const boost::regex      reClangWarnCnt_;
+        const RE reClangWarnCnt_ =
+            RE("^" RE_CLANG_CNT_EVTS " generated\\.$");
 };
 
 EToken NoiseFilter::readNext(DefEvent *pEvt)
@@ -261,10 +266,7 @@ class MultilineConcatenator: public AbstractTokenFilter {
     public:
         MultilineConcatenator(ITokenizer *slave):
             AbstractTokenFilter(slave),
-            lastTok_(T_NULL),
-#define REASON_SUFFIX "( \\[[^ \\]]+\\])?" RE_TOOL_SUFFIX
-            reBase_("^([^ ].*[^\\]])" REASON_SUFFIX),
-            reExtra_("^ *((?: [^ ].*[^\\]])|(?:\\(.+\\)))" REASON_SUFFIX)
+            lastTok_(T_NULL)
         {
         }
 
@@ -273,10 +275,15 @@ class MultilineConcatenator: public AbstractTokenFilter {
     private:
         EToken                  lastTok_;
         DefEvent                lastEvt_;
-        const boost::regex      reBase_;
-        const boost::regex      reExtra_;
-
         bool tryMerge(DefEvent *pEvt);
+
+#define REASON_SUFFIX "( \\[[^ \\]]+\\])?" RE_TOOL_SUFFIX
+
+        const RE reBase_ =
+            RE("^([^ ].*[^\\]])" REASON_SUFFIX);
+
+        const RE reExtra_ =
+            RE("^ *((?: [^ ].*[^\\]])|(?:\\(.+\\)))" REASON_SUFFIX);
 };
 
 bool MultilineConcatenator::tryMerge(DefEvent *pEvt)
@@ -371,12 +378,6 @@ class BasicGccParser {
             tokenizer_(&markerConverter_),
             fileName_(fileName),
             silent_(silent),
-            reCppcheck_("^([A-Za-z_]+)(?:\\(CWE-([0-9]+)\\))?: (.*)$"),
-            reClang_("^clang.*$"),
-            reProspector_(RE_EVENT_PROSPECTOR),
-            reShellCheckMsg_("^.* \\[SC[0-9]+\\]$"),
-            reSmatchMsg_("^" RE_FNC_SMATCH ": .*$"),
-            reTool_("^(.*) <--\\[([^\\]]+)\\]$"),
             hasKeyEvent_(false),
             hasError_(false)
         {
@@ -392,12 +393,6 @@ class BasicGccParser {
         MultilineConcatenator   tokenizer_;
         const std::string       fileName_;
         const bool              silent_;
-        const boost::regex      reCppcheck_;
-        const boost::regex      reClang_;
-        const boost::regex      reProspector_;
-        const boost::regex      reShellCheckMsg_;
-        const boost::regex      reSmatchMsg_;
-        const boost::regex      reTool_;
         bool                    hasKeyEvent_;
         bool                    hasError_;
         Defect                  defCurrent_;
@@ -405,6 +400,24 @@ class BasicGccParser {
         void handleError();
         bool digCppcheckEvt(Defect *pDef);
         bool exportAndReset(Defect *pDef);
+
+        const RE reCppcheck_ =
+            RE("^([A-Za-z_]+)(?:\\(CWE-([0-9]+)\\))?: (.*)$");
+
+        const RE reClang_ =
+            RE("^clang.*$");
+
+        const RE reProspector_ =
+            RE(RE_EVENT_PROSPECTOR);
+
+        const RE reShellCheckMsg_ =
+            RE("^.* \\[SC[0-9]+\\]$");
+
+        const RE reSmatchMsg_ =
+            RE("^" RE_FNC_SMATCH ": .*$");
+
+        const RE reTool_ =
+            RE("^(.*) <--\\[([^\\]]+)\\]$");
 };
 
 void BasicGccParser::handleError()
@@ -545,23 +558,23 @@ bool BasicGccParser::hasError() const
 }
 
 struct GccPostProcessor::Private {
-    const boost::regex reGccAnalCoreEvt;
-    const boost::regex reGccAnalCwe;
-    const boost::regex reGccWarningEvt;
-    const boost::regex reShellCheckId;
     const LangDetector langDetector;
-
-    Private():
-        reGccAnalCoreEvt("^(.*) (\\[-Wanalyzer-[^ \\]]+\\])$"),
-        reGccAnalCwe("^(.*) \\[CWE-([0-9]+)\\]$"),
-        reGccWarningEvt("^(.*) (\\[-W[^ \\]]+\\])$"),
-        reShellCheckId("(^.*) (\\[SC([0-9]+)\\])$")
-    {
-    }
 
     void transGccAnal(Defect *pDef) const;
     void transGccSuffix(Defect *pDef) const;
     void transShellCheckId(Defect *pDef) const;
+
+    const RE reGccAnalCoreEvt =
+        RE("^(.*) (\\[-Wanalyzer-[^ \\]]+\\])$");
+
+    const RE reGccAnalCwe =
+        RE("^(.*) \\[CWE-([0-9]+)\\]$");
+
+    const RE reGccWarningEvt =
+        RE("^(.*) (\\[-W[^ \\]]+\\])$");
+
+    const RE reShellCheckId =
+        RE("(^.*) (\\[SC([0-9]+)\\])$");
 };
 
 GccPostProcessor::GccPostProcessor():
@@ -646,19 +659,19 @@ struct GccParser::Private {
     BasicGccParser              core;
     GccPostProcessor            postProc;
     Defect                      lastDef;
-    const boost::regex          reLocation;
 
     Private(
             std::istream       &input_,
             const std::string  &fileName_,
             const bool          silent_):
-        core(input_, fileName_, silent_),
-        reLocation("^this is the location.*$")
+        core(input_, fileName_, silent_)
     {
     }
 
     bool checkMerge(DefEvent &keyEvt);
     bool tryMerge(Defect *pDef);
+
+    const RE reLocation = RE("^this is the location.*$");
 };
 
 GccParser::GccParser(

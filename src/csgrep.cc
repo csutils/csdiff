@@ -21,6 +21,7 @@
 #include "abstract-filter.hh"
 #include "cswriter.hh"
 #include "json-writer.hh"
+#include "regex.hh"
 #include "version.hh"
 
 #include <cstdlib>
@@ -29,7 +30,6 @@
 #include <map>
 
 #include <boost/program_options.hpp>
-#include <boost/regex.hpp>
 
 class StatWriter: public AbstractWriter {
     public:
@@ -171,10 +171,10 @@ class FileDefCounter: public StatWriter {
 
 class MsgPredicate: public IPredicate {
     private:
-        boost::regex re_;
+        const RE re_;
 
     public:
-        MsgPredicate(const boost::regex &re):
+        MsgPredicate(const RE &re):
             re_(re)
         {
         }
@@ -191,10 +191,10 @@ class MsgPredicate: public IPredicate {
 
 class KeyEventPredicate: public IPredicate {
     private:
-        boost::regex re_;
+        const RE re_;
 
     public:
-        KeyEventPredicate(const boost::regex &re):
+        KeyEventPredicate(const RE &re):
             re_(re)
         {
         }
@@ -207,10 +207,10 @@ class KeyEventPredicate: public IPredicate {
 
 class ErrorPredicate: public IPredicate {
     private:
-        boost::regex re_;
+        const RE re_;
 
     public:
-        ErrorPredicate(const boost::regex &re):
+        ErrorPredicate(const RE &re):
             re_(re)
         {
         }
@@ -223,10 +223,10 @@ class ErrorPredicate: public IPredicate {
 
 class PathPredicate: public IPredicate {
     private:
-        boost::regex re_;
+        const RE re_;
 
     public:
-        PathPredicate(const boost::regex &re):
+        PathPredicate(const RE &re):
             re_(re)
         {
         }
@@ -239,10 +239,10 @@ class PathPredicate: public IPredicate {
 
 class CheckerPredicate: public IPredicate {
     private:
-        boost::regex re_;
+        const RE re_;
 
     public:
-        CheckerPredicate(const boost::regex &re):
+        CheckerPredicate(const RE &re):
             re_(re)
         {
         }
@@ -254,10 +254,10 @@ class CheckerPredicate: public IPredicate {
 
 class AnnotPredicate: public IPredicate {
     private:
-        boost::regex re_;
+        const RE re_;
 
     public:
-        AnnotPredicate(const boost::regex &re):
+        AnnotPredicate(const RE &re):
             re_(re)
         {
         }
@@ -269,10 +269,10 @@ class AnnotPredicate: public IPredicate {
 
 class SrcAnnotPredicate: public IPredicate {
     private:
-        boost::regex re_;
+        const RE re_;
 
     public:
-        SrcAnnotPredicate(const boost::regex &re):
+        SrcAnnotPredicate(const RE &re):
             re_(re)
         {
         }
@@ -430,7 +430,7 @@ bool appendPredIfNeeded(
     TPred *pred = 0;
     const std::string &reStr = vm[key].as<std::string>();
     try {
-        boost::regex re(reStr, flags);
+        const RE re(reStr, flags);
         pred = new TPred(re);
     }
     catch (...) {

@@ -19,6 +19,7 @@
 
 #include "json-writer.hh"
 
+#include "regex.hh"
 #include "shared-string-ptree.hh"
 
 #include <queue>
@@ -119,17 +120,17 @@ void JsonWriter::flush()
     boost::iostreams::filtering_ostream str;
 
     // create a regex-based filter to restore integral values wrapped as strings
-    const boost::regex re(": \"([0-9]+)\",$");
-    boost::iostreams::basic_regex_filter<char> reFilter(re, ": \\1,");
+    const RE reInt(": \"([0-9]+)\",$");
+    boost::iostreams::basic_regex_filter<char> reFilter(reInt, ": \\1,");
     str.push(reFilter);
 
     // create a regex-based filter to replace \/ (produced by newer boost) by /
-    const boost::regex reSlash("([^\\\\]*(?:\\\\\\\\)*)(?:\\\\(/))?");
+    const RE reSlash("([^\\\\]*(?:\\\\\\\\)*)(?:\\\\(/))?");
     boost::iostreams::basic_regex_filter<char> reFilterSlash(reSlash, "\\1\\2");
     str.push(reFilterSlash);
 
     // create a regex-based filter to replace \u0009 by \t
-    const boost::regex reTab("\\\\u0009");
+    const RE reTab("\\\\u0009");
     boost::iostreams::basic_regex_filter<char> reFilterTab(reTab, "\\\\t");
     str.push(reFilterTab);
 

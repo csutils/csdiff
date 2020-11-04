@@ -18,10 +18,10 @@
  */
 
 #include "abstract-writer.hh"
+#include "regex.hh"
 #include "version.hh"
 
 #include <boost/program_options.hpp>
-#include <boost/regex.hpp>
 
 class SortFactory {
     public:
@@ -110,7 +110,7 @@ bool operator<(const DefByChecker &a, const DefByChecker &b)
 
     if ("SHELLCHECK_WARNING" == a.checker /* == b.checker */) {
         // sort ShellCheck warnings by the [SC1234] suffixes
-        const boost::regex reCode("^.* \\[SC([0-9]+)\\]$");
+        const RE reCode("^.* \\[SC([0-9]+)\\]$");
         std::string aCode, bCode;
         boost::smatch sm;
         if (boost::regex_match(ea.msg, sm, reCode))

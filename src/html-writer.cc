@@ -20,11 +20,11 @@
 #include "html-writer.hh"
 
 #include "deflookup.hh"
+#include "regex.hh"
 
 #include <boost/algorithm/string/replace.hpp>
 #include <boost/format.hpp>
 #include <boost/lexical_cast.hpp>
-#include <boost/regex.hpp>
 
 static int parsingRatioThr = 95;
 static int parsingOldToNewRatioThr = 75;
@@ -99,7 +99,7 @@ namespace CsLib {
                 return "";
 
             const std::string &args = it->second;
-            const boost::regex reSrpm("^.*[ /']([^ /']*)\\.src\\.rpm.*$");
+            const RE reSrpm("^.*[ /']([^ /']*)\\.src\\.rpm.*$");
 
             boost::smatch sm;
             if (!boost::regex_match(args, sm, reSrpm))
@@ -286,10 +286,9 @@ struct HtmlWriter::Private {
     HtmlWriterCore                  core;
     TScanProps                      scanProps;
     const std::string               defUrlTemplate;
-    const boost::regex              reEvent;
     unsigned                        defCnt;
     DefLookup                      *baseLookup;
-    boost::regex                    checkerIgnRegex;
+    RE                              checkerIgnRegex;
     std::string                     newDefMsg;
     std::string                     plainTextUrl;
 
@@ -301,7 +300,6 @@ struct HtmlWriter::Private {
         str(str_),
         core(str_, titleFallback_, spPlacement_),
         defUrlTemplate(defUrlTemplate_),
-        reEvent("^([^\\[]*\\[)?([^\\]]+)(])?$"),
         defCnt(0),
         baseLookup(0)
     {
@@ -312,6 +310,8 @@ struct HtmlWriter::Private {
 
     void writeLinkToDetails(const Defect &);
     void writeNewDefWarning(const Defect &);
+
+    const RE reEvent = RE("^([^\\[]*\\[)?([^\\]]+)(])?$");
 };
 
 HtmlWriter::HtmlWriter(
@@ -427,7 +427,7 @@ void HtmlWriter::Private::writeNewDefWarning(const Defect &def)
 
 void linkifyShellCheckMsg(std::string *pMgs)
 {
-    static boost::regex reShellCheckMsg("(\\[)?SC([0-9]+)(\\])?$");
+    static const RE reShellCheckMsg("(\\[)?SC([0-9]+)(\\])?$");
     *pMgs = boost::regex_replace(*pMgs, reShellCheckMsg,
             "<a href=\"https://github.com/koalaman/shellcheck/wiki/SC\\2\""
             " title=\"description of ShellCheck's checker SC\\2\">"

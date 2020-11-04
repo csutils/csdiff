@@ -17,12 +17,12 @@
  * along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include "regex.hh"
 #include "version.hh"
 
 #include <boost/algorithm/string/replace.hpp>
 #include <boost/filesystem.hpp>
 #include <boost/program_options.hpp>
-#include <boost/regex.hpp>
 #include <boost/tokenizer.hpp>
 
 #include <cctype>
@@ -38,10 +38,6 @@ class DockerFileTransformer {
         DockerFileTransformer(const TStringList &prefixCmd, const bool verbose):
             prefixCmd_(prefixCmd),
             verbose_(verbose),
-            reLineRun_("^RUN (.*)$"),
-            reLineRunExec_("^RUN  *\\[(.*)\\] *$"),
-            reLineCont_("(^.*[^\\\\])\\\\$"),
-            reComment_("^ *#.*$"),
             lineNum_(0)
         {
         }
@@ -52,13 +48,21 @@ class DockerFileTransformer {
     private:
         const TStringList   prefixCmd_;         ///< cmd-line operands
         const bool          verbose_;           ///< --verbose on cmd-line
-        const boost::regex  reLineRun_;         ///< match ... in RUN ...
-        const boost::regex  reLineRunExec_;     ///< match ... in RUN [...]
-        const boost::regex  reLineCont_;        ///< match ... in ... BS-NL
-        const boost::regex  reComment_;         ///< match in-line comments
         int                 lineNum_;           ///< line number being read
 
         bool transformRunLine(std::string *);
+
+        /// match ... in RUN ...
+        const RE reLineRun_     = RE("^RUN (.*)$");
+
+        /// match ... in RUN [...]
+        const RE reLineRunExec_ = RE("^RUN  *\\[(.*)\\] *$");
+
+        /// match ... in ... BS-NL
+        const RE reLineCont_    = RE("(^.*[^\\\\])\\\\$");
+
+        /// match in-line comments
+        const RE reComment_     = RE("^ *#.*$");
 };
 
 /// parse serialized list in the form: "item1", "item2", ...

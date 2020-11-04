@@ -20,12 +20,12 @@
 #include "csdiff-core.hh"
 #include "csfilter.hh"
 #include "instream.hh"
+#include "regex.hh"
 #include "version.hh"
 
 #include <cstdlib>
 
 #include <boost/program_options.hpp>
-#include <boost/regex.hpp>
 
 int main(int argc, char *argv[])
 {
@@ -119,7 +119,7 @@ int main(int argc, char *argv[])
     if (vm.count("file-rename")) {
         const TStringList &substList = vm["file-rename"].as<TStringList>();
         boost::smatch sm;
-        const boost::regex reSubst("([^,]+),(.*)");
+        const RE reSubst("([^,]+),(.*)");
         for (const string &subst : substList) {
             if (!boost::regex_match(subst, sm, reSubst)) {
                 std::cerr << "bad substutution format: " << subst

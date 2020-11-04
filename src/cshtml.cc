@@ -21,22 +21,22 @@
 #include "deflookup.hh"
 #include "html-writer.hh"
 #include "instream.hh"
+#include "regex.hh"
 #include "version.hh"
 
 #include <boost/program_options.hpp>
-#include <boost/regex.hpp>
 
 std::string titleFromFileName(const std::string &fileName)
 {
     if (!fileName.compare("-"))
         return "";
 
-    const boost::regex reNoVer("^(.*/)?[^/0-9]*$");
+    const RE reNoVer("^(.*/)?[^/0-9]*$");
     if (boost::regex_match(fileName, reNoVer))
         // no version information -> bailing out
         return "";
 
-    const boost::regex reTitle("^(?:.*/)?([^/]*)\\.(?:err|js)$");
+    const RE reTitle("^(?:.*/)?([^/]*)\\.(?:err|js)$");
 
     boost::smatch sm;
     if (!boost::regex_match(fileName, sm, reTitle))

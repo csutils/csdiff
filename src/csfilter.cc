@@ -18,10 +18,9 @@
  */
 
 #include "csfilter.hh"
+#include "regex.hh"
 
 #include <iostream>
-
-#include <boost/regex.hpp>
 
 // Setup verbosity for debugging string substitions while matching them.
 // Verbosity levels are from 0 to 3 (0 is off)
@@ -29,7 +28,7 @@
 
 inline std::string regexReplaceWrap(
         const std::string       &input,
-        const boost::regex      &re,
+        const RE                &re,
         const std::string       &fmt)
 {
     std::string output(boost::regex_replace(input, re, fmt));
@@ -43,7 +42,7 @@ inline std::string regexReplaceWrap(
 MsgFilter* MsgFilter::self_;
 
 struct MsgReplace {
-    const boost::regex          regex;
+    const RE                    regex;
     const std::string           replaceWith;
 
     MsgReplace(const std::string &regex_, const std::string &rpl) :
@@ -57,17 +56,17 @@ typedef std::vector<MsgReplace *>               TRegexList;
 typedef std::map<const std::string, TRegexList> TMsgFilterMap;
 
 struct MsgFilter::Private {
-    bool ignorePath;
-    const std::string strKrn;
-    const boost::regex reKrn;
-    const boost::regex reMsgConstExprRes;
-    const boost::regex reDir;
-    const boost::regex reFile;
-    const boost::regex rePath;
-    const boost::regex reTmpPath;
-    const boost::regex reTmpCleaner;
+    bool ignorePath = false;
     TMsgFilterMap msgFilterMap;
     TSubstMap fileSubsts;
+
+    const std::string strKrn = "^[a-zA-Z+]+";
+    const RE reKrn = RE(strKrn);
+    const RE reDir = RE("^([^:]*/)");
+    const RE reFile = RE("[^/]+$");
+    const RE rePath = RE("^(?:/builddir/build/BUILD/)?([^/]+/)(.*)(\\.[ly])?$");
+    const RE reTmpPath = RE("^(/var)?/tmp/(.*)$");
+    const RE reTmpCleaner = RE("(.*)");
 
     void addMsgFilter(
             const std::string          &checker,
@@ -77,68 +76,56 @@ struct MsgFilter::Private {
         struct MsgReplace *rpl = new MsgReplace(regexp, replacement);
         msgFilterMap[checker].push_back(rpl);
     }
-
-    Private():
-        ignorePath(false),
-        strKrn("^[a-zA-Z+]+"),
-        reKrn(strKrn),
-        reDir("^([^:]*/)"),
-        reFile("[^/]+$"),
-        rePath("^(?:/builddir/build/BUILD/)?([^/]+/)(.*)(\\.[ly])?$"),
-        reTmpPath("^(/var)?/tmp/(.*)$"),
-        reTmpCleaner("(.*)")
-    {
-        addMsgFilter("", "[0-9][0-9]* out of [0-9][0-9]* times");
-        addMsgFilter("UNUSED_VALUE",
-                "\\(instance [0-9]+\\)");
-        addMsgFilter("STRING_OVERFLOW",
-                "You might overrun the [0-9][0-9]* byte");
-        // ignore changes in parameters -> it is still the same UNUSED_VALUE
-        addMsgFilter("UNUSED_VALUE",
-                "returned by \"([^\\(]+)\\(.*\\)\"",
-                "returned by \"\\1\\(\\)\"");
-
-        // unify the format of glib/gnome dprecation warnings
-        // NOTE: "\u007f\u007f\u007f" does not compile on el6
-        static const char uniApos[] = { 0x7f, 0x7f, 0x7f, 0x00 };
-        addMsgFilter("COMPILER_WARNING", uniApos, "'");
-
-        // ignore embeded declaration location
-        addMsgFilter("COMPILER_WARNING", " \\(declared at [^)]*\\)", "");
-
-        // ignore suggestion for deprecation warnings
-        addMsgFilter("COMPILER_WARNING", ": Use '[^']*' instead", "");
-
-        // unify (per build random) names of temporary variables
-        addMsgFilter("COMPILER_WARNING", "_tmp[0-9]+_", "_tmp_");
-
-        // pylint reports, either raw, or prospector-wrapped
-        const std::vector<std::string> pylintCheckers= {
-            "PROSPECTOR_WARNING",
-            "PYLINT_WARNING"
-        };
-        for (const std::string &checker : pylintCheckers) {
-            // "Too many lines in module (1152/1000)" etc.
-            addMsgFilter(checker, " \\([0-9]+/[0-9]+\\)$", "");
-
-            // "... Redefining name 'desc' from outer scope (line 10)" etc.
-            addMsgFilter(checker, " \\((?:imported )?line [0-9]+\\)$", "");
-        }
-
-        // "__coverity_strcmp" -> "strcmp", etc.
-        addMsgFilter("", "__coverity_", "");
-
-        // artificial field names of anonymous unions that Coverity produces
-        addMsgFilter("", "__C[0-9]+");
-
-        // used by IDENTIFIER_TYPO (but applies generally)
-        addMsgFilter("", "at least [0-9][0-9]* times.$");
-    }
 };
 
 MsgFilter::MsgFilter():
     d(new Private)
 {
+    d->addMsgFilter("", "[0-9][0-9]* out of [0-9][0-9]* times");
+    d->addMsgFilter("UNUSED_VALUE",
+            "\\(instance [0-9]+\\)");
+    d->addMsgFilter("STRING_OVERFLOW",
+            "You might overrun the [0-9][0-9]* byte");
+    // ignore changes in parameters -> it is still the same UNUSED_VALUE
+    d->addMsgFilter("UNUSED_VALUE",
+            "returned by \"([^\\(]+)\\(.*\\)\"",
+            "returned by \"\\1\\(\\)\"");
+
+    // unify the format of glib/gnome dprecation warnings
+    // NOTE: "\u007f\u007f\u007f" does not compile on el6
+    static const char uniApos[] = { 0x7f, 0x7f, 0x7f, 0x00 };
+    d->addMsgFilter("COMPILER_WARNING", uniApos, "'");
+
+    // ignore embeded declaration location
+    d->addMsgFilter("COMPILER_WARNING", " \\(declared at [^)]*\\)", "");
+
+    // ignore suggestion for deprecation warnings
+    d->addMsgFilter("COMPILER_WARNING", ": Use '[^']*' instead", "");
+
+    // unify (per build random) names of temporary variables
+    d->addMsgFilter("COMPILER_WARNING", "_tmp[0-9]+_", "_tmp_");
+
+    // pylint reports, either raw, or prospector-wrapped
+    const std::vector<std::string> pylintCheckers= {
+        "PROSPECTOR_WARNING",
+        "PYLINT_WARNING"
+    };
+    for (const std::string &checker : pylintCheckers) {
+        // "Too many lines in module (1152/1000)" etc.
+        d->addMsgFilter(checker, " \\([0-9]+/[0-9]+\\)$", "");
+
+        // "... Redefining name 'desc' from outer scope (line 10)" etc.
+        d->addMsgFilter(checker, " \\((?:imported )?line [0-9]+\\)$", "");
+    }
+
+    // "__coverity_strcmp" -> "strcmp", etc.
+    d->addMsgFilter("", "__coverity_", "");
+
+    // artificial field names of anonymous unions that Coverity produces
+    d->addMsgFilter("", "__C[0-9]+");
+
+    // used by IDENTIFIER_TYPO (but applies generally)
+    d->addMsgFilter("", "at least [0-9][0-9]* times.$");
 }
 
 MsgFilter::~MsgFilter()
@@ -224,7 +211,7 @@ std::string MsgFilter::filterPath(const std::string &origPath)
     std::cerr << "krnPattern: " << krnPattern << "\n";
 #endif
 
-    const boost::regex reKill(krnPattern);
+    const RE reKill(krnPattern);
     core = boost::regex_replace(core, reKill, "");
 
     // quirk for Coverity inconsistency in handling bison-generated file names

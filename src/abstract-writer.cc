@@ -20,11 +20,10 @@
 #include "abstract-writer.hh"
 
 #include "cswriter.hh"
+#include "html-writer.hh"
 #include "instream.hh"
 #include "json-writer.hh"
-#include "html-writer.hh"
-
-#include <boost/regex.hpp>
+#include "regex.hh"
 
 // /////////////////////////////////////////////////////////////////////////////
 // implementation of AbstractWriter
@@ -121,14 +120,8 @@ AbstractWriter* createWriter(
 // implementation of CtxEventDetector
 
 struct CtxEventDetector::Private {
-    boost::regex reAnyCtxLine;
-    boost::regex reKeyCtxLine;
-    
-    Private():
-        reAnyCtxLine("^ *[0-9]+\\|(?:->)? .*$"),
-        reKeyCtxLine("^ *[0-9]+\\|-> .*$")
-    {
-    }
+    const RE reAnyCtxLine = RE("^ *[0-9]+\\|(?:->)? .*$");
+    const RE reKeyCtxLine = RE("^ *[0-9]+\\|-> .*$");
 };
 
 CtxEventDetector::CtxEventDetector():
