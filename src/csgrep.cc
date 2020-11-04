@@ -311,8 +311,8 @@ fail:
 
 class PathStripper: public GenericAbstractFilter {
     public:
-        PathStripper(AbstractWriter *slave, const std::string &prefix):
-            GenericAbstractFilter(slave),
+        PathStripper(AbstractWriter *agent, const std::string &prefix):
+            GenericAbstractFilter(agent),
             prefStr_(prefix),
             prefSize_(prefix.size())
         {
@@ -335,7 +335,7 @@ class PathStripper: public GenericAbstractFilter {
                 path.erase(/* pos */ 0U, prefSize_);
             }
 
-            slave_->handleDef(def);
+            agent_->handleDef(def);
         }
 
     private:
@@ -345,8 +345,8 @@ class PathStripper: public GenericAbstractFilter {
 
 class DuplicateFilter: public AbstractFilter {
     public:
-        DuplicateFilter(AbstractWriter *slave):
-            AbstractFilter(slave)
+        DuplicateFilter(AbstractWriter *agent):
+            AbstractFilter(agent)
         {
         }
 

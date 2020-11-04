@@ -42,8 +42,8 @@ struct PredicateFilter::Private {
     }
 };
 
-PredicateFilter::PredicateFilter(AbstractWriter *slave):
-    AbstractFilter(slave),
+PredicateFilter::PredicateFilter(AbstractWriter *agent):
+    AbstractFilter(agent),
     d(new Private)
 {
 }
@@ -97,7 +97,7 @@ void EventPrunner::handleDef(const Defect &defOrig)
             def.keyEventIdx--;
     }
 
-    slave_->handleDef(def);
+    agent_->handleDef(def);
 }
 
 
@@ -170,14 +170,14 @@ void CtxEmbedder::handleDef(const Defect &defOrig)
     const DefEvent &evt = defOrig.events[defOrig.keyEventIdx];
     if (!evt.line) {
         // no line number for the key event
-        slave_->handleDef(defOrig);
+        agent_->handleDef(defOrig);
         return;
     }
 
     std::fstream fstr(evt.fileName.c_str(), std::ios::in);
     if (!fstr) {
         // failed to open input file
-        slave_->handleDef(defOrig);
+        agent_->handleDef(defOrig);
         return;
     }
 
@@ -188,5 +188,5 @@ void CtxEmbedder::handleDef(const Defect &defOrig)
 
     // close the file stream and forward the result
     fstr.close();
-    slave_->handleDef(def);
+    agent_->handleDef(def);
 }

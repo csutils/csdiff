@@ -45,17 +45,17 @@ class ITokenizer {
 class AbstractTokenFilter: public ITokenizer {
     public:
         virtual int lineNo() const {
-            return slave_->lineNo();
+            return agent_->lineNo();
         }
 
     protected:
-        /// @param slave the object will NOT be deleted on destruction
-        AbstractTokenFilter(ITokenizer *slave):
-            slave_(slave)
+        /// @param agent the object will NOT be deleted on destruction
+        AbstractTokenFilter(ITokenizer *agent):
+            agent_(agent)
         {
         }
 
-        ITokenizer *slave_;
+        ITokenizer *agent_;
 };
 
 #define RE_LOCATION "([^ #:\"][^:\"]+)(?::([0-9]+))?(?::([0-9]+))?"
@@ -174,8 +174,8 @@ EToken Tokenizer::readNext(DefEvent *pEvt)
 
 class NoiseFilter: public AbstractTokenFilter {
     public:
-        NoiseFilter(ITokenizer *slave):
-            AbstractTokenFilter(slave)
+        NoiseFilter(ITokenizer *agent):
+            AbstractTokenFilter(agent)
         {
         }
 
@@ -189,7 +189,7 @@ class NoiseFilter: public AbstractTokenFilter {
 EToken NoiseFilter::readNext(DefEvent *pEvt)
 {
     for (;;) {
-        const EToken tok = slave_->readNext(pEvt);
+        const EToken tok = agent_->readNext(pEvt);
         if (T_UNKNOWN != tok)
             return tok;
 
@@ -200,8 +200,8 @@ EToken NoiseFilter::readNext(DefEvent *pEvt)
 
 class MarkerConverter: public AbstractTokenFilter {
     public:
-        MarkerConverter(ITokenizer *slave):
-            AbstractTokenFilter(slave),
+        MarkerConverter(ITokenizer *agent):
+            AbstractTokenFilter(agent),
             lastTok_(T_NULL),
             lineNo_(0)
         {
@@ -224,13 +224,13 @@ EToken MarkerConverter::readNext(DefEvent *pEvt)
     EToken tok = lastTok_;
     if (T_NULL != tok) {
         *pEvt = lastEvt_;
-        lineNo_ = slave_->lineNo();
+        lineNo_ = agent_->lineNo();
         lastTok_ = T_NULL;
         return tok;
     }
 
-    tok = slave_->readNext(pEvt);
-    lineNo_ = slave_->lineNo();
+    tok = agent_->readNext(pEvt);
+    lineNo_ = agent_->lineNo();
     switch (tok) {
         case T_SIDEBAR:
             pEvt->event = "#";
@@ -244,7 +244,7 @@ EToken MarkerConverter::readNext(DefEvent *pEvt)
             return tok;
     }
 
-    lastTok_ = slave_->readNext(&lastEvt_);
+    lastTok_ = agent_->readNext(&lastEvt_);
     switch (lastTok_) {
         case T_SIDEBAR:
         case T_MARKER:
@@ -264,8 +264,8 @@ EToken MarkerConverter::readNext(DefEvent *pEvt)
 
 class MultilineConcatenator: public AbstractTokenFilter {
     public:
-        MultilineConcatenator(ITokenizer *slave):
-            AbstractTokenFilter(slave),
+        MultilineConcatenator(ITokenizer *agent):
+            AbstractTokenFilter(agent),
             lastTok_(T_NULL)
         {
         }
@@ -336,7 +336,7 @@ EToken MultilineConcatenator::readNext(DefEvent *pEvt)
     switch (lastTok_) {
         case T_NULL:
             // no last token --> we have to read a new one
-            tok = slave_->readNext(pEvt);
+            tok = agent_->readNext(pEvt);
             break;
 
         case T_MSG:
@@ -356,7 +356,7 @@ EToken MultilineConcatenator::readNext(DefEvent *pEvt)
     if (T_MSG == tok) {
         do
             // read one token ahead
-            lastTok_ = slave_->readNext(&lastEvt_);
+            lastTok_ = agent_->readNext(&lastEvt_);
 
         while
             // try to merge it with the previous one

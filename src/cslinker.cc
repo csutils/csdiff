@@ -114,10 +114,10 @@ void ImpFlagDecorator::handleDef(const Defect &defOrig)
         // found -> set "imp" flag to 1
         Defect def = defOrig;
         def.imp = 1;
-        slave_->handleDef(def);
+        agent_->handleDef(def);
     }
     else {
-        slave_->handleDef(defOrig);
+        agent_->handleDef(defOrig);
     }
 }
 
@@ -138,7 +138,7 @@ void ParsingRulesDecorator::handleDef(const Defect &defOrig)
 {
     Defect def = defOrig;
     gccPostProc_.apply(&def);
-    slave_->handleDef(def);
+    agent_->handleDef(def);
 }
 
 class OrphanWriter {

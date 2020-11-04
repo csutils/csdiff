@@ -201,13 +201,13 @@ void CweMapDecorator::handleDef(const Defect &orig)
 {
     if (d->cweMap.empty()) {
         // CweMap not populated
-        slave_->handleDef(orig);
+        agent_->handleDef(orig);
         return;
     }
 
     Defect def(orig);
     d->cweMap.assignCwe(def);
-    slave_->handleDef(def);
+    agent_->handleDef(def);
 }
 
 CweMap& CweMapDecorator::cweMap()

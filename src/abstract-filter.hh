@@ -25,33 +25,33 @@
 /// decorator
 class GenericAbstractFilter: public AbstractWriter {
     protected:
-        AbstractWriter *slave_;
+        AbstractWriter *agent_;
         virtual void handleDef(const Defect &def) = 0;
 
     public:
         virtual void notifyFile(const std::string &fileName) {
-            slave_->notifyFile(fileName);
+            agent_->notifyFile(fileName);
         }
 
-        GenericAbstractFilter(AbstractWriter *slave):
-            slave_(slave)
+        GenericAbstractFilter(AbstractWriter *agent):
+            agent_(agent)
         {
         }
 
         ~GenericAbstractFilter() {
-            delete slave_;
+            delete agent_;
         }
 
         virtual void flush() {
-            slave_->flush();
+            agent_->flush();
         }
 
         virtual const TScanProps& getScanProps() const {
-            return slave_->getScanProps();
+            return agent_->getScanProps();
         }
 
         virtual void setScanProps(const TScanProps &scanProps) {
-            slave_->setScanProps(scanProps);
+            agent_->setScanProps(scanProps);
         }
 };
 
@@ -61,8 +61,8 @@ class EventPrunner: public GenericAbstractFilter {
         int thr_;
 
     public:
-        EventPrunner(AbstractWriter *slave, unsigned thr):
-            GenericAbstractFilter(slave),
+        EventPrunner(AbstractWriter *agent, unsigned thr):
+            GenericAbstractFilter(agent),
             thr_(thr)
         {
         }
@@ -76,8 +76,8 @@ class CtxEmbedder: public GenericAbstractFilter {
         int ctxLines_;
 
     public:
-        CtxEmbedder(AbstractWriter *slave, const int ctxLines):
-            GenericAbstractFilter(slave),
+        CtxEmbedder(AbstractWriter *agent, const int ctxLines):
+            GenericAbstractFilter(agent),
             ctxLines_(ctxLines)
         {
         }
@@ -94,8 +94,8 @@ class AbstractFilter: public GenericAbstractFilter {
         virtual bool matchDef(const Defect &def) = 0;
 
     public:
-        AbstractFilter(AbstractWriter *slave):
-            GenericAbstractFilter(slave),
+        AbstractFilter(AbstractWriter *agent):
+            GenericAbstractFilter(agent),
             neg_(false)
         {
         }
@@ -108,7 +108,7 @@ class AbstractFilter: public GenericAbstractFilter {
             if (neg_ == matchDef(def))
                 return;
 
-            slave_->handleDef(def);
+            agent_->handleDef(def);
         }
 };
 
@@ -120,7 +120,7 @@ class IPredicate {
 
 class PredicateFilter: public AbstractFilter {
     public:
-        PredicateFilter(AbstractWriter *slave);
+        PredicateFilter(AbstractWriter *agent);
         virtual ~PredicateFilter();
 
         /// takes ownership of pred and will call delete on it on destruction
