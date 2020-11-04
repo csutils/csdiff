@@ -21,7 +21,6 @@
 
 #include <boost/algorithm/string/replace.hpp>
 #include <boost/filesystem.hpp>
-#include <boost/foreach.hpp>
 #include <boost/program_options.hpp>
 #include <boost/regex.hpp>
 #include <boost/tokenizer.hpp>
@@ -75,7 +74,7 @@ void appendExecArgs(TStringList *pExecList, const std::string &str)
     std::string arg;
 
     // process the given string char by char
-    BOOST_FOREACH(const unsigned char c, str) {
+    for (const unsigned char c : str) {
         switch (state) {
             case ES_SEEK_QUOT_OPEN:
                 if ('\"' == c)
@@ -150,7 +149,7 @@ std::string runLineFromExecList(const TStringList &execList)
     // construct RUN ["cmd", "arg1", "arg2", ...] from execList
     std::string runLine = "RUN [";
     int i = 0;
-    BOOST_FOREACH (const std::string &arg, execList) {
+    for (const std::string &arg : execList) {
         if (i++)
             runLine += ", ";
 

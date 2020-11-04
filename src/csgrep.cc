@@ -28,7 +28,6 @@
 #include <iomanip>
 #include <map>
 
-#include <boost/foreach.hpp>
 #include <boost/program_options.hpp>
 #include <boost/regex.hpp>
 
@@ -95,7 +94,7 @@ class DefCounter: public StatWriter {
         }
 
         virtual void flush() {
-            BOOST_FOREACH(TMap::const_reference item, cnt_) {
+            for (TMap::const_reference item : cnt_) {
                 using namespace std;
                 const ios_base::fmtflags oldFlags = cout.flags();
                 const int oldWidth = cout.width();
@@ -121,7 +120,7 @@ class EvtCounter: public StatWriter {
         }
 
         virtual void flush() {
-            BOOST_FOREACH(TMap::const_reference item, cnt_) {
+            for (TMap::const_reference item : cnt_) {
                 using namespace std;
                 const ios_base::fmtflags oldFlags = cout.flags();
                 const int oldWidth = cout.width();
@@ -144,7 +143,7 @@ class FileDefCounter: public StatWriter {
 
     public:
         virtual ~FileDefCounter() {
-            BOOST_FOREACH(TMap::const_reference item, cntMap_)
+            for (TMap::const_reference item : cntMap_)
                 delete /* (DefCounter *) */ item.second;
         }
 
@@ -160,7 +159,7 @@ class FileDefCounter: public StatWriter {
         }
 
         virtual void flush() {
-            BOOST_FOREACH(TMap::const_reference item, cntMap_) {
+            for (TMap::const_reference item : cntMap_) {
                 const std::string fName = item.first;
                 std::cout << "\n\n--- " << fName << " ---\n";
 
@@ -181,7 +180,7 @@ class MsgPredicate: public IPredicate {
         }
 
         virtual bool matchDef(const Defect &def) const {
-            BOOST_FOREACH(const DefEvent &evt, def.events) {
+            for (const DefEvent &evt : def.events) {
                 if (boost::regex_search(evt.msg, re_))
                     return true;
             }
@@ -323,7 +322,7 @@ class PathStripper: public GenericAbstractFilter {
             Defect def(defOrig);
 
             // iterate through all events
-            BOOST_FOREACH(DefEvent &evt, def.events) {
+            for (DefEvent &evt : def.events) {
                 std::string &path = evt.fileName;
                 if (path.size() < prefSize_)
                     continue;
@@ -638,7 +637,7 @@ int main(int argc, char *argv[])
     }
     else {
         const TStringList &files = vm["input-file"].as<TStringList>();
-        BOOST_FOREACH(const string &fileName, files) {
+        for (const string &fileName : files) {
             if (!eng->handleFile(fileName, silent))
                 hasError = true;
         }

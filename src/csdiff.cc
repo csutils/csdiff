@@ -24,7 +24,6 @@
 
 #include <cstdlib>
 
-#include <boost/foreach.hpp>
 #include <boost/program_options.hpp>
 #include <boost/regex.hpp>
 
@@ -121,7 +120,7 @@ int main(int argc, char *argv[])
         const TStringList &substList = vm["file-rename"].as<TStringList>();
         boost::smatch sm;
         const boost::regex reSubst("([^,]+),(.*)");
-        BOOST_FOREACH(const string &subst, substList) {
+        for (const string &subst : substList) {
             if (!boost::regex_match(subst, sm, reSubst)) {
                 std::cerr << "bad substutution format: " << subst
                     << std::endl << "use: -s OLD,NEW" << std::endl;

@@ -23,7 +23,6 @@
 
 #include <queue>
 
-#include <boost/foreach.hpp>
 #include <boost/iostreams/filtering_stream.hpp>
 #include <boost/iostreams/filter/regex.hpp>
 #include <boost/property_tree/json_parser.hpp>
@@ -67,7 +66,7 @@ void appendDefectNode(PTree &dst, const Defect &def)
 
     // go through events
     PTree evtList;
-    BOOST_FOREACH(const DefEvent &evt, def.events) {
+    for (const DefEvent &evt : def.events) {
         PTree evtNode;
 
         // describe the location
@@ -140,7 +139,7 @@ void JsonWriter::flush()
     PTree root;
     if (!d->scanProps.empty()) {
         PTree scan;
-        BOOST_FOREACH(TScanProps::const_reference prop, d->scanProps)
+        for (TScanProps::const_reference prop : d->scanProps)
             scan.put<std::string>(prop.first, prop.second);
 
         root.put_child("scan", scan);

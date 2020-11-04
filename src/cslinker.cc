@@ -67,7 +67,7 @@ bool loadPropsFromIniFile(
 
         // update scan properties from the ptree node
         pt::ptree scanNode = root.get_child("scan");
-        BOOST_FOREACH(const pt::ptree::value_type &item, scanNode)
+        for (const pt::ptree::value_type &item : scanNode)
             props[item.first] = item.second.data();
 
         // write the updated scan properties back to the writer

@@ -23,8 +23,6 @@
 #include "gcc-parser.hh"
 #include "json-parser.hh"
 
-#include <boost/foreach.hpp>
-
 AbstractParser* createParser(
         std::istream        &input,
         const std::string   &fileName,

@@ -19,8 +19,6 @@
 
 #include "cswriter.hh"
 
-#include <boost/foreach.hpp>
-
 struct CovWriter::Private {
     std::ostream       &str;
     ColorWriter         cw;
@@ -62,7 +60,7 @@ void CovWriter::handleDef(const Defect &def)
         str << def.annotation;
     str << d->cw.setColor(C_NO_COLOR) << ":\n";
 
-    BOOST_FOREACH(const DefEvent &evt, def.events) {
+    for (const DefEvent &evt : def.events) {
         const bool isKeyEvt = !evt.verbosityLevel;
         if (!isKeyEvt)
             str << d->cw.setColor(C_DARK_GRAY);

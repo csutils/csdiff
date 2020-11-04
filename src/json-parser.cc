@@ -23,7 +23,6 @@
 
 #include <set>
 
-#include <boost/foreach.hpp>
 #include <boost/property_tree/json_parser.hpp>
 
 // suppress strict-aliasing warnings in <boost/optional/optional.hpp> coming
@@ -158,7 +157,7 @@ JsonParser::JsonParser(
         pt::ptree emp;
         pt::ptree scanNode =
             d->root.get_child_optional("scan").get_value_or(emp);
-        BOOST_FOREACH(const pt::ptree::value_type &item, scanNode)
+        for (const pt::ptree::value_type &item : scanNode)
             d->scanProps[item.first] = item.second.data();
 
         if (findChildOf(&d->defList, d->root, "defects"))
@@ -279,7 +278,7 @@ void SimpleTreeDecoder::reportUnknownNodes(ENodeKind nk, const pt::ptree &node)
 
     const TNodeSet &nodeSet = nodeStore_[nk];
 
-    BOOST_FOREACH(const pt::ptree::value_type &item, node) {
+    for (const pt::ptree::value_type &item : node) {
         const std::string &name = item.first;
         if (nodeSet.end() == nodeSet.find(name))
             std::cerr << fileName_
@@ -305,7 +304,7 @@ void SimpleTreeDecoder::readNode(
     // read the events
     TEvtList &evtListDst = def->events;
     const pt::ptree &evtListSrc = defNode.get_child("events");
-    BOOST_FOREACH(const pt::ptree::value_type &evtItem, evtListSrc) {
+    for (const pt::ptree::value_type &evtItem : evtListSrc) {
         const pt::ptree &evtNode = evtItem.second;
         this->reportUnknownNodes(NK_EVENT, evtNode);
 

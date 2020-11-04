@@ -20,7 +20,6 @@
 #include "abstract-writer.hh"
 #include "version.hh"
 
-#include <boost/foreach.hpp>
 #include <boost/program_options.hpp>
 #include <boost/regex.hpp>
 
@@ -53,7 +52,7 @@ class GenericSort: public AbstractWriter {
                 createWriter(std::cout, this->inputFormat(), cm_, scanProps_);
 
             // write the data
-            BOOST_FOREACH(const Defect &def, cont_)
+            for (const Defect &def : cont_)
                 writer->handleDef(def);
 
             // flush data and destroy writer
@@ -238,7 +237,7 @@ int main(int argc, char *argv[])
     }
     else {
         const TStringList &files = vm["input-file"].as<TStringList>();
-        BOOST_FOREACH(const string &fileName, files) {
+        for (const string &fileName : files) {
             if (!eng->handleFile(fileName, silent))
                 hasError = true;
         }

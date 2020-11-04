@@ -27,7 +27,6 @@
 #include <vector>
 
 #include <boost/algorithm/string/replace.hpp>
-#include <boost/foreach.hpp>
 
 // /////////////////////////////////////////////////////////////////////////////
 // implementation of PredicateFilter
@@ -51,7 +50,7 @@ PredicateFilter::PredicateFilter(AbstractWriter *slave):
 
 PredicateFilter::~PredicateFilter()
 {
-    BOOST_FOREACH(IPredicate *pred, d->preds_)
+    for (IPredicate *pred : d->preds_)
         delete pred;
 
     delete d;
@@ -71,7 +70,7 @@ bool PredicateFilter::matchDef(const Defect &def)
 {
     const bool neg = d->invertEach_;
 
-    BOOST_FOREACH(const IPredicate *pred, d->preds_) {
+    for (const IPredicate *pred : d->preds_) {
         if (neg == pred->matchDef(def))
             return false;
     }
@@ -110,7 +109,7 @@ void dropCtxLines(TEvtList *pEvtList)
     static CtxEventDetector detector;
 
     TEvtList dst;
-    BOOST_FOREACH(const DefEvent &evt, *pEvtList) {
+    for (const DefEvent &evt : *pEvtList) {
         if (detector.isAnyCtxLine(evt))
             continue;
 

@@ -22,7 +22,6 @@
 #include "deflookup.hh"
 
 #include <boost/algorithm/string/replace.hpp>
-#include <boost/foreach.hpp>
 #include <boost/format.hpp>
 #include <boost/lexical_cast.hpp>
 #include <boost/regex.hpp>
@@ -175,7 +174,7 @@ namespace CsLib {
         str << "<table style='font-family: monospace;'>\n";
         int i = 0;
 
-        BOOST_FOREACH(TScanProps::const_reference item, props) {
+        for (TScanProps::const_reference item : props) {
             const char *trStyle = "";
             if (++i & 1)
                 trStyle = " style='background-color: #EEE;'";

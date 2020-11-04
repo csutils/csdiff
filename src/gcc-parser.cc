@@ -23,7 +23,6 @@
 
 #include <algorithm>
 
-#include <boost/foreach.hpp>
 #include <boost/regex.hpp>
 
 enum EToken {
@@ -490,7 +489,7 @@ bool BasicGccParser::exportAndReset(Defect *pDef)
         this->digCppcheckEvt(&def);
 
     // drop the " <--[tool]" suffixes
-    BOOST_FOREACH(DefEvent &evt, def.events)
+    for (DefEvent &evt : def.events)
         if (boost::regex_match(evt.msg, sm, reTool_))
             evt.msg = sm[/* msg */ 1];
 

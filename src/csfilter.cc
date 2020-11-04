@@ -22,7 +22,6 @@
 #include <iostream>
 
 #include <boost/regex.hpp>
-#include <boost/foreach.hpp>
 
 // Setup verbosity for debugging string substitions while matching them.
 // Verbosity levels are from 0 to 3 (0 is off)
@@ -118,7 +117,7 @@ struct MsgFilter::Private {
             "PROSPECTOR_WARNING",
             "PYLINT_WARNING"
         };
-        BOOST_FOREACH(const std::string &checker, pylintCheckers) {
+        for (const std::string &checker : pylintCheckers) {
             // "Too many lines in module (1152/1000)" etc.
             addMsgFilter(checker, " \\([0-9]+/[0-9]+\\)$", "");
 
@@ -144,8 +143,8 @@ MsgFilter::MsgFilter():
 
 MsgFilter::~MsgFilter()
 {
-    BOOST_FOREACH(TMsgFilterMap::const_reference item, d->msgFilterMap)
-        BOOST_FOREACH(struct MsgReplace *rpl, item.second)
+    for (TMsgFilterMap::const_reference item : d->msgFilterMap)
+        for (struct MsgReplace *rpl : item.second)
             delete rpl;
 
     delete d;
@@ -168,12 +167,12 @@ std::string MsgFilter::filterMsg(
         const std::string &checker)
 {
     std::string filtered = msg;
-    BOOST_FOREACH(const struct MsgReplace *rpl, d->msgFilterMap[checker]) {
+    for (const struct MsgReplace *rpl : d->msgFilterMap[checker]) {
         filtered = regexReplaceWrap(filtered, rpl->regex, rpl->replaceWith);
     }
 
     // these substitutions are common for all checkers
-    BOOST_FOREACH(const struct MsgReplace *rpl, d->msgFilterMap[""]) {
+    for (const struct MsgReplace *rpl : d->msgFilterMap[""]) {
         filtered = regexReplaceWrap(filtered, rpl->regex, rpl->replaceWith);
     }
 

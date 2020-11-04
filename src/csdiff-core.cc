@@ -23,14 +23,13 @@
 #include "deflookup.hh"
 #include "json-writer.hh"
 
-#include <boost/foreach.hpp>
 #include <boost/shared_ptr.hpp>
 
 // FIXME: some keys should be merge more intelligently if they already exist
 // TODO: define a nesting limit for keys like diffbase-diffbase-diffbase-...
 void mergeScanProps(TScanProps &props, const TScanProps &oldProps)
 {
-    BOOST_FOREACH(TScanProps::const_reference item, oldProps) {
+    for (TScanProps::const_reference item : oldProps) {
         const std::string &oldKey = item.first;
         const std::string &oldVal = item.second;
         std::string key("diffbase-");
