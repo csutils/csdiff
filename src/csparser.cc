@@ -201,7 +201,7 @@ struct KeyEventDigger::Private {
     typedef std::set<std::string>                   TSet;
     typedef std::map<std::string, TSet>             TMap;
     TMap hMap;
-    TSet blackList, traceEvts;
+    TSet denyList, traceEvts;
     const RE reEvtSuffix = RE("^(.*)\\[[^ \\]]+\\]$");
     const std::string stripEvtName(const std::string &) const;
 };
@@ -275,19 +275,19 @@ KeyEventDigger::KeyEventDigger():
     d->hMap["GCC_ANALYZER_WARNING"] .insert("fatal error");
 
     // events that should never be used as key events (excluding trace events)
-    d->blackList.insert("another_instance");
-    d->blackList.insert("comparison_remediation");
-    d->blackList.insert("example_access");
-    d->blackList.insert("example_assign");
-    d->blackList.insert("example_checked");
-    d->blackList.insert("example_comparison");
-    d->blackList.insert("example_lock");
-    d->blackList.insert("function_annotation");
-    d->blackList.insert("included_from");
-    d->blackList.insert("note");
-    d->blackList.insert("remediation");
-    d->blackList.insert("rounding_remediation");
-    d->blackList.insert("scope_hint");
+    d->denyList.insert("another_instance");
+    d->denyList.insert("comparison_remediation");
+    d->denyList.insert("example_access");
+    d->denyList.insert("example_assign");
+    d->denyList.insert("example_checked");
+    d->denyList.insert("example_comparison");
+    d->denyList.insert("example_lock");
+    d->denyList.insert("function_annotation");
+    d->denyList.insert("included_from");
+    d->denyList.insert("note");
+    d->denyList.insert("remediation");
+    d->denyList.insert("rounding_remediation");
+    d->denyList.insert("scope_hint");
 
     // trace events
     d->traceEvts.insert("break");
@@ -364,7 +364,7 @@ bool KeyEventDigger::guessKeyEvent(Defect *def)
             continue;
 
         const std::string &evtName = evt.event;
-        if (!d->traceEvts.count(evtName) && !d->blackList.count(evtName))
+        if (!d->traceEvts.count(evtName) && !d->denyList.count(evtName))
             // never use trace or black-listed event as the key event
             break;
     }
