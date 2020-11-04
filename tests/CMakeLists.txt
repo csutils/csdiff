@@ -16,10 +16,10 @@
 # along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
 
 # common setup for all tests
-set(csdiff      "${csdiff_BINARY_DIR}/csdiff")
-set(csgrep      "${csdiff_BINARY_DIR}/csgrep")
-set(cssort      "${csdiff_BINARY_DIR}/cssort")
-set(testdir     "${csdiff_SOURCE_DIR}/tests")
+set(csdiff      "${CMAKE_BINARY_DIR}/src/csdiff")
+set(csgrep      "${CMAKE_BINARY_DIR}/src/csgrep")
+set(cssort      "${CMAKE_BINARY_DIR}/src/cssort")
+set(testdir     "${CMAKE_CURRENT_SOURCE_DIR}")
 set(csjson      "${csgrep} --mode=json")
 set(diffcmd     "diff -up")
 
@@ -108,7 +108,7 @@ endmacro()
 # a generic template for cstrans-df-run tests
 macro(tests_cstrans_df_run tst)
     set(test_data_prefix "${testdir}/cstrans-df-run/${tst}")
-    set(cmd "${csdiff_BINARY_DIR}/cstrans-df-run")
+    set(cmd "${CMAKE_BINARY_DIR}/src/cstrans-df-run")
     set(cmd "${cmd} -- /opt/cov-sa-2019.09/bin/cov-build --dir=/cov --append-log")
     set(cmd "${cmd} <${test_data_prefix}-stdin.txt")
     set(cmd "${cmd} | ${diffcmd} ${test_data_prefix}-stdout.txt -")

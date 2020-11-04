@@ -148,7 +148,7 @@ make %{?_smp_mflags} VERBOSE=yes
 mkdir ../csdiff_build_py2
 cd ../csdiff_build_py2
 %cmake .. -B. -DPYTHON_EXECUTABLE=%{__python2}
-make %{?_smp_mflags} VERBOSE=yes
+make %{?_smp_mflags} VERBOSE=yes pycsdiff
 %endif
 
 %if %{with python3}
@@ -162,17 +162,15 @@ make %{?_smp_mflags} VERBOSE=yes pycsdiff
 
 %install
 %if %{with python2}
-mkdir -vp %{buildroot}%{python2_sitearch}
-install -vm0644 csdiff_build_py2/pycsdiff.so %{buildroot}%{python2_sitearch}
+make install-pycsdiff -C csdiff_build_py2 DESTDIR=%{buildroot}
 %endif
 
 %if %{with python3}
-mkdir -vp %{buildroot}%{python3_sitearch}
-install -vm0644 csdiff_build_py3/pycsdiff.so %{buildroot}%{python3_sitearch}
+make install-pycsdiff -C csdiff_build_py3 DESTDIR=%{buildroot}
 %endif
 
 cd csdiff_build
-make install DESTDIR="\$RPM_BUILD_ROOT"
+%make_install
 
 %check
 cd csdiff_build

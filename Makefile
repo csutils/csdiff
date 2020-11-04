@@ -1,4 +1,4 @@
-# Copyright (C) 2011 Red Hat, Inc.
+# Copyright (C) 2011 - 2020 Red Hat, Inc.
 #
 # This file is part of csdiff.
 #
@@ -22,7 +22,7 @@ CTEST ?= ctest -j$(NUM_CPU) --progress
 
 CMAKE_BUILD_TYPE ?= RelWithDebInfo
 
-.PHONY: all check clean distclean distcheck fast install version.cc
+.PHONY: all check clean distclean distcheck fast install version.cc src/version.cc
 
 all: version.cc
 	mkdir -p csdiff_build
@@ -37,9 +37,9 @@ check: all
 
 clean:
 	if test -e csdiff_build/Makefile; then $(MAKE) clean -C csdiff_build; fi
-	if test -e .git; then rm -f version.cc; fi
 
 distclean:
+	if test -e .git; then rm -f src/version.cc; fi
 	rm -rf csdiff_build
 
 distcheck: distclean
@@ -48,7 +48,9 @@ distcheck: distclean
 install: all
 	$(MAKE) -C csdiff_build install
 
-version.cc:
+version.cc: src/version.cc
+
+src/version.cc:
 	@if test -e .git; then \
 		cmd='git log --pretty="0.%cd_%h" --date=short -1 | tr -d -'; \
 	else \
