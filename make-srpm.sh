@@ -1,6 +1,6 @@
 #/bin/bash
 
-# Copyright (C) 2014 Red Hat, Inc.
+# Copyright (C) 2014 - 2020 Red Hat, Inc.
 #
 # This file is part of csdiff.
 #
@@ -71,19 +71,15 @@ xz -c "$SRC_TAR" > "$SRC"               || die "failed to compress sources"
 
 SPEC="./$PKG.spec"
 cat > "$SPEC" << EOF
-# python3 is not available on RHEL <= 7
-%if 0%{?fedora} || 0%{?rhel} > 7
-%bcond_without python3
-%else
-%bcond_with python3
-%endif
-
-# python2 is not available on RHEL > 7 and not needed on Fedora > 29
-%if 0%{?rhel} > 7 || 0%{?fedora} > 29
+# python2 is not available on RHEL > 7 and Fedora
+%if 0%{?rhel} > 7 || 0%{?fedora}
 %bcond_with python2
 %else
 %bcond_without python2
 %endif
+
+# python3 support is optional
+%bcond_without python3
 
 Name:       $PKG
 Version:    $VER
@@ -111,7 +107,7 @@ defect lists using various filtering predicates.
 %if %{with python2}
 %package -n python2-%{name}
 Summary:        Python interface to csdiff for Python 2
-%if 0%{?fedora} > 28
+%if 0%{?fedora}
 BuildRequires:  boost-python2-devel
 %endif
 BuildRequires:  python2-devel
@@ -125,7 +121,13 @@ code scan defect lists to find out added or fixed defects.
 %if %{with python3}
 %package -n python3-%{name}
 Summary:        Python interface to csdiff for Python 3
-BuildRequires:  boost-python3-devel
+
+# this packages redefines %%{python3_pkgversion} to 36 because there is
+# no boost-python3-devel in epel-7 buildroot, only boost-python36-devel
+%if 0%{?rhel} == 7
+BuildRequires:  epel-rpm-macros
+%endif
+BuildRequires:  boost-python%{python3_pkgversion}-devel
 BuildRequires:  python3-devel
 %{?python_provide:%python_provide python3-%{name}}
 
@@ -139,41 +141,40 @@ code scan defect lists to find out added or fixed defects.
 
 %build
 make version.cc
-mkdir csdiff_build
-cd csdiff_build
+mkdir -p %{_target_platform}
+cd %{_target_platform}
 %cmake .. -B. -DBUILD_PYCSDIFF=OFF
-make %{?_smp_mflags} VERBOSE=yes
+%make_build
 
 %if %{with python2}
-mkdir ../csdiff_build_py2
-cd ../csdiff_build_py2
+mkdir -p ../%{_target_platform}-py2
+cd ../%{_target_platform}-py2
 %cmake .. -B. -DPYTHON_EXECUTABLE=%{__python2}
-make %{?_smp_mflags} VERBOSE=yes pycsdiff
+%make_build pycsdiff
 %endif
 
 %if %{with python3}
-mkdir ../csdiff_build_py3
-cd ../csdiff_build_py3
+mkdir -p ../%{_target_platform}-py3
+cd ../%{_target_platform}-py3
 %cmake .. -B. \\
     -DPYTHON_EXECUTABLE=%{__python3} \\
     -DBOOST_PYTHON_LIB_NAME=boost_python%{python3_version_nodots}
-make %{?_smp_mflags} VERBOSE=yes pycsdiff
+%make_build pycsdiff
 %endif
 
 %install
 %if %{with python2}
-make install-pycsdiff -C csdiff_build_py2 DESTDIR=%{buildroot}
+make install-pycsdiff -C %{_target_platform}-py2 DESTDIR=%{buildroot}
 %endif
 
 %if %{with python3}
-make install-pycsdiff -C csdiff_build_py3 DESTDIR=%{buildroot}
+make install-pycsdiff -C %{_target_platform}-py3 DESTDIR=%{buildroot}
 %endif
 
-cd csdiff_build
-%make_install
+%make_install -C %{_target_platform}
 
 %check
-cd csdiff_build
+cd %{_target_platform}
 ctest %{?_smp_mflags} --output-on-failure
 
 %files
