@@ -564,6 +564,7 @@ struct GccPostProcessor::Private {
     void transSuffixGeneric(Defect *pDef, const std::string, const RE &) const;
     void transShellCheckId(Defect *pDef) const;
 
+    const RE reClangWarningEvt  = RE("^(.*) (\\[[A-Za-z.]+\\])$");
     const RE reGccAnalCoreEvt   = RE("^(.*) (\\[-Wanalyzer-[^ \\]]+\\])$");
     const RE reGccAnalCwe       = RE("^(.*) \\[CWE-([0-9]+)\\]$");
     const RE reGccWarningEvt    = RE("^(.*) (\\[-W[^ \\]]+\\])$");
@@ -630,6 +631,7 @@ void GccPostProcessor::Private::transSuffixGeneric(
 void GccPostProcessor::apply(Defect *pDef) const
 {
     d->transGccAnal(pDef);
+    d->transSuffixGeneric(pDef, "CLANG_WARNING",      d->reClangWarningEvt);
     d->transSuffixGeneric(pDef, "COMPILER_WARNING",   d->reGccWarningEvt);
     d->transSuffixGeneric(pDef, "SHELLCHECK_WARNING", d->reShellCheckId);
     d->langDetector.inferLangFromChecker(pDef);
