@@ -561,20 +561,13 @@ struct GccPostProcessor::Private {
     const LangDetector langDetector;
 
     void transGccAnal(Defect *pDef) const;
-    void transGccSuffix(Defect *pDef) const;
+    void transSuffixGeneric(Defect *pDef, const std::string, const RE &) const;
     void transShellCheckId(Defect *pDef) const;
 
-    const RE reGccAnalCoreEvt =
-        RE("^(.*) (\\[-Wanalyzer-[^ \\]]+\\])$");
-
-    const RE reGccAnalCwe =
-        RE("^(.*) \\[CWE-([0-9]+)\\]$");
-
-    const RE reGccWarningEvt =
-        RE("^(.*) (\\[-W[^ \\]]+\\])$");
-
-    const RE reShellCheckId =
-        RE("(^.*) (\\[SC([0-9]+)\\])$");
+    const RE reGccAnalCoreEvt   = RE("^(.*) (\\[-Wanalyzer-[^ \\]]+\\])$");
+    const RE reGccAnalCwe       = RE("^(.*) \\[CWE-([0-9]+)\\]$");
+    const RE reGccWarningEvt    = RE("^(.*) (\\[-W[^ \\]]+\\])$");
+    const RE reShellCheckId     = RE("(^.*) (\\[SC([0-9]+)\\])$");
 };
 
 GccPostProcessor::GccPostProcessor():
@@ -613,35 +606,22 @@ void GccPostProcessor::Private::transGccAnal(Defect *pDef) const
     keyEvt.msg = sm[/* msg */ 1];
 }
 
-void GccPostProcessor::Private::transGccSuffix(Defect *pDef) const
+void GccPostProcessor::Private::transSuffixGeneric(
+        Defect                 *pDef,
+        const std::string       checker,
+        const RE               &reEvt)
+    const
 {
-    if ("COMPILER_WARNING" != pDef->checker)
+    if (checker != pDef->checker)
         return;
 
-    // check for [-W...] suffix in message of the key event
+    // check for [...] suffix in message of the key event
     DefEvent &keyEvt = pDef->events[pDef->keyEventIdx];
     boost::smatch sm;
-    if (!boost::regex_match(keyEvt.msg, sm, this->reGccWarningEvt))
+    if (!boost::regex_match(keyEvt.msg, sm, reEvt))
         return;
 
-    // append [-W...] to key event ID and remove it from event msg
-    keyEvt.event += sm[/* id */ 2];
-    // this invalidates sm
-    keyEvt.msg = sm[/* msg */ 1];
-}
-
-void GccPostProcessor::Private::transShellCheckId(Defect *pDef) const
-{
-    if ("SHELLCHECK_WARNING" != pDef->checker)
-        return;
-
-    // check for [SC1234] suffix in message of the key event
-    DefEvent &keyEvt = pDef->events[pDef->keyEventIdx];
-    boost::smatch sm;
-    if (!boost::regex_match(keyEvt.msg, sm, this->reShellCheckId))
-        return;
-
-    // append [SC1234] to key event ID and remove it from event msg
+    // append [...] to key event ID and remove it from event msg
     keyEvt.event += sm[/* id */ 2];
     // this invalidates sm
     keyEvt.msg = sm[/* msg */ 1];
@@ -650,8 +630,8 @@ void GccPostProcessor::Private::transShellCheckId(Defect *pDef) const
 void GccPostProcessor::apply(Defect *pDef) const
 {
     d->transGccAnal(pDef);
-    d->transGccSuffix(pDef);
-    d->transShellCheckId(pDef);
+    d->transSuffixGeneric(pDef, "COMPILER_WARNING",   d->reGccWarningEvt);
+    d->transSuffixGeneric(pDef, "SHELLCHECK_WARNING", d->reShellCheckId);
     d->langDetector.inferLangFromChecker(pDef);
 }
 
