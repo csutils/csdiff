@@ -84,110 +84,116 @@ namespace HtmlLib {
 
 } // namespace HtmlLib
 
-namespace CsLib {
-    std::string digTitle(const TScanProps &props) {
-        const TScanProps::const_iterator NA = props.end();
-        TScanProps::const_iterator it = props.find("title");
-        if (NA != it)
-            return it->second;
+std::string digTitle(const TScanProps &props) {
+    const TScanProps::const_iterator NA = props.end();
+    TScanProps::const_iterator it = props.find("title");
+    if (NA != it)
+        return it->second;
 
-        std::string title;
-        it = props.find("project-name");
-        if (NA == it) {
-            it = props.find("tool-args");
-            if (props.end() == it)
-                return "";
+    std::string title;
+    it = props.find("project-name");
+    if (NA == it) {
+        it = props.find("tool-args");
+        if (props.end() == it)
+            return "";
 
-            const std::string &args = it->second;
-            const RE reSrpm("^.*[ /']([^ /']*)\\.src\\.rpm.*$");
+        const std::string &args = it->second;
+        const RE reSrpm("^.*[ /']([^ /']*)\\.src\\.rpm.*$");
 
-            boost::smatch sm;
-            if (!boost::regex_match(args, sm, reSrpm))
-                return "";
+        boost::smatch sm;
+        if (!boost::regex_match(args, sm, reSrpm))
+            return "";
 
-            title = sm[/* NVR */ 1];
-        }
-        else
-            title = it->second;
+        title = sm[/* NVR */ 1];
+    }
+    else
+        title = it->second;
 
-        it = props.find("diffbase-project-name");
-        if (NA != it) {
-            title += " - defects not occurring in ";
-            title += it->second;
-        }
-
-        return title;
+    it = props.find("diffbase-project-name");
+    if (NA != it) {
+        title += " - defects not occurring in ";
+        title += it->second;
     }
 
-    void writeParseWarnings(std::ostream &str, const TScanProps &props) {
-        TScanProps::const_iterator itCount, itRatio;
-        itCount = props.find("cov-compilation-unit-count");
-        itRatio = props.find("cov-compilation-unit-ratio");
+    return title;
+}
+
+void writeParseWarnings(std::ostream &str, const TScanProps &props) {
+    TScanProps::const_iterator itCount, itRatio;
+    itCount = props.find("cov-compilation-unit-count");
+    itRatio = props.find("cov-compilation-unit-ratio");
+    if (props.end() == itCount || props.end() == itRatio) {
+        // fallback to deprecated format produced by cov-mockbuild
+        itCount = props.find("compilation-unit-count");
+        itRatio = props.find("compilation-unit-ratio");
+    }
+    if (props.end() == itCount || props.end() == itRatio)
+        return;
+
+    try {
+        const int count = boost::lexical_cast<int>(itCount->second);
+        const int ratio = boost::lexical_cast<float>(itRatio->second);
+        if (ratio < parsingRatioThr)
+            str << "<p><b style='color: #FF0000;'>warning:</b> "
+                "low parsing ratio: " << ratio << "%</p>\n";
+
+        itCount = props.find("diffbase-cov-compilation-unit-count");
+        itRatio = props.find("diffbase-cov-compilation-unit-ratio");
         if (props.end() == itCount || props.end() == itRatio) {
             // fallback to deprecated format produced by cov-mockbuild
-            itCount = props.find("compilation-unit-count");
-            itRatio = props.find("compilation-unit-ratio");
+            itCount = props.find("diffbase-compilation-unit-count");
+            itRatio = props.find("diffbase-compilation-unit-ratio");
         }
         if (props.end() == itCount || props.end() == itRatio)
             return;
 
-        try {
-            const int count = boost::lexical_cast<int>(itCount->second);
-            const int ratio = boost::lexical_cast<float>(itRatio->second);
-            if (ratio < parsingRatioThr)
-                str << "<p><b style='color: #FF0000;'>warning:</b> "
-                    "low parsing ratio: " << ratio << "%</p>\n";
+        const int baseCount = boost::lexical_cast<int>(itCount->second);
+        const int baseRatio = boost::lexical_cast<float>(itRatio->second);
+        if (baseRatio < parsingRatioThr && baseRatio < ratio)
+            str << "<p><b style='color: #FF0000;'>warning:</b> "
+                "low parsing ratio in diff base: "
+                << baseRatio << "%</p>\n";
 
-            itCount = props.find("diffbase-cov-compilation-unit-count");
-            itRatio = props.find("diffbase-cov-compilation-unit-ratio");
-            if (props.end() == itCount || props.end() == itRatio) {
-                // fallback to deprecated format produced by cov-mockbuild
-                itCount = props.find("diffbase-compilation-unit-count");
-                itRatio = props.find("diffbase-compilation-unit-ratio");
-            }
-            if (props.end() == itCount || props.end() == itRatio)
-                return;
+        if (!count || 100 * baseCount / count < parsingOldToNewRatioThr)
+            str << "<p><b style='color: #FF0000;'>warning:</b> "
+                "low count of parsed units in diff base: "
+                << baseCount << "</p>\n";
+    }
+    catch (boost::bad_lexical_cast &) {
+        // failed to parse count/ratio
+    }
+}
 
-            const int baseCount = boost::lexical_cast<int>(itCount->second);
-            const int baseRatio = boost::lexical_cast<float>(itRatio->second);
-            if (baseRatio < parsingRatioThr && baseRatio < ratio)
-                str << "<p><b style='color: #FF0000;'>warning:</b> "
-                    "low parsing ratio in diff base: "
-                    << baseRatio << "%</p>\n";
+void writeScanProps(std::ostream &str, const TScanProps &props) {
+    if (props.empty())
+        return;
 
-            if (!count || 100 * baseCount / count < parsingOldToNewRatioThr)
-                str << "<p><b style='color: #FF0000;'>warning:</b> "
-                    "low count of parsed units in diff base: "
-                    << baseCount << "</p>\n";
-        }
-        catch (boost::bad_lexical_cast &) {
-            // failed to parse count/ratio
-        }
+    HtmlLib::initSection(str, "Scan Properties");
+
+    str << "<table style='font-family: monospace;'>\n";
+    int i = 0;
+
+    for (TScanProps::const_reference item : props) {
+        const char *trStyle = "";
+        if (++i & 1)
+            trStyle = " style='background-color: #EEE;'";
+
+        const char *tdStyle0 = "padding-right: 8px; white-space: nowrap;";
+        str << "<tr" << trStyle << "><td style='" << tdStyle0 << "'>"
+            << item.first << "</td><td>" << item.second << "</td></tr>\n";
     }
 
-    void writeScanProps(std::ostream &str, const TScanProps &props) {
-        if (props.empty())
-            return;
+    str << "</table>\n";
+}
 
-        HtmlLib::initSection(str, "Scan Properties");
-
-        str << "<table style='font-family: monospace;'>\n";
-        int i = 0;
-
-        for (TScanProps::const_reference item : props) {
-            const char *trStyle = "";
-            if (++i & 1)
-                trStyle = " style='background-color: #EEE;'";
-
-            const char *tdStyle0 = "padding-right: 8px; white-space: nowrap;";
-            str << "<tr" << trStyle << "><td style='" << tdStyle0 << "'>"
-                << item.first << "</td><td>" << item.second << "</td></tr>\n";
-        }
-
-        str << "</table>\n";
-    }
-
-} // namespace CsLib
+void linkifyShellCheckMsg(std::string *pMsg)
+{
+    static const RE reShellCheckMsg("(\\[)?SC([0-9]+)(\\])?$");
+    *pMsg = boost::regex_replace(*pMsg, reShellCheckMsg,
+            "<a href=\"https://github.com/koalaman/shellcheck/wiki/SC\\2\""
+            " title=\"description of ShellCheck's checker SC\\2\">"
+            "\\1SC\\2\\3</a>");
+}
 
 class HtmlWriterCore {
     public:
@@ -245,7 +251,7 @@ void HtmlWriterCore::writeHeaderOnce(
         return;
 
     // resolve title of the document
-    std::string title = CsLib::digTitle(props);
+    std::string title = digTitle(props);
     if (title.empty())
         title = titleFallback_;
 
@@ -255,9 +261,9 @@ void HtmlWriterCore::writeHeaderOnce(
         HtmlLib::writeLink(str_, plainTextUrl, "[Show plain-text results]");
 
     // write scan properties
-    CsLib::writeParseWarnings(str_, props);
+    writeParseWarnings(str_, props);
     if (spOnTop_)
-        CsLib::writeScanProps(str_, props);
+        writeScanProps(str_, props);
 
     // initialize the section for defects
     HtmlLib::initSection(str_, "List of Defects");
@@ -275,7 +281,7 @@ void HtmlWriterCore::closeDocument(const TScanProps &props)
     HtmlLib::finalizePre(str_);
 
     if (spBottom_)
-        CsLib::writeScanProps(str_, props);
+        writeScanProps(str_, props);
 
     HtmlLib::finalizeHtml(str_);
 
@@ -424,15 +430,6 @@ void HtmlWriter::Private::writeNewDefWarning(const Defect &def)
     // a newly introduced defect
     this->str << " <span style='color: #00FF00;'>[<b>warning:</b> "
         << this->newDefMsg << "]</span>";
-}
-
-void linkifyShellCheckMsg(std::string *pMgs)
-{
-    static const RE reShellCheckMsg("(\\[)?SC([0-9]+)(\\])?$");
-    *pMgs = boost::regex_replace(*pMgs, reShellCheckMsg,
-            "<a href=\"https://github.com/koalaman/shellcheck/wiki/SC\\2\""
-            " title=\"description of ShellCheck's checker SC\\2\">"
-            "\\1SC\\2\\3</a>");
 }
 
 void HtmlWriter::handleDef(const Defect &def)
