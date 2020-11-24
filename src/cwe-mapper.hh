@@ -21,18 +21,20 @@
 #define H_GUARD_CWE_MAPPER_H
 
 #include "abstract-filter.hh"
+#include "csv-parser.hh"
 
 #include <iostream>
 
-class CweMap {
+class CweMap: public AbstractCsvParser {
     public:
         CweMap();
         ~CweMap();
 
-        bool loadCweMap(std::istream &, const std::string &fileName);
         bool assignCwe(Defect &def) const;
         bool empty() const;
-        void setSilent(bool);
+
+    protected:
+        virtual bool /* continue */ handleLine(const TStringList &);
 
     private:
         struct Private;

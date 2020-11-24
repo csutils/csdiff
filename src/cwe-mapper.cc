@@ -21,30 +21,18 @@
 
 #include <cstdio>
 
-#include <boost/tokenizer.hpp>
-
 // /////////////////////////////////////////////////////////////////////////////
 // implementation of CweMap
 struct CweMap::Private {
     typedef std::map<std::string, int>              TNumByEvent;
     typedef std::map<std::string, TNumByEvent>      TMapByChk;
 
-    std::string         fileName;
-    std::string         line;
-    int                 lineno;
-    bool                silent;
-    bool                hasError;
     TMapByChk           mapByChk;
-
-    void parseError(const std::string &msg);
-    void parseLine();
 };
 
 CweMap::CweMap():
     d(new Private)
 {
-    d->silent = false;
-    d->hasError = false;
 }
 
 CweMap::~CweMap()
@@ -57,35 +45,11 @@ bool CweMap::empty() const
     return d->mapByChk.empty();
 }
 
-void CweMap::setSilent(bool silent)
+bool CweMap::handleLine(const TStringList &fields)
 {
-    d->silent = silent;
-}
-
-void CweMap::Private::parseError(const std::string &msg)
-{
-    this->hasError = true;
-    if (this->silent)
-        return;
-    std::cerr
-        << this->fileName << ":"
-        << this->lineno << ": error: "
-        << msg << "\n";
-}
-
-void CweMap::Private::parseLine()
-{
-    // initialize tokenizer
-    typedef boost::escaped_list_separator<char>     TSeparator;
-    typedef boost::tokenizer<TSeparator>            TTokenizer;
-    TTokenizer tok(this->line);
-
-    // break the current line into fields
-    typedef std::vector<std::string>                TStringList;
-    TStringList fields(tok.begin(), tok.end());
     if (3U != fields.size()) {
         this->parseError("invalid count of fields");
-        return;
+        return /* continue */ true;
     }
 
     // parse CWE number
@@ -94,12 +58,12 @@ void CweMap::Private::parseLine()
     if (1 != sscanf(fields[/* CWE */ 2].c_str(), "CWE-%u%c", &cwe, &c) || !cwe)
     {
         this->parseError("invalid CWE ID");
-        return;
+        return /* continue */ true;
     }
 
     // lookup by checker
     const std::string &chk = fields[/* chk */ 0];
-    TNumByEvent &row = this->mapByChk[chk];
+    Private::TNumByEvent &row = d->mapByChk[chk];
 
     // lookup by event
     const std::string &evt = fields[/* evt */ 1];
@@ -108,19 +72,8 @@ void CweMap::Private::parseLine()
 
     // store the mapping
     row[evt] = cwe;
-}
 
-bool CweMap::loadCweMap(std::istream &str, const std::string &fileName)
-{
-    d->fileName = fileName;
-    d->lineno = 0;
-
-    while (std::getline(str, d->line)) {
-        d->lineno++;
-        d->parseLine();
-    }
-
-    return !d->hasError;
+    return /* continue */ true;
 }
 
 bool CweMap::assignCwe(Defect &def) const
@@ -134,7 +87,7 @@ bool CweMap::assignCwe(Defect &def) const
             // CWE already assigned, stay silent
             return true;
 
-        if (!d->silent)
+        if (!this->silent)
             std::cerr << "warning: CWE not found: checker = "
                 << def.checker <<"\n";
         return false;
@@ -149,7 +102,7 @@ bool CweMap::assignCwe(Defect &def) const
             // CWE already assigned, stay silent
             return true;
 
-        if (!d->silent)
+        if (!this->silent)
             std::cerr << "warning: CWE not found: checker = " << def.checker
                 << ", event = " << evt.event << "\n";
 
@@ -167,7 +120,7 @@ bool CweMap::assignCwe(Defect &def) const
         // already assigned to the requested value
         return true;
 
-    if (cweDst && !d->silent)
+    if (cweDst && !this->silent)
         // we are rewriting the CWE
         std::cerr << "warning: CWE overriden: "
             << cweSrc << " -> "

@@ -26,6 +26,7 @@ add_library(cs STATIC
     csdiff-core.cc
     csfilter.cc
     csparser.cc
+    csv-parser.cc
     cswriter.cc
     cwe-mapper.cc
     deflookup.cc

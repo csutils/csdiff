@@ -234,7 +234,7 @@ int main(int argc, char *argv[])
         try {
             // load CWE mapping from the given file
             InStream strCwe(fnCwe);
-            if (!cweDec->cweMap().loadCweMap(strCwe.str(), fnCwe))
+            if (!cweDec->cweMap().parse(strCwe))
                 hasError = true;
         }
         catch (const InFileException &e) {
