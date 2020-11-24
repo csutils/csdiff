@@ -195,6 +195,16 @@ void linkifyShellCheckMsg(std::string *pMsg)
             "\\1SC\\2\\3</a>");
 }
 
+void printCweLink(std::ostream &str, const int cwe)
+{
+    str << "<a href=\"https://cwe.mitre.org/data/definitions/"
+        << cwe << ".html\""
+        << " title=\"definition of CWE-"
+        << cwe << " by MITRE\">"
+        << "CWE-" << cwe
+        << "</a>";
+}
+
 class HtmlWriterCore {
     public:
         HtmlWriterCore(
@@ -441,8 +451,11 @@ void HtmlWriter::handleDef(const Defect &def)
 
     d->str << "<b>Error: <span style='background: #C0FF00;'>"
         << HtmlLib::escapeTextInline(def.checker) << "</span>";
-    if (def.cwe)
-        d->str << " (CWE-" << def.cwe << ")";
+    if (def.cwe) {
+        d->str << " (";
+        printCweLink(d->str, def.cwe);
+        d->str << ")";
+    }
     else
         d->str << HtmlLib::escapeTextInline(def.annotation);
     d->str << ":</b>";
