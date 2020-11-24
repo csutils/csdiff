@@ -179,7 +179,8 @@ namespace CsLib {
             if (++i & 1)
                 trStyle = " style='background-color: #EEE;'";
 
-            str << "<tr" << trStyle << "><td style='padding-right: 8px;'>"
+            const char *tdStyle0 = "padding-right: 8px; white-space: nowrap;";
+            str << "<tr" << trStyle << "><td style='" << tdStyle0 << "'>"
                 << item.first << "</td><td>" << item.second << "</td></tr>\n";
         }
 
