@@ -1,1 +1,1 @@
-16-compiler-warnings-args.txt
+--quiet --path '^/builddir/build/BUILD/' --event='warning.*' --remove-duplicates

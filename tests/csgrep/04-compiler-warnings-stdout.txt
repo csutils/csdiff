@@ -1,1 +1,245 @@
-03-compiler-warnings-stdout.txt
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/conftest.c: scope_hint: In function 'main'
+/builddir/build/BUILD/curl-7.15.5/conftest.c:29: warning: implicit declaration of function 'exit'
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/conftest.c:29: warning: incompatible implicit declaration of built-in function 'exit'
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/conftest.c:41: warning: unused variable 'dummy'
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/conftest.c: scope_hint: In function 'main'
+/builddir/build/BUILD/curl-7.15.5/conftest.c:42: warning: implicit declaration of function 'WSACleanup'
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/conftest.c:42: warning: unused variable 'dummy'
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/conftest.c:43: warning: unused variable 'dummy'
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/conftest.c:51: warning: conflicting types for built-in function 'strcasecmp'
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/conftest.c: scope_hint: In function 'main'
+/builddir/build/BUILD/curl-7.15.5/conftest.c:35: warning: implicit declaration of function 'timeGetTime'
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/conftest.c: scope_hint: In function 'main'
+/builddir/build/BUILD/curl-7.15.5/conftest.c:56: warning: 'flags' is used uninitialized in this function
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/conftest.c:56: warning: 'socket' is used uninitialized in this function
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/conftest.c: scope_hint: In function 'main'
+/builddir/build/BUILD/curl-7.15.5/conftest.c:2: warning: unused parameter 'argc'
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/conftest.c: scope_hint: In function 'main'
+/builddir/build/BUILD/curl-7.15.5/conftest.c:38: warning: implicit declaration of function 'GdiFlush'
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/conftest.c: scope_hint: In function 'main'
+/builddir/build/BUILD/curl-7.15.5/conftest.c:71: warning: initialization makes pointer from integer without a cast
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/conftest.c: scope_hint: In function 'main'
+/builddir/build/BUILD/curl-7.15.5/conftest.c:8: warning: implicit declaration of function 'putenv'
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/conftest.c: scope_hint: In function 'main'
+/builddir/build/BUILD/curl-7.15.5/conftest.c:127: warning: unused variable 's'
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/conftest.c:147: warning: unused variable 'foo'
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/conftest.c:114: warning: unused variable 'zero'
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/conftest.c:108: warning: unused variable 'x'
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/conftest.c:129: warning: 't' is used uninitialized in this function
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/conftest.c:144: warning: 'b' is used uninitialized in this function
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/conftest.c: scope_hint: In function 'main'
+/builddir/build/BUILD/curl-7.15.5/conftest.c:150: warning: unused variable 'res'
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/conftest.c: scope_hint: In function 'main'
+/builddir/build/BUILD/curl-7.15.5/conftest.c:157: warning: unused variable 'res'
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/conftest.c: scope_hint: In function 'main'
+/builddir/build/BUILD/curl-7.15.5/conftest.c:160: warning: unused variable 'flag'
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/conftest.c: scope_hint: In function 'main'
+/builddir/build/BUILD/curl-7.15.5/conftest.c:147: warning: unused variable 'i'
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/conftest.c:161: warning: conflicting types for built-in function 'strdup'
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/conftest.c:162: warning: conflicting types for built-in function 'strstr'
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/conftest.c: scope_hint: In function 'main'
+/builddir/build/BUILD/curl-7.15.5/conftest.c:146: warning: implicit declaration of function 'stricmp'
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/conftest.c: scope_hint: In function 'main'
+/builddir/build/BUILD/curl-7.15.5/conftest.c:146: warning: implicit declaration of function 'strcmpi'
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/conftest.c: scope_hint: In function 'main'
+/builddir/build/BUILD/curl-7.15.5/conftest.c:152: warning: implicit declaration of function 'closesocket'
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/conftest.c: scope_hint: In function 'main'
+/builddir/build/BUILD/curl-7.15.5/conftest.c:155: warning: implicit declaration of function 'getpass_r'
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/conftest.c: scope_hint: In function 'main'
+/builddir/build/BUILD/curl-7.15.5/conftest.c:155: warning: implicit declaration of function 'strlcat'
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/conftest.c: scope_hint: In function 'main'
+/builddir/build/BUILD/curl-7.15.5/conftest.c:159: warning: implicit declaration of function 'sigsetjmp'
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/conftest.c:187: warning: conflicting types for built-in function 'fork'
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/conftest.c: scope_hint: In function 'main'
+/builddir/build/BUILD/curl-7.15.5/conftest.c:176: warning: unused variable 'p'
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/conftest.c: scope_hint: In function 'main'
+/builddir/build/BUILD/curl-7.15.5/conftest.c:212: warning: unused variable 'res'
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/conftest.c: scope_hint: In function 'main'
+/builddir/build/BUILD/curl-7.15.5/conftest.c:184: warning: implicit declaration of function 'memset'
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/conftest.c:184: warning: incompatible implicit declaration of built-in function 'memset'
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/conftest.c: scope_hint: In function 'main'
+/builddir/build/BUILD/curl-7.15.5/conftest.c:9: warning: implicit declaration of function 'poll'
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/lib/file.c:91: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/include/curl/mprintf.h:43:1: warning: "printf" redefined
+/usr/include/stdio.h:838: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/lib/setup.h:151: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/lib/file.c:24: included_from: Included from here.
+/usr/include/bits/stdio2.h:65:1: note: this is the location of the previous definition
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/lib/file.c:91: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/include/curl/mprintf.h:44:1: warning: "fprintf" redefined
+/usr/include/stdio.h:838: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/lib/setup.h:151: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/lib/file.c:24: included_from: Included from here.
+/usr/include/bits/stdio2.h:67:1: note: this is the location of the previous definition
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/lib/file.c:91: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/include/curl/mprintf.h:51:1: warning: "sprintf" redefined
+/usr/include/stdio.h:838: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/lib/setup.h:151: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/lib/file.c:24: included_from: Included from here.
+/usr/include/bits/stdio2.h:30:1: note: this is the location of the previous definition
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/lib/file.c:91: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/include/curl/mprintf.h:52:1: warning: "vsprintf" redefined
+/usr/include/stdio.h:838: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/lib/setup.h:151: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/lib/file.c:24: included_from: Included from here.
+/usr/include/bits/stdio2.h:33:1: note: this is the location of the previous definition
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/lib/file.c:91: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/include/curl/mprintf.h:54:1: warning: "snprintf" redefined
+/usr/include/stdio.h:838: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/lib/setup.h:151: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/lib/file.c:24: included_from: Included from here.
+/usr/include/bits/stdio2.h:45:1: note: this is the location of the previous definition
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/lib/file.c:91: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/include/curl/mprintf.h:55:1: warning: "vprintf" redefined
+/usr/include/stdio.h:838: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/lib/setup.h:151: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/lib/file.c:24: included_from: Included from here.
+/usr/include/bits/stdio2.h:69:1: note: this is the location of the previous definition
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/lib/file.c:91: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/include/curl/mprintf.h:56:1: warning: "vfprintf" redefined
+/usr/include/stdio.h:838: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/lib/setup.h:151: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/lib/file.c:24: included_from: Included from here.
+/usr/include/bits/stdio2.h:71:1: note: this is the location of the previous definition
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/lib/file.c:91: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/include/curl/mprintf.h:57:1: warning: "vsnprintf" redefined
+/usr/include/stdio.h:838: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/lib/setup.h:151: included_from: Included from here.
+/builddir/build/BUILD/curl-7.15.5/lib/file.c:24: included_from: Included from here.
+/usr/include/bits/stdio2.h:48:1: note: this is the location of the previous definition
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/lib/sendf.c: scope_hint: In function 'showit'
+/builddir/build/BUILD/curl-7.15.5/lib/sendf.c:520: warning: ignoring return value of 'fwrite', declared with attribute warn_unused_result
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/lib/sendf.c:521: warning: ignoring return value of 'fwrite', declared with attribute warn_unused_result
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/lib/ftp.c: scope_hint: In function 'ftp_perform'
+/builddir/build/BUILD/curl-7.15.5/lib/ftp.c:3286: warning: empty body in an if-statement
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/lib/ldap.c: scope_hint: In function 'DynaGetFunction'
+/builddir/build/BUILD/curl-7.15.5/lib/ldap.c:201: warning: dereferencing type-punned pointer will break strict-aliasing rules
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/lib/ssluse.c: scope_hint: In function 'verifyhost'
+/builddir/build/BUILD/curl-7.15.5/lib/ssluse.c:956: warning: comparison between signed and unsigned
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/lib/connect.c: scope_hint: In function 'bindlocal'
+/builddir/build/BUILD/curl-7.15.5/lib/connect.c:389: warning: dereferencing type-punned pointer will break strict-aliasing rules
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/lib/http_negotiate.c: scope_hint: In function 'Curl_input_negotiate'
+/builddir/build/BUILD/curl-7.15.5/lib/http_negotiate.c:181: warning: dereferencing type-punned pointer will break strict-aliasing rules
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/src/main.c: scope_hint: In function 'warnf'
+/builddir/build/BUILD/curl-7.15.5/src/main.c:392: warning: ignoring return value of 'fwrite', declared with attribute warn_unused_result
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/src/main.c: scope_hint: In function 'my_trace'
+/builddir/build/BUILD/curl-7.15.5/src/main.c:3052: warning: ignoring return value of 'fwrite', declared with attribute warn_unused_result
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/src/main.c:3059: warning: ignoring return value of 'fwrite', declared with attribute warn_unused_result
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/src/main.c:3065: warning: ignoring return value of 'fwrite', declared with attribute warn_unused_result
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/curl-7.15.5/src/main.c: scope_hint: In function 'operate'
+/builddir/build/BUILD/curl-7.15.5/src/main.c:4149: warning: ignoring return value of 'ftruncate', declared with attribute warn_unused_result

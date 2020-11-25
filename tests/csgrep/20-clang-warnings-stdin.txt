@@ -1,1 +1,51 @@
-19-clang-warnings-stdout.txt
+Error: COMPILER_WARNING:
+/home/kdudka/git/coverity-scan/abscc/abscc.c: scope_hint: In function 'find_exe_in_dir'
+/home/kdudka/git/coverity-scan/abscc/abscc.c:151: warning: ISO C90 forbids mixed declarations and code
+
+Error: COMPILER_WARNING:
+/home/kdudka/git/coverity-scan/abscc/abscc.c: scope_hint: In function 'find_tool_in_path'
+/home/kdudka/git/coverity-scan/abscc/abscc.c:187: warning: ISO C90 forbids mixed declarations and code
+
+Error: COMPILER_WARNING:
+/home/kdudka/git/coverity-scan/abscc/abscc.c:203: warning: ISO C90 forbids mixed declarations and code
+
+Error: COMPILER_WARNING:
+/home/kdudka/git/coverity-scan/abscc/abscc.c: scope_hint: In function 'handle_flag'
+/home/kdudka/git/coverity-scan/abscc/abscc.c:264: warning: ISO C90 forbids mixed declarations and code
+
+Error: COMPILER_WARNING:
+/home/kdudka/git/coverity-scan/abscc/abscc.c: scope_hint: In function 'handle_cvar'
+/home/kdudka/git/coverity-scan/abscc/abscc.c:288: warning: ISO C90 forbids mixed declarations and code
+
+Error: COMPILER_WARNING:
+/home/kdudka/git/coverity-scan/abscc/abscc.c: scope_hint: In function 'write_out'
+/home/kdudka/git/coverity-scan/abscc/abscc.c:359: warning: ISO C90 forbids mixed declarations and code
+
+Error: COMPILER_WARNING:
+/home/kdudka/git/coverity-scan/abscc/abscc.c: scope_hint: In function 'handle_line'
+/home/kdudka/git/coverity-scan/abscc/abscc.c:385: warning: ISO C90 forbids mixed declarations and code
+
+Error: COMPILER_WARNING:
+/home/kdudka/git/coverity-scan/abscc/abscc.c:406: warning: ISO C90 forbids mixed declarations and code
+
+Error: COMPILER_WARNING:
+/home/kdudka/git/coverity-scan/abscc/abscc.c: scope_hint: In function 'trans_paths_to_abs'
+/home/kdudka/git/coverity-scan/abscc/abscc.c:429: warning: ISO C90 forbids mixed declarations and code
+
+Error: COMPILER_WARNING:
+/home/kdudka/git/coverity-scan/abscc/abscc.c: scope_hint: In function 'main'
+/home/kdudka/git/coverity-scan/abscc/abscc.c:460: warning: ISO C90 forbids mixed declarations and code
+
+Error: COMPILER_WARNING:
+/home/kdudka/git/coverity-scan/abscc/abscc.c:465: warning: ISO C90 forbids mixed declarations and code
+
+Error: COMPILER_WARNING:
+/home/kdudka/git/coverity-scan/abscc/abscc.c:485: warning: ISO C90 forbids mixed declarations and code
+
+Error: COMPILER_WARNING:
+/home/kdudka/git/coverity-scan/abscc/abscc.c:492: warning: ISO C90 forbids mixed declarations and code
+
+Error: CLANG_WARNING:
+/home/kdudka/git/coverity-scan/abscc/abscc.c:531:26: warning: Pass-by-value argument in function call is undefined
+#                status = fail("unexpected child status: %s", status);
+#                         ^                                   ~~~~~~

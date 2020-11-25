@@ -1,1 +1,25 @@
-21-compiler-warnings-stdout.txt
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/autofs-5.0.8/lib/mounts.c: scope_hint: In function 'remount_active_mount'
+/builddir/build/BUILD/autofs-5.0.8/lib/mounts.c:1550:7: warning[-Wunused-but-set-variable]: variable 'ret' set but not used
+#   int ret;
+#       ^
+/builddir/build/BUILD/autofs-5.0.8/lib/master_tok.l:424: included_from: Included from here.
+/builddir/build/BUILD/autofs-5.0.8/include/automount.h:119: note: this is the location of the previous definition
+# #define min(a, b) (a <= b ? a : b)
+# ^
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/autofs-5.0.8/lib/master_tok.c:2491:16: warning[-Wunused-function]: 'input' defined but not used
+#     static int input  (void)
+#                ^
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/autofs-5.0.8/lib/nss_tok.c:1288:16: warning[-Wunused-function]: 'input' defined but not used
+#     static int input  (void)
+#                ^
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/autofs-5.0.8/lib/defaults.c:27: included_from: Included from here.
+/builddir/build/BUILD/autofs-5.0.8/include/lookup_ldap.h:7:25: fatal error: openssl/ssl.h: No such file or directory
+# #include <openssl/ssl.h>
+#                         ^

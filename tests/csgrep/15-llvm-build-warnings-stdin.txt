@@ -1,1 +1,3577 @@
-14-llvm-build-warnings-stdout.txt
+{
+    "defects": [
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "cc1",
+                    "line": 0,
+                    "event": "warning",
+                    "message": "command line option \"-fno-rtti\" is valid for C++/ObjC++ but not for C",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "cc1",
+                    "line": 0,
+                    "event": "error",
+                    "message": "unrecognized command line option \"-Wcpp\"",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "cc1",
+                    "line": 0,
+                    "event": "error",
+                    "message": "unrecognized command line option \"-Wdouble-promotion\"",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "cc1",
+                    "line": 0,
+                    "event": "error",
+                    "message": "unrecognized command line option \"-Wfree-nonheap-object\"",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "cc1",
+                    "line": 0,
+                    "event": "error",
+                    "message": "unrecognized command line option \"-Winvalid-memory-model\"",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "cc1",
+                    "line": 0,
+                    "event": "error",
+                    "message": "unrecognized command line option \"-Wjump-misses-init\"",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "cc1",
+                    "line": 0,
+                    "event": "error",
+                    "message": "unrecognized command line option \"-Wmaybe-uninitialized\"",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "cc1",
+                    "line": 0,
+                    "event": "error",
+                    "message": "unrecognized command line option \"-Wnarrowing\"",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "cc1",
+                    "line": 0,
+                    "event": "error",
+                    "message": "unrecognized command line option \"-Wsizeof-pointer-memaccess\"",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "cc1",
+                    "line": 0,
+                    "event": "error",
+                    "message": "unrecognized command line option \"-Wsuggest-attribute=const\"",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "cc1",
+                    "line": 0,
+                    "event": "error",
+                    "message": "unrecognized command line option \"-Wsuggest-attribute=format\"",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "cc1",
+                    "line": 0,
+                    "event": "error",
+                    "message": "unrecognized command line option \"-Wsuggest-attribute=noreturn\"",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "cc1",
+                    "line": 0,
+                    "event": "error",
+                    "message": "unrecognized command line option \"-Wsuggest-attribute=pure\"",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "cc1",
+                    "line": 0,
+                    "event": "error",
+                    "message": "unrecognized command line option \"-Wtrampolines\"",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "cc1",
+                    "line": 0,
+                    "event": "error",
+                    "message": "unrecognized command line option \"-Wunused-local-typedefs\"",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "cc1",
+                    "line": 0,
+                    "event": "error",
+                    "message": "unrecognized command line option \"-Wunused-result\"",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "cc1",
+                    "line": 0,
+                    "event": "error",
+                    "message": "unrecognized command line option \"-Wvarargs\"",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "cc1",
+                    "line": 0,
+                    "event": "error",
+                    "message": "unrecognized command line option \"-Wvector-operation-performance\"",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/gnulib/lib/vasnprintf.c",
+                    "line": 1883,
+                    "column": 17,
+                    "event": "warning",
+                    "message": "Null pointer passed as an argument to a 'nonnull' parameter",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                DCHAR_CPY (result + length, (const DCHAR_T *) cp, n);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                ^          ~~~~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/gnulib/lib/vasnprintf.c",
+                    "line": 143,
+                    "column": 21,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "#  define DCHAR_CPY memcpy",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                    ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/gnulib/lib/vasnprintf.c",
+                    "line": 5548,
+                    "column": 5,
+                    "event": "warning",
+                    "message": "Dereference of null pointer",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    result[length] = '\\0';",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/gnulib/lib/vasnprintf.c",
+                    "line": 1905,
+                    "column": 13,
+                    "event": "warning",
+                    "message": "Dereference of null pointer",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "            result[length] = '%';",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "            ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/util/processinfo.c",
+                    "line": 64,
+                    "column": 13,
+                    "event": "warning[-Wunused-value]",
+                    "message": "expression result unused",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "            CPU_SET_S(i, masklen, mask);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "            ^~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/util/processinfo.c",
+                    "line": 24,
+                    "event": "included_from",
+                    "message": "Included from here.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/usr/include/sched.h",
+                    "line": 87,
+                    "column": 45,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "# define CPU_SET_S(cpu, setsize, cpusetp)   __CPU_SET_S (cpu, setsize, cpusetp)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                                            ^",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/util/processinfo.c",
+                    "line": 24,
+                    "event": "included_from",
+                    "message": "Included from here.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/usr/include/sched.h",
+                    "line": 43,
+                    "event": "included_from",
+                    "message": "Included from here.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/usr/include/bits/sched.h",
+                    "line": 148,
+                    "column": 9,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      : 0; }))",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "        ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/util/util.c",
+                    "line": 960,
+                    "column": 32,
+                    "event": "warning",
+                    "message": "Although the value stored to 'ret' is used in the enclosing expression, the value is never actually read from 'ret'",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    if (!WIFEXITED(status) || (ret = -WEXITSTATUS(status)) == -EACCES ||",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                               ^     ~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/util/virnetdevmacvlan.c",
+                    "line": 582,
+                    "column": 9,
+                    "event": "warning",
+                    "message": "Branch condition evaluates to a garbage value",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "        if (tb_vfinfo[IFLA_VF_MAC]) {",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "        ^   ~~~~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/util/virnetlink.c",
+                    "line": 635,
+                    "column": 5,
+                    "event": "warning",
+                    "message": "Value stored to 'r' is never read",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    r = 0;",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    ^   ~",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/util/virstring.c",
+                    "line": 102,
+                    "column": 12,
+                    "event": "warning",
+                    "message": "Value stored to 'ntokens' is never read",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    tokens[ntokens++] = NULL;",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "           ^~~~~~~~~",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/conf/domain_conf.c",
+                    "line": 15807,
+                    "column": 9,
+                    "event": "warning",
+                    "message": "Dereference of null pointer (loaded from variable 'domains')",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "        *domains = data.domains;",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "        ^~~~~~~~",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/conf/snapshot_conf.c",
+                    "line": 844,
+                    "column": 13,
+                    "event": "warning",
+                    "message": "Null pointer passed as an argument to a 'nonnull' parameter",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "            VIR_FREE(names[i]);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "            ^~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/conf/snapshot_conf.c",
+                    "line": 38,
+                    "event": "included_from",
+                    "message": "Included from here.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/util/memory.h",
+                    "line": 368,
+                    "column": 24,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "# define VIR_FREE(ptr) virFree((void *) (1 ? (const void *) &(ptr) : (ptr)))",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                       ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/nodeinfo.c",
+                    "line": 254,
+                    "column": 9,
+                    "event": "warning[-Wunused-value]",
+                    "message": "expression result unused",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "        CPU_SET(sock, &sock_map);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "        ^~~~~~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/nodeinfo.c",
+                    "line": 33,
+                    "event": "included_from",
+                    "message": "Included from here.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/usr/include/sched.h",
+                    "line": 80,
+                    "column": 33,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "# define CPU_SET(cpu, cpusetp)   __CPU_SET_S (cpu, sizeof (cpu_set_t), cpusetp)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                                 ^",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/nodeinfo.c",
+                    "line": 33,
+                    "event": "included_from",
+                    "message": "Included from here.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/usr/include/sched.h",
+                    "line": 43,
+                    "event": "included_from",
+                    "message": "Included from here.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/usr/include/bits/sched.h",
+                    "line": 148,
+                    "column": 9,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      : 0; }))",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "        ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/nodeinfo.c",
+                    "line": 312,
+                    "column": 9,
+                    "event": "warning[-Wunused-value]",
+                    "message": "expression result unused",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "        CPU_SET(core, &core_maps[sock]);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/nodeinfo.c",
+                    "line": 33,
+                    "event": "included_from",
+                    "message": "Included from here.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/usr/include/sched.h",
+                    "line": 80,
+                    "column": 33,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "# define CPU_SET(cpu, cpusetp)   __CPU_SET_S (cpu, sizeof (cpu_set_t), cpusetp)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                                 ^",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/nodeinfo.c",
+                    "line": 33,
+                    "event": "included_from",
+                    "message": "Included from here.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/usr/include/sched.h",
+                    "line": 43,
+                    "event": "included_from",
+                    "message": "Included from here.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/usr/include/bits/sched.h",
+                    "line": 148,
+                    "column": 9,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      : 0; }))",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "        ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
+                    "line": 4968,
+                    "column": 21,
+                    "event": "warning",
+                    "message": "Null pointer passed as an argument to a 'nonnull' parameter",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    if (!(tempuri = virURIParse(dconnuri))) {",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                    ^           ~~~~~~~~",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
+                    "line": 14209,
+                    "column": 10,
+                    "event": "warning",
+                    "message": "Field access results in a dereference of a null pointer (loaded from variable 'dev')",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
+                    "line": 46,
+                    "event": "included_from",
+                    "message": "Included from here.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h",
+                    "line": 74,
+                    "column": 33,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                                ^",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
+                    "line": 14209,
+                    "column": 10,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "         ^",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
+                    "line": 46,
+                    "event": "included_from",
+                    "message": "Included from here.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h",
+                    "line": 74,
+                    "column": 55,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                                               ~~~~~  ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
+                    "line": 14243,
+                    "column": 10,
+                    "event": "warning",
+                    "message": "Field access results in a dereference of a null pointer (loaded from variable 'dev')",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
+                    "line": 46,
+                    "event": "included_from",
+                    "message": "Included from here.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h",
+                    "line": 74,
+                    "column": 33,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                                ^",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
+                    "line": 14243,
+                    "column": 10,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "         ^",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
+                    "line": 46,
+                    "event": "included_from",
+                    "message": "Included from here.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h",
+                    "line": 74,
+                    "column": 55,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                                               ~~~~~  ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
+                    "line": 14267,
+                    "column": 10,
+                    "event": "warning",
+                    "message": "Field access results in a dereference of a null pointer (loaded from variable 'dev')",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
+                    "line": 46,
+                    "event": "included_from",
+                    "message": "Included from here.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h",
+                    "line": 74,
+                    "column": 33,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                                ^",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
+                    "line": 14267,
+                    "column": 10,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "         ^",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
+                    "line": 46,
+                    "event": "included_from",
+                    "message": "Included from here.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h",
+                    "line": 74,
+                    "column": 55,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                                               ~~~~~  ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
+                    "line": 14299,
+                    "column": 10,
+                    "event": "warning",
+                    "message": "Field access results in a dereference of a null pointer (loaded from variable 'dev')",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
+                    "line": 46,
+                    "event": "included_from",
+                    "message": "Included from here.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h",
+                    "line": 74,
+                    "column": 33,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                                ^",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
+                    "line": 14299,
+                    "column": 10,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "         ^",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
+                    "line": 46,
+                    "event": "included_from",
+                    "message": "Included from here.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h",
+                    "line": 74,
+                    "column": 55,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                                               ~~~~~  ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
+                    "line": 14339,
+                    "column": 10,
+                    "event": "warning",
+                    "message": "Field access results in a dereference of a null pointer (loaded from variable 'dev')",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
+                    "line": 46,
+                    "event": "included_from",
+                    "message": "Included from here.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h",
+                    "line": 74,
+                    "column": 33,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                                ^",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
+                    "line": 14339,
+                    "column": 10,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "         ^",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
+                    "line": 46,
+                    "event": "included_from",
+                    "message": "Included from here.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h",
+                    "line": 74,
+                    "column": 55,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                                               ~~~~~  ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
+                    "line": 14379,
+                    "column": 10,
+                    "event": "warning",
+                    "message": "Field access results in a dereference of a null pointer (loaded from variable 'dev')",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
+                    "line": 46,
+                    "event": "included_from",
+                    "message": "Included from here.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h",
+                    "line": 74,
+                    "column": 33,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                                ^",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
+                    "line": 14379,
+                    "column": 10,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "         ^",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
+                    "line": 46,
+                    "event": "included_from",
+                    "message": "Included from here.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h",
+                    "line": 74,
+                    "column": 55,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                                               ~~~~~  ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
+                    "line": 14445,
+                    "column": 10,
+                    "event": "warning",
+                    "message": "Field access results in a dereference of a null pointer (loaded from variable 'dev')",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
+                    "line": 46,
+                    "event": "included_from",
+                    "message": "Included from here.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h",
+                    "line": 74,
+                    "column": 33,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                                ^",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
+                    "line": 14445,
+                    "column": 10,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "         ^",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
+                    "line": 46,
+                    "event": "included_from",
+                    "message": "Included from here.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h",
+                    "line": 74,
+                    "column": 55,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                                               ~~~~~  ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
+                    "line": 14493,
+                    "column": 10,
+                    "event": "warning",
+                    "message": "Field access results in a dereference of a null pointer (loaded from variable 'dev')",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
+                    "line": 46,
+                    "event": "included_from",
+                    "message": "Included from here.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h",
+                    "line": 74,
+                    "column": 33,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                                ^",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
+                    "line": 14493,
+                    "column": 10,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "         ^",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
+                    "line": 46,
+                    "event": "included_from",
+                    "message": "Included from here.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h",
+                    "line": 74,
+                    "column": 55,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                                               ~~~~~  ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
+                    "line": 14543,
+                    "column": 10,
+                    "event": "warning",
+                    "message": "Field access results in a dereference of a null pointer (loaded from variable 'dev')",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
+                    "line": 46,
+                    "event": "included_from",
+                    "message": "Included from here.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h",
+                    "line": 74,
+                    "column": 33,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                                ^",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
+                    "line": 14543,
+                    "column": 10,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "         ^",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
+                    "line": 46,
+                    "event": "included_from",
+                    "message": "Included from here.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h",
+                    "line": 74,
+                    "column": 55,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                                               ~~~~~  ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/remote/remote_driver.c",
+                    "line": 4982,
+                    "column": 10,
+                    "event": "warning",
+                    "message": "Although the value stored to 'eventID' is used in the enclosing expression, the value is never actually read from 'eventID'",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    if ((eventID = virDomainEventStateEventID(conn,",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "         ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/rpc/virnetclient.c",
+                    "line": 1822,
+                    "column": 18,
+                    "event": "warning",
+                    "message": "Field access results in a dereference of a null pointer (loaded from variable 'client')",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    if (!client->sock)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "         ~~~~~~  ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/esx/esx_driver.c",
+                    "line": 5170,
+                    "column": 21,
+                    "event": "warning",
+                    "message": "Pass-by-value argument in function call is undefined",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "            state = esxVI_VirtualMachinePowerState_ConvertToLibvirt(powerState);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                    ^                                               ~~~~~~~~~~",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/esx/esx_driver.c",
+                    "line": 5126,
+                    "column": 27,
+                    "event": "warning",
+                    "message": "The left operand of '==' is a garbage value",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "               powerState == esxVI_VirtualMachinePowerState_PoweredOff)))",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "               ~~~~~~~~~~ ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/esx/esx_driver.c",
+                    "line": 5124,
+                    "column": 27,
+                    "event": "warning",
+                    "message": "The left operand of '!=' is a garbage value",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "               powerState != esxVI_VirtualMachinePowerState_PoweredOff) ||",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "               ~~~~~~~~~~ ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/esx/esx_driver.c",
+                    "line": 5149,
+                    "column": 36,
+                    "event": "warning",
+                    "message": "Field access results in a dereference of a null pointer (loaded from variable 'autoStartDefaults')",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "            if (autoStartDefaults->enabled == esxVI_Boolean_True) {",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                ~~~~~~~~~~~~~~~~~  ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/security/security_selinux.c",
+                    "line": 1996,
+                    "column": 5,
+                    "event": "warning",
+                    "message": "Field access results in a dereference of a null pointer (loaded from variable 'secdef')",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    VIR_DEBUG(\"imageLabel=%s opts=%s\", secdef->imagelabel, opts);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/security/security_selinux.c",
+                    "line": 39,
+                    "event": "included_from",
+                    "message": "Included from here.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/util/logging.h",
+                    "line": 59,
+                    "column": 9,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "        VIR_DEBUG_INT(\"file.\" __FILE__, __func__, __LINE__, __VA_ARGS__)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "        ^",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/security/security_selinux.c",
+                    "line": 1996,
+                    "column": 5,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    VIR_DEBUG(\"imageLabel=%s opts=%s\", secdef->imagelabel, opts);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    ^                                  ~~~~~~",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/security/security_selinux.c",
+                    "line": 1996,
+                    "column": 48,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    VIR_DEBUG(\"imageLabel=%s opts=%s\", secdef->imagelabel, opts);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                                       ~~~~~~  ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/tmp/tmpjF4UBX.c",
+                    "line": 1,
+                    "event": "warning",
+                    "message": "return type defaults to 'int'",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/tmp/tmpjF4UBX.c",
+                    "line": 1,
+                    "event": "warning",
+                    "message": "'__dtrace' defined but not used",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/tmp/tmpjF4UBX.c",
+                    "line": 1,
+                    "column": 8,
+                    "event": "warning[-Wimplicit-int]",
+                    "message": "type specifier missing, defaults to 'int'",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "static __dtrace () {}",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "~~~~~~ ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/tmp/tmpjF4UBX.c",
+                    "line": 1,
+                    "column": 21,
+                    "event": "warning[-Wreturn-type]",
+                    "message": "control reaches end of non-void function",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "static __dtrace () {}",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                    ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_capabilities.c",
+                    "line": 735,
+                    "column": 14,
+                    "event": "warning",
+                    "message": "Although the value stored to 'dom' is used in the enclosing expression, the value is never actually read from 'dom'",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "        if ((dom = virCapabilitiesAddGuestDomain(guest,",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "             ^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_command.c",
+                    "line": 4476,
+                    "column": 13,
+                    "event": "warning",
+                    "message": "Value stored to 'have_cpu' is never read",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "            have_cpu = true;",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "            ^          ~~~~",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_command.c",
+                    "line": 7291,
+                    "column": 22,
+                    "event": "warning",
+                    "message": "Field access results in a dereference of a null pointer (loaded from variable 'def')",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                def->src = values[i];",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                ~~~  ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_command.c",
+                    "line": 7398,
+                    "column": 22,
+                    "event": "warning",
+                    "message": "Field access results in a dereference of a null pointer (loaded from variable 'def')",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                def->type = VIR_DOMAIN_DISK_TYPE_FILE;",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                ~~~  ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_command.c",
+                    "line": 7518,
+                    "column": 14,
+                    "event": "warning",
+                    "message": "Field access results in a dereference of a null pointer (loaded from variable 'def')",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    if (def->rerror_policy == def->error_policy)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "        ~~~  ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_command.c",
+                    "line": 7411,
+                    "column": 22,
+                    "event": "warning",
+                    "message": "Field access results in a dereference of a null pointer (loaded from variable 'def')",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                def->device = VIR_DOMAIN_DISK_DEVICE_CDROM;",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                ~~~  ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_command.c",
+                    "line": 7402,
+                    "column": 22,
+                    "event": "warning",
+                    "message": "Field access results in a dereference of a null pointer (loaded from variable 'def')",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                def->bus = VIR_DOMAIN_DISK_BUS_IDE;",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                ~~~  ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_command.c",
+                    "line": 7416,
+                    "column": 18,
+                    "event": "warning",
+                    "message": "Field access results in a dereference of a null pointer (loaded from variable 'def')",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "            def->driverName = strdup(\"qemu\");",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "            ~~~  ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_command.c",
+                    "line": 7404,
+                    "column": 22,
+                    "event": "warning",
+                    "message": "Field access results in a dereference of a null pointer (loaded from variable 'def')",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                def->bus = VIR_DOMAIN_DISK_BUS_SCSI;",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                ~~~  ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_monitor.c",
+                    "line": 2902,
+                    "column": 15,
+                    "event": "warning",
+                    "message": "Null pointer passed as an argument to a 'nonnull' parameter",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "        ret = qemuMonitorJSONBlockCommit(mon, device, top, base, speed);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "              ^                                       ~~~",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/tmp/tmpObFhPl.c",
+                    "line": 1,
+                    "event": "warning",
+                    "message": "return type defaults to 'int'",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/tmp/tmpObFhPl.c",
+                    "line": 1,
+                    "event": "warning",
+                    "message": "'__dtrace' defined but not used",
+                    "verbosity_level": "0"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_driver.c",
+                    "line": 8587,
+                    "column": 22,
+                    "event": "warning",
+                    "message": "Although the value stored to 'rc' is used in the enclosing expression, the value is never actually read from 'rc'",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                if ((rc = qemuSetEmulatorBandwidthLive(vm, group, value_ul, 0)))",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                     ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_driver.c",
+                    "line": 8601,
+                    "column": 22,
+                    "event": "warning",
+                    "message": "Although the value stored to 'rc' is used in the enclosing expression, the value is never actually read from 'rc'",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                if ((rc = qemuSetEmulatorBandwidthLive(vm, group, 0, value_l)))",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                     ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_driver.c",
+                    "line": 8573,
+                    "column": 22,
+                    "event": "warning",
+                    "message": "Although the value stored to 'rc' is used in the enclosing expression, the value is never actually read from 'rc'",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                if ((rc = qemuSetVcpusBWLive(vm, group, 0, value_l)))",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                     ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_driver.c",
+                    "line": 8559,
+                    "column": 22,
+                    "event": "warning",
+                    "message": "Although the value stored to 'rc' is used in the enclosing expression, the value is never actually read from 'rc'",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                if ((rc = qemuSetVcpusBWLive(vm, group, value_ul, 0)))",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                     ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_driver.c",
+                    "line": 9419,
+                    "column": 19,
+                    "event": "warning",
+                    "message": "Field access results in a dereference of a null pointer (loaded from variable 'net')",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "            (net->bandwidth && net->bandwidth->in)) {",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "             ~~~  ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_driver.c",
+                    "line": 9441,
+                    "column": 40,
+                    "event": "warning",
+                    "message": "Field access results in a dereference of a null pointer (loaded from variable 'net')",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "        if (virNetDevBandwidthSet(net->ifname, newBandwidth, false) < 0) {",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                                  ~~~  ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_driver.c",
+                    "line": 9430,
+                    "column": 19,
+                    "event": "warning",
+                    "message": "Field access results in a dereference of a null pointer (loaded from variable 'net')",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "            (net->bandwidth && net->bandwidth->out)) {",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "             ~~~  ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_driver.c",
+                    "line": 9453,
+                    "column": 29,
+                    "event": "warning",
+                    "message": "Field access results in a dereference of a null pointer (loaded from variable 'persistentNet')",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "        if (!persistentNet->bandwidth) {",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "             ~~~~~~~~~~~~~  ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_driver.c",
+                    "line": 12570,
+                    "column": 11,
+                    "event": "warning",
+                    "message": "Although the value stored to 'snap' is used in the enclosing expression, the value is never actually read from 'snap'",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    if (!(snap = qemuSnapObjFromSnapshot(vm, snapshot)))",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "          ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_driver.c",
+                    "line": 12596,
+                    "column": 11,
+                    "event": "warning",
+                    "message": "Although the value stored to 'snap' is used in the enclosing expression, the value is never actually read from 'snap'",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    if (!(snap = qemuSnapObjFromSnapshot(vm, snapshot)))",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "          ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_driver.c",
+                    "line": 14421,
+                    "column": 17,
+                    "event": "warning",
+                    "message": "Pass-by-value argument in function call is undefined",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "            if (virTypedParameterAssign(param,",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/lxc/lxc_container.c",
+                    "line": 1435,
+                    "column": 5,
+                    "event": "warning",
+                    "message": "Null pointer passed as an argument to a 'nonnull' parameter",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    closedir(dh);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    ^        ~~",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/lxc/lxc_container.c",
+                    "line": 1382,
+                    "column": 16,
+                    "event": "warning",
+                    "message": "Null pointer passed as an argument to a 'nonnull' parameter",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    if (!(dh = opendir(*root))) {",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "               ^       ~~~~~",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/tmp/tmpObFhPl.c",
+                    "line": 1,
+                    "column": 8,
+                    "event": "warning[-Wimplicit-int]",
+                    "message": "type specifier missing, defaults to 'int'",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "static __dtrace () {}",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "~~~~~~ ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/tmp/tmpObFhPl.c",
+                    "line": 1,
+                    "column": 21,
+                    "event": "warning[-Wreturn-type]",
+                    "message": "control reaches end of non-void function",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "static __dtrace () {}",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                    ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/lxc/lxc_process.c",
+                    "line": 466,
+                    "column": 17,
+                    "event": "warning",
+                    "message": "Value stored to 'fail' is never read",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                fail = true;",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                ^      ~~~~",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/nwfilter/nwfilter_dhcpsnoop.c",
+                    "line": 900,
+                    "column": 5,
+                    "event": "warning[-Wunused-value]",
+                    "message": "expression result unused",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    virAtomicIntDecAndTest(&virNWFilterSnoopState.nLeases);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/nwfilter/nwfilter_dhcpsnoop.c",
+                    "line": 67,
+                    "event": "included_from",
+                    "message": "Included from here.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/util/viratomic.h",
+                    "line": 183,
+                    "column": 47,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "            __sync_fetch_and_sub((atomic), 1) == 1;                     \\",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^  ~",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/nwfilter/nwfilter_dhcpsnoop.c",
+                    "line": 1182,
+                    "column": 5,
+                    "event": "warning[-Wunused-value]",
+                    "message": "expression result unused",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    virAtomicIntDecAndTest(job->qCtr);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/nwfilter/nwfilter_dhcpsnoop.c",
+                    "line": 67,
+                    "event": "included_from",
+                    "message": "Included from here.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/util/viratomic.h",
+                    "line": 183,
+                    "column": 47,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "            __sync_fetch_and_sub((atomic), 1) == 1;                     \\",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^  ~",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/nwfilter/nwfilter_dhcpsnoop.c",
+                    "line": 1576,
+                    "column": 5,
+                    "event": "warning[-Wunused-value]",
+                    "message": "expression result unused",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    virAtomicIntDecAndTest(&virNWFilterSnoopState.nThreads);",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/nwfilter/nwfilter_dhcpsnoop.c",
+                    "line": 67,
+                    "event": "included_from",
+                    "message": "Included from here.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/util/viratomic.h",
+                    "line": 183,
+                    "column": 47,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "            __sync_fetch_and_sub((atomic), 1) == 1;                     \\",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^  ~",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/nwfilter/nwfilter_dhcpsnoop.c",
+                    "line": 577,
+                    "column": 9,
+                    "event": "warning",
+                    "message": "Null pointer passed as an argument to a 'nonnull' parameter",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "        virReportError(VIR_ERR_INTERNAL_ERROR,",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/nwfilter/nwfilter_dhcpsnoop.c",
+                    "line": 581,
+                    "column": 24,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                       strlen(ifkey));",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                       ^      ~~~~~",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/nwfilter/nwfilter_gentech_driver.c",
+                    "line": 723,
+                    "column": 17,
+                    "event": "warning",
+                    "message": "Value stored to 'rc' is never read",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                rc = -1;",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                ^    ~~",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/tools/virsh-interface.c",
+                    "line": 966,
+                    "column": 11,
+                    "event": "warning",
+                    "message": "Although the value stored to 'br_node' is used in the enclosing expression, the value is never actually read from 'br_node'",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    if (!(br_node = virXPathNode(\"./bridge\", ctxt))) {",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "          ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/tools/virsh-interface.c",
+                    "line": 971,
+                    "column": 10,
+                    "event": "warning",
+                    "message": "Although the value stored to 'if_node' is used in the enclosing expression, the value is never actually read from 'if_node'",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    if ((if_node = virXPathNode(\"./bridge/interface[2]\", ctxt))) {",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "         ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/tools/virsh-host.c",
+                    "line": 943,
+                    "column": 49,
+                    "event": "warning",
+                    "message": "Value stored to 'i' is never read",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "            if (virTypedParameterAssign(&params[i++],",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                                                ^~~",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/tools/virsh-volume.c",
+                    "line": 1045,
+                    "column": 9,
+                    "event": "warning",
+                    "message": "Value stored to 'success' is never read",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "        success = true;",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "        ^         ~~~~",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/tools/virsh-domain.c",
+                    "line": 984,
+                    "column": 45,
+                    "event": "warning",
+                    "message": "Value stored to 'i' is never read",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "            virTypedParameterAssign(&params[i++],",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                                            ^~~",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/tools/virsh-domain.c",
+                    "line": 2281,
+                    "column": 13,
+                    "event": "warning",
+                    "message": "Value stored to 'i' is never read",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "            i++;",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "            ^~~",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/tools/virsh-domain.c",
+                    "line": 5713,
+                    "column": 10,
+                    "event": "warning",
+                    "message": "Although the value stored to 'state' is used in the enclosing expression, the value is never actually read from 'state'",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    if ((state = vshDomainState(ctl, dom, NULL)) < 0)",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "         ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/tools/virsh-domain.c",
+                    "line": 7143,
+                    "column": 13,
+                    "event": "warning",
+                    "message": "Value stored to 'params' is never read",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "            params = true;",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "            ^        ~~~~",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/tools/virsh-snapshot.c",
+                    "line": 509,
+                    "event": "included_from",
+                    "message": "Included from here.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/tools/virsh-edit.c",
+                    "line": 118,
+                    "column": 19,
+                    "event": "warning[-Wunused-value]",
+                    "message": "expression result unused",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    if (!msg && !(EDIT_DEFINE)) {",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                  ^~~~~~~~~~~",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/tools/virsh-snapshot.c",
+                    "line": 504,
+                    "column": 60,
+                    "event": "note",
+                    "message": "instantiated from:",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    define_flags |= VIR_DOMAIN_SNAPSHOT_CREATE_DISK_ONLY : 0), \\",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                                                           ^",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libvirt-0.10.2/tools/virsh.c",
+                    "line": 1854,
+                    "column": 24,
+                    "event": "warning",
+                    "message": "Value stored to 'tmpopt' during its initialization is never read",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "            vshCmdOpt *tmpopt = first;",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "                       ^        ~~~~~",
+                    "verbosity_level": "1"
+                }
+            ]
+        }
+    ]
+}
