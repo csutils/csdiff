@@ -1,4 +1,4 @@
-# Copyright (C) 2011 Red Hat, Inc.
+# Copyright (C) 2011 - 2020 Red Hat, Inc.
 #
 # This file is part of csdiff.
 #
@@ -36,6 +36,7 @@ endmacro()
 set(test_cost 1048576)
 
 add_subdirectory(csdiff)
+add_subdirectory(cssort)
 
 # a generic template for csparser test-cases
 macro(test_csparser dir num)
@@ -59,19 +60,6 @@ macro(test_csgrep dir num)
     set(cmd "${csgrep} ${args} ${tst}-stdin.txt")
     set(cmd "${cmd} | ${jsfilter} | ${diffcmd} ${tst}-stdout.txt -")
     add_test_wrap("${dir}-${num}" "${cmd}")
-endmacro()
-
-# a generic template for cssort test-cases
-macro(test_cssort dir num)
-    set(tst "${testdir}/${dir}/${num}")
-
-    set(cmd "${cssort} --key=checker ${tst}-input.err 2>/dev/null")
-    set(cmd "${cmd} | ${jsfilter} | ${diffcmd} ${tst}-by-checker.err -")
-    add_test_wrap("${dir}-${num}-by-checker" "${cmd}")
-
-    set(cmd "${cssort} --key=path ${tst}-input.err 2>/dev/null")
-    set(cmd "${cmd} | ${jsfilter} | ${diffcmd} ${tst}-by-path.err -")
-    add_test_wrap("${dir}-${num}-by-path" "${cmd}")
 endmacro()
 
 # a generic template for cstrans-df-run tests
@@ -154,13 +142,6 @@ test_csgrep(csgrep      "65-gcc-parser-clang-warn-suff")
 test_csparser(csparser-5.8                          00)
 test_csparser(csparser-5.8                          01)
 test_csparser(csparser-5.8                          02)
-
-# cssort tests
-test_cssort(cssort-5.8                              00)
-test_cssort(cssort-5.8                              01)
-test_cssort(cssort-5.8                              02)
-test_cssort(cssort-5.8                              03)
-test_cssort(cssort-misc                             00)
 
 # cstrans-df-run tests
 tests_cstrans_df_run(0001)

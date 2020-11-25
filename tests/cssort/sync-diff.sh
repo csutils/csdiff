@@ -1,5 +1,5 @@
 #!/bin/sh
-export CSSORT="`readlink -f ../csdiff_build/cssort`"
+export CSSORT="`readlink -f ../../csdiff_build/src/cssort`"
 
 for dir in cssort*/; do (
     cd $dir || exit $?
