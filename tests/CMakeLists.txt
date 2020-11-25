@@ -35,38 +35,7 @@ endmacro()
 
 set(test_cost 1048576)
 
-# a generic template for a csdiff test-case
-macro(test_csdiff dir num)
-    set(tst "${testdir}/${dir}/${num}")
-
-    set(cmd "${csdiff} -c ${tst}-old.err ${tst}-new.err")
-    set(cmd "${cmd} | ${diffcmd} ${tst}-add.err -")
-    add_test_wrap("${dir}-${num}-added" "${cmd}")
-
-    set(cmd "${csdiff} -x ${tst}-old.err ${tst}-new.err")
-    set(cmd "${cmd} | ${csjson} | ${csgrep}")
-    set(cmd "${cmd} | ${diffcmd} ${tst}-fix.err -")
-    add_test_wrap("${dir}-${num}-fixed" "${cmd}")
-
-    set(cmd "${csdiff} -z ${tst}-old.err ${tst}-new.err")
-    set(cmd "${cmd} | ${csjson} | ${csgrep}")
-    set(cmd "${cmd} | ${diffcmd} ${tst}-add-z.err -")
-    add_test_wrap("${dir}-${num}-added-with-z" "${cmd}")
-
-    set(cmd "${csdiff} -xz ${tst}-old.err ${tst}-new.err")
-    set(cmd "${cmd} | ${csjson} | ${csgrep}")
-    set(cmd "${cmd} | ${diffcmd} ${tst}-fix-z.err -")
-    add_test_wrap("${dir}-${num}-fixed-with-z" "${cmd}")
-
-    set(cmd "${csdiff} -c ${tst}-old.err ${tst}-new.err")
-    set(cmd "${cmd} | ${diffcmd} ${tst}-add.err -")
-    add_test_wrap("${dir}-${num}-added-with-c" "${cmd}")
-
-    set(cmd "${csdiff} -jx ${tst}-old.err ${tst}-new.err")
-    set(cmd "${cmd} | ${csgrep}")
-    set(cmd "${cmd} | ${diffcmd} ${tst}-fix.err -")
-    add_test_wrap("${dir}-${num}-fixed-with-j" "${cmd}")
-endmacro()
+add_subdirectory(csdiff)
 
 # a generic template for csparser test-cases
 macro(test_csparser dir num)
@@ -192,35 +161,6 @@ test_cssort(cssort-5.8                              01)
 test_cssort(cssort-5.8                              02)
 test_cssort(cssort-5.8                              03)
 test_cssort(cssort-misc                             00)
-
-# csdiff tests
-test_csdiff(diff5.9-kernel                          00)
-test_csdiff(diff7.0-qt                              00)
-test_csdiff(diff7.0-fftw                            00)
-test_csdiff(diff7.0-sudo                            00)
-test_csdiff(diff7.0-libssh                          00)
-test_csdiff(diff7.0-icu                             00)
-test_csdiff(diff7.0-virtuoso-opensource             00)
-test_csdiff(diff5.8-kernel                          00)
-test_csdiff(diff6.4-iok                             00)
-test_csdiff(diff6.4-rpm                             00)
-test_csdiff(diff6.4-ksh                             00)
-test_csdiff(diff6.4-samba4                          00)
-test_csdiff(diff6.4-papi                            00)
-test_csdiff(diff6.4-kernel                          00)
-test_csdiff(diff8.0-ModemManager                    00)
-test_csdiff(diff-misc                               00)
-test_csdiff(diff-misc                               01)
-test_csdiff(diff-misc                               02)
-test_csdiff(diff-misc                               03)
-test_csdiff(diff-misc                               04)
-test_csdiff(diff-misc                               05)
-test_csdiff(diff-misc                               06)
-test_csdiff(diff-misc                               07)
-test_csdiff(diff-misc                               08)
-test_csdiff(diff-misc 09-shellcheck-raw)
-test_csdiff(diff-misc 10-pylint-copr)
-test_csdiff(diff-misc 11-pylint-copr-json)
 
 # cstrans-df-run tests
 tests_cstrans_df_run(0001)
