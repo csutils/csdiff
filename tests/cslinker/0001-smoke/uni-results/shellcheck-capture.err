@@ -1,0 +1,479 @@
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/aide-attributes.sh:34:10: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/aide-attributes.sh:38:5: note[SC2219]: Instead of 'let expr', prefer (( expr )) .
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/aide-attributes.sh:48:17: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/aide-attributes.sh:51:21: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/aide-attributes.sh:60:18: note[SC2004]: $/${} is unnecessary on arithmetic variables.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/aide-attributes.sh:60:23: note[SC2004]: $/${} is unnecessary on arithmetic variables.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/aide-attributes.sh:60:40: note[SC2004]: $/${} is unnecessary on arithmetic variables.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/aide-attributes.sh:60:45: note[SC2004]: $/${} is unnecessary on arithmetic variables.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/aide-attributes.sh:61:21: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/aide-attributes.sh:62:22: note[SC2004]: $/${} is unnecessary on arithmetic variables.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/aide-attributes.sh:62:27: note[SC2004]: $/${} is unnecessary on arithmetic variables.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/aide-attributes.sh:62:42: note[SC2004]: $/${} is unnecessary on arithmetic variables.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/aide-attributes.sh:62:47: note[SC2004]: $/${} is unnecessary on arithmetic variables.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/aide-attributes.sh:63:21: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/aide-attributes.sh:66:18: note[SC2004]: $/${} is unnecessary on arithmetic variables.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/aide-attributes.sh:66:23: note[SC2004]: $/${} is unnecessary on arithmetic variables.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/gpg2_check.sh:6:10: note[SC2006]: Use $(...) notation instead of legacy backticked `...`.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/gpg2_check.sh:7:55: note[SC2006]: Use $(...) notation instead of legacy backticked `...`.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/gpg2_check.sh:15:6: warning[SC2039]: In POSIX sh, 'pushd' is undefined.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/gpg2_check.sh:15:6: warning[SC2164]: Use 'pushd ... || exit' or 'pushd ... || return' in case pushd fails.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/gpg2_check.sh:20:13: warning[SC2039]: In POSIX sh, == in place of = is undefined.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/gpg2_check.sh:26:6: warning[SC2039]: In POSIX sh, 'popd' is undefined.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/gpg2_check.sh:26:6: warning[SC2164]: Use 'popd ... || exit' or 'popd ... || return' in case popd fails.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/gpg2_update.sh:20:1: warning[SC2039]: In POSIX sh, 'pushd' is undefined.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/gpg2_update.sh:20:1: warning[SC2164]: Use 'pushd ... || exit' or 'pushd ... || return' in case pushd fails.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/gpg2_update.sh:24:19: note[SC2006]: Use $(...) notation instead of legacy backticked `...`.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/gpg2_update.sh:24:30: note[SC2006]: Use $(...) notation instead of legacy backticked `...`.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/gpg2_update.sh:25:22: warning[SC2039]: In POSIX sh, == in place of = is undefined.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/gpg2_update.sh:25:27: warning[SC2166]: Prefer [ p ] && [ q ] as [ p -a q ] is not well defined.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/gpg2_update.sh:28:12: warning[SC2039]: In POSIX sh, == in place of = is undefined.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/gpg2_update.sh:35:20: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/gpg2_update.sh:37:22: warning[SC2039]: In POSIX sh, == in place of = is undefined.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/gpg2_update.sh:39:2: warning[SC2039]: In POSIX sh, [[ ]] is undefined.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/gpg2_update.sh:41:12: warning[SC2039]: In POSIX sh, == in place of = is undefined.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/gpg2_update.sh:46:14: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/gpg2_update.sh:52:1: warning[SC2039]: In POSIX sh, 'popd' is undefined.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/gpg2_update.sh:52:1: warning[SC2164]: Use 'popd ... || exit' or 'popd ... || return' in case popd fails.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/gpg_check.sh:25:14: note[SC2002]: Useless cat. Consider 'cmd < file | ..' or 'cmd file | ..' instead.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/gpg_check.sh:25:69: note[SC2006]: Use $(...) notation instead of legacy backticked `...`.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/gpg_check.sh:29:6: note[SC2181]: Check exit code directly with e.g. 'if mycmd;', not indirectly with $?.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/gpg_update.sh:28:14: note[SC2002]: Useless cat. Consider 'cmd < file | ..' or 'cmd file | ..' instead.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/gpg_update.sh:28:71: note[SC2006]: Use $(...) notation instead of legacy backticked `...`.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/gpg_update.sh:32:6: note[SC2181]: Check exit code directly with e.g. 'if mycmd;', not indirectly with $?.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:202:15: note[SC2006]: Use $(...) notation instead of legacy backticked `...`.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:211:6: note[SC2006]: Use $(...) notation instead of legacy backticked `...`.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:220:10: note[SC2006]: Use $(...) notation instead of legacy backticked `...`.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:220:20: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:229:18: note[SC2006]: Use $(...) notation instead of legacy backticked `...`.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:251:14: note[SC2006]: Use $(...) notation instead of legacy backticked `...`.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:252:16: note[SC2006]: Use $(...) notation instead of legacy backticked `...`.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:252:21: note[SC2002]: Useless cat. Consider 'cmd < file | ..' or 'cmd file | ..' instead.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:253:14: note[SC2006]: Use $(...) notation instead of legacy backticked `...`.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:253:15: note[SC2003]: expr is antiquated. Consider rewriting this using $((..)), ${} or [[ ]].
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:253:20: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:253:34: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:256:13: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:260:15: note[SC2006]: Use $(...) notation instead of legacy backticked `...`.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:263:11: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:263:49: warning[SC2069]: To redirect stdout+stderr, 2>&1 must be last (or use '{ cmd > file; } 2>&1' to clarify).
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:267:10: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:272:18: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:273:18: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:276:12: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:276:20: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:279:14: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:279:35: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:280:12: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:280:22: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:280:33: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:280:62: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:280:73: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:282:16: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:282:29: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:282:48: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:283:12: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:283:25: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:283:44: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:283:55: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:283:68: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:283:87: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:286:12: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:286:22: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:286:33: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:286:62: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:286:75: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:286:94: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:290:12: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:290:16: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:290:26: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:290:37: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:291:12: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:291:20: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:294:18: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:294:37: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:295:15: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:295:34: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:297:12: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:297:22: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:297:33: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:297:58: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:297:67: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:322:18: note[SC2006]: Use $(...) notation instead of legacy backticked `...`.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:322:22: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:335:5: warning[SC2034]: log appears unused. Verify use (or export if used externally).
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:339:15: note[SC2006]: Use $(...) notation instead of legacy backticked `...`.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:342:19: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:348:27: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:349:14: note[SC2181]: Check exit code directly with e.g. 'if mycmd;', not indirectly with $?.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:352:23: note[SC2006]: Use $(...) notation instead of legacy backticked `...`.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:352:46: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:356:24: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:357:14: note[SC2181]: Check exit code directly with e.g. 'if mycmd;', not indirectly with $?.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:360:20: note[SC2006]: Use $(...) notation instead of legacy backticked `...`.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:360:40: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:364:25: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:365:14: note[SC2181]: Check exit code directly with e.g. 'if mycmd;', not indirectly with $?.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:368:28: note[SC2006]: Use $(...) notation instead of legacy backticked `...`.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:368:49: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:374:12: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:374:20: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:375:12: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:375:20: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:375:30: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:375:41: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:376:12: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:376:20: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:376:30: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:376:41: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:384:12: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:384:20: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:397:9: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:397:9: note[SC2002]: Useless cat. Consider 'cmd < file | ..' or 'cmd file | ..' instead.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:397:24: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:398:53: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:407:9: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:408:12: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:408:27: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:409:12: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:410:13: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:416:9: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:418:20: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:418:33: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:419:13: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:419:28: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:419:46: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:420:16: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:420:29: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:429:9: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:432:17: warning[SC2045]: Iterating over ls output is fragile. Use globs.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:432:17: note[SC2006]: Use $(...) notation instead of legacy backticked `...`.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:432:24: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:435:10: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:435:18: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:435:24: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:438:9: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:438:24: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:440:15: note[SC2086]: Double quote to prevent globbing and word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:440:25: warning[SC2046]: Quote this to prevent word splitting.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:440:25: note[SC2006]: Use $(...) notation instead of legacy backticked `...`.
+
+Error: SHELLCHECK_WARNING:
+/builddir/build/BUILDROOT/aide-0.16-16.eln103.x86_64/usr/share/doc/aide/contrib/sshaide.sh:444:12: note[SC2086]: Double quote to prevent globbing and word splitting.

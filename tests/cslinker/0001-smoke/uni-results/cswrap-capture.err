@@ -1,0 +1,2258 @@
+Error: GCC_ANALYZER_WARNING (CWE-690):
+/builddir/build/BUILD/aide-0.16/src/do_md.c: scope_hint: In function 'acl2line'
+/builddir/build/BUILD/aide-0.16/src/do_md.c:485:18: warning[-Wanalyzer-possible-null-dereference]: dereference of possibly-NULL 'ret'
+#  485 |       ret->acl_a = NULL;
+#      |                  ^
+/builddir/build/BUILD/aide-0.16/src/do_md.c:458:5: note: (1) following 'true' branch...
+#  458 |   if(DB_ACL&line->attr) {
+#      |     ^
+/builddir/build/BUILD/aide-0.16/src/do_md.c:463:30: note: (2) ...to here
+#  463 |     acl_a = acl_get_file(line->fullpath, ACL_TYPE_ACCESS);
+#      |                          ~~~~^~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/do_md.c:480:11: note: (3) this call could return NULL
+#  480 |     ret = malloc(sizeof(acl_type));
+#      |           ^~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/do_md.c:485:18: note: (4) 'ret' could be NULL: unchecked value from (3)
+#  485 |       ret->acl_a = NULL;
+#      |                  ^
+
+Error: GCC_ANALYZER_WARNING (CWE-690):
+/builddir/build/BUILD/aide-0.16/src/do_md.c:487:18: warning[-Wanalyzer-possible-null-dereference]: dereference of possibly-NULL 'ret'
+#  487 |       ret->acl_a = strdup(tmp);
+#      |       ~~~~~~~~~~~^~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/do_md.c:458:5: note: (1) following 'true' branch...
+#  458 |   if(DB_ACL&line->attr) {
+#      |     ^
+/builddir/build/BUILD/aide-0.16/src/do_md.c:463:30: note: (2) ...to here
+#  463 |     acl_a = acl_get_file(line->fullpath, ACL_TYPE_ACCESS);
+#      |                          ~~~~^~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/do_md.c:480:11: note: (3) this call could return NULL
+#  480 |     ret = malloc(sizeof(acl_type));
+#      |           ^~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/do_md.c:484:8: note: (4) following 'false' branch (when 'tmp' is non-NULL)...
+#  484 |     if (!tmp || !*tmp)
+#      |        ^
+/builddir/build/BUILD/aide-0.16/src/do_md.c:484:18: note: (5) ...to here
+#  484 |     if (!tmp || !*tmp)
+#      |                  ^~~~
+/builddir/build/BUILD/aide-0.16/src/do_md.c:484:14: note: (6) following 'false' branch...
+#  484 |     if (!tmp || !*tmp)
+#      |         ~~~~~^~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/do_md.c:487:20: note: (7) ...to here
+#  487 |       ret->acl_a = strdup(tmp);
+#      |                    ^~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/do_md.c:487:18: note: (8) 'ret' could be NULL: unchecked value from (3)
+#  487 |       ret->acl_a = strdup(tmp);
+#      |       ~~~~~~~~~~~^~~~~~~~~~~~~
+
+Error: GCC_ANALYZER_WARNING (CWE-690):
+/builddir/build/BUILD/aide-0.16/src/do_md.c: scope_hint: In function 'xattr_new'
+/builddir/build/BUILD/aide-0.16/src/do_md.c:543:14: warning[-Wanalyzer-possible-null-dereference]: dereference of possibly-NULL 'ret'
+#  543 |     ret->num = 0;
+#      |     ~~~~~~~~~^~~
+/builddir/build/BUILD/aide-0.16/src/do_md.c:575:6: note: (1) entry to 'xattrs2line'
+#  575 | void xattrs2line(db_line *line) {
+#      |      ^~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/do_md.c:582:8: note: (2) following 'false' branch...
+#  582 |     if (!(DB_XATTRS&line->attr))
+#      |        ^
+/builddir/build/BUILD/aide-0.16/src/do_md.c:586:9: note: (3) ...to here
+#  586 |     if (!xatrs) xatrs = malloc(xsz);
+#      |         ^~~~~~
+/builddir/build/BUILD/aide-0.16/src/do_md.c:595:15: note: (4) following 'false' branch (when 'xret != -1')...
+#  595 |     } else if (xret == -1) {
+#      |               ^
+/builddir/build/BUILD/aide-0.16/src/do_md.c:597:15: note: (5) ...to here
+#  597 |     } else if (xret) {
+#      |               ^
+/builddir/build/BUILD/aide-0.16/src/do_md.c:597:15: note: (6) following 'true' branch (when 'xret != 0')...
+/builddir/build/BUILD/aide-0.16/src/do_md.c:598:21: note: (7) ...to here
+#  598 |         const char *attr = xatrs;
+#      |                     ^~~~
+/builddir/build/BUILD/aide-0.16/src/do_md.c:602:12: note: (8) following 'false' branch...
+#  602 |         if (!val) val = malloc(asz);
+#      |            ^
+/builddir/build/BUILD/aide-0.16/src/do_md.c:604:18: note: (9) ...to here
+#  604 |         xattrs = xattr_new();
+#      |                  ^~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/do_md.c:604:18: note: (10) calling 'xattr_new' from 'xattrs2line'
+/builddir/build/BUILD/aide-0.16/src/do_md.c:539:21: note: (11) entry to 'xattr_new'
+#  539 | static xattrs_type *xattr_new(void) {
+#      |                     ^~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/do_md.c:542:11: note: (12) this call could return NULL
+#  542 |     ret = malloc(sizeof(xattrs_type));
+#      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/do_md.c:543:14: note: (13) 'ret' could be NULL: unchecked value from (12)
+#  543 |     ret->num = 0;
+#      |     ~~~~~~~~~^~~
+
+Error: GCC_ANALYZER_WARNING (CWE-401):
+/builddir/build/BUILD/aide-0.16/src/do_md.c: scope_hint: In function 'xattr_add'
+/builddir/build/BUILD/aide-0.16/src/do_md.c:554:11: warning[-Wanalyzer-malloc-leak]: leak of '<unknown>'
+#  554 |     ret = malloc(len+1);
+#      |           ^~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/do_md.c:575:6: note: (1) entry to 'xattrs2line'
+#  575 | void xattrs2line(db_line *line) {
+#      |      ^~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/do_md.c:582:8: note: (2) following 'false' branch...
+#  582 |     if (!(DB_XATTRS&line->attr))
+#      |        ^
+/builddir/build/BUILD/aide-0.16/src/do_md.c:586:9: note: (3) ...to here
+#  586 |     if (!xatrs) xatrs = malloc(xsz);
+#      |         ^~~~~~
+/builddir/build/BUILD/aide-0.16/src/do_md.c:595:15: note: (4) following 'false' branch (when 'xret != -1')...
+#  595 |     } else if (xret == -1) {
+#      |               ^
+/builddir/build/BUILD/aide-0.16/src/do_md.c:597:15: note: (5) ...to here
+#  597 |     } else if (xret) {
+#      |               ^
+/builddir/build/BUILD/aide-0.16/src/do_md.c:597:15: note: (6) following 'true' branch (when 'xret != 0')...
+/builddir/build/BUILD/aide-0.16/src/do_md.c:598:21: note: (7) ...to here
+#  598 |         const char *attr = xatrs;
+#      |                     ^~~~
+/builddir/build/BUILD/aide-0.16/src/do_md.c:606:15: note: (8) following 'true' branch (when 'xret > 0')...
+#  606 |         while (xret > 0) {
+#      |               ^
+/builddir/build/BUILD/aide-0.16/src/do_md.c:607:26: note: (9) ...to here
+#  607 |             size_t len = strlen(attr);
+#      |                          ^~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/do_md.c:614:19: note: (10) following 'false' branch (when 'aret != -1')...
+#  614 |             while (((aret = getxattr(line->fullpath, attr, val, asz)) ==
+#      |                   ^
+/builddir/build/BUILD/aide-0.16/src/do_md.c:620:16: note: (11) ...to here
+#  620 |             if (aret != -1)
+#      |                ^
+/builddir/build/BUILD/aide-0.16/src/do_md.c:620:16: note: (12) following 'true' branch (when 'aret != -1')...
+/builddir/build/BUILD/aide-0.16/src/do_md.c:621:17: note: (13) ...to here
+#  621 |                 xattr_add(xattrs, attr, val, aret);
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/do_md.c:621:17: note: (14) calling 'xattr_add' from 'xattrs2line'
+/builddir/build/BUILD/aide-0.16/src/do_md.c:561:13: note: (15) entry to 'xattr_add'
+#  561 | static void xattr_add(xattrs_type *xattrs, const char *key, const char
+#      |             ^~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/do_md.c:563:8: note: (16) following 'false' branch...
+#  563 |     if (xattrs->num >= xattrs->sz) {
+#      |        ^
+/builddir/build/BUILD/aide-0.16/src/do_md.c:568:11: note: (17) ...to here
+#  568 |     xattrs->ents[xattrs->num].key = strdup(key);
+#      |     ~~~~~~^~~~~~
+/builddir/build/BUILD/aide-0.16/src/do_md.c:568:11: note: (18) allocated here
+/builddir/build/BUILD/aide-0.16/src/do_md.c:554:11: note: (19) '<unknown>' leaks here; was allocated at (18)
+#  554 |     ret = malloc(len+1);
+#      |           ^~~~~~~~~~~~~
+
+Error: GCC_ANALYZER_WARNING (CWE-690):
+/builddir/build/BUILD/aide-0.16/src/do_md.c: scope_hint: In function 'xzmemdup'
+/builddir/build/BUILD/aide-0.16/src/do_md.c:555:5: warning[-Wanalyzer-possible-null-argument]: use of possibly-NULL 'ret' where non-null expected
+#  555 |     memcpy(ret, ptr, len);
+#      |     ^~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/do_md.c:575:6: note: (1) entry to 'xattrs2line'
+#  575 | void xattrs2line(db_line *line) {
+#      |      ^~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/do_md.c:582:8: note: (2) following 'false' branch...
+#  582 |     if (!(DB_XATTRS&line->attr))
+#      |        ^
+/builddir/build/BUILD/aide-0.16/src/do_md.c:586:9: note: (3) ...to here
+#  586 |     if (!xatrs) xatrs = malloc(xsz);
+#      |         ^~~~~~
+/builddir/build/BUILD/aide-0.16/src/do_md.c:595:15: note: (4) following 'false' branch (when 'xret != -1')...
+#  595 |     } else if (xret == -1) {
+#      |               ^
+/builddir/build/BUILD/aide-0.16/src/do_md.c:597:15: note: (5) ...to here
+#  597 |     } else if (xret) {
+#      |               ^
+/builddir/build/BUILD/aide-0.16/src/do_md.c:597:15: note: (6) following 'true' branch (when 'xret != 0')...
+/builddir/build/BUILD/aide-0.16/src/do_md.c:598:21: note: (7) ...to here
+#  598 |         const char *attr = xatrs;
+#      |                     ^~~~
+/builddir/build/BUILD/aide-0.16/src/do_md.c:606:15: note: (8) following 'true' branch (when 'xret > 0')...
+#  606 |         while (xret > 0) {
+#      |               ^
+/builddir/build/BUILD/aide-0.16/src/do_md.c:607:26: note: (9) ...to here
+#  607 |             size_t len = strlen(attr);
+#      |                          ^~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/do_md.c:614:19: note: (10) following 'false' branch (when 'aret != -1')...
+#  614 |             while (((aret = getxattr(line->fullpath, attr, val, asz)) ==
+#      |                   ^
+/builddir/build/BUILD/aide-0.16/src/do_md.c:620:16: note: (11) ...to here
+#  620 |             if (aret != -1)
+#      |                ^
+/builddir/build/BUILD/aide-0.16/src/do_md.c:620:16: note: (12) following 'true' branch (when 'aret != -1')...
+/builddir/build/BUILD/aide-0.16/src/do_md.c:621:17: note: (13) ...to here
+#  621 |                 xattr_add(xattrs, attr, val, aret);
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/do_md.c:621:17: note: (14) calling 'xattr_add' from 'xattrs2line'
+/builddir/build/BUILD/aide-0.16/src/do_md.c:561:13: note: (15) entry to 'xattr_add'
+#  561 | static void xattr_add(xattrs_type *xattrs, const char *key, const char
+#      |             ^~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/do_md.c:563:8: note: (16) following 'false' branch...
+#  563 |     if (xattrs->num >= xattrs->sz) {
+#      |        ^
+/builddir/build/BUILD/aide-0.16/src/do_md.c:568:11: note: (17) ...to here
+#  568 |     xattrs->ents[xattrs->num].key = strdup(key);
+#      |     ~~~~~~^~~~~~
+/builddir/build/BUILD/aide-0.16/src/do_md.c:569:37: note: (18) calling 'xzmemdup' from 'xattr_add'
+#  569 |     xattrs->ents[xattrs->num].val = xzmemdup(val, vsz);
+#      |                                     ^~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/do_md.c:550:14: note: (19) entry to 'xzmemdup'
+#  550 | static void *xzmemdup(const void *ptr, size_t len) {
+#      |              ^~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/do_md.c:554:11: note: (20) this call could return NULL
+#  554 |     ret = malloc(len+1);
+#      |           ^~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/do_md.c:555:5: note: (21) argument 1 ('ret') from (20) could be NULL where non-null expected
+#  555 |     memcpy(ret, ptr, len);
+#      |     ^~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/do_md.c:32: included_from: Included from here.
+/usr/include/string.h:43:14: note: argument 1 of 'memcpy' must be non-null
+#   43 | extern void *memcpy (void *__restrict __dest, const void *__restrict __src,
+#      |              ^~~~~~
+
+Error: GCC_ANALYZER_WARNING (CWE-690):
+/builddir/build/BUILD/aide-0.16/src/md.c: scope_hint: In function 'md2line'
+/builddir/build/BUILD/aide-0.16/src/md.c:448:7: warning[-Wanalyzer-possible-null-dereference]: dereference of possibly-NULL '<unknown>'
+#  448 |       memcpy(line->b,md->b,c); \
+#      |       ^~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/md.c:455:3: note: in expansion of macro 'copyhash'
+#  455 |   copyhash(DB_MD5,md5,HASH_MD5_LEN);
+#      |   ^~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/md.c:443:6: note: (1) following 'true' branch...
+#  443 |   if (line->attr&a) {          \
+#      |      ^
+/builddir/build/BUILD/aide-0.16/src/md.c:455:3: note: in expansion of macro 'copyhash'
+#  455 |   copyhash(DB_MD5,md5,HASH_MD5_LEN);
+#      |   ^~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/md.c:444:5: note: (2) ...to here
+#  444 |     error(255,"Line has %llu\n",a); \
+#      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/md.c:455:3: note: in expansion of macro 'copyhash'
+#  455 |   copyhash(DB_MD5,md5,HASH_MD5_LEN);
+#      |   ^~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/md.c:445:8: note: (3) following 'true' branch...
+#  445 |     if (md->calc_attr&a) {     \
+#      |        ^
+/builddir/build/BUILD/aide-0.16/src/md.c:455:3: note: in expansion of macro 'copyhash'
+#  455 |   copyhash(DB_MD5,md5,HASH_MD5_LEN);
+#      |   ^~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/md.c:446:7: note: (4) ...to here
+#  446 |       error(255,"copying %llu\n",a); \
+#      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/md.c:455:3: note: in expansion of macro 'copyhash'
+#  455 |   copyhash(DB_MD5,md5,HASH_MD5_LEN);
+#      |   ^~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/md.c:446:7: note: (5) this call could return NULL
+#  446 |       error(255,"copying %llu\n",a); \
+#      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/md.c:455:3: note: in expansion of macro 'copyhash'
+#  455 |   copyhash(DB_MD5,md5,HASH_MD5_LEN);
+#      |   ^~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/md.c:448:7: note: (6) '<unknown>' could be NULL: unchecked value from (5)
+#  448 |       memcpy(line->b,md->b,c); \
+#      |       ^~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/md.c:455:3: note: in expansion of macro 'copyhash'
+#  455 |   copyhash(DB_MD5,md5,HASH_MD5_LEN);
+#      |   ^~~~~~~~
+
+Error: GCC_ANALYZER_WARNING (CWE-690):
+/builddir/build/BUILD/aide-0.16/src/md.c:448:7: warning[-Wanalyzer-possible-null-argument]: use of possibly-NULL '<unknown>' where non-null expected
+#  448 |       memcpy(line->b,md->b,c); \
+#      |       ^~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/md.c:456:3: note: in expansion of macro 'copyhash'
+#  456 |   copyhash(DB_SHA1,sha1,HASH_SHA1_LEN);
+#      |   ^~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/md.c:443:6: note: (1) following 'true' branch...
+#  443 |   if (line->attr&a) {          \
+#      |      ^
+/builddir/build/BUILD/aide-0.16/src/md.c:456:3: note: in expansion of macro 'copyhash'
+#  456 |   copyhash(DB_SHA1,sha1,HASH_SHA1_LEN);
+#      |   ^~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/md.c:444:5: note: (2) ...to here
+#  444 |     error(255,"Line has %llu\n",a); \
+#      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/md.c:456:3: note: in expansion of macro 'copyhash'
+#  456 |   copyhash(DB_SHA1,sha1,HASH_SHA1_LEN);
+#      |   ^~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/md.c:445:8: note: (3) following 'true' branch...
+#  445 |     if (md->calc_attr&a) {     \
+#      |        ^
+/builddir/build/BUILD/aide-0.16/src/md.c:456:3: note: in expansion of macro 'copyhash'
+#  456 |   copyhash(DB_SHA1,sha1,HASH_SHA1_LEN);
+#      |   ^~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/md.c:446:7: note: (4) ...to here
+#  446 |       error(255,"copying %llu\n",a); \
+#      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/md.c:456:3: note: in expansion of macro 'copyhash'
+#  456 |   copyhash(DB_SHA1,sha1,HASH_SHA1_LEN);
+#      |   ^~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/md.c:446:7: note: (5) this call could return NULL
+#  446 |       error(255,"copying %llu\n",a); \
+#      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/md.c:456:3: note: in expansion of macro 'copyhash'
+#  456 |   copyhash(DB_SHA1,sha1,HASH_SHA1_LEN);
+#      |   ^~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/md.c:448:7: note: (6) argument 1 ('<unknown>') from (5) could be NULL where non-null expected
+#  448 |       memcpy(line->b,md->b,c); \
+#      |       ^~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/md.c:456:3: note: in expansion of macro 'copyhash'
+#  456 |   copyhash(DB_SHA1,sha1,HASH_SHA1_LEN);
+#      |   ^~~~~~~~
+/usr/include/gcrypt.h:28: included_from: Included from here.
+/builddir/build/BUILD/aide-0.16/include/md.h:47: included_from: Included from here.
+/builddir/build/BUILD/aide-0.16/src/md.c:24: included_from: Included from here.
+/usr/include/string.h:43:14: note: argument 1 of 'memcpy' must be non-null
+#   43 | extern void *memcpy (void *__restrict __dest, const void *__restrict __src,
+#      |              ^~~~~~
+
+Error: GCC_ANALYZER_WARNING (CWE-690):
+/builddir/build/BUILD/aide-0.16/src/gen_list.c: scope_hint: In function 'new_seltree_node'
+/builddir/build/BUILD/aide-0.16/src/gen_list.c:453:15: warning[-Wanalyzer-possible-null-dereference]: dereference of possibly-NULL 'node'
+#  453 |   node->childs=NULL;
+#      |               ^
+/builddir/build/BUILD/aide-0.16/src/gen_list.c:452:18: note: (1) this call could return NULL
+#  452 |   node=(seltree*)malloc(sizeof(seltree));
+#      |                  ^~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/gen_list.c:453:15: note: (2) 'node' could be NULL: unchecked value from (1)
+#  453 |   node->childs=NULL;
+#      |               ^
+
+Error: CLANG_WARNING:
+/builddir/build/BUILD/aide-0.16/src/gen_list.c:1160:6: warning: Although the value stored to 'node' is used in the enclosing expression, the value is never actually read from 'node' [deadcode.DeadStores]
+#        if((node=get_seltree_node(tree,new->filename))==NULL){
+#            ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/gen_list.c:1160:6: note: Although the value stored to 'node' is used in the enclosing expression, the value is never actually read from 'node'
+#        if((node=get_seltree_node(tree,new->filename))==NULL){
+#            ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Error: CLANG_WARNING:
+/builddir/build/BUILD/aide-0.16/src/gen_list.c:1161:4: warning: Value stored to 'node' is never read [deadcode.DeadStores]
+#          node=new_seltree_node(tree,new->filename,0,NULL);
+#          ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/gen_list.c:1161:4: note: Value stored to 'node' is never read
+#          node=new_seltree_node(tree,new->filename,0,NULL);
+#          ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Error: CLANG_WARNING:
+/builddir/build/BUILD/aide-0.16/src/gen_list.c:1163:6: warning: Although the value stored to 'add' is used in the enclosing expression, the value is never actually read from 'add' [deadcode.DeadStores]
+#        if((add=check_rxtree(new->filename,tree,&attr, new->perm))>0){
+#            ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/gen_list.c:1163:6: note: Although the value stored to 'add' is used in the enclosing expression, the value is never actually read from 'add'
+#        if((add=check_rxtree(new->filename,tree,&attr, new->perm))>0){
+#            ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Error: CLANG_WARNING:
+/builddir/build/BUILD/aide-0.16/src/gen_list.c:1184:21: warning: Although the value stored to 'node' is used in the enclosing expression, the value is never actually read from 'node' [deadcode.DeadStores]
+#                if((node=get_seltree_node(tree,old->filename))==NULL){
+#                    ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/gen_list.c:1184:21: note: Although the value stored to 'node' is used in the enclosing expression, the value is never actually read from 'node'
+#                if((node=get_seltree_node(tree,old->filename))==NULL){
+#                    ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Error: CLANG_WARNING:
+/builddir/build/BUILD/aide-0.16/src/gen_list.c:1185:21: warning: Value stored to 'node' is never read [deadcode.DeadStores]
+#                    node=new_seltree_node(tree,old->filename,0,NULL);
+#                    ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/gen_list.c:1185:21: note: Value stored to 'node' is never read
+#                    node=new_seltree_node(tree,old->filename,0,NULL);
+#                    ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Error: GCC_ANALYZER_WARNING (CWE-690):
+/builddir/build/BUILD/aide-0.16/src/util.c:87:10: warning[-Wanalyzer-possible-null-dereference]: dereference of possibly-NULL 'u'
+#   87 |   u->type=url_unknown;
+#      |   ~~~~~~~^~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:73:5: note: (1) following 'false' branch (when 'val' is non-NULL)...
+#   73 |   if(val==NULL){
+#      |     ^
+/builddir/build/BUILD/aide-0.16/src/util.c:77:13: note: (2) ...to here
+#   77 |   u=(url_t*)malloc(sizeof(url_t));
+#      |             ^~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:77:13: note: (3) this call could return NULL
+/builddir/build/BUILD/aide-0.16/src/util.c:87:10: note: (4) 'u' could be NULL: unchecked value from (3)
+#   87 |   u->type=url_unknown;
+#      |   ~~~~~~~^~~~~~~~~~~~
+
+Error: GCC_ANALYZER_WARNING (CWE-401):
+/builddir/build/BUILD/aide-0.16/src/util.c:108:9: warning[-Wanalyzer-malloc-leak]: leak of 'u'
+#  108 |         free(hostname);
+#      |         ^~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:73:5: note: (1) following 'false' branch (when 'val' is non-NULL)...
+#   73 |   if(val==NULL){
+#      |     ^
+/builddir/build/BUILD/aide-0.16/src/util.c:77:13: note: (2) ...to here
+#   77 |   u=(url_t*)malloc(sizeof(url_t));
+#      |             ^~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:77:13: note: (3) allocated here
+/builddir/build/BUILD/aide-0.16/src/util.c:87:10: note: (4) assuming 'u' is non-NULL
+#   87 |   u->type=url_unknown;
+#      |   ~~~~~~~^~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:88:3: note: (5) following 'true' branch (when 'i != 11')...
+#   88 |   for(i=0;i<url_ntypes;i++){
+#      |   ^~~
+/builddir/build/BUILD/aide-0.16/src/util.c:89:8: note: (6) ...to here
+#   89 |     if(strcmp(val_copy,url_name[i])==0){
+#      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:95:3: note: (7) following 'case 0:' branch...
+#   95 |   switch (u->type) {
+#      |   ^~~~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:96:3: note: (8) ...to here
+#   96 |   case url_file : {
+#      |   ^~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:97:7: note: (9) following 'true' branch...
+#   97 |     if(r[0]=='/'&&(r+1)[0]=='/'&&(r+2)[0]=='/'){
+#      |       ^
+/builddir/build/BUILD/aide-0.16/src/util.c:97:24: note: (10) ...to here
+#   97 |     if(r[0]=='/'&&(r+1)[0]=='/'&&(r+2)[0]=='/'){
+#      |                   ~~~~~^~~
+/builddir/build/BUILD/aide-0.16/src/util.c:97:17: note: (11) following 'true' branch...
+#   97 |     if(r[0]=='/'&&(r+1)[0]=='/'&&(r+2)[0]=='/'){
+#      |        ~~~~~~~~~^~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:97:39: note: (12) ...to here
+#   97 |     if(r[0]=='/'&&(r+1)[0]=='/'&&(r+2)[0]=='/'){
+#      |                                  ~~~~~^~~
+/builddir/build/BUILD/aide-0.16/src/util.c:97:32: note: (13) following 'false' branch...
+#   97 |     if(r[0]=='/'&&(r+1)[0]=='/'&&(r+2)[0]=='/'){
+#      |        ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:101:7: note: (14) ...to here
+#  101 |     if(r[0]=='/'&&(r+1)[0]=='/'&&(r+2)[0]!='/'){
+#      |       ^
+/builddir/build/BUILD/aide-0.16/src/util.c:101:7: note: (15) following 'true' branch...
+/builddir/build/BUILD/aide-0.16/src/util.c:101:24: note: (16) ...to here
+#  101 |     if(r[0]=='/'&&(r+1)[0]=='/'&&(r+2)[0]!='/'){
+#      |                   ~~~~~^~~
+/builddir/build/BUILD/aide-0.16/src/util.c:101:17: note: (17) following 'true' branch...
+#  101 |     if(r[0]=='/'&&(r+1)[0]=='/'&&(r+2)[0]!='/'){
+#      |        ~~~~~~~~~^~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:101:39: note: (18) ...to here
+#  101 |     if(r[0]=='/'&&(r+1)[0]=='/'&&(r+2)[0]!='/'){
+#      |                                  ~~~~~^~~
+/builddir/build/BUILD/aide-0.16/src/util.c:101:32: note: (19) following 'true' branch...
+#  101 |     if(r[0]=='/'&&(r+1)[0]=='/'&&(r+2)[0]!='/'){
+#      |        ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:102:28: note: (20) ...to here
+#  102 |       char*hostname=(char*)malloc(sizeof(char)*MAXHOSTNAMELEN);
+#      |                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:105:7: note: (21) following 'false' branch...
+#  105 |       for(i=0;r[0]!='/'&&r[0]!='\0';r++,i++);
+#      |       ^~~
+/builddir/build/BUILD/aide-0.16/src/util.c:106:9: note: (22) ...to here
+#  106 |       if(r[0]=='\0'){
+#      |         ^
+/builddir/build/BUILD/aide-0.16/src/util.c:108:9: note: (23) 'u' leaks here; was allocated at (3)
+#  108 |         free(hostname);
+#      |         ^~~~~~~~~~~~~~
+
+Error: GCC_ANALYZER_WARNING (CWE-690):
+/builddir/build/BUILD/aide-0.16/src/util.c:113:10: warning[-Wanalyzer-possible-null-argument]: use of possibly-NULL 'hostname' where non-null expected
+#  113 |       if(gethostname(hostname,MAXHOSTNAMELEN)==-1){
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:73:5: note: (1) following 'false' branch (when 'val' is non-NULL)...
+#   73 |   if(val==NULL){
+#      |     ^
+/builddir/build/BUILD/aide-0.16/src/util.c:77:13: note: (2) ...to here
+#   77 |   u=(url_t*)malloc(sizeof(url_t));
+#      |             ^~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:88:3: note: (3) following 'true' branch (when 'i != 11')...
+#   88 |   for(i=0;i<url_ntypes;i++){
+#      |   ^~~
+/builddir/build/BUILD/aide-0.16/src/util.c:89:8: note: (4) ...to here
+#   89 |     if(strcmp(val_copy,url_name[i])==0){
+#      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:89:7: note: (5) following 'true' branch (when the strings are equal)...
+#   89 |     if(strcmp(val_copy,url_name[i])==0){
+#      |       ^
+/builddir/build/BUILD/aide-0.16/src/util.c:90:24: note: (6) ...to here
+#   90 |       u->type=url_value[i];
+#      |               ~~~~~~~~~^~~
+/builddir/build/BUILD/aide-0.16/src/util.c:95:3: note: (7) following 'case 0:' branch...
+#   95 |   switch (u->type) {
+#      |   ^~~~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:96:3: note: (8) ...to here
+#   96 |   case url_file : {
+#      |   ^~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:97:7: note: (9) following 'true' branch...
+#   97 |     if(r[0]=='/'&&(r+1)[0]=='/'&&(r+2)[0]=='/'){
+#      |       ^
+/builddir/build/BUILD/aide-0.16/src/util.c:97:24: note: (10) ...to here
+#   97 |     if(r[0]=='/'&&(r+1)[0]=='/'&&(r+2)[0]=='/'){
+#      |                   ~~~~~^~~
+/builddir/build/BUILD/aide-0.16/src/util.c:97:17: note: (11) following 'true' branch...
+#   97 |     if(r[0]=='/'&&(r+1)[0]=='/'&&(r+2)[0]=='/'){
+#      |        ~~~~~~~~~^~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:97:39: note: (12) ...to here
+#   97 |     if(r[0]=='/'&&(r+1)[0]=='/'&&(r+2)[0]=='/'){
+#      |                                  ~~~~~^~~
+/builddir/build/BUILD/aide-0.16/src/util.c:97:32: note: (13) following 'false' branch...
+#   97 |     if(r[0]=='/'&&(r+1)[0]=='/'&&(r+2)[0]=='/'){
+#      |        ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:101:7: note: (14) ...to here
+#  101 |     if(r[0]=='/'&&(r+1)[0]=='/'&&(r+2)[0]!='/'){
+#      |       ^
+/builddir/build/BUILD/aide-0.16/src/util.c:101:7: note: (15) following 'true' branch...
+/builddir/build/BUILD/aide-0.16/src/util.c:101:24: note: (16) ...to here
+#  101 |     if(r[0]=='/'&&(r+1)[0]=='/'&&(r+2)[0]!='/'){
+#      |                   ~~~~~^~~
+/builddir/build/BUILD/aide-0.16/src/util.c:101:17: note: (17) following 'true' branch...
+#  101 |     if(r[0]=='/'&&(r+1)[0]=='/'&&(r+2)[0]!='/'){
+#      |        ~~~~~~~~~^~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:101:39: note: (18) ...to here
+#  101 |     if(r[0]=='/'&&(r+1)[0]=='/'&&(r+2)[0]!='/'){
+#      |                                  ~~~~~^~~
+/builddir/build/BUILD/aide-0.16/src/util.c:101:32: note: (19) following 'true' branch...
+#  101 |     if(r[0]=='/'&&(r+1)[0]=='/'&&(r+2)[0]!='/'){
+#      |        ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:102:28: note: (20) ...to here
+#  102 |       char*hostname=(char*)malloc(sizeof(char)*MAXHOSTNAMELEN);
+#      |                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:102:28: note: (21) this call could return NULL
+/builddir/build/BUILD/aide-0.16/src/util.c:105:7: note: (22) following 'false' branch...
+#  105 |       for(i=0;r[0]!='/'&&r[0]!='\0';r++,i++);
+#      |       ^~~
+/builddir/build/BUILD/aide-0.16/src/util.c:106:9: note: (23) ...to here
+#  106 |       if(r[0]=='\0'){
+#      |         ^
+/builddir/build/BUILD/aide-0.16/src/util.c:106:9: note: (24) following 'false' branch...
+/builddir/build/BUILD/aide-0.16/src/util.c:111:16: note: (25) ...to here
+#  111 |       u->value=strdup(r);
+#      |                ^~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:113:10: note: (26) argument 1 ('hostname') from (21) could be NULL where non-null expected
+#  113 |       if(gethostname(hostname,MAXHOSTNAMELEN)==-1){
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/include/db_config.h:26: included_from: Included from here.
+/builddir/build/BUILD/aide-0.16/include/aide.h:26: included_from: Included from here.
+/builddir/build/BUILD/aide-0.16/src/util.c:22: included_from: Included from here.
+/usr/include/unistd.h:891:12: note: argument 1 of 'gethostname' must be non-null
+#  891 | extern int gethostname (char *__name, size_t __len) __THROW __nonnull ((1))
+#      |            ^~~~~~~~~~~
+
+Error: GCC_ANALYZER_WARNING (CWE-690):
+/builddir/build/BUILD/aide-0.16/src/util.c:214:14: warning[-Wanalyzer-possible-null-dereference]: dereference of possibly-NULL 'p'
+#  214 |         *p++ = '%';
+#      |         ~~~~~^~~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:202:3: note: (1) following 'false' branch...
+#  202 |   for (i = 0; *s; s++, i++){
+#      |   ^~~
+/builddir/build/BUILD/aide-0.16/src/util.c:208:27: note: (2) ...to here
+#  208 |   res = (char *)malloc (i + 1);
+#      |                         ~~^~~
+/builddir/build/BUILD/aide-0.16/src/util.c:208:27: note: (3) this call could return NULL
+/builddir/build/BUILD/aide-0.16/src/util.c:210:3: note: (4) following 'true' branch...
+#  210 |   for (p = res; *s; s++){
+#      |   ^~~
+/builddir/build/BUILD/aide-0.16/src/util.c:211:9: note: (5) ...to here
+#  211 |     if (strchr (URL_UNSAFE, *s)||!ISPRINT((int)*s))
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:211:8: note: (6) following 'true' branch...
+#  211 |     if (strchr (URL_UNSAFE, *s)||!ISPRINT((int)*s))
+#      |        ^
+/builddir/build/BUILD/aide-0.16/src/util.c:213:29: note: (7) ...to here
+#  213 |         const unsigned char c = *s;
+#      |                             ^
+/builddir/build/BUILD/aide-0.16/src/util.c:214:14: note: (8) 'p' could be NULL: unchecked value from (3)
+#  214 |         *p++ = '%';
+#      |         ~~~~~^~~~~
+
+Error: GCC_ANALYZER_WARNING (CWE-690):
+/builddir/build/BUILD/aide-0.16/src/util.c:219:12: warning[-Wanalyzer-possible-null-dereference]: dereference of possibly-NULL 'p'
+#  219 |       *p++ = *s;
+#      |       ~~~~~^~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:202:3: note: (1) following 'false' branch...
+#  202 |   for (i = 0; *s; s++, i++){
+#      |   ^~~
+/builddir/build/BUILD/aide-0.16/src/util.c:208:27: note: (2) ...to here
+#  208 |   res = (char *)malloc (i + 1);
+#      |                         ~~^~~
+/builddir/build/BUILD/aide-0.16/src/util.c:208:27: note: (3) this call could return NULL
+/builddir/build/BUILD/aide-0.16/src/util.c:210:3: note: (4) following 'true' branch...
+#  210 |   for (p = res; *s; s++){
+#      |   ^~~
+/builddir/build/BUILD/aide-0.16/src/util.c:211:9: note: (5) ...to here
+#  211 |     if (strchr (URL_UNSAFE, *s)||!ISPRINT((int)*s))
+#      |         ^~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:211:8: note: (6) following 'false' branch...
+#  211 |     if (strchr (URL_UNSAFE, *s)||!ISPRINT((int)*s))
+#      |        ^
+/builddir/build/BUILD/aide-0.16/src/util.c:211:32: note: (7) ...to here
+#  211 |     if (strchr (URL_UNSAFE, *s)||!ISPRINT((int)*s))
+#      |                                ^
+/builddir/build/BUILD/aide-0.16/src/util.c:211:32: note: (8) following 'false' branch...
+/builddir/build/BUILD/aide-0.16/src/util.c:28: included_from: Included from here.
+/builddir/build/BUILD/aide-0.16/src/util.c:44:35: note: (9) ...to here
+#   44 | #define ISPRINT(c) (isascii(c) && isprint(c))
+#      |                                   ^~~~~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:211:35: note: in expansion of macro 'ISPRINT'
+#  211 |     if (strchr (URL_UNSAFE, *s)||!ISPRINT((int)*s))
+#      |                                   ^~~~~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:211:34: note: (10) following 'false' branch...
+#  211 |     if (strchr (URL_UNSAFE, *s)||!ISPRINT((int)*s))
+#      |                                  ^
+/builddir/build/BUILD/aide-0.16/src/util.c:219:9: note: (11) ...to here
+#  219 |       *p++ = *s;
+#      |        ~^~
+/builddir/build/BUILD/aide-0.16/src/util.c:219:12: note: (12) 'p' could be NULL: unchecked value from (3)
+#  219 |       *p++ = *s;
+#      |       ~~~~~^~~~
+
+Error: GCC_ANALYZER_WARNING (CWE-690):
+/builddir/build/BUILD/aide-0.16/src/util.c:222:6: warning[-Wanalyzer-possible-null-dereference]: dereference of possibly-NULL 'p'
+#  222 |   *p = '\0';
+#      |   ~~~^~~~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:202:3: note: (1) following 'false' branch...
+#  202 |   for (i = 0; *s; s++, i++){
+#      |   ^~~
+/builddir/build/BUILD/aide-0.16/src/util.c:208:27: note: (2) ...to here
+#  208 |   res = (char *)malloc (i + 1);
+#      |                         ~~^~~
+/builddir/build/BUILD/aide-0.16/src/util.c:208:27: note: (3) this call could return NULL
+/builddir/build/BUILD/aide-0.16/src/util.c:210:3: note: (4) following 'false' branch...
+#  210 |   for (p = res; *s; s++){
+#      |   ^~~
+/builddir/build/BUILD/aide-0.16/src/util.c:222:6: note: (5) ...to here
+#  222 |   *p = '\0';
+#      |   ~~~^~~~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:222:6: note: (6) 'p' could be NULL: unchecked value from (3)
+
+Error: GCC_ANALYZER_WARNING (CWE-690):
+/builddir/build/BUILD/aide-0.16/src/util.c:235:9: warning[-Wanalyzer-possible-null-dereference]: dereference of possibly-NULL 'pc'
+#  235 |   pc[10]='\0';
+#      |   ~~~~~~^~~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:231:13: note: (1) this call could return NULL
+#  231 |   pc=(char*)malloc(sizeof(char)*11);
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:232:3: note: (2) following 'true' branch (when 'i != 10')...
+#  232 |   for(i=0;i<10;i++){
+#      |   ^~~
+/builddir/build/BUILD/aide-0.16/src/util.c:233:7: note: (3) ...to here
+#  233 |     pc[i]='-';
+#      |       ^
+/builddir/build/BUILD/aide-0.16/src/util.c:232:3: note: (4) following 'false' branch (when 'i == 10')...
+#  232 |   for(i=0;i<10;i++){
+#      |   ^~~
+/builddir/build/BUILD/aide-0.16/src/util.c:235:9: note: (5) ...to here
+#  235 |   pc[10]='\0';
+#      |   ~~~~~~^~~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:235:9: note: (6) 'pc' could be NULL: unchecked value from (1)
+
+Error: GCC_ANALYZER_WARNING (CWE-690):
+/builddir/build/BUILD/aide-0.16/src/util.c:377:17: warning[-Wanalyzer-possible-null-argument]: use of possibly-NULL 'full' where non-null expected
+#  377 |                 strncpy(full, homedir, homedir_len);
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:370:8: note: (1) following 'true' branch (when 'path' is non-NULL)...
+#  370 |     if (path != NULL) {
+#      |        ^
+/builddir/build/BUILD/aide-0.16/src/util.c:371:17: note: (2) ...to here
+#  371 |         if (path[0] == '~') {
+#      |             ~~~~^~~
+/builddir/build/BUILD/aide-0.16/src/util.c:371:12: note: (3) following 'true' branch...
+#  371 |         if (path[0] == '~') {
+#      |            ^
+/builddir/build/BUILD/aide-0.16/src/util.c:372:25: note: (4) ...to here
+#  372 |             if((homedir=getenv("HOME")) != NULL) {
+#      |                         ^~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:372:15: note: (5) following 'true' branch (when 'homedir' is non-NULL)...
+#  372 |             if((homedir=getenv("HOME")) != NULL) {
+#      |               ^
+/builddir/build/BUILD/aide-0.16/src/util.c:373:39: note: (6) ...to here
+#  373 |                 path_len = strlen(path+sizeof(char));
+#      |                                   ~~~~^~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:373:39: note: (7) this call could return NULL
+/builddir/build/BUILD/aide-0.16/src/util.c:377:17: note: (8) argument 1 ('full') from (7) could be NULL where non-null expected
+#  377 |                 strncpy(full, homedir, homedir_len);
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:25: included_from: Included from here.
+/usr/include/string.h:128:14: note: argument 1 of 'strncpy' must be non-null
+#  128 | extern char *strncpy (char *__restrict __dest,
+#      |              ^~~~~~~
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/aide-0.16/src/util.c:377:17: warning: 'strncpy' specified bound depends on the length of the source argument [-Wstringop-overflow=]
+#  377 |                 strncpy(full, homedir, homedir_len);
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:374:31: note: length computed here
+#  374 |                 homedir_len = strlen(homedir);
+#      |                               ^~~~~~~~~~~~~~~
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/aide-0.16/src/util.c:378:17: warning: 'strncpy' specified bound depends on the length of the source argument [-Wstringop-overflow=]
+#  378 |                 strncpy(full+homedir_len, path+sizeof(char), path_len);
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/util.c:373:28: note: length computed here
+#  373 |                 path_len = strlen(path+sizeof(char));
+#      |                            ^~~~~~~~~~~~~~~~~~~~~~~~~
+
+Error: GCC_ANALYZER_WARNING (CWE-690):
+/builddir/build/BUILD/aide-0.16/src/aide.c: scope_hint: In function 'read_param'
+/builddir/build/BUILD/aide-0.16/src/aide.c:187:17: warning[-Wanalyzer-possible-null-argument]: use of possibly-NULL '<unknown>' where non-null expected
+#  187 |                 strcpy(conf->limit,optarg);
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/aide.c:506:5: note: (1) entry to 'main'
+#  506 | int main(int argc,char**argv)
+#      |     ^~~~
+/builddir/build/BUILD/aide-0.16/src/aide.c:530:5: note: (2) following 'false' branch...
+#  530 |   if(!gcry_check_version(GCRYPT_VERSION)) {
+#      |     ^
+/builddir/build/BUILD/aide-0.16/src/aide.c:535:3: note: (3) ...to here
+#  535 |   gcry_control(GCRYCTL_INITIALIZATION_FINISHED, 0);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/aide.c:539:6: note: (4) calling 'read_param' from 'main'
+#  539 |   if(read_param(argc,argv)==RETFAIL){
+#      |      ^~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/aide.c:94:12: note: (5) entry to 'read_param'
+#   94 | static int read_param(int argc,char**argv)
+#      |            ^~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/aide.c:121:7: note: (6) following 'false' branch (when 'option != -1')...
+#  121 |     if(option==-1)
+#      |       ^
+/builddir/build/BUILD/aide-0.16/src/aide.c:123:5: note: (7) ...to here
+#  123 |     switch(option)
+#      |     ^~~~~~
+/builddir/build/BUILD/aide-0.16/src/aide.c:183:16: note: (8) following 'true' branch...
+#  183 |             if (optarg!=NULL) {
+#      |                ^
+/builddir/build/BUILD/aide-0.16/src/aide.c:186:36: note: (9) ...to here
+#  186 |                 conf->limit=malloc(strlen(optarg)+1);
+#      |                                    ^~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/aide.c:186:36: note: (10) this call could return NULL
+/builddir/build/BUILD/aide-0.16/src/aide.c:187:17: note: (11) argument 1 ('<unknown>') from (10) could be NULL where non-null expected
+#  187 |                 strcpy(conf->limit,optarg);
+#      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gcrypt.h:28: included_from: Included from here.
+/builddir/build/BUILD/aide-0.16/include/md.h:47: included_from: Included from here.
+/builddir/build/BUILD/aide-0.16/src/aide.c:38: included_from: Included from here.
+/usr/include/string.h:125:14: note: argument 1 of 'strcpy' must be non-null
+#  125 | extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+#      |              ^~~~~~
+
+Error: GCC_ANALYZER_WARNING (CWE-690):
+/builddir/build/BUILD/aide-0.16/src/aide.c: scope_hint: In function 'setdefaults_before_config'
+/builddir/build/BUILD/aide-0.16/src/aide.c:275:16: warning[-Wanalyzer-possible-null-dereference]: dereference of possibly-NULL '<unknown>'
+#  275 |   conf->defsyms=NULL;
+#      |                ^
+/builddir/build/BUILD/aide-0.16/src/aide.c:506:5: note: (1) entry to 'main'
+#  506 | int main(int argc,char**argv)
+#      |     ^~~~
+/builddir/build/BUILD/aide-0.16/src/aide.c:517:3: note: (2) calling 'setdefaults_before_config' from 'main'
+#  517 |   setdefaults_before_config();
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/aide.c:264:13: note: (3) entry to 'setdefaults_before_config'
+#  264 | static void setdefaults_before_config()
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/aide.c:274:20: note: (4) this call could return NULL
+#  274 |   conf=(db_config*)malloc(sizeof(db_config));
+#      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/aide.c:275:16: note: (5) '<unknown>' could be NULL: unchecked value from (4)
+#  275 |   conf->defsyms=NULL;
+#      |                ^
+
+Error: GCC_ANALYZER_WARNING (CWE-690):
+/builddir/build/BUILD/aide-0.16/src/aide.c:277:7: warning[-Wanalyzer-possible-null-argument]: use of possibly-NULL 's' where non-null expected
+#  277 |   if (gethostname(s,MAXHOSTNAMELEN)==-1) {
+#      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/aide.c:506:5: note: (1) entry to 'main'
+#  506 | int main(int argc,char**argv)
+#      |     ^~~~
+/builddir/build/BUILD/aide-0.16/src/aide.c:517:3: note: (2) calling 'setdefaults_before_config' from 'main'
+#  517 |   setdefaults_before_config();
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/aide.c:264:13: note: (3) entry to 'setdefaults_before_config'
+#  264 | static void setdefaults_before_config()
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/aide.c:268:18: note: (4) this call could return NULL
+#  268 |   char* s=(char*)malloc(sizeof(char)*MAXHOSTNAMELEN+1);
+#      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/aide.c:277:7: note: (5) argument 1 ('s') from (4) could be NULL where non-null expected
+#  277 |   if (gethostname(s,MAXHOSTNAMELEN)==-1) {
+#      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/include/db_config.h:26: included_from: Included from here.
+/builddir/build/BUILD/aide-0.16/include/aide.h:26: included_from: Included from here.
+/builddir/build/BUILD/aide-0.16/src/aide.c:22: included_from: Included from here.
+/usr/include/unistd.h:891:12: note: argument 1 of 'gethostname' must be non-null
+#  891 | extern int gethostname (char *__name, size_t __len) __THROW __nonnull ((1))
+#      |            ^~~~~~~~~~~
+
+Error: GCC_ANALYZER_WARNING (CWE-690):
+/builddir/build/BUILD/aide-0.16/src/aide.c:331:24: warning[-Wanalyzer-possible-null-dereference]: dereference of possibly-NULL '<unknown>'
+#  331 |   conf->db_out_order[0]=db_filename;
+#      |   ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/aide.c:506:5: note: (1) entry to 'main'
+#  506 | int main(int argc,char**argv)
+#      |     ^~~~
+/builddir/build/BUILD/aide-0.16/src/aide.c:517:3: note: (2) calling 'setdefaults_before_config' from 'main'
+#  517 |   setdefaults_before_config();
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/aide.c:264:13: note: (3) entry to 'setdefaults_before_config'
+#  264 | static void setdefaults_before_config()
+#      |             ^~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/aide.c:277:6: note: (4) following 'true' branch...
+#  277 |   if (gethostname(s,MAXHOSTNAMELEN)==-1) {
+#      |      ^
+/builddir/build/BUILD/aide-0.16/src/aide.c:278:5: note: (5) ...to here
+#  278 |     error(0,_("Couldn't get hostname"));
+#      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/aide.c:311:27: note: (6) this call could return NULL
+#  311 |   conf->no_acl_on_symlinks=0; /* zero means don't do ACLs on symlinks */
+#      |   ~~~~~~~~~~~~~~~~~~~~~~~~^~
+/builddir/build/BUILD/aide-0.16/src/aide.c:331:24: note: (7) '<unknown>' could be NULL: unchecked value from (6)
+#  331 |   conf->db_out_order[0]=db_filename;
+#      |   ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+
+Error: GCC_ANALYZER_WARNING (CWE-690):
+/builddir/build/BUILD/aide-0.16/src/base64.c: scope_hint: In function 'encode_base64'
+/builddir/build/BUILD/aide-0.16/src/base64.c:167:3: warning[-Wanalyzer-possible-null-argument]: use of possibly-NULL 'retbuf' where non-null expected
+#  167 |   memcpy(retbuf,outbuf,pos);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/base64.c:100:6: note: (1) following 'false' branch...
+#  100 |   if (!ssize||src==NULL){
+#      |      ^
+/builddir/build/BUILD/aide-0.16/src/base64.c:104:20: note: (2) ...to here
+#  104 |   outbuf = (char *)malloc(sizeof(char)*B64_BUF);
+#      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/base64.c:116:9: note: (3) following 'false' branch (when 'left == 0')...
+#  116 |   while (left != 0)
+#      |         ^
+/builddir/build/BUILD/aide-0.16/src/base64.c:166:41: note: (4) ...to here
+#  166 |   retbuf=(char*)malloc(sizeof(char)*(pos+1));
+#      |                                     ~~~~^~~
+/builddir/build/BUILD/aide-0.16/src/base64.c:166:41: note: (5) this call could return NULL
+/builddir/build/BUILD/aide-0.16/src/base64.c:167:3: note: (6) argument 1 ('retbuf') from (5) could be NULL where non-null expected
+#  167 |   memcpy(retbuf,outbuf,pos);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/base64.c:34: included_from: Included from here.
+/usr/include/string.h:43:14: note: argument 1 of 'memcpy' must be non-null
+#   43 | extern void *memcpy (void *__restrict __dest, const void *__restrict __src,
+#      |              ^~~~~~
+
+Error: GCC_ANALYZER_WARNING (CWE-690):
+/builddir/build/BUILD/aide-0.16/src/base64.c:167:3: warning[-Wanalyzer-possible-null-argument]: use of possibly-NULL 'outbuf' where non-null expected
+#  167 |   memcpy(retbuf,outbuf,pos);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/base64.c:100:6: note: (1) following 'false' branch...
+#  100 |   if (!ssize||src==NULL){
+#      |      ^
+/builddir/build/BUILD/aide-0.16/src/base64.c:104:20: note: (2) ...to here
+#  104 |   outbuf = (char *)malloc(sizeof(char)*B64_BUF);
+#      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/base64.c:104:20: note: (3) this call could return NULL
+/builddir/build/BUILD/aide-0.16/src/base64.c:116:9: note: (4) following 'false' branch (when 'left == 0')...
+#  116 |   while (left != 0)
+#      |         ^
+/builddir/build/BUILD/aide-0.16/src/base64.c:166:41: note: (5) ...to here
+#  166 |   retbuf=(char*)malloc(sizeof(char)*(pos+1));
+#      |                                     ~~~~^~~
+/builddir/build/BUILD/aide-0.16/src/base64.c:167:3: note: (6) argument 2 ('outbuf') from (3) could be NULL where non-null expected
+#  167 |   memcpy(retbuf,outbuf,pos);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/base64.c:34: included_from: Included from here.
+/usr/include/string.h:43:14: note: argument 2 of 'memcpy' must be non-null
+#   43 | extern void *memcpy (void *__restrict __dest, const void *__restrict __src,
+#      |              ^~~~~~
+
+Error: GCC_ANALYZER_WARNING (CWE-690):
+/builddir/build/BUILD/aide-0.16/src/base64.c: scope_hint: In function 'decode_base64'
+/builddir/build/BUILD/aide-0.16/src/base64.c:247:3: warning[-Wanalyzer-possible-null-argument]: use of possibly-NULL 'retbuf' where non-null expected
+#  247 |   memcpy(retbuf,outbuf,pos);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/base64.c:188:6: note: (1) following 'false' branch...
+#  188 |   if (!ssize||src==NULL)
+#      |      ^
+/builddir/build/BUILD/aide-0.16/src/base64.c:194:20: note: (2) ...to here
+#  194 |   outbuf = (byte *)malloc(sizeof(byte)*B64_BUF);
+#      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/base64.c:203:9: note: (3) following 'false' branch (when 'left == 0')...
+#  203 |   while (left != 0)
+#      |         ^
+/builddir/build/BUILD/aide-0.16/src/base64.c:246:41: note: (4) ...to here
+#  246 |   retbuf=(byte*)malloc(sizeof(byte)*(pos+1));
+#      |                                     ~~~~^~~
+/builddir/build/BUILD/aide-0.16/src/base64.c:246:41: note: (5) this call could return NULL
+/builddir/build/BUILD/aide-0.16/src/base64.c:247:3: note: (6) argument 1 ('retbuf') from (5) could be NULL where non-null expected
+#  247 |   memcpy(retbuf,outbuf,pos);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/base64.c:34: included_from: Included from here.
+/usr/include/string.h:43:14: note: argument 1 of 'memcpy' must be non-null
+#   43 | extern void *memcpy (void *__restrict __dest, const void *__restrict __src,
+#      |              ^~~~~~
+
+Error: GCC_ANALYZER_WARNING (CWE-690):
+/builddir/build/BUILD/aide-0.16/src/base64.c:247:3: warning[-Wanalyzer-possible-null-argument]: use of possibly-NULL 'outbuf' where non-null expected
+#  247 |   memcpy(retbuf,outbuf,pos);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/base64.c:188:6: note: (1) following 'false' branch...
+#  188 |   if (!ssize||src==NULL)
+#      |      ^
+/builddir/build/BUILD/aide-0.16/src/base64.c:194:20: note: (2) ...to here
+#  194 |   outbuf = (byte *)malloc(sizeof(byte)*B64_BUF);
+#      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/base64.c:194:20: note: (3) this call could return NULL
+/builddir/build/BUILD/aide-0.16/src/base64.c:203:9: note: (4) following 'false' branch (when 'left == 0')...
+#  203 |   while (left != 0)
+#      |         ^
+/builddir/build/BUILD/aide-0.16/src/base64.c:246:41: note: (5) ...to here
+#  246 |   retbuf=(byte*)malloc(sizeof(byte)*(pos+1));
+#      |                                     ~~~~^~~
+/builddir/build/BUILD/aide-0.16/src/base64.c:247:3: note: (6) argument 2 ('outbuf') from (3) could be NULL where non-null expected
+#  247 |   memcpy(retbuf,outbuf,pos);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/base64.c:34: included_from: Included from here.
+/usr/include/string.h:43:14: note: argument 2 of 'memcpy' must be non-null
+#   43 | extern void *memcpy (void *__restrict __dest, const void *__restrict __src,
+#      |              ^~~~~~
+
+Error: GCC_ANALYZER_WARNING (CWE-690):
+/builddir/build/BUILD/aide-0.16/src/commandconf.c: scope_hint: In function 'append_rxlist'
+/builddir/build/BUILD/aide-0.16/src/commandconf.c:725:8: warning[-Wanalyzer-possible-null-dereference]: dereference of possibly-NULL 'r'
+#  725 |   r->rx=rx;
+#      |   ~~~~~^~~
+/builddir/build/BUILD/aide-0.16/src/commandconf.c:724:15: note: (1) this call could return NULL
+#  724 |   r=(rx_rule*)malloc(sizeof(rx_rule));
+#      |               ^~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/commandconf.c:725:8: note: (2) 'r' could be NULL: unchecked value from (1)
+#  725 |   r->rx=rx;
+#      |   ~~~~~^~~
+
+Error: GCC_ANALYZER_WARNING (CWE-690):
+/builddir/build/BUILD/aide-0.16/src/commandconf.c: scope_hint: In function 'do_groupdef'
+/builddir/build/BUILD/aide-0.16/src/commandconf.c:757:10: warning[-Wanalyzer-possible-null-dereference]: dereference of possibly-NULL 's'
+#  757 |   s->name=group;
+#      |   ~~~~~~~^~~~~~
+/builddir/build/BUILD/aide-0.16/src/commandconf.c:750:5: note: (1) following 'false' branch (when 'r' is NULL)...
+#  750 |   if((r=list_find(group,conf->groupsyms))){
+#      |     ^
+/builddir/build/BUILD/aide-0.16/src/commandconf.c:756:13: note: (2) ...to here
+#  756 |   s=(symba*)malloc(sizeof(symba));
+#      |             ^~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/commandconf.c:756:13: note: (3) this call could return NULL
+/builddir/build/BUILD/aide-0.16/src/commandconf.c:757:10: note: (4) 's' could be NULL: unchecked value from (3)
+#  757 |   s->name=group;
+#      |   ~~~~~~~^~~~~~
+
+Error: GCC_ANALYZER_WARNING (CWE-690):
+/builddir/build/BUILD/aide-0.16/src/commandconf.c: scope_hint: In function 'get_conf_key'
+/builddir/build/BUILD/aide-0.16/src/commandconf.c:1014:7: warning[-Wanalyzer-possible-null-dereference]: dereference of possibly-NULL 'm'
+# 1014 |   m[0]=0;
+#      |   ~~~~^~
+/builddir/build/BUILD/aide-0.16/src/commandconf.c:1004:25: note: (1) this call could return NULL
+# 1004 |   char* m=(char*)malloc(strlen(aide_key_1)+
+#      |                         ^~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/commandconf.c:1014:7: note: (2) 'm' could be NULL: unchecked value from (1)
+# 1014 |   m[0]=0;
+#      |   ~~~~^~
+
+Error: GCC_ANALYZER_WARNING (CWE-690):
+/builddir/build/BUILD/aide-0.16/src/commandconf.c: scope_hint: In function 'get_conf_key_len'
+/builddir/build/BUILD/aide-0.16/src/commandconf.c:1045:7: warning[-Wanalyzer-possible-null-dereference]: dereference of possibly-NULL 'm'
+# 1045 |   m[0]=0;
+#      |   ~~~~^~
+/builddir/build/BUILD/aide-0.16/src/commandconf.c:1035:25: note: (1) this call could return NULL
+# 1035 |   char* m=(char*)malloc(strlen(aide_key_1)+
+#      |                         ^~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/commandconf.c:1045:7: note: (2) 'm' could be NULL: unchecked value from (1)
+# 1045 |   m[0]=0;
+#      |   ~~~~^~
+
+Error: GCC_ANALYZER_WARNING (CWE-690):
+/builddir/build/BUILD/aide-0.16/src/commandconf.c: scope_hint: In function 'get_db_key'
+/builddir/build/BUILD/aide-0.16/src/commandconf.c:1076:7: warning[-Wanalyzer-possible-null-dereference]: dereference of possibly-NULL 'm'
+# 1076 |   m[0]=0;
+#      |   ~~~~^~
+/builddir/build/BUILD/aide-0.16/src/commandconf.c:1066:25: note: (1) this call could return NULL
+# 1066 |   char* m=(char*)malloc(strlen(db_key_1)+
+#      |                         ^~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/commandconf.c:1076:7: note: (2) 'm' could be NULL: unchecked value from (1)
+# 1076 |   m[0]=0;
+#      |   ~~~~^~
+
+Error: GCC_ANALYZER_WARNING (CWE-690):
+/builddir/build/BUILD/aide-0.16/src/commandconf.c: scope_hint: In function 'get_db_key_len'
+/builddir/build/BUILD/aide-0.16/src/commandconf.c:1107:7: warning[-Wanalyzer-possible-null-dereference]: dereference of possibly-NULL 'm'
+# 1107 |   m[0]=0;
+#      |   ~~~~^~
+/builddir/build/BUILD/aide-0.16/src/commandconf.c:1097:25: note: (1) this call could return NULL
+# 1097 |   char* m=(char*)malloc(strlen(db_key_1)+
+#      |                         ^~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/commandconf.c:1107:7: note: (2) 'm' could be NULL: unchecked value from (1)
+# 1107 |   m[0]=0;
+#      |   ~~~~^~
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:6895:16: warning[-Wunused-function]: 'input' defined but not used
+# 6895 | #else
+#      |                ^    
+
+Error: CPPCHECK_WARNING (CWE-476):
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7088: warning[nullPointer]: Possible null pointer dereference: b
+
+Error: CPPCHECK_WARNING (CWE-476):
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7089: warning[nullPointer]: Possible null pointer dereference: b
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/aide-0.16/src/db_disk.c: scope_hint: In function 'db_readline_disk'
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:211:3: warning: 'strncat' specified bound 1 equals source length [-Wstringop-overflow=]
+#  211 |   strncat (fullname, "/", 1);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/aide-0.16/src/db_disk.c: scope_hint: In function 'name_construct'
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:131:3: warning: 'strncat' specified bound 1 equals source length [-Wstringop-overflow=]
+#  131 |   strncat (ret, "/", 1);
+#      |   ^~~~~~~~~~~~~~~~~~~~~
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/aide-0.16/src/db_disk.c: scope_hint: In function 'db_disk_init'
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:445:2: warning: 'strncat' specified bound 1 equals source length [-Wstringop-overflow=]
+#  445 |  strncat (fullname, "/", 1);
+#      |  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Error: GCC_ANALYZER_WARNING (CWE-690):
+/builddir/build/BUILD/aide-0.16/src/db_disk.c: scope_hint: In function 'add_child'
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:157:14: warning[-Wanalyzer-possible-null-dereference]: dereference of possibly-NULL 'new_r'
+#  157 |  new_r->attr = 0;
+#      |  ~~~~~~~~~~~~^~~
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:145:5: note: (1) following 'false' branch (when 'new_r' is NULL)...
+#  145 |  if (new_r != NULL) {
+#      |     ^
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:155:10: note: (2) ...to here
+#  155 |  new_r = malloc (sizeof (seltree));
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:155:10: note: (3) this call could return NULL
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:157:14: note: (4) 'new_r' could be NULL: unchecked value from (3)
+#  157 |  new_r->attr = 0;
+#      |  ~~~~~~~~~~~~^~~
+
+Error: GCC_ANALYZER_WARNING (CWE-690):
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:161:2: warning[-Wanalyzer-possible-null-argument]: use of possibly-NULL '<unknown>' where non-null expected
+#  161 |  strncpy(new_r->path, fil->filename, i+1);
+#      |  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:145:5: note: (1) following 'false' branch (when 'new_r' is NULL)...
+#  145 |  if (new_r != NULL) {
+#      |     ^
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:155:10: note: (2) ...to here
+#  155 |  new_r = malloc (sizeof (seltree));
+#      |          ^~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:158:17: note: (3) this call could return NULL
+#  158 |  i = strlen (fil->filename);
+#      |              ~~~^~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:161:2: note: (4) argument 1 ('<unknown>') from (3) could be NULL where non-null expected
+#  161 |  strncpy(new_r->path, fil->filename, i+1);
+#      |  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:29: included_from: Included from here.
+/usr/include/string.h:128:14: note: argument 1 of 'strncpy' must be non-null
+#  128 | extern char *strncpy (char *__restrict __dest,
+#      |              ^~~~~~~
+
+Error: GCC_ANALYZER_WARNING (CWE-690):
+/builddir/build/BUILD/aide-0.16/src/db_disk.c: scope_hint: In function 'db_readline_disk'
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:210:3: warning[-Wanalyzer-possible-null-argument]: use of possibly-NULL 'fullname' where non-null expected
+#  210 |   strncpy(fullname, conf->root_prefix, conf->root_prefix_length+1);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:207:5: note: (1) following 'true' branch...
+#  207 |  if (!root_handled) {
+#      |     ^
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:208:16: note: (2) ...to here
+#  208 |   root_handled = 1;
+#      |   ~~~~~~~~~~~~~^~~
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:208:16: note: (3) this call could return NULL
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:210:3: note: (4) argument 1 ('fullname') from (3) could be NULL where non-null expected
+#  210 |   strncpy(fullname, conf->root_prefix, conf->root_prefix_length+1);
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:29: included_from: Included from here.
+/usr/include/string.h:128:14: note: argument 1 of 'strncpy' must be non-null
+#  128 | extern char *strncpy (char *__restrict __dest,
+#      |              ^~~~~~~
+
+Error: GCC_ANALYZER_WARNING (CWE-690):
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:349:5: warning[-Wanalyzer-possible-null-argument]: use of possibly-NULL 'fullname' where non-null expected
+#  349 |     strncpy(fullname, conf->root_prefix, conf->root_prefix_length+1);
+#      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:222:7: note: (1) following 'false' branch (when 'fil' is NULL)...
+#  222 |    if (fil != NULL) {
+#      |       ^
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:228:3: note: (2) ...to here
+#  228 |   free (fullname);
+#      |   ^~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:233:5: note: (3) following 'false' branch...
+#  233 |  if (in_this ()) {
+#      |     ^
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:318:9: note: (4) ...to here
+#  318 |   if (r == NULL) {
+#      |         ^
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:318:6: note: (5) following 'false' branch...
+#  318 |   if (r == NULL) {
+#      |      ^
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:322:3: note: (6) ...to here
+#  322 |   error (255, "r->childs %p, r->parent %p, r->checked %i\n", r->childs,
+#      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  323 |       r->parent, r->checked);
+#      |       ~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:325:6: note: (7) following 'true' branch...
+#  325 |   if ((0 == (r->checked & NODE_CHECKED)) && r->childs != NULL) {
+#      |      ^
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:325:46: note: (8) ...to here
+#  325 |   if ((0 == (r->checked & NODE_CHECKED)) && r->childs != NULL) {
+#      |                                             ~^~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:325:42: note: (9) following 'true' branch...
+#  325 |   if ((0 == (r->checked & NODE_CHECKED)) && r->childs != NULL) {
+#      |                                          ^
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:328:17: note: (10) ...to here
+#  328 |    l = r->childs->header->head;
+#      |        ~~~~~~~~~^~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:330:10: note: (11) following 'true' branch (when 'l' is non-NULL)...
+#  330 |    while (l != NULL
+#      |          ^
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:331:27: note: (12) ...to here
+#  331 |        && (((seltree *) (l->data))->checked & NODE_TRAVERSE) != 0) {
+#      |                         ~~^~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:331:8: note: (13) following 'false' branch...
+#  330 |    while (l != NULL
+#      |           ~~~~~~~~~
+#  331 |        && (((seltree *) (l->data))->checked & NODE_TRAVERSE) != 0) {
+#      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:334:7: note: (14) ...to here
+#  334 |    if (l != NULL) {
+#      |       ^
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:334:7: note: (15) following 'true' branch (when 'l' is non-NULL)...
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:335:15: note: (16) ...to here
+#  335 |     if (l == l->header->tail) {
+#      |              ~^~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:335:8: note: (17) following 'false' branch...
+#  335 |     if (l == l->header->tail) {
+#      |        ^
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:339:8: note: (18) ...to here
+#  339 |     rr = (seltree *) l->data;
+#      |     ~~~^~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:339:8: note: (19) this call could return NULL
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:349:5: note: (20) argument 1 ('fullname') from (19) could be NULL where non-null expected
+#  349 |     strncpy(fullname, conf->root_prefix, conf->root_prefix_length+1);
+#      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:29: included_from: Included from here.
+/usr/include/string.h:128:14: note: argument 1 of 'strncpy' must be non-null
+#  128 | extern char *strncpy (char *__restrict __dest,
+#      |              ^~~~~~~
+
+Error: GCC_ANALYZER_WARNING (CWE-690):
+/builddir/build/BUILD/aide-0.16/src/db_disk.c: scope_hint: In function 'db_disk_init'
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:444:2: warning[-Wanalyzer-possible-null-argument]: use of possibly-NULL 'fullname' where non-null expected
+#  444 |  strncpy(fullname, conf->root_prefix, conf->root_prefix_length+1);
+#      |  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:443:29: note: (1) this call could return NULL
+#  443 |  char* fullname=malloc((conf->root_prefix_length+2)*sizeof(char));
+#      |                         ~~~~^~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:444:2: note: (2) argument 1 ('fullname') from (1) could be NULL where non-null expected
+#  444 |  strncpy(fullname, conf->root_prefix, conf->root_prefix_length+1);
+#      |  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:29: included_from: Included from here.
+/usr/include/string.h:128:14: note: argument 1 of 'strncpy' must be non-null
+#  128 | extern char *strncpy (char *__restrict __dest,
+#      |              ^~~~~~~
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/aide-0.16/src/db_disk.c: scope_hint: In function 'db_readline_disk'
+/builddir/build/BUILD/aide-0.16/src/db_disk.c:350:5: warning: 'strncat' specified bound depends on the length of the source argument [-Wstringop-overflow=]
+#  350 |     strncat(fullname, r->path, strlen(r->path));
+#      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Error: GCC_ANALYZER_WARNING (CWE-690):
+/builddir/build/BUILD/aide-0.16/src/compare_db.c: scope_hint: In function 'print_line'
+/builddir/build/BUILD/aide-0.16/src/compare_db.c:489:23: warning[-Wanalyzer-possible-null-dereference]: dereference of possibly-NULL 'summary'
+#  489 |             summary[0]=get_file_type_char((node->checked&NODE_REMOVED?node->old_data:node->new_data)->perm);
+#      |             ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/compare_db.c:851:5: note: (1) entry to 'gen_report'
+#  851 | int gen_report(seltree* node) {
+#      |     ^~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/compare_db.c:863:12: note: (2) following 'false' branch...
+#  863 |         if (!conf->syslog_format) {
+#      |            ^
+/builddir/build/BUILD/aide-0.16/src/compare_db.c:867:16: note: (3) ...to here
+#  867 |         if(conf->action&(DO_COMPARE|DO_DIFF) || (conf->action&DO_INIT && conf->report_detailed_init) ) {
+#      |                ^~
+/builddir/build/BUILD/aide-0.16/src/compare_db.c:868:16: note: (4) following 'true' branch...
+#  868 |             if (!conf->syslog_format && conf->grouped) {
+#      |                ^
+/builddir/build/BUILD/aide-0.16/src/compare_db.c:868:45: note: (5) ...to here
+#  868 |             if (!conf->syslog_format && conf->grouped) {
+#      |                                         ~~~~^~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/compare_db.c:868:38: note: (6) following 'true' branch...
+#  868 |             if (!conf->syslog_format && conf->grouped) {
+#      |                 ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/compare_db.c:869:21: note: (7) ...to here
+#  869 |                 if (nadd) {
+#      |                     ^~~~
+/builddir/build/BUILD/aide-0.16/src/compare_db.c:869:20: note: (8) following 'true' branch...
+#  869 |                 if (nadd) {
+#      |                    ^
+/builddir/build/BUILD/aide-0.16/src/compare_db.c:870:21: note: (9) ...to here
+#  870 |                     error(2,(char*)report_top_format,_("Added entries"));
+#      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/compare_db.c:871:21: note: (10) calling 'print_report_list' from 'gen_report'
+#  871 |                     print_report_list(node, NODE_ADDED);
+#      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/compare_db.c:694:13: note: (11) entry to 'print_report_list'
+#  694 | static void print_report_list(seltree* node, const int node_status) {
+#      |             ^~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/compare_db.c:696:8: note: (12) following 'true' branch...
+#  696 |     if (node->checked&node_status) {
+#      |        ^
+/builddir/build/BUILD/aide-0.16/src/compare_db.c:697:9: note: (13) ...to here
+#  697 |         print_line(node);
+#      |         ^~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/compare_db.c:697:9: note: (14) calling 'print_line' from 'print_report_list'
+/builddir/build/BUILD/aide-0.16/src/compare_db.c:483:13: note: (15) entry to 'print_line'
+#  483 | static void print_line(seltree* node) {
+#      |             ^~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/compare_db.c:484:7: note: (16) following 'true' branch...
+#  484 |     if(conf->summarize_changes==1) {
+#      |       ^
+/builddir/build/BUILD/aide-0.16/src/compare_db.c:487:25: note: (17) ...to here
+#  487 |         char* summary = malloc ((length+1) * sizeof (char));
+#      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/compare_db.c:487:25: note: (18) this call could return NULL
+/builddir/build/BUILD/aide-0.16/src/compare_db.c:488:12: note: (19) following 'true' branch...
+#  488 |         if (node->checked&(NODE_ADDED|NODE_REMOVED)) {
+#      |            ^
+/builddir/build/BUILD/aide-0.16/src/compare_db.c:489:57: note: (20) ...to here
+#  489 |             summary[0]=get_file_type_char((node->checked&NODE_REMOVED?node->old_data:node->new_data)->perm);
+/builddir/build/BUILD/aide-0.16/src/compare_db.c:489:85: note: (21) following 'true' branch...
+#  489 |             summary[0]=get_file_type_char((node->checked&NODE_REMOVED?node->old_data:node->new_data)->perm);
+#      |                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/compare_db.c:489:85: note: (22) ...to here
+/builddir/build/BUILD/aide-0.16/src/compare_db.c:489:23: note: (23) 'summary' could be NULL: unchecked value from (18)
+#  489 |             summary[0]=get_file_type_char((node->checked&NODE_REMOVED?node->old_data:node->new_data)->perm);
+#      |             ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Error: GCC_ANALYZER_WARNING (CWE-401):
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c: scope_hint: In function 'conf_create_buffer'
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7055:9: warning[-Wanalyzer-malloc-leak]: leak of '<unknown>'
+# 7055 | 
+#      |         ^
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:8:26: note: (1) entry to 'conf_create_buffer'
+#    8 | 
+#      |                          ^                 
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7034:21: note: in expansion of macro 'yy_create_buffer'
+# 7034 |  */
+#      |                     ^               
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7039:5: note: (2) following 'false' branch...
+# 7039 |  b = (YY_BUFFER_STATE) yyalloc( sizeof( struct yy_buffer_state )  );
+#      |     ^
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7042:17: note: (3) ...to here
+# 7042 | 
+#      |                 ^     
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7042:17: note: (4) allocated here
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7048:5: note: (5) assuming '<unknown>' is non-NULL
+# 7048 |  b->yy_ch_buf = (char *) yyalloc( (yy_size_t) (b->yy_buf_size + 2)  );
+#      |     ^
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7048:5: note: (6) following 'false' branch...
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7051:22: note: (7) ...to here
+# 7051 | 
+#      |                      ^  
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:13:24: note: (8) calling 'conf_init_buffer' from 'conf_create_buffer'
+#   13 | #define yy_scan_bytes conf_scan_bytes
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7053:2: note: in expansion of macro 'yy_init_buffer'
+# 7053 | 
+#      |  ^             
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:13:24: note: (9) entry to 'conf_init_buffer'
+#   13 | #define yy_scan_bytes conf_scan_bytes
+#      |                        ^~~~~~~~~~~~~~  
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7081:17: note: in expansion of macro 'yy_init_buffer'
+# 7081 |  */
+#      |                 ^             
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:14:25: note: (10) calling 'conf_flush_buffer' from 'conf_init_buffer'
+#   14 | #define yy_init_buffer conf_init_buffer
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7086:2: note: in expansion of macro 'yy_flush_buffer'
+# 7086 | 
+#      |  ^              
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:14:25: note: (11) entry to 'conf_flush_buffer'
+#   14 | #define yy_init_buffer conf_init_buffer
+#      |                         ^~~~~~~~~~~~~~~  
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7109:10: note: in expansion of macro 'yy_flush_buffer'
+# 7109 |  */
+#      |          ^              
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7111:9: note: (12) following 'false' branch (when 'b' is non-NULL)...
+# 7111 | {
+#      |         ^
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7114:16: note: (13) ...to here
+# 7114 | 
+#      |                ^  
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:520:27: note: (14) following 'true' branch...
+#  518 |  */
+#      |                            
+#  519 | #define YY_CURRENT_BUFFER ( (yy_buffer_stack) \
+#      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  520 |                           ? (yy_buffer_stack)[(yy_buffer_stack_top)] \
+#      |                           ^~~~~~~
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7128:12: note: in expansion of macro 'YY_CURRENT_BUFFER'
+# 7128 | 
+#      |            ^                
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:519:46: note: (15) ...to here
+#  519 | #define YY_CURRENT_BUFFER ( (yy_buffer_stack) \
+#      |                                              ^
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7128:12: note: in expansion of macro 'YY_CURRENT_BUFFER'
+# 7128 | 
+#      |            ^                
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7128:5: note: (16) following 'true' branch...
+# 7128 | 
+#      |     ^
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:15:30: note: (17) ...to here
+#   15 | #define yy_flush_buffer conf_flush_buffer
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7129:3: note: in expansion of macro 'yy_load_buffer_state'
+# 7129 |  if ( b == YY_CURRENT_BUFFER )
+#      |   ^~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:14:25: note: (18) returning to 'conf_init_buffer' from 'conf_flush_buffer'
+#   14 | #define yy_init_buffer conf_init_buffer
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7086:2: note: in expansion of macro 'yy_flush_buffer'
+# 7086 | 
+#      |  ^              
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:520:27: note: (19) following 'true' branch...
+#  518 |  */
+#      |                            
+#  519 | #define YY_CURRENT_BUFFER ( (yy_buffer_stack) \
+#      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  520 |                           ? (yy_buffer_stack)[(yy_buffer_stack_top)] \
+#      |                           ^~~~~~~
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7095:14: note: in expansion of macro 'YY_CURRENT_BUFFER'
+# 7095 |      */
+#      |              ^                
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:519:46: note: (20) ...to here
+#  519 | #define YY_CURRENT_BUFFER ( (yy_buffer_stack) \
+#      |                                              ^
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7095:14: note: in expansion of macro 'YY_CURRENT_BUFFER'
+# 7095 |      */
+#      |              ^                
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7100:68: note: (21) following 'false' branch (when 'file' is NULL)...
+# 7100 | 
+#      |                                                                    ^  
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7100:30: note: (22) ...to here
+# 7100 | 
+#      |                              ^                                        
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:13:24: note: (23) returning to 'conf_create_buffer' from 'conf_init_buffer'
+#   13 | #define yy_scan_bytes conf_scan_bytes
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7053:2: note: in expansion of macro 'yy_init_buffer'
+# 7053 | 
+#      |  ^             
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7055:9: note: (24) '<unknown>' leaks here; was allocated at (4)
+# 7055 | 
+#      |         ^
+
+Error: GCC_ANALYZER_WARNING (CWE-690):
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c: scope_hint: In function 'conf_init_buffer'
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7100:30: warning[-Wanalyzer-null-dereference]: dereference of NULL 'b'
+# 7100 | 
+#      |                              ^                                        
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:26:19: note: (1) entry to 'confrestart'
+#   26 | #define yyout confout
+#      |                   ^~~        
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:6972:10: note: in expansion of macro 'yyrestart'
+# 6972 |  */
+#      |          ^        
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:6975:7: note: (2) following 'true' branch...
+# 6975 | 
+#      |       ^
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:19:31: note: (3) ...to here
+#   19 | #define yypop_buffer_state confpop_buffer_state
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:6976:9: note: in expansion of macro 'yyensure_buffer_stack'
+# 6976 |  if ( ! YY_CURRENT_BUFFER ){
+#      |         ^~~~~~~~~~~~~~~~~~~~ 
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:8:26: note: (4) calling 'conf_create_buffer' from 'confrestart'
+#    8 | 
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:6978:13: note: in expansion of macro 'yy_create_buffer'
+# 6978 |   YY_CURRENT_BUFFER_LVALUE =
+#      |             ^~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:8:26: note: (5) entry to 'conf_create_buffer'
+#    8 | 
+#      |                          ^                 
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7034:21: note: in expansion of macro 'yy_create_buffer'
+# 7034 |  */
+#      |                     ^               
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7039:5: note: (6) following 'false' branch...
+# 7039 |  b = (YY_BUFFER_STATE) yyalloc( sizeof( struct yy_buffer_state )  );
+#      |     ^
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7042:17: note: (7) ...to here
+# 7042 | 
+#      |                 ^     
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7048:5: note: (8) following 'false' branch...
+# 7048 |  b->yy_ch_buf = (char *) yyalloc( (yy_size_t) (b->yy_buf_size + 2)  );
+#      |     ^
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7051:22: note: (9) ...to here
+# 7051 | 
+#      |                      ^  
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:13:24: note: (10) calling 'conf_init_buffer' from 'conf_create_buffer'
+#   13 | #define yy_scan_bytes conf_scan_bytes
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7053:2: note: in expansion of macro 'yy_init_buffer'
+# 7053 | 
+#      |  ^             
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:13:24: note: (11) entry to 'conf_init_buffer'
+#   13 | #define yy_scan_bytes conf_scan_bytes
+#      |                        ^~~~~~~~~~~~~~  
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7081:17: note: in expansion of macro 'yy_init_buffer'
+# 7081 |  */
+#      |                 ^             
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:14:25: note: (12) calling 'conf_flush_buffer' from 'conf_init_buffer'
+#   14 | #define yy_init_buffer conf_init_buffer
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7086:2: note: in expansion of macro 'yy_flush_buffer'
+# 7086 | 
+#      |  ^              
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:14:25: note: (13) entry to 'conf_flush_buffer'
+#   14 | #define yy_init_buffer conf_init_buffer
+#      |                         ^~~~~~~~~~~~~~~  
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7109:10: note: in expansion of macro 'yy_flush_buffer'
+# 7109 |  */
+#      |          ^              
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7111:9: note: (14) following 'false' branch (when 'b' is non-NULL)...
+# 7111 | {
+#      |         ^
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7114:16: note: (15) ...to here
+# 7114 | 
+#      |                ^  
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:520:27: note: (16) following 'false' branch...
+#  518 |  */
+#      |                            
+#  519 | #define YY_CURRENT_BUFFER ( (yy_buffer_stack) \
+#      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  520 |                           ? (yy_buffer_stack)[(yy_buffer_stack_top)] \
+#      |                           ^~~~~~~
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7128:12: note: in expansion of macro 'YY_CURRENT_BUFFER'
+# 7128 | 
+#      |            ^                
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7128:5: note: (17) ...to here
+# 7128 | 
+#      |     ^
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7128:5: note: (18) following 'true' branch...
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:15:30: note: (19) ...to here
+#   15 | #define yy_flush_buffer conf_flush_buffer
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7129:3: note: in expansion of macro 'yy_load_buffer_state'
+# 7129 |  if ( b == YY_CURRENT_BUFFER )
+#      |   ^~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:14:25: note: (20) returning to 'conf_init_buffer' from 'conf_flush_buffer'
+#   14 | #define yy_init_buffer conf_init_buffer
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7086:2: note: in expansion of macro 'yy_flush_buffer'
+# 7086 | 
+#      |  ^              
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:520:27: note: (21) following 'true' branch...
+#  518 |  */
+#      |                            
+#  519 | #define YY_CURRENT_BUFFER ( (yy_buffer_stack) \
+#      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  520 |                           ? (yy_buffer_stack)[(yy_buffer_stack_top)] \
+#      |                           ^~~~~~~
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7095:14: note: in expansion of macro 'YY_CURRENT_BUFFER'
+# 7095 |      */
+#      |              ^                
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:519:46: note: (22) ...to here
+#  519 | #define YY_CURRENT_BUFFER ( (yy_buffer_stack) \
+#      |                                              ^
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7095:14: note: in expansion of macro 'YY_CURRENT_BUFFER'
+# 7095 |      */
+#      |              ^                
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7095:8: note: (23) following 'false' branch...
+# 7095 |      */
+#      |        ^
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7100:68: note: (24) ...to here
+# 7100 | 
+#      |                                                                    ^  
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7100:68: note: (25) following 'true' branch (when 'file' is non-NULL)...
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7100:40: note: (26) ...to here
+# 7100 | 
+#      |                                        ^                     
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7100:68: note: (27) following 'true' branch...
+# 7100 | 
+#      |                                                                    ^  
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7100:30: note: (28) ...to here
+# 7100 | 
+#      |                              ^                                        
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:13:24: note: (29) returning to 'conf_create_buffer' from 'conf_init_buffer'
+#   13 | #define yy_scan_bytes conf_scan_bytes
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7053:2: note: in expansion of macro 'yy_init_buffer'
+# 7053 | 
+#      |  ^             
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:8:26: note: (30) returning to 'confrestart' from 'conf_create_buffer'
+#    8 | 
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:6978:13: note: in expansion of macro 'yy_create_buffer'
+# 6978 |   YY_CURRENT_BUFFER_LVALUE =
+#      |             ^~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:13:24: note: (31) following 'true' branch...
+#   13 | #define yy_scan_bytes conf_scan_bytes
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:6981:2: note: in expansion of macro 'yy_init_buffer'
+# 6981 | 
+#      |  ^             
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:519:46: note: (32) ...to here
+#  519 | #define YY_CURRENT_BUFFER ( (yy_buffer_stack) \
+#      |                                              ^
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:6981:18: note: in expansion of macro 'YY_CURRENT_BUFFER'
+# 6981 | 
+#      |                  ^                
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:13:24: note: (33) calling 'conf_init_buffer' from 'confrestart'
+#   13 | #define yy_scan_bytes conf_scan_bytes
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:6981:2: note: in expansion of macro 'yy_init_buffer'
+# 6981 | 
+#      |  ^             
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:13:24: note: (34) entry to 'conf_init_buffer'
+#   13 | #define yy_scan_bytes conf_scan_bytes
+#      |                        ^~~~~~~~~~~~~~  
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7081:17: note: in expansion of macro 'yy_init_buffer'
+# 7081 |  */
+#      |                 ^             
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:14:25: note: (35) calling 'conf_flush_buffer' from 'conf_init_buffer'
+#   14 | #define yy_init_buffer conf_init_buffer
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7086:2: note: in expansion of macro 'yy_flush_buffer'
+# 7086 | 
+#      |  ^              
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:14:25: note: (36) entry to 'conf_flush_buffer'
+#   14 | #define yy_init_buffer conf_init_buffer
+#      |                         ^~~~~~~~~~~~~~~  
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7109:10: note: in expansion of macro 'yy_flush_buffer'
+# 7109 |  */
+#      |          ^              
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7111:9: note: (37) following 'true' branch (when 'b' is NULL)...
+# 7111 | {
+#      |         ^
+cc1: note: (38) ...to here
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:14:25: note: (39) returning to 'conf_init_buffer' from 'conf_flush_buffer'
+#   14 | #define yy_init_buffer conf_init_buffer
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7086:2: note: in expansion of macro 'yy_flush_buffer'
+# 7086 | 
+#      |  ^              
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:520:27: note: (40) following 'false' branch...
+#  518 |  */
+#      |                            
+#  519 | #define YY_CURRENT_BUFFER ( (yy_buffer_stack) \
+#      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  520 |                           ? (yy_buffer_stack)[(yy_buffer_stack_top)] \
+#      |                           ^~~~~~~
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7095:14: note: in expansion of macro 'YY_CURRENT_BUFFER'
+# 7095 |      */
+#      |              ^                
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7095:8: note: (41) ...to here
+# 7095 |      */
+#      |        ^
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7095:8: note: (42) following 'false' branch...
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7100:68: note: (43) ...to here
+# 7100 | 
+#      |                                                                    ^  
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7100:68: note: (44) following 'false' branch (when 'file' is NULL)...
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7100:30: note: (45) ...to here
+# 7100 | 
+#      |                              ^                                        
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:7100:30: note: (46) dereference of NULL 'b'
+
+Error: GCC_ANALYZER_WARNING (CWE-690):
+/builddir/build/BUILD/aide-0.16/src/db.c: scope_hint: In function 'close_db_attrs'
+/builddir/build/BUILD/aide-0.16/src/db.c:169:24: warning[-Wanalyzer-possible-null-dereference]: dereference of possibly-NULL 'line'
+#  169 |         line->filename = url_value;
+#      |         ~~~~~~~~~~~~~~~^~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db.c:820:6: note: (1) entry to 'db_close'
+#  820 | void db_close() {
+#      |      ^~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db.c:858:22: note: (2) calling 'close_db_attrs' from 'db_close'
+#  858 |   conf->line_db_in = close_db_attrs(conf->mdc_in, (conf->db_in_url)->value);
+#      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db.c:164:17: note: (3) entry to 'close_db_attrs'
+#  164 | static db_line *close_db_attrs (struct md_container *mdc, char *url_value) {
+#      |                 ^~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db.c:166:8: note: (4) following 'true' branch (when 'mdc' is non-NULL)...
+#  166 |     if (mdc != NULL) {
+#      |        ^
+/builddir/build/BUILD/aide-0.16/src/db.c:167:9: note: (5) ...to here
+#  167 |         close_md(mdc);
+#      |         ^~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db.c:167:9: note: (6) this call could return NULL
+/builddir/build/BUILD/aide-0.16/src/db.c:169:24: note: (7) 'line' could be NULL: unchecked value from (6)
+#  169 |         line->filename = url_value;
+#      |         ~~~~~~~~~~~~~~~^~~~~~~~~~~
+
+Error: GCC_ANALYZER_WARNING (CWE-690):
+/builddir/build/BUILD/aide-0.16/src/db.c: scope_hint: In function 'db_char2line'
+/builddir/build/BUILD/aide-0.16/src/db.c:396:12: warning[-Wanalyzer-possible-null-dereference]: dereference of possibly-NULL 'line'
+#  396 |   line->md5=NULL;
+#      |            ^
+/builddir/build/BUILD/aide-0.16/src/db.c:374:27: note: (1) this call could return NULL
+#  374 |   db_line* line=(db_line*)malloc(sizeof(db_line)*1);
+#      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db.c:396:12: note: (2) 'line' could be NULL: unchecked value from (1)
+#  396 |   line->md5=NULL;
+#      |            ^
+
+Error: COMPILER_WARNING:
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1535:16: warning[-Wunused-function]: 'input' defined but not used
+# 1535 | #else
+#      |                ^    
+
+Error: CPPCHECK_WARNING (CWE-476):
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1728: warning[nullPointer]: Possible null pointer dereference: b
+
+Error: CPPCHECK_WARNING (CWE-476):
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1729: warning[nullPointer]: Possible null pointer dereference: b
+
+Error: GCC_ANALYZER_WARNING (CWE-401):
+/builddir/build/BUILD/aide-0.16/src/db_lex.c: scope_hint: In function 'db_create_buffer'
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1695:9: warning[-Wanalyzer-malloc-leak]: leak of '<unknown>'
+# 1695 | 
+#      |         ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:8:26: note: (1) entry to 'db_create_buffer'
+#    8 | 
+#      |                          ^               
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1674:21: note: in expansion of macro 'yy_create_buffer'
+# 1674 |  */
+#      |                     ^               
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1679:5: note: (2) following 'false' branch...
+# 1679 |  b = (YY_BUFFER_STATE) yyalloc( sizeof( struct yy_buffer_state )  );
+#      |     ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1682:17: note: (3) ...to here
+# 1682 | 
+#      |                 ^     
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1682:17: note: (4) allocated here
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1688:5: note: (5) assuming '<unknown>' is non-NULL
+# 1688 |  b->yy_ch_buf = (char *) yyalloc( (yy_size_t) (b->yy_buf_size + 2)  );
+#      |     ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1688:5: note: (6) following 'false' branch...
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1691:22: note: (7) ...to here
+# 1691 | 
+#      |                      ^  
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:13:24: note: (8) calling 'db_init_buffer' from 'db_create_buffer'
+#   13 | #define yy_scan_bytes db_scan_bytes
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1693:2: note: in expansion of macro 'yy_init_buffer'
+# 1693 | 
+#      |  ^             
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:13:24: note: (9) entry to 'db_init_buffer'
+#   13 | #define yy_scan_bytes db_scan_bytes
+#      |                        ^~~~~~~~~~~~  
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1721:17: note: in expansion of macro 'yy_init_buffer'
+# 1721 |  */
+#      |                 ^             
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:14:25: note: (10) calling 'db_flush_buffer' from 'db_init_buffer'
+#   14 | #define yy_init_buffer db_init_buffer
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1726:2: note: in expansion of macro 'yy_flush_buffer'
+# 1726 | 
+#      |  ^              
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:14:25: note: (11) entry to 'db_flush_buffer'
+#   14 | #define yy_init_buffer db_init_buffer
+#      |                         ^~~~~~~~~~~~~  
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1749:10: note: in expansion of macro 'yy_flush_buffer'
+# 1749 |  */
+#      |          ^              
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1751:9: note: (12) following 'false' branch (when 'b' is non-NULL)...
+# 1751 | {
+#      |         ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1754:16: note: (13) ...to here
+# 1754 | 
+#      |                ^  
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:520:27: note: (14) following 'true' branch...
+#  518 |  */
+#      |                            
+#  519 | #define YY_CURRENT_BUFFER ( (yy_buffer_stack) \
+#      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  520 |                           ? (yy_buffer_stack)[(yy_buffer_stack_top)] \
+#      |                           ^~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1768:12: note: in expansion of macro 'YY_CURRENT_BUFFER'
+# 1768 | 
+#      |            ^                
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:519:46: note: (15) ...to here
+#  519 | #define YY_CURRENT_BUFFER ( (yy_buffer_stack) \
+#      |                                              ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1768:12: note: in expansion of macro 'YY_CURRENT_BUFFER'
+# 1768 | 
+#      |            ^                
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1768:5: note: (16) following 'true' branch...
+# 1768 | 
+#      |     ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:15:30: note: (17) ...to here
+#   15 | #define yy_flush_buffer db_flush_buffer
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1769:3: note: in expansion of macro 'yy_load_buffer_state'
+# 1769 |  if ( b == YY_CURRENT_BUFFER )
+#      |   ^~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:14:25: note: (18) returning to 'db_init_buffer' from 'db_flush_buffer'
+#   14 | #define yy_init_buffer db_init_buffer
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1726:2: note: in expansion of macro 'yy_flush_buffer'
+# 1726 | 
+#      |  ^              
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:520:27: note: (19) following 'true' branch...
+#  518 |  */
+#      |                            
+#  519 | #define YY_CURRENT_BUFFER ( (yy_buffer_stack) \
+#      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  520 |                           ? (yy_buffer_stack)[(yy_buffer_stack_top)] \
+#      |                           ^~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1735:14: note: in expansion of macro 'YY_CURRENT_BUFFER'
+# 1735 |      */
+#      |              ^                
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:519:46: note: (20) ...to here
+#  519 | #define YY_CURRENT_BUFFER ( (yy_buffer_stack) \
+#      |                                              ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1735:14: note: in expansion of macro 'YY_CURRENT_BUFFER'
+# 1735 |      */
+#      |              ^                
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1740:68: note: (21) following 'false' branch (when 'file' is NULL)...
+# 1740 | 
+#      |                                                                    ^  
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1740:30: note: (22) ...to here
+# 1740 | 
+#      |                              ^                                        
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:13:24: note: (23) returning to 'db_create_buffer' from 'db_init_buffer'
+#   13 | #define yy_scan_bytes db_scan_bytes
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1693:2: note: in expansion of macro 'yy_init_buffer'
+# 1693 | 
+#      |  ^             
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1695:9: note: (24) '<unknown>' leaks here; was allocated at (4)
+# 1695 | 
+#      |         ^
+
+Error: GCC_ANALYZER_WARNING (CWE-690):
+/builddir/build/BUILD/aide-0.16/src/db_lex.c: scope_hint: In function 'db_init_buffer'
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1740:30: warning[-Wanalyzer-null-dereference]: dereference of NULL 'b'
+# 1740 | 
+#      |                              ^                                        
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:26:19: note: (1) entry to 'dbrestart'
+#   26 | #define yyout dbout
+#      |                   ^        
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1612:10: note: in expansion of macro 'yyrestart'
+# 1612 |  */
+#      |          ^        
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1615:5: note: (2) following 'true' branch...
+# 1615 | 
+#      |     ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:19:31: note: (3) ...to here
+#   19 | #define yypop_buffer_state dbpop_buffer_state
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1616:9: note: in expansion of macro 'yyensure_buffer_stack'
+# 1616 |  if ( ! YY_CURRENT_BUFFER ){
+#      |         ^~~~~~~~~~~~~~~~~~~~ 
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:19:31: note: (4) calling 'dbensure_buffer_stack' from 'dbrestart'
+#   19 | #define yypop_buffer_state dbpop_buffer_state
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1616:9: note: in expansion of macro 'yyensure_buffer_stack'
+# 1616 |  if ( ! YY_CURRENT_BUFFER ){
+#      |         ^~~~~~~~~~~~~~~~~~~~ 
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:19:31: note: (5) entry to 'dbensure_buffer_stack'
+#   19 | #define yypop_buffer_state dbpop_buffer_state
+#      |                               ^~~~~~~~~~~~~~~      
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1827:13: note: in expansion of macro 'yyensure_buffer_stack'
+# 1827 |  */
+#      |             ^                    
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1831:5: note: (6) following 'true' branch...
+# 1831 | 
+#      |     ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:2140:11: note: (7) ...to here
+# 2140 | {
+#      |           ^           
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1841:6: note: (8) following 'false' branch...
+# 1841 |         );
+#      |      ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1844:3: note: (9) ...to here
+# 1844 | 
+#      |   ^                                                                           
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:19:31: note: (10) returning to 'dbrestart' from 'dbensure_buffer_stack'
+#   19 | #define yypop_buffer_state dbpop_buffer_state
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1616:9: note: in expansion of macro 'yyensure_buffer_stack'
+# 1616 |  if ( ! YY_CURRENT_BUFFER ){
+#      |         ^~~~~~~~~~~~~~~~~~~~ 
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:8:26: note: (11) calling 'db_create_buffer' from 'dbrestart'
+#    8 | 
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1618:13: note: in expansion of macro 'yy_create_buffer'
+# 1618 |   YY_CURRENT_BUFFER_LVALUE =
+#      |             ^~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:8:26: note: (12) entry to 'db_create_buffer'
+#    8 | 
+#      |                          ^               
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1674:21: note: in expansion of macro 'yy_create_buffer'
+# 1674 |  */
+#      |                     ^               
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1679:5: note: (13) following 'false' branch...
+# 1679 |  b = (YY_BUFFER_STATE) yyalloc( sizeof( struct yy_buffer_state )  );
+#      |     ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1682:17: note: (14) ...to here
+# 1682 | 
+#      |                 ^     
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1688:5: note: (15) following 'false' branch...
+# 1688 |  b->yy_ch_buf = (char *) yyalloc( (yy_size_t) (b->yy_buf_size + 2)  );
+#      |     ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1691:22: note: (16) ...to here
+# 1691 | 
+#      |                      ^  
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:13:24: note: (17) calling 'db_init_buffer' from 'db_create_buffer'
+#   13 | #define yy_scan_bytes db_scan_bytes
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1693:2: note: in expansion of macro 'yy_init_buffer'
+# 1693 | 
+#      |  ^             
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:13:24: note: (18) entry to 'db_init_buffer'
+#   13 | #define yy_scan_bytes db_scan_bytes
+#      |                        ^~~~~~~~~~~~  
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1721:17: note: in expansion of macro 'yy_init_buffer'
+# 1721 |  */
+#      |                 ^             
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:14:25: note: (19) calling 'db_flush_buffer' from 'db_init_buffer'
+#   14 | #define yy_init_buffer db_init_buffer
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1726:2: note: in expansion of macro 'yy_flush_buffer'
+# 1726 | 
+#      |  ^              
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:14:25: note: (20) entry to 'db_flush_buffer'
+#   14 | #define yy_init_buffer db_init_buffer
+#      |                         ^~~~~~~~~~~~~  
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1749:10: note: in expansion of macro 'yy_flush_buffer'
+# 1749 |  */
+#      |          ^              
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1751:9: note: (21) following 'false' branch (when 'b' is non-NULL)...
+# 1751 | {
+#      |         ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1754:16: note: (22) ...to here
+# 1754 | 
+#      |                ^  
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:520:27: note: (23) following 'true' branch...
+#  518 |  */
+#      |                            
+#  519 | #define YY_CURRENT_BUFFER ( (yy_buffer_stack) \
+#      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  520 |                           ? (yy_buffer_stack)[(yy_buffer_stack_top)] \
+#      |                           ^~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1768:12: note: in expansion of macro 'YY_CURRENT_BUFFER'
+# 1768 | 
+#      |            ^                
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:519:46: note: (24) ...to here
+#  519 | #define YY_CURRENT_BUFFER ( (yy_buffer_stack) \
+#      |                                              ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1768:12: note: in expansion of macro 'YY_CURRENT_BUFFER'
+# 1768 | 
+#      |            ^                
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1768:5: note: (25) following 'false' branch...
+# 1768 | 
+#      |     ^
+cc1: note: (26) ...to here
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:14:25: note: (27) returning to 'db_init_buffer' from 'db_flush_buffer'
+#   14 | #define yy_init_buffer db_init_buffer
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1726:2: note: in expansion of macro 'yy_flush_buffer'
+# 1726 | 
+#      |  ^              
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:520:27: note: (28) following 'true' branch...
+#  518 |  */
+#      |                            
+#  519 | #define YY_CURRENT_BUFFER ( (yy_buffer_stack) \
+#      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  520 |                           ? (yy_buffer_stack)[(yy_buffer_stack_top)] \
+#      |                           ^~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1735:14: note: in expansion of macro 'YY_CURRENT_BUFFER'
+# 1735 |      */
+#      |              ^                
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:519:46: note: (29) ...to here
+#  519 | #define YY_CURRENT_BUFFER ( (yy_buffer_stack) \
+#      |                                              ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1735:14: note: in expansion of macro 'YY_CURRENT_BUFFER'
+# 1735 |      */
+#      |              ^                
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1735:8: note: (30) following 'true' branch...
+# 1735 |      */
+#      |        ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1736:25: note: (31) ...to here
+# 1736 |     if (b != YY_CURRENT_BUFFER){
+#      |         ~~~~~~~~~~~~~~~~^~~
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1740:68: note: (32) following 'true' branch (when 'file' is non-NULL)...
+# 1740 | 
+#      |                                                                    ^  
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1740:40: note: (33) ...to here
+# 1740 | 
+#      |                                        ^                     
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1740:68: note: (34) following 'true' branch...
+# 1740 | 
+#      |                                                                    ^  
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1740:30: note: (35) ...to here
+# 1740 | 
+#      |                              ^                                        
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:13:24: note: (36) returning to 'db_create_buffer' from 'db_init_buffer'
+#   13 | #define yy_scan_bytes db_scan_bytes
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1693:2: note: in expansion of macro 'yy_init_buffer'
+# 1693 | 
+#      |  ^             
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:8:26: note: (37) returning to 'dbrestart' from 'db_create_buffer'
+#    8 | 
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1618:13: note: in expansion of macro 'yy_create_buffer'
+# 1618 |   YY_CURRENT_BUFFER_LVALUE =
+#      |             ^~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:13:24: note: (38) following 'true' branch...
+#   13 | #define yy_scan_bytes db_scan_bytes
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1621:2: note: in expansion of macro 'yy_init_buffer'
+# 1621 | 
+#      |  ^             
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:519:46: note: (39) ...to here
+#  519 | #define YY_CURRENT_BUFFER ( (yy_buffer_stack) \
+#      |                                              ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1621:18: note: in expansion of macro 'YY_CURRENT_BUFFER'
+# 1621 | 
+#      |                  ^                
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:13:24: note: (40) calling 'db_init_buffer' from 'dbrestart'
+#   13 | #define yy_scan_bytes db_scan_bytes
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1621:2: note: in expansion of macro 'yy_init_buffer'
+# 1621 | 
+#      |  ^             
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:13:24: note: (41) entry to 'db_init_buffer'
+#   13 | #define yy_scan_bytes db_scan_bytes
+#      |                        ^~~~~~~~~~~~  
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1721:17: note: in expansion of macro 'yy_init_buffer'
+# 1721 |  */
+#      |                 ^             
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:14:25: note: (42) calling 'db_flush_buffer' from 'db_init_buffer'
+#   14 | #define yy_init_buffer db_init_buffer
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1726:2: note: in expansion of macro 'yy_flush_buffer'
+# 1726 | 
+#      |  ^              
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:14:25: note: (43) entry to 'db_flush_buffer'
+#   14 | #define yy_init_buffer db_init_buffer
+#      |                         ^~~~~~~~~~~~~  
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1749:10: note: in expansion of macro 'yy_flush_buffer'
+# 1749 |  */
+#      |          ^              
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1751:9: note: (44) following 'true' branch (when 'b' is NULL)...
+# 1751 | {
+#      |         ^
+cc1: note: (45) ...to here
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:14:25: note: (46) returning to 'db_init_buffer' from 'db_flush_buffer'
+#   14 | #define yy_init_buffer db_init_buffer
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1726:2: note: in expansion of macro 'yy_flush_buffer'
+# 1726 | 
+#      |  ^              
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:520:27: note: (47) following 'false' branch...
+#  518 |  */
+#      |                            
+#  519 | #define YY_CURRENT_BUFFER ( (yy_buffer_stack) \
+#      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  520 |                           ? (yy_buffer_stack)[(yy_buffer_stack_top)] \
+#      |                           ^~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1735:14: note: in expansion of macro 'YY_CURRENT_BUFFER'
+# 1735 |      */
+#      |              ^                
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1735:8: note: (48) ...to here
+# 1735 |      */
+#      |        ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1735:8: note: (49) following 'false' branch...
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1740:68: note: (50) ...to here
+# 1740 | 
+#      |                                                                    ^  
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1740:68: note: (51) following 'false' branch (when 'file' is NULL)...
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1740:30: note: (52) ...to here
+# 1740 | 
+#      |                              ^                                        
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1740:30: note: (53) dereference of NULL 'b'
+
+Error: CLANG_WARNING:
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:6784:52: warning: Use of zero-allocated memory [unix.Malloc]
+#        YY_CURRENT_BUFFER_LVALUE->yy_ch_buf[(yy_n_chars)] = YY_END_OF_BUFFER_CHAR;
+#                                                          ^
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:6903:7: note: Assuming the condition is true
+#        if ( *(yy_c_buf_p) == YY_END_OF_BUFFER_CHAR )
+#             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:6903:2: note: Taking true branch
+#        if ( *(yy_c_buf_p) == YY_END_OF_BUFFER_CHAR )
+#        ^
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:6909:8: note: Assuming the condition is false
+#                if ( (yy_c_buf_p) < &YY_CURRENT_BUFFER_LVALUE->yy_ch_buf[(yy_n_chars)] )
+#                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:6909:3: note: Taking false branch
+#                if ( (yy_c_buf_p) < &YY_CURRENT_BUFFER_LVALUE->yy_ch_buf[(yy_n_chars)] )
+#                ^
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:6918:13: note: Calling 'yy_get_next_buffer'
+#                        switch ( yy_get_next_buffer(  ) )
+#                                 ^~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:6663:7: note: Assuming the condition is false
+#        if ( (yy_c_buf_p) > &YY_CURRENT_BUFFER_LVALUE->yy_ch_buf[(yy_n_chars) + 1] )
+#             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:6663:2: note: Taking false branch
+#        if ( (yy_c_buf_p) > &YY_CURRENT_BUFFER_LVALUE->yy_ch_buf[(yy_n_chars) + 1] )
+#        ^
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:6667:7: note: Assuming field 'yy_fill_buffer' is not equal to 0
+#        if ( YY_CURRENT_BUFFER_LVALUE->yy_fill_buffer == 0 )
+#             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:524:34: note: expanded from macro 'YY_CURRENT_BUFFER_LVALUE'
+##define YY_CURRENT_BUFFER_LVALUE (yy_buffer_stack)[(yy_buffer_stack_top)]
+#                                 ^
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:6667:2: note: Taking false branch
+#        if ( YY_CURRENT_BUFFER_LVALUE->yy_fill_buffer == 0 )
+#        ^
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:6691:15: note: Assuming 'i' is >= 'number_to_move'
+#        for ( i = 0; i < number_to_move; ++i )
+#                     ^~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:6691:2: note: Loop condition is false. Execution continues on line 6695
+#        for ( i = 0; i < number_to_move; ++i )
+#        ^
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:6694:7: note: Assuming field 'yy_buffer_status' is equal to YY_BUFFER_EOF_PENDING
+#        if ( YY_CURRENT_BUFFER_LVALUE->yy_buffer_status == YY_BUFFER_EOF_PENDING )
+#             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:524:34: note: expanded from macro 'YY_CURRENT_BUFFER_LVALUE'
+##define YY_CURRENT_BUFFER_LVALUE (yy_buffer_stack)[(yy_buffer_stack_top)]
+#                                 ^
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:6694:2: note: Taking true branch
+#        if ( YY_CURRENT_BUFFER_LVALUE->yy_buffer_status == YY_BUFFER_EOF_PENDING )
+#        ^
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:6753:7: note: 'yy_n_chars' is equal to 0
+#        if ( (yy_n_chars) == 0 )
+#             ^~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:6753:2: note: Taking true branch
+#        if ( (yy_n_chars) == 0 )
+#        ^
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:6755:8: note: Assuming 'number_to_move' is equal to YY_MORE_ADJ
+#                if ( number_to_move == YY_MORE_ADJ )
+#                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:6755:3: note: Taking true branch
+#                if ( number_to_move == YY_MORE_ADJ )
+#                ^
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:6772:6: note: Assuming the condition is true
+#        if (((yy_n_chars) + number_to_move) > YY_CURRENT_BUFFER_LVALUE->yy_buf_size) {
+#            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:6772:2: note: Taking true branch
+#        if (((yy_n_chars) + number_to_move) > YY_CURRENT_BUFFER_LVALUE->yy_buf_size) {
+#        ^
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:6777:8: note: Assuming field 'yy_ch_buf' is non-null
+#                if ( ! YY_CURRENT_BUFFER_LVALUE->yy_ch_buf )
+#                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:6777:3: note: Taking false branch
+#                if ( ! YY_CURRENT_BUFFER_LVALUE->yy_ch_buf )
+#                ^
+/builddir/build/BUILD/aide-0.16/src/conf_lex.c:6784:52: note: Use of zero-allocated memory
+#        YY_CURRENT_BUFFER_LVALUE->yy_ch_buf[(yy_n_chars)] = YY_END_OF_BUFFER_CHAR;
+#        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+
+Error: CLANG_WARNING:
+/builddir/build/BUILD/aide-0.16/src/db_file.c:267:23: warning: The left operand of '==' is a garbage value [core.UndefinedBinaryOperatorResult]
+#    if ((*db_order)[i]==db_attr) {
+#                      ^
+/builddir/build/BUILD/aide-0.16/src/db_file.c:301:3: note: Control jumps to 'case 4:'  at line 316
+#  switch (db) {
+#  ^
+/builddir/build/BUILD/aide-0.16/src/db_file.c:328:5: note:  Execution continues on line 332
+#    break;
+#    ^
+/builddir/build/BUILD/aide-0.16/src/db_file.c:332:7: note: 'db_osize' is not equal to NULL
+#  if (db_osize == NULL) return NULL;
+#      ^~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_file.c:332:3: note: Taking false branch
+#  if (db_osize == NULL) return NULL;
+#  ^
+/builddir/build/BUILD/aide-0.16/src/db_file.c:334:7: note: Assuming the condition is true
+#  if (*db_osize==0) {
+#      ^~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_file.c:334:3: note: Taking true branch
+#  if (*db_osize==0) {
+#  ^
+/builddir/build/BUILD/aide-0.16/src/db_file.c:338:12: note: Assuming 'token' is equal to TDBSPEC
+#    while((token!=TDBSPEC && token!=TEOF)){
+#           ^~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_file.c:338:27: note: Left side of '&&' is false
+#    while((token!=TDBSPEC && token!=TEOF)){
+#                          ^
+/builddir/build/BUILD/aide-0.16/src/db_file.c:372:17: note: Left side of '&&' is false
+#    if(FORCEDBMD&&!gotbegin_db){
+#                ^
+/builddir/build/BUILD/aide-0.16/src/db_file.c:377:9: note: 'token' is equal to TDBSPEC
+#    if (token!=TDBSPEC) {
+#        ^~~~~
+/builddir/build/BUILD/aide-0.16/src/db_file.c:377:5: note: Taking false branch
+#    if (token!=TDBSPEC) {
+#    ^
+/builddir/build/BUILD/aide-0.16/src/db_file.c:420:9: note: Calling 'db_file_read_spec'
+#    if (db_file_read_spec(db)!=0) {
+#        ^~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_file.c:177:3: note: Control jumps to 'case 4:'  at line 184
+#  switch (db) {
+#  ^
+/builddir/build/BUILD/aide-0.16/src/db_file.c:188:5: note:  Execution continues on line 195
+#    break;
+#    ^
+/builddir/build/BUILD/aide-0.16/src/db_file.c:195:25: note: Storing uninitialized value
+#  *db_order=(DB_FIELD*) malloc(1*sizeof(DB_FIELD));
+#                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_file.c:197:10: note: Assuming the condition is false
+#  while ((i=db_scan())!=TNEWLINE){
+#         ^~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_file.c:197:3: note: Loop condition is false. Execution continues on line 264
+#  while ((i=db_scan())!=TNEWLINE){
+#  ^
+/builddir/build/BUILD/aide-0.16/src/db_file.c:266:8: note: The value 0 is assigned to 'i'
+#  for (i=0;i<*db_osize;i++) {
+#       ^~~
+/builddir/build/BUILD/aide-0.16/src/db_file.c:266:12: note: Assuming the condition is true
+#  for (i=0;i<*db_osize;i++) {
+#           ^~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_file.c:266:3: note: Loop condition is true.  Entering loop body
+#  for (i=0;i<*db_osize;i++) {
+#  ^
+/builddir/build/BUILD/aide-0.16/src/db_file.c:267:23: note: The left operand of '==' is a garbage value
+#    if ((*db_order)[i]==db_attr) {
+#        ~~~~~~~~~~~~~~^
+
+Error: CLANG_WARNING:
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1053:19: warning: Array subscript is undefined [core.uninitialized.ArraySubscript]
+#                        YY_CHAR yy_c = yy_ec[YY_SC_TO_UI(*yy_cp)] ;
+#                                       ^     ~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1004:7: note: Assuming 'yy_init' is 0
+#        if ( !(yy_init) )
+#             ^~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1004:2: note: Taking true branch
+#        if ( !(yy_init) )
+#        ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1012:8: note: Assuming 'yy_start' is not equal to 0
+#                if ( ! (yy_start) )
+#                     ^~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1012:3: note: Taking false branch
+#                if ( ! (yy_start) )
+#                ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1015:8: note: Assuming 'dbin' is non-null
+#                if ( ! yyin )
+#                     ^~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1015:3: note: Taking false branch
+#                if ( ! yyin )
+#                ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1018:8: note: Assuming 'dbout' is non-null
+#                if ( ! yyout )
+#                     ^~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1018:3: note: Taking false branch
+#                if ( ! yyout )
+#                ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1021:10: note: Assuming 'yy_buffer_stack' is null
+#                if ( ! YY_CURRENT_BUFFER ) {
+#                       ^~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:518:29: note: expanded from macro 'YY_CURRENT_BUFFER'
+##define YY_CURRENT_BUFFER ( (yy_buffer_stack) \
+#                            ^~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1021:10: note: '?' condition is false
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:518:29: note: expanded from macro 'YY_CURRENT_BUFFER'
+##define YY_CURRENT_BUFFER ( (yy_buffer_stack) \
+#                            ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1021:3: note: Taking true branch
+#                if ( ! YY_CURRENT_BUFFER ) {
+#                ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1024:5: note: Calling 'db_create_buffer'
+#                                yy_create_buffer( yyin, YY_BUF_SIZE );
+#                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:8:26: note: expanded from macro 'yy_create_buffer'
+##define yy_create_buffer db_create_buffer
+#                         ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1679:7: note: Assuming 'b' is non-null
+#        if ( ! b )
+#             ^~~
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1679:2: note: Taking false branch
+#        if ( ! b )
+#        ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1687:26: note: Calling 'dballoc'
+#        b->yy_ch_buf = (char *) yyalloc( (yy_size_t) (b->yy_buf_size + 2)  );
+#                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:29:17: note: expanded from macro 'yyalloc'
+##define yyalloc dballoc
+#                ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:2140:11: note: Storing uninitialized value
+#                        return malloc(size);
+#                               ^~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1687:26: note: Returning from 'dballoc'
+#        b->yy_ch_buf = (char *) yyalloc( (yy_size_t) (b->yy_buf_size + 2)  );
+#                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:29:17: note: expanded from macro 'yyalloc'
+##define yyalloc dballoc
+#                ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1688:7: note: Assuming field 'yy_ch_buf' is non-null
+#        if ( ! b->yy_ch_buf )
+#             ^~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1688:2: note: Taking false branch
+#        if ( ! b->yy_ch_buf )
+#        ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1024:5: note: Returning from 'db_create_buffer'
+#                                yy_create_buffer( yyin, YY_BUF_SIZE );
+#                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:8:26: note: expanded from macro 'yy_create_buffer'
+##define yy_create_buffer db_create_buffer
+#                         ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1036:2: note: Loop condition is true.  Entering loop body
+#        while ( /*CONSTCOND*/1 )                /* loops until end-of-file is reached */
+#        ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1054:9: note: Assuming the condition is true
+#                        if ( yy_accept[yy_current_state] )
+#                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1054:4: note: Taking true branch
+#                        if ( yy_accept[yy_current_state] )
+#                        ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1059:4: note: Loop condition is false. Execution continues on line 1066
+#                        while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
+#                        ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1051:3: note: Loop condition is true. Execution continues on line 1054
+#                do
+#                ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1054:9: note: Assuming the condition is true
+#                        if ( yy_accept[yy_current_state] )
+#                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1054:4: note: Taking true branch
+#                        if ( yy_accept[yy_current_state] )
+#                        ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1059:4: note: Loop condition is false. Execution continues on line 1066
+#                        while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
+#                        ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1051:3: note: Loop condition is true. Execution continues on line 1054
+#                do
+#                ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1053:19: note: Array subscript is undefined
+#                        YY_CHAR yy_c = yy_ec[YY_SC_TO_UI(*yy_cp)] ;
+#                                       ^     ~~~~~~~~~~~~~~~~~~~
+
+Error: CLANG_WARNING:
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1461:52: warning: Use of zero-allocated memory [unix.Malloc]
+#        YY_CURRENT_BUFFER_LVALUE->yy_ch_buf[(yy_n_chars)] = YY_END_OF_BUFFER_CHAR;
+#                                                          ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1543:7: note: Assuming the condition is true
+#        if ( *(yy_c_buf_p) == YY_END_OF_BUFFER_CHAR )
+#             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1543:2: note: Taking true branch
+#        if ( *(yy_c_buf_p) == YY_END_OF_BUFFER_CHAR )
+#        ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1549:8: note: Assuming the condition is false
+#                if ( (yy_c_buf_p) < &YY_CURRENT_BUFFER_LVALUE->yy_ch_buf[(yy_n_chars)] )
+#                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1549:3: note: Taking false branch
+#                if ( (yy_c_buf_p) < &YY_CURRENT_BUFFER_LVALUE->yy_ch_buf[(yy_n_chars)] )
+#                ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1558:13: note: Calling 'yy_get_next_buffer'
+#                        switch ( yy_get_next_buffer(  ) )
+#                                 ^~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1340:7: note: Assuming the condition is false
+#        if ( (yy_c_buf_p) > &YY_CURRENT_BUFFER_LVALUE->yy_ch_buf[(yy_n_chars) + 1] )
+#             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1340:2: note: Taking false branch
+#        if ( (yy_c_buf_p) > &YY_CURRENT_BUFFER_LVALUE->yy_ch_buf[(yy_n_chars) + 1] )
+#        ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1344:7: note: Assuming field 'yy_fill_buffer' is not equal to 0
+#        if ( YY_CURRENT_BUFFER_LVALUE->yy_fill_buffer == 0 )
+#             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:524:34: note: expanded from macro 'YY_CURRENT_BUFFER_LVALUE'
+##define YY_CURRENT_BUFFER_LVALUE (yy_buffer_stack)[(yy_buffer_stack_top)]
+#                                 ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1344:2: note: Taking false branch
+#        if ( YY_CURRENT_BUFFER_LVALUE->yy_fill_buffer == 0 )
+#        ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1368:15: note: Assuming 'i' is >= 'number_to_move'
+#        for ( i = 0; i < number_to_move; ++i )
+#                     ^~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1368:2: note: Loop condition is false. Execution continues on line 1372
+#        for ( i = 0; i < number_to_move; ++i )
+#        ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1371:7: note: Assuming field 'yy_buffer_status' is equal to YY_BUFFER_EOF_PENDING
+#        if ( YY_CURRENT_BUFFER_LVALUE->yy_buffer_status == YY_BUFFER_EOF_PENDING )
+#             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:524:34: note: expanded from macro 'YY_CURRENT_BUFFER_LVALUE'
+##define YY_CURRENT_BUFFER_LVALUE (yy_buffer_stack)[(yy_buffer_stack_top)]
+#                                 ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1371:2: note: Taking true branch
+#        if ( YY_CURRENT_BUFFER_LVALUE->yy_buffer_status == YY_BUFFER_EOF_PENDING )
+#        ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1430:7: note: 'yy_n_chars' is equal to 0
+#        if ( (yy_n_chars) == 0 )
+#             ^~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1430:2: note: Taking true branch
+#        if ( (yy_n_chars) == 0 )
+#        ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1432:8: note: Assuming 'number_to_move' is equal to YY_MORE_ADJ
+#                if ( number_to_move == YY_MORE_ADJ )
+#                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1432:3: note: Taking true branch
+#                if ( number_to_move == YY_MORE_ADJ )
+#                ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1449:6: note: Assuming the condition is true
+#        if (((yy_n_chars) + number_to_move) > YY_CURRENT_BUFFER_LVALUE->yy_buf_size) {
+#            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1449:2: note: Taking true branch
+#        if (((yy_n_chars) + number_to_move) > YY_CURRENT_BUFFER_LVALUE->yy_buf_size) {
+#        ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1454:8: note: Assuming field 'yy_ch_buf' is non-null
+#                if ( ! YY_CURRENT_BUFFER_LVALUE->yy_ch_buf )
+#                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1454:3: note: Taking false branch
+#                if ( ! YY_CURRENT_BUFFER_LVALUE->yy_ch_buf )
+#                ^
+/builddir/build/BUILD/aide-0.16/src/db_lex.c:1461:52: note: Use of zero-allocated memory
+#        YY_CURRENT_BUFFER_LVALUE->yy_ch_buf[(yy_n_chars)] = YY_END_OF_BUFFER_CHAR;
+#        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^
