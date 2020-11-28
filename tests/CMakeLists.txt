@@ -18,6 +18,7 @@
 # common setup for all tests
 set(csdiff      "${CMAKE_BINARY_DIR}/src/csdiff")
 set(csgrep      "${CMAKE_BINARY_DIR}/src/csgrep")
+set(cshtml      "${CMAKE_BINARY_DIR}/src/cshtml")
 set(cssort      "${CMAKE_BINARY_DIR}/src/cssort")
 set(csjson      "${csgrep} --mode=json")
 set(diffcmd     "diff -up")
@@ -36,5 +37,6 @@ set(test_cost 1048576)
 
 add_subdirectory(csdiff)
 add_subdirectory(csgrep)
+add_subdirectory(cshtml)
 add_subdirectory(cssort)
 add_subdirectory(cstrans-df-run)
