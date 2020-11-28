@@ -29,7 +29,6 @@ add_library(cs STATIC
     cswriter.cc
     cwe-mapper.cc
     deflookup.cc
-    defqueue.cc
     gcc-parser.cc
     html-writer.cc
     instream.cc

@@ -20,7 +20,6 @@
 #include "abstract-parser.hh"
 #include "cwe-mapper.hh"
 #include "deflookup.hh"
-#include "defqueue.hh"
 #include "gcc-parser.hh"
 #include "instream.hh"
 #include "json-writer.hh"
@@ -141,57 +140,6 @@ void ParsingRulesDecorator::handleDef(const Defect &defOrig)
     agent_->handleDef(def);
 }
 
-class OrphanWriter {
-    public:
-        OrphanWriter(AbstractWriter &writer):
-            writer_(writer)
-        {
-        }
-
-        bool operator()(const Defect &def) {
-            writer_.handleDef(def);
-            return /* continue */ true;
-        }
-
-    private:
-        AbstractWriter &writer_;
-};
-
-bool writeMappedDefects(
-        AbstractWriter             &writer,
-        DefQueue                   &defQueue,
-        std::istream               &input,
-        const std::string          &fName)
-{
-    DefQueryParser qParser(input, fName);
-    DefQueryParser::QRow row;
-    while (qParser.getNext(row)) {
-        Defect def;
-        if (!defQueue.lookup(def, row.checker, row.fileName)) {
-            std::cerr
-                << fName << ": warning: defect lookup failed, cid = "
-                << row.cid << "\n";
-
-            DefEvent evt;
-            evt.fileName    = row.fileName;
-            evt.event       = "defect_lookup_failed";
-            evt.msg         = "unmatched defect in ";
-            evt.msg        += row.fnc;
-
-            def = Defect();
-            def.checker = row.checker;
-            def.events.push_back(evt);
-        }
-
-        def.defectId = row.cid;
-        def.function = row.fnc;
-        writer.handleDef(def);
-    }
-
-    OrphanWriter visitor(writer);
-    return defQueue.walk(visitor);
-}
-
 template <class TVal, class TVar>
 inline TVal valueOf(const TVar &var)
 {
@@ -221,8 +169,6 @@ int main(int argc, char *argv[])
              "mark reports from the specified list as important")
             ("inifile", po::value<string>(),
              "load scan properties from the given INI file")
-            ("mapfile", po::value<string>(),
-             "load defect IDs from comma-separated mapfile")
             ("reapply-parsing-rules", "canonicalize data originally parsed "
              "by an older version of the parser")
             ("quiet,q", "do not report non-fatal errors")
@@ -263,7 +209,6 @@ int main(int argc, char *argv[])
     const string fnCwe = valueOf<string>(vm["cwelist"]);
     const string fnImp = valueOf<string>(vm["implist"]);
     const string fnIni = valueOf<string>(vm["inifile"]);
-    const string fnMap = valueOf<string>(vm["mapfile"]);
     const bool silent = vm.count("quiet");
 
     const po::variables_map::const_iterator it = vm.find("input-file");
@@ -282,8 +227,6 @@ int main(int argc, char *argv[])
     AbstractWriter *writer = cweDec;
     if (vm.count("reapply-parsing-rules"))
         writer = new ParsingRulesDecorator(writer);
-
-    DefQueue defQueue;
 
     bool hasError = false;
 
@@ -336,31 +279,10 @@ int main(int argc, char *argv[])
                     hasError = true;
             }
 
-            if (fnMap.empty()) {
-                // no .map file given
-                writer->handleFile(pErr, fnErr);
-            }
-            else {
-                // load defects from .err
-                Defect def;
-                while (pErr.getNext(&def))
-                    defQueue.hashDefect(def);
-            }
+            // process a single input file
+            writer->handleFile(pErr, fnErr);
 
             hasError |= pErr.hasError();
-        }
-        catch (const InFileException &e) {
-            printError(e);
-            hasError = true;
-        }
-    }
-
-    if (!fnMap.empty()) {
-        try {
-            // process the given .map file
-            InStream strMap(fnMap.c_str());
-            if (!writeMappedDefects(*writer, defQueue, strMap.str(), fnMap))
-                hasError = true;
         }
         catch (const InFileException &e) {
             printError(e);
