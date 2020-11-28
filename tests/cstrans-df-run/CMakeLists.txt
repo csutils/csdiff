@@ -17,7 +17,7 @@
 
 # a generic template for cstrans-df-run tests
 macro(tests_cstrans_df_run tst)
-    set(test_data_prefix "${testdir}/cstrans-df-run/${tst}")
+    set(test_data_prefix "${CMAKE_CURRENT_SOURCE_DIR}/${tst}")
     set(cmd "${CMAKE_BINARY_DIR}/src/cstrans-df-run")
     set(cmd "${cmd} -- /opt/cov-sa-2019.09/bin/cov-build --dir=/cov --append-log")
     set(cmd "${cmd} <${test_data_prefix}-stdin.txt")

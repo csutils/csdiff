@@ -19,7 +19,6 @@
 set(csdiff      "${CMAKE_BINARY_DIR}/src/csdiff")
 set(csgrep      "${CMAKE_BINARY_DIR}/src/csgrep")
 set(cssort      "${CMAKE_BINARY_DIR}/src/cssort")
-set(testdir     "${CMAKE_CURRENT_SOURCE_DIR}")
 set(csjson      "${csgrep} --mode=json")
 set(diffcmd     "diff -up")
 
