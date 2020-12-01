@@ -122,7 +122,7 @@ int main(int argc, char *argv[])
 
     try {
         // initialize parser for .err
-        InStream strInput(fnInput.c_str());
+        InStream strInput(fnInput);
         Parser pInput(strInput.str(), fnInput, silent);
 
         DefLookup baseLookup;
@@ -130,7 +130,7 @@ int main(int argc, char *argv[])
 
         // read old defects if given
         if (!fnBase.empty()) {
-            InStream strBase(fnBase.c_str());
+            InStream strBase(fnBase);
             Parser pBase(strBase.str(), fnBase, silent);
             Defect def;
             while (pBase.getNext(&def))

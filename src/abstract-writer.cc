@@ -59,7 +59,7 @@ bool AbstractWriter::handleFile(
 bool AbstractWriter::handleFile(const std::string &fileName, bool silent)
 {
     try {
-        InStream str(fileName.c_str());
+        InStream str(fileName);
         return this->handleFile(str.str(), fileName, silent);
     }
     catch (const InFileException &e) {

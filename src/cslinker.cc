@@ -55,7 +55,7 @@ bool loadPropsFromIniFile(
 {
     try {
         // open the input file
-        InStream input(fName.c_str());
+        InStream input(fName);
 
         // parse .ini
         pt::ptree root;
@@ -233,7 +233,7 @@ int main(int argc, char *argv[])
     if (!fnCwe.empty()) {
         try {
             // load CWE mapping from the given file
-            InStream strCwe(fnCwe.c_str());
+            InStream strCwe(fnCwe);
             if (!cweDec->cweMap().loadCweMap(strCwe.str(), fnCwe))
                 hasError = true;
         }
@@ -246,7 +246,7 @@ int main(int argc, char *argv[])
     if (!fnImp.empty()) {
         try {
             // load list of important defects
-            InStream strImp(fnImp.c_str());
+            InStream strImp(fnImp);
             Parser pImp(strImp.str(), fnImp);
             Defect defImp;
             while (pImp.getNext(&defImp))
@@ -267,7 +267,7 @@ int main(int argc, char *argv[])
 
         try {
             // initialize parser for .err
-            InStream strErr(fnErr.c_str());
+            InStream strErr(fnErr);
             Parser pErr(strErr.str(), fnErr, silent);
 
             if (!i) {

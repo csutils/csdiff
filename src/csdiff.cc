@@ -153,8 +153,8 @@ int main(int argc, char *argv[])
 
     try {
         // open streams
-        InStream strOld(fnOld.c_str());
-        InStream strNew(fnNew.c_str());
+        InStream strOld(fnOld);
+        InStream strNew(fnNew);
 
         // run the core
         return diffScans(std::cout, strOld.str(), strNew.str(),
