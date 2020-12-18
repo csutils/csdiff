@@ -25,12 +25,12 @@
 #include "regex.hh"
 #include "version.hh"
 
+#include <boost/filesystem.hpp>
 #include <boost/program_options.hpp>
 
 #ifndef DEFAULT_CWE_NAMES_FILE
 #   define DEFAULT_CWE_NAMES_FILE "/usr/share/csdiff/cwe-names.csv"
 #endif
-static const char fnCweNamesDefault[] = DEFAULT_CWE_NAMES_FILE;
 
 std::string titleFromFileName(const std::string &fileName)
 {
@@ -55,6 +55,11 @@ int main(int argc, char *argv[])
 {
     using std::string;
     const char *name = argv[0];
+
+    std::string fnCweNamesDefault = DEFAULT_CWE_NAMES_FILE;
+    if (!boost::filesystem::exists(fnCweNamesDefault))
+        // if the default file is not installed, do not use it as default
+        fnCweNamesDefault.clear();
 
     namespace po = boost::program_options;
     po::variables_map vm;

@@ -42,11 +42,13 @@ add_library(cs STATIC
 )
 
 # link cslib.a and boost libraries
-find_library(BOOST_REGEX                boost_regex                 REQUIRED)
+find_library(BOOST_FILESYSTEM           boost_filesystem            REQUIRED)
 find_library(BOOST_PROGRAM_OPTIONS      boost_program_options       REQUIRED)
+find_library(BOOST_REGEX                boost_regex                 REQUIRED)
+find_library(BOOST_SYSTEM               boost_system                REQUIRED)
 link_libraries(cs
-    boost_regex
-    boost_program_options)
+    boost_program_options
+    boost_regex)
 
 # the list of executables
 add_executable(csdiff       csdiff.cc)
@@ -54,6 +56,9 @@ add_executable(csgrep       csgrep.cc)
 add_executable(cshtml       cshtml.cc)
 add_executable(cslinker     cslinker.cc)
 add_executable(cssort       cssort.cc)
+target_link_libraries(cshtml
+    boost_filesystem
+    boost_system)
 
 # experimental
 add_executable(cstrans-df-run cstrans-df-run.cc)
