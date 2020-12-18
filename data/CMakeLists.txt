@@ -1,4 +1,4 @@
-# Copyright (C) 2011 - 2020 Red Hat, Inc.
+# Copyright (C) 2020 Red Hat, Inc.
 #
 # This file is part of csdiff.
 #
@@ -15,15 +15,7 @@
 # You should have received a copy of the GNU General Public License
 # along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
 
-cmake_minimum_required(VERSION 2.8)
-project(csdiff CXX)
-enable_testing()
-
-# C/C++ sources
-add_subdirectory(src)
-
-# regression tests
-add_subdirectory(tests)
-
-# data files
-add_subdirectory(data)
+# install /usr/share/csdiff/cwe-names.csv
+install(FILES
+    ${CMAKE_CURRENT_SOURCE_DIR}/cwe-names.csv
+    DESTINATION ${SHARE_INSTALL_PREFIX}/csdiff)

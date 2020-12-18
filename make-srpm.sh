@@ -184,6 +184,7 @@ ctest %{?_smp_mflags} --output-on-failure
 %{_bindir}/cslinker
 %{_bindir}/cssort
 %{_bindir}/cstrans-df-run
+%{_datadir}/%{name}
 %{_mandir}/man1/csdiff.1*
 %{_mandir}/man1/csgrep.1*
 %{_mandir}/man1/cshtml.1*
