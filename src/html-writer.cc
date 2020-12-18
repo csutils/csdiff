@@ -19,6 +19,7 @@
 
 #include "html-writer.hh"
 
+#include "cwe-name-lookup.hh"
 #include "deflookup.hh"
 #include "regex.hh"
 
@@ -195,12 +196,16 @@ void linkifyShellCheckMsg(std::string *pMsg)
             "\\1SC\\2\\3</a>");
 }
 
-void printCweLink(std::ostream &str, const int cwe)
+void printCweLink(std::ostream &str, const int cwe, const std::string &cweName)
 {
     str << "<a href=\"https://cwe.mitre.org/data/definitions/"
-        << cwe << ".html\""
-        << " title=\"definition of CWE-"
-        << cwe << " by MITRE\">"
+        << cwe << ".html\" title=\"";
+    if (cweName.empty())
+        str << "definition of CWE-" << cwe << " by MITRE";
+    else
+        str << "CWE-" << cwe << ": " << cweName;
+
+    str << "\">"
         << "CWE-" << cwe
         << "</a>";
 }
@@ -303,11 +308,12 @@ struct HtmlWriter::Private {
     HtmlWriterCore                  core;
     TScanProps                      scanProps;
     const std::string               defUrlTemplate;
-    unsigned                        defCnt;
-    DefLookup                      *baseLookup;
+    unsigned                        defCnt = 0U;
+    DefLookup                      *baseLookup = nullptr;
     RE                              checkerIgnRegex;
     std::string                     newDefMsg;
     std::string                     plainTextUrl;
+    const CweNameLookup            *cweNames = nullptr;
 
     Private(
             std::ostream           &str_,
@@ -316,9 +322,7 @@ struct HtmlWriter::Private {
             const std::string      &spPlacement_):
         str(str_),
         core(str_, titleFallback_, spPlacement_),
-        defUrlTemplate(defUrlTemplate_),
-        defCnt(0),
-        baseLookup(0)
+        defUrlTemplate(defUrlTemplate_)
     {
         if (!defUrlTemplate.empty())
             // just make sure that the format string is correct
@@ -394,6 +398,11 @@ void HtmlWriter::setPlainTextUrl(const std::string &url)
     d->plainTextUrl = url;
 }
 
+void HtmlWriter::setCweNameLookup(const CweNameLookup *cweNames)
+{
+    d->cweNames = cweNames;
+}
+
 void HtmlWriter::Private::writeLinkToDetails(const Defect &def)
 {
     const int defId = def.defectId;
@@ -451,13 +460,19 @@ void HtmlWriter::handleDef(const Defect &def)
 
     d->str << "<b>Error: <span style='background: #C0FF00;'>"
         << HtmlLib::escapeTextInline(def.checker) << "</span>";
-    if (def.cwe) {
+
+    const int cwe = def.cwe;
+    if (cwe) {
+        std::string cweName;
+        if (d->cweNames)
+            cweName = d->cweNames->lookup(cwe);
         d->str << " (";
-        printCweLink(d->str, def.cwe);
+        printCweLink(d->str, cwe, cweName);
         d->str << ")";
     }
     else
         d->str << HtmlLib::escapeTextInline(def.annotation);
+
     d->str << ":</b>";
 
     d->writeLinkToDetails(def);

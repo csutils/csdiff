@@ -18,6 +18,7 @@
  */
 
 #include "abstract-parser.hh"
+#include "cwe-name-lookup.hh"
 #include "deflookup.hh"
 #include "html-writer.hh"
 #include "instream.hh"
@@ -25,6 +26,11 @@
 #include "version.hh"
 
 #include <boost/program_options.hpp>
+
+#ifndef DEFAULT_CWE_NAMES_FILE
+#   define DEFAULT_CWE_NAMES_FILE "/usr/share/csdiff/cwe-names.csv"
+#endif
+static const char fnCweNamesDefault[] = DEFAULT_CWE_NAMES_FILE;
 
 std::string titleFromFileName(const std::string &fileName)
 {
@@ -57,9 +63,13 @@ int main(int argc, char *argv[])
 
     typedef std::vector<string> TStringList;
     string defUrlTemplate, fnBase, checkerIgnRegex, plainTextUrl, spPosition;
+    string fnCweNames;
 
     try {
         desc.add_options()
+            ("cwe-names",
+             po::value(&fnCweNames)->default_value(fnCweNamesDefault),
+             "CSV file mapping CWE numbers to names")
             ("defect-url-template", po::value(&defUrlTemplate),
              "e.g. http://localhost/index.php?proj=%d&defect=%d")
             ("diff-base", po::value(&fnBase),
@@ -150,6 +160,14 @@ int main(int argc, char *argv[])
             const std::string diffTitleFallback = titleFromFileName(fnBase);
             writer.setDiffBase(&baseLookup, checkerIgnRegex, baseProps,
                     diffTitleFallback);
+        }
+
+        // initialize CWE names lookup
+        CweNameLookup cweNames;
+        if (!fnCweNames.empty()) {
+            InStream strCweNames(fnCweNames);
+            cweNames.parse(strCweNames);
+            writer.setCweNameLookup(&cweNames);
         }
 
         // write HTML

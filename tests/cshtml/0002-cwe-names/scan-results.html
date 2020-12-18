@@ -1,0 +1,1432 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.1//EN' 'http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head><title>curl-7.60.0-1.el8+7</title></head>
+<body style='background: white;'>
+<h1>curl-7.60.0-1.el8+7</h1>
+<h2>List of Defects</h2>
+<pre style='white-space: pre-wrap;'>
+<a name='def1'/><b>Error: <span style='background: #C0FF00;'>SHELLCHECK_WARNING</span>:</b> <a href ='#def1'>[#def1]</a>
+/usr/bin/curl-config:25:1: warning[<b><a href="https://github.com/koalaman/shellcheck/wiki/SC2034" title="description of ShellCheck's checker SC2034">SC2034</a></b>]: exec_prefix appears unused. Verify it or export it.
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>   23|   </span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>   24|   prefix=/usr</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'>   25|-&gt; exec_prefix=/usr</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>   26|   includedir=/usr/include</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>   27|   cppflag_curl_staticlib=</span></span>
+
+<a name='def2'/><b>Error: <span style='background: #C0FF00;'>SHELLCHECK_WARNING</span>:</b> <a href ='#def2'>[#def2]</a>
+/usr/bin/curl-config:26:1: warning[<b><a href="https://github.com/koalaman/shellcheck/wiki/SC2034" title="description of ShellCheck's checker SC2034">SC2034</a></b>]: includedir appears unused. Verify it or export it.
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>   24|   prefix=/usr</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>   25|   exec_prefix=/usr</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'>   26|-&gt; includedir=/usr/include</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>   27|   cppflag_curl_staticlib=</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>   28|   </span></span>
+
+<a name='def3'/><b>Error: <span style='background: #C0FF00;'>SHELLCHECK_WARNING</span>:</b> <a href ='#def3'>[#def3]</a>
+/usr/bin/curl-config:66:8: warning[<b><a href="https://github.com/koalaman/shellcheck/wiki/SC2034" title="description of ShellCheck's checker SC2034">SC2034</a></b>]: value appears unused. Verify it or export it.
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>   64|       # [not currently used]</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>   65|       -*=*) value=`echo &quot;$1&quot; | sed &apos;s/[-_a-zA-Z0-9]*=//&apos;` ;;</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'>   66|-&gt;     *) value= ;;</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>   67|       esac</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>   68|   </span></span>
+
+<a name='def4'/><b>Error: <span style='background: #C0FF00;'>SHELLCHECK_WARNING</span>:</b> <a href ='#def4'>[#def4]</a>
+/usr/bin/curl-config:146:14: warning[<b><a href="https://github.com/koalaman/shellcheck/wiki/SC2039" title="description of ShellCheck's checker SC2039">SC2039</a></b>]: In POSIX sh, echo flags are undefined.
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  144|   </span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  145|       --libs)</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'>  146|-&gt;         echo -lcurl</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  147|           ;;</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  148|       --ssl-backends)</span></span>
+
+<a name='def5'/><b>Error: <span style='background: #C0FF00;'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="CWE-561: Dead Code">CWE-561</a>):</b> <a href ='#def5'>[#def5]</a>
+<span style='color: #808080;'>curl-7.60.0/lib/base64.c:183: <b>assignment</b>: Assigning: &quot;convbuf&quot; = &quot;NULL&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/base64.c:213: <b>null</b>: At condition &quot;convbuf&quot;, the value of &quot;convbuf&quot; must be &quot;NULL&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/base64.c:213: <b>dead_error_condition</b>: The condition &quot;convbuf&quot; cannot be true.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/base64.c:214: <b>dead_error_line</b>: Execution cannot reach this statement: &quot;indata = (char *)convbuf;&quot;.</span>
+curl-7.60.0/lib/base64.c:214: <b>effectively_constant</b>: Local variable &quot;convbuf&quot; is assigned only once, to a constant value, making it effectively constant throughout its scope. If this is not the intent, examine the logic to see if there is a missing assignment that would make &quot;convbuf&quot; not remain constant.
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  212|   </span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  213|     if(convbuf)</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'>  214|-&gt;     indata = (char *)convbuf;</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  215|   </span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  216|     while(insize &gt; 0) {</span></span>
+
+<a name='def6'/><b>Error: <span style='background: #C0FF00;'>OVERRUN</span> (<a href="https://cwe.mitre.org/data/definitions/119.html" title="CWE-119: Buffer Overflow">CWE-119</a>):</b> <a href ='#def6'>[#def6]</a>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/connect.c:1353: <b>cond_true</b>: Condition &quot;!addr&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/connect.c:1367: <b>cond_true</b>: Condition &quot;conn-&gt;socktype == SOCK_DGRAM&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/connect.c:1370: <b>cond_true</b>: Condition &quot;addr-&gt;addrlen &gt; 128UL /* sizeof (struct Curl_sockaddr_storage) */&quot;, taking true branch.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/connect.c:1371: <b>assignment</b>: Assigning: &quot;addr-&gt;addrlen&quot; = &quot;128U&quot;.</span>
+curl-7.60.0/lib/connect.c:1372: <b>overrun-buffer-arg</b>: Overrunning struct type sockaddr of 16 bytes by passing it to a function which accesses it at byte offset 127 using argument &quot;addr-&gt;addrlen&quot; (which evaluates to 128). [Note: The source code implementation of the function has been overridden by a builtin model.]
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 1370|     if(addr-&gt;addrlen &gt; sizeof(struct Curl_sockaddr_storage))</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 1371|        addr-&gt;addrlen = sizeof(struct Curl_sockaddr_storage);</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'> 1372|-&gt;   memcpy(&amp;addr-&gt;sa_addr, ai-&gt;ai_addr, addr-&gt;addrlen);</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 1373|   </span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 1374|     if(data-&gt;set.fopensocket) {</span></span>
+
+<a name='def7'/><b>Error: <span style='background: #C0FF00;'>CPPCHECK_WARNING</span> (<a href="https://cwe.mitre.org/data/definitions/456.html" title="CWE-456: Missing Initialization of a Variable">CWE-456</a>):</b> <a href ='#def7'>[#def7]</a>
+curl-7.60.0/lib/curl_ntlm_core.c:414: error[<b>uninitvar</b>]: Uninitialized variable: ks
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  412|     DES_key_schedule ks;</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  413|   </span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'>  414|-&gt;   setup_des_key(keys, DESKEY(ks));</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  415|     DES_ecb_encrypt((DES_cblock*) plaintext, (DES_cblock*) results,</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  416|                     DESKEY(ks), DES_ENCRYPT);</span></span>
+
+<a name='def8'/><b>Error: <span style='background: #C0FF00;'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="CWE-561: Dead Code">CWE-561</a>):</b> <a href ='#def8'>[#def8]</a>
+<span style='color: #808080;'>curl-7.60.0/lib/curl_ntlm_core.c:479: <b>assignment</b>: Assigning: &quot;result&quot; = &quot;((void)data) , CURLE_OK&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/curl_ntlm_core.c:480: <b>const</b>: At condition &quot;result&quot;, the value of &quot;result&quot; must be equal to 0.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/curl_ntlm_core.c:480: <b>dead_error_condition</b>: The condition &quot;result&quot; cannot be true.</span>
+curl-7.60.0/lib/curl_ntlm_core.c:481: <b>dead_error_line</b>: Execution cannot reach this statement: &quot;return result;&quot;.
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  479|     result = Curl_convert_to_network(data, (char *)pw, 14);</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  480|     if(result)</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'>  481|-&gt;     return result;</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  482|   </span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  483|     {</span></span>
+
+<a name='def9'/><b>Error: <span style='background: #C0FF00;'>CPPCHECK_WARNING</span> (<a href="https://cwe.mitre.org/data/definitions/456.html" title="CWE-456: Missing Initialization of a Variable">CWE-456</a>):</b> <a href ='#def9'>[#def9]</a>
+curl-7.60.0/lib/curl_ntlm_core.c:489: error[<b>uninitvar</b>]: Uninitialized variable: ks
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  487|       DES_key_schedule ks;</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  488|   </span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'>  489|-&gt;     setup_des_key(pw, DESKEY(ks));</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  490|       DES_ecb_encrypt((DES_cblock *)magic, (DES_cblock *)lmbuffer,</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  491|                       DESKEY(ks), DES_ENCRYPT);</span></span>
+
+<a name='def10'/><b>Error: <span style='background: #C0FF00;'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="CWE-561: Dead Code">CWE-561</a>):</b> <a href ='#def10'>[#def10]</a>
+<span style='color: #808080;'>curl-7.60.0/lib/curl_ntlm_core.c:571: <b>assignment</b>: Assigning: &quot;result&quot; = &quot;((void)data) , CURLE_OK&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/curl_ntlm_core.c:572: <b>const</b>: At condition &quot;result&quot;, the value of &quot;result&quot; must be equal to 0.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/curl_ntlm_core.c:572: <b>dead_error_condition</b>: The condition &quot;result&quot; cannot be true.</span>
+curl-7.60.0/lib/curl_ntlm_core.c:573: <b>dead_error_line</b>: Execution cannot reach this statement: &quot;return result;&quot;.
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  571|     result = Curl_convert_to_network(data, (char *)pw, len * 2);</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  572|     if(result)</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'>  573|-&gt;     return result;</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  574|   </span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  575|     {</span></span>
+
+<a name='def11'/><b>Error: <span style='background: #C0FF00;'>TAINTED_STRING</span> (<a href="https://cwe.mitre.org/data/definitions/20.html" title="CWE-20: Improper Input Validation">CWE-20</a>):</b> <a href ='#def11'>[#def11]</a>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:129: <b>cond_false</b>: Condition &quot;conn-&gt;ntlm_auth_hlpr_socket != -1&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:129: <b>cond_false</b>: Condition &quot;conn-&gt;ntlm_auth_hlpr_pid&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:131: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:142: <b>cond_true</b>: Condition &quot;!username&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:144: <b>cond_true</b>: Condition &quot;!username&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:146: <b>cond_true</b>: Condition &quot;!username&quot;, taking true branch.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/curl_ntlm_wb.c:147: <b>tainted_string_return_content</b>: &quot;getenv&quot; returns tainted string content.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/curl_ntlm_wb.c:147: <b>var_assign</b>: Assigning: &quot;username&quot; = &quot;getenv(&quot;USER&quot;)&quot;, which taints &quot;username&quot;.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:149: <b>cond_false</b>: Condition &quot;!username&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:149: <b>cond_false</b>: Condition &quot;!username[0]&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:153: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:155: <b>cond_false</b>: Condition &quot;!username&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:155: <b>cond_false</b>: Condition &quot;!username[0]&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:156: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:159: <b>cond_true</b>: Condition &quot;slash&quot;, taking true branch.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/curl_ntlm_wb.c:160: <b>tainted_data_transitive</b>: Call to function &quot;strdup&quot; with tainted argument &quot;username&quot; returns tainted data.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/curl_ntlm_wb.c:160: <b>var_assign</b>: Assigning: &quot;domain&quot; = &quot;strdup(username)&quot;, which taints &quot;domain&quot;.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:161: <b>cond_false</b>: Condition &quot;!domain&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:162: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:180: <b>cond_false</b>: Condition &quot;access(ntlm_auth, 1) != 0&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:184: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:186: <b>cond_false</b>: Condition &quot;socketpair(1, SOCK_STREAM, 0, sockfds)&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:190: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:193: <b>cond_false</b>: Condition &quot;child_pid == -1&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:200: <b>else_branch</b>: Reached else branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:200: <b>cond_true</b>: Condition &quot;!child_pid&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:207: <b>cond_false</b>: Condition &quot;dup2(sockfds[1], 0) == -1&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:211: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:213: <b>cond_false</b>: Condition &quot;dup2(sockfds[1], 1) == -1&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:217: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:219: <b>cond_true</b>: Condition &quot;domain&quot;, taking true branch.</span>
+curl-7.60.0/lib/curl_ntlm_wb.c:220: <b>tainted_string</b>: Passing tainted string &quot;domain&quot; to &quot;execl&quot;, which cannot accept tainted data.
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  218|   </span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  219|       if(domain)</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'>  220|-&gt;       execl(ntlm_auth, ntlm_auth,</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  221|               &quot;--helper-protocol&quot;, &quot;ntlmssp-client-1&quot;,</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  222|               &quot;--use-cached-creds&quot;,</span></span>
+
+<a name='def12'/><b>Error: <span style='background: #C0FF00;'>TAINTED_STRING</span> (<a href="https://cwe.mitre.org/data/definitions/20.html" title="CWE-20: Improper Input Validation">CWE-20</a>):</b> <a href ='#def12'>[#def12]</a>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:129: <b>cond_false</b>: Condition &quot;conn-&gt;ntlm_auth_hlpr_socket != -1&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:129: <b>cond_false</b>: Condition &quot;conn-&gt;ntlm_auth_hlpr_pid&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:131: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:142: <b>cond_true</b>: Condition &quot;!username&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:144: <b>cond_true</b>: Condition &quot;!username&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:146: <b>cond_true</b>: Condition &quot;!username&quot;, taking true branch.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/curl_ntlm_wb.c:147: <b>tainted_string_return_content</b>: &quot;getenv&quot; returns tainted string content.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/curl_ntlm_wb.c:147: <b>var_assign</b>: Assigning: &quot;username&quot; = &quot;getenv(&quot;USER&quot;)&quot;, which taints &quot;username&quot;.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:149: <b>cond_false</b>: Condition &quot;!username&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:149: <b>cond_false</b>: Condition &quot;!username[0]&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:153: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:155: <b>cond_false</b>: Condition &quot;!username&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:155: <b>cond_false</b>: Condition &quot;!username[0]&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:156: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:159: <b>cond_true</b>: Condition &quot;slash&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:161: <b>cond_false</b>: Condition &quot;!domain&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:162: <b>if_end</b>: End of if statement.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/curl_ntlm_wb.c:165: <b>var_assign_var</b>: Assigning: &quot;username&quot; = &quot;username + (slash - domain) + 1&quot;. Both are now tainted.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:180: <b>cond_false</b>: Condition &quot;access(ntlm_auth, 1) != 0&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:184: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:186: <b>cond_false</b>: Condition &quot;socketpair(1, SOCK_STREAM, 0, sockfds)&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:190: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:193: <b>cond_false</b>: Condition &quot;child_pid == -1&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:200: <b>else_branch</b>: Reached else branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:200: <b>cond_true</b>: Condition &quot;!child_pid&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:207: <b>cond_false</b>: Condition &quot;dup2(sockfds[1], 0) == -1&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:211: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:213: <b>cond_false</b>: Condition &quot;dup2(sockfds[1], 1) == -1&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:217: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:219: <b>cond_true</b>: Condition &quot;domain&quot;, taking true branch.</span>
+curl-7.60.0/lib/curl_ntlm_wb.c:220: <b>tainted_string</b>: Passing tainted string &quot;username&quot; to &quot;execl&quot;, which cannot accept tainted data.
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  218|   </span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  219|       if(domain)</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'>  220|-&gt;       execl(ntlm_auth, ntlm_auth,</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  221|               &quot;--helper-protocol&quot;, &quot;ntlmssp-client-1&quot;,</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  222|               &quot;--use-cached-creds&quot;,</span></span>
+
+<a name='def13'/><b>Error: <span style='background: #C0FF00;'>TOCTOU</span> (<a href="https://cwe.mitre.org/data/definitions/367.html" title="CWE-367: Time-of-check Time-of-use (TOCTOU) Race Condition">CWE-367</a>):</b> <a href ='#def13'>[#def13]</a>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:129: <b>cond_false</b>: Condition &quot;conn-&gt;ntlm_auth_hlpr_socket != -1&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:129: <b>cond_false</b>: Condition &quot;conn-&gt;ntlm_auth_hlpr_pid&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:131: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:142: <b>cond_true</b>: Condition &quot;!username&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:144: <b>cond_true</b>: Condition &quot;!username&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:146: <b>cond_true</b>: Condition &quot;!username&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:149: <b>cond_true</b>: Condition &quot;!username&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:149: <b>cond_true</b>: Condition &quot;!getpwuid_r(geteuid(), &amp;pw, pwbuf, 1024UL /* sizeof (pwbuf) */, &amp;pw_res)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:149: <b>cond_true</b>: Condition &quot;pw_res&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:155: <b>cond_true</b>: Condition &quot;!username&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:159: <b>cond_true</b>: Condition &quot;slash&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:161: <b>cond_false</b>: Condition &quot;!domain&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:162: <b>if_end</b>: End of if statement.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/curl_ntlm_wb.c:180: <b>fs_check_call</b>: Calling function &quot;access&quot; to perform check on &quot;ntlm_auth&quot;.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:180: <b>cond_false</b>: Condition &quot;access(ntlm_auth, 1) != 0&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:184: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:186: <b>cond_false</b>: Condition &quot;socketpair(1, SOCK_STREAM, 0, sockfds)&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:190: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:193: <b>cond_false</b>: Condition &quot;child_pid == -1&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:200: <b>else_branch</b>: Reached else branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:200: <b>cond_true</b>: Condition &quot;!child_pid&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:207: <b>cond_true</b>: Condition &quot;dup2(sockfds[1], 0) == -1&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:213: <b>cond_true</b>: Condition &quot;dup2(sockfds[1], 1) == -1&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:219: <b>cond_true</b>: Condition &quot;domain&quot;, taking true branch.</span>
+curl-7.60.0/lib/curl_ntlm_wb.c:220: <b>toctou</b>: Calling function &quot;execl&quot; that uses &quot;ntlm_auth&quot; after a check function. This can cause a time-of-check, time-of-use race condition.
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  218|   </span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  219|       if(domain)</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'>  220|-&gt;       execl(ntlm_auth, ntlm_auth,</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  221|               &quot;--helper-protocol&quot;, &quot;ntlmssp-client-1&quot;,</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  222|               &quot;--use-cached-creds&quot;,</span></span>
+
+<a name='def14'/><b>Error: <span style='background: #C0FF00;'>TOCTOU</span> (<a href="https://cwe.mitre.org/data/definitions/367.html" title="CWE-367: Time-of-check Time-of-use (TOCTOU) Race Condition">CWE-367</a>):</b> <a href ='#def14'>[#def14]</a>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:129: <b>cond_false</b>: Condition &quot;conn-&gt;ntlm_auth_hlpr_socket != -1&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:129: <b>cond_false</b>: Condition &quot;conn-&gt;ntlm_auth_hlpr_pid&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:131: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:142: <b>cond_true</b>: Condition &quot;!username&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:144: <b>cond_true</b>: Condition &quot;!username&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:146: <b>cond_true</b>: Condition &quot;!username&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:149: <b>cond_true</b>: Condition &quot;!username&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:149: <b>cond_true</b>: Condition &quot;!getpwuid_r(geteuid(), &amp;pw, pwbuf, 1024UL /* sizeof (pwbuf) */, &amp;pw_res)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:149: <b>cond_true</b>: Condition &quot;pw_res&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:155: <b>cond_true</b>: Condition &quot;!username&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:159: <b>cond_false</b>: Condition &quot;slash&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:166: <b>if_end</b>: End of if statement.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/curl_ntlm_wb.c:180: <b>fs_check_call</b>: Calling function &quot;access&quot; to perform check on &quot;ntlm_auth&quot;.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:180: <b>cond_false</b>: Condition &quot;access(ntlm_auth, 1) != 0&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:184: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:186: <b>cond_false</b>: Condition &quot;socketpair(1, SOCK_STREAM, 0, sockfds)&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:190: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:193: <b>cond_false</b>: Condition &quot;child_pid == -1&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:200: <b>else_branch</b>: Reached else branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:200: <b>cond_true</b>: Condition &quot;!child_pid&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:207: <b>cond_true</b>: Condition &quot;dup2(sockfds[1], 0) == -1&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:213: <b>cond_true</b>: Condition &quot;dup2(sockfds[1], 1) == -1&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:219: <b>cond_false</b>: Condition &quot;domain&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/curl_ntlm_wb.c:227: <b>else_branch</b>: Reached else branch.</span>
+curl-7.60.0/lib/curl_ntlm_wb.c:227: <b>toctou</b>: Calling function &quot;execl&quot; that uses &quot;ntlm_auth&quot; after a check function. This can cause a time-of-check, time-of-use race condition.
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  225|               NULL);</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  226|       else</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'>  227|-&gt;       execl(ntlm_auth, ntlm_auth,</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  228|               &quot;--helper-protocol&quot;, &quot;ntlmssp-client-1&quot;,</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  229|               &quot;--use-cached-creds&quot;,</span></span>
+
+<a name='def15'/><b>Error: <span style='background: #C0FF00;'>CLANG_WARNING</span>:</b> <a href ='#def15'>[#def15]</a>
+curl-7.60.0/lib/formdata.c: <b>internal warning</b>: child 19175 timed out after 30s
+
+<a name='def16'/><b>Error: <span style='background: #C0FF00;'>CLANG_WARNING</span>:</b> <a href ='#def16'>[#def16]</a>
+curl-7.60.0/lib/formdata.c: <b>internal warning</b>: child 31044 timed out after 30s
+
+<a name='def17'/><b>Error: <span style='background: #C0FF00;'>CLANG_WARNING</span>:</b> <a href ='#def17'>[#def17]</a>
+curl-7.60.0/lib/ftp.c: <b>internal warning</b>: child 31022 timed out after 30s
+
+<a name='def18'/><b>Error: <span style='background: #C0FF00;'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="CWE-561: Dead Code">CWE-561</a>):</b> <a href ='#def18'>[#def18]</a>
+<span style='color: #808080;'>curl-7.60.0/lib/ftp.c:3975: <b>assignment</b>: Assigning: &quot;result&quot; = &quot;((void)conn-&gt;data) , CURLE_OK&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ftp.c:3977: <b>const</b>: At condition &quot;result&quot;, the value of &quot;result&quot; must be equal to 0.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ftp.c:3977: <b>dead_error_condition</b>: The condition &quot;result&quot; cannot be true.</span>
+curl-7.60.0/lib/ftp.c:3978: <b>dead_error_line</b>: Execution cannot reach this statement: &quot;return result;&quot;.
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 3976|     /* Curl_convert_to_network calls failf if unsuccessful */</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 3977|     if(result)</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'> 3978|-&gt;     return result;</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 3979|   </span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 3980|     for(;;) {</span></span>
+
+<a name='def19'/><b>Error: <span style='background: #C0FF00;'>CONSTANT_EXPRESSION_RESULT</span> (<a href="https://cwe.mitre.org/data/definitions/398.html" title="CWE-398: Code Quality">CWE-398</a>):</b> <a href ='#def19'>[#def19]</a>
+curl-7.60.0/lib/getinfo.c:159: <b>result_independent_of_operands</b>: &quot;data-&gt;info.filetime &gt; 9223372036854775807L&quot; is always false regardless of the values of its operands. This occurs as the logical operand of &quot;if&quot;.
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  157|       break;</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  158|     case CURLINFO_FILETIME:</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'>  159|-&gt;     if(data-&gt;info.filetime &gt; LONG_MAX)</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  160|         *param_longp = LONG_MAX;</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  161|       else if(data-&gt;info.filetime &lt; LONG_MIN)</span></span>
+
+<a name='def20'/><b>Error: <span style='background: #C0FF00;'>CONSTANT_EXPRESSION_RESULT</span> (<a href="https://cwe.mitre.org/data/definitions/398.html" title="CWE-398: Code Quality">CWE-398</a>):</b> <a href ='#def20'>[#def20]</a>
+curl-7.60.0/lib/getinfo.c:161: <b>result_independent_of_operands</b>: &quot;data-&gt;info.filetime &lt; -9223372036854775808L /* -9223372036854775807L - 1L */&quot; is always false regardless of the values of its operands. This occurs as the logical operand of &quot;if&quot;.
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  159|       if(data-&gt;info.filetime &gt; LONG_MAX)</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  160|         *param_longp = LONG_MAX;</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'>  161|-&gt;     else if(data-&gt;info.filetime &lt; LONG_MIN)</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  162|         *param_longp = LONG_MIN;</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  163|       else</span></span>
+
+<a name='def21'/><b>Error: <span style='background: #C0FF00;'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="CWE-561: Dead Code">CWE-561</a>):</b> <a href ='#def21'>[#def21]</a>
+<span style='color: #808080;'>curl-7.60.0/lib/http.c:1086: <b>assignment</b>: Assigning: &quot;result&quot; = &quot;((void)conn-&gt;data) , CURLE_OK&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/http.c:1088: <b>const</b>: At condition &quot;result&quot;, the value of &quot;result&quot; must be equal to 0.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/http.c:1088: <b>dead_error_condition</b>: The condition &quot;result&quot; cannot be true.</span>
+curl-7.60.0/lib/http.c:1090: <b>dead_error_begin</b>: Execution cannot reach this statement: &quot;Curl_add_buffer_free(in);&quot;.
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 1088|     if(result) {</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 1089|       /* conversion failed, free memory and return to the caller */</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'> 1090|-&gt;     Curl_add_buffer_free(in);</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 1091|       return result;</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 1092|     }</span></span>
+
+<a name='def22'/><b>Error: <span style='background: #C0FF00;'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="CWE-561: Dead Code">CWE-561</a>):</b> <a href ='#def22'>[#def22]</a>
+<span style='color: #808080;'>curl-7.60.0/lib/http.c:3566: <b>assignment</b>: Assigning: &quot;result&quot; = &quot;((void)data) , CURLE_OK&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/http.c:3568: <b>const</b>: At condition &quot;result&quot;, the value of &quot;result&quot; must be equal to 0.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/http.c:3568: <b>dead_error_condition</b>: The condition &quot;result&quot; cannot be true.</span>
+curl-7.60.0/lib/http.c:3569: <b>dead_error_line</b>: Execution cannot reach this statement: &quot;return result;&quot;.
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 3567|       /* Curl_convert_from_network calls failf if unsuccessful */</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 3568|       if(result)</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'> 3569|-&gt;       return result;</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 3570|   </span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 3571|       /* Check for Content-Length: header lines to get size */</span></span>
+
+<a name='def23'/><b>Error: <span style='background: #C0FF00;'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="CWE-561: Dead Code">CWE-561</a>):</b> <a href ='#def23'>[#def23]</a>
+<span style='color: #808080;'>curl-7.60.0/lib/http_chunks.c:157: <b>assignment</b>: Assigning: &quot;result&quot; = &quot;((void)conn-&gt;data) , CURLE_OK&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/http_chunks.c:159: <b>const</b>: At condition &quot;result&quot;, the value of &quot;result&quot; must be equal to 0.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/http_chunks.c:159: <b>dead_error_condition</b>: The condition &quot;result&quot; cannot be true.</span>
+curl-7.60.0/lib/http_chunks.c:162: <b>dead_error_line</b>: Execution cannot reach this statement: &quot;return CHUNKE_ILLEGAL_HEX;&quot;.
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  160|             /* Curl_convert_from_network calls failf if unsuccessful */</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  161|             /* Treat it as a bad hex character */</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'>  162|-&gt;           return CHUNKE_ILLEGAL_HEX;</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  163|           }</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  164|   </span></span>
+
+<a name='def24'/><b>Error: <span style='background: #C0FF00;'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="CWE-561: Dead Code">CWE-561</a>):</b> <a href ='#def24'>[#def24]</a>
+<span style='color: #808080;'>curl-7.60.0/lib/http_chunks.c:237: <b>assignment</b>: Assigning: &quot;result&quot; = &quot;((void)conn-&gt;data) , CURLE_OK&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/http_chunks.c:239: <b>const</b>: At condition &quot;result&quot;, the value of &quot;result&quot; must be equal to 0.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/http_chunks.c:239: <b>dead_error_condition</b>: The condition &quot;result&quot; cannot be true.</span>
+curl-7.60.0/lib/http_chunks.c:242: <b>dead_error_line</b>: Execution cannot reach this statement: &quot;return CHUNKE_BAD_CHUNK;&quot;.
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  240|               /* Curl_convert_from_network calls failf if unsuccessful */</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  241|               /* Treat it as a bad chunk */</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'>  242|-&gt;             return CHUNKE_BAD_CHUNK;</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  243|   </span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  244|             if(!data-&gt;set.http_te_skip) {</span></span>
+
+<a name='def25'/><b>Error: <span style='background: #C0FF00;'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="CWE-561: Dead Code">CWE-561</a>):</b> <a href ='#def25'>[#def25]</a>
+<span style='color: #808080;'>curl-7.60.0/lib/http_proxy.c:413: <b>assignment</b>: Assigning: &quot;result&quot; = &quot;((void)data) , CURLE_OK&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/http_proxy.c:416: <b>const</b>: At condition &quot;result&quot;, the value of &quot;result&quot; must be equal to 0.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/http_proxy.c:416: <b>dead_error_condition</b>: The condition &quot;result&quot; cannot be true.</span>
+curl-7.60.0/lib/http_proxy.c:417: <b>dead_error_line</b>: Execution cannot reach this statement: &quot;return result;&quot;.
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  415|           /* Curl_convert_from_network calls failf if unsuccessful */</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  416|           if(result)</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'>  417|-&gt;           return result;</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  418|   </span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  419|           /* output debug if that is requested */</span></span>
+
+<a name='def26'/><b>Error: <span style='background: #C0FF00;'>CLANG_WARNING</span>:</b> <a href ='#def26'>[#def26]</a>
+curl-7.60.0/lib/multi.c: <b>internal warning</b>: child 32119 timed out after 30s
+
+<a name='def27'/><b>Error: <span style='background: #C0FF00;'>FORWARD_NULL</span> (<a href="https://cwe.mitre.org/data/definitions/476.html" title="CWE-476: NULL Pointer Dereference">CWE-476</a>):</b> <a href ='#def27'>[#def27]</a>
+<span style='color: #808080;'>curl-7.60.0/lib/multi.c:959: <b>assign_zero</b>: Assigning: &quot;ufds&quot; = &quot;NULL&quot;.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:965: <b>cond_true</b>: Condition &quot;multi&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:965: <b>cond_true</b>: Condition &quot;multi-&gt;type == 764702&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:966: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:968: <b>cond_false</b>: Condition &quot;multi-&gt;in_callback&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:969: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:975: <b>cond_false</b>: Condition &quot;timeout_internal &gt;= 0&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:976: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:980: <b>cond_true</b>: Condition &quot;data&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>cond_true</b>: Condition &quot;i &lt; 5&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:986: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:990: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; 16 + i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:994: <b>cond_true</b>: Condition &quot;s == -1&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:995: <b>break</b>: Breaking from loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:997: <b>loop_end</b>: Reached end of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1000: <b>loop</b>: Jumping back to the beginning of the loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:980: <b>loop_begin</b>: Jumped back to beginning of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:980: <b>cond_true</b>: Condition &quot;data&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>cond_true</b>: Condition &quot;i &lt; 5&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:986: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:990: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; 16 + i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:994: <b>cond_true</b>: Condition &quot;s == -1&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:995: <b>break</b>: Breaking from loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:997: <b>loop_end</b>: Reached end of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1000: <b>loop</b>: Jumping back to the beginning of the loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:980: <b>loop_begin</b>: Jumped back to beginning of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:980: <b>cond_true</b>: Condition &quot;data&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>cond_true</b>: Condition &quot;i &lt; 5&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:986: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:990: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; 16 + i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:994: <b>cond_false</b>: Condition &quot;s == -1&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:996: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:997: <b>loop</b>: Jumping back to the beginning of the loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>loop_begin</b>: Jumped back to beginning of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>cond_true</b>: Condition &quot;i &lt; 5&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:986: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:990: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; 16 + i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:994: <b>cond_false</b>: Condition &quot;s == -1&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:996: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:997: <b>loop</b>: Jumping back to the beginning of the loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>loop_begin</b>: Jumped back to beginning of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>cond_true</b>: Condition &quot;i &lt; 5&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:986: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:990: <b>cond_false</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; 16 + i)&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:993: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:994: <b>cond_true</b>: Condition &quot;s == -1&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:995: <b>break</b>: Breaking from loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:997: <b>loop_end</b>: Reached end of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1000: <b>loop</b>: Jumping back to the beginning of the loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:980: <b>loop_begin</b>: Jumped back to beginning of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:980: <b>cond_true</b>: Condition &quot;data&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>cond_true</b>: Condition &quot;i &lt; 5&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:986: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:990: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; 16 + i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:994: <b>cond_false</b>: Condition &quot;s == -1&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:996: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:997: <b>loop</b>: Jumping back to the beginning of the loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>loop_begin</b>: Jumped back to beginning of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>cond_true</b>: Condition &quot;i &lt; 5&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:986: <b>cond_false</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; i)&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:989: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:990: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; 16 + i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:994: <b>cond_true</b>: Condition &quot;s == -1&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:995: <b>break</b>: Breaking from loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:997: <b>loop_end</b>: Reached end of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1000: <b>loop</b>: Jumping back to the beginning of the loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:980: <b>loop_begin</b>: Jumped back to beginning of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:980: <b>cond_true</b>: Condition &quot;data&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>cond_true</b>: Condition &quot;i &lt; 5&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:986: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:990: <b>cond_false</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; 16 + i)&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:993: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:994: <b>cond_false</b>: Condition &quot;s == -1&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:996: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:997: <b>loop</b>: Jumping back to the beginning of the loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>loop_begin</b>: Jumped back to beginning of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>cond_true</b>: Condition &quot;i &lt; 5&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:986: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:990: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; 16 + i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:994: <b>cond_true</b>: Condition &quot;s == -1&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:995: <b>break</b>: Breaking from loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:997: <b>loop_end</b>: Reached end of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1000: <b>loop</b>: Jumping back to the beginning of the loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:980: <b>loop_begin</b>: Jumped back to beginning of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:980: <b>cond_true</b>: Condition &quot;data&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>cond_true</b>: Condition &quot;i &lt; 5&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:986: <b>cond_false</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; i)&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:989: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:990: <b>cond_false</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; 16 + i)&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:993: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:994: <b>cond_true</b>: Condition &quot;s == -1&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:995: <b>break</b>: Breaking from loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:997: <b>loop_end</b>: Reached end of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1000: <b>loop</b>: Jumping back to the beginning of the loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:980: <b>loop_begin</b>: Jumped back to beginning of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:980: <b>cond_false</b>: Condition &quot;data&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1000: <b>loop_end</b>: Reached end of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1005: <b>cond_false</b>: Condition &quot;nfds&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1018: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1024: <b>cond_true</b>: Condition &quot;curlfds&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1027: <b>cond_true</b>: Condition &quot;data&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1030: <b>cond_true</b>: Condition &quot;i &lt; 5&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1033: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; i)&quot;, taking true branch.</span>
+curl-7.60.0/lib/multi.c:1034: <b>var_deref_op</b>: Dereferencing null pointer &quot;ufds&quot;.
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 1032|   </span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 1033|           if(bitmap &amp; GETSOCK_READSOCK(i)) {</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'> 1034|-&gt;           ufds[nfds].fd = sockbunch[i];</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 1035|             ufds[nfds].events = POLLIN;</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 1036|             ++nfds;</span></span>
+
+<a name='def28'/><b>Error: <span style='background: #C0FF00;'>FORWARD_NULL</span> (<a href="https://cwe.mitre.org/data/definitions/476.html" title="CWE-476: NULL Pointer Dereference">CWE-476</a>):</b> <a href ='#def28'>[#def28]</a>
+<span style='color: #808080;'>curl-7.60.0/lib/multi.c:959: <b>assign_zero</b>: Assigning: &quot;ufds&quot; = &quot;NULL&quot;.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:965: <b>cond_true</b>: Condition &quot;multi&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:965: <b>cond_true</b>: Condition &quot;multi-&gt;type == 764702&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:966: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:968: <b>cond_false</b>: Condition &quot;multi-&gt;in_callback&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:969: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:975: <b>cond_false</b>: Condition &quot;timeout_internal &gt;= 0&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:976: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:980: <b>cond_true</b>: Condition &quot;data&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>cond_true</b>: Condition &quot;i &lt; 5&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:986: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:990: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; 16 + i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:994: <b>cond_true</b>: Condition &quot;s == -1&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:995: <b>break</b>: Breaking from loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:997: <b>loop_end</b>: Reached end of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1000: <b>loop</b>: Jumping back to the beginning of the loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:980: <b>loop_begin</b>: Jumped back to beginning of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:980: <b>cond_true</b>: Condition &quot;data&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>cond_true</b>: Condition &quot;i &lt; 5&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:986: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:990: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; 16 + i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:994: <b>cond_true</b>: Condition &quot;s == -1&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:995: <b>break</b>: Breaking from loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:997: <b>loop_end</b>: Reached end of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1000: <b>loop</b>: Jumping back to the beginning of the loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:980: <b>loop_begin</b>: Jumped back to beginning of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:980: <b>cond_true</b>: Condition &quot;data&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>cond_true</b>: Condition &quot;i &lt; 5&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:986: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:990: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; 16 + i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:994: <b>cond_false</b>: Condition &quot;s == -1&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:996: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:997: <b>loop</b>: Jumping back to the beginning of the loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>loop_begin</b>: Jumped back to beginning of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>cond_true</b>: Condition &quot;i &lt; 5&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:986: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:990: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; 16 + i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:994: <b>cond_false</b>: Condition &quot;s == -1&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:996: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:997: <b>loop</b>: Jumping back to the beginning of the loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>loop_begin</b>: Jumped back to beginning of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>cond_true</b>: Condition &quot;i &lt; 5&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:986: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:990: <b>cond_false</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; 16 + i)&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:993: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:994: <b>cond_true</b>: Condition &quot;s == -1&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:995: <b>break</b>: Breaking from loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:997: <b>loop_end</b>: Reached end of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1000: <b>loop</b>: Jumping back to the beginning of the loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:980: <b>loop_begin</b>: Jumped back to beginning of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:980: <b>cond_true</b>: Condition &quot;data&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>cond_true</b>: Condition &quot;i &lt; 5&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:986: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:990: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; 16 + i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:994: <b>cond_false</b>: Condition &quot;s == -1&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:996: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:997: <b>loop</b>: Jumping back to the beginning of the loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>loop_begin</b>: Jumped back to beginning of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>cond_true</b>: Condition &quot;i &lt; 5&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:986: <b>cond_false</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; i)&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:989: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:990: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; 16 + i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:994: <b>cond_true</b>: Condition &quot;s == -1&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:995: <b>break</b>: Breaking from loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:997: <b>loop_end</b>: Reached end of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1000: <b>loop</b>: Jumping back to the beginning of the loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:980: <b>loop_begin</b>: Jumped back to beginning of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:980: <b>cond_true</b>: Condition &quot;data&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>cond_true</b>: Condition &quot;i &lt; 5&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:986: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:990: <b>cond_false</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; 16 + i)&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:993: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:994: <b>cond_false</b>: Condition &quot;s == -1&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:996: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:997: <b>loop</b>: Jumping back to the beginning of the loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>loop_begin</b>: Jumped back to beginning of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>cond_true</b>: Condition &quot;i &lt; 5&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:986: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:990: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; 16 + i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:994: <b>cond_true</b>: Condition &quot;s == -1&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:995: <b>break</b>: Breaking from loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:997: <b>loop_end</b>: Reached end of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1000: <b>loop</b>: Jumping back to the beginning of the loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:980: <b>loop_begin</b>: Jumped back to beginning of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:980: <b>cond_true</b>: Condition &quot;data&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>cond_true</b>: Condition &quot;i &lt; 5&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:986: <b>cond_false</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; i)&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:989: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:990: <b>cond_false</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; 16 + i)&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:993: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:994: <b>cond_true</b>: Condition &quot;s == -1&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:995: <b>break</b>: Breaking from loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:997: <b>loop_end</b>: Reached end of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1000: <b>loop</b>: Jumping back to the beginning of the loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:980: <b>loop_begin</b>: Jumped back to beginning of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:980: <b>cond_false</b>: Condition &quot;data&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1000: <b>loop_end</b>: Reached end of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1005: <b>cond_false</b>: Condition &quot;nfds&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1018: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1024: <b>cond_true</b>: Condition &quot;curlfds&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1027: <b>cond_true</b>: Condition &quot;data&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1030: <b>cond_true</b>: Condition &quot;i &lt; 5&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1033: <b>cond_false</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; i)&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1038: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1039: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; 16 + i)&quot;, taking true branch.</span>
+curl-7.60.0/lib/multi.c:1040: <b>var_deref_op</b>: Dereferencing null pointer &quot;ufds&quot;.
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 1038|           }</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 1039|           if(bitmap &amp; GETSOCK_WRITESOCK(i)) {</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'> 1040|-&gt;           ufds[nfds].fd = sockbunch[i];</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 1041|             ufds[nfds].events = POLLOUT;</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 1042|             ++nfds;</span></span>
+
+<a name='def29'/><b>Error: <span style='background: #C0FF00;'>FORWARD_NULL</span> (<a href="https://cwe.mitre.org/data/definitions/476.html" title="CWE-476: NULL Pointer Dereference">CWE-476</a>):</b> <a href ='#def29'>[#def29]</a>
+<span style='color: #808080;'>curl-7.60.0/lib/multi.c:959: <b>assign_zero</b>: Assigning: &quot;ufds&quot; = &quot;NULL&quot;.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:965: <b>cond_true</b>: Condition &quot;multi&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:965: <b>cond_true</b>: Condition &quot;multi-&gt;type == 764702&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:966: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:968: <b>cond_false</b>: Condition &quot;multi-&gt;in_callback&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:969: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:975: <b>cond_false</b>: Condition &quot;timeout_internal &gt;= 0&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:976: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:980: <b>cond_true</b>: Condition &quot;data&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>cond_true</b>: Condition &quot;i &lt; 5&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:986: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:990: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; 16 + i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:994: <b>cond_true</b>: Condition &quot;s == -1&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:995: <b>break</b>: Breaking from loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:997: <b>loop_end</b>: Reached end of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1000: <b>loop</b>: Jumping back to the beginning of the loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:980: <b>loop_begin</b>: Jumped back to beginning of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:980: <b>cond_true</b>: Condition &quot;data&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>cond_true</b>: Condition &quot;i &lt; 5&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:986: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:990: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; 16 + i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:994: <b>cond_true</b>: Condition &quot;s == -1&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:995: <b>break</b>: Breaking from loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:997: <b>loop_end</b>: Reached end of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1000: <b>loop</b>: Jumping back to the beginning of the loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:980: <b>loop_begin</b>: Jumped back to beginning of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:980: <b>cond_true</b>: Condition &quot;data&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>cond_true</b>: Condition &quot;i &lt; 5&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:986: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:990: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; 16 + i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:994: <b>cond_false</b>: Condition &quot;s == -1&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:996: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:997: <b>loop</b>: Jumping back to the beginning of the loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>loop_begin</b>: Jumped back to beginning of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>cond_true</b>: Condition &quot;i &lt; 5&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:986: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:990: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; 16 + i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:994: <b>cond_false</b>: Condition &quot;s == -1&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:996: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:997: <b>loop</b>: Jumping back to the beginning of the loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>loop_begin</b>: Jumped back to beginning of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>cond_true</b>: Condition &quot;i &lt; 5&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:986: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:990: <b>cond_false</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; 16 + i)&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:993: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:994: <b>cond_true</b>: Condition &quot;s == -1&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:995: <b>break</b>: Breaking from loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:997: <b>loop_end</b>: Reached end of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1000: <b>loop</b>: Jumping back to the beginning of the loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:980: <b>loop_begin</b>: Jumped back to beginning of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:980: <b>cond_true</b>: Condition &quot;data&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>cond_true</b>: Condition &quot;i &lt; 5&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:986: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:990: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; 16 + i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:994: <b>cond_false</b>: Condition &quot;s == -1&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:996: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:997: <b>loop</b>: Jumping back to the beginning of the loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>loop_begin</b>: Jumped back to beginning of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>cond_true</b>: Condition &quot;i &lt; 5&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:986: <b>cond_false</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; i)&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:989: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:990: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; 16 + i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:994: <b>cond_true</b>: Condition &quot;s == -1&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:995: <b>break</b>: Breaking from loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:997: <b>loop_end</b>: Reached end of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1000: <b>loop</b>: Jumping back to the beginning of the loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:980: <b>loop_begin</b>: Jumped back to beginning of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:980: <b>cond_true</b>: Condition &quot;data&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>cond_true</b>: Condition &quot;i &lt; 5&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:986: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:990: <b>cond_false</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; 16 + i)&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:993: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:994: <b>cond_false</b>: Condition &quot;s == -1&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:996: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:997: <b>loop</b>: Jumping back to the beginning of the loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>loop_begin</b>: Jumped back to beginning of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>cond_true</b>: Condition &quot;i &lt; 5&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:986: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:990: <b>cond_true</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; 16 + i)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:994: <b>cond_true</b>: Condition &quot;s == -1&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:995: <b>break</b>: Breaking from loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:997: <b>loop_end</b>: Reached end of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1000: <b>loop</b>: Jumping back to the beginning of the loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:980: <b>loop_begin</b>: Jumped back to beginning of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:980: <b>cond_true</b>: Condition &quot;data&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:983: <b>cond_true</b>: Condition &quot;i &lt; 5&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:986: <b>cond_false</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; i)&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:989: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:990: <b>cond_false</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; 16 + i)&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:993: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:994: <b>cond_true</b>: Condition &quot;s == -1&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:995: <b>break</b>: Breaking from loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:997: <b>loop_end</b>: Reached end of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1000: <b>loop</b>: Jumping back to the beginning of the loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:980: <b>loop_begin</b>: Jumped back to beginning of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:980: <b>cond_false</b>: Condition &quot;data&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1000: <b>loop_end</b>: Reached end of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1005: <b>cond_false</b>: Condition &quot;nfds&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1018: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1024: <b>cond_true</b>: Condition &quot;curlfds&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1027: <b>cond_true</b>: Condition &quot;data&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1030: <b>cond_true</b>: Condition &quot;i &lt; 5&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1033: <b>cond_false</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; i)&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1038: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1039: <b>cond_false</b>: Condition &quot;bitmap &amp; (1 &lt;&lt; 16 + i)&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1044: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1045: <b>cond_true</b>: Condition &quot;s == -1&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1046: <b>break</b>: Breaking from loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1048: <b>loop_end</b>: Reached end of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1051: <b>loop</b>: Jumping back to the beginning of the loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1027: <b>loop_begin</b>: Jumped back to beginning of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1027: <b>cond_false</b>: Condition &quot;data&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1051: <b>loop_end</b>: Reached end of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/multi.c:1055: <b>cond_true</b>: Condition &quot;i &lt; extra_nfds&quot;, taking true branch.</span>
+curl-7.60.0/lib/multi.c:1056: <b>var_deref_op</b>: Dereferencing null pointer &quot;ufds&quot;.
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 1054|     /* Add external file descriptions from poll-like struct curl_waitfd */</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 1055|     for(i = 0; i &lt; extra_nfds; i++) {</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'> 1056|-&gt;     ufds[nfds].fd = extra_fds[i].fd;</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 1057|       ufds[nfds].events = 0;</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 1058|       if(extra_fds[i].events &amp; CURL_WAIT_POLLIN)</span></span>
+
+<a name='def30'/><b>Error: <span style='background: #C0FF00;'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="CWE-561: Dead Code">CWE-561</a>):</b> <a href ='#def30'>[#def30]</a>
+<span style='color: #808080;'>curl-7.60.0/lib/sendf.c:441: <b>assignment</b>: Assigning: &quot;nread&quot; = &quot;0L&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/sendf.c:442: <b>const</b>: At condition &quot;nread &gt; 0L&quot;, the value of &quot;nread&quot; must be equal to 0.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/sendf.c:442: <b>dead_error_condition</b>: The condition &quot;nread &gt; 0L&quot; cannot be true.</span>
+curl-7.60.0/lib/sendf.c:443: <b>dead_error_begin</b>: Execution cannot reach this statement: &quot;*code = CURLE_OK;&quot;.
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  441|     nread = get_pre_recved(conn, num, buf, len);</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  442|     if(nread &gt; 0) {</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'>  443|-&gt;     *code = CURLE_OK;</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  444|       return nread;</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  445|     }</span></span>
+
+<a name='def31'/><b>Error: <span style='background: #C0FF00;'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="CWE-561: Dead Code">CWE-561</a>):</b> <a href ='#def31'>[#def31]</a>
+<span style='color: #808080;'>curl-7.60.0/lib/sendf.c:657: <b>assignment</b>: Assigning: &quot;result&quot; = &quot;((void)data) , CURLE_OK&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/sendf.c:659: <b>const</b>: At condition &quot;result&quot;, the value of &quot;result&quot; must be equal to 0.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/sendf.c:659: <b>dead_error_condition</b>: The condition &quot;result&quot; cannot be true.</span>
+curl-7.60.0/lib/sendf.c:660: <b>dead_error_line</b>: Execution cannot reach this statement: &quot;return result;&quot;.
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  658|       /* Curl_convert_from_network calls failf if unsuccessful */</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  659|       if(result)</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'>  660|-&gt;       return result;</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  661|   </span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  662|   #ifdef CURL_DO_LINEEND_CONV</span></span>
+
+<a name='def32'/><b>Error: <span style='background: #C0FF00;'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="CWE-561: Dead Code">CWE-561</a>):</b> <a href ='#def32'>[#def32]</a>
+<span style='color: #808080;'>curl-7.60.0/lib/smb.c:734: <b>assignment</b>: Assigning: &quot;next_state&quot; = &quot;SMB_DONE&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/smb.c:773: <b>assignment</b>: Assigning: &quot;next_state&quot; = &quot;SMB_OPEN&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/smb.c:779: <b>assignment</b>: Assigning: &quot;next_state&quot; = &quot;SMB_TREE_DISCONNECT&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/smb.c:788: <b>assignment</b>: Assigning: &quot;next_state&quot; = &quot;SMB_UPLOAD&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/smb.c:795: <b>assignment</b>: Assigning: &quot;next_state&quot; = &quot;SMB_CLOSE&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/smb.c:801: <b>assignment</b>: Assigning: &quot;next_state&quot; = &quot;SMB_DOWNLOAD&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/smb.c:827: <b>assignment</b>: Assigning: &quot;next_state&quot; = &quot;SMB_CLOSE&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/smb.c:834: <b>assignment</b>: Assigning: &quot;next_state&quot; = &quot;(len &lt; 32768) ? SMB_CLOSE : SMB_DOWNLOAD&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/smb.c:870: <b>between</b>: When switching on &quot;next_state&quot;, the value of &quot;next_state&quot; must be between 2 and 7.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/smb.c:870: <b>dead_error_condition</b>: The switch value &quot;next_state&quot; cannot reach the default case.</span>
+curl-7.60.0/lib/smb.c:896: <b>dead_error_begin</b>: Execution cannot reach this statement: &quot;default:&quot;.
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  894|       break;</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  895|   </span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'>  896|-&gt;   default:</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  897|       break;</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  898|     }</span></span>
+
+<a name='def33'/><b>Error: <span style='background: #C0FF00;'>STRING_OVERFLOW</span> (<a href="https://cwe.mitre.org/data/definitions/120.html" title="CWE-120: Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')">CWE-120</a>):</b> <a href ='#def33'>[#def33]</a>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/socks_gssapi.c:51: <b>cond_true</b>: Condition &quot;major_status &amp; (4294901760U /* ((OM_uint32)255UL &lt;&lt; 24) | ((OM_uint32)255UL &lt;&lt; 16) */)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/socks_gssapi.c:60: <b>cond_true</b>: Condition &quot;!msg_ctx&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/socks_gssapi.c:66: <b>cond_true</b>: Condition &quot;maj_stat == 0&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/socks_gssapi.c:67: <b>cond_true</b>: Condition &quot;1024UL /* sizeof (buf) */ &gt; len + status_string.length + 1&quot;, taking true branch.</span>
+curl-7.60.0/lib/socks_gssapi.c:68: <b>fixed_size_dest</b>: You might overrun the 1024-character fixed-size string &quot;buf + len&quot; by copying &quot;status_string.value&quot; without checking the length.
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>   66|         if(maj_stat == GSS_S_COMPLETE) {</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>   67|           if(sizeof(buf) &gt; len + status_string.length + 1) {</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'>   68|-&gt;           strcpy(buf + len, (char *) status_string.value);</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>   69|             len += status_string.length;</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>   70|           }</span></span>
+
+<a name='def34'/><b>Error: <span style='background: #C0FF00;'>STRING_OVERFLOW</span> (<a href="https://cwe.mitre.org/data/definitions/120.html" title="CWE-120: Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')">CWE-120</a>):</b> <a href ='#def34'>[#def34]</a>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/socks_gssapi.c:51: <b>cond_true</b>: Condition &quot;major_status &amp; (4294901760U /* ((OM_uint32)255UL &lt;&lt; 24) | ((OM_uint32)255UL &lt;&lt; 16) */)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/socks_gssapi.c:60: <b>cond_true</b>: Condition &quot;!msg_ctx&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/socks_gssapi.c:66: <b>cond_true</b>: Condition &quot;maj_stat == 0&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/socks_gssapi.c:67: <b>cond_true</b>: Condition &quot;1024UL /* sizeof (buf) */ &gt; len + status_string.length + 1&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/socks_gssapi.c:72: <b>break</b>: Breaking from loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/socks_gssapi.c:75: <b>loop_end</b>: Reached end of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/socks_gssapi.c:76: <b>cond_true</b>: Condition &quot;1024UL /* sizeof (buf) */ &gt; len + 3&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/socks_gssapi.c:81: <b>cond_true</b>: Condition &quot;!msg_ctx&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/socks_gssapi.c:87: <b>cond_true</b>: Condition &quot;maj_stat == 0&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/socks_gssapi.c:88: <b>cond_true</b>: Condition &quot;1024UL /* sizeof (buf) */ &gt; len + status_string.length&quot;, taking true branch.</span>
+curl-7.60.0/lib/socks_gssapi.c:89: <b>fixed_size_dest</b>: You might overrun the 1024-character fixed-size string &quot;buf + len&quot; by copying &quot;status_string.value&quot; without checking the length.
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>   87|         if(maj_stat == GSS_S_COMPLETE) {</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>   88|           if(sizeof(buf) &gt; len + status_string.length)</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'>   89|-&gt;           strcpy(buf + len, (char *) status_string.value);</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>   90|           gss_release_buffer(&amp;min_stat, &amp;status_string);</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>   91|           break;</span></span>
+
+<a name='def35'/><b>Error: <span style='background: #C0FF00;'>CLANG_WARNING</span>:</b> <a href ='#def35'>[#def35]</a>
+curl-7.60.0/lib/ssh-libssh.c:1116:15: <b>warning</b>: Null pointer passed as an argument to a &apos;nonnull&apos; parameter
+<span style='color: #00C0C0;'>#             (strlen(protop-&gt;path) &gt; 1))) {</span>
+<span style='color: #00C0C0;'>#              ^      ~~~~~~~~~~~~</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:549:5: <b>note</b>: Control jumps to &apos;case SSH_SFTP_CLOSE:&apos;  at line 1615</span>
+<span style='color: #00C0C0;'>#    switch(sshc-&gt;state) {</span>
+<span style='color: #00C0C0;'>#    ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1616:7: <b>note</b>: Taking false branch</span>
+<span style='color: #00C0C0;'>#      if(sshc-&gt;sftp_file) {</span>
+<span style='color: #00C0C0;'>#      ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1620:7: <b>note</b>: Null pointer value stored to field &apos;path&apos;</span>
+<span style='color: #00C0C0;'>#      Curl_safefree(protop-&gt;path);</span>
+<span style='color: #00C0C0;'>#      ^~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+<span style='color: #808080;'>curl-7.60.0/lib/memdebug.h:184:21: <b>note</b>: expanded from macro &apos;Curl_safefree&apos;</span>
+<span style='color: #00C0C0;'>#  do { free((ptr)); (ptr) = NULL;} WHILE_FALSE</span>
+<span style='color: #00C0C0;'>#                    ^~~~~~~~~~~~</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1620:7: <b>note</b>: Loop condition is false.  Exiting loop</span>
+<span style='color: #808080;'>curl-7.60.0/lib/memdebug.h:184:3: <b>note</b>: expanded from macro &apos;Curl_safefree&apos;</span>
+<span style='color: #00C0C0;'>#  do { free((ptr)); (ptr) = NULL;} WHILE_FALSE</span>
+<span style='color: #00C0C0;'>#  ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1627:10: <b>note</b>: Left side of &apos;&amp;&amp;&apos; is true</span>
+<span style='color: #00C0C0;'>#      if(sshc-&gt;nextstate != SSH_NO_STATE &amp;&amp;</span>
+<span style='color: #00C0C0;'>#         ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1627:7: <b>note</b>: Taking true branch</span>
+<span style='color: #00C0C0;'>#      if(sshc-&gt;nextstate != SSH_NO_STATE &amp;&amp;</span>
+<span style='color: #00C0C0;'>#      ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1636:7: <b>note</b>:  Execution continues on line 1887</span>
+<span style='color: #00C0C0;'>#      break;</span>
+<span style='color: #00C0C0;'>#      ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1887:11: <b>note</b>: Left side of &apos;&amp;&amp;&apos; is true</span>
+<span style='color: #00C0C0;'>#  } while(!rc &amp;&amp; (sshc-&gt;state != SSH_STOP));</span>
+<span style='color: #00C0C0;'>#          ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1887:19: <b>note</b>: Assuming the condition is true</span>
+<span style='color: #00C0C0;'>#  } while(!rc &amp;&amp; (sshc-&gt;state != SSH_STOP));</span>
+<span style='color: #00C0C0;'>#                  ^~~~~~~~~~~~~~~~~~~~~~~</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:547:3: <b>note</b>: Loop condition is true. Execution continues on line 549</span>
+<span style='color: #00C0C0;'>#  do {</span>
+<span style='color: #00C0C0;'>#  ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:549:5: <b>note</b>: Control jumps to &apos;case SSH_SFTP_READDIR_BOTTOM:&apos;  at line 1412</span>
+<span style='color: #00C0C0;'>#    switch(sshc-&gt;state) {</span>
+<span style='color: #00C0C0;'>#    ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1421:10: <b>note</b>: Assuming &apos;result&apos; is 0</span>
+<span style='color: #00C0C0;'>#      if(!result) {</span>
+<span style='color: #00C0C0;'>#         ^~~~~~~</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1421:7: <b>note</b>: Taking true branch</span>
+<span style='color: #00C0C0;'>#      if(!result) {</span>
+<span style='color: #00C0C0;'>#      ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1424:12: <b>note</b>: Assuming the condition is false</span>
+<span style='color: #00C0C0;'>#        if(data-&gt;set.verbose) {</span>
+<span style='color: #00C0C0;'>#           ^~~~~~~~~~~~~~~~~</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1424:9: <b>note</b>: Taking false branch</span>
+<span style='color: #00C0C0;'>#        if(data-&gt;set.verbose) {</span>
+<span style='color: #00C0C0;'>#        ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1434:7: <b>note</b>: Taking false branch</span>
+<span style='color: #00C0C0;'>#      if(result) {</span>
+<span style='color: #00C0C0;'>#      ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1439:7: <b>note</b>:  Execution continues on line 1887</span>
+<span style='color: #00C0C0;'>#      break;</span>
+<span style='color: #00C0C0;'>#      ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1887:11: <b>note</b>: Left side of &apos;&amp;&amp;&apos; is true</span>
+<span style='color: #00C0C0;'>#  } while(!rc &amp;&amp; (sshc-&gt;state != SSH_STOP));</span>
+<span style='color: #00C0C0;'>#          ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:547:3: <b>note</b>: Loop condition is true. Execution continues on line 549</span>
+<span style='color: #00C0C0;'>#  do {</span>
+<span style='color: #00C0C0;'>#  ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:549:5: <b>note</b>: Control jumps to &apos;case SSH_SFTP_READDIR:&apos;  at line 1273</span>
+<span style='color: #00C0C0;'>#    switch(sshc-&gt;state) {</span>
+<span style='color: #00C0C0;'>#    ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1275:7: <b>note</b>: Taking false branch</span>
+<span style='color: #00C0C0;'>#      if(sshc-&gt;readdir_attrs)</span>
+<span style='color: #00C0C0;'>#      ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1279:10: <b>note</b>: Assuming the condition is true</span>
+<span style='color: #00C0C0;'>#      if(sshc-&gt;readdir_attrs) {</span>
+<span style='color: #00C0C0;'>#         ^~~~~~~~~~~~~~~~~~~</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1279:7: <b>note</b>: Taking true branch</span>
+<span style='color: #00C0C0;'>#      if(sshc-&gt;readdir_attrs) {</span>
+<span style='color: #00C0C0;'>#      ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1284:12: <b>note</b>: Assuming the condition is true</span>
+<span style='color: #00C0C0;'>#        if(data-&gt;set.ftp_list_only) {</span>
+<span style='color: #00C0C0;'>#           ^~~~~~~~~~~~~~~~~~~~~~~</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1284:9: <b>note</b>: Taking true branch</span>
+<span style='color: #00C0C0;'>#        if(data-&gt;set.ftp_list_only) {</span>
+<span style='color: #00C0C0;'>#        ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1288:14: <b>note</b>: Assuming &apos;tmpLine&apos; is not equal to NULL</span>
+<span style='color: #00C0C0;'>#          if(tmpLine == NULL) {</span>
+<span style='color: #00C0C0;'>#             ^~~~~~~~~~~~~~~</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1288:11: <b>note</b>: Taking false branch</span>
+<span style='color: #00C0C0;'>#          if(tmpLine == NULL) {</span>
+<span style='color: #00C0C0;'>#          ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1297:14: <b>note</b>: Assuming &apos;result&apos; is 0</span>
+<span style='color: #00C0C0;'>#          if(result) {</span>
+<span style='color: #00C0C0;'>#             ^~~~~~</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1297:11: <b>note</b>: Taking false branch</span>
+<span style='color: #00C0C0;'>#          if(result) {</span>
+<span style='color: #00C0C0;'>#          ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1306:11: <b>note</b>: Taking false branch</span>
+<span style='color: #00C0C0;'>#          if(data-&gt;set.verbose) {</span>
+<span style='color: #00C0C0;'>#          ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1354:7: <b>note</b>:  Execution continues on line 1887</span>
+<span style='color: #00C0C0;'>#      break;</span>
+<span style='color: #00C0C0;'>#      ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1887:11: <b>note</b>: Left side of &apos;&amp;&amp;&apos; is true</span>
+<span style='color: #00C0C0;'>#  } while(!rc &amp;&amp; (sshc-&gt;state != SSH_STOP));</span>
+<span style='color: #00C0C0;'>#          ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:547:3: <b>note</b>: Loop condition is true. Execution continues on line 549</span>
+<span style='color: #00C0C0;'>#  do {</span>
+<span style='color: #00C0C0;'>#  ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:549:5: <b>note</b>: Control jumps to &apos;case SSH_SFTP_UPLOAD_INIT:&apos;  at line 1070</span>
+<span style='color: #00C0C0;'>#    switch(sshc-&gt;state) {</span>
+<span style='color: #00C0C0;'>#    ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1074:10: <b>note</b>: Assuming the condition is false</span>
+<span style='color: #00C0C0;'>#      if(data-&gt;state.resume_from != 0) {</span>
+<span style='color: #00C0C0;'>#         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1074:7: <b>note</b>: Taking false branch</span>
+<span style='color: #00C0C0;'>#      if(data-&gt;state.resume_from != 0) {</span>
+<span style='color: #00C0C0;'>#      ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1095:10: <b>note</b>: Assuming the condition is true</span>
+<span style='color: #00C0C0;'>#      if(data-&gt;set.ftp_append)</span>
+<span style='color: #00C0C0;'>#         ^~~~~~~~~~~~~~~~~~~~</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1095:7: <b>note</b>: Taking true branch</span>
+<span style='color: #00C0C0;'>#      if(data-&gt;set.ftp_append)</span>
+<span style='color: #00C0C0;'>#      ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1105:7: <b>note</b>: Taking false branch</span>
+<span style='color: #00C0C0;'>#      if(sshc-&gt;sftp_file)</span>
+<span style='color: #00C0C0;'>#      ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1110:10: <b>note</b>: Assuming the condition is true</span>
+<span style='color: #00C0C0;'>#      if(!sshc-&gt;sftp_file) {</span>
+<span style='color: #00C0C0;'>#         ^~~~~~~~~~~~~~~~</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1110:7: <b>note</b>: Taking true branch</span>
+<span style='color: #00C0C0;'>#      if(!sshc-&gt;sftp_file) {</span>
+<span style='color: #00C0C0;'>#      ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1113:14: <b>note</b>: Assuming &apos;err&apos; is equal to SSH_FX_NO_SUCH_FILE</span>
+<span style='color: #00C0C0;'>#        if(((err == SSH_FX_NO_SUCH_FILE || err == SSH_FX_FAILURE ||</span>
+<span style='color: #00C0C0;'>#             ^~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1113:41: <b>note</b>: Left side of &apos;||&apos; is true</span>
+<span style='color: #00C0C0;'>#        if(((err == SSH_FX_NO_SUCH_FILE || err == SSH_FX_FAILURE ||</span>
+<span style='color: #00C0C0;'>#                                        ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1115:15: <b>note</b>: Assuming the condition is true</span>
+<span style='color: #00C0C0;'>#             (data-&gt;set.ftp_create_missing_dirs &amp;&amp;</span>
+<span style='color: #00C0C0;'>#              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1115:15: <b>note</b>: Left side of &apos;&amp;&amp;&apos; is true</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1116:15: <b>note</b>: Null pointer passed as an argument to a &apos;nonnull&apos; parameter</span>
+<span style='color: #00C0C0;'>#             (strlen(protop-&gt;path) &gt; 1))) {</span>
+<span style='color: #00C0C0;'>#              ^      ~~~~~~~~~~~~</span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 1114|                err == SSH_FX_NO_SUCH_PATH)) &amp;&amp;</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 1115|                (data-&gt;set.ftp_create_missing_dirs &amp;&amp;</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'> 1116|-&gt;              (strlen(protop-&gt;path) &gt; 1))) {</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 1117|                  /* try to create the path remotely */</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 1118|                  rc = 0;</span></span>
+
+<a name='def36'/><b>Error: <span style='background: #C0FF00;'>CLANG_WARNING</span>:</b> <a href ='#def36'>[#def36]</a>
+curl-7.60.0/lib/ssh-libssh.c:1208:10: <b>warning</b>: Null pointer passed as an argument to a &apos;nonnull&apos; parameter
+<span style='color: #00C0C0;'>#      if(strlen(protop-&gt;path) &gt; 1) {</span>
+<span style='color: #00C0C0;'>#         ^      ~~~~~~~~~~~~</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:549:5: <b>note</b>: Control jumps to &apos;case SSH_SFTP_CLOSE:&apos;  at line 1615</span>
+<span style='color: #00C0C0;'>#    switch(sshc-&gt;state) {</span>
+<span style='color: #00C0C0;'>#    ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1616:7: <b>note</b>: Taking false branch</span>
+<span style='color: #00C0C0;'>#      if(sshc-&gt;sftp_file) {</span>
+<span style='color: #00C0C0;'>#      ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1620:7: <b>note</b>: Null pointer value stored to field &apos;path&apos;</span>
+<span style='color: #00C0C0;'>#      Curl_safefree(protop-&gt;path);</span>
+<span style='color: #00C0C0;'>#      ^~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+<span style='color: #808080;'>curl-7.60.0/lib/memdebug.h:184:21: <b>note</b>: expanded from macro &apos;Curl_safefree&apos;</span>
+<span style='color: #00C0C0;'>#  do { free((ptr)); (ptr) = NULL;} WHILE_FALSE</span>
+<span style='color: #00C0C0;'>#                    ^~~~~~~~~~~~</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1620:7: <b>note</b>: Loop condition is false.  Exiting loop</span>
+<span style='color: #808080;'>curl-7.60.0/lib/memdebug.h:184:3: <b>note</b>: expanded from macro &apos;Curl_safefree&apos;</span>
+<span style='color: #00C0C0;'>#  do { free((ptr)); (ptr) = NULL;} WHILE_FALSE</span>
+<span style='color: #00C0C0;'>#  ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1627:10: <b>note</b>: Left side of &apos;&amp;&amp;&apos; is true</span>
+<span style='color: #00C0C0;'>#      if(sshc-&gt;nextstate != SSH_NO_STATE &amp;&amp;</span>
+<span style='color: #00C0C0;'>#         ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1627:7: <b>note</b>: Taking true branch</span>
+<span style='color: #00C0C0;'>#      if(sshc-&gt;nextstate != SSH_NO_STATE &amp;&amp;</span>
+<span style='color: #00C0C0;'>#      ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1636:7: <b>note</b>:  Execution continues on line 1887</span>
+<span style='color: #00C0C0;'>#      break;</span>
+<span style='color: #00C0C0;'>#      ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1887:11: <b>note</b>: Left side of &apos;&amp;&amp;&apos; is true</span>
+<span style='color: #00C0C0;'>#  } while(!rc &amp;&amp; (sshc-&gt;state != SSH_STOP));</span>
+<span style='color: #00C0C0;'>#          ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1887:19: <b>note</b>: Assuming the condition is true</span>
+<span style='color: #00C0C0;'>#  } while(!rc &amp;&amp; (sshc-&gt;state != SSH_STOP));</span>
+<span style='color: #00C0C0;'>#                  ^~~~~~~~~~~~~~~~~~~~~~~</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:547:3: <b>note</b>: Loop condition is true. Execution continues on line 549</span>
+<span style='color: #00C0C0;'>#  do {</span>
+<span style='color: #00C0C0;'>#  ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:549:5: <b>note</b>: Control jumps to &apos;case SSH_SFTP_READDIR_BOTTOM:&apos;  at line 1412</span>
+<span style='color: #00C0C0;'>#    switch(sshc-&gt;state) {</span>
+<span style='color: #00C0C0;'>#    ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1421:10: <b>note</b>: Assuming &apos;result&apos; is 0</span>
+<span style='color: #00C0C0;'>#      if(!result) {</span>
+<span style='color: #00C0C0;'>#         ^~~~~~~</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1421:7: <b>note</b>: Taking true branch</span>
+<span style='color: #00C0C0;'>#      if(!result) {</span>
+<span style='color: #00C0C0;'>#      ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1424:12: <b>note</b>: Assuming the condition is false</span>
+<span style='color: #00C0C0;'>#        if(data-&gt;set.verbose) {</span>
+<span style='color: #00C0C0;'>#           ^~~~~~~~~~~~~~~~~</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1424:9: <b>note</b>: Taking false branch</span>
+<span style='color: #00C0C0;'>#        if(data-&gt;set.verbose) {</span>
+<span style='color: #00C0C0;'>#        ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1434:7: <b>note</b>: Taking false branch</span>
+<span style='color: #00C0C0;'>#      if(result) {</span>
+<span style='color: #00C0C0;'>#      ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1439:7: <b>note</b>:  Execution continues on line 1887</span>
+<span style='color: #00C0C0;'>#      break;</span>
+<span style='color: #00C0C0;'>#      ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1887:11: <b>note</b>: Left side of &apos;&amp;&amp;&apos; is true</span>
+<span style='color: #00C0C0;'>#  } while(!rc &amp;&amp; (sshc-&gt;state != SSH_STOP));</span>
+<span style='color: #00C0C0;'>#          ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:547:3: <b>note</b>: Loop condition is true. Execution continues on line 549</span>
+<span style='color: #00C0C0;'>#  do {</span>
+<span style='color: #00C0C0;'>#  ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:549:5: <b>note</b>: Control jumps to &apos;case SSH_SFTP_READDIR:&apos;  at line 1273</span>
+<span style='color: #00C0C0;'>#    switch(sshc-&gt;state) {</span>
+<span style='color: #00C0C0;'>#    ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1275:7: <b>note</b>: Taking false branch</span>
+<span style='color: #00C0C0;'>#      if(sshc-&gt;readdir_attrs)</span>
+<span style='color: #00C0C0;'>#      ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1279:10: <b>note</b>: Assuming the condition is true</span>
+<span style='color: #00C0C0;'>#      if(sshc-&gt;readdir_attrs) {</span>
+<span style='color: #00C0C0;'>#         ^~~~~~~~~~~~~~~~~~~</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1279:7: <b>note</b>: Taking true branch</span>
+<span style='color: #00C0C0;'>#      if(sshc-&gt;readdir_attrs) {</span>
+<span style='color: #00C0C0;'>#      ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1284:12: <b>note</b>: Assuming the condition is true</span>
+<span style='color: #00C0C0;'>#        if(data-&gt;set.ftp_list_only) {</span>
+<span style='color: #00C0C0;'>#           ^~~~~~~~~~~~~~~~~~~~~~~</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1284:9: <b>note</b>: Taking true branch</span>
+<span style='color: #00C0C0;'>#        if(data-&gt;set.ftp_list_only) {</span>
+<span style='color: #00C0C0;'>#        ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1288:14: <b>note</b>: Assuming &apos;tmpLine&apos; is not equal to NULL</span>
+<span style='color: #00C0C0;'>#          if(tmpLine == NULL) {</span>
+<span style='color: #00C0C0;'>#             ^~~~~~~~~~~~~~~</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1288:11: <b>note</b>: Taking false branch</span>
+<span style='color: #00C0C0;'>#          if(tmpLine == NULL) {</span>
+<span style='color: #00C0C0;'>#          ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1297:14: <b>note</b>: Assuming &apos;result&apos; is 0</span>
+<span style='color: #00C0C0;'>#          if(result) {</span>
+<span style='color: #00C0C0;'>#             ^~~~~~</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1297:11: <b>note</b>: Taking false branch</span>
+<span style='color: #00C0C0;'>#          if(result) {</span>
+<span style='color: #00C0C0;'>#          ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1306:11: <b>note</b>: Taking false branch</span>
+<span style='color: #00C0C0;'>#          if(data-&gt;set.verbose) {</span>
+<span style='color: #00C0C0;'>#          ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1354:7: <b>note</b>:  Execution continues on line 1887</span>
+<span style='color: #00C0C0;'>#      break;</span>
+<span style='color: #00C0C0;'>#      ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1887:11: <b>note</b>: Left side of &apos;&amp;&amp;&apos; is true</span>
+<span style='color: #00C0C0;'>#  } while(!rc &amp;&amp; (sshc-&gt;state != SSH_STOP));</span>
+<span style='color: #00C0C0;'>#          ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:547:3: <b>note</b>: Loop condition is true. Execution continues on line 549</span>
+<span style='color: #00C0C0;'>#  do {</span>
+<span style='color: #00C0C0;'>#  ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:549:5: <b>note</b>: Control jumps to &apos;case SSH_SFTP_CREATE_DIRS_INIT:&apos;  at line 1207</span>
+<span style='color: #00C0C0;'>#    switch(sshc-&gt;state) {</span>
+<span style='color: #00C0C0;'>#    ^</span>
+<span style='color: #808080;'>curl-7.60.0/lib/ssh-libssh.c:1208:10: <b>note</b>: Null pointer passed as an argument to a &apos;nonnull&apos; parameter</span>
+<span style='color: #00C0C0;'>#      if(strlen(protop-&gt;path) &gt; 1) {</span>
+<span style='color: #00C0C0;'>#         ^      ~~~~~~~~~~~~</span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 1206|   </span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 1207|       case SSH_SFTP_CREATE_DIRS_INIT:</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'> 1208|-&gt;       if(strlen(protop-&gt;path) &gt; 1) {</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 1209|           sshc-&gt;slash_pos = protop-&gt;path + 1; /* ignore the leading &apos;/&apos; */</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 1210|           state(conn, SSH_SFTP_CREATE_DIRS);</span></span>
+
+<a name='def37'/><b>Error: <span style='background: #C0FF00;'>FORWARD_NULL</span> (<a href="https://cwe.mitre.org/data/definitions/476.html" title="CWE-476: NULL Pointer Dereference">CWE-476</a>):</b> <a href ='#def37'>[#def37]</a>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2140: <b>cond_true</b>: Condition &quot;i &lt; argc&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2140: <b>cond_true</b>: Condition &quot;!result&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2143: <b>cond_true</b>: Condition &quot;stillflags&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2143: <b>cond_true</b>: Condition &quot;&apos;-&apos; == argv[i][0]&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2148: <b>cond_false</b>: Condition &quot;!strcmp(&quot;--&quot;, argv[i])&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2152: <b>else_branch</b>: Reached else branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2153: <b>cond_true</b>: Condition &quot;i &lt; argc - 1&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2156: <b>cond_false</b>: Condition &quot;result == PARAM_NEXT_OPERATION&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2185: <b>else_branch</b>: Reached else branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2185: <b>cond_true</b>: Condition &quot;!result&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2185: <b>cond_true</b>: Condition &quot;passarg&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2188: <b>if_fallthrough</b>: Falling through to end of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2195: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2196: <b>loop</b>: Jumping back to the beginning of the loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2140: <b>loop_begin</b>: Jumped back to beginning of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2140: <b>cond_true</b>: Condition &quot;i &lt; argc&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2140: <b>cond_true</b>: Condition &quot;!result&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2143: <b>cond_true</b>: Condition &quot;stillflags&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2143: <b>cond_true</b>: Condition &quot;&apos;-&apos; == argv[i][0]&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2148: <b>cond_false</b>: Condition &quot;!strcmp(&quot;--&quot;, argv[i])&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2152: <b>else_branch</b>: Reached else branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2153: <b>cond_true</b>: Condition &quot;i &lt; argc - 1&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2156: <b>cond_true</b>: Condition &quot;result == PARAM_NEXT_OPERATION&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2161: <b>cond_true</b>: Condition &quot;operation-&gt;url_list&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2161: <b>cond_true</b>: Condition &quot;operation-&gt;url_list-&gt;url&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2164: <b>cond_true</b>: Condition &quot;operation-&gt;next&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2180: <b>if_fallthrough</b>: Falling through to end of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2182: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2184: <b>if_fallthrough</b>: Falling through to end of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2186: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2188: <b>if_fallthrough</b>: Falling through to end of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2195: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2196: <b>loop</b>: Jumping back to the beginning of the loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2140: <b>loop_begin</b>: Jumped back to beginning of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2140: <b>cond_true</b>: Condition &quot;i &lt; argc&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2140: <b>cond_true</b>: Condition &quot;!result&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2143: <b>cond_true</b>: Condition &quot;stillflags&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2143: <b>cond_true</b>: Condition &quot;&apos;-&apos; == argv[i][0]&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2148: <b>cond_false</b>: Condition &quot;!strcmp(&quot;--&quot;, argv[i])&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2152: <b>else_branch</b>: Reached else branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2153: <b>cond_true</b>: Condition &quot;i &lt; argc - 1&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2156: <b>cond_true</b>: Condition &quot;result == PARAM_NEXT_OPERATION&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2161: <b>cond_false</b>: Condition &quot;operation-&gt;url_list&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2183: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2184: <b>if_fallthrough</b>: Falling through to end of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2186: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2188: <b>if_fallthrough</b>: Falling through to end of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2195: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2196: <b>loop</b>: Jumping back to the beginning of the loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2140: <b>loop_begin</b>: Jumped back to beginning of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2140: <b>cond_true</b>: Condition &quot;i &lt; argc&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2140: <b>cond_true</b>: Condition &quot;!result&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2143: <b>cond_true</b>: Condition &quot;stillflags&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2143: <b>cond_true</b>: Condition &quot;&apos;-&apos; == argv[i][0]&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2148: <b>cond_false</b>: Condition &quot;!strcmp(&quot;--&quot;, argv[i])&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2152: <b>else_branch</b>: Reached else branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2153: <b>cond_false</b>: Condition &quot;i &lt; argc - 1&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2156: <b>cond_false</b>: Condition &quot;result == PARAM_NEXT_OPERATION&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2185: <b>else_branch</b>: Reached else branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2185: <b>cond_true</b>: Condition &quot;!result&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2185: <b>cond_false</b>: Condition &quot;passarg&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2186: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2188: <b>if_fallthrough</b>: Falling through to end of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2195: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2196: <b>loop</b>: Jumping back to the beginning of the loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2140: <b>loop_begin</b>: Jumped back to beginning of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2140: <b>cond_true</b>: Condition &quot;i &lt; argc&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2140: <b>cond_true</b>: Condition &quot;!result&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2143: <b>cond_true</b>: Condition &quot;stillflags&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2143: <b>cond_true</b>: Condition &quot;&apos;-&apos; == argv[i][0]&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2148: <b>cond_false</b>: Condition &quot;!strcmp(&quot;--&quot;, argv[i])&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2152: <b>else_branch</b>: Reached else branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:2153: <b>cond_false</b>: Condition &quot;i &lt; argc - 1&quot;, taking false branch.</span>
+<span style='color: #808080;'>curl-7.60.0/src/tool_getparam.c:2153: <b>assign_zero</b>: Assigning: &quot;nextarg&quot; = &quot;NULL&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/src/tool_getparam.c:2155: <b>var_deref_model</b>: Passing null pointer &quot;nextarg&quot; to &quot;getparameter&quot;, which dereferences it.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:505:3: <b>cond_true</b>: Condition &quot;&apos;-&apos; != flag[0]&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:512:5: <b>cond_true</b>: Condition &quot;!strncmp(word, &quot;no-&quot;, 3)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:518:5: <b>cond_true</b>: Condition &quot;j &lt; 221UL /* sizeof (aliases) / sizeof (aliases[0]) */&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:519:7: <b>cond_true</b>: Condition &quot;curl_strnequal(aliases[j].lname, word, fnam)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:522:9: <b>cond_false</b>: Condition &quot;curl_strequal(aliases[j].lname, word)&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:527:9: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:531:5: <b>loop</b>: Jumping back to the beginning of the loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:518:5: <b>loop_begin</b>: Jumped back to beginning of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:518:5: <b>cond_true</b>: Condition &quot;j &lt; 221UL /* sizeof (aliases) / sizeof (aliases[0]) */&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:519:7: <b>cond_true</b>: Condition &quot;curl_strnequal(aliases[j].lname, word, fnam)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:522:9: <b>cond_false</b>: Condition &quot;curl_strequal(aliases[j].lname, word)&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:527:9: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:531:5: <b>loop</b>: Jumping back to the beginning of the loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:518:5: <b>loop_begin</b>: Jumped back to beginning of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:518:5: <b>cond_true</b>: Condition &quot;j &lt; 221UL /* sizeof (aliases) / sizeof (aliases[0]) */&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:519:7: <b>cond_true</b>: Condition &quot;curl_strnequal(aliases[j].lname, word, fnam)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:522:9: <b>cond_false</b>: Condition &quot;curl_strequal(aliases[j].lname, word)&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:527:9: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:531:5: <b>loop</b>: Jumping back to the beginning of the loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:518:5: <b>loop_begin</b>: Jumped back to beginning of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:518:5: <b>cond_true</b>: Condition &quot;j &lt; 221UL /* sizeof (aliases) / sizeof (aliases[0]) */&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:519:7: <b>cond_true</b>: Condition &quot;curl_strnequal(aliases[j].lname, word, fnam)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:522:9: <b>cond_true</b>: Condition &quot;curl_strequal(aliases[j].lname, word)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:526:11: <b>break</b>: Breaking from loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:531:5: <b>loop_end</b>: Reached end of loop.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:532:5: <b>cond_false</b>: Condition &quot;numhits &gt; 1&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:535:5: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:536:5: <b>cond_false</b>: Condition &quot;hit &lt; 0&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:538:5: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:539:3: <b>if_fallthrough</b>: Falling through to end of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:544:3: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:549:5: <b>cond_false</b>: Condition &quot;!longopt&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:553:10: <b>else_branch</b>: Reached else branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:558:5: <b>cond_false</b>: Condition &quot;hit &lt; 0&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:568:5: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:570:5: <b>cond_false</b>: Condition &quot;aliases[hit].desc == ARG_STRING&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:581:10: <b>else_branch</b>: Reached else branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:581:10: <b>cond_false</b>: Condition &quot;aliases[hit].desc == ARG_NONE&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:582:7: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:584:5: <b>switch</b>: Switch case value &quot;&apos;*&apos;&quot;.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:585:10: <b>switch_case</b>: Reached case &quot;&apos;*&apos;&quot;.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:586:7: <b>switch</b>: Switch case value &quot;&apos;i&apos;&quot;.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_getparam.c:646:12: <b>switch_case</b>: Reached case &quot;&apos;i&apos;&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/src/tool_getparam.c:649:27: <b>deref_parm_in_call</b>: Function &quot;GetSizeParameter&quot; dereferences &quot;nextarg&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/src/tool_getparam.c:442:3: <b>deref_parm_in_call</b>: Function &quot;curlx_strtoofft&quot; dereferences &quot;arg&quot;.</span>
+curl-7.60.0/lib/strtoofft.c:223:3: <b>deref_parm</b>: Directly dereferencing parameter &quot;str&quot;.
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  221|     *num = 0; /* clear by default */</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  222|   </span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'>  223|-&gt;   while(*str &amp;&amp; ISSPACE(*str))</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  224|       str++;</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  225|     if(&apos;-&apos; == *str) {</span></span>
+
+<a name='def38'/><b>Error: <span style='background: #C0FF00;'>STRING_NULL</span> (<a href="https://cwe.mitre.org/data/definitions/170.html" title="CWE-170: Improper Null Termination">CWE-170</a>):</b> <a href ='#def38'>[#def38]</a>
+<span style='color: #808080;'>curl-7.60.0/lib/tftp.c:1110: <b>string_null_argument</b>: Function &quot;recvfrom&quot; does not terminate string &quot;*state-&gt;rpacket.data&quot;. [Note: The source code implementation of the function has been overridden by a builtin model.]</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/tftp.c:1116: <b>cond_true</b>: Condition &quot;state-&gt;remote_addrlen == 0&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/tftp.c:1122: <b>cond_false</b>: Condition &quot;state-&gt;rbytes &lt; 4&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/tftp.c:1127: <b>else_branch</b>: Reached else branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/tftp.c:1132: <b>switch</b>: Switch case value &quot;TFTP_EVENT_OACK&quot;.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/tftp.c:1157: <b>switch_case</b>: Reached case &quot;TFTP_EVENT_OACK&quot;.</span>
+curl-7.60.0/lib/tftp.c:1158: <b>string_null</b>: Passing unterminated string &quot;(char const *)state-&gt;rpacket.data + 2&quot; to &quot;tftp_parse_option_ack&quot;, which expects a null-terminated string.
+<span style='color: #808080;'>curl-7.60.0/lib/tftp.c:337:19: <b>var_assign_parm</b>: Assigning: &quot;tmp&quot; = &quot;ptr&quot;. They now point to the same thing.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/tftp.c:343:3: <b>cond_true</b>: Condition &quot;tmp &lt; ptr + len&quot;, taking true branch.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/tftp.c:346:5: <b>string_null_sink_lv_call</b>: Passing local &quot;tmp&quot;, that points to a parameter, to &quot;tftp_option_get&quot;, which expects a null-terminated string.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/tftp.c:320:3: <b>cond_false</b>: Condition &quot;loc &gt;= len&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/tftp.c:321:5: <b>if_end</b>: End of if statement.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/tftp.c:322:3: <b>var_assign_parm</b>: Assigning: &quot;*option&quot; = &quot;buf&quot;.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/tftp.c:327:3: <b>cond_false</b>: Condition &quot;loc &gt; len&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/tftp.c:328:5: <b>if_end</b>: End of if statement.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/tftp.c:329:3: <b>string_null_sink_parm_call</b>: Passing parameter &quot;*option&quot; to &quot;strlen&quot; which expects a null-terminated string.</span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 1156|         break;</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 1157|       case TFTP_EVENT_OACK:</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'> 1158|-&gt;       result = tftp_parse_option_ack(state,</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 1159|                                        (const char *)state-&gt;rpacket.data + 2,</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 1160|                                        state-&gt;rbytes-2);</span></span>
+
+<a name='def39'/><b>Error: <span style='background: #C0FF00;'>NEGATIVE_RETURNS</span> (<a href="https://cwe.mitre.org/data/definitions/394.html" title="CWE-394: Unexpected Status Code or Return Value">CWE-394</a>):</b> <a href ='#def39'>[#def39]</a>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/transfer.c:131: <b>cond_true</b>: Condition &quot;data-&gt;req.upload_chunky&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/transfer.c:144: <b>cond_false</b>: Condition &quot;nread == 268435456&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/transfer.c:148: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/transfer.c:149: <b>cond_false</b>: Condition &quot;nread == 268435457&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/transfer.c:170: <b>else_branch</b>: Reached else branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/transfer.c:170: <b>cond_false</b>: Condition &quot;(size_t)nread &gt; buffersize&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/transfer.c:175: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/transfer.c:177: <b>cond_true</b>: Condition &quot;!data-&gt;req.forbidchunk&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/transfer.c:177: <b>cond_true</b>: Condition &quot;data-&gt;req.upload_chunky&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/transfer.c:198: <b>cond_true</b>: Condition &quot;data-&gt;set.prefer_ascii&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/transfer.c:206: <b>if_fallthrough</b>: Falling through to end of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/transfer.c:210: <b>if_end</b>: End of if statement.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/transfer.c:211: <b>negative_return_fn</b>: Function &quot;curl_msnprintf(hexbuffer, 11UL, &quot;%x%s&quot;, nread, endofline_native)&quot; returns a negative number.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/mprintf.c:1023:3: <b>negative_return</b>: Calling &quot;curl_mvsnprintf&quot;, which might return a negative value.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/mprintf.c:1007:3: <b>cond_false</b>: Condition &quot;retcode != -1&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/mprintf.c:1014:3: <b>if_end</b>: End of if statement.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/mprintf.c:1007:3: <b>var_tested_neg</b>: Variable &quot;retcode&quot; is negative.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/mprintf.c:1015:3: <b>return_negative_variable</b>: Explicitly returning negative variable &quot;retcode&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/mprintf.c:1023:3: <b>var_assign</b>: Assigning: &quot;retcode&quot; = &quot;curl_mvsnprintf(buffer, maxlength, format, ap_save)&quot;, which might be negative.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/mprintf.c:1025:3: <b>return_negative_variable</b>: Explicitly returning negative variable &quot;retcode&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/transfer.c:211: <b>var_assign</b>: Assigning: signed variable &quot;hexlen&quot; = &quot;curl_msnprintf&quot;.</span>
+curl-7.60.0/lib/transfer.c:219: <b>negative_returns</b>: &quot;hexlen&quot; is passed to a parameter that cannot be negative. [Note: The source code implementation of the function has been overridden by a builtin model.]
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  217|   </span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  218|       /* copy the prefix to the buffer, leaving out the NUL */</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'>  219|-&gt;     memcpy(data-&gt;req.upload_fromhere, hexbuffer, hexlen);</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  220|   </span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  221|       /* always append ASCII CRLF to the data */</span></span>
+
+<a name='def40'/><b>Error: <span style='background: #C0FF00;'>CLANG_WARNING</span>:</b> <a href ='#def40'>[#def40]</a>
+curl-7.60.0/lib/url.c: <b>internal warning</b>: child 19172 timed out after 30s
+
+<a name='def41'/><b>Error: <span style='background: #C0FF00;'>CLANG_WARNING</span>:</b> <a href ='#def41'>[#def41]</a>
+curl-7.60.0/lib/url.c: <b>internal warning</b>: child 31100 timed out after 30s
+
+<a name='def42'/><b>Error: <span style='background: #C0FF00;'>NEGATIVE_RETURNS</span> (<a href="https://cwe.mitre.org/data/definitions/394.html" title="CWE-394: Unexpected Status Code or Return Value">CWE-394</a>):</b> <a href ='#def42'>[#def42]</a>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/vauth/ntlm.c:541: <b>cond_true</b>: Condition &quot;!user&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/vauth/ntlm.c:544: <b>cond_false</b>: Condition &quot;user&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/vauth/ntlm.c:550: <b>else_branch</b>: Reached else branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/vauth/ntlm.c:556: <b>cond_false</b>: Condition &quot;Curl_gethostname(host, 1025UL /* sizeof (host) */)&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/vauth/ntlm.c:560: <b>else_branch</b>: Reached else branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/vauth/ntlm.c:565: <b>cond_true</b>: Condition &quot;ntlm-&gt;target_info_len&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/vauth/ntlm.c:571: <b>cond_false</b>: Condition &quot;result&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/vauth/ntlm.c:572: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/vauth/ntlm.c:575: <b>cond_false</b>: Condition &quot;result&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/vauth/ntlm.c:576: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/vauth/ntlm.c:580: <b>cond_false</b>: Condition &quot;result&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/vauth/ntlm.c:581: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/vauth/ntlm.c:586: <b>cond_false</b>: Condition &quot;result&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/vauth/ntlm.c:587: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/vauth/ntlm.c:592: <b>cond_false</b>: Condition &quot;result&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/vauth/ntlm.c:593: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/vauth/ntlm.c:596: <b>if_fallthrough</b>: Falling through to end of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/vauth/ntlm.c:662: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/vauth/ntlm.c:664: <b>cond_true</b>: Condition &quot;unicode&quot;, taking true branch.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/vauth/ntlm.c:681: <b>negative_return_fn</b>: Function &quot;curl_msnprintf((char *)ntlmbuf, 1024UL, &quot;NTLMSSP%c\3%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c&quot;, 0, 0, 0, 0, 24, 0, 24, 0, (int)(lmrespoff &amp; 0xff), (int)((lmrespoff &gt;&gt; 8) &amp; 0xff), 0, 0, (int)(ntresplen &amp; 0xffU), (int)((ntresplen &gt;&gt; 8) &amp; 0xffU), (int)(ntresplen &amp; 0xffU), (int)((ntresplen &gt;&gt; 8) &amp; 0xffU), (int)(ntrespoff &amp; 0xff), (int)((ntrespoff &gt;&gt; 8) &amp; 0xff), 0, 0, (int)(domlen &amp; 0xffUL), (int)((domlen &gt;&gt; 8) &amp; 0xffUL), (int)(domlen &amp; 0xffUL), (int)((domlen &gt;&gt; 8) &amp; 0xffUL), (int)(domoff &amp; 0xffUL), (int)((domoff &gt;&gt; 8) &amp; 0xffUL), 0, 0, (int)(userlen &amp; 0xffUL), (int)((userlen &gt;&gt; 8) &amp; 0xffUL), (int)(userlen &amp; 0xffUL), (int)((userlen &gt;&gt; 8) &amp; 0xffUL), (int)(useroff &amp; 0xffUL), (int)((useroff &gt;&gt; 8) &amp; 0xffUL), 0, 0, (int)(hostlen &amp; 0xffUL), (int)((hostlen &gt;&gt; 8) &amp; 0xffUL), (int)(hostlen &amp; 0xffUL), (int)((hostlen &gt;&gt; 8) &amp; 0xffUL), (int)(hostoff &amp; 0xffUL), (int)((hostoff &gt;&gt; 8) &amp; 0xffUL), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, (int)(ntlm-&gt;flags &amp; 0xffU), (int)((ntlm-&gt;flags &gt;&gt; 8) &amp; 0xffU), (int)((ntlm-&gt;flags &gt;&gt; 16) &amp; 0xffU), (int)((ntlm-&gt;flags &gt;&gt; 24) &amp; 0xffU))&quot; returns a negative number.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/mprintf.c:1023:3: <b>negative_return</b>: Calling &quot;curl_mvsnprintf&quot;, which might return a negative value.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/mprintf.c:1007:3: <b>cond_false</b>: Condition &quot;retcode != -1&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/mprintf.c:1014:3: <b>if_end</b>: End of if statement.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/mprintf.c:1007:3: <b>var_tested_neg</b>: Variable &quot;retcode&quot; is negative.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/mprintf.c:1015:3: <b>return_negative_variable</b>: Explicitly returning negative variable &quot;retcode&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/mprintf.c:1023:3: <b>var_assign</b>: Assigning: &quot;retcode&quot; = &quot;curl_mvsnprintf(buffer, maxlength, format, ap_save)&quot;, which might be negative.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/mprintf.c:1025:3: <b>return_negative_variable</b>: Explicitly returning negative variable &quot;retcode&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/vauth/ntlm.c:681: <b>var_assign</b>: Assigning: unsigned variable &quot;size&quot; = &quot;curl_msnprintf&quot;.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/vauth/ntlm.c:768: <b>cond_false</b>: Condition &quot;size &lt; 1000UL /* 1024 - 24 */&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/vauth/ntlm.c:771: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/vauth/ntlm.c:779: <b>cond_false</b>: Condition &quot;size &lt; 1024 - ntresplen&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/vauth/ntlm.c:783: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/vauth/ntlm.c:803: <b>cond_false</b>: Condition &quot;size + userlen + domlen + hostlen &gt;= 1024&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/vauth/ntlm.c:806: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/lib/vauth/ntlm.c:809: <b>cond_true</b>: Condition &quot;unicode&quot;, taking true branch.</span>
+curl-7.60.0/lib/vauth/ntlm.c:810: <b>negative_returns</b>: Using variable &quot;size&quot; as an index to array &quot;ntlmbuf&quot;.
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  808|     DEBUGASSERT(size == domoff);</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  809|     if(unicode)</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'>  810|-&gt;     unicodecpy(&amp;ntlmbuf[size], domain, domlen / 2);</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  811|     else</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  812|       memcpy(&amp;ntlmbuf[size], domain, domlen);</span></span>
+
+<a name='def43'/><b>Error: <span style='background: #C0FF00;'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="CWE-561: Dead Code">CWE-561</a>):</b> <a href ='#def43'>[#def43]</a>
+<span style='color: #808080;'>curl-7.60.0/lib/vauth/ntlm.c:833: <b>assignment</b>: Assigning: &quot;result&quot; = &quot;((void)data) , CURLE_OK&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/vauth/ntlm.c:835: <b>const</b>: At condition &quot;result&quot;, the value of &quot;result&quot; must be equal to 0.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/vauth/ntlm.c:835: <b>dead_error_condition</b>: The condition &quot;result&quot; cannot be true.</span>
+curl-7.60.0/lib/vauth/ntlm.c:836: <b>dead_error_line</b>: Execution cannot reach this statement: &quot;return CURLE_CONV_FAILED;&quot;.
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  834|                                      size - domoff);</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  835|     if(result)</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'>  836|-&gt;     return CURLE_CONV_FAILED;</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  837|   </span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  838|     /* Return with binary blob encoded into base64 */</span></span>
+
+<a name='def44'/><b>Error: <span style='background: #C0FF00;'>COMPILER_WARNING</span>:</b> <a href ='#def44'>[#def44]</a>
+<span style='color: #808080;'>curl-7.60.0/lib/vtls/openssl.c: <b>scope_hint</b>: In function &apos;ossl_connect_step1&apos;</span>
+curl-7.60.0/lib/vtls/openssl.c:2217:5: warning[<b>-Wdeprecated-declarations</b>]: &apos;SSLv3_client_method&apos; is deprecated
+<span style='color: #00C0C0;'>#     req_method = SSLv3_client_method();</span>
+<span style='color: #00C0C0;'>#     ^~~~~~~~~~</span>
+<span style='color: #808080;'>/usr/include/openssl/opensslconf.h:42: <b>included_from</b>: Included from here.</span>
+<span style='color: #808080;'>/usr/include/openssl/ct.h:13: <b>included_from</b>: Included from here.</span>
+<span style='color: #808080;'>/usr/include/openssl/ssl.h:61: <b>included_from</b>: Included from here.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/vtls/openssl.c:52: <b>included_from</b>: Included from here.</span>
+<span style='color: #808080;'>/usr/include/openssl/ssl.h:1619:1: <b>note</b>: declared here</span>
+<span style='color: #00C0C0;'># DEPRECATEDIN_1_1_0(__owur const SSL_METHOD *SSLv3_client_method(void)) /* SSLv3 */</span>
+<span style='color: #00C0C0;'># ^~~~~~~~~~~~~~~~~~</span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 2215|         return CURLE_SSL_CONNECT_ERROR;</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 2216|   #endif</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'> 2217|-&gt;     req_method = SSLv3_client_method();</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 2218|       use_sni(FALSE);</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 2219|       break;</span></span>
+
+<a name='def45'/><b>Error: <span style='background: #C0FF00;'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="CWE-561: Dead Code">CWE-561</a>):</b> <a href ='#def45'>[#def45]</a>
+<span style='color: #808080;'>curl-7.60.0/lib/vtls/openssl.c:2214: <b>cond_cannot_single</b>: Condition &quot;ssl_authtype == CURL_TLSAUTH_SRP&quot;, taking false branch. Now the value of &quot;ssl_authtype&quot; cannot be equal to 1.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/vtls/openssl.c:2309: <b>cannot_single</b>: At condition &quot;ssl_authtype == CURL_TLSAUTH_SRP&quot;, the value of &quot;ssl_authtype&quot; cannot be equal to 1.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/vtls/openssl.c:2309: <b>dead_error_condition</b>: The condition &quot;ssl_authtype == CURL_TLSAUTH_SRP&quot; cannot be true.</span>
+curl-7.60.0/lib/vtls/openssl.c:2310: <b>dead_error_line</b>: Execution cannot reach this statement: &quot;Curl_infof(data, &quot;Set versi...&quot;.
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 2308|   #ifdef USE_TLS_SRP</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 2309|       if(ssl_authtype == CURL_TLSAUTH_SRP) {</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'> 2310|-&gt;       infof(data, &quot;Set version TLSv1.x for SRP authorisation\n&quot;);</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 2311|       }</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 2312|   #endif</span></span>
+
+<a name='def46'/><b>Error: <span style='background: #C0FF00;'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="CWE-561: Dead Code">CWE-561</a>):</b> <a href ='#def46'>[#def46]</a>
+<span style='color: #808080;'>curl-7.60.0/lib/vtls/openssl.c:2181: <b>equality_cond</b>: Jumping to case &quot;CURL_SSLVERSION_DEFAULT&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/vtls/openssl.c:2182: <b>equality_cond</b>: Jumping to case &quot;CURL_SSLVERSION_TLSv1&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/vtls/openssl.c:2183: <b>equality_cond</b>: Jumping to case &quot;CURL_SSLVERSION_TLSv1_0&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/vtls/openssl.c:2184: <b>equality_cond</b>: Jumping to case &quot;CURL_SSLVERSION_TLSv1_1&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/vtls/openssl.c:2185: <b>equality_cond</b>: Jumping to case &quot;CURL_SSLVERSION_TLSv1_2&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/vtls/openssl.c:2186: <b>equality_cond</b>: Jumping to case &quot;CURL_SSLVERSION_TLSv1_3&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/vtls/openssl.c:2208: <b>equality_cond</b>: Jumping to case &quot;CURL_SSLVERSION_SSLv3&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/vtls/openssl.c:2306: <b>intervals</b>: When switching on &quot;ssl_version&quot;, the value of &quot;ssl_version&quot; must be in one of the following intervals: {[0,1], [3,7]}.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/vtls/openssl.c:2339: <b>dead_error_condition</b>: The switch value &quot;ssl_version&quot; cannot be &quot;CURL_SSLVERSION_SSLv2&quot;.</span>
+curl-7.60.0/lib/vtls/openssl.c:2339: <b>dead_error_begin</b>: Execution cannot reach this statement: &quot;case CURL_SSLVERSION_SSLv2:&quot;.
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 2337|       break;</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 2338|   </span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'> 2339|-&gt;   case CURL_SSLVERSION_SSLv2:</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 2340|   #ifndef OPENSSL_NO_SSL2</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 2341|       ctx_options |= SSL_OP_NO_SSLv3;</span></span>
+
+<a name='def47'/><b>Error: <span style='background: #C0FF00;'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="CWE-561: Dead Code">CWE-561</a>):</b> <a href ='#def47'>[#def47]</a>
+<span style='color: #808080;'>curl-7.60.0/lib/vtls/openssl.c:2181: <b>equality_cond</b>: Jumping to case &quot;CURL_SSLVERSION_DEFAULT&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/vtls/openssl.c:2182: <b>equality_cond</b>: Jumping to case &quot;CURL_SSLVERSION_TLSv1&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/vtls/openssl.c:2183: <b>equality_cond</b>: Jumping to case &quot;CURL_SSLVERSION_TLSv1_0&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/vtls/openssl.c:2184: <b>equality_cond</b>: Jumping to case &quot;CURL_SSLVERSION_TLSv1_1&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/vtls/openssl.c:2185: <b>equality_cond</b>: Jumping to case &quot;CURL_SSLVERSION_TLSv1_2&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/vtls/openssl.c:2186: <b>equality_cond</b>: Jumping to case &quot;CURL_SSLVERSION_TLSv1_3&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/vtls/openssl.c:2208: <b>equality_cond</b>: Jumping to case &quot;CURL_SSLVERSION_SSLv3&quot;.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/vtls/openssl.c:2306: <b>intervals</b>: When switching on &quot;ssl_version&quot;, the value of &quot;ssl_version&quot; must be in one of the following intervals: {[0,1], [3,7]}.</span>
+<span style='color: #808080;'>curl-7.60.0/lib/vtls/openssl.c:2306: <b>dead_error_condition</b>: The switch value &quot;ssl_version&quot; cannot reach the default case.</span>
+curl-7.60.0/lib/vtls/openssl.c:2356: <b>dead_error_begin</b>: Execution cannot reach this statement: &quot;default:&quot;.
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 2354|   #endif</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 2355|   </span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'> 2356|-&gt;   default:</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 2357|       failf(data, &quot;Unrecognized parameter passed via CURLOPT_SSLVERSION&quot;);</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 2358|       return CURLE_SSL_CONNECT_ERROR;</span></span>
+
+<a name='def48'/><b>Error: <span style='background: #C0FF00;'>TOCTOU</span> (<a href="https://cwe.mitre.org/data/definitions/367.html" title="CWE-367: Time-of-check Time-of-use (TOCTOU) Race Condition">CWE-367</a>):</b> <a href ='#def48'>[#def48]</a>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_dirhie.c:113: <b>cond_false</b>: Condition &quot;!outdup&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_dirhie.c:114: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_dirhie.c:117: <b>cond_false</b>: Condition &quot;!dirbuildup&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_dirhie.c:120: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_dirhie.c:127: <b>cond_true</b>: Condition &quot;tempdir != NULL&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_dirhie.c:131: <b>cond_true</b>: Condition &quot;tempdir2 != NULL&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_dirhie.c:133: <b>cond_true</b>: Condition &quot;dlen&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_dirhie.c:134: <b>if_fallthrough</b>: Falling through to end of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_dirhie.c:141: <b>if_end</b>: End of if statement.</span>
+<span style='color: #808080;'>curl-7.60.0/src/tool_dirhie.c:142: <b>fs_check_call</b>: Calling function &quot;access&quot; to perform check on &quot;dirbuildup&quot;.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/src/tool_dirhie.c:142: <b>cond_true</b>: Condition &quot;access(dirbuildup, 0) == -1&quot;, taking true branch.</span>
+curl-7.60.0/src/tool_dirhie.c:143: <b>toctou</b>: Calling function &quot;mkdir&quot; that uses &quot;dirbuildup&quot; after a check function. This can cause a time-of-check, time-of-use race condition.
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  141|         }</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  142|         if(access(dirbuildup, F_OK) == -1) {</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'>  143|-&gt;         if(-1 == mkdir(dirbuildup, (mode_t)0000750)) {</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  144|             show_dir_errno(errors, dirbuildup);</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  145|             result = CURLE_WRITE_ERROR;</span></span>
+
+<a name='def49'/><b>Error: <span style='background: #C0FF00;'>COPY_PASTE_ERROR</span> (<a href="https://cwe.mitre.org/data/definitions/398.html" title="CWE-398: Code Quality">CWE-398</a>):</b> <a href ='#def49'>[#def49]</a>
+<span style='color: #808080;'>curl-7.60.0/tests/python_dependencies/impacket/ntlm.py:595: <b>original</b>: &quot;user.decode&quot; looks like the original copy.</span>
+curl-7.60.0/tests/python_dependencies/impacket/ntlm.py:603: <b>copy_paste_error</b>: &quot;user&quot; in &quot;user.decode&quot; looks like a copy-paste error.
+<span style='color: #808080;'>curl-7.60.0/tests/python_dependencies/impacket/ntlm.py:603: <b>remediation</b>: Should it say &quot;domain&quot; instead?</span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  601|               domain.encode(&apos;utf-16le&apos;)</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  602|           except:</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'>  603|-&gt;             domain = user.decode(encoding)</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  604|   </span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'>  605|       ntlmChallenge = NTLMAuthChallenge(type2)</span></span>
+
+<a name='def50'/><b>Error: <span style='background: #C0FF00;'>FORWARD_NULL</span> (<a href="https://cwe.mitre.org/data/definitions/476.html" title="CWE-476: NULL Pointer Dereference">CWE-476</a>):</b> <a href ='#def50'>[#def50]</a>
+<span style='color: #808080;'>curl-7.60.0/tests/python_dependencies/impacket/smb.py:3504: <b>assign_undefined</b>: Assigning: &quot;readAndX&quot; = &quot;undefined&quot;.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/tests/python_dependencies/impacket/smb.py:3504: <b>cond_true</b>: Condition &quot;!max_size&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/tests/python_dependencies/impacket/smb.py:3505: <b>cond_true</b>: Condition &quot;self._dialects_parameters[&quot;Capabilities&quot;] &amp; SMB.CAP_LARGE_READX&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/tests/python_dependencies/impacket/smb.py:3505: <b>cond_true</b>: Condition &quot;self._SignatureEnabled === False&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/tests/python_dependencies/impacket/smb.py:3505: <b>cond_true</b>: Condition &quot;(self._dialects_parameters[&quot;Capabilities&quot;] &amp; SMB.CAP_LARGE_READX) &amp;&amp; (self._SignatureEnabled === False)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/tests/python_dependencies/impacket/smb.py:3506: <b>if_fallthrough</b>: Falling through to end of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/tests/python_dependencies/impacket/smb.py:3508: <b>if_end</b>: End of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/tests/python_dependencies/impacket/smb.py:3512: <b>cond_false</b>: Condition &quot;smb_packet === None&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/tests/python_dependencies/impacket/smb.py:3523: <b>else_branch</b>: Reached else branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/tests/python_dependencies/impacket/smb.py:3525: <b>cond_true</b>: Condition &quot;wait_answer&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/tests/python_dependencies/impacket/smb.py:3527: <b>cond_true</b>: Condition &quot;1&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/tests/python_dependencies/impacket/smb.py:3531: <b>cond_true</b>: Condition &quot;ans.isValidAnswer(SMB.SMB_COM_READ_ANDX)&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/tests/python_dependencies/impacket/smb.py:3539: <b>cond_false</b>: Condition &quot;!ans.isMoreData()&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/tests/python_dependencies/impacket/smb.py:3540: <b>if_end</b>: End of if statement.</span>
+curl-7.60.0/tests/python_dependencies/impacket/smb.py:3542: <b>property_access</b>: Accessing a property of null-like value &quot;readAndX&quot;.
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 3540|                           return answer</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 3541|                       max_size = min(max_size, readAndXParameters[&apos;Remaining&apos;])</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'> 3542|-&gt;                     readAndX[&apos;Parameters&apos;][&apos;Offset&apos;] += count                      # XXX Offset is not important (apparently)</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 3543|           else:</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 3544|               self.sendSMB(smb)</span></span>
+
+<a name='def51'/><b>Error: <span style='background: #C0FF00;'>IDENTICAL_BRANCHES</span>:</b> <a href ='#def51'>[#def51]</a>
+curl-7.60.0/tests/python_dependencies/impacket/smb.py:3775: <b>identical_branches</b>: Ternary expression on condition &quot;self.__flags2 &amp; SMB.FLAGS2_UNICODE&quot; has identical then and else expressions: &quot;&quot;&quot;&quot;. Should one of the expressions be modified, or the entire ternary expression replaced?
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 3773|               findFirstParameter[&apos;InformationLevel&apos;] = SMB_FIND_FILE_BOTH_DIRECTORY_INFO</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 3774|               findFirstParameter[&apos;SearchStorageType&apos;] = 0</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'> 3775|-&gt;             findFirstParameter[&apos;FileName&apos;] = path + (&apos;\x00\x00&apos; if self.__flags2 &amp; SMB.FLAGS2_UNICODE else &apos;\x00&apos;)</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 3776|               self.send_trans2(tid, SMB.TRANS2_FIND_FIRST2, &apos;\x00&apos;, findFirstParameter, &apos;&apos;)</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 3777|               files = [ ]</span></span>
+
+<a name='def52'/><b>Error: <span style='background: #C0FF00;'>IDENTICAL_BRANCHES</span>:</b> <a href ='#def52'>[#def52]</a>
+curl-7.60.0/tests/python_dependencies/impacket/smb.py:3818: <b>identical_branches</b>: Ternary expression on condition &quot;self.__flags2 &amp; SMB.FLAGS2_UNICODE&quot; has identical then and else expressions: &quot;&quot;&quot;&quot;. Should one of the expressions be modified, or the entire ternary expression replaced?
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 3816|                           findNextParameter[&apos;ResumeKey&apos;] = 0</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 3817|                           findNextParameter[&apos;Flags&apos;] = SMB_FIND_RETURN_RESUME_KEYS | SMB_FIND_CLOSE_AT_EOS</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'> 3818|-&gt;                         findNextParameter[&apos;FileName&apos;] = resume_filename + (&apos;\x00\x00&apos; if self.__flags2 &amp; SMB.FLAGS2_UNICODE else &apos;\x00&apos;)</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 3819|                           self.send_trans2(tid, SMB.TRANS2_FIND_NEXT2, &apos;\x00&apos;, findNextParameter, &apos;&apos;)</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 3820|                           findData = &apos;&apos;</span></span>
+
+<a name='def53'/><b>Error: <span style='background: #C0FF00;'>FORWARD_NULL</span> (<a href="https://cwe.mitre.org/data/definitions/476.html" title="CWE-476: NULL Pointer Dereference">CWE-476</a>):</b> <a href ='#def53'>[#def53]</a>
+<span style='color: #808080;'>curl-7.60.0/tests/python_dependencies/impacket/smbserver.py:2066: <b>assign_undefined</b>: Assigning: &quot;mode&quot; = &quot;undefined&quot;.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/tests/python_dependencies/impacket/smbserver.py:2077: <b>cond_false</b>: Condition &quot;connData[&quot;ConnectedShares&quot;].has_key(recvPacket[&quot;Tid&quot;])&quot;, taking false branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/tests/python_dependencies/impacket/smbserver.py:2085: <b>else_branch</b>: Reached else branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/tests/python_dependencies/impacket/smbserver.py:2087: <b>cond_true</b>: Condition &quot;errorCode == STATUS_SUCCESS&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/tests/python_dependencies/impacket/smbserver.py:2090: <b>cond_true</b>: Condition &quot;len(connData[&quot;OpenedFiles&quot;]) == 0&quot;, taking true branch.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/tests/python_dependencies/impacket/smbserver.py:2091: <b>if_fallthrough</b>: Falling through to end of if statement.</span>
+<span style='color: #C0C0C0;'>curl-7.60.0/tests/python_dependencies/impacket/smbserver.py:2093: <b>if_end</b>: End of if statement.</span>
+curl-7.60.0/tests/python_dependencies/impacket/smbserver.py:2095: <b>invalid_operation</b>: Invalid operation on null-like value &quot;mode&quot;.
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 2093|                  fid = connData[&apos;OpenedFiles&apos;].keys()[-1] + 1</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 2094|               respParameters[&apos;Fid&apos;] = fid</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #000000;'> 2095|-&gt;             if mode &amp; os.O_CREAT:</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 2096|                   # File did not exist and was created</span></span>
+<span style='color: #00C0C0;'>#<span style='color: #C0C0C0;'> 2097|                   respParameters[&apos;Action&apos;] = 0x2</span></span>
+
+</pre>
+<h2>Scan Properties</h2>
+<table style='font-family: monospace;'>
+<tr style='background-color: #EEE;'><td style='padding-right: 8px; white-space: nowrap;'>analyzer-version-clang</td><td>6.0.0</td></tr>
+<tr><td style='padding-right: 8px; white-space: nowrap;'>analyzer-version-coverity</td><td>2017.07-SP2</td></tr>
+<tr style='background-color: #EEE;'><td style='padding-right: 8px; white-space: nowrap;'>analyzer-version-cppcheck</td><td>1.80</td></tr>
+<tr><td style='padding-right: 8px; white-space: nowrap;'>analyzer-version-gcc</td><td>8.1.1</td></tr>
+<tr style='background-color: #EEE;'><td style='padding-right: 8px; white-space: nowrap;'>analyzer-version-shellcheck</td><td>0.4.7</td></tr>
+<tr><td style='padding-right: 8px; white-space: nowrap;'>cov-compilation-unit-count</td><td>193</td></tr>
+<tr style='background-color: #EEE;'><td style='padding-right: 8px; white-space: nowrap;'>cov-compilation-unit-ratio</td><td>100</td></tr>
+<tr><td style='padding-right: 8px; white-space: nowrap;'>cov-lines-processed</td><td>174359</td></tr>
+<tr style='background-color: #EEE;'><td style='padding-right: 8px; white-space: nowrap;'>cov-time-elapsed-analysis</td><td>00:01:55</td></tr>
+<tr><td style='padding-right: 8px; white-space: nowrap;'>exit-code</td><td>0</td></tr>
+<tr style='background-color: #EEE;'><td style='padding-right: 8px; white-space: nowrap;'>host</td><td>cov01.lab.eng.brq.redhat.com</td></tr>
+<tr><td style='padding-right: 8px; white-space: nowrap;'>mock-config</td><td>rhel-8.0-x86_64</td></tr>
+<tr style='background-color: #EEE;'><td style='padding-right: 8px; white-space: nowrap;'>project-name</td><td>curl-7.60.0-1.el8+7</td></tr>
+<tr><td style='padding-right: 8px; white-space: nowrap;'>store-results-to</td><td>/tmp/tmpteasee/curl-7.60.0-1.el8+7.tar.xz</td></tr>
+<tr style='background-color: #EEE;'><td style='padding-right: 8px; white-space: nowrap;'>time-created</td><td>2018-06-28 01:26:37</td></tr>
+<tr><td style='padding-right: 8px; white-space: nowrap;'>time-finished</td><td>2018-06-28 01:47:28</td></tr>
+<tr style='background-color: #EEE;'><td style='padding-right: 8px; white-space: nowrap;'>tool</td><td>csmock</td></tr>
+<tr><td style='padding-right: 8px; white-space: nowrap;'>tool-args</td><td>'/usr/bin/csmock' '-t' 'cppcheck,gcc,shellcheck,clang,coverity' '-o' '/tmp/tmpteasee/curl-7.60.0-1.el8+7.tar.xz' '-r' 'rhel-8.0-x86_64' '--cov-analyze-java' '--cov-analyze-opts=--security --concurrency' '--cov-use-version' 'cov-sa-2017.07' '--cov-fs-capture' '--use-host-cppcheck' '/tmp/tmpteasee/curl-7.60.0-1.el8+7.src.rpm'</td></tr>
+<tr style='background-color: #EEE;'><td style='padding-right: 8px; white-space: nowrap;'>tool-version</td><td>csmock-2.1.1.20180627.142826.g96a4a75-1.el6</td></tr>
+</table>
+</body>
+</html>

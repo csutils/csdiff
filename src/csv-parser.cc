@@ -48,7 +48,7 @@ bool AbstractCsvParser::parse(InStream &ins)
 
     std::istream &str = ins.str();
     std::string line;
-    for (d->lineno = 0; std::getline(str, line); d->lineno++) {
+    for (d->lineno = 1; std::getline(str, line); d->lineno++) {
         // initialize tokenizer
         typedef boost::escaped_list_separator<char>     TSeparator;
         typedef boost::tokenizer<TSeparator>            TTokenizer;

@@ -22,6 +22,7 @@
 
 #include "abstract-writer.hh"
 
+class CweNameLookup;
 class DefLookup;
 
 class HtmlWriter: public AbstractWriter {
@@ -48,6 +49,9 @@ class HtmlWriter: public AbstractWriter {
                 const std::string           &baseTitleFallback);
 
         void setPlainTextUrl(const std::string &);
+
+        /// @attention cweNames needs to stay valid long enough (no deep copy)
+        void setCweNameLookup(const CweNameLookup *cweNames);
 
     private:
         struct Private;

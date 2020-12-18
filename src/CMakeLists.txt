@@ -29,6 +29,7 @@ add_library(cs STATIC
     csv-parser.cc
     cswriter.cc
     cwe-mapper.cc
+    cwe-name-lookup.cc
     deflookup.cc
     gcc-parser.cc
     html-writer.cc
