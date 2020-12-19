@@ -14,4 +14,4 @@ install:
 
 script:
     - make -j9 distcheck CTEST='ctest -j9'
-    - test -z "$TRAVIS_COMMIT_RANGE" || csbuild --git-commit-range "$TRAVIS_COMMIT_RANGE" -c "make distclean && make -j9" --git-bisect --print-fixed
+    - test -z "$TRAVIS_COMMIT_RANGE" || csbuild --git-commit-range "$TRAVIS_COMMIT_RANGE" -c "make distclean && make -j9" --git-bisect --print-fixed --gcc-add-flag=-Wno-shadow
