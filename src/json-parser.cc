@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011-2012 Red Hat, Inc.
+ * Copyright (C) 2011-2021 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -19,28 +19,12 @@
 
 #include "json-parser.hh"
 
+#include "abstract-tree.hh"
 #include "csparser.hh"              // for KeyEventDigger
 
 #include <set>
 
 #include <boost/property_tree/json_parser.hpp>
-
-// suppress strict-aliasing warnings in <boost/optional/optional.hpp> coming
-// with gcc-4.4.x <http://gcc.gnu.org/bugzilla/show_bug.cgi?id=41874>
-#if defined(__GNUC_MINOR__) && (__GNUC__ == 4) && (__GNUC_MINOR__ == 4)
-#   pragma GCC diagnostic ignored "-Wstrict-aliasing"
-#endif
-
-namespace pt = boost::property_tree;
-
-/// abstraction for higher-level decoders for various JSON-based tree formats
-class AbstractTreeDecoder {
-    public:
-        virtual ~AbstractTreeDecoder() { }
-
-        /// read the given ptree node, decode, and store the result into def
-        virtual void readNode(Defect *def, const pt::ptree &node) = 0;
-};
 
 /// tree decoder of the native JSON format of csdiff
 class SimpleTreeDecoder: public AbstractTreeDecoder {
