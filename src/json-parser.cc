@@ -97,16 +97,6 @@ void JsonParser::Private::dataError(const std::string &msg)
         << this->defNumber << ": " << msg << "\n";
 }
 
-template <typename TNode>
-bool findChildOf(TNode **pDst, TNode &node, const char *key)
-{
-    if (node.not_found() == node.find(key))
-        return false;
-
-    *pDst = &node.get_child(key);
-    return true;
-}
-
 JsonParser::JsonParser(InStream &input):
     d(new Private(input))
 {
@@ -155,13 +145,6 @@ bool JsonParser::hasError() const
 const TScanProps& JsonParser::getScanProps() const
 {
     return d->scanProps;
-}
-
-template <typename T>
-inline T valueOf(const pt::ptree &node, const char *path, const T &defVal)
-{
-    const boost::optional<T> &opt = node.get_optional<T>(path);
-    return opt.get_value_or(defVal);
 }
 
 bool JsonParser::Private::readNext(Defect *def)

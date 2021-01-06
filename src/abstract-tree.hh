@@ -35,4 +35,21 @@ class AbstractTreeDecoder {
         virtual void readNode(Defect *def, const pt::ptree &node) = 0;
 };
 
+template <typename TNode>
+bool findChildOf(TNode **pDst, TNode &node, const char *key)
+{
+    if (node.not_found() == node.find(key))
+        return false;
+
+    *pDst = &node.get_child(key);
+    return true;
+}
+
+template <typename T>
+inline T valueOf(const pt::ptree &node, const char *path, const T &defVal)
+{
+    const boost::optional<T> &opt = node.get_optional<T>(path);
+    return opt.get_value_or(defVal);
+}
+
 #endif /* H_GUARD_ABSTRACT_TREE_H */
