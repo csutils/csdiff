@@ -24,10 +24,7 @@
 
 class JsonParser: public AbstractParser {
     public:
-        JsonParser(
-                std::istream        &input,
-                const std::string   &fileName,
-                const bool           silent);
+        JsonParser(InStream &input, bool silent);
 
         virtual ~JsonParser();
         virtual bool getNext(Defect *);

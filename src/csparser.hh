@@ -24,10 +24,7 @@
 
 class CovParser: public AbstractParser {
     public:
-        CovParser(
-                std::istream        &input,
-                const std::string   &fileName,
-                const bool           silent);
+        CovParser(InStream &input, bool silent);
 
         virtual ~CovParser();
         bool getNext(Defect *);

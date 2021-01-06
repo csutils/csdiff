@@ -23,30 +23,28 @@
 #include "gcc-parser.hh"
 #include "json-parser.hh"
 
-AbstractParser* createParser(
-        std::istream        &input,
-        const std::string   &fileName,
-        const bool          silent)
+AbstractParser* createParser(InStream &input, const bool silent)
 {
     // sniff the first char from the input
     unsigned char c = 'E';
-    if (input >> c)
+    std::istream &inStr = input.str();
+    if (inStr >> c)
         // ... and put the char back to the input stream
-        input.putback(c);
+        inStr.putback(c);
 
     switch (c) {
         case '{':
             // JSON
-            return new JsonParser(input, fileName, silent);
+            return new JsonParser(input, silent);
 
         case 'E':
         case '#':
             // Coverity
-            return new CovParser(input, fileName, silent);
+            return new CovParser(input, silent);
 
         default:
             // GCC
-            return new GccParser(input, fileName, silent);
+            return new GccParser(input, silent);
     }
 }
 

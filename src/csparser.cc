@@ -411,9 +411,9 @@ struct CovParser::Private {
     AnnotHandler            annotHdl;
     LangDetector            langDetector;
 
-    Private(std::istream &input_, std::string fileName_, bool silent_):
-        lexer(input_),
-        fileName(fileName_),
+    Private(InStream &input_, const bool silent_):
+        lexer(input_.str()),
+        fileName(input_.fileName()),
         silent(silent_),
         hasError(false),
         code(T_NULL)
@@ -427,11 +427,8 @@ struct CovParser::Private {
     bool parseNext(Defect *);
 };
 
-CovParser::CovParser(
-        std::istream                &input,
-        const std::string           &fileName,
-        const bool                   silent):
-    d(new Private(input, fileName, silent))
+CovParser::CovParser(InStream &input, bool silent):
+    d(new Private(input, silent))
 {
 }
 

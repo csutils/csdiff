@@ -143,15 +143,12 @@ bool findChildOf(TNode **pDst, TNode &node, const char *key)
     return true;
 }
 
-JsonParser::JsonParser(
-        std::istream                &input,
-        const std::string           &fileName,
-        const bool                   silent):
-    d(new Private(fileName, silent))
+JsonParser::JsonParser(InStream &input, const bool silent):
+    d(new Private(input.fileName(), silent))
 {
     try {
         // parse JSON
-        read_json(input, d->root);
+        read_json(input.str(), d->root);
 
         // read scan properties if available (csdiff-native JSON format only)
         pt::ptree emp;
@@ -162,7 +159,7 @@ JsonParser::JsonParser(
 
         if (findChildOf(&d->defList, d->root, "defects"))
             // csdiff-native JSON format
-            d->decoder = new SimpleTreeDecoder(fileName, silent);
+            d->decoder = new SimpleTreeDecoder(d->fileName, silent);
         else if (findChildOf(&d->defList, d->root, "issues"))
             // Coverity JSON format
             d->decoder = new CovTreeDecoder;

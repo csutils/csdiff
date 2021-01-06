@@ -49,7 +49,7 @@ bool AbstractWriter::handleFile(Parser &parser, const std::string &fileName)
 
 bool AbstractWriter::handleFile(InStream &input, const bool silent)
 {
-    Parser parser(input.str(), input.fileName(), silent);
+    Parser parser(input, silent);
     return this->handleFile(parser, input.fileName());
 }
 

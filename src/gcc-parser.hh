@@ -24,10 +24,7 @@
 
 class GccParser: public AbstractParser {
     public:
-        GccParser(
-                std::istream        &input,
-                const std::string   &fileName,
-                const bool           silent);
+        GccParser(InStream &input, bool silent);
 
         virtual ~GccParser();
         bool getNext(Defect *);

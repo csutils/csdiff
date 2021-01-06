@@ -138,7 +138,7 @@ int main(int argc, char *argv[])
     try {
         // initialize parser for .err
         InStream strInput(fnInput);
-        Parser pInput(strInput.str(), fnInput, silent);
+        Parser pInput(strInput, silent);
 
         DefLookup baseLookup;
         TScanProps baseProps;
@@ -146,7 +146,7 @@ int main(int argc, char *argv[])
         // read old defects if given
         if (!fnBase.empty()) {
             InStream strBase(fnBase);
-            Parser pBase(strBase.str(), fnBase, silent);
+            Parser pBase(strBase, silent);
             Defect def;
             while (pBase.getNext(&def))
                 baseLookup.hashDefect(def);

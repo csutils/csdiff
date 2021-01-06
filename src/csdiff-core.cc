@@ -48,8 +48,8 @@ bool /* anyError */ diffScans(
         const EColorMode            cm)
 {
     // create Parsers
-    Parser pOld(strOld.str(), strOld.fileName(), silent);
-    Parser pNew(strNew.str(), strNew.fileName(), silent);
+    Parser pOld(strOld, silent);
+    Parser pNew(strNew, silent);
 
     // propagate scan properties if available
     TScanProps props = pNew.getScanProps();

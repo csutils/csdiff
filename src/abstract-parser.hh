@@ -54,19 +54,13 @@ class AbstractParser {
         const TScanProps emptyProps_;
 };
 
-AbstractParser* createParser(
-        std::istream        &input,
-        const std::string   &fileName,
-        const bool          silent);
+AbstractParser* createParser(InStream &input, bool silent);
 
 // RAII
 class Parser {
     public:
-        Parser(
-                std::istream        &input,
-                const std::string   &fileName,
-                const bool          silent = false):
-            parser_(createParser(input, fileName, silent))
+        Parser(InStream &input, const bool silent = false):
+            parser_(createParser(input, silent))
         {
         }
 

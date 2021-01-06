@@ -247,7 +247,7 @@ int main(int argc, char *argv[])
         try {
             // load list of important defects
             InStream strImp(fnImp);
-            Parser pImp(strImp.str(), fnImp);
+            Parser pImp(strImp);
             Defect defImp;
             while (pImp.getNext(&defImp))
                 impDec->hashImpDefect(defImp);
@@ -268,7 +268,7 @@ int main(int argc, char *argv[])
         try {
             // initialize parser for .err
             InStream strErr(fnErr);
-            Parser pErr(strErr.str(), fnErr, silent);
+            Parser pErr(strErr, silent);
 
             if (!i) {
                 // try to load scan properties from the first input file
