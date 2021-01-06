@@ -40,18 +40,16 @@ void mergeScanProps(TScanProps &props, const TScanProps &oldProps)
 
 bool /* anyError */ diffScans(
         std::ostream               &strDst,
-        std::istream               &strOld,
-        std::istream               &strNew,
-        const std::string          &fnOld,
-        const std::string          &fnNew,
+        InStream                   &strOld,
+        InStream                   &strNew,
         const bool                  showInternal,
         const bool                  silent,
         EFileFormat                 format,
         const EColorMode            cm)
 {
     // create Parsers
-    Parser pOld(strOld, fnOld, silent);
-    Parser pNew(strNew, fnNew, silent);
+    Parser pOld(strOld.str(), strOld.fileName(), silent);
+    Parser pNew(strNew.str(), strNew.fileName(), silent);
 
     // propagate scan properties if available
     TScanProps props = pNew.getScanProps();

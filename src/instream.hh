@@ -22,6 +22,7 @@
 
 #include <fstream>
 #include <iostream>
+#include <sstream>
 #include <string>
 
 struct InFileException {
@@ -37,13 +38,14 @@ struct InFileException {
 class InStream {
     public:
         InStream(const std::string &fileName);
+        InStream(std::istringstream &str);
         ~InStream();
 
         const std::string& fileName()   const { return fileName_;   }
         std::istream& str()             const { return str_;        }
 
     private:
-        std::string         fileName_;
+        const std::string   fileName_;
         std::fstream        fileStr_;
         std::istream       &str_;
 };

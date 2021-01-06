@@ -32,6 +32,11 @@ InStream::InStream(const std::string &fName):
         throw InFileException(fileName_);
 }
 
+InStream::InStream(std::istringstream &str):
+    str_(str)
+{
+}
+
 InStream::~InStream()
 {
     if (&str_ == &fileStr_)

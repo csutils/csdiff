@@ -157,8 +157,8 @@ int main(int argc, char *argv[])
         InStream strNew(fnNew);
 
         // run the core
-        return diffScans(std::cout, strOld.str(), strNew.str(),
-                fnOld, fnNew, showInternal, silent, format, cm);
+        return diffScans(std::cout, strOld, strNew,
+                showInternal, silent, format, cm);
     }
     catch (const InFileException &e) {
         std::cerr << e.fileName << ": failed to open input file\n";

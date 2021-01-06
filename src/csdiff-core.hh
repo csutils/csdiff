@@ -19,16 +19,12 @@
 
 #include "abstract-parser.hh"
 #include "color.hh"
-
-#include <iostream>
-#include <string>
+#include "instream.hh"
 
 bool /* anyError */ diffScans(
         std::ostream               &strDst,
-        std::istream               &strOld,
-        std::istream               &strNew,
-        const std::string          &fnOld       = std::string(),
-        const std::string          &fnNew       = std::string(),
+        InStream                   &strOld,
+        InStream                   &strNew,
         bool                        showInternal= false,
         bool                        silent      = true,
         EFileFormat                 format      = FF_AUTO,
