@@ -39,6 +39,7 @@ add_library(cs STATIC
     parser-common.cc
     shared-string.cc
     version.cc
+    xml-parser.cc
 )
 
 # link cslib.a and boost libraries

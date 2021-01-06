@@ -22,6 +22,7 @@
 #include "csparser.hh"
 #include "gcc-parser.hh"
 #include "json-parser.hh"
+#include "xml-parser.hh"
 
 AbstractParser* createParser(InStream &input)
 {
@@ -36,6 +37,10 @@ AbstractParser* createParser(InStream &input)
         case '{':
             // JSON
             return new JsonParser(input);
+
+        case '<':
+            // XML
+            return new XmlParser(input);
 
         case 'E':
         case '#':
