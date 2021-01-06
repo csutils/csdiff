@@ -41,10 +41,7 @@ class AbstractWriter {
 
         bool handleFile(Parser &parser, const std::string &fileName);
 
-        bool handleFile(
-                std::istream       &str,
-                const std::string  &fileName,
-                const bool          silent);
+        bool handleFile(InStream &, bool silent);
 
         bool handleFile(const std::string &fileName, bool silent);
 

@@ -21,8 +21,7 @@
 #define H_GUARD_ABSTRACT_PARSER_H
 
 #include "defect.hh"
-
-#include <iostream>
+#include "instream.hh"
 
 /// used only by the JSON format
 typedef std::map<std::string, std::string> TScanProps;

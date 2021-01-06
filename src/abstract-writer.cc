@@ -47,20 +47,17 @@ bool AbstractWriter::handleFile(Parser &parser, const std::string &fileName)
         return !parser.hasError();
 }
 
-bool AbstractWriter::handleFile(
-        std::istream               &str,
-        const std::string          &fileName,
-        const bool                  silent)
+bool AbstractWriter::handleFile(InStream &input, const bool silent)
 {
-    Parser parser(str, fileName, silent);
-    return this->handleFile(parser, fileName);
+    Parser parser(input.str(), input.fileName(), silent);
+    return this->handleFile(parser, input.fileName());
 }
 
 bool AbstractWriter::handleFile(const std::string &fileName, bool silent)
 {
     try {
         InStream str(fileName);
-        return this->handleFile(str.str(), fileName, silent);
+        return this->handleFile(str, silent);
     }
     catch (const InFileException &e) {
         std::cerr << e.fileName << ": failed to open input file\n";
