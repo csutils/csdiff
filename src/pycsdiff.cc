@@ -33,8 +33,8 @@ std::string diff_scans(
     std::istringstream strNew(newScan);
     std::ostringstream strDst;
 
-    InStream inOld(strOld);
-    InStream inNew(strNew);
+    InStream inOld(strOld, /* silent */ true);
+    InStream inNew(strNew, /* silent */ true);
 
     // FIXME: we need a better API to configure this
     MsgFilter::inst()->setIgnorePath(true);

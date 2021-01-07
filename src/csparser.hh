@@ -24,7 +24,7 @@
 
 class CovParser: public AbstractParser {
     public:
-        CovParser(InStream &input, bool silent);
+        CovParser(InStream &input);
 
         virtual ~CovParser();
         bool getNext(Defect *);

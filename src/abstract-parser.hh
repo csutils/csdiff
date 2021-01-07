@@ -54,18 +54,23 @@ class AbstractParser {
         const TScanProps emptyProps_;
 };
 
-AbstractParser* createParser(InStream &input, bool silent);
+AbstractParser* createParser(InStream &input);
 
 // RAII
 class Parser {
     public:
-        Parser(InStream &input, const bool silent = false):
-            parser_(createParser(input, silent))
+        Parser(InStream &input):
+            input_(input),
+            parser_(createParser(input))
         {
         }
 
         ~Parser() {
             delete parser_;
+        }
+
+        InStream &input() const {
+            return input_;
         }
 
         bool getNext(Defect *def) {
@@ -86,6 +91,7 @@ class Parser {
         Parser(const Parser &);
         Parser& operator=(const Parser &);
 
+        InStream       &input_;
         AbstractParser *parser_;
 };
 

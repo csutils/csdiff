@@ -39,9 +39,9 @@ class AbstractWriter {
 
         virtual void flush() { };
 
-        bool handleFile(Parser &parser, const std::string &fileName);
+        bool handleFile(Parser &parser);
 
-        bool handleFile(InStream &, bool silent);
+        bool handleFile(InStream &);
 
         bool handleFile(const std::string &fileName, bool silent);
 

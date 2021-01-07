@@ -43,13 +43,12 @@ bool /* anyError */ diffScans(
         InStream                   &strOld,
         InStream                   &strNew,
         const bool                  showInternal,
-        const bool                  silent,
         EFileFormat                 format,
         const EColorMode            cm)
 {
     // create Parsers
-    Parser pOld(strOld, silent);
-    Parser pNew(strNew, silent);
+    Parser pOld(strOld);
+    Parser pNew(strNew);
 
     // propagate scan properties if available
     TScanProps props = pNew.getScanProps();

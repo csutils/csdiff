@@ -153,12 +153,11 @@ int main(int argc, char *argv[])
 
     try {
         // open streams
-        InStream strOld(fnOld);
-        InStream strNew(fnNew);
+        InStream strOld(fnOld, silent);
+        InStream strNew(fnNew, silent);
 
         // run the core
-        return diffScans(std::cout, strOld, strNew,
-                showInternal, silent, format, cm);
+        return diffScans(std::cout, strOld, strNew, showInternal, format, cm);
     }
     catch (const InFileException &e) {
         std::cerr << e.fileName << ": failed to open input file\n";

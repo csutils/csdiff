@@ -19,8 +19,9 @@
 
 #include "instream.hh"
 
-InStream::InStream(const std::string &fName):
-    fileName_(fName),
+InStream::InStream(const std::string &fileName, const bool silent):
+    fileName_(fileName),
+    silent_(silent),
     str_((!fileName_.compare("-"))
                 ? std::cin
                 : fileStr_)
@@ -32,7 +33,8 @@ InStream::InStream(const std::string &fName):
         throw InFileException(fileName_);
 }
 
-InStream::InStream(std::istringstream &str):
+InStream::InStream(std::istringstream &str, const bool silent):
+    silent_(silent),
     str_(str)
 {
 }

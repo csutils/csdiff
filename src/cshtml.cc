@@ -137,16 +137,16 @@ int main(int argc, char *argv[])
 
     try {
         // initialize parser for .err
-        InStream strInput(fnInput);
-        Parser pInput(strInput, silent);
+        InStream strInput(fnInput, silent);
+        Parser pInput(strInput);
 
         DefLookup baseLookup;
         TScanProps baseProps;
 
         // read old defects if given
         if (!fnBase.empty()) {
-            InStream strBase(fnBase);
-            Parser pBase(strBase, silent);
+            InStream strBase(fnBase, silent);
+            Parser pBase(strBase);
             Defect def;
             while (pBase.getNext(&def))
                 baseLookup.hashDefect(def);
@@ -176,7 +176,7 @@ int main(int argc, char *argv[])
         }
 
         // write HTML
-        writer.handleFile(pInput, fnInput);
+        writer.handleFile(pInput);
         writer.flush();
 
         return pInput.hasError();

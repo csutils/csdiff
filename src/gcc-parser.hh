@@ -24,7 +24,7 @@
 
 class GccParser: public AbstractParser {
     public:
-        GccParser(InStream &input, bool silent);
+        GccParser(InStream &input);
 
         virtual ~GccParser();
         bool getNext(Defect *);

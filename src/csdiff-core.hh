@@ -26,6 +26,5 @@ bool /* anyError */ diffScans(
         InStream                   &strOld,
         InStream                   &strNew,
         bool                        showInternal= false,
-        bool                        silent      = true,
         EFileFormat                 format      = FF_AUTO,
         EColorMode                  cm          = CM_AUTO);

@@ -24,7 +24,7 @@
 
 class JsonParser: public AbstractParser {
     public:
-        JsonParser(InStream &input, bool silent);
+        JsonParser(InStream &input);
 
         virtual ~JsonParser();
         virtual bool getNext(Defect *);

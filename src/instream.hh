@@ -37,15 +37,17 @@ struct InFileException {
 
 class InStream {
     public:
-        InStream(const std::string &fileName);
-        InStream(std::istringstream &str);
+        InStream(const std::string &fileName, bool silent = false);
+        InStream(std::istringstream &str, bool silent = false);
         ~InStream();
 
         const std::string& fileName()   const { return fileName_;   }
         std::istream& str()             const { return str_;        }
+        bool silent()                   const { return silent_;     }
 
     private:
         const std::string   fileName_;
+        const bool          silent_;
         std::fstream        fileStr_;
         std::istream       &str_;
 };

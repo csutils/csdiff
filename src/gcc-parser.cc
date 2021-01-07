@@ -368,13 +368,13 @@ EToken MultilineConcatenator::readNext(DefEvent *pEvt)
 
 class BasicGccParser {
     public:
-        BasicGccParser(InStream &input, const bool silent):
+        BasicGccParser(InStream &input):
             rawTokenizer_(input.str()),
             noiseFilter_(&rawTokenizer_),
             markerConverter_(&noiseFilter_),
             tokenizer_(&markerConverter_),
             fileName_(input.fileName()),
-            silent_(silent),
+            silent_(input.silent()),
             hasKeyEvent_(false),
             hasError_(false)
         {
@@ -639,8 +639,8 @@ struct GccParser::Private {
     GccPostProcessor            postProc;
     Defect                      lastDef;
 
-    Private(InStream &input, const bool silent):
-        core(input, silent)
+    Private(InStream &input):
+        core(input)
     {
     }
 
@@ -650,8 +650,8 @@ struct GccParser::Private {
     const RE reLocation = RE("^this is the location.*$");
 };
 
-GccParser::GccParser(InStream &input, const bool silent):
-    d(new Private(input, silent))
+GccParser::GccParser(InStream &input):
+    d(new Private(input))
 {
 }
 

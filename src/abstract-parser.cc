@@ -23,7 +23,7 @@
 #include "gcc-parser.hh"
 #include "json-parser.hh"
 
-AbstractParser* createParser(InStream &input, const bool silent)
+AbstractParser* createParser(InStream &input)
 {
     // sniff the first char from the input
     unsigned char c = 'E';
@@ -35,16 +35,16 @@ AbstractParser* createParser(InStream &input, const bool silent)
     switch (c) {
         case '{':
             // JSON
-            return new JsonParser(input, silent);
+            return new JsonParser(input);
 
         case 'E':
         case '#':
             // Coverity
-            return new CovParser(input, silent);
+            return new CovParser(input);
 
         default:
             // GCC
-            return new GccParser(input, silent);
+            return new GccParser(input);
     }
 }
 

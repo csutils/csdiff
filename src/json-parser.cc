@@ -87,9 +87,9 @@ struct JsonParser::Private {
     int                             defNumber;
     TScanProps                      scanProps;
 
-    Private(const std::string &fileName_, bool silent_):
-        fileName(fileName_),
-        silent(silent_),
+    Private(InStream &input):
+        fileName(input.fileName()),
+        silent(input.silent()),
         jsonValid(false),
         hasError(false),
         decoder(0),
@@ -143,8 +143,8 @@ bool findChildOf(TNode **pDst, TNode &node, const char *key)
     return true;
 }
 
-JsonParser::JsonParser(InStream &input, const bool silent):
-    d(new Private(input.fileName(), silent))
+JsonParser::JsonParser(InStream &input):
+    d(new Private(input))
 {
     try {
         // parse JSON
@@ -159,7 +159,7 @@ JsonParser::JsonParser(InStream &input, const bool silent):
 
         if (findChildOf(&d->defList, d->root, "defects"))
             // csdiff-native JSON format
-            d->decoder = new SimpleTreeDecoder(d->fileName, silent);
+            d->decoder = new SimpleTreeDecoder(d->fileName, d->silent);
         else if (findChildOf(&d->defList, d->root, "issues"))
             // Coverity JSON format
             d->decoder = new CovTreeDecoder;

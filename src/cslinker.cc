@@ -267,8 +267,8 @@ int main(int argc, char *argv[])
 
         try {
             // initialize parser for .err
-            InStream strErr(fnErr);
-            Parser pErr(strErr, silent);
+            InStream strErr(fnErr, silent);
+            Parser pErr(strErr);
 
             if (!i) {
                 // try to load scan properties from the first input file
@@ -280,7 +280,7 @@ int main(int argc, char *argv[])
             }
 
             // process a single input file
-            writer->handleFile(pErr, fnErr);
+            writer->handleFile(pErr);
 
             hasError |= pErr.hasError();
         }
