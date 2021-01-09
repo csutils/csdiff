@@ -45,7 +45,7 @@ class AbstractTreeDecoder {
 /// tree decoder of the native JSON format of csdiff
 class SimpleTreeDecoder: public AbstractTreeDecoder {
     public:
-        SimpleTreeDecoder(const std::string &fileName, bool silent);
+        SimpleTreeDecoder(InStream &input);
         virtual void readNode(Defect *def, const pt::ptree &node);
 
     private:
@@ -76,10 +76,8 @@ class CovTreeDecoder: public AbstractTreeDecoder {
 };
 
 struct JsonParser::Private {
-    const std::string               fileName;
-    const bool                      silent;
+    InStream                       &input;
     bool                            jsonValid;
-    bool                            hasError;
     AbstractTreeDecoder            *decoder;
     pt::ptree                       root;
     pt::ptree                      *defList;
@@ -88,10 +86,8 @@ struct JsonParser::Private {
     TScanProps                      scanProps;
 
     Private(InStream &input):
-        fileName(input.fileName()),
-        silent(input.silent()),
+        input(input),
         jsonValid(false),
-        hasError(false),
         decoder(0),
         defNumber(0)
     {
@@ -102,34 +98,18 @@ struct JsonParser::Private {
         delete this->decoder;
     }
 
-    void parseError(const std::string &msg, unsigned long line = 0UL);
     void dataError(const std::string &msg);
     bool readNext(Defect *def);
 };
 
-void JsonParser::Private::parseError(const std::string &msg, unsigned long line)
-{
-    this->hasError = true;
-    if (this->silent)
-        return;
-
-    std::cerr << this->fileName;
-
-    if (line)
-        // line number available
-        std::cerr << ":" << line;
-
-    std::cerr << ": parse error: " << msg << "\n";
-}
-
 void JsonParser::Private::dataError(const std::string &msg)
 {
-    this->hasError = true;
-    if (this->silent)
+    this->input.handleError();
+    if (this->input.silent())
         return;
 
     std::cerr
-        << this->fileName << ": error: failed to read defect #"
+        << this->input.fileName() << ": error: failed to read defect #"
         << this->defNumber << ": " << msg << "\n";
 }
 
@@ -159,7 +139,7 @@ JsonParser::JsonParser(InStream &input):
 
         if (findChildOf(&d->defList, d->root, "defects"))
             // csdiff-native JSON format
-            d->decoder = new SimpleTreeDecoder(d->fileName, d->silent);
+            d->decoder = new SimpleTreeDecoder(d->input);
         else if (findChildOf(&d->defList, d->root, "issues"))
             // Coverity JSON format
             d->decoder = new CovTreeDecoder;
@@ -171,10 +151,10 @@ JsonParser::JsonParser(InStream &input):
         d->jsonValid = true;
     }
     catch (pt::file_parser_error &e) {
-        d->parseError(e.message(), e.line());
+        d->input.handleError(e.message(), e.line());
     }
     catch (pt::ptree_error &e) {
-        d->parseError(e.what());
+        d->input.handleError(e.what());
     }
 }
 
@@ -185,7 +165,7 @@ JsonParser::~JsonParser()
 
 bool JsonParser::hasError() const
 {
-    return d->hasError;
+    return d->input.anyError();
 }
 
 const TScanProps& JsonParser::getScanProps() const
@@ -233,9 +213,9 @@ bool JsonParser::getNext(Defect *def)
     }
 }
 
-SimpleTreeDecoder::SimpleTreeDecoder(const std::string &fileName, bool silent):
-    fileName_(fileName),
-    silent_(silent)
+SimpleTreeDecoder::SimpleTreeDecoder(InStream &input):
+    fileName_(input.fileName()),
+    silent_(input.silent())
 {
     if (silent_)
         // skip initialization of nodeStore_ because no lookup will ever happen

@@ -22,6 +22,7 @@
 InStream::InStream(const std::string &fileName, const bool silent):
     fileName_(fileName),
     silent_(silent),
+    anyError_(false),
     str_((!fileName_.compare("-"))
                 ? std::cin
                 : fileStr_)
@@ -35,6 +36,7 @@ InStream::InStream(const std::string &fileName, const bool silent):
 
 InStream::InStream(std::istringstream &str, const bool silent):
     silent_(silent),
+    anyError_(false),
     str_(str)
 {
 }
@@ -43,4 +45,19 @@ InStream::~InStream()
 {
     if (&str_ == &fileStr_)
         fileStr_.close();
+}
+
+void InStream::handleError(const std::string msg, const long line)
+{
+    anyError_ = true;
+    if (silent_ || msg.empty())
+        return;
+
+    std::cerr << fileName_;
+
+    if (line)
+        // line number available
+        std::cerr << ":" << line;
+
+    std::cerr << ": error: " << msg << "\n";
 }

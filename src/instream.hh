@@ -44,10 +44,14 @@ class InStream {
         const std::string& fileName()   const { return fileName_;   }
         std::istream& str()             const { return str_;        }
         bool silent()                   const { return silent_;     }
+        bool anyError()                 const { return anyError_;   }
+
+        void handleError(std::string msg = std::string(), long line = 0L);
 
     private:
         const std::string   fileName_;
         const bool          silent_;
+        bool                anyError_;
         std::fstream        fileStr_;
         std::istream       &str_;
 };
