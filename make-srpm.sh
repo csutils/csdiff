@@ -98,6 +98,7 @@ BuildRequires: boost-devel
 BuildRequires: cmake
 BuildRequires: gcc-c++
 BuildRequires: help2man
+BuildRequires: make
 
 %description
 This package contains the csdiff tool for comparing code scan defect lists in
