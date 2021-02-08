@@ -165,9 +165,8 @@ EToken ErrFileLexer::readNext()
     boost::smatch sm;
 
     if (boost::regex_match(line, sm, reChecker_)) {
-        def_ = Defect();
-        def_.checker    = sm[/* checker */ 1];
-        def_.annotation = sm[/* annotat */ 2];
+        def_ = Defect(sm[/* checker */ 1]);
+        def_.annotation = sm[/* annotation */ 2];
         return T_CHECKER;
     }
 

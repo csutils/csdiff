@@ -45,21 +45,16 @@
 
 
 struct DefEvent {
-    std::string             fileName;
-    int                     line;
-    int                     column;
-    std::string             event;
-    std::string             msg;
+    std::string         fileName;
+    int                 line            = 0;
+    int                 column          = 0;
+    std::string         event;
+    std::string         msg;
 
     /// 0 = key event,  1 = info event,  2 = trace event
-    int                     verbosityLevel;
+    int                 verbosityLevel  = 0;
 
-    DefEvent():
-        line(0),
-        column(0),
-        verbosityLevel(0)
-    {
-    }
+    DefEvent() { }
 };
 
 inline bool cmpEvents(bool *pResult, const DefEvent &a, const DefEvent &b)
@@ -85,21 +80,20 @@ inline bool operator<(const DefEvent &a, const DefEvent &b)
 typedef std::vector<DefEvent> TEvtList;
 
 struct Defect {
-    std::string             checker;
-    std::string             annotation;
-    TEvtList                events;
-    unsigned                keyEventIdx;    ///< in range 0..(events.size()-1)
-    int                     cwe;            ///< CWE number, 0 means unused
-    int                     imp;            ///< "important" flag, bool for now
-    int                     defectId;       ///< used only by the JSON format
-    std::string             function;       ///< used only by the JSON format
-    std::string             language;       ///< used only by the JSON format
+    std::string         checker;
+    std::string         annotation;
+    TEvtList            events;
+    unsigned            keyEventIdx = 0U;   ///< in range 0..(events.size()-1)
+    int                 cwe         = 0;    ///< CWE number, 0 means unused
+    int                 imp         = 0;    ///< "important" flag, bool for now
+    int                 defectId    = 0;    ///< used only by the JSON format
+    std::string         function;           ///< used only by the JSON format
+    std::string         language;           ///< used only by the JSON format
 
-    Defect():
-        keyEventIdx(0U),
-        cwe(0),
-        imp(0),
-        defectId(0)
+    Defect() { }
+
+    explicit Defect(const std::string checker):
+        checker(checker)
     {
     }
 };
