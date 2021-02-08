@@ -31,6 +31,9 @@ class ValgrindTreeDecoder: public AbstractTreeDecoder {
         virtual void readRoot(
                 const pt::ptree       **pDefList,
                 const pt::ptree        *root);
+
+    private:
+        Defect defPrototype = Defect("VALGRIND_WARNING");
 };
 
 void ValgrindTreeDecoder::readRoot(
@@ -43,11 +46,29 @@ void ValgrindTreeDecoder::readRoot(
 
 bool ValgrindTreeDecoder::readNode(Defect *pDef, pt::ptree::const_iterator defIter)
 {
+    static const std::string errorKey = "error";
+    if (errorKey != defIter->first)
+        // not a node we are interested in
+        return false;
+
+    // initialize the defect structure
+    Defect &def = *pDef;
+    def = this->defPrototype;
+
+    // initialize the key event
+    def.keyEventIdx = def.events.size();
+    def.events.push_back(DefEvent());
+    DefEvent &keyEvent = def.events.back();
+    keyEvent.event = "warning";
+
+    // read "kind" of the report
+    const pt::ptree &defNode = defIter->second;
+    pt::ptree::const_assoc_iterator itKind = defNode.find("kind");
+    if (defNode.not_found() != itKind)
+        keyEvent.event += "[" + itKind->second.get_value<std::string>() + "]";
+
     // TODO
-    (void) pDef;
-    (void) defIter;
-    assert(!"implemented");
-    return false;
+    return true;
 }
 
 struct XmlParser::Private {
