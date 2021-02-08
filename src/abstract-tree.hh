@@ -31,8 +31,16 @@ class AbstractTreeDecoder {
     public:
         virtual ~AbstractTreeDecoder() { }
 
+        virtual void readRoot(
+                const pt::ptree       **pDefList,
+                const pt::ptree        *root)
+        {
+            *pDefList = root;
+        }
+
         /// read the given ptree node, decode, and store the result into def
-        virtual void readNode(Defect *def, const pt::ptree &node) = 0;
+        virtual bool readNode(Defect *def, pt::ptree::const_iterator defIter)
+            = 0;
 };
 
 template <typename TNode>

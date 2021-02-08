@@ -30,7 +30,7 @@
 class SimpleTreeDecoder: public AbstractTreeDecoder {
     public:
         SimpleTreeDecoder(InStream &input);
-        virtual void readNode(Defect *def, const pt::ptree &node);
+        virtual bool readNode(Defect *def, pt::ptree::const_iterator defIter);
 
     private:
         enum ENodeKind {
@@ -53,7 +53,7 @@ class SimpleTreeDecoder: public AbstractTreeDecoder {
 /// tree decoder of the Coverity JSON format
 class CovTreeDecoder: public AbstractTreeDecoder {
     public:
-        virtual void readNode(Defect *def, const pt::ptree &node);
+        virtual bool readNode(Defect *def, pt::ptree::const_iterator defIter);
 
     private:
         KeyEventDigger              keDigger;
@@ -150,13 +150,12 @@ const TScanProps& JsonParser::getScanProps() const
 bool JsonParser::Private::readNext(Defect *def)
 {
     try {
-        // get the current node and move to the next one
-        const pt::ptree &defNode = this->defIter->second;
-        this->defIter++;
-        this->defNumber++;
+        // make sure the Defect structure is properly initialized
+        (*def) = Defect();
 
-        // read the current node
-        this->decoder->readNode(def, defNode);
+        // read the current node and move to the next one
+        this->defNumber++;
+        this->decoder->readNode(def, this->defIter++);
         return true;
     }
     catch (pt::ptree_error &e) {
@@ -231,12 +230,11 @@ void SimpleTreeDecoder::reportUnknownNodes(ENodeKind nk, const pt::ptree &node)
     }
 }
 
-void SimpleTreeDecoder::readNode(
+bool SimpleTreeDecoder::readNode(
         Defect                      *def,
-        const pt::ptree             &defNode)
+        pt::ptree::const_iterator    defIter)
 {
-    // make sure the Defect structure is properly initialized
-    (*def) = Defect();
+    const pt::ptree &defNode = defIter->second;
 
     this->reportUnknownNodes(NK_DEFECT, defNode);
 
@@ -293,14 +291,15 @@ void SimpleTreeDecoder::readNode(
 
     // read annotation if available
     def->annotation = valueOf<std::string>(defNode, "annotation", "");
+
+    return true;
 }
 
-void CovTreeDecoder::readNode(
+bool CovTreeDecoder::readNode(
         Defect                      *def,
-        const pt::ptree             &defNode)
+        pt::ptree::const_iterator    defIter)
 {
-    // make sure the Defect structure is properly initialized
-    (*def) = Defect();
+    const pt::ptree &defNode = defIter->second;
 
     // read per-defect properties
     def->checker = defNode.get<std::string>("checkerName");
@@ -337,4 +336,6 @@ void CovTreeDecoder::readNode(
 
     // initialize verbosity level of all events
     this->keDigger.initVerbosity(def);
+
+    return true;
 }
