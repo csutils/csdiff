@@ -138,12 +138,32 @@ void ValgrindTreeDecoder::readRoot(
     noteEvt.verbosityLevel = /* note */ 1;
 }
 
+/// read valgrind's message
+std::string readMsg(const pt::ptree &defNode)
+{
+    const pt::ptree *whatNode;
+    if (findChildOf(&whatNode, defNode, "what"))
+        // message found in <what>...</what>
+        return whatNode->get_value<std::string>();
+
+    if (findChildOf(&whatNode, defNode, "xwhat")
+            && findChildOf(&whatNode, *whatNode, "text"))
+        // message found in <xwhat><text>...</text></xwhat>
+        return whatNode->get_value<std::string>();
+
+    // message not found
+    return "<unknown>";
+}
+
 bool ValgrindTreeDecoder::readNode(Defect *pDef, pt::ptree::const_iterator defIter)
 {
     static const std::string errorKey = "error";
     if (errorKey != defIter->first)
         // not a node we are interested in
         return false;
+
+    // the current "error" node representing a single valgrind's report
+    const pt::ptree &defNode = defIter->second;
 
     // initialize the defect structure
     Defect &def = *pDef;
@@ -153,9 +173,10 @@ bool ValgrindTreeDecoder::readNode(Defect *pDef, pt::ptree::const_iterator defIt
     def.keyEventIdx = def.events.size();
     def.events.push_back(DefEvent("warning"));
     DefEvent &keyEvent = def.events.back();
+    keyEvent.fileName = "<unknown>";
+    keyEvent.msg = readMsg(defNode);
 
     // read "kind" of the report
-    const pt::ptree &defNode = defIter->second;
     pt::ptree::const_assoc_iterator itKind = defNode.find("kind");
     if (defNode.not_found() != itKind)
         keyEvent.event += "[" + itKind->second.get_value<std::string>() + "]";
