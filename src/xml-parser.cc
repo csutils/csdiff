@@ -155,6 +155,83 @@ std::string readMsg(const pt::ptree &defNode)
     return "<unknown>";
 }
 
+/// return true if the given frame is internal to valgrind itself
+bool isInternalFrame(const pt::ptree &frameNode)
+{
+    std::string obj = valueOf<std::string>(frameNode, "obj", "");
+    if (obj.empty())
+        return false;
+
+    static const std::string valgrindPrefix = "/usr/libexec/valgrind/";
+    static const size_t valgrindPrefixLen = valgrindPrefix.size();
+    if (obj.size() <= valgrindPrefixLen)
+        return false;
+
+    obj.resize(valgrindPrefixLen);
+    return (valgrindPrefix == obj);
+}
+
+/// go through stack, append "note" events, and update the key event
+void readStack(Defect *pDef, const pt::ptree &stackNode)
+{
+    int keyEventBestScore = -1;
+
+    for (const pt::ptree::value_type &frame : stackNode) {
+        const pt::ptree &frameNode = frame.second;
+        const bool intFrame = isInternalFrame(frameNode);
+        int keyEventScore = 0;
+
+        // initialize "note" event
+        DefEvent noteEvt("note");
+        noteEvt.msg = "called from ";
+        noteEvt.verbosityLevel = /* note */ 1 + static_cast<int>(intFrame);
+
+        // read function name if available
+        const std::string fn = valueOf<std::string>(frameNode, "fn", "");
+        noteEvt.msg += (fn.empty())
+            ? "here"
+            : fn + "()";
+
+        const pt::ptree *fileNode;
+        if (findChildOf(&fileNode, frameNode, "file")) {
+            // read absolute path of the source file
+            noteEvt.fileName = fileNode->get_value<std::string>();
+            const std::string dir = valueOf<std::string>(frameNode, "dir", "");
+            if (!dir.empty())
+                noteEvt.fileName = dir + "/" + noteEvt.fileName;
+
+            // read line number
+            noteEvt.line = valueOf<int>(frameNode, "line", 0);
+            keyEventScore = 8;
+        }
+        else if (findChildOf(&fileNode, frameNode, "obj")) {
+            // pick path of the object file
+            noteEvt.fileName = fileNode->get_value<std::string>();
+            keyEventScore = 4;
+        }
+        else if (findChildOf(&fileNode, frameNode, "ip")) {
+            // pick address of the code in memory
+            noteEvt.fileName = fileNode->get_value<std::string>();
+            keyEventScore = 2;
+        }
+        else {
+            // no location info found --> skip this frame
+            continue;
+        }
+
+        if (!intFrame && keyEventBestScore < keyEventScore) {
+            // update key event
+            keyEventBestScore = keyEventScore;
+            DefEvent &keyEvent = pDef->events[pDef->keyEventIdx];
+            keyEvent.fileName = noteEvt.fileName;
+            keyEvent.line     = noteEvt.line;
+        }
+
+        // finally push the "note" event
+        pDef->events.push_back(noteEvt);
+    }
+}
+
 bool ValgrindTreeDecoder::readNode(Defect *pDef, pt::ptree::const_iterator defIter)
 {
     static const std::string errorKey = "error";
@@ -181,7 +258,22 @@ bool ValgrindTreeDecoder::readNode(Defect *pDef, pt::ptree::const_iterator defIt
     if (defNode.not_found() != itKind)
         keyEvent.event += "[" + itKind->second.get_value<std::string>() + "]";
 
-    // TODO
+    // go through stack trace
+    const pt::ptree *stackNode;
+    if (findChildOf(&stackNode, defNode, "stack"))
+        // this invalidates &keyEvent !!!
+        readStack(pDef, *stackNode);
+
+    // read aux valgrind's message if available and insert _after_ the key event
+    const pt::ptree *auxwhat;
+    if (findChildOf(&auxwhat, defNode, "auxwhat")) {
+        DefEvent auxEvent = def.events[def.keyEventIdx];
+        auxEvent.event = "note";
+        auxEvent.verbosityLevel = /* note */ 1;
+        auxEvent.msg = auxwhat->get_value<std::string>();
+        def.events.insert(def.events.begin() + def.keyEventIdx + 1, auxEvent);
+    }
+
     return true;
 }
 
