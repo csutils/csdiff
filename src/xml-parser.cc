@@ -23,6 +23,11 @@
 
 #include <boost/property_tree/xml_parser.hpp>
 
+// executable of the dynamic linker (used as ELF interpreter)
+#ifndef LD_LINUX_SO
+#   define LD_LINUX_SO "/lib64/ld-linux-x86-64.so.2"
+#endif
+
 /// tree decoder for valgrind XML output
 class ValgrindTreeDecoder: public AbstractTreeDecoder {
     public:
@@ -36,12 +41,101 @@ class ValgrindTreeDecoder: public AbstractTreeDecoder {
         Defect defPrototype = Defect("VALGRIND_WARNING");
 };
 
-void ValgrindTreeDecoder::readRoot(
-                const pt::ptree       **pDefList,
-                const pt::ptree        *root)
+/// hide explicit invocation of dynamic linker from command-line args
+bool /* continue */ skipLdArgs(
+        std::string                    *pExe,
+        pt::ptree::const_iterator      *pIt,
+        const pt::ptree::const_iterator itEnd)
 {
-    // TODO: read path to the binary and command-line args
+    if (*pExe != LD_LINUX_SO)
+        return /* continue */ true;
+
+    for (bool skipArg = false; *pIt != itEnd; ++(*pIt)) {
+        if (skipArg) {
+            skipArg = false;
+            continue;
+        }
+
+        const std::string argVal = (*pIt)->second.get_value<std::string>();
+        if (argVal == "--preload")
+            goto skip_arg;
+
+        if (argVal == "--argv0")
+            goto skip_arg;
+
+        // record path of the real binary being executed
+        *pExe = argVal;
+        ++(*pIt);
+        return /* continue */ (itEnd != *pIt);
+
+skip_arg:
+        skipArg = true;
+    }
+
+    return /* break */ false;
+}
+
+/// read command-line of the executed program
+void readExeArgs(
+        std::string                    *pExe,
+        std::string                    *pArgs,
+        const pt::ptree                *root)
+{
+    const pt::ptree *argsNode;
+    if (!findChildOf(&argsNode, *root, "args"))
+        return;
+
+    const pt::ptree *argvNode;
+    if (!findChildOf(&argvNode, *argsNode, "argv"))
+        return;
+
+    // read name of executable
+    *pExe = valueOf<std::string>(*argvNode, "exe", *pExe);
+
+    // read command-line args
+    pt::ptree::const_iterator it;
+    for (it = argvNode->begin(); argvNode->end() != it; ++it) {
+        if (it->first != "arg")
+            // skip this node
+            continue;
+
+        if (!skipLdArgs(pExe, &it, argvNode->end()))
+            break;
+
+        *pArgs += " ";
+        *pArgs += it->second.get_value<std::string>();
+    }
+}
+
+void ValgrindTreeDecoder::readRoot(
+        const pt::ptree               **pDefList,
+        const pt::ptree                *root)
+{
+    // valgrind reports will be at the same level in the XML tree
     *pDefList = root;
+
+    const int pid = valueOf<int>(*root, "pid", 0);
+    if (!pid)
+        // insufficient data
+        return;
+
+    // read command-line
+    std::string exe = "<unknown>";
+    std::string args;
+    readExeArgs(&exe, &args, root);
+
+    // create a note event in the defect prototype
+    this->defPrototype.events.push_back(DefEvent("note"));
+    DefEvent &noteEvt = this->defPrototype.events.back();
+    noteEvt.fileName = exe;
+
+    // record PID and command-line args
+    std::ostringstream str;
+    str << "while executing process " << pid;
+    if (!args.empty())
+        str << " with arguments:" << args;
+    noteEvt.msg = str.str();
+    noteEvt.verbosityLevel = /* note */ 1;
 }
 
 bool ValgrindTreeDecoder::readNode(Defect *pDef, pt::ptree::const_iterator defIter)
@@ -57,9 +151,8 @@ bool ValgrindTreeDecoder::readNode(Defect *pDef, pt::ptree::const_iterator defIt
 
     // initialize the key event
     def.keyEventIdx = def.events.size();
-    def.events.push_back(DefEvent());
+    def.events.push_back(DefEvent("warning"));
     DefEvent &keyEvent = def.events.back();
-    keyEvent.event = "warning";
 
     // read "kind" of the report
     const pt::ptree &defNode = defIter->second;

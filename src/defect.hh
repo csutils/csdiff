@@ -55,6 +55,11 @@ struct DefEvent {
     int                 verbosityLevel  = 0;
 
     DefEvent() { }
+
+    explicit DefEvent(const std::string &event):
+        event(event)
+    {
+    }
 };
 
 inline bool cmpEvents(bool *pResult, const DefEvent &a, const DefEvent &b)
@@ -92,7 +97,7 @@ struct Defect {
 
     Defect() { }
 
-    explicit Defect(const std::string checker):
+    explicit Defect(const std::string &checker):
         checker(checker)
     {
     }
