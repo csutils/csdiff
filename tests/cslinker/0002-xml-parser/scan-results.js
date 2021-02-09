@@ -1,0 +1,161 @@
+{
+    "defects": [
+        {
+            "checker": "VALGRIND_WARNING",
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/logrotate-3.18.0/build/logrotate",
+                    "line": 0,
+                    "event": "note",
+                    "message": "while executing process 690565 with arguments: -v -m ./mailer -s state test-config.85 -f",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/logrotate-3.18.0/build/logrotate.c",
+                    "line": 2983,
+                    "event": "warning[Leak_DefinitelyLost]",
+                    "message": "6 bytes in 1 blocks are definitely lost in loss record 2 of 13",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/valgrind-3.16.1/coregrind/m_replacemalloc/vg_replace_malloc.c",
+                    "line": 307,
+                    "event": "note",
+                    "message": "called from malloc()",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/usr/lib64/libpopt.so.0.0.1",
+                    "line": 0,
+                    "event": "note",
+                    "message": "called from poptGetNextOpt()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/logrotate-3.18.0/build/logrotate.c",
+                    "line": 2983,
+                    "event": "note",
+                    "message": "called from main()",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "VALGRIND_WARNING",
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "./a.out",
+                    "line": 0,
+                    "event": "note",
+                    "message": "while executing process 5483",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/home/kdudka/git/csdiff/xxx.c",
+                    "line": 9,
+                    "event": "warning[InvalidJump]",
+                    "message": "Jump to the invalid address stated on the next line",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "/home/kdudka/git/csdiff/xxx.c",
+                    "line": 9,
+                    "event": "note",
+                    "message": "Address 0x0 is not stack'd, malloc'd or (recently) free'd",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "0x0",
+                    "line": 0,
+                    "event": "note",
+                    "message": "called from here",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/home/kdudka/git/csdiff/xxx.c",
+                    "line": 9,
+                    "event": "note",
+                    "message": "called from main()",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "VALGRIND_WARNING",
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "./a.out",
+                    "line": 0,
+                    "event": "note",
+                    "message": "while executing process 691556",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/home/kdudka/git/csdiff/a.out",
+                    "line": 0,
+                    "event": "warning[InvalidFree]",
+                    "message": "Invalid free() / delete / delete[] / realloc()",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "/home/kdudka/git/csdiff/a.out",
+                    "line": 0,
+                    "event": "note",
+                    "message": "Address 0x401040 is in the PLT segment of /home/kdudka/git/csdiff/a.out",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/valgrind-3.16.1/coregrind/m_replacemalloc/vg_replace_malloc.c",
+                    "line": 538,
+                    "event": "note",
+                    "message": "called from free()",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/home/kdudka/git/csdiff/a.out",
+                    "line": 0,
+                    "event": "note",
+                    "message": "called from main()",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "VALGRIND_WARNING",
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "./a.out",
+                    "line": 0,
+                    "event": "note",
+                    "message": "while executing process 691556",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "/home/kdudka/git/csdiff/a.out",
+                    "line": 0,
+                    "event": "warning[Leak_DefinitelyLost]",
+                    "message": "13 bytes in 1 blocks are definitely lost in loss record 1 of 1",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/valgrind-3.16.1/coregrind/m_replacemalloc/vg_replace_malloc.c",
+                    "line": 307,
+                    "event": "note",
+                    "message": "called from malloc()",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "/home/kdudka/git/csdiff/a.out",
+                    "line": 0,
+                    "event": "note",
+                    "message": "called from main()",
+                    "verbosity_level": "1"
+                }
+            ]
+        }
+    ]
+}

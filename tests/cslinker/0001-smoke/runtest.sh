@@ -2,11 +2,8 @@
 set -e
 set -x
 
-# FIXME: copy-pasted from ../../CMakeLists.txt
-export JSFILTER_CMD="sed -e ':a;N;\$!ba;s|:\\n *\\[|: [|g'"
-
-# yet another conversion needed for scan properties on EPEL-7
-JSFILTER_CMD="${JSFILTER_CMD}';s|:\\n *{|: {|g'"
+# import ${JSFILTER_CMD}
+. ${TEST_SRC_DIR}/../test-lib-cslinker.sh
 
 # run cshtml
 "${CSLINKER_BIN}" \
