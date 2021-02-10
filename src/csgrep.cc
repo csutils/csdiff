@@ -19,6 +19,7 @@
 
 #include "abstract-parser.hh"
 #include "abstract-filter.hh"
+#include "csfilter.hh"
 #include "cswriter.hh"
 #include "json-writer.hh"
 #include "regex.hh"
@@ -352,7 +353,11 @@ class DuplicateFilter: public AbstractFilter {
 
     protected:
         virtual bool matchDef(const Defect &def) {
-            const DefEvent &evt = def.events[def.keyEventIdx];
+            DefEvent evt = def.events[def.keyEventIdx];
+
+            // abstract out differences we do not deem important
+            evt.msg = MsgFilter::inst()->filterMsg(evt.msg, def.checker);
+
             return lookup_.insert(evt)./* inserted */second;
         }
 
