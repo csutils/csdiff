@@ -107,7 +107,7 @@ MsgFilter::MsgFilter():
 
     // auxiliary info provided by valgrind directly in the key event message
     d->addMsgFilter("VALGRIND_WARNING",
-            " lost in loss record [0-9]+ of [0-9]+$", "");
+            " lost in loss record [0-9,]+ of [0-9,]+$", "");
 
     // pylint reports, either raw, or prospector-wrapped
     const std::vector<std::string> pylintCheckers= {
