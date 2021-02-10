@@ -3,7 +3,7 @@ set -e
 set -x
 
 # import ${JSFILTER_CMD}
-. ${TEST_SRC_DIR}/../test-lib-cslinker.sh
+. ${TEST_SRC_DIR}/../../test-lib.sh
 
 # run cshtml
 "${CSLINKER_BIN}" --quiet                                       \

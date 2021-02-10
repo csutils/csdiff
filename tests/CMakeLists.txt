@@ -28,6 +28,9 @@ set(diffcmd     "diff -up")
 set(jsfilter "sed")
 set(jsfilter "${jsfilter} -e ':a;N;$!ba;s|:\\\\\\\\n *\\\\\\\\[|: [|g'")
 
+# yet another conversion needed for scan properties on EPEL-7
+set(jsfilter "${jsfilter} -e ';s|:\\\\\\\\n *{|: {|g'")
+
 macro(add_test_wrap test_name cmd)
     add_test("${test_name}" bash -c "${cmd}")
     set_tests_properties(${test_name} PROPERTIES COST ${test_cost})
