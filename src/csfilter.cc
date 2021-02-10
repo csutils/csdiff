@@ -105,6 +105,10 @@ MsgFilter::MsgFilter():
     // unify (per build random) names of temporary variables
     d->addMsgFilter("COMPILER_WARNING", "_tmp[0-9]+_", "_tmp_");
 
+    // auxiliary info provided by valgrind directly in the key event message
+    d->addMsgFilter("VALGRIND_WARNING",
+            " lost in loss record [0-9]+ of [0-9]+$", "");
+
     // pylint reports, either raw, or prospector-wrapped
     const std::vector<std::string> pylintCheckers= {
         "PROSPECTOR_WARNING",
