@@ -107,7 +107,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(1) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -128,7 +128,7 @@
                     "line": 0,
                     "event": "note",
                     "message": "(2) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/relay.c",
@@ -136,7 +136,7 @@
                     "column": 8,
                     "event": "note",
                     "message": "(3) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -158,7 +158,7 @@
                     "column": 27,
                     "event": "note",
                     "message": "(4) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -180,7 +180,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(5) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -202,7 +202,7 @@
                     "column": 40,
                     "event": "note",
                     "message": "(6) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -224,7 +224,7 @@
                     "column": 40,
                     "event": "note",
                     "message": "(7) allocated here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/relay.c",
@@ -232,7 +232,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(8) assuming '<unknown>' is non-NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -254,7 +254,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(9) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/relay.c",
@@ -262,7 +262,7 @@
                     "column": 16,
                     "event": "note",
                     "message": "(10) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -284,7 +284,7 @@
                     "column": 16,
                     "event": "note",
                     "message": "(11) '<unknown>' leaks here; was allocated at (7)",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 }
             ]
         },

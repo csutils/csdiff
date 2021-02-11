@@ -3893,7 +3893,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(1) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -3915,7 +3915,7 @@
                     "column": 30,
                     "event": "note",
                     "message": "(2) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -3937,7 +3937,7 @@
                     "column": 11,
                     "event": "note",
                     "message": "(3) this call could return NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -3959,7 +3959,7 @@
                     "column": 18,
                     "event": "note",
                     "message": "(4) 'ret' could be NULL: unchecked value from (3)",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -4011,7 +4011,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(1) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -4033,7 +4033,7 @@
                     "column": 30,
                     "event": "note",
                     "message": "(2) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -4055,7 +4055,7 @@
                     "column": 11,
                     "event": "note",
                     "message": "(3) this call could return NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -4077,7 +4077,7 @@
                     "column": 8,
                     "event": "note",
                     "message": "(4) following 'false' branch (when 'tmp' is non-NULL)...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -4099,7 +4099,7 @@
                     "column": 18,
                     "event": "note",
                     "message": "(5) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -4121,7 +4121,7 @@
                     "column": 14,
                     "event": "note",
                     "message": "(6) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -4143,7 +4143,7 @@
                     "column": 20,
                     "event": "note",
                     "message": "(7) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -4165,7 +4165,7 @@
                     "column": 18,
                     "event": "note",
                     "message": "(8) 'ret' could be NULL: unchecked value from (3)",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -4224,7 +4224,7 @@
                     "column": 6,
                     "event": "note",
                     "message": "(1) entry to 'xattrs2line'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -4246,7 +4246,7 @@
                     "column": 8,
                     "event": "note",
                     "message": "(2) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -4268,7 +4268,7 @@
                     "column": 9,
                     "event": "note",
                     "message": "(3) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -4290,7 +4290,7 @@
                     "column": 15,
                     "event": "note",
                     "message": "(4) following 'false' branch (when 'xret != -1')...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -4312,7 +4312,7 @@
                     "column": 15,
                     "event": "note",
                     "message": "(5) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -4334,7 +4334,7 @@
                     "column": 15,
                     "event": "note",
                     "message": "(6) following 'true' branch (when 'xret != 0')...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/do_md.c",
@@ -4342,7 +4342,7 @@
                     "column": 21,
                     "event": "note",
                     "message": "(7) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -4364,7 +4364,7 @@
                     "column": 12,
                     "event": "note",
                     "message": "(8) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -4386,7 +4386,7 @@
                     "column": 18,
                     "event": "note",
                     "message": "(9) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -4408,7 +4408,7 @@
                     "column": 18,
                     "event": "note",
                     "message": "(10) calling 'xattr_new' from 'xattrs2line'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/do_md.c",
@@ -4416,7 +4416,7 @@
                     "column": 21,
                     "event": "note",
                     "message": "(11) entry to 'xattr_new'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -4438,7 +4438,7 @@
                     "column": 11,
                     "event": "note",
                     "message": "(12) this call could return NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -4460,7 +4460,7 @@
                     "column": 14,
                     "event": "note",
                     "message": "(13) 'ret' could be NULL: unchecked value from (12)",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -4519,7 +4519,7 @@
                     "column": 6,
                     "event": "note",
                     "message": "(1) entry to 'xattrs2line'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -4541,7 +4541,7 @@
                     "column": 8,
                     "event": "note",
                     "message": "(2) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -4563,7 +4563,7 @@
                     "column": 9,
                     "event": "note",
                     "message": "(3) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -4585,7 +4585,7 @@
                     "column": 15,
                     "event": "note",
                     "message": "(4) following 'false' branch (when 'xret != -1')...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -4607,7 +4607,7 @@
                     "column": 15,
                     "event": "note",
                     "message": "(5) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -4629,7 +4629,7 @@
                     "column": 15,
                     "event": "note",
                     "message": "(6) following 'true' branch (when 'xret != 0')...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/do_md.c",
@@ -4637,7 +4637,7 @@
                     "column": 21,
                     "event": "note",
                     "message": "(7) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -4659,7 +4659,7 @@
                     "column": 15,
                     "event": "note",
                     "message": "(8) following 'true' branch (when 'xret > 0')...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -4681,7 +4681,7 @@
                     "column": 26,
                     "event": "note",
                     "message": "(9) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -4703,7 +4703,7 @@
                     "column": 19,
                     "event": "note",
                     "message": "(10) following 'false' branch (when 'aret != -1')...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -4725,7 +4725,7 @@
                     "column": 16,
                     "event": "note",
                     "message": "(11) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -4747,7 +4747,7 @@
                     "column": 16,
                     "event": "note",
                     "message": "(12) following 'true' branch (when 'aret != -1')...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/do_md.c",
@@ -4755,7 +4755,7 @@
                     "column": 17,
                     "event": "note",
                     "message": "(13) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -4777,7 +4777,7 @@
                     "column": 17,
                     "event": "note",
                     "message": "(14) calling 'xattr_add' from 'xattrs2line'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/do_md.c",
@@ -4785,7 +4785,7 @@
                     "column": 13,
                     "event": "note",
                     "message": "(15) entry to 'xattr_add'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -4807,7 +4807,7 @@
                     "column": 8,
                     "event": "note",
                     "message": "(16) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -4829,7 +4829,7 @@
                     "column": 11,
                     "event": "note",
                     "message": "(17) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -4851,7 +4851,7 @@
                     "column": 11,
                     "event": "note",
                     "message": "(18) allocated here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/do_md.c",
@@ -4859,7 +4859,7 @@
                     "column": 11,
                     "event": "note",
                     "message": "(19) '<unknown>' leaks here; was allocated at (18)",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -4918,7 +4918,7 @@
                     "column": 6,
                     "event": "note",
                     "message": "(1) entry to 'xattrs2line'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -4940,7 +4940,7 @@
                     "column": 8,
                     "event": "note",
                     "message": "(2) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -4962,7 +4962,7 @@
                     "column": 9,
                     "event": "note",
                     "message": "(3) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -4984,7 +4984,7 @@
                     "column": 15,
                     "event": "note",
                     "message": "(4) following 'false' branch (when 'xret != -1')...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -5006,7 +5006,7 @@
                     "column": 15,
                     "event": "note",
                     "message": "(5) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -5028,7 +5028,7 @@
                     "column": 15,
                     "event": "note",
                     "message": "(6) following 'true' branch (when 'xret != 0')...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/do_md.c",
@@ -5036,7 +5036,7 @@
                     "column": 21,
                     "event": "note",
                     "message": "(7) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -5058,7 +5058,7 @@
                     "column": 15,
                     "event": "note",
                     "message": "(8) following 'true' branch (when 'xret > 0')...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -5080,7 +5080,7 @@
                     "column": 26,
                     "event": "note",
                     "message": "(9) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -5102,7 +5102,7 @@
                     "column": 19,
                     "event": "note",
                     "message": "(10) following 'false' branch (when 'aret != -1')...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -5124,7 +5124,7 @@
                     "column": 16,
                     "event": "note",
                     "message": "(11) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -5146,7 +5146,7 @@
                     "column": 16,
                     "event": "note",
                     "message": "(12) following 'true' branch (when 'aret != -1')...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/do_md.c",
@@ -5154,7 +5154,7 @@
                     "column": 17,
                     "event": "note",
                     "message": "(13) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -5176,7 +5176,7 @@
                     "column": 17,
                     "event": "note",
                     "message": "(14) calling 'xattr_add' from 'xattrs2line'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/do_md.c",
@@ -5184,7 +5184,7 @@
                     "column": 13,
                     "event": "note",
                     "message": "(15) entry to 'xattr_add'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -5206,7 +5206,7 @@
                     "column": 8,
                     "event": "note",
                     "message": "(16) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -5228,7 +5228,7 @@
                     "column": 11,
                     "event": "note",
                     "message": "(17) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -5250,7 +5250,7 @@
                     "column": 37,
                     "event": "note",
                     "message": "(18) calling 'xzmemdup' from 'xattr_add'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -5272,7 +5272,7 @@
                     "column": 14,
                     "event": "note",
                     "message": "(19) entry to 'xzmemdup'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -5294,7 +5294,7 @@
                     "column": 11,
                     "event": "note",
                     "message": "(20) this call could return NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -5316,7 +5316,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(21) argument 1 ('ret') from (20) could be NULL where non-null expected",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -5426,7 +5426,7 @@
                     "column": 6,
                     "event": "note",
                     "message": "(1) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -5470,7 +5470,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(2) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -5514,7 +5514,7 @@
                     "column": 8,
                     "event": "note",
                     "message": "(3) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -5558,7 +5558,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "(4) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -5602,7 +5602,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "(5) this call could return NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -5646,7 +5646,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "(6) '<unknown>' could be NULL: unchecked value from (5)",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -5742,7 +5742,7 @@
                     "column": 6,
                     "event": "note",
                     "message": "(1) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -5786,7 +5786,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(2) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -5830,7 +5830,7 @@
                     "column": 8,
                     "event": "note",
                     "message": "(3) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -5874,7 +5874,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "(4) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -5918,7 +5918,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "(5) this call could return NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -5962,7 +5962,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "(6) argument 1 ('<unknown>') from (5) could be NULL where non-null expected",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -6086,7 +6086,7 @@
                     "column": 18,
                     "event": "note",
                     "message": "(1) this call could return NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -6108,7 +6108,7 @@
                     "column": 15,
                     "event": "note",
                     "message": "(2) 'node' could be NULL: unchecked value from (1)",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -6415,7 +6415,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(1) following 'false' branch (when 'val' is non-NULL)...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -6437,7 +6437,7 @@
                     "column": 13,
                     "event": "note",
                     "message": "(2) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -6459,7 +6459,7 @@
                     "column": 13,
                     "event": "note",
                     "message": "(3) this call could return NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/util.c",
@@ -6467,7 +6467,7 @@
                     "column": 10,
                     "event": "note",
                     "message": "(4) 'u' could be NULL: unchecked value from (3)",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -6519,7 +6519,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(1) following 'false' branch (when 'val' is non-NULL)...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -6541,7 +6541,7 @@
                     "column": 13,
                     "event": "note",
                     "message": "(2) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -6563,7 +6563,7 @@
                     "column": 13,
                     "event": "note",
                     "message": "(3) allocated here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/util.c",
@@ -6571,7 +6571,7 @@
                     "column": 10,
                     "event": "note",
                     "message": "(4) assuming 'u' is non-NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -6593,7 +6593,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "(5) following 'true' branch (when 'i != 11')...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -6615,7 +6615,7 @@
                     "column": 8,
                     "event": "note",
                     "message": "(6) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -6637,7 +6637,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "(7) following 'case 0:' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -6659,7 +6659,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "(8) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -6681,7 +6681,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "(9) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -6703,7 +6703,7 @@
                     "column": 24,
                     "event": "note",
                     "message": "(10) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -6725,7 +6725,7 @@
                     "column": 17,
                     "event": "note",
                     "message": "(11) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -6747,7 +6747,7 @@
                     "column": 39,
                     "event": "note",
                     "message": "(12) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -6769,7 +6769,7 @@
                     "column": 32,
                     "event": "note",
                     "message": "(13) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -6791,7 +6791,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "(14) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -6813,7 +6813,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "(15) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/util.c",
@@ -6821,7 +6821,7 @@
                     "column": 24,
                     "event": "note",
                     "message": "(16) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -6843,7 +6843,7 @@
                     "column": 17,
                     "event": "note",
                     "message": "(17) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -6865,7 +6865,7 @@
                     "column": 39,
                     "event": "note",
                     "message": "(18) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -6887,7 +6887,7 @@
                     "column": 32,
                     "event": "note",
                     "message": "(19) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -6909,7 +6909,7 @@
                     "column": 28,
                     "event": "note",
                     "message": "(20) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -6931,7 +6931,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "(21) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -6953,7 +6953,7 @@
                     "column": 9,
                     "event": "note",
                     "message": "(22) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -6975,7 +6975,7 @@
                     "column": 9,
                     "event": "note",
                     "message": "(23) 'u' leaks here; was allocated at (3)",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -7027,7 +7027,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(1) following 'false' branch (when 'val' is non-NULL)...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -7049,7 +7049,7 @@
                     "column": 13,
                     "event": "note",
                     "message": "(2) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -7071,7 +7071,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "(3) following 'true' branch (when 'i != 11')...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -7093,7 +7093,7 @@
                     "column": 8,
                     "event": "note",
                     "message": "(4) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -7115,7 +7115,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "(5) following 'true' branch (when the strings are equal)...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -7137,7 +7137,7 @@
                     "column": 24,
                     "event": "note",
                     "message": "(6) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -7159,7 +7159,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "(7) following 'case 0:' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -7181,7 +7181,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "(8) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -7203,7 +7203,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "(9) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -7225,7 +7225,7 @@
                     "column": 24,
                     "event": "note",
                     "message": "(10) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -7247,7 +7247,7 @@
                     "column": 17,
                     "event": "note",
                     "message": "(11) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -7269,7 +7269,7 @@
                     "column": 39,
                     "event": "note",
                     "message": "(12) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -7291,7 +7291,7 @@
                     "column": 32,
                     "event": "note",
                     "message": "(13) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -7313,7 +7313,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "(14) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -7335,7 +7335,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "(15) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/util.c",
@@ -7343,7 +7343,7 @@
                     "column": 24,
                     "event": "note",
                     "message": "(16) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -7365,7 +7365,7 @@
                     "column": 17,
                     "event": "note",
                     "message": "(17) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -7387,7 +7387,7 @@
                     "column": 39,
                     "event": "note",
                     "message": "(18) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -7409,7 +7409,7 @@
                     "column": 32,
                     "event": "note",
                     "message": "(19) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -7431,7 +7431,7 @@
                     "column": 28,
                     "event": "note",
                     "message": "(20) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -7453,7 +7453,7 @@
                     "column": 28,
                     "event": "note",
                     "message": "(21) this call could return NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/util.c",
@@ -7461,7 +7461,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "(22) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -7483,7 +7483,7 @@
                     "column": 9,
                     "event": "note",
                     "message": "(23) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -7505,7 +7505,7 @@
                     "column": 9,
                     "event": "note",
                     "message": "(24) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/util.c",
@@ -7513,7 +7513,7 @@
                     "column": 16,
                     "event": "note",
                     "message": "(25) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -7535,7 +7535,7 @@
                     "column": 10,
                     "event": "note",
                     "message": "(26) argument 1 ('hostname') from (21) could be NULL where non-null expected",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -7630,7 +7630,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "(1) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -7652,7 +7652,7 @@
                     "column": 27,
                     "event": "note",
                     "message": "(2) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -7674,7 +7674,7 @@
                     "column": 27,
                     "event": "note",
                     "message": "(3) this call could return NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/util.c",
@@ -7682,7 +7682,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "(4) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -7704,7 +7704,7 @@
                     "column": 9,
                     "event": "note",
                     "message": "(5) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -7726,7 +7726,7 @@
                     "column": 8,
                     "event": "note",
                     "message": "(6) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -7748,7 +7748,7 @@
                     "column": 29,
                     "event": "note",
                     "message": "(7) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -7770,7 +7770,7 @@
                     "column": 14,
                     "event": "note",
                     "message": "(8) 'p' could be NULL: unchecked value from (3)",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -7822,7 +7822,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "(1) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -7844,7 +7844,7 @@
                     "column": 27,
                     "event": "note",
                     "message": "(2) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -7866,7 +7866,7 @@
                     "column": 27,
                     "event": "note",
                     "message": "(3) this call could return NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/util.c",
@@ -7874,7 +7874,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "(4) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -7896,7 +7896,7 @@
                     "column": 9,
                     "event": "note",
                     "message": "(5) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -7918,7 +7918,7 @@
                     "column": 8,
                     "event": "note",
                     "message": "(6) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -7940,7 +7940,7 @@
                     "column": 32,
                     "event": "note",
                     "message": "(7) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -7962,7 +7962,7 @@
                     "column": 32,
                     "event": "note",
                     "message": "(8) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/util.c",
@@ -7977,7 +7977,7 @@
                     "column": 35,
                     "event": "note",
                     "message": "(9) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -8021,7 +8021,7 @@
                     "column": 34,
                     "event": "note",
                     "message": "(10) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -8043,7 +8043,7 @@
                     "column": 9,
                     "event": "note",
                     "message": "(11) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -8065,7 +8065,7 @@
                     "column": 12,
                     "event": "note",
                     "message": "(12) 'p' could be NULL: unchecked value from (3)",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -8117,7 +8117,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "(1) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -8139,7 +8139,7 @@
                     "column": 27,
                     "event": "note",
                     "message": "(2) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -8161,7 +8161,7 @@
                     "column": 27,
                     "event": "note",
                     "message": "(3) this call could return NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/util.c",
@@ -8169,7 +8169,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "(4) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -8191,7 +8191,7 @@
                     "column": 6,
                     "event": "note",
                     "message": "(5) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -8213,7 +8213,7 @@
                     "column": 6,
                     "event": "note",
                     "message": "(6) 'p' could be NULL: unchecked value from (3)",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 }
             ]
         },
@@ -8251,7 +8251,7 @@
                     "column": 13,
                     "event": "note",
                     "message": "(1) this call could return NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -8273,7 +8273,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "(2) following 'true' branch (when 'i != 10')...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -8295,7 +8295,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "(3) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -8317,7 +8317,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "(4) following 'false' branch (when 'i == 10')...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -8339,7 +8339,7 @@
                     "column": 9,
                     "event": "note",
                     "message": "(5) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -8361,7 +8361,7 @@
                     "column": 9,
                     "event": "note",
                     "message": "(6) 'pc' could be NULL: unchecked value from (1)",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 }
             ]
         },
@@ -8399,7 +8399,7 @@
                     "column": 8,
                     "event": "note",
                     "message": "(1) following 'true' branch (when 'path' is non-NULL)...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -8421,7 +8421,7 @@
                     "column": 17,
                     "event": "note",
                     "message": "(2) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -8443,7 +8443,7 @@
                     "column": 12,
                     "event": "note",
                     "message": "(3) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -8465,7 +8465,7 @@
                     "column": 25,
                     "event": "note",
                     "message": "(4) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -8487,7 +8487,7 @@
                     "column": 15,
                     "event": "note",
                     "message": "(5) following 'true' branch (when 'homedir' is non-NULL)...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -8509,7 +8509,7 @@
                     "column": 39,
                     "event": "note",
                     "message": "(6) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -8531,7 +8531,7 @@
                     "column": 39,
                     "event": "note",
                     "message": "(7) this call could return NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/util.c",
@@ -8539,7 +8539,7 @@
                     "column": 17,
                     "event": "note",
                     "message": "(8) argument 1 ('full') from (7) could be NULL where non-null expected",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -8731,7 +8731,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(1) entry to 'main'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -8753,7 +8753,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(2) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -8775,7 +8775,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "(3) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -8797,7 +8797,7 @@
                     "column": 6,
                     "event": "note",
                     "message": "(4) calling 'read_param' from 'main'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -8819,7 +8819,7 @@
                     "column": 12,
                     "event": "note",
                     "message": "(5) entry to 'read_param'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -8841,7 +8841,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "(6) following 'false' branch (when 'option != -1')...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -8863,7 +8863,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(7) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -8885,7 +8885,7 @@
                     "column": 16,
                     "event": "note",
                     "message": "(8) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -8907,7 +8907,7 @@
                     "column": 36,
                     "event": "note",
                     "message": "(9) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -8929,7 +8929,7 @@
                     "column": 36,
                     "event": "note",
                     "message": "(10) this call could return NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/aide.c",
@@ -8937,7 +8937,7 @@
                     "column": 17,
                     "event": "note",
                     "message": "(11) argument 1 ('<unknown>') from (10) could be NULL where non-null expected",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -9039,7 +9039,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(1) entry to 'main'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -9061,7 +9061,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "(2) calling 'setdefaults_before_config' from 'main'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -9083,7 +9083,7 @@
                     "column": 13,
                     "event": "note",
                     "message": "(3) entry to 'setdefaults_before_config'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -9105,7 +9105,7 @@
                     "column": 20,
                     "event": "note",
                     "message": "(4) this call could return NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -9127,7 +9127,7 @@
                     "column": 16,
                     "event": "note",
                     "message": "(5) '<unknown>' could be NULL: unchecked value from (4)",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -9179,7 +9179,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(1) entry to 'main'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -9201,7 +9201,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "(2) calling 'setdefaults_before_config' from 'main'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -9223,7 +9223,7 @@
                     "column": 13,
                     "event": "note",
                     "message": "(3) entry to 'setdefaults_before_config'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -9245,7 +9245,7 @@
                     "column": 18,
                     "event": "note",
                     "message": "(4) this call could return NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -9267,7 +9267,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "(5) argument 1 ('s') from (4) could be NULL where non-null expected",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -9362,7 +9362,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(1) entry to 'main'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -9384,7 +9384,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "(2) calling 'setdefaults_before_config' from 'main'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -9406,7 +9406,7 @@
                     "column": 13,
                     "event": "note",
                     "message": "(3) entry to 'setdefaults_before_config'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -9428,7 +9428,7 @@
                     "column": 6,
                     "event": "note",
                     "message": "(4) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -9450,7 +9450,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(5) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -9472,7 +9472,7 @@
                     "column": 27,
                     "event": "note",
                     "message": "(6) this call could return NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -9494,7 +9494,7 @@
                     "column": 24,
                     "event": "note",
                     "message": "(7) '<unknown>' could be NULL: unchecked value from (6)",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -9553,7 +9553,7 @@
                     "column": 6,
                     "event": "note",
                     "message": "(1) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -9575,7 +9575,7 @@
                     "column": 20,
                     "event": "note",
                     "message": "(2) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -9597,7 +9597,7 @@
                     "column": 9,
                     "event": "note",
                     "message": "(3) following 'false' branch (when 'left == 0')...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -9619,7 +9619,7 @@
                     "column": 41,
                     "event": "note",
                     "message": "(4) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -9641,7 +9641,7 @@
                     "column": 41,
                     "event": "note",
                     "message": "(5) this call could return NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/base64.c",
@@ -9649,7 +9649,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "(6) argument 1 ('retbuf') from (5) could be NULL where non-null expected",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -9730,7 +9730,7 @@
                     "column": 6,
                     "event": "note",
                     "message": "(1) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -9752,7 +9752,7 @@
                     "column": 20,
                     "event": "note",
                     "message": "(2) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -9774,7 +9774,7 @@
                     "column": 20,
                     "event": "note",
                     "message": "(3) this call could return NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/base64.c",
@@ -9782,7 +9782,7 @@
                     "column": 9,
                     "event": "note",
                     "message": "(4) following 'false' branch (when 'left == 0')...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -9804,7 +9804,7 @@
                     "column": 41,
                     "event": "note",
                     "message": "(5) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -9826,7 +9826,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "(6) argument 2 ('outbuf') from (3) could be NULL where non-null expected",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -9914,7 +9914,7 @@
                     "column": 6,
                     "event": "note",
                     "message": "(1) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -9936,7 +9936,7 @@
                     "column": 20,
                     "event": "note",
                     "message": "(2) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -9958,7 +9958,7 @@
                     "column": 9,
                     "event": "note",
                     "message": "(3) following 'false' branch (when 'left == 0')...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -9980,7 +9980,7 @@
                     "column": 41,
                     "event": "note",
                     "message": "(4) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -10002,7 +10002,7 @@
                     "column": 41,
                     "event": "note",
                     "message": "(5) this call could return NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/base64.c",
@@ -10010,7 +10010,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "(6) argument 1 ('retbuf') from (5) could be NULL where non-null expected",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -10091,7 +10091,7 @@
                     "column": 6,
                     "event": "note",
                     "message": "(1) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -10113,7 +10113,7 @@
                     "column": 20,
                     "event": "note",
                     "message": "(2) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -10135,7 +10135,7 @@
                     "column": 20,
                     "event": "note",
                     "message": "(3) this call could return NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/base64.c",
@@ -10143,7 +10143,7 @@
                     "column": 9,
                     "event": "note",
                     "message": "(4) following 'false' branch (when 'left == 0')...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -10165,7 +10165,7 @@
                     "column": 41,
                     "event": "note",
                     "message": "(5) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -10187,7 +10187,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "(6) argument 2 ('outbuf') from (3) could be NULL where non-null expected",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -10275,7 +10275,7 @@
                     "column": 15,
                     "event": "note",
                     "message": "(1) this call could return NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -10297,7 +10297,7 @@
                     "column": 8,
                     "event": "note",
                     "message": "(2) 'r' could be NULL: unchecked value from (1)",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -10356,7 +10356,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(1) following 'false' branch (when 'r' is NULL)...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -10378,7 +10378,7 @@
                     "column": 13,
                     "event": "note",
                     "message": "(2) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -10400,7 +10400,7 @@
                     "column": 13,
                     "event": "note",
                     "message": "(3) this call could return NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/commandconf.c",
@@ -10408,7 +10408,7 @@
                     "column": 10,
                     "event": "note",
                     "message": "(4) 's' could be NULL: unchecked value from (3)",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -10467,7 +10467,7 @@
                     "column": 25,
                     "event": "note",
                     "message": "(1) this call could return NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -10489,7 +10489,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "(2) 'm' could be NULL: unchecked value from (1)",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -10548,7 +10548,7 @@
                     "column": 25,
                     "event": "note",
                     "message": "(1) this call could return NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -10570,7 +10570,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "(2) 'm' could be NULL: unchecked value from (1)",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -10629,7 +10629,7 @@
                     "column": 25,
                     "event": "note",
                     "message": "(1) this call could return NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -10651,7 +10651,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "(2) 'm' could be NULL: unchecked value from (1)",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -10710,7 +10710,7 @@
                     "column": 25,
                     "event": "note",
                     "message": "(1) this call could return NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -10732,7 +10732,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "(2) 'm' could be NULL: unchecked value from (1)",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -10962,7 +10962,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(1) following 'false' branch (when 'new_r' is NULL)...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -10984,7 +10984,7 @@
                     "column": 10,
                     "event": "note",
                     "message": "(2) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -11006,7 +11006,7 @@
                     "column": 10,
                     "event": "note",
                     "message": "(3) this call could return NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/db_disk.c",
@@ -11014,7 +11014,7 @@
                     "column": 14,
                     "event": "note",
                     "message": "(4) 'new_r' could be NULL: unchecked value from (3)",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -11066,7 +11066,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(1) following 'false' branch (when 'new_r' is NULL)...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -11088,7 +11088,7 @@
                     "column": 10,
                     "event": "note",
                     "message": "(2) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -11110,7 +11110,7 @@
                     "column": 17,
                     "event": "note",
                     "message": "(3) this call could return NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -11132,7 +11132,7 @@
                     "column": 2,
                     "event": "note",
                     "message": "(4) argument 1 ('<unknown>') from (3) could be NULL where non-null expected",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -11220,7 +11220,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(1) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -11242,7 +11242,7 @@
                     "column": 16,
                     "event": "note",
                     "message": "(2) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -11264,7 +11264,7 @@
                     "column": 16,
                     "event": "note",
                     "message": "(3) this call could return NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/db_disk.c",
@@ -11272,7 +11272,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "(4) argument 1 ('fullname') from (3) could be NULL where non-null expected",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -11353,7 +11353,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "(1) following 'false' branch (when 'fil' is NULL)...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -11375,7 +11375,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "(2) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -11397,7 +11397,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(3) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -11419,7 +11419,7 @@
                     "column": 9,
                     "event": "note",
                     "message": "(4) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -11441,7 +11441,7 @@
                     "column": 6,
                     "event": "note",
                     "message": "(5) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -11463,7 +11463,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "(6) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -11499,7 +11499,7 @@
                     "column": 6,
                     "event": "note",
                     "message": "(7) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -11521,7 +11521,7 @@
                     "column": 46,
                     "event": "note",
                     "message": "(8) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -11543,7 +11543,7 @@
                     "column": 42,
                     "event": "note",
                     "message": "(9) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -11565,7 +11565,7 @@
                     "column": 17,
                     "event": "note",
                     "message": "(10) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -11587,7 +11587,7 @@
                     "column": 10,
                     "event": "note",
                     "message": "(11) following 'true' branch (when 'l' is non-NULL)...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -11609,7 +11609,7 @@
                     "column": 27,
                     "event": "note",
                     "message": "(12) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -11631,7 +11631,7 @@
                     "column": 8,
                     "event": "note",
                     "message": "(13) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -11667,7 +11667,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "(14) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -11689,7 +11689,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "(15) following 'true' branch (when 'l' is non-NULL)...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/db_disk.c",
@@ -11697,7 +11697,7 @@
                     "column": 15,
                     "event": "note",
                     "message": "(16) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -11719,7 +11719,7 @@
                     "column": 8,
                     "event": "note",
                     "message": "(17) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -11741,7 +11741,7 @@
                     "column": 8,
                     "event": "note",
                     "message": "(18) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -11763,7 +11763,7 @@
                     "column": 8,
                     "event": "note",
                     "message": "(19) this call could return NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/db_disk.c",
@@ -11771,7 +11771,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(20) argument 1 ('fullname') from (19) could be NULL where non-null expected",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -11859,7 +11859,7 @@
                     "column": 29,
                     "event": "note",
                     "message": "(1) this call could return NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -11881,7 +11881,7 @@
                     "column": 2,
                     "event": "note",
                     "message": "(2) argument 1 ('fullname') from (1) could be NULL where non-null expected",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -12006,7 +12006,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(1) entry to 'gen_report'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -12028,7 +12028,7 @@
                     "column": 12,
                     "event": "note",
                     "message": "(2) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -12050,7 +12050,7 @@
                     "column": 16,
                     "event": "note",
                     "message": "(3) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -12072,7 +12072,7 @@
                     "column": 16,
                     "event": "note",
                     "message": "(4) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -12094,7 +12094,7 @@
                     "column": 45,
                     "event": "note",
                     "message": "(5) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -12116,7 +12116,7 @@
                     "column": 38,
                     "event": "note",
                     "message": "(6) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -12138,7 +12138,7 @@
                     "column": 21,
                     "event": "note",
                     "message": "(7) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -12160,7 +12160,7 @@
                     "column": 20,
                     "event": "note",
                     "message": "(8) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -12182,7 +12182,7 @@
                     "column": 21,
                     "event": "note",
                     "message": "(9) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -12204,7 +12204,7 @@
                     "column": 21,
                     "event": "note",
                     "message": "(10) calling 'print_report_list' from 'gen_report'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -12226,7 +12226,7 @@
                     "column": 13,
                     "event": "note",
                     "message": "(11) entry to 'print_report_list'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -12248,7 +12248,7 @@
                     "column": 8,
                     "event": "note",
                     "message": "(12) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -12270,7 +12270,7 @@
                     "column": 9,
                     "event": "note",
                     "message": "(13) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -12292,7 +12292,7 @@
                     "column": 9,
                     "event": "note",
                     "message": "(14) calling 'print_line' from 'print_report_list'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/compare_db.c",
@@ -12300,7 +12300,7 @@
                     "column": 13,
                     "event": "note",
                     "message": "(15) entry to 'print_line'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -12322,7 +12322,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "(16) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -12344,7 +12344,7 @@
                     "column": 25,
                     "event": "note",
                     "message": "(17) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -12366,7 +12366,7 @@
                     "column": 25,
                     "event": "note",
                     "message": "(18) this call could return NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/compare_db.c",
@@ -12374,7 +12374,7 @@
                     "column": 12,
                     "event": "note",
                     "message": "(19) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -12396,7 +12396,7 @@
                     "column": 57,
                     "event": "note",
                     "message": "(20) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -12411,7 +12411,7 @@
                     "column": 85,
                     "event": "note",
                     "message": "(21) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -12433,7 +12433,7 @@
                     "column": 85,
                     "event": "note",
                     "message": "(22) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/compare_db.c",
@@ -12441,7 +12441,7 @@
                     "column": 23,
                     "event": "note",
                     "message": "(23) 'summary' could be NULL: unchecked value from (18)",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -12500,7 +12500,7 @@
                     "column": 26,
                     "event": "note",
                     "message": "(1) entry to 'conf_create_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -12544,7 +12544,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(2) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -12566,7 +12566,7 @@
                     "column": 17,
                     "event": "note",
                     "message": "(3) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -12588,7 +12588,7 @@
                     "column": 17,
                     "event": "note",
                     "message": "(4) allocated here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/conf_lex.c",
@@ -12596,7 +12596,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(5) assuming '<unknown>' is non-NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -12618,7 +12618,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(6) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/conf_lex.c",
@@ -12626,7 +12626,7 @@
                     "column": 22,
                     "event": "note",
                     "message": "(7) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -12648,7 +12648,7 @@
                     "column": 24,
                     "event": "note",
                     "message": "(8) calling 'conf_init_buffer' from 'conf_create_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -12685,7 +12685,7 @@
                     "column": 24,
                     "event": "note",
                     "message": "(9) entry to 'conf_init_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -12729,7 +12729,7 @@
                     "column": 25,
                     "event": "note",
                     "message": "(10) calling 'conf_flush_buffer' from 'conf_init_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -12766,7 +12766,7 @@
                     "column": 25,
                     "event": "note",
                     "message": "(11) entry to 'conf_flush_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -12810,7 +12810,7 @@
                     "column": 9,
                     "event": "note",
                     "message": "(12) following 'false' branch (when 'b' is non-NULL)...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -12832,7 +12832,7 @@
                     "column": 16,
                     "event": "note",
                     "message": "(13) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -12854,7 +12854,7 @@
                     "column": 27,
                     "event": "note",
                     "message": "(14) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -12926,7 +12926,7 @@
                     "column": 46,
                     "event": "note",
                     "message": "(15) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -12970,7 +12970,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(16) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -12992,7 +12992,7 @@
                     "column": 30,
                     "event": "note",
                     "message": "(17) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -13029,7 +13029,7 @@
                     "column": 25,
                     "event": "note",
                     "message": "(18) returning to 'conf_init_buffer' from 'conf_flush_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -13066,7 +13066,7 @@
                     "column": 27,
                     "event": "note",
                     "message": "(19) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -13138,7 +13138,7 @@
                     "column": 46,
                     "event": "note",
                     "message": "(20) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -13182,7 +13182,7 @@
                     "column": 68,
                     "event": "note",
                     "message": "(21) following 'false' branch (when 'file' is NULL)...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -13204,7 +13204,7 @@
                     "column": 30,
                     "event": "note",
                     "message": "(22) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -13226,7 +13226,7 @@
                     "column": 24,
                     "event": "note",
                     "message": "(23) returning to 'conf_create_buffer' from 'conf_init_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -13263,7 +13263,7 @@
                     "column": 9,
                     "event": "note",
                     "message": "(24) '<unknown>' leaks here; was allocated at (4)",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -13322,7 +13322,7 @@
                     "column": 19,
                     "event": "note",
                     "message": "(1) entry to 'confrestart'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -13366,7 +13366,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "(2) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -13388,7 +13388,7 @@
                     "column": 31,
                     "event": "note",
                     "message": "(3) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -13425,7 +13425,7 @@
                     "column": 26,
                     "event": "note",
                     "message": "(4) calling 'conf_create_buffer' from 'confrestart'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -13462,7 +13462,7 @@
                     "column": 26,
                     "event": "note",
                     "message": "(5) entry to 'conf_create_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -13506,7 +13506,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(6) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -13528,7 +13528,7 @@
                     "column": 17,
                     "event": "note",
                     "message": "(7) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -13550,7 +13550,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(8) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -13572,7 +13572,7 @@
                     "column": 22,
                     "event": "note",
                     "message": "(9) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -13594,7 +13594,7 @@
                     "column": 24,
                     "event": "note",
                     "message": "(10) calling 'conf_init_buffer' from 'conf_create_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -13631,7 +13631,7 @@
                     "column": 24,
                     "event": "note",
                     "message": "(11) entry to 'conf_init_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -13675,7 +13675,7 @@
                     "column": 25,
                     "event": "note",
                     "message": "(12) calling 'conf_flush_buffer' from 'conf_init_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -13712,7 +13712,7 @@
                     "column": 25,
                     "event": "note",
                     "message": "(13) entry to 'conf_flush_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -13756,7 +13756,7 @@
                     "column": 9,
                     "event": "note",
                     "message": "(14) following 'false' branch (when 'b' is non-NULL)...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -13778,7 +13778,7 @@
                     "column": 16,
                     "event": "note",
                     "message": "(15) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -13800,7 +13800,7 @@
                     "column": 27,
                     "event": "note",
                     "message": "(16) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -13872,7 +13872,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(17) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -13894,7 +13894,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(18) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/conf_lex.c",
@@ -13902,7 +13902,7 @@
                     "column": 30,
                     "event": "note",
                     "message": "(19) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -13939,7 +13939,7 @@
                     "column": 25,
                     "event": "note",
                     "message": "(20) returning to 'conf_init_buffer' from 'conf_flush_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -13976,7 +13976,7 @@
                     "column": 27,
                     "event": "note",
                     "message": "(21) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -14048,7 +14048,7 @@
                     "column": 46,
                     "event": "note",
                     "message": "(22) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -14092,7 +14092,7 @@
                     "column": 8,
                     "event": "note",
                     "message": "(23) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -14114,7 +14114,7 @@
                     "column": 68,
                     "event": "note",
                     "message": "(24) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -14136,7 +14136,7 @@
                     "column": 68,
                     "event": "note",
                     "message": "(25) following 'true' branch (when 'file' is non-NULL)...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/conf_lex.c",
@@ -14144,7 +14144,7 @@
                     "column": 40,
                     "event": "note",
                     "message": "(26) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -14166,7 +14166,7 @@
                     "column": 68,
                     "event": "note",
                     "message": "(27) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -14188,7 +14188,7 @@
                     "column": 30,
                     "event": "note",
                     "message": "(28) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -14210,7 +14210,7 @@
                     "column": 24,
                     "event": "note",
                     "message": "(29) returning to 'conf_create_buffer' from 'conf_init_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -14247,7 +14247,7 @@
                     "column": 26,
                     "event": "note",
                     "message": "(30) returning to 'confrestart' from 'conf_create_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -14284,7 +14284,7 @@
                     "column": 24,
                     "event": "note",
                     "message": "(31) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -14321,7 +14321,7 @@
                     "column": 46,
                     "event": "note",
                     "message": "(32) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -14365,7 +14365,7 @@
                     "column": 24,
                     "event": "note",
                     "message": "(33) calling 'conf_init_buffer' from 'confrestart'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -14402,7 +14402,7 @@
                     "column": 24,
                     "event": "note",
                     "message": "(34) entry to 'conf_init_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -14446,7 +14446,7 @@
                     "column": 25,
                     "event": "note",
                     "message": "(35) calling 'conf_flush_buffer' from 'conf_init_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -14483,7 +14483,7 @@
                     "column": 25,
                     "event": "note",
                     "message": "(36) entry to 'conf_flush_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -14527,7 +14527,7 @@
                     "column": 9,
                     "event": "note",
                     "message": "(37) following 'true' branch (when 'b' is NULL)...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -14548,7 +14548,7 @@
                     "line": 0,
                     "event": "note",
                     "message": "(38) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/conf_lex.c",
@@ -14556,7 +14556,7 @@
                     "column": 25,
                     "event": "note",
                     "message": "(39) returning to 'conf_init_buffer' from 'conf_flush_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -14593,7 +14593,7 @@
                     "column": 27,
                     "event": "note",
                     "message": "(40) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -14665,7 +14665,7 @@
                     "column": 8,
                     "event": "note",
                     "message": "(41) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -14687,7 +14687,7 @@
                     "column": 8,
                     "event": "note",
                     "message": "(42) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/conf_lex.c",
@@ -14695,7 +14695,7 @@
                     "column": 68,
                     "event": "note",
                     "message": "(43) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -14717,7 +14717,7 @@
                     "column": 68,
                     "event": "note",
                     "message": "(44) following 'false' branch (when 'file' is NULL)...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/conf_lex.c",
@@ -14725,7 +14725,7 @@
                     "column": 30,
                     "event": "note",
                     "message": "(45) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -14747,7 +14747,7 @@
                     "column": 30,
                     "event": "note",
                     "message": "(46) dereference of NULL 'b'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 }
             ]
         },
@@ -14792,7 +14792,7 @@
                     "column": 6,
                     "event": "note",
                     "message": "(1) entry to 'db_close'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -14814,7 +14814,7 @@
                     "column": 22,
                     "event": "note",
                     "message": "(2) calling 'close_db_attrs' from 'db_close'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -14836,7 +14836,7 @@
                     "column": 17,
                     "event": "note",
                     "message": "(3) entry to 'close_db_attrs'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -14858,7 +14858,7 @@
                     "column": 8,
                     "event": "note",
                     "message": "(4) following 'true' branch (when 'mdc' is non-NULL)...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -14880,7 +14880,7 @@
                     "column": 9,
                     "event": "note",
                     "message": "(5) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -14902,7 +14902,7 @@
                     "column": 9,
                     "event": "note",
                     "message": "(6) this call could return NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/db.c",
@@ -14910,7 +14910,7 @@
                     "column": 24,
                     "event": "note",
                     "message": "(7) 'line' could be NULL: unchecked value from (6)",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -14969,7 +14969,7 @@
                     "column": 27,
                     "event": "note",
                     "message": "(1) this call could return NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -14991,7 +14991,7 @@
                     "column": 12,
                     "event": "note",
                     "message": "(2) 'line' could be NULL: unchecked value from (1)",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -15110,7 +15110,7 @@
                     "column": 26,
                     "event": "note",
                     "message": "(1) entry to 'db_create_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -15154,7 +15154,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(2) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -15176,7 +15176,7 @@
                     "column": 17,
                     "event": "note",
                     "message": "(3) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -15198,7 +15198,7 @@
                     "column": 17,
                     "event": "note",
                     "message": "(4) allocated here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/db_lex.c",
@@ -15206,7 +15206,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(5) assuming '<unknown>' is non-NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -15228,7 +15228,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(6) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/db_lex.c",
@@ -15236,7 +15236,7 @@
                     "column": 22,
                     "event": "note",
                     "message": "(7) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -15258,7 +15258,7 @@
                     "column": 24,
                     "event": "note",
                     "message": "(8) calling 'db_init_buffer' from 'db_create_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -15295,7 +15295,7 @@
                     "column": 24,
                     "event": "note",
                     "message": "(9) entry to 'db_init_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -15339,7 +15339,7 @@
                     "column": 25,
                     "event": "note",
                     "message": "(10) calling 'db_flush_buffer' from 'db_init_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -15376,7 +15376,7 @@
                     "column": 25,
                     "event": "note",
                     "message": "(11) entry to 'db_flush_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -15420,7 +15420,7 @@
                     "column": 9,
                     "event": "note",
                     "message": "(12) following 'false' branch (when 'b' is non-NULL)...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -15442,7 +15442,7 @@
                     "column": 16,
                     "event": "note",
                     "message": "(13) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -15464,7 +15464,7 @@
                     "column": 27,
                     "event": "note",
                     "message": "(14) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -15536,7 +15536,7 @@
                     "column": 46,
                     "event": "note",
                     "message": "(15) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -15580,7 +15580,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(16) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -15602,7 +15602,7 @@
                     "column": 30,
                     "event": "note",
                     "message": "(17) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -15639,7 +15639,7 @@
                     "column": 25,
                     "event": "note",
                     "message": "(18) returning to 'db_init_buffer' from 'db_flush_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -15676,7 +15676,7 @@
                     "column": 27,
                     "event": "note",
                     "message": "(19) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -15748,7 +15748,7 @@
                     "column": 46,
                     "event": "note",
                     "message": "(20) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -15792,7 +15792,7 @@
                     "column": 68,
                     "event": "note",
                     "message": "(21) following 'false' branch (when 'file' is NULL)...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -15814,7 +15814,7 @@
                     "column": 30,
                     "event": "note",
                     "message": "(22) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -15836,7 +15836,7 @@
                     "column": 24,
                     "event": "note",
                     "message": "(23) returning to 'db_create_buffer' from 'db_init_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -15873,7 +15873,7 @@
                     "column": 9,
                     "event": "note",
                     "message": "(24) '<unknown>' leaks here; was allocated at (4)",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -15932,7 +15932,7 @@
                     "column": 19,
                     "event": "note",
                     "message": "(1) entry to 'dbrestart'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -15976,7 +15976,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(2) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -15998,7 +15998,7 @@
                     "column": 31,
                     "event": "note",
                     "message": "(3) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -16035,7 +16035,7 @@
                     "column": 31,
                     "event": "note",
                     "message": "(4) calling 'dbensure_buffer_stack' from 'dbrestart'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -16072,7 +16072,7 @@
                     "column": 31,
                     "event": "note",
                     "message": "(5) entry to 'dbensure_buffer_stack'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -16116,7 +16116,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(6) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -16138,7 +16138,7 @@
                     "column": 11,
                     "event": "note",
                     "message": "(7) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -16160,7 +16160,7 @@
                     "column": 6,
                     "event": "note",
                     "message": "(8) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -16182,7 +16182,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "(9) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -16204,7 +16204,7 @@
                     "column": 31,
                     "event": "note",
                     "message": "(10) returning to 'dbrestart' from 'dbensure_buffer_stack'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -16241,7 +16241,7 @@
                     "column": 26,
                     "event": "note",
                     "message": "(11) calling 'db_create_buffer' from 'dbrestart'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -16278,7 +16278,7 @@
                     "column": 26,
                     "event": "note",
                     "message": "(12) entry to 'db_create_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -16322,7 +16322,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(13) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -16344,7 +16344,7 @@
                     "column": 17,
                     "event": "note",
                     "message": "(14) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -16366,7 +16366,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(15) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -16388,7 +16388,7 @@
                     "column": 22,
                     "event": "note",
                     "message": "(16) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -16410,7 +16410,7 @@
                     "column": 24,
                     "event": "note",
                     "message": "(17) calling 'db_init_buffer' from 'db_create_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -16447,7 +16447,7 @@
                     "column": 24,
                     "event": "note",
                     "message": "(18) entry to 'db_init_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -16491,7 +16491,7 @@
                     "column": 25,
                     "event": "note",
                     "message": "(19) calling 'db_flush_buffer' from 'db_init_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -16528,7 +16528,7 @@
                     "column": 25,
                     "event": "note",
                     "message": "(20) entry to 'db_flush_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -16572,7 +16572,7 @@
                     "column": 9,
                     "event": "note",
                     "message": "(21) following 'false' branch (when 'b' is non-NULL)...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -16594,7 +16594,7 @@
                     "column": 16,
                     "event": "note",
                     "message": "(22) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -16616,7 +16616,7 @@
                     "column": 27,
                     "event": "note",
                     "message": "(23) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -16688,7 +16688,7 @@
                     "column": 46,
                     "event": "note",
                     "message": "(24) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -16732,7 +16732,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(25) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -16753,7 +16753,7 @@
                     "line": 0,
                     "event": "note",
                     "message": "(26) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/db_lex.c",
@@ -16761,7 +16761,7 @@
                     "column": 25,
                     "event": "note",
                     "message": "(27) returning to 'db_init_buffer' from 'db_flush_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -16798,7 +16798,7 @@
                     "column": 27,
                     "event": "note",
                     "message": "(28) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -16870,7 +16870,7 @@
                     "column": 46,
                     "event": "note",
                     "message": "(29) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -16914,7 +16914,7 @@
                     "column": 8,
                     "event": "note",
                     "message": "(30) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -16936,7 +16936,7 @@
                     "column": 25,
                     "event": "note",
                     "message": "(31) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -16958,7 +16958,7 @@
                     "column": 68,
                     "event": "note",
                     "message": "(32) following 'true' branch (when 'file' is non-NULL)...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -16980,7 +16980,7 @@
                     "column": 40,
                     "event": "note",
                     "message": "(33) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -17002,7 +17002,7 @@
                     "column": 68,
                     "event": "note",
                     "message": "(34) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -17024,7 +17024,7 @@
                     "column": 30,
                     "event": "note",
                     "message": "(35) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -17046,7 +17046,7 @@
                     "column": 24,
                     "event": "note",
                     "message": "(36) returning to 'db_create_buffer' from 'db_init_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -17083,7 +17083,7 @@
                     "column": 26,
                     "event": "note",
                     "message": "(37) returning to 'dbrestart' from 'db_create_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -17120,7 +17120,7 @@
                     "column": 24,
                     "event": "note",
                     "message": "(38) following 'true' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -17157,7 +17157,7 @@
                     "column": 46,
                     "event": "note",
                     "message": "(39) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -17201,7 +17201,7 @@
                     "column": 24,
                     "event": "note",
                     "message": "(40) calling 'db_init_buffer' from 'dbrestart'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -17238,7 +17238,7 @@
                     "column": 24,
                     "event": "note",
                     "message": "(41) entry to 'db_init_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -17282,7 +17282,7 @@
                     "column": 25,
                     "event": "note",
                     "message": "(42) calling 'db_flush_buffer' from 'db_init_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -17319,7 +17319,7 @@
                     "column": 25,
                     "event": "note",
                     "message": "(43) entry to 'db_flush_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -17363,7 +17363,7 @@
                     "column": 9,
                     "event": "note",
                     "message": "(44) following 'true' branch (when 'b' is NULL)...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -17384,7 +17384,7 @@
                     "line": 0,
                     "event": "note",
                     "message": "(45) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/db_lex.c",
@@ -17392,7 +17392,7 @@
                     "column": 25,
                     "event": "note",
                     "message": "(46) returning to 'db_init_buffer' from 'db_flush_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -17429,7 +17429,7 @@
                     "column": 27,
                     "event": "note",
                     "message": "(47) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -17501,7 +17501,7 @@
                     "column": 8,
                     "event": "note",
                     "message": "(48) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -17523,7 +17523,7 @@
                     "column": 8,
                     "event": "note",
                     "message": "(49) following 'false' branch...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/db_lex.c",
@@ -17531,7 +17531,7 @@
                     "column": 68,
                     "event": "note",
                     "message": "(50) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -17553,7 +17553,7 @@
                     "column": 68,
                     "event": "note",
                     "message": "(51) following 'false' branch (when 'file' is NULL)...",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/db_lex.c",
@@ -17561,7 +17561,7 @@
                     "column": 30,
                     "event": "note",
                     "message": "(52) ...to here",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -17583,7 +17583,7 @@
                     "column": 30,
                     "event": "note",
                     "message": "(53) dereference of NULL 'b'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 }
             ]
         },

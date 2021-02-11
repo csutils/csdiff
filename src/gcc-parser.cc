@@ -558,12 +558,14 @@ struct GccPostProcessor::Private {
     const LangDetector langDetector;
 
     void transGccAnal(Defect *pDef) const;
+    void polishGccAnal(Defect *pDef) const;
     void transSuffixGeneric(Defect *pDef, const std::string, const RE &) const;
     void transShellCheckId(Defect *pDef) const;
 
     const RE reClangWarningEvt  = RE("^(.*) (\\[[A-Za-z.]+\\])$");
     const RE reGccAnalCoreEvt   = RE("^(.*) (\\[-Wanalyzer-[^ \\]]+\\])$");
     const RE reGccAnalCwe       = RE("^(.*) \\[CWE-([0-9]+)\\]$");
+    const RE reGccAnalTraceEvt  = RE("^\\([0-9]+\\) .*$$");
     const RE reGccWarningEvt    = RE("^(.*) (\\[-W[^ \\]]+\\])$");
     const RE reShellCheckId     = RE("(^.*) (\\[SC([0-9]+)\\])$");
 };
@@ -604,6 +606,24 @@ void GccPostProcessor::Private::transGccAnal(Defect *pDef) const
     keyEvt.msg = sm[/* msg */ 1];
 }
 
+void GccPostProcessor::Private::polishGccAnal(Defect *pDef) const
+{
+    if ("GCC_ANALYZER_WARNING" != pDef->checker)
+        return;
+
+    for (DefEvent &evt : pDef->events) {
+        if (evt.verbosityLevel != /* note */ 1 || evt.event != "note")
+            // not a "note" event
+            continue;
+
+        if (!boost::regex_match(evt.msg, this->reGccAnalTraceEvt))
+            // not a "trace" event either
+            continue;
+
+        evt.verbosityLevel = /* trace */ 2;
+    }
+}
+
 void GccPostProcessor::Private::transSuffixGeneric(
         Defect                 *pDef,
         const std::string       checker,
@@ -631,6 +651,9 @@ void GccPostProcessor::apply(Defect *pDef) const
     d->transSuffixGeneric(pDef, "CLANG_WARNING",      d->reClangWarningEvt);
     d->transSuffixGeneric(pDef, "COMPILER_WARNING",   d->reGccWarningEvt);
     d->transSuffixGeneric(pDef, "SHELLCHECK_WARNING", d->reShellCheckId);
+
+    d->polishGccAnal(pDef);
+
     d->langDetector.inferLangFromChecker(pDef);
 }
 
