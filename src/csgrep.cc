@@ -123,16 +123,20 @@ class EvtCounter: public StatWriter {
         virtual void flush() {
             for (TMap::const_reference item : cnt_) {
                 using namespace std;
+                const TKey &key = item.first;
+
+                // save iostream flags
                 const ios_base::fmtflags oldFlags = cout.flags();
                 const int oldWidth = cout.width();
+
                 cout << fixed << setw(7) << item.second;
+                cout << "\t" << left << setw(32) << key.first;
+
+                // restore iostream flags
                 cout.width(oldWidth);
                 cout.flags(oldFlags);
 
-                const TKey &key = item.first;
-                cout << "\t" << key.first
-                    << "\t" << key.second
-                    << "\n";
+                cout << "\t" << key.second << "\n";
             }
         }
 };
