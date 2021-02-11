@@ -6159,7 +6159,7 @@
                     "column": 6,
                     "event": "note",
                     "message": "Although the value stored to 'node' is used in the enclosing expression, the value is never actually read from 'node'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -6210,7 +6210,7 @@
                     "column": 4,
                     "event": "note",
                     "message": "Value stored to 'node' is never read",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -6261,7 +6261,7 @@
                     "column": 6,
                     "event": "note",
                     "message": "Although the value stored to 'add' is used in the enclosing expression, the value is never actually read from 'add'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -6312,7 +6312,7 @@
                     "column": 21,
                     "event": "note",
                     "message": "Although the value stored to 'node' is used in the enclosing expression, the value is never actually read from 'node'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -6363,7 +6363,7 @@
                     "column": 21,
                     "event": "note",
                     "message": "Value stored to 'node' is never read",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -17620,7 +17620,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "Assuming the condition is true",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -17642,7 +17642,7 @@
                     "column": 2,
                     "event": "note",
                     "message": "Taking true branch",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -17664,7 +17664,7 @@
                     "column": 8,
                     "event": "note",
                     "message": "Assuming the condition is false",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -17686,7 +17686,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "Taking false branch",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -17708,7 +17708,7 @@
                     "column": 13,
                     "event": "note",
                     "message": "Calling 'yy_get_next_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -17730,7 +17730,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "Assuming the condition is false",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -17752,7 +17752,7 @@
                     "column": 2,
                     "event": "note",
                     "message": "Taking false branch",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -17774,7 +17774,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "Assuming field 'yy_fill_buffer' is not equal to 0",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -17796,7 +17796,7 @@
                     "column": 34,
                     "event": "note",
                     "message": "expanded from macro 'YY_CURRENT_BUFFER_LVALUE'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -17818,7 +17818,7 @@
                     "column": 2,
                     "event": "note",
                     "message": "Taking false branch",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -17840,7 +17840,7 @@
                     "column": 15,
                     "event": "note",
                     "message": "Assuming 'i' is >= 'number_to_move'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -17862,7 +17862,7 @@
                     "column": 2,
                     "event": "note",
                     "message": "Loop condition is false. Execution continues on line 6695",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -17884,7 +17884,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "Assuming field 'yy_buffer_status' is equal to YY_BUFFER_EOF_PENDING",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -17906,7 +17906,7 @@
                     "column": 34,
                     "event": "note",
                     "message": "expanded from macro 'YY_CURRENT_BUFFER_LVALUE'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -17928,7 +17928,7 @@
                     "column": 2,
                     "event": "note",
                     "message": "Taking true branch",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -17950,7 +17950,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "'yy_n_chars' is equal to 0",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -17972,7 +17972,7 @@
                     "column": 2,
                     "event": "note",
                     "message": "Taking true branch",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -17994,7 +17994,7 @@
                     "column": 8,
                     "event": "note",
                     "message": "Assuming 'number_to_move' is equal to YY_MORE_ADJ",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18016,7 +18016,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "Taking true branch",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18038,7 +18038,7 @@
                     "column": 6,
                     "event": "note",
                     "message": "Assuming the condition is true",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18060,7 +18060,7 @@
                     "column": 2,
                     "event": "note",
                     "message": "Taking true branch",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18082,7 +18082,7 @@
                     "column": 8,
                     "event": "note",
                     "message": "Assuming field 'yy_ch_buf' is non-null",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18104,7 +18104,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "Taking false branch",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18126,7 +18126,7 @@
                     "column": 52,
                     "event": "note",
                     "message": "Use of zero-allocated memory",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18177,7 +18177,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "Control jumps to 'case 4:'  at line 316",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18199,7 +18199,7 @@
                     "column": 5,
                     "event": "note",
                     "message": " Execution continues on line 332",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18221,7 +18221,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "'db_osize' is not equal to NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18243,7 +18243,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "Taking false branch",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18265,7 +18265,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "Assuming the condition is true",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18287,7 +18287,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "Taking true branch",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18309,7 +18309,7 @@
                     "column": 12,
                     "event": "note",
                     "message": "Assuming 'token' is equal to TDBSPEC",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18331,7 +18331,7 @@
                     "column": 27,
                     "event": "note",
                     "message": "Left side of '&&' is false",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18353,7 +18353,7 @@
                     "column": 17,
                     "event": "note",
                     "message": "Left side of '&&' is false",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18375,7 +18375,7 @@
                     "column": 9,
                     "event": "note",
                     "message": "'token' is equal to TDBSPEC",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18397,7 +18397,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "Taking false branch",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18419,7 +18419,7 @@
                     "column": 9,
                     "event": "note",
                     "message": "Calling 'db_file_read_spec'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18441,7 +18441,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "Control jumps to 'case 4:'  at line 184",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18463,7 +18463,7 @@
                     "column": 5,
                     "event": "note",
                     "message": " Execution continues on line 195",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18485,7 +18485,7 @@
                     "column": 25,
                     "event": "note",
                     "message": "Storing uninitialized value",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18507,7 +18507,7 @@
                     "column": 10,
                     "event": "note",
                     "message": "Assuming the condition is false",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18529,7 +18529,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "Loop condition is false. Execution continues on line 264",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18551,7 +18551,7 @@
                     "column": 8,
                     "event": "note",
                     "message": "The value 0 is assigned to 'i'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18573,7 +18573,7 @@
                     "column": 12,
                     "event": "note",
                     "message": "Assuming the condition is true",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18595,7 +18595,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "Loop condition is true.  Entering loop body",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18617,7 +18617,7 @@
                     "column": 23,
                     "event": "note",
                     "message": "The left operand of '==' is a garbage value",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18668,7 +18668,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "Assuming 'yy_init' is 0",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18690,7 +18690,7 @@
                     "column": 2,
                     "event": "note",
                     "message": "Taking true branch",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18712,7 +18712,7 @@
                     "column": 8,
                     "event": "note",
                     "message": "Assuming 'yy_start' is not equal to 0",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18734,7 +18734,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "Taking false branch",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18756,7 +18756,7 @@
                     "column": 8,
                     "event": "note",
                     "message": "Assuming 'dbin' is non-null",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18778,7 +18778,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "Taking false branch",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18800,7 +18800,7 @@
                     "column": 8,
                     "event": "note",
                     "message": "Assuming 'dbout' is non-null",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18822,7 +18822,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "Taking false branch",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18844,7 +18844,7 @@
                     "column": 10,
                     "event": "note",
                     "message": "Assuming 'yy_buffer_stack' is null",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18866,7 +18866,7 @@
                     "column": 29,
                     "event": "note",
                     "message": "expanded from macro 'YY_CURRENT_BUFFER'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18888,7 +18888,7 @@
                     "column": 10,
                     "event": "note",
                     "message": "'?' condition is false",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "/builddir/build/BUILD/aide-0.16/src/db_lex.c",
@@ -18896,7 +18896,7 @@
                     "column": 29,
                     "event": "note",
                     "message": "expanded from macro 'YY_CURRENT_BUFFER'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18918,7 +18918,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "Taking true branch",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18940,7 +18940,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "Calling 'db_create_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18962,7 +18962,7 @@
                     "column": 26,
                     "event": "note",
                     "message": "expanded from macro 'yy_create_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -18984,7 +18984,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "Assuming 'b' is non-null",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19006,7 +19006,7 @@
                     "column": 2,
                     "event": "note",
                     "message": "Taking false branch",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19028,7 +19028,7 @@
                     "column": 26,
                     "event": "note",
                     "message": "Calling 'dballoc'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19050,7 +19050,7 @@
                     "column": 17,
                     "event": "note",
                     "message": "expanded from macro 'yyalloc'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19072,7 +19072,7 @@
                     "column": 11,
                     "event": "note",
                     "message": "Storing uninitialized value",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19094,7 +19094,7 @@
                     "column": 26,
                     "event": "note",
                     "message": "Returning from 'dballoc'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19116,7 +19116,7 @@
                     "column": 17,
                     "event": "note",
                     "message": "expanded from macro 'yyalloc'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19138,7 +19138,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "Assuming field 'yy_ch_buf' is non-null",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19160,7 +19160,7 @@
                     "column": 2,
                     "event": "note",
                     "message": "Taking false branch",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19182,7 +19182,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "Returning from 'db_create_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19204,7 +19204,7 @@
                     "column": 26,
                     "event": "note",
                     "message": "expanded from macro 'yy_create_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19226,7 +19226,7 @@
                     "column": 2,
                     "event": "note",
                     "message": "Loop condition is true.  Entering loop body",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19248,7 +19248,7 @@
                     "column": 9,
                     "event": "note",
                     "message": "Assuming the condition is true",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19270,7 +19270,7 @@
                     "column": 4,
                     "event": "note",
                     "message": "Taking true branch",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19292,7 +19292,7 @@
                     "column": 4,
                     "event": "note",
                     "message": "Loop condition is false. Execution continues on line 1066",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19314,7 +19314,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "Loop condition is true. Execution continues on line 1054",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19336,7 +19336,7 @@
                     "column": 9,
                     "event": "note",
                     "message": "Assuming the condition is true",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19358,7 +19358,7 @@
                     "column": 4,
                     "event": "note",
                     "message": "Taking true branch",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19380,7 +19380,7 @@
                     "column": 4,
                     "event": "note",
                     "message": "Loop condition is false. Execution continues on line 1066",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19402,7 +19402,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "Loop condition is true. Execution continues on line 1054",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19424,7 +19424,7 @@
                     "column": 19,
                     "event": "note",
                     "message": "Array subscript is undefined",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19475,7 +19475,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "Assuming the condition is true",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19497,7 +19497,7 @@
                     "column": 2,
                     "event": "note",
                     "message": "Taking true branch",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19519,7 +19519,7 @@
                     "column": 8,
                     "event": "note",
                     "message": "Assuming the condition is false",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19541,7 +19541,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "Taking false branch",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19563,7 +19563,7 @@
                     "column": 13,
                     "event": "note",
                     "message": "Calling 'yy_get_next_buffer'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19585,7 +19585,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "Assuming the condition is false",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19607,7 +19607,7 @@
                     "column": 2,
                     "event": "note",
                     "message": "Taking false branch",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19629,7 +19629,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "Assuming field 'yy_fill_buffer' is not equal to 0",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19651,7 +19651,7 @@
                     "column": 34,
                     "event": "note",
                     "message": "expanded from macro 'YY_CURRENT_BUFFER_LVALUE'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19673,7 +19673,7 @@
                     "column": 2,
                     "event": "note",
                     "message": "Taking false branch",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19695,7 +19695,7 @@
                     "column": 15,
                     "event": "note",
                     "message": "Assuming 'i' is >= 'number_to_move'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19717,7 +19717,7 @@
                     "column": 2,
                     "event": "note",
                     "message": "Loop condition is false. Execution continues on line 1372",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19739,7 +19739,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "Assuming field 'yy_buffer_status' is equal to YY_BUFFER_EOF_PENDING",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19761,7 +19761,7 @@
                     "column": 34,
                     "event": "note",
                     "message": "expanded from macro 'YY_CURRENT_BUFFER_LVALUE'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19783,7 +19783,7 @@
                     "column": 2,
                     "event": "note",
                     "message": "Taking true branch",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19805,7 +19805,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "'yy_n_chars' is equal to 0",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19827,7 +19827,7 @@
                     "column": 2,
                     "event": "note",
                     "message": "Taking true branch",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19849,7 +19849,7 @@
                     "column": 8,
                     "event": "note",
                     "message": "Assuming 'number_to_move' is equal to YY_MORE_ADJ",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19871,7 +19871,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "Taking true branch",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19893,7 +19893,7 @@
                     "column": 6,
                     "event": "note",
                     "message": "Assuming the condition is true",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19915,7 +19915,7 @@
                     "column": 2,
                     "event": "note",
                     "message": "Taking true branch",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19937,7 +19937,7 @@
                     "column": 8,
                     "event": "note",
                     "message": "Assuming field 'yy_ch_buf' is non-null",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19959,7 +19959,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "Taking false branch",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -19981,7 +19981,7 @@
                     "column": 52,
                     "event": "note",
                     "message": "Use of zero-allocated memory",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",

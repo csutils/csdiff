@@ -559,6 +559,7 @@ struct GccPostProcessor::Private {
 
     void transGccAnal(Defect *pDef) const;
     void polishGccAnal(Defect *pDef) const;
+    void polishClangAnal(Defect *pDef) const;
     void transSuffixGeneric(Defect *pDef, const std::string, const RE &) const;
     void transShellCheckId(Defect *pDef) const;
 
@@ -624,6 +625,22 @@ void GccPostProcessor::Private::polishGccAnal(Defect *pDef) const
     }
 }
 
+void GccPostProcessor::Private::polishClangAnal(Defect *pDef) const
+{
+    if ("CLANG_WARNING" != pDef->checker)
+        return;
+
+    // FIXME: we should distinguish `clang --analyze` and clang compiler
+
+    for (DefEvent &evt : pDef->events) {
+        if (evt.verbosityLevel != /* note */ 1 || evt.event != "note")
+            // not a "note" event
+            continue;
+
+        evt.verbosityLevel = /* trace */ 2;
+    }
+}
+
 void GccPostProcessor::Private::transSuffixGeneric(
         Defect                 *pDef,
         const std::string       checker,
@@ -653,6 +670,7 @@ void GccPostProcessor::apply(Defect *pDef) const
     d->transSuffixGeneric(pDef, "SHELLCHECK_WARNING", d->reShellCheckId);
 
     d->polishGccAnal(pDef);
+    d->polishClangAnal(pDef);
 
     d->langDetector.inferLangFromChecker(pDef);
 }

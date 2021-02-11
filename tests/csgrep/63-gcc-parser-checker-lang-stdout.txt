@@ -321,7 +321,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "expanded from macro 'fprintf'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -343,7 +343,7 @@
                     "column": 8,
                     "event": "note",
                     "message": "Memory is allocated",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -365,7 +365,7 @@
                     "column": 6,
                     "event": "note",
                     "message": "Assuming 'buf' is not equal to NULL",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -387,7 +387,7 @@
                     "column": 2,
                     "event": "note",
                     "message": "Taking false branch",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -409,7 +409,7 @@
                     "column": 9,
                     "event": "note",
                     "message": "Assuming the condition is false",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -431,7 +431,7 @@
                     "column": 2,
                     "event": "note",
                     "message": "Loop condition is false. Execution continues on line 65",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -453,7 +453,7 @@
                     "column": 6,
                     "event": "note",
                     "message": "Assuming 'optind' is not equal to 'argc'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -475,7 +475,7 @@
                     "column": 2,
                     "event": "note",
                     "message": "Taking false branch",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -497,7 +497,7 @@
                     "column": 9,
                     "event": "note",
                     "message": "Assuming 'optind' is < 'argc'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -519,7 +519,7 @@
                     "column": 2,
                     "event": "note",
                     "message": "Loop condition is true.  Entering loop body",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -541,7 +541,7 @@
                     "column": 7,
                     "event": "note",
                     "message": "Assuming the condition is true",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -563,7 +563,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "Taking true branch",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -585,7 +585,7 @@
                     "column": 4,
                     "event": "note",
                     "message": "Potential leak of memory pointed to by 'buf'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
@@ -607,7 +607,7 @@
                     "column": 3,
                     "event": "note",
                     "message": "expanded from macro 'fprintf'",
-                    "verbosity_level": "1"
+                    "verbosity_level": "2"
                 },
                 {
                     "file_name": "",
