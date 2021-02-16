@@ -60,4 +60,14 @@ inline T valueOf(const pt::ptree &node, const char *path, const T &defVal)
     return opt.get_value_or(defVal);
 }
 
+inline std::string getStringValue(const pt::ptree *const node)
+{
+    return node->get_value<std::string>();
+}
+
+inline std::string getStringValue(const pt::ptree::const_iterator it)
+{
+    return getStringValue(&it->second);
+}
+
 #endif /* H_GUARD_ABSTRACT_TREE_H */

@@ -56,7 +56,7 @@ bool /* continue */ skipLdArgs(
             continue;
         }
 
-        const std::string argVal = (*pIt)->second.get_value<std::string>();
+        const std::string argVal = getStringValue(*pIt);
         if (argVal == "--preload")
             goto skip_arg;
 
@@ -103,7 +103,7 @@ void readExeArgs(
             break;
 
         *pArgs += " ";
-        *pArgs += it->second.get_value<std::string>();
+        *pArgs += getStringValue(it);
     }
 }
 
@@ -144,12 +144,12 @@ std::string readMsg(const pt::ptree &defNode)
     const pt::ptree *whatNode;
     if (findChildOf(&whatNode, defNode, "what"))
         // message found in <what>...</what>
-        return whatNode->get_value<std::string>();
+        return getStringValue(whatNode);
 
     if (findChildOf(&whatNode, defNode, "xwhat")
             && findChildOf(&whatNode, *whatNode, "text"))
         // message found in <xwhat><text>...</text></xwhat>
-        return whatNode->get_value<std::string>();
+        return getStringValue(whatNode);
 
     // message not found
     return "<unknown>";
@@ -195,7 +195,7 @@ void readStack(Defect *pDef, const pt::ptree &stackNode)
         const pt::ptree *fileNode;
         if (findChildOf(&fileNode, frameNode, "file")) {
             // read absolute path of the source file
-            noteEvt.fileName = fileNode->get_value<std::string>();
+            noteEvt.fileName = getStringValue(fileNode);
             const std::string dir = valueOf<std::string>(frameNode, "dir", "");
             if (!dir.empty())
                 noteEvt.fileName = dir + "/" + noteEvt.fileName;
@@ -206,12 +206,12 @@ void readStack(Defect *pDef, const pt::ptree &stackNode)
         }
         else if (findChildOf(&fileNode, frameNode, "obj")) {
             // pick path of the object file
-            noteEvt.fileName = fileNode->get_value<std::string>();
+            noteEvt.fileName = getStringValue(fileNode);
             keyEventScore = 4;
         }
         else if (findChildOf(&fileNode, frameNode, "ip")) {
             // pick address of the code in memory
-            noteEvt.fileName = fileNode->get_value<std::string>();
+            noteEvt.fileName = getStringValue(fileNode);
             keyEventScore = 2;
         }
         else {
@@ -254,9 +254,9 @@ bool ValgrindTreeDecoder::readNode(Defect *pDef, pt::ptree::const_iterator defIt
     keyEvent.msg = readMsg(defNode);
 
     // read "kind" of the report
-    pt::ptree::const_assoc_iterator itKind = defNode.find("kind");
-    if (defNode.not_found() != itKind)
-        keyEvent.event += "[" + itKind->second.get_value<std::string>() + "]";
+    const std::string kind = valueOf<std::string>(defNode, "kind", "");
+    if (!kind.empty())
+        keyEvent.event += "[" + kind + "]";
 
     // go through stack trace
     const pt::ptree *stackNode;
@@ -270,7 +270,7 @@ bool ValgrindTreeDecoder::readNode(Defect *pDef, pt::ptree::const_iterator defIt
         DefEvent auxEvent = def.events[def.keyEventIdx];
         auxEvent.event = "note";
         auxEvent.verbosityLevel = /* note */ 1;
-        auxEvent.msg = auxwhat->get_value<std::string>();
+        auxEvent.msg = getStringValue(auxwhat);
         def.events.insert(def.events.begin() + def.keyEventIdx + 1, auxEvent);
     }
 
