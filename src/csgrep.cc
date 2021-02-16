@@ -130,7 +130,7 @@ class EvtCounter: public StatWriter {
                 const int oldWidth = cout.width();
 
                 cout << fixed << setw(7) << item.second;
-                cout << "\t" << left << setw(32) << key.first;
+                cout << "\t" << left << setw(48) << key.first;
 
                 // restore iostream flags
                 cout.width(oldWidth);
