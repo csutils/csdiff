@@ -24,6 +24,8 @@
 
 #include <algorithm>
 
+namespace GccParserImpl {
+
 enum EToken {
     T_NULL = 0,
     T_UNKNOWN,
@@ -553,6 +555,10 @@ bool BasicGccParser::hasError() const
 {
     return hasError_;
 }
+
+} // namespace GccParserImpl
+
+using namespace GccParserImpl;
 
 struct GccPostProcessor::Private {
     const LangDetector langDetector;

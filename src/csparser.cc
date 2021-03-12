@@ -31,6 +31,8 @@
 
 #include <boost/algorithm/string.hpp>
 
+namespace CovParserImpl {
+
 class LineReader {
     public:
         LineReader(std::istream &input):
@@ -195,6 +197,10 @@ EToken ErrFileLexer::readNext()
 
     return T_EVENT;
 }
+
+} // namespace CovParserImpl
+
+using namespace CovParserImpl;
 
 struct KeyEventDigger::Private {
     typedef std::set<std::string>                   TSet;
