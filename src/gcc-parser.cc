@@ -399,7 +399,7 @@ class BasicGccParser {
         bool exportAndReset(Defect *pDef);
 
         const RE reCppcheck_ =
-            RE("^([A-Za-z_]+)(?:\\(CWE-([0-9]+)\\))?: (.*)$");
+            RE("^([0-9A-Za-z_]+)(?:\\(CWE-([0-9]+)\\))?: (.*)$");
 
         const RE reClang_ =
             RE("^clang.*$");
