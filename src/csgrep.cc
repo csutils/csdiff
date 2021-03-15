@@ -360,6 +360,7 @@ class DuplicateFilter: public AbstractFilter {
             DefEvent evt = def.events[def.keyEventIdx];
 
             // abstract out differences we do not deem important
+            evt.fileName = MsgFilter::inst()->filterPath(evt.fileName);
             evt.msg = MsgFilter::inst()->filterMsg(evt.msg, def.checker);
 
             return lookup_.insert(evt)./* inserted */second;

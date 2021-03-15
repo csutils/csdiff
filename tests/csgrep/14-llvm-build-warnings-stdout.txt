@@ -2514,34 +2514,6 @@
             "key_event_idx": 0,
             "events": [
                 {
-                    "file_name": "/tmp/tmpObFhPl.c",
-                    "line": 1,
-                    "event": "warning",
-                    "message": "return type defaults to 'int'",
-                    "verbosity_level": "0"
-                }
-            ]
-        },
-        {
-            "checker": "COMPILER_WARNING",
-            "language": "c/c++",
-            "key_event_idx": 0,
-            "events": [
-                {
-                    "file_name": "/tmp/tmpObFhPl.c",
-                    "line": 1,
-                    "event": "warning",
-                    "message": "'__dtrace' defined but not used",
-                    "verbosity_level": "0"
-                }
-            ]
-        },
-        {
-            "checker": "COMPILER_WARNING",
-            "language": "c/c++",
-            "key_event_idx": 0,
-            "events": [
-                {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_driver.c",
                     "line": 8587,
                     "column": 22,
@@ -2909,64 +2881,6 @@
                     "line": 0,
                     "event": "#",
                     "message": "               ^       ~~~~~",
-                    "verbosity_level": "1"
-                }
-            ]
-        },
-        {
-            "checker": "COMPILER_WARNING",
-            "language": "c/c++",
-            "key_event_idx": 0,
-            "events": [
-                {
-                    "file_name": "/tmp/tmpObFhPl.c",
-                    "line": 1,
-                    "column": 8,
-                    "event": "warning[-Wimplicit-int]",
-                    "message": "type specifier missing, defaults to 'int'",
-                    "verbosity_level": "0"
-                },
-                {
-                    "file_name": "",
-                    "line": 0,
-                    "event": "#",
-                    "message": "static __dtrace () {}",
-                    "verbosity_level": "1"
-                },
-                {
-                    "file_name": "",
-                    "line": 0,
-                    "event": "#",
-                    "message": "~~~~~~ ^",
-                    "verbosity_level": "1"
-                }
-            ]
-        },
-        {
-            "checker": "COMPILER_WARNING",
-            "language": "c/c++",
-            "key_event_idx": 0,
-            "events": [
-                {
-                    "file_name": "/tmp/tmpObFhPl.c",
-                    "line": 1,
-                    "column": 21,
-                    "event": "warning[-Wreturn-type]",
-                    "message": "control reaches end of non-void function",
-                    "verbosity_level": "0"
-                },
-                {
-                    "file_name": "",
-                    "line": 0,
-                    "event": "#",
-                    "message": "static __dtrace () {}",
-                    "verbosity_level": "1"
-                },
-                {
-                    "file_name": "",
-                    "line": 0,
-                    "event": "#",
-                    "message": "                    ^",
                     "verbosity_level": "1"
                 }
             ]

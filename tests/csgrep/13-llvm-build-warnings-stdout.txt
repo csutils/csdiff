@@ -407,12 +407,6 @@ Error: COMPILER_WARNING:
 #              ^                                       ~~~
 
 Error: COMPILER_WARNING:
-/tmp/tmpObFhPl.c:1: warning: return type defaults to 'int'
-
-Error: COMPILER_WARNING:
-/tmp/tmpObFhPl.c:1: warning: '__dtrace' defined but not used
-
-Error: COMPILER_WARNING:
 /builddir/build/BUILD/libvirt-0.10.2/src/qemu/qemu_driver.c:8587:22: warning: Although the value stored to 'rc' is used in the enclosing expression, the value is never actually read from 'rc'
 #                if ((rc = qemuSetEmulatorBandwidthLive(vm, group, value_ul, 0)))
 #                     ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -476,16 +470,6 @@ Error: COMPILER_WARNING:
 /builddir/build/BUILD/libvirt-0.10.2/src/lxc/lxc_container.c:1382:16: warning: Null pointer passed as an argument to a 'nonnull' parameter
 #    if (!(dh = opendir(*root))) {
 #               ^       ~~~~~
-
-Error: COMPILER_WARNING:
-/tmp/tmpObFhPl.c:1:8: warning[-Wimplicit-int]: type specifier missing, defaults to 'int'
-#static __dtrace () {}
-#~~~~~~ ^
-
-Error: COMPILER_WARNING:
-/tmp/tmpObFhPl.c:1:21: warning[-Wreturn-type]: control reaches end of non-void function
-#static __dtrace () {}
-#                    ^
 
 Error: COMPILER_WARNING:
 /builddir/build/BUILD/libvirt-0.10.2/src/lxc/lxc_process.c:466:17: warning: Value stored to 'fail' is never read
