@@ -65,6 +65,7 @@ struct MsgFilter::Private {
     const RE reDir = RE("^([^:]*/)");
     const RE reFile = RE("[^/]+$");
     const RE rePath = RE("^(?:/builddir/build/BUILD/)?([^/]+/)(.*)(\\.[ly])?$");
+    const RE rePyBuild = RE("^((?:/builddir/build/BUILD/)?[^/]+/)build/lib/(.*)$");
     const RE reTmpPath = RE("^(/var)?/tmp/(.*)$");
     const RE reTmpCleaner = RE("(.*)");
 
@@ -197,6 +198,12 @@ std::string MsgFilter::filterPath(const std::string &origPath)
     }
 
     boost::smatch sm;
+    if (boost::regex_match(path, sm, d->rePyBuild)) {
+        // %{_builddir}/build/lib/setuptools/glob.py ->
+        // %{_builddir}/setuptools/glob.py
+        path = sm[1] + sm[2];
+    }
+
     if (!boost::regex_match(path, sm, d->rePath))
         // no match
         return path;

@@ -1,0 +1,157 @@
+{
+    "scan": {
+        "analyzer-version-clang": "11.1.0",
+        "analyzer-version-coverity": "2020.12",
+        "analyzer-version-cppcheck": "2.1",
+        "analyzer-version-gcc": "11.0.0",
+        "analyzer-version-gcc-analyzer": "11.0.0",
+        "analyzer-version-shellcheck": "0.7.1",
+        "cov-compilation-unit-count": 282,
+        "cov-compilation-unit-ratio": 100,
+        "cov-lines-processed": 70499,
+        "cov-time-elapsed-analysis": "00:00:07",
+        "exit-code": 0,
+        "host": "cov04.lab.eng.brq.redhat.com",
+        "known-false-positives": "/usr/share/csmock/known-false-positives.js",
+        "mock-config": "rhel-9-alpha-x86_64",
+        "project-name": "python-setuptools-53.0.0-1.el9",
+        "store-results-to": "/tmp/tmpehhPYa/python-setuptools-53.0.0-1.el9.tar.xz",
+        "time-created": "2021-02-23 06:30:38",
+        "time-finished": "2021-02-23 06:32:19",
+        "tool": "csmock",
+        "tool-args": "'/bin/csmock' '-t' 'cppcheck,gcc,shellcheck,clang,coverity' '-r' 'rhel-9-alpha-x86_64' '-o' '/tmp/tmpehhPYa/python-setuptools-53.0.0-1.el9.tar.xz' '--cov-analyze-java' '--cov-analyze-opts=--security --concurrency' '--use-host-cppcheck' '--gcc-analyze' '--cov-use-instance' '/opt/cov-sa-2020.12' '/tmp/tmpehhPYa/python-setuptools-53.0.0-1.el9.src.rpm'",
+        "tool-version": "csmock-2.7.0.20210216.090633.gd7fc8c2.internal-1.el7"
+    },
+    "defects": [
+        {
+            "checker": "COPY_PASTE_ERROR",
+            "cwe": 398,
+            "function": "_iglob",
+            "language": "python",
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "setuptools-53.0.0/build/lib/setuptools/glob.py",
+                    "line": 55,
+                    "event": "original",
+                    "message": "\"yield pathname\" looks like the original copy.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "setuptools-53.0.0/build/lib/setuptools/glob.py",
+                    "line": 59,
+                    "event": "copy_paste_error",
+                    "message": "\"pathname\" in \"yield pathname\" looks like a copy-paste error.",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "setuptools-53.0.0/build/lib/setuptools/glob.py",
+                    "line": 59,
+                    "event": "remediation",
+                    "message": "Should it say \"dirname\" instead?",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   57|               # Patterns ending with a slash should match only directories",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   58|               if os.path.isdir(dirname):",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   59|->                 yield pathname",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   60|           return",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   61|   ",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "COPY_PASTE_ERROR",
+            "cwe": 398,
+            "function": "_iglob",
+            "language": "python",
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "setuptools-53.0.0/setuptools/glob.py",
+                    "line": 55,
+                    "event": "original",
+                    "message": "\"yield pathname\" looks like the original copy.",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "setuptools-53.0.0/setuptools/glob.py",
+                    "line": 59,
+                    "event": "copy_paste_error",
+                    "message": "\"pathname\" in \"yield pathname\" looks like a copy-paste error.",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "setuptools-53.0.0/setuptools/glob.py",
+                    "line": 59,
+                    "event": "remediation",
+                    "message": "Should it say \"dirname\" instead?",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   57|               # Patterns ending with a slash should match only directories",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   58|               if os.path.isdir(dirname):",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   59|->                 yield pathname",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   60|           return",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   61|   ",
+                    "verbosity_level": "1"
+                }
+            ]
+        }
+    ]
+}
