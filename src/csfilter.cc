@@ -121,6 +121,10 @@ MsgFilter::MsgFilter():
 
         // "... Redefining name 'desc' from outer scope (line 10)" etc.
         d->addMsgFilter(checker, " \\((?:imported )?line [0-9]+\\)$", "");
+
+        // ".. method already defined line 199"
+        d->addMsgFilter(checker, " method already defined line [0-9]+$",
+                                 " method already defined");
     }
 
     // "__coverity_strcmp" -> "strcmp", etc.

@@ -12136,6 +12136,18 @@
       "checker": "PYLINT_WARNING",
       "events": [
         {
+          "file_name": "coprs_frontend/tests/test_apiv3/test_projects.py",
+          "line": 219,
+          "column": 4,
+          "event": "E0102[function-redefined]",
+          "message": "TestApiV3Permissions.test_perms_set_sends_emails: method already defined line 199"
+        }
+      ]
+    },
+    {
+      "checker": "PYLINT_WARNING",
+      "events": [
+        {
           "file_name": "coprs_frontend/tests/test_commands/test_notify_outdated_chroots.py",
           "line": 1,
           "column": 0,
