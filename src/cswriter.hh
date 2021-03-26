@@ -29,6 +29,7 @@ class CovWriter: public AbstractWriter {
 
         virtual void handleDef(const Defect &def);
         virtual void flush();
+        virtual void setScanProps(const TScanProps &);
 
     private:
         struct Private;

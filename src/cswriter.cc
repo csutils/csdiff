@@ -100,3 +100,8 @@ void CovWriter::flush()
 {
     d->str.flush();
 }
+
+// only to prevent AbstractWriter::setScanProps() from printing a warning
+void CovWriter::setScanProps(const TScanProps &)
+{
+}
