@@ -1,0 +1,94 @@
+Error: SHELLCHECK_WARNING (CWE-398):
+/usr/bin/gpgrt-config:44:25: error[SC2066]: Since you double quoted this, it will not word split, and the loop will only run once.
+#   42|   # variant of get_attr for list (separated by ',')
+#   43|   get_attr_l () {
+#   44|->     (IFS=', '; for x in "$(get_attr $1)"; do echo $x; done)
+#   45|   }
+#   46|   
+
+Error: SHELLCHECK_WARNING (CWE-569):
+/usr/bin/gpgrt-config:120:3: warning[SC2221]: This pattern always overrides a later one on line 131.
+#  118|   	if [ -n "$_reading_attrs" ]; then
+#  119|   	    case "$_line" in
+#  120|-> 		*:\ *)
+#  121|   		    _key="${_line%%:\ *}"
+#  122|   		    _value="${_line#*:\ }"
+
+Error: SHELLCHECK_WARNING (CWE-569):
+/usr/bin/gpgrt-config:131:6: warning[SC2222]: This pattern never matches because of a previous pattern on line 120.
+#  129|   EOF2
+#  130|   		    ;;
+#  131|-> 		*:|*:\ ) ;;
+#  132|   		*)
+#  133|   		    echo "Error reading $_filename: $_line" 1>&2
+
+Error: SHELLCHECK_WARNING (CWE-563):
+/usr/bin/gpgrt-config:564:6: warning[SC2034]: delimiter appears unused. Verify use (or export if used externally).
+#  562|   	--modversion)
+#  563|   	    want_attr=Version
+#  564|-> 	    delimiter="
+#  565|   "
+#  566|   	    ;;
+
+Error: CPPCHECK_WARNING (CWE-664):
+libgpg-error-1.41/src/logging.c:1277: error[va_list_usedBeforeStarted]: va_list 'dummy_argptr' used before va_start() was called.
+# 1275|         static va_list dummy_argptr;
+# 1276|   
+# 1277|->       _gpgrt_logv_printhex (buffer, length, NULL, dummy_argptr);
+# 1278|       }
+# 1279|   }
+
+Error: RESOURCE_LEAK (CWE-772):
+libgpg-error-1.41/src/mkheader.c:196: alloc_fn: Storage is returned from allocation function "fopen".
+libgpg-error-1.41/src/mkheader.c:196: var_assign: Assigning: "fp" = storage returned from "fopen(fname, "r")".
+libgpg-error-1.41/src/mkheader.c:204: noescape: Resource "fp" is not freed or pointed-to in "fgets". [Note: The source code implementation of the function has been overridden by a builtin model.]
+libgpg-error-1.41/src/mkheader.c:243: noescape: Resource "fp" is not freed or pointed-to in "ferror".
+libgpg-error-1.41/src/mkheader.c:247: leaked_storage: Variable "fp" going out of scope leaks the storage it points to.
+#  245|         fprintf (stderr, "%s:%d: error reading file: %s\n",
+#  246|                  fname, lnr, strerror (errno));
+#  247|->       return 1;
+#  248|       }
+#  249|   
+
+Error: RESOURCE_LEAK (CWE-772):
+libgpg-error-1.41/src/spawn-posix.c:697: alloc_fn: Storage is returned from allocation function "_gpgrt_malloc".
+libgpg-error-1.41/src/spawn-posix.c:697: var_assign: Assigning: "r_exitcodes" = storage returned from "_gpgrt_malloc(4UL * count)".
+libgpg-error-1.41/src/spawn-posix.c:697: var_assign: Assigning: "dummy" = "r_exitcodes".
+libgpg-error-1.41/src/spawn-posix.c:707: leaked_storage: Variable "dummy" going out of scope leaks the storage it points to.
+libgpg-error-1.41/src/spawn-posix.c:707: leaked_storage: Returning without freeing "r_exitcodes" leaks the storage that it points to.
+#  705|   
+#  706|         if (pids[i] == (pid_t)(-1))
+#  707|->         return GPG_ERR_INV_VALUE;
+#  708|   
+#  709|         /* See if there was a previously stored result for this pid.  */
+
+Error: RESOURCE_LEAK (CWE-772):
+libgpg-error-1.41/tests/t-b64.c:100: alloc_fn: Storage is returned from allocation function "gpgrt_b64enc_start".
+libgpg-error-1.41/tests/t-b64.c:100: var_assign: Assigning: "state" = storage returned from "gpgrt_b64enc_start(fp, title)".
+libgpg-error-1.41/tests/t-b64.c:108: noescape: Resource "state" is not freed or pointed-to in "gpgrt_b64enc_write".
+libgpg-error-1.41/tests/t-b64.c:112: leaked_storage: Variable "state" going out of scope leaks the storage it points to.
+#  110|       {
+#  111|         fail ("gpgrt_b64enc_write failed: %s\n", gpg_strerror (err));
+#  112|->       return err;
+#  113|       }
+#  114|   
+
+Error: RESOURCE_LEAK (CWE-772):
+libgpg-error-1.41/tests/t-b64.c:151: alloc_fn: Storage is returned from allocation function "malloc".
+libgpg-error-1.41/tests/t-b64.c:151: var_assign: Assigning: "buffer" = storage returned from "malloc(strlen(string) + 1UL)".
+libgpg-error-1.41/tests/t-b64.c:157: noescape: Resource "buffer" is not freed or pointed-to in "strcpy". [Note: The source code implementation of the function has been overridden by a builtin model.]
+libgpg-error-1.41/tests/t-b64.c:168: noescape: Resource "buffer" is not freed or pointed-to in "gpgrt_b64dec_proc".
+libgpg-error-1.41/tests/t-b64.c:194: leaked_storage: Variable "buffer" going out of scope leaks the storage it points to.
+#  192|                                     strlen (expected));
+#  193|           }
+#  194|->       return GPG_ERR_FALSE;
+#  195|       }
+#  196|   
+
+Error: CPPCHECK_WARNING (CWE-404):
+libgpg-error-1.41/tests/t-syserror.c:53: error[resourceLeak]: Resource leak: fp
+#   51|       {
+#   52|         fprintf (stderr, "unable to run test\n");
+#   53|->       return 1;
+#   54|       }
+#   55|     save_errno = errno;

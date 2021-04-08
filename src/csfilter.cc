@@ -110,6 +110,10 @@ MsgFilter::MsgFilter():
     d->addMsgFilter("VALGRIND_WARNING",
             " lost in loss record [0-9,]+ of [0-9,]+$", "");
 
+    // line numbers embedded in diagnostic messages produced by ShellCheck
+    d->addMsgFilter("SHELLCHECK_WARNING",
+            " on line [0-9]+\\.$", " on line NNNN.");
+
     // pylint reports, either raw, or prospector-wrapped
     const std::vector<std::string> pylintCheckers= {
         "PROSPECTOR_WARNING",

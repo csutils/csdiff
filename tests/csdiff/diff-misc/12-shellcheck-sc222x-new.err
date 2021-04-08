@@ -1,0 +1,15 @@
+Error: SHELLCHECK_WARNING (CWE-569):
+/usr/bin/gpgrt-config:121:3: warning[SC2221]: This pattern always overrides a later one on line 132.
+#  119|   	if [ -n "$_reading_attrs" ]; then
+#  120|   	    case "$_line" in
+#  121|-> 		*:\ *)
+#  122|   		    _key="${_line%%:\ *}"
+#  123|   		    _value="${_line#*:\ }"
+
+Error: SHELLCHECK_WARNING (CWE-569):
+/usr/bin/gpgrt-config:132:6: warning[SC2222]: This pattern never matches because of a previous pattern on line 121.
+#  130|   EOF2
+#  131|   		    ;;
+#  132|-> 		*:|*:\ ) ;;
+#  133|   		*)
+#  134|   		    echo "Error reading $_filename: $_line" 1>&2

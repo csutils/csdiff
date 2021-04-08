@@ -1,7 +1,7 @@
 #!/bin/zsh
 set -x
 
-csdiff=$(realpath ../../csdiff_build/csdiff)
+csdiff=$(realpath ../../../csdiff_build/src/csdiff)
 test -x "$csdiff" || exit $?
 
 for old in *-old.err; do
