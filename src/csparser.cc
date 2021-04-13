@@ -360,21 +360,25 @@ bool KeyEventDigger::guessKeyEvent(Defect *def)
         return true;
     }
 
-    // use the last event as key event by default (unless black-listed)
+    // use the last event as key event by default (unless deny-listed)
     for (int idx = evtCount - 1U; idx >= 0; --idx) {
-        def->keyEventIdx = idx;
         const DefEvent &evt = evtList[idx];
         if (evt.event == "#")
             // never use comment as the key event
             continue;
 
         const std::string &evtName = evt.event;
-        if (!d->traceEvts.count(evtName) && !d->denyList.count(evtName))
-            // never use trace or black-listed event as the key event
-            break;
+        if (d->traceEvts.count(evtName) || d->denyList.count(evtName))
+            // never use trace or deny-listed event as the key event
+            continue;
+
+        // matched
+        def->keyEventIdx = idx;
+        return true;
     }
 
-    return true;
+    // no valid key event
+    return false;
 }
 
 void KeyEventDigger::initVerbosity(Defect *def)
