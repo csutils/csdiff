@@ -1,0 +1,36 @@
+Error: COMPILER_WARNING (CWE-758):
+boost_1_75_0/boost/smart_ptr/detail/sp_thread_sleep.hpp:22: included_from: Included from here.
+boost_1_75_0/boost/smart_ptr/detail/yield_k.hpp:23: included_from: Included from here.
+boost_1_75_0/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14: included_from: Included from here.
+boost_1_75_0/boost/smart_ptr/detail/spinlock.hpp:42: included_from: Included from here.
+boost_1_75_0/boost/smart_ptr/detail/spinlock_pool.hpp:25: included_from: Included from here.
+boost_1_75_0/boost/smart_ptr/shared_ptr.hpp:29: included_from: Included from here.
+boost_1_75_0/boost/shared_ptr.hpp:17: included_from: Included from here.
+boost_1_75_0/boost/program_options/options_description.hpp:16: included_from: Included from here.
+boost_1_75_0/boost/program_options/detail/cmdline.hpp:14: included_from: Included from here.
+boost_1_75_0/libs/program_options/src/cmdline.cpp:11: included_from: Included from here.
+boost_1_75_0/boost/config/pragma_message.hpp:24:34: note: '#pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.'
+#   22|   # define BOOST_PRAGMA_MESSAGE(x) __pragma(message(__FILE__ "(" BOOST_STRINGIZE(__LINE__) "): note: " x))
+#   23|   #elif defined(__GNUC__)
+#   24|-> # define BOOST_PRAGMA_MESSAGE(x) _Pragma(BOOST_STRINGIZE(message(x)))
+#   25|   #elif defined(_MSC_VER)
+#   26|   # define BOOST_PRAGMA_MESSAGE(x) __pragma(message(__FILE__ "(" BOOST_STRINGIZE(__LINE__) "): note: " x))
+
+Error: COMPILER_WARNING (CWE-758):
+boost_1_75_0/boost/smart_ptr/detail/sp_thread_sleep.hpp:22: included_from: Included from here.
+boost_1_75_0/boost/smart_ptr/detail/yield_k.hpp:23: included_from: Included from here.
+boost_1_75_0/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14: included_from: Included from here.
+boost_1_75_0/boost/smart_ptr/detail/spinlock.hpp:42: included_from: Included from here.
+boost_1_75_0/boost/smart_ptr/detail/spinlock_pool.hpp:25: included_from: Included from here.
+boost_1_75_0/boost/smart_ptr/shared_ptr.hpp:29: included_from: Included from here.
+boost_1_75_0/boost/property_map/vector_property_map.hpp:14: included_from: Included from here.
+boost_1_75_0/boost/property_map/property_map.hpp:602: included_from: Included from here.
+boost_1_75_0/boost/graph/graphviz.hpp:19: included_from: Included from here.
+boost_1_75_0/boost/graph/graphml.hpp:20: included_from: Included from here.
+boost_1_75_0/libs/graph/src/graphml.cpp:17: included_from: Included from here.
+boost_1_75_0/boost/config/pragma_message.hpp:24:34: note: '#pragma message: This header is deprecated. Use <iterator> instead.'
+#   22|   # define BOOST_PRAGMA_MESSAGE(x) __pragma(message(__FILE__ "(" BOOST_STRINGIZE(__LINE__) "): note: " x))
+#   23|   #elif defined(__GNUC__)
+#   24|-> # define BOOST_PRAGMA_MESSAGE(x) _Pragma(BOOST_STRINGIZE(message(x)))
+#   25|   #elif defined(_MSC_VER)
+#   26|   # define BOOST_PRAGMA_MESSAGE(x) __pragma(message(__FILE__ "(" BOOST_STRINGIZE(__LINE__) "): note: " x))

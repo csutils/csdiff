@@ -361,20 +361,26 @@ bool KeyEventDigger::guessKeyEvent(Defect *def)
     }
 
     // use the last event as key event by default (unless deny-listed)
-    for (int idx = evtCount - 1U; idx >= 0; --idx) {
-        const DefEvent &evt = evtList[idx];
-        if (evt.event == "#")
-            // never use comment as the key event
-            continue;
+    for (int pass = 0; pass < 2; ++pass) {
+        for (int idx = evtCount - 1U; idx >= 0; --idx) {
+            const DefEvent &evt = evtList[idx];
+            if (evt.event == "#")
+                // never use comment as the key event
+                continue;
 
-        const std::string &evtName = evt.event;
-        if (d->traceEvts.count(evtName) || d->denyList.count(evtName))
+
             // never use trace or deny-listed event as the key event
-            continue;
+            // (but pick the last one of there are no other events)
+            if (!pass) {
+                const std::string &evtName = evt.event;
+                if (d->traceEvts.count(evtName) || d->denyList.count(evtName))
+                    continue;
+            }
 
-        // matched
-        def->keyEventIdx = idx;
-        return true;
+            // matched
+            def->keyEventIdx = idx;
+            return true;
+        }
     }
 
     // no valid key event
