@@ -2,16 +2,8 @@ language: cpp
 compiler: gcc
 dist: trusty
 
-before_install:
-    - sudo apt-get update
-    - sudo apt-get install apt-transport-https
-    - echo "deb https://kdudka.fedorapeople.org/csbuild trusty contrib" | sudo tee -a /etc/apt/sources.list
-    - sudo apt-get update
-
 install:
     - sudo apt-get install cmake help2man libboost-dev libboost-filesystem-dev libboost-program-options-dev libboost-python-dev libboost-regex-dev
-    - sudo apt-get install -y --force-yes csbuild
 
 script:
-    - make -j9 distcheck CTEST='ctest -j9'
-    - test -z "$TRAVIS_COMMIT_RANGE" || csbuild --git-commit-range "$TRAVIS_COMMIT_RANGE" -c "make distclean && make -j9" --git-bisect --print-fixed --gcc-add-flag=-Wno-shadow
+    - make distcheck
