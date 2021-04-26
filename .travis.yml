@@ -1,6 +1,19 @@
 language: cpp
 compiler: gcc
-dist: trusty
+
+matrix:
+    include:
+        - name: "Ubuntu LTS 2014 (trusty)"
+          dist: trusty
+
+        - name: "Ubuntu LTS 2016 (xenial)"
+          dist: xenial
+
+        - name: "Ubutnu LTS 2018 (bionic)"
+          dist: bionic
+
+        - name: "Ubuntu LTS 2020 (focal)"
+          dist: focal
 
 install:
     - sudo apt-get install cmake help2man libboost-dev libboost-filesystem-dev libboost-program-options-dev libboost-python-dev libboost-regex-dev
