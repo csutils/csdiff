@@ -348,6 +348,32 @@ class PathStripper: public GenericAbstractFilter {
         const size_t                prefSize_;
 };
 
+class DropScanProps: public GenericAbstractFilter {
+    public:
+        DropScanProps(AbstractWriter *agent):
+            GenericAbstractFilter(agent)
+        {
+        }
+
+        /// ignore any given scan properties
+        virtual void setScanProps(const TScanProps &) {
+        }
+
+        /// always return empty scan properties
+        virtual const TScanProps& getScanProps() const {
+            return emp_;
+        }
+
+    protected:
+        /// trivial pass-through
+        virtual void handleDef(const Defect &def) {
+            agent_->handleDef(def);
+        }
+
+    private:
+        const TScanProps emp_;
+};
+
 class DuplicateFilter: public AbstractFilter {
     public:
         DuplicateFilter(AbstractWriter *agent):
@@ -552,6 +578,7 @@ int main(int argc, char *argv[])
             ("annot",               po::value<string>(),        "defect matches if its annotation matches the given regex")
             ("src-annot",           po::value<string>(),        "defect matches if an annotation in the _source_ file matches the given regex")
 
+            ("drop-scan-props",                                 "do not propagate scan properties")
             ("embed-context,U",     po::value<int>(),           "embed a number of lines of context from the source file for the key event")
             ("prune-events",        po::value<int>(),           "event is preserved if its verbosity level is below the given number")
             ("remove-duplicates,u",                             "remove defects that are not unique by their key event")
@@ -630,6 +657,9 @@ int main(int argc, char *argv[])
     if (!chainFilters(&eng, vm))
         // an error message already printed out
         return 1;
+
+    if (vm.count("drop-scan-props"))
+        eng = new DropScanProps(eng);
 
     if (vm.count("remove-duplicates"))
         eng = new DuplicateFilter(eng);
