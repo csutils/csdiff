@@ -1,0 +1,1887 @@
+{
+    "defects": [
+        {
+            "checker": "VALGRIND_WARNING",
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "./Programs/_freeze_importlib",
+                    "line": 0,
+                    "event": "note",
+                    "message": "while executing process 25473 with arguments: zipimport /builddir/build/BUILD/Python-3.10.0a5/Lib/zipimport.py /builddir/build/BUILD/Python-3.10.0a5/Python/importlib_zipimport.h.new",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 572,
+                    "event": "warning[Leak_PossiblyLost]",
+                    "message": "904 bytes in 10 blocks are possibly lost in loss record 1,956 of 2,038",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "valgrind-3.16.1/coregrind/m_replacemalloc/vg_replace_malloc.c",
+                    "line": 307,
+                    "event": "note",
+                    "message": "called from malloc()",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 572,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 1645,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 1638,
+                    "event": "note",
+                    "message": "called from _PyObject_Malloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 685,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/gcmodule.c",
+                    "line": 2217,
+                    "event": "note",
+                    "message": "called from _PyObject_GC_Alloc.constprop.0()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/gcmodule.c",
+                    "line": 2244,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/gcmodule.c",
+                    "line": 2275,
+                    "event": "note",
+                    "message": "called from _PyObject_GC_NewVar()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/tupleobject.c",
+                    "line": 157,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/tupleobject.c",
+                    "line": 149,
+                    "event": "note",
+                    "message": "called from PyTuple_New()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 5738,
+                    "event": "note",
+                    "message": "called from dict_keys_inorder()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 5852,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 6036,
+                    "event": "note",
+                    "message": "called from assemble()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 2292,
+                    "event": "note",
+                    "message": "called from compiler_function()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 1840,
+                    "event": "note",
+                    "message": "called from compiler_body()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 1860,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 395,
+                    "event": "note",
+                    "message": "called from PyAST_CompileObject()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/pythonrun.c",
+                    "line": 1307,
+                    "event": "note",
+                    "message": "called from Py_CompileStringObject()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/pythonrun.c",
+                    "line": 1320,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/_freeze_importlib.c",
+                    "line": 103,
+                    "event": "note",
+                    "message": "called from main()",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "VALGRIND_WARNING",
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "./python",
+                    "line": 0,
+                    "event": "note",
+                    "message": "while executing process 26289 with arguments: -E -S -m sysconfig --generate-posix-vars",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 572,
+                    "event": "warning[Leak_PossiblyLost]",
+                    "message": "92 bytes in 1 blocks are possibly lost in loss record 2,328 of 2,941",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "valgrind-3.16.1/coregrind/m_replacemalloc/vg_replace_malloc.c",
+                    "line": 307,
+                    "event": "note",
+                    "message": "called from malloc()",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 572,
+                    "event": "note",
+                    "message": "called from PyMem_RawMalloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 1645,
+                    "event": "note",
+                    "message": "called from _PyObject_Malloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 685,
+                    "event": "note",
+                    "message": "called from PyObject_Malloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/unicodeobject.c",
+                    "line": 1442,
+                    "event": "note",
+                    "message": "called from PyUnicode_New()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/unicodeobject.c",
+                    "line": 5155,
+                    "event": "note",
+                    "message": "called from unicode_decode_utf8()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/unicodeobject.c",
+                    "line": 5285,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/unicodeobject.c",
+                    "line": 2295,
+                    "event": "note",
+                    "message": "called from PyUnicode_FromString()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/typeobject.c",
+                    "line": 5644,
+                    "event": "note",
+                    "message": "called from PyType_Ready()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/object.c",
+                    "line": 1801,
+                    "event": "note",
+                    "message": "called from _PyTypes_Init()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/pylifecycle.c",
+                    "line": 646,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/pylifecycle.c",
+                    "line": 762,
+                    "event": "note",
+                    "message": "called from pycore_interp_init()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/pylifecycle.c",
+                    "line": 809,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/pylifecycle.c",
+                    "line": 972,
+                    "event": "note",
+                    "message": "called from pyinit_core.constprop.0()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/pylifecycle.c",
+                    "line": 1157,
+                    "event": "note",
+                    "message": "called from Py_InitializeFromConfig()",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "VALGRIND_WARNING",
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "./python",
+                    "line": 0,
+                    "event": "note",
+                    "message": "while executing process 26289 with arguments: -E -S -m sysconfig --generate-posix-vars",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 572,
+                    "event": "warning[Leak_PossiblyLost]",
+                    "message": "936 bytes in 13 blocks are possibly lost in loss record 2,846 of 2,941",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "valgrind-3.16.1/coregrind/m_replacemalloc/vg_replace_malloc.c",
+                    "line": 307,
+                    "event": "note",
+                    "message": "called from malloc()",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 572,
+                    "event": "note",
+                    "message": "called from PyMem_RawMalloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 1645,
+                    "event": "note",
+                    "message": "called from _PyObject_Malloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 685,
+                    "event": "note",
+                    "message": "called from PyObject_Malloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/gcmodule.c",
+                    "line": 2217,
+                    "event": "note",
+                    "message": "called from _PyObject_GC_Alloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/gcmodule.c",
+                    "line": 2244,
+                    "event": "note",
+                    "message": "called from _PyObject_GC_Malloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/typeobject.c",
+                    "line": 1072,
+                    "event": "note",
+                    "message": "called from PyType_GenericAlloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/descrobject.c",
+                    "line": 886,
+                    "event": "note",
+                    "message": "called from descr_new()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/descrobject.c",
+                    "line": 939,
+                    "event": "note",
+                    "message": "called from PyDescr_NewMethod()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/typeobject.c",
+                    "line": 5115,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/typeobject.c",
+                    "line": 5572,
+                    "event": "note",
+                    "message": "called from PyType_Ready()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/object.c",
+                    "line": 1760,
+                    "event": "note",
+                    "message": "called from _PyTypes_Init()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/pylifecycle.c",
+                    "line": 646,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/pylifecycle.c",
+                    "line": 762,
+                    "event": "note",
+                    "message": "called from pycore_interp_init()",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "VALGRIND_WARNING",
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "./python",
+                    "line": 0,
+                    "event": "note",
+                    "message": "while executing process 26289 with arguments: -E -S -m sysconfig --generate-posix-vars",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 572,
+                    "event": "warning[Leak_PossiblyLost]",
+                    "message": "94 bytes in 1 blocks are possibly lost in loss record 2,329 of 2,941",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "valgrind-3.16.1/coregrind/m_replacemalloc/vg_replace_malloc.c",
+                    "line": 307,
+                    "event": "note",
+                    "message": "called from malloc()",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 572,
+                    "event": "note",
+                    "message": "called from PyMem_RawMalloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 1645,
+                    "event": "note",
+                    "message": "called from _PyObject_Malloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 685,
+                    "event": "note",
+                    "message": "called from PyObject_Malloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/unicodeobject.c",
+                    "line": 1442,
+                    "event": "note",
+                    "message": "called from PyUnicode_New()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/unicodeobject.c",
+                    "line": 5155,
+                    "event": "note",
+                    "message": "called from unicode_decode_utf8()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/unicodeobject.c",
+                    "line": 5285,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/unicodeobject.c",
+                    "line": 2295,
+                    "event": "note",
+                    "message": "called from PyUnicode_FromString()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/typeobject.c",
+                    "line": 5644,
+                    "event": "note",
+                    "message": "called from PyType_Ready()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/exceptions.c",
+                    "line": 2592,
+                    "event": "note",
+                    "message": "called from _PyExc_Init()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/pylifecycle.c",
+                    "line": 666,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/pylifecycle.c",
+                    "line": 762,
+                    "event": "note",
+                    "message": "called from pycore_interp_init()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/pylifecycle.c",
+                    "line": 809,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/pylifecycle.c",
+                    "line": 972,
+                    "event": "note",
+                    "message": "called from pyinit_core.constprop.0()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/pylifecycle.c",
+                    "line": 1157,
+                    "event": "note",
+                    "message": "called from Py_InitializeFromConfig()",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "VALGRIND_WARNING",
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "./python",
+                    "line": 0,
+                    "event": "note",
+                    "message": "while executing process 26289 with arguments: -E -S -m sysconfig --generate-posix-vars",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 572,
+                    "event": "warning[Leak_PossiblyLost]",
+                    "message": "95 bytes in 1 blocks are possibly lost in loss record 2,332 of 2,941",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "valgrind-3.16.1/coregrind/m_replacemalloc/vg_replace_malloc.c",
+                    "line": 307,
+                    "event": "note",
+                    "message": "called from malloc()",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 572,
+                    "event": "note",
+                    "message": "called from PyMem_RawMalloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 1645,
+                    "event": "note",
+                    "message": "called from _PyObject_Malloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 685,
+                    "event": "note",
+                    "message": "called from PyObject_Malloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/unicodeobject.c",
+                    "line": 1442,
+                    "event": "note",
+                    "message": "called from PyUnicode_New()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/unicodeobject.c",
+                    "line": 5155,
+                    "event": "note",
+                    "message": "called from unicode_decode_utf8()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/unicodeobject.c",
+                    "line": 5285,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/unicodeobject.c",
+                    "line": 2295,
+                    "event": "note",
+                    "message": "called from PyUnicode_FromString()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/typeobject.c",
+                    "line": 5644,
+                    "event": "note",
+                    "message": "called from PyType_Ready()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/exceptions.c",
+                    "line": 2558,
+                    "event": "note",
+                    "message": "called from _PyExc_Init()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/pylifecycle.c",
+                    "line": 666,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/pylifecycle.c",
+                    "line": 762,
+                    "event": "note",
+                    "message": "called from pycore_interp_init()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/pylifecycle.c",
+                    "line": 809,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/pylifecycle.c",
+                    "line": 972,
+                    "event": "note",
+                    "message": "called from pyinit_core.constprop.0()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/pylifecycle.c",
+                    "line": 1157,
+                    "event": "note",
+                    "message": "called from Py_InitializeFromConfig()",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "VALGRIND_WARNING",
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "./Programs/_freeze_importlib",
+                    "line": 0,
+                    "event": "note",
+                    "message": "while executing process 25473 with arguments: zipimport /builddir/build/BUILD/Python-3.10.0a5/Lib/zipimport.py /builddir/build/BUILD/Python-3.10.0a5/Python/importlib_zipimport.h.new",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 572,
+                    "event": "warning[Leak_PossiblyLost]",
+                    "message": "952 bytes in 12 blocks are possibly lost in loss record 1,960 of 2,038",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "valgrind-3.16.1/coregrind/m_replacemalloc/vg_replace_malloc.c",
+                    "line": 307,
+                    "event": "note",
+                    "message": "called from malloc()",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 572,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 1645,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 1638,
+                    "event": "note",
+                    "message": "called from _PyObject_Malloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 685,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/gcmodule.c",
+                    "line": 2217,
+                    "event": "note",
+                    "message": "called from _PyObject_GC_Alloc.constprop.0()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/gcmodule.c",
+                    "line": 2244,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/gcmodule.c",
+                    "line": 2275,
+                    "event": "note",
+                    "message": "called from _PyObject_GC_NewVar()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/tupleobject.c",
+                    "line": 157,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/tupleobject.c",
+                    "line": 149,
+                    "event": "note",
+                    "message": "called from PyTuple_New()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 5738,
+                    "event": "note",
+                    "message": "called from dict_keys_inorder()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 5853,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 6036,
+                    "event": "note",
+                    "message": "called from assemble()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 2292,
+                    "event": "note",
+                    "message": "called from compiler_function()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 1840,
+                    "event": "note",
+                    "message": "called from compiler_body()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 2381,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 3391,
+                    "event": "note",
+                    "message": "called from compiler_visit_stmt()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 1840,
+                    "event": "note",
+                    "message": "called from compiler_body()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 1860,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 395,
+                    "event": "note",
+                    "message": "called from PyAST_CompileObject()",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "VALGRIND_WARNING",
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "./Programs/_freeze_importlib",
+                    "line": 0,
+                    "event": "note",
+                    "message": "while executing process 25468 with arguments: importlib._bootstrap /builddir/build/BUILD/Python-3.10.0a5/Lib/importlib/_bootstrap.py /builddir/build/BUILD/Python-3.10.0a5/Python/importlib.h.new",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 572,
+                    "event": "warning[Leak_PossiblyLost]",
+                    "message": "952 bytes in 17 blocks are possibly lost in loss record 1,975 of 2,069",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "valgrind-3.16.1/coregrind/m_replacemalloc/vg_replace_malloc.c",
+                    "line": 307,
+                    "event": "note",
+                    "message": "called from malloc()",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 572,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 1645,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 1638,
+                    "event": "note",
+                    "message": "called from _PyObject_Malloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 685,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/gcmodule.c",
+                    "line": 2217,
+                    "event": "note",
+                    "message": "called from _PyObject_GC_Alloc.constprop.0()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/gcmodule.c",
+                    "line": 2244,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/gcmodule.c",
+                    "line": 2275,
+                    "event": "note",
+                    "message": "called from _PyObject_GC_NewVar()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/tupleobject.c",
+                    "line": 248,
+                    "event": "note",
+                    "message": "called from PyTuple_Pack()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/codeobject.c",
+                    "line": 907,
+                    "event": "note",
+                    "message": "called from _PyCode_ConstantKey()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 5816,
+                    "event": "note",
+                    "message": "called from merge_const_tuple()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 5884,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 6036,
+                    "event": "note",
+                    "message": "called from assemble()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 2292,
+                    "event": "note",
+                    "message": "called from compiler_function()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 1840,
+                    "event": "note",
+                    "message": "called from compiler_body()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 2381,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 3391,
+                    "event": "note",
+                    "message": "called from compiler_visit_stmt()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 1840,
+                    "event": "note",
+                    "message": "called from compiler_body()",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "VALGRIND_WARNING",
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "./Programs/_freeze_importlib",
+                    "line": 0,
+                    "event": "note",
+                    "message": "while executing process 25468 with arguments: importlib._bootstrap /builddir/build/BUILD/Python-3.10.0a5/Lib/importlib/_bootstrap.py /builddir/build/BUILD/Python-3.10.0a5/Python/importlib.h.new",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 572,
+                    "event": "warning[Leak_PossiblyLost]",
+                    "message": "952 bytes in 8 blocks are possibly lost in loss record 1,973 of 2,069",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "valgrind-3.16.1/coregrind/m_replacemalloc/vg_replace_malloc.c",
+                    "line": 307,
+                    "event": "note",
+                    "message": "called from malloc()",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 572,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 1645,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 1638,
+                    "event": "note",
+                    "message": "called from _PyObject_Malloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 685,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/gcmodule.c",
+                    "line": 2217,
+                    "event": "note",
+                    "message": "called from _PyObject_GC_Alloc.constprop.0()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/gcmodule.c",
+                    "line": 2244,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/gcmodule.c",
+                    "line": 2275,
+                    "event": "note",
+                    "message": "called from _PyObject_GC_NewVar()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/tupleobject.c",
+                    "line": 157,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/tupleobject.c",
+                    "line": 149,
+                    "event": "note",
+                    "message": "called from PyTuple_New()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 5738,
+                    "event": "note",
+                    "message": "called from dict_keys_inorder()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 5852,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 6036,
+                    "event": "note",
+                    "message": "called from assemble()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 2420,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 3391,
+                    "event": "note",
+                    "message": "called from compiler_visit_stmt()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 1840,
+                    "event": "note",
+                    "message": "called from compiler_body()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 1860,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 395,
+                    "event": "note",
+                    "message": "called from PyAST_CompileObject()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/pythonrun.c",
+                    "line": 1307,
+                    "event": "note",
+                    "message": "called from Py_CompileStringObject()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/pythonrun.c",
+                    "line": 1320,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/_freeze_importlib.c",
+                    "line": 103,
+                    "event": "note",
+                    "message": "called from main()",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "VALGRIND_WARNING",
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "./python",
+                    "line": 0,
+                    "event": "note",
+                    "message": "while executing process 26289 with arguments: -E -S -m sysconfig --generate-posix-vars",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 572,
+                    "event": "warning[Leak_PossiblyLost]",
+                    "message": "96 bytes in 1 blocks are possibly lost in loss record 2,333 of 2,941",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "valgrind-3.16.1/coregrind/m_replacemalloc/vg_replace_malloc.c",
+                    "line": 307,
+                    "event": "note",
+                    "message": "called from malloc()",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 572,
+                    "event": "note",
+                    "message": "called from PyMem_RawMalloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 1645,
+                    "event": "note",
+                    "message": "called from _PyObject_Malloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 685,
+                    "event": "note",
+                    "message": "called from PyObject_Malloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/unicodeobject.c",
+                    "line": 1442,
+                    "event": "note",
+                    "message": "called from PyUnicode_New()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/unicodeobject.c",
+                    "line": 5155,
+                    "event": "note",
+                    "message": "called from unicode_decode_utf8()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/unicodeobject.c",
+                    "line": 5285,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/unicodeobject.c",
+                    "line": 2295,
+                    "event": "note",
+                    "message": "called from PyUnicode_FromString()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/typeobject.c",
+                    "line": 5644,
+                    "event": "note",
+                    "message": "called from PyType_Ready()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/exceptions.c",
+                    "line": 2571,
+                    "event": "note",
+                    "message": "called from _PyExc_Init()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/pylifecycle.c",
+                    "line": 666,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/pylifecycle.c",
+                    "line": 762,
+                    "event": "note",
+                    "message": "called from pycore_interp_init()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/pylifecycle.c",
+                    "line": 809,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/pylifecycle.c",
+                    "line": 972,
+                    "event": "note",
+                    "message": "called from pyinit_core.constprop.0()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/pylifecycle.c",
+                    "line": 1157,
+                    "event": "note",
+                    "message": "called from Py_InitializeFromConfig()",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "VALGRIND_WARNING",
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "./Programs/_freeze_importlib",
+                    "line": 0,
+                    "event": "note",
+                    "message": "while executing process 25473 with arguments: zipimport /builddir/build/BUILD/Python-3.10.0a5/Lib/zipimport.py /builddir/build/BUILD/Python-3.10.0a5/Python/importlib_zipimport.h.new",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 572,
+                    "event": "warning[Leak_PossiblyLost]",
+                    "message": "96 bytes in 2 blocks are possibly lost in loss record 1,472 of 2,038",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "valgrind-3.16.1/coregrind/m_replacemalloc/vg_replace_malloc.c",
+                    "line": 307,
+                    "event": "note",
+                    "message": "called from malloc()",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 572,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 1645,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 1638,
+                    "event": "note",
+                    "message": "called from _PyObject_Malloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 685,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/gcmodule.c",
+                    "line": 2217,
+                    "event": "note",
+                    "message": "called from _PyObject_GC_Alloc.constprop.0()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/gcmodule.c",
+                    "line": 2244,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/gcmodule.c",
+                    "line": 2275,
+                    "event": "note",
+                    "message": "called from _PyObject_GC_NewVar()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/tupleobject.c",
+                    "line": 157,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/tupleobject.c",
+                    "line": 149,
+                    "event": "note",
+                    "message": "called from PyTuple_New()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 4294,
+                    "event": "note",
+                    "message": "called from compiler_call_helper()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 5132,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 3420,
+                    "event": "note",
+                    "message": "called from compiler_visit_stmt()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 2744,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 3416,
+                    "event": "note",
+                    "message": "called from compiler_visit_stmt()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 2290,
+                    "event": "note",
+                    "message": "called from compiler_function()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 1840,
+                    "event": "note",
+                    "message": "called from compiler_body()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 2381,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 3391,
+                    "event": "note",
+                    "message": "called from compiler_visit_stmt()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 1840,
+                    "event": "note",
+                    "message": "called from compiler_body()",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "VALGRIND_WARNING",
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "./python",
+                    "line": 0,
+                    "event": "note",
+                    "message": "while executing process 26289 with arguments: -E -S -m sysconfig --generate-posix-vars",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 572,
+                    "event": "warning[Leak_PossiblyLost]",
+                    "message": "960 bytes in 15 blocks are possibly lost in loss record 2,851 of 2,941",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "valgrind-3.16.1/coregrind/m_replacemalloc/vg_replace_malloc.c",
+                    "line": 307,
+                    "event": "note",
+                    "message": "called from malloc()",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 572,
+                    "event": "note",
+                    "message": "called from PyMem_RawMalloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 1645,
+                    "event": "note",
+                    "message": "called from _PyObject_Malloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 685,
+                    "event": "note",
+                    "message": "called from PyObject_Malloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/gcmodule.c",
+                    "line": 2217,
+                    "event": "note",
+                    "message": "called from _PyObject_GC_Alloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/gcmodule.c",
+                    "line": 2244,
+                    "event": "note",
+                    "message": "called from _PyObject_GC_Malloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/typeobject.c",
+                    "line": 1072,
+                    "event": "note",
+                    "message": "called from PyType_GenericAlloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/descrobject.c",
+                    "line": 886,
+                    "event": "note",
+                    "message": "called from descr_new()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/descrobject.c",
+                    "line": 965,
+                    "event": "note",
+                    "message": "called from PyDescr_NewMember()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/typeobject.c",
+                    "line": 5153,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/typeobject.c",
+                    "line": 5576,
+                    "event": "note",
+                    "message": "called from PyType_Ready()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/structseq.c",
+                    "line": 469,
+                    "event": "note",
+                    "message": "called from PyStructSequence_InitType2()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/sysmodule.c",
+                    "line": 2824,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/sysmodule.c",
+                    "line": 3080,
+                    "event": "note",
+                    "message": "called from _PySys_Create()",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "VALGRIND_WARNING",
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "./python",
+                    "line": 0,
+                    "event": "note",
+                    "message": "while executing process 26289 with arguments: -E -S -m sysconfig --generate-posix-vars",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 572,
+                    "event": "warning[Leak_PossiblyLost]",
+                    "message": "960 bytes in 20 blocks are possibly lost in loss record 2,852 of 2,941",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "valgrind-3.16.1/coregrind/m_replacemalloc/vg_replace_malloc.c",
+                    "line": 307,
+                    "event": "note",
+                    "message": "called from malloc()",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 572,
+                    "event": "note",
+                    "message": "called from PyMem_RawMalloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 1645,
+                    "event": "note",
+                    "message": "called from _PyObject_Malloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 685,
+                    "event": "note",
+                    "message": "called from PyObject_Malloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/gcmodule.c",
+                    "line": 2217,
+                    "event": "note",
+                    "message": "called from _PyObject_GC_Alloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/gcmodule.c",
+                    "line": 2244,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/gcmodule.c",
+                    "line": 2275,
+                    "event": "note",
+                    "message": "called from _PyObject_GC_NewVar()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/tupleobject.c",
+                    "line": 98,
+                    "event": "note",
+                    "message": "called from tuple_alloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/tupleobject.c",
+                    "line": 157,
+                    "event": "note",
+                    "message": "called from PyTuple_New()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/codeobject.c",
+                    "line": 845,
+                    "event": "note",
+                    "message": "called from _PyCode_ConstantKey()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/codeobject.c",
+                    "line": 853,
+                    "event": "note",
+                    "message": "called from _PyCode_ConstantKey()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 5816,
+                    "event": "note",
+                    "message": "called from merge_const_tuple()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/compile.c",
+                    "line": 5884,
+                    "event": "note",
+                    "message": "called from makecode()",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "VALGRIND_WARNING",
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "./python",
+                    "line": 0,
+                    "event": "note",
+                    "message": "while executing process 26289 with arguments: -E -S -m sysconfig --generate-posix-vars",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 572,
+                    "event": "warning[Leak_PossiblyLost]",
+                    "message": "961 bytes in 16 blocks are possibly lost in loss record 2,853 of 2,941",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "valgrind-3.16.1/coregrind/m_replacemalloc/vg_replace_malloc.c",
+                    "line": 307,
+                    "event": "note",
+                    "message": "called from malloc()",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 572,
+                    "event": "note",
+                    "message": "called from PyMem_RawMalloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 1645,
+                    "event": "note",
+                    "message": "called from _PyObject_Malloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 685,
+                    "event": "note",
+                    "message": "called from PyObject_Malloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/unicodeobject.c",
+                    "line": 1442,
+                    "event": "note",
+                    "message": "called from PyUnicode_New()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/unicodeobject.c",
+                    "line": 5155,
+                    "event": "note",
+                    "message": "called from unicode_decode_utf8()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/unicodeobject.c",
+                    "line": 5285,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/unicodeobject.c",
+                    "line": 2295,
+                    "event": "note",
+                    "message": "called from PyUnicode_FromString()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/unicodeobject.c",
+                    "line": 15807,
+                    "event": "note",
+                    "message": "called from PyUnicode_InternFromString()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/descrobject.c",
+                    "line": 890,
+                    "event": "note",
+                    "message": "called from descr_new()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/descrobject.c",
+                    "line": 965,
+                    "event": "note",
+                    "message": "called from PyDescr_NewMember()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/typeobject.c",
+                    "line": 5153,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/typeobject.c",
+                    "line": 5576,
+                    "event": "note",
+                    "message": "called from PyType_Ready()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/object.c",
+                    "line": 1779,
+                    "event": "note",
+                    "message": "called from _PyTypes_Init()",
+                    "verbosity_level": "1"
+                }
+            ]
+        },
+        {
+            "checker": "VALGRIND_WARNING",
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "./python",
+                    "line": 0,
+                    "event": "note",
+                    "message": "while executing process 26289 with arguments: -E -S -m sysconfig --generate-posix-vars",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 572,
+                    "event": "warning[Leak_PossiblyLost]",
+                    "message": "99 bytes in 1 blocks are possibly lost in loss record 2,338 of 2,941",
+                    "verbosity_level": "0"
+                },
+                {
+                    "file_name": "valgrind-3.16.1/coregrind/m_replacemalloc/vg_replace_malloc.c",
+                    "line": 307,
+                    "event": "note",
+                    "message": "called from malloc()",
+                    "verbosity_level": "2"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 572,
+                    "event": "note",
+                    "message": "called from PyMem_RawMalloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 1645,
+                    "event": "note",
+                    "message": "called from _PyObject_Malloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/obmalloc.c",
+                    "line": 685,
+                    "event": "note",
+                    "message": "called from PyObject_Malloc()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/unicodeobject.c",
+                    "line": 1442,
+                    "event": "note",
+                    "message": "called from PyUnicode_New()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/unicodeobject.c",
+                    "line": 5155,
+                    "event": "note",
+                    "message": "called from unicode_decode_utf8()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/unicodeobject.c",
+                    "line": 5285,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/unicodeobject.c",
+                    "line": 2295,
+                    "event": "note",
+                    "message": "called from PyUnicode_FromString()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/typeobject.c",
+                    "line": 5644,
+                    "event": "note",
+                    "message": "called from PyType_Ready()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/object.c",
+                    "line": 1779,
+                    "event": "note",
+                    "message": "called from _PyTypes_Init()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/pylifecycle.c",
+                    "line": 646,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/pylifecycle.c",
+                    "line": 762,
+                    "event": "note",
+                    "message": "called from pycore_interp_init()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/pylifecycle.c",
+                    "line": 809,
+                    "event": "note",
+                    "message": "called from UnknownInlinedFun()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/pylifecycle.c",
+                    "line": 972,
+                    "event": "note",
+                    "message": "called from pyinit_core.constprop.0()",
+                    "verbosity_level": "1"
+                },
+                {
+                    "file_name": "Python-3.10.0a5/build/optimized/pylifecycle.c",
+                    "line": 1157,
+                    "event": "note",
+                    "message": "called from Py_InitializeFromConfig()",
+                    "verbosity_level": "1"
+                }
+            ]
+        }
+    ]
+}
