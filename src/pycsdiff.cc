@@ -23,14 +23,6 @@
 
 #include <sstream>
 
-// eliminate the following warning:
-//   /usr/include/boost/bind.hpp:36:1: note: ‘#pragma message: The practice
-//   of declaring the Bind placeholders (_1, _2, ...) in the global namespace
-//   is deprecated. Please use <boost/bind/bind.hpp> + using namespace
-//   boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain
-//   the current behavior.’
-#define BOOST_BIND_GLOBAL_PLACEHOLDERS
-
 #include <boost/python.hpp>
 
 std::string diff_scans(
