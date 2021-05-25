@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011 Red Hat, Inc.
+ * Copyright (C) 2011 - 2021 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -24,6 +24,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <vector>
 
 struct InFileException {
     std::string fileName;
@@ -54,6 +55,18 @@ class InStream {
         bool                anyError_;
         std::fstream        fileStr_;
         std::istream       &str_;
+};
+
+class InStreamLookAhead {
+    public:
+        InStreamLookAhead(InStream &, unsigned size);
+
+        char operator[](const unsigned idx) const {
+            return buf_.at(idx);
+        }
+
+    private:
+        std::vector<char> buf_;
 };
 
 #endif /* H_GUARD_INSTREAM_H */

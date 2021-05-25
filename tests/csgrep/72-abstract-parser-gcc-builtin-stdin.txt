@@ -1,0 +1,5 @@
+<built-in>: In function 'main':
+./0001-test.c:7:5: warning: 'free' of '&a' which points to memory not on the heap [CWE-590] [-Wanalyzer-free-of-non-heap]
+./0001-test.c:7:5: note: (1) call to 'free' here
+./0001-test.c:7:5: warning: 'free' called on unallocated object 'a' [-Wfree-nonheap-object]
+./0001-test.c:3:5: note: declared here

@@ -1,0 +1,8 @@
+Error: GCC_ANALYZER_WARNING (CWE-590):
+<built-in>: scope_hint: In function 'main'
+./0001-test.c:7:5: warning[-Wanalyzer-free-of-non-heap]: 'free' of '&a' which points to memory not on the heap
+./0001-test.c:7:5: note: (1) call to 'free' here
+
+Error: COMPILER_WARNING:
+./0001-test.c:7:5: warning[-Wfree-nonheap-object]: 'free' called on unallocated object 'a'
+./0001-test.c:3:5: note: declared here

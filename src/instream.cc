@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011 Red Hat, Inc.
+ * Copyright (C) 2011 - 2021 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -60,4 +60,17 @@ void InStream::handleError(const std::string msg, const long line)
         std::cerr << ":" << line;
 
     std::cerr << ": error: " << msg << "\n";
+}
+
+InStreamLookAhead::InStreamLookAhead(InStream &input, const unsigned size)
+{
+    std::istream &inStr = input.str();
+
+    // read `size` chars from input
+    while (buf_.size() < size)
+        buf_.push_back(inStr.get());
+
+    // put the chars back to the input stream
+    for (auto it = buf_.rbegin(); it != buf_.rend(); ++it)
+        inStr.putback(*it);
 }

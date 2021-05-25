@@ -26,31 +26,34 @@
 
 AbstractParser* createParser(InStream &input)
 {
-    // sniff the first char from the input
-    unsigned char c = 'E';
-    std::istream &inStr = input.str();
-    if (inStr >> c)
-        // ... and put the char back to the input stream
-        inStr.putback(c);
+    // sniff the first two chars from the input
+    InStreamLookAhead head(input, 2U);
 
-    switch (c) {
+    switch (head[0]) {
         case '{':
             // JSON
             return new JsonParser(input);
 
         case '<':
+            if ('?' != head[1])
+                break;
             // XML
             return new XmlParser(input);
 
         case 'E':
+            if ('r' != head[1])
+                break;
+            // fall through!
         case '#':
             // Coverity
             return new CovParser(input);
 
         default:
-            // GCC
-            return new GccParser(input);
+            break;
     }
+
+    // GCC
+    return new GccParser(input);
 }
 
 EFileFormat Parser::inputFormat() const
