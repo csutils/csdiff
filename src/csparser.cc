@@ -31,6 +31,10 @@
 
 #include <boost/algorithm/string.hpp>
 
+#define RE_CHECKER_NAME_SA "(?:[A-Za-z][0-9A-Za-z_.]+)"
+#define RE_CHECKER_NAME_MISRA "(?:MISRA C(?:\\+\\+)?-[0-9]+ (?:Directive|Rule) [0-9.-]+)"
+#define RE_CHECKER_NAME RE_CHECKER_NAME_SA "|" RE_CHECKER_NAME_MISRA
+
 namespace CovParserImpl {
 
 class LineReader {
@@ -148,7 +152,7 @@ class ErrFileLexer {
             RE("^(#)(.*)$");
 
         const RE reChecker_ =
-            RE("^Error: *([A-Za-z][0-9A-Za-z_.]+)( *\\([^)]+\\))? *:$");
+            RE("^Error: *(" RE_CHECKER_NAME ")( *\\([^)]+\\))? *:$");
 
         const RE reEvent_ =
             RE(/* location */ "^([^:]+)(?::([0-9]+|<unknown>))?(?::([0-9]+))?"
