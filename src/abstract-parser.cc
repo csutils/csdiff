@@ -26,8 +26,8 @@
 
 AbstractParser* createParser(InStream &input)
 {
-    // sniff the first two chars from the input
-    InStreamLookAhead head(input, 2U);
+    // skip all white-spaces and sniff the first two chars from the input
+    InStreamLookAhead head(input, 2U, /* skipWhiteSpaces */ true);
 
     switch (head[0]) {
         case '{':

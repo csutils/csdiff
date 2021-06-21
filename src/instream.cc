@@ -62,13 +62,25 @@ void InStream::handleError(const std::string msg, const long line)
     std::cerr << ": error: " << msg << "\n";
 }
 
-InStreamLookAhead::InStreamLookAhead(InStream &input, const unsigned size)
+InStreamLookAhead::InStreamLookAhead(
+        InStream               &input,
+        const unsigned          size,
+        bool                    skipWhiteSpaces)
 {
     std::istream &inStr = input.str();
 
     // read `size` chars from input
-    while (buf_.size() < size)
-        buf_.push_back(inStr.get());
+    while (buf_.size() < size) {
+        const int c = inStr.get();
+        if (skipWhiteSpaces && isspace(c) && !!inStr)
+            // skip a white-space
+            continue;
+
+        // only the leading white-spaces are skipped
+        skipWhiteSpaces = false;
+
+        buf_.push_back(c);
+    }
 
     // put the chars back to the input stream
     for (auto it = buf_.rbegin(); it != buf_.rend(); ++it)

@@ -1,0 +1,1068 @@
+
+###############################################################################
+# This is a definition of basic paths in linux system. It's true that they are
+# not used and I guess that it's a leftover from some generic config script.
+# Anyway, gdlib-config is deprecated so no fixes of such minor issues are
+# needed.
+###############################################################################
+
+Error: SHELLCHECK_WARNING:
+/usr/bin/gdlib-config:11:1: warning: prefix appears unused. Verify it or export it. [SC2034]
+#    9|   
+#   10|   # installation directories
+#   11|-> prefix=/usr
+#   12|   exec_prefix=/usr
+#   13|   libdir=`pkg-config gdlib --variable=libdir`
+
+Error: SHELLCHECK_WARNING:
+/usr/bin/gdlib-config:12:1: warning: exec_prefix appears unused. Verify it or export it. [SC2034]
+#   10|   # installation directories
+#   11|   prefix=/usr
+#   12|-> exec_prefix=/usr
+#   13|   libdir=`pkg-config gdlib --variable=libdir`
+#   14|   includedir=/usr/include
+
+Error: SHELLCHECK_WARNING:
+/usr/bin/gdlib-config:15:1: warning: bindir appears unused. Verify it or export it. [SC2034]
+#   13|   libdir=`pkg-config gdlib --variable=libdir`
+#   14|   includedir=/usr/include
+#   15|-> bindir=/usr/bin
+#   16|   ldflags=`pkg-config gdlib --variable=ldflags`
+#   17|   
+
+###############################################################################
+# 'optarg' is not used. It's intended to parse optional arguments after '=' in
+# options. But no such option is accepted by gdlib-config, so 'optarg' has no
+# use.
+# Anyway, gdlib-config is deprecated so no fixes of such minor issues are
+# needed.
+###############################################################################
+
+Error: SHELLCHECK_WARNING:
+/usr/bin/gdlib-config:52:8: warning: optarg appears unused. Verify it or export it. [SC2034]
+#   50|       case "$1" in
+#   51|       -*=*) optarg=`echo "$1" | sed 's/[-_a-zA-Z0-9]*=//'` ;;
+#   52|->     *) optarg= ;;
+#   53|       esac
+#   54|   
+
+###############################################################################
+# Echo prints flags for libgd library. So no echo flags are used.
+###############################################################################
+
+Error: SHELLCHECK_WARNING:
+/usr/bin/gdlib-config:78:7: warning: In POSIX sh, echo flags are undefined. [SC2039]
+#   76|   	;;
+#   77|       --libs)
+#   78|-> 	echo -lgd -lm   -lz   -lpng16 -lz   -lfreetype   -lfontconfig -lfreetype    -ljpeg  -lXpm -lX11  -L/usr/lib -ltiff    -lwebp 
+#   79|   	;;
+#   80|       --cflags|--includes)
+
+Error: SHELLCHECK_WARNING:
+/usr/bin/gdlib-config:81:7: warning: In POSIX sh, echo flags are undefined. [SC2039]
+#   79|   	;;
+#   80|       --cflags|--includes)
+#   81|-> 	echo -I/usr/include
+#   82|   	;;
+#   83|       --features)
+
+###############################################################################
+# OK. "resultsFrame" is either "HTML" or "FramedHTML".
+###############################################################################
+
+Error: FORWARD_NULL (CWE-476):
+libgd-2.2.5/docs/naturaldocs/html/javascript/main.js:559: assign_undefined: Assigning: "resultsFrame" = "undefined".
+libgd-2.2.5/docs/naturaldocs/html/javascript/main.js:566: property_access: Accessing a property of null-like value "resultsFrame".
+#  564|   
+#  565|   
+#  566|->         if (resultsPage != this.lastResultsPage ||
+#  567|   
+#  568|               // Bug in IE.  If everything becomes hidden in a run, none of them will be able to be reshown in the next for some
+
+Error: FORWARD_NULL (CWE-476):
+libgd-2.2.5/docs/naturaldocs/html/javascript/main.js:559: assign_undefined: Assigning: "resultsFrame" = "undefined".
+libgd-2.2.5/docs/naturaldocs/html/javascript/main.js:576: property_access: Accessing a property of null-like value "resultsFrame".
+#  574|   
+#  575|               {
+#  576|->             resultsFrame.location.href = resultsPageWithSearch;
+#  577|               }
+#  578|   
+
+###############################################################################
+# Not a problem. Temp file is created only in case when output location is not
+# seakable.
+#
+# Note: On some implementations (e.g. Linux), this function actually creates,
+# opens, and immediately deletes the file from the file system: as long as an
+# open file descriptor to a deleted file is held by a program, the file exists,
+# but since it was deleted, its name does not appear in any directory, so that
+# no other process can open it.
+###############################################################################
+
+Error: SECURE_TEMP (CWE-377):
+libgd-2.2.5/src/gd_bmp.c:169: secure_temp: "tmpfile" creates files with predictable names, which is unsafe.
+#  167|   	if (compression && !out->seek) {
+#  168|   		/* Try to create a temp file where we can seek */
+#  169|-> 		if ((tmpfile_for_compression = tmpfile()) == NULL) {
+#  170|   			compression = 0;
+#  171|   		} else {
+
+###############################################################################
+# The error is true. Reported upstream: https://github.com/libgd/libgd/pull/483
+#
+# This is not serious issue. As name of the function shows, that "guess" of the
+# color is done. In current implementation result might be wrong by value
+# 1/256, so actually no big difference.
+# Minor problem, so not fixing it downstream.
+###############################################################################
+
+Error: UNINTENDED_INTEGER_DIVISION:
+libgd-2.2.5/src/gd_crop.c:302: integer_division: Dividing integer expressions "(im->trueColor ? (tl & 0xff0000) >> 16 : im->red[tl]) + (im->trueColor ? (tr & 0xff0000) >> 16 : im->red[tr]) + (im->trueColor ? (bl & 0xff0000) >> 16 : im->red[bl]) + (im->trueColor ? (br & 0xff0000) >> 16 : im->red[br])" and "4", and then converting the integer quotient to type "float". Any remainder, or fractional part of the quotient, is ignored.
+libgd-2.2.5/src/gd_crop.c:302: rounding_remediation: For the rounding operation to work as intended, change or cast either division operand to type "float".
+#  300|   		register int r,b,g,a;
+#  301|   
+#  302|-> 		r = (int)(0.5f + (gdImageRed(im, tl) + gdImageRed(im, tr) + gdImageRed(im, bl) + gdImageRed(im, br)) / 4);
+#  303|   		g = (int)(0.5f + (gdImageGreen(im, tl) + gdImageGreen(im, tr) + gdImageGreen(im, bl) + gdImageGreen(im, br)) / 4);
+#  304|   		b = (int)(0.5f + (gdImageBlue(im, tl) + gdImageBlue(im, tr) + gdImageBlue(im, bl) + gdImageBlue(im, br)) / 4);
+
+Error: UNINTENDED_INTEGER_DIVISION:
+libgd-2.2.5/src/gd_crop.c:303: integer_division: Dividing integer expressions "(im->trueColor ? (tl & 0xff00) >> 8 : im->green[tl]) + (im->trueColor ? (tr & 0xff00) >> 8 : im->green[tr]) + (im->trueColor ? (bl & 0xff00) >> 8 : im->green[bl]) + (im->trueColor ? (br & 0xff00) >> 8 : im->green[br])" and "4", and then converting the integer quotient to type "float". Any remainder, or fractional part of the quotient, is ignored.
+libgd-2.2.5/src/gd_crop.c:303: rounding_remediation: For the rounding operation to work as intended, change or cast either division operand to type "float".
+#  301|   
+#  302|   		r = (int)(0.5f + (gdImageRed(im, tl) + gdImageRed(im, tr) + gdImageRed(im, bl) + gdImageRed(im, br)) / 4);
+#  303|-> 		g = (int)(0.5f + (gdImageGreen(im, tl) + gdImageGreen(im, tr) + gdImageGreen(im, bl) + gdImageGreen(im, br)) / 4);
+#  304|   		b = (int)(0.5f + (gdImageBlue(im, tl) + gdImageBlue(im, tr) + gdImageBlue(im, bl) + gdImageBlue(im, br)) / 4);
+#  305|   		a = (int)(0.5f + (gdImageAlpha(im, tl) + gdImageAlpha(im, tr) + gdImageAlpha(im, bl) + gdImageAlpha(im, br)) / 4);
+
+Error: UNINTENDED_INTEGER_DIVISION:
+libgd-2.2.5/src/gd_crop.c:304: integer_division: Dividing integer expressions "(im->trueColor ? tl & 0xff : im->blue[tl]) + (im->trueColor ? tr & 0xff : im->blue[tr]) + (im->trueColor ? bl & 0xff : im->blue[bl]) + (im->trueColor ? br & 0xff : im->blue[br])" and "4", and then converting the integer quotient to type "float". Any remainder, or fractional part of the quotient, is ignored.
+libgd-2.2.5/src/gd_crop.c:304: rounding_remediation: For the rounding operation to work as intended, change or cast either division operand to type "float".
+#  302|   		r = (int)(0.5f + (gdImageRed(im, tl) + gdImageRed(im, tr) + gdImageRed(im, bl) + gdImageRed(im, br)) / 4);
+#  303|   		g = (int)(0.5f + (gdImageGreen(im, tl) + gdImageGreen(im, tr) + gdImageGreen(im, bl) + gdImageGreen(im, br)) / 4);
+#  304|-> 		b = (int)(0.5f + (gdImageBlue(im, tl) + gdImageBlue(im, tr) + gdImageBlue(im, bl) + gdImageBlue(im, br)) / 4);
+#  305|   		a = (int)(0.5f + (gdImageAlpha(im, tl) + gdImageAlpha(im, tr) + gdImageAlpha(im, bl) + gdImageAlpha(im, br)) / 4);
+#  306|   		*color = gdImageColorClosestAlpha(im, r, g, b, a);
+
+Error: UNINTENDED_INTEGER_DIVISION:
+libgd-2.2.5/src/gd_crop.c:305: integer_division: Dividing integer expressions "(im->trueColor ? (tl & 0x7f000000) >> 24 : im->alpha[tl]) + (im->trueColor ? (tr & 0x7f000000) >> 24 : im->alpha[tr]) + (im->trueColor ? (bl & 0x7f000000) >> 24 : im->alpha[bl]) + (im->trueColor ? (br & 0x7f000000) >> 24 : im->alpha[br])" and "4", and then converting the integer quotient to type "float". Any remainder, or fractional part of the quotient, is ignored.
+libgd-2.2.5/src/gd_crop.c:305: rounding_remediation: For the rounding operation to work as intended, change or cast either division operand to type "float".
+#  303|   		g = (int)(0.5f + (gdImageGreen(im, tl) + gdImageGreen(im, tr) + gdImageGreen(im, bl) + gdImageGreen(im, br)) / 4);
+#  304|   		b = (int)(0.5f + (gdImageBlue(im, tl) + gdImageBlue(im, tr) + gdImageBlue(im, bl) + gdImageBlue(im, br)) / 4);
+#  305|-> 		a = (int)(0.5f + (gdImageAlpha(im, tl) + gdImageAlpha(im, tr) + gdImageAlpha(im, bl) + gdImageAlpha(im, br)) / 4);
+#  306|   		*color = gdImageColorClosestAlpha(im, r, g, b, a);
+#  307|   		return 0;
+
+###############################################################################
+# It's STD C way. A super secure random number is not needed here.
+###############################################################################
+
+Error: DC.WEAK_CRYPTO:
+libgd-2.2.5/src/gd_filter.c:93: dont_call: "rand" should not be used for security related applications, as linear congruential algorithms are too easy to break.
+libgd-2.2.5/src/gd_filter.c:93: remediation: Use a compliant random number generator, such as "/dev/random" or "/dev/urandom" on Unix-like systems, and "CryptGenRandom" on Windows.
+#   91|   		for (y = 0; y < im->sy; y++) {
+#   92|   			for (x = 0; x < im->sx; x++) {
+#   93|-> 				dest_x = (int) (x + ((rand() % (plus - sub)) + sub));
+#   94|   				dest_y = (int) (y + ((rand() % (plus - sub)) + sub));
+#   95|   
+
+Error: DC.WEAK_CRYPTO:
+libgd-2.2.5/src/gd_filter.c:94: dont_call: "rand" should not be used for security related applications, as linear congruential algorithms are too easy to break.
+libgd-2.2.5/src/gd_filter.c:94: remediation: Use a compliant random number generator, such as "/dev/random" or "/dev/urandom" on Unix-like systems, and "CryptGenRandom" on Windows.
+#   92|   			for (x = 0; x < im->sx; x++) {
+#   93|   				dest_x = (int) (x + ((rand() % (plus - sub)) + sub));
+#   94|-> 				dest_y = (int) (y + ((rand() % (plus - sub)) + sub));
+#   95|   
+#   96|   				if (!gdImageBoundsSafe(im, dest_x, dest_y)) {
+
+Error: DC.WEAK_CRYPTO:
+libgd-2.2.5/src/gd_filter.c:114: dont_call: "rand" should not be used for security related applications, as linear congruential algorithms are too easy to break.
+libgd-2.2.5/src/gd_filter.c:114: remediation: Use a compliant random number generator, such as "/dev/random" or "/dev/urandom" on Unix-like systems, and "CryptGenRandom" on Windows.
+#  112|   		for (y = 0; y < im->sy; y++) {
+#  113|   			for (x = 0; x < im->sx; x++) {
+#  114|-> 				dest_x = (int) (x + ((rand() % (plus - sub)) + sub));
+#  115|   				dest_y = (int) (y + ((rand() % (plus - sub)) + sub));
+#  116|   
+
+Error: DC.WEAK_CRYPTO:
+libgd-2.2.5/src/gd_filter.c:115: dont_call: "rand" should not be used for security related applications, as linear congruential algorithms are too easy to break.
+libgd-2.2.5/src/gd_filter.c:115: remediation: Use a compliant random number generator, such as "/dev/random" or "/dev/urandom" on Unix-like systems, and "CryptGenRandom" on Windows.
+#  113|   			for (x = 0; x < im->sx; x++) {
+#  114|   				dest_x = (int) (x + ((rand() % (plus - sub)) + sub));
+#  115|-> 				dest_y = (int) (y + ((rand() % (plus - sub)) + sub));
+#  116|   
+#  117|   				if (!gdImageBoundsSafe(im, dest_x, dest_y)) {
+
+###############################################################################
+# 'Resolution' equals 'BitsPerPixel'. 'BitsPerPixel' is obtained by calling
+# 'colorstobpp' function and it newer returns value lower than zero.
+###############################################################################
+
+Error: CLANG_WARNING:
+libgd-2.2.5/src/gd_gif_out.c:407:24: warning: The result of the left shift is undefined because the left operand is negative
+#        B |= (Resolution - 1) << 4;
+#                              ^
+libgd-2.2.5/src/gd_gif_out.c:348:6: note: Assuming 'out' is not equal to NULL
+#        if (out == NULL) return;
+#            ^~~~~~~~~~~
+libgd-2.2.5/src/gd_gif_out.c:348:2: note: Taking false branch
+#        if (out == NULL) return;
+#        ^
+libgd-2.2.5/src/gd_gif_out.c:349:2: note: Calling 'gdImageGifAnimBeginCtx'
+#        gdImageGifAnimBeginCtx(im, out, GlobalCM, Loops);
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libgd-2.2.5/src/gd_gif_out.c:384:6: note: Assuming 'GlobalCM' is >= 0
+#        if (GlobalCM < 0) {
+#            ^~~~~~~~~~~~
+libgd-2.2.5/src/gd_gif_out.c:384:2: note: Taking false branch
+#        if (GlobalCM < 0) {
+#        ^
+libgd-2.2.5/src/gd_gif_out.c:404:6: note: Assuming 'GlobalCM' is 0
+#        B = GlobalCM ? 0x80 : 0;
+#            ^~~~~~~~
+libgd-2.2.5/src/gd_gif_out.c:404:6: note: '?' condition is false
+libgd-2.2.5/src/gd_gif_out.c:407:24: note: The result of the left shift is undefined because the left operand is negative
+#        B |= (Resolution - 1) << 4;
+#             ~~~~~~~~~~~~~~~~~^~~~
+#  405|   
+#  406|   	/* OR in the resolution */
+#  407|-> 	B |= (Resolution - 1) << 4;
+#  408|   
+#  409|   	/* OR in the Bits per Pixel */
+
+Error: CLANG_WARNING:
+libgd-2.2.5/src/gd_gif_out.c:1097:24: warning: The result of the left shift is undefined because the left operand is negative
+#        B |= (Resolution - 1) << 4;
+#                              ^
+libgd-2.2.5/src/gd_gif_out.c:202:6: note: Assuming 'out' is not equal to NULL
+#        if (out == NULL) return;
+#            ^~~~~~~~~~~
+libgd-2.2.5/src/gd_gif_out.c:202:2: note: Taking false branch
+#        if (out == NULL) return;
+#        ^
+libgd-2.2.5/src/gd_gif_out.c:203:2: note: Calling 'gdImageGifCtx'
+#        gdImageGifCtx(im, out);
+#        ^~~~~~~~~~~~~~~~~~~~~~
+libgd-2.2.5/src/gd_gif_out.c:228:5: note: Assuming the condition is false
+#        if(im->trueColor) {
+#           ^~~~~~~~~~~~~
+libgd-2.2.5/src/gd_gif_out.c:228:2: note: Taking false branch
+#        if(im->trueColor) {
+#        ^
+libgd-2.2.5/src/gd_gif_out.c:242:2: note: Calling 'GIFEncode'
+#        GIFEncode(
+#        ^~~~~~~~~~
+libgd-2.2.5/src/gd_gif_out.c:1076:2: note: Taking true branch
+#        if(BitsPerPixel <= 1) {
+#        ^
+libgd-2.2.5/src/gd_gif_out.c:1086:11: note: Assuming 'Transparent' is >= 0
+#        gdPutBuf(Transparent < 0 ? "GIF87a" : "GIF89a", 6, fp);
+#                 ^~~~~~~~~~~~~~~
+libgd-2.2.5/src/gd_gif_out.c:1086:11: note: '?' condition is false
+libgd-2.2.5/src/gd_gif_out.c:1097:24: note: The result of the left shift is undefined because the left operand is negative
+#        B |= (Resolution - 1) << 4;
+#             ~~~~~~~~~~~~~~~~~^~~~
+# 1095|   
+# 1096|   	/* OR in the resolution */
+# 1097|-> 	B |= (Resolution - 1) << 4;
+# 1098|   
+# 1099|   	/* OR in the Bits per Pixel */
+
+###############################################################################
+# 'remap' is defined for every color in 'map' which is based on colors from
+# 'nnq->network'. 'inxsearch' also uses colors from 'nnq->network'.
+###############################################################################
+
+Error: CLANG_WARNING:
+libgd-2.2.5/src/gd_nnquant.c:627:9: warning: Assigned value is garbage or undefined
+#                        p[i] = remap[
+#                             ^ ~~~~~~
+libgd-2.2.5/src/gd_nnquant.c:545:6: note: Assuming 'sample_factor' is >= 1
+#        if (sample_factor < 1) {
+#            ^~~~~~~~~~~~~~~~~
+libgd-2.2.5/src/gd_nnquant.c:545:2: note: Taking false branch
+#        if (sample_factor < 1) {
+#        ^
+libgd-2.2.5/src/gd_nnquant.c:556:6: note: Assuming the condition is false
+#        if (overflow2(gdImageSX(im), gdImageSY(im))
+#            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libgd-2.2.5/src/gd_nnquant.c:556:6: note: Left side of '||' is false
+libgd-2.2.5/src/gd_nnquant.c:557:13: note: Assuming the condition is false
+#                || overflow2(gdImageSX(im) * gdImageSY(im), 4)) {
+#                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libgd-2.2.5/src/gd_nnquant.c:556:2: note: Taking false branch
+#        if (overflow2(gdImageSX(im), gdImageSY(im))
+#        ^
+libgd-2.2.5/src/gd_nnquant.c:561:6: note: Assuming 'rgba' is non-null
+#        if (!rgba) {
+#            ^~~~~
+libgd-2.2.5/src/gd_nnquant.c:561:2: note: Taking false branch
+#        if (!rgba) {
+#        ^
+libgd-2.2.5/src/gd_nnquant.c:566:16: note: Assuming the condition is true
+#        for (row = 0; row < gdImageSY(im); row++) {
+#                      ^~~~~~~~~~~~~~~~~~~
+libgd-2.2.5/src/gd_nnquant.c:566:2: note: Loop condition is true.  Entering loop body
+#        for (row = 0; row < gdImageSY(im); row++) {
+#        ^
+libgd-2.2.5/src/gd_nnquant.c:570:15: note: Assuming the condition is true
+#                for (i = 0; i < gdImageSX(im); i++) {
+#                            ^~~~~~~~~~~~~~~~~
+libgd-2.2.5/src/gd_nnquant.c:570:3: note: Loop condition is true.  Entering loop body
+#                for (i = 0; i < gdImageSX(im); i++) {
+#                ^
+libgd-2.2.5/src/gd_nnquant.c:570:15: note: Assuming the condition is false
+#                for (i = 0; i < gdImageSX(im); i++) {
+#                            ^~~~~~~~~~~~~~~~~
+libgd-2.2.5/src/gd_nnquant.c:570:3: note: Loop condition is false. Execution continues on line 566
+#                for (i = 0; i < gdImageSX(im); i++) {
+#                ^
+libgd-2.2.5/src/gd_nnquant.c:566:16: note: Assuming the condition is false
+#        for (row = 0; row < gdImageSY(im); row++) {
+#                      ^~~~~~~~~~~~~~~~~~~
+libgd-2.2.5/src/gd_nnquant.c:566:2: note: Loop condition is false. Execution continues on line 580
+#        for (row = 0; row < gdImageSY(im); row++) {
+#        ^
+libgd-2.2.5/src/gd_nnquant.c:581:6: note: Assuming 'nnq' is non-null
+#        if (!nnq) {
+#            ^~~~
+libgd-2.2.5/src/gd_nnquant.c:581:2: note: Taking false branch
+#        if (!nnq) {
+#        ^
+libgd-2.2.5/src/gd_nnquant.c:592:48: note: Assuming 'x' is >= 'newcolors'
+#        for (top_idx = newcolors-1, bot_idx = x = 0;  x < newcolors;  ++x) {
+#                                                      ^~~~~~~~~~~~~
+libgd-2.2.5/src/gd_nnquant.c:592:2: note: Loop condition is false. Execution continues on line 599
+#        for (top_idx = newcolors-1, bot_idx = x = 0;  x < newcolors;  ++x) {
+#        ^
+libgd-2.2.5/src/gd_nnquant.c:599:6: note: Assuming the condition is false
+#        if (bot_idx != top_idx + 1) {
+#            ^~~~~~~~~~~~~~~~~~~~~~
+libgd-2.2.5/src/gd_nnquant.c:599:2: note: Taking false branch
+#        if (bot_idx != top_idx + 1) {
+#        ^
+libgd-2.2.5/src/gd_nnquant.c:606:6: note: Assuming 'dst' is non-null
+#        if (!dst) {
+#            ^~~~
+libgd-2.2.5/src/gd_nnquant.c:606:2: note: Taking false branch
+#        if (!dst) {
+#        ^
+libgd-2.2.5/src/gd_nnquant.c:610:2: note: Loop condition is false. Execution continues on line 620
+#        for (x = 0; x < newcolors; ++x) {
+#        ^
+libgd-2.2.5/src/gd_nnquant.c:620:2: note: Loop condition is true.  Entering loop body
+#        for ( row = 0; row < gdImageSY(im); ++row ) {
+#        ^
+libgd-2.2.5/src/gd_nnquant.c:626:3: note: Loop condition is true.  Entering loop body
+#                for(i=0; i < gdImageSX(im); i++) {
+#                ^
+libgd-2.2.5/src/gd_nnquant.c:627:9: note: Assigned value is garbage or undefined
+#                        p[i] = remap[
+#                             ^ ~~~~~~
+#  625|   		offset = row * gdImageSX(im) * 4;
+#  626|   		for(i=0; i < gdImageSX(im); i++) {
+#  627|-> 			p[i] = remap[
+#  628|   			           inxsearch(nnq, rgba[i * 4 + offset + ALPHA],
+#  629|   			                     rgba[i * 4 + offset + BLUE],
+
+###############################################################################
+# Not a problem. Both cases are intentionaly treated the same.
+###############################################################################
+
+Error: MISSING_BREAK (CWE-484):
+libgd-2.2.5/src/gd_png.c:387: unterminated_case: The case for value "4" is not terminated by a 'break' statement.
+libgd-2.2.5/src/gd_png.c:390: fallthrough: The above case falls through to this one.
+#  388|   		png_set_gray_to_rgb(png_ptr);
+#  389|   
+#  390|-> 	case PNG_COLOR_TYPE_RGB:
+#  391|   	case PNG_COLOR_TYPE_RGB_ALPHA:
+#  392|   		/* gd 2.0: we now support truecolor. See the comment above
+
+###############################################################################
+# Not a problem: 'palette' is freed on line 531. 'palette_allocated' is set
+# true right after 'pallete' is allocated.
+###############################################################################
+
+Error: RESOURCE_LEAK (CWE-772):
+libgd-2.2.5/src/gd_png.c:350: alloc_fn: Storage is returned from allocation function "gdMalloc".
+libgd-2.2.5/src/gdhelpers.c:75:2: alloc_fn: Storage is returned from allocation function "malloc".
+libgd-2.2.5/src/gdhelpers.c:75:2: return_alloc_fn: Directly returning storage allocated by "malloc".
+libgd-2.2.5/src/gd_png.c:350: var_assign: Assigning: "palette" = storage returned from "gdMalloc(768UL)".
+libgd-2.2.5/src/gd_png.c:538: leaked_storage: Variable "palette" going out of scope leaks the storage it points to.
+#  536|   		gdFree(row_pointers);
+#  537|   
+#  538|-> 	return im;
+#  539|   
+#  540|    error:
+
+###############################################################################
+# This is intentional: gd needs to read dimension of the image from the file.
+# And based on that width and height values it reads image data of length
+# 'bytes'.
+# If wrong image dimension is provided, gd reaches EOF earlier and recognizes
+# error.
+###############################################################################
+
+Error: TAINTED_SCALAR (CWE-20):
+libgd-2.2.5/src/gd_xbm.c:85: tainted_data_argument: Calling function "fgets" taints argument "fline". [Note: The source code implementation of the function has been overridden by a builtin model.]
+libgd-2.2.5/src/gd_xbm.c:90: vararg_transitive: Call to "sscanf" with tainted argument "fline" taints "iname".
+libgd-2.2.5/src/gd_xbm.c:90: vararg_transitive: Call to "sscanf" with tainted argument "fline" taints "value".
+libgd-2.2.5/src/gd_xbm.c:98: var_assign_var: Assigning: "width" = "(unsigned int)value". Both are now tainted.
+libgd-2.2.5/src/gd_xbm.c:101: var_assign_var: Assigning: "height" = "(unsigned int)value". Both are now tainted.
+libgd-2.2.5/src/gd_xbm.c:98: var_assign_var: Assigning: "width" = "(unsigned int)value". Both are now tainted.
+libgd-2.2.5/src/gd_xbm.c:101: var_assign_var: Assigning: "height" = "(unsigned int)value". Both are now tainted.
+libgd-2.2.5/src/gd_xbm.c:114: var_assign_var: Assigning: "bytes" = "(width + 7U) / 8U * height". Both are now tainted.
+libgd-2.2.5/src/gd_xbm.c:140: tainted_data: Using tainted variable "bytes" as a loop boundary.
+#  138|   	h[2] = '\0';
+#  139|   	h[4] = '\0';
+#  140|-> 	for (i = 0; i < bytes; i++) {
+#  141|   		while (1) {
+#  142|   			if ((ch=getc(fd)) == EOF) {
+
+###############################################################################
+# This is a problem with full cache of size 1.
+# Reported upstream: https://github.com/libgd/libgd/pull/484
+###############################################################################
+
+Error: CLANG_WARNING:
+libgd-2.2.5/src/gdcache.c:141:18: warning: Access to field 'next' results in a dereference of a null pointer (loaded from variable 'prevprev')
+#                prevprev->next = NULL;
+#                ~~~~~~~~       ^
+libgd-2.2.5/src/gdcache.c:102:42: note: 'prevprev' initialized to a null pointer value
+#        gdCache_element_t *elem, *prev = NULL, *prevprev = NULL;
+#                                                ^~~~~~~~
+libgd-2.2.5/src/gdcache.c:106:2: note: Loop condition is false. Execution continues on line 125
+#        while(elem) {
+#        ^
+libgd-2.2.5/src/gdcache.c:126:5: note: Assuming 'userdata' is non-null
+#        if(!userdata) {
+#           ^~~~~~~~~
+libgd-2.2.5/src/gdcache.c:126:2: note: Taking false branch
+#        if(!userdata) {
+#        ^
+libgd-2.2.5/src/gdcache.c:131:5: note: Assuming the condition is false
+#        if(i < head->size) {
+#           ^~~~~~~~~~~~~~
+libgd-2.2.5/src/gdcache.c:131:2: note: Taking false branch
+#        if(i < head->size) {
+#        ^
+libgd-2.2.5/src/gdcache.c:141:18: note: Access to field 'next' results in a dereference of a null pointer (loaded from variable 'prevprev')
+#                prevprev->next = NULL;
+#                ~~~~~~~~       ^
+#  139|   		/* cache full - replace least-recently-used */
+#  140|   		/* preveprev becomes new end of list */
+#  141|-> 		prevprev->next = NULL;
+#  142|   		elem = prev;
+#  143|   		(*(head->gdCacheRelease))(elem->userdata);
+
+###############################################################################
+# This is intentional: gd needs to read dimension of the image from the file.
+# And based on that width and height values it allocates image data.
+# If wrong image dimension is provided, gd checks for int overflow in
+# gdImageCreatereaches and checks that specified amount of image data are
+# provided. If it reads EOF earlier, it recognizes error.
+###############################################################################
+
+Error: TAINTED_SCALAR (CWE-20):
+libgd-2.2.5/src/gd_xbm.c:85: tainted_data_argument: Calling function "fgets" taints argument "fline". [Note: The source code implementation of the function has been overridden by a builtin model.]
+libgd-2.2.5/src/gd_xbm.c:90: vararg_transitive: Call to "sscanf" with tainted argument "fline" taints "iname".
+libgd-2.2.5/src/gd_xbm.c:90: vararg_transitive: Call to "sscanf" with tainted argument "fline" taints "value".
+libgd-2.2.5/src/gd_xbm.c:98: var_assign_var: Assigning: "width" = "(unsigned int)value". Both are now tainted.
+libgd-2.2.5/src/gd_xbm.c:101: var_assign_var: Assigning: "height" = "(unsigned int)value". Both are now tainted.
+libgd-2.2.5/src/gd_xbm.c:98: var_assign_var: Assigning: "width" = "(unsigned int)value". Both are now tainted.
+libgd-2.2.5/src/gd_xbm.c:101: var_assign_var: Assigning: "height" = "(unsigned int)value". Both are now tainted.
+libgd-2.2.5/src/gd_xbm.c:133: tainted_data: Passing tainted variable "height" to a tainted sink.
+libgd-2.2.5/src/gd.c:205:2: tainted_data_sink_lv_call: Passing tainted variable "8UL * sy" to tainted data sink "gdMalloc".
+libgd-2.2.5/src/gdhelpers.c:75:2: tainted_data_sink_lv_call: Passing tainted variable "size" to tainted data sink "malloc".
+#   73|   gdMalloc (size_t size)
+#   74|   {
+#   75|-> 	return malloc (size);
+#   76|   }
+#   77|   
+
+###############################################################################
+# webpng.c:170 checks if 'im' is null. If so, function 'err' is called and it
+# terminates the program. So accessing 'im->trueColor' after it is not a
+# problem.
+###############################################################################
+
+Error: CLANG_WARNING:
+libgd-2.2.5/src/webpng.c:175:8: warning: Access to field 'trueColor' results in a dereference of a null pointer (loaded from variable 'im')
+#                if (!im->trueColor) {
+#                     ^~
+libgd-2.2.5/src/webpng.c:92:9: note: Assuming the condition is true
+#        while ((i = getopt(argc, argv, "i:lt:da")) != -1) {
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libgd-2.2.5/src/webpng.c:92:2: note: Loop condition is true.  Entering loop body
+#        while ((i = getopt(argc, argv, "i:lt:da")) != -1) {
+#        ^
+libgd-2.2.5/src/webpng.c:94:3: note: Control jumps to 'case 97:'  at line 130
+#                switch (i) {
+#                ^
+libgd-2.2.5/src/webpng.c:133:4: note:  Execution continues on line 92
+#                        break;
+#                        ^
+libgd-2.2.5/src/webpng.c:92:9: note: Assuming the condition is true
+#        while ((i = getopt(argc, argv, "i:lt:da")) != -1) {
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libgd-2.2.5/src/webpng.c:92:2: note: Loop condition is true.  Entering loop body
+#        while ((i = getopt(argc, argv, "i:lt:da")) != -1) {
+#        ^
+libgd-2.2.5/src/webpng.c:94:3: note: Control jumps to 'case 97:'  at line 130
+#                switch (i) {
+#                ^
+libgd-2.2.5/src/webpng.c:133:4: note:  Execution continues on line 92
+#                        break;
+#                        ^
+libgd-2.2.5/src/webpng.c:92:9: note: Assuming the condition is true
+#        while ((i = getopt(argc, argv, "i:lt:da")) != -1) {
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libgd-2.2.5/src/webpng.c:92:2: note: Loop condition is true.  Entering loop body
+#        while ((i = getopt(argc, argv, "i:lt:da")) != -1) {
+#        ^
+libgd-2.2.5/src/webpng.c:94:3: note: Control jumps to 'case 108:'  at line 106
+#                switch (i) {
+#                ^
+libgd-2.2.5/src/webpng.c:109:4: note:  Execution continues on line 92
+#                        break;
+#                        ^
+libgd-2.2.5/src/webpng.c:92:9: note: Assuming the condition is false
+#        while ((i = getopt(argc, argv, "i:lt:da")) != -1) {
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libgd-2.2.5/src/webpng.c:92:2: note: Loop condition is false. Execution continues on line 147
+#        while ((i = getopt(argc, argv, "i:lt:da")) != -1) {
+#        ^
+libgd-2.2.5/src/webpng.c:147:2: note: Taking false branch
+#        if (got_a_flag == 0)
+#        ^
+libgd-2.2.5/src/webpng.c:150:2: note: Taking false branch
+#        if (argc == optind)
+#        ^
+libgd-2.2.5/src/webpng.c:152:7: note: Taking false branch
+#        else if (argc != optind + 1)
+#             ^
+libgd-2.2.5/src/webpng.c:156:6: note: Assuming the condition is false
+#        if (strcmp(infile, "-") == 0) {
+#            ^~~~~~~~~~~~~~~~~~~~~~~~
+libgd-2.2.5/src/webpng.c:156:2: note: Taking false branch
+#        if (strcmp(infile, "-") == 0) {
+#        ^
+libgd-2.2.5/src/webpng.c:163:6: note: Assuming 'in' is non-null
+#        if (!in)
+#            ^~~
+libgd-2.2.5/src/webpng.c:163:2: note: Taking false branch
+#        if (!in)
+#        ^
+libgd-2.2.5/src/webpng.c:167:2: note: Value assigned to 'im'
+#        im = gdImageCreateFromPng(in);
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libgd-2.2.5/src/webpng.c:170:6: note: Assuming 'im' is null
+#        if (!im)
+#            ^~~
+libgd-2.2.5/src/webpng.c:170:2: note: Taking true branch
+#        if (!im)
+#        ^
+libgd-2.2.5/src/webpng.c:173:2: note: Taking true branch
+#        if (list_color_table) {
+#        ^
+libgd-2.2.5/src/webpng.c:175:8: note: Access to field 'trueColor' results in a dereference of a null pointer (loaded from variable 'im')
+#                if (!im->trueColor) {
+#                     ^~
+#  173|   	if (list_color_table) {
+#  174|   		/* List the colors in the color table. */
+#  175|-> 		if (!im->trueColor) {
+#  176|   			int j;
+#  177|   			/* Tabs used below. */
+
+###############################################################################
+# webpng.c:170 checks if 'im' is null. If so, function 'err' is called and it
+# terminates the program. So calling 'gdImageSX(im)' after it is not a
+# problem.
+###############################################################################
+
+Error: CLANG_WARNING:
+libgd-2.2.5/src/webpng.c:195:4: warning: Access to field 'sx' results in a dereference of a null pointer (loaded from variable 'im')
+#                        gdImageSX(im),
+#                        ^
+libgd-2.2.5/src/gd.h:1325:23: note: expanded from macro 'gdImageSX'
+##define gdImageSX(im) ((im)->sx)
+#                      ^
+libgd-2.2.5/src/webpng.c:92:9: note: Assuming the condition is true
+#        while ((i = getopt(argc, argv, "i:lt:da")) != -1) {
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libgd-2.2.5/src/webpng.c:92:2: note: Loop condition is true.  Entering loop body
+#        while ((i = getopt(argc, argv, "i:lt:da")) != -1) {
+#        ^
+libgd-2.2.5/src/webpng.c:94:3: note: Control jumps to 'case 97:'  at line 130
+#                switch (i) {
+#                ^
+libgd-2.2.5/src/webpng.c:133:4: note:  Execution continues on line 92
+#                        break;
+#                        ^
+libgd-2.2.5/src/webpng.c:92:9: note: Assuming the condition is true
+#        while ((i = getopt(argc, argv, "i:lt:da")) != -1) {
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libgd-2.2.5/src/webpng.c:92:2: note: Loop condition is true.  Entering loop body
+#        while ((i = getopt(argc, argv, "i:lt:da")) != -1) {
+#        ^
+libgd-2.2.5/src/webpng.c:94:3: note: Control jumps to 'case 100:'  at line 125
+#                switch (i) {
+#                ^
+libgd-2.2.5/src/webpng.c:128:4: note:  Execution continues on line 92
+#                        break;
+#                        ^
+libgd-2.2.5/src/webpng.c:92:9: note: Assuming the condition is false
+#        while ((i = getopt(argc, argv, "i:lt:da")) != -1) {
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libgd-2.2.5/src/webpng.c:92:2: note: Loop condition is false. Execution continues on line 147
+#        while ((i = getopt(argc, argv, "i:lt:da")) != -1) {
+#        ^
+libgd-2.2.5/src/webpng.c:147:2: note: Taking false branch
+#        if (got_a_flag == 0)
+#        ^
+libgd-2.2.5/src/webpng.c:150:2: note: Taking false branch
+#        if (argc == optind)
+#        ^
+libgd-2.2.5/src/webpng.c:152:7: note: Taking false branch
+#        else if (argc != optind + 1)
+#             ^
+libgd-2.2.5/src/webpng.c:156:6: note: Assuming the condition is false
+#        if (strcmp(infile, "-") == 0) {
+#            ^~~~~~~~~~~~~~~~~~~~~~~~
+libgd-2.2.5/src/webpng.c:156:2: note: Taking false branch
+#        if (strcmp(infile, "-") == 0) {
+#        ^
+libgd-2.2.5/src/webpng.c:163:6: note: Assuming 'in' is non-null
+#        if (!in)
+#            ^~~
+libgd-2.2.5/src/webpng.c:163:2: note: Taking false branch
+#        if (!in)
+#        ^
+libgd-2.2.5/src/webpng.c:167:2: note: Value assigned to 'im'
+#        im = gdImageCreateFromPng(in);
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libgd-2.2.5/src/webpng.c:170:6: note: Assuming 'im' is null
+#        if (!im)
+#            ^~~
+libgd-2.2.5/src/webpng.c:170:2: note: Taking true branch
+#        if (!im)
+#        ^
+libgd-2.2.5/src/webpng.c:173:2: note: Taking false branch
+#        if (list_color_table) {
+#        ^
+libgd-2.2.5/src/webpng.c:191:2: note: Taking true branch
+#        if (report_details) {
+#        ^
+libgd-2.2.5/src/webpng.c:195:4: note: Access to field 'sx' results in a dereference of a null pointer (loaded from variable 'im')
+#                        gdImageSX(im),
+#                        ^         ~~
+libgd-2.2.5/src/gd.h:1325:23: note: expanded from macro 'gdImageSX'
+##define gdImageSX(im) ((im)->sx)
+#                      ^ ~~
+#  193|   		int t;
+#  194|   		printf("Width: %d Height: %d Colors: %d\n",
+#  195|-> 			gdImageSX(im),
+#  196|   			gdImageSY(im),
+#  197|   			gdImageColorsTotal(im));
+
+Error: CLANG_WARNING:
+libgd-2.2.5/src/webpng.c:216:10: warning: Access to field 'sx' results in a dereference of a null pointer (loaded from variable 'im')
+#                maxx = gdImageSX(im);
+#                       ^
+libgd-2.2.5/src/gd.h:1325:23: note: expanded from macro 'gdImageSX'
+##define gdImageSX(im) ((im)->sx)
+#                      ^
+libgd-2.2.5/src/webpng.c:92:9: note: Assuming the condition is true
+#        while ((i = getopt(argc, argv, "i:lt:da")) != -1) {
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libgd-2.2.5/src/webpng.c:92:2: note: Loop condition is true.  Entering loop body
+#        while ((i = getopt(argc, argv, "i:lt:da")) != -1) {
+#        ^
+libgd-2.2.5/src/webpng.c:94:3: note: Control jumps to 'case 97:'  at line 130
+#                switch (i) {
+#                ^
+libgd-2.2.5/src/webpng.c:133:4: note:  Execution continues on line 92
+#                        break;
+#                        ^
+libgd-2.2.5/src/webpng.c:92:9: note: Assuming the condition is false
+#        while ((i = getopt(argc, argv, "i:lt:da")) != -1) {
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libgd-2.2.5/src/webpng.c:92:2: note: Loop condition is false. Execution continues on line 147
+#        while ((i = getopt(argc, argv, "i:lt:da")) != -1) {
+#        ^
+libgd-2.2.5/src/webpng.c:147:2: note: Taking false branch
+#        if (got_a_flag == 0)
+#        ^
+libgd-2.2.5/src/webpng.c:150:2: note: Taking false branch
+#        if (argc == optind)
+#        ^
+libgd-2.2.5/src/webpng.c:152:7: note: Taking false branch
+#        else if (argc != optind + 1)
+#             ^
+libgd-2.2.5/src/webpng.c:156:6: note: Assuming the condition is false
+#        if (strcmp(infile, "-") == 0) {
+#            ^~~~~~~~~~~~~~~~~~~~~~~~
+libgd-2.2.5/src/webpng.c:156:2: note: Taking false branch
+#        if (strcmp(infile, "-") == 0) {
+#        ^
+libgd-2.2.5/src/webpng.c:163:6: note: Assuming 'in' is non-null
+#        if (!in)
+#            ^~~
+libgd-2.2.5/src/webpng.c:163:2: note: Taking false branch
+#        if (!in)
+#        ^
+libgd-2.2.5/src/webpng.c:167:2: note: Value assigned to 'im'
+#        im = gdImageCreateFromPng(in);
+#        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libgd-2.2.5/src/webpng.c:170:6: note: Assuming 'im' is null
+#        if (!im)
+#            ^~~
+libgd-2.2.5/src/webpng.c:170:2: note: Taking true branch
+#        if (!im)
+#        ^
+libgd-2.2.5/src/webpng.c:173:2: note: Taking false branch
+#        if (list_color_table) {
+#        ^
+libgd-2.2.5/src/webpng.c:191:2: note: Taking false branch
+#        if (report_details) {
+#        ^
+libgd-2.2.5/src/webpng.c:212:2: note: Taking true branch
+#        if (print_alpha) {
+#        ^
+libgd-2.2.5/src/webpng.c:216:10: note: Access to field 'sx' results in a dereference of a null pointer (loaded from variable 'im')
+#                maxx = gdImageSX(im);
+#                       ^         ~~
+libgd-2.2.5/src/gd.h:1325:23: note: expanded from macro 'gdImageSX'
+##define gdImageSX(im) ((im)->sx)
+#                      ^ ~~
+#  214|   		int maxx, maxy, x, y, alpha, pix, nalpha = 0;
+#  215|   
+#  216|-> 		maxx = gdImageSX(im);
+#  217|   		maxy = gdImageSY(im);
+#  218|   
+
+###############################################################################
+# webpng.c:268 checks if 'tmpfile' is null. If so, function 'err' is called and
+# it terminates the program. So calling 'memcpy(tmpfile, infile, filelen)'
+# after it is not a problem.
+###############################################################################
+
+Error: CLANG_WARNING:
+libgd-2.2.5/src/webpng.c:270:3: warning: Null pointer passed as an argument to a 'nonnull' parameter
+#                memcpy(tmpfile, infile, filelen);
+#                ^      ~~~~~~~
+libgd-2.2.5/src/webpng.c:92:9: note: Assuming the condition is true
+#        while ((i = getopt(argc, argv, "i:lt:da")) != -1) {
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libgd-2.2.5/src/webpng.c:92:2: note: Loop condition is true.  Entering loop body
+#        while ((i = getopt(argc, argv, "i:lt:da")) != -1) {
+#        ^
+libgd-2.2.5/src/webpng.c:94:3: note: Control jumps to 'case 97:'  at line 130
+#                switch (i) {
+#                ^
+libgd-2.2.5/src/webpng.c:133:4: note:  Execution continues on line 92
+#                        break;
+#                        ^
+libgd-2.2.5/src/webpng.c:92:9: note: Assuming the condition is true
+#        while ((i = getopt(argc, argv, "i:lt:da")) != -1) {
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libgd-2.2.5/src/webpng.c:92:2: note: Loop condition is true.  Entering loop body
+#        while ((i = getopt(argc, argv, "i:lt:da")) != -1) {
+#        ^
+libgd-2.2.5/src/webpng.c:94:3: note: Control jumps to 'case 97:'  at line 130
+#                switch (i) {
+#                ^
+libgd-2.2.5/src/webpng.c:133:4: note:  Execution continues on line 92
+#                        break;
+#                        ^
+libgd-2.2.5/src/webpng.c:92:9: note: Assuming the condition is true
+#        while ((i = getopt(argc, argv, "i:lt:da")) != -1) {
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libgd-2.2.5/src/webpng.c:92:2: note: Loop condition is true.  Entering loop body
+#        while ((i = getopt(argc, argv, "i:lt:da")) != -1) {
+#        ^
+libgd-2.2.5/src/webpng.c:94:3: note: Control jumps to 'case 105:'  at line 95
+#                switch (i) {
+#                ^
+libgd-2.2.5/src/webpng.c:97:4: note: Taking true branch
+#                        if (strcmp(optarg, "y") == 0)
+#                        ^
+libgd-2.2.5/src/webpng.c:104:4: note:  Execution continues on line 92
+#                        break;
+#                        ^
+libgd-2.2.5/src/webpng.c:92:9: note: Assuming the condition is false
+#        while ((i = getopt(argc, argv, "i:lt:da")) != -1) {
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libgd-2.2.5/src/webpng.c:92:2: note: Loop condition is false. Execution continues on line 147
+#        while ((i = getopt(argc, argv, "i:lt:da")) != -1) {
+#        ^
+libgd-2.2.5/src/webpng.c:147:2: note: Taking false branch
+#        if (got_a_flag == 0)
+#        ^
+libgd-2.2.5/src/webpng.c:150:2: note: Taking false branch
+#        if (argc == optind)
+#        ^
+libgd-2.2.5/src/webpng.c:152:7: note: Taking false branch
+#        else if (argc != optind + 1)
+#             ^
+libgd-2.2.5/src/webpng.c:156:6: note: Assuming the condition is false
+#        if (strcmp(infile, "-") == 0) {
+#            ^~~~~~~~~~~~~~~~~~~~~~~~
+libgd-2.2.5/src/webpng.c:156:2: note: Taking false branch
+#        if (strcmp(infile, "-") == 0) {
+#        ^
+libgd-2.2.5/src/webpng.c:163:6: note: Assuming 'in' is non-null
+#        if (!in)
+#            ^~~
+libgd-2.2.5/src/webpng.c:163:2: note: Taking false branch
+#        if (!in)
+#        ^
+libgd-2.2.5/src/webpng.c:170:6: note: Assuming 'im' is non-null
+#        if (!im)
+#            ^~~
+libgd-2.2.5/src/webpng.c:170:2: note: Taking false branch
+#        if (!im)
+#        ^
+libgd-2.2.5/src/webpng.c:173:2: note: Taking false branch
+#        if (list_color_table) {
+#        ^
+libgd-2.2.5/src/webpng.c:191:2: note: Taking false branch
+#        if (report_details) {
+#        ^
+libgd-2.2.5/src/webpng.c:212:2: note: Taking true branch
+#        if (print_alpha) {
+#        ^
+libgd-2.2.5/src/webpng.c:221:7: note: Assuming the condition is false
+#                if (im->trueColor) {
+#                    ^~~~~~~~~~~~~
+libgd-2.2.5/src/webpng.c:221:3: note: Taking false branch
+#                if (im->trueColor) {
+#                ^
+libgd-2.2.5/src/webpng.c:246:2: note: Taking false branch
+#        if (write == 0) {
+#        ^
+libgd-2.2.5/src/webpng.c:251:2: note: Taking true branch
+#        if (interlace == 1)
+#        ^
+libgd-2.2.5/src/webpng.c:256:2: note: Taking false branch
+#        if (trans_col != KEEP_TRANS)
+#        ^
+libgd-2.2.5/src/webpng.c:259:2: note: Taking false branch
+#        if (use_stdin_stdout) {
+#        ^
+libgd-2.2.5/src/webpng.c:267:3: note: Value assigned to 'tmpfile'
+#                tmpfile = malloc(len);
+#                ^~~~~~~~~~~~~~~~~~~~~
+libgd-2.2.5/src/webpng.c:268:7: note: Assuming 'tmpfile' is equal to NULL
+#                if (tmpfile == NULL)
+#                    ^~~~~~~~~~~~~~~
+libgd-2.2.5/src/webpng.c:268:3: note: Taking true branch
+#                if (tmpfile == NULL)
+#                ^
+libgd-2.2.5/src/webpng.c:270:3: note: Null pointer passed as an argument to a 'nonnull' parameter
+#                memcpy(tmpfile, infile, filelen);
+#                ^      ~~~~~~~
+#  268|   		if (tmpfile == NULL)
+#  269|   			err("could not create a tempfile");
+#  270|-> 		memcpy(tmpfile, infile, filelen);
+#  271|   		strcpy(tmpfile + filelen, ".XXXXXX");
+#  272|   
+
+###############################################################################
+# Not a problem.
+# @fweimer in github.com/cockpit-project/cockpit/issues/760:
+# This is a Coverity bug—the advice is actually dangerous for multi-threaded
+# programs because there is often no safe way to change umask. POSIX-2008
+# requires that mkstemp creates the file with 0600 permissions. GNU libc and
+# others implemented this more than a decade ago, as a quality-of-implementation
+# measure, even though it wasn't completely POSIX-conforming at the time.
+###############################################################################
+
+Error: SECURE_TEMP (CWE-377):
+libgd-2.2.5/src/webpng.c:273: secure_temp: Calling "mkstemp" without securely setting umask first.
+#  271|   		strcpy(tmpfile + filelen, ".XXXXXX");
+#  272|   
+#  273|-> 		outfd = mkstemp(tmpfile);
+#  274|   		if (outfd == -1)
+#  275|   			err("could not open %s", tmpfile);
+
+###############################################################################
+# The program gets input file name into 'infile'. It first opens it for reading
+# and if it's successful it uses 'infile' and 'tmpfile' with 'rename' call. So
+# this is safe.
+###############################################################################
+
+Error: TAINTED_STRING (CWE-20):
+libgd-2.2.5/src/webpng.c:155: var_assign_var: Assigning: "infile" = "argv[optind]". Both are now tainted.
+libgd-2.2.5/src/webpng.c:290: tainted_string: Passing tainted string "infile" to "rename", which cannot accept tainted data.
+#  288|   		unlink(infile);
+#  289|   		/* Rename the new to the old. */
+#  290|-> 		if (rename(tmpfile, infile) != 0)
+#  291|   			err("unable to rename %s to %s", infile, tmpfile);
+#  292|   	}
+
+Error: TAINTED_STRING (CWE-20):
+libgd-2.2.5/src/webpng.c:155: var_assign_var: Assigning: "infile" = "argv[optind]". Both are now tainted.
+libgd-2.2.5/src/webpng.c:270: tainted_data_transitive: Call to function "memcpy" with tainted argument "*infile" transitively taints "tmpfile". [Note: The source code implementation of the function has been overridden by a builtin model.]
+libgd-2.2.5/src/webpng.c:290: tainted_string: Passing tainted string "tmpfile" to "rename", which cannot accept tainted data.
+#  288|   		unlink(infile);
+#  289|   		/* Rename the new to the old. */
+#  290|-> 		if (rename(tmpfile, infile) != 0)
+#  291|   			err("unable to rename %s to %s", infile, tmpfile);
+#  292|   	}
+
+###############################################################################
+# True, this is memory leak!
+# But 'tmpfile' is allocated only once in program run, so no memory problems
+# can be caused by this leak. 'tmpfile' should be clean in the end of the
+# program. Linux OS cleans that memory after process exits.
+# But in current gd_xbml.c implementation 'timestamp' have to freed also in
+# 'err' function (because program exits here too). But 'err' function don't
+# access 'tmpfile' in all runs and it has no reference specifically to
+# 'timestamp'. So there is no elegant solution except moving exit() out of
+# 'err' function.  Which is obviously one of main purposes of 'err' function.
+#
+# This memory leak doesn't cause problem and fixing it doesn't worth code
+# redesign.
+###############################################################################
+
+Error: CLANG_WARNING:
+libgd-2.2.5/src/webpng.c:295:2: warning: Potential leak of memory pointed to by 'tmpfile'
+#        gdImageDestroy(im);
+#        ^
+libgd-2.2.5/src/webpng.c:92:9: note: Assuming the condition is true
+#        while ((i = getopt(argc, argv, "i:lt:da")) != -1) {
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libgd-2.2.5/src/webpng.c:92:2: note: Loop condition is true.  Entering loop body
+#        while ((i = getopt(argc, argv, "i:lt:da")) != -1) {
+#        ^
+libgd-2.2.5/src/webpng.c:94:3: note: Control jumps to 'case 97:'  at line 130
+#                switch (i) {
+#                ^
+libgd-2.2.5/src/webpng.c:133:4: note:  Execution continues on line 92
+#                        break;
+#                        ^
+libgd-2.2.5/src/webpng.c:92:9: note: Assuming the condition is true
+#        while ((i = getopt(argc, argv, "i:lt:da")) != -1) {
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libgd-2.2.5/src/webpng.c:92:2: note: Loop condition is true.  Entering loop body
+#        while ((i = getopt(argc, argv, "i:lt:da")) != -1) {
+#        ^
+libgd-2.2.5/src/webpng.c:94:3: note: Control jumps to 'case 97:'  at line 130
+#                switch (i) {
+#                ^
+libgd-2.2.5/src/webpng.c:133:4: note:  Execution continues on line 92
+#                        break;
+#                        ^
+libgd-2.2.5/src/webpng.c:92:9: note: Assuming the condition is true
+#        while ((i = getopt(argc, argv, "i:lt:da")) != -1) {
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libgd-2.2.5/src/webpng.c:92:2: note: Loop condition is true.  Entering loop body
+#        while ((i = getopt(argc, argv, "i:lt:da")) != -1) {
+#        ^
+libgd-2.2.5/src/webpng.c:94:3: note: Control jumps to 'case 105:'  at line 95
+#                switch (i) {
+#                ^
+libgd-2.2.5/src/webpng.c:97:4: note: Taking true branch
+#                        if (strcmp(optarg, "y") == 0)
+#                        ^
+libgd-2.2.5/src/webpng.c:104:4: note:  Execution continues on line 92
+#                        break;
+#                        ^
+libgd-2.2.5/src/webpng.c:92:9: note: Assuming the condition is false
+#        while ((i = getopt(argc, argv, "i:lt:da")) != -1) {
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libgd-2.2.5/src/webpng.c:92:2: note: Loop condition is false. Execution continues on line 147
+#        while ((i = getopt(argc, argv, "i:lt:da")) != -1) {
+#        ^
+libgd-2.2.5/src/webpng.c:147:2: note: Taking false branch
+#        if (got_a_flag == 0)
+#        ^
+libgd-2.2.5/src/webpng.c:150:2: note: Taking false branch
+#        if (argc == optind)
+#        ^
+libgd-2.2.5/src/webpng.c:152:7: note: Taking false branch
+#        else if (argc != optind + 1)
+#             ^
+libgd-2.2.5/src/webpng.c:156:6: note: Assuming the condition is false
+#        if (strcmp(infile, "-") == 0) {
+#            ^~~~~~~~~~~~~~~~~~~~~~~~
+libgd-2.2.5/src/webpng.c:156:2: note: Taking false branch
+#        if (strcmp(infile, "-") == 0) {
+#        ^
+libgd-2.2.5/src/webpng.c:163:6: note: Assuming 'in' is non-null
+#        if (!in)
+#            ^~~
+libgd-2.2.5/src/webpng.c:163:2: note: Taking false branch
+#        if (!in)
+#        ^
+libgd-2.2.5/src/webpng.c:170:6: note: Assuming 'im' is non-null
+#        if (!im)
+#            ^~~
+libgd-2.2.5/src/webpng.c:170:2: note: Taking false branch
+#        if (!im)
+#        ^
+libgd-2.2.5/src/webpng.c:173:2: note: Taking false branch
+#        if (list_color_table) {
+#        ^
+libgd-2.2.5/src/webpng.c:191:2: note: Taking false branch
+#        if (report_details) {
+#        ^
+libgd-2.2.5/src/webpng.c:212:2: note: Taking true branch
+#        if (print_alpha) {
+#        ^
+libgd-2.2.5/src/webpng.c:221:7: note: Assuming the condition is false
+#                if (im->trueColor) {
+#                    ^~~~~~~~~~~~~
+libgd-2.2.5/src/webpng.c:221:3: note: Taking false branch
+#                if (im->trueColor) {
+#                ^
+libgd-2.2.5/src/webpng.c:246:2: note: Taking false branch
+#        if (write == 0) {
+#        ^
+libgd-2.2.5/src/webpng.c:251:2: note: Taking true branch
+#        if (interlace == 1)
+#        ^
+libgd-2.2.5/src/webpng.c:256:2: note: Taking false branch
+#        if (trans_col != KEEP_TRANS)
+#        ^
+libgd-2.2.5/src/webpng.c:259:2: note: Taking false branch
+#        if (use_stdin_stdout) {
+#        ^
+libgd-2.2.5/src/webpng.c:267:13: note: Memory is allocated
+#                tmpfile = malloc(len);
+#                          ^~~~~~~~~~~
+libgd-2.2.5/src/webpng.c:268:7: note: Assuming 'tmpfile' is not equal to NULL
+#                if (tmpfile == NULL)
+#                    ^~~~~~~~~~~~~~~
+libgd-2.2.5/src/webpng.c:268:3: note: Taking false branch
+#                if (tmpfile == NULL)
+#                ^
+libgd-2.2.5/src/webpng.c:274:7: note: Assuming the condition is false
+#                if (outfd == -1)
+#                    ^~~~~~~~~~~
+libgd-2.2.5/src/webpng.c:274:3: note: Taking false branch
+#                if (outfd == -1)
+#                ^
+libgd-2.2.5/src/webpng.c:278:7: note: Assuming 'out' is non-null
+#                if (!out)
+#                    ^~~~
+libgd-2.2.5/src/webpng.c:278:3: note: Taking false branch
+#                if (!out)
+#                ^
+libgd-2.2.5/src/webpng.c:285:2: note: Taking true branch
+#        if (!use_stdin_stdout) {
+#        ^
+libgd-2.2.5/src/webpng.c:290:7: note: Assuming the condition is false
+#                if (rename(tmpfile, infile) != 0)
+#                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libgd-2.2.5/src/webpng.c:290:3: note: Taking false branch
+#                if (rename(tmpfile, infile) != 0)
+#                ^
+libgd-2.2.5/src/webpng.c:295:2: note: Potential leak of memory pointed to by 'tmpfile'
+#        gdImageDestroy(im);
+#        ^
+#  293|   
+#  294|   	/* Delete the image from memory. */
+#  295|-> 	gdImageDestroy(im);
+#  296|   
+#  297|   	/* All's well that ends well. */
