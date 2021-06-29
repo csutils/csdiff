@@ -1,0 +1,433 @@
+# [rjones] For my comments on these warnings, see:
+# https://bugzilla.redhat.com/show_bug.cgi?id=1938681#c2
+
+Error: RESOURCE_LEAK (CWE-772): [#def3]
+augeas-1.12.0/src/augeas.c:1057: alloc_fn: Storage is returned from allocation function "make_tree".
+augeas-1.12.0/src/augeas.c:1057: var_assign: Assigning: "new" = storage returned from "make_tree(strdup(label), NULL, match->parent, NULL)".
+augeas-1.12.0/src/augeas.c:1067: leaked_storage: Variable "new" going out of scope leaks the storage it points to.
+# 1065|           match->next = new;
+# 1066|       }
+# 1067|->     return 0;
+# 1068|    error:
+# 1069|       free_tree(new);
+
+Error: RESOURCE_LEAK (CWE-772): [#def4]
+augeas-1.12.0/src/augrun.c:979: alloc_arg: "aug_source" allocates memory that is stored into "file_path".
+augeas-1.12.0/src/augrun.c:980: leaked_storage: Variable "file_path" going out of scope leaks the storage it points to.
+#  978|   
+#  979|       aug_source(cmd->aug, path, &file_path);
+#  980|->     ERR_RET(cmd);
+#  981|       if (file_path != NULL) {
+#  982|           fprintf(cmd->out, "%s\n", file_path);
+
+Error: RESOURCE_LEAK (CWE-772): [#def5]
+augeas-1.12.0/src/augtool.c:524: alloc_arg: "asprintf" allocates memory that is stored into "msg". [Note: The source code implementation of the function has been overridden by a builtin model.]
+augeas-1.12.0/src/augtool.c:527: noescape: Resource "msg" is not freed or pointed-to in "perror".
+augeas-1.12.0/src/augtool.c:528: leaked_storage: Variable "msg" going out of scope leaks the storage it points to.
+#  526|               else
+#  527|                   perror(msg);
+#  528|->             return -1;
+#  529|           }
+#  530|       }
+
+Error: BAD_FREE (CWE-763): [#def6]
+augeas-1.12.0/src/augtool.c:580: array_address: Taking address of array "inputline".
+augeas-1.12.0/src/augtool.c:580: assign: Assigning: "line" = "inputline".
+augeas-1.12.0/src/augtool.c:597: incorrect_free: "free" frees incorrect pointer "line".
+#  595|   
+#  596|           if (*line == '\0' || *line == '#') {
+#  597|->             free(line);
+#  598|               continue;
+#  599|           }
+
+Error: BAD_FREE (CWE-763): [#def7]
+augeas-1.12.0/src/augtool.c:580: array_address: Taking address of array "inputline".
+augeas-1.12.0/src/augtool.c:580: assign: Assigning: "line" = "inputline".
+augeas-1.12.0/src/augtool.c:603: incorrect_free: "free" frees incorrect pointer "line".
+#  601|           code = run_command(line, timing);
+#  602|           if (code == -2) {
+#  603|->             free(line);
+#  604|               return ret;
+#  605|           }
+
+Error: RESOURCE_LEAK (CWE-772): [#def8]
+augeas-1.12.0/src/builtin.c:176: alloc_arg: "mem_alloc_n" allocates memory that is stored into "msg".
+augeas-1.12.0/src/builtin.c:177: noescape: Resource "msg" is not freed or pointed-to in "strncpy". [Note: The source code implementation of the function has been overridden by a builtin model.]
+augeas-1.12.0/src/builtin.c:178: noescape: Resource "msg" is not freed or pointed-to in "strcat". [Note: The source code implementation of the function has been overridden by a builtin model.]
+augeas-1.12.0/src/builtin.c:179: noescape: Resource "msg" is not freed or pointed-to in "strcat". [Note: The source code implementation of the function has been overridden by a builtin model.]
+augeas-1.12.0/src/builtin.c:180: noescape: Assuming resource "msg" is not freed or pointed-to as ellipsis argument to "exn_add_lines".
+augeas-1.12.0/src/builtin.c:182: leaked_storage: Variable "msg" going out of scope leaks the storage it points to.
+#  180|           exn_add_lines(v, 1, msg);
+#  181|       }
+#  182|->     return v;
+#  183|   }
+#  184|   
+
+Error: RESOURCE_LEAK (CWE-772): [#def9]
+augeas-1.12.0/src/builtin.c:634: alloc_fn: Storage is returned from allocation function "module_create".
+augeas-1.12.0/src/builtin.c:634: var_assign: Assigning: "modl" = storage returned from "module_create("Builtin")".
+augeas-1.12.0/src/builtin.c:641: noescape: Resource "modl" is not freed or pointed-to in "define_native_intl".
+augeas-1.12.0/src/builtin.c:644: noescape: Resource "modl" is not freed or pointed-to in "define_native_intl".
+augeas-1.12.0/src/builtin.c:698: overwrite_var: Overwriting "modl" in "modl = NULL" leaks the storage that "modl" points to.
+#  696|       return modl;
+#  697|    error:
+#  698|->     unref(modl, module);
+#  699|       return NULL;
+#  700|   }
+
+Error: RESOURCE_LEAK (CWE-772): [#def10]
+augeas-1.12.0/src/fa.c:1336: alloc_fn: Storage is returned from allocation function "state_set_init".
+augeas-1.12.0/src/fa.c:1336: var_assign: Assigning: "pset" = storage returned from "state_set_init(-1, S_SORTED)".
+augeas-1.12.0/src/fa.c:1341: noescape: Resource "pset" is not freed or pointed-to in "state_set_add".
+augeas-1.12.0/src/fa.c:1341: leaked_storage: Variable "pset" going out of scope leaks the storage it points to.
+# 1339|                   for_each_trans(t, sset->states[q]) {
+# 1340|                       if (t->min <= points[n] && points[n] <= t->max) {
+# 1341|->                         F(state_set_add(pset, t->to));
+# 1342|                       }
+# 1343|                   }
+
+Error: RESOURCE_LEAK (CWE-772): [#def11]
+augeas-1.12.0/src/fa.c:3133: alloc_fn: Storage is returned from allocation function "parse_regexp".
+augeas-1.12.0/src/fa.c:3133: var_assign: Assigning: "re" = storage returned from "parse_regexp(&parse)".
+augeas-1.12.0/src/fa.c:3137: noescape: Resource "re" is not freed or pointed-to in "fa_from_re".
+augeas-1.12.0/src/fa.c:3138: overwrite_var: Overwriting "re" in "re = NULL" leaks the storage that "re" points to.
+# 3136|   
+# 3137|       *fa = fa_from_re(re);
+# 3138|->     re_unref(re);
+# 3139|   
+# 3140|       if (*fa == NULL || collect(*fa) < 0)
+
+Error: RESOURCE_LEAK (CWE-772): [#def12]
+augeas-1.12.0/src/fa.c:3359: alloc_fn: Storage is returned from allocation function "make_re_char_set".
+augeas-1.12.0/src/fa.c:3359: var_assign: Assigning: "re" = storage returned from "make_re_char_set(negate, parse->no_ranges)".
+augeas-1.12.0/src/fa.c:3364: noescape: Resource "re" is not freed or pointed-to in "parse_char_class".
+augeas-1.12.0/src/fa.c:3419: overwrite_var: Overwriting "re" in "re = NULL" leaks the storage that "re" points to.
+# 3417|       return re;
+# 3418|    error:
+# 3419|->     re_unref(re);
+# 3420|       return NULL;
+# 3421|   }
+
+Error: RESOURCE_LEAK (CWE-772): [#def13]
+augeas-1.12.0/src/fa.c:3502: alloc_fn: Storage is returned from allocation function "parse_repeated_exp".
+augeas-1.12.0/src/fa.c:3502: var_assign: Assigning: "re" = storage returned from "parse_repeated_exp(parse)".
+augeas-1.12.0/src/fa.c:3519: overwrite_var: Overwriting "re" in "re = NULL" leaks the storage that "re" points to.
+# 3517|   
+# 3518|    error:
+# 3519|->     re_unref(re);
+# 3520|       return NULL;
+# 3521|   }
+
+Error: RESOURCE_LEAK (CWE-772): [#def14]
+augeas-1.12.0/src/fa.c:4042: alloc_fn: Storage is returned from allocation function "make_re_rep".
+augeas-1.12.0/src/fa.c:4042: var_assign: Assigning: "loop" = storage returned from "make_re_rep(((loop == NULL || loop->ref == 4294967295U) ? loop : ((loop->ref++) , loop)), 0, -1)".
+augeas-1.12.0/src/fa.c:4084: leaked_storage: Returning without freeing "loop" leaks the storage that it points to.
+# 4082|           }
+# 4083|       }
+# 4084|->     return 0;
+# 4085|    error:
+# 4086|       // FIXME: make sure we don't leak loop
+
+Error: RESOURCE_LEAK (CWE-772): [#def15]
+augeas-1.12.0/src/fa.c:4042: alloc_fn: Storage is returned from allocation function "make_re_rep".
+augeas-1.12.0/src/fa.c:4042: var_assign: Assigning: "loop" = storage returned from "make_re_rep(((loop == NULL || loop->ref == 4294967295U) ? loop : ((loop->ref++) , loop)), 0, -1)".
+augeas-1.12.0/src/fa.c:4087: leaked_storage: Returning without freeing "loop" leaks the storage that it points to.
+# 4085|    error:
+# 4086|       // FIXME: make sure we don't leak loop
+# 4087|->     return -1;
+# 4088|   }
+# 4089|   
+
+Error: RESOURCE_LEAK (CWE-772): [#def16]
+augeas-1.12.0/src/fa.c:4339: alloc_fn: Storage is returned from allocation function "parse_regexp".
+augeas-1.12.0/src/fa.c:4339: var_assign: Assigning: "re" = storage returned from "parse_regexp(&parse)".
+augeas-1.12.0/src/fa.c:4343: noescape: Resource "re" is not freed or pointed-to in "re_restrict_alphabet".
+augeas-1.12.0/src/fa.c:4354: overwrite_var: Overwriting "re" in "re = NULL" leaks the storage that "re" points to.
+# 4352|       *newregexp_len = str.len;
+# 4353|    done:
+# 4354|->     re_unref(re);
+# 4355|       return result;
+# 4356|   }
+
+Error: RESOURCE_LEAK (CWE-772): [#def17]
+augeas-1.12.0/src/fa.c:4449: alloc_fn: Storage is returned from allocation function "parse_regexp".
+augeas-1.12.0/src/fa.c:4449: var_assign: Assigning: "re" = storage returned from "parse_regexp(&parse)".
+augeas-1.12.0/src/fa.c:4453: noescape: Resource "re" is not freed or pointed-to in "re_case_expand".
+augeas-1.12.0/src/fa.c:4455: overwrite_var: Overwriting "re" in "re = NULL" leaks the storage that "re" points to.
+# 4453|       r = re_case_expand(re);
+# 4454|       if (r < 0) {
+# 4455|->         re_unref(re);
+# 4456|           return REG_ESPACE;
+# 4457|       }
+
+Error: RESOURCE_LEAK (CWE-772): [#def18]
+augeas-1.12.0/src/fa.c:4449: alloc_fn: Storage is returned from allocation function "parse_regexp".
+augeas-1.12.0/src/fa.c:4449: var_assign: Assigning: "re" = storage returned from "parse_regexp(&parse)".
+augeas-1.12.0/src/fa.c:4453: noescape: Resource "re" is not freed or pointed-to in "re_case_expand".
+augeas-1.12.0/src/fa.c:4469: overwrite_var: Overwriting "re" in "re = NULL" leaks the storage that "re" points to.
+# 4467|           result = (*newregexp == NULL) ? REG_ESPACE : REG_NOERROR;
+# 4468|       }
+# 4469|->     re_unref(re);
+# 4470|       return result;
+# 4471|   }
+
+Error: RESOURCE_LEAK (CWE-772): [#def19]
+augeas-1.12.0/src/get.c:1343: alloc_fn: Storage is returned from allocation function "format_lens".
+augeas-1.12.0/src/get.c:1343: noescape: Assuming resource "format_lens((*lens).children[i])" is not freed or pointed-to as ellipsis argument to "bug_on".
+augeas-1.12.0/src/get.c:1343: leaked_storage: Failing to save or free storage allocated by "format_lens((*lens).children[i])" leaks it.
+# 1341|               struct frame *fr = nth_frame(rec_state, i);
+# 1342|               ERR_BAIL(state->info);
+# 1343|->             BUG_ON(lens->children[i] != fr->lens,
+# 1344|                       lens->info,
+# 1345|                "Unexpected lens in concat %zd..%zd\n  Expected: %s\n  Actual: %s",
+
+Error: RESOURCE_LEAK (CWE-772): [#def20]
+augeas-1.12.0/src/get.c:1343: alloc_fn: Storage is returned from allocation function "format_lens".
+augeas-1.12.0/src/get.c:1343: noescape: Assuming resource "format_lens(fr->lens)" is not freed or pointed-to as ellipsis argument to "bug_on".
+augeas-1.12.0/src/get.c:1343: leaked_storage: Failing to save or free storage allocated by "format_lens(fr->lens)" leaks it.
+# 1341|               struct frame *fr = nth_frame(rec_state, i);
+# 1342|               ERR_BAIL(state->info);
+# 1343|->             BUG_ON(lens->children[i] != fr->lens,
+# 1344|                       lens->info,
+# 1345|                "Unexpected lens in concat %zd..%zd\n  Expected: %s\n  Actual: %s",
+
+Error: RESOURCE_LEAK (CWE-772): [#def21]
+augeas-1.12.0/src/info.c:44: alloc_arg: "ref_make_ref" allocates memory that is stored into "string".
+augeas-1.12.0/src/info.c:50: overwrite_var: Overwriting "string" in "string = NULL" leaks the storage that "string" points to.
+#   48|           string->str = strdup(str);
+#   49|       if (string->str == NULL)
+#   50|->         unref(string, string);
+#   51|       return string;
+#   52|   }
+
+Error: RESOURCE_LEAK (CWE-772): [#def22]
+augeas-1.12.0/src/jmt.c:1779: alloc_fn: Storage is returned from allocation function "make_nfa_state".
+augeas-1.12.0/src/jmt.c:1779: var_assign: Assigning: "to" = storage returned from "make_nfa_state(jmt)".
+augeas-1.12.0/src/jmt.c:1780: leaked_storage: Variable "to" going out of scope leaks the storage it points to.
+# 1778|                   if (to == NULL) {
+# 1779|                       to = make_nfa_state(jmt);
+# 1780|->                     ERR_RET(jmt);
+# 1781|                   }
+# 1782|                   nfa_state_add(jmt, to, t->to);
+
+Error: RESOURCE_LEAK (CWE-772): [#def23]
+augeas-1.12.0/src/lens.c:378: alloc_fn: Storage is returned from allocation function "lns_make_star".
+augeas-1.12.0/src/lens.c:378: var_assign: Assigning: "star" = storage returned from "lns_make_star(info, l, check)".
+augeas-1.12.0/src/lens.c:383: overwrite_var: Overwriting "star" in "star = NULL" leaks the storage that "star" points to.
+#  381|   
+#  382|       conc = lns_make_concat(ref(info), ref(l), ref(star->lens), check);
+#  383|->     unref(star, value);
+#  384|       return conc;
+#  385|   }
+
+Error: RESOURCE_LEAK (CWE-772): [#def24]
+augeas-1.12.0/src/lens.c:423: alloc_fn: Storage is returned from allocation function "str_to_fa".
+augeas-1.12.0/src/lens.c:423: var_assign: Assigning: "exn" = storage returned from "str_to_fa(info, left->pattern->str, &fa, left->nocase)".
+augeas-1.12.0/src/lens.c:463: overwrite_var: Overwriting "exn" in "exn = NULL" leaks the storage that "exn" points to.
+#  461|       free(u);
+#  462|       fa_free(fa);
+#  463|->     unref(exn, value);
+#  464|   }
+#  465|   
+
+Error: RESOURCE_LEAK (CWE-772): [#def25]
+augeas-1.12.0/src/lens.c:485: alloc_fn: Storage is returned from allocation function "lns_make_concat".
+augeas-1.12.0/src/lens.c:485: var_assign: Assigning: "res" = storage returned from "lns_make_concat(((info == NULL || info->ref == 4294967295U) ? info : ((info->ref++) , info)), ((l1 == NULL || l1->ref == 4294967295U) ? l1 : ((l1->ref++) , l1)), ((l2 == NULL || l2->ref == 4294967295U) ? l2 : ((l2->ref++) , l2)), check)".
+augeas-1.12.0/src/lens.c:488: var_assign: Assigning: "cnt1" = "res".
+augeas-1.12.0/src/lens.c:515: overwrite_var: Overwriting "cnt1" in "cnt1 = NULL" leaks the storage that "cnt1" points to.
+#  513|       unref(l2, lens);
+#  514|       unref(l3, lens);
+#  515|->     unref(cnt1, value);
+#  516|       unref(cnt2, value);
+#  517|       unref(sqr, lens);
+
+Error: RESOURCE_LEAK (CWE-772): [#def26]
+augeas-1.12.0/src/lens.c:553: alloc_fn: Storage is returned from allocation function "make_regexp".
+augeas-1.12.0/src/lens.c:553: var_assign: Assigning: "result" = storage returned from "make_regexp(r->info, nre, r->nocase)".
+augeas-1.12.0/src/lens.c:555: noescape: Resource "result" is not freed or pointed-to in "regexp_compile".
+augeas-1.12.0/src/lens.c:561: overwrite_var: Overwriting "result" in "result = NULL" leaks the storage that "result" points to.
+#  559|       return result;
+#  560|    error:
+#  561|->     unref(result, regexp);
+#  562|       goto done;
+#  563|   }
+
+Error: RESOURCE_LEAK (CWE-772): [#def27]
+augeas-1.12.0/src/lens.c:1854: alloc_fn: Storage is returned from allocation function "regexp_concat".
+augeas-1.12.0/src/lens.c:1854: var_assign: Assigning: "r" = storage returned from "regexp_concat(rtn->info, r1, r2)".
+augeas-1.12.0/src/lens.c:1882: noescape: Resource "r" is not freed or pointed-to in "regexp_matches_empty".
+augeas-1.12.0/src/lens.c:1885: noescape: Resource "r" is not freed or pointed-to in "regexp_maybe".
+augeas-1.12.0/src/lens.c:1886: overwrite_var: Overwriting "r" in "r = NULL" leaks the storage that "r" points to.
+# 1884|           else {
+# 1885|               t->re = regexp_maybe(rtn->info, r);
+# 1886|->             unref(r, regexp);
+# 1887|               ERR_NOMEM(t->re == NULL, rtn->info);
+# 1888|           }
+
+Error: RESOURCE_LEAK (CWE-772): [#def28]
+augeas-1.12.0/src/lens.c:1967: alloc_arg: "mem_alloc_n" allocates memory that is stored into "start".
+augeas-1.12.0/src/lens.c:1976: noescape: Resource "start" is not freed or pointed-to in "add_trans".
+augeas-1.12.0/src/lens.c:2034: leaked_storage: Variable "start" going out of scope leaks the storage it points to.
+# 2032|       return result;
+# 2033|    error:
+# 2034|->     return NULL;
+# 2035|   }
+# 2036|   
+
+Error: RESOURCE_LEAK (CWE-772): [#def29]
+augeas-1.12.0/src/lens.c:2335: alloc_fn: Storage is returned from allocation function "make_exn_value".
+augeas-1.12.0/src/lens.c:2335: var_assign: Assigning: "result" = storage returned from "make_exn_value(((rec->info == NULL || rec->info->ref == 4294967295U) ? rec->info : ((rec->info->ref++) , (rec->info))), "recursive lens generates the empty language for its %s", ((rec->ctype == NULL) ? "ctype" : "atype"))".
+augeas-1.12.0/src/lens.c:2373: overwrite_var: Overwriting "result" in "result = NULL" leaks the storage that "result" points to.
+# 2371|    error:
+# 2372|       if (result != NULL && result->tag != V_EXN)
+# 2373|->         unref(result, value);
+# 2374|       if (result == NULL)
+# 2375|           result = info->error->exn;
+
+Error: RESOURCE_LEAK (CWE-772): [#def30]
+augeas-1.12.0/src/parser.y:356: alloc_arg: "ref_make_ref" allocates memory that is stored into "sname".
+augeas-1.12.0/src/parser.y:390: overwrite_var: Overwriting "sname" in "sname = NULL" leaks the storage that "sname" points to.
+#  388|   
+#  389|    error:
+#  390|->   unref(sname, string);
+#  391|     // free TERM
+#  392|     return result;
+
+Error: RESOURCE_LEAK (CWE-772): [#def31]
+augeas-1.12.0/src/parser.y:460: alloc_fn: Storage is returned from allocation function "make_param".
+augeas-1.12.0/src/parser.y:460: var_assign: Assigning: "lambda" = storage returned from "make_param(id, make_base_type(T_LENS), ((info == NULL || info->ref == 4294967295U) ? info : ((info->ref++) , info)))".
+augeas-1.12.0/src/parser.y:464: noescape: Resource "lambda" is not freed or pointed-to in "build_func".
+augeas-1.12.0/src/parser.y:488: overwrite_var: Overwriting "lambda" in "lambda = NULL" leaks the storage that "lambda" points to.
+#  486|    error:
+#  487|     free(id);
+#  488|->   unref(lambda, term);
+#  489|     unref(rlens, term);
+#  490|     unref(app1, term);
+
+Error: RESOURCE_LEAK (CWE-772): [#def34]
+augeas-1.12.0/src/syntax.c:879: alloc_fn: Storage is returned from allocation function "type_meet".
+augeas-1.12.0/src/syntax.c:879: var_assign: Assigning: "dom" = storage returned from "type_meet(t1->dom, t2->dom)".
+augeas-1.12.0/src/syntax.c:882: overwrite_var: Overwriting "dom" in "dom = NULL" leaks the storage that "dom" points to.
+#  880|           struct type *img = type_join(t1->img, t2->img);
+#  881|           if (dom == NULL || img == NULL) {
+#  882|->             unref(dom, type);
+#  883|               unref(img, type);
+#  884|               return NULL;
+
+Error: RESOURCE_LEAK (CWE-772): [#def35]
+augeas-1.12.0/src/syntax.c:1384: alloc_fn: Storage is returned from allocation function "coerce".
+augeas-1.12.0/src/syntax.c:1384: var_assign: Assigning: "v1" = storage returned from "coerce(v1, t)".
+augeas-1.12.0/src/syntax.c:1389: overwrite_var: Overwriting "v1" in "v1 = NULL" leaks the storage that "v1" points to.
+# 1387|       v2 = coerce(v2, t);
+# 1388|       if (EXN(v2)) {
+# 1389|->         unref(v1, value);
+# 1390|           return v2;
+# 1391|       }
+
+Error: RESOURCE_LEAK (CWE-772): [#def36]
+augeas-1.12.0/src/syntax.c:1384: alloc_fn: Storage is returned from allocation function "coerce".
+augeas-1.12.0/src/syntax.c:1384: var_assign: Assigning: "v1" = storage returned from "coerce(v1, t)".
+augeas-1.12.0/src/syntax.c:1405: overwrite_var: Overwriting "v1" in "v1 = NULL" leaks the storage that "v1" points to.
+# 1403|                       type_name(t));
+# 1404|       }
+# 1405|->     unref(v1, value);
+# 1406|       unref(v2, value);
+# 1407|       return v;
+
+Error: RESOURCE_LEAK (CWE-772): [#def37]
+augeas-1.12.0/src/syntax.c:1387: alloc_fn: Storage is returned from allocation function "coerce".
+augeas-1.12.0/src/syntax.c:1387: var_assign: Assigning: "v2" = storage returned from "coerce(v2, t)".
+augeas-1.12.0/src/syntax.c:1406: overwrite_var: Overwriting "v2" in "v2 = NULL" leaks the storage that "v2" points to.
+# 1404|       }
+# 1405|       unref(v1, value);
+# 1406|->     unref(v2, value);
+# 1407|       return v;
+# 1408|   }
+
+Error: RESOURCE_LEAK (CWE-772): [#def38]
+augeas-1.12.0/src/syntax.c:1424: alloc_fn: Storage is returned from allocation function "coerce".
+augeas-1.12.0/src/syntax.c:1424: var_assign: Assigning: "v1" = storage returned from "coerce(v1, t)".
+augeas-1.12.0/src/syntax.c:1445: overwrite_var: Overwriting "v1" in "v1 = NULL" leaks the storage that "v1" points to.
+# 1443|                       type_name(t));
+# 1444|       }
+# 1445|->     unref(v1, value);
+# 1446|       unref(v2, value);
+# 1447|       return v;
+
+Error: RESOURCE_LEAK (CWE-772): [#def39]
+augeas-1.12.0/src/syntax.c:1425: alloc_fn: Storage is returned from allocation function "coerce".
+augeas-1.12.0/src/syntax.c:1425: var_assign: Assigning: "v2" = storage returned from "coerce(v2, t)".
+augeas-1.12.0/src/syntax.c:1446: overwrite_var: Overwriting "v2" in "v2 = NULL" leaks the storage that "v2" points to.
+# 1444|       }
+# 1445|       unref(v1, value);
+# 1446|->     unref(v2, value);
+# 1447|       return v;
+# 1448|   }
+
+Error: RESOURCE_LEAK (CWE-772): [#def40]
+augeas-1.12.0/src/syntax.c:1510: alloc_fn: Storage is returned from allocation function "coerce".
+augeas-1.12.0/src/syntax.c:1510: var_assign: Assigning: "v1" = storage returned from "coerce(v1, t)".
+augeas-1.12.0/src/syntax.c:1554: overwrite_var: Overwriting "v1" in "v1 = NULL" leaks the storage that "v1" points to.
+# 1552|                       type_name(t));
+# 1553|       }
+# 1554|->     unref(v1, value);
+# 1555|       unref(v2, value);
+# 1556|       return v;
+
+Error: RESOURCE_LEAK (CWE-772): [#def41]
+augeas-1.12.0/src/syntax.c:1511: alloc_fn: Storage is returned from allocation function "coerce".
+augeas-1.12.0/src/syntax.c:1511: var_assign: Assigning: "v2" = storage returned from "coerce(v2, t)".
+augeas-1.12.0/src/syntax.c:1555: overwrite_var: Overwriting "v2" in "v2 = NULL" leaks the storage that "v2" points to.
+# 1553|       }
+# 1554|       unref(v1, value);
+# 1555|->     unref(v2, value);
+# 1556|       return v;
+# 1557|    error:
+
+Error: RESOURCE_LEAK (CWE-772): [#def42]
+augeas-1.12.0/src/syntax.c:1617: alloc_fn: Storage is returned from allocation function "coerce".
+augeas-1.12.0/src/syntax.c:1617: var_assign: Assigning: "arg" = storage returned from "coerce(arg, rep->type)".
+augeas-1.12.0/src/syntax.c:1647: overwrite_var: Overwriting "arg" in "arg = NULL" leaks the storage that "arg" points to.
+# 1645|                       type_name(rep->rexp->type), type_name(rep->type));
+# 1646|       }
+# 1647|->     unref(arg, value);
+# 1648|       return v;
+# 1649|   }
+
+Error: RESOURCE_LEAK (CWE-772): [#def43]
+augeas-1.12.0/src/syntax.c:1825: alloc_arg: "ref_make_ref" allocates memory that is stored into "info".
+augeas-1.12.0/src/syntax.c:1835: overwrite_var: Overwriting "info" in "info = NULL" leaks the storage that "info" points to.
+# 1833|       return info;
+# 1834|    error:
+# 1835|->     unref(info, info);
+# 1836|       return NULL;
+# 1837|   }
+
+Error: RESOURCE_LEAK (CWE-772): [#def44]
+augeas-1.12.0/src/transform.c:556: alloc_arg: "ref_make_ref" allocates memory that is stored into "info".
+augeas-1.12.0/src/transform.c:576: overwrite_var: Overwriting "info" in "info = NULL" leaks the storage that "info" points to.
+#  574|       return info;
+#  575|    error:
+#  576|->     unref(info, info);
+#  577|       return NULL;
+#  578|   }
+
+Error: RESOURCE_LEAK (CWE-772): [#def45]
+augeas-1.12.0/src/transform.c:598: alloc_fn: Storage is returned from allocation function "make_lns_info".
+augeas-1.12.0/src/transform.c:598: var_assign: Assigning: "info" = storage returned from "make_lns_info(aug, filename, text, text_len)".
+augeas-1.12.0/src/transform.c:625: overwrite_var: Overwriting "info" in "info = NULL" leaks the storage that "info" points to.
+#  623|    error:
+#  624|       free_span(span);
+#  625|->     unref(info, info);
+#  626|       free_tree(tree);
+#  627|   }
+
+Error: RESOURCE_LEAK (CWE-772): [#def46]
+augeas-1.12.0/src/transform.c:1106: alloc_fn: Storage is returned from allocation function "make_lns_info".
+augeas-1.12.0/src/transform.c:1106: var_assign: Assigning: "info" = storage returned from "make_lns_info(aug, filename, text, text_len)".
+augeas-1.12.0/src/transform.c:1124: overwrite_var: Overwriting "info" in "info = NULL" leaks the storage that "info" points to.
+# 1122|       }
+# 1123|    error:
+# 1124|->     unref(info, info);
+# 1125|   }
+# 1126|   

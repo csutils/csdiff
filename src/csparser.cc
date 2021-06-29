@@ -152,7 +152,7 @@ class ErrFileLexer {
             RE("^(#)(.*)$");
 
         const RE reChecker_ =
-            RE("^Error: *(" RE_CHECKER_NAME ")( *\\([^)]+\\))? *:$");
+            RE("^Error: *(" RE_CHECKER_NAME ")( *\\([^)]+\\))? *:(?: \\[#def[0-9]+\\])?$");
 
         const RE reEvent_ =
             RE(/* location */ "^([^:]+)(?::([0-9]+|<unknown>))?(?::([0-9]+))?"
