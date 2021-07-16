@@ -144,12 +144,12 @@ std::string readMsg(const pt::ptree &defNode)
     const pt::ptree *whatNode;
     if (findChildOf(&whatNode, defNode, "what"))
         // message found in <what>...</what>
-        return getStringValue(whatNode);
+        return getStringValue(*whatNode);
 
     if (findChildOf(&whatNode, defNode, "xwhat")
             && findChildOf(&whatNode, *whatNode, "text"))
         // message found in <xwhat><text>...</text></xwhat>
-        return getStringValue(whatNode);
+        return getStringValue(*whatNode);
 
     // message not found
     return "<unknown>";
@@ -195,7 +195,7 @@ void readStack(Defect *pDef, const pt::ptree &stackNode)
         const pt::ptree *fileNode;
         if (findChildOf(&fileNode, frameNode, "file")) {
             // read absolute path of the source file
-            noteEvt.fileName = getStringValue(fileNode);
+            noteEvt.fileName = getStringValue(*fileNode);
             const std::string dir = valueOf<std::string>(frameNode, "dir", "");
             if (!dir.empty())
                 noteEvt.fileName = dir + "/" + noteEvt.fileName;
@@ -206,12 +206,12 @@ void readStack(Defect *pDef, const pt::ptree &stackNode)
         }
         else if (findChildOf(&fileNode, frameNode, "obj")) {
             // pick path of the object file
-            noteEvt.fileName = getStringValue(fileNode);
+            noteEvt.fileName = getStringValue(*fileNode);
             keyEventScore = 4;
         }
         else if (findChildOf(&fileNode, frameNode, "ip")) {
             // pick address of the code in memory
-            noteEvt.fileName = getStringValue(fileNode);
+            noteEvt.fileName = getStringValue(*fileNode);
             keyEventScore = 2;
         }
         else {
@@ -270,7 +270,7 @@ bool ValgrindTreeDecoder::readNode(Defect *pDef, pt::ptree::const_iterator defIt
         DefEvent auxEvent = def.events[def.keyEventIdx];
         auxEvent.event = "note";
         auxEvent.verbosityLevel = /* note */ 1;
-        auxEvent.msg = getStringValue(auxwhat);
+        auxEvent.msg = getStringValue(*auxwhat);
         def.events.insert(def.events.begin() + def.keyEventIdx + 1, auxEvent);
     }
 
