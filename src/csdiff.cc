@@ -50,7 +50,9 @@ int main(int argc, char *argv[])
             ("json-output,j", "write the result in JSON format")
             ("html-output", "write the result in HTML format")
             ("file-rename,s", po::value<TStringList>(),
-             "account the file base-name change, [OLD,NEW] (*testing*)");
+             "account the file base-name change, [OLD,NEW] (*testing*)")
+            ("filter-file,f", po::value<TStringList>(),
+             "read custom filtering rules from a file in JSON format");
 
         addColorOptions(&desc);
 
@@ -150,6 +152,13 @@ int main(int argc, char *argv[])
 
     const bool showInternal = vm.count("show-internal");
     const bool silent       = vm.count("quiet");
+
+    if (vm.count("filter-file")) {
+        const TStringList &filterFiles = vm["filter-file"].as<TStringList>();
+        if (!MsgFilter::inst()->setFilterFiles(filterFiles, silent))
+            // an error message already printed out
+            return 1;
+    }
 
     try {
         // open streams

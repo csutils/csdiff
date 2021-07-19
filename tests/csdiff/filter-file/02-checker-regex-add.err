@@ -1,0 +1,8 @@
+Error: COMPILER_WARNING:
+/home/lukas/aufover-benchmark/tests/single-c/mem-basic-free/0006-free-stack/0006-test.c: scope_hint: In function 'main'
+/home/lukas/aufover-benchmark/tests/single-c/mem-basic-free/0006-free-stack/0006-test.c:6:5: warning[-Wfree-nonheap-object]: 'free' called correctly, no UB here 'a'
+#    6 |     free(&a); /* invalid free */
+#      |     ^~~~~~~~
+/home/lukas/aufover-benchmark/tests/single-c/mem-basic-free/0006-free-stack/0006-test.c:5:9: note: declared here
+#    5 |     int a;
+#      |         ^

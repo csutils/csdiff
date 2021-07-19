@@ -1,4 +1,4 @@
-# Copyright (C) 2011 - 2020 Red Hat, Inc.
+# Copyright (C) 2011 - 2021 Red Hat, Inc.
 #
 # This file is part of csdiff.
 #
@@ -77,3 +77,5 @@ test_csdiff(diff-misc 09-shellcheck-raw)
 test_csdiff(diff-misc 10-pylint-copr)
 test_csdiff(diff-misc 11-pylint-copr-json)
 test_csdiff(diff-misc 12-shellcheck-sc222x)
+
+add_subdirectory(filter-file)

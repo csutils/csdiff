@@ -15,3 +15,18 @@ for i in diff*/; do (
     done
     echo
 ) done
+
+(
+    cd filter-file || exit $?
+    basename "$PWD"
+    for j in [0-9][0-9]*-old.err; do
+        set -x
+        tst=${j%-old.err}
+        "$CSDIFF" -cf   ${tst}-filter.json ${tst}-old.err ${tst}-new.err > ${tst}-add.err
+        "$CSDIFF" -czf  ${tst}-filter.json ${tst}-old.err ${tst}-new.err > ${tst}-add-z.err
+        "$CSDIFF" -cxf  ${tst}-filter.json ${tst}-old.err ${tst}-new.err > ${tst}-fix.err
+        "$CSDIFF" -cxzf ${tst}-filter.json ${tst}-old.err ${tst}-new.err > ${tst}-fix-z.err
+        set +x
+    done
+    echo
+)

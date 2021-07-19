@@ -1,0 +1,5 @@
+Error: COMPILER_WARNING:
+/home/lukas/aufover-benchmark/tests/single-c/mem-basic-calloc/0004-calloc-plain-leak/0004-test.c: scope_hint: In function 'main'
+/home/lukas/aufover-benchmark/tests/single-c/mem-basic-calloc/0004-calloc-plain-leak/0004-test.c:5:5: warning[-Wunused-result]: ignoring return value of 'calloc' declared with attribute 'warn_unused_result'
+#    5 |     calloc(1, sizeof(char)); /* leak */
+#      |     ^~~~~~~~~~~~~~~~~~~~~~~

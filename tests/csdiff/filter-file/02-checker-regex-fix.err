@@ -1,0 +1,11 @@
+Error: SYMBIOTIC_WARNING:
+/home/lukas/aufover-benchmark/tests/single-c/mem-basic-malloc/0009-malloc-zerosize-leak/0009-test.c:10: error: memory error: memory not cleaned up
+/home/lukas/aufover-benchmark/tests/single-c/mem-basic-malloc/0009-malloc-zerosize-leak/0009-test.c:10: note: call stack: main ()
+
+Error: DIVINE_WARNING:
+/home/lukas/tmp/assert-bounds.c: scope_hint: In function 'main':
+/home/lukas/tmp/assert-bounds.c:8: error: access of size 1 at [alloca*] is 1 bytes out of bounds
+/home/lukas/tmp/assert-bounds.c:8: note: memory error in userspace
+/opt/divine/include/dios/sys/fault.hpp:119: note: void __dios::FaultBase::handler<__dios::Context>(_VM_Fault, _VM_Frame*, void (*)())
+/home/lukas/tmp/assert-bounds.c:8: note: main
+/opt/divine/include/dios/libc/sys/start.cpp:91: note: __dios_start
