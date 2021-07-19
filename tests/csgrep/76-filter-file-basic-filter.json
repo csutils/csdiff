@@ -1,0 +1,13 @@
+{
+    "msg-filter" : [
+        {
+            "checker" : "DIVINE|SYMBIOTIC",
+            "regexp" : "memory"
+        },
+        {
+            "checker" : "COMPILER_WARNING",
+            "regexp" : "called on unallocated object",
+            "replace" : "called correctly, no UB here"
+        }
+    ]
+}

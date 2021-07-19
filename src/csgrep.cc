@@ -586,8 +586,8 @@ int main(int argc, char *argv[])
 
             ("ignore-case,i",                                   "ignore case when matching regular expressions")
             ("invert-match,v",                                  "select defects that do not match the selected criteria")
-            ("invert-regex,n",                                  "invert regular expressions in all predicates");
-
+            ("invert-regex,n",                                  "invert regular expressions in all predicates")
+            ("filter-file,f",       po::value<TStringList>(),   "read custom filtering rules from a file in JSON format");
         addColorOptions(&desc);
         desc.add_options()
             ("quiet,q",                                         "do not report any parsing errors")
@@ -639,6 +639,15 @@ int main(int argc, char *argv[])
         return 1;
     }
 
+    const bool silent = vm.count("quiet");
+
+    if (vm.count("filter-file")) {
+        const TStringList &filterFiles = vm["filter-file"].as<TStringList>();
+        if (!MsgFilter::inst()->setFilterFiles(filterFiles, silent))
+            // an error message already printed out
+            return 1;
+    }
+
     // create a writer according to the selected mode
     WriterFactory factory;
     AbstractWriter *eng = factory.create(mode);
@@ -664,13 +673,12 @@ int main(int argc, char *argv[])
     if (vm.count("remove-duplicates"))
         eng = new DuplicateFilter(eng);
 
-    const bool silent = vm.count("quiet");
-    bool hasError = false;
-
     if (!chainDecorator<EventPrunner>(&eng, vm, "prune-events")
             || !chainDecorator<CtxEmbedder>(&eng, vm, "embed-context"))
         // error message already printed, eng already feeed
         return 1;
+
+    bool hasError = false;
 
     if (!vm.count("input-file")) {
         hasError = !eng->handleFile("-", silent);
