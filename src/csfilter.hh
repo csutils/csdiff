@@ -20,9 +20,13 @@
 #ifndef H_GUARD_CSFILTER_H
 #define H_GUARD_CSFILTER_H
 
+#include "instream.hh"
+
 #include <map>
 #include <string>
+#include <vector>
 
+typedef std::vector<std::string> TStringList;
 typedef std::map<std::string, std::string> TSubstMap;
 
 class MsgFilter {
@@ -35,6 +39,8 @@ class MsgFilter {
         }
 
         void setIgnorePath(bool);
+        bool setFilterFiles(const TStringList &fileNames,
+                            bool               silent);
         void setFileNameSubstitution(
                 const std::string      &oldFile,
                 const std::string      &newFile);
@@ -47,6 +53,8 @@ class MsgFilter {
     private:
         MsgFilter();
         ~MsgFilter();
+
+        bool setJSONFilter(InStream &filter);
 
         static MsgFilter *self_;
         struct Private;

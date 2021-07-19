@@ -17,10 +17,11 @@
  * along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include "abstract-tree.hh"
 #include "csfilter.hh"
 #include "regex.hh"
 
-#include <iostream>
+#include <boost/property_tree/json_parser.hpp>
 
 // Setup verbosity for debugging string substitions while matching them.
 // Verbosity levels are from 0 to 3 (0 is off)
@@ -148,6 +149,56 @@ MsgFilter::~MsgFilter()
 void MsgFilter::setIgnorePath(bool enable)
 {
     d->ignorePath = enable;
+}
+
+bool MsgFilter::setFilterFiles(
+                const TStringList &fileNames,
+                bool               silent)
+{
+    try {
+        for (const std::string &file : fileNames) {
+            InStream filter(file, silent);
+            if (!setJSONFilter(filter))
+                return false;
+        }
+        return true;
+    }
+    catch (const InFileException &e) {
+        std::cerr << e.fileName << ": failed to open filter file\n";
+        return false;
+    }
+}
+
+bool MsgFilter::setJSONFilter(InStream &input)
+{
+    using namespace boost::property_tree;
+
+    try {
+        // parse JSON
+        ptree root;
+        read_json(input.str(), root);
+
+        // read filtering rules
+        for (const auto &filter_rule : root.get_child("msg-filter")) {
+            const auto &filter = filter_rule.second;
+            d->addMsgFilter(getStringValue(filter.get_child("checker")),
+                            getStringValue(filter.get_child("regexp")),
+                            valueOf(filter, "replace", std::string{}));
+        }
+        return true;
+    }
+    catch (boost::regex_error &e) {
+        input.handleError(e.what());
+        return false;
+    }
+    catch (file_parser_error &e) {
+        input.handleError(e.message(), e.line());
+        return false;
+    }
+    catch (ptree_error &e) {
+        input.handleError(e.what());
+        return false;
+    }
 }
 
 void MsgFilter::setFileNameSubstitution(
