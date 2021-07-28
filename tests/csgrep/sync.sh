@@ -1,5 +1,5 @@
 #!/bin/zsh
-set -x
+set -exo pipefail
 
 # import ${JSFILTER_CMD}
 . ../test-lib.sh
