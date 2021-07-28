@@ -1,6 +1,28 @@
 [NAME]
 csdiff - take two lists of defects and output either added or fixed ones
 
+[OPTIONS]
+The \fB\-\-filter\-file\fR option takes a list of JSON files in the following
+format.  Missing replace entry is equal to replace : "".
+
+.RS 4
+.nf
+{
+    "msg-filter" : [
+        {
+             "checker" : "DIVINE|SYMBIOTIC",
+             "regexp" : "memory"
+        },
+        {
+             "checker" : "COMPILER_WARNING",
+             "regexp" : "called on unallocated object",
+             "replace" : "called correctly, no UB here"
+        }
+    ]
+}
+.fi
+.RE
+
 [EXIT STATUS]
 csdiff exits with status 0 if arguments are valid and input files are parsed
 successfully.  It does not matter whether any defects were matched or not.
