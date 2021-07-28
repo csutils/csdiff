@@ -42,22 +42,26 @@ inline std::string regexReplaceWrap(
 MsgFilter* MsgFilter::self_;
 
 struct MsgReplace {
-    const RE                    regex;
+    const RE                    reChecker;
+    const RE                    reMsg;
     const std::string           replaceWith;
 
-    MsgReplace(const std::string &regex_, const std::string &rpl) :
-        regex(regex_),
-        replaceWith(rpl)
+    MsgReplace(
+            const std::string  &reChecker,
+            const std::string  &reMsg,
+            const std::string  &replaceWith) :
+        reChecker(reChecker),
+        reMsg(reMsg),
+        replaceWith(replaceWith)
     {
     }
 };
 
-typedef std::vector<MsgReplace *>               TRegexList;
-typedef std::map<const std::string, TRegexList> TMsgFilterMap;
+typedef std::vector<MsgReplace *>               TMsgReplaceList;
 
 struct MsgFilter::Private {
     bool ignorePath = false;
-    TMsgFilterMap msgFilterMap;
+    TMsgReplaceList repList;
     TSubstMap fileSubsts;
 
     const std::string strKrn = "^[a-zA-Z+]+";
@@ -70,12 +74,15 @@ struct MsgFilter::Private {
     const RE reTmpCleaner = RE("(.*)");
 
     void addMsgFilter(
-            const std::string          &checker,
+            std::string                 checker,
             const std::string          &regexp,
             const std::string          &replacement = "")
     {
-        struct MsgReplace *rpl = new MsgReplace(regexp, replacement);
-        msgFilterMap[checker].push_back(rpl);
+        if (checker.empty())
+            // match everything
+            checker = ".*";
+
+        this->repList.push_back(new MsgReplace(checker, regexp, replacement));
     }
 };
 
@@ -115,21 +122,17 @@ MsgFilter::MsgFilter():
             " on line [0-9]+\\.$", " on line NNNN.");
 
     // pylint reports, either raw, or prospector-wrapped
-    const std::vector<std::string> pylintCheckers= {
-        "PROSPECTOR_WARNING",
-        "PYLINT_WARNING"
-    };
-    for (const std::string &checker : pylintCheckers) {
-        // "Too many lines in module (1152/1000)" etc.
-        d->addMsgFilter(checker, " \\([0-9]+/[0-9]+\\)$", "");
+    const std::string pylintCheckers = "PROSPECTOR_WARNING|PYLINT_WARNING";
 
-        // "... Redefining name 'desc' from outer scope (line 10)" etc.
-        d->addMsgFilter(checker, " \\((?:imported )?line [0-9]+\\)$", "");
+    // "Too many lines in module (1152/1000)" etc.
+    d->addMsgFilter(pylintCheckers, " \\([0-9]+/[0-9]+\\)$", "");
 
-        // ".. method already defined line 199"
-        d->addMsgFilter(checker, " method already defined line [0-9]+$",
-                                 " method already defined");
-    }
+    // "... Redefining name 'desc' from outer scope (line 10)" etc.
+    d->addMsgFilter(pylintCheckers, " \\((?:imported )?line [0-9]+\\)$", "");
+
+    // ".. method already defined line 199"
+    d->addMsgFilter(pylintCheckers, " method already defined line [0-9]+$",
+                                    " method already defined");
 
     // "__coverity_strcmp" -> "strcmp", etc.
     d->addMsgFilter("", "__coverity_", "");
@@ -143,9 +146,8 @@ MsgFilter::MsgFilter():
 
 MsgFilter::~MsgFilter()
 {
-    for (TMsgFilterMap::const_reference item : d->msgFilterMap)
-        for (struct MsgReplace *rpl : item.second)
-            delete rpl;
+    for (struct MsgReplace *rpl : d->repList)
+        delete rpl;
 
     delete d;
 }
@@ -167,14 +169,9 @@ std::string MsgFilter::filterMsg(
         const std::string &checker)
 {
     std::string filtered = msg;
-    for (const struct MsgReplace *rpl : d->msgFilterMap[checker]) {
-        filtered = regexReplaceWrap(filtered, rpl->regex, rpl->replaceWith);
-    }
-
-    // these substitutions are common for all checkers
-    for (const struct MsgReplace *rpl : d->msgFilterMap[""]) {
-        filtered = regexReplaceWrap(filtered, rpl->regex, rpl->replaceWith);
-    }
+    for (const struct MsgReplace *rpl : d->repList)
+        if (boost::regex_match(checker, rpl->reChecker))
+            filtered = regexReplaceWrap(filtered, rpl->reMsg, rpl->replaceWith);
 
 #if DEBUG_SUBST > 1
     std::cerr << "filterMsg: " << filtered << "\n";
