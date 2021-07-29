@@ -85,11 +85,34 @@ install(TARGETS
     cstrans-df-run
     DESTINATION bin)
 
+# check for python libs (e.g. python3-devel on Fedora)
+find_package(PythonLibs)
+if ("${PYTHON_LIBRARY}" STREQUAL "PYTHON_LIBRARY-NOTFOUND")
+    set(BUILD_PYCSDIFF_DEFAULT OFF)
+else()
+    set(BUILD_PYCSDIFF_DEFAULT ON)
+endif()
+
 # pycsdiff - python binding of csdiff
-option(BUILD_PYCSDIFF "Set to ON to enable python binding" ON)
+option(BUILD_PYCSDIFF "Set to ON to enable python binding"
+    ${BUILD_PYCSDIFF_DEFAULT})
 if (BUILD_PYCSDIFF)
     set(BOOST_PYTHON_LIB_NAME "boost_python"
         CACHE STRING "Name of the boost_python library")
+
+    # query PYTHON_SITEARCH
+    find_package(PythonInterp REQUIRED)
+    execute_process(COMMAND ${PYTHON_EXECUTABLE}
+        -c "import sysconfig; print(sysconfig.get_paths()['platlib'])"
+        RESULT_VARIABLE PYTHON_SITEARCH_STATUS
+        OUTPUT_VARIABLE PYTHON_SITEARCH
+        OUTPUT_STRIP_TRAILING_WHITESPACE)
+    if("${PYTHON_SITEARCH_STATUS}" EQUAL 0)
+        message(STATUS "PYTHON_SITEARCH: ${PYTHON_SITEARCH}")
+    else()
+        message(FATAL_ERROR "
+failed to query PYTHON_SITEARCH")
+    endif()
 
     # boost_python3 is used on RHEL-8.
     # boost_python310 is used on Fedora 35.
@@ -104,26 +127,17 @@ if (BUILD_PYCSDIFF)
 
     message(STATUS "BOOST_PYTHON: ${BOOST_PYTHON}")
 
-    # query PYTHON_INCLUDE_DIR
-    find_package(PythonInterp REQUIRED)
-    find_package(PythonLibs   REQUIRED)
+    # verify PYTHON_LIBRARY
+    if ("${PYTHON_LIBRARY}" STREQUAL "PYTHON_LIBRARY-NOTFOUND")
+        message(FATAL_ERROR "
+python libraries not found, unable to build pycsdiff")
+    endif()
+
+    # verify PYTHON_INCLUDE_DIR
     message(STATUS "PYTHON_INCLUDE_DIR: ${PYTHON_INCLUDE_DIR}")
     if(NOT EXISTS "${PYTHON_INCLUDE_DIR}/pyconfig.h")
         message(FATAL_ERROR "
 ${PYTHON_INCLUDE_DIR}/pyconfig.h does not exits")
-    endif()
-
-    # query PYTHON_SITEARCH
-    execute_process(COMMAND ${PYTHON_EXECUTABLE}
-        -c "import sysconfig; print(sysconfig.get_paths()['platlib'])"
-        RESULT_VARIABLE PYTHON_SITEARCH_STATUS
-        OUTPUT_VARIABLE PYTHON_SITEARCH
-        OUTPUT_STRIP_TRAILING_WHITESPACE)
-    if("${PYTHON_SITEARCH_STATUS}" EQUAL 0)
-        message(STATUS "PYTHON_SITEARCH: ${PYTHON_SITEARCH}")
-    else()
-        message(FATAL_ERROR "
-failed to query PYTHON_SITEARCH")
     endif()
 
     message(STATUS "python binding enabled, the pycsdiff module will be built!")
