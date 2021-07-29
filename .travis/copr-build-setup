@@ -15,15 +15,12 @@ esac
 
 build_deps=(
     boost-devel
-    boost-python3-devel
     bsdtar
     cmake
     coreutils
     gcc-c++
     git
-    help2man
     make
-    python3-devel
 )
 
 copr_cmd=(
