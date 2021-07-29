@@ -57,7 +57,7 @@ struct MsgReplace {
     }
 };
 
-typedef std::vector<MsgReplace *>               TMsgReplaceList;
+typedef std::vector<MsgReplace>               TMsgReplaceList;
 
 struct MsgFilter::Private {
     bool ignorePath = false;
@@ -78,7 +78,7 @@ struct MsgFilter::Private {
             const std::string          &regexp,
             const std::string          &replacement = "")
     {
-        this->repList.push_back(new MsgReplace(checker, regexp, replacement));
+        repList.emplace_back(checker, regexp, replacement);
     }
 };
 
@@ -142,9 +142,6 @@ MsgFilter::MsgFilter():
 
 MsgFilter::~MsgFilter()
 {
-    for (struct MsgReplace *rpl : d->repList)
-        delete rpl;
-
     delete d;
 }
 
@@ -165,9 +162,9 @@ std::string MsgFilter::filterMsg(
         const std::string &checker)
 {
     std::string filtered = msg;
-    for (const struct MsgReplace *rpl : d->repList)
-        if (boost::regex_search(checker, rpl->reChecker))
-            filtered = regexReplaceWrap(filtered, rpl->reMsg, rpl->replaceWith);
+    for (const MsgReplace &rpl : d->repList)
+        if (boost::regex_search(checker, rpl.reChecker))
+            filtered = regexReplaceWrap(filtered, rpl.reMsg, rpl.replaceWith);
 
 #if DEBUG_SUBST > 1
     std::cerr << "filterMsg: " << filtered << "\n";
