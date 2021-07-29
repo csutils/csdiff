@@ -74,14 +74,10 @@ struct MsgFilter::Private {
     const RE reTmpCleaner = RE("(.*)");
 
     void addMsgFilter(
-            std::string                 checker,
+            const std::string          &checker,
             const std::string          &regexp,
             const std::string          &replacement = "")
     {
-        if (checker.empty())
-            // match everything
-            checker = ".*";
-
         this->repList.push_back(new MsgReplace(checker, regexp, replacement));
     }
 };
@@ -170,7 +166,7 @@ std::string MsgFilter::filterMsg(
 {
     std::string filtered = msg;
     for (const struct MsgReplace *rpl : d->repList)
-        if (boost::regex_match(checker, rpl->reChecker))
+        if (boost::regex_search(checker, rpl->reChecker))
             filtered = regexReplaceWrap(filtered, rpl->reMsg, rpl->replaceWith);
 
 #if DEBUG_SUBST > 1
