@@ -91,16 +91,16 @@ if (BUILD_PYCSDIFF)
     set(BOOST_PYTHON_LIB_NAME "boost_python"
         CACHE STRING "Name of the boost_python library")
 
-    # boost_python3 is used on Fedora 29.
-    # boost_python38 is used on Fedora 31.
-    # boost_python-3.x is used on Gentoo Linux.
+    # boost_python3 is used on RHEL-8.
+    # boost_python310 is used on Fedora 35.
     find_library(BOOST_PYTHON NAMES ${BOOST_PYTHON_LIB_NAME}
-        boost_python3
-        boost_python39 boost_python-3.9
-        boost_python38 boost_python-3.8
-        boost_python37 boost_python-3.7
-        boost_python36 boost_python-3.6
-        boost_python35 boost_python-3.5)
+        boost_python311
+        boost_python310
+        boost_python39
+        boost_python38
+        boost_python37
+        boost_python36
+        boost_python3)
 
     message(STATUS "BOOST_PYTHON: ${BOOST_PYTHON}")
 
