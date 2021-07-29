@@ -115,8 +115,7 @@ ${PYTHON_INCLUDE_DIR}/pyconfig.h does not exits")
 
     # query PYTHON_SITEARCH
     execute_process(COMMAND ${PYTHON_EXECUTABLE}
-        -c "from distutils.sysconfig import get_python_lib
-print(get_python_lib(1))"
+        -c "import sysconfig; print(sysconfig.get_paths()['platlib'])"
         RESULT_VARIABLE PYTHON_SITEARCH_STATUS
         OUTPUT_VARIABLE PYTHON_SITEARCH
         OUTPUT_STRIP_TRAILING_WHITESPACE)
