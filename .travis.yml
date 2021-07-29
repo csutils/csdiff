@@ -15,8 +15,13 @@ matrix:
         - name: "Ubuntu LTS 2020 (focal)"
           dist: focal
 
+        - name: "Fedora Copr build"
+          dist: focal
+          env:
+              - COPR_BUILD=yes
+
 install:
     - sudo apt-get install cmake help2man libboost-dev libboost-filesystem-dev libboost-program-options-dev libboost-python-dev libboost-regex-dev
 
 script:
-    - make distcheck
+    - if test -z "$COPR_BUILD"; then make distcheck; else ./.travis/copr-build ; fi

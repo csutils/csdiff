@@ -1,0 +1,15 @@
+Scripts in this directory
+-------------------------
+
+copr-build
+    This script is executed from .travis.yml task.
+
+copr-build-setup
+    Use this to configure the remote copr project, it uploads the
+    'copr-custom-script' to Copr project.  Execute like:
+        $ ./copr-custom-script PR
+        $ ./copr-custom-script PUSH
+    .. depending on which webhook you want to setup.
+
+copr-custom-script
+    This script is used in Copr to build the package from remote git repository.
