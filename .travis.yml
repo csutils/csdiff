@@ -19,6 +19,7 @@ matrix:
           dist: focal
           env:
               - COPR_BUILD=yes
+          if: branch = master
 
 install:
     - sudo apt-get install cmake help2man libboost-dev libboost-filesystem-dev libboost-program-options-dev libboost-python-dev libboost-regex-dev
