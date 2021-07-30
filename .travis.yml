@@ -1,6 +1,8 @@
 language: cpp
 compiler: gcc
 
+if: branch = master
+
 matrix:
     include:
         - name: "Ubuntu LTS 2014 (trusty)"
@@ -19,7 +21,6 @@ matrix:
           dist: focal
           env:
               - COPR_BUILD=yes
-          if: branch = master
 
 install:
     - sudo apt-get install cmake help2man libboost-dev libboost-filesystem-dev libboost-program-options-dev libboost-python-dev libboost-regex-dev
