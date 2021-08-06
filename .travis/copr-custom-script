@@ -3,7 +3,7 @@
 set -e
 set -o pipefail
 
-clone_url_parent=https://github.com/kdudka/csdiff.git
+clone_url_parent=https://github.com/csutils/csdiff.git
 
 workdir=$(basename "$clone_url_parent")
 workdir=${workdir%%.git}
