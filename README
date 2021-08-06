@@ -1,11 +1,11 @@
-codescan-diff utilities
-=======================
+csdiff, csgrep, and friends
+===========================
 This repository contains source codes of the csdiff tool for comparing code
 scan defect lists in order to find out added or fixed defects, and the csgrep
 utility for filtering defect lists using various filtering predicates.  You
 can find the up2date sources in the following repository:
 
-    https://github.com/kdudka/csdiff
+    https://github.com/csutils/csdiff
 
 The codescan-diff utilities are licensed under GPLv3+, see COPYING for details.
 Please report bugs and feature requests on GitHub using the above URL.
@@ -13,9 +13,9 @@ Please report bugs and feature requests on GitHub using the above URL.
 
 Dependences
 -----------
-    * Boost 1.41+
+    * Boost C++ Libraries
 
-    * CMake 2.8+
+    * CMake 2.8.12+
 
 
 Manual Installation
@@ -48,6 +48,8 @@ List of Utilities
     cslinker - extend the list of defects by CWE numbers, scan properties, etc.
 
     cssort - sort the given defect list by the selected key
+
+    cstrans-df-run - transform RUN line in a Dockerfile
 
 
 Documentation

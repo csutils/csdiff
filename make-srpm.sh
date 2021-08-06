@@ -47,7 +47,7 @@ VER="`echo "$VER" | sed "s/-.*-/.$TIMESTAMP./"`"
 
 BRANCH="`git rev-parse --abbrev-ref HEAD`"
 test -n "$BRANCH" || die "failed to get current branch name"
-test master = "${BRANCH}" || VER="${VER}.${BRANCH//-/_}"
+test "main" = "${BRANCH}" || VER="${VER}.${BRANCH//-/_}"
 test -z "`git diff HEAD`" || VER="${VER}.dirty"
 
 NV="${PKG}-${VER}"
@@ -87,8 +87,8 @@ Release:    1%{?dist}
 Summary:    Non-interactive tools for processing code scan results in plain-text
 
 License:    GPLv3+
-URL:        https://github.com/kdudka/csdiff
-Source0:    https://github.com/kdudka/csdiff/releases/download/%{name}-%{version}/%{name}-%{version}.tar.xz
+URL:        https://github.com/csutils/csdiff
+Source0:    https://github.com/csutils/csdiff/releases/download/%{name}-%{version}/%{name}-%{version}.tar.xz
 
 # the following upstream commit is needed to work with up2date csdiff/csgrep
 # https://github.com/kdudka/csmock/commit/48b09b3a
