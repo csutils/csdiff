@@ -27,7 +27,7 @@ git clone \
 # checkout requested revision
 cd "$workdir"
 
-copr-travis-checkout "$hook_payload"
+test -f "$hook_payload" && copr-travis-checkout "$hook_payload"
 
 ./make-srpm.sh |& tee srpm-build.log
 srpm=$(grep Wrote: srpm-build.log | cut -d' ' -f2)
