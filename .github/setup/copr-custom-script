@@ -27,7 +27,7 @@ git clone \
 # checkout requested revision
 cd "$workdir"
 
-test -f "$hook_payload" && webook-checkout "$hook_payload"
+test -f "$hook_payload" && webhook-checkout "$hook_payload"
 
 ./make-srpm.sh |& tee srpm-build.log
 srpm=$(grep Wrote: srpm-build.log | cut -d' ' -f2)
