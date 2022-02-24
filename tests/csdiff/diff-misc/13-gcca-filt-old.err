@@ -1,0 +1,10 @@
+Error: GCC_ANALYZER_WARNING (CWE-457):
+sssd-test_build_base_srpm_225/src/lib/sifp/sss_sifp_parser.c: scope_hint: In function 'sss_sifp_parse_dict'
+sssd-test_build_base_srpm_225/src/lib/sifp/sss_sifp_parser.c:233:18: warning[-Wanalyzer-use-of-uninitialized-value]: use of uninitialized value 'table_key.<Uf260>.str'
+sssd-test_build_base_srpm_225/src/lib/sifp/sss_sifp_parser.c:461:5: note: in expansion of macro 'check_dbus_arg'
+sssd-test_build_base_srpm_225/src/lib/sifp/sss_sifp_parser.c:147:5: note: in expansion of macro 'check_dbus_arg'
+#  231|   
+#  232|   done:
+#  233|->     if (table_key.str != NULL) {
+#  234|           _free(ctx, table_key.str);
+#  235|       }

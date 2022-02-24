@@ -110,6 +110,12 @@ MsgFilter::MsgFilter():
     // unify (per build random) names of temporary variables
     d->addMsgFilter("COMPILER_WARNING", "_tmp[0-9]+_", "_tmp_");
 
+    // abstract out <Uf260> vs. <U4260> in:
+    // "use of uninitialized value 'table_key.<Uf260>.str'"
+    d->addMsgFilter("GCC_ANALYZER",
+            "^(use of uninitialized value '[^'<]+\\.<)[^>]+(>.[^']+)'",
+            "\\1XXX\\2");
+
     // auxiliary info provided by valgrind directly in the key event message
     d->addMsgFilter("VALGRIND_WARNING",
             " lost in loss record [0-9,]+ of [0-9,]+$", "");
