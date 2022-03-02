@@ -64,7 +64,7 @@ struct JsonParser::Private {
     bool                            jsonValid;
     AbstractTreeDecoder            *decoder;
     pt::ptree                       root;
-    pt::ptree                      *defList;
+    const pt::ptree                *defList;
     pt::ptree::const_iterator       defIter;
     int                             defNumber;
     TScanProps                      scanProps;
@@ -111,14 +111,19 @@ JsonParser::JsonParser(InStream &input):
         for (const pt::ptree::value_type &item : scanNode)
             d->scanProps[item.first] = item.second.data();
 
-        if (findChildOf(&d->defList, d->root, "defects"))
+        // recognize inner format of the JSON document
+        pt::ptree *node = nullptr;
+        if (findChildOf(&node, d->root, "defects"))
             // csdiff-native JSON format
             d->decoder = new SimpleTreeDecoder(d->input);
-        else if (findChildOf(&d->defList, d->root, "issues"))
+        else if (findChildOf(&node, d->root, "issues"))
             // Coverity JSON format
             d->decoder = new CovTreeDecoder;
         else
             throw pt::ptree_error("unknown JSON format");
+
+        // process the root node
+        d->decoder->readRoot(&d->defList, node);
 
         // initialize the traversal through the list of defects/issues
         d->defIter = d->defList->begin();
