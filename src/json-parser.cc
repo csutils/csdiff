@@ -66,19 +66,15 @@ class CovTreeDecoder: public AbstractTreeDecoder {
 
 struct JsonParser::Private {
     InStream                       &input;
-    bool                            jsonValid;
-    AbstractTreeDecoder            *decoder;
+    AbstractTreeDecoder            *decoder = nullptr;
     pt::ptree                       root;
-    const pt::ptree                *defList;
+    const pt::ptree                *defList = nullptr;
     pt::ptree::const_iterator       defIter;
-    int                             defNumber;
+    int                             defNumber = 0;
     TScanProps                      scanProps;
 
     Private(InStream &input):
-        input(input),
-        jsonValid(false),
-        decoder(0),
-        defNumber(0)
+        input(input)
     {
     }
 
@@ -127,8 +123,8 @@ JsonParser::JsonParser(InStream &input):
         d->decoder->readRoot(&d->defList, node);
 
         // initialize the traversal through the list of defects/issues
-        d->defIter = d->defList->begin();
-        d->jsonValid = true;
+        if (d->defList)
+            d->defIter = d->defList->begin();
     }
     catch (pt::file_parser_error &e) {
         d->input.handleError(e.message(), e.line());
@@ -172,7 +168,7 @@ bool JsonParser::Private::readNext(Defect *def)
 
 bool JsonParser::getNext(Defect *def)
 {
-    if (!d->jsonValid)
+    if (!d->defList)
         return false;
 
     // error recovery loop
