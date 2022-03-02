@@ -411,10 +411,62 @@ void SnykTreeDecoder::readRoot(
         pDefList = nullptr;
 }
 
+void snykReadLocation(DefEvent *pEvt, const pt::ptree &defNode)
+{
+    const pt::ptree *locs;
+    if (!findChildOf(&locs, defNode, "locations") || locs->empty())
+        // no location info available
+        return;
+
+    const pt::ptree *pl;
+    if (!findChildOf(&pl, locs->begin()->second, "physicalLocation"))
+        // unknown location info format
+        return;
+
+    const pt::ptree *al;
+    if (findChildOf(&al, *pl, "artifactLocation")) {
+        const auto uri = valueOf<std::string>(*al, "uri", "");
+        if (!uri.empty())
+            // read file name
+            pEvt->fileName = uri;
+    }
+
+    const pt::ptree *reg;
+    if (findChildOf(&reg, *pl, "region")) {
+        // read line/col if available
+        pEvt->line = valueOf<int>(*reg, "startLine", 0);
+        pEvt->column = valueOf<int>(*reg, "startColumn", 0);
+    }
+}
+
 bool SnykTreeDecoder::readNode(
         Defect                      *def,
         pt::ptree::const_iterator    defIter)
 {
-    // TODO
-    return false;
+    // initialize the defect structure
+    *def = Defect("SNYK_CODE_WARNING");
+
+    // the current node representing a single snyk's report
+    const pt::ptree &defNode = defIter->second;
+
+    // initialize the key event
+    const auto level = valueOf<std::string>(defNode, "level", "warning");
+    def->events.push_back(DefEvent(level));
+    DefEvent &keyEvent = def->events.back();
+
+    // read "rule" that triggered the report
+    const auto rule = valueOf<std::string>(defNode, "ruleId", "");
+    if (!rule.empty())
+        keyEvent.event += "[" + rule + "]";
+
+    // read location
+    keyEvent.fileName = "<unknown>";
+    snykReadLocation(&keyEvent, defNode);
+
+    // read diagnostic message
+    const pt::ptree *msgNode;
+    if (findChildOf(&msgNode, defNode, "message"))
+        keyEvent.msg = valueOf<std::string>(*msgNode, "text", "<unknown>");
+
+    return true;
 }
