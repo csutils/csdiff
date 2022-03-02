@@ -64,6 +64,20 @@ class CovTreeDecoder: public AbstractTreeDecoder {
         KeyEventDigger              keDigger;
 };
 
+/// tree decoder of the JSON format produced by Snyk Code
+class SnykTreeDecoder: public AbstractTreeDecoder {
+    public:
+        virtual void readScanProps(
+                TScanProps             *pDst,
+                const pt::ptree        *root);
+
+        virtual void readRoot(
+                const pt::ptree       **pDefList,
+                const pt::ptree        *root);
+
+        virtual bool readNode(Defect *def, pt::ptree::const_iterator defIter);
+};
+
 struct JsonParser::Private {
     InStream                       &input;
     AbstractTreeDecoder            *decoder = nullptr;
@@ -113,6 +127,9 @@ JsonParser::JsonParser(InStream &input):
         else if (findChildOf(&node, d->root, "issues"))
             // Coverity JSON format
             d->decoder = new CovTreeDecoder;
+        else if (findChildOf(&node, d->root, "runs"))
+            // JSON format produced by Snyk Code
+            d->decoder = new SnykTreeDecoder;
         else
             throw pt::ptree_error("unknown JSON format");
 
@@ -157,8 +174,7 @@ bool JsonParser::Private::readNext(Defect *def)
 
         // read the current node and move to the next one
         this->defNumber++;
-        this->decoder->readNode(def, this->defIter++);
-        return true;
+        return this->decoder->readNode(def, this->defIter++);
     }
     catch (pt::ptree_error &e) {
         this->dataError(e.what());
@@ -352,4 +368,53 @@ bool CovTreeDecoder::readNode(
     this->keDigger.initVerbosity(def);
 
     return true;
+}
+
+void SnykTreeDecoder::readScanProps(
+        TScanProps                 *pDst,
+        const pt::ptree            *root)
+{
+    // check that we have exactly one run
+    const pt::ptree *runs;
+    if (!findChildOf(&runs, *root, "runs") || (1U != runs->size()))
+        return;
+
+    // check which tool was used for the run
+    const pt::ptree *toolNode;
+    if (!findChildOf(&toolNode, runs->begin()->second, "tool"))
+        return;
+    const pt::ptree *driverNode;
+    if (!findChildOf(&driverNode, *toolNode, "driver"))
+        return;
+
+    const auto name = valueOf<std::string>(*driverNode, "name", "");
+    if (name != "SnykCode")
+        // not a supported tool
+        return;
+
+    const auto version = valueOf<std::string>(*driverNode, "version", "");
+    if (version.empty())
+        // no version provided
+        return;
+
+    // record tool version of Snyk Code
+    (*pDst)["analyzer-version-snyk-code"] = version;
+}
+
+void SnykTreeDecoder::readRoot(
+        const pt::ptree           **pDefList,
+        const pt::ptree            *runs)
+{
+    // check that we have exactly one run and return its results
+    if ((1U != runs->size())
+            || !findChildOf(pDefList, runs->begin()->second, "results"))
+        pDefList = nullptr;
+}
+
+bool SnykTreeDecoder::readNode(
+        Defect                      *def,
+        pt::ptree::const_iterator    defIter)
+{
+    // TODO
+    return false;
 }
