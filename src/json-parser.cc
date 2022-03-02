@@ -30,6 +30,11 @@
 class SimpleTreeDecoder: public AbstractTreeDecoder {
     public:
         SimpleTreeDecoder(InStream &input);
+
+        virtual void readScanProps(
+                TScanProps             *pDst,
+                const pt::ptree        *root);
+
         virtual bool readNode(Defect *def, pt::ptree::const_iterator defIter);
 
     private:
@@ -104,13 +109,6 @@ JsonParser::JsonParser(InStream &input):
         // parse JSON
         read_json(input.str(), d->root);
 
-        // read scan properties if available (csdiff-native JSON format only)
-        pt::ptree emp;
-        pt::ptree scanNode =
-            d->root.get_child_optional("scan").get_value_or(emp);
-        for (const pt::ptree::value_type &item : scanNode)
-            d->scanProps[item.first] = item.second.data();
-
         // recognize inner format of the JSON document
         pt::ptree *node = nullptr;
         if (findChildOf(&node, d->root, "defects"))
@@ -121,6 +119,9 @@ JsonParser::JsonParser(InStream &input):
             d->decoder = new CovTreeDecoder;
         else
             throw pt::ptree_error("unknown JSON format");
+
+        // read scan properties if available
+        d->decoder->readScanProps(&d->scanProps, &d->root);
 
         // process the root node
         d->decoder->readRoot(&d->defList, node);
@@ -233,6 +234,18 @@ void SimpleTreeDecoder::reportUnknownNodes(ENodeKind nk, const pt::ptree &node)
                 << ": warning: unknown JSON node: " << name
                 << std::endl;
     }
+}
+
+void SimpleTreeDecoder::readScanProps(
+        TScanProps                 *pDst,
+        const pt::ptree            *root)
+{
+    const pt::ptree emp;
+    const pt::ptree &scanNode =
+        root->get_child_optional("scan").get_value_or(emp);
+
+    for (const pt::ptree::value_type &item : scanNode)
+        (*pDst)[item.first] = item.second.data();
 }
 
 bool SimpleTreeDecoder::readNode(

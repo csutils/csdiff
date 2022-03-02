@@ -20,6 +20,8 @@
 #ifndef H_GUARD_ABSTRACT_TREE_H
 #define H_GUARD_ABSTRACT_TREE_H
 
+#include "abstract-parser.hh"       // for TScanProps
+
 #include <boost/property_tree/ptree.hpp>
 
 namespace pt = boost::property_tree;
@@ -31,6 +33,16 @@ class AbstractTreeDecoder {
     public:
         virtual ~AbstractTreeDecoder() { }
 
+        /// read scan properties if available
+        virtual void readScanProps(
+                TScanProps             *pDst,
+                const pt::ptree        *root)
+        {
+            (void) pDst;
+            (void) root;
+        }
+
+        /// locate the list of defects within the inner document format
         virtual void readRoot(
                 const pt::ptree       **pDefList,
                 const pt::ptree        *root)
