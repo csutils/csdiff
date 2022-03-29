@@ -1,0 +1,11 @@
+Error: SYMBIOTIC_WARNING:
+<Unknown>:<Unknown>: error: memory error: out of bound pointer
+/builddir/build/BUILD/gnupg-2.3.2/common/membuf.c:114: note: call stack: function put_membuf (=0, =0, =3)
+/builddir/build/BUILD/gnupg-2.3.2/common/membuf.c:136: note: call stack: function put_membuf_str (=0, =0)
+/builddir/build/BUILD/gnupg-2.3.2/common/mapstrings.c:156: note: call stack: function map_static_macro_string (=0)
+/builddir/build/BUILD/gnupg-2.3.2/common/t-mapstrings.c:68: note: call stack: function test_map_static_macro_string ()
+/builddir/build/BUILD/gnupg-2.3.2/common/t-mapstrings.c:97: note: call stack: function main (=2, =0)
+<Unknown>:<Unknown>: note: Additional Info: address: 255:0
+<Unknown>:<Unknown>: note: Additional Info: pointing to: none
+/builddir/build/BUILD/gnupg-2.3.2/common/membuf.c:52:13: note: Non-deterministic values: gcry_malloc: len 8 bytes, [0xff|7 times 0x0] (i64: 255)
+/builddir/build/BUILD/gnupg-2.3.2/common/membuf.c:52:13 (offset): note: Non-deterministic values: gcry_malloc: len 8 bytes, [8 times 0x0] (i64: 0)

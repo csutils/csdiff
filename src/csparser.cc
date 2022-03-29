@@ -155,7 +155,7 @@ class ErrFileLexer {
             RE("^Error: *(" RE_CHECKER_NAME ")( *\\([^)]+\\))? *:(?: \\[#def[0-9]+\\])?$");
 
         const RE reEvent_ =
-            RE(/* location */ "^([^:]+)(?::([0-9]+|<unknown>))?(?::([0-9]+))?"
+            RE(/* location */ "^([^:]+)(?::([0-9]+|<[Uu]nknown>))?(?::([0-9]+))?"
                /* evt/mesg */ ": (" RE_EVENT "): (.*)$");
 };
 
