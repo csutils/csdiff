@@ -415,7 +415,11 @@ class WriterFactory {
         }
 
         static AbstractWriter* createJson() {
-            return new JsonWriter(std::cout);
+            return new JsonWriter(std::cout, FF_JSON);
+        }
+
+        static AbstractWriter* createSarif() {
+            return new JsonWriter(std::cout, FF_SARIF);
         }
 
         static AbstractWriter* createKeyEventPrinter() {
@@ -435,6 +439,7 @@ class WriterFactory {
             tbl_["grep"]            = createGrep;
             tbl_["grouped"]         = createGrouped;
             tbl_["json"]            = createJson;
+            tbl_["sarif"]           = createSarif;
             tbl_["stat"]            = createStat;
         }
 
@@ -593,7 +598,7 @@ int main(int argc, char *argv[])
             ("quiet,q",                                         "do not report any parsing errors")
 
             ("mode",                po::value<string>(&mode)
-                                    ->default_value("grep"),    "grep, json, evtstat, files, filestat, grouped, stat, or dig_key_events")
+                                    ->default_value("grep"),    "grep, json, evtstat, files, filestat, grouped, sarif, stat, or dig_key_events")
 
             ("help",                                            "print the usage of csgrep")
             ("version",                                         "print the version of csgrep");

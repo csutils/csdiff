@@ -41,9 +41,16 @@ struct JsonWriter::Private {
     }
 };
 
-JsonWriter::JsonWriter(std::ostream &str):
+JsonWriter::JsonWriter(std::ostream &str, const EFileFormat format):
     d(new Private(str))
 {
+    switch (format) {
+        case FF_JSON:
+            break;
+
+        default:
+            throw std::runtime_error("unknown output format");
+    }
 }
 
 JsonWriter::~JsonWriter()

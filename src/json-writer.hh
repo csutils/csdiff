@@ -26,7 +26,7 @@
 
 class JsonWriter: public AbstractWriter {
     public:
-        JsonWriter(std::ostream &);
+        JsonWriter(std::ostream &, EFileFormat format = FF_JSON);
         virtual ~JsonWriter();
 
         virtual const TScanProps& getScanProps() const;

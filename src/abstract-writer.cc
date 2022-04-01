@@ -104,6 +104,10 @@ AbstractWriter* createWriter(
             writer = new HtmlWriter(strDst, emp, emp, spPlacement);
             break;
         }
+
+        case FF_SARIF:
+            writer = new JsonWriter(strDst, FF_SARIF);
+            break;
     }
 
     if (!scanProps.empty())
