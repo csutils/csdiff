@@ -22,6 +22,7 @@
 #include "abstract-tree.hh"
 #include "regex.hh"
 #include "shared-string-ptree.hh"
+#include "version.hh"
 
 #include <queue>
 
@@ -117,6 +118,73 @@ void SimpleTreeEncoder::writeTo(std::ostream &str)
     write_json(str, root_);
 }
 
+// SARIF 2.1.0 is documented at:
+// https://docs.github.com/en/code-security/code-scanning/integrating-with-code-scanning/sarif-support-for-code-scanning
+// specification: https://docs.oasis-open.org/sarif/sarif/v2.1.0/os/sarif-v2.1.0-os.html
+// validation: https://sarifweb.azurewebsites.net/Validation
+class SarifTreeEncoder: public AbstractTreeEncoder {
+    public:
+        SarifTreeEncoder();
+
+        /// import supported scan properties
+        void importScanProps(const TScanProps &) override;
+
+        /// append single defect
+        void appendDef(const Defect &) override;
+
+        /// write everything to the given output stream
+        void writeTo(std::ostream &) override;
+
+    private:
+        PTree                       run0_;
+        PTree                       results_;
+};
+
+SarifTreeEncoder::SarifTreeEncoder()
+{
+    // mandatory: tool/driver
+    PTree driver;
+    driver.put<std::string>("name", "csdiff");
+    driver.put<std::string>("version", CS_VERSION);
+    driver.put<std::string>("informationUri",
+            "https://github.com/csutils/csdiff");
+    PTree tool;
+    tool.put_child("driver", driver);
+    run0_.put_child("tool", tool);
+}
+
+void SarifTreeEncoder::importScanProps(const TScanProps &scanProps)
+{
+    // TODO
+}
+
+void SarifTreeEncoder::appendDef(const Defect &def)
+{
+    // TODO
+}
+
+void SarifTreeEncoder::writeTo(std::ostream &str)
+{
+    PTree root;
+
+    // mandatory: schema/version
+    root.put<std::string>("$schema",
+            "https://json.schemastore.org/sarif-2.1.0.json");
+    root.put<std::string>("version", "2.1.0");
+
+    if (!results_.empty())
+        // results
+        run0_.put_child("results", results_);
+
+    // mandatory: runs
+    PTree runs;
+    runs.put_child("", run0_);
+    root.put_child("runs", runs);
+
+    // encode as JSON
+    write_json(str, root);
+}
+
 struct JsonWriter::Private {
     std::ostream                   &str;
     std::queue<Defect>              defQueue;
@@ -135,6 +203,10 @@ JsonWriter::JsonWriter(std::ostream &str, const EFileFormat format):
     switch (format) {
         case FF_JSON:
             d->encoder = new SimpleTreeEncoder;
+            break;
+
+        case FF_SARIF:
+            d->encoder = new SarifTreeEncoder;
             break;
 
         default:
