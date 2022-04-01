@@ -19,6 +19,7 @@
 
 #include "json-writer.hh"
 
+#include "abstract-tree.hh"
 #include "regex.hh"
 #include "shared-string-ptree.hh"
 
@@ -30,45 +31,35 @@
 
 typedef SharedStringPTree PTree;
 
-struct JsonWriter::Private {
-    std::ostream                   &str;
-    std::queue<Defect>              defQueue;
-    TScanProps                      scanProps;
+class SimpleTreeEncoder: public AbstractTreeEncoder {
+    public:
+        /// import supported scan properties
+        void importScanProps(const TScanProps &) override;
 
-    Private(std::ostream &str_):
-        str(str_)
-    {
-    }
+        /// append single defect
+        void appendDef(const Defect &) override;
+
+        /// write everything to the given output stream
+        void writeTo(std::ostream &) override;
+
+    private:
+        PTree                       root_;
+        PTree                      *pDefects_ = nullptr;
 };
 
-JsonWriter::JsonWriter(std::ostream &str, const EFileFormat format):
-    d(new Private(str))
+void SimpleTreeEncoder::importScanProps(const TScanProps &scanProps)
 {
-    switch (format) {
-        case FF_JSON:
-            break;
+    if (scanProps.empty())
+        return;
 
-        default:
-            throw std::runtime_error("unknown output format");
-    }
+    PTree scan;
+    for (TScanProps::const_reference prop : scanProps)
+        scan.put<std::string>(prop.first, prop.second);
+
+    root_.put_child("scan", scan);
 }
 
-JsonWriter::~JsonWriter()
-{
-    delete d;
-}
-
-const TScanProps& JsonWriter::getScanProps() const
-{
-    return d->scanProps;
-}
-
-void JsonWriter::setScanProps(const TScanProps &scanProps)
-{
-    d->scanProps = scanProps;
-}
-
-void appendDefectNode(PTree &dst, const Defect &def)
+void SimpleTreeEncoder::appendDef(const Defect &def)
 {
     using std::string;
 
@@ -113,8 +104,58 @@ void appendDefectNode(PTree &dst, const Defect &def)
     defNode.put<int>("key_event_idx", def.keyEventIdx);
     defNode.put_child("events", evtList);
 
+    // create the node representing the list of defects
+    if (!pDefects_)
+        pDefects_ = &root_.put_child("defects", PTree());
+
     // append the node to the list
-    dst.push_back(std::make_pair("", defNode));
+    pDefects_->push_back(std::make_pair("", defNode));
+}
+
+void SimpleTreeEncoder::writeTo(std::ostream &str)
+{
+    write_json(str, root_);
+}
+
+struct JsonWriter::Private {
+    std::ostream                   &str;
+    std::queue<Defect>              defQueue;
+    TScanProps                      scanProps;
+    AbstractTreeEncoder            *encoder;
+
+    Private(std::ostream &str_):
+        str(str_)
+    {
+    }
+};
+
+JsonWriter::JsonWriter(std::ostream &str, const EFileFormat format):
+    d(new Private(str))
+{
+    switch (format) {
+        case FF_JSON:
+            d->encoder = new SimpleTreeEncoder;
+            break;
+
+        default:
+            throw std::runtime_error("unknown output format");
+    }
+}
+
+JsonWriter::~JsonWriter()
+{
+    delete d->encoder;
+    delete d;
+}
+
+const TScanProps& JsonWriter::getScanProps() const
+{
+    return d->scanProps;
+}
+
+void JsonWriter::setScanProps(const TScanProps &scanProps)
+{
+    d->scanProps = scanProps;
 }
 
 void JsonWriter::handleDef(const Defect &def)
@@ -143,24 +184,13 @@ void JsonWriter::flush()
 
     str.push(d->str);
 
-    // encode scan properties if we have some
-    PTree root;
-    if (!d->scanProps.empty()) {
-        PTree scan;
-        for (TScanProps::const_reference prop : d->scanProps)
-            scan.put<std::string>(prop.first, prop.second);
-
-        root.put_child("scan", scan);
-    }
-
-    // node representing the list of defects
-    root.put_child("defects", PTree());
-    PTree &defects = root.get_child("defects");
+    // transfer scan properties if available
+    d->encoder->importScanProps(d->scanProps);
 
     // go through the queue and move defects one by one to the property tree
     for (; !d->defQueue.empty(); d->defQueue.pop())
-        appendDefectNode(defects, d->defQueue.front());
+        d->encoder->appendDef(d->defQueue.front());
 
     // finally encode the tree as JSON
-    write_json(str, root);
+    d->encoder->writeTo(str);
 }

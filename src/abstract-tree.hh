@@ -55,6 +55,21 @@ class AbstractTreeDecoder {
             = 0;
 };
 
+/// abstraction for higher-level encoders for various tree-based file formats
+class AbstractTreeEncoder {
+    public:
+        virtual ~AbstractTreeEncoder() { }
+
+        /// import supported scan properties
+        virtual void importScanProps(const TScanProps &) { }
+
+        /// append single defect
+        virtual void appendDef(const Defect &) = 0;
+
+        /// write everything to the given output stream
+        virtual void writeTo(std::ostream &) = 0;
+};
+
 template <typename TNode>
 bool findChildOf(TNode **pDst, TNode &node, const char *key)
 {
