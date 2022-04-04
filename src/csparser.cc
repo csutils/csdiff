@@ -31,10 +31,6 @@
 
 #include <boost/algorithm/string.hpp>
 
-#define RE_CHECKER_NAME_SA "(?:[A-Za-z][0-9A-Za-z_.]+)"
-#define RE_CHECKER_NAME_MISRA "(?:MISRA C(?:\\+\\+)?-[0-9]+ (?:Directive|Rule) [0-9.-]+)"
-#define RE_CHECKER_NAME RE_CHECKER_NAME_SA "|" RE_CHECKER_NAME_MISRA
-
 namespace CovParserImpl {
 
 class LineReader {
