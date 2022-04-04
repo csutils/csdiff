@@ -64,8 +64,8 @@ class CovTreeDecoder: public AbstractTreeDecoder {
         KeyEventDigger              keDigger;
 };
 
-/// tree decoder of the JSON format produced by Snyk Code
-class SnykTreeDecoder: public AbstractTreeDecoder {
+/// tree decoder of the SARIF format
+class SarifTreeDecoder: public AbstractTreeDecoder {
     public:
         virtual void readScanProps(
                 TScanProps             *pDst,
@@ -128,8 +128,8 @@ JsonParser::JsonParser(InStream &input):
             // Coverity JSON format
             d->decoder = new CovTreeDecoder;
         else if (findChildOf(&node, d->root, "runs"))
-            // JSON format produced by Snyk Code
-            d->decoder = new SnykTreeDecoder;
+            // SARIF format
+            d->decoder = new SarifTreeDecoder;
         else
             throw pt::ptree_error("unknown JSON format");
 
@@ -370,7 +370,7 @@ bool CovTreeDecoder::readNode(
     return true;
 }
 
-void SnykTreeDecoder::readScanProps(
+void SarifTreeDecoder::readScanProps(
         TScanProps                 *pDst,
         const pt::ptree            *root)
 {
@@ -401,7 +401,7 @@ void SnykTreeDecoder::readScanProps(
     (*pDst)["analyzer-version-snyk-code"] = version;
 }
 
-void SnykTreeDecoder::readRoot(
+void SarifTreeDecoder::readRoot(
         const pt::ptree           **pDefList,
         const pt::ptree            *runs)
 {
@@ -411,7 +411,7 @@ void SnykTreeDecoder::readRoot(
         pDefList = nullptr;
 }
 
-void snykReadLocation(DefEvent *pEvt, const pt::ptree &defNode)
+void sarifReadLocation(DefEvent *pEvt, const pt::ptree &defNode)
 {
     const pt::ptree *locs;
     if (!findChildOf(&locs, defNode, "locations") || locs->empty())
@@ -439,14 +439,14 @@ void snykReadLocation(DefEvent *pEvt, const pt::ptree &defNode)
     }
 }
 
-bool SnykTreeDecoder::readNode(
+bool SarifTreeDecoder::readNode(
         Defect                      *def,
         pt::ptree::const_iterator    defIter)
 {
     // initialize the defect structure
     *def = Defect("SNYK_CODE_WARNING");
 
-    // the current node representing a single snyk's report
+    // the current node representing a single SARIF report
     const pt::ptree &defNode = defIter->second;
 
     // initialize the key event
@@ -461,7 +461,7 @@ bool SnykTreeDecoder::readNode(
 
     // read location
     keyEvent.fileName = "<unknown>";
-    snykReadLocation(&keyEvent, defNode);
+    sarifReadLocation(&keyEvent, defNode);
 
     // read diagnostic message
     const pt::ptree *msgNode;
