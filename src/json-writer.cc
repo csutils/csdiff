@@ -168,8 +168,8 @@ void JsonWriter::flush()
     boost::iostreams::filtering_ostream str;
 
     // create a regex-based filter to restore integral values wrapped as strings
-    const RE reInt(": \"([0-9]+)\",$");
-    boost::iostreams::basic_regex_filter<char> reFilter(reInt, ": \\1,");
+    const RE reInt(": \"([0-9]+)\"(,?)$");
+    boost::iostreams::basic_regex_filter<char> reFilter(reInt, ": \\1\\2");
     str.push(reFilter);
 
     // create a regex-based filter to replace \/ (produced by newer boost) by /

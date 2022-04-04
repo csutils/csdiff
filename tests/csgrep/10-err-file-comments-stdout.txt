@@ -10,35 +10,35 @@
                     "line": 0,
                     "event": "#",
                     "message": " These pieces:  After reaching DateTimeParseError the program \"exists\" and",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": " never returns to time_in function",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": " Defect #1",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/date.c",
                     "line": 1044,
                     "event": "var_decl",
                     "message": "Declaring variable \"fsec\" without initializer.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/date.c",
                     "line": 1062,
                     "event": "uninit_use_in_call",
                     "message": "Using uninitialized value \"fsec\" when calling \"tm2time(struct pg_tm *, fsec_t, TimeADT *)\".",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/date.c",
@@ -46,7 +46,7 @@
                     "column": 2,
                     "event": "read_parm",
                     "message": "Reading a parameter value.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -60,21 +60,21 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #4",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/nabstime.c",
                     "line": 232,
                     "event": "var_decl",
                     "message": "Declaring variable \"dtype\" without initializer.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/nabstime.c",
                     "line": 243,
                     "event": "uninit_use",
                     "message": "Using uninitialized value \"dtype\".",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -88,21 +88,21 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #12",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/date.c",
                     "line": 122,
                     "event": "var_decl",
                     "message": "Declaring variable \"dtype\" without initializer.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/date.c",
                     "line": 136,
                     "event": "uninit_use",
                     "message": "Using uninitialized value \"dtype\".",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -116,21 +116,21 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #13",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/date.c",
                     "line": 1882,
                     "event": "var_decl",
                     "message": "Declaring variable \"fsec\" without initializer.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/date.c",
                     "line": 1901,
                     "event": "uninit_use_in_call",
                     "message": "Using uninitialized value \"fsec\" when calling \"tm2timetz(struct pg_tm *, fsec_t, int, TimeTzADT *)\".",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/date.c",
@@ -138,7 +138,7 @@
                     "column": 2,
                     "event": "read_parm",
                     "message": "Reading a parameter value.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -152,21 +152,21 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #14",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/date.c",
                     "line": 1885,
                     "event": "var_decl",
                     "message": "Declaring variable \"tz\" without initializer.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/date.c",
                     "line": 1901,
                     "event": "uninit_use_in_call",
                     "message": "Using uninitialized value \"tz\" when calling \"tm2timetz(struct pg_tm *, fsec_t, int, TimeTzADT *)\".",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/date.c",
@@ -174,7 +174,7 @@
                     "column": 2,
                     "event": "read_parm",
                     "message": "Reading a parameter value.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -188,35 +188,35 @@
                     "line": 0,
                     "event": "#",
                     "message": " the structure is memcpy'ed, coverity does not detect ereport(FATAL,...) as",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": " \"exit's sister\"",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": " Defect #17",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
                     "line": 6236,
                     "event": "var_decl",
                     "message": "Declaring variable \"checkPoint\" without initializer.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
                     "line": 6528,
                     "event": "uninit_use_in_call",
                     "message": "Using uninitialized value \"checkPoint.nextMulti\" when calling \"MultiXactSetNextMXact(MultiXactId, MultiXactOffset)\".",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/multixact.c",
@@ -224,14 +224,14 @@
                     "column": 2,
                     "event": "read_parm",
                     "message": "Reading a parameter value.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
                     "line": 6528,
                     "event": "uninit_use_in_call",
                     "message": "Using uninitialized value \"checkPoint.nextMultiOffset\" when calling \"MultiXactSetNextMXact(MultiXactId, MultiXactOffset)\".",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/multixact.c",
@@ -239,7 +239,7 @@
                     "column": 2,
                     "event": "read_parm",
                     "message": "Reading a parameter value.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -253,21 +253,21 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #18",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
                     "line": 6236,
                     "event": "var_decl",
                     "message": "Declaring variable \"checkPoint\" without initializer.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
                     "line": 6514,
                     "event": "uninit_use_in_call",
                     "message": "Using uninitialized value \"checkPoint.nextMulti\" when calling \"errmsg(char const *, ...)\".",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -281,21 +281,21 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #19",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
                     "line": 6236,
                     "event": "var_decl",
                     "message": "Declaring variable \"checkPoint\" without initializer.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
                     "line": 6514,
                     "event": "uninit_use_in_call",
                     "message": "Using uninitialized value \"checkPoint.nextMultiOffset\" when calling \"errmsg(char const *, ...)\".",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -309,21 +309,21 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #20",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
                     "line": 6236,
                     "event": "var_decl",
                     "message": "Declaring variable \"checkPoint\" without initializer.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
                     "line": 6510,
                     "event": "uninit_use_in_call",
                     "message": "Using uninitialized value \"checkPoint.nextOid\" when calling \"errmsg(char const *, ...)\".",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -337,21 +337,21 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #21",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
                     "line": 6236,
                     "event": "var_decl",
                     "message": "Declaring variable \"checkPoint\" without initializer.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
                     "line": 6510,
                     "event": "uninit_use_in_call",
                     "message": "Using uninitialized value \"checkPoint.nextXid\" when calling \"errmsg(char const *, ...)\".",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -365,21 +365,21 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #22",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
                     "line": 6236,
                     "event": "var_decl",
                     "message": "Declaring variable \"checkPoint\" without initializer.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
                     "line": 6510,
                     "event": "uninit_use_in_call",
                     "message": "Using uninitialized value \"checkPoint.nextXidEpoch\" when calling \"errmsg(char const *, ...)\".",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -393,21 +393,21 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #23",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
                     "line": 6236,
                     "event": "var_decl",
                     "message": "Declaring variable \"checkPoint\" without initializer.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
                     "line": 6529,
                     "event": "uninit_use_in_call",
                     "message": "Using uninitialized value \"checkPoint.oldestXid\" when calling \"SetTransactionIdLimit(TransactionId, Oid)\".",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/varsup.c",
@@ -415,14 +415,14 @@
                     "column": 2,
                     "event": "read_parm",
                     "message": "Reading a parameter value.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
                     "line": 6529,
                     "event": "uninit_use_in_call",
                     "message": "Using uninitialized value \"checkPoint.oldestXidDB\" when calling \"SetTransactionIdLimit(TransactionId, Oid)\".",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/varsup.c",
@@ -430,7 +430,7 @@
                     "column": 2,
                     "event": "read_parm",
                     "message": "Reading a parameter value.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -444,21 +444,21 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #24",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
                     "line": 6236,
                     "event": "var_decl",
                     "message": "Declaring variable \"checkPoint\" without initializer.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
                     "line": 6517,
                     "event": "uninit_use_in_call",
                     "message": "Using uninitialized value \"checkPoint.oldestXid\" when calling \"errmsg(char const *, ...)\".",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -472,21 +472,21 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #25",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
                     "line": 6236,
                     "event": "var_decl",
                     "message": "Declaring variable \"checkPoint\" without initializer.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
                     "line": 6517,
                     "event": "uninit_use_in_call",
                     "message": "Using uninitialized value \"checkPoint.oldestXidDB\" when calling \"errmsg(char const *, ...)\".",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -500,21 +500,21 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #26",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
                     "line": 6236,
                     "event": "var_decl",
                     "message": "Declaring variable \"checkPoint\" without initializer.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
                     "line": 6538,
                     "event": "uninit_use",
                     "message": "Using uninitialized value \"checkPoint.ThisTimeLineID\".",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -528,21 +528,21 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #27",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
                     "line": 6236,
                     "event": "var_decl",
                     "message": "Declaring variable \"checkPoint\" without initializer.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
                     "line": 6540,
                     "event": "uninit_use",
                     "message": "Using uninitialized value \"checkPoint.fullPageWrites\".",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -556,21 +556,21 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #28",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
                     "line": 6236,
                     "event": "var_decl",
                     "message": "Declaring variable \"checkPoint\" without initializer.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
                     "line": 6526,
                     "event": "uninit_use",
                     "message": "Using uninitialized value \"checkPoint.nextOid\".",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -584,21 +584,21 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #29",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
                     "line": 6236,
                     "event": "var_decl",
                     "message": "Declaring variable \"checkPoint\" without initializer.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
                     "line": 6520,
                     "event": "uninit_use",
                     "message": "Using uninitialized value \"checkPoint.nextXid\".",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -612,21 +612,21 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #30",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
                     "line": 6236,
                     "event": "var_decl",
                     "message": "Declaring variable \"checkPoint\" without initializer.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
                     "line": 6530,
                     "event": "uninit_use",
                     "message": "Using uninitialized value \"checkPoint.nextXidEpoch\".",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -640,21 +640,21 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #31",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
                     "line": 6236,
                     "event": "var_decl",
                     "message": "Declaring variable \"checkPoint\" without initializer.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
                     "line": 6594,
                     "event": "uninit_use",
                     "message": "Using uninitialized value \"checkPoint\": field \"checkPoint\".\"oldestActiveXid\" is uninitialized.",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -668,21 +668,21 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #32",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
                     "line": 6236,
                     "event": "var_decl",
                     "message": "Declaring variable \"checkPoint\" without initializer.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/xlog.c",
                     "line": 6542,
                     "event": "uninit_use",
                     "message": "Using uninitialized value \"checkPoint.redo\": field \"checkPoint.redo\".\"xrecoff\" is uninitialized.",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -696,35 +696,35 @@
                     "line": 0,
                     "event": "#",
                     "message": " negative values (which t_tableOid is) are handled before going to this",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": " branch..",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": " Defect #33",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/executor/execQual.c",
                     "line": 3967,
                     "event": "var_decl",
                     "message": "Declaring variable \"tmptup\" without initializer.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/executor/execQual.c",
                     "line": 4017,
                     "event": "uninit_use_in_call",
                     "message": "Using uninitialized value \"tmptup.t_tableOid\" when calling \"heap_getsysattr(HeapTuple, int, TupleDesc, bool *)\".",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/common/heaptuple.c",
@@ -732,7 +732,7 @@
                     "column": 4,
                     "event": "read_parm_fld",
                     "message": "Reading a parameter field.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -746,28 +746,28 @@
                     "line": 0,
                     "event": "#",
                     "message": " again, ereport(ERROR,...)",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": " Defect #34",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/timestamp.c",
                     "line": 152,
                     "event": "var_decl",
                     "message": "Declaring variable \"dtype\" without initializer.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/timestamp.c",
                     "line": 166,
                     "event": "uninit_use",
                     "message": "Using uninitialized value \"dtype\".",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -781,21 +781,21 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #35",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/timestamp.c",
                     "line": 148,
                     "event": "var_decl",
                     "message": "Declaring variable \"fsec\" without initializer.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/timestamp.c",
                     "line": 169,
                     "event": "uninit_use_in_call",
                     "message": "Using uninitialized value \"fsec\" when calling \"tm2timestamp(struct pg_tm *, fsec_t, int *, Timestamp *)\".",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/timestamp.c",
@@ -803,7 +803,7 @@
                     "column": 2,
                     "event": "read_parm",
                     "message": "Reading a parameter value.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -817,35 +817,35 @@
                     "line": 0,
                     "event": "#",
                     "message": " Initialized in #ifndef -> and readed only if that #ifndef is run (after",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": " memcpy)",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": " Defect #36",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/geo_ops.c",
                     "line": 2988,
                     "event": "var_decl",
                     "message": "Declaring variable \"seg\" without initializer.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/geo_ops.c",
                     "line": 3008,
                     "event": "uninit_use_in_call",
                     "message": "Using uninitialized value \"seg\": field \"seg\".\"m\" is uninitialized when calling \"memcpy(void * restrict, void const * restrict, size_t)\".",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -859,28 +859,28 @@
                     "line": 0,
                     "event": "#",
                     "message": " again -> this will never happen due to ereport(ERROR,..)",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": " Defect #42",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/timestamp.c",
                     "line": 426,
                     "event": "var_decl",
                     "message": "Declaring variable \"dtype\" without initializer.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/timestamp.c",
                     "line": 440,
                     "event": "uninit_use",
                     "message": "Using uninitialized value \"dtype\".",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -894,21 +894,21 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #43",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/timestamp.c",
                     "line": 422,
                     "event": "var_decl",
                     "message": "Declaring variable \"fsec\" without initializer.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/timestamp.c",
                     "line": 443,
                     "event": "uninit_use_in_call",
                     "message": "Using uninitialized value \"fsec\" when calling \"tm2timestamp(struct pg_tm *, fsec_t, int *, Timestamp *)\".",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/timestamp.c",
@@ -916,7 +916,7 @@
                     "column": 2,
                     "event": "read_parm",
                     "message": "Reading a parameter value.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -930,21 +930,21 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #44",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/timestamp.c",
                     "line": 425,
                     "event": "var_decl",
                     "message": "Declaring variable \"tz\" without initializer.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/timestamp.c",
                     "line": 443,
                     "event": "uninit_use_in_call",
                     "message": "Using uninitialized value \"tz\" when calling \"tm2timestamp(struct pg_tm *, fsec_t, int *, Timestamp *)\".",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/timestamp.c",
@@ -952,7 +952,7 @@
                     "column": 3,
                     "event": "read_parm",
                     "message": "Reading a parameter value.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -966,21 +966,21 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #49",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/tid.c",
                     "line": 55,
                     "event": "var_decl",
                     "message": "Declaring variable \"coord\" without initializer.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/utils/adt/tid.c",
                     "line": 74,
                     "event": "uninit_use_in_call",
                     "message": "Using uninitialized value \"coord[0]\" when calling \"strtoul(char const * restrict, char ** restrict, int)\".",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -994,28 +994,28 @@
                     "line": 0,
                     "event": "#",
                     "message": " rettup is always initialized (missed due to elog() again probably)",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": " Defect #50",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/pl/tcl/pltcl.c",
                     "line": 820,
                     "event": "var_decl",
                     "message": "Declaring variable \"rettup\" without initializer.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/pl/tcl/pltcl.c",
                     "line": 1104,
                     "event": "uninit_use_in_call",
                     "message": "Using uninitialized value \"rettup\" when calling \"SPI_modifytuple(Relation, HeapTuple, int, int *, Datum *, char const *)\".",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/executor/spi.c",
@@ -1023,7 +1023,7 @@
                     "column": 2,
                     "event": "read_parm",
                     "message": "Reading a parameter value.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -1037,21 +1037,21 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #51",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/pl/tcl/pltcl.c",
                     "line": 820,
                     "event": "var_decl",
                     "message": "Declaring variable \"rettup\" without initializer.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/pl/tcl/pltcl.c",
                     "line": 1013,
                     "event": "uninit_use",
                     "message": "Using uninitialized value \"rettup\".",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -1065,28 +1065,28 @@
                     "line": 0,
                     "event": "#",
                     "message": " iacls.objtype is always initialized or elog() is called",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": " Defect #52",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/catalog/aclchk.c",
                     "line": 1304,
                     "event": "var_decl",
                     "message": "Declaring variable \"iacls\" without initializer.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/catalog/aclchk.c",
                     "line": 1364,
                     "event": "uninit_use_in_call",
                     "message": "Using uninitialized value \"iacls.objtype\" when calling \"SetDefaultACL(InternalDefaultACL *)\".",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/catalog/aclchk.c",
@@ -1094,7 +1094,7 @@
                     "column": 2,
                     "event": "read_parm_fld",
                     "message": "Reading a parameter field.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -1108,21 +1108,21 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #53",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/catalog/aclchk.c",
                     "line": 1368,
                     "event": "var_decl",
                     "message": "Declaring variable \"istmt\" without initializer.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/catalog/aclchk.c",
                     "line": 1416,
                     "event": "uninit_use_in_call",
                     "message": "Using uninitialized value \"istmt.objtype\" when calling \"ExecGrantStmt_oids(InternalGrant *)\".",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/catalog/aclchk.c",
@@ -1130,7 +1130,7 @@
                     "column": 2,
                     "event": "read_parm_fld",
                     "message": "Reading a parameter field.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -1144,35 +1144,35 @@
                     "line": 0,
                     "event": "#",
                     "message": " The 'leftids' pointer is always initialized (even if it is somethimes NULL,",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": " this should not hurt).  (caused again because of elog())",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": " Defect #54",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/optimizer/plan/initsplan.c",
                     "line": 359,
                     "event": "var_decl",
                     "message": "Declaring variable \"leftids\" without initializer.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/optimizer/plan/initsplan.c",
                     "line": 452,
                     "event": "uninit_use_in_call",
                     "message": "Using uninitialized value \"leftids\" when calling \"make_outerjoininfo(PlannerInfo *, Relids, Relids, Relids, JoinType, List *)\".",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/optimizer/plan/initsplan.c",
@@ -1180,7 +1180,7 @@
                     "column": 2,
                     "event": "read_parm",
                     "message": "Reading a parameter value.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -1194,21 +1194,21 @@
                     "line": 0,
                     "event": "#",
                     "message": " Defect #55",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/optimizer/plan/initsplan.c",
                     "line": 360,
                     "event": "var_decl",
                     "message": "Declaring variable \"rightids\" without initializer.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/optimizer/plan/initsplan.c",
                     "line": 452,
                     "event": "uninit_use_in_call",
                     "message": "Using uninitialized value \"rightids\" when calling \"make_outerjoininfo(PlannerInfo *, Relids, Relids, Relids, JoinType, List *)\".",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/optimizer/plan/initsplan.c",
@@ -1216,7 +1216,7 @@
                     "column": 3,
                     "event": "read_parm",
                     "message": "Reading a parameter value.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         }

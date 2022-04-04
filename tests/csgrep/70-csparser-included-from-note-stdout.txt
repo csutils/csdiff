@@ -11,70 +11,70 @@
                     "line": 22,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "boost_1_75_0/boost/smart_ptr/detail/yield_k.hpp",
                     "line": 23,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "boost_1_75_0/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp",
                     "line": 14,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "boost_1_75_0/boost/smart_ptr/detail/spinlock.hpp",
                     "line": 42,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "boost_1_75_0/boost/smart_ptr/detail/spinlock_pool.hpp",
                     "line": 25,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "boost_1_75_0/boost/smart_ptr/shared_ptr.hpp",
                     "line": 29,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "boost_1_75_0/boost/shared_ptr.hpp",
                     "line": 17,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "boost_1_75_0/boost/program_options/options_description.hpp",
                     "line": 16,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "boost_1_75_0/boost/program_options/detail/cmdline.hpp",
                     "line": 14,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "boost_1_75_0/libs/program_options/src/cmdline.cpp",
                     "line": 11,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "boost_1_75_0/boost/config/pragma_message.hpp",
@@ -82,42 +82,42 @@
                     "column": 34,
                     "event": "note",
                     "message": "'#pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "   22|   # define BOOST_PRAGMA_MESSAGE(x) __pragma(message(__FILE__ \"(\" BOOST_STRINGIZE(__LINE__) \"): note: \" x))",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "   23|   #elif defined(__GNUC__)",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "   24|-> # define BOOST_PRAGMA_MESSAGE(x) _Pragma(BOOST_STRINGIZE(message(x)))",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "   25|   #elif defined(_MSC_VER)",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "   26|   # define BOOST_PRAGMA_MESSAGE(x) __pragma(message(__FILE__ \"(\" BOOST_STRINGIZE(__LINE__) \"): note: \" x))",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -132,77 +132,77 @@
                     "line": 22,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "boost_1_75_0/boost/smart_ptr/detail/yield_k.hpp",
                     "line": 23,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "boost_1_75_0/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp",
                     "line": 14,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "boost_1_75_0/boost/smart_ptr/detail/spinlock.hpp",
                     "line": 42,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "boost_1_75_0/boost/smart_ptr/detail/spinlock_pool.hpp",
                     "line": 25,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "boost_1_75_0/boost/smart_ptr/shared_ptr.hpp",
                     "line": 29,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "boost_1_75_0/boost/property_map/vector_property_map.hpp",
                     "line": 14,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "boost_1_75_0/boost/property_map/property_map.hpp",
                     "line": 602,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "boost_1_75_0/boost/graph/graphviz.hpp",
                     "line": 19,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "boost_1_75_0/boost/graph/graphml.hpp",
                     "line": 20,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "boost_1_75_0/libs/graph/src/graphml.cpp",
                     "line": 17,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "boost_1_75_0/boost/config/pragma_message.hpp",
@@ -210,42 +210,42 @@
                     "column": 34,
                     "event": "note",
                     "message": "'#pragma message: This header is deprecated. Use <iterator> instead.'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "   22|   # define BOOST_PRAGMA_MESSAGE(x) __pragma(message(__FILE__ \"(\" BOOST_STRINGIZE(__LINE__) \"): note: \" x))",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "   23|   #elif defined(__GNUC__)",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "   24|-> # define BOOST_PRAGMA_MESSAGE(x) _Pragma(BOOST_STRINGIZE(message(x)))",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "   25|   #elif defined(_MSC_VER)",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "   26|   # define BOOST_PRAGMA_MESSAGE(x) __pragma(message(__FILE__ \"(\" BOOST_STRINGIZE(__LINE__) \"): note: \" x))",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         }

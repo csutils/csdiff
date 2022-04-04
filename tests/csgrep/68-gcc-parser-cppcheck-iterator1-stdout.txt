@@ -10,7 +10,7 @@
                     "line": 0,
                     "event": "scope_hint",
                     "message": "In function 'int IDMEFValue_to_SWIG(VALUE, const Prelude::IDMEFValue&, void*, VALUE*)'",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libprelude-5.2.0/bindings/ruby/Prelude.cxx",
@@ -18,21 +18,21 @@
                     "column": 58,
                     "event": "warning[-Wint-in-bool-context]",
                     "message": "enum constant in boolean context",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": " 4659 |                 else if ( t == IDMEF_DATA_TYPE_UINT32 || IDMEF_DATA_TYPE_INT )",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "      |                                                          ^~~~~~~~~~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -47,7 +47,7 @@
                     "line": 3144,
                     "event": "error[invalidIterator1]",
                     "message": "Invalid iterator: sb",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -62,7 +62,7 @@
                     "line": 2487,
                     "event": "error[uninitvar]",
                     "message": "Uninitialized variable: v",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -76,7 +76,7 @@
                     "line": 0,
                     "event": "internal warning",
                     "message": "child 13758 timed out after 30s",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -91,7 +91,7 @@
                     "line": 149,
                     "event": "warning[mismatchingContainerExpression]",
                     "message": "Iterators to containers from different expressions 'static_cast<const pmem::obj::array < int , 5 >&>(c)' and 'c' are used together.",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -106,7 +106,7 @@
                     "line": 156,
                     "event": "warning[mismatchingContainerExpression]",
                     "message": "Iterators to containers from different expressions 'static_cast<const pmem::obj::array < int , 5 >&>(c)' and 'c' are used together.",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -120,7 +120,7 @@
                     "line": 0,
                     "event": "internal warning",
                     "message": "child 19752 timed out after 30s",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -135,7 +135,7 @@
                     "line": 85,
                     "event": "error[iterators1]",
                     "message": "Same iterator is used with different containers 'r.c1' and 'r.c2'.",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -149,7 +149,7 @@
                     "line": 0,
                     "event": "internal warning",
                     "message": "child 29213 timed out after 30s",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         }

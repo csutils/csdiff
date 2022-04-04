@@ -11,7 +11,7 @@
                     "column": 13,
                     "event": "warning[core.CallAndMessage]",
                     "message": "2nd function call argument is an uninitialized value",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -26,7 +26,7 @@
                     "column": 32,
                     "event": "warning[unix.Malloc]",
                     "message": "Use of zero-allocated memory",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -41,7 +41,7 @@
                     "column": 32,
                     "event": "warning[unix.Malloc]",
                     "message": "Use of zero-allocated memory",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -56,7 +56,7 @@
                     "column": 33,
                     "event": "warning[unix.Malloc]",
                     "message": "Potential leak of memory pointed to by 'n'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -71,7 +71,7 @@
                     "column": 47,
                     "event": "warning[unix.Malloc]",
                     "message": "Potential leak of memory pointed to by 'prefix'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -86,7 +86,7 @@
                     "column": 32,
                     "event": "warning[unix.Malloc]",
                     "message": "Potential leak of memory pointed to by 'prefix'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -101,7 +101,7 @@
                     "column": 16,
                     "event": "warning[unix.Malloc]",
                     "message": "Potential leak of memory pointed to by 'prefix'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -116,7 +116,7 @@
                     "column": 65,
                     "event": "warning[core.UndefinedBinaryOperatorResult]",
                     "message": "The left operand of '&' is a garbage value",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -131,7 +131,7 @@
                     "column": 63,
                     "event": "warning[core.UndefinedBinaryOperatorResult]",
                     "message": "The left operand of '&' is a garbage value",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -146,7 +146,7 @@
                     "column": 41,
                     "event": "warning[core.UndefinedBinaryOperatorResult]",
                     "message": "The left operand of '&' is a garbage value",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -161,7 +161,7 @@
                     "column": 33,
                     "event": "warning[core.UndefinedBinaryOperatorResult]",
                     "message": "The left operand of '+' is a garbage value",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -176,7 +176,7 @@
                     "column": 11,
                     "event": "warning[unix.Malloc]",
                     "message": "Potential leak of memory pointed to by 'buf'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -191,7 +191,7 @@
                     "column": 15,
                     "event": "warning[core.UndefinedBinaryOperatorResult]",
                     "message": "The left operand of '!=' is a garbage value",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -206,7 +206,7 @@
                     "column": 32,
                     "event": "warning[unix.Malloc]",
                     "message": "Use of zero-allocated memory",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -221,7 +221,7 @@
                     "column": 32,
                     "event": "warning[unix.Malloc]",
                     "message": "Use of zero-allocated memory",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -236,7 +236,7 @@
                     "column": 12,
                     "event": "warning[unix.Malloc]",
                     "message": "Use of zero-allocated memory",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -251,7 +251,7 @@
                     "column": 57,
                     "event": "warning[core.UndefinedBinaryOperatorResult]",
                     "message": "The result of the '/' expression is undefined",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -266,7 +266,7 @@
                     "column": 32,
                     "event": "warning[core.UndefinedBinaryOperatorResult]",
                     "message": "The left operand of '>' is a garbage value",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -281,7 +281,7 @@
                     "column": 30,
                     "event": "warning[unix.Malloc]",
                     "message": "Potential leak of memory pointed to by 'component'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -296,7 +296,7 @@
                     "column": 30,
                     "event": "warning[unix.Malloc]",
                     "message": "Potential leak of memory pointed to by 'prefix'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -311,7 +311,7 @@
                     "column": 27,
                     "event": "warning[unix.Malloc]",
                     "message": "Potential leak of memory pointed to by 't'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -326,7 +326,7 @@
                     "column": 25,
                     "event": "warning[unix.Malloc]",
                     "message": "Potential leak of memory pointed to by 'mycon'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -341,7 +341,7 @@
                     "column": 24,
                     "event": "warning[deadcode.DeadStores]",
                     "message": "Although the value stored to 'abspath' is used in the enclosing expression, the value is never actually read from 'abspath'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -356,7 +356,7 @@
                     "column": 33,
                     "event": "warning[unix.Malloc]",
                     "message": "Potential leak of memory pointed to by 'done'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -371,7 +371,7 @@
                     "column": 33,
                     "event": "warning[unix.Malloc]",
                     "message": "Potential leak of memory pointed to by 'done'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -386,7 +386,7 @@
                     "column": 41,
                     "event": "warning[unix.Malloc]",
                     "message": "Potential leak of memory pointed to by 'destination'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -401,7 +401,7 @@
                     "column": 41,
                     "event": "warning[unix.Malloc]",
                     "message": "Potential leak of memory pointed to by 'done'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -416,7 +416,7 @@
                     "column": 14,
                     "event": "warning[unix.Malloc]",
                     "message": "Potential leak of memory pointed to by 'first'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -431,7 +431,7 @@
                     "column": 13,
                     "event": "warning[unix.Malloc]",
                     "message": "Potential leak of memory pointed to by 'done'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -446,7 +446,7 @@
                     "column": 9,
                     "event": "warning[deadcode.DeadStores]",
                     "message": "Value stored to 'p' is never read",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -461,7 +461,7 @@
                     "column": 24,
                     "event": "warning[unix.Malloc]",
                     "message": "Potential leak of memory pointed to by 'buf'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -476,7 +476,7 @@
                     "column": 33,
                     "event": "warning[unix.Malloc]",
                     "message": "Potential leak of memory pointed to by 'buf'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -491,7 +491,7 @@
                     "column": 25,
                     "event": "warning[deadcode.DeadStores]",
                     "message": "Value stored to 'buf' is never read",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -506,7 +506,7 @@
                     "column": 29,
                     "event": "warning[core.NonNullParamChecker]",
                     "message": "Null pointer passed to 1st parameter expecting 'nonnull'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -521,7 +521,7 @@
                     "column": 41,
                     "event": "warning[unix.Malloc]",
                     "message": "Potential leak of memory pointed to by 't'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -536,7 +536,7 @@
                     "column": 31,
                     "event": "warning[core.CallAndMessage]",
                     "message": "1st function call argument is an uninitialized value",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -551,7 +551,7 @@
                     "column": 24,
                     "event": "warning[unix.Malloc]",
                     "message": "Potential leak of memory pointed to by 'x'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -566,7 +566,7 @@
                     "column": 24,
                     "event": "warning[unix.Malloc]",
                     "message": "Potential leak of memory pointed to by 'x'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -581,7 +581,7 @@
                     "column": 24,
                     "event": "warning[unix.Malloc]",
                     "message": "Potential leak of memory pointed to by 'x'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -596,7 +596,7 @@
                     "column": 27,
                     "event": "warning[unix.Malloc]",
                     "message": "Potential leak of memory pointed to by 'ip_str'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -611,7 +611,7 @@
                     "column": 25,
                     "event": "warning[unix.Malloc]",
                     "message": "Potential leak of memory pointed to by 'h'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -626,7 +626,7 @@
                     "column": 24,
                     "event": "warning[unix.Malloc]",
                     "message": "Potential leak of memory pointed to by 'p'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         }

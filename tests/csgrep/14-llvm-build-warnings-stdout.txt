@@ -10,7 +10,7 @@
                     "line": 0,
                     "event": "warning",
                     "message": "command line option \"-fno-rtti\" is valid for C++/ObjC++ but not for C",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -24,7 +24,7 @@
                     "line": 0,
                     "event": "error",
                     "message": "unrecognized command line option \"-Wcpp\"",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -38,7 +38,7 @@
                     "line": 0,
                     "event": "error",
                     "message": "unrecognized command line option \"-Wdouble-promotion\"",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -52,7 +52,7 @@
                     "line": 0,
                     "event": "error",
                     "message": "unrecognized command line option \"-Wfree-nonheap-object\"",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -66,7 +66,7 @@
                     "line": 0,
                     "event": "error",
                     "message": "unrecognized command line option \"-Winvalid-memory-model\"",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -80,7 +80,7 @@
                     "line": 0,
                     "event": "error",
                     "message": "unrecognized command line option \"-Wjump-misses-init\"",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -94,7 +94,7 @@
                     "line": 0,
                     "event": "error",
                     "message": "unrecognized command line option \"-Wmaybe-uninitialized\"",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -108,7 +108,7 @@
                     "line": 0,
                     "event": "error",
                     "message": "unrecognized command line option \"-Wnarrowing\"",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -122,7 +122,7 @@
                     "line": 0,
                     "event": "error",
                     "message": "unrecognized command line option \"-Wsizeof-pointer-memaccess\"",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -136,7 +136,7 @@
                     "line": 0,
                     "event": "error",
                     "message": "unrecognized command line option \"-Wsuggest-attribute=const\"",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -150,7 +150,7 @@
                     "line": 0,
                     "event": "error",
                     "message": "unrecognized command line option \"-Wsuggest-attribute=format\"",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -164,7 +164,7 @@
                     "line": 0,
                     "event": "error",
                     "message": "unrecognized command line option \"-Wsuggest-attribute=noreturn\"",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -178,7 +178,7 @@
                     "line": 0,
                     "event": "error",
                     "message": "unrecognized command line option \"-Wsuggest-attribute=pure\"",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -192,7 +192,7 @@
                     "line": 0,
                     "event": "error",
                     "message": "unrecognized command line option \"-Wtrampolines\"",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -206,7 +206,7 @@
                     "line": 0,
                     "event": "error",
                     "message": "unrecognized command line option \"-Wunused-local-typedefs\"",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -220,7 +220,7 @@
                     "line": 0,
                     "event": "error",
                     "message": "unrecognized command line option \"-Wunused-result\"",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -234,7 +234,7 @@
                     "line": 0,
                     "event": "error",
                     "message": "unrecognized command line option \"-Wvarargs\"",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -248,7 +248,7 @@
                     "line": 0,
                     "event": "error",
                     "message": "unrecognized command line option \"-Wvector-operation-performance\"",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -263,21 +263,21 @@
                     "column": 17,
                     "event": "warning",
                     "message": "Null pointer passed as an argument to a 'nonnull' parameter",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                DCHAR_CPY (result + length, (const DCHAR_T *) cp, n);",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                ^          ~~~~~~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/gnulib/lib/vasnprintf.c",
@@ -285,21 +285,21 @@
                     "column": 21,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "#  define DCHAR_CPY memcpy",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                    ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -314,21 +314,21 @@
                     "column": 5,
                     "event": "warning",
                     "message": "Dereference of null pointer",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    result[length] = '\\0';",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -343,21 +343,21 @@
                     "column": 13,
                     "event": "warning",
                     "message": "Dereference of null pointer",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "            result[length] = '%';",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "            ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -372,28 +372,28 @@
                     "column": 13,
                     "event": "warning[-Wunused-value]",
                     "message": "expression result unused",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "            CPU_SET_S(i, masklen, mask);",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "            ^~~~~~~~~~~~~~~~~~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/util/processinfo.c",
                     "line": 24,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/usr/include/sched.h",
@@ -401,35 +401,35 @@
                     "column": 45,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "# define CPU_SET_S(cpu, setsize, cpusetp)   __CPU_SET_S (cpu, setsize, cpusetp)",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                                            ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/util/processinfo.c",
                     "line": 24,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/usr/include/sched.h",
                     "line": 43,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/usr/include/bits/sched.h",
@@ -437,21 +437,21 @@
                     "column": 9,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "      : 0; }))",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "        ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -466,21 +466,21 @@
                     "column": 32,
                     "event": "warning",
                     "message": "Although the value stored to 'ret' is used in the enclosing expression, the value is never actually read from 'ret'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    if (!WIFEXITED(status) || (ret = -WEXITSTATUS(status)) == -EACCES ||",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                               ^     ~~~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -495,21 +495,21 @@
                     "column": 9,
                     "event": "warning",
                     "message": "Branch condition evaluates to a garbage value",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "        if (tb_vfinfo[IFLA_VF_MAC]) {",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "        ^   ~~~~~~~~~~~~~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -524,21 +524,21 @@
                     "column": 5,
                     "event": "warning",
                     "message": "Value stored to 'r' is never read",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    r = 0;",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    ^   ~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -553,21 +553,21 @@
                     "column": 12,
                     "event": "warning",
                     "message": "Value stored to 'ntokens' is never read",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    tokens[ntokens++] = NULL;",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "           ^~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -582,21 +582,21 @@
                     "column": 9,
                     "event": "warning",
                     "message": "Dereference of null pointer (loaded from variable 'domains')",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "        *domains = data.domains;",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "        ^~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -611,28 +611,28 @@
                     "column": 13,
                     "event": "warning",
                     "message": "Null pointer passed as an argument to a 'nonnull' parameter",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "            VIR_FREE(names[i]);",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "            ^~~~~~~~~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/conf/snapshot_conf.c",
                     "line": 38,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/util/memory.h",
@@ -640,21 +640,21 @@
                     "column": 24,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "# define VIR_FREE(ptr) virFree((void *) (1 ? (const void *) &(ptr) : (ptr)))",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                       ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -669,28 +669,28 @@
                     "column": 9,
                     "event": "warning[-Wunused-value]",
                     "message": "expression result unused",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "        CPU_SET(sock, &sock_map);",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "        ^~~~~~~~~~~~~~~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/nodeinfo.c",
                     "line": 33,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/usr/include/sched.h",
@@ -698,35 +698,35 @@
                     "column": 33,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "# define CPU_SET(cpu, cpusetp)   __CPU_SET_S (cpu, sizeof (cpu_set_t), cpusetp)",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                                 ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/nodeinfo.c",
                     "line": 33,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/usr/include/sched.h",
                     "line": 43,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/usr/include/bits/sched.h",
@@ -734,21 +734,21 @@
                     "column": 9,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "      : 0; }))",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "        ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -763,28 +763,28 @@
                     "column": 9,
                     "event": "warning[-Wunused-value]",
                     "message": "expression result unused",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "        CPU_SET(core, &core_maps[sock]);",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/nodeinfo.c",
                     "line": 33,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/usr/include/sched.h",
@@ -792,35 +792,35 @@
                     "column": 33,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "# define CPU_SET(cpu, cpusetp)   __CPU_SET_S (cpu, sizeof (cpu_set_t), cpusetp)",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                                 ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/nodeinfo.c",
                     "line": 33,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/usr/include/sched.h",
                     "line": 43,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/usr/include/bits/sched.h",
@@ -828,21 +828,21 @@
                     "column": 9,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "      : 0; }))",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "        ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -857,21 +857,21 @@
                     "column": 21,
                     "event": "warning",
                     "message": "Null pointer passed as an argument to a 'nonnull' parameter",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    if (!(tempuri = virURIParse(dconnuri))) {",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                    ^           ~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -886,28 +886,28 @@
                     "column": 10,
                     "event": "warning",
                     "message": "Field access results in a dereference of a null pointer (loaded from variable 'dev')",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
                     "line": 46,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h",
@@ -915,21 +915,21 @@
                     "column": 33,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                                ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
@@ -937,28 +937,28 @@
                     "column": 10,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "         ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
                     "line": 46,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h",
@@ -966,21 +966,21 @@
                     "column": 55,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                                               ~~~~~  ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -995,28 +995,28 @@
                     "column": 10,
                     "event": "warning",
                     "message": "Field access results in a dereference of a null pointer (loaded from variable 'dev')",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
                     "line": 46,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h",
@@ -1024,21 +1024,21 @@
                     "column": 33,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                                ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
@@ -1046,28 +1046,28 @@
                     "column": 10,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "         ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
                     "line": 46,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h",
@@ -1075,21 +1075,21 @@
                     "column": 55,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                                               ~~~~~  ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -1104,28 +1104,28 @@
                     "column": 10,
                     "event": "warning",
                     "message": "Field access results in a dereference of a null pointer (loaded from variable 'dev')",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
                     "line": 46,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h",
@@ -1133,21 +1133,21 @@
                     "column": 33,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                                ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
@@ -1155,28 +1155,28 @@
                     "column": 10,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "         ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
                     "line": 46,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h",
@@ -1184,21 +1184,21 @@
                     "column": 55,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                                               ~~~~~  ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -1213,28 +1213,28 @@
                     "column": 10,
                     "event": "warning",
                     "message": "Field access results in a dereference of a null pointer (loaded from variable 'dev')",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
                     "line": 46,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h",
@@ -1242,21 +1242,21 @@
                     "column": 33,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                                ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
@@ -1264,28 +1264,28 @@
                     "column": 10,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "         ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
                     "line": 46,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h",
@@ -1293,21 +1293,21 @@
                     "column": 55,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                                               ~~~~~  ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -1322,28 +1322,28 @@
                     "column": 10,
                     "event": "warning",
                     "message": "Field access results in a dereference of a null pointer (loaded from variable 'dev')",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
                     "line": 46,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h",
@@ -1351,21 +1351,21 @@
                     "column": 33,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                                ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
@@ -1373,28 +1373,28 @@
                     "column": 10,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "         ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
                     "line": 46,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h",
@@ -1402,21 +1402,21 @@
                     "column": 55,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                                               ~~~~~  ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -1431,28 +1431,28 @@
                     "column": 10,
                     "event": "warning",
                     "message": "Field access results in a dereference of a null pointer (loaded from variable 'dev')",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
                     "line": 46,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h",
@@ -1460,21 +1460,21 @@
                     "column": 33,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                                ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
@@ -1482,28 +1482,28 @@
                     "column": 10,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "         ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
                     "line": 46,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h",
@@ -1511,21 +1511,21 @@
                     "column": 55,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                                               ~~~~~  ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -1540,28 +1540,28 @@
                     "column": 10,
                     "event": "warning",
                     "message": "Field access results in a dereference of a null pointer (loaded from variable 'dev')",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
                     "line": 46,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h",
@@ -1569,21 +1569,21 @@
                     "column": 33,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                                ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
@@ -1591,28 +1591,28 @@
                     "column": 10,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "         ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
                     "line": 46,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h",
@@ -1620,21 +1620,21 @@
                     "column": 55,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                                               ~~~~~  ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -1649,28 +1649,28 @@
                     "column": 10,
                     "event": "warning",
                     "message": "Field access results in a dereference of a null pointer (loaded from variable 'dev')",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
                     "line": 46,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h",
@@ -1678,21 +1678,21 @@
                     "column": 33,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                                ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
@@ -1700,28 +1700,28 @@
                     "column": 10,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "         ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
                     "line": 46,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h",
@@ -1729,21 +1729,21 @@
                     "column": 55,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                                               ~~~~~  ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -1758,28 +1758,28 @@
                     "column": 10,
                     "event": "warning",
                     "message": "Field access results in a dereference of a null pointer (loaded from variable 'dev')",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
                     "line": 46,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h",
@@ -1787,21 +1787,21 @@
                     "column": 33,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                                ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
@@ -1809,28 +1809,28 @@
                     "column": 10,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    if (!VIR_IS_CONNECTED_NODE_DEVICE(dev)) {",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "         ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/libvirt.c",
                     "line": 46,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/datatypes.h",
@@ -1838,21 +1838,21 @@
                     "column": 55,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    (VIR_IS_NODE_DEVICE(obj) && VIR_IS_CONNECT((obj)->conn))",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                                               ~~~~~  ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -1867,21 +1867,21 @@
                     "column": 10,
                     "event": "warning",
                     "message": "Although the value stored to 'eventID' is used in the enclosing expression, the value is never actually read from 'eventID'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    if ((eventID = virDomainEventStateEventID(conn,",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "         ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -1896,21 +1896,21 @@
                     "column": 18,
                     "event": "warning",
                     "message": "Field access results in a dereference of a null pointer (loaded from variable 'client')",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    if (!client->sock)",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "         ~~~~~~  ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -1925,21 +1925,21 @@
                     "column": 21,
                     "event": "warning",
                     "message": "Pass-by-value argument in function call is undefined",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "            state = esxVI_VirtualMachinePowerState_ConvertToLibvirt(powerState);",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                    ^                                               ~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -1954,21 +1954,21 @@
                     "column": 27,
                     "event": "warning",
                     "message": "The left operand of '==' is a garbage value",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "               powerState == esxVI_VirtualMachinePowerState_PoweredOff)))",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "               ~~~~~~~~~~ ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -1983,21 +1983,21 @@
                     "column": 27,
                     "event": "warning",
                     "message": "The left operand of '!=' is a garbage value",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "               powerState != esxVI_VirtualMachinePowerState_PoweredOff) ||",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "               ~~~~~~~~~~ ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -2012,21 +2012,21 @@
                     "column": 36,
                     "event": "warning",
                     "message": "Field access results in a dereference of a null pointer (loaded from variable 'autoStartDefaults')",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "            if (autoStartDefaults->enabled == esxVI_Boolean_True) {",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                ~~~~~~~~~~~~~~~~~  ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -2041,28 +2041,28 @@
                     "column": 5,
                     "event": "warning",
                     "message": "Field access results in a dereference of a null pointer (loaded from variable 'secdef')",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    VIR_DEBUG(\"imageLabel=%s opts=%s\", secdef->imagelabel, opts);",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/security/security_selinux.c",
                     "line": 39,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/util/logging.h",
@@ -2070,21 +2070,21 @@
                     "column": 9,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "        VIR_DEBUG_INT(\"file.\" __FILE__, __func__, __LINE__, __VA_ARGS__)",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "        ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/security/security_selinux.c",
@@ -2092,21 +2092,21 @@
                     "column": 5,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    VIR_DEBUG(\"imageLabel=%s opts=%s\", secdef->imagelabel, opts);",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    ^                                  ~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/security/security_selinux.c",
@@ -2114,21 +2114,21 @@
                     "column": 48,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    VIR_DEBUG(\"imageLabel=%s opts=%s\", secdef->imagelabel, opts);",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                                       ~~~~~~  ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -2142,7 +2142,7 @@
                     "line": 1,
                     "event": "warning",
                     "message": "return type defaults to 'int'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -2156,7 +2156,7 @@
                     "line": 1,
                     "event": "warning",
                     "message": "'__dtrace' defined but not used",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -2171,21 +2171,21 @@
                     "column": 8,
                     "event": "warning[-Wimplicit-int]",
                     "message": "type specifier missing, defaults to 'int'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "static __dtrace () {}",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "~~~~~~ ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -2200,21 +2200,21 @@
                     "column": 21,
                     "event": "warning[-Wreturn-type]",
                     "message": "control reaches end of non-void function",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "static __dtrace () {}",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                    ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -2229,21 +2229,21 @@
                     "column": 14,
                     "event": "warning",
                     "message": "Although the value stored to 'dom' is used in the enclosing expression, the value is never actually read from 'dom'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "        if ((dom = virCapabilitiesAddGuestDomain(guest,",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "             ^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -2258,21 +2258,21 @@
                     "column": 13,
                     "event": "warning",
                     "message": "Value stored to 'have_cpu' is never read",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "            have_cpu = true;",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "            ^          ~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -2287,21 +2287,21 @@
                     "column": 22,
                     "event": "warning",
                     "message": "Field access results in a dereference of a null pointer (loaded from variable 'def')",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                def->src = values[i];",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                ~~~  ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -2316,21 +2316,21 @@
                     "column": 22,
                     "event": "warning",
                     "message": "Field access results in a dereference of a null pointer (loaded from variable 'def')",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                def->type = VIR_DOMAIN_DISK_TYPE_FILE;",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                ~~~  ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -2345,21 +2345,21 @@
                     "column": 14,
                     "event": "warning",
                     "message": "Field access results in a dereference of a null pointer (loaded from variable 'def')",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    if (def->rerror_policy == def->error_policy)",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "        ~~~  ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -2374,21 +2374,21 @@
                     "column": 22,
                     "event": "warning",
                     "message": "Field access results in a dereference of a null pointer (loaded from variable 'def')",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                def->device = VIR_DOMAIN_DISK_DEVICE_CDROM;",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                ~~~  ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -2403,21 +2403,21 @@
                     "column": 22,
                     "event": "warning",
                     "message": "Field access results in a dereference of a null pointer (loaded from variable 'def')",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                def->bus = VIR_DOMAIN_DISK_BUS_IDE;",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                ~~~  ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -2432,21 +2432,21 @@
                     "column": 18,
                     "event": "warning",
                     "message": "Field access results in a dereference of a null pointer (loaded from variable 'def')",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "            def->driverName = strdup(\"qemu\");",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "            ~~~  ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -2461,21 +2461,21 @@
                     "column": 22,
                     "event": "warning",
                     "message": "Field access results in a dereference of a null pointer (loaded from variable 'def')",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                def->bus = VIR_DOMAIN_DISK_BUS_SCSI;",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                ~~~  ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -2490,21 +2490,21 @@
                     "column": 15,
                     "event": "warning",
                     "message": "Null pointer passed as an argument to a 'nonnull' parameter",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "        ret = qemuMonitorJSONBlockCommit(mon, device, top, base, speed);",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "              ^                                       ~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -2519,21 +2519,21 @@
                     "column": 22,
                     "event": "warning",
                     "message": "Although the value stored to 'rc' is used in the enclosing expression, the value is never actually read from 'rc'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                if ((rc = qemuSetEmulatorBandwidthLive(vm, group, value_ul, 0)))",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                     ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -2548,21 +2548,21 @@
                     "column": 22,
                     "event": "warning",
                     "message": "Although the value stored to 'rc' is used in the enclosing expression, the value is never actually read from 'rc'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                if ((rc = qemuSetEmulatorBandwidthLive(vm, group, 0, value_l)))",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                     ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -2577,21 +2577,21 @@
                     "column": 22,
                     "event": "warning",
                     "message": "Although the value stored to 'rc' is used in the enclosing expression, the value is never actually read from 'rc'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                if ((rc = qemuSetVcpusBWLive(vm, group, 0, value_l)))",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                     ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -2606,21 +2606,21 @@
                     "column": 22,
                     "event": "warning",
                     "message": "Although the value stored to 'rc' is used in the enclosing expression, the value is never actually read from 'rc'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                if ((rc = qemuSetVcpusBWLive(vm, group, value_ul, 0)))",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                     ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -2635,21 +2635,21 @@
                     "column": 19,
                     "event": "warning",
                     "message": "Field access results in a dereference of a null pointer (loaded from variable 'net')",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "            (net->bandwidth && net->bandwidth->in)) {",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "             ~~~  ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -2664,21 +2664,21 @@
                     "column": 40,
                     "event": "warning",
                     "message": "Field access results in a dereference of a null pointer (loaded from variable 'net')",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "        if (virNetDevBandwidthSet(net->ifname, newBandwidth, false) < 0) {",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                                  ~~~  ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -2693,21 +2693,21 @@
                     "column": 19,
                     "event": "warning",
                     "message": "Field access results in a dereference of a null pointer (loaded from variable 'net')",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "            (net->bandwidth && net->bandwidth->out)) {",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "             ~~~  ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -2722,21 +2722,21 @@
                     "column": 29,
                     "event": "warning",
                     "message": "Field access results in a dereference of a null pointer (loaded from variable 'persistentNet')",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "        if (!persistentNet->bandwidth) {",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "             ~~~~~~~~~~~~~  ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -2751,21 +2751,21 @@
                     "column": 11,
                     "event": "warning",
                     "message": "Although the value stored to 'snap' is used in the enclosing expression, the value is never actually read from 'snap'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    if (!(snap = qemuSnapObjFromSnapshot(vm, snapshot)))",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "          ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -2780,21 +2780,21 @@
                     "column": 11,
                     "event": "warning",
                     "message": "Although the value stored to 'snap' is used in the enclosing expression, the value is never actually read from 'snap'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    if (!(snap = qemuSnapObjFromSnapshot(vm, snapshot)))",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "          ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -2809,21 +2809,21 @@
                     "column": 17,
                     "event": "warning",
                     "message": "Pass-by-value argument in function call is undefined",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "            if (virTypedParameterAssign(param,",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -2838,21 +2838,21 @@
                     "column": 5,
                     "event": "warning",
                     "message": "Null pointer passed as an argument to a 'nonnull' parameter",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    closedir(dh);",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    ^        ~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -2867,21 +2867,21 @@
                     "column": 16,
                     "event": "warning",
                     "message": "Null pointer passed as an argument to a 'nonnull' parameter",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    if (!(dh = opendir(*root))) {",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "               ^       ~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -2896,21 +2896,21 @@
                     "column": 17,
                     "event": "warning",
                     "message": "Value stored to 'fail' is never read",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                fail = true;",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                ^      ~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -2925,28 +2925,28 @@
                     "column": 5,
                     "event": "warning[-Wunused-value]",
                     "message": "expression result unused",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    virAtomicIntDecAndTest(&virNWFilterSnoopState.nLeases);",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/nwfilter/nwfilter_dhcpsnoop.c",
                     "line": 67,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/util/viratomic.h",
@@ -2954,21 +2954,21 @@
                     "column": 47,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "            __sync_fetch_and_sub((atomic), 1) == 1;                     \\",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^  ~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -2983,28 +2983,28 @@
                     "column": 5,
                     "event": "warning[-Wunused-value]",
                     "message": "expression result unused",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    virAtomicIntDecAndTest(job->qCtr);",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/nwfilter/nwfilter_dhcpsnoop.c",
                     "line": 67,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/util/viratomic.h",
@@ -3012,21 +3012,21 @@
                     "column": 47,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "            __sync_fetch_and_sub((atomic), 1) == 1;                     \\",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^  ~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -3041,28 +3041,28 @@
                     "column": 5,
                     "event": "warning[-Wunused-value]",
                     "message": "expression result unused",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    virAtomicIntDecAndTest(&virNWFilterSnoopState.nThreads);",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/nwfilter/nwfilter_dhcpsnoop.c",
                     "line": 67,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/util/viratomic.h",
@@ -3070,21 +3070,21 @@
                     "column": 47,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "            __sync_fetch_and_sub((atomic), 1) == 1;                     \\",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^  ~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -3099,21 +3099,21 @@
                     "column": 9,
                     "event": "warning",
                     "message": "Null pointer passed as an argument to a 'nonnull' parameter",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "        virReportError(VIR_ERR_INTERNAL_ERROR,",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/src/nwfilter/nwfilter_dhcpsnoop.c",
@@ -3121,21 +3121,21 @@
                     "column": 24,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                       strlen(ifkey));",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                       ^      ~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -3150,21 +3150,21 @@
                     "column": 17,
                     "event": "warning",
                     "message": "Value stored to 'rc' is never read",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                rc = -1;",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                ^    ~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -3179,21 +3179,21 @@
                     "column": 11,
                     "event": "warning",
                     "message": "Although the value stored to 'br_node' is used in the enclosing expression, the value is never actually read from 'br_node'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    if (!(br_node = virXPathNode(\"./bridge\", ctxt))) {",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "          ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -3208,21 +3208,21 @@
                     "column": 10,
                     "event": "warning",
                     "message": "Although the value stored to 'if_node' is used in the enclosing expression, the value is never actually read from 'if_node'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    if ((if_node = virXPathNode(\"./bridge/interface[2]\", ctxt))) {",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "         ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -3237,21 +3237,21 @@
                     "column": 49,
                     "event": "warning",
                     "message": "Value stored to 'i' is never read",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "            if (virTypedParameterAssign(&params[i++],",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                                                ^~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -3266,21 +3266,21 @@
                     "column": 9,
                     "event": "warning",
                     "message": "Value stored to 'success' is never read",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "        success = true;",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "        ^         ~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -3295,21 +3295,21 @@
                     "column": 45,
                     "event": "warning",
                     "message": "Value stored to 'i' is never read",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "            virTypedParameterAssign(&params[i++],",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                                            ^~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -3324,21 +3324,21 @@
                     "column": 13,
                     "event": "warning",
                     "message": "Value stored to 'i' is never read",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "            i++;",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "            ^~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -3353,21 +3353,21 @@
                     "column": 10,
                     "event": "warning",
                     "message": "Although the value stored to 'state' is used in the enclosing expression, the value is never actually read from 'state'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    if ((state = vshDomainState(ctl, dom, NULL)) < 0)",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "         ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -3382,21 +3382,21 @@
                     "column": 13,
                     "event": "warning",
                     "message": "Value stored to 'params' is never read",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "            params = true;",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "            ^        ~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -3410,7 +3410,7 @@
                     "line": 509,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/tools/virsh-edit.c",
@@ -3418,21 +3418,21 @@
                     "column": 19,
                     "event": "warning[-Wunused-value]",
                     "message": "expression result unused",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    if (!msg && !(EDIT_DEFINE)) {",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                  ^~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/libvirt-0.10.2/tools/virsh-snapshot.c",
@@ -3440,21 +3440,21 @@
                     "column": 60,
                     "event": "note",
                     "message": "instantiated from:",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "    define_flags |= VIR_DOMAIN_SNAPSHOT_CREATE_DISK_ONLY : 0), \\",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                                                           ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -3469,21 +3469,21 @@
                     "column": 24,
                     "event": "warning",
                     "message": "Value stored to 'tmpopt' during its initialization is never read",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "            vshCmdOpt *tmpopt = first;",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                       ^        ~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         }

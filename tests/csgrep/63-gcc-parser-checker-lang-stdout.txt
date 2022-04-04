@@ -11,7 +11,7 @@
                     "column": 39,
                     "event": "note[SC2162]",
                     "message": "read without -r will mangle backslashes.",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -26,7 +26,7 @@
                     "column": 6,
                     "event": "error[SC1068]",
                     "message": "Don't put spaces around the = in assignments (or quote to make it literal).",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -41,7 +41,7 @@
                     "column": 6,
                     "event": "error[SC1097]",
                     "message": "Unexpected ==. For assignment, use =. For comparison, use [/[[.",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -55,7 +55,7 @@
                     "line": 810,
                     "event": "error[unknownMacro]",
                     "message": "There is an unknown macro here somewhere. Configuration is required. If _SDT_ASM_ARGS is a macro then please configure it.",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -69,7 +69,7 @@
                     "line": 810,
                     "event": "error[unknownMacro]",
                     "message": "There is an unknown macro here somewhere. Configuration is required. If _SDT_ASM_ARGS is a macro then please configure it.",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -85,21 +85,21 @@
                     "column": 16,
                     "event": "warning[-Wanalyzer-malloc-leak]",
                     "message": "leak of '<unknown>'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "   60 |  backlog_order = order;",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "      |  ~~~~~~~~~~~~~~^~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/relay.c",
@@ -107,28 +107,28 @@
                     "column": 5,
                     "event": "note",
                     "message": "(1) following 'false' branch...",
-                    "verbosity_level": "2"
+                    "verbosity_level": 2
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "   51 |  if (!fnum_max)",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "      |     ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "cc1",
                     "line": 0,
                     "event": "note",
                     "message": "(2) ...to here",
-                    "verbosity_level": "2"
+                    "verbosity_level": 2
                 },
                 {
                     "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/relay.c",
@@ -136,21 +136,21 @@
                     "column": 8,
                     "event": "note",
                     "message": "(3) following 'false' branch...",
-                    "verbosity_level": "2"
+                    "verbosity_level": 2
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "   53 |  while (fnum_max >> order) order++;",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "      |        ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/relay.c",
@@ -158,21 +158,21 @@
                     "column": 27,
                     "event": "note",
                     "message": "(4) ...to here",
-                    "verbosity_level": "2"
+                    "verbosity_level": 2
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "   54 |  if (fnum_max == 1<<(order-1)) order--;",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "      |                     ~~~~~~^~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/relay.c",
@@ -180,21 +180,21 @@
                     "column": 5,
                     "event": "note",
                     "message": "(5) following 'false' branch...",
-                    "verbosity_level": "2"
+                    "verbosity_level": 2
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "   54 |  if (fnum_max == 1<<(order-1)) order--;",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "      |     ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/relay.c",
@@ -202,21 +202,21 @@
                     "column": 40,
                     "event": "note",
                     "message": "(6) ...to here",
-                    "verbosity_level": "2"
+                    "verbosity_level": 2
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "   55 |  time_backlog[cpu] = (time_t *)calloc(1<<order, sizeof(time_t));",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "      |                                       ~^~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/relay.c",
@@ -224,7 +224,7 @@
                     "column": 40,
                     "event": "note",
                     "message": "(7) allocated here",
-                    "verbosity_level": "2"
+                    "verbosity_level": 2
                 },
                 {
                     "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/relay.c",
@@ -232,21 +232,21 @@
                     "column": 5,
                     "event": "note",
                     "message": "(8) assuming '<unknown>' is non-NULL",
-                    "verbosity_level": "2"
+                    "verbosity_level": 2
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "   56 |  if (time_backlog[cpu] == NULL) {",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "      |     ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/relay.c",
@@ -254,7 +254,7 @@
                     "column": 5,
                     "event": "note",
                     "message": "(9) following 'false' branch...",
-                    "verbosity_level": "2"
+                    "verbosity_level": 2
                 },
                 {
                     "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/relay.c",
@@ -262,21 +262,21 @@
                     "column": 16,
                     "event": "note",
                     "message": "(10) ...to here",
-                    "verbosity_level": "2"
+                    "verbosity_level": 2
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "   60 |  backlog_order = order;",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "      |  ~~~~~~~~~~~~~~^~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/relay.c",
@@ -284,7 +284,7 @@
                     "column": 16,
                     "event": "note",
                     "message": "(11) '<unknown>' leaks here; was allocated at (7)",
-                    "verbosity_level": "2"
+                    "verbosity_level": 2
                 }
             ]
         },
@@ -299,21 +299,21 @@
                     "column": 4,
                     "event": "warning",
                     "message": "Potential leak of memory pointed to by 'buf'",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                        fprintf(stderr, \"error opening file %s.\\n\", argv[optind - 1]);",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                        ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/usr/include/bits/stdio2.h",
@@ -321,21 +321,21 @@
                     "column": 3,
                     "event": "note",
                     "message": "expanded from macro 'fprintf'",
-                    "verbosity_level": "2"
+                    "verbosity_level": 2
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "  __fprintf_chk (stream, __USE_FORTIFY_LEVEL - 1, __VA_ARGS__)",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "  ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/stap_merge.c",
@@ -343,21 +343,21 @@
                     "column": 8,
                     "event": "note",
                     "message": "Memory is allocated",
-                    "verbosity_level": "2"
+                    "verbosity_level": 2
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "        buf = malloc(bufsize);",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "              ^~~~~~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/stap_merge.c",
@@ -365,21 +365,21 @@
                     "column": 6,
                     "event": "note",
                     "message": "Assuming 'buf' is not equal to NULL",
-                    "verbosity_level": "2"
+                    "verbosity_level": 2
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "        if (buf == NULL) {",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "            ^~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/stap_merge.c",
@@ -387,21 +387,21 @@
                     "column": 2,
                     "event": "note",
                     "message": "Taking false branch",
-                    "verbosity_level": "2"
+                    "verbosity_level": 2
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "        if (buf == NULL) {",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "        ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/stap_merge.c",
@@ -409,21 +409,21 @@
                     "column": 9,
                     "event": "note",
                     "message": "Assuming the condition is false",
-                    "verbosity_level": "2"
+                    "verbosity_level": 2
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "        while ((c = getopt (argc, argv, \"vo:\")) != EOF)  {",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/stap_merge.c",
@@ -431,21 +431,21 @@
                     "column": 2,
                     "event": "note",
                     "message": "Loop condition is false. Execution continues on line 65",
-                    "verbosity_level": "2"
+                    "verbosity_level": 2
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "        while ((c = getopt (argc, argv, \"vo:\")) != EOF)  {",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "        ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/stap_merge.c",
@@ -453,21 +453,21 @@
                     "column": 6,
                     "event": "note",
                     "message": "Assuming 'optind' is not equal to 'argc'",
-                    "verbosity_level": "2"
+                    "verbosity_level": 2
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "        if (optind == argc)",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "            ^~~~~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/stap_merge.c",
@@ -475,21 +475,21 @@
                     "column": 2,
                     "event": "note",
                     "message": "Taking false branch",
-                    "verbosity_level": "2"
+                    "verbosity_level": 2
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "        if (optind == argc)",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "        ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/stap_merge.c",
@@ -497,21 +497,21 @@
                     "column": 9,
                     "event": "note",
                     "message": "Assuming 'optind' is < 'argc'",
-                    "verbosity_level": "2"
+                    "verbosity_level": 2
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "        while (optind < argc) {",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "               ^~~~~~~~~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/stap_merge.c",
@@ -519,21 +519,21 @@
                     "column": 2,
                     "event": "note",
                     "message": "Loop condition is true.  Entering loop body",
-                    "verbosity_level": "2"
+                    "verbosity_level": 2
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "        while (optind < argc) {",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "        ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/stap_merge.c",
@@ -541,21 +541,21 @@
                     "column": 7,
                     "event": "note",
                     "message": "Assuming the condition is true",
-                    "verbosity_level": "2"
+                    "verbosity_level": 2
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                if (!fp[i]) {",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                    ^~~~~~",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/stap_merge.c",
@@ -563,21 +563,21 @@
                     "column": 3,
                     "event": "note",
                     "message": "Taking true branch",
-                    "verbosity_level": "2"
+                    "verbosity_level": 2
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                if (!fp[i]) {",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/stap_merge.c",
@@ -585,21 +585,21 @@
                     "column": 4,
                     "event": "note",
                     "message": "Potential leak of memory pointed to by 'buf'",
-                    "verbosity_level": "2"
+                    "verbosity_level": 2
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                        fprintf(stderr, \"error opening file %s.\\n\", argv[optind - 1]);",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "                        ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "/usr/include/bits/stdio2.h",
@@ -607,21 +607,21 @@
                     "column": 3,
                     "event": "note",
                     "message": "expanded from macro 'fprintf'",
-                    "verbosity_level": "2"
+                    "verbosity_level": 2
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "  __fprintf_chk (stream, __USE_FORTIFY_LEVEL - 1, __VA_ARGS__)",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
                     "line": 0,
                     "event": "#",
                     "message": "  ^",
-                    "verbosity_level": "1"
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -636,7 +636,7 @@
                     "column": 5,
                     "event": "note[SC1091]",
                     "message": "Not following: /etc/rc.d/init.d/functions was not specified as input (see shellcheck -x).",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -651,7 +651,7 @@
                     "column": 3,
                     "event": "note[SC1091]",
                     "message": "Not following: /usr/libexec/systemtap/stap-env was not specified as input (see shellcheck -x).",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         },
@@ -666,7 +666,7 @@
                     "column": 19,
                     "event": "warning[SC2154]",
                     "message": "stap_pkglibexecdir is referenced but not assigned.",
-                    "verbosity_level": "0"
+                    "verbosity_level": 0
                 }
             ]
         }
