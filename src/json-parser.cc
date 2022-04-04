@@ -21,6 +21,8 @@
 
 #include "abstract-tree.hh"
 #include "csparser.hh"              // for KeyEventDigger
+#include "parser-common.hh"
+#include "regex.hh"
 
 #include <set>
 
@@ -76,6 +78,11 @@ class SarifTreeDecoder: public AbstractTreeDecoder {
                 const pt::ptree        *root);
 
         virtual bool readNode(Defect *def, pt::ptree::const_iterator defIter);
+
+    private:
+        std::string                 singleChecker;
+        const RE                    reRuleId =
+            RE("(" RE_CHECKER_NAME "): (" RE_EVENT ")");
 };
 
 struct JsonParser::Private {
@@ -374,6 +381,17 @@ void SarifTreeDecoder::readScanProps(
         TScanProps                 *pDst,
         const pt::ptree            *root)
 {
+    // read external properties if available
+    const pt::ptree *iep;
+    if (findChildOf(&iep, *root, "inlineExternalProperties")
+            && (1U == iep->size()))
+    {
+        const pt::ptree *props;
+        if (findChildOf(&props, iep->begin()->second, "externalizedProperties"))
+            for (const pt::ptree::value_type &item : *props)
+                (*pDst)[item.first] = item.second.data();
+    }
+
     // check that we have exactly one run
     const pt::ptree *runs;
     if (!findChildOf(&runs, *root, "runs") || (1U != runs->size()))
@@ -388,17 +406,15 @@ void SarifTreeDecoder::readScanProps(
         return;
 
     const auto name = valueOf<std::string>(*driverNode, "name", "");
-    if (name != "SnykCode")
-        // not a supported tool
-        return;
+    if (name == "SnykCode") {
+        // Snyk Code detected!
+        this->singleChecker = "SNYK_CODE_WARNING";
 
-    const auto version = valueOf<std::string>(*driverNode, "version", "");
-    if (version.empty())
-        // no version provided
-        return;
-
-    // record tool version of Snyk Code
-    (*pDst)["analyzer-version-snyk-code"] = version;
+        const auto version = valueOf<std::string>(*driverNode, "version", "");
+        if (!version.empty())
+            // record tool version of Snyk Code
+            (*pDst)["analyzer-version-snyk-code"] = version;
+    }
 }
 
 void SarifTreeDecoder::readRoot(
@@ -444,7 +460,7 @@ bool SarifTreeDecoder::readNode(
         pt::ptree::const_iterator    defIter)
 {
     // initialize the defect structure
-    *def = Defect("SNYK_CODE_WARNING");
+    *def = Defect(this->singleChecker);
 
     // the current node representing a single SARIF report
     const pt::ptree &defNode = defIter->second;
@@ -456,8 +472,18 @@ bool SarifTreeDecoder::readNode(
 
     // read "rule" that triggered the report
     const auto rule = valueOf<std::string>(defNode, "ruleId", "");
-    if (!rule.empty())
-        keyEvent.event += "[" + rule + "]";
+    if (!rule.empty()) {
+        boost::smatch sm;
+        if (boost::regex_match(rule, sm, reRuleId)) {
+            // csdiff format
+            def->checker    = sm[/* checker  */ 1];
+            keyEvent.event  = sm[/* keyEvent */ 2];
+        }
+        else {
+            // Snyk Code etc.
+            keyEvent.event += "[" + rule + "]";
+        }
+    }
 
     // read location
     keyEvent.fileName = "<unknown>";
