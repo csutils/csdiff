@@ -136,6 +136,7 @@ class SarifTreeEncoder: public AbstractTreeEncoder {
         void writeTo(std::ostream &) override;
 
     private:
+        TScanProps                  scanProps_;
         PTree                       run0_;
         PTree                       results_;
 };
@@ -155,12 +156,111 @@ SarifTreeEncoder::SarifTreeEncoder()
 
 void SarifTreeEncoder::importScanProps(const TScanProps &scanProps)
 {
-    // TODO
+    scanProps_ = scanProps;
+}
+
+static void sarifEncodeMsg(PTree *pDst, const std::string text)
+{
+    PTree msg;
+    msg.put<std::string>("text", text);
+    pDst->put_child("message", msg);
+}
+
+static void sarifEncodeLoc(PTree *pLoc, const Defect &def, unsigned idx)
+{
+    // location ID within the result
+    pLoc->put<unsigned>("id", idx);
+
+    const DefEvent &evt = def.events[idx];
+
+    // file name
+    PTree locArt;
+    locArt.put<std::string>("uri", evt.fileName);
+    PTree locPhy;
+    locPhy.put_child("artifactLocation", locArt);
+
+    // line/col
+    if (evt.line) {
+        PTree reg;
+        reg.put<int>("startLine", evt.line);
+        if (evt.column)
+            reg.put<int>("startColumn", evt.column);
+
+        locPhy.put_child("region", reg);
+    }
+
+    // location
+    pLoc->put_child("physicalLocation", locPhy);
+}
+
+static void sarifEncodeEvt(PTree *pDst, const Defect &def, unsigned idx)
+{
+    const DefEvent &evt = def.events[idx];
+
+    // location + message
+    PTree loc;
+    sarifEncodeLoc(&loc, def, idx);
+    sarifEncodeMsg(&loc, evt.msg);
+
+    // threadFlowLocation
+    PTree tfLoc;
+    tfLoc.put_child("location", loc);
+
+    // verbosityLevel
+    tfLoc.put<int>("nestingLevel", evt.verbosityLevel);
+
+    // event
+    PTree kind;
+    kind.put<std::string>("", evt.event);
+    PTree kindList;
+    kindList.put_child("", kind);
+    tfLoc.put_child("kinds", kindList);
+
+    // append the threadFlowLocation object to the destination array
+    pDst->push_back(std::make_pair("", tfLoc));
 }
 
 void SarifTreeEncoder::appendDef(const Defect &def)
 {
-    // TODO
+    const DefEvent &keyEvt = def.events[def.keyEventIdx];
+    PTree result;
+
+    // checker (FIXME: suboptimal mapping to SARIF)
+    const std::string ruleId = def.checker + ": " + keyEvt.event;
+    result.put<std::string>("ruleId", ruleId);
+
+    // key event location
+    PTree loc;
+    sarifEncodeLoc(&loc, def, def.keyEventIdx);
+    PTree keyLocs;
+    keyLocs.put_child("", loc);
+    result.put_child("locations", keyLocs);
+
+    // key msg
+    sarifEncodeMsg(&result, keyEvt.msg);
+
+    // other events
+    PTree flowLocs;
+    for (unsigned i = 0; i < def.events.size(); ++i)
+        sarifEncodeEvt(&flowLocs, def, i);
+
+    // locations
+    PTree tf;
+    tf.put_child("locations", flowLocs);
+
+    // threadFlows
+    PTree tfList;
+    tfList.put_child("", tf);
+    PTree cf;
+    cf.put_child("threadFlows", tfList);
+
+    // codeFlows
+    PTree cfList;
+    cfList.put_child("", cf);
+    result.put_child("codeFlows", cfList);
+
+    // append the `result` object to the `results` array
+    results_.push_back(std::make_pair("", result));
 }
 
 void SarifTreeEncoder::writeTo(std::ostream &str)
@@ -171,6 +271,19 @@ void SarifTreeEncoder::writeTo(std::ostream &str)
     root.put<std::string>("$schema",
             "https://json.schemastore.org/sarif-2.1.0.json");
     root.put<std::string>("version", "2.1.0");
+
+    if (!scanProps_.empty()) {
+        // scan props
+        PTree props;
+        for (TScanProps::const_reference prop : scanProps_)
+            props.put<std::string>(prop.first, prop.second);
+
+        PTree extProps;
+        extProps.put_child("externalizedProperties", props);
+        PTree propsList;
+        propsList.put_child("", extProps);
+        root.put_child("inlineExternalProperties", propsList);
+    }
 
     if (!results_.empty())
         // results
