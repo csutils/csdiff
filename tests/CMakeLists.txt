@@ -28,6 +28,9 @@ set(diffcmd     "diff -up")
 set(jsfilter "sed")
 set(jsfilter "${jsfilter} -e ':a;N;$!ba;s|:\\\\\\\\n *\\\\\\\\[|: [|g'")
 
+# eliminate csdiff's version string in the output
+set(jsfilter "${jsfilter} -e 's|\"version\": \"[^\"]*\"|\"version\": \"\"|g'")
+
 # yet another conversion needed for scan properties on EPEL-7
 set(jsfilter "${jsfilter} -e ';s|:\\\\\\\\n *{|: {|g'")
 
