@@ -80,9 +80,15 @@ class SarifTreeDecoder: public AbstractTreeDecoder {
         virtual bool readNode(Defect *def, pt::ptree::const_iterator defIter);
 
     private:
+        void updateCweMap(const pt::ptree *driverNode);
+
         std::string                 singleChecker;
+        const RE                    reCwe = RE("^CWE-([0-9]+)$");
         const RE                    reRuleId =
             RE("(" RE_CHECKER_NAME "): (" RE_EVENT ")");
+
+        typedef std::map<std::string, int>  TCweMap;
+        TCweMap                     cweMap;
 };
 
 struct JsonParser::Private {
@@ -377,6 +383,40 @@ bool CovTreeDecoder::readNode(
     return true;
 }
 
+void SarifTreeDecoder::updateCweMap(const pt::ptree *driverNode)
+{
+    const pt::ptree *rules;
+    if (!findChildOf(&rules, *driverNode, "rules"))
+        return;
+
+    for (const auto &item : *rules) {
+        const pt::ptree &rule = item.second;
+        const auto id = valueOf<std::string>(rule, "id", "");
+        if (id.empty())
+            // rule ID missing
+            continue;
+
+        const pt::ptree *props;
+        if (!findChildOf(&props, rule, "properties"))
+            // properties missing
+            continue;
+
+        const pt::ptree *cweList;
+        if (!findChildOf(&cweList, *props, "cwe") || cweList->empty())
+            // cwe list missing
+            continue;
+
+        const std::string cweStr = cweList->begin()->second.data();
+        boost::smatch sm;
+        if (!boost::regex_match(cweStr, sm, this->reCwe))
+            // unable to parse cwe
+            continue;
+
+        const int cwe = std::stoi(sm[/* cwe */ 1]);
+        this->cweMap[id] = cwe;
+    }
+}
+
 void SarifTreeDecoder::readScanProps(
         TScanProps                 *pDst,
         const pt::ptree            *root)
@@ -404,6 +444,8 @@ void SarifTreeDecoder::readScanProps(
     const pt::ptree *driverNode;
     if (!findChildOf(&driverNode, *toolNode, "driver"))
         return;
+
+    this->updateCweMap(driverNode);
 
     const auto name = valueOf<std::string>(*driverNode, "name", "");
     if (name == "SnykCode") {
@@ -538,6 +580,11 @@ bool SarifTreeDecoder::readNode(
             keyEvent.event += "[" + rule + "]";
         }
     }
+
+    // lookup cwe
+    const TCweMap::const_iterator it = this->cweMap.find(rule);
+    if (this->cweMap.end() != it)
+        def->cwe = it->second;
 
     // read location and diagnostic message
     keyEvent.fileName = "<unknown>";
