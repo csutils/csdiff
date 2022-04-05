@@ -136,22 +136,46 @@ class SarifTreeEncoder: public AbstractTreeEncoder {
         void writeTo(std::ostream &) override;
 
     private:
+        void serializeCweMap();
+
+        typedef std::map<std::string, int>  TCweMap;
+        TCweMap                     cweMap_;
         TScanProps                  scanProps_;
-        PTree                       run0_;
+        PTree                       driver_;
         PTree                       results_;
 };
 
 SarifTreeEncoder::SarifTreeEncoder()
 {
     // mandatory: tool/driver
-    PTree driver;
-    driver.put<std::string>("name", "csdiff");
-    driver.put<std::string>("version", CS_VERSION);
-    driver.put<std::string>("informationUri",
+    driver_.put<std::string>("name", "csdiff");
+    driver_.put<std::string>("version", CS_VERSION);
+    driver_.put<std::string>("informationUri",
             "https://github.com/csutils/csdiff");
-    PTree tool;
-    tool.put_child("driver", driver);
-    run0_.put_child("tool", tool);
+}
+
+void SarifTreeEncoder::serializeCweMap()
+{
+    PTree ruleList;
+
+    for (const auto &item : cweMap_) {
+        PTree rule;
+        const auto &id = item.first;
+        rule.put<std::string>("id", id);
+
+        PTree cweList;
+        const auto cwe = item.second;
+        const auto cweStr = "CWE-" + std::to_string(cwe);
+        appendNode(&cweList, PTree(cweStr));
+
+        PTree props;
+        props.put_child("cwe", cweList);
+        rule.put_child("properties", props);
+
+        appendNode(&ruleList, rule);
+    }
+
+    driver_.put_child("rules", ruleList);
 }
 
 void SarifTreeEncoder::importScanProps(const TScanProps &scanProps)
@@ -228,6 +252,9 @@ void SarifTreeEncoder::appendDef(const Defect &def)
     // checker (FIXME: suboptimal mapping to SARIF)
     const std::string ruleId = def.checker + ": " + keyEvt.event;
     result.put<std::string>("ruleId", ruleId);
+    if (def.cwe)
+        // update CWE map
+        cweMap_[ruleId] = def.cwe;
 
     // key event location
     PTree loc;
@@ -285,13 +312,23 @@ void SarifTreeEncoder::writeTo(std::ostream &str)
         root.put_child("inlineExternalProperties", propsList);
     }
 
+    if (!cweMap_.empty())
+        // needs to run before we pick driver_
+        this->serializeCweMap();
+
+    PTree tool;
+    tool.put_child("driver", driver_);
+
+    PTree run0;
+    run0.put_child("tool", tool);
+
     if (!results_.empty())
         // results
-        run0_.put_child("results", results_);
+        run0.put_child("results", results_);
 
     // mandatory: runs
     PTree runs;
-    appendNode(&runs, run0_);
+    appendNode(&runs, run0);
     root.put_child("runs", runs);
 
     // encode as JSON
