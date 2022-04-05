@@ -427,15 +427,10 @@ void SarifTreeDecoder::readRoot(
         pDefList = nullptr;
 }
 
-void sarifReadLocation(DefEvent *pEvt, const pt::ptree &defNode)
+static void sarifReadLocation(DefEvent *pEvt, const pt::ptree &loc)
 {
-    const pt::ptree *locs;
-    if (!findChildOf(&locs, defNode, "locations") || locs->empty())
-        // no location info available
-        return;
-
     const pt::ptree *pl;
-    if (!findChildOf(&pl, locs->begin()->second, "physicalLocation"))
+    if (!findChildOf(&pl, loc, "physicalLocation"))
         // unknown location info format
         return;
 
@@ -453,6 +448,13 @@ void sarifReadLocation(DefEvent *pEvt, const pt::ptree &defNode)
         pEvt->line = valueOf<int>(*reg, "startLine", 0);
         pEvt->column = valueOf<int>(*reg, "startColumn", 0);
     }
+}
+
+static void sarifReadMsg(std::string *pDst, const pt::ptree &node)
+{
+    const pt::ptree *msgNode;
+    if (findChildOf(&msgNode, node, "message"))
+        *pDst = valueOf<std::string>(*msgNode, "text", "<unknown>");
 }
 
 bool SarifTreeDecoder::readNode(
@@ -485,14 +487,12 @@ bool SarifTreeDecoder::readNode(
         }
     }
 
-    // read location
+    // read location and diagnostic message
     keyEvent.fileName = "<unknown>";
-    sarifReadLocation(&keyEvent, defNode);
-
-    // read diagnostic message
-    const pt::ptree *msgNode;
-    if (findChildOf(&msgNode, defNode, "message"))
-        keyEvent.msg = valueOf<std::string>(*msgNode, "text", "<unknown>");
+    const pt::ptree *locs;
+    if (findChildOf(&locs, defNode, "locations") && !locs->empty())
+        sarifReadLocation(&keyEvent, locs->begin()->second);
+    sarifReadMsg(&keyEvent.msg, defNode);
 
     return true;
 }
