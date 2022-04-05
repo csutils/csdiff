@@ -81,7 +81,7 @@ void SimpleTreeEncoder::appendDef(const Defect &def)
         evtNode.put<int>("verbosity_level", evt.verbosityLevel);
 
         // append the event to the list
-        evtList.push_back(std::make_pair("", evtNode));
+        appendNode(&evtList, evtNode);
     }
 
     // create a node for a single defect
@@ -110,7 +110,7 @@ void SimpleTreeEncoder::appendDef(const Defect &def)
         pDefects_ = &root_.put_child("defects", PTree());
 
     // append the node to the list
-    pDefects_->push_back(std::make_pair("", defNode));
+    appendNode(pDefects_, defNode);
 }
 
 void SimpleTreeEncoder::writeTo(std::ostream &str)
@@ -213,11 +213,11 @@ static void sarifEncodeEvt(PTree *pDst, const Defect &def, unsigned idx)
     PTree kind;
     kind.put<std::string>("", evt.event);
     PTree kindList;
-    kindList.put_child("", kind);
+    appendNode(&kindList, kind);
     tfLoc.put_child("kinds", kindList);
 
     // append the threadFlowLocation object to the destination array
-    pDst->push_back(std::make_pair("", tfLoc));
+    appendNode(pDst, tfLoc);
 }
 
 void SarifTreeEncoder::appendDef(const Defect &def)
@@ -233,7 +233,7 @@ void SarifTreeEncoder::appendDef(const Defect &def)
     PTree loc;
     sarifEncodeLoc(&loc, def, def.keyEventIdx);
     PTree keyLocs;
-    keyLocs.put_child("", loc);
+    appendNode(&keyLocs, loc);
     result.put_child("locations", keyLocs);
 
     // key msg
@@ -250,17 +250,17 @@ void SarifTreeEncoder::appendDef(const Defect &def)
 
     // threadFlows
     PTree tfList;
-    tfList.put_child("", tf);
+    appendNode(&tfList, tf);
     PTree cf;
     cf.put_child("threadFlows", tfList);
 
     // codeFlows
     PTree cfList;
-    cfList.put_child("", cf);
+    appendNode(&cfList, cf);
     result.put_child("codeFlows", cfList);
 
     // append the `result` object to the `results` array
-    results_.push_back(std::make_pair("", result));
+    appendNode(&results_, result);
 }
 
 void SarifTreeEncoder::writeTo(std::ostream &str)
@@ -281,7 +281,7 @@ void SarifTreeEncoder::writeTo(std::ostream &str)
         PTree extProps;
         extProps.put_child("externalizedProperties", props);
         PTree propsList;
-        propsList.put_child("", extProps);
+        appendNode(&propsList, extProps);
         root.put_child("inlineExternalProperties", propsList);
     }
 
@@ -291,7 +291,7 @@ void SarifTreeEncoder::writeTo(std::ostream &str)
 
     // mandatory: runs
     PTree runs;
-    runs.put_child("", run0_);
+    appendNode(&runs, run0_);
     root.put_child("runs", runs);
 
     // encode as JSON

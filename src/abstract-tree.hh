@@ -71,6 +71,12 @@ class AbstractTreeEncoder {
 };
 
 template <typename TNode>
+void appendNode(TNode *pDst, const TNode &src)
+{
+    pDst->push_back(std::make_pair("", src));
+}
+
+template <typename TNode>
 bool findChildOf(TNode **pDst, TNode &node, const char *key)
 {
     if (node.not_found() == node.find(key))
