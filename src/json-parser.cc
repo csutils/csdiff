@@ -457,6 +457,58 @@ static void sarifReadMsg(std::string *pDst, const pt::ptree &node)
         *pDst = valueOf<std::string>(*msgNode, "text", "<unknown>");
 }
 
+static void sarifReadCodeFlow(Defect *pDef, const pt::ptree &cf)
+{
+    const pt::ptree *tf;
+    if ((1U != cf.size())
+            || !findChildOf(&tf, cf.begin()->second, "threadFlows"))
+        return;
+
+    const pt::ptree *locs;
+    if (1U != tf->size()
+            || !findChildOf(&locs, tf->begin()->second, "locations"))
+        return;
+
+    TEvtList events;
+    unsigned keyEventIdx = 0U;
+
+    // read the full list of events
+    for (const auto &item : *locs) {
+        const pt::ptree &tfLoc = item.second;
+
+        const pt::ptree *kindList;
+        if (!findChildOf(&kindList, tfLoc, "kinds") || (1U != kindList->size()))
+            // not the format that csdiff produces
+            return;
+
+        // append a new event of the specified kind
+        const auto evtName = kindList->begin()->second.data();
+        events.push_back(DefEvent(evtName));
+        DefEvent &evt = events.back();
+
+        evt.verbosityLevel = valueOf<int>(tfLoc, "nestingLevel", 1);
+        if (!evt.verbosityLevel)
+            // update key event
+            keyEventIdx = events.size() - 1U;
+
+        const pt::ptree *loc;
+        if (!findChildOf(&loc, tfLoc, "location"))
+            // location info missing
+            return;
+
+        sarifReadLocation(&evt, *loc);
+        sarifReadMsg(&evt.msg, *loc);
+    }
+
+    if (events.size() <= 1U)
+        // we failed to read more than one event
+        return;
+
+    // update the list of events
+    events.swap(pDef->events);
+    pDef->keyEventIdx = keyEventIdx;
+}
+
 bool SarifTreeDecoder::readNode(
         Defect                      *def,
         pt::ptree::const_iterator    defIter)
@@ -493,6 +545,11 @@ bool SarifTreeDecoder::readNode(
     if (findChildOf(&locs, defNode, "locations") && !locs->empty())
         sarifReadLocation(&keyEvent, locs->begin()->second);
     sarifReadMsg(&keyEvent.msg, defNode);
+
+    // read code flow if available
+    const pt::ptree *cf;
+    if (findChildOf(&cf, defNode, "codeFlows"))
+        sarifReadCodeFlow(def, *cf);
 
     return true;
 }
