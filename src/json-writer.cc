@@ -225,6 +225,17 @@ static void sarifEncodeLoc(PTree *pLoc, const Defect &def, unsigned idx)
     pLoc->put_child("physicalLocation", locPhy);
 }
 
+static void sarifEncodeComment(PTree *pDst, const Defect &def, unsigned idx)
+{
+    PTree comment;
+
+    // needed for Github to see the SARIF data as valid
+    sarifEncodeLoc(&comment, def, idx);
+
+    sarifEncodeMsg(&comment, def.events[idx].msg);
+    appendNode(pDst, comment);
+}
+
 static void sarifEncodeEvt(PTree *pDst, const Defect &def, unsigned idx)
 {
     const DefEvent &evt = def.events[idx];
@@ -275,9 +286,13 @@ void SarifTreeEncoder::appendDef(const Defect &def)
     sarifEncodeMsg(&result, keyEvt.msg);
 
     // other events
-    PTree flowLocs;
-    for (unsigned i = 0; i < def.events.size(); ++i)
-        sarifEncodeEvt(&flowLocs, def, i);
+    PTree flowLocs, relatedLocs;
+    for (unsigned i = 0; i < def.events.size(); ++i) {
+        if (def.events[i].event == "#")
+            sarifEncodeComment(&relatedLocs, def, i);
+        else
+            sarifEncodeEvt(&flowLocs, def, i);
+    }
 
     // locations
     PTree tf;
@@ -293,6 +308,10 @@ void SarifTreeEncoder::appendDef(const Defect &def)
     PTree cfList;
     appendNode(&cfList, cf);
     result.put_child("codeFlows", cfList);
+
+    if (!relatedLocs.empty())
+        // our stash for comments
+        result.put_child("relatedLocations", relatedLocs);
 
     // append the `result` object to the `results` array
     appendNode(&results_, result);

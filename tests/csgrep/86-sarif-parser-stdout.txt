@@ -1,0 +1,1260 @@
+{
+    "scan": {
+        "analyzer-version-clang": "13.0.0",
+        "analyzer-version-coverity": "2022.3.0",
+        "analyzer-version-cppcheck": "2.7.4",
+        "analyzer-version-gcc": "11.2.1",
+        "analyzer-version-gcc-analyzer": "11.2.1",
+        "analyzer-version-shellcheck": "0.7.2",
+        "cov-compilation-unit-count": 31,
+        "cov-compilation-unit-ratio": 100,
+        "cov-lines-processed": 272444,
+        "cov-time-elapsed-analysis": "00:00:58",
+        "enabled-plugins": "clang, coverity, cppcheck, shellcheck, gcc",
+        "exit-code": 0,
+        "host": "f34",
+        "known-false-positives": "/usr/share/csmock/known-false-positives.js",
+        "mock-config": "fedora-35-x86_64",
+        "project-name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif-1.fc34",
+        "store-results-to": "/tmp/csdiff-2.3.0.20220405.151039.gdb041e9.sarif-1.fc34.tar.xz",
+        "time-created": "2022-04-06 09:58:40",
+        "time-finished": "2022-04-06 10:07:18",
+        "tool": "csmock",
+        "tool-args": "'/usr/bin/csmock' '-ar' 'fedora-35-x86_64' '-f' '/home/kdudka/git/csdiff/csdiff-2.3.0.20220405.151039.gdb041e9.sarif-1.fc34.src.rpm'",
+        "tool-version": "csmock-3.3.1-1.fc34"
+    },
+    "defects": [
+        {
+            "checker": "UNCAUGHT_EXCEPT",
+            "cwe": 248,
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csdiff.cc",
+                    "line": 30,
+                    "event": "root_function",
+                    "message": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::bad_any_cast>\" is thrown and never caught.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csdiff.cc",
+                    "line": 122,
+                    "event": "fun_call_w_exception",
+                    "message": "Called function throws an exception of type \"boost::wrapexcept<boost::bad_any_cast>\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   28|   #include <boost/program_options.hpp>",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   29|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   30|-> int main(int argc, char *argv[])",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   31|   {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   32|       using std::string;",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "UNCAUGHT_EXCEPT",
+            "cwe": 248,
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csdiff.cc",
+                    "line": 30,
+                    "event": "root_function",
+                    "message": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::property_tree::ptree_bad_data>\" is thrown and never caught.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csdiff.cc",
+                    "line": 169,
+                    "event": "fun_call_w_exception",
+                    "message": "Called function throws an exception of type \"boost::wrapexcept<boost::property_tree::ptree_bad_data>\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   28|   #include <boost/program_options.hpp>",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   29|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   30|-> int main(int argc, char *argv[])",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   31|   {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   32|       using std::string;",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "UNCAUGHT_EXCEPT",
+            "cwe": 248,
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csdiff.cc",
+                    "line": 30,
+                    "event": "root_function",
+                    "message": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::regex_error>\" is thrown and never caught.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csdiff.cc",
+                    "line": 124,
+                    "event": "fun_call_w_exception",
+                    "message": "Called function throws an exception of type \"boost::wrapexcept<boost::regex_error>\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   28|   #include <boost/program_options.hpp>",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   29|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   30|-> int main(int argc, char *argv[])",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   31|   {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   32|       using std::string;",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "UNCAUGHT_EXCEPT",
+            "cwe": 248,
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csdiff.cc",
+                    "line": 30,
+                    "event": "root_function",
+                    "message": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<std::logic_error>\" is thrown and never caught.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csdiff.cc",
+                    "line": 126,
+                    "event": "fun_call_w_exception",
+                    "message": "Called function throws an exception of type \"boost::wrapexcept<std::logic_error>\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   28|   #include <boost/program_options.hpp>",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   29|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   30|-> int main(int argc, char *argv[])",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   31|   {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   32|       using std::string;",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "UNCAUGHT_EXCEPT",
+            "cwe": 248,
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csgrep.cc",
+                    "line": 563,
+                    "event": "root_function",
+                    "message": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::bad_any_cast>\" is thrown and never caught.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csgrep.cc",
+                    "line": 650,
+                    "event": "fun_call_w_exception",
+                    "message": "Called function throws an exception of type \"boost::wrapexcept<boost::bad_any_cast>\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  561|   }",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  562|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  563|-> int main(int argc, char *argv[])",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  564|   {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  565|       using std::string;",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "UNCAUGHT_EXCEPT",
+            "cwe": 248,
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csgrep.cc",
+                    "line": 563,
+                    "event": "root_function",
+                    "message": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::bad_lexical_cast>\" is thrown and never caught.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csgrep.cc",
+                    "line": 597,
+                    "event": "fun_call_w_exception",
+                    "message": "Called function throws an exception of type \"boost::wrapexcept<boost::bad_lexical_cast>\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  561|   }",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  562|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  563|-> int main(int argc, char *argv[])",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  564|   {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  565|       using std::string;",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "UNCAUGHT_EXCEPT",
+            "cwe": 248,
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csgrep.cc",
+                    "line": 563,
+                    "event": "root_function",
+                    "message": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::regex_error>\" is thrown and never caught.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csgrep.cc",
+                    "line": 651,
+                    "event": "fun_call_w_exception",
+                    "message": "Called function throws an exception of type \"boost::wrapexcept<boost::regex_error>\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  561|   }",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  562|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  563|-> int main(int argc, char *argv[])",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  564|   {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  565|       using std::string;",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "UNCAUGHT_EXCEPT",
+            "cwe": 248,
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cshtml.cc",
+                    "line": 54,
+                    "event": "root_function",
+                    "message": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::bad_any_cast>\" is thrown and never caught.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cshtml.cc",
+                    "line": 129,
+                    "event": "fun_call_w_exception",
+                    "message": "Called function throws an exception of type \"boost::wrapexcept<boost::bad_any_cast>\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   52|   }",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   53|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   54|-> int main(int argc, char *argv[])",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   55|   {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   56|       using std::string;",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "UNCAUGHT_EXCEPT",
+            "cwe": 248,
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cshtml.cc",
+                    "line": 54,
+                    "event": "root_function",
+                    "message": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::bad_lexical_cast>\" is thrown and never caught.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cshtml.cc",
+                    "line": 74,
+                    "event": "fun_call_w_exception",
+                    "message": "Called function throws an exception of type \"boost::wrapexcept<boost::bad_lexical_cast>\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   52|   }",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   53|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   54|-> int main(int argc, char *argv[])",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   55|   {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   56|       using std::string;",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "UNCAUGHT_EXCEPT",
+            "cwe": 248,
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cslinker.cc",
+                    "line": 152,
+                    "event": "root_function",
+                    "message": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::bad_any_cast>\" is thrown and never caught.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cslinker.cc",
+                    "line": 209,
+                    "event": "fun_call_w_exception",
+                    "message": "Called function throws an exception of type \"boost::wrapexcept<boost::bad_any_cast>\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  150|   }",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  151|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  152|-> int main(int argc, char *argv[])",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  153|   {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  154|       using std::string;",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "UNCAUGHT_EXCEPT",
+            "cwe": 248,
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cslinker.cc",
+                    "line": 152,
+                    "event": "root_function",
+                    "message": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::escaped_list_error>\" is thrown and never caught.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cslinker.cc",
+                    "line": 237,
+                    "event": "fun_call_w_exception",
+                    "message": "Called function throws an exception of type \"boost::wrapexcept<boost::escaped_list_error>\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  150|   }",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  151|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  152|-> int main(int argc, char *argv[])",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  153|   {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  154|       using std::string;",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "UNCAUGHT_EXCEPT",
+            "cwe": 248,
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cslinker.cc",
+                    "line": 152,
+                    "event": "root_function",
+                    "message": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::property_tree::ptree_bad_data>\" is thrown and never caught.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cslinker.cc",
+                    "line": 224,
+                    "event": "fun_call_w_exception",
+                    "message": "Called function throws an exception of type \"boost::wrapexcept<boost::property_tree::ptree_bad_data>\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  150|   }",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  151|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  152|-> int main(int argc, char *argv[])",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  153|   {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  154|       using std::string;",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "UNCAUGHT_EXCEPT",
+            "cwe": 248,
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cslinker.cc",
+                    "line": 152,
+                    "event": "root_function",
+                    "message": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::regex_error>\" is thrown and never caught.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cslinker.cc",
+                    "line": 229,
+                    "event": "fun_call_w_exception",
+                    "message": "Called function throws an exception of type \"boost::wrapexcept<boost::regex_error>\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  150|   }",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  151|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  152|-> int main(int argc, char *argv[])",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  153|   {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  154|       using std::string;",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "UNCAUGHT_EXCEPT",
+            "cwe": 248,
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cslinker.cc",
+                    "line": 152,
+                    "event": "root_function",
+                    "message": "In function \"main(int, char **)\" an exception of type \"std::runtime_error\" is thrown and never caught.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cslinker.cc",
+                    "line": 224,
+                    "event": "fun_call_w_exception",
+                    "message": "Called function throws an exception of type \"std::runtime_error\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  150|   }",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  151|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  152|-> int main(int argc, char *argv[])",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  153|   {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  154|       using std::string;",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "UNCAUGHT_EXCEPT",
+            "cwe": 248,
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cssort.cc",
+                    "line": 161,
+                    "event": "root_function",
+                    "message": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::bad_any_cast>\" is thrown and never caught.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cssort.cc",
+                    "line": 239,
+                    "event": "fun_call_w_exception",
+                    "message": "Called function throws an exception of type \"boost::wrapexcept<boost::bad_any_cast>\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  159|   }",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  160|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  161|-> int main(int argc, char *argv[])",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  162|   {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  163|       using std::string;",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "UNCAUGHT_EXCEPT",
+            "cwe": 248,
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cssort.cc",
+                    "line": 161,
+                    "event": "root_function",
+                    "message": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::bad_lexical_cast>\" is thrown and never caught.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cssort.cc",
+                    "line": 175,
+                    "event": "fun_call_w_exception",
+                    "message": "Called function throws an exception of type \"boost::wrapexcept<boost::bad_lexical_cast>\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  159|   }",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  160|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  161|-> int main(int argc, char *argv[])",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  162|   {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  163|       using std::string;",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "UNCAUGHT_EXCEPT",
+            "cwe": 248,
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cssort.cc",
+                    "line": 161,
+                    "event": "root_function",
+                    "message": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::regex_error>\" is thrown and never caught.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cssort.cc",
+                    "line": 236,
+                    "event": "fun_call_w_exception",
+                    "message": "Called function throws an exception of type \"boost::wrapexcept<boost::regex_error>\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  159|   }",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  160|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  161|-> int main(int argc, char *argv[])",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  162|   {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  163|       using std::string;",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "UNCAUGHT_EXCEPT",
+            "cwe": 248,
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cstrans-df-run.cc",
+                    "line": 300,
+                    "event": "root_function",
+                    "message": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::bad_any_cast>\" is thrown and never caught.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cstrans-df-run.cc",
+                    "line": 358,
+                    "event": "fun_call_w_exception",
+                    "message": "Called function throws an exception of type \"boost::wrapexcept<boost::bad_any_cast>\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  298|   }",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  299|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  300|-> int main(int argc, char *argv[])",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  301|   {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  302|       // used also in diagnostic messages",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "UNCAUGHT_EXCEPT",
+            "cwe": 248,
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cstrans-df-run.cc",
+                    "line": 300,
+                    "event": "root_function",
+                    "message": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::regex_error>\" is thrown and never caught.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cstrans-df-run.cc",
+                    "line": 365,
+                    "event": "fun_call_w_exception",
+                    "message": "Called function throws an exception of type \"boost::wrapexcept<boost::regex_error>\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  298|   }",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  299|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  300|-> int main(int argc, char *argv[])",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  301|   {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  302|       // used also in diagnostic messages",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "UNCAUGHT_EXCEPT",
+            "cwe": 248,
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cstrans-df-run.cc",
+                    "line": 300,
+                    "event": "root_function",
+                    "message": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<std::logic_error>\" is thrown and never caught.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cstrans-df-run.cc",
+                    "line": 369,
+                    "event": "fun_call_w_exception",
+                    "message": "Called function throws an exception of type \"boost::wrapexcept<std::logic_error>\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  298|   }",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  299|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  300|-> int main(int argc, char *argv[])",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  301|   {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  302|       // used also in diagnostic messages",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT_CTOR",
+            "cwe": 456,
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csv-parser.hh",
+                    "line": 44,
+                    "event": "member_decl",
+                    "message": "Class member declaration for \"silent\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csv-parser.cc",
+                    "line": 36,
+                    "event": "uninit_member",
+                    "message": "Non-static class member \"silent\" is not initialized in this constructor nor in any functions that it calls.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   34|       d(new Private)",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   35|   {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   36|-> }",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   37|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   38|   AbstractCsvParser::~AbstractCsvParser()",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT_CTOR",
+            "cwe": 456,
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/json-writer.cc",
+                    "line": 342,
+                    "event": "member_decl",
+                    "message": "Class member declaration for \"encoder\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/json-writer.cc",
+                    "line": 347,
+                    "event": "uninit_member",
+                    "message": "Non-static class member \"encoder\" is not initialized in this constructor nor in any functions that it calls.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  345|           str(str_)",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  346|       {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  347|->     }",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  348|   };",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  349|   ",
+                    "verbosity_level": 1
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,2841 @@
+{
+    "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+    "version": "",
+    "inlineExternalProperties": [
+        {
+            "externalizedProperties": {
+                "analyzer-version-clang": "13.0.0",
+                "analyzer-version-coverity": "2022.3.0",
+                "analyzer-version-cppcheck": "2.7.4",
+                "analyzer-version-gcc": "11.2.1",
+                "analyzer-version-gcc-analyzer": "11.2.1",
+                "analyzer-version-shellcheck": "0.7.2",
+                "cov-compilation-unit-count": 31,
+                "cov-compilation-unit-ratio": 100,
+                "cov-lines-processed": 272444,
+                "cov-time-elapsed-analysis": "00:00:58",
+                "enabled-plugins": "clang, coverity, cppcheck, shellcheck, gcc",
+                "exit-code": 0,
+                "host": "f34",
+                "known-false-positives": "/usr/share/csmock/known-false-positives.js",
+                "mock-config": "fedora-35-x86_64",
+                "project-name": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif-1.fc34",
+                "store-results-to": "/tmp/csdiff-2.3.0.20220405.151039.gdb041e9.sarif-1.fc34.tar.xz",
+                "time-created": "2022-04-06 09:58:40",
+                "time-finished": "2022-04-06 10:07:18",
+                "tool": "csmock",
+                "tool-args": "'/usr/bin/csmock' '-ar' 'fedora-35-x86_64' '-f' '/home/kdudka/git/csdiff/csdiff-2.3.0.20220405.151039.gdb041e9.sarif-1.fc34.src.rpm'",
+                "tool-version": "csmock-3.3.1-1.fc34"
+            }
+        }
+    ],
+    "runs": [
+        {
+            "tool": {
+                "driver": {
+                    "name": "csdiff",
+                    "version": "",
+                    "informationUri": "https://github.com/csutils/csdiff",
+                    "rules": [
+                        {
+                            "id": "UNCAUGHT_EXCEPT: root_function",
+                            "properties": {
+                                "cwe": [
+                                    "CWE-248"
+                                ]
+                            },
+                            "help": {
+                                "text": "https://cwe.mitre.org/data/definitions/248.html"
+                            }
+                        },
+                        {
+                            "id": "UNINIT_CTOR: uninit_member",
+                            "properties": {
+                                "cwe": [
+                                    "CWE-456"
+                                ]
+                            },
+                            "help": {
+                                "text": "https://cwe.mitre.org/data/definitions/456.html"
+                            }
+                        }
+                    ]
+                }
+            },
+            "results": [
+                {
+                    "ruleId": "UNCAUGHT_EXCEPT: root_function",
+                    "locations": [
+                        {
+                            "id": 0,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csdiff.cc"
+                                },
+                                "region": {
+                                    "startLine": 30
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::bad_any_cast>\" is thrown and never caught."
+                    },
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "id": 0,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csdiff.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 30
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::bad_any_cast>\" is thrown and never caught."
+                                                }
+                                            },
+                                            "nestingLevel": 0,
+                                            "kinds": [
+                                                "root_function"
+                                            ]
+                                        },
+                                        {
+                                            "location": {
+                                                "id": 1,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csdiff.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 122
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "Called function throws an exception of type \"boost::wrapexcept<boost::bad_any_cast>\"."
+                                                }
+                                            },
+                                            "nestingLevel": 1,
+                                            "kinds": [
+                                                "fun_call_w_exception"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "relatedLocations": [
+                        {
+                            "id": 2,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "   28|   #include <boost/program_options.hpp>"
+                            }
+                        },
+                        {
+                            "id": 3,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "   29|   "
+                            }
+                        },
+                        {
+                            "id": 4,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "   30|-> int main(int argc, char *argv[])"
+                            }
+                        },
+                        {
+                            "id": 5,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "   31|   {"
+                            }
+                        },
+                        {
+                            "id": 6,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "   32|       using std::string;"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "UNCAUGHT_EXCEPT: root_function",
+                    "locations": [
+                        {
+                            "id": 0,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csdiff.cc"
+                                },
+                                "region": {
+                                    "startLine": 30
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::property_tree::ptree_bad_data>\" is thrown and never caught."
+                    },
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "id": 0,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csdiff.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 30
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::property_tree::ptree_bad_data>\" is thrown and never caught."
+                                                }
+                                            },
+                                            "nestingLevel": 0,
+                                            "kinds": [
+                                                "root_function"
+                                            ]
+                                        },
+                                        {
+                                            "location": {
+                                                "id": 1,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csdiff.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 169
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "Called function throws an exception of type \"boost::wrapexcept<boost::property_tree::ptree_bad_data>\"."
+                                                }
+                                            },
+                                            "nestingLevel": 1,
+                                            "kinds": [
+                                                "fun_call_w_exception"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "relatedLocations": [
+                        {
+                            "id": 2,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "   28|   #include <boost/program_options.hpp>"
+                            }
+                        },
+                        {
+                            "id": 3,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "   29|   "
+                            }
+                        },
+                        {
+                            "id": 4,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "   30|-> int main(int argc, char *argv[])"
+                            }
+                        },
+                        {
+                            "id": 5,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "   31|   {"
+                            }
+                        },
+                        {
+                            "id": 6,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "   32|       using std::string;"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "UNCAUGHT_EXCEPT: root_function",
+                    "locations": [
+                        {
+                            "id": 0,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csdiff.cc"
+                                },
+                                "region": {
+                                    "startLine": 30
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::regex_error>\" is thrown and never caught."
+                    },
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "id": 0,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csdiff.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 30
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::regex_error>\" is thrown and never caught."
+                                                }
+                                            },
+                                            "nestingLevel": 0,
+                                            "kinds": [
+                                                "root_function"
+                                            ]
+                                        },
+                                        {
+                                            "location": {
+                                                "id": 1,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csdiff.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 124
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "Called function throws an exception of type \"boost::wrapexcept<boost::regex_error>\"."
+                                                }
+                                            },
+                                            "nestingLevel": 1,
+                                            "kinds": [
+                                                "fun_call_w_exception"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "relatedLocations": [
+                        {
+                            "id": 2,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "   28|   #include <boost/program_options.hpp>"
+                            }
+                        },
+                        {
+                            "id": 3,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "   29|   "
+                            }
+                        },
+                        {
+                            "id": 4,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "   30|-> int main(int argc, char *argv[])"
+                            }
+                        },
+                        {
+                            "id": 5,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "   31|   {"
+                            }
+                        },
+                        {
+                            "id": 6,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "   32|       using std::string;"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "UNCAUGHT_EXCEPT: root_function",
+                    "locations": [
+                        {
+                            "id": 0,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csdiff.cc"
+                                },
+                                "region": {
+                                    "startLine": 30
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<std::logic_error>\" is thrown and never caught."
+                    },
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "id": 0,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csdiff.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 30
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<std::logic_error>\" is thrown and never caught."
+                                                }
+                                            },
+                                            "nestingLevel": 0,
+                                            "kinds": [
+                                                "root_function"
+                                            ]
+                                        },
+                                        {
+                                            "location": {
+                                                "id": 1,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csdiff.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 126
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "Called function throws an exception of type \"boost::wrapexcept<std::logic_error>\"."
+                                                }
+                                            },
+                                            "nestingLevel": 1,
+                                            "kinds": [
+                                                "fun_call_w_exception"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "relatedLocations": [
+                        {
+                            "id": 2,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "   28|   #include <boost/program_options.hpp>"
+                            }
+                        },
+                        {
+                            "id": 3,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "   29|   "
+                            }
+                        },
+                        {
+                            "id": 4,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "   30|-> int main(int argc, char *argv[])"
+                            }
+                        },
+                        {
+                            "id": 5,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "   31|   {"
+                            }
+                        },
+                        {
+                            "id": 6,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "   32|       using std::string;"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "UNCAUGHT_EXCEPT: root_function",
+                    "locations": [
+                        {
+                            "id": 0,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csgrep.cc"
+                                },
+                                "region": {
+                                    "startLine": 563
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::bad_any_cast>\" is thrown and never caught."
+                    },
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "id": 0,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csgrep.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 563
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::bad_any_cast>\" is thrown and never caught."
+                                                }
+                                            },
+                                            "nestingLevel": 0,
+                                            "kinds": [
+                                                "root_function"
+                                            ]
+                                        },
+                                        {
+                                            "location": {
+                                                "id": 1,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csgrep.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 650
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "Called function throws an exception of type \"boost::wrapexcept<boost::bad_any_cast>\"."
+                                                }
+                                            },
+                                            "nestingLevel": 1,
+                                            "kinds": [
+                                                "fun_call_w_exception"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "relatedLocations": [
+                        {
+                            "id": 2,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  561|   }"
+                            }
+                        },
+                        {
+                            "id": 3,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  562|   "
+                            }
+                        },
+                        {
+                            "id": 4,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  563|-> int main(int argc, char *argv[])"
+                            }
+                        },
+                        {
+                            "id": 5,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  564|   {"
+                            }
+                        },
+                        {
+                            "id": 6,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  565|       using std::string;"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "UNCAUGHT_EXCEPT: root_function",
+                    "locations": [
+                        {
+                            "id": 0,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csgrep.cc"
+                                },
+                                "region": {
+                                    "startLine": 563
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::bad_lexical_cast>\" is thrown and never caught."
+                    },
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "id": 0,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csgrep.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 563
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::bad_lexical_cast>\" is thrown and never caught."
+                                                }
+                                            },
+                                            "nestingLevel": 0,
+                                            "kinds": [
+                                                "root_function"
+                                            ]
+                                        },
+                                        {
+                                            "location": {
+                                                "id": 1,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csgrep.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 597
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "Called function throws an exception of type \"boost::wrapexcept<boost::bad_lexical_cast>\"."
+                                                }
+                                            },
+                                            "nestingLevel": 1,
+                                            "kinds": [
+                                                "fun_call_w_exception"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "relatedLocations": [
+                        {
+                            "id": 2,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  561|   }"
+                            }
+                        },
+                        {
+                            "id": 3,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  562|   "
+                            }
+                        },
+                        {
+                            "id": 4,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  563|-> int main(int argc, char *argv[])"
+                            }
+                        },
+                        {
+                            "id": 5,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  564|   {"
+                            }
+                        },
+                        {
+                            "id": 6,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  565|       using std::string;"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "UNCAUGHT_EXCEPT: root_function",
+                    "locations": [
+                        {
+                            "id": 0,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csgrep.cc"
+                                },
+                                "region": {
+                                    "startLine": 563
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::regex_error>\" is thrown and never caught."
+                    },
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "id": 0,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csgrep.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 563
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::regex_error>\" is thrown and never caught."
+                                                }
+                                            },
+                                            "nestingLevel": 0,
+                                            "kinds": [
+                                                "root_function"
+                                            ]
+                                        },
+                                        {
+                                            "location": {
+                                                "id": 1,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csgrep.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 651
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "Called function throws an exception of type \"boost::wrapexcept<boost::regex_error>\"."
+                                                }
+                                            },
+                                            "nestingLevel": 1,
+                                            "kinds": [
+                                                "fun_call_w_exception"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "relatedLocations": [
+                        {
+                            "id": 2,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  561|   }"
+                            }
+                        },
+                        {
+                            "id": 3,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  562|   "
+                            }
+                        },
+                        {
+                            "id": 4,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  563|-> int main(int argc, char *argv[])"
+                            }
+                        },
+                        {
+                            "id": 5,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  564|   {"
+                            }
+                        },
+                        {
+                            "id": 6,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  565|       using std::string;"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "UNCAUGHT_EXCEPT: root_function",
+                    "locations": [
+                        {
+                            "id": 0,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cshtml.cc"
+                                },
+                                "region": {
+                                    "startLine": 54
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::bad_any_cast>\" is thrown and never caught."
+                    },
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "id": 0,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cshtml.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 54
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::bad_any_cast>\" is thrown and never caught."
+                                                }
+                                            },
+                                            "nestingLevel": 0,
+                                            "kinds": [
+                                                "root_function"
+                                            ]
+                                        },
+                                        {
+                                            "location": {
+                                                "id": 1,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cshtml.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 129
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "Called function throws an exception of type \"boost::wrapexcept<boost::bad_any_cast>\"."
+                                                }
+                                            },
+                                            "nestingLevel": 1,
+                                            "kinds": [
+                                                "fun_call_w_exception"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "relatedLocations": [
+                        {
+                            "id": 2,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "   52|   }"
+                            }
+                        },
+                        {
+                            "id": 3,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "   53|   "
+                            }
+                        },
+                        {
+                            "id": 4,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "   54|-> int main(int argc, char *argv[])"
+                            }
+                        },
+                        {
+                            "id": 5,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "   55|   {"
+                            }
+                        },
+                        {
+                            "id": 6,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "   56|       using std::string;"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "UNCAUGHT_EXCEPT: root_function",
+                    "locations": [
+                        {
+                            "id": 0,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cshtml.cc"
+                                },
+                                "region": {
+                                    "startLine": 54
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::bad_lexical_cast>\" is thrown and never caught."
+                    },
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "id": 0,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cshtml.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 54
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::bad_lexical_cast>\" is thrown and never caught."
+                                                }
+                                            },
+                                            "nestingLevel": 0,
+                                            "kinds": [
+                                                "root_function"
+                                            ]
+                                        },
+                                        {
+                                            "location": {
+                                                "id": 1,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cshtml.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 74
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "Called function throws an exception of type \"boost::wrapexcept<boost::bad_lexical_cast>\"."
+                                                }
+                                            },
+                                            "nestingLevel": 1,
+                                            "kinds": [
+                                                "fun_call_w_exception"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "relatedLocations": [
+                        {
+                            "id": 2,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "   52|   }"
+                            }
+                        },
+                        {
+                            "id": 3,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "   53|   "
+                            }
+                        },
+                        {
+                            "id": 4,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "   54|-> int main(int argc, char *argv[])"
+                            }
+                        },
+                        {
+                            "id": 5,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "   55|   {"
+                            }
+                        },
+                        {
+                            "id": 6,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "   56|       using std::string;"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "UNCAUGHT_EXCEPT: root_function",
+                    "locations": [
+                        {
+                            "id": 0,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cslinker.cc"
+                                },
+                                "region": {
+                                    "startLine": 152
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::bad_any_cast>\" is thrown and never caught."
+                    },
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "id": 0,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cslinker.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 152
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::bad_any_cast>\" is thrown and never caught."
+                                                }
+                                            },
+                                            "nestingLevel": 0,
+                                            "kinds": [
+                                                "root_function"
+                                            ]
+                                        },
+                                        {
+                                            "location": {
+                                                "id": 1,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cslinker.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 209
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "Called function throws an exception of type \"boost::wrapexcept<boost::bad_any_cast>\"."
+                                                }
+                                            },
+                                            "nestingLevel": 1,
+                                            "kinds": [
+                                                "fun_call_w_exception"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "relatedLocations": [
+                        {
+                            "id": 2,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  150|   }"
+                            }
+                        },
+                        {
+                            "id": 3,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  151|   "
+                            }
+                        },
+                        {
+                            "id": 4,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  152|-> int main(int argc, char *argv[])"
+                            }
+                        },
+                        {
+                            "id": 5,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  153|   {"
+                            }
+                        },
+                        {
+                            "id": 6,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  154|       using std::string;"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "UNCAUGHT_EXCEPT: root_function",
+                    "locations": [
+                        {
+                            "id": 0,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cslinker.cc"
+                                },
+                                "region": {
+                                    "startLine": 152
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::escaped_list_error>\" is thrown and never caught."
+                    },
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "id": 0,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cslinker.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 152
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::escaped_list_error>\" is thrown and never caught."
+                                                }
+                                            },
+                                            "nestingLevel": 0,
+                                            "kinds": [
+                                                "root_function"
+                                            ]
+                                        },
+                                        {
+                                            "location": {
+                                                "id": 1,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cslinker.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 237
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "Called function throws an exception of type \"boost::wrapexcept<boost::escaped_list_error>\"."
+                                                }
+                                            },
+                                            "nestingLevel": 1,
+                                            "kinds": [
+                                                "fun_call_w_exception"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "relatedLocations": [
+                        {
+                            "id": 2,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  150|   }"
+                            }
+                        },
+                        {
+                            "id": 3,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  151|   "
+                            }
+                        },
+                        {
+                            "id": 4,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  152|-> int main(int argc, char *argv[])"
+                            }
+                        },
+                        {
+                            "id": 5,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  153|   {"
+                            }
+                        },
+                        {
+                            "id": 6,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  154|       using std::string;"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "UNCAUGHT_EXCEPT: root_function",
+                    "locations": [
+                        {
+                            "id": 0,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cslinker.cc"
+                                },
+                                "region": {
+                                    "startLine": 152
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::property_tree::ptree_bad_data>\" is thrown and never caught."
+                    },
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "id": 0,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cslinker.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 152
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::property_tree::ptree_bad_data>\" is thrown and never caught."
+                                                }
+                                            },
+                                            "nestingLevel": 0,
+                                            "kinds": [
+                                                "root_function"
+                                            ]
+                                        },
+                                        {
+                                            "location": {
+                                                "id": 1,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cslinker.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 224
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "Called function throws an exception of type \"boost::wrapexcept<boost::property_tree::ptree_bad_data>\"."
+                                                }
+                                            },
+                                            "nestingLevel": 1,
+                                            "kinds": [
+                                                "fun_call_w_exception"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "relatedLocations": [
+                        {
+                            "id": 2,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  150|   }"
+                            }
+                        },
+                        {
+                            "id": 3,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  151|   "
+                            }
+                        },
+                        {
+                            "id": 4,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  152|-> int main(int argc, char *argv[])"
+                            }
+                        },
+                        {
+                            "id": 5,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  153|   {"
+                            }
+                        },
+                        {
+                            "id": 6,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  154|       using std::string;"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "UNCAUGHT_EXCEPT: root_function",
+                    "locations": [
+                        {
+                            "id": 0,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cslinker.cc"
+                                },
+                                "region": {
+                                    "startLine": 152
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::regex_error>\" is thrown and never caught."
+                    },
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "id": 0,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cslinker.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 152
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::regex_error>\" is thrown and never caught."
+                                                }
+                                            },
+                                            "nestingLevel": 0,
+                                            "kinds": [
+                                                "root_function"
+                                            ]
+                                        },
+                                        {
+                                            "location": {
+                                                "id": 1,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cslinker.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 229
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "Called function throws an exception of type \"boost::wrapexcept<boost::regex_error>\"."
+                                                }
+                                            },
+                                            "nestingLevel": 1,
+                                            "kinds": [
+                                                "fun_call_w_exception"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "relatedLocations": [
+                        {
+                            "id": 2,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  150|   }"
+                            }
+                        },
+                        {
+                            "id": 3,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  151|   "
+                            }
+                        },
+                        {
+                            "id": 4,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  152|-> int main(int argc, char *argv[])"
+                            }
+                        },
+                        {
+                            "id": 5,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  153|   {"
+                            }
+                        },
+                        {
+                            "id": 6,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  154|       using std::string;"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "UNCAUGHT_EXCEPT: root_function",
+                    "locations": [
+                        {
+                            "id": 0,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cslinker.cc"
+                                },
+                                "region": {
+                                    "startLine": 152
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "In function \"main(int, char **)\" an exception of type \"std::runtime_error\" is thrown and never caught."
+                    },
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "id": 0,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cslinker.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 152
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "In function \"main(int, char **)\" an exception of type \"std::runtime_error\" is thrown and never caught."
+                                                }
+                                            },
+                                            "nestingLevel": 0,
+                                            "kinds": [
+                                                "root_function"
+                                            ]
+                                        },
+                                        {
+                                            "location": {
+                                                "id": 1,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cslinker.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 224
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "Called function throws an exception of type \"std::runtime_error\"."
+                                                }
+                                            },
+                                            "nestingLevel": 1,
+                                            "kinds": [
+                                                "fun_call_w_exception"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "relatedLocations": [
+                        {
+                            "id": 2,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  150|   }"
+                            }
+                        },
+                        {
+                            "id": 3,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  151|   "
+                            }
+                        },
+                        {
+                            "id": 4,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  152|-> int main(int argc, char *argv[])"
+                            }
+                        },
+                        {
+                            "id": 5,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  153|   {"
+                            }
+                        },
+                        {
+                            "id": 6,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  154|       using std::string;"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "UNCAUGHT_EXCEPT: root_function",
+                    "locations": [
+                        {
+                            "id": 0,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cssort.cc"
+                                },
+                                "region": {
+                                    "startLine": 161
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::bad_any_cast>\" is thrown and never caught."
+                    },
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "id": 0,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cssort.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 161
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::bad_any_cast>\" is thrown and never caught."
+                                                }
+                                            },
+                                            "nestingLevel": 0,
+                                            "kinds": [
+                                                "root_function"
+                                            ]
+                                        },
+                                        {
+                                            "location": {
+                                                "id": 1,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cssort.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 239
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "Called function throws an exception of type \"boost::wrapexcept<boost::bad_any_cast>\"."
+                                                }
+                                            },
+                                            "nestingLevel": 1,
+                                            "kinds": [
+                                                "fun_call_w_exception"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "relatedLocations": [
+                        {
+                            "id": 2,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  159|   }"
+                            }
+                        },
+                        {
+                            "id": 3,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  160|   "
+                            }
+                        },
+                        {
+                            "id": 4,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  161|-> int main(int argc, char *argv[])"
+                            }
+                        },
+                        {
+                            "id": 5,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  162|   {"
+                            }
+                        },
+                        {
+                            "id": 6,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  163|       using std::string;"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "UNCAUGHT_EXCEPT: root_function",
+                    "locations": [
+                        {
+                            "id": 0,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cssort.cc"
+                                },
+                                "region": {
+                                    "startLine": 161
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::bad_lexical_cast>\" is thrown and never caught."
+                    },
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "id": 0,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cssort.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 161
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::bad_lexical_cast>\" is thrown and never caught."
+                                                }
+                                            },
+                                            "nestingLevel": 0,
+                                            "kinds": [
+                                                "root_function"
+                                            ]
+                                        },
+                                        {
+                                            "location": {
+                                                "id": 1,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cssort.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 175
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "Called function throws an exception of type \"boost::wrapexcept<boost::bad_lexical_cast>\"."
+                                                }
+                                            },
+                                            "nestingLevel": 1,
+                                            "kinds": [
+                                                "fun_call_w_exception"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "relatedLocations": [
+                        {
+                            "id": 2,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  159|   }"
+                            }
+                        },
+                        {
+                            "id": 3,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  160|   "
+                            }
+                        },
+                        {
+                            "id": 4,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  161|-> int main(int argc, char *argv[])"
+                            }
+                        },
+                        {
+                            "id": 5,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  162|   {"
+                            }
+                        },
+                        {
+                            "id": 6,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  163|       using std::string;"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "UNCAUGHT_EXCEPT: root_function",
+                    "locations": [
+                        {
+                            "id": 0,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cssort.cc"
+                                },
+                                "region": {
+                                    "startLine": 161
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::regex_error>\" is thrown and never caught."
+                    },
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "id": 0,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cssort.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 161
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::regex_error>\" is thrown and never caught."
+                                                }
+                                            },
+                                            "nestingLevel": 0,
+                                            "kinds": [
+                                                "root_function"
+                                            ]
+                                        },
+                                        {
+                                            "location": {
+                                                "id": 1,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cssort.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 236
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "Called function throws an exception of type \"boost::wrapexcept<boost::regex_error>\"."
+                                                }
+                                            },
+                                            "nestingLevel": 1,
+                                            "kinds": [
+                                                "fun_call_w_exception"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "relatedLocations": [
+                        {
+                            "id": 2,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  159|   }"
+                            }
+                        },
+                        {
+                            "id": 3,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  160|   "
+                            }
+                        },
+                        {
+                            "id": 4,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  161|-> int main(int argc, char *argv[])"
+                            }
+                        },
+                        {
+                            "id": 5,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  162|   {"
+                            }
+                        },
+                        {
+                            "id": 6,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  163|       using std::string;"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "UNCAUGHT_EXCEPT: root_function",
+                    "locations": [
+                        {
+                            "id": 0,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cstrans-df-run.cc"
+                                },
+                                "region": {
+                                    "startLine": 300
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::bad_any_cast>\" is thrown and never caught."
+                    },
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "id": 0,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cstrans-df-run.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 300
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::bad_any_cast>\" is thrown and never caught."
+                                                }
+                                            },
+                                            "nestingLevel": 0,
+                                            "kinds": [
+                                                "root_function"
+                                            ]
+                                        },
+                                        {
+                                            "location": {
+                                                "id": 1,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cstrans-df-run.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 358
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "Called function throws an exception of type \"boost::wrapexcept<boost::bad_any_cast>\"."
+                                                }
+                                            },
+                                            "nestingLevel": 1,
+                                            "kinds": [
+                                                "fun_call_w_exception"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "relatedLocations": [
+                        {
+                            "id": 2,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  298|   }"
+                            }
+                        },
+                        {
+                            "id": 3,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  299|   "
+                            }
+                        },
+                        {
+                            "id": 4,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  300|-> int main(int argc, char *argv[])"
+                            }
+                        },
+                        {
+                            "id": 5,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  301|   {"
+                            }
+                        },
+                        {
+                            "id": 6,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  302|       // used also in diagnostic messages"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "UNCAUGHT_EXCEPT: root_function",
+                    "locations": [
+                        {
+                            "id": 0,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cstrans-df-run.cc"
+                                },
+                                "region": {
+                                    "startLine": 300
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::regex_error>\" is thrown and never caught."
+                    },
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "id": 0,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cstrans-df-run.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 300
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<boost::regex_error>\" is thrown and never caught."
+                                                }
+                                            },
+                                            "nestingLevel": 0,
+                                            "kinds": [
+                                                "root_function"
+                                            ]
+                                        },
+                                        {
+                                            "location": {
+                                                "id": 1,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cstrans-df-run.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 365
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "Called function throws an exception of type \"boost::wrapexcept<boost::regex_error>\"."
+                                                }
+                                            },
+                                            "nestingLevel": 1,
+                                            "kinds": [
+                                                "fun_call_w_exception"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "relatedLocations": [
+                        {
+                            "id": 2,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  298|   }"
+                            }
+                        },
+                        {
+                            "id": 3,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  299|   "
+                            }
+                        },
+                        {
+                            "id": 4,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  300|-> int main(int argc, char *argv[])"
+                            }
+                        },
+                        {
+                            "id": 5,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  301|   {"
+                            }
+                        },
+                        {
+                            "id": 6,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  302|       // used also in diagnostic messages"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "UNCAUGHT_EXCEPT: root_function",
+                    "locations": [
+                        {
+                            "id": 0,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cstrans-df-run.cc"
+                                },
+                                "region": {
+                                    "startLine": 300
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<std::logic_error>\" is thrown and never caught."
+                    },
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "id": 0,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cstrans-df-run.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 300
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "In function \"main(int, char **)\" an exception of type \"boost::wrapexcept<std::logic_error>\" is thrown and never caught."
+                                                }
+                                            },
+                                            "nestingLevel": 0,
+                                            "kinds": [
+                                                "root_function"
+                                            ]
+                                        },
+                                        {
+                                            "location": {
+                                                "id": 1,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cstrans-df-run.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 369
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "Called function throws an exception of type \"boost::wrapexcept<std::logic_error>\"."
+                                                }
+                                            },
+                                            "nestingLevel": 1,
+                                            "kinds": [
+                                                "fun_call_w_exception"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "relatedLocations": [
+                        {
+                            "id": 2,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  298|   }"
+                            }
+                        },
+                        {
+                            "id": 3,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  299|   "
+                            }
+                        },
+                        {
+                            "id": 4,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  300|-> int main(int argc, char *argv[])"
+                            }
+                        },
+                        {
+                            "id": 5,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  301|   {"
+                            }
+                        },
+                        {
+                            "id": 6,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  302|       // used also in diagnostic messages"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "UNINIT_CTOR: uninit_member",
+                    "locations": [
+                        {
+                            "id": 1,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csv-parser.cc"
+                                },
+                                "region": {
+                                    "startLine": 36
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "Non-static class member \"silent\" is not initialized in this constructor nor in any functions that it calls."
+                    },
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "id": 0,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csv-parser.hh"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 44
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "Class member declaration for \"silent\"."
+                                                }
+                                            },
+                                            "nestingLevel": 1,
+                                            "kinds": [
+                                                "member_decl"
+                                            ]
+                                        },
+                                        {
+                                            "location": {
+                                                "id": 1,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csv-parser.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 36
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "Non-static class member \"silent\" is not initialized in this constructor nor in any functions that it calls."
+                                                }
+                                            },
+                                            "nestingLevel": 0,
+                                            "kinds": [
+                                                "uninit_member"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "relatedLocations": [
+                        {
+                            "id": 2,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "   34|       d(new Private)"
+                            }
+                        },
+                        {
+                            "id": 3,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "   35|   {"
+                            }
+                        },
+                        {
+                            "id": 4,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "   36|-> }"
+                            }
+                        },
+                        {
+                            "id": 5,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "   37|   "
+                            }
+                        },
+                        {
+                            "id": 6,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "   38|   AbstractCsvParser::~AbstractCsvParser()"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "UNINIT_CTOR: uninit_member",
+                    "locations": [
+                        {
+                            "id": 1,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/json-writer.cc"
+                                },
+                                "region": {
+                                    "startLine": 347
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "Non-static class member \"encoder\" is not initialized in this constructor nor in any functions that it calls."
+                    },
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "id": 0,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/json-writer.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 342
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "Class member declaration for \"encoder\"."
+                                                }
+                                            },
+                                            "nestingLevel": 1,
+                                            "kinds": [
+                                                "member_decl"
+                                            ]
+                                        },
+                                        {
+                                            "location": {
+                                                "id": 1,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/json-writer.cc"
+                                                    },
+                                                    "region": {
+                                                        "startLine": 347
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "Non-static class member \"encoder\" is not initialized in this constructor nor in any functions that it calls."
+                                                }
+                                            },
+                                            "nestingLevel": 0,
+                                            "kinds": [
+                                                "uninit_member"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "relatedLocations": [
+                        {
+                            "id": 2,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  345|           str(str_)"
+                            }
+                        },
+                        {
+                            "id": 3,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  346|       {"
+                            }
+                        },
+                        {
+                            "id": 4,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  347|->     }"
+                            }
+                        },
+                        {
+                            "id": 5,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  348|   };"
+                            }
+                        },
+                        {
+                            "id": 6,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ""
+                                }
+                            },
+                            "message": {
+                                "text": "  349|   "
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

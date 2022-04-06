@@ -492,11 +492,34 @@ static void sarifReadLocation(DefEvent *pEvt, const pt::ptree &loc)
     }
 }
 
-static void sarifReadMsg(std::string *pDst, const pt::ptree &node)
+static bool sarifReadMsg(std::string *pDst, const pt::ptree &node)
 {
     const pt::ptree *msgNode;
-    if (findChildOf(&msgNode, node, "message"))
-        *pDst = valueOf<std::string>(*msgNode, "text", "<unknown>");
+    if (!findChildOf(&msgNode, node, "message"))
+        return false;
+
+    *pDst = valueOf<std::string>(*msgNode, "text", "<unknown>");
+    return true;
+}
+
+static void sarifReadComments(Defect *pDef, const pt::ptree &relatedLocs)
+{
+    for (const auto &item : relatedLocs) {
+        const pt::ptree &loc = item.second;
+
+        DefEvent tmp;
+        sarifReadLocation(&tmp, loc);
+        if (!tmp.fileName.empty())
+            // location info available --> not a csdiff-encoded comment
+            continue;
+
+        DefEvent evt("#");
+        if (!sarifReadMsg(&evt.msg, loc))
+            continue;
+
+        evt.verbosityLevel = 1;
+        pDef->events.push_back(evt);
+    }
 }
 
 static void sarifReadCodeFlow(Defect *pDef, const pt::ptree &cf)
@@ -597,6 +620,11 @@ bool SarifTreeDecoder::readNode(
     const pt::ptree *cf;
     if (findChildOf(&cf, defNode, "codeFlows"))
         sarifReadCodeFlow(def, *cf);
+
+    // read comments if available
+    const pt::ptree *relatedLocs;
+    if (findChildOf(&relatedLocs, defNode, "relatedLocations"))
+        sarifReadComments(def, *relatedLocs);
 
     return true;
 }
