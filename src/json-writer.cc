@@ -165,12 +165,20 @@ void SarifTreeEncoder::serializeCweMap()
 
         PTree cweList;
         const auto cwe = item.second;
-        const auto cweStr = "CWE-" + std::to_string(cwe);
-        appendNode(&cweList, PTree(cweStr));
+        const auto cweStr = std::to_string(cwe);
+        appendNode(&cweList, PTree("CWE-" + cweStr));
 
+        // properties.cwe[]
         PTree props;
         props.put_child("cwe", cweList);
         rule.put_child("properties", props);
+
+        // help.text
+        PTree help;
+        const auto helpText =
+            "https://cwe.mitre.org/data/definitions/" + cweStr + ".html";
+        help.put<std::string>("text", helpText);
+        rule.put_child("help", help);
 
         appendNode(&ruleList, rule);
     }
