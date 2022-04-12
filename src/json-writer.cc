@@ -363,10 +363,10 @@ void SarifTreeEncoder::writeTo(std::ostream &str)
 }
 
 struct JsonWriter::Private {
-    std::ostream                   &str;
-    std::queue<Defect>              defQueue;
-    TScanProps                      scanProps;
-    AbstractTreeEncoder            *encoder;
+    std::ostream                           &str;
+    std::queue<Defect>                      defQueue;
+    TScanProps                              scanProps;
+    std::unique_ptr<AbstractTreeEncoder>    encoder;
 
     Private(std::ostream &str_):
         str(str_)
@@ -379,22 +379,16 @@ JsonWriter::JsonWriter(std::ostream &str, const EFileFormat format):
 {
     switch (format) {
         case FF_JSON:
-            d->encoder = new SimpleTreeEncoder;
+            d->encoder.reset(new SimpleTreeEncoder);
             break;
 
         case FF_SARIF:
-            d->encoder = new SarifTreeEncoder;
+            d->encoder.reset(new SarifTreeEncoder);
             break;
 
         default:
             throw std::runtime_error("unknown output format");
     }
-}
-
-JsonWriter::~JsonWriter()
-{
-    delete d->encoder;
-    delete d;
 }
 
 const TScanProps& JsonWriter::getScanProps() const

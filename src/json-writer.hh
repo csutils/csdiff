@@ -23,21 +23,22 @@
 #include "abstract-writer.hh"
 
 #include <iostream>
+#include <memory>
 
 class JsonWriter: public AbstractWriter {
     public:
         JsonWriter(std::ostream &, EFileFormat format = FF_JSON);
-        virtual ~JsonWriter();
+        ~JsonWriter() override = default;
 
-        virtual const TScanProps& getScanProps() const;
-        virtual void setScanProps(const TScanProps &);
+        const TScanProps& getScanProps() const override;
+        void setScanProps(const TScanProps &) override;
 
-        virtual void handleDef(const Defect &def);
-        virtual void flush();
+        void handleDef(const Defect &def) override;
+        void flush() override;
 
     private:
         struct Private;
-        Private *d;
+        std::unique_ptr<Private> d;
 };
 
 #endif /* H_GUARD_JSON_WRITER_H */
