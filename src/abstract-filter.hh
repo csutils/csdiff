@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011 Red Hat, Inc.
+ * Copyright (C) 2011-2022 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -26,10 +26,9 @@
 class GenericAbstractFilter: public AbstractWriter {
     protected:
         AbstractWriter *agent_;
-        virtual void handleDef(const Defect &def) = 0;
 
     public:
-        virtual void notifyFile(const std::string &fileName) {
+        void notifyFile(const std::string &fileName) override {
             agent_->notifyFile(fileName);
         }
 
@@ -38,19 +37,19 @@ class GenericAbstractFilter: public AbstractWriter {
         {
         }
 
-        ~GenericAbstractFilter() {
+        ~GenericAbstractFilter() override {
             delete agent_;
         }
 
-        virtual void flush() {
+        void flush() override {
             agent_->flush();
         }
 
-        virtual const TScanProps& getScanProps() const {
+        const TScanProps& getScanProps() const override {
             return agent_->getScanProps();
         }
 
-        virtual void setScanProps(const TScanProps &scanProps) {
+        void setScanProps(const TScanProps &scanProps) override {
             agent_->setScanProps(scanProps);
         }
 };
@@ -67,7 +66,7 @@ class EventPrunner: public GenericAbstractFilter {
         {
         }
 
-        virtual void handleDef(const Defect &defOrig);
+        void handleDef(const Defect &defOrig) override;
 };
 
 /// decorator
@@ -82,7 +81,7 @@ class CtxEmbedder: public GenericAbstractFilter {
         {
         }
 
-        virtual void handleDef(const Defect &defOrig);
+        void handleDef(const Defect &defOrig) override;
 };
 
 /// decorator
@@ -104,7 +103,7 @@ class AbstractFilter: public GenericAbstractFilter {
             neg_ = enabled;
         }
 
-        virtual void handleDef(const Defect &def) {
+        void handleDef(const Defect &def) override {
             if (neg_ == matchDef(def))
                 return;
 
@@ -114,14 +113,14 @@ class AbstractFilter: public GenericAbstractFilter {
 
 class IPredicate {
     public:
-        virtual ~IPredicate() { }
+        virtual ~IPredicate() = default;
         virtual bool matchDef(const Defect &def) const = 0;
 };
 
 class PredicateFilter: public AbstractFilter {
     public:
         PredicateFilter(AbstractWriter *agent);
-        virtual ~PredicateFilter();
+        ~PredicateFilter() override;
 
         /// takes ownership of pred and will call delete on it on destruction
         void append(IPredicate *);
@@ -129,7 +128,7 @@ class PredicateFilter: public AbstractFilter {
         void setInvertEachMatch(bool enabled = true);
 
     protected:
-        virtual bool matchDef(const Defect &def);
+        bool matchDef(const Defect &def) override;
 
     private:
         struct Private;
