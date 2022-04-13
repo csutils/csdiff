@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011 Red Hat, Inc.
+ * Copyright (C) 2011-2022 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -96,10 +96,11 @@ MsgFilter::MsgFilter():
             "returned by \"([^\\(]+)\\(.*\\)\"",
             "returned by \"\\1\\(\\)\"");
 
-    // unify the format of glib/gnome dprecation warnings
-    // NOTE: "\u007f\u007f\u007f" does not compile on el6
-    static const char uniApos[] = { 0x7f, 0x7f, 0x7f, 0x00 };
-    d->addMsgFilter("COMPILER_WARNING", uniApos, "'");
+    // unify the format of glib/gnome deprecation warnings. The unicode
+    // apostrophes get somehow converted into a sequence of three ASCII DEL
+    // characters.
+    // DEL - U+007F
+    d->addMsgFilter("COMPILER_WARNING", "\u007f\u007f\u007f", "'");
 
     // ignore embeded declaration location
     d->addMsgFilter("COMPILER_WARNING", " \\(declared at [^)]*\\)", "");
