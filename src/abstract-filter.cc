@@ -32,7 +32,9 @@
 // implementation of PredicateFilter
 
 struct PredicateFilter::Private {
-    typedef std::vector<IPredicate *>               TList;
+    using IPredicatePtr = std::unique_ptr<IPredicate>;
+    using TList         = std::vector<IPredicatePtr>;
+
     bool                invertEach_;
     TList               preds_;
 
@@ -48,17 +50,11 @@ PredicateFilter::PredicateFilter(AbstractWriter *agent):
 {
 }
 
-PredicateFilter::~PredicateFilter()
-{
-    for (IPredicate *pred : d->preds_)
-        delete pred;
-
-    delete d;
-}
+PredicateFilter::~PredicateFilter() = default;
 
 void PredicateFilter::append(IPredicate *pred)
 {
-    d->preds_.push_back(pred);
+    d->preds_.emplace_back(pred);
 }
 
 void PredicateFilter::setInvertEachMatch(bool enabled)
@@ -70,7 +66,7 @@ bool PredicateFilter::matchDef(const Defect &def)
 {
     const bool neg = d->invertEach_;
 
-    for (const IPredicate *pred : d->preds_) {
+    for (const auto &pred : d->preds_) {
         if (neg == pred->matchDef(def))
             return false;
     }

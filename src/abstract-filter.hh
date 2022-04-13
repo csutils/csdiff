@@ -22,10 +22,12 @@
 
 #include "abstract-writer.hh"
 
+#include <memory>
+
 /// decorator
 class GenericAbstractFilter: public AbstractWriter {
     protected:
-        AbstractWriter *agent_;
+        std::unique_ptr<AbstractWriter> agent_;
 
     public:
         void notifyFile(const std::string &fileName) override {
@@ -37,9 +39,7 @@ class GenericAbstractFilter: public AbstractWriter {
         {
         }
 
-        ~GenericAbstractFilter() override {
-            delete agent_;
-        }
+        ~GenericAbstractFilter() override = default;
 
         void flush() override {
             agent_->flush();
@@ -132,7 +132,7 @@ class PredicateFilter: public AbstractFilter {
 
     private:
         struct Private;
-        Private *d;
+        std::unique_ptr<Private> d;
 };
 
 #endif /* H_GUARD_ABSTRACT_FILTER_H */
