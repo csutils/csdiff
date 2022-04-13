@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011-2012 Red Hat, Inc.
+ * Copyright (C) 2011-2022 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -23,7 +23,7 @@
 #include "deflookup.hh"
 #include "json-writer.hh"
 
-#include <boost/shared_ptr.hpp>
+#include <memory>
 
 // FIXME: some keys should be merge more intelligently if they already exist
 // TODO: define a nesting limit for keys like diffbase-diffbase-diffbase-...
@@ -59,7 +59,7 @@ bool /* anyError */ diffScans(
         format = pNew.inputFormat();
 
     // create the appropriate writer
-    typedef boost::shared_ptr<AbstractWriter> TWriterPtr;
+    using TWriterPtr = std::shared_ptr<AbstractWriter>;
     TWriterPtr writer(createWriter(strDst, format, cm, props));
 
     // read old
