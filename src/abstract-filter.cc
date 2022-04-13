@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011 Red Hat, Inc.
+ * Copyright (C) 2011-2022 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -174,7 +174,7 @@ void CtxEmbedder::handleDef(const Defect &defOrig)
         return;
     }
 
-    std::fstream fstr(evt.fileName.c_str(), std::ios::in);
+    std::ifstream fstr(evt.fileName);
     if (!fstr) {
         // failed to open input file
         agent_->handleDef(defOrig);
