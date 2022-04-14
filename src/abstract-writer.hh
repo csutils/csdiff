@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011 Red Hat, Inc.
+ * Copyright (C) 2011-2022 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -22,6 +22,8 @@
 
 #include "abstract-parser.hh"
 #include "color.hh"
+
+#include <memory>
 
 // FIXME: misleading class name
 class AbstractWriter {
@@ -64,7 +66,9 @@ class AbstractWriter {
         const TScanProps            emptyProps_;
 };
 
-AbstractWriter* createWriter(
+using TWriterPtr = std::unique_ptr<AbstractWriter>;
+
+TWriterPtr createWriter(
         std::ostream               &strDst,
         const EFileFormat           format,
         const EColorMode            cm        = CM_AUTO,
@@ -80,7 +84,7 @@ class CtxEventDetector {
 
     private:
         struct Private;
-        Private *d;
+        std::unique_ptr<Private> d;
 };
 
 #endif /* H_GUARD_ABSTRACT_WRITER_H */

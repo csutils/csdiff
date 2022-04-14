@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011 Red Hat, Inc.
+ * Copyright (C) 2011-2022 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -73,13 +73,13 @@ void AbstractWriter::setScanProps(const TScanProps &scanProps)
     std::cerr << "warning: scan properties not supported by output format\n";
 }
 
-AbstractWriter* createWriter(
+TWriterPtr createWriter(
         std::ostream               &strDst,
         const EFileFormat           format,
         const EColorMode            cm,
         const TScanProps           &scanProps)
 {
-    AbstractWriter *writer = 0;
+    TWriterPtr writer;
 
     switch (format) {
         case FF_GCC:
@@ -88,25 +88,25 @@ AbstractWriter* createWriter(
 
         case FF_INVALID:
         case FF_COVERITY:
-            writer = new CovWriter(strDst, cm);
+            writer.reset(new CovWriter(strDst, cm));
             break;
 
         case FF_AUTO:
             // TODO
 
         case FF_JSON:
-            writer = new JsonWriter(strDst);
+            writer.reset(new JsonWriter(strDst));
             break;
 
         case FF_HTML: {
             const std::string emp;
             const std::string spPlacement = "bottom";
-            writer = new HtmlWriter(strDst, emp, emp, spPlacement);
+            writer.reset(new HtmlWriter(strDst, emp, emp, spPlacement));
             break;
         }
 
         case FF_SARIF:
-            writer = new JsonWriter(strDst, FF_SARIF);
+            writer.reset(new JsonWriter(strDst, FF_SARIF));
             break;
     }
 
@@ -130,10 +130,7 @@ CtxEventDetector::CtxEventDetector():
 {
 }
 
-CtxEventDetector::~CtxEventDetector()
-{
-    delete d;
-}
+CtxEventDetector::~CtxEventDetector() = default;
 
 bool CtxEventDetector::isAnyCtxLine(const DefEvent &evt) const
 {

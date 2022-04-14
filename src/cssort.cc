@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012 Red Hat, Inc.
+ * Copyright (C) 2012-2022 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -48,16 +48,15 @@ class GenericSort: public AbstractWriter {
             std::sort(cont_.begin(), cont_.end());
 
             // use the same output format is the input format
-            AbstractWriter *writer =
+            TWriterPtr writer =
                 createWriter(std::cout, this->inputFormat(), cm_, scanProps_);
 
             // write the data
             for (const Defect &def : cont_)
                 writer->handleDef(def);
 
-            // flush data and destroy writer
+            // flush data
             writer->flush();
-            delete writer;
         }
 
         virtual const TScanProps& getScanProps() const {
