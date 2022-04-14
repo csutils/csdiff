@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011-2012 Red Hat, Inc.
+ * Copyright (C) 2011-2022 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -22,6 +22,8 @@
 
 #include "defect.hh"
 #include "instream.hh"
+
+#include <memory>
 
 /// used only by the JSON format
 typedef std::map<std::string, std::string> TScanProps;
@@ -55,7 +57,9 @@ class AbstractParser {
         const TScanProps emptyProps_;
 };
 
-AbstractParser* createParser(InStream &input);
+using AbstractParserPtr = std::unique_ptr<AbstractParser>;
+
+AbstractParserPtr createParser(InStream &input);
 
 // RAII
 class Parser {
@@ -66,9 +70,7 @@ class Parser {
         {
         }
 
-        ~Parser() {
-            delete parser_;
-        }
+        ~Parser() = default;
 
         InStream &input() const {
             return input_;
@@ -92,8 +94,8 @@ class Parser {
         Parser(const Parser &);
         Parser& operator=(const Parser &);
 
-        InStream       &input_;
-        AbstractParser *parser_;
+        InStream                         &input_;
+        std::unique_ptr<AbstractParser>   parser_;
 };
 
 #endif /* H_GUARD_ABSTRACT_PARSER_H */

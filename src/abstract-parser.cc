@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011-2013 Red Hat, Inc.
+ * Copyright (C) 2011-2022 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -24,7 +24,14 @@
 #include "json-parser.hh"
 #include "xml-parser.hh"
 
-AbstractParser* createParser(InStream &input)
+// TODO: remove this when we move to C++14
+// by mistake, std::make_unique was not included in C++11
+template<typename T>
+static inline std::unique_ptr<T> make_unique(InStream &input) {
+    return std::unique_ptr<T>(new T(input));
+}
+
+AbstractParserPtr createParser(InStream &input)
 {
     // skip all white-spaces and sniff the first two chars from the input
     InStreamLookAhead head(input, 2U, /* skipWhiteSpaces */ true);
@@ -32,13 +39,13 @@ AbstractParser* createParser(InStream &input)
     switch (head[0]) {
         case '{':
             // JSON
-            return new JsonParser(input);
+            return make_unique<JsonParser>(input);
 
         case '<':
             if ('?' != head[1])
                 break;
             // XML
-            return new XmlParser(input);
+            return make_unique<XmlParser>(input);
 
         case 'E':
             if ('r' != head[1])
@@ -46,25 +53,25 @@ AbstractParser* createParser(InStream &input)
             // fall through!
         case '#':
             // Coverity
-            return new CovParser(input);
+            return make_unique<CovParser>(input);
 
         default:
             break;
     }
 
     // GCC
-    return new GccParser(input);
+    return make_unique<GccParser>(input);
 }
 
 EFileFormat Parser::inputFormat() const
 {
-    if (dynamic_cast<JsonParser *>(parser_))
+    if (dynamic_cast<JsonParser *>(parser_.get()))
         return FF_JSON;
 
-    if (dynamic_cast<CovParser *>(parser_))
+    if (dynamic_cast<CovParser *>(parser_.get()))
         return FF_COVERITY;
 
-    if (dynamic_cast<GccParser *>(parser_))
+    if (dynamic_cast<GccParser *>(parser_.get()))
         return FF_GCC;
 
     return FF_INVALID;
