@@ -31,13 +31,17 @@ class AbstractWriter {
         virtual void handleDef(const Defect &def) = 0;
         virtual void notifyFile(const std::string &) { }
 
-    public:
         AbstractWriter():
             inputFormat_(FF_INVALID)
         {
         }
 
-        virtual ~AbstractWriter() { }
+        AbstractWriter(const AbstractWriter &) = delete;
+        AbstractWriter& operator=(const AbstractWriter &) = delete;
+        AbstractWriter(AbstractWriter &&) noexcept = delete;
+        AbstractWriter& operator=(AbstractWriter &&) noexcept = delete;
+
+        virtual ~AbstractWriter() = default;
 
         virtual void flush() { };
 
@@ -57,9 +61,6 @@ class AbstractWriter {
 
         virtual void setScanProps(const TScanProps &);
 
-    private:
-        AbstractWriter(const AbstractWriter &);
-        AbstractWriter& operator=(const AbstractWriter &);
 
     private:
         EFileFormat                 inputFormat_;
