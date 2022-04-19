@@ -41,7 +41,7 @@ enum EFileFormat {
 // abstract class with a factory method
 class AbstractParser {
     public:
-        virtual ~AbstractParser() { }
+        virtual ~AbstractParser() = default;
         virtual bool getNext(Defect *) = 0;
         virtual bool hasError() const = 0;
 
@@ -51,10 +51,10 @@ class AbstractParser {
         }
 
     protected:
-        AbstractParser() { }
+        AbstractParser() = default;
 
     private:
-        const TScanProps emptyProps_;
+        const TScanProps emptyProps_{};
 };
 
 using AbstractParserPtr = std::unique_ptr<AbstractParser>;
