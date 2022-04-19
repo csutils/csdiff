@@ -115,6 +115,10 @@ void SimpleTreeEncoder::appendDef(const Defect &def)
 
 void SimpleTreeEncoder::writeTo(std::ostream &str)
 {
+    if (!pDefects_)
+        // create an empty "defects" node to keep format detection working
+        pDefects_ = &root_.put_child("defects", PTree());
+
     write_json(str, root_);
 }
 
