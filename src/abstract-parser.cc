@@ -63,17 +63,3 @@ AbstractParserPtr createParser(InStream &input)
     // GCC
     return make_unique<GccParser>(input);
 }
-
-EFileFormat Parser::inputFormat() const
-{
-    if (dynamic_cast<JsonParser *>(parser_.get()))
-        return FF_JSON;
-
-    if (dynamic_cast<CovParser *>(parser_.get()))
-        return FF_COVERITY;
-
-    if (dynamic_cast<GccParser *>(parser_.get()))
-        return FF_GCC;
-
-    return FF_INVALID;
-}

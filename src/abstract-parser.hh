@@ -50,6 +50,10 @@ class AbstractParser {
             return emptyProps_;
         }
 
+        virtual EFileFormat inputFormat() const {
+            return FF_INVALID;
+        }
+
     protected:
         AbstractParser() = default;
 
@@ -91,7 +95,9 @@ class Parser {
             return parser_->getScanProps();
         }
 
-        EFileFormat inputFormat() const;
+        EFileFormat inputFormat() const {
+            return parser_->inputFormat();
+        };
 
     private:
         InStream                         &input_;

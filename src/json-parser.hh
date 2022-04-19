@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012 Red Hat, Inc.
+ * Copyright (C) 2012-2022 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -30,6 +30,10 @@ class JsonParser: public AbstractParser {
         bool getNext(Defect *) override;
         bool hasError() const override;
         const TScanProps& getScanProps() const override;
+
+        EFileFormat inputFormat() const override {
+            return FF_JSON;
+        }
 
     private:
         JsonParser(const Parser &);

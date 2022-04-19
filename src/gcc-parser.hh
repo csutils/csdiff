@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Red Hat, Inc.
+ * Copyright (C) 2013-2022 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -29,6 +29,10 @@ class GccParser: public AbstractParser {
         ~GccParser() override;
         bool getNext(Defect *) override;
         bool hasError() const override;
+
+        EFileFormat inputFormat() const override {
+            return FF_GCC;
+        }
 
     private:
         GccParser(const Parser &);

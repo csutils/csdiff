@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011-2012 Red Hat, Inc.
+ * Copyright (C) 2011-2022 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -29,6 +29,10 @@ class CovParser: public AbstractParser {
         ~CovParser() override;
         bool getNext(Defect *) override;
         bool hasError() const override;
+
+        EFileFormat inputFormat() const override {
+            return FF_COVERITY;
+        }
 
     private:
         CovParser(const Parser &);
