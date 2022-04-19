@@ -70,6 +70,9 @@ class Parser {
         {
         }
 
+        // copy constructor and copy assigment operator are implicitly deleted
+        // as std::unique_ptr cannot be copied
+
         ~Parser() = default;
 
         InStream &input() const {
@@ -91,9 +94,6 @@ class Parser {
         EFileFormat inputFormat() const;
 
     private:
-        Parser(const Parser &);
-        Parser& operator=(const Parser &);
-
         InStream                         &input_;
         std::unique_ptr<AbstractParser>   parser_;
 };
