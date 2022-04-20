@@ -1,0 +1,34 @@
+---
+on:
+  push:
+    branches: main
+  pull_request:
+    branches: main
+
+jobs:
+  ubuntu:
+    name: Ubuntu ${{ matrix.version }} (${{ matrix.compiler }})
+    strategy:
+      fail-fast: false
+      matrix:
+        compiler: [clang++, g++]
+        version: [18.04, 20.04]
+
+    runs-on: ubuntu-${{ matrix.version }}
+    env:
+      CXX: ${{ matrix.compiler }}
+      DEBIAN_FRONTEND: noninteractive
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y cmake help2man libboost-dev         \
+            libboost-filesystem-dev libboost-program-options-dev  \
+            libboost-python-dev libboost-regex-dev
+
+      - name: Build and check
+        run: make distcheck
