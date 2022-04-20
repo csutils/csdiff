@@ -41,7 +41,7 @@ class AbstractCsvParser {
         virtual bool /* continue */ handleLine(const TStringList &) = 0;
         void parseError(const std::string &msg);
 
-        bool silent;
+        bool silent = false;
 
     private:
         struct Private;

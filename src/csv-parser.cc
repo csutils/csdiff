@@ -26,7 +26,6 @@
 struct AbstractCsvParser::Private {
     const std::string      *pFileName   = nullptr;
     int                     lineno      = 0;
-    bool                    silent      = false;
     bool                    hasError    = false;
 };
 
@@ -70,7 +69,7 @@ void AbstractCsvParser::parseError(const std::string &msg)
 {
     assert(d->pFileName);
     d->hasError = true;
-    if (d->silent)
+    if (this->silent)
         return;
 
     std::cerr
