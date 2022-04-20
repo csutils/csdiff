@@ -1,0 +1,20 @@
+---
+on:
+  push:
+    branches: main
+
+jobs:
+  coverity:
+    name: Coverity Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Coverity scan
+        uses: vapier/coverity-scan-action@v1
+        with:
+          email: ${{ secrets.COVERITY_SCAN_EMAIL }}
+          token: ${{ secrets.COVERITY_SCAN_TOKEN }}
+          project: csutils/csdiff
+          command: make
