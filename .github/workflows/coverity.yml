@@ -11,6 +11,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y cmake help2man libboost-dev         \
+            libboost-filesystem-dev libboost-program-options-dev  \
+            libboost-python-dev libboost-regex-dev
+
       - name: Coverity scan
         uses: vapier/coverity-scan-action@v1
         with:
