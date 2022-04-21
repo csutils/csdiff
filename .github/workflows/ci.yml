@@ -30,5 +30,22 @@ jobs:
             libboost-filesystem-dev libboost-program-options-dev  \
             libboost-python-dev libboost-regex-dev
 
+      - name: '[Focal] Add sanitizers to CXXFLAGS'
+        if: matrix.version >= 20.04
+        run: |
+          # Use ASAN and UBSAN
+          CXXFLAGS="-fsanitize=address,undefined"
+          # Recommended for better error traces
+          CXXFLAGS="$CXXFLAGS -fno-omit-frame-pointer"
+          # Make UBSAN reports fatal
+          CXXFLAGS="$CXXFLAGS -fno-sanitize-recover=all"
+
+          # Make UBSAN print whole stack traces
+          UBSAN_OPTIONS="print_stacktrace=1"
+
+          # Store the env variables
+          echo "CXXFLAGS=$CXXFLAGS" >> "$GITHUB_ENV"
+          echo "UBSAN_OPTIONS=$UBSAN_OPTIONS" >> "$GITHUB_ENV"
+
       - name: Build and check
         run: make distcheck
