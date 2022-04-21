@@ -1,4 +1,4 @@
-# Copyright (C) 2011 - 2020 Red Hat, Inc.
+# Copyright (C) 2011 - 2022 Red Hat, Inc.
 #
 # This file is part of csdiff.
 #
@@ -14,6 +14,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
+message(STATUS "User-provided flags: ${CMAKE_CXX_FLAGS}")
 
 add_definitions(-Wall -Wextra -fPIC -std=c++11)
 
