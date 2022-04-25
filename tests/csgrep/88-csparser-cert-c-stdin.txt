@@ -1845,11 +1845,6 @@ Error: CERT INT31-C (CWE-192):
 wget-1.21.1/lib/malloca.c:50: path: Condition "nplus >= n", taking true branch.
 wget-1.21.1/lib/malloca.c:54: path: Condition "mem != NULL", taking true branch.
 wget-1.21.1/lib/malloca.c:65: cert_int31_c_violation: Casting "p - mem" from "long" to "unsigned char" without checking its value may result in lost or misinterpreted data.
-#   63|                So, the memory range [p, p+n) lies in the allocated memory range
-#   64|                [mem, mem + nplus).  */
-#   65|->           ((small_t *) p)[-1] = p - mem;
-#   66|             /* p ≡ sa_alignment_max mod 2*sa_alignment_max.  */
-#   67|             return p;
 
 Error: CERT DCL37-C (CWE-758):
 wget-1.21.1/lib/malloca.h:19: cert_dcl37_c_violation: The reserved identifier "_MALLOCA_H", which is reserved for use as identifiers with file scope in both the ordinary and tag name spaces, is defined.
@@ -2071,11 +2066,6 @@ Error: CERT INT31-C (CWE-192):
 wget-1.21.1/lib/md5.c:247: path: Condition "ctx->buflen != 0", taking true branch.
 wget-1.21.1/lib/md5.c:255: path: Condition "ctx->buflen > 64", taking true branch.
 wget-1.21.1/lib/md5.c:262: cert_int31_c_violation: Casting "~0x3f" from "int" to "unsigned long" without checking its value may result in lost or misinterpreted data.
-#  260|             /* The regions in the following copy operation cannot overlap,
-#  261|                because ctx->buflen < 64 ≤ (left_over + add) & ~63.  */
-#  262|->           memcpy (ctx->buffer,
-#  263|                     &((char *) ctx->buffer)[(left_over + add) & ~63],
-#  264|                     ctx->buflen);
 
 Error: CERT INT31-C (CWE-192):
 wget-1.21.1/lib/md5.c:247: path: Condition "ctx->buflen != 0", taking true branch.
@@ -2184,11 +2174,6 @@ wget-1.21.1/lib/md5.h:57: cert_dcl37_c_violation: The reserved identifier "__md5
 
 Error: CERT DCL37-C (CWE-758):
 wget-1.21.1/lib/md5.h:76: cert_dcl37_c_violation: The reserved identifier "total", which is reserved for future library directions in ctype.h, is declared.
-#   74|     uint32_t D;
-#   75|   
-#   76|->   uint32_t total[2];
-#   77|     uint32_t buflen;     /* ≥ 0, ≤ 128 */
-#   78|     uint32_t buffer[32]; /* 128 bytes; the first buflen bytes are in use */
 
 Error: CERT DCL37-C (CWE-758):
 wget-1.21.1/lib/minmax.h:19: cert_dcl37_c_violation: The reserved identifier "_MINMAX_H", which is reserved for use as identifiers with file scope in both the ordinary and tag name spaces, is defined.
@@ -4965,11 +4950,6 @@ Error: CERT INT31-C (CWE-192):
 wget-1.21.1/lib/sha1.c:234: path: Condition "ctx->buflen != 0", taking true branch.
 wget-1.21.1/lib/sha1.c:242: path: Condition "ctx->buflen > 64", taking true branch.
 wget-1.21.1/lib/sha1.c:249: cert_int31_c_violation: Casting "~0x3f" from "int" to "unsigned long" without checking its value may result in lost or misinterpreted data.
-#  247|             /* The regions in the following copy operation cannot overlap,
-#  248|                because ctx->buflen < 64 ≤ (left_over + add) & ~63.  */
-#  249|->           memcpy (ctx->buffer,
-#  250|                     &((char *) ctx->buffer)[(left_over + add) & ~63],
-#  251|                     ctx->buflen);
 
 Error: CERT INT31-C (CWE-192):
 wget-1.21.1/lib/sha1.c:234: path: Condition "ctx->buflen != 0", taking true branch.
@@ -5022,11 +5002,6 @@ wget-1.21.1/lib/sha1.c:351: cert_dcl37_c_violation: The reserved identifier "tm"
 
 Error: CERT DCL37-C (CWE-758):
 wget-1.21.1/lib/sha1.h:48: cert_dcl37_c_violation: The reserved identifier "total", which is reserved for future library directions in ctype.h, is declared.
-#   46|     uint32_t E;
-#   47|   
-#   48|->   uint32_t total[2];
-#   49|     uint32_t buflen;     /* ≥ 0, ≤ 128 */
-#   50|     uint32_t buffer[32]; /* 128 bytes; the first buflen bytes are in use */
 
 Error: CERT DCL37-C (CWE-758):
 wget-1.21.1/lib/sha256.c:181: cert_dcl37_c_violation: The reserved identifier "stream", which is reserved for future library directions in stdlib.h or string.h, is declared.
@@ -5066,11 +5041,6 @@ Error: CERT INT31-C (CWE-192):
 wget-1.21.1/lib/sha256.c:313: path: Condition "ctx->buflen != 0", taking true branch.
 wget-1.21.1/lib/sha256.c:321: path: Condition "ctx->buflen > 64", taking true branch.
 wget-1.21.1/lib/sha256.c:328: cert_int31_c_violation: Casting "~0x3f" from "int" to "unsigned long" without checking its value may result in lost or misinterpreted data.
-#  326|             /* The regions in the following copy operation cannot overlap,
-#  327|                because ctx->buflen < 64 ≤ (left_over + add) & ~63.  */
-#  328|->           memcpy (ctx->buffer,
-#  329|                     &((char *) ctx->buffer)[(left_over + add) & ~63],
-#  330|                     ctx->buflen);
 
 Error: CERT INT31-C (CWE-192):
 wget-1.21.1/lib/sha256.c:313: path: Condition "ctx->buflen != 0", taking true branch.
@@ -5123,11 +5093,6 @@ wget-1.21.1/lib/sha256.c:451: cert_dcl37_c_violation: The reserved identifier "t
 
 Error: CERT DCL37-C (CWE-758):
 wget-1.21.1/lib/sha256.h:46: cert_dcl37_c_violation: The reserved identifier "total", which is reserved for future library directions in ctype.h, is declared.
-#   44|     uint32_t state[8];
-#   45|   
-#   46|->   uint32_t total[2];
-#   47|     size_t buflen;       /* ≥ 0, ≤ 128 */
-#   48|     uint32_t buffer[32]; /* 128 bytes; the first buflen bytes are in use */
 
 Error: CERT DCL37-C (CWE-758):
 wget-1.21.1/lib/sha512.c:182: cert_dcl37_c_violation: The reserved identifier "stream", which is reserved for future library directions in stdlib.h or string.h, is declared.
@@ -5167,11 +5132,6 @@ Error: CERT INT31-C (CWE-192):
 wget-1.21.1/lib/sha512.c:314: path: Condition "ctx->buflen != 0", taking true branch.
 wget-1.21.1/lib/sha512.c:322: path: Condition "ctx->buflen > 128", taking true branch.
 wget-1.21.1/lib/sha512.c:329: cert_int31_c_violation: Casting "~0x7f" from "int" to "unsigned long" without checking its value may result in lost or misinterpreted data.
-#  327|             /* The regions in the following copy operation cannot overlap,
-#  328|                because ctx->buflen < 128 ≤ (left_over + add) & ~127.  */
-#  329|->           memcpy (ctx->buffer,
-#  330|                     &((char *) ctx->buffer)[(left_over + add) & ~127],
-#  331|                     ctx->buflen);
 
 Error: CERT INT31-C (CWE-192):
 wget-1.21.1/lib/sha512.c:314: path: Condition "ctx->buflen != 0", taking true branch.
@@ -5199,11 +5159,6 @@ wget-1.21.1/lib/sha512.c:354: cert_int31_c_violation: Casting "~0x7f" from "int"
 
 Error: CERT DCL37-C (CWE-758):
 wget-1.21.1/lib/sha512.h:46: cert_dcl37_c_violation: The reserved identifier "total", which is reserved for future library directions in ctype.h, is declared.
-#   44|     u64 state[8];
-#   45|   
-#   46|->   u64 total[2];
-#   47|     size_t buflen;  /* ≥ 0, ≤ 256 */
-#   48|     u64 buffer[32]; /* 256 bytes; the first buflen bytes are in use */
 
 Error: CERT DCL37-C (CWE-758):
 wget-1.21.1/lib/sig-handler.h:19: cert_dcl37_c_violation: The reserved identifier "_GL_SIG_HANDLER_H", which is reserved for use as identifiers with file scope in both the ordinary and tag name spaces, is defined.
@@ -8287,11 +8242,6 @@ wget-1.21.1/src/config.h:2547: cert_dcl37_c_violation: The reserved identifier "
 
 Error: CERT DCL37-C (CWE-758):
 wget-1.21.1/src/config.h:2592: cert_dcl37_c_violation: The reserved identifier "_GL_CMP", which is reserved for use as identifiers with file scope in both the ordinary and tag name spaces, is defined.
-# 2590|      The better code  (n1 > n2) - (n1 < n2)  from Hacker's Delight § 2-9
-# 2591|      avoids conditional jumps in all GCC versions >= 3.4.  */
-# 2592|-> #define _GL_CMP(n1, n2) (((n1) > (n2)) - ((n1) < (n2)))
-# 2593|   
-# 2594|   
 
 Error: CERT DCL37-C (CWE-758):
 wget-1.21.1/src/connect.c:85: cert_dcl37_c_violation: The reserved identifier "sin", which is reserved for use in existing libraries, is declared.
