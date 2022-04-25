@@ -25,8 +25,9 @@
 #include <string>
 
 #define RE_CHECKER_NAME_SA "(?:[A-Za-z][0-9A-Za-z_.]+)"
+#define RE_CHECKER_NAME_CERT "(?:CERT [0-9A-Z-]+-C)"
 #define RE_CHECKER_NAME_MISRA "(?:MISRA C(?:\\+\\+)?-[0-9]+ (?:Directive|Rule) [0-9.-]+)"
-#define RE_CHECKER_NAME RE_CHECKER_NAME_SA "|" RE_CHECKER_NAME_MISRA
+#define RE_CHECKER_NAME RE_CHECKER_NAME_SA "|" RE_CHECKER_NAME_CERT "|" RE_CHECKER_NAME_MISRA
 
 #define RE_EVENT_GCC "(?:(?:(?:fatal|internal) )?[a-z][A-Za-z0-9_-]+)(?:\\[[^ \\]]+\\])?"
 #define RE_EVENT_PROSPECTOR "(?:[A-Z]+[0-9]+\\[[a-z0-9-]+\\])"
