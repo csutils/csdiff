@@ -1,0 +1,18 @@
+{
+    "defects": [
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "test.c",
+                    "line": 0,
+                    "event": "warning",
+                    "message": "illegal sequence '�' will be replaced with '�'",
+                    "verbosity_level": 0
+                }
+            ]
+        }
+    ]
+}

@@ -1,4 +1,4 @@
-# Copyright (C) 2011 - 2020 Red Hat, Inc.
+# Copyright (C) 2011 - 2022 Red Hat, Inc.
 #
 # This file is part of csdiff.
 #

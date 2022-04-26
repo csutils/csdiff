@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011 Red Hat, Inc.
+ * Copyright (C) 2011-2022 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -28,7 +28,17 @@
 
 #include <boost/iostreams/filtering_stream.hpp>
 #include <boost/iostreams/filter/regex.hpp>
+#include <boost/nowide/utf/convert.hpp>
 #include <boost/property_tree/json_parser.hpp>
+
+static inline std::string sanitizeUTF8(const std::string &str)
+{
+    using boost::nowide::utf::convert_string;
+
+    // every non-UTF8 sequence will be replaced with 0xEF 0xBF 0xBD which
+    // corresponds to REPLACEMENT CHARACTER U+FFFD
+    return convert_string<char>(str.data(), str.data() + str.size());
+}
 
 typedef SharedStringPTree PTree;
 
@@ -77,7 +87,7 @@ void SimpleTreeEncoder::appendDef(const Defect &def)
 
         // describe the event
         evtNode.put<string>("event", evt.event);
-        evtNode.put<string>("message", evt.msg);
+        evtNode.put<string>("message", sanitizeUTF8(evt.msg));
         evtNode.put<int>("verbosity_level", evt.verbosityLevel);
 
         // append the event to the list
@@ -195,10 +205,10 @@ void SarifTreeEncoder::importScanProps(const TScanProps &scanProps)
     scanProps_ = scanProps;
 }
 
-static void sarifEncodeMsg(PTree *pDst, const std::string text)
+static void sarifEncodeMsg(PTree *pDst, const std::string& text)
 {
     PTree msg;
-    msg.put<std::string>("text", text);
+    msg.put<std::string>("text", sanitizeUTF8(text));
     pDst->put_child("message", msg);
 }
 

@@ -1,0 +1,60 @@
+{
+    "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+    "version": "",
+    "runs": [
+        {
+            "tool": {
+                "driver": {
+                    "name": "csdiff",
+                    "version": "",
+                    "informationUri": "https://github.com/csutils/csdiff"
+                }
+            },
+            "results": [
+                {
+                    "ruleId": "COMPILER_WARNING: warning",
+                    "locations": [
+                        {
+                            "id": 0,
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "test.c"
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "illegal sequence '�' will be replaced with '�'"
+                    },
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "id": 0,
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "test.c"
+                                                    }
+                                                },
+                                                "message": {
+                                                    "text": "illegal sequence '�' will be replaced with '�'"
+                                                }
+                                            },
+                                            "nestingLevel": 0,
+                                            "kinds": [
+                                                "warning"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
