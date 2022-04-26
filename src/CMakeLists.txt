@@ -26,6 +26,16 @@ add_definitions(-Wall -Wextra -fPIC -std=c++11)
 #   the current behavior.’
 add_definitions(-DBOOST_BIND_GLOBAL_PLACEHOLDERS)
 
+find_package(Boost 1.74)
+if (NOT Boost_FOUND)
+    message(STATUS "WARNING: System Boost libraries are tool old.  Using local"
+        " version of Boost.Nowide!")
+    include_directories(SYSTEM ${CMAKE_SOURCE_DIR}/boost_1_74_0)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D'BOOST_LIKELY(x)=__builtin_expect(x, 1)'")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D'BOOST_UNLIKELY(x)=__builtin_expect(x, 0)'")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D'BOOST_FALLTHROUGH='")
+endif()
+
 # cslib.a
 add_library(cs STATIC
     abstract-filter.cc

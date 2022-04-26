@@ -100,6 +100,10 @@ BuildRequires: gcc-c++
 BuildRequires: help2man
 BuildRequires: make
 
+%if 0%{?rhel} && 0%{?rhel} <= 8
+Provides: bundled(boost_nowide)
+%endif
+
 %description
 This package contains the csdiff tool for comparing code scan defect lists in
 order to find out added or fixed defects, and the csgrep utility for filtering
