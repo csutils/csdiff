@@ -114,6 +114,9 @@ void ValgrindTreeDecoder::readRoot(
     // valgrind reports will be at the same level in the XML tree
     *pDefList = root;
 
+    // only valgrind produces this data format
+    this->defPrototype.tool = "valgrind";
+
     const int pid = valueOf<int>(*root, "pid", 0);
     if (!pid)
         // insufficient data

@@ -111,6 +111,8 @@ void SimpleTreeEncoder::appendDef(const Defect &def)
         defNode.put<string>("function", def.function);
     if (!def.language.empty())
         defNode.put<string>("language", def.language);
+    if (!def.tool.empty())
+        defNode.put<string>("tool", def.tool);
 
     defNode.put<int>("key_event_idx", def.keyEventIdx);
     defNode.put_child("events", evtList);

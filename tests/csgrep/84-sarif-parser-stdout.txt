@@ -3,6 +3,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -17,6 +18,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 6,
             "events": [
                 {
@@ -73,6 +75,7 @@
         {
             "checker": "DEADCODE",
             "cwe": 561,
+            "tool": "coverity",
             "key_event_idx": 4,
             "events": [
                 {
@@ -115,6 +118,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 18,
             "events": [
                 {
@@ -255,6 +259,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 18,
             "events": [
                 {
@@ -395,6 +400,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 4,
             "events": [
                 {
@@ -437,6 +443,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 2,
             "events": [
                 {
@@ -465,6 +472,7 @@
         {
             "checker": "OVERRUN",
             "cwe": 119,
+            "tool": "coverity",
             "key_event_idx": 5,
             "events": [
                 {
@@ -514,6 +522,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 26,
             "events": [
                 {
@@ -710,6 +719,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 26,
             "events": [
                 {
@@ -906,6 +916,7 @@
         {
             "checker": "DEADCODE",
             "cwe": 561,
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -941,6 +952,7 @@
         {
             "checker": "DEADCODE",
             "cwe": 561,
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -976,6 +988,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 1,
             "events": [
                 {
@@ -997,6 +1010,7 @@
         {
             "checker": "TOCTOU",
             "cwe": 367,
+            "tool": "coverity",
             "key_event_idx": 18,
             "events": [
                 {
@@ -1137,6 +1151,7 @@
         {
             "checker": "TOCTOU",
             "cwe": 367,
+            "tool": "coverity",
             "key_event_idx": 19,
             "events": [
                 {
@@ -1284,6 +1299,7 @@
         {
             "checker": "PRINTF_ARGS",
             "cwe": 686,
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -1298,6 +1314,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 11,
             "events": [
                 {
@@ -1389,6 +1406,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 13,
             "events": [
                 {
@@ -1494,6 +1512,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 8,
             "events": [
                 {
@@ -1564,6 +1583,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 7,
             "events": [
                 {
@@ -1627,6 +1647,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 12,
             "events": [
                 {
@@ -1725,6 +1746,7 @@
         {
             "checker": "NEGATIVE_RETURNS",
             "cwe": 687,
+            "tool": "coverity",
             "key_event_idx": 74,
             "events": [
                 {
@@ -2257,6 +2279,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 46,
             "events": [
                 {
@@ -2593,6 +2616,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 2,
             "events": [
                 {
@@ -2621,6 +2645,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 8,
             "events": [
                 {
@@ -2691,6 +2716,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -2726,6 +2752,7 @@
         {
             "checker": "DEADCODE",
             "cwe": 561,
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -2761,6 +2788,7 @@
         {
             "checker": "CONSTANT_EXPRESSION_RESULT",
             "cwe": 569,
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -2775,6 +2803,7 @@
         {
             "checker": "CONSTANT_EXPRESSION_RESULT",
             "cwe": 569,
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -2789,6 +2818,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 12,
             "events": [
                 {
@@ -2887,6 +2917,7 @@
         {
             "checker": "DEADCODE",
             "cwe": 561,
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -2922,6 +2953,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 2,
             "events": [
                 {
@@ -2950,6 +2982,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 6,
             "events": [
                 {
@@ -3006,6 +3039,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 78,
             "events": [
                 {
@@ -3566,6 +3600,7 @@
         {
             "checker": "DEADCODE",
             "cwe": 561,
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -3601,6 +3636,7 @@
         {
             "checker": "PRINTF_ARGS",
             "cwe": 686,
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -3615,6 +3651,7 @@
         {
             "checker": "PRINTF_ARGS",
             "cwe": 686,
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -3629,6 +3666,7 @@
         {
             "checker": "PRINTF_ARGS",
             "cwe": 686,
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -3643,6 +3681,7 @@
         {
             "checker": "DEADCODE",
             "cwe": 561,
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -3678,6 +3717,7 @@
         {
             "checker": "DEADCODE",
             "cwe": 561,
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -3713,6 +3753,7 @@
         {
             "checker": "PRINTF_ARGS",
             "cwe": 686,
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -3727,6 +3768,7 @@
         {
             "checker": "DEADCODE",
             "cwe": 561,
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -3762,6 +3804,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 18,
             "events": [
                 {
@@ -3902,6 +3945,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 19,
             "events": [
                 {
@@ -4049,6 +4093,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -4063,6 +4108,7 @@
         {
             "checker": "PRINTF_ARGS",
             "cwe": 686,
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -4077,6 +4123,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 24,
             "events": [
                 {
@@ -4259,6 +4306,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -4294,6 +4342,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 2,
             "events": [
                 {
@@ -4322,6 +4371,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -4357,6 +4407,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -4392,6 +4443,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 1,
             "events": [
                 {
@@ -4413,6 +4465,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 2,
             "events": [
                 {
@@ -4441,6 +4494,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -4476,6 +4530,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 4,
             "events": [
                 {
@@ -4518,6 +4573,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 5,
             "events": [
                 {
@@ -4567,6 +4623,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 6,
             "events": [
                 {
@@ -4623,6 +4680,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 7,
             "events": [
                 {
@@ -4686,6 +4744,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 7,
             "events": [
                 {
@@ -4749,6 +4808,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -4784,6 +4844,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 2,
             "events": [
                 {
@@ -4812,6 +4873,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 2,
             "events": [
                 {
@@ -4840,6 +4902,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 16,
             "events": [
                 {
@@ -4966,6 +5029,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -4980,6 +5044,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 4,
             "events": [
                 {
@@ -5022,6 +5087,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 4,
             "events": [
                 {
@@ -5064,6 +5130,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 1,
             "events": [
                 {
@@ -5085,6 +5152,7 @@
         {
             "checker": "DEADCODE",
             "cwe": 561,
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -5120,6 +5188,7 @@
         {
             "checker": "DEADCODE",
             "cwe": 561,
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -5155,6 +5224,7 @@
         {
             "checker": "DEADCODE",
             "cwe": 561,
+            "tool": "coverity",
             "key_event_idx": 10,
             "events": [
                 {
@@ -5239,6 +5309,7 @@
         {
             "checker": "STRING_OVERFLOW",
             "cwe": 120,
+            "tool": "coverity",
             "key_event_idx": 4,
             "events": [
                 {
@@ -5281,6 +5352,7 @@
         {
             "checker": "STRING_OVERFLOW",
             "cwe": 120,
+            "tool": "coverity",
             "key_event_idx": 9,
             "events": [
                 {
@@ -5358,6 +5430,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 2,
             "events": [
                 {
@@ -5386,6 +5459,7 @@
         {
             "checker": "PRINTF_ARGS",
             "cwe": 686,
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -5400,6 +5474,7 @@
         {
             "checker": "PRINTF_ARGS",
             "cwe": 686,
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -5414,6 +5489,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 2,
             "events": [
                 {
@@ -5442,6 +5518,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 1,
             "events": [
                 {
@@ -5463,6 +5540,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 1,
             "events": [
                 {
@@ -5484,6 +5562,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 1,
             "events": [
                 {
@@ -5505,6 +5584,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 1,
             "events": [
                 {
@@ -5526,6 +5606,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 4,
             "events": [
                 {
@@ -5568,6 +5649,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 6,
             "events": [
                 {
@@ -5624,6 +5706,7 @@
         {
             "checker": "STRING_NULL",
             "cwe": 170,
+            "tool": "coverity",
             "key_event_idx": 4,
             "events": [
                 {
@@ -5666,6 +5749,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 12,
             "events": [
                 {
@@ -5764,6 +5848,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 12,
             "events": [
                 {
@@ -5862,6 +5947,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 14,
             "events": [
                 {
@@ -5974,6 +6060,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 2,
             "events": [
                 {
@@ -6002,6 +6089,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 11,
             "events": [
                 {
@@ -6093,6 +6181,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 14,
             "events": [
                 {
@@ -6205,6 +6294,7 @@
         {
             "checker": "FORWARD_NULL",
             "cwe": 476,
+            "tool": "coverity",
             "key_event_idx": 20,
             "events": [
                 {
@@ -6359,6 +6449,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 7,
             "events": [
                 {
@@ -6422,6 +6513,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 12,
             "events": [
                 {
@@ -6520,6 +6612,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 17,
             "events": [
                 {
@@ -6653,6 +6746,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 15,
             "events": [
                 {
@@ -6772,6 +6866,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 1,
             "events": [
                 {
@@ -6793,6 +6888,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 1,
             "events": [
                 {
@@ -6814,6 +6910,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -6828,6 +6925,7 @@
         {
             "checker": "OVERRUN",
             "cwe": 119,
+            "tool": "coverity",
             "key_event_idx": 19,
             "events": [
                 {
@@ -7017,6 +7115,7 @@
         {
             "checker": "OVERRUN",
             "cwe": 125,
+            "tool": "coverity",
             "key_event_idx": 24,
             "events": [
                 {
@@ -7199,6 +7298,7 @@
         {
             "checker": "OVERRUN",
             "cwe": 125,
+            "tool": "coverity",
             "key_event_idx": 20,
             "events": [
                 {
@@ -7353,6 +7453,7 @@
         {
             "checker": "DEADCODE",
             "cwe": 561,
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -7388,6 +7489,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 6,
             "events": [
                 {
@@ -7444,6 +7546,7 @@
         {
             "checker": "DEADCODE",
             "cwe": 561,
+            "tool": "coverity",
             "key_event_idx": 9,
             "events": [
                 {
@@ -7521,6 +7624,7 @@
         {
             "checker": "DEADCODE",
             "cwe": 561,
+            "tool": "coverity",
             "key_event_idx": 9,
             "events": [
                 {
@@ -7598,6 +7702,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 7,
             "events": [
                 {
@@ -7661,6 +7766,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -7675,6 +7781,7 @@
         {
             "checker": "PRINTF_ARGS",
             "cwe": 686,
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -7689,6 +7796,7 @@
         {
             "checker": "PRINTF_ARGS",
             "cwe": 686,
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -7703,6 +7811,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 7,
             "events": [
                 {
@@ -7766,6 +7875,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 1,
             "events": [
                 {
@@ -7787,6 +7897,7 @@
         {
             "checker": "ALLOC_FREE_MISMATCH",
             "cwe": 762,
+            "tool": "coverity",
             "key_event_idx": 8,
             "events": [
                 {
@@ -7857,6 +7968,7 @@
         {
             "checker": "ALLOC_FREE_MISMATCH",
             "cwe": 762,
+            "tool": "coverity",
             "key_event_idx": 13,
             "events": [
                 {
@@ -7962,6 +8074,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 2,
             "events": [
                 {
@@ -7990,6 +8103,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 14,
             "events": [
                 {
@@ -8102,6 +8216,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 21,
             "events": [
                 {
@@ -8263,6 +8378,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 11,
             "events": [
                 {
@@ -8354,6 +8470,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 13,
             "events": [
                 {
@@ -8459,6 +8576,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 13,
             "events": [
                 {
@@ -8564,6 +8682,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 10,
             "events": [
                 {
@@ -8648,6 +8767,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 1,
             "events": [
                 {
@@ -8669,6 +8789,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 2,
             "events": [
                 {
@@ -8697,6 +8818,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 5,
             "events": [
                 {
@@ -8746,6 +8868,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 31,
             "events": [
                 {
@@ -8977,6 +9100,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 15,
             "events": [
                 {
@@ -9096,6 +9220,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -9110,6 +9235,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 14,
             "events": [
                 {
@@ -9222,6 +9348,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 14,
             "events": [
                 {
@@ -9334,6 +9461,7 @@
         {
             "checker": "ALLOC_FREE_MISMATCH",
             "cwe": 762,
+            "tool": "coverity",
             "key_event_idx": 7,
             "events": [
                 {
@@ -9397,6 +9525,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 1,
             "events": [
                 {
@@ -9418,6 +9547,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 1,
             "events": [
                 {
@@ -9439,6 +9569,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 1,
             "events": [
                 {
@@ -9460,6 +9591,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 1,
             "events": [
                 {
@@ -9481,6 +9613,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 1,
             "events": [
                 {
@@ -9502,6 +9635,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 1,
             "events": [
                 {
@@ -9523,6 +9657,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 5,
             "events": [
                 {
@@ -9572,6 +9707,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 6,
             "events": [
                 {
@@ -9628,6 +9764,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 4,
             "events": [
                 {
@@ -9670,6 +9807,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 10,
             "events": [
                 {
@@ -9754,6 +9892,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 13,
             "events": [
                 {
@@ -9859,6 +9998,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 14,
             "events": [
                 {
@@ -9971,6 +10111,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 16,
             "events": [
                 {
@@ -10097,6 +10238,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 19,
             "events": [
                 {
@@ -10244,6 +10386,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 23,
             "events": [
                 {
@@ -10419,6 +10562,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 24,
             "events": [
                 {
@@ -10601,6 +10745,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 27,
             "events": [
                 {
@@ -10804,6 +10949,7 @@
         {
             "checker": "RESOURCE_LEAK",
             "cwe": 404,
+            "tool": "coverity",
             "key_event_idx": 9,
             "events": [
                 {
@@ -10881,6 +11027,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 14,
             "events": [
                 {
@@ -10993,6 +11140,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 67,
             "events": [
                 {
@@ -11476,6 +11624,7 @@
         {
             "checker": "PRINTF_ARGS",
             "cwe": 686,
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -11490,6 +11639,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 1,
             "events": [
                 {
@@ -11511,6 +11661,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 1,
             "events": [
                 {
@@ -11532,6 +11683,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 1,
             "events": [
                 {
@@ -11553,6 +11705,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 2,
             "events": [
                 {
@@ -11581,6 +11734,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 5,
             "events": [
                 {
@@ -11630,6 +11784,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 14,
             "events": [
                 {
@@ -11742,6 +11897,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 18,
             "events": [
                 {
@@ -11882,6 +12038,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 45,
             "events": [
                 {
@@ -12211,6 +12368,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 47,
             "events": [
                 {
@@ -12554,6 +12712,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 48,
             "events": [
                 {
@@ -12904,6 +13063,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 29,
             "events": [
                 {
@@ -13121,6 +13281,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 23,
             "events": [
                 {
@@ -13296,6 +13457,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 41,
             "events": [
                 {
@@ -13597,6 +13759,7 @@
         {
             "checker": "RESOURCE_LEAK",
             "cwe": 404,
+            "tool": "coverity",
             "key_event_idx": 621,
             "events": [
                 {
@@ -17958,6 +18121,7 @@
         {
             "checker": "RESOURCE_LEAK",
             "cwe": 404,
+            "tool": "coverity",
             "key_event_idx": 622,
             "events": [
                 {
@@ -22326,6 +22490,7 @@
         {
             "checker": "RESOURCE_LEAK",
             "cwe": 404,
+            "tool": "coverity",
             "key_event_idx": 479,
             "events": [
                 {
@@ -25693,6 +25858,7 @@
         {
             "checker": "RESOURCE_LEAK",
             "cwe": 404,
+            "tool": "coverity",
             "key_event_idx": 60,
             "events": [
                 {
@@ -26127,6 +26293,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 9,
             "events": [
                 {
@@ -26204,6 +26371,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 10,
             "events": [
                 {
@@ -26288,6 +26456,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 11,
             "events": [
                 {
@@ -26379,6 +26548,7 @@
         {
             "checker": "ALLOC_FREE_MISMATCH",
             "cwe": 762,
+            "tool": "coverity",
             "key_event_idx": 12,
             "events": [
                 {
@@ -26477,6 +26647,7 @@
         {
             "checker": "ALLOC_FREE_MISMATCH",
             "cwe": 762,
+            "tool": "coverity",
             "key_event_idx": 13,
             "events": [
                 {
@@ -26582,6 +26753,7 @@
         {
             "checker": "ALLOC_FREE_MISMATCH",
             "cwe": 762,
+            "tool": "coverity",
             "key_event_idx": 14,
             "events": [
                 {
@@ -26694,6 +26866,7 @@
         {
             "checker": "ALLOC_FREE_MISMATCH",
             "cwe": 762,
+            "tool": "coverity",
             "key_event_idx": 14,
             "events": [
                 {
@@ -26806,6 +26979,7 @@
         {
             "checker": "ALLOC_FREE_MISMATCH",
             "cwe": 762,
+            "tool": "coverity",
             "key_event_idx": 15,
             "events": [
                 {
@@ -26925,6 +27099,7 @@
         {
             "checker": "ALLOC_FREE_MISMATCH",
             "cwe": 762,
+            "tool": "coverity",
             "key_event_idx": 15,
             "events": [
                 {
@@ -27044,6 +27219,7 @@
         {
             "checker": "RESOURCE_LEAK",
             "cwe": 404,
+            "tool": "coverity",
             "key_event_idx": 12,
             "events": [
                 {
@@ -27142,6 +27318,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 6,
             "events": [
                 {
@@ -27198,6 +27375,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 6,
             "events": [
                 {
@@ -27254,6 +27432,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 1,
             "events": [
                 {
@@ -27275,6 +27454,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 2,
             "events": [
                 {
@@ -27303,6 +27483,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -27338,6 +27519,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 4,
             "events": [
                 {
@@ -27380,6 +27562,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 5,
             "events": [
                 {
@@ -27429,6 +27612,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 6,
             "events": [
                 {
@@ -27485,6 +27669,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 7,
             "events": [
                 {
@@ -27548,6 +27733,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 7,
             "events": [
                 {
@@ -27611,6 +27797,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 2,
             "events": [
                 {
@@ -27639,6 +27826,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -27674,6 +27862,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -27709,6 +27898,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 14,
             "events": [
                 {
@@ -27821,6 +28011,7 @@
         {
             "checker": "PRINTF_ARGS",
             "cwe": 686,
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -27835,6 +28026,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 15,
             "events": [
                 {
@@ -27954,6 +28146,7 @@
         {
             "checker": "PRINTF_ARGS",
             "cwe": 686,
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -27968,6 +28161,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 42,
             "events": [
                 {
@@ -28276,6 +28470,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 25,
             "events": [
                 {
@@ -28465,6 +28660,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 5,
             "events": [
                 {
@@ -28514,6 +28710,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 10,
             "events": [
                 {
@@ -28598,6 +28795,7 @@
         {
             "checker": "PRINTF_ARGS",
             "cwe": 686,
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -28612,6 +28810,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 5,
             "events": [
                 {
@@ -28661,6 +28860,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 10,
             "events": [
                 {
@@ -28745,6 +28945,7 @@
         {
             "checker": "PRINTF_ARGS",
             "cwe": 686,
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -28759,6 +28960,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 4,
             "events": [
                 {
@@ -28801,6 +29003,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 2,
             "events": [
                 {
@@ -28829,6 +29032,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 6,
             "events": [
                 {
@@ -28885,6 +29089,7 @@
         {
             "checker": "PRINTF_ARGS",
             "cwe": 686,
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -28899,6 +29104,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 7,
             "events": [
                 {
@@ -28962,6 +29168,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 5,
             "events": [
                 {
@@ -29011,6 +29218,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 29,
             "events": [
                 {
@@ -29228,6 +29436,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 57,
             "events": [
                 {
@@ -29641,6 +29850,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 27,
             "events": [
                 {
@@ -29844,6 +30054,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 28,
             "events": [
                 {
@@ -30054,6 +30265,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 28,
             "events": [
                 {
@@ -30264,6 +30476,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 28,
             "events": [
                 {
@@ -30474,6 +30687,7 @@
         {
             "checker": "CHECKED_RETURN",
             "cwe": 252,
+            "tool": "coverity",
             "key_event_idx": 31,
             "events": [
                 {
@@ -30705,6 +30919,7 @@
         {
             "checker": "CONSTANT_EXPRESSION_RESULT",
             "cwe": 569,
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {

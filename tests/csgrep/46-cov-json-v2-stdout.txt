@@ -3,6 +3,7 @@
         {
             "checker": "DEADCODE",
             "function": "base64_encode",
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -45,6 +46,7 @@
         {
             "checker": "OVERRUN",
             "function": "Curl_socket",
+            "tool": "coverity",
             "key_event_idx": 4,
             "events": [
                 {
@@ -87,6 +89,7 @@
         {
             "checker": "DEADCODE",
             "function": "Curl_ntlm_core_mk_lm_hash",
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -122,6 +125,7 @@
         {
             "checker": "DEADCODE",
             "function": "Curl_ntlm_core_mk_nt_hash",
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -157,6 +161,7 @@
         {
             "checker": "DEADCODE",
             "function": "Curl_ftpsend",
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -192,6 +197,7 @@
         {
             "checker": "CONSTANT_EXPRESSION_RESULT",
             "function": "getinfo_long",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -206,6 +212,7 @@
         {
             "checker": "CONSTANT_EXPRESSION_RESULT",
             "function": "getinfo_long",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -220,6 +227,7 @@
         {
             "checker": "DEADCODE",
             "function": "Curl_add_buffer_send",
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -255,6 +263,7 @@
         {
             "checker": "DEADCODE",
             "function": "Curl_http_readwrite_headers",
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -290,6 +299,7 @@
         {
             "checker": "DEADCODE",
             "function": "Curl_httpchunk_read",
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -325,6 +335,7 @@
         {
             "checker": "DEADCODE",
             "function": "Curl_httpchunk_read",
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -360,6 +371,7 @@
         {
             "checker": "DEADCODE",
             "function": "CONNECT",
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -395,6 +407,7 @@
         {
             "checker": "FORWARD_NULL",
             "function": "curl_multi_wait",
+            "tool": "coverity",
             "key_event_idx": 62,
             "events": [
                 {
@@ -843,6 +856,7 @@
         {
             "checker": "FORWARD_NULL",
             "function": "curl_multi_wait",
+            "tool": "coverity",
             "key_event_idx": 60,
             "events": [
                 {
@@ -1277,6 +1291,7 @@
         {
             "checker": "DEADCODE",
             "function": "Curl_recv_plain",
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -1312,6 +1327,7 @@
         {
             "checker": "DEADCODE",
             "function": "Curl_client_write",
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -1347,6 +1363,7 @@
         {
             "checker": "DEADCODE",
             "function": "smb_request_state",
+            "tool": "coverity",
             "key_event_idx": 10,
             "events": [
                 {
@@ -1431,6 +1448,7 @@
         {
             "checker": "DEADCODE",
             "function": "Curl_auth_create_ntlm_type3_message",
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -1466,6 +1484,7 @@
         {
             "checker": "DEADCODE",
             "function": "ossl_connect_step1",
+            "tool": "coverity",
             "key_event_idx": 8,
             "events": [
                 {
@@ -1536,6 +1555,7 @@
         {
             "checker": "DEADCODE",
             "function": "ossl_connect_step1",
+            "tool": "coverity",
             "key_event_idx": 8,
             "events": [
                 {
@@ -1606,6 +1626,7 @@
         {
             "checker": "DEADCODE",
             "function": "ossl_connect_step1",
+            "tool": "coverity",
             "key_event_idx": 8,
             "events": [
                 {
@@ -1676,6 +1697,7 @@
         {
             "checker": "CHECKED_RETURN",
             "function": "tool_header_cb",
+            "tool": "coverity",
             "key_event_idx": 34,
             "events": [
                 {
@@ -1928,6 +1950,7 @@
         {
             "checker": "CONSTANT_EXPRESSION_RESULT",
             "function": "fread",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -1949,6 +1972,7 @@
         {
             "checker": "COPY_PASTE_ERROR",
             "function": "getNTLMSSPType3",
+            "tool": "coverity",
             "key_event_idx": 1,
             "events": [
                 {
@@ -1977,6 +2001,7 @@
         {
             "checker": "FORWARD_NULL",
             "function": "read_andx",
+            "tool": "coverity",
             "key_event_idx": 11,
             "events": [
                 {
@@ -2068,6 +2093,7 @@
         {
             "checker": "IDENTICAL_BRANCHES",
             "function": "list_path",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -2082,6 +2108,7 @@
         {
             "checker": "IDENTICAL_BRANCHES",
             "function": "list_path",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -2096,6 +2123,7 @@
         {
             "checker": "FORWARD_NULL",
             "function": "smbComOpenAndX",
+            "tool": "coverity",
             "key_event_idx": 5,
             "events": [
                 {

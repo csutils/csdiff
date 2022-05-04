@@ -612,6 +612,7 @@ done:
     this->keDigger.initVerbosity(def);
     this->annotHdl.handleDef(def);
     this->digger.inferLangFromChecker(def);
+    this->digger.inferToolFromChecker(def);
 
     // all OK
     return true;

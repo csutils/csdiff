@@ -3,6 +3,7 @@
         {
             "checker": "CPPCHECK_WARNING",
             "language": "c/c++",
+            "tool": "cppcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -17,6 +18,7 @@
         {
             "checker": "CPPCHECK_WARNING",
             "language": "c/c++",
+            "tool": "cppcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -31,6 +33,7 @@
         {
             "checker": "CPPCHECK_WARNING",
             "language": "c/c++",
+            "tool": "cppcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -46,6 +49,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 401,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 0,
             "events": [
                 {
@@ -260,6 +264,7 @@
         {
             "checker": "CLANG_WARNING",
             "language": "c/c++",
+            "tool": "clang",
             "key_event_idx": 0,
             "events": [
                 {
@@ -597,6 +602,7 @@
         {
             "checker": "SHELLCHECK_WARNING",
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -612,6 +618,7 @@
         {
             "checker": "SHELLCHECK_WARNING",
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -627,6 +634,7 @@
         {
             "checker": "SHELLCHECK_WARNING",
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -642,6 +650,7 @@
         {
             "checker": "SHELLCHECK_WARNING",
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -657,6 +666,7 @@
         {
             "checker": "SHELLCHECK_WARNING",
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {

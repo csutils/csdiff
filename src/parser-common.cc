@@ -19,6 +19,10 @@
 
 #include "parser-common.hh"
 
+#include "regex.hh"
+
+#include <boost/algorithm/string.hpp>
+#include <boost/algorithm/string/replace.hpp>
 #include <boost/lexical_cast.hpp>
 
 int parse_int(const std::string &str, const int fallback)
@@ -34,6 +38,8 @@ int parse_int(const std::string &str, const int fallback)
 struct ImpliedAttrDigger::Private {
     typedef std::map<std::string, std::string>      TMap;
     TMap langByChecker;
+
+    const RE reToolWarning = RE("^([A-Z_]+)_WARNING$");
 };
 
 ImpliedAttrDigger::ImpliedAttrDigger():
@@ -69,4 +75,31 @@ void ImpliedAttrDigger::inferLangFromChecker(
 
     // found --> assign from map
     pDef->language = it->second;
+}
+
+void ImpliedAttrDigger::inferToolFromChecker(
+        Defect         *pDef,
+        const bool      onlyIfMissing)
+    const
+{
+    if (onlyIfMissing && !pDef->tool.empty())
+        // tool already assigned
+        return;
+
+    boost::smatch sm;
+    if (boost::regex_match(pDef->checker, sm, d->reToolWarning)) {
+        // extract tool="gcc-analyzer" out of checker="GCC_ANALYZER_WARNING"
+        std::string tool = sm[/* tool */ 1];
+        boost::algorithm::to_lower(tool);
+        boost::algorithm::replace_all(tool, "_", "-");
+
+        if (tool == "compiler")
+            // we use COMPILER_WARNING for "gcc" due to historical reasons
+            tool = "gcc";
+
+        pDef->tool = tool;
+    }
+    else
+        // no tool matched --> assume coverity
+        pDef->tool = "coverity";
 }

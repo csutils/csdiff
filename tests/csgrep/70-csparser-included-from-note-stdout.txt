@@ -4,6 +4,7 @@
             "checker": "COMPILER_WARNING",
             "cwe": 758,
             "language": "c/c++",
+            "tool": "gcc",
             "key_event_idx": 10,
             "events": [
                 {
@@ -125,6 +126,7 @@
             "checker": "COMPILER_WARNING",
             "cwe": 758,
             "language": "c/c++",
+            "tool": "gcc",
             "key_event_idx": 11,
             "events": [
                 {

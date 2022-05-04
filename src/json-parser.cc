@@ -89,6 +89,8 @@ class SarifTreeDecoder: public AbstractTreeDecoder {
 
         typedef std::map<std::string, int>  TCweMap;
         TCweMap                     cweMap;
+
+        ImpliedAttrDigger           digger;
 };
 
 struct JsonParser::Private {
@@ -231,6 +233,7 @@ SimpleTreeDecoder::SimpleTreeDecoder(InStream &input):
         "imp",
         "key_event_idx",
         "language",
+        "tool",
     };
 
     // known per-event subnodes
@@ -312,6 +315,7 @@ bool SimpleTreeDecoder::readNode(
     def->imp      = valueOf<int>        (defNode, "imp"      , 0);
     def->function = valueOf<std::string>(defNode, "function", "");
     def->language = valueOf<std::string>(defNode, "language", "");
+    def->tool     = valueOf<std::string>(defNode, "tool",     "");
 
     if (defNode.not_found() == defNode.find("key_event_idx")) {
         // key event not specified, try to guess it
@@ -348,6 +352,9 @@ bool CovTreeDecoder::readNode(
     def->checker = defNode.get<std::string>("checkerName");
     def->function = valueOf<std::string>(defNode, "functionDisplayName", "");
     def->language = valueOf<std::string>(defNode, "code-language", "");
+
+    // out of the supported tools, only Coverity produces this data format
+    def->tool = "coverity";
 
     // read CWE if available
     const pt::ptree *checkerProps;
@@ -625,6 +632,9 @@ bool SarifTreeDecoder::readNode(
     const pt::ptree *relatedLocs;
     if (findChildOf(&relatedLocs, defNode, "relatedLocations"))
         sarifReadComments(def, *relatedLocs);
+
+    this->digger.inferLangFromChecker(def);
+    this->digger.inferToolFromChecker(def);
 
     return true;
 }

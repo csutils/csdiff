@@ -4,6 +4,7 @@
             "checker": "MISSING_MOVE_ASSIGNMENT",
             "function": "null",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -41,6 +42,7 @@
             "cwe": 457,
             "function": "bpf::life_data::life_data(unsigned long, unsigned long)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 1,
             "events": [
                 {
@@ -64,6 +66,7 @@
             "cwe": 457,
             "function": "bpf::bpf_unparser::bpf_unparser(bpf::program &, bpf::globals &)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 4,
             "events": [
                 {
@@ -107,6 +110,7 @@
             "checker": "STREAM_FORMAT_STATE",
             "function": "bpf::operator <<(std::basic_ostream<char, std::char_traits<char> > &, bpf::asm_stmt const &)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 7,
             "events": [
                 {
@@ -172,6 +176,7 @@
             "cwe": 457,
             "function": "bpf::BPF_Section::BPF_Section(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const &)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 1,
             "events": [
                 {
@@ -195,6 +200,7 @@
             "cwe": 404,
             "function": "bpf::output_probe(bpf::BPF_Output &, bpf::program &, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const &, unsigned int)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 15,
             "events": [
                 {
@@ -316,6 +322,7 @@
             "cwe": 367,
             "function": "clean_cache(systemtap_session &)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 5,
             "events": [
                 {
@@ -647,6 +654,7 @@
             "cwe": 404,
             "function": "sql_stmt(sqlite3 *, char const *)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -684,6 +692,7 @@
             "cwe": 457,
             "function": "functioncall_security_check::functioncall_security_check(systemtap_session &, functioncall *)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 1,
             "events": [
                 {
@@ -707,6 +716,7 @@
             "cwe": 377,
             "function": "edit_cmd::handler(systemtap_session &, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > &, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > &)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 1,
             "events": [
                 {
@@ -729,6 +739,7 @@
             "checker": "STREAM_FORMAT_STATE",
             "function": "interactive_usage()",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 8,
             "events": [
                 {
@@ -801,6 +812,7 @@
             "cwe": 401,
             "function": "location_context::location_context(target_symbol *, expression *)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 1,
             "events": [
                 {
@@ -894,6 +906,7 @@
             "cwe": 457,
             "function": "location_context::location_context(target_symbol *, expression *)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 11,
             "events": [
                 {
@@ -987,6 +1000,7 @@
             "cwe": 476,
             "function": "nss_get_specified_server_info(systemtap_session &, std::vector<compile_server_info, std::allocator<compile_server_info> > &, bool)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 1,
             "events": [
                 {
@@ -1010,6 +1024,7 @@
             "cwe": 676,
             "function": "generate_private_key(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const &, PK11SlotInfoStr *, SECKEYPublicKeyStr **)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -1033,6 +1048,7 @@
             "cwe": 569,
             "function": "parser::expect_number(long &)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -1049,6 +1065,7 @@
             "cwe": 476,
             "function": "parser::do_parse_functiondecl(std::vector<functiondecl *, std::allocator<functiondecl *> > &, token const *, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const &, bool)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 17,
             "events": [
                 {
@@ -1254,6 +1271,7 @@
             "cwe": 404,
             "function": "parser::parse_components()",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 32,
             "events": [
                 {
@@ -1494,6 +1512,7 @@
             "cwe": 476,
             "function": "parser::parse_component()",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 1,
             "events": [
                 {
@@ -1517,6 +1536,7 @@
             "cwe": 569,
             "function": "parser::parse_literal()",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -1533,6 +1553,7 @@
             "cwe": 476,
             "function": "parser::parse_return_statement()",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 5,
             "events": [
                 {
@@ -1654,6 +1675,7 @@
             "cwe": 248,
             "function": "direct::~direct()",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -1677,6 +1699,7 @@
             "cwe": 120,
             "function": "unix_stapsh::unix_stapsh(systemtap_session &, uri_decoder const &)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 7,
             "events": [
                 {
@@ -1742,6 +1765,7 @@
             "cwe": 457,
             "function": "systemtap_session::systemtap_session(systemtap_session const &, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const &, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const &)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -1779,6 +1803,7 @@
             "cwe": 476,
             "function": "systemtap_session::parse_cmdline(int, char * const *)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 11,
             "events": [
                 {
@@ -1872,6 +1897,7 @@
             "cwe": 476,
             "function": "systemtap_session::parse_cmdline(int, char * const *)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 11,
             "events": [
                 {
@@ -1965,6 +1991,7 @@
             "cwe": 476,
             "function": "systemtap_session::parse_cmdline(int, char * const *)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 11,
             "events": [
                 {
@@ -2058,6 +2085,7 @@
             "cwe": 476,
             "function": "systemtap_session::parse_cmdline(int, char * const *)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 10,
             "events": [
                 {
@@ -2144,6 +2172,7 @@
             "cwe": 606,
             "function": "_Z19get_kernel_build_idB5cxx11R17systemtap_session",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 18,
             "events": [
                 {
@@ -2293,6 +2322,7 @@
             "cwe": 367,
             "function": "handleRequest(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const &, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const &, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 17,
             "events": [
                 {
@@ -2449,6 +2479,7 @@
             "cwe": 190,
             "function": "bpf_interpret(unsigned long, bpf_insn const *, bpf_transport_context *)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -2472,6 +2503,7 @@
             "cwe": 457,
             "function": "procfsprobe_data::procfsprobe_data(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long, char, unsigned long, std::vector<Elf_Data *, std::allocator<Elf_Data *> >)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 4,
             "events": [
                 {
@@ -2516,6 +2548,7 @@
             "cwe": 170,
             "function": "procfs_write_event_loop(procfsprobe_data *, bpf_transport_context *)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 5,
             "events": [
                 {
@@ -2567,6 +2600,7 @@
             "cwe": 248,
             "function": "main",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -2590,6 +2624,7 @@
             "cwe": 248,
             "function": "main",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -2613,6 +2648,7 @@
             "cwe": 248,
             "function": "main",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -2636,6 +2672,7 @@
             "cwe": 248,
             "function": "main",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -2659,6 +2696,7 @@
             "cwe": 248,
             "function": "main",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -2682,6 +2720,7 @@
             "cwe": 248,
             "function": "main",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -2705,6 +2744,7 @@
             "cwe": 476,
             "function": "open_output_file",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 2,
             "events": [
                 {
@@ -2735,6 +2775,7 @@
             "cwe": 369,
             "function": "output_cpu_logs",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 23,
             "events": [
                 {
@@ -2912,6 +2953,7 @@
             "cwe": 369,
             "function": "output_cpu_logs",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 23,
             "events": [
                 {
@@ -3089,6 +3131,7 @@
             "cwe": 369,
             "function": "output_cpu_logs",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 35,
             "events": [
                 {
@@ -3350,6 +3393,7 @@
             "cwe": 369,
             "function": "output_cpu_logs",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 26,
             "events": [
                 {
@@ -3548,6 +3592,7 @@
             "cwe": 369,
             "function": "output_cpu_logs",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 26,
             "events": [
                 {
@@ -3746,6 +3791,7 @@
             "cwe": 457,
             "function": "stapregex::state::state(stapregex::dfa *, std::__cxx11::list<stapregex::kernel_point, std::allocator<stapregex::kernel_point> > *)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 1,
             "events": [
                 {
@@ -3769,6 +3815,7 @@
             "cwe": 457,
             "function": "stapregex::rebalance_priorities(std::stack<stapregex::kernel_point, std::deque<stapregex::kernel_point, std::allocator<stapregex::kernel_point> > > &, std::stack<stapregex::kernel_point, std::deque<stapregex::kernel_point, std::allocator<stapregex::kernel_point> > > &)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 2,
             "events": [
                 {
@@ -3799,6 +3846,7 @@
             "cwe": 457,
             "function": "stapregex::rebalance_priorities(std::stack<stapregex::kernel_point, std::deque<stapregex::kernel_point, std::allocator<stapregex::kernel_point> > > &, std::stack<stapregex::kernel_point, std::deque<stapregex::kernel_point, std::allocator<stapregex::kernel_point> > > &)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 4,
             "events": [
                 {
@@ -3843,6 +3891,7 @@
             "cwe": 457,
             "function": "stapregex::rebalance_priorities(std::stack<stapregex::kernel_point, std::deque<stapregex::kernel_point, std::allocator<stapregex::kernel_point> > > &, std::stack<stapregex::kernel_point, std::deque<stapregex::kernel_point, std::allocator<stapregex::kernel_point> > > &)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 8,
             "events": [
                 {
@@ -3915,6 +3964,7 @@
             "cwe": 606,
             "function": "stapregex::regexp::compile()",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 2,
             "events": [
                 {
@@ -3945,6 +3995,7 @@
             "cwe": 404,
             "function": "parse_args",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 13,
             "events": [
                 {
@@ -4052,6 +4103,7 @@
             "cwe": 404,
             "function": "parse_args",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 122,
             "events": [
                 {
@@ -4922,6 +4974,7 @@
             "cwe": 686,
             "function": "stp_main_loop",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -4938,6 +4991,7 @@
             "cwe": 687,
             "function": "monitor_render",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 26,
             "events": [
                 {
@@ -5136,6 +5190,7 @@
             "cwe": 686,
             "function": "monitor_render",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -5152,6 +5207,7 @@
             "cwe": 686,
             "function": "monitor_render",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -5168,6 +5224,7 @@
             "cwe": 686,
             "function": "monitor_render",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -5184,6 +5241,7 @@
             "cwe": 686,
             "function": "monitor_render",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -5200,6 +5258,7 @@
             "cwe": 686,
             "function": "monitor_render",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -5216,6 +5275,7 @@
             "cwe": 686,
             "function": "monitor_render",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -5232,6 +5292,7 @@
             "cwe": 686,
             "function": "monitor_render",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -5248,6 +5309,7 @@
             "cwe": 686,
             "function": "monitor_render",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -5264,6 +5326,7 @@
             "cwe": 686,
             "function": "monitor_render",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -5280,6 +5343,7 @@
             "cwe": 686,
             "function": "monitor_render",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -5296,6 +5360,7 @@
             "cwe": 686,
             "function": "monitor_render",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -5312,6 +5377,7 @@
             "cwe": 686,
             "function": "monitor_render",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -5327,6 +5393,7 @@
             "checker": "BAD_SHIFT",
             "function": "init_backlog",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -5363,6 +5430,7 @@
             "checker": "BAD_SHIFT",
             "function": "init_backlog",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 5,
             "events": [
                 {
@@ -5414,6 +5482,7 @@
             "cwe": 685,
             "function": "switchfile_handler",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -5430,6 +5499,7 @@
             "cwe": 20,
             "function": "reader_thread",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 8,
             "events": [
                 {
@@ -5509,6 +5579,7 @@
             "cwe": 606,
             "function": "reader_thread",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 8,
             "events": [
                 {
@@ -5588,6 +5659,7 @@
             "cwe": 685,
             "function": "switchfile_handler",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -5604,6 +5676,7 @@
             "cwe": 252,
             "function": "main",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 13,
             "events": [
                 {
@@ -5746,6 +5819,7 @@
             "cwe": 252,
             "function": "main",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 72,
             "events": [
                 {
@@ -6378,6 +6452,7 @@
             "cwe": 770,
             "function": "main",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 43,
             "events": [
                 {
@@ -6702,6 +6777,7 @@
             "cwe": 20,
             "function": "main",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 122,
             "events": [
                 {
@@ -7579,6 +7655,7 @@
             "cwe": 252,
             "function": "main",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 80,
             "events": [
                 {
@@ -8211,6 +8288,7 @@
             "cwe": 404,
             "function": "send_relocation_modules",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 24,
             "events": [
                 {
@@ -8395,6 +8473,7 @@
             "cwe": 467,
             "function": "insert_module",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -8418,6 +8497,7 @@
             "cwe": 367,
             "function": "mountfs",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 8,
             "events": [
                 {
@@ -8525,6 +8605,7 @@
             "cwe": 20,
             "function": "assert_stap_module_permissions",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 6,
             "events": [
                 {
@@ -8590,6 +8671,7 @@
             "cwe": 20,
             "function": "assert_stap_module_permissions",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 10,
             "events": [
                 {
@@ -8683,6 +8765,7 @@
             "cwe": 457,
             "function": "functioncall::functioncall()",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 1,
             "events": [
                 {
@@ -8706,6 +8789,7 @@
             "cwe": 252,
             "function": "netfilter_builder::build(systemtap_session &, probe *, probe_point *, std::map<interned_string, literal *, std::less<interned_string>, std::allocator<std::pair<interned_string const, literal *> > > const &, std::vector<derived_probe *, std::allocator<derived_probe *> > &)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 2,
             "events": [
                 {
@@ -8799,6 +8883,7 @@
             "cwe": 404,
             "function": "register_tapset_python(systemtap_session &)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -8836,6 +8921,7 @@
             "cwe": 404,
             "function": "utrace_var_expanding_visitor::visit_target_symbol_arg(target_symbol *)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 6,
             "events": [
                 {
@@ -8894,6 +8980,7 @@
             "cwe": 404,
             "function": "register_tapset_utrace(systemtap_session &)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -8931,6 +9018,7 @@
             "cwe": 457,
             "function": "uprobe_derived_probe::uprobe_derived_probe(probe *, probe_point *, int, unsigned long, bool)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 1,
             "events": [
                 {
@@ -8954,6 +9042,7 @@
             "cwe": 606,
             "function": "dwarf_query::parse_function_spec(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const &)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 12,
             "events": [
                 {
@@ -9061,6 +9150,7 @@
             "cwe": 606,
             "function": "dwarf_query::parse_function_spec(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const &)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 13,
             "events": [
                 {
@@ -9175,6 +9265,7 @@
             "cwe": 561,
             "function": "dwarf_pretty_print::recurse_array(Dwarf_Die *, target_symbol *, print_format *, bool)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -9212,6 +9303,7 @@
             "cwe": 404,
             "function": "dwarf_var_expanding_visitor::visit_target_symbol_context(target_symbol *)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 9,
             "events": [
                 {
@@ -9291,6 +9383,7 @@
             "cwe": 606,
             "function": "sdt_uprobe_var_expanding_visitor::try_parse_arg_effective_addr(target_symbol *, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const &, long)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 16,
             "events": [
                 {
@@ -9426,6 +9519,7 @@
             "cwe": 404,
             "function": "delete_statement_operand_visitor::visit_arrayindex(arrayindex *)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 21,
             "events": [
                 {
@@ -9589,6 +9683,7 @@
             "cwe": 476,
             "function": "c_unparser_assignment::visit_symbol(symbol *)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 5,
             "events": [
                 {
@@ -9640,6 +9735,7 @@
             "cwe": 476,
             "function": "c_unparser_assignment::visit_arrayindex(arrayindex *)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 7,
             "events": [
                 {
@@ -9705,6 +9801,7 @@
             "cwe": 476,
             "function": "c_unparser_assignment::visit_arrayindex(arrayindex *)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 5,
             "events": [
                 {
@@ -9756,6 +9853,7 @@
             "cwe": 377,
             "function": "copy_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const &, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const &, bool)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 2,
             "events": [
                 {
@@ -9786,6 +9884,7 @@
             "cwe": 367,
             "function": "remove_file_or_dir(char const *)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -9816,6 +9915,7 @@
             "cwe": 252,
             "function": "follow_link(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const &, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const &)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -9832,6 +9932,7 @@
             "cwe": 252,
             "function": "stap_fork_read(int, std::basic_ostream<char, std::char_traits<char> > &)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 4,
             "events": [
                 {
@@ -9876,6 +9977,7 @@
             "cwe": 569,
             "function": "fread",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -9899,6 +10001,7 @@
             "cwe": 569,
             "function": "fread",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -9922,6 +10025,7 @@
             "cwe": 401,
             "function": "std::_Hashtable<Dwarf *, std::pair<Dwarf * const, std::unordered_multimap<interned_string, Dwarf_Die, std::hash<interned_string>, std::equal_to<interned_string>, std::allocator<std::pair<interned_string const, Dwarf_Die> > > *>, std::allocator<std::pair<Dwarf * const, std::unordered_multimap<interned_string, Dwarf_Die, std::hash<interned_string>, std::equal_to<interned_string>, std::allocator<std::pair<interned_string const, Dwarf_Die> > > *> >, std::__detail::_Select1st, std::equal_to<Dwarf *>, std::hash<Dwarf *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<Dwarf * const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<Dwarf * const, std::unordered_multimap<interned_string, Dwarf_Die, std::hash<interned_string>, std::equal_to<interned_string>, std::allocator<std::pair<interned_string const, Dwarf_Die> > > *>, false> > > *, <std::piecewise_construct_t const &, std::tuple<Dwarf * const &>, std::tuple<>...> &&...)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -9959,6 +10063,7 @@
             "cwe": 401,
             "function": "std::_Hashtable<Dwarf *, std::pair<Dwarf * const, std::vector<Dwarf_Die, std::allocator<Dwarf_Die> > *>, std::allocator<std::pair<Dwarf * const, std::vector<Dwarf_Die, std::allocator<Dwarf_Die> > *> >, std::__detail::_Select1st, std::equal_to<Dwarf *>, std::hash<Dwarf *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<Dwarf * const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<Dwarf * const, std::vector<Dwarf_Die, std::allocator<Dwarf_Die> > *>, false> > > *, <std::piecewise_construct_t const &, std::tuple<Dwarf * const &>, std::tuple<>...> &&...)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -9996,6 +10101,7 @@
             "cwe": 401,
             "function": "std::_Hashtable<int, std::pair<int const, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, int> > > >, std::allocator<std::pair<int const, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, int> > > > >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<int const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<int const, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, int> > > >, false> > > *, <std::piecewise_construct_t const &, std::tuple<int const &>, std::tuple<>...> &&...)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -10033,6 +10139,7 @@
             "cwe": 401,
             "function": "std::_Hashtable<interned_string, std::pair<interned_string const, Dwarf_Die>, std::allocator<std::pair<interned_string const, Dwarf_Die> >, std::__detail::_Select1st, std::equal_to<interned_string>, std::hash<interned_string>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, false> >::_Scoped_node::_Scoped_node<std::pair<char const *, Dwarf_Die> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<interned_string const, Dwarf_Die>, true> > > *, <std::pair<char const *, Dwarf_Die>...> &&...)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -10070,6 +10177,7 @@
             "cwe": 401,
             "function": "std::_Hashtable<interned_string, std::pair<interned_string const, func_info *>, std::allocator<std::pair<interned_string const, func_info *> >, std::__detail::_Select1st, std::equal_to<interned_string>, std::hash<interned_string>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, false> >::_Scoped_node::_Scoped_node<std::pair<interned_string, func_info *> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<interned_string const, func_info *>, true> > > *, <std::pair<interned_string, func_info *>...> &&...)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -10107,6 +10215,7 @@
             "cwe": 401,
             "function": "std::_Hashtable<interned_string, std::pair<interned_string const, generic_kprobe_derived_probe *>, std::allocator<std::pair<interned_string const, generic_kprobe_derived_probe *> >, std::__detail::_Select1st, std::equal_to<interned_string>, std::hash<interned_string>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, false> >::_Scoped_node::_Scoped_node<std::pair<interned_string, generic_kprobe_derived_probe *> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<interned_string const, generic_kprobe_derived_probe *>, true> > > *, <std::pair<interned_string, generic_kprobe_derived_probe *>...> &&...)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -10144,6 +10253,7 @@
             "cwe": 401,
             "function": "std::_Hashtable<interned_string, std::pair<interned_string const, unsigned long>, std::allocator<std::pair<interned_string const, unsigned long> >, std::__detail::_Select1st, std::equal_to<interned_string>, std::hash<interned_string>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<interned_string const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<interned_string const, unsigned long>, true> > > *, <std::piecewise_construct_t const &, std::tuple<interned_string const &>, std::tuple<>...> &&...)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -10181,6 +10291,7 @@
             "cwe": 401,
             "function": "std::_Hashtable<long, std::pair<long const, bpf::value *>, std::allocator<std::pair<long const, bpf::value *> >, std::__detail::_Select1st, std::equal_to<long>, std::hash<long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::pair<long, bpf::value *> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<long const, bpf::value *>, false> > > *, <std::pair<long, bpf::value *>...> &&...)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -10218,6 +10329,7 @@
             "cwe": 401,
             "function": "std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Dwarf_Die>, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Dwarf_Die> >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Dwarf_Die>, true> > > *, <std::piecewise_construct_t const &, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const &>, std::tuple<>...> &&...)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -10255,6 +10367,7 @@
             "cwe": 401,
             "function": "std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bpf::value *>, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bpf::value *> >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_Scoped_node::_Scoped_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, bpf::value *> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bpf::value *>, true> > > *, <std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, bpf::value *>...> &&...)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -10292,6 +10405,7 @@
             "cwe": 401,
             "function": "std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, expression *>, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, expression *> >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, expression *>, true> > > *, <std::piecewise_construct_t const &, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const &>, std::tuple<>...> &&...)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -10329,6 +10443,7 @@
             "cwe": 401,
             "function": "std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<Dwarf_Line_s *, std::allocator<Dwarf_Line_s *> > *>, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<Dwarf_Line_s *, std::allocator<Dwarf_Line_s *> > *> >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > &&>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<Dwarf_Line_s *, std::allocator<Dwarf_Line_s *> > *>, true> > > *, <std::piecewise_construct_t const &, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > &&>, std::tuple<>...> &&...)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -10366,6 +10481,7 @@
             "cwe": 401,
             "function": "std::_Hashtable<unsigned int, std::pair<unsigned int const, unsigned int>, std::allocator<std::pair<unsigned int const, unsigned int> >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::pair<unsigned int, unsigned int> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned int const, unsigned int>, false> > > *, <std::pair<unsigned int, unsigned int>...> &&...)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -10403,6 +10519,7 @@
             "cwe": 401,
             "function": "std::_Hashtable<unsigned long, std::pair<unsigned long const, block *>, std::allocator<std::pair<unsigned long const, block *> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::pair<unsigned long, block *> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, block *>, false> > > *, <std::pair<unsigned long, block *>...> &&...)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -10440,6 +10557,7 @@
             "cwe": 401,
             "function": "std::_Hashtable<vardecl *, std::pair<vardecl * const, bpf::globals::map_slot>, std::allocator<std::pair<vardecl * const, bpf::globals::map_slot> >, std::__detail::_Select1st, std::equal_to<vardecl *>, std::hash<vardecl *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::pair<vardecl *, bpf::globals::map_slot> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<vardecl * const, bpf::globals::map_slot>, false> > > *, <std::pair<vardecl *, bpf::globals::map_slot>...> &&...)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -10477,6 +10595,7 @@
             "cwe": 401,
             "function": "std::_Hashtable<vardecl *, std::pair<vardecl * const, int>, std::allocator<std::pair<vardecl * const, int> >, std::__detail::_Select1st, std::equal_to<vardecl *>, std::hash<vardecl *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<vardecl * const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<vardecl * const, int>, false> > > *, <std::piecewise_construct_t const &, std::tuple<vardecl * const &>, std::tuple<>...> &&...)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -10514,6 +10633,7 @@
             "cwe": 401,
             "function": "std::_Hashtable<vardecl *, std::pair<vardecl * const, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, int> > > >, std::allocator<std::pair<vardecl * const, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, int> > > > >, std::__detail::_Select1st, std::equal_to<vardecl *>, std::hash<vardecl *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<vardecl * const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<vardecl * const, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, int> > > >, false> > > *, <std::piecewise_construct_t const &, std::tuple<vardecl * const &>, std::tuple<>...> &&...)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -10551,6 +10671,7 @@
             "cwe": 401,
             "function": "std::_Hashtable<void *, std::pair<void * const, Dwarf_Die>, std::allocator<std::pair<void * const, Dwarf_Die> >, std::__detail::_Select1st, std::equal_to<void *>, std::hash<void *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::pair<void *, Dwarf_Die> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<void * const, Dwarf_Die>, false> > > *, <std::pair<void *, Dwarf_Die>...> &&...)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -10588,6 +10709,7 @@
             "cwe": 401,
             "function": "std::_Hashtable<void *, std::pair<void * const, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Dwarf_Die, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Dwarf_Die> > > *>, std::allocator<std::pair<void * const, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Dwarf_Die, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Dwarf_Die> > > *> >, std::__detail::_Select1st, std::equal_to<void *>, std::hash<void *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<void * const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<void * const, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Dwarf_Die, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Dwarf_Die> > > *>, false> > > *, <std::piecewise_construct_t const &, std::tuple<void * const &>, std::tuple<>...> &&...)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -10625,6 +10747,7 @@
             "cwe": 401,
             "function": "std::_Hashtable<void *, std::pair<void * const, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<Dwarf_Line_s *, std::allocator<Dwarf_Line_s *> > *, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<Dwarf_Line_s *, std::allocator<Dwarf_Line_s *> > *> > > *>, std::allocator<std::pair<void * const, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<Dwarf_Line_s *, std::allocator<Dwarf_Line_s *> > *, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<Dwarf_Line_s *, std::allocator<Dwarf_Line_s *> > *> > > *> >, std::__detail::_Select1st, std::equal_to<void *>, std::hash<void *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<void *&&>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<void * const, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<Dwarf_Line_s *, std::allocator<Dwarf_Line_s *> > *, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<Dwarf_Line_s *, std::allocator<Dwarf_Line_s *> > *> > > *>, false> > > *, <std::piecewise_construct_t const &, std::tuple<void *&&>, std::tuple<>...> &&...)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -10662,6 +10785,7 @@
             "cwe": 401,
             "function": "std::_Hashtable<void *, std::pair<void * const, std::unordered_map<void *, Dwarf_Die, std::hash<void *>, std::equal_to<void *>, std::allocator<std::pair<void * const, Dwarf_Die> > > *>, std::allocator<std::pair<void * const, std::unordered_map<void *, Dwarf_Die, std::hash<void *>, std::equal_to<void *>, std::allocator<std::pair<void * const, Dwarf_Die> > > *> >, std::__detail::_Select1st, std::equal_to<void *>, std::hash<void *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<void * const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<void * const, std::unordered_map<void *, Dwarf_Die, std::hash<void *>, std::equal_to<void *>, std::allocator<std::pair<void * const, Dwarf_Die> > > *>, false> > > *, <std::piecewise_construct_t const &, std::tuple<void * const &>, std::tuple<>...> &&...)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -10699,6 +10823,7 @@
             "cwe": 401,
             "function": "std::_Hashtable<void *, std::pair<void * const, std::unordered_multimap<interned_string, Dwarf_Die, std::hash<interned_string>, std::equal_to<interned_string>, std::allocator<std::pair<interned_string const, Dwarf_Die> > > *>, std::allocator<std::pair<void * const, std::unordered_multimap<interned_string, Dwarf_Die, std::hash<interned_string>, std::equal_to<interned_string>, std::allocator<std::pair<interned_string const, Dwarf_Die> > > *> >, std::__detail::_Select1st, std::equal_to<void *>, std::hash<void *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<void * const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<void * const, std::unordered_multimap<interned_string, Dwarf_Die, std::hash<interned_string>, std::equal_to<interned_string>, std::allocator<std::pair<interned_string const, Dwarf_Die> > > *>, false> > > *, <std::piecewise_construct_t const &, std::tuple<void * const &>, std::tuple<>...> &&...)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -10736,6 +10861,7 @@
             "cwe": 401,
             "function": "std::_Hashtable<void *, std::pair<void * const, std::unordered_set<unsigned long, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<unsigned long> > *>, std::allocator<std::pair<void * const, std::unordered_set<unsigned long, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<unsigned long> > *> >, std::__detail::_Select1st, std::equal_to<void *>, std::hash<void *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<void * const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<void * const, std::unordered_set<unsigned long, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<unsigned long> > *>, false> > > *, <std::piecewise_construct_t const &, std::tuple<void * const &>, std::tuple<>...> &&...)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -10773,6 +10899,7 @@
             "cwe": 401,
             "function": "std::_Hashtable<void *, std::pair<void * const, std::vector<Dwarf_Die, std::allocator<Dwarf_Die> > *>, std::allocator<std::pair<void * const, std::vector<Dwarf_Die, std::allocator<Dwarf_Die> > *> >, std::__detail::_Select1st, std::equal_to<void *>, std::hash<void *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<void * const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<void * const, std::vector<Dwarf_Die, std::allocator<Dwarf_Die> > *>, false> > > *, <std::piecewise_construct_t const &, std::tuple<void * const &>, std::tuple<>...> &&...)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -10810,6 +10937,7 @@
             "cwe": 401,
             "function": "std::_Hashtable<void *, std::pair<void * const, std::vector<std::pair<Dwarf_Die, Dwarf_Die>, std::allocator<std::pair<Dwarf_Die, Dwarf_Die> > > *>, std::allocator<std::pair<void * const, std::vector<std::pair<Dwarf_Die, Dwarf_Die>, std::allocator<std::pair<Dwarf_Die, Dwarf_Die> > > *> >, std::__detail::_Select1st, std::equal_to<void *>, std::hash<void *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<void * const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<void * const, std::vector<std::pair<Dwarf_Die, Dwarf_Die>, std::allocator<std::pair<Dwarf_Die, Dwarf_Die> > > *>, false> > > *, <std::piecewise_construct_t const &, std::tuple<void * const &>, std::tuple<>...> &&...)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -10847,6 +10975,7 @@
             "cwe": 398,
             "function": "void std::__push_heap<__gnu_cxx::__normal_iterator<compile_server_info *, std::vector<compile_server_info, std::allocator<compile_server_info> > >, long, compile_server_info, __gnu_cxx::__ops::_Iter_less_val>(__gnu_cxx::__normal_iterator<compile_server_info *, std::vector<compile_server_info, std::allocator<compile_server_info> > >, long, long, compile_server_info, __gnu_cxx::__ops::_Iter_less_val &)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -10863,6 +10992,7 @@
             "cwe": 398,
             "function": "void std::__adjust_heap<__gnu_cxx::__normal_iterator<compile_server_info *, std::vector<compile_server_info, std::allocator<compile_server_info> > >, long, compile_server_info, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<compile_server_info *, std::vector<compile_server_info, std::allocator<compile_server_info> > >, long, long, compile_server_info, __gnu_cxx::__ops::_Iter_less_iter)",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -10879,6 +11009,7 @@
             "cwe": 366,
             "function": "std::unique_lock<std::mutex>::unlock()",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 2,
             "events": [
                 {
@@ -10922,6 +11053,7 @@
             "checker": "BAD_SHIFT",
             "function": "Dyninst::InstructionAPI::BinaryFunction::rightRotateResult::operator ()(Dyninst::InstructionAPI::Result const &, Dyninst::InstructionAPI::Result const &) const",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -10958,6 +11090,7 @@
             "checker": "BAD_SHIFT",
             "function": "Dyninst::InstructionAPI::BinaryFunction::rightRotateResult::operator ()(Dyninst::InstructionAPI::Result const &, Dyninst::InstructionAPI::Result const &) const",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -10994,6 +11127,7 @@
             "checker": "MISSING_MOVE_ASSIGNMENT",
             "function": "null",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {

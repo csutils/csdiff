@@ -29,6 +29,7 @@
             "imp": 1,
             "function": "do_dbdef",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 5,
             "events": [
                 {
@@ -80,6 +81,7 @@
             "cwe": 476,
             "function": "get_attribute_values",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 6,
             "events": [
                 {
@@ -194,6 +196,7 @@
             "cwe": 476,
             "function": "conflex",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 7,
             "events": [
                 {
@@ -259,6 +262,7 @@
             "cwe": 476,
             "function": "confrestart",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -296,6 +300,7 @@
             "cwe": 476,
             "function": "conf_switch_to_buffer",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 5,
             "events": [
                 {
@@ -347,6 +352,7 @@
             "cwe": 476,
             "function": "confpush_buffer_state",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 6,
             "events": [
                 {
@@ -405,6 +411,7 @@
             "cwe": 119,
             "function": "confparse",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 9,
             "events": [
                 {
@@ -484,6 +491,7 @@
             "cwe": 119,
             "function": "confparse",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 10,
             "events": [
                 {
@@ -612,6 +620,7 @@
             "cwe": 252,
             "function": "db_writechar",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 1,
             "events": [
                 {
@@ -635,6 +644,7 @@
             "cwe": 252,
             "function": "db_writechar",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 7,
             "events": [
                 {
@@ -700,6 +710,7 @@
             "cwe": 252,
             "function": "db_writeint",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 1,
             "events": [
                 {
@@ -723,6 +734,7 @@
             "cwe": 252,
             "function": "db_writelong",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 1,
             "events": [
                 {
@@ -746,6 +758,7 @@
             "cwe": 252,
             "function": "db_write_byte_base64",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 5,
             "events": [
                 {
@@ -797,6 +810,7 @@
             "cwe": 252,
             "function": "db_write_time_base64",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 1,
             "events": [
                 {
@@ -820,6 +834,7 @@
             "cwe": 252,
             "function": "db_writeoct",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 1,
             "events": [
                 {
@@ -843,6 +858,7 @@
             "cwe": 252,
             "function": "db_writeacl",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 1,
             "events": [
                 {
@@ -866,6 +882,7 @@
             "cwe": 252,
             "function": "db_writeacl",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 2,
             "events": [
                 {
@@ -896,6 +913,7 @@
             "cwe": 252,
             "function": "db_writeacl",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 2,
             "events": [
                 {
@@ -926,6 +944,7 @@
             "cwe": 252,
             "function": "db_writeacl",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 2,
             "events": [
                 {
@@ -956,6 +975,7 @@
             "cwe": 252,
             "function": "db_writeacl",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -993,6 +1013,7 @@
             "cwe": 252,
             "function": "db_writeacl",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 4,
             "events": [
                 {
@@ -1037,6 +1058,7 @@
             "cwe": 252,
             "function": "db_writeacl",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 5,
             "events": [
                 {
@@ -1088,6 +1110,7 @@
             "cwe": 252,
             "function": "db_writeline_file",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 6,
             "events": [
                 {
@@ -1146,6 +1169,7 @@
             "cwe": 252,
             "function": "db_writeline_file",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 10,
             "events": [
                 {
@@ -1232,6 +1256,7 @@
             "cwe": 252,
             "function": "db_writeline_file",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 10,
             "events": [
                 {
@@ -1318,6 +1343,7 @@
             "cwe": 252,
             "function": "db_writeline_file",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 10,
             "events": [
                 {
@@ -1404,6 +1430,7 @@
             "cwe": 252,
             "function": "db_writeline_file",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 10,
             "events": [
                 {
@@ -1490,6 +1517,7 @@
             "cwe": 252,
             "function": "db_writeline_file",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 10,
             "events": [
                 {
@@ -1576,6 +1604,7 @@
             "cwe": 252,
             "function": "db_writeline_file",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 10,
             "events": [
                 {
@@ -1662,6 +1691,7 @@
             "cwe": 252,
             "function": "db_writeline_file",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 10,
             "events": [
                 {
@@ -1748,6 +1778,7 @@
             "cwe": 252,
             "function": "db_writeline_file",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 10,
             "events": [
                 {
@@ -1834,6 +1865,7 @@
             "cwe": 252,
             "function": "db_writeline_file",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 10,
             "events": [
                 {
@@ -1920,6 +1952,7 @@
             "cwe": 252,
             "function": "db_writeline_file",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 10,
             "events": [
                 {
@@ -2006,6 +2039,7 @@
             "cwe": 252,
             "function": "db_writeline_file",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 10,
             "events": [
                 {
@@ -2092,6 +2126,7 @@
             "cwe": 252,
             "function": "db_writeline_file",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 10,
             "events": [
                 {
@@ -2178,6 +2213,7 @@
             "cwe": 252,
             "function": "db_writeline_file",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 11,
             "events": [
                 {
@@ -2271,6 +2307,7 @@
             "cwe": 252,
             "function": "db_writeline_file",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 11,
             "events": [
                 {
@@ -2364,6 +2401,7 @@
             "cwe": 252,
             "function": "db_writeline_file",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 16,
             "events": [
                 {
@@ -2492,6 +2530,7 @@
             "cwe": 252,
             "function": "db_writeline_file",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 16,
             "events": [
                 {
@@ -2620,6 +2659,7 @@
             "cwe": 252,
             "function": "db_writeline_file",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 10,
             "events": [
                 {
@@ -2706,6 +2746,7 @@
             "cwe": 252,
             "function": "db_writeline_file",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 10,
             "events": [
                 {
@@ -2792,6 +2833,7 @@
             "cwe": 252,
             "function": "db_writeline_file",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 10,
             "events": [
                 {
@@ -2878,6 +2920,7 @@
             "cwe": 252,
             "function": "db_writeline_file",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 9,
             "events": [
                 {
@@ -2957,6 +3000,7 @@
             "cwe": 476,
             "function": "db_scan",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 7,
             "events": [
                 {
@@ -3022,6 +3066,7 @@
             "cwe": 476,
             "function": "dbrestart",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -3059,6 +3104,7 @@
             "cwe": 476,
             "function": "db_switch_to_buffer",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 5,
             "events": [
                 {
@@ -3110,6 +3156,7 @@
             "cwe": 476,
             "function": "dbpush_buffer_state",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 6,
             "events": [
                 {
@@ -3168,6 +3215,7 @@
             "cwe": 561,
             "function": "calc_md",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -3184,6 +3232,7 @@
             "cwe": 252,
             "function": "url_fopen",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 3,
             "events": [
                 {
@@ -3221,6 +3270,7 @@
             "cwe": 252,
             "function": "url_fopen",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 4,
             "events": [
                 {
@@ -3265,6 +3315,7 @@
             "cwe": 252,
             "function": "url_fopen",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 5,
             "events": [
                 {
@@ -3316,6 +3367,7 @@
             "cwe": 252,
             "function": "url_fopen",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 6,
             "events": [
                 {
@@ -3375,6 +3427,7 @@
             "imp": 1,
             "function": "add_file_to_tree",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 7,
             "events": [
                 {
@@ -3441,6 +3494,7 @@
             "imp": 1,
             "function": "add_file_to_tree",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 16,
             "events": [
                 {
@@ -3570,6 +3624,7 @@
             "imp": 1,
             "function": "populate_tree",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 16,
             "events": [
                 {
@@ -3699,6 +3754,7 @@
             "imp": 1,
             "function": "populate_tree",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 17,
             "events": [
                 {
@@ -3834,6 +3890,7 @@
             "cwe": 569,
             "function": "fread",
             "language": "c/c++",
+            "tool": "coverity",
             "key_event_idx": 0,
             "events": [
                 {
@@ -3856,6 +3913,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 476,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 1,
             "events": [
                 {
@@ -3981,6 +4039,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 476,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 0,
             "events": [
                 {
@@ -4187,6 +4246,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 476,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 1,
             "events": [
                 {
@@ -4482,6 +4542,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 401,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 1,
             "events": [
                 {
@@ -4881,6 +4942,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 688,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 1,
             "events": [
                 {
@@ -5367,6 +5429,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 476,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 1,
             "events": [
                 {
@@ -5690,6 +5753,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 688,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 0,
             "events": [
                 {
@@ -6049,6 +6113,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 476,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 1,
             "events": [
                 {
@@ -6129,6 +6194,7 @@
         {
             "checker": "CLANG_WARNING",
             "language": "c/c++",
+            "tool": "clang",
             "key_event_idx": 0,
             "events": [
                 {
@@ -6180,6 +6246,7 @@
         {
             "checker": "CLANG_WARNING",
             "language": "c/c++",
+            "tool": "clang",
             "key_event_idx": 0,
             "events": [
                 {
@@ -6231,6 +6298,7 @@
         {
             "checker": "CLANG_WARNING",
             "language": "c/c++",
+            "tool": "clang",
             "key_event_idx": 0,
             "events": [
                 {
@@ -6282,6 +6350,7 @@
         {
             "checker": "CLANG_WARNING",
             "language": "c/c++",
+            "tool": "clang",
             "key_event_idx": 0,
             "events": [
                 {
@@ -6333,6 +6402,7 @@
         {
             "checker": "CLANG_WARNING",
             "language": "c/c++",
+            "tool": "clang",
             "key_event_idx": 0,
             "events": [
                 {
@@ -6385,6 +6455,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 476,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 0,
             "events": [
                 {
@@ -6489,6 +6560,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 401,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 0,
             "events": [
                 {
@@ -6997,6 +7069,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 688,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 0,
             "events": [
                 {
@@ -7600,6 +7673,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 476,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 0,
             "events": [
                 {
@@ -7792,6 +7866,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 476,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 0,
             "events": [
                 {
@@ -8087,6 +8162,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 476,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 0,
             "events": [
                 {
@@ -8221,6 +8297,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 476,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 0,
             "events": [
                 {
@@ -8369,6 +8446,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 688,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 0,
             "events": [
                 {
@@ -8590,6 +8668,7 @@
             "checker": "COMPILER_WARNING",
             "cwe": 758,
             "language": "c/c++",
+            "tool": "gcc",
             "key_event_idx": 0,
             "events": [
                 {
@@ -8642,6 +8721,7 @@
             "checker": "COMPILER_WARNING",
             "cwe": 758,
             "language": "c/c++",
+            "tool": "gcc",
             "key_event_idx": 0,
             "events": [
                 {
@@ -8694,6 +8774,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 688,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 1,
             "events": [
                 {
@@ -9002,6 +9083,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 476,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 1,
             "events": [
                 {
@@ -9149,6 +9231,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 688,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 0,
             "events": [
                 {
@@ -9332,6 +9415,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 476,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 0,
             "events": [
                 {
@@ -9516,6 +9600,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 688,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 1,
             "events": [
                 {
@@ -9700,6 +9785,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 688,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 0,
             "events": [
                 {
@@ -9877,6 +9963,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 688,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 1,
             "events": [
                 {
@@ -10061,6 +10148,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 688,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 0,
             "events": [
                 {
@@ -10238,6 +10326,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 476,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 1,
             "events": [
                 {
@@ -10319,6 +10408,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 476,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 1,
             "events": [
                 {
@@ -10430,6 +10520,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 476,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 1,
             "events": [
                 {
@@ -10511,6 +10602,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 476,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 1,
             "events": [
                 {
@@ -10592,6 +10684,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 476,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 1,
             "events": [
                 {
@@ -10673,6 +10766,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 476,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 1,
             "events": [
                 {
@@ -10754,6 +10848,7 @@
             "checker": "COMPILER_WARNING",
             "cwe": 1164,
             "language": "c/c++",
+            "tool": "gcc",
             "key_event_idx": 0,
             "events": [
                 {
@@ -10784,6 +10879,7 @@
             "checker": "CPPCHECK_WARNING",
             "cwe": 476,
             "language": "c/c++",
+            "tool": "cppcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -10799,6 +10895,7 @@
             "checker": "CPPCHECK_WARNING",
             "cwe": 476,
             "language": "c/c++",
+            "tool": "cppcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -10814,6 +10911,7 @@
             "checker": "COMPILER_WARNING",
             "cwe": 758,
             "language": "c/c++",
+            "tool": "gcc",
             "key_event_idx": 1,
             "events": [
                 {
@@ -10851,6 +10949,7 @@
             "checker": "COMPILER_WARNING",
             "cwe": 758,
             "language": "c/c++",
+            "tool": "gcc",
             "key_event_idx": 1,
             "events": [
                 {
@@ -10888,6 +10987,7 @@
             "checker": "COMPILER_WARNING",
             "cwe": 758,
             "language": "c/c++",
+            "tool": "gcc",
             "key_event_idx": 1,
             "events": [
                 {
@@ -10925,6 +11025,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 476,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 1,
             "events": [
                 {
@@ -11036,6 +11137,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 688,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 0,
             "events": [
                 {
@@ -11183,6 +11285,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 688,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 1,
             "events": [
                 {
@@ -11323,6 +11426,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 688,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 0,
             "events": [
                 {
@@ -11822,6 +11926,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 688,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 1,
             "events": [
                 {
@@ -11932,6 +12037,7 @@
             "checker": "COMPILER_WARNING",
             "cwe": 758,
             "language": "c/c++",
+            "tool": "gcc",
             "key_event_idx": 1,
             "events": [
                 {
@@ -11969,6 +12075,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 476,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 1,
             "events": [
                 {
@@ -12463,6 +12570,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 401,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 1,
             "events": [
                 {
@@ -13285,6 +13393,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 476,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 1,
             "events": [
                 {
@@ -14755,6 +14864,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 476,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 1,
             "events": [
                 {
@@ -14932,6 +15042,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 476,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 1,
             "events": [
                 {
@@ -15013,6 +15124,7 @@
             "checker": "COMPILER_WARNING",
             "cwe": 1164,
             "language": "c/c++",
+            "tool": "gcc",
             "key_event_idx": 0,
             "events": [
                 {
@@ -15043,6 +15155,7 @@
             "checker": "CPPCHECK_WARNING",
             "cwe": 476,
             "language": "c/c++",
+            "tool": "cppcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -15058,6 +15171,7 @@
             "checker": "CPPCHECK_WARNING",
             "cwe": 476,
             "language": "c/c++",
+            "tool": "cppcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -15073,6 +15187,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 401,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 1,
             "events": [
                 {
@@ -15895,6 +16010,7 @@
             "checker": "GCC_ANALYZER_WARNING",
             "cwe": 476,
             "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 1,
             "events": [
                 {
@@ -17590,6 +17706,7 @@
         {
             "checker": "CLANG_WARNING",
             "language": "c/c++",
+            "tool": "clang",
             "key_event_idx": 0,
             "events": [
                 {
@@ -18147,6 +18264,7 @@
         {
             "checker": "CLANG_WARNING",
             "language": "c/c++",
+            "tool": "clang",
             "key_event_idx": 0,
             "events": [
                 {
@@ -18638,6 +18756,7 @@
         {
             "checker": "CLANG_WARNING",
             "language": "c/c++",
+            "tool": "clang",
             "key_event_idx": 0,
             "events": [
                 {
@@ -19445,6 +19564,7 @@
         {
             "checker": "CLANG_WARNING",
             "language": "c/c++",
+            "tool": "clang",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20003,6 +20123,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20019,6 +20140,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20035,6 +20157,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20051,6 +20174,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20067,6 +20191,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20083,6 +20208,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20099,6 +20225,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20115,6 +20242,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20131,6 +20259,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20147,6 +20276,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20163,6 +20293,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20179,6 +20310,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20195,6 +20327,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20211,6 +20344,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20227,6 +20361,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20243,6 +20378,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20259,6 +20395,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20275,6 +20412,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20291,6 +20429,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20307,6 +20446,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20323,6 +20463,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20339,6 +20480,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20355,6 +20497,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20371,6 +20514,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20387,6 +20531,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20403,6 +20548,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20419,6 +20565,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20435,6 +20582,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20451,6 +20599,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20467,6 +20616,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20483,6 +20633,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20499,6 +20650,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20515,6 +20667,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20531,6 +20684,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20547,6 +20701,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20563,6 +20718,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20579,6 +20735,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20595,6 +20752,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20611,6 +20769,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20627,6 +20786,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20643,6 +20803,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20659,6 +20820,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20675,6 +20837,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20691,6 +20854,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20707,6 +20871,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20723,6 +20888,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20739,6 +20905,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20755,6 +20922,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20771,6 +20939,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20787,6 +20956,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20803,6 +20973,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20819,6 +20990,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20835,6 +21007,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20851,6 +21024,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20867,6 +21041,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20883,6 +21058,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20899,6 +21075,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20915,6 +21092,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20931,6 +21109,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20947,6 +21126,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20963,6 +21143,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20979,6 +21160,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -20995,6 +21177,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21011,6 +21194,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21027,6 +21211,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21043,6 +21228,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21059,6 +21245,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21075,6 +21262,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21091,6 +21279,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21107,6 +21296,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21123,6 +21313,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21139,6 +21330,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21155,6 +21347,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21171,6 +21364,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21187,6 +21381,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21203,6 +21398,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21219,6 +21415,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21235,6 +21432,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21251,6 +21449,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21267,6 +21466,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21283,6 +21483,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21299,6 +21500,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21315,6 +21517,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21331,6 +21534,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21347,6 +21551,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21363,6 +21568,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21379,6 +21585,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21395,6 +21602,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21411,6 +21619,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21427,6 +21636,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21443,6 +21653,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21459,6 +21670,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21475,6 +21687,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21491,6 +21704,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21507,6 +21721,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21523,6 +21738,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21539,6 +21755,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21555,6 +21772,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21571,6 +21789,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21587,6 +21806,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21603,6 +21823,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21619,6 +21840,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21635,6 +21857,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21651,6 +21874,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21667,6 +21891,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21683,6 +21908,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21699,6 +21925,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21715,6 +21942,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21731,6 +21959,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21747,6 +21976,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21763,6 +21993,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21779,6 +22010,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21795,6 +22027,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21811,6 +22044,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21827,6 +22061,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21843,6 +22078,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21859,6 +22095,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21875,6 +22112,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21891,6 +22129,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21907,6 +22146,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21923,6 +22163,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21939,6 +22180,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21955,6 +22197,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21971,6 +22214,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -21987,6 +22231,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -22003,6 +22248,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -22019,6 +22265,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -22035,6 +22282,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -22051,6 +22299,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -22067,6 +22316,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -22083,6 +22333,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -22099,6 +22350,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -22115,6 +22367,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -22131,6 +22384,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -22147,6 +22401,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -22163,6 +22418,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -22179,6 +22435,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -22195,6 +22452,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -22211,6 +22469,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -22227,6 +22486,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -22243,6 +22503,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -22259,6 +22520,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -22275,6 +22537,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -22291,6 +22554,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -22307,6 +22571,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -22323,6 +22588,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -22339,6 +22605,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -22355,6 +22622,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -22371,6 +22639,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -22387,6 +22656,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -22403,6 +22673,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -22419,6 +22690,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -22435,6 +22707,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -22451,6 +22724,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -22467,6 +22741,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -22483,6 +22758,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -22499,6 +22775,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -22515,6 +22792,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -22531,6 +22809,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -22547,6 +22826,7 @@
             "checker": "SHELLCHECK_WARNING",
             "cwe": 398,
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {

@@ -41,6 +41,7 @@ class ImpliedAttrDigger {
         ~ImpliedAttrDigger();
 
         void inferLangFromChecker(Defect *, bool onlyIfMissing = true) const;
+        void inferToolFromChecker(Defect *, bool onlyIfMissing = true) const;
 
     private:
         struct Private;

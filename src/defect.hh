@@ -94,6 +94,7 @@ struct Defect {
     int                 defectId    = 0;    ///< used only by the JSON format
     std::string         function;           ///< used only by the JSON format
     std::string         language;           ///< used only by the JSON format
+    std::string         tool;               ///< used only by the JSON format
 
     Defect() { }
 

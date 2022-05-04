@@ -3,6 +3,7 @@
         {
             "checker": "COMPILER_WARNING",
             "language": "c/c++",
+            "tool": "gcc",
             "key_event_idx": 1,
             "events": [
                 {
@@ -40,6 +41,7 @@
             "checker": "CPPCHECK_WARNING",
             "cwe": 664,
             "language": "c/c++",
+            "tool": "cppcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -55,6 +57,7 @@
             "checker": "CPPCHECK_WARNING",
             "cwe": 457,
             "language": "c/c++",
+            "tool": "cppcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -69,6 +72,7 @@
         {
             "checker": "CPPCHECK_WARNING",
             "language": "c/c++",
+            "tool": "cppcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -84,6 +88,7 @@
             "checker": "CPPCHECK_WARNING",
             "cwe": 664,
             "language": "c/c++",
+            "tool": "cppcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -99,6 +104,7 @@
             "checker": "CPPCHECK_WARNING",
             "cwe": 664,
             "language": "c/c++",
+            "tool": "cppcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -113,6 +119,7 @@
         {
             "checker": "CPPCHECK_WARNING",
             "language": "c/c++",
+            "tool": "cppcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -128,6 +135,7 @@
             "checker": "CPPCHECK_WARNING",
             "cwe": 664,
             "language": "c/c++",
+            "tool": "cppcheck",
             "key_event_idx": 0,
             "events": [
                 {
@@ -142,6 +150,7 @@
         {
             "checker": "CLANG_WARNING",
             "language": "c/c++",
+            "tool": "clang",
             "key_event_idx": 0,
             "events": [
                 {

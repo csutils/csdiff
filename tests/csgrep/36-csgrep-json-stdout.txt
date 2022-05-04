@@ -3,6 +3,7 @@
         {
             "checker": "SHELLCHECK_WARNING",
             "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {

@@ -678,7 +678,8 @@ void GccPostProcessor::apply(Defect *pDef) const
     d->polishGccAnal(pDef);
     d->polishClangAnal(pDef);
 
-    d->digger.inferLangFromChecker(pDef);
+    d->digger.inferLangFromChecker(pDef, /* onlyIfMissing */ false);
+    d->digger.inferToolFromChecker(pDef, /* onlyIfMissing */ false);
 }
 
 struct GccParser::Private {
