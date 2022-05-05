@@ -561,7 +561,7 @@ bool BasicGccParser::hasError() const
 using namespace GccParserImpl;
 
 struct GccPostProcessor::Private {
-    const LangDetector langDetector;
+    const ImpliedAttrDigger digger;
 
     void transGccAnal(Defect *pDef) const;
     void polishGccAnal(Defect *pDef) const;
@@ -678,7 +678,7 @@ void GccPostProcessor::apply(Defect *pDef) const
     d->polishGccAnal(pDef);
     d->polishClangAnal(pDef);
 
-    d->langDetector.inferLangFromChecker(pDef);
+    d->digger.inferLangFromChecker(pDef);
 }
 
 struct GccParser::Private {

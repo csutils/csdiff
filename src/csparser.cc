@@ -424,7 +424,7 @@ struct CovParser::Private {
     EToken                  code;
     KeyEventDigger          keDigger;
     AnnotHandler            annotHdl;
-    LangDetector            langDetector;
+    ImpliedAttrDigger       digger;
 
     Private(InStream &input_):
         lexer(input_.str()),
@@ -611,7 +611,7 @@ done:
 
     this->keDigger.initVerbosity(def);
     this->annotHdl.handleDef(def);
-    this->langDetector.inferLangFromChecker(def);
+    this->digger.inferLangFromChecker(def);
 
     // all OK
     return true;

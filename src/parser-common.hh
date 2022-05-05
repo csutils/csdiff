@@ -35,10 +35,10 @@
 
 int parse_int(const std::string &, int fallback = 0);
 
-class LangDetector {
+class ImpliedAttrDigger {
     public:
-        LangDetector();
-        ~LangDetector();
+        ImpliedAttrDigger();
+        ~ImpliedAttrDigger();
 
         void inferLangFromChecker(Defect *, bool onlyIfMissing = true) const;
 

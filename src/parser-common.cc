@@ -31,12 +31,12 @@ int parse_int(const std::string &str, const int fallback)
     }
 }
 
-struct LangDetector::Private {
+struct ImpliedAttrDigger::Private {
     typedef std::map<std::string, std::string>      TMap;
     TMap langByChecker;
 };
 
-LangDetector::LangDetector():
+ImpliedAttrDigger::ImpliedAttrDigger():
     d(new Private)
 {
     d->langByChecker["CLANG_WARNING"]           = "c/c++";
@@ -48,12 +48,14 @@ LangDetector::LangDetector():
     d->langByChecker["SMATCH_WARNING"]          = "c/c++";
 }
 
-LangDetector::~LangDetector()
+ImpliedAttrDigger::~ImpliedAttrDigger()
 {
     delete d;
 }
 
-void LangDetector::inferLangFromChecker(Defect *pDef, const bool onlyIfMissing)
+void ImpliedAttrDigger::inferLangFromChecker(
+        Defect         *pDef,
+        const bool      onlyIfMissing)
     const
 {
     if (onlyIfMissing && !pDef->language.empty())
