@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011-2021 Red Hat, Inc.
+ * Copyright (C) 2011-2022 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -31,7 +31,7 @@ struct Defect;
 /// abstraction for higher-level decoders for various tree-based file formats
 class AbstractTreeDecoder {
     public:
-        virtual ~AbstractTreeDecoder() { }
+        virtual ~AbstractTreeDecoder() = default;
 
         /// read scan properties if available
         virtual void readScanProps(
@@ -58,7 +58,7 @@ class AbstractTreeDecoder {
 /// abstraction for higher-level encoders for various tree-based file formats
 class AbstractTreeEncoder {
     public:
-        virtual ~AbstractTreeEncoder() { }
+        virtual ~AbstractTreeEncoder() = default;
 
         /// import supported scan properties
         virtual void importScanProps(const TScanProps &) { }
