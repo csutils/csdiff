@@ -31,8 +31,7 @@ class AbstractWriter {
         virtual void handleDef(const Defect &def) = 0;
         virtual void notifyFile(const std::string &) { }
 
-        AbstractWriter():
-            inputFormat_(FF_INVALID)
+        AbstractWriter()
         {
         }
 
@@ -63,7 +62,7 @@ class AbstractWriter {
 
 
     private:
-        EFileFormat                 inputFormat_;
+        EFileFormat                 inputFormat_ = FF_INVALID;
         const TScanProps            emptyProps_;
 };
 
