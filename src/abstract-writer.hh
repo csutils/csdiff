@@ -68,8 +68,8 @@ using TWriterPtr = std::unique_ptr<AbstractWriter>;
 
 TWriterPtr createWriter(
         std::ostream               &strDst,
-        const EFileFormat           format,
-        const EColorMode            cm        = CM_AUTO,
+        EFileFormat                 format,
+        EColorMode                  cm        = CM_AUTO,
         const TScanProps           &scanProps = TScanProps());
 
 class CtxEventDetector {
