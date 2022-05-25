@@ -38,9 +38,7 @@ struct PredicateFilter::Private {
     bool                invertEach_ = false;
     TList               preds_;
 
-    Private()
-    {
-    }
+    Private() = default;
 };
 
 PredicateFilter::PredicateFilter(AbstractWriter *agent):
