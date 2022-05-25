@@ -35,11 +35,10 @@ struct PredicateFilter::Private {
     using IPredicatePtr = std::unique_ptr<IPredicate>;
     using TList         = std::vector<IPredicatePtr>;
 
-    bool                invertEach_;
+    bool                invertEach_ = false;
     TList               preds_;
 
-    Private():
-        invertEach_(false)
+    Private()
     {
     }
 };

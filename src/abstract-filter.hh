@@ -87,15 +87,14 @@ class CtxEmbedder: public GenericAbstractFilter {
 /// decorator
 class AbstractFilter: public GenericAbstractFilter {
     private:
-        bool neg_;
+        bool neg_ = false;
 
     protected:
         virtual bool matchDef(const Defect &def) = 0;
 
     public:
         AbstractFilter(AbstractWriter *agent):
-            GenericAbstractFilter(agent),
-            neg_(false)
+            GenericAbstractFilter(agent)
         {
         }
 
