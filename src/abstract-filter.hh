@@ -60,7 +60,7 @@ class EventPrunner: public GenericAbstractFilter {
         int thr_;
 
     public:
-        EventPrunner(AbstractWriter *agent, unsigned thr):
+        EventPrunner(AbstractWriter *agent, int thr):
             GenericAbstractFilter(agent),
             thr_(thr)
         {
