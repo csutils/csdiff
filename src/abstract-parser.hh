@@ -26,7 +26,7 @@
 #include <memory>
 
 /// used only by the JSON format
-typedef std::map<std::string, std::string> TScanProps;
+using TScanProps = std::map<std::string, std::string>;
 
 enum EFileFormat {
     FF_INVALID = 0,                         ///< for signalling errors
