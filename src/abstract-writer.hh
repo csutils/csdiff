@@ -31,9 +31,7 @@ class AbstractWriter {
         virtual void handleDef(const Defect &def) = 0;
         virtual void notifyFile(const std::string &) { }
 
-        AbstractWriter()
-        {
-        }
+        AbstractWriter() = default;
 
         AbstractWriter(const AbstractWriter &) = delete;
         AbstractWriter& operator=(const AbstractWriter &) = delete;
@@ -63,7 +61,7 @@ class AbstractWriter {
 
     private:
         EFileFormat                 inputFormat_ = FF_INVALID;
-        const TScanProps            emptyProps_;
+        const TScanProps            emptyProps_{};
 };
 
 using TWriterPtr = std::unique_ptr<AbstractWriter>;
