@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 Red Hat, Inc.
+ * Copyright (C) 2014-2022 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -39,7 +39,7 @@ ColorWriter::ColorWriter(const std::ostream &str, const EColorMode cm)
     }
 }
 
-const char* ColorWriter::setColor(const EColor color)
+const char* ColorWriter::setColor(const EColor color) const
 {
     if (!enabled_)
         return "";
@@ -55,7 +55,7 @@ const char* ColorWriter::setColor(const EColor color)
     return "";
 }
 
-const char* ColorWriter::setColorIf(bool cond, const EColor color)
+const char* ColorWriter::setColorIf(bool cond, const EColor color) const
 {
     return (cond) ? this->setColor(color) : "";
 }

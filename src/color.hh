@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 Red Hat, Inc.
+ * Copyright (C) 2014-2022 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -39,8 +39,8 @@ enum EColor {
 class ColorWriter {
     public:
         ColorWriter(const std::ostream &str, EColorMode);
-        const char* setColor(EColor);
-        const char* setColorIf(bool, EColor);
+        const char* setColor(EColor) const;
+        const char* setColorIf(bool, EColor) const;
 
     private:
         bool enabled_;
