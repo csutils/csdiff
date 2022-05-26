@@ -19,7 +19,6 @@ jobs:
     runs-on: ubuntu-${{ matrix.version }}
     env:
       CXX: ${{ matrix.compiler }}
-      DEBIAN_FRONTEND: noninteractive
 
     steps:
       - name: Checkout repository
