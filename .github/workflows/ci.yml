@@ -24,6 +24,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: '[clang] Install a default version for Ubuntu ${{ matrix.version }}'
+        if: matrix.compiler == 'clang++'
+        run: |
+          sudo apt update
+          sudo apt install -y clang
+
       - name: Install dependencies
         run: |
           sudo apt update
