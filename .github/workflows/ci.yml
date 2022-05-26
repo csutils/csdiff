@@ -14,7 +14,7 @@ jobs:
       fail-fast: false
       matrix:
         compiler: [clang++, g++]
-        version: [18.04, 20.04]
+        version: [18.04, 20.04, 22.04]
 
     runs-on: ubuntu-${{ matrix.version }}
     env:
@@ -31,8 +31,8 @@ jobs:
             libboost-filesystem-dev libboost-program-options-dev  \
             libboost-python-dev libboost-regex-dev
 
-      - name: '[Focal] Add sanitizers to CXXFLAGS'
-        if: matrix.version >= 20.04
+      - name: '[Jammy] Add sanitizers to CXXFLAGS'
+        if: matrix.version >= 22.04
         run: |
           # Use ASAN and UBSAN
           CXXFLAGS="-fsanitize=address,undefined"
