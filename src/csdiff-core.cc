@@ -59,8 +59,7 @@ bool /* anyError */ diffScans(
         format = pNew.inputFormat();
 
     // create the appropriate writer
-    using TWriterPtr = std::shared_ptr<AbstractWriter>;
-    TWriterPtr writer(createWriter(strDst, format, cm, props));
+    TWriterPtr writer = createWriter(strDst, format, cm, props);
 
     // read old
     DefLookup stor(/* TODO: document this side effect */ showInternal);
