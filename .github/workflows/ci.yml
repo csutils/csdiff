@@ -19,6 +19,7 @@ jobs:
     runs-on: ubuntu-${{ matrix.version }}
     env:
       CXX: ${{ matrix.compiler }}
+      CXXFLAGS: -Werror
 
     steps:
       - name: Checkout repository
@@ -40,7 +41,7 @@ jobs:
         if: matrix.version >= 22.04
         run: |
           # Use ASAN and UBSAN
-          CXXFLAGS="-fsanitize=address,undefined"
+          CXXFLAGS="$CXXFLAGS -fsanitize=address,undefined"
           # Recommended for better error traces
           CXXFLAGS="$CXXFLAGS -fno-omit-frame-pointer"
           # Make UBSAN reports fatal
