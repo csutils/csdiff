@@ -492,13 +492,13 @@ bool chainFiltersCore(
         const po::variables_map                         &vm,
         const TFlags                                    flags)
 {
-    return appendPredIfNeeded<CheckerPredicate>   (pf, vm, flags, "checker")
-        && appendPredIfNeeded<SrcAnnotPredicate>  (pf, vm, flags, "src-annot")
-        && appendPredIfNeeded<AnnotPredicate>     (pf, vm, flags, "annot")
+    return appendPredIfNeeded<AnnotPredicate>     (pf, vm, flags, "annot")
+        && appendPredIfNeeded<CheckerPredicate>   (pf, vm, flags, "checker")
         && appendPredIfNeeded<ErrorPredicate>     (pf, vm, flags, "error")
         && appendPredIfNeeded<KeyEventPredicate>  (pf, vm, flags, "event")
         && appendPredIfNeeded<MsgPredicate>       (pf, vm, flags, "msg")
-        && appendPredIfNeeded<PathPredicate>      (pf, vm, flags, "path");
+        && appendPredIfNeeded<PathPredicate>      (pf, vm, flags, "path")
+        && appendPredIfNeeded<SrcAnnotPredicate>  (pf, vm, flags, "src-annot");
 }
 
 bool chainFilters(
