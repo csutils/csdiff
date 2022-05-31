@@ -35,7 +35,7 @@
 class StatWriter: public AbstractWriter {
     public:
         /// silently drop scan properties when printing stats only
-        virtual void setScanProps(const TScanProps &) { }
+        void setScanProps(const TScanProps &) override { }
 };
 
 class FilePrinter: public StatWriter {
@@ -43,11 +43,11 @@ class FilePrinter: public StatWriter {
         std::string file_;
 
     protected:
-        virtual void notifyFile(const std::string &fileName) {
+        void notifyFile(const std::string &fileName) override {
             file_ = fileName;
         }
 
-        virtual void handleDef(const Defect &) {
+        void handleDef(const Defect &) override {
             if (file_.empty())
                 return;
 
@@ -61,11 +61,11 @@ class GroupPrinter: public StatWriter {
         std::string file_;
 
     protected:
-        virtual void notifyFile(const std::string &fileName) {
+        void notifyFile(const std::string &fileName) override {
             file_ = fileName;
         }
 
-        virtual void handleDef(const Defect &def) {
+        void handleDef(const Defect &def) override {
             if (!file_.empty()) {
                 std::cout << "\n\n=== " << file_ << " ===\n";
                 file_.clear();
@@ -78,7 +78,7 @@ class GroupPrinter: public StatWriter {
 
 class KeyEventPrinter: public StatWriter {
     protected:
-        virtual void handleDef(const Defect &def) {
+        void handleDef(const Defect &def) override {
             const DefEvent &keyEvent = def.events[def.keyEventIdx];
             std::cout << def.checker << "\t" << keyEvent.event << "\n";
         }
@@ -90,11 +90,11 @@ class DefCounter: public StatWriter {
         TMap cnt_;
 
     public:
-        virtual void handleDef(const Defect &def) {
+        void handleDef(const Defect &def) override {
             ++cnt_[def.checker];
         }
 
-        virtual void flush() {
+        void flush() override {
             for (TMap::const_reference item : cnt_) {
                 using namespace std;
                 const ios_base::fmtflags oldFlags = cout.flags();
@@ -114,13 +114,13 @@ class EvtCounter: public StatWriter {
         TMap cnt_;
 
     public:
-        virtual void handleDef(const Defect &def) {
+        void handleDef(const Defect &def) override {
             const DefEvent &evt = def.events[def.keyEventIdx];
             const TKey key(def.checker, evt.event);
             ++cnt_[key];
         }
 
-        virtual void flush() {
+        void flush() override {
             for (TMap::const_reference item : cnt_) {
                 using namespace std;
                 const TKey &key = item.first;
@@ -147,12 +147,12 @@ class FileDefCounter: public StatWriter {
         TMap cntMap_;
 
     public:
-        virtual ~FileDefCounter() {
+        ~FileDefCounter() override {
             for (TMap::const_reference item : cntMap_)
                 delete /* (DefCounter *) */ item.second;
         }
 
-        virtual void handleDef(const Defect &def) {
+        void handleDef(const Defect &def) override {
             const std::string fName = def.events[def.keyEventIdx].fileName;
             TMap::const_iterator it = cntMap_.find(fName);
 
@@ -163,7 +163,7 @@ class FileDefCounter: public StatWriter {
             defCnt->handleDef(def);
         }
 
-        virtual void flush() {
+        void flush() override {
             for (TMap::const_reference item : cntMap_) {
                 const std::string fName = item.first;
                 std::cout << "\n\n--- " << fName << " ---\n";
@@ -184,7 +184,7 @@ class MsgPredicate: public IPredicate {
         {
         }
 
-        virtual bool matchDef(const Defect &def) const {
+        bool matchDef(const Defect &def) const override {
             for (const DefEvent &evt : def.events) {
                 if (boost::regex_search(evt.msg, re_))
                     return true;
@@ -204,7 +204,7 @@ class KeyEventPredicate: public IPredicate {
         {
         }
 
-        virtual bool matchDef(const Defect &def) const {
+        bool matchDef(const Defect &def) const override {
             const DefEvent &keyEvent = def.events[def.keyEventIdx];
             return boost::regex_search(keyEvent.event, re_);
         }
@@ -220,7 +220,7 @@ class ErrorPredicate: public IPredicate {
         {
         }
 
-        virtual bool matchDef(const Defect &def) const {
+        bool matchDef(const Defect &def) const override {
             const DefEvent &evt = def.events[def.keyEventIdx];
             return boost::regex_search(evt.msg, re_);
         }
@@ -236,7 +236,7 @@ class PathPredicate: public IPredicate {
         {
         }
 
-        virtual bool matchDef(const Defect &def) const {
+        bool matchDef(const Defect &def) const override {
             const DefEvent &evt = def.events[def.keyEventIdx];
             return boost::regex_search(evt.fileName, re_);
         }
@@ -252,7 +252,7 @@ class CheckerPredicate: public IPredicate {
         {
         }
 
-        virtual bool matchDef(const Defect &def) const {
+        bool matchDef(const Defect &def) const override {
             return boost::regex_search(def.checker, re_);
         }
 };
@@ -267,7 +267,7 @@ class AnnotPredicate: public IPredicate {
         {
         }
 
-        virtual bool matchDef(const Defect &def) const {
+        bool matchDef(const Defect &def) const override {
             return boost::regex_search(def.annotation, re_);
         }
 };
@@ -283,7 +283,7 @@ class SrcAnnotPredicate: public IPredicate {
         }
 
         // FIXME: this implementation is desperately inefficient
-        virtual bool matchDef(const Defect &def) const {
+        bool matchDef(const Defect &def) const override {
             const DefEvent &evt = def.events[def.keyEventIdx];
             const std::string &fname = evt.fileName;
             std::fstream fstr(fname.c_str(), std::ios::in);
@@ -323,7 +323,7 @@ class PathStripper: public GenericAbstractFilter {
         {
         }
 
-        virtual void handleDef(const Defect &defOrig) {
+        void handleDef(const Defect &defOrig) override {
             Defect def(defOrig);
 
             // iterate through all events
@@ -356,17 +356,16 @@ class DropScanProps: public GenericAbstractFilter {
         }
 
         /// ignore any given scan properties
-        virtual void setScanProps(const TScanProps &) {
-        }
+        void setScanProps(const TScanProps &) override { }
 
         /// always return empty scan properties
-        virtual const TScanProps& getScanProps() const {
+        const TScanProps& getScanProps() const override {
             return emp_;
         }
 
     protected:
         /// trivial pass-through
-        virtual void handleDef(const Defect &def) {
+        void handleDef(const Defect &def) override {
             agent_->handleDef(def);
         }
 
@@ -382,7 +381,7 @@ class DuplicateFilter: public AbstractFilter {
         }
 
     protected:
-        virtual bool matchDef(const Defect &def) {
+        bool matchDef(const Defect &def) override {
             DefEvent evt = def.events[def.keyEventIdx];
 
             // abstract out differences we do not deem important
