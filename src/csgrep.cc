@@ -22,6 +22,7 @@
 #include "csfilter.hh"
 #include "cswriter.hh"
 #include "json-writer.hh"
+#include "parser-common.hh"
 #include "regex.hh"
 #include "version.hh"
 
@@ -191,6 +192,26 @@ class MsgPredicate: public IPredicate {
             }
 
             return false;
+        }
+};
+
+class ToolPredicate: public IPredicate {
+    private:
+        const ImpliedAttrDigger digger_;
+        const RE re_;
+
+    public:
+        ToolPredicate(const RE &re):
+            re_(re)
+        {
+        }
+
+        bool matchDef(const Defect &defOrig) const override {
+            // detect tool in case it is not explicitly specified
+            Defect def = defOrig;
+            digger_.inferToolFromChecker(&def, /* onlyIfMissing */ true);
+
+            return boost::regex_search(def.tool, re_);
         }
 };
 
@@ -498,7 +519,8 @@ bool chainFiltersCore(
         && appendPredIfNeeded<KeyEventPredicate>  (pf, vm, flags, "event")
         && appendPredIfNeeded<MsgPredicate>       (pf, vm, flags, "msg")
         && appendPredIfNeeded<PathPredicate>      (pf, vm, flags, "path")
-        && appendPredIfNeeded<SrcAnnotPredicate>  (pf, vm, flags, "src-annot");
+        && appendPredIfNeeded<SrcAnnotPredicate>  (pf, vm, flags, "src-annot")
+        && appendPredIfNeeded<ToolPredicate>      (pf, vm, flags, "tool");
 }
 
 bool chainFilters(
@@ -579,6 +601,7 @@ int main(int argc, char *argv[])
             ("event",               po::value<string>(),        "defect matches if its key event matches the given regex (each defect has exactly one key event, which determines its location in the code)")
             ("error",               po::value<string>(),        "defect matches if the message of its key event matches the given regex")
             ("msg",                 po::value<string>(),        "defect matches if any of its messages matches the given regex")
+            ("tool",                po::value<string>(),        "defect matches if it was detected by tool that matches the given regex")
             ("annot",               po::value<string>(),        "defect matches if its annotation matches the given regex")
             ("src-annot",           po::value<string>(),        "defect matches if an annotation in the _source_ file matches the given regex")
 

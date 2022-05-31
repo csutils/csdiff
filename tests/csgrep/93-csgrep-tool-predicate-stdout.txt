@@ -1,0 +1,62 @@
+Error: TOCTOU (CWE-367):
+logrotate-3.18.0/config.c:648: fs_check_call: Calling function "stat" to perform check on "path".
+logrotate-3.18.0/config.c:666: toctou: Calling function "opendir" that uses "path" after a check function. This can cause a time-of-check, time-of-use race condition.
+#  646|       struct logInfo defConfigBackup;
+#  647|   
+#  648|->     if (stat(path, &sb)) {
+#  649|           message(MESS_ERROR, "cannot stat %s: %s\n", path, strerror(errno));
+#  650|           return 1;
+
+Error: RESOURCE_LEAK (CWE-772):
+logrotate-3.18.0/logrotate.c:338: alloc_arg: "fgetfilecon_raw" allocates memory that is stored into "srcCtx".
+logrotate-3.18.0/logrotate.c:351: leaked_storage: Variable "srcCtx" going out of scope leaks the storage it points to.
+#  349|       if (getfscreatecon_raw(pPrevCtx) < 0) {
+#  350|           message(MESS_ERROR, "getting default context: %s\n", strerror(errno));
+#  351|->         return selinux_enforce;
+#  352|       }
+#  353|   
+
+Error: RESOURCE_LEAK (CWE-772):
+logrotate-3.18.0/logrotate.c:793: alloc_arg: "setSecCtx" allocates memory that is stored into "prevCtx".
+logrotate-3.18.0/logrotate.c:796: leaked_storage: Variable "prevCtx" going out of scope leaks the storage it points to.
+#  794|           /* error msg already printed */
+#  795|           close(inFile);
+#  796|->         return 1;
+#  797|       }
+#  798|   
+
+Error: RESOURCE_LEAK (CWE-772):
+logrotate-3.18.0/logrotate.c:1178: alloc_arg: "setSecCtx" allocates memory that is stored into "prevCtx".
+logrotate-3.18.0/logrotate.c:1180: leaked_storage: Variable "prevCtx" going out of scope leaks the storage it points to.
+# 1178|               if (setSecCtx(fdcurr, currLog, &prevCtx) != 0) {
+# 1179|                   /* error msg already printed */
+# 1180|->                 goto fail;
+# 1181|               }
+# 1182|   #ifdef WITH_ACL
+
+Error: TOCTOU (CWE-367):
+logrotate-3.18.0/logrotate.c:1934: fs_check_call: Calling function "stat" to perform check on "oldName".
+logrotate-3.18.0/logrotate.c:1962: toctou: Calling function "rename" that uses "oldName" after a check function. This can cause a time-of-check, time-of-use race condition.
+# 1932|                   struct stat fst_buf;
+# 1933|   
+# 1934|->                 if (stat(oldName, &fst_buf)) {
+# 1935|                       if (errno == ENOENT) {
+# 1936|                           message(MESS_DEBUG, "old log %s does not exist\n",
+
+Error: RESOURCE_LEAK (CWE-772):
+logrotate-3.18.0/logrotate.c:2032: alloc_arg: "setSecCtxByName" allocates memory that is stored into "savedContext".
+logrotate-3.18.0/logrotate.c:2034: leaked_storage: Variable "savedContext" going out of scope leaks the storage it points to.
+# 2032|               if (setSecCtxByName(log->files[logNum], &savedContext) != 0) {
+# 2033|                   /* error msg already printed */
+# 2034|->                 return 1;
+# 2035|               }
+# 2036|   #ifdef WITH_ACL
+
+Error: RESOURCE_LEAK (CWE-772):
+logrotate-3.18.0/logrotate.c:2533: alloc_arg: "setSecCtx" allocates memory that is stored into "prevCtx".
+logrotate-3.18.0/logrotate.c:2537: leaked_storage: Variable "prevCtx" going out of scope leaks the storage it points to.
+# 2535|           free(tmpFilename);
+# 2536|           close(fdcurr);
+# 2537|->         return 1;
+# 2538|       }
+# 2539|   

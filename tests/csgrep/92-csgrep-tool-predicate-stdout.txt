@@ -1,0 +1,122 @@
+Error: GCC_ANALYZER_WARNING (CWE-401):
+logrotate-3.18.0/config.c: scope_hint: In function 'readAddress'
+logrotate-3.18.0/config.c:376:8: warning[-Wanalyzer-malloc-leak]: leak of 'key'
+logrotate-3.18.0/config.c:14: included_from: Included from here.
+logrotate-3.18.0/config.c:3: included_from: Included from here.
+logrotate-3.18.0/config.c:1354:25: note: in expansion of macro 'freeLogItem'
+#  374|       char *address = isolateValue(configFile, lineNum, key, startPtr, buf, length);
+#  375|   
+#  376|->     if (address != NULL) {
+#  377|           /* validate the address */
+#  378|           const char *chptr = address;
+
+Error: GCC_ANALYZER_WARNING (CWE-401):
+logrotate-3.18.0/config.c: scope_hint: In function 'readConfigFile'
+logrotate-3.18.0/config.c:1149:28: warning[-Wanalyzer-malloc-leak]: leak of 'key'
+logrotate-3.18.0/config.c:14: included_from: Included from here.
+logrotate-3.18.0/config.c:3: included_from: Included from here.
+# 1147|                           free(key);
+# 1148|                           key = isolateLine(&start, &buf, length);
+# 1149|->                         if (key == NULL)
+# 1150|                               continue;
+# 1151|   
+
+Error: GCC_ANALYZER_WARNING (CWE-401):
+logrotate-3.18.0/config.c:1180:28: warning[-Wanalyzer-malloc-leak]: leak of 'key'
+logrotate-3.18.0/config.c:14: included_from: Included from here.
+logrotate-3.18.0/config.c:3: included_from: Included from here.
+# 1178|                           free(key);
+# 1179|                           key = isolateLine(&start, &buf, length);
+# 1180|->                         if (key == NULL)
+# 1181|                               continue;
+# 1182|   
+
+Error: GCC_ANALYZER_WARNING (CWE-401):
+logrotate-3.18.0/config.c:1196:28: warning[-Wanalyzer-malloc-leak]: leak of 'key'
+logrotate-3.18.0/config.c:14: included_from: Included from here.
+logrotate-3.18.0/config.c:3: included_from: Included from here.
+# 1194|                           free(key);
+# 1195|                           key = isolateLine(&start, &buf, length);
+# 1196|->                         if (key == NULL)
+# 1197|                               continue;
+# 1198|   
+
+Error: GCC_ANALYZER_WARNING (CWE-401):
+logrotate-3.18.0/config.c:1263:28: warning[-Wanalyzer-malloc-leak]: leak of 'key'
+logrotate-3.18.0/config.c:14: included_from: Included from here.
+logrotate-3.18.0/config.c:3: included_from: Included from here.
+# 1261|                           key = isolateValue(configFile, lineNum, "shred cycles",
+# 1262|                                              &start, &buf, length);
+# 1263|->                         if (key == NULL)
+# 1264|                               continue;
+# 1265|                           newlog->shred_cycles = (int)strtoul(key, &chptr, 0);
+
+Error: GCC_ANALYZER_WARNING (CWE-401):
+logrotate-3.18.0/config.c:1304:28: warning[-Wanalyzer-malloc-leak]: leak of 'key'
+logrotate-3.18.0/config.c:14: included_from: Included from here.
+logrotate-3.18.0/config.c:3: included_from: Included from here.
+# 1302|                           key = isolateValue(configFile, lineNum, "rotate count", &start,
+# 1303|                                              &buf, length);
+# 1304|->                         if (key == NULL)
+# 1305|                               continue;
+# 1306|                           newlog->rotateCount = (int)strtol(key, &chptr, 0);
+
+Error: GCC_ANALYZER_WARNING (CWE-401):
+logrotate-3.18.0/config.c:1317:28: warning[-Wanalyzer-malloc-leak]: leak of 'key'
+logrotate-3.18.0/config.c:14: included_from: Included from here.
+logrotate-3.18.0/config.c:3: included_from: Included from here.
+# 1315|                           key = isolateValue(configFile, lineNum, "start count", &start,
+# 1316|                                              &buf, length);
+# 1317|->                         if (key == NULL)
+# 1318|                               continue;
+# 1319|                           newlog->logStart = (int)strtoul(key, &chptr, 0);
+
+Error: GCC_ANALYZER_WARNING (CWE-401):
+logrotate-3.18.0/config.c:1329:28: warning[-Wanalyzer-malloc-leak]: leak of 'key'
+logrotate-3.18.0/config.c:14: included_from: Included from here.
+logrotate-3.18.0/config.c:3: included_from: Included from here.
+# 1327|                           key = isolateValue(configFile, lineNum, "minage count", &start,
+# 1328|                                              &buf, length);
+# 1329|->                         if (key == NULL)
+# 1330|                               continue;
+# 1331|                           newlog->rotateMinAge = (int)strtoul(key, &chptr, 0);
+
+Error: GCC_ANALYZER_WARNING (CWE-401):
+logrotate-3.18.0/config.c:1341:28: warning[-Wanalyzer-malloc-leak]: leak of 'key'
+logrotate-3.18.0/config.c:14: included_from: Included from here.
+logrotate-3.18.0/config.c:3: included_from: Included from here.
+# 1339|                           key = isolateValue(configFile, lineNum, "maxage count", &start,
+# 1340|                                              &buf, length);
+# 1341|->                         if (key == NULL)
+# 1342|                               continue;
+# 1343|                           newlog->rotateAge = (int)strtoul(key, &chptr, 0);
+
+Error: GCC_ANALYZER_WARNING (CWE-401):
+logrotate-3.18.0/config.c:1405:28: warning[-Wanalyzer-malloc-leak]: leak of 'key'
+logrotate-3.18.0/config.c:14: included_from: Included from here.
+logrotate-3.18.0/config.c:3: included_from: Included from here.
+# 1403|                           key = isolateValue(configFile, lineNum, "tabooext", &start,
+# 1404|                                              &buf, length);
+# 1405|->                         if (key == NULL)
+# 1406|                               continue;
+# 1407|                           endtag = key;
+
+Error: GCC_ANALYZER_WARNING (CWE-401):
+logrotate-3.18.0/config.c:1464:28: warning[-Wanalyzer-malloc-leak]: leak of 'key'
+logrotate-3.18.0/config.c:14: included_from: Included from here.
+logrotate-3.18.0/config.c:3: included_from: Included from here.
+# 1462|                           key = isolateValue(configFile, lineNum, "taboopat", &start,
+# 1463|                                              &buf, length);
+# 1464|->                         if (key == NULL)
+# 1465|                               continue;
+# 1466|   
+
+Error: GCC_ANALYZER_WARNING (CWE-401):
+logrotate-3.18.0/config.c:1514:28: warning[-Wanalyzer-malloc-leak]: leak of 'key'
+logrotate-3.18.0/config.c:14: included_from: Included from here.
+logrotate-3.18.0/config.c:3: included_from: Included from here.
+# 1512|                           key = isolateValue(configFile, lineNum, "include", &start,
+# 1513|                                              &buf, length);
+# 1514|->                         if (key == NULL)
+# 1515|                               continue;
+# 1516|   
