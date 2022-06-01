@@ -19,6 +19,8 @@
 
 #include "cwe-mapper.hh"
 
+#include "parser-common.hh"
+
 #include <cstdio>
 
 // /////////////////////////////////////////////////////////////////////////////
@@ -28,7 +30,18 @@ struct CweMap::Private {
     typedef std::map<std::string, TNumByEvent>      TMapByChk;
 
     TMapByChk           mapByChk;
+    ImpliedAttrDigger   digger;
+
+    bool detectedByTool(Defect def, const char *tool);
 };
+
+bool CweMap::Private::detectedByTool(Defect def, const char *tool)
+{
+    // detect tool in case it is not explicitly specified
+    this->digger.inferToolFromChecker(&def);
+
+    return (def.tool == tool);
+}
 
 CweMap::CweMap():
     d(new Private)
@@ -106,13 +119,15 @@ bool CweMap::assignCwe(Defect &def) const
             std::cerr << "warning: CWE not found: checker = " << def.checker
                 << ", event = " << evt.event << "\n";
 
-        if (def.checker == "CPPCHECK_WARNING") {
-            // we cannot fallback to a random CWE that Cppcheck has mapping for
+        if (d->detectedByTool(def, "coverity")) {
+            // we assign per-checker CWE only for Coverity
+            cweIt = row.begin();
+        }
+        else {
+            // for other tools there is no fallback if the event is not found
             cweDst = 0;
             return false;
         }
-
-        cweIt = row.begin();
     }
 
     const int cweSrc = cweIt->second;
