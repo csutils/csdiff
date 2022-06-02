@@ -1,6 +1,6 @@
-#/bin/bash
+#!/bin/bash
 
-# Copyright (C) 2014 - 2020 Red Hat, Inc.
+# Copyright (C) 2014 - 2022 Red Hat, Inc.
 #
 # This file is part of csdiff.
 #
