@@ -47,27 +47,29 @@ VER="`echo "$VER" | sed "s/-.*-/.$TIMESTAMP./"`"
 
 BRANCH="`git rev-parse --abbrev-ref HEAD`"
 test -n "$BRANCH" || die "failed to get current branch name"
-test "main" = "${BRANCH}" || VER="${VER}.${BRANCH//-/_}"
+test "main" = "${BRANCH}" || VER="${VER}.${BRANCH//[\/-]/_}"
 test -z "`git diff HEAD`" || VER="${VER}.dirty"
 
 NV="${PKG}-${VER}"
 printf "\n%s: preparing a release of \033[1;32m%s\033[0m\n\n" "$SELF" "$NV"
 
-TMP="`mktemp -d`"
-trap "rm -rf '$TMP'" EXIT
-cd "$TMP" >/dev/null || die "mktemp failed"
+if [[ "$1" != "--generate-spec" ]]; then
+    TMP="`mktemp -d`"
+    trap "rm -rf '$TMP'" EXIT
+    cd "$TMP" >/dev/null || die "mktemp failed"
 
-# clone the repository
-git clone "$REPO" "$PKG"                || die "git clone failed"
-cd "$PKG"                               || die "git clone failed"
-make distcheck                          || die "'make distcheck' has failed"
+    # clone the repository
+    git clone "$REPO" "$PKG"                || die "git clone failed"
+    cd "$PKG"                               || die "git clone failed"
+    make distcheck                          || die "'make distcheck' has failed"
 
-SRC_TAR="${NV}.tar"
-SRC="${SRC_TAR}.xz"
-git archive --prefix="$NV/" --format="tar" HEAD -- . > "$SRC_TAR" \
-                                        || die "failed to export sources"
+    SRC_TAR="${NV}.tar"
+    SRC="${SRC_TAR}.xz"
+    git archive --prefix="$NV/" --format="tar" HEAD -- . > "$SRC_TAR" \
+                                            || die "failed to export sources"
 
-xz -c "$SRC_TAR" > "$SRC"               || die "failed to compress sources"
+    xz -c "$SRC_TAR" > "$SRC"               || die "failed to compress sources"
+fi
 
 SPEC="./$PKG.spec"
 cat > "$SPEC" << EOF
@@ -211,7 +213,9 @@ ctest %{?_smp_mflags} --output-on-failure
 %endif
 EOF
 
-rpmbuild -bs "$SPEC"                            \
-    --define "_sourcedir ."                     \
-    --define "_specdir ."                       \
-    --define "_srcrpmdir $DST"
+if [[ "$1" != "--generate-spec" ]]; then
+    rpmbuild -bs "$SPEC"                            \
+        --define "_sourcedir ."                     \
+        --define "_specdir ."                       \
+        --define "_srcrpmdir $DST"
+fi
