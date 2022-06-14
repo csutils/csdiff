@@ -21,7 +21,7 @@ actions:
 jobs:
     - &copr
       job: copr_build
-      trigger: commit
+      trigger: pull_request
       metadata:
         targets:
             - epel-all-aarch64
@@ -32,7 +32,10 @@ jobs:
             - fedora-all-ppc64le
             - fedora-all-s390x
             - fedora-all-x86_64
-        branch: main  # only used for commit trigger
 
     - <<: *copr
-      trigger: pull_request
+      trigger: commit
+      metadata:
+        owner: "@codescan"
+        project: "csdiff"
+        branch: main
