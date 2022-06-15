@@ -34,7 +34,6 @@ jobs:
 
     - <<: *copr
       trigger: commit
-      metadata:
-        owner: "@codescan"
-        project: "csdiff"
-        branch: main
+      owner: "@codescan"
+      project: "csdiff"
+      branch: main
