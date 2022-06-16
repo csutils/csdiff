@@ -174,7 +174,7 @@ macro(create_manpage BINARY)
         set(H2M_ARGS "")
     endif()
     add_custom_command(TARGET ${BINARY} POST_BUILD
-        COMMAND ${HELP2MAN} --no-info --section 1 ${H2M_ARGS}
+        COMMAND env LC_ALL=C ${HELP2MAN} --no-info --section 1 ${H2M_ARGS}
             ${CMAKE_CURRENT_BINARY_DIR}/${BINARY}
             > ${BINARY}.1 || rm -f ${BINARY}.1
         COMMENT "Generating ${BINARY} man page"
