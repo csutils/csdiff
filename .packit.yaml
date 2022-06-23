@@ -35,5 +35,5 @@ jobs:
     - <<: *copr
       trigger: commit
       owner: "@codescan"
-      project: "csdiff"
+      project: "csutils"
       branch: main
