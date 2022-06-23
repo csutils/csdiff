@@ -134,7 +134,10 @@ Summary:        Python interface to csdiff for Python 3
 %if 0%{?rhel} == 7
 BuildRequires:  epel-rpm-macros
 %endif
+# in f33 boost-python3-devel was merged into boost-devel
+%if 0%{?rhel} && 0%{?rhel} < 9
 BuildRequires:  boost-python%{python3_pkgversion}-devel
+%endif
 BuildRequires:  python3-devel
 %{?python_provide:%python_provide python3-%{name}}
 
