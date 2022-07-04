@@ -38,6 +38,7 @@ AbstractParserPtr createParser(InStream &input)
 
     switch (head[0]) {
         case '{':
+        case '[':
             // JSON
             return make_unique<JsonParser>(input);
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011-2021 Red Hat, Inc.
+ * Copyright (C) 2011-2022 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -97,6 +97,12 @@ class SarifTreeDecoder: public AbstractTreeDecoder {
         ImpliedAttrDigger           digger;
 };
 
+/// tree decoder of the JSON format produced by GCC
+class GccTreeDecoder: public AbstractTreeDecoder {
+    public:
+        bool readNode(Defect *def, pt::ptree::const_iterator defIter) override;
+};
+
 struct JsonParser::Private {
     InStream                       &input;
     AbstractTreeDecoder            *decoder = nullptr;
@@ -138,8 +144,15 @@ JsonParser::JsonParser(InStream &input):
         // parse JSON
         read_json(input.str(), d->root);
 
+        pt::ptree::const_iterator itFirst = d->root.begin();
+        if (itFirst == d->root.end())
+            // empty JSON, such as []
+            return;
+
+        const pt::ptree &first = itFirst->second;
+
         // recognize inner format of the JSON document
-        pt::ptree *node = nullptr;
+        pt::ptree *node = &d->root;
         if (findChildOf(&node, d->root, "defects"))
             // csdiff-native JSON format
             d->decoder = new SimpleTreeDecoder(d->input);
@@ -149,6 +162,8 @@ JsonParser::JsonParser(InStream &input):
         else if (findChildOf(&node, d->root, "runs"))
             // SARIF format
             d->decoder = new SarifTreeDecoder;
+        else if (first.not_found() != first.find("kind"))
+            d->decoder = new GccTreeDecoder;
         else
             throw pt::ptree_error("unknown JSON format");
 
@@ -640,5 +655,12 @@ bool SarifTreeDecoder::readNode(
     this->digger.inferLangFromChecker(def);
     this->digger.inferToolFromChecker(def);
 
+    return true;
+}
+
+bool GccTreeDecoder::readNode(Defect *def, pt::ptree::const_iterator defIter)
+{
+    *def = Defect("COMPILER_WARNING");
+    // TODO
     return true;
 }
