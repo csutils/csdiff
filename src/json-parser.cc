@@ -658,9 +658,65 @@ bool SarifTreeDecoder::readNode(
     return true;
 }
 
+static bool gccReadEvent(DefEvent *pEvt, const pt::ptree &evtNode)
+{
+    using std::string;
+
+    // read kind (error, warning, note)
+    string &evtName = pEvt->event;
+    evtName = valueOf<string>(evtNode, "kind", "");
+    if (evtName.empty())
+        return false;
+
+    // read -W... if available
+    const string option = valueOf<string>(evtNode, "option", "");
+    if (!option.empty())
+        evtName += "[" + option + "]";
+
+    // read location
+    pEvt->fileName = "<unknown>";
+    const pt::ptree *locs;
+    if (findChildOf(&locs, evtNode, "locations") && !locs->empty()) {
+        const pt::ptree *caret;
+        if (findChildOf(&caret, locs->begin()->second, "caret")) {
+            pEvt->fileName  = valueOf<string>(*caret, "file", "<unknown>");
+            pEvt->line      = valueOf<int>   (*caret, "line", 0);
+            pEvt->column    = valueOf<int>   (*caret, "byte-column", 0);
+        }
+    }
+
+    // read message
+    pEvt->msg = valueOf<string>(evtNode, "message", "<unknown>");
+
+    return true;
+}
+
 bool GccTreeDecoder::readNode(Defect *def, pt::ptree::const_iterator defIter)
 {
     *def = Defect("COMPILER_WARNING");
-    // TODO
+    const pt::ptree &defNode = defIter->second;
+
+    // read key event
+    def->events.push_back(DefEvent());
+    if (!gccReadEvent(&def->events.back(), defNode))
+        return false;
+
+    // read other events if available
+    const pt::ptree *children;
+    if (findChildOf(&children, defNode, "children")) {
+        for (const auto &item : *children) {
+            const pt::ptree &evtNode = item.second;
+
+            DefEvent evt;
+            if (gccReadEvent(&evt, evtNode))
+                def->events.emplace_back(evt);
+        }
+    }
+
+    // read CWE ID if available
+    const pt::ptree *meta;
+    if (findChildOf(&meta, defNode, "metadata"))
+        def->cwe = valueOf<int>(*meta, "cwe", 0);
+
     return true;
 }

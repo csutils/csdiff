@@ -1,0 +1,111 @@
+{
+    "defects": [
+        {
+            "checker": "COMPILER_WARNING",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "xxx.c",
+                    "line": 16,
+                    "column": 13,
+                    "event": "warning[-Wshadow]",
+                    "message": "declaration of ‘x’ shadows a previous local",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "xxx.c",
+                    "line": 14,
+                    "column": 9,
+                    "event": "note",
+                    "message": "shadowed declaration is here",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "xxx.c",
+                    "line": 14,
+                    "column": 9,
+                    "event": "warning[-Wunused-but-set-variable]",
+                    "message": "variable ‘x’ set but not used",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "xxx.c",
+                    "line": 11,
+                    "column": 15,
+                    "event": "warning[-Wunused-parameter]",
+                    "message": "unused parameter ‘argc’",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "xxx.c",
+                    "line": 11,
+                    "column": 27,
+                    "event": "warning[-Wunused-parameter]",
+                    "message": "unused parameter ‘argv’",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "xxx.c",
+                    "line": 7,
+                    "column": 5,
+                    "event": "warning[-Wunused-result]",
+                    "message": "ignoring return value of ‘malloc’ declared with attribute ‘warn_unused_result’",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "xxx.c",
+                    "line": 17,
+                    "column": 16,
+                    "event": "warning[-Wuninitialized]",
+                    "message": "‘x’ is used uninitialized",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "cwe": 479,
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "xxx.c",
+                    "line": 7,
+                    "column": 5,
+                    "event": "warning[-Wanalyzer-unsafe-call-within-signal-handler]",
+                    "message": "call to ‘malloc’ from within signal handler",
+                    "verbosity_level": 0
+                }
+            ]
+        }
+    ]
+}

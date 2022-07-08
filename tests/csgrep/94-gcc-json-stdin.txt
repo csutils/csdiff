@@ -1,0 +1,250 @@
+[
+  {
+    "kind": "warning",
+    "locations": [
+      {
+        "caret": {
+          "byte-column": 13,
+          "display-column": 13,
+          "line": 16,
+          "file": "xxx.c",
+          "column": 13
+        }
+      }
+    ],
+    "column-origin": 1,
+    "option": "-Wshadow",
+    "children": [
+      {
+        "kind": "note",
+        "locations": [
+          {
+            "caret": {
+              "byte-column": 9,
+              "display-column": 9,
+              "line": 14,
+              "file": "xxx.c",
+              "column": 9
+            }
+          }
+        ],
+        "message": "shadowed declaration is here"
+      }
+    ],
+    "option_url": "https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wshadow",
+    "message": "declaration of ‘x’ shadows a previous local"
+  },
+  {
+    "kind": "warning",
+    "locations": [
+      {
+        "caret": {
+          "byte-column": 9,
+          "display-column": 9,
+          "line": 14,
+          "file": "xxx.c",
+          "column": 9
+        }
+      }
+    ],
+    "column-origin": 1,
+    "option": "-Wunused-but-set-variable",
+    "children": [],
+    "option_url": "https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-but-set-variable",
+    "message": "variable ‘x’ set but not used"
+  },
+  {
+    "kind": "warning",
+    "locations": [
+      {
+        "finish": {
+          "byte-column": 18,
+          "display-column": 18,
+          "line": 11,
+          "file": "xxx.c",
+          "column": 18
+        },
+        "caret": {
+          "byte-column": 15,
+          "display-column": 15,
+          "line": 11,
+          "file": "xxx.c",
+          "column": 15
+        },
+        "start": {
+          "byte-column": 11,
+          "display-column": 11,
+          "line": 11,
+          "file": "xxx.c",
+          "column": 11
+        }
+      }
+    ],
+    "column-origin": 1,
+    "option": "-Wunused-parameter",
+    "children": [],
+    "option_url": "https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter",
+    "message": "unused parameter ‘argc’"
+  },
+  {
+    "kind": "warning",
+    "locations": [
+      {
+        "finish": {
+          "byte-column": 32,
+          "display-column": 32,
+          "line": 11,
+          "file": "xxx.c",
+          "column": 32
+        },
+        "caret": {
+          "byte-column": 27,
+          "display-column": 27,
+          "line": 11,
+          "file": "xxx.c",
+          "column": 27
+        },
+        "start": {
+          "byte-column": 21,
+          "display-column": 21,
+          "line": 11,
+          "file": "xxx.c",
+          "column": 21
+        }
+      }
+    ],
+    "column-origin": 1,
+    "option": "-Wunused-parameter",
+    "children": [],
+    "option_url": "https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter",
+    "message": "unused parameter ‘argv’"
+  },
+  {
+    "kind": "warning",
+    "locations": [
+      {
+        "finish": {
+          "byte-column": 13,
+          "display-column": 13,
+          "line": 7,
+          "file": "xxx.c",
+          "column": 13
+        },
+        "caret": {
+          "byte-column": 5,
+          "display-column": 5,
+          "line": 7,
+          "file": "xxx.c",
+          "column": 5
+        }
+      }
+    ],
+    "column-origin": 1,
+    "option": "-Wunused-result",
+    "children": [],
+    "option_url": "https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result",
+    "message": "ignoring return value of ‘malloc’ declared with attribute ‘warn_unused_result’"
+  },
+  {
+    "kind": "warning",
+    "locations": [
+      {
+        "caret": {
+          "byte-column": 16,
+          "display-column": 16,
+          "line": 17,
+          "file": "xxx.c",
+          "column": 16
+        }
+      }
+    ],
+    "column-origin": 1,
+    "option": "-Wuninitialized",
+    "children": [],
+    "option_url": "https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wuninitialized",
+    "message": "‘x’ is used uninitialized"
+  },
+  {
+    "kind": "warning",
+    "locations": [
+      {
+        "finish": {
+          "byte-column": 13,
+          "display-column": 13,
+          "line": 7,
+          "file": "xxx.c",
+          "column": 13
+        },
+        "caret": {
+          "byte-column": 5,
+          "display-column": 5,
+          "line": 7,
+          "file": "xxx.c",
+          "column": 5
+        }
+      }
+    ],
+    "path": [
+      {
+        "location": {
+          "byte-column": 5,
+          "display-column": 5,
+          "line": 11,
+          "file": "xxx.c",
+          "column": 5
+        },
+        "description": "entry to ‘main’",
+        "depth": 1,
+        "function": "main"
+      },
+      {
+        "location": {
+          "byte-column": 5,
+          "display-column": 5,
+          "line": 13,
+          "file": "xxx.c",
+          "column": 5
+        },
+        "description": "registering ‘handler’ as signal handler",
+        "depth": 1,
+        "function": "main"
+      },
+      {
+        "description": "later on, when the signal is delivered to the process",
+        "depth": 0
+      },
+      {
+        "location": {
+          "byte-column": 6,
+          "display-column": 6,
+          "line": 5,
+          "file": "xxx.c",
+          "column": 6
+        },
+        "description": "entry to ‘handler’",
+        "depth": 1,
+        "function": "handler"
+      },
+      {
+        "location": {
+          "byte-column": 5,
+          "display-column": 5,
+          "line": 7,
+          "file": "xxx.c",
+          "column": 5
+        },
+        "description": "call to ‘malloc’ from within signal handler",
+        "depth": 1,
+        "function": "handler"
+      }
+    ],
+    "column-origin": 1,
+    "option": "-Wanalyzer-unsafe-call-within-signal-handler",
+    "children": [],
+    "option_url": "https://gcc.gnu.org/onlinedocs/gcc/Static-Analyzer-Options.html#index-Wanalyzer-unsafe-call-within-signal-handler",
+    "message": "call to ‘malloc’ from within signal handler",
+    "metadata": {
+      "cwe": 479
+    }
+  }
+]
