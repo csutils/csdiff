@@ -26,9 +26,9 @@ class XmlParser: public AbstractParser {
     public:
         XmlParser(InStream &input);
 
-        virtual ~XmlParser();
-        virtual bool getNext(Defect *);
-        virtual bool hasError() const;
+        ~XmlParser() override;
+        bool getNext(Defect *) override;
+        bool hasError() const override;
 
     private:
         XmlParser(const Parser &);

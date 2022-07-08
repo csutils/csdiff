@@ -26,9 +26,9 @@ class CovParser: public AbstractParser {
     public:
         CovParser(InStream &input);
 
-        virtual ~CovParser();
-        bool getNext(Defect *);
-        bool hasError() const;
+        ~CovParser() override;
+        bool getNext(Defect *) override;
+        bool hasError() const override;
 
     private:
         CovParser(const Parser &);

@@ -96,7 +96,7 @@ class ImpFlagDecorator: public GenericAbstractFilter {
 
         void hashImpDefect(const Defect &);
 
-        virtual void handleDef(const Defect &def);
+        void handleDef(const Defect &def) override;
 
     private:
         DefLookup impSet_;
@@ -127,7 +127,7 @@ class ParsingRulesDecorator: public GenericAbstractFilter {
         {
         }
 
-        virtual void handleDef(const Defect &def);
+        void handleDef(const Defect &def) override;
 
     private:
         GccPostProcessor gccPostProc_;

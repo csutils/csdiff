@@ -33,11 +33,12 @@ class SimpleTreeDecoder: public AbstractTreeDecoder {
     public:
         SimpleTreeDecoder(InStream &input);
 
-        virtual void readScanProps(
+        void readScanProps(
                 TScanProps             *pDst,
-                const pt::ptree        *root);
+                const pt::ptree        *root)
+            override;
 
-        virtual bool readNode(Defect *def, pt::ptree::const_iterator defIter);
+        bool readNode(Defect *def, pt::ptree::const_iterator defIter) override;
 
     private:
         enum ENodeKind {
@@ -60,7 +61,7 @@ class SimpleTreeDecoder: public AbstractTreeDecoder {
 /// tree decoder of the Coverity JSON format
 class CovTreeDecoder: public AbstractTreeDecoder {
     public:
-        virtual bool readNode(Defect *def, pt::ptree::const_iterator defIter);
+        bool readNode(Defect *def, pt::ptree::const_iterator defIter) override;
 
     private:
         KeyEventDigger              keDigger;
@@ -69,15 +70,18 @@ class CovTreeDecoder: public AbstractTreeDecoder {
 /// tree decoder of the SARIF format
 class SarifTreeDecoder: public AbstractTreeDecoder {
     public:
-        virtual void readScanProps(
+        void readScanProps(
                 TScanProps             *pDst,
-                const pt::ptree        *root);
+                const pt::ptree        *root)
+            override;
 
-        virtual void readRoot(
+        void readRoot(
                 const pt::ptree       **pDefList,
-                const pt::ptree        *root);
+                const pt::ptree        *root)
+            override;
 
-        virtual bool readNode(Defect *def, pt::ptree::const_iterator defIter);
+        bool readNode(Defect *def, pt::ptree::const_iterator defIter)
+            override;
 
     private:
         void updateCweMap(const pt::ptree *driverNode);

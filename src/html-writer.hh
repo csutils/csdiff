@@ -33,13 +33,13 @@ class HtmlWriter: public AbstractWriter {
                 const std::string           &defUrlTemplate,
                 const std::string           &spPlacement);
 
-        virtual ~HtmlWriter();
+        ~HtmlWriter() override;
 
-        virtual const TScanProps& getScanProps() const;
-        virtual void setScanProps(const TScanProps &);
+        const TScanProps& getScanProps() const override;
+        void setScanProps(const TScanProps &) override;
 
-        virtual void handleDef(const Defect &def);
-        virtual void flush();
+        void handleDef(const Defect &def) override;
+        void flush() override;
 
         /// @attention baseLookup needs to stay valid long enough (no deep copy)
         void setDiffBase(

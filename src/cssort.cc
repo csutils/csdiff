@@ -43,7 +43,7 @@ class GenericSort: public AbstractWriter {
         {
         }
 
-        virtual void flush() {
+        void flush() override {
             // sort the container
             std::sort(cont_.begin(), cont_.end());
 
@@ -59,16 +59,16 @@ class GenericSort: public AbstractWriter {
             writer->flush();
         }
 
-        virtual const TScanProps& getScanProps() const {
+        const TScanProps& getScanProps() const override {
             return scanProps_;
         }
 
-        virtual void setScanProps(const TScanProps &scanProps) {
+        void setScanProps(const TScanProps &scanProps) override {
             scanProps_ = scanProps;
         }
 
     protected:
-        virtual void handleDef(const Defect &def) {
+        void handleDef(const Defect &def) override {
             cont_.push_back(static_cast<const TItem &>(def));
         }
 };

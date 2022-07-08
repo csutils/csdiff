@@ -26,9 +26,9 @@ class GccParser: public AbstractParser {
     public:
         GccParser(InStream &input);
 
-        virtual ~GccParser();
-        bool getNext(Defect *);
-        bool hasError() const;
+        ~GccParser() override;
+        bool getNext(Defect *) override;
+        bool hasError() const override;
 
     private:
         GccParser(const Parser &);

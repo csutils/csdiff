@@ -34,7 +34,7 @@ class CweMap: public AbstractCsvParser {
         bool empty() const;
 
     protected:
-        virtual bool /* continue */ handleLine(const TStringList &);
+        bool /* continue */ handleLine(const TStringList &) override;
 
     private:
         struct Private;
@@ -45,9 +45,9 @@ class CweMapDecorator: public GenericAbstractFilter {
     public:
         /// @param writer the instance will be deleted on destruction
         CweMapDecorator(AbstractWriter *writer, bool silent);
-        virtual ~CweMapDecorator();
+        ~CweMapDecorator() override;
 
-        virtual void handleDef(const Defect &def);
+        void handleDef(const Defect &def) override;
 
         CweMap& cweMap();
 

@@ -46,7 +46,7 @@ class ITokenizer {
 
 class AbstractTokenFilter: public ITokenizer {
     public:
-        virtual int lineNo() const {
+        int lineNo() const override {
             return agent_->lineNo();
         }
 
@@ -72,11 +72,11 @@ class Tokenizer: public ITokenizer {
         {
         }
 
-        virtual int lineNo() const {
+        int lineNo() const override {
             return lineNo_;
         }
 
-        virtual EToken readNext(DefEvent *pEvt);
+        EToken readNext(DefEvent *pEvt) override;
 
     private:
         std::istream           &input_;
@@ -181,7 +181,7 @@ class NoiseFilter: public AbstractTokenFilter {
         {
         }
 
-        virtual EToken readNext(DefEvent *);
+        EToken readNext(DefEvent *) override;
 
     private:
         const RE reClangWarnCnt_ =
@@ -209,11 +209,11 @@ class MarkerConverter: public AbstractTokenFilter {
         {
         }
 
-        virtual int lineNo() const {
+        int lineNo() const override {
             return lineNo_;
         }
 
-        virtual EToken readNext(DefEvent *pEvt);
+        EToken readNext(DefEvent *pEvt) override;
 
     private:
         EToken                  lastTok_;
@@ -272,7 +272,7 @@ class MultilineConcatenator: public AbstractTokenFilter {
         {
         }
 
-        virtual EToken readNext(DefEvent *pEvt);
+        EToken readNext(DefEvent *pEvt) override;
 
     private:
         EToken                  lastTok_;

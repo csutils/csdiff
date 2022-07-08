@@ -28,13 +28,13 @@
 class CweNameLookup: public AbstractCsvParser {
     public:
         CweNameLookup();
-        virtual ~CweNameLookup();
+        ~CweNameLookup() override;
 
         /// return name of the given CWE ID, or an empty string if not found
         const std::string& lookup(const int cwe) const;
 
     protected:
-        virtual bool /* continue */ handleLine(const TStringList &);
+        bool /* continue */ handleLine(const TStringList &) override;
 
     private:
         struct Private;

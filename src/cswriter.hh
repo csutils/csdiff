@@ -25,11 +25,11 @@
 class CovWriter: public AbstractWriter {
     public:
         CovWriter(std::ostream &, EColorMode cm = CM_AUTO);
-        virtual ~CovWriter();
+        ~CovWriter() override;
 
-        virtual void handleDef(const Defect &def);
-        virtual void flush();
-        virtual void setScanProps(const TScanProps &);
+        void handleDef(const Defect &def) override;
+        void flush() override;
+        void setScanProps(const TScanProps &) override;
 
     private:
         struct Private;

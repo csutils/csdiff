@@ -26,10 +26,10 @@ class JsonParser: public AbstractParser {
     public:
         JsonParser(InStream &input);
 
-        virtual ~JsonParser();
-        virtual bool getNext(Defect *);
-        virtual bool hasError() const;
-        virtual const TScanProps& getScanProps() const;
+        ~JsonParser() override;
+        bool getNext(Defect *) override;
+        bool hasError() const override;
+        const TScanProps& getScanProps() const override;
 
     private:
         JsonParser(const Parser &);

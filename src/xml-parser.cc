@@ -31,11 +31,12 @@
 /// tree decoder for valgrind XML output
 class ValgrindTreeDecoder: public AbstractTreeDecoder {
     public:
-        virtual bool readNode(Defect *def, pt::ptree::const_iterator defIter);
+        bool readNode(Defect *def, pt::ptree::const_iterator defIter) override;
 
-        virtual void readRoot(
+        void readRoot(
                 const pt::ptree       **pDefList,
-                const pt::ptree        *root);
+                const pt::ptree        *root)
+            override;
 
     private:
         Defect defPrototype = Defect("VALGRIND_WARNING");
