@@ -5,6 +5,7 @@
     "defects": [
         {
             "checker": "GCC_ANALYZER_WARNING",
+            "cwe": 415,
             "language": "c/c++",
             "tool": "gcc-analyzer",
             "key_event_idx": 0,

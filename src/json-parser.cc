@@ -629,6 +629,27 @@ static void sarifReadCodeFlow(Defect *pDef, const pt::ptree &cf)
     }
 }
 
+static int sarifCweFromDefNode(const pt::ptree &defNode)
+{
+    const pt::ptree *taxa;
+    if (!findChildOf(&taxa, defNode, "taxa"))
+        return 0;
+
+    for (const auto &item : *taxa) {
+        const pt::ptree &t = item.second;
+
+        const pt::ptree *tc;
+        if (!findChildOf(&tc, t, "toolComponent"))
+            continue;
+
+        if (valueOf<std::string>(*tc, "name", "") == "cwe")
+            return valueOf<int>(t, "id", 0);
+    }
+
+    // not found
+    return 0;
+}
+
 bool SarifTreeDecoder::readNode(
         Defect                      *def,
         pt::ptree::const_iterator    defIter)
@@ -664,10 +685,13 @@ bool SarifTreeDecoder::readNode(
         }
     }
 
-    // lookup cwe
-    const TCweMap::const_iterator it = this->cweMap.find(rule);
-    if (this->cweMap.end() != it)
-        def->cwe = it->second;
+    def->cwe = sarifCweFromDefNode(defNode);
+    if (!def->cwe) {
+        // lookup cwe
+        const TCweMap::const_iterator it = this->cweMap.find(rule);
+        if (this->cweMap.end() != it)
+            def->cwe = it->second;
+    }
 
     // read location and diagnostic message
     keyEvent.fileName = "<unknown>";
