@@ -27,6 +27,7 @@
 
 #include <set>
 
+#include <boost/algorithm/string/predicate.hpp>
 #include <boost/property_tree/json_parser.hpp>
 
 /// tree decoder of the native JSON format of csdiff
@@ -87,8 +88,9 @@ class SarifTreeDecoder: public AbstractTreeDecoder {
     private:
         void updateCweMap(const pt::ptree *driverNode);
 
-        std::string                 singleChecker;
+        std::string                 singleChecker = "UNKNOWN_SARIF_WARNING";
         const RE                    reCwe = RE("^CWE-([0-9]+)$");
+        const RE                    reVersion = RE("^([0-9][0-9.]+).*$");
         const RE                    reRuleId =
             RE("(" RE_CHECKER_NAME "): (" RE_EVENT ")");
 
@@ -477,15 +479,23 @@ void SarifTreeDecoder::readScanProps(
 
     this->updateCweMap(driverNode);
 
+    const auto version = valueOf<std::string>(*driverNode, "version", "");
     const auto name = valueOf<std::string>(*driverNode, "name", "");
     if (name == "SnykCode") {
         // Snyk Code detected!
         this->singleChecker = "SNYK_CODE_WARNING";
 
-        const auto version = valueOf<std::string>(*driverNode, "version", "");
         if (!version.empty())
             // record tool version of Snyk Code
             (*pDst)["analyzer-version-snyk-code"] = version;
+    }
+    else if (boost::starts_with(name, "GNU C")) {
+        // GCC
+        this->singleChecker = "COMPILER_WARNING";
+
+        boost::smatch sm;
+        if (boost::regex_match(version, sm, this->reVersion))
+            (*pDst)["analyzer-version-gcc"] = sm[/* version */ 1];
     }
 }
 
@@ -629,8 +639,13 @@ bool SarifTreeDecoder::readNode(
             keyEvent.event  = sm[/* keyEvent */ 2];
         }
         else {
-            // Snyk Code etc.
+            // output of a single tool
             keyEvent.event += "[" + rule + "]";
+
+            // distinguish GCC compiler/analyzer
+            if (def->checker == "COMPILER_WARNING"
+                    && boost::starts_with(rule, "-Wanalyzer-"))
+                def->checker = "GCC_ANALYZER_WARNING";
         }
     }
 

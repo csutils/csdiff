@@ -1,0 +1,247 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "runs": [
+    {
+      "artifacts": [
+        {
+          "location": {
+            "uri": "<source>"
+          },
+          "sourceLanguage": "c",
+          "contents": {
+            "text": "#include <stdlib.h>\n\nvoid test (void *ptr, int flag)\n{\n    if (flag)\n        free(ptr);\n    free(ptr);\n}"
+          }
+        }
+      ],
+      "tool": {
+        "driver": {
+          "fullName": "GNU C17 (Compiler-Explorer-Build-gcc-c70a48a8f8f6a43b35f783b5672c9a3c0a363c31-binutils-2.38) version 13.0.0 20220705 (experimental) (x86_64-linux-gnu)",
+          "name": "GNU C17",
+          "rules": [
+            {
+              "id": "-Wanalyzer-double-free",
+              "helpUri": "https://gcc.gnu.org/onlinedocs/gcc/Static-Analyzer-Options.html#index-Wanalyzer-double-free"
+            }
+          ],
+          "informationUri": "https://gcc.gnu.org/gcc-13/",
+          "version": "13.0.0 20220705 (experimental)"
+        }
+      },
+      "results": [
+        {
+          "level": "warning",
+          "ruleId": "-Wanalyzer-double-free",
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "decoratedName": "test",
+                  "kind": "function",
+                  "name": "test",
+                  "fullyQualifiedName": "test"
+                }
+              ],
+              "physicalLocation": {
+                "contextRegion": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "    free(ptr);\n"
+                  }
+                },
+                "artifactLocation": {
+                  "uri": "<source>"
+                },
+                "region": {
+                  "startLine": 7,
+                  "endColumn": 14,
+                  "startColumn": 5
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "double-'free' of 'ptr'"
+          },
+          "taxa": [
+            {
+              "id": "415",
+              "toolComponent": {
+                "name": "cwe"
+              }
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "nestingLevel": 1,
+                      "location": {
+                        "logicalLocations": [
+                          {
+                            "decoratedName": "test",
+                            "kind": "function",
+                            "name": "test",
+                            "fullyQualifiedName": "test"
+                          }
+                        ],
+                        "message": {
+                          "text": "following 'true' branch (when 'flag != 0')..."
+                        },
+                        "physicalLocation": {
+                          "contextRegion": {
+                            "startLine": 5,
+                            "snippet": {
+                              "text": "    if (flag)\n"
+                            }
+                          },
+                          "artifactLocation": {
+                            "uri": "<source>"
+                          },
+                          "region": {
+                            "startLine": 5,
+                            "endColumn": 9,
+                            "startColumn": 8
+                          }
+                        }
+                      },
+                      "kinds": [
+                        "branch",
+                        "true"
+                      ]
+                    },
+                    {
+                      "nestingLevel": 1,
+                      "location": {
+                        "logicalLocations": [
+                          {
+                            "decoratedName": "test",
+                            "kind": "function",
+                            "name": "test",
+                            "fullyQualifiedName": "test"
+                          }
+                        ],
+                        "message": {
+                          "text": "...to here"
+                        },
+                        "physicalLocation": {
+                          "contextRegion": {
+                            "startLine": 6,
+                            "snippet": {
+                              "text": "        free(ptr);\n"
+                            }
+                          },
+                          "artifactLocation": {
+                            "uri": "<source>"
+                          },
+                          "region": {
+                            "startLine": 6,
+                            "endColumn": 18,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "kinds": [
+                        "branch",
+                        "true"
+                      ]
+                    },
+                    {
+                      "nestingLevel": 1,
+                      "location": {
+                        "logicalLocations": [
+                          {
+                            "decoratedName": "test",
+                            "kind": "function",
+                            "name": "test",
+                            "fullyQualifiedName": "test"
+                          }
+                        ],
+                        "message": {
+                          "text": "first 'free' here"
+                        },
+                        "physicalLocation": {
+                          "contextRegion": {
+                            "startLine": 6,
+                            "snippet": {
+                              "text": "        free(ptr);\n"
+                            }
+                          },
+                          "artifactLocation": {
+                            "uri": "<source>"
+                          },
+                          "region": {
+                            "startLine": 6,
+                            "endColumn": 18,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "kinds": [
+                        "release",
+                        "memory"
+                      ]
+                    },
+                    {
+                      "nestingLevel": 1,
+                      "location": {
+                        "logicalLocations": [
+                          {
+                            "decoratedName": "test",
+                            "kind": "function",
+                            "name": "test",
+                            "fullyQualifiedName": "test"
+                          }
+                        ],
+                        "message": {
+                          "text": "second 'free' here; first 'free' was at (3)"
+                        },
+                        "physicalLocation": {
+                          "contextRegion": {
+                            "startLine": 7,
+                            "snippet": {
+                              "text": "    free(ptr);\n"
+                            }
+                          },
+                          "artifactLocation": {
+                            "uri": "<source>"
+                          },
+                          "region": {
+                            "startLine": 7,
+                            "endColumn": 14,
+                            "startColumn": 5
+                          }
+                        }
+                      },
+                      "kinds": [
+                        "danger"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "taxonomies": [
+        {
+          "organization": "MITRE",
+          "name": "CWE",
+          "version": "4.7",
+          "shortDescription": {
+            "text": "The MITRE Common Weakness Enumeration"
+          },
+          "taxa": [
+            {
+              "id": "415",
+              "helpUri": "https://cwe.mitre.org/data/definitions/415.html"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "version": "2.1.0"
+}

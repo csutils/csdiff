@@ -1,0 +1,23 @@
+{
+    "scan": {
+        "analyzer-version-gcc": "13.0.0"
+    },
+    "defects": [
+        {
+            "checker": "GCC_ANALYZER_WARNING",
+            "language": "c/c++",
+            "tool": "gcc-analyzer",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "<source>",
+                    "line": 7,
+                    "column": 5,
+                    "event": "warning[-Wanalyzer-double-free]",
+                    "message": "double-'free' of 'ptr'",
+                    "verbosity_level": 0
+                }
+            ]
+        }
+    ]
+}
