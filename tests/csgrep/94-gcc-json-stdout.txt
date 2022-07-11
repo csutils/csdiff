@@ -2,6 +2,8 @@
     "defects": [
         {
             "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "tool": "gcc",
             "key_event_idx": 0,
             "events": [
                 {
@@ -24,6 +26,8 @@
         },
         {
             "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "tool": "gcc",
             "key_event_idx": 0,
             "events": [
                 {
@@ -38,6 +42,8 @@
         },
         {
             "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "tool": "gcc",
             "key_event_idx": 0,
             "events": [
                 {
@@ -52,6 +58,8 @@
         },
         {
             "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "tool": "gcc",
             "key_event_idx": 0,
             "events": [
                 {
@@ -66,6 +74,8 @@
         },
         {
             "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "tool": "gcc",
             "key_event_idx": 0,
             "events": [
                 {
@@ -80,6 +90,8 @@
         },
         {
             "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "tool": "gcc",
             "key_event_idx": 0,
             "events": [
                 {
@@ -93,8 +105,10 @@
             ]
         },
         {
-            "checker": "COMPILER_WARNING",
+            "checker": "GCC_ANALYZER_WARNING",
             "cwe": 479,
+            "language": "c/c++",
+            "tool": "gcc-analyzer",
             "key_event_idx": 0,
             "events": [
                 {

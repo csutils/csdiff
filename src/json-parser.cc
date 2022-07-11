@@ -21,6 +21,7 @@
 
 #include "abstract-tree.hh"
 #include "csparser.hh"              // for KeyEventDigger
+#include "gcc-parser.hh"            // for GccPostProcessor
 #include "parser-common.hh"
 #include "regex.hh"
 
@@ -101,6 +102,9 @@ class SarifTreeDecoder: public AbstractTreeDecoder {
 class GccTreeDecoder: public AbstractTreeDecoder {
     public:
         bool readNode(Defect *def, pt::ptree::const_iterator defIter) override;
+
+    private:
+        const GccPostProcessor postProc;
 };
 
 struct JsonParser::Private {
@@ -668,11 +672,6 @@ static bool gccReadEvent(DefEvent *pEvt, const pt::ptree &evtNode)
     if (evtName.empty())
         return false;
 
-    // read -W... if available
-    const string option = valueOf<string>(evtNode, "option", "");
-    if (!option.empty())
-        evtName += "[" + option + "]";
-
     // read location
     pEvt->fileName = "<unknown>";
     const pt::ptree *locs;
@@ -687,6 +686,11 @@ static bool gccReadEvent(DefEvent *pEvt, const pt::ptree &evtNode)
 
     // read message
     pEvt->msg = valueOf<string>(evtNode, "message", "<unknown>");
+
+    // read -W... if available
+    const string option = valueOf<string>(evtNode, "option", "");
+    if (!option.empty())
+        pEvt->msg += " [" + option + "]";
 
     return true;
 }
@@ -717,6 +721,9 @@ bool GccTreeDecoder::readNode(Defect *def, pt::ptree::const_iterator defIter)
     const pt::ptree *meta;
     if (findChildOf(&meta, defNode, "metadata"))
         def->cwe = valueOf<int>(*meta, "cwe", 0);
+
+    // apply post-processing rules
+    this->postProc.apply(def);
 
     return true;
 }
