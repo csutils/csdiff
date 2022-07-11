@@ -575,19 +575,27 @@ static void sarifReadCodeFlow(Defect *pDef, const pt::ptree &cf)
         return;
 
     TEvtList events;
-    unsigned keyEventIdx = 0U;
+    int keyEventIdx = -1;
 
     // read the full list of events
     for (const auto &item : *locs) {
         const pt::ptree &tfLoc = item.second;
 
         const pt::ptree *kindList;
-        if (!findChildOf(&kindList, tfLoc, "kinds") || (1U != kindList->size()))
-            // not the format that csdiff produces
-            return;
+        if (!findChildOf(&kindList, tfLoc, "kinds") || kindList->empty())
+            // kind of the event not specified
+            continue;
+
+        // concatenate event name
+        std::string evtName;
+        for (const auto &kindItem : *kindList) {
+            const pt::ptree &kind = kindItem.second;
+            if (!evtName.empty())
+                evtName += "_";
+            evtName += kind.data();
+        }
 
         // append a new event of the specified kind
-        const auto evtName = kindList->begin()->second.data();
         events.push_back(DefEvent(evtName));
         DefEvent &evt = events.back();
 
@@ -609,9 +617,16 @@ static void sarifReadCodeFlow(Defect *pDef, const pt::ptree &cf)
         // we failed to read more than one event
         return;
 
-    // update the list of events
-    events.swap(pDef->events);
-    pDef->keyEventIdx = keyEventIdx;
+    if (-1 == keyEventIdx) {
+        // no key event in threadFlows
+        std::copy(events.begin(), events.end(),
+                std::back_inserter(pDef->events));
+    }
+    else {
+        // use only the events from threadFlows
+        events.swap(pDef->events);
+        pDef->keyEventIdx = keyEventIdx;
+    }
 }
 
 bool SarifTreeDecoder::readNode(
