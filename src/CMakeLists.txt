@@ -16,7 +16,12 @@
 # along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
 message(STATUS "User-provided flags: ${CMAKE_CXX_FLAGS}")
 
-add_definitions(-Wall -Wextra -fPIC -std=c++11)
+# set standards
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -pedantic")
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 # eliminate the following warning:
 #   /usr/include/boost/bind.hpp:36:1: note: ‘#pragma message: The practice
