@@ -97,7 +97,7 @@ Source0:    https://github.com/csutils/csdiff/releases/download/%{name}-%{versio
 Conflicts:  csmock-plugin-shellcheck <= 2.5
 
 BuildRequires: boost-devel
-BuildRequires: cmake
+BuildRequires: cmake3
 BuildRequires: gcc-c++
 BuildRequires: help2man
 BuildRequires: make
@@ -153,20 +153,20 @@ code scan defect lists to find out added or fixed defects.
 make version.cc
 mkdir -p %{_target_platform}
 cd %{_target_platform}
-%cmake .. -S.. -B. -DBUILD_PYCSDIFF=OFF
+%cmake3 .. -S.. -B. -DBUILD_PYCSDIFF=OFF
 %make_build
 
 %if %{with python2}
 mkdir -p ../%{_target_platform}-py2
 cd ../%{_target_platform}-py2
-%cmake .. -S.. -B. -DPYTHON_EXECUTABLE=%{__python2}
+%cmake3 .. -S.. -B. -DPYTHON_EXECUTABLE=%{__python2}
 %make_build pycsdiff
 %endif
 
 %if %{with python3}
 mkdir -p ../%{_target_platform}-py3
 cd ../%{_target_platform}-py3
-%cmake .. -S.. -B. \\
+%cmake3 .. -S.. -B. \\
     -DPYTHON_EXECUTABLE=%{__python3} \\
     -DBOOST_PYTHON_LIB_NAME=boost_python%{python3_version_nodots}
 %make_build pycsdiff
@@ -185,7 +185,7 @@ make install-pycsdiff -C %{_target_platform}-py3 DESTDIR=%{buildroot}
 
 %check
 cd %{_target_platform}
-ctest %{?_smp_mflags} --output-on-failure
+ctest3 %{?_smp_mflags} --output-on-failure
 
 %files
 %{_bindir}/csdiff
