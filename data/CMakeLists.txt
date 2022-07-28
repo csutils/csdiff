@@ -1,4 +1,4 @@
-# Copyright (C) 2020 Red Hat, Inc.
+# Copyright (C) 2020 - 2022 Red Hat, Inc.
 #
 # This file is part of csdiff.
 #
@@ -16,6 +16,7 @@
 # along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
 
 # install /usr/share/csdiff/cwe-names.csv
+include(GNUInstallDirs)
 install(FILES
     ${CMAKE_CURRENT_SOURCE_DIR}/cwe-names.csv
-    DESTINATION ${SHARE_INSTALL_PREFIX}/csdiff)
+    DESTINATION ${CMAKE_INSTALL_DATADIR}/csdiff)

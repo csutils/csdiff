@@ -96,6 +96,7 @@ target_link_libraries(cstrans-df-run
     ${Boost_SYSTEM_LIBRARY})
 
 # declare what 'make install' should install
+include(GNUInstallDirs)
 install(TARGETS
     csdiff
     csgrep
@@ -103,7 +104,7 @@ install(TARGETS
     cslinker
     cssort
     cstrans-df-run
-    DESTINATION bin)
+    DESTINATION ${CMAKE_INSTALL_BINDIR})
 
 # check for python libs (e.g. python3-devel on Fedora)
 find_package(PythonLibs)
@@ -190,7 +191,7 @@ macro(create_manpage BINARY)
         COMMENT "Generating ${BINARY} man page"
         VERBATIM)
     install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${BINARY}.1
-        DESTINATION share/man/man1)
+            DESTINATION ${CMAKE_INSTALL_MANDIR}/man1)
 endmacro(create_manpage)
 
 # generate man pages using help2man if available
