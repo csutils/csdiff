@@ -106,74 +106,66 @@ install(TARGETS
     cstrans-df-run
     DESTINATION ${CMAKE_INSTALL_BINDIR})
 
-# check for python libs (e.g. python3-devel on Fedora)
-find_package(PythonLibs)
-if ("${PYTHON_LIBRARY}" STREQUAL "PYTHON_LIBRARY-NOTFOUND")
-    set(BUILD_PYCSDIFF_DEFAULT OFF)
-else()
-    set(BUILD_PYCSDIFF_DEFAULT ON)
-endif()
-
 # pycsdiff - python binding of csdiff
-option(BUILD_PYCSDIFF "Set to ON to enable python binding"
-    ${BUILD_PYCSDIFF_DEFAULT})
-if (BUILD_PYCSDIFF)
-    set(BOOST_PYTHON_LIB_NAME "boost_python"
-        CACHE STRING "Name of the boost_python library")
+option(PYCSDIFF_PYTHON2 "Set to ON to build pycsdiff for Python 2" OFF)
+option(PYCSDIFF_PYTHON3 "Set to ON to build pycsdiff for Python 3" ON)
 
-    # query PYTHON_SITEARCH
-    find_package(PythonInterp REQUIRED)
-    execute_process(COMMAND ${PYTHON_EXECUTABLE}
-        -c "import sysconfig; print(sysconfig.get_paths()['platlib'])"
-        RESULT_VARIABLE PYTHON_SITEARCH_STATUS
-        OUTPUT_VARIABLE PYTHON_SITEARCH
-        OUTPUT_STRIP_TRAILING_WHITESPACE)
-    if("${PYTHON_SITEARCH_STATUS}" EQUAL 0)
-        message(STATUS "PYTHON_SITEARCH: ${PYTHON_SITEARCH}")
-    else()
-        message(FATAL_ERROR "
-failed to query PYTHON_SITEARCH")
+macro(build_pycsdiff version boost_python_lib_names)
+    # check for Python libs (e.g. python${version}-devel on Fedora)
+    # Interpreter is required for Python_SITEARCH
+    find_package(Python${version} COMPONENTS Development Interpreter)
+    if(NOT Python${version}_FOUND)
+        message(FATAL_ERROR
+            "The pycsdiff module for Python ${version} will NOT be built!")
     endif()
 
+    # find boost_python
+    find_library(BOOST_PYTHON${version}
+        NAMES ${boost_python_lib_names}
+        HINTS ${Boost_LIBRARY_DIRS})
+    if(BOOST_PYTHON${version})
+        message(STATUS "Found libboost_python: ${BOOST_PYTHON${version}}")
+    else()
+        message(FATAL_ERROR "libboost_python for Python ${version} NOT FOUND!")
+    endif()
+
+    message(STATUS "Python ${version} binding enabled. "
+        "The pycsdiff module will be built!")
+
+    add_library(pycsdiff${version} SHARED pycsdiff.cc)
+    target_include_directories(pycsdiff${version} SYSTEM
+        PRIVATE ${Python${version}_INCLUDE_DIRS})
+    target_link_libraries(pycsdiff${version} PRIVATE ${BOOST_PYTHON${version}})
+
+    # remove 'lib' prefix so that `python -c 'import pycsdiff' works`
+    set_target_properties(pycsdiff${version} PROPERTIES
+        PREFIX "" OUTPUT_NAME "pycsdiff")
+
+    install(TARGETS pycsdiff${version}
+            DESTINATION ${Python${version}_SITEARCH})
+endmacro()
+
+if(PYCSDIFF_PYTHON2)
+    # boost_python has no suffix
+    set(BOOST_PYTHON_LIB_NAMES
+        boost_python)
+
+    build_pycsdiff(2 "${BOOST_PYTHON_LIB_NAMES}")
+endif()
+
+if(PYCSDIFF_PYTHON3)
     # boost_python3 is used on RHEL-8.
     # boost_python310 is used on Fedora 35.
-    find_library(BOOST_PYTHON NAMES ${BOOST_PYTHON_LIB_NAME}
+    set(BOOST_PYTHON_LIB_NAMES
         boost_python311
         boost_python310
         boost_python39
         boost_python38
         boost_python37
         boost_python36
-        boost_python3
-        HINTS ${Boost_LIBRARY_DIRS})
+        boost_python3)
 
-    message(STATUS "BOOST_PYTHON: ${BOOST_PYTHON}")
-
-    # verify PYTHON_LIBRARY
-    if ("${PYTHON_LIBRARY}" STREQUAL "PYTHON_LIBRARY-NOTFOUND")
-        message(FATAL_ERROR "
-python libraries not found, unable to build pycsdiff")
-    endif()
-
-    # verify PYTHON_INCLUDE_DIR
-    message(STATUS "PYTHON_INCLUDE_DIR: ${PYTHON_INCLUDE_DIR}")
-    if(NOT EXISTS "${PYTHON_INCLUDE_DIR}/pyconfig.h")
-        message(FATAL_ERROR "
-${PYTHON_INCLUDE_DIR}/pyconfig.h does not exits")
-    endif()
-
-    message(STATUS "python binding enabled, the pycsdiff module will be built!")
-    add_library(pycsdiff SHARED pycsdiff.cc)
-    set_target_properties(pycsdiff PROPERTIES
-        COMPILE_FLAGS "-I${PYTHON_INCLUDE_DIR}"
-        PREFIX "")
-    target_link_libraries(pycsdiff ${BOOST_PYTHON})
-    install(TARGETS pycsdiff
-        DESTINATION ${PYTHON_SITEARCH}
-        COMPONENT pycsdiff)
-    add_custom_target(install-pycsdiff
-        COMMAND ${CMAKE_COMMAND} -DCOMPONENT=pycsdiff
-        -P ${CMAKE_BINARY_DIR}/cmake_install.cmake)
+    build_pycsdiff(3 "${BOOST_PYTHON_LIB_NAMES}")
 endif()
 
 # macro to generate a man page from the corresponding binary

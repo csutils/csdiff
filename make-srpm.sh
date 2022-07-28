@@ -153,34 +153,12 @@ code scan defect lists to find out added or fixed defects.
 make version.cc
 mkdir -p %{_target_platform}
 cd %{_target_platform}
-%cmake3 .. -S.. -B. -DBUILD_PYCSDIFF=OFF
+%cmake3 .. -S.. -B. \\
+    -DPYCSDIFF_PYTHON2=%{?with_python2:ON} \\
+    -DPYCSDIFF_PYTHON3=%{?with_python3:ON}
 %make_build
 
-%if %{with python2}
-mkdir -p ../%{_target_platform}-py2
-cd ../%{_target_platform}-py2
-%cmake3 .. -S.. -B. -DPYTHON_EXECUTABLE=%{__python2}
-%make_build pycsdiff
-%endif
-
-%if %{with python3}
-mkdir -p ../%{_target_platform}-py3
-cd ../%{_target_platform}-py3
-%cmake3 .. -S.. -B. \\
-    -DPYTHON_EXECUTABLE=%{__python3} \\
-    -DBOOST_PYTHON_LIB_NAME=boost_python%{python3_version_nodots}
-%make_build pycsdiff
-%endif
-
 %install
-%if %{with python2}
-make install-pycsdiff -C %{_target_platform}-py2 DESTDIR=%{buildroot}
-%endif
-
-%if %{with python3}
-make install-pycsdiff -C %{_target_platform}-py3 DESTDIR=%{buildroot}
-%endif
-
 %make_install -C %{_target_platform}
 
 %check
