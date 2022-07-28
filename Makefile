@@ -1,4 +1,4 @@
-# Copyright (C) 2011 - 2020 Red Hat, Inc.
+# Copyright (C) 2011 - 2022 Red Hat, Inc.
 #
 # This file is part of csdiff.
 #
@@ -20,13 +20,18 @@ NUM_CPU ?= $(shell getconf _NPROCESSORS_ONLN 2>/dev/null || echo 1)
 CMAKE ?= cmake
 CTEST ?= ctest -j$(NUM_CPU) --progress
 
+SANITIZERS ?= OFF
+
 CMAKE_BUILD_TYPE ?= RelWithDebInfo
 
-.PHONY: all check clean distclean distcheck fast install version.cc src/version.cc
+.PHONY: all check clean sanitizers distclean distcheck distcheck-sanitizers \
+	fast install version.cc src/version.cc
 
 all: version.cc
 	mkdir -p csdiff_build
-	cd csdiff_build && $(CMAKE) -D 'CMAKE_BUILD_TYPE=$(CMAKE_BUILD_TYPE)' ..
+	cd csdiff_build && $(CMAKE) \
+		-D 'CMAKE_BUILD_TYPE=$(CMAKE_BUILD_TYPE)' \
+		-D SANITIZERS='$(SANITIZERS)' ..
 	$(MAKE) -sC csdiff_build -j$(NUM_CPU)
 
 fast: version.cc
@@ -38,12 +43,18 @@ check: all
 clean:
 	if test -e csdiff_build/Makefile; then $(MAKE) clean -C csdiff_build; fi
 
+sanitizers:
+	$(MAKE) -s all SANITIZERS=ON
+
 distclean:
 	if test -e .git; then rm -f src/version.cc; fi
 	rm -rf csdiff_build
 
 distcheck: distclean
 	$(MAKE) -s check
+
+distcheck-sanitizers:
+	$(MAKE) -s distcheck SANITIZERS=ON
 
 install: all
 	$(MAKE) -C csdiff_build install
