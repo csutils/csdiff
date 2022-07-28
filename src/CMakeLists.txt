@@ -23,6 +23,24 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -pedantic")
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
+# find Boost
+find_package(Boost REQUIRED
+    COMPONENTS filesystem
+               program_options
+               regex
+               system)
+include_directories(SYSTEM ${Boost_INCLUDE_DIRS})
+link_directories(${Boost_LIBRARY_DIRS})
+
+if(Boost_VERSION_STRING VERSION_LESS 1.74)
+    message(WARNING "System Boost libraries are too old (1.74+ recommended)."
+        " Using local version of Boost.Nowide!")
+    include_directories(SYSTEM ${CMAKE_SOURCE_DIR}/boost_1_74_0)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D'BOOST_LIKELY(x)=__builtin_expect(x, 1)'")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D'BOOST_UNLIKELY(x)=__builtin_expect(x, 0)'")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D'BOOST_FALLTHROUGH='")
+endif()
+
 # eliminate the following warning:
 #   /usr/include/boost/bind.hpp:36:1: note: ‘#pragma message: The practice
 #   of declaring the Bind placeholders (_1, _2, ...) in the global namespace
@@ -30,16 +48,6 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 #   boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain
 #   the current behavior.’
 add_definitions(-DBOOST_BIND_GLOBAL_PLACEHOLDERS)
-
-find_package(Boost 1.74)
-if (NOT Boost_FOUND)
-    message(STATUS "WARNING: System Boost libraries are tool old.  Using local"
-        " version of Boost.Nowide!")
-    include_directories(SYSTEM ${CMAKE_SOURCE_DIR}/boost_1_74_0)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D'BOOST_LIKELY(x)=__builtin_expect(x, 1)'")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D'BOOST_UNLIKELY(x)=__builtin_expect(x, 0)'")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D'BOOST_FALLTHROUGH='")
-endif()
 
 # cslib.a
 add_library(cs STATIC
@@ -67,13 +75,9 @@ add_library(cs STATIC
 )
 
 # link cslib.a and boost libraries
-find_library(BOOST_FILESYSTEM           boost_filesystem            REQUIRED)
-find_library(BOOST_PROGRAM_OPTIONS      boost_program_options       REQUIRED)
-find_library(BOOST_REGEX                boost_regex                 REQUIRED)
-find_library(BOOST_SYSTEM               boost_system                REQUIRED)
 link_libraries(cs
-    boost_program_options
-    boost_regex)
+    ${Boost_PROGRAM_OPTIONS_LIBRARY}
+    ${Boost_REGEX_LIBRARY})
 
 # the list of executables
 add_executable(csdiff       csdiff.cc)
@@ -82,14 +86,14 @@ add_executable(cshtml       cshtml.cc)
 add_executable(cslinker     cslinker.cc)
 add_executable(cssort       cssort.cc)
 target_link_libraries(cshtml
-    boost_filesystem
-    boost_system)
+    ${Boost_FILESYSTEM_LIBRARY}
+    ${Boost_SYSTEM_LIBRARY})
 
 # experimental
 add_executable(cstrans-df-run cstrans-df-run.cc)
 target_link_libraries(cstrans-df-run
-    boost_filesystem
-    boost_system)
+    ${Boost_FILESYSTEM_LIBRARY}
+    ${Boost_SYSTEM_LIBRARY})
 
 # declare what 'make install' should install
 install(TARGETS
@@ -139,7 +143,8 @@ failed to query PYTHON_SITEARCH")
         boost_python38
         boost_python37
         boost_python36
-        boost_python3)
+        boost_python3
+        HINTS ${Boost_LIBRARY_DIRS})
 
     message(STATUS "BOOST_PYTHON: ${BOOST_PYTHON}")
 
