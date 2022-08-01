@@ -157,6 +157,14 @@ macro(build_pycsdiff version boost_python_lib_names)
 
     install(TARGETS pycsdiff_py${version}
             DESTINATION ${Python${version}_SITEARCH})
+
+    # TODO: support running pycsdiff with sanitizers
+    if(NOT SANITIZERS)
+        # assert that the library is usable
+        add_test(NAME "pycsdiff_py${version}"
+            COMMAND ${Python${version}_EXECUTABLE} -c "import pycsdiff"
+            WORKING_DIRECTORY $<TARGET_FILE_DIR:pycsdiff_py${version}>)
+    endif()
 endmacro()
 
 if(PYCSDIFF_PYTHON2)
