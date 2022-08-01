@@ -97,7 +97,7 @@ URL:        https://github.com/csutils/csdiff
 Source0:    https://github.com/csutils/csdiff/releases/download/%{name}-%{version}/%{name}-%{version}.tar.xz
 
 # the following upstream commit is needed to work with up2date csdiff/csgrep
-# https://github.com/kdudka/csmock/commit/48b09b3a
+# https://github.com/csutils/csmock/commit/48b09b3a
 Conflicts:  csmock-plugin-shellcheck <= 2.5
 
 BuildRequires: boost-devel
