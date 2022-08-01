@@ -113,7 +113,7 @@ Provides: bundled(boost_nowide)
 %description
 This package contains the csdiff tool for comparing code scan defect lists in
 order to find out added or fixed defects, and the csgrep utility for filtering
-defect lists using various filtering predicates. 
+defect lists using various filtering predicates.
 
 %if %{with python2}
 %package -n python2-%{name}
@@ -133,7 +133,7 @@ code scan defect lists to find out added or fixed defects.
 %package -n python3-%{name}
 Summary:        Python interface to csdiff for Python 3
 
-# this packages redefines %%{python3_pkgversion} to 36 because there is
+# this package redefines %%{python3_pkgversion} to 36 because there is
 # no boost-python3-devel in epel-7 buildroot, only boost-python36-devel
 %if 0%{?rhel} == 7
 BuildRequires:  epel-rpm-macros
