@@ -73,6 +73,10 @@ fi
 
 SPEC="./$PKG.spec"
 cat > "$SPEC" << EOF
+# disable in source builds on EPEL <9
+%undefine __cmake_in_source_build
+%undefine __cmake3_in_source_build
+
 # python2 is not available on RHEL > 7 and Fedora
 %if 0%{?rhel} > 7 || 0%{?fedora}
 %bcond_with python2
@@ -151,19 +155,16 @@ code scan defect lists to find out added or fixed defects.
 
 %build
 make version.cc
-mkdir -p %{_target_platform}
-cd %{_target_platform}
-%cmake3 .. -S.. -B. \\
+%cmake3                                    \\
     -DPYCSDIFF_PYTHON2=%{?with_python2:ON} \\
     -DPYCSDIFF_PYTHON3=%{?with_python3:ON}
-%make_build
+%cmake3_build
 
 %install
-%make_install -C %{_target_platform}
+%cmake3_install
 
 %check
-cd %{_target_platform}
-ctest3 %{?_smp_mflags} --output-on-failure
+%ctest3
 
 %files
 %{_bindir}/csdiff
