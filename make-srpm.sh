@@ -122,7 +122,7 @@ Summary:        Python interface to csdiff for Python 2
 BuildRequires:  boost-python2-devel
 %endif
 BuildRequires:  python2-devel
-%{?python_provide:%python_provide python2-%{name}}
+%py_provides    python2-%{name}
 
 %description -n python2-%{name}
 This package contains the Python 2 binding for the csdiff tool for comparing
@@ -143,7 +143,7 @@ BuildRequires:  epel-rpm-macros
 BuildRequires:  boost-python%{python3_pkgversion}-devel
 %endif
 BuildRequires:  python3-devel
-%{?python_provide:%python_provide python3-%{name}}
+%py_provides    python3-%{name}
 
 %description -n python3-%{name}
 This package contains the Python 3 binding for the csdiff tool for comparing
