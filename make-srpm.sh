@@ -147,7 +147,7 @@ code scan defect lists to find out added or fixed defects.
 %endif
 
 %prep
-%setup -q
+%autosetup
 
 %build
 make version.cc
