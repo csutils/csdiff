@@ -148,9 +148,12 @@ macro(build_pycsdiff version boost_python_lib_names)
         PRIVATE ${Python${version}_INCLUDE_DIRS})
     target_link_libraries(pycsdiff_py${version} PRIVATE ${BOOST_PYTHON${version}})
 
-    # remove 'lib' prefix so that `python -c 'import pycsdiff' works`
+    # set correct name so that `python -c 'import pycsdiff' works`
     set_target_properties(pycsdiff_py${version} PROPERTIES
-        PREFIX "" OUTPUT_NAME "pycsdiff")
+        PREFIX ""
+        OUTPUT_NAME "pycsdiff"
+        # to avoid overwrites with multiple Python versions
+        LIBRARY_OUTPUT_DIRECTORY "pycsdiff_py${version}")
 
     install(TARGETS pycsdiff_py${version}
             DESTINATION ${Python${version}_SITEARCH})
