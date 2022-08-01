@@ -167,6 +167,8 @@ make version.cc
 %ctest3
 
 %files
+%doc README
+%license COPYING
 %{_bindir}/csdiff
 %{_bindir}/csgrep
 %{_bindir}/cshtml
@@ -180,18 +182,17 @@ make version.cc
 %{_mandir}/man1/cslinker.1*
 %{_mandir}/man1/cssort.1*
 %{_mandir}/man1/cstrans-df-run.1*
-%doc COPYING README
 
 %if %{with python2}
 %files -n python2-%{name}
+%license COPYING
 %{python2_sitearch}/pycsdiff.so
-%doc COPYING
 %endif
 
 %if %{with python3}
 %files -n python3-%{name}
+%license COPYING
 %{python3_sitearch}/pycsdiff.so
-%doc COPYING
 %endif
 EOF
 
