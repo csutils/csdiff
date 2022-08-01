@@ -143,16 +143,16 @@ macro(build_pycsdiff version boost_python_lib_names)
     message(STATUS "Python ${version} binding enabled. "
         "The pycsdiff module will be built!")
 
-    add_library(pycsdiff${version} SHARED pycsdiff.cc)
-    target_include_directories(pycsdiff${version} SYSTEM
+    add_library(pycsdiff_py${version} SHARED pycsdiff.cc)
+    target_include_directories(pycsdiff_py${version} SYSTEM
         PRIVATE ${Python${version}_INCLUDE_DIRS})
-    target_link_libraries(pycsdiff${version} PRIVATE ${BOOST_PYTHON${version}})
+    target_link_libraries(pycsdiff_py${version} PRIVATE ${BOOST_PYTHON${version}})
 
     # remove 'lib' prefix so that `python -c 'import pycsdiff' works`
-    set_target_properties(pycsdiff${version} PROPERTIES
+    set_target_properties(pycsdiff_py${version} PROPERTIES
         PREFIX "" OUTPUT_NAME "pycsdiff")
 
-    install(TARGETS pycsdiff${version}
+    install(TARGETS pycsdiff_py${version}
             DESTINATION ${Python${version}_SITEARCH})
 endmacro()
 
