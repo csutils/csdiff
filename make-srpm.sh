@@ -118,9 +118,6 @@ defect lists using various filtering predicates.
 %if %{with python2}
 %package -n python2-%{name}
 Summary:        Python interface to csdiff for Python 2
-%if 0%{?fedora}
-BuildRequires:  boost-python2-devel
-%endif
 BuildRequires:  python2-devel
 %py_provides    python2-%{name}
 
