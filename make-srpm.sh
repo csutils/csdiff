@@ -106,7 +106,7 @@ BuildRequires: gcc-c++
 BuildRequires: help2man
 BuildRequires: make
 
-%if 0%{?rhel} && 0%{?rhel} <= 8
+%if 0%{?rhel} && 0%{?rhel} < 9
 Provides: bundled(boost_nowide)
 %endif
 
