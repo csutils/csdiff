@@ -9,7 +9,7 @@ on:
 
 jobs:
   ubuntu:
-    name: Ubuntu ${{ matrix.version }} (${{ matrix.compiler }})
+    name: Ubuntu ${{ matrix.version }} (${{ matrix.compiler }}${{ matrix.version == 22.04 && ' with sanitizers' || '' }})
     strategy:
       fail-fast: false
       matrix:
