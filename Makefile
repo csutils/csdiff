@@ -68,6 +68,6 @@ src/version.cc:
 		cmd='basename $$(readlink -f .) | cut -f2 -d-'; \
 	fi \
 		&& printf "#include \"version.hh\"\nconst char *CS_VERSION = \"%s\";\n" \
-			"`eval "$$cmd"`" > $@.tmp \
+			"$$(eval "$$cmd")" > $@.tmp \
 		&& install -m0644 -C -v $@.tmp $@ \
 		&& rm -f $@.tmp
