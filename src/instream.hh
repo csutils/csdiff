@@ -47,7 +47,7 @@ class InStream {
         bool silent()                   const { return silent_;     }
         bool anyError()                 const { return anyError_;   }
 
-        void handleError(std::string msg = std::string(), long line = 0L);
+        void handleError(const std::string &msg = "", unsigned long line = 0UL);
 
     private:
         const std::string   fileName_;

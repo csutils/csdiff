@@ -41,7 +41,7 @@ InStream::InStream(std::istringstream &str, const bool silent):
 {
 }
 
-void InStream::handleError(const std::string msg, const long line)
+void InStream::handleError(const std::string &msg, const unsigned long line)
 {
     anyError_ = true;
     if (silent_ || msg.empty())
