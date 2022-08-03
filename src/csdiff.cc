@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011 Red Hat, Inc.
+ * Copyright (C) 2011-2022 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
     po::options_description desc(string("Usage: ") + name
             + " [options] old.err new.err, where options are");
 
-    typedef std::vector<string> TStringList;
+    using TStringList = std::vector<string>;
     string mode;
 
     try {
