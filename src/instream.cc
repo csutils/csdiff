@@ -28,7 +28,7 @@ InStream::InStream(const std::string &fileName, const bool silent):
                 : fileStr_)
 {
     if (&str_ == &fileStr_)
-        fileStr_.open(fileName_, std::ios::in);
+        fileStr_.open(fileName_);
 
     if (!fileStr_)
         throw InFileException(fileName_);

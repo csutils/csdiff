@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011 - 2021 Red Hat, Inc.
+ * Copyright (C) 2011 - 2022 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -53,7 +53,7 @@ class InStream {
         const std::string   fileName_;
         const bool          silent_;
         bool                anyError_;
-        std::fstream        fileStr_;
+        std::ifstream       fileStr_;
         std::istream       &str_;
 };
 
