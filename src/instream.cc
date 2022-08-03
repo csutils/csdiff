@@ -41,12 +41,6 @@ InStream::InStream(std::istringstream &str, const bool silent):
 {
 }
 
-InStream::~InStream()
-{
-    if (&str_ == &fileStr_)
-        fileStr_.close();
-}
-
 void InStream::handleError(const std::string msg, const long line)
 {
     anyError_ = true;

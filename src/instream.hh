@@ -40,7 +40,7 @@ class InStream {
     public:
         InStream(const std::string &fileName, bool silent = false);
         InStream(std::istringstream &str, bool silent = false);
-        ~InStream();
+        ~InStream() = default;
 
         const std::string& fileName()   const { return fileName_;   }
         std::istream& str()             const { return str_;        }
