@@ -38,7 +38,7 @@ struct InFileException {
 
 class InStream {
     public:
-        InStream(const std::string &fileName, bool silent = false);
+        InStream(std::string fileName, bool silent = false);
         InStream(std::istringstream &str, bool silent = false);
         ~InStream() = default;
 
