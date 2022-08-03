@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011 - 2021 Red Hat, Inc.
+ * Copyright (C) 2011 - 2022 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -23,7 +23,7 @@ InStream::InStream(const std::string &fileName, const bool silent):
     fileName_(fileName),
     silent_(silent),
     anyError_(false),
-    str_((!fileName_.compare("-"))
+    str_((fileName_ == "-")
                 ? std::cin
                 : fileStr_)
 {
