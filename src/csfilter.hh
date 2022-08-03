@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011 Red Hat, Inc.
+ * Copyright (C) 2011-2022 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -26,8 +26,8 @@
 #include <string>
 #include <vector>
 
-typedef std::vector<std::string> TStringList;
-typedef std::map<std::string, std::string> TSubstMap;
+using TStringList = std::vector<std::string>;
+using TSubstMap = std::map<std::string, std::string>;
 
 class MsgFilter {
     public:

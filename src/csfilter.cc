@@ -58,7 +58,7 @@ struct MsgReplace {
     }
 };
 
-typedef std::vector<MsgReplace>               TMsgReplaceList;
+using TMsgReplaceList = std::vector<MsgReplace>;
 
 struct MsgFilter::Private {
     bool ignorePath = false;
