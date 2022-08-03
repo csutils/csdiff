@@ -60,7 +60,7 @@ class InStream {
 class InStreamLookAhead {
     public:
         InStreamLookAhead(
-                InStream       &inStr,
+                InStream       &input,
                 unsigned        size,
                 bool            skipWhiteSpaces = false);
 
