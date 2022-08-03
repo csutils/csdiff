@@ -35,10 +35,10 @@ libhsm.c:1210: var_deref_op: Dereferencing null pointer key_handles.
 .fi
 
 In the above example, FORWARD_NULL is the
-.B checker
-, assign_zero and var_deref_op are
-.B events
-, where var_deref_op is the key event and
+.BR checker ,
+assign_zero and var_deref_op are
+.BR events ,
+where var_deref_op is the key event and
 "Dereferencing null pointer key_handles." is the
 .B message
 associated with the key event.
