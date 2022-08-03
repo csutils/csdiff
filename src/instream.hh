@@ -52,7 +52,7 @@ class InStream {
     private:
         const std::string   fileName_;
         const bool          silent_;
-        bool                anyError_;
+        bool                anyError_ = false;
         std::ifstream       fileStr_;
         std::istream       &str_;
 };

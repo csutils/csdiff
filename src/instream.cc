@@ -22,7 +22,6 @@
 InStream::InStream(std::string fileName, const bool silent):
     fileName_(std::move(fileName)),
     silent_(silent),
-    anyError_(false),
     str_((fileName_ == "-")
                 ? std::cin
                 : fileStr_)
@@ -36,7 +35,6 @@ InStream::InStream(std::string fileName, const bool silent):
 
 InStream::InStream(std::istringstream &str, const bool silent):
     silent_(silent),
-    anyError_(false),
     str_(str)
 {
 }
