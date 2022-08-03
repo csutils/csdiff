@@ -124,7 +124,7 @@ int main(int argc, char *argv[])
         const RE reSubst("([^,]+),(.*)");
         for (const string &subst : substList) {
             if (!boost::regex_match(subst, sm, reSubst)) {
-                std::cerr << "bad substutution format: " << subst
+                std::cerr << "bad substitution format: " << subst
                     << std::endl << "use: -s OLD,NEW" << std::endl;
                 return 1;
             }
