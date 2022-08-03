@@ -66,5 +66,8 @@ associated with the key event.
 .B json
 - print matched defects in a JSON format
 
+.B sarif
+- print matched defects in a SARIF format
+
 .B stat
 - print overall statistics of the matched defects in given error files
