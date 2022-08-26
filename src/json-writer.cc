@@ -214,6 +214,24 @@ static void sarifEncodeMsg(PTree *pDst, const std::string& text)
     pDst->put_child("message", msg);
 }
 
+static void sarifEncodeLevel(PTree *result, const std::string &event) {
+    std::string level = event;
+
+    // cut the [...] suffix from event if present
+    size_t pos = event.find('[');
+    if (std::string::npos != pos)
+        level = event.substr(0U, pos);
+
+    // go through events that denote warning level
+    for (const char *str : {"error", "warning", "note"}) {
+        if (str == level) {
+            // encode in the output if matched
+            result->put<std::string>("level", level);
+            return;
+        }
+    }
+}
+
 static void sarifEncodeLoc(PTree *pLoc, const Defect &def, unsigned idx)
 {
     // location ID within the result
@@ -290,6 +308,9 @@ void SarifTreeEncoder::appendDef(const Defect &def)
     if (def.cwe)
         // update CWE map
         cweMap_[ruleId] = def.cwe;
+
+    // key event severity level
+    sarifEncodeLevel(&result, keyEvt.event);
 
     // key event location
     PTree loc;
