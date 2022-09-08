@@ -1,0 +1,1330 @@
+{
+  "comments": [
+    {
+      "file": "tests/test-lib.sh",
+      "line": 1,
+      "endLine": 1,
+      "column": 1,
+      "endColumn": 1,
+      "level": "error",
+      "code": 2148,
+      "message": "Tips depend on target shell and yours is unknown. Add a shebang or a 'shell' directive.",
+      "fix": null
+    },
+    {
+      "file": "tests/cssort/sync-diff.sh",
+      "line": 2,
+      "endLine": 2,
+      "column": 8,
+      "endColumn": 14,
+      "level": "warning",
+      "code": 2155,
+      "message": "Declare and assign separately to avoid masking return values.",
+      "fix": null
+    },
+    {
+      "file": "tests/cssort/sync-diff.sh",
+      "line": 5,
+      "endLine": 5,
+      "column": 8,
+      "endColumn": 12,
+      "level": "info",
+      "code": 2086,
+      "message": "Double quote to prevent globbing and word splitting.",
+      "fix": {
+        "replacements": [
+          {
+            "line": 5,
+            "endLine": 5,
+            "precedence": 14,
+            "insertionPoint": "afterEnd",
+            "column": 8,
+            "replacement": "\"",
+            "endColumn": 8
+          },
+          {
+            "line": 5,
+            "endLine": 5,
+            "precedence": 14,
+            "insertionPoint": "beforeStart",
+            "column": 12,
+            "replacement": "\"",
+            "endColumn": 12
+          }
+        ]
+      }
+    },
+    {
+      "file": "tests/cssort/sync-diff.sh",
+      "line": 7,
+      "endLine": 7,
+      "column": 31,
+      "endColumn": 37,
+      "level": "info",
+      "code": 2086,
+      "message": "Double quote to prevent globbing and word splitting.",
+      "fix": {
+        "replacements": [
+          {
+            "line": 7,
+            "endLine": 7,
+            "precedence": 22,
+            "insertionPoint": "afterEnd",
+            "column": 31,
+            "replacement": "\"",
+            "endColumn": 31
+          },
+          {
+            "line": 7,
+            "endLine": 7,
+            "precedence": 22,
+            "insertionPoint": "beforeStart",
+            "column": 37,
+            "replacement": "\"",
+            "endColumn": 37
+          }
+        ]
+      }
+    },
+    {
+      "file": "tests/cssort/sync-diff.sh",
+      "line": 9,
+      "endLine": 9,
+      "column": 33,
+      "endColumn": 41,
+      "level": "info",
+      "code": 2086,
+      "message": "Double quote to prevent globbing and word splitting.",
+      "fix": {
+        "replacements": [
+          {
+            "line": 9,
+            "endLine": 9,
+            "precedence": 16,
+            "insertionPoint": "afterEnd",
+            "column": 33,
+            "replacement": "\"",
+            "endColumn": 33
+          },
+          {
+            "line": 9,
+            "endLine": 9,
+            "precedence": 16,
+            "insertionPoint": "beforeStart",
+            "column": 41,
+            "replacement": "\"",
+            "endColumn": 41
+          }
+        ]
+      }
+    },
+    {
+      "file": "tests/cssort/sync-diff.sh",
+      "line": 9,
+      "endLine": 9,
+      "column": 56,
+      "endColumn": 69,
+      "level": "info",
+      "code": 2086,
+      "message": "Double quote to prevent globbing and word splitting.",
+      "fix": {
+        "replacements": [
+          {
+            "line": 9,
+            "endLine": 9,
+            "precedence": 17,
+            "insertionPoint": "afterEnd",
+            "column": 56,
+            "replacement": "\"",
+            "endColumn": 56
+          },
+          {
+            "line": 9,
+            "endLine": 9,
+            "precedence": 17,
+            "insertionPoint": "beforeStart",
+            "column": 69,
+            "replacement": "\"",
+            "endColumn": 69
+          }
+        ]
+      }
+    },
+    {
+      "file": "tests/cssort/sync-diff.sh",
+      "line": 10,
+      "endLine": 10,
+      "column": 33,
+      "endColumn": 41,
+      "level": "info",
+      "code": 2086,
+      "message": "Double quote to prevent globbing and word splitting.",
+      "fix": {
+        "replacements": [
+          {
+            "line": 10,
+            "endLine": 10,
+            "precedence": 16,
+            "insertionPoint": "afterEnd",
+            "column": 33,
+            "replacement": "\"",
+            "endColumn": 33
+          },
+          {
+            "line": 10,
+            "endLine": 10,
+            "precedence": 16,
+            "insertionPoint": "beforeStart",
+            "column": 41,
+            "replacement": "\"",
+            "endColumn": 41
+          }
+        ]
+      }
+    },
+    {
+      "file": "tests/cssort/sync-diff.sh",
+      "line": 10,
+      "endLine": 10,
+      "column": 56,
+      "endColumn": 69,
+      "level": "info",
+      "code": 2086,
+      "message": "Double quote to prevent globbing and word splitting.",
+      "fix": {
+        "replacements": [
+          {
+            "line": 10,
+            "endLine": 10,
+            "precedence": 17,
+            "insertionPoint": "afterEnd",
+            "column": 56,
+            "replacement": "\"",
+            "endColumn": 56
+          },
+          {
+            "line": 10,
+            "endLine": 10,
+            "precedence": 17,
+            "insertionPoint": "beforeStart",
+            "column": 69,
+            "replacement": "\"",
+            "endColumn": 69
+          }
+        ]
+      }
+    },
+    {
+      "file": "tests/cslinker/0002-xml-parser/runtest.sh",
+      "line": 6,
+      "endLine": 6,
+      "column": 3,
+      "endColumn": 36,
+      "level": "info",
+      "code": 1091,
+      "message": "Not following: ./../../test-lib.sh was not specified as input (see shellcheck -x).",
+      "fix": null
+    },
+    {
+      "file": "tests/cslinker/0002-xml-parser/runtest.sh",
+      "line": 6,
+      "endLine": 6,
+      "column": 3,
+      "endColumn": 18,
+      "level": "info",
+      "code": 2086,
+      "message": "Double quote to prevent globbing and word splitting.",
+      "fix": {
+        "replacements": [
+          {
+            "line": 6,
+            "endLine": 6,
+            "precedence": 7,
+            "insertionPoint": "afterEnd",
+            "column": 3,
+            "replacement": "\"",
+            "endColumn": 3
+          },
+          {
+            "line": 6,
+            "endLine": 6,
+            "precedence": 7,
+            "insertionPoint": "beforeStart",
+            "column": 18,
+            "replacement": "\"",
+            "endColumn": 18
+          }
+        ]
+      }
+    },
+    {
+      "file": "tests/cslinker/0001-smoke/runtest.sh",
+      "line": 6,
+      "endLine": 6,
+      "column": 3,
+      "endColumn": 36,
+      "level": "info",
+      "code": 1091,
+      "message": "Not following: ./../../test-lib.sh was not specified as input (see shellcheck -x).",
+      "fix": null
+    },
+    {
+      "file": "tests/cslinker/0001-smoke/runtest.sh",
+      "line": 6,
+      "endLine": 6,
+      "column": 3,
+      "endColumn": 18,
+      "level": "info",
+      "code": 2086,
+      "message": "Double quote to prevent globbing and word splitting.",
+      "fix": {
+        "replacements": [
+          {
+            "line": 6,
+            "endLine": 6,
+            "precedence": 7,
+            "insertionPoint": "afterEnd",
+            "column": 3,
+            "replacement": "\"",
+            "endColumn": 3
+          },
+          {
+            "line": 6,
+            "endLine": 6,
+            "precedence": 7,
+            "insertionPoint": "beforeStart",
+            "column": 18,
+            "replacement": "\"",
+            "endColumn": 18
+          }
+        ]
+      }
+    },
+    {
+      "file": "tests/csgrep/sync.sh",
+      "line": 1,
+      "endLine": 1,
+      "column": 1,
+      "endColumn": 1,
+      "level": "error",
+      "code": 1071,
+      "message": "ShellCheck only supports sh/bash/dash/ksh scripts. Sorry!",
+      "fix": null
+    },
+    {
+      "file": "tests/csdiff/sync-diff.sh",
+      "line": 2,
+      "endLine": 2,
+      "column": 8,
+      "endColumn": 14,
+      "level": "warning",
+      "code": 2155,
+      "message": "Declare and assign separately to avoid masking return values.",
+      "fix": null
+    },
+    {
+      "file": "tests/csdiff/sync-diff.sh",
+      "line": 2,
+      "endLine": 2,
+      "column": 16,
+      "endColumn": 59,
+      "level": "style",
+      "code": 2006,
+      "message": "Use $(...) notation instead of legacy backticked `...`.",
+      "fix": {
+        "replacements": [
+          {
+            "line": 2,
+            "endLine": 2,
+            "precedence": 9,
+            "insertionPoint": "afterEnd",
+            "column": 16,
+            "replacement": "$(",
+            "endColumn": 17
+          },
+          {
+            "line": 2,
+            "endLine": 2,
+            "precedence": 9,
+            "insertionPoint": "beforeStart",
+            "column": 58,
+            "replacement": ")",
+            "endColumn": 59
+          }
+        ]
+      }
+    },
+    {
+      "file": "tests/csdiff/sync-diff.sh",
+      "line": 5,
+      "endLine": 5,
+      "column": 8,
+      "endColumn": 10,
+      "level": "info",
+      "code": 2086,
+      "message": "Double quote to prevent globbing and word splitting.",
+      "fix": {
+        "replacements": [
+          {
+            "line": 5,
+            "endLine": 5,
+            "precedence": 14,
+            "insertionPoint": "afterEnd",
+            "column": 8,
+            "replacement": "\"",
+            "endColumn": 8
+          },
+          {
+            "line": 5,
+            "endLine": 5,
+            "precedence": 14,
+            "insertionPoint": "beforeStart",
+            "column": 10,
+            "replacement": "\"",
+            "endColumn": 10
+          }
+        ]
+      }
+    },
+    {
+      "file": "tests/csdiff/sync-diff.sh",
+      "line": 10,
+      "endLine": 10,
+      "column": 24,
+      "endColumn": 30,
+      "level": "info",
+      "code": 2086,
+      "message": "Double quote to prevent globbing and word splitting.",
+      "fix": {
+        "replacements": [
+          {
+            "line": 10,
+            "endLine": 10,
+            "precedence": 16,
+            "insertionPoint": "afterEnd",
+            "column": 24,
+            "replacement": "\"",
+            "endColumn": 24
+          },
+          {
+            "line": 10,
+            "endLine": 10,
+            "precedence": 16,
+            "insertionPoint": "beforeStart",
+            "column": 30,
+            "replacement": "\"",
+            "endColumn": 30
+          }
+        ]
+      }
+    },
+    {
+      "file": "tests/csdiff/sync-diff.sh",
+      "line": 10,
+      "endLine": 10,
+      "column": 39,
+      "endColumn": 45,
+      "level": "info",
+      "code": 2086,
+      "message": "Double quote to prevent globbing and word splitting.",
+      "fix": {
+        "replacements": [
+          {
+            "line": 10,
+            "endLine": 10,
+            "precedence": 16,
+            "insertionPoint": "afterEnd",
+            "column": 39,
+            "replacement": "\"",
+            "endColumn": 39
+          },
+          {
+            "line": 10,
+            "endLine": 10,
+            "precedence": 16,
+            "insertionPoint": "beforeStart",
+            "column": 45,
+            "replacement": "\"",
+            "endColumn": 45
+          }
+        ]
+      }
+    },
+    {
+      "file": "tests/csdiff/sync-diff.sh",
+      "line": 10,
+      "endLine": 10,
+      "column": 56,
+      "endColumn": 62,
+      "level": "info",
+      "code": 2086,
+      "message": "Double quote to prevent globbing and word splitting.",
+      "fix": {
+        "replacements": [
+          {
+            "line": 10,
+            "endLine": 10,
+            "precedence": 17,
+            "insertionPoint": "afterEnd",
+            "column": 56,
+            "replacement": "\"",
+            "endColumn": 56
+          },
+          {
+            "line": 10,
+            "endLine": 10,
+            "precedence": 17,
+            "insertionPoint": "beforeStart",
+            "column": 62,
+            "replacement": "\"",
+            "endColumn": 62
+          }
+        ]
+      }
+    },
+    {
+      "file": "tests/csdiff/sync-diff.sh",
+      "line": 11,
+      "endLine": 11,
+      "column": 24,
+      "endColumn": 30,
+      "level": "info",
+      "code": 2086,
+      "message": "Double quote to prevent globbing and word splitting.",
+      "fix": {
+        "replacements": [
+          {
+            "line": 11,
+            "endLine": 11,
+            "precedence": 16,
+            "insertionPoint": "afterEnd",
+            "column": 24,
+            "replacement": "\"",
+            "endColumn": 24
+          },
+          {
+            "line": 11,
+            "endLine": 11,
+            "precedence": 16,
+            "insertionPoint": "beforeStart",
+            "column": 30,
+            "replacement": "\"",
+            "endColumn": 30
+          }
+        ]
+      }
+    },
+    {
+      "file": "tests/csdiff/sync-diff.sh",
+      "line": 11,
+      "endLine": 11,
+      "column": 39,
+      "endColumn": 45,
+      "level": "info",
+      "code": 2086,
+      "message": "Double quote to prevent globbing and word splitting.",
+      "fix": {
+        "replacements": [
+          {
+            "line": 11,
+            "endLine": 11,
+            "precedence": 16,
+            "insertionPoint": "afterEnd",
+            "column": 39,
+            "replacement": "\"",
+            "endColumn": 39
+          },
+          {
+            "line": 11,
+            "endLine": 11,
+            "precedence": 16,
+            "insertionPoint": "beforeStart",
+            "column": 45,
+            "replacement": "\"",
+            "endColumn": 45
+          }
+        ]
+      }
+    },
+    {
+      "file": "tests/csdiff/sync-diff.sh",
+      "line": 11,
+      "endLine": 11,
+      "column": 56,
+      "endColumn": 62,
+      "level": "info",
+      "code": 2086,
+      "message": "Double quote to prevent globbing and word splitting.",
+      "fix": {
+        "replacements": [
+          {
+            "line": 11,
+            "endLine": 11,
+            "precedence": 17,
+            "insertionPoint": "afterEnd",
+            "column": 56,
+            "replacement": "\"",
+            "endColumn": 56
+          },
+          {
+            "line": 11,
+            "endLine": 11,
+            "precedence": 17,
+            "insertionPoint": "beforeStart",
+            "column": 62,
+            "replacement": "\"",
+            "endColumn": 62
+          }
+        ]
+      }
+    },
+    {
+      "file": "tests/csdiff/sync-diff.sh",
+      "line": 12,
+      "endLine": 12,
+      "column": 24,
+      "endColumn": 30,
+      "level": "info",
+      "code": 2086,
+      "message": "Double quote to prevent globbing and word splitting.",
+      "fix": {
+        "replacements": [
+          {
+            "line": 12,
+            "endLine": 12,
+            "precedence": 16,
+            "insertionPoint": "afterEnd",
+            "column": 24,
+            "replacement": "\"",
+            "endColumn": 24
+          },
+          {
+            "line": 12,
+            "endLine": 12,
+            "precedence": 16,
+            "insertionPoint": "beforeStart",
+            "column": 30,
+            "replacement": "\"",
+            "endColumn": 30
+          }
+        ]
+      }
+    },
+    {
+      "file": "tests/csdiff/sync-diff.sh",
+      "line": 12,
+      "endLine": 12,
+      "column": 39,
+      "endColumn": 45,
+      "level": "info",
+      "code": 2086,
+      "message": "Double quote to prevent globbing and word splitting.",
+      "fix": {
+        "replacements": [
+          {
+            "line": 12,
+            "endLine": 12,
+            "precedence": 16,
+            "insertionPoint": "afterEnd",
+            "column": 39,
+            "replacement": "\"",
+            "endColumn": 39
+          },
+          {
+            "line": 12,
+            "endLine": 12,
+            "precedence": 16,
+            "insertionPoint": "beforeStart",
+            "column": 45,
+            "replacement": "\"",
+            "endColumn": 45
+          }
+        ]
+      }
+    },
+    {
+      "file": "tests/csdiff/sync-diff.sh",
+      "line": 12,
+      "endLine": 12,
+      "column": 56,
+      "endColumn": 62,
+      "level": "info",
+      "code": 2086,
+      "message": "Double quote to prevent globbing and word splitting.",
+      "fix": {
+        "replacements": [
+          {
+            "line": 12,
+            "endLine": 12,
+            "precedence": 17,
+            "insertionPoint": "afterEnd",
+            "column": 56,
+            "replacement": "\"",
+            "endColumn": 56
+          },
+          {
+            "line": 12,
+            "endLine": 12,
+            "precedence": 17,
+            "insertionPoint": "beforeStart",
+            "column": 62,
+            "replacement": "\"",
+            "endColumn": 62
+          }
+        ]
+      }
+    },
+    {
+      "file": "tests/csdiff/sync-diff.sh",
+      "line": 13,
+      "endLine": 13,
+      "column": 24,
+      "endColumn": 30,
+      "level": "info",
+      "code": 2086,
+      "message": "Double quote to prevent globbing and word splitting.",
+      "fix": {
+        "replacements": [
+          {
+            "line": 13,
+            "endLine": 13,
+            "precedence": 16,
+            "insertionPoint": "afterEnd",
+            "column": 24,
+            "replacement": "\"",
+            "endColumn": 24
+          },
+          {
+            "line": 13,
+            "endLine": 13,
+            "precedence": 16,
+            "insertionPoint": "beforeStart",
+            "column": 30,
+            "replacement": "\"",
+            "endColumn": 30
+          }
+        ]
+      }
+    },
+    {
+      "file": "tests/csdiff/sync-diff.sh",
+      "line": 13,
+      "endLine": 13,
+      "column": 39,
+      "endColumn": 45,
+      "level": "info",
+      "code": 2086,
+      "message": "Double quote to prevent globbing and word splitting.",
+      "fix": {
+        "replacements": [
+          {
+            "line": 13,
+            "endLine": 13,
+            "precedence": 16,
+            "insertionPoint": "afterEnd",
+            "column": 39,
+            "replacement": "\"",
+            "endColumn": 39
+          },
+          {
+            "line": 13,
+            "endLine": 13,
+            "precedence": 16,
+            "insertionPoint": "beforeStart",
+            "column": 45,
+            "replacement": "\"",
+            "endColumn": 45
+          }
+        ]
+      }
+    },
+    {
+      "file": "tests/csdiff/sync-diff.sh",
+      "line": 13,
+      "endLine": 13,
+      "column": 56,
+      "endColumn": 62,
+      "level": "info",
+      "code": 2086,
+      "message": "Double quote to prevent globbing and word splitting.",
+      "fix": {
+        "replacements": [
+          {
+            "line": 13,
+            "endLine": 13,
+            "precedence": 17,
+            "insertionPoint": "afterEnd",
+            "column": 56,
+            "replacement": "\"",
+            "endColumn": 56
+          },
+          {
+            "line": 13,
+            "endLine": 13,
+            "precedence": 17,
+            "insertionPoint": "beforeStart",
+            "column": 62,
+            "replacement": "\"",
+            "endColumn": 62
+          }
+        ]
+      }
+    },
+    {
+      "file": "tests/csdiff/sync-diff.sh",
+      "line": 25,
+      "endLine": 25,
+      "column": 25,
+      "endColumn": 31,
+      "level": "info",
+      "code": 2086,
+      "message": "Double quote to prevent globbing and word splitting.",
+      "fix": {
+        "replacements": [
+          {
+            "line": 25,
+            "endLine": 25,
+            "precedence": 13,
+            "insertionPoint": "afterEnd",
+            "column": 25,
+            "replacement": "\"",
+            "endColumn": 25
+          },
+          {
+            "line": 25,
+            "endLine": 25,
+            "precedence": 13,
+            "insertionPoint": "beforeStart",
+            "column": 31,
+            "replacement": "\"",
+            "endColumn": 31
+          }
+        ]
+      }
+    },
+    {
+      "file": "tests/csdiff/sync-diff.sh",
+      "line": 25,
+      "endLine": 25,
+      "column": 44,
+      "endColumn": 50,
+      "level": "info",
+      "code": 2086,
+      "message": "Double quote to prevent globbing and word splitting.",
+      "fix": {
+        "replacements": [
+          {
+            "line": 25,
+            "endLine": 25,
+            "precedence": 13,
+            "insertionPoint": "afterEnd",
+            "column": 44,
+            "replacement": "\"",
+            "endColumn": 44
+          },
+          {
+            "line": 25,
+            "endLine": 25,
+            "precedence": 13,
+            "insertionPoint": "beforeStart",
+            "column": 50,
+            "replacement": "\"",
+            "endColumn": 50
+          }
+        ]
+      }
+    },
+    {
+      "file": "tests/csdiff/sync-diff.sh",
+      "line": 25,
+      "endLine": 25,
+      "column": 59,
+      "endColumn": 65,
+      "level": "info",
+      "code": 2086,
+      "message": "Double quote to prevent globbing and word splitting.",
+      "fix": {
+        "replacements": [
+          {
+            "line": 25,
+            "endLine": 25,
+            "precedence": 13,
+            "insertionPoint": "afterEnd",
+            "column": 59,
+            "replacement": "\"",
+            "endColumn": 59
+          },
+          {
+            "line": 25,
+            "endLine": 25,
+            "precedence": 13,
+            "insertionPoint": "beforeStart",
+            "column": 65,
+            "replacement": "\"",
+            "endColumn": 65
+          }
+        ]
+      }
+    },
+    {
+      "file": "tests/csdiff/sync-diff.sh",
+      "line": 25,
+      "endLine": 25,
+      "column": 76,
+      "endColumn": 82,
+      "level": "info",
+      "code": 2086,
+      "message": "Double quote to prevent globbing and word splitting.",
+      "fix": {
+        "replacements": [
+          {
+            "line": 25,
+            "endLine": 25,
+            "precedence": 14,
+            "insertionPoint": "afterEnd",
+            "column": 76,
+            "replacement": "\"",
+            "endColumn": 76
+          },
+          {
+            "line": 25,
+            "endLine": 25,
+            "precedence": 14,
+            "insertionPoint": "beforeStart",
+            "column": 82,
+            "replacement": "\"",
+            "endColumn": 82
+          }
+        ]
+      }
+    },
+    {
+      "file": "tests/csdiff/sync-diff.sh",
+      "line": 26,
+      "endLine": 26,
+      "column": 25,
+      "endColumn": 31,
+      "level": "info",
+      "code": 2086,
+      "message": "Double quote to prevent globbing and word splitting.",
+      "fix": {
+        "replacements": [
+          {
+            "line": 26,
+            "endLine": 26,
+            "precedence": 13,
+            "insertionPoint": "afterEnd",
+            "column": 25,
+            "replacement": "\"",
+            "endColumn": 25
+          },
+          {
+            "line": 26,
+            "endLine": 26,
+            "precedence": 13,
+            "insertionPoint": "beforeStart",
+            "column": 31,
+            "replacement": "\"",
+            "endColumn": 31
+          }
+        ]
+      }
+    },
+    {
+      "file": "tests/csdiff/sync-diff.sh",
+      "line": 26,
+      "endLine": 26,
+      "column": 44,
+      "endColumn": 50,
+      "level": "info",
+      "code": 2086,
+      "message": "Double quote to prevent globbing and word splitting.",
+      "fix": {
+        "replacements": [
+          {
+            "line": 26,
+            "endLine": 26,
+            "precedence": 13,
+            "insertionPoint": "afterEnd",
+            "column": 44,
+            "replacement": "\"",
+            "endColumn": 44
+          },
+          {
+            "line": 26,
+            "endLine": 26,
+            "precedence": 13,
+            "insertionPoint": "beforeStart",
+            "column": 50,
+            "replacement": "\"",
+            "endColumn": 50
+          }
+        ]
+      }
+    },
+    {
+      "file": "tests/csdiff/sync-diff.sh",
+      "line": 26,
+      "endLine": 26,
+      "column": 59,
+      "endColumn": 65,
+      "level": "info",
+      "code": 2086,
+      "message": "Double quote to prevent globbing and word splitting.",
+      "fix": {
+        "replacements": [
+          {
+            "line": 26,
+            "endLine": 26,
+            "precedence": 13,
+            "insertionPoint": "afterEnd",
+            "column": 59,
+            "replacement": "\"",
+            "endColumn": 59
+          },
+          {
+            "line": 26,
+            "endLine": 26,
+            "precedence": 13,
+            "insertionPoint": "beforeStart",
+            "column": 65,
+            "replacement": "\"",
+            "endColumn": 65
+          }
+        ]
+      }
+    },
+    {
+      "file": "tests/csdiff/sync-diff.sh",
+      "line": 26,
+      "endLine": 26,
+      "column": 76,
+      "endColumn": 82,
+      "level": "info",
+      "code": 2086,
+      "message": "Double quote to prevent globbing and word splitting.",
+      "fix": {
+        "replacements": [
+          {
+            "line": 26,
+            "endLine": 26,
+            "precedence": 14,
+            "insertionPoint": "afterEnd",
+            "column": 76,
+            "replacement": "\"",
+            "endColumn": 76
+          },
+          {
+            "line": 26,
+            "endLine": 26,
+            "precedence": 14,
+            "insertionPoint": "beforeStart",
+            "column": 82,
+            "replacement": "\"",
+            "endColumn": 82
+          }
+        ]
+      }
+    },
+    {
+      "file": "tests/csdiff/sync-diff.sh",
+      "line": 27,
+      "endLine": 27,
+      "column": 25,
+      "endColumn": 31,
+      "level": "info",
+      "code": 2086,
+      "message": "Double quote to prevent globbing and word splitting.",
+      "fix": {
+        "replacements": [
+          {
+            "line": 27,
+            "endLine": 27,
+            "precedence": 13,
+            "insertionPoint": "afterEnd",
+            "column": 25,
+            "replacement": "\"",
+            "endColumn": 25
+          },
+          {
+            "line": 27,
+            "endLine": 27,
+            "precedence": 13,
+            "insertionPoint": "beforeStart",
+            "column": 31,
+            "replacement": "\"",
+            "endColumn": 31
+          }
+        ]
+      }
+    },
+    {
+      "file": "tests/csdiff/sync-diff.sh",
+      "line": 27,
+      "endLine": 27,
+      "column": 44,
+      "endColumn": 50,
+      "level": "info",
+      "code": 2086,
+      "message": "Double quote to prevent globbing and word splitting.",
+      "fix": {
+        "replacements": [
+          {
+            "line": 27,
+            "endLine": 27,
+            "precedence": 13,
+            "insertionPoint": "afterEnd",
+            "column": 44,
+            "replacement": "\"",
+            "endColumn": 44
+          },
+          {
+            "line": 27,
+            "endLine": 27,
+            "precedence": 13,
+            "insertionPoint": "beforeStart",
+            "column": 50,
+            "replacement": "\"",
+            "endColumn": 50
+          }
+        ]
+      }
+    },
+    {
+      "file": "tests/csdiff/sync-diff.sh",
+      "line": 27,
+      "endLine": 27,
+      "column": 59,
+      "endColumn": 65,
+      "level": "info",
+      "code": 2086,
+      "message": "Double quote to prevent globbing and word splitting.",
+      "fix": {
+        "replacements": [
+          {
+            "line": 27,
+            "endLine": 27,
+            "precedence": 13,
+            "insertionPoint": "afterEnd",
+            "column": 59,
+            "replacement": "\"",
+            "endColumn": 59
+          },
+          {
+            "line": 27,
+            "endLine": 27,
+            "precedence": 13,
+            "insertionPoint": "beforeStart",
+            "column": 65,
+            "replacement": "\"",
+            "endColumn": 65
+          }
+        ]
+      }
+    },
+    {
+      "file": "tests/csdiff/sync-diff.sh",
+      "line": 27,
+      "endLine": 27,
+      "column": 76,
+      "endColumn": 82,
+      "level": "info",
+      "code": 2086,
+      "message": "Double quote to prevent globbing and word splitting.",
+      "fix": {
+        "replacements": [
+          {
+            "line": 27,
+            "endLine": 27,
+            "precedence": 14,
+            "insertionPoint": "afterEnd",
+            "column": 76,
+            "replacement": "\"",
+            "endColumn": 76
+          },
+          {
+            "line": 27,
+            "endLine": 27,
+            "precedence": 14,
+            "insertionPoint": "beforeStart",
+            "column": 82,
+            "replacement": "\"",
+            "endColumn": 82
+          }
+        ]
+      }
+    },
+    {
+      "file": "tests/csdiff/sync-diff.sh",
+      "line": 28,
+      "endLine": 28,
+      "column": 25,
+      "endColumn": 31,
+      "level": "info",
+      "code": 2086,
+      "message": "Double quote to prevent globbing and word splitting.",
+      "fix": {
+        "replacements": [
+          {
+            "line": 28,
+            "endLine": 28,
+            "precedence": 13,
+            "insertionPoint": "afterEnd",
+            "column": 25,
+            "replacement": "\"",
+            "endColumn": 25
+          },
+          {
+            "line": 28,
+            "endLine": 28,
+            "precedence": 13,
+            "insertionPoint": "beforeStart",
+            "column": 31,
+            "replacement": "\"",
+            "endColumn": 31
+          }
+        ]
+      }
+    },
+    {
+      "file": "tests/csdiff/sync-diff.sh",
+      "line": 28,
+      "endLine": 28,
+      "column": 44,
+      "endColumn": 50,
+      "level": "info",
+      "code": 2086,
+      "message": "Double quote to prevent globbing and word splitting.",
+      "fix": {
+        "replacements": [
+          {
+            "line": 28,
+            "endLine": 28,
+            "precedence": 13,
+            "insertionPoint": "afterEnd",
+            "column": 44,
+            "replacement": "\"",
+            "endColumn": 44
+          },
+          {
+            "line": 28,
+            "endLine": 28,
+            "precedence": 13,
+            "insertionPoint": "beforeStart",
+            "column": 50,
+            "replacement": "\"",
+            "endColumn": 50
+          }
+        ]
+      }
+    },
+    {
+      "file": "tests/csdiff/sync-diff.sh",
+      "line": 28,
+      "endLine": 28,
+      "column": 59,
+      "endColumn": 65,
+      "level": "info",
+      "code": 2086,
+      "message": "Double quote to prevent globbing and word splitting.",
+      "fix": {
+        "replacements": [
+          {
+            "line": 28,
+            "endLine": 28,
+            "precedence": 13,
+            "insertionPoint": "afterEnd",
+            "column": 59,
+            "replacement": "\"",
+            "endColumn": 59
+          },
+          {
+            "line": 28,
+            "endLine": 28,
+            "precedence": 13,
+            "insertionPoint": "beforeStart",
+            "column": 65,
+            "replacement": "\"",
+            "endColumn": 65
+          }
+        ]
+      }
+    },
+    {
+      "file": "tests/csdiff/sync-diff.sh",
+      "line": 28,
+      "endLine": 28,
+      "column": 76,
+      "endColumn": 82,
+      "level": "info",
+      "code": 2086,
+      "message": "Double quote to prevent globbing and word splitting.",
+      "fix": {
+        "replacements": [
+          {
+            "line": 28,
+            "endLine": 28,
+            "precedence": 14,
+            "insertionPoint": "afterEnd",
+            "column": 76,
+            "replacement": "\"",
+            "endColumn": 76
+          },
+          {
+            "line": 28,
+            "endLine": 28,
+            "precedence": 14,
+            "insertionPoint": "beforeStart",
+            "column": 82,
+            "replacement": "\"",
+            "endColumn": 82
+          }
+        ]
+      }
+    },
+    {
+      "file": "tests/csdiff/diff-misc/sync.sh",
+      "line": 1,
+      "endLine": 1,
+      "column": 1,
+      "endColumn": 1,
+      "level": "error",
+      "code": 1071,
+      "message": "ShellCheck only supports sh/bash/dash/ksh scripts. Sorry!",
+      "fix": null
+    },
+    {
+      "file": "make-srpm.sh",
+      "line": 41,
+      "endLine": 41,
+      "column": 8,
+      "endColumn": 37,
+      "level": "style",
+      "code": 2001,
+      "message": "See if you can use ${variable//search/replace} instead.",
+      "fix": null
+    },
+    {
+      "file": "make-srpm.sh",
+      "line": 46,
+      "endLine": 46,
+      "column": 8,
+      "endColumn": 48,
+      "level": "style",
+      "code": 2001,
+      "message": "See if you can use ${variable//search/replace} instead.",
+      "fix": null
+    },
+    {
+      "file": "make-srpm.sh",
+      "line": 58,
+      "endLine": 58,
+      "column": 19,
+      "endColumn": 23,
+      "level": "warning",
+      "code": 2064,
+      "message": "Use single quotes, otherwise this expands now rather than when signalled.",
+      "fix": null
+    }
+  ]
+}
