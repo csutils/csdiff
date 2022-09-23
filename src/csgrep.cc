@@ -551,17 +551,46 @@ void printUsage(TStream &str, const TDesc &desc)
     desc.print(str);
 }
 
-template <class TDecorator>
-bool chainDecorator(
+template <class TDecorator, class TArg>
+bool chainDecoratorGeneric(
         AbstractWriter            **pEng,
         const po::variables_map    &vm,
         const char                 *key)
 {
-    if (!vm.count(key))
+    const auto it = vm.find(key);
+    if (it == vm.end())
         // nothing to chain
         return true;
 
-    const int val = vm[key].as<int>();
+    const auto &val = it->second.as<TArg>();
+
+    try {
+        // chain the decorator
+        *pEng = new TDecorator(*pEng, val);
+        return true;
+    }
+    catch (const std::runtime_error &e) {
+        std::cerr << name << ": error: invalid value for --"
+            << key << ": " << e.what() << "\n";
+
+        // *pEng is already deleted by destructor of GenericAbstractFilter
+        *pEng = nullptr;
+        return false;
+    }
+}
+
+template <class TDecorator>
+bool chainDecoratorIntArg(
+        AbstractWriter            **pEng,
+        const po::variables_map    &vm,
+        const char                 *key)
+{
+    const auto it = vm.find(key);
+    if (it == vm.end())
+        // nothing to chain
+        return true;
+
+    const int val = it->second.as<int>();
     if (val < 0) {
         std::cerr << name << ": error: invalid value for --"
             << key << ": " << val << "\n";
@@ -678,10 +707,10 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    const po::variables_map::const_iterator it = vm.find("strip-path-prefix");
-    if (it != vm.end())
-        // insert PathStripper into the chain
-        eng = new PathStripper(eng, it->second.as<std::string>());
+    // insert PathStripper into the chain if requested
+    if (!chainDecoratorGeneric<PathStripper, string>(&eng, vm,
+                "strip-path-prefix"))
+        return 1;
 
     // chain all filters
     if (!chainFilters(&eng, vm))
@@ -694,8 +723,8 @@ int main(int argc, char *argv[])
     if (vm.count("remove-duplicates"))
         eng = new DuplicateFilter(eng);
 
-    if (!chainDecorator<EventPrunner>(&eng, vm, "prune-events")
-            || !chainDecorator<CtxEmbedder>(&eng, vm, "embed-context"))
+    if (!chainDecoratorIntArg<EventPrunner>(&eng, vm, "prune-events")
+            || !chainDecoratorIntArg<CtxEmbedder>(&eng, vm, "embed-context"))
         // error message already printed, eng already feeed
         return 1;
 
