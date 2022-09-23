@@ -63,7 +63,7 @@ version.cc: src/version.cc
 
 src/version.cc:
 	@if test -e .git; then \
-		cmd='git describe --tags | sed -e "s/^csdiff-//" -e "s/-.*-/.$$(git log --pretty="%cd" --date=iso -1 | tr -d ":-" | tr " " . | cut -d. -f 1,2)./"'; \
+		cmd='git describe --always | sed -e "s/^csdiff-//" -e "s/-.*-/.$$(git log --pretty="%cd" --date=iso -1 | tr -d ":-" | tr " " . | cut -d. -f 1,2)./"'; \
 	else \
 		cmd='basename $$(readlink -f .) | cut -f2 -d-'; \
 	fi \
