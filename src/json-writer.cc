@@ -140,7 +140,7 @@ void SimpleTreeEncoder::writeTo(std::ostream &str)
 // validation: https://sarifweb.azurewebsites.net/Validation
 class SarifTreeEncoder: public AbstractTreeEncoder {
     public:
-        SarifTreeEncoder();
+        SarifTreeEncoder() = default;
 
         /// import supported scan properties
         void importScanProps(const TScanProps &) override;
@@ -152,6 +152,7 @@ class SarifTreeEncoder: public AbstractTreeEncoder {
         void writeTo(std::ostream &) override;
 
     private:
+        void initToolVersion();
         void serializeCweMap();
 
         typedef std::map<std::string, int>  TCweMap;
@@ -161,13 +162,57 @@ class SarifTreeEncoder: public AbstractTreeEncoder {
         PTree                       results_;
 };
 
-SarifTreeEncoder::SarifTreeEncoder()
+void SarifTreeEncoder::initToolVersion()
 {
-    // mandatory: tool/driver
-    driver_.put<std::string>("name", "csdiff");
-    driver_.put<std::string>("version", CS_VERSION);
-    driver_.put<std::string>("informationUri",
-            "https://github.com/csutils/csdiff");
+    std::string tool;
+    auto it = scanProps_.find("tool");
+    if (scanProps_.end() != it)
+        // read "tool" scan property
+        tool = it->second;
+
+    std::string ver;
+    it = scanProps_.find("tool-version");
+    if (scanProps_.end() != it) {
+        // read "tool-version" scan property
+        ver = it->second;
+
+        if (tool.empty()) {
+            // try to split the "{tool}-{version}" string by the last '-'
+            const size_t lastDashAt = ver.rfind('-');
+            if (std::string::npos != lastDashAt) {
+                // read tool from the "{tool}-{version}" string
+                tool = ver.substr(0, lastDashAt);
+
+                // remove "{tool}-" from "{tool}-{version}"
+                ver.erase(0U, lastDashAt);
+            }
+        }
+        else {
+            // try to find "{tool}-" prefix in the "tool-version" scan property
+            const std::string prefix = tool + "-";
+            if (0U == ver.find(prefix))
+                ver.erase(0U, prefix.size());
+        }
+    }
+
+    std::string uri;
+    if (tool.empty()) { 
+        // unable to read tool name --> fallback to csdiff as the tool
+        tool = "csdiff";
+        ver = CS_VERSION;
+        uri = "https://github.com/csutils/csdiff";
+    }
+    else if (scanProps_.end() != (it = scanProps_.find("tool-url")))
+        // read "tool-url" scan property
+        uri = it->second;
+
+    driver_.put<std::string>("name", tool);
+
+    if (!ver.empty())
+        driver_.put<std::string>("version", ver);
+
+    if (!uri.empty())
+        driver_.put<std::string>("informationUri", uri);
 }
 
 void SarifTreeEncoder::serializeCweMap()
@@ -375,6 +420,8 @@ void SarifTreeEncoder::writeTo(std::ostream &str)
         appendNode(&propsList, extProps);
         root.put_child("inlineExternalProperties", propsList);
     }
+
+    this->initToolVersion();
 
     if (!cweMap_.empty())
         // needs to run before we pick driver_

@@ -33,9 +33,8 @@
         {
             "tool": {
                 "driver": {
-                    "name": "csdiff",
+                    "name": "csmock",
                     "version": "",
-                    "informationUri": "https://github.com/csutils/csdiff",
                     "rules": [
                         {
                             "id": "UNCAUGHT_EXCEPT: root_function",
