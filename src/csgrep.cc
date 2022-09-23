@@ -388,6 +388,54 @@ class DropScanProps: public GenericAbstractFilter {
         const TScanProps emp_;
 };
 
+class ScanPropSetter: public GenericAbstractFilter {
+    public:
+        ScanPropSetter(AbstractWriter *agent, const TStringList &propList);
+
+        /// override specified scan properties
+        void setScanProps(const TScanProps &origProps) override;
+
+    private:
+        // key/val pairs are stored in a vector
+        using TItem = std::pair<std::string, std::string>;
+        using TList = std::vector<TItem>;
+        TList itemList_;
+};
+
+ScanPropSetter::ScanPropSetter(
+        AbstractWriter             *agent,
+        const TStringList          &propList):
+    GenericAbstractFilter(agent)
+{
+    // iterate over the given NAME:VALUE strings
+    for (const std::string &str : propList) {
+        // split the string by the first occurrence of ':'
+        size_t ddAt = str.find(':');
+        if (std::string::npos == ddAt) {
+            const auto msg = "missing ':' in " + str;
+            throw std::runtime_error(msg);
+        }
+
+        // store the key/val pair into the vector
+        itemList_.emplace_back(
+                /* key */ str.substr(0, ddAt),
+                /* val */ str.substr(ddAt + 1));
+    }
+}
+
+void ScanPropSetter::setScanProps(const TScanProps &origProps)
+{
+    // we need to copy the given map
+    TScanProps props = origProps;
+
+    // apply specified changes
+    for (const auto &item : itemList_)
+        props[item./* key */first] = item./* val */second;
+
+    // forward the result
+    agent_->setScanProps(props);
+}
+
 class DuplicateFilter: public AbstractFilter {
     public:
         DuplicateFilter(AbstractWriter *agent):
@@ -632,6 +680,7 @@ int main(int argc, char *argv[])
             ("embed-context,U",     po::value<int>(),           "embed a number of lines of context from the source file for the key event")
             ("prune-events",        po::value<int>(),           "event is preserved if its verbosity level is below the given number")
             ("remove-duplicates,u",                             "remove defects that are not unique by their key event")
+            ("set-scan-prop",       po::value<TStringList>(),   "NAME:VALUE pair to override the specified scan property")
             ("strip-path-prefix",   po::value<string>(),        "string prefix to strip from path (applied after all filters)")
 
             ("ignore-case,i",                                   "ignore case when matching regular expressions")
@@ -710,6 +759,11 @@ int main(int argc, char *argv[])
     // insert PathStripper into the chain if requested
     if (!chainDecoratorGeneric<PathStripper, string>(&eng, vm,
                 "strip-path-prefix"))
+        return 1;
+
+    // insert ScanPropSetter into the chain if requested
+    if (!chainDecoratorGeneric<ScanPropSetter, TStringList>(&eng, vm,
+            "set-scan-prop"))
         return 1;
 
     // chain all filters

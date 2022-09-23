@@ -1,0 +1,2 @@
+./contrib/guide/get_started/00-cleanup.sh:6:1: warning: Use 'cd ... || exit' or 'cd ... || return' in case cd fails. [SC2164]
+./contrib/guide/get_started/12-datadir-create.sh:4:7: warning: When used with -p, -m only applies to the deepest directory. [SC2174]
