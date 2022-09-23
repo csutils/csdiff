@@ -41,6 +41,10 @@ class GenericAbstractFilter: public AbstractWriter {
 
         ~GenericAbstractFilter() override = default;
 
+        void handleDef(const Defect &def) override {
+            agent_->handleDef(def);
+        }
+
         void flush() override {
             agent_->flush();
         }

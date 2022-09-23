@@ -384,12 +384,6 @@ class DropScanProps: public GenericAbstractFilter {
             return emp_;
         }
 
-    protected:
-        /// trivial pass-through
-        void handleDef(const Defect &def) override {
-            agent_->handleDef(def);
-        }
-
     private:
         const TScanProps emp_;
 };
