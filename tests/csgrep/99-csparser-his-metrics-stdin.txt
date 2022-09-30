@@ -1,0 +1,1311 @@
+Error: HIS_COMF:
+/usr/include/bits/fcntl2.h:41: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#   39|   
+#   40|   __fortify_function int
+#   41|-> open (const char *__path, int __oflag, ...)
+#   42|   {
+#   43|     if (__va_arg_pack_len () > 1)
+
+Error: HIS_RETURN:
+/usr/include/bits/fcntl2.h:41: HIS_metric_violation: Measured value of RETURN metric 4.00 is higher than maximum value 1.00 allowed by the HIS metrics policy.
+#   39|   
+#   40|   __fortify_function int
+#   41|-> open (const char *__path, int __oflag, ...)
+#   42|   {
+#   43|     if (__va_arg_pack_len () > 1)
+
+Error: HIS_CALLING:
+/usr/include/bits/stdio.h:47: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#   45|   /* Read a character from stdin.  */
+#   46|   __STDIO_INLINE int
+#   47|-> getchar (void)
+#   48|   {
+#   49|     return getc (stdin);
+
+Error: HIS_COMF:
+/usr/include/bits/stdio.h:47: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#   45|   /* Read a character from stdin.  */
+#   46|   __STDIO_INLINE int
+#   47|-> getchar (void)
+#   48|   {
+#   49|     return getc (stdin);
+
+Error: HIS_CALLING:
+/usr/include/bits/stdio.h:56: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#   54|   /* Faster version when locking is not necessary.  */
+#   55|   __STDIO_INLINE int
+#   56|-> fgetc_unlocked (FILE *__fp)
+#   57|   {
+#   58|     return __getc_unlocked_body (__fp);
+
+Error: HIS_COMF:
+/usr/include/bits/stdio.h:56: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#   54|   /* Faster version when locking is not necessary.  */
+#   55|   __STDIO_INLINE int
+#   56|-> fgetc_unlocked (FILE *__fp)
+#   57|   {
+#   58|     return __getc_unlocked_body (__fp);
+
+Error: HIS_COMF:
+/usr/include/bits/stdio.h:66: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#   64|   /* This is defined in POSIX.1:1996.  */
+#   65|   __STDIO_INLINE int
+#   66|-> getc_unlocked (FILE *__fp)
+#   67|   {
+#   68|     return __getc_unlocked_body (__fp);
+
+Error: HIS_CALLING:
+/usr/include/bits/stdio.h:73: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#   71|   /* This is defined in POSIX.1:1996.  */
+#   72|   __STDIO_INLINE int
+#   73|-> getchar_unlocked (void)
+#   74|   {
+#   75|     return __getc_unlocked_body (stdin);
+
+Error: HIS_COMF:
+/usr/include/bits/stdio.h:73: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#   71|   /* This is defined in POSIX.1:1996.  */
+#   72|   __STDIO_INLINE int
+#   73|-> getchar_unlocked (void)
+#   74|   {
+#   75|     return __getc_unlocked_body (stdin);
+
+Error: HIS_CALLING:
+/usr/include/bits/stdio.h:82: HIS_metric_violation: Measured value of CALLING metric 6.00 is higher than maximum value 5.00 allowed by the HIS metrics policy.
+#   80|   /* Write a character to stdout.  */
+#   81|   __STDIO_INLINE int
+#   82|-> putchar (int __c)
+#   83|   {
+#   84|     return putc (__c, stdout);
+
+Error: HIS_COMF:
+/usr/include/bits/stdio.h:82: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#   80|   /* Write a character to stdout.  */
+#   81|   __STDIO_INLINE int
+#   82|-> putchar (int __c)
+#   83|   {
+#   84|     return putc (__c, stdout);
+
+Error: HIS_CALLING:
+/usr/include/bits/stdio.h:91: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#   89|   /* Faster version when locking is not necessary.  */
+#   90|   __STDIO_INLINE int
+#   91|-> fputc_unlocked (int __c, FILE *__stream)
+#   92|   {
+#   93|     return __putc_unlocked_body (__c, __stream);
+
+Error: HIS_COMF:
+/usr/include/bits/stdio.h:91: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#   89|   /* Faster version when locking is not necessary.  */
+#   90|   __STDIO_INLINE int
+#   91|-> fputc_unlocked (int __c, FILE *__stream)
+#   92|   {
+#   93|     return __putc_unlocked_body (__c, __stream);
+
+Error: HIS_CALLING:
+/usr/include/bits/stdio.h:101: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#   99|   /* This is defined in POSIX.1:1996.  */
+#  100|   __STDIO_INLINE int
+#  101|-> putc_unlocked (int __c, FILE *__stream)
+#  102|   {
+#  103|     return __putc_unlocked_body (__c, __stream);
+
+Error: HIS_COMF:
+/usr/include/bits/stdio.h:101: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#   99|   /* This is defined in POSIX.1:1996.  */
+#  100|   __STDIO_INLINE int
+#  101|-> putc_unlocked (int __c, FILE *__stream)
+#  102|   {
+#  103|     return __putc_unlocked_body (__c, __stream);
+
+Error: HIS_CALLING:
+/usr/include/bits/stdio.h:108: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#  106|   /* This is defined in POSIX.1:1996.  */
+#  107|   __STDIO_INLINE int
+#  108|-> putchar_unlocked (int __c)
+#  109|   {
+#  110|     return __putc_unlocked_body (__c, stdout);
+
+Error: HIS_COMF:
+/usr/include/bits/stdio.h:108: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  106|   /* This is defined in POSIX.1:1996.  */
+#  107|   __STDIO_INLINE int
+#  108|-> putchar_unlocked (int __c)
+#  109|   {
+#  110|     return __putc_unlocked_body (__c, stdout);
+
+Error: HIS_CALLING:
+/usr/include/bits/stdio.h:128: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#  126|   /* Faster versions when locking is not required.  */
+#  127|   __STDIO_INLINE int
+#  128|-> __NTH (feof_unlocked (FILE *__stream))
+#  129|   {
+#  130|     return __feof_unlocked_body (__stream);
+
+Error: HIS_COMF:
+/usr/include/bits/stdio.h:128: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  126|   /* Faster versions when locking is not required.  */
+#  127|   __STDIO_INLINE int
+#  128|-> __NTH (feof_unlocked (FILE *__stream))
+#  129|   {
+#  130|     return __feof_unlocked_body (__stream);
+
+Error: HIS_CALLING:
+/usr/include/bits/stdio.h:135: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#  133|   /* Faster versions when locking is not required.  */
+#  134|   __STDIO_INLINE int
+#  135|-> __NTH (ferror_unlocked (FILE *__stream))
+#  136|   {
+#  137|     return __ferror_unlocked_body (__stream);
+
+Error: HIS_COMF:
+/usr/include/bits/stdio.h:135: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  133|   /* Faster versions when locking is not required.  */
+#  134|   __STDIO_INLINE int
+#  135|-> __NTH (ferror_unlocked (FILE *__stream))
+#  136|   {
+#  137|     return __ferror_unlocked_body (__stream);
+
+Error: HIS_CALLING:
+/usr/include/bits/stdio2.h:28: HIS_metric_violation: Measured value of CALLING metric 6.00 is higher than maximum value 5.00 allowed by the HIS metrics policy.
+#   26|   #ifdef __va_arg_pack
+#   27|   __fortify_function int
+#   28|-> __NTH (sprintf (char *__restrict __s, const char *__restrict __fmt, ...))
+#   29|   {
+#   30|     return __builtin___sprintf_chk (__s, __USE_FORTIFY_LEVEL - 1,
+
+Error: HIS_COMF:
+/usr/include/bits/stdio2.h:28: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#   26|   #ifdef __va_arg_pack
+#   27|   __fortify_function int
+#   28|-> __NTH (sprintf (char *__restrict __s, const char *__restrict __fmt, ...))
+#   29|   {
+#   30|     return __builtin___sprintf_chk (__s, __USE_FORTIFY_LEVEL - 1,
+
+Error: HIS_CALLING:
+/usr/include/bits/stdio2.h:41: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#   39|   
+#   40|   __fortify_function int
+#   41|-> __NTH (vsprintf (char *__restrict __s, const char *__restrict __fmt,
+#   42|   		 __gnuc_va_list __ap))
+#   43|   {
+
+Error: HIS_COMF:
+/usr/include/bits/stdio2.h:41: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#   39|   
+#   40|   __fortify_function int
+#   41|-> __NTH (vsprintf (char *__restrict __s, const char *__restrict __fmt,
+#   42|   		 __gnuc_va_list __ap))
+#   43|   {
+
+Error: HIS_CALLING:
+/usr/include/bits/stdio2.h:51: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#   49|   # ifdef __va_arg_pack
+#   50|   __fortify_function int
+#   51|-> __NTH (snprintf (char *__restrict __s, size_t __n,
+#   52|   		 const char *__restrict __fmt, ...))
+#   53|   {
+
+Error: HIS_COMF:
+/usr/include/bits/stdio2.h:51: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#   49|   # ifdef __va_arg_pack
+#   50|   __fortify_function int
+#   51|-> __NTH (snprintf (char *__restrict __s, size_t __n,
+#   52|   		 const char *__restrict __fmt, ...))
+#   53|   {
+
+Error: HIS_CALLING:
+/usr/include/bits/stdio2.h:65: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#   63|   
+#   64|   __fortify_function int
+#   65|-> __NTH (vsnprintf (char *__restrict __s, size_t __n,
+#   66|   		  const char *__restrict __fmt, __gnuc_va_list __ap))
+#   67|   {
+
+Error: HIS_COMF:
+/usr/include/bits/stdio2.h:65: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#   63|   
+#   64|   __fortify_function int
+#   65|-> __NTH (vsnprintf (char *__restrict __s, size_t __n,
+#   66|   		  const char *__restrict __fmt, __gnuc_va_list __ap))
+#   67|   {
+
+Error: HIS_CALLING:
+/usr/include/bits/stdio2.h:77: HIS_metric_violation: Measured value of CALLING metric 26.00 is higher than maximum value 5.00 allowed by the HIS metrics policy.
+#   75|   # ifdef __va_arg_pack
+#   76|   __fortify_function int
+#   77|-> fprintf (FILE *__restrict __stream, const char *__restrict __fmt, ...)
+#   78|   {
+#   79|     return __fprintf_chk (__stream, __USE_FORTIFY_LEVEL - 1, __fmt,
+
+Error: HIS_COMF:
+/usr/include/bits/stdio2.h:77: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#   75|   # ifdef __va_arg_pack
+#   76|   __fortify_function int
+#   77|-> fprintf (FILE *__restrict __stream, const char *__restrict __fmt, ...)
+#   78|   {
+#   79|     return __fprintf_chk (__stream, __USE_FORTIFY_LEVEL - 1, __fmt,
+
+Error: HIS_CALLING:
+/usr/include/bits/stdio2.h:84: HIS_metric_violation: Measured value of CALLING metric 13.00 is higher than maximum value 5.00 allowed by the HIS metrics policy.
+#   82|   
+#   83|   __fortify_function int
+#   84|-> printf (const char *__restrict __fmt, ...)
+#   85|   {
+#   86|     return __printf_chk (__USE_FORTIFY_LEVEL - 1, __fmt, __va_arg_pack ());
+
+Error: HIS_COMF:
+/usr/include/bits/stdio2.h:84: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#   82|   
+#   83|   __fortify_function int
+#   84|-> printf (const char *__restrict __fmt, ...)
+#   85|   {
+#   86|     return __printf_chk (__USE_FORTIFY_LEVEL - 1, __fmt, __va_arg_pack ());
+
+Error: HIS_COMF:
+/usr/include/bits/stdio2.h:96: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#   94|   
+#   95|   __fortify_function int
+#   96|-> vprintf (const char *__restrict __fmt, __gnuc_va_list __ap)
+#   97|   {
+#   98|   #ifdef __USE_EXTERN_INLINES
+
+Error: HIS_COMF:
+/usr/include/bits/stdio2.h:106: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  104|   
+#  105|   __fortify_function int
+#  106|-> vfprintf (FILE *__restrict __stream,
+#  107|   	  const char *__restrict __fmt, __gnuc_va_list __ap)
+#  108|   {
+
+Error: HIS_CALLING:
+/usr/include/bits/stdio2.h:115: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#  113|   #  ifdef __va_arg_pack
+#  114|   __fortify_function int
+#  115|-> dprintf (int __fd, const char *__restrict __fmt, ...)
+#  116|   {
+#  117|     return __dprintf_chk (__fd, __USE_FORTIFY_LEVEL - 1, __fmt,
+
+Error: HIS_COMF:
+/usr/include/bits/stdio2.h:115: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  113|   #  ifdef __va_arg_pack
+#  114|   __fortify_function int
+#  115|-> dprintf (int __fd, const char *__restrict __fmt, ...)
+#  116|   {
+#  117|     return __dprintf_chk (__fd, __USE_FORTIFY_LEVEL - 1, __fmt,
+
+Error: HIS_CALLING:
+/usr/include/bits/stdio2.h:126: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#  124|   
+#  125|   __fortify_function int
+#  126|-> vdprintf (int __fd, const char *__restrict __fmt, __gnuc_va_list __ap)
+#  127|   {
+#  128|     return __vdprintf_chk (__fd, __USE_FORTIFY_LEVEL - 1, __fmt, __ap);
+
+Error: HIS_COMF:
+/usr/include/bits/stdio2.h:126: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  124|   
+#  125|   __fortify_function int
+#  126|-> vdprintf (int __fd, const char *__restrict __fmt, __gnuc_va_list __ap)
+#  127|   {
+#  128|     return __vdprintf_chk (__fd, __USE_FORTIFY_LEVEL - 1, __fmt, __ap);
+
+Error: HIS_CCM:
+/usr/include/bits/stdio2.h:209: HIS_metric_violation: Measured value of CCM metric 13.00 is higher than maximum value 10.00 allowed by the HIS metrics policy.
+#  207|   
+#  208|   __fortify_function __wur __fortified_attr_access (__write_only__, 1, 2) char *
+#  209|-> fgets (char *__restrict __s, int __n, FILE *__restrict __stream)
+#  210|   {
+#  211|     size_t sz = __glibc_objsize (__s);
+
+Error: HIS_COMF:
+/usr/include/bits/stdio2.h:209: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  207|   
+#  208|   __fortify_function __wur __fortified_attr_access (__write_only__, 1, 2) char *
+#  209|-> fgets (char *__restrict __s, int __n, FILE *__restrict __stream)
+#  210|   {
+#  211|     size_t sz = __glibc_objsize (__s);
+
+Error: HIS_RETURN:
+/usr/include/bits/stdio2.h:209: HIS_metric_violation: Measured value of RETURN metric 3.00 is higher than maximum value 1.00 allowed by the HIS metrics policy.
+#  207|   
+#  208|   __fortify_function __wur __fortified_attr_access (__write_only__, 1, 2) char *
+#  209|-> fgets (char *__restrict __s, int __n, FILE *__restrict __stream)
+#  210|   {
+#  211|     size_t sz = __glibc_objsize (__s);
+
+Error: HIS_CALLING:
+/usr/include/bits/stdio2.h:232: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#  230|   
+#  231|   __fortify_function __wur size_t
+#  232|-> fread (void *__restrict __ptr, size_t __size, size_t __n,
+#  233|          FILE *__restrict __stream)
+#  234|   {
+
+Error: HIS_COMF:
+/usr/include/bits/stdio2.h:232: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  230|   
+#  231|   __fortify_function __wur size_t
+#  232|-> fread (void *__restrict __ptr, size_t __size, size_t __n,
+#  233|          FILE *__restrict __stream)
+#  234|   {
+
+Error: HIS_RETURN:
+/usr/include/bits/stdio2.h:232: HIS_metric_violation: Measured value of RETURN metric 3.00 is higher than maximum value 1.00 allowed by the HIS metrics policy.
+#  230|   
+#  231|   __fortify_function __wur size_t
+#  232|-> fread (void *__restrict __ptr, size_t __size, size_t __n,
+#  233|          FILE *__restrict __stream)
+#  234|   {
+
+Error: HIS_CALLING:
+/usr/include/bits/stdio2.h:281: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#  279|   
+#  280|   __fortify_function __wur size_t
+#  281|-> fread_unlocked (void *__restrict __ptr, size_t __size, size_t __n,
+#  282|   		FILE *__restrict __stream)
+#  283|   {
+
+Error: HIS_CCM:
+/usr/include/bits/stdio2.h:281: HIS_metric_violation: Measured value of CCM metric 13.00 is higher than maximum value 10.00 allowed by the HIS metrics policy.
+#  279|   
+#  280|   __fortify_function __wur size_t
+#  281|-> fread_unlocked (void *__restrict __ptr, size_t __size, size_t __n,
+#  282|   		FILE *__restrict __stream)
+#  283|   {
+
+Error: HIS_COMF:
+/usr/include/bits/stdio2.h:281: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  279|   
+#  280|   __fortify_function __wur size_t
+#  281|-> fread_unlocked (void *__restrict __ptr, size_t __size, size_t __n,
+#  282|   		FILE *__restrict __stream)
+#  283|   {
+
+Error: HIS_RETURN:
+/usr/include/bits/stdio2.h:281: HIS_metric_violation: Measured value of RETURN metric 5.00 is higher than maximum value 1.00 allowed by the HIS metrics policy.
+#  279|   
+#  280|   __fortify_function __wur size_t
+#  281|-> fread_unlocked (void *__restrict __ptr, size_t __size, size_t __n,
+#  282|   		FILE *__restrict __stream)
+#  283|   {
+
+Error: HIS_CALLING:
+/usr/include/bits/string_fortified.h:26: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#   24|   
+#   25|   __fortify_function void *
+#   26|-> __NTH (memcpy (void *__restrict __dest, const void *__restrict __src,
+#   27|   	       size_t __len))
+#   28|   {
+
+Error: HIS_COMF:
+/usr/include/bits/string_fortified.h:26: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#   24|   
+#   25|   __fortify_function void *
+#   26|-> __NTH (memcpy (void *__restrict __dest, const void *__restrict __src,
+#   27|   	       size_t __len))
+#   28|   {
+
+Error: HIS_COMF:
+/usr/include/bits/string_fortified.h:34: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#   32|   
+#   33|   __fortify_function void *
+#   34|-> __NTH (memmove (void *__dest, const void *__src, size_t __len))
+#   35|   {
+#   36|     return __builtin___memmove_chk (__dest, __src, __len,
+
+Error: HIS_COMF:
+/usr/include/bits/string_fortified.h:57: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#   55|      non-existing functions.  */
+#   56|   __fortify_function void *
+#   57|-> __NTH (memset (void *__dest, int __ch, size_t __len))
+#   58|   {
+#   59|     return __builtin___memset_chk (__dest, __ch, __len,
+
+Error: HIS_CALLING:
+/usr/include/bits/string_fortified.h:70: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#   68|   
+#   69|   __fortify_function void
+#   70|-> __NTH (explicit_bzero (void *__dest, size_t __len))
+#   71|   {
+#   72|     __explicit_bzero_chk (__dest, __len, __glibc_objsize0 (__dest));
+
+Error: HIS_COMF:
+/usr/include/bits/string_fortified.h:70: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#   68|   
+#   69|   __fortify_function void
+#   70|-> __NTH (explicit_bzero (void *__dest, size_t __len))
+#   71|   {
+#   72|     __explicit_bzero_chk (__dest, __len, __glibc_objsize0 (__dest));
+
+Error: HIS_CALLING:
+/usr/include/bits/string_fortified.h:77: HIS_metric_violation: Measured value of CALLING metric 13.00 is higher than maximum value 5.00 allowed by the HIS metrics policy.
+#   75|   
+#   76|   __fortify_function char *
+#   77|-> __NTH (strcpy (char *__restrict __dest, const char *__restrict __src))
+#   78|   {
+#   79|     return __builtin___strcpy_chk (__dest, __src, __glibc_objsize (__dest));
+
+Error: HIS_COMF:
+/usr/include/bits/string_fortified.h:77: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#   75|   
+#   76|   __fortify_function char *
+#   77|-> __NTH (strcpy (char *__restrict __dest, const char *__restrict __src))
+#   78|   {
+#   79|     return __builtin___strcpy_chk (__dest, __src, __glibc_objsize (__dest));
+
+Error: HIS_CALLING:
+/usr/include/bits/string_fortified.h:84: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#   82|   #ifdef __USE_XOPEN2K8
+#   83|   __fortify_function char *
+#   84|-> __NTH (stpcpy (char *__restrict __dest, const char *__restrict __src))
+#   85|   {
+#   86|     return __builtin___stpcpy_chk (__dest, __src, __glibc_objsize (__dest));
+
+Error: HIS_COMF:
+/usr/include/bits/string_fortified.h:84: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#   82|   #ifdef __USE_XOPEN2K8
+#   83|   __fortify_function char *
+#   84|-> __NTH (stpcpy (char *__restrict __dest, const char *__restrict __src))
+#   85|   {
+#   86|     return __builtin___stpcpy_chk (__dest, __src, __glibc_objsize (__dest));
+
+Error: HIS_COMF:
+/usr/include/bits/string_fortified.h:92: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#   90|   
+#   91|   __fortify_function char *
+#   92|-> __NTH (strncpy (char *__restrict __dest, const char *__restrict __src,
+#   93|   		size_t __len))
+#   94|   {
+
+Error: HIS_CALLING:
+/usr/include/bits/string_fortified.h:102: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#  100|   # if __GNUC_PREREQ (4, 7) || __glibc_clang_prereq (2, 6)
+#  101|   __fortify_function char *
+#  102|-> __NTH (stpncpy (char *__dest, const char *__src, size_t __n))
+#  103|   {
+#  104|     return __builtin___stpncpy_chk (__dest, __src, __n,
+
+Error: HIS_COMF:
+/usr/include/bits/string_fortified.h:102: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  100|   # if __GNUC_PREREQ (4, 7) || __glibc_clang_prereq (2, 6)
+#  101|   __fortify_function char *
+#  102|-> __NTH (stpncpy (char *__dest, const char *__src, size_t __n))
+#  103|   {
+#  104|     return __builtin___stpncpy_chk (__dest, __src, __n,
+
+Error: HIS_CALLING:
+/usr/include/bits/string_fortified.h:128: HIS_metric_violation: Measured value of CALLING metric 7.00 is higher than maximum value 5.00 allowed by the HIS metrics policy.
+#  126|   
+#  127|   __fortify_function char *
+#  128|-> __NTH (strcat (char *__restrict __dest, const char *__restrict __src))
+#  129|   {
+#  130|     return __builtin___strcat_chk (__dest, __src, __glibc_objsize (__dest));
+
+Error: HIS_COMF:
+/usr/include/bits/string_fortified.h:128: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  126|   
+#  127|   __fortify_function char *
+#  128|-> __NTH (strcat (char *__restrict __dest, const char *__restrict __src))
+#  129|   {
+#  130|     return __builtin___strcat_chk (__dest, __src, __glibc_objsize (__dest));
+
+Error: HIS_CALLING:
+/usr/include/bits/string_fortified.h:135: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#  133|   
+#  134|   __fortify_function char *
+#  135|-> __NTH (strncat (char *__restrict __dest, const char *__restrict __src,
+#  136|   		size_t __len))
+#  137|   {
+
+Error: HIS_COMF:
+/usr/include/bits/string_fortified.h:135: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  133|   
+#  134|   __fortify_function char *
+#  135|-> __NTH (strncat (char *__restrict __dest, const char *__restrict __src,
+#  136|   		size_t __len))
+#  137|   {
+
+Error: HIS_CALLING:
+/usr/include/bits/strings_fortified.h:23: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#   21|   
+#   22|   __fortify_function void
+#   23|-> __NTH (bcopy (const void *__src, void *__dest, size_t __len))
+#   24|   {
+#   25|     (void) __builtin___memmove_chk (__dest, __src, __len,
+
+Error: HIS_COMF:
+/usr/include/bits/strings_fortified.h:23: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#   21|   
+#   22|   __fortify_function void
+#   23|-> __NTH (bcopy (const void *__src, void *__dest, size_t __len))
+#   24|   {
+#   25|     (void) __builtin___memmove_chk (__dest, __src, __len,
+
+Error: HIS_CALLING:
+/usr/include/bits/strings_fortified.h:30: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#   28|   
+#   29|   __fortify_function void
+#   30|-> __NTH (bzero (void *__dest, size_t __len))
+#   31|   {
+#   32|     (void) __builtin___memset_chk (__dest, '\0', __len,
+
+Error: HIS_COMF:
+/usr/include/bits/strings_fortified.h:30: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#   28|   
+#   29|   __fortify_function void
+#   30|-> __NTH (bzero (void *__dest, size_t __len))
+#   31|   {
+#   32|     (void) __builtin___memset_chk (__dest, '\0', __len,
+
+Error: HIS_CALLING:
+/usr/include/bits/unistd.h:36: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#   34|   
+#   35|   __fortify_function __wur ssize_t
+#   36|-> read (int __fd, void *__buf, size_t __nbytes)
+#   37|   {
+#   38|     return __glibc_fortify (read, __nbytes, sizeof (char),
+
+Error: HIS_COMF:
+/usr/include/bits/unistd.h:36: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#   34|   
+#   35|   __fortify_function __wur ssize_t
+#   36|-> read (int __fd, void *__buf, size_t __nbytes)
+#   37|   {
+#   38|     return __glibc_fortify (read, __nbytes, sizeof (char),
+
+Error: HIS_VOCF:
+/usr/include/bits/unistd.h:36: HIS_metric_violation: Measured value of VOCF metric 4.35 is higher than maximum value 4.00 allowed by the HIS metrics policy.
+#   34|   
+#   35|   __fortify_function __wur ssize_t
+#   36|-> read (int __fd, void *__buf, size_t __nbytes)
+#   37|   {
+#   38|     return __glibc_fortify (read, __nbytes, sizeof (char),
+
+Error: HIS_CALLING:
+/usr/include/bits/unistd.h:72: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#   70|   # ifndef __USE_FILE_OFFSET64
+#   71|   __fortify_function __wur ssize_t
+#   72|-> pread (int __fd, void *__buf, size_t __nbytes, __off_t __offset)
+#   73|   {
+#   74|     return __glibc_fortify (pread, __nbytes, sizeof (char),
+
+Error: HIS_COMF:
+/usr/include/bits/unistd.h:72: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#   70|   # ifndef __USE_FILE_OFFSET64
+#   71|   __fortify_function __wur ssize_t
+#   72|-> pread (int __fd, void *__buf, size_t __nbytes, __off_t __offset)
+#   73|   {
+#   74|     return __glibc_fortify (pread, __nbytes, sizeof (char),
+
+Error: HIS_VOCF:
+/usr/include/bits/unistd.h:72: HIS_metric_violation: Measured value of VOCF metric 4.29 is higher than maximum value 4.00 allowed by the HIS metrics policy.
+#   70|   # ifndef __USE_FILE_OFFSET64
+#   71|   __fortify_function __wur ssize_t
+#   72|-> pread (int __fd, void *__buf, size_t __nbytes, __off_t __offset)
+#   73|   {
+#   74|     return __glibc_fortify (pread, __nbytes, sizeof (char),
+
+Error: HIS_CALLING:
+/usr/include/bits/unistd.h:116: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#  114|   
+#  115|   __fortify_function __nonnull ((1, 2)) __wur ssize_t
+#  116|-> __NTH (readlink (const char *__restrict __path, char *__restrict __buf,
+#  117|   		 size_t __len))
+#  118|   {
+
+Error: HIS_COMF:
+/usr/include/bits/unistd.h:116: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  114|   
+#  115|   __fortify_function __nonnull ((1, 2)) __wur ssize_t
+#  116|-> __NTH (readlink (const char *__restrict __path, char *__restrict __buf,
+#  117|   		 size_t __len))
+#  118|   {
+
+Error: HIS_VOCF:
+/usr/include/bits/unistd.h:116: HIS_metric_violation: Measured value of VOCF metric 4.79 is higher than maximum value 4.00 allowed by the HIS metrics policy.
+#  114|   
+#  115|   __fortify_function __nonnull ((1, 2)) __wur ssize_t
+#  116|-> __NTH (readlink (const char *__restrict __path, char *__restrict __buf,
+#  117|   		 size_t __len))
+#  118|   {
+
+Error: HIS_CALLING:
+/usr/include/bits/unistd.h:164: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#  162|   
+#  163|   __fortify_function __wur char *
+#  164|-> __NTH (getcwd (char *__buf, size_t __size))
+#  165|   {
+#  166|     return __glibc_fortify (getcwd, __size, sizeof (char),
+
+Error: HIS_COMF:
+/usr/include/bits/unistd.h:164: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  162|   
+#  163|   __fortify_function __wur char *
+#  164|-> __NTH (getcwd (char *__buf, size_t __size))
+#  165|   {
+#  166|     return __glibc_fortify (getcwd, __size, sizeof (char),
+
+Error: HIS_VOCF:
+/usr/include/bits/unistd.h:164: HIS_metric_violation: Measured value of VOCF metric 4.87 is higher than maximum value 4.00 allowed by the HIS metrics policy.
+#  162|   
+#  163|   __fortify_function __wur char *
+#  164|-> __NTH (getcwd (char *__buf, size_t __size))
+#  165|   {
+#  166|     return __glibc_fortify (getcwd, __size, sizeof (char),
+
+Error: HIS_CALLING:
+/usr/include/bits/unistd.h:179: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#  177|   
+#  178|   __fortify_function __nonnull ((1)) __attribute_deprecated__ __wur char *
+#  179|-> __NTH (getwd (char *__buf))
+#  180|   {
+#  181|     if (__glibc_objsize (__buf) != (size_t) -1)
+
+Error: HIS_COMF:
+/usr/include/bits/unistd.h:179: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  177|   
+#  178|   __fortify_function __nonnull ((1)) __attribute_deprecated__ __wur char *
+#  179|-> __NTH (getwd (char *__buf))
+#  180|   {
+#  181|     if (__glibc_objsize (__buf) != (size_t) -1)
+
+Error: HIS_RETURN:
+/usr/include/bits/unistd.h:179: HIS_metric_violation: Measured value of RETURN metric 2.00 is higher than maximum value 1.00 allowed by the HIS metrics policy.
+#  177|   
+#  178|   __fortify_function __nonnull ((1)) __attribute_deprecated__ __wur char *
+#  179|-> __NTH (getwd (char *__buf))
+#  180|   {
+#  181|     if (__glibc_objsize (__buf) != (size_t) -1)
+
+Error: HIS_CALLING:
+/usr/include/bits/unistd.h:200: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#  198|   
+#  199|   __fortify_function size_t
+#  200|-> __NTH (confstr (int __name, char *__buf, size_t __len))
+#  201|   {
+#  202|     return __glibc_fortify (confstr, __len, sizeof (char),
+
+Error: HIS_COMF:
+/usr/include/bits/unistd.h:200: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  198|   
+#  199|   __fortify_function size_t
+#  200|-> __NTH (confstr (int __name, char *__buf, size_t __len))
+#  201|   {
+#  202|     return __glibc_fortify (confstr, __len, sizeof (char),
+
+Error: HIS_VOCF:
+/usr/include/bits/unistd.h:200: HIS_metric_violation: Measured value of VOCF metric 4.79 is higher than maximum value 4.00 allowed by the HIS metrics policy.
+#  198|   
+#  199|   __fortify_function size_t
+#  200|-> __NTH (confstr (int __name, char *__buf, size_t __len))
+#  201|   {
+#  202|     return __glibc_fortify (confstr, __len, sizeof (char),
+
+Error: HIS_CALLING:
+/usr/include/bits/unistd.h:219: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#  217|   
+#  218|   __fortify_function int
+#  219|-> __NTH (getgroups (int __size, __gid_t __list[]))
+#  220|   {
+#  221|     return __glibc_fortify (getgroups, __size, sizeof (__gid_t),
+
+Error: HIS_CCM:
+/usr/include/bits/unistd.h:219: HIS_metric_violation: Measured value of CCM metric 13.00 is higher than maximum value 10.00 allowed by the HIS metrics policy.
+#  217|   
+#  218|   __fortify_function int
+#  219|-> __NTH (getgroups (int __size, __gid_t __list[]))
+#  220|   {
+#  221|     return __glibc_fortify (getgroups, __size, sizeof (__gid_t),
+
+Error: HIS_COMF:
+/usr/include/bits/unistd.h:219: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  217|   
+#  218|   __fortify_function int
+#  219|-> __NTH (getgroups (int __size, __gid_t __list[]))
+#  220|   {
+#  221|     return __glibc_fortify (getgroups, __size, sizeof (__gid_t),
+
+Error: HIS_VOCF:
+/usr/include/bits/unistd.h:219: HIS_metric_violation: Measured value of VOCF metric 4.42 is higher than maximum value 4.00 allowed by the HIS metrics policy.
+#  217|   
+#  218|   __fortify_function int
+#  219|-> __NTH (getgroups (int __size, __gid_t __list[]))
+#  220|   {
+#  221|     return __glibc_fortify (getgroups, __size, sizeof (__gid_t),
+
+Error: HIS_CALLING:
+/usr/include/bits/unistd.h:240: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#  238|   
+#  239|   __fortify_function int
+#  240|-> __NTH (ttyname_r (int __fd, char *__buf, size_t __buflen))
+#  241|   {
+#  242|     return __glibc_fortify (ttyname_r, __buflen, sizeof (char),
+
+Error: HIS_COMF:
+/usr/include/bits/unistd.h:240: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  238|   
+#  239|   __fortify_function int
+#  240|-> __NTH (ttyname_r (int __fd, char *__buf, size_t __buflen))
+#  241|   {
+#  242|     return __glibc_fortify (ttyname_r, __buflen, sizeof (char),
+
+Error: HIS_VOCF:
+/usr/include/bits/unistd.h:240: HIS_metric_violation: Measured value of VOCF metric 4.79 is higher than maximum value 4.00 allowed by the HIS metrics policy.
+#  238|   
+#  239|   __fortify_function int
+#  240|-> __NTH (ttyname_r (int __fd, char *__buf, size_t __buflen))
+#  241|   {
+#  242|     return __glibc_fortify (ttyname_r, __buflen, sizeof (char),
+
+Error: HIS_CALLING:
+/usr/include/bits/unistd.h:260: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#  258|   
+#  259|   __fortify_function int
+#  260|-> getlogin_r (char *__buf, size_t __buflen)
+#  261|   {
+#  262|     return __glibc_fortify (getlogin_r, __buflen, sizeof (char),
+
+Error: HIS_COMF:
+/usr/include/bits/unistd.h:260: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  258|   
+#  259|   __fortify_function int
+#  260|-> getlogin_r (char *__buf, size_t __buflen)
+#  261|   {
+#  262|     return __glibc_fortify (getlogin_r, __buflen, sizeof (char),
+
+Error: HIS_VOCF:
+/usr/include/bits/unistd.h:260: HIS_metric_violation: Measured value of VOCF metric 4.87 is higher than maximum value 4.00 allowed by the HIS metrics policy.
+#  258|   
+#  259|   __fortify_function int
+#  260|-> getlogin_r (char *__buf, size_t __buflen)
+#  261|   {
+#  262|     return __glibc_fortify (getlogin_r, __buflen, sizeof (char),
+
+Error: HIS_CALLING:
+/usr/include/bits/unistd.h:282: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#  280|   
+#  281|   __fortify_function int
+#  282|-> __NTH (gethostname (char *__buf, size_t __buflen))
+#  283|   {
+#  284|     return __glibc_fortify (gethostname, __buflen, sizeof (char),
+
+Error: HIS_COMF:
+/usr/include/bits/unistd.h:282: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  280|   
+#  281|   __fortify_function int
+#  282|-> __NTH (gethostname (char *__buf, size_t __buflen))
+#  283|   {
+#  284|     return __glibc_fortify (gethostname, __buflen, sizeof (char),
+
+Error: HIS_VOCF:
+/usr/include/bits/unistd.h:282: HIS_metric_violation: Measured value of VOCF metric 4.87 is higher than maximum value 4.00 allowed by the HIS metrics policy.
+#  280|   
+#  281|   __fortify_function int
+#  282|-> __NTH (gethostname (char *__buf, size_t __buflen))
+#  283|   {
+#  284|     return __glibc_fortify (gethostname, __buflen, sizeof (char),
+
+Error: HIS_CALLING:
+/usr/include/bits/wchar2.h:39: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#   37|   
+#   38|   __fortify_function wchar_t *
+#   39|-> __NTH (wmemcpy (wchar_t *__restrict __s1, const wchar_t *__restrict __s2,
+#   40|   		size_t __n))
+#   41|   {
+
+Error: HIS_COMF:
+/usr/include/bits/wchar2.h:39: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#   37|   
+#   38|   __fortify_function wchar_t *
+#   39|-> __NTH (wmemcpy (wchar_t *__restrict __s1, const wchar_t *__restrict __s2,
+#   40|   		size_t __n))
+#   41|   {
+
+Error: HIS_VOCF:
+/usr/include/bits/wchar2.h:39: HIS_metric_violation: Measured value of VOCF metric 4.42 is higher than maximum value 4.00 allowed by the HIS metrics policy.
+#   37|   
+#   38|   __fortify_function wchar_t *
+#   39|-> __NTH (wmemcpy (wchar_t *__restrict __s1, const wchar_t *__restrict __s2,
+#   40|   		size_t __n))
+#   41|   {
+
+Error: HIS_CALLING:
+/usr/include/bits/wchar2.h:60: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#   58|   
+#   59|   __fortify_function wchar_t *
+#   60|-> __NTH (wmemmove (wchar_t *__s1, const wchar_t *__s2, size_t __n))
+#   61|   {
+#   62|     return __glibc_fortify_n (wmemmove, __n, sizeof (wchar_t),
+
+Error: HIS_COMF:
+/usr/include/bits/wchar2.h:60: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#   58|   
+#   59|   __fortify_function wchar_t *
+#   60|-> __NTH (wmemmove (wchar_t *__s1, const wchar_t *__s2, size_t __n))
+#   61|   {
+#   62|     return __glibc_fortify_n (wmemmove, __n, sizeof (wchar_t),
+
+Error: HIS_VOCF:
+/usr/include/bits/wchar2.h:60: HIS_metric_violation: Measured value of VOCF metric 4.42 is higher than maximum value 4.00 allowed by the HIS metrics policy.
+#   58|   
+#   59|   __fortify_function wchar_t *
+#   60|-> __NTH (wmemmove (wchar_t *__s1, const wchar_t *__s2, size_t __n))
+#   61|   {
+#   62|     return __glibc_fortify_n (wmemmove, __n, sizeof (wchar_t),
+
+Error: HIS_CALLING:
+/usr/include/bits/wchar2.h:105: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#  103|   
+#  104|   __fortify_function wchar_t *
+#  105|-> __NTH (wmemset (wchar_t *__s, wchar_t __c, size_t __n))
+#  106|   {
+#  107|     return __glibc_fortify_n (wmemset, __n, sizeof (wchar_t),
+
+Error: HIS_COMF:
+/usr/include/bits/wchar2.h:105: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  103|   
+#  104|   __fortify_function wchar_t *
+#  105|-> __NTH (wmemset (wchar_t *__s, wchar_t __c, size_t __n))
+#  106|   {
+#  107|     return __glibc_fortify_n (wmemset, __n, sizeof (wchar_t),
+
+Error: HIS_VOCF:
+/usr/include/bits/wchar2.h:105: HIS_metric_violation: Measured value of VOCF metric 4.42 is higher than maximum value 4.00 allowed by the HIS metrics policy.
+#  103|   
+#  104|   __fortify_function wchar_t *
+#  105|-> __NTH (wmemset (wchar_t *__s, wchar_t __c, size_t __n))
+#  106|   {
+#  107|     return __glibc_fortify_n (wmemset, __n, sizeof (wchar_t),
+
+Error: HIS_CALLING:
+/usr/include/bits/wchar2.h:121: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#  119|   
+#  120|   __fortify_function wchar_t *
+#  121|-> __NTH (wcscpy (wchar_t *__restrict __dest, const wchar_t *__restrict __src))
+#  122|   {
+#  123|     size_t sz = __glibc_objsize (__dest);
+
+Error: HIS_COMF:
+/usr/include/bits/wchar2.h:121: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  119|   
+#  120|   __fortify_function wchar_t *
+#  121|-> __NTH (wcscpy (wchar_t *__restrict __dest, const wchar_t *__restrict __src))
+#  122|   {
+#  123|     size_t sz = __glibc_objsize (__dest);
+
+Error: HIS_RETURN:
+/usr/include/bits/wchar2.h:121: HIS_metric_violation: Measured value of RETURN metric 2.00 is higher than maximum value 1.00 allowed by the HIS metrics policy.
+#  119|   
+#  120|   __fortify_function wchar_t *
+#  121|-> __NTH (wcscpy (wchar_t *__restrict __dest, const wchar_t *__restrict __src))
+#  122|   {
+#  123|     size_t sz = __glibc_objsize (__dest);
+
+Error: HIS_CALLING:
+/usr/include/bits/wchar2.h:138: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#  136|   
+#  137|   __fortify_function wchar_t *
+#  138|-> __NTH (wcpcpy (wchar_t *__restrict __dest, const wchar_t *__restrict __src))
+#  139|   {
+#  140|     size_t sz = __glibc_objsize (__dest);
+
+Error: HIS_COMF:
+/usr/include/bits/wchar2.h:138: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  136|   
+#  137|   __fortify_function wchar_t *
+#  138|-> __NTH (wcpcpy (wchar_t *__restrict __dest, const wchar_t *__restrict __src))
+#  139|   {
+#  140|     size_t sz = __glibc_objsize (__dest);
+
+Error: HIS_RETURN:
+/usr/include/bits/wchar2.h:138: HIS_metric_violation: Measured value of RETURN metric 2.00 is higher than maximum value 1.00 allowed by the HIS metrics policy.
+#  136|   
+#  137|   __fortify_function wchar_t *
+#  138|-> __NTH (wcpcpy (wchar_t *__restrict __dest, const wchar_t *__restrict __src))
+#  139|   {
+#  140|     size_t sz = __glibc_objsize (__dest);
+
+Error: HIS_CALLING:
+/usr/include/bits/wchar2.h:162: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#  160|   
+#  161|   __fortify_function wchar_t *
+#  162|-> __NTH (wcsncpy (wchar_t *__restrict __dest, const wchar_t *__restrict __src,
+#  163|   		size_t __n))
+#  164|   {
+
+Error: HIS_COMF:
+/usr/include/bits/wchar2.h:162: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  160|   
+#  161|   __fortify_function wchar_t *
+#  162|-> __NTH (wcsncpy (wchar_t *__restrict __dest, const wchar_t *__restrict __src,
+#  163|   		size_t __n))
+#  164|   {
+
+Error: HIS_VOCF:
+/usr/include/bits/wchar2.h:162: HIS_metric_violation: Measured value of VOCF metric 4.84 is higher than maximum value 4.00 allowed by the HIS metrics policy.
+#  160|   
+#  161|   __fortify_function wchar_t *
+#  162|-> __NTH (wcsncpy (wchar_t *__restrict __dest, const wchar_t *__restrict __src,
+#  163|   		size_t __n))
+#  164|   {
+
+Error: HIS_CALLING:
+/usr/include/bits/wchar2.h:186: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#  184|   
+#  185|   __fortify_function wchar_t *
+#  186|-> __NTH (wcpncpy (wchar_t *__restrict __dest, const wchar_t *__restrict __src,
+#  187|   		size_t __n))
+#  188|   {
+
+Error: HIS_COMF:
+/usr/include/bits/wchar2.h:186: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  184|   
+#  185|   __fortify_function wchar_t *
+#  186|-> __NTH (wcpncpy (wchar_t *__restrict __dest, const wchar_t *__restrict __src,
+#  187|   		size_t __n))
+#  188|   {
+
+Error: HIS_VOCF:
+/usr/include/bits/wchar2.h:186: HIS_metric_violation: Measured value of VOCF metric 4.84 is higher than maximum value 4.00 allowed by the HIS metrics policy.
+#  184|   
+#  185|   __fortify_function wchar_t *
+#  186|-> __NTH (wcpncpy (wchar_t *__restrict __dest, const wchar_t *__restrict __src,
+#  187|   		size_t __n))
+#  188|   {
+
+Error: HIS_CALLING:
+/usr/include/bits/wchar2.h:203: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#  201|   
+#  202|   __fortify_function wchar_t *
+#  203|-> __NTH (wcscat (wchar_t *__restrict __dest, const wchar_t *__restrict __src))
+#  204|   {
+#  205|     size_t sz = __glibc_objsize (__dest);
+
+Error: HIS_COMF:
+/usr/include/bits/wchar2.h:203: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  201|   
+#  202|   __fortify_function wchar_t *
+#  203|-> __NTH (wcscat (wchar_t *__restrict __dest, const wchar_t *__restrict __src))
+#  204|   {
+#  205|     size_t sz = __glibc_objsize (__dest);
+
+Error: HIS_RETURN:
+/usr/include/bits/wchar2.h:203: HIS_metric_violation: Measured value of RETURN metric 2.00 is higher than maximum value 1.00 allowed by the HIS metrics policy.
+#  201|   
+#  202|   __fortify_function wchar_t *
+#  203|-> __NTH (wcscat (wchar_t *__restrict __dest, const wchar_t *__restrict __src))
+#  204|   {
+#  205|     size_t sz = __glibc_objsize (__dest);
+
+Error: HIS_CALLING:
+/usr/include/bits/wchar2.h:221: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#  219|   
+#  220|   __fortify_function wchar_t *
+#  221|-> __NTH (wcsncat (wchar_t *__restrict __dest, const wchar_t *__restrict __src,
+#  222|   		size_t __n))
+#  223|   {
+
+Error: HIS_COMF:
+/usr/include/bits/wchar2.h:221: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  219|   
+#  220|   __fortify_function wchar_t *
+#  221|-> __NTH (wcsncat (wchar_t *__restrict __dest, const wchar_t *__restrict __src,
+#  222|   		size_t __n))
+#  223|   {
+
+Error: HIS_RETURN:
+/usr/include/bits/wchar2.h:221: HIS_metric_violation: Measured value of RETURN metric 2.00 is higher than maximum value 1.00 allowed by the HIS metrics policy.
+#  219|   
+#  220|   __fortify_function wchar_t *
+#  221|-> __NTH (wcsncat (wchar_t *__restrict __dest, const wchar_t *__restrict __src,
+#  222|   		size_t __n))
+#  223|   {
+
+Error: HIS_CALLING:
+/usr/include/bits/wchar2.h:243: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#  241|   #ifdef __va_arg_pack
+#  242|   __fortify_function int
+#  243|-> __NTH (swprintf (wchar_t *__restrict __s, size_t __n,
+#  244|   		 const wchar_t *__restrict __fmt, ...))
+#  245|   {
+
+Error: HIS_COMF:
+/usr/include/bits/wchar2.h:243: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  241|   #ifdef __va_arg_pack
+#  242|   __fortify_function int
+#  243|-> __NTH (swprintf (wchar_t *__restrict __s, size_t __n,
+#  244|   		 const wchar_t *__restrict __fmt, ...))
+#  245|   {
+
+Error: HIS_RETURN:
+/usr/include/bits/wchar2.h:243: HIS_metric_violation: Measured value of RETURN metric 2.00 is higher than maximum value 1.00 allowed by the HIS metrics policy.
+#  241|   #ifdef __va_arg_pack
+#  242|   __fortify_function int
+#  243|-> __NTH (swprintf (wchar_t *__restrict __s, size_t __n,
+#  244|   		 const wchar_t *__restrict __fmt, ...))
+#  245|   {
+
+Error: HIS_CALLING:
+/usr/include/bits/wchar2.h:273: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#  271|   
+#  272|   __fortify_function int
+#  273|-> __NTH (vswprintf (wchar_t *__restrict __s, size_t __n,
+#  274|   		  const wchar_t *__restrict __fmt, __gnuc_va_list __ap))
+#  275|   {
+
+Error: HIS_COMF:
+/usr/include/bits/wchar2.h:273: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  271|   
+#  272|   __fortify_function int
+#  273|-> __NTH (vswprintf (wchar_t *__restrict __s, size_t __n,
+#  274|   		  const wchar_t *__restrict __fmt, __gnuc_va_list __ap))
+#  275|   {
+
+Error: HIS_RETURN:
+/usr/include/bits/wchar2.h:273: HIS_metric_violation: Measured value of RETURN metric 2.00 is higher than maximum value 1.00 allowed by the HIS metrics policy.
+#  271|   
+#  272|   __fortify_function int
+#  273|-> __NTH (vswprintf (wchar_t *__restrict __s, size_t __n,
+#  274|   		  const wchar_t *__restrict __fmt, __gnuc_va_list __ap))
+#  275|   {
+
+Error: HIS_CALLING:
+/usr/include/bits/wchar2.h:298: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#  296|   # ifdef __va_arg_pack
+#  297|   __fortify_function int
+#  298|-> wprintf (const wchar_t *__restrict __fmt, ...)
+#  299|   {
+#  300|     return __wprintf_chk (__USE_FORTIFY_LEVEL - 1, __fmt, __va_arg_pack ());
+
+Error: HIS_COMF:
+/usr/include/bits/wchar2.h:298: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  296|   # ifdef __va_arg_pack
+#  297|   __fortify_function int
+#  298|-> wprintf (const wchar_t *__restrict __fmt, ...)
+#  299|   {
+#  300|     return __wprintf_chk (__USE_FORTIFY_LEVEL - 1, __fmt, __va_arg_pack ());
+
+Error: HIS_CALLING:
+/usr/include/bits/wchar2.h:304: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#  302|   
+#  303|   __fortify_function int
+#  304|-> fwprintf (__FILE *__restrict __stream, const wchar_t *__restrict __fmt, ...)
+#  305|   {
+#  306|     return __fwprintf_chk (__stream, __USE_FORTIFY_LEVEL - 1, __fmt,
+
+Error: HIS_COMF:
+/usr/include/bits/wchar2.h:304: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  302|   
+#  303|   __fortify_function int
+#  304|-> fwprintf (__FILE *__restrict __stream, const wchar_t *__restrict __fmt, ...)
+#  305|   {
+#  306|     return __fwprintf_chk (__stream, __USE_FORTIFY_LEVEL - 1, __fmt,
+
+Error: HIS_CALLING:
+/usr/include/bits/wchar2.h:317: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#  315|   
+#  316|   __fortify_function int
+#  317|-> vwprintf (const wchar_t *__restrict __fmt, __gnuc_va_list __ap)
+#  318|   {
+#  319|     return __vwprintf_chk (__USE_FORTIFY_LEVEL - 1, __fmt, __ap);
+
+Error: HIS_COMF:
+/usr/include/bits/wchar2.h:317: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  315|   
+#  316|   __fortify_function int
+#  317|-> vwprintf (const wchar_t *__restrict __fmt, __gnuc_va_list __ap)
+#  318|   {
+#  319|     return __vwprintf_chk (__USE_FORTIFY_LEVEL - 1, __fmt, __ap);
+
+Error: HIS_CALLING:
+/usr/include/bits/wchar2.h:323: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#  321|   
+#  322|   __fortify_function int
+#  323|-> vfwprintf (__FILE *__restrict __stream,
+#  324|   	   const wchar_t *__restrict __fmt, __gnuc_va_list __ap)
+#  325|   {
+
+Error: HIS_COMF:
+/usr/include/bits/wchar2.h:323: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  321|   
+#  322|   __fortify_function int
+#  323|-> vfwprintf (__FILE *__restrict __stream,
+#  324|   	   const wchar_t *__restrict __fmt, __gnuc_va_list __ap)
+#  325|   {
+
+Error: HIS_CALLING:
+/usr/include/bits/wchar2.h:343: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#  341|   
+#  342|   __fortify_function __wur wchar_t *
+#  343|-> fgetws (wchar_t *__restrict __s, int __n, __FILE *__restrict __stream)
+#  344|   {
+#  345|     size_t sz = __glibc_objsize (__s);
+
+Error: HIS_CCM:
+/usr/include/bits/wchar2.h:343: HIS_metric_violation: Measured value of CCM metric 13.00 is higher than maximum value 10.00 allowed by the HIS metrics policy.
+#  341|   
+#  342|   __fortify_function __wur wchar_t *
+#  343|-> fgetws (wchar_t *__restrict __s, int __n, __FILE *__restrict __stream)
+#  344|   {
+#  345|     size_t sz = __glibc_objsize (__s);
+
+Error: HIS_COMF:
+/usr/include/bits/wchar2.h:343: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  341|   
+#  342|   __fortify_function __wur wchar_t *
+#  343|-> fgetws (wchar_t *__restrict __s, int __n, __FILE *__restrict __stream)
+#  344|   {
+#  345|     size_t sz = __glibc_objsize (__s);
+
+Error: HIS_RETURN:
+/usr/include/bits/wchar2.h:343: HIS_metric_violation: Measured value of RETURN metric 3.00 is higher than maximum value 1.00 allowed by the HIS metrics policy.
+#  341|   
+#  342|   __fortify_function __wur wchar_t *
+#  343|-> fgetws (wchar_t *__restrict __s, int __n, __FILE *__restrict __stream)
+#  344|   {
+#  345|     size_t sz = __glibc_objsize (__s);
+
+Error: HIS_CALLING:
+/usr/include/bits/wchar2.h:390: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#  388|   
+#  389|   __fortify_function __wur size_t
+#  390|-> __NTH (wcrtomb (char *__restrict __s, wchar_t __wchar,
+#  391|   		mbstate_t *__restrict __ps))
+#  392|   {
+
+Error: HIS_COMF:
+/usr/include/bits/wchar2.h:390: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  388|   
+#  389|   __fortify_function __wur size_t
+#  390|-> __NTH (wcrtomb (char *__restrict __s, wchar_t __wchar,
+#  391|   		mbstate_t *__restrict __ps))
+#  392|   {
+
+Error: HIS_RETURN:
+/usr/include/bits/wchar2.h:390: HIS_metric_violation: Measured value of RETURN metric 2.00 is higher than maximum value 1.00 allowed by the HIS metrics policy.
+#  388|   
+#  389|   __fortify_function __wur size_t
+#  390|-> __NTH (wcrtomb (char *__restrict __s, wchar_t __wchar,
+#  391|   		mbstate_t *__restrict __ps))
+#  392|   {
+
+Error: HIS_COMF:
+/usr/include/bits/wchar2.h:425: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  423|   
+#  424|   __fortify_function size_t
+#  425|-> __NTH (mbsrtowcs (wchar_t *__restrict __dst, const char **__restrict __src,
+#  426|   		  size_t __len, mbstate_t *__restrict __ps))
+#  427|   {
+
+Error: HIS_VOCF:
+/usr/include/bits/wchar2.h:425: HIS_metric_violation: Measured value of VOCF metric 4.77 is higher than maximum value 4.00 allowed by the HIS metrics policy.
+#  423|   
+#  424|   __fortify_function size_t
+#  425|-> __NTH (mbsrtowcs (wchar_t *__restrict __dst, const char **__restrict __src,
+#  426|   		  size_t __len, mbstate_t *__restrict __ps))
+#  427|   {
+
+Error: HIS_CALLING:
+/usr/include/bits/wchar2.h:451: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#  449|   
+#  450|   __fortify_function size_t
+#  451|-> __NTH (wcsrtombs (char *__restrict __dst, const wchar_t **__restrict __src,
+#  452|   		  size_t __len, mbstate_t *__restrict __ps))
+#  453|   {
+
+Error: HIS_COMF:
+/usr/include/bits/wchar2.h:451: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  449|   
+#  450|   __fortify_function size_t
+#  451|-> __NTH (wcsrtombs (char *__restrict __dst, const wchar_t **__restrict __src,
+#  452|   		  size_t __len, mbstate_t *__restrict __ps))
+#  453|   {
+
+Error: HIS_VOCF:
+/usr/include/bits/wchar2.h:451: HIS_metric_violation: Measured value of VOCF metric 4.72 is higher than maximum value 4.00 allowed by the HIS metrics policy.
+#  449|   
+#  450|   __fortify_function size_t
+#  451|-> __NTH (wcsrtombs (char *__restrict __dst, const wchar_t **__restrict __src,
+#  452|   		  size_t __len, mbstate_t *__restrict __ps))
+#  453|   {
+
+Error: HIS_COMF:
+/usr/include/ctype.h:207: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  205|   # ifdef __USE_EXTERN_INLINES
+#  206|   __extern_inline int
+#  207|-> __NTH (tolower (int __c))
+#  208|   {
+#  209|     return __c >= -128 && __c < 256 ? (*__ctype_tolower_loc ())[__c] : __c;
+
+Error: HIS_CALLING:
+/usr/include/ctype.h:213: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#  211|   
+#  212|   __extern_inline int
+#  213|-> __NTH (toupper (int __c))
+#  214|   {
+#  215|     return __c >= -128 && __c < 256 ? (*__ctype_toupper_loc ())[__c] : __c;
+
+Error: HIS_COMF:
+/usr/include/ctype.h:213: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  211|   
+#  212|   __extern_inline int
+#  213|-> __NTH (toupper (int __c))
+#  214|   {
+#  215|     return __c >= -128 && __c < 256 ? (*__ctype_toupper_loc ())[__c] : __c;
+
+Error: HIS_CALLING:
+/usr/include/wchar.h:319: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#  317|   extern wint_t __btowc_alias (int __c) __asm ("btowc");
+#  318|   __extern_inline wint_t
+#  319|-> __NTH (btowc (int __c))
+#  320|   { return (__builtin_constant_p (__c) && __c >= '\0' && __c <= '\x7f'
+#  321|   	  ? (wint_t) __c : __btowc_alias (__c)); }
+
+Error: HIS_COMF:
+/usr/include/wchar.h:319: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  317|   extern wint_t __btowc_alias (int __c) __asm ("btowc");
+#  318|   __extern_inline wint_t
+#  319|-> __NTH (btowc (int __c))
+#  320|   { return (__builtin_constant_p (__c) && __c >= '\0' && __c <= '\x7f'
+#  321|   	  ? (wint_t) __c : __btowc_alias (__c)); }
+
+Error: HIS_CALLING:
+/usr/include/wchar.h:325: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#  323|   extern int __wctob_alias (wint_t __c) __asm ("wctob");
+#  324|   __extern_inline int
+#  325|-> __NTH (wctob (wint_t __wc))
+#  326|   { return (__builtin_constant_p (__wc) && __wc >= L'\0' && __wc <= L'\x7f'
+#  327|   	  ? (int) __wc : __wctob_alias (__wc)); }
+
+Error: HIS_COMF:
+/usr/include/wchar.h:325: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  323|   extern int __wctob_alias (wint_t __c) __asm ("wctob");
+#  324|   __extern_inline int
+#  325|-> __NTH (wctob (wint_t __wc))
+#  326|   { return (__builtin_constant_p (__wc) && __wc >= L'\0' && __wc <= L'\x7f'
+#  327|   	  ? (int) __wc : __wctob_alias (__wc)); }
+
+Error: NO_EFFECT (CWE-398):
+/usr/include/wchar.h:326: unsigned_compare: This greater-than-or-equal-to-zero comparison of an unsigned value is always true. "__wc >= 0U".
+#  324|   __extern_inline int
+#  325|   __NTH (wctob (wint_t __wc))
+#  326|-> { return (__builtin_constant_p (__wc) && __wc >= L'\0' && __wc <= L'\x7f'
+#  327|   	  ? (int) __wc : __wctob_alias (__wc)); }
+#  328|   
+
+Error: HIS_CALLING:
+/usr/include/wchar.h:330: HIS_metric_violation: Measured value of CALLING metric 0.00 is lower than the minimum value 1.00 allowed by the HIS metrics policy.
+#  328|   
+#  329|   __extern_inline size_t
+#  330|-> __NTH (mbrlen (const char *__restrict __s, size_t __n,
+#  331|   	       mbstate_t *__restrict __ps))
+#  332|   { return (__ps != NULL
+
+Error: HIS_COMF:
+/usr/include/wchar.h:330: HIS_metric_violation: Measured value of COMF metric 0.00 is lower than the minimum value 0.20 allowed by the HIS metrics policy.
+#  328|   
+#  329|   __extern_inline size_t
+#  330|-> __NTH (mbrlen (const char *__restrict __s, size_t __n,
+#  331|   	       mbstate_t *__restrict __ps))
+#  332|   { return (__ps != NULL
