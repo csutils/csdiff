@@ -1,0 +1,97 @@
+{
+    "scan": {
+        "analyzer-version-gitleaks": "v8.0.0"
+    },
+    "defects": [
+        {
+            "checker": "GITLEAKS_WARNING",
+            "tool": "gitleaks",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/covscan-0.8.2.git.20221006.153904.67668dc/build/lib/covscanhub/scan/fixtures/initial_data.json",
+                    "line": 3039,
+                    "column": 14,
+                    "event": "warning[generic-api-key]",
+                    "message": "generic-api-key has detected secret for file /builddir/build/BUILD/covscan-0.8.2.git.20221006.153904.67668dc/build/lib/covscanhub/scan/fixtures/initial_data.json.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "GITLEAKS_WARNING",
+            "tool": "gitleaks",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/covscan-0.8.2.git.20221006.153904.67668dc/covscand/covscand-local.conf",
+                    "line": 15,
+                    "column": 9,
+                    "event": "warning[generic-api-key]",
+                    "message": "generic-api-key has detected secret for file /builddir/build/BUILD/covscan-0.8.2.git.20221006.153904.67668dc/covscand/covscand-local.conf.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "GITLEAKS_WARNING",
+            "tool": "gitleaks",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/covscan-0.8.2.git.20221006.153904.67668dc/covscand/covscand.conf",
+                    "line": 15,
+                    "column": 9,
+                    "event": "warning[generic-api-key]",
+                    "message": "generic-api-key has detected secret for file /builddir/build/BUILD/covscan-0.8.2.git.20221006.153904.67668dc/covscand/covscand.conf.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "GITLEAKS_WARNING",
+            "tool": "gitleaks",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/covscan-0.8.2.git.20221006.153904.67668dc/covscand/covscand.conf.prod",
+                    "line": 15,
+                    "column": 9,
+                    "event": "warning[generic-api-key]",
+                    "message": "generic-api-key has detected secret for file /builddir/build/BUILD/covscan-0.8.2.git.20221006.153904.67668dc/covscand/covscand.conf.prod.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "GITLEAKS_WARNING",
+            "tool": "gitleaks",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/covscan-0.8.2.git.20221006.153904.67668dc/covscand/covscand.conf.stage",
+                    "line": 15,
+                    "column": 9,
+                    "event": "warning[generic-api-key]",
+                    "message": "generic-api-key has detected secret for file /builddir/build/BUILD/covscan-0.8.2.git.20221006.153904.67668dc/covscand/covscand.conf.stage.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "GITLEAKS_WARNING",
+            "tool": "gitleaks",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/covscan-0.8.2.git.20221006.153904.67668dc/covscanhub/scan/fixtures/initial_data.json",
+                    "line": 3039,
+                    "column": 14,
+                    "event": "warning[generic-api-key]",
+                    "message": "generic-api-key has detected secret for file /builddir/build/BUILD/covscan-0.8.2.git.20221006.153904.67668dc/covscanhub/scan/fixtures/initial_data.json.",
+                    "verbosity_level": 0
+                }
+            ]
+        }
+    ]
+}

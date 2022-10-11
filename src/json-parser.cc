@@ -492,8 +492,11 @@ void SarifTreeDecoder::readScanProps(
 
     this->updateCweMap(driverNode);
 
-    const auto version = valueOf<std::string>(*driverNode, "version", "");
     const auto name = valueOf<std::string>(*driverNode, "name", "");
+    auto version = valueOf<std::string>(*driverNode, "version", "");
+    if (version.empty())
+        version = valueOf<std::string>(*driverNode, "semanticVersion", "");
+
     if (name == "SnykCode") {
         // Snyk Code detected!
         this->singleChecker = "SNYK_CODE_WARNING";
@@ -501,6 +504,13 @@ void SarifTreeDecoder::readScanProps(
         if (!version.empty())
             // record tool version of Snyk Code
             (*pDst)["analyzer-version-snyk-code"] = version;
+    }
+    else if (name == "gitleaks") {
+        // gitleaks
+        this->singleChecker = "GITLEAKS_WARNING";
+
+        if (!version.empty())
+            (*pDst)["analyzer-version-gitleaks"] = version;
     }
     else if (boost::starts_with(name, "GNU C")) {
         // GCC
