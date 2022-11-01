@@ -267,7 +267,7 @@ bool transformInPlace(DockerFileTransformer &dft, const std::string &fileName)
     using namespace boost::filesystem;
 
     // open input file and temporary output file
-    std::fstream fin(fileName.c_str(), std::ios::in);
+    std::ifstream fin(fileName);
     if (!fin) {
         printOpenError("failed to open input file", fileName);
         return false;
@@ -275,10 +275,9 @@ bool transformInPlace(DockerFileTransformer &dft, const std::string &fileName)
 
     const path tmpFilePath = unique_path();
     const std::string tmpFileName = tmpFilePath.native();
-    std::fstream fout(tmpFileName.c_str(), std::ios::out);
+    std::ofstream fout(tmpFileName);
     if (!fout) {
         printOpenError("failed to create temporary file", tmpFileName);
-        fin.close();
         return false;
     }
 
