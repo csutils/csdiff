@@ -282,8 +282,10 @@ bool ValgrindTreeDecoder::readNode(Defect *pDef, pt::ptree::const_iterator defIt
 }
 
 struct XmlParser::Private {
+    using TDecoderPtr = std::unique_ptr<AbstractTreeDecoder>;
+
     InStream                       &input;
-    AbstractTreeDecoder            *decoder = nullptr;
+    TDecoderPtr                     decoder;
     pt::ptree                       root;
     const pt::ptree                *defList = nullptr;
     pt::ptree::const_iterator       defIter = root.end();
@@ -291,11 +293,6 @@ struct XmlParser::Private {
     Private(InStream &input):
         input(input)
     {
-    }
-
-    ~Private()
-    {
-        delete this->decoder;
     }
 };
 
@@ -310,7 +307,7 @@ XmlParser::XmlParser(InStream &input):
         pt::ptree *node = nullptr;
         if (findChildOf(&node, d->root, "valgrindoutput"))
             // valgrind XML format
-            d->decoder = new ValgrindTreeDecoder;
+            d->decoder.reset(new ValgrindTreeDecoder);
         else
             throw pt::ptree_error("unknown XML format");
 
@@ -328,10 +325,7 @@ XmlParser::XmlParser(InStream &input):
     }
 }
 
-XmlParser::~XmlParser()
-{
-    delete d;
-}
+XmlParser::~XmlParser() = default;
 
 bool XmlParser::hasError() const
 {

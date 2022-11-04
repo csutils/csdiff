@@ -31,11 +31,8 @@ class XmlParser: public AbstractParser {
         bool hasError() const override;
 
     private:
-        XmlParser(const Parser &);
-        XmlParser& operator=(const Parser &);
-
         struct Private;
-        Private *d;
+        std::unique_ptr<Private> d;
 };
 
 #endif /* H_GUARD_XML_PARSER_H */
