@@ -43,16 +43,33 @@ class AbstractTreeDecoder {
         }
 
         /// locate the list of defects within the inner document format
-        virtual void readRoot(
-                const pt::ptree       **pDefList,
-                const pt::ptree        *root)
+        virtual void readRoot(const pt::ptree *root)
         {
-            *pDefList = root;
+            defList_ = root;
+            defIter_ = root->begin();
         }
 
-        /// read the given ptree node, decode, and store the result into def
-        virtual bool readNode(Defect *def, pt::ptree::const_iterator defIter)
-            = 0;
+        /// read the current node, decode into def, and move to the next one
+        virtual bool readNode(Defect *def) = 0;
+
+    protected:
+        const pt::ptree                *defList_ = nullptr;
+        pt::ptree::const_iterator       defIter_;
+
+        virtual const pt::ptree* nextNode()
+        {
+            if (!defList_)
+                // failed initialization
+                return nullptr;
+
+            if (defList_->end() == defIter_)
+                // EOF
+                return nullptr;
+
+            // move the iterator after we get the current position
+            const pt::ptree::const_iterator itNow = defIter_++;
+            return &itNow->second;
+        }
 };
 
 /// abstraction for higher-level encoders for various tree-based file formats

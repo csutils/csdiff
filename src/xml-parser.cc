@@ -31,12 +31,9 @@
 /// tree decoder for valgrind XML output
 class ValgrindTreeDecoder: public AbstractTreeDecoder {
     public:
-        bool readNode(Defect *def, pt::ptree::const_iterator defIter) override;
+        bool readNode(Defect *def) override;
 
-        void readRoot(
-                const pt::ptree       **pDefList,
-                const pt::ptree        *root)
-            override;
+        void readRoot(const pt::ptree *root) override;
 
     private:
         Defect defPrototype = Defect("VALGRIND_WARNING");
@@ -108,12 +105,11 @@ void readExeArgs(
     }
 }
 
-void ValgrindTreeDecoder::readRoot(
-        const pt::ptree               **pDefList,
-        const pt::ptree                *root)
+void ValgrindTreeDecoder::readRoot(const pt::ptree *root)
 {
     // valgrind reports will be at the same level in the XML tree
-    *pDefList = root;
+    defList_ = root;
+    defIter_ = root->begin();
 
     // only valgrind produces this data format
     this->defPrototype.tool = "valgrind";
@@ -236,15 +232,25 @@ void readStack(Defect *pDef, const pt::ptree &stackNode)
     }
 }
 
-bool ValgrindTreeDecoder::readNode(Defect *pDef, pt::ptree::const_iterator defIter)
+bool ValgrindTreeDecoder::readNode(Defect *pDef)
 {
-    static const std::string errorKey = "error";
-    if (errorKey != defIter->first)
-        // not a node we are interested in
+    if (!defList_)
+        // initialization failed
         return false;
 
+    pt::ptree::const_iterator it;
+    do {
+        if (defList_->end() == defIter_)
+            // EOF
+            return false;
+
+        // move the iterator after we get the current position
+        it = defIter_++;
+    }
+    while ("error" != it->first);
+
     // the current "error" node representing a single valgrind's report
-    const pt::ptree &defNode = defIter->second;
+    const pt::ptree &defNode = it->second;
 
     // initialize the defect structure
     Defect &def = *pDef;
@@ -287,8 +293,6 @@ struct XmlParser::Private {
     InStream                       &input;
     TDecoderPtr                     decoder;
     pt::ptree                       root;
-    const pt::ptree                *defList = nullptr;
-    pt::ptree::const_iterator       defIter = root.end();
 
     Private(InStream &input):
         input(input)
@@ -312,10 +316,7 @@ XmlParser::XmlParser(InStream &input):
             throw pt::ptree_error("unknown XML format");
 
         // process the root node
-        d->decoder->readRoot(&d->defList, node);
-
-        // initialize the traversal through the list of defects/issues
-        d->defIter = d->defList->begin();
+        d->decoder->readRoot(node);
     }
     catch (pt::file_parser_error &e) {
         d->input.handleError(e.message(), e.line());
@@ -334,21 +335,13 @@ bool XmlParser::hasError() const
 
 bool XmlParser::getNext(Defect *pDef)
 {
-    if (!d->defList)
-        // initialization failed, error has already been reported
-        return false;
-
-    while (d->defList->end() != d->defIter) {
-        // get the current node and move to the next one
+    // error recovery loop
+    for (;;) {
         try {
-            if (d->decoder->readNode(pDef, d->defIter++))
-                return true;
+            return d->decoder->readNode(pDef);
         }
         catch (pt::ptree_error &e) {
             d->input.handleError(e.what());
         }
     }
-
-    // EOF
-    return false;
 }

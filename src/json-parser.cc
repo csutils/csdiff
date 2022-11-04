@@ -40,7 +40,7 @@ class SimpleTreeDecoder: public AbstractTreeDecoder {
                 const pt::ptree        *root)
             override;
 
-        bool readNode(Defect *def, pt::ptree::const_iterator defIter) override;
+        bool readNode(Defect *def) override;
 
     private:
         enum ENodeKind {
@@ -63,7 +63,7 @@ class SimpleTreeDecoder: public AbstractTreeDecoder {
 /// tree decoder of the Coverity JSON format
 class CovTreeDecoder: public AbstractTreeDecoder {
     public:
-        bool readNode(Defect *def, pt::ptree::const_iterator defIter) override;
+        bool readNode(Defect *def) override;
 
     private:
         KeyEventDigger              keDigger;
@@ -77,13 +77,9 @@ class SarifTreeDecoder: public AbstractTreeDecoder {
                 const pt::ptree        *root)
             override;
 
-        void readRoot(
-                const pt::ptree       **pDefList,
-                const pt::ptree        *root)
-            override;
+        void readRoot(const pt::ptree *root) override;
 
-        bool readNode(Defect *def, pt::ptree::const_iterator defIter)
-            override;
+        bool readNode(Defect *def) override;
 
     private:
         void updateCweMap(const pt::ptree *driverNode);
@@ -103,7 +99,7 @@ class SarifTreeDecoder: public AbstractTreeDecoder {
 /// tree decoder of the JSON format produced by GCC
 class GccTreeDecoder: public AbstractTreeDecoder {
     public:
-        bool readNode(Defect *def, pt::ptree::const_iterator defIter) override;
+        bool readNode(Defect *def) override;
 
     private:
         const GccPostProcessor postProc;
@@ -112,7 +108,7 @@ class GccTreeDecoder: public AbstractTreeDecoder {
 /// tree decoder of the JSON format produced by ShellCheck
 class ShellCheckTreeDecoder: public AbstractTreeDecoder {
     public:
-        bool readNode(Defect *def, pt::ptree::const_iterator defIter) override;
+        bool readNode(Defect *def) override;
 
     private:
         const GccPostProcessor postProc;
@@ -124,8 +120,6 @@ struct JsonParser::Private {
     InStream                       &input;
     TDecoderPtr                     decoder;
     pt::ptree                       root;
-    const pt::ptree                *defList = nullptr;
-    pt::ptree::const_iterator       defIter;
     int                             defNumber = 0;
     TScanProps                      scanProps;
 
@@ -135,7 +129,6 @@ struct JsonParser::Private {
     }
 
     void dataError(const std::string &msg);
-    bool readNext(Defect *def);
 };
 
 void JsonParser::Private::dataError(const std::string &msg)
@@ -187,11 +180,7 @@ JsonParser::JsonParser(InStream &input):
         d->decoder->readScanProps(&d->scanProps, &d->root);
 
         // process the root node
-        d->decoder->readRoot(&d->defList, node);
-
-        // initialize the traversal through the list of defects/issues
-        if (d->defList)
-            d->defIter = d->defList->begin();
+        d->decoder->readRoot(node);
     }
     catch (pt::file_parser_error &e) {
         d->input.handleError(e.message(), e.line());
@@ -213,34 +202,24 @@ const TScanProps& JsonParser::getScanProps() const
     return d->scanProps;
 }
 
-bool JsonParser::Private::readNext(Defect *def)
-{
-    try {
-        // make sure the Defect structure is properly initialized
-        (*def) = Defect();
-
-        // read the current node and move to the next one
-        this->defNumber++;
-        return this->decoder->readNode(def, this->defIter++);
-    }
-    catch (pt::ptree_error &e) {
-        this->dataError(e.what());
-        return false;
-    }
-}
-
 bool JsonParser::getNext(Defect *def)
 {
-    if (!d->defList)
-        return false;
-
     // error recovery loop
     for (;;) {
-        if (d->defList->end() == d->defIter)
-            return false;
+        try {
+            // make sure the Defect structure is properly initialized
+            (*def) = Defect();
 
-        if (d->readNext(def))
-            return true;
+            // read the current node and move to the next one
+            const bool ok = d->decoder->readNode(def);
+            if (ok)
+                d->defNumber++;
+
+            return ok;
+        }
+        catch (pt::ptree_error &e) {
+            d->dataError(e.what());
+        }
     }
 }
 
@@ -308,11 +287,15 @@ void SimpleTreeDecoder::readScanProps(
         (*pDst)[item.first] = item.second.data();
 }
 
-bool SimpleTreeDecoder::readNode(
-        Defect                      *def,
-        pt::ptree::const_iterator    defIter)
+bool SimpleTreeDecoder::readNode(Defect *def)
 {
-    const pt::ptree &defNode = defIter->second;
+    // move the iterator after we get the current position
+    const pt::ptree *pNode = this->nextNode();
+    if (!pNode)
+        // failed initialization or EOF
+        return false;
+
+    const pt::ptree &defNode = *pNode;
 
     this->reportUnknownNodes(NK_DEFECT, defNode);
 
@@ -374,11 +357,15 @@ bool SimpleTreeDecoder::readNode(
     return true;
 }
 
-bool CovTreeDecoder::readNode(
-        Defect                      *def,
-        pt::ptree::const_iterator    defIter)
+bool CovTreeDecoder::readNode(Defect *def)
 {
-    const pt::ptree &defNode = defIter->second;
+    // move the iterator after we get the current position
+    const pt::ptree *pNode = this->nextNode();
+    if (!pNode)
+        // failed initialization or EOF
+        return false;
+
+    const pt::ptree &defNode = *pNode;
 
     // read per-defect properties
     def->checker = defNode.get<std::string>("checkerName");
@@ -516,14 +503,18 @@ void SarifTreeDecoder::readScanProps(
     }
 }
 
-void SarifTreeDecoder::readRoot(
-        const pt::ptree           **pDefList,
-        const pt::ptree            *runs)
+void SarifTreeDecoder::readRoot(const pt::ptree *runs)
 {
-    // check that we have exactly one run and return its results
-    if ((1U != runs->size())
-            || !findChildOf(pDefList, runs->begin()->second, "results"))
-        pDefList = nullptr;
+    if (1U != runs->size())
+        // exactly one run expected
+        return;
+
+    if (!findChildOf(&defList_, runs->begin()->second, "results"))
+        // no results found
+        return;
+
+    // initialize the iteration over "results"
+    defIter_ = defList_->begin();
 }
 
 static void sarifReadLocation(DefEvent *pEvt, const pt::ptree &loc)
@@ -667,15 +658,18 @@ static int sarifCweFromDefNode(const pt::ptree &defNode)
     return 0;
 }
 
-bool SarifTreeDecoder::readNode(
-        Defect                      *def,
-        pt::ptree::const_iterator    defIter)
+bool SarifTreeDecoder::readNode(Defect *def)
 {
+    // move the iterator after we get the current position
+    const pt::ptree *pNode = this->nextNode();
+    if (!pNode)
+        // failed initialization or EOF
+        return false;
+
+    const pt::ptree &defNode = *pNode;
+
     // initialize the defect structure
     *def = Defect(this->singleChecker);
-
-    // the current node representing a single SARIF report
-    const pt::ptree &defNode = defIter->second;
 
     // initialize the key event
     const auto level = valueOf<std::string>(defNode, "level", "warning");
@@ -766,10 +760,17 @@ static bool gccReadEvent(DefEvent *pEvt, const pt::ptree &evtNode)
     return true;
 }
 
-bool GccTreeDecoder::readNode(Defect *def, pt::ptree::const_iterator defIter)
+bool GccTreeDecoder::readNode(Defect *def)
 {
+    // move the iterator after we get the current position
+    const pt::ptree *pNode = this->nextNode();
+    if (!pNode)
+        // failed initialization or EOF
+        return false;
+
+    const pt::ptree &defNode = *pNode;
+
     *def = Defect("COMPILER_WARNING");
-    const pt::ptree &defNode = defIter->second;
 
     // read key event
     def->events.push_back(DefEvent());
@@ -825,12 +826,17 @@ static bool scReadEvent(DefEvent *pEvt, const pt::ptree &evtNode)
     return true;
 }
 
-bool ShellCheckTreeDecoder::readNode(
-        Defect                     *def,
-        pt::ptree::const_iterator   defIter)
+bool ShellCheckTreeDecoder::readNode(Defect *def)
 {
+    // move the iterator after we get the current position
+    const pt::ptree *pNode = this->nextNode();
+    if (!pNode)
+        // failed initialization or EOF
+        return false;
+
+    const pt::ptree &defNode = *pNode;
+
     *def = Defect("SHELLCHECK_WARNING");
-    const pt::ptree &defNode = defIter->second;
 
     // read key event
     def->events.push_back(DefEvent());
