@@ -36,11 +36,8 @@ class JsonParser: public AbstractParser {
         }
 
     private:
-        JsonParser(const Parser &);
-        JsonParser& operator=(const Parser &);
-
         struct Private;
-        Private *d;
+        std::unique_ptr<Private> d;
 };
 
 #endif /* H_GUARD_JSON_PARSER_H */

@@ -119,8 +119,10 @@ class ShellCheckTreeDecoder: public AbstractTreeDecoder {
 };
 
 struct JsonParser::Private {
+    using TDecoderPtr = std::unique_ptr<AbstractTreeDecoder>;
+
     InStream                       &input;
-    AbstractTreeDecoder            *decoder = nullptr;
+    TDecoderPtr                     decoder;
     pt::ptree                       root;
     const pt::ptree                *defList = nullptr;
     pt::ptree::const_iterator       defIter;
@@ -130,11 +132,6 @@ struct JsonParser::Private {
     Private(InStream &input):
         input(input)
     {
-    }
-
-    ~Private()
-    {
-        delete this->decoder;
     }
 
     void dataError(const std::string &msg);
@@ -170,19 +167,19 @@ JsonParser::JsonParser(InStream &input):
         pt::ptree *node = &d->root;
         if (findChildOf(&node, d->root, "defects"))
             // csdiff-native JSON format
-            d->decoder = new SimpleTreeDecoder(d->input);
+            d->decoder.reset(new SimpleTreeDecoder(d->input));
         else if (findChildOf(&node, d->root, "issues"))
             // Coverity JSON format
-            d->decoder = new CovTreeDecoder;
+            d->decoder.reset(new CovTreeDecoder);
         else if (findChildOf(&node, d->root, "runs"))
             // SARIF format
-            d->decoder = new SarifTreeDecoder;
+            d->decoder.reset(new SarifTreeDecoder);
         else if (findChildOf(&node, d->root, "comments"))
             // ShellCheck JSON format
-            d->decoder = new ShellCheckTreeDecoder;
+            d->decoder.reset(new ShellCheckTreeDecoder);
         else if (first.not_found() != first.find("kind"))
             // GCC JSON format
-            d->decoder = new GccTreeDecoder;
+            d->decoder.reset(new GccTreeDecoder);
         else
             throw pt::ptree_error("unknown JSON format");
 
@@ -204,10 +201,7 @@ JsonParser::JsonParser(InStream &input):
     }
 }
 
-JsonParser::~JsonParser()
-{
-    delete d;
-}
+JsonParser::~JsonParser() = default;
 
 bool JsonParser::hasError() const
 {
