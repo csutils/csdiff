@@ -17,8 +17,8 @@
  * along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef H_GUARD_CSPARSER_H
-#define H_GUARD_CSPARSER_H
+#ifndef H_GUARD_PARSER_COV_H
+#define H_GUARD_PARSER_COV_H
 
 #include "parser.hh"
 
@@ -61,4 +61,4 @@ class KeyEventDigger {
         Private *d;
 };
 
-#endif /* H_GUARD_CSPARSER_H */
+#endif /* H_GUARD_PARSER_COV_H */

@@ -67,7 +67,6 @@ add_library(cs STATIC
     color.cc
     csdiff-core.cc
     csfilter.cc
-    csparser.cc
     csv-parser.cc
     cswriter.cc
     cwe-mapper.cc
@@ -80,6 +79,7 @@ add_library(cs STATIC
     json-writer.cc
     parser.cc
     parser-common.cc
+    parser-cov.cc
     shared-string.cc
     version.cc
     xml-parser.cc

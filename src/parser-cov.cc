@@ -17,7 +17,7 @@
  * along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "csparser.hh"
+#include "parser-cov.hh"
 
 #include "parser-common.hh"
 #include "regex.hh"
