@@ -17,8 +17,8 @@
  * along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef H_GUARD_JSON_WRITER_H
-#define H_GUARD_JSON_WRITER_H
+#ifndef H_GUARD_WRITER_JSON_H
+#define H_GUARD_WRITER_JSON_H
 
 #include "writer.hh"
 
@@ -41,4 +41,4 @@ class JsonWriter: public AbstractWriter {
         std::unique_ptr<Private> d;
 };
 
-#endif /* H_GUARD_JSON_WRITER_H */
+#endif /* H_GUARD_WRITER_JSON_H */

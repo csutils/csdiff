@@ -21,9 +21,9 @@
 
 #include "cswriter.hh"
 #include "instream.hh"
-#include "json-writer.hh"
 #include "regex.hh"
 #include "writer-html.hh"
+#include "writer-json.hh"
 
 // /////////////////////////////////////////////////////////////////////////////
 // implementation of AbstractWriter

@@ -17,7 +17,7 @@
  * along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "json-writer.hh"
+#include "writer-json.hh"
 
 #include "abstract-tree.hh"
 #include "regex.hh"

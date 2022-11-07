@@ -21,10 +21,10 @@
 #include "abstract-filter.hh"
 #include "csfilter.hh"
 #include "cswriter.hh"
-#include "json-writer.hh"
 #include "parser-common.hh"
 #include "regex.hh"
 #include "version.hh"
+#include "writer-json.hh"
 
 #include <cstdlib>
 #include <fstream>

@@ -21,9 +21,9 @@
 #include "cwe-mapper.hh"
 #include "deflookup.hh"
 #include "instream.hh"
-#include "json-writer.hh"
 #include "parser-gcc.hh"
 #include "version.hh"
+#include "writer-json.hh"
 
 #include <boost/program_options.hpp>
 #include <boost/property_tree/ini_parser.hpp>

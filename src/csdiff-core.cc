@@ -21,7 +21,7 @@
 
 #include "cswriter.hh"
 #include "deflookup.hh"
-#include "json-writer.hh"
+#include "writer-json.hh"
 
 #include <memory>
 
