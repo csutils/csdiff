@@ -19,23 +19,13 @@
 
 #include "parser-json.hh"
 
-#include "abstract-tree.hh"
-#include "parser-gcc.hh"            // for GccPostProcessor
 #include "parser-json-cov.hh"
 #include "parser-json-gcc.hh"
 #include "parser-json-sarif.hh"
+#include "parser-json-shchk.hh"
 #include "parser-json-simple.hh"
 
 #include <boost/property_tree/json_parser.hpp>
-
-/// tree decoder of the JSON format produced by ShellCheck
-class ShellCheckTreeDecoder: public AbstractTreeDecoder {
-    public:
-        bool readNode(Defect *def) override;
-
-    private:
-        const GccPostProcessor postProc;
-};
 
 struct JsonParser::Private {
     using TDecoderPtr = std::unique_ptr<AbstractTreeDecoder>;
@@ -144,55 +134,4 @@ bool JsonParser::getNext(Defect *def)
             d->dataError(e.what());
         }
     }
-}
-
-static bool scReadEvent(DefEvent *pEvt, const pt::ptree &evtNode)
-{
-    using std::string;
-
-    // read level (error, warning, note)
-    string &evtName = pEvt->event;
-    evtName = valueOf<string>(evtNode, "level", "");
-    if (evtName.empty())
-        return false;
-
-    // read location
-    pEvt->fileName = valueOf<string>(evtNode, "file", "<unknown>");
-    pEvt->line     = valueOf<int>   (evtNode, "line", 0);
-    pEvt->column   = valueOf<int>   (evtNode, "byte-column", 0);
-
-    // read message
-    pEvt->msg = valueOf<string>(evtNode, "message", "<unknown>");
-
-    // append [SC...] if available
-    const string code = valueOf<string>(evtNode, "code", "");
-    if (!code.empty())
-        pEvt->msg += " [SC" + code + "]";
-
-    return true;
-}
-
-bool ShellCheckTreeDecoder::readNode(Defect *def)
-{
-    // move the iterator after we get the current position
-    const pt::ptree *pNode = this->nextNode();
-    if (!pNode)
-        // failed initialization or EOF
-        return false;
-
-    const pt::ptree &defNode = *pNode;
-
-    *def = Defect("SHELLCHECK_WARNING");
-
-    // read key event
-    def->events.push_back(DefEvent());
-    if (!scReadEvent(&def->events.back(), defNode))
-        return false;
-
-    // TODO: go through fix/replacements nodes
-
-    // apply post-processing rules
-    this->postProc.apply(def);
-
-    return true;
 }
