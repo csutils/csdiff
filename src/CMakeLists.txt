@@ -82,6 +82,7 @@ add_library(cs STATIC
     parser-json-shchk.cc
     parser-json-simple.cc
     parser-xml.cc
+    parser-xml-valgrind.cc
     shared-string.cc
     version.cc
     writer.cc
