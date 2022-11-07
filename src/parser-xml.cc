@@ -17,7 +17,7 @@
  * along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "xml-parser.hh"
+#include "parser-xml.hh"
 
 #include "abstract-tree.hh"
 

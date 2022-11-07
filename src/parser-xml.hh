@@ -17,8 +17,8 @@
  * along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef H_GUARD_XML_PARSER_H
-#define H_GUARD_XML_PARSER_H
+#ifndef H_GUARD_PARSER_XML_H
+#define H_GUARD_PARSER_XML_H
 
 #include "parser.hh"
 
@@ -35,4 +35,4 @@ class XmlParser: public AbstractParser {
         std::unique_ptr<Private> d;
 };
 
-#endif /* H_GUARD_XML_PARSER_H */
+#endif /* H_GUARD_PARSER_XML_H */

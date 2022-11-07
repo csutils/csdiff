@@ -22,7 +22,7 @@
 #include "parser-cov.hh"
 #include "parser-gcc.hh"
 #include "parser-json.hh"
-#include "xml-parser.hh"
+#include "parser-xml.hh"
 
 // TODO: remove this when we move to C++14
 // by mistake, std::make_unique was not included in C++11

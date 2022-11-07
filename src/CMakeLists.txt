@@ -80,9 +80,9 @@ add_library(cs STATIC
     parser-cov.cc
     parser-gcc.cc
     parser-json.cc
+    parser-xml.cc
     shared-string.cc
     version.cc
-    xml-parser.cc
 )
 
 # link cslib.a and boost libraries
