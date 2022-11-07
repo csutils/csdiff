@@ -20,7 +20,7 @@
 #ifndef H_GUARD_XML_PARSER_H
 #define H_GUARD_XML_PARSER_H
 
-#include "abstract-parser.hh"
+#include "parser.hh"
 
 class XmlParser: public AbstractParser {
     public:

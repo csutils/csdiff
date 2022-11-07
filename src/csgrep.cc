@@ -17,7 +17,7 @@
  * along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "abstract-parser.hh"
+#include "parser.hh"
 #include "abstract-filter.hh"
 #include "csfilter.hh"
 #include "cswriter.hh"

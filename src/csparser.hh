@@ -20,7 +20,7 @@
 #ifndef H_GUARD_CSPARSER_H
 #define H_GUARD_CSPARSER_H
 
-#include "abstract-parser.hh"
+#include "parser.hh"
 
 class CovParser: public AbstractParser {
     public:

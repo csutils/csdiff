@@ -20,7 +20,7 @@
 #ifndef H_GUARD_ABSTRACT_WRITER_H
 #define H_GUARD_ABSTRACT_WRITER_H
 
-#include "abstract-parser.hh"
+#include "parser.hh"
 #include "color.hh"
 
 #include <memory>

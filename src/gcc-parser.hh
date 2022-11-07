@@ -20,7 +20,7 @@
 #ifndef H_GUARD_GCC_PARSER_H
 #define H_GUARD_GCC_PARSER_H
 
-#include "abstract-parser.hh"
+#include "parser.hh"
 
 class GccParser: public AbstractParser {
     public:

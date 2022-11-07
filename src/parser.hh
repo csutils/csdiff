@@ -17,8 +17,8 @@
  * along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef H_GUARD_ABSTRACT_PARSER_H
-#define H_GUARD_ABSTRACT_PARSER_H
+#ifndef H_GUARD_PARSER_H
+#define H_GUARD_PARSER_H
 
 #include "defect.hh"
 #include "instream.hh"
@@ -104,4 +104,4 @@ class Parser {
         std::unique_ptr<AbstractParser>   parser_;
 };
 
-#endif /* H_GUARD_ABSTRACT_PARSER_H */
+#endif /* H_GUARD_PARSER_H */

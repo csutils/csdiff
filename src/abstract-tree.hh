@@ -20,7 +20,7 @@
 #ifndef H_GUARD_ABSTRACT_TREE_H
 #define H_GUARD_ABSTRACT_TREE_H
 
-#include "abstract-parser.hh"       // for TScanProps
+#include "parser.hh"                // for TScanProps
 
 #include <boost/property_tree/ptree.hpp>
 

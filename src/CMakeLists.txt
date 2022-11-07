@@ -63,7 +63,6 @@ add_definitions(-DBOOST_BIND_GLOBAL_PLACEHOLDERS)
 # cslib.a
 add_library(cs STATIC
     abstract-filter.cc
-    abstract-parser.cc
     abstract-writer.cc
     color.cc
     csdiff-core.cc
@@ -79,6 +78,7 @@ add_library(cs STATIC
     instream.cc
     json-parser.cc
     json-writer.cc
+    parser.cc
     parser-common.cc
     shared-string.cc
     version.cc
