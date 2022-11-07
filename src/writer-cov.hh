@@ -17,8 +17,8 @@
  * along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef H_GUARD_CSWRITER_H
-#define H_GUARD_CSWRITER_H
+#ifndef H_GUARD_WRITER_COV_H
+#define H_GUARD_WRITER_COV_H
 
 #include "abstract-filter.hh"
 
@@ -36,4 +36,4 @@ class CovWriter: public AbstractWriter {
         Private *d;
 };
 
-#endif /* H_GUARD_CSWRITER_H */
+#endif /* H_GUARD_WRITER_COV_H */

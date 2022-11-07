@@ -17,7 +17,7 @@
  * along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "cswriter.hh"
+#include "writer-cov.hh"
 
 struct CovWriter::Private {
     std::ostream       &str;

@@ -20,10 +20,10 @@
 #include "parser.hh"
 #include "abstract-filter.hh"
 #include "csfilter.hh"
-#include "cswriter.hh"
 #include "parser-common.hh"
 #include "regex.hh"
 #include "version.hh"
+#include "writer-cov.hh"
 #include "writer-json.hh"
 
 #include <cstdlib>

@@ -19,8 +19,8 @@
 
 #include "csdiff-core.hh"
 
-#include "cswriter.hh"
 #include "deflookup.hh"
+#include "writer-cov.hh"
 #include "writer-json.hh"
 
 #include <memory>

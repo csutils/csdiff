@@ -67,7 +67,6 @@ add_library(cs STATIC
     csdiff-core.cc
     csfilter.cc
     csv-parser.cc
-    cswriter.cc
     cwe-mapper.cc
     cwe-name-lookup.cc
     deflookup.cc
@@ -81,6 +80,7 @@ add_library(cs STATIC
     shared-string.cc
     version.cc
     writer.cc
+    writer-cov.cc
     writer-html.cc
     writer-json.cc
 )

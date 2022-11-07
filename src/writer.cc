@@ -19,9 +19,9 @@
 
 #include "writer.hh"
 
-#include "cswriter.hh"
 #include "instream.hh"
 #include "regex.hh"
+#include "writer-cov.hh"
 #include "writer-html.hh"
 #include "writer-json.hh"
 
