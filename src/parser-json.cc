@@ -22,19 +22,11 @@
 #include "abstract-tree.hh"
 #include "parser-gcc.hh"            // for GccPostProcessor
 #include "parser-json-cov.hh"
+#include "parser-json-gcc.hh"
 #include "parser-json-sarif.hh"
 #include "parser-json-simple.hh"
 
 #include <boost/property_tree/json_parser.hpp>
-
-/// tree decoder of the JSON format produced by GCC
-class GccTreeDecoder: public AbstractTreeDecoder {
-    public:
-        bool readNode(Defect *def) override;
-
-    private:
-        const GccPostProcessor postProc;
-};
 
 /// tree decoder of the JSON format produced by ShellCheck
 class ShellCheckTreeDecoder: public AbstractTreeDecoder {
@@ -152,79 +144,6 @@ bool JsonParser::getNext(Defect *def)
             d->dataError(e.what());
         }
     }
-}
-
-static bool gccReadEvent(DefEvent *pEvt, const pt::ptree &evtNode)
-{
-    using std::string;
-
-    // read kind (error, warning, note)
-    string &evtName = pEvt->event;
-    evtName = valueOf<string>(evtNode, "kind", "");
-    if (evtName.empty())
-        return false;
-
-    // read location
-    pEvt->fileName = "<unknown>";
-    const pt::ptree *locs;
-    if (findChildOf(&locs, evtNode, "locations") && !locs->empty()) {
-        const pt::ptree *caret;
-        if (findChildOf(&caret, locs->begin()->second, "caret")) {
-            pEvt->fileName  = valueOf<string>(*caret, "file", "<unknown>");
-            pEvt->line      = valueOf<int>   (*caret, "line", 0);
-            pEvt->column    = valueOf<int>   (*caret, "byte-column", 0);
-        }
-    }
-
-    // read message
-    pEvt->msg = valueOf<string>(evtNode, "message", "<unknown>");
-
-    // read -W... if available
-    const string option = valueOf<string>(evtNode, "option", "");
-    if (!option.empty())
-        pEvt->msg += " [" + option + "]";
-
-    return true;
-}
-
-bool GccTreeDecoder::readNode(Defect *def)
-{
-    // move the iterator after we get the current position
-    const pt::ptree *pNode = this->nextNode();
-    if (!pNode)
-        // failed initialization or EOF
-        return false;
-
-    const pt::ptree &defNode = *pNode;
-
-    *def = Defect("COMPILER_WARNING");
-
-    // read key event
-    def->events.push_back(DefEvent());
-    if (!gccReadEvent(&def->events.back(), defNode))
-        return false;
-
-    // read other events if available
-    const pt::ptree *children;
-    if (findChildOf(&children, defNode, "children")) {
-        for (const auto &item : *children) {
-            const pt::ptree &evtNode = item.second;
-
-            DefEvent evt;
-            if (gccReadEvent(&evt, evtNode))
-                def->events.emplace_back(evt);
-        }
-    }
-
-    // read CWE ID if available
-    const pt::ptree *meta;
-    if (findChildOf(&meta, defNode, "metadata"))
-        def->cwe = valueOf<int>(*meta, "cwe", 0);
-
-    // apply post-processing rules
-    this->postProc.apply(def);
-
-    return true;
 }
 
 static bool scReadEvent(DefEvent *pEvt, const pt::ptree &evtNode)
