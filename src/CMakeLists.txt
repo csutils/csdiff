@@ -71,7 +71,6 @@ add_library(cs STATIC
     cwe-mapper.cc
     cwe-name-lookup.cc
     deflookup.cc
-    html-writer.cc
     instream.cc
     json-writer.cc
     parser.cc
@@ -83,6 +82,7 @@ add_library(cs STATIC
     shared-string.cc
     version.cc
     writer.cc
+    writer-html.cc
 )
 
 # link cslib.a and boost libraries

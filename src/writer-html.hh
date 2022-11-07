@@ -17,8 +17,8 @@
  * along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef H_GUARD_HTML_WRITER_H
-#define H_GUARD_HTML_WRITER_H
+#ifndef H_GUARD_WRITER_HTML_H
+#define H_GUARD_WRITER_HTML_H
 
 #include "writer.hh"
 
@@ -58,4 +58,4 @@ class HtmlWriter: public AbstractWriter {
         Private *d;
 };
 
-#endif /* H_GUARD_HTML_WRITER_H */
+#endif /* H_GUARD_WRITER_HTML_H */

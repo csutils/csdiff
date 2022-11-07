@@ -20,10 +20,10 @@
 #include "parser.hh"
 #include "cwe-name-lookup.hh"
 #include "deflookup.hh"
-#include "html-writer.hh"
 #include "instream.hh"
 #include "regex.hh"
 #include "version.hh"
+#include "writer-html.hh"
 
 #include <boost/filesystem.hpp>
 #include <boost/program_options.hpp>

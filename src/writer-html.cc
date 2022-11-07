@@ -17,7 +17,7 @@
  * along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "html-writer.hh"
+#include "writer-html.hh"
 
 #include "cwe-name-lookup.hh"
 #include "deflookup.hh"

@@ -20,10 +20,10 @@
 #include "writer.hh"
 
 #include "cswriter.hh"
-#include "html-writer.hh"
 #include "instream.hh"
 #include "json-writer.hh"
 #include "regex.hh"
+#include "writer-html.hh"
 
 // /////////////////////////////////////////////////////////////////////////////
 // implementation of AbstractWriter
