@@ -17,8 +17,8 @@
  * along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef H_GUARD_JSON_PARSER_H
-#define H_GUARD_JSON_PARSER_H
+#ifndef H_GUARD_PARSER_JSON_H
+#define H_GUARD_PARSER_JSON_H
 
 #include "parser.hh"
 
@@ -40,4 +40,4 @@ class JsonParser: public AbstractParser {
         std::unique_ptr<Private> d;
 };
 
-#endif /* H_GUARD_JSON_PARSER_H */
+#endif /* H_GUARD_PARSER_JSON_H */

@@ -74,12 +74,12 @@ add_library(cs STATIC
     deflookup.cc
     html-writer.cc
     instream.cc
-    json-parser.cc
     json-writer.cc
     parser.cc
     parser-common.cc
     parser-cov.cc
     parser-gcc.cc
+    parser-json.cc
     shared-string.cc
     version.cc
     xml-parser.cc

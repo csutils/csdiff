@@ -17,7 +17,7 @@
  * along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "json-parser.hh"
+#include "parser-json.hh"
 
 #include "abstract-tree.hh"
 #include "parser-common.hh"

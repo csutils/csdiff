@@ -19,9 +19,9 @@
 
 #include "parser.hh"
 
-#include "json-parser.hh"
 #include "parser-cov.hh"
 #include "parser-gcc.hh"
+#include "parser-json.hh"
 #include "xml-parser.hh"
 
 // TODO: remove this when we move to C++14
