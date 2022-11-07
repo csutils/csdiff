@@ -17,7 +17,7 @@
  * along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "abstract-writer.hh"
+#include "writer.hh"
 
 #include "cswriter.hh"
 #include "html-writer.hh"

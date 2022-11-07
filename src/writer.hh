@@ -17,8 +17,8 @@
  * along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef H_GUARD_ABSTRACT_WRITER_H
-#define H_GUARD_ABSTRACT_WRITER_H
+#ifndef H_GUARD_WRITER_H
+#define H_GUARD_WRITER_H
 
 #include "parser.hh"
 #include "color.hh"
@@ -85,4 +85,4 @@ class CtxEventDetector {
         std::unique_ptr<Private> d;
 };
 
-#endif /* H_GUARD_ABSTRACT_WRITER_H */
+#endif /* H_GUARD_WRITER_H */

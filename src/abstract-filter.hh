@@ -20,7 +20,7 @@
 #ifndef H_GUARD_ABSTRACT_FILTER_H
 #define H_GUARD_ABSTRACT_FILTER_H
 
-#include "abstract-writer.hh"
+#include "writer.hh"
 
 #include <memory>
 

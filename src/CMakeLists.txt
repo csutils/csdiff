@@ -63,7 +63,6 @@ add_definitions(-DBOOST_BIND_GLOBAL_PLACEHOLDERS)
 # cslib.a
 add_library(cs STATIC
     abstract-filter.cc
-    abstract-writer.cc
     color.cc
     csdiff-core.cc
     csfilter.cc
@@ -83,6 +82,7 @@ add_library(cs STATIC
     parser-xml.cc
     shared-string.cc
     version.cc
+    writer.cc
 )
 
 # link cslib.a and boost libraries

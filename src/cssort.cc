@@ -17,9 +17,9 @@
  * along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "abstract-writer.hh"
 #include "regex.hh"
 #include "version.hh"
+#include "writer.hh"
 
 #include <boost/program_options.hpp>
 

@@ -20,7 +20,7 @@
 #ifndef H_GUARD_HTML_WRITER_H
 #define H_GUARD_HTML_WRITER_H
 
-#include "abstract-writer.hh"
+#include "writer.hh"
 
 class CweNameLookup;
 class DefLookup;
