@@ -23,42 +23,11 @@
 #include "parser-common.hh"
 #include "parser-cov.hh"            // for KeyEventDigger
 #include "parser-gcc.hh"            // for GccPostProcessor
+#include "parser-json-simple.hh"
 #include "regex.hh"
-
-#include <set>
 
 #include <boost/algorithm/string/predicate.hpp>
 #include <boost/property_tree/json_parser.hpp>
-
-/// tree decoder of the native JSON format of csdiff
-class SimpleTreeDecoder: public AbstractTreeDecoder {
-    public:
-        SimpleTreeDecoder(InStream &input);
-
-        void readScanProps(
-                TScanProps             *pDst,
-                const pt::ptree        *root)
-            override;
-
-        bool readNode(Defect *def) override;
-
-    private:
-        enum ENodeKind {
-            NK_DEFECT,
-            NK_EVENT,
-            NK_LAST
-        };
-
-        void reportUnknownNodes(ENodeKind, const pt::ptree &) const;
-
-        typedef std::set<std::string>       TNodeSet;
-        typedef std::vector<TNodeSet>       TNodeStore;
-
-        const std::string           fileName_;
-        const bool                  silent_;
-        TNodeStore                  nodeStore_;
-        KeyEventDigger              keDigger_;
-};
 
 /// tree decoder of the Coverity JSON format
 class CovTreeDecoder: public AbstractTreeDecoder {
@@ -221,140 +190,6 @@ bool JsonParser::getNext(Defect *def)
             d->dataError(e.what());
         }
     }
-}
-
-SimpleTreeDecoder::SimpleTreeDecoder(InStream &input):
-    fileName_(input.fileName()),
-    silent_(input.silent())
-{
-    if (silent_)
-        // skip initialization of nodeStore_ because no lookup will ever happen
-        return;
-
-    nodeStore_.resize(NK_LAST);
-
-    // known per-defect subnodes
-    nodeStore_[NK_DEFECT] = {
-        "annotation",
-        "checker",
-        "cwe",
-        "defect_id",
-        "events",
-        "function",
-        "imp",
-        "key_event_idx",
-        "language",
-        "tool",
-    };
-
-    // known per-event subnodes
-    nodeStore_[NK_EVENT] = {
-        "column",
-        "event",
-        "file_name",
-        "line",
-        "message",
-        "verbosity_level",
-    };
-}
-
-void SimpleTreeDecoder::reportUnknownNodes(ENodeKind nk, const pt::ptree &node)
-    const
-{
-    if (silent_)
-        return;
-
-    const TNodeSet &nodeSet = nodeStore_[nk];
-
-    for (const pt::ptree::value_type &item : node) {
-        const std::string &name = item.first;
-        if (nodeSet.end() == nodeSet.find(name))
-            std::cerr << fileName_
-                << ": warning: unknown JSON node: " << name
-                << std::endl;
-    }
-}
-
-void SimpleTreeDecoder::readScanProps(
-        TScanProps                 *pDst,
-        const pt::ptree            *root)
-{
-    const pt::ptree emp;
-    const pt::ptree &scanNode =
-        root->get_child_optional("scan").get_value_or(emp);
-
-    for (const pt::ptree::value_type &item : scanNode)
-        (*pDst)[item.first] = item.second.data();
-}
-
-bool SimpleTreeDecoder::readNode(Defect *def)
-{
-    // move the iterator after we get the current position
-    const pt::ptree *pNode = this->nextNode();
-    if (!pNode)
-        // failed initialization or EOF
-        return false;
-
-    const pt::ptree &defNode = *pNode;
-
-    this->reportUnknownNodes(NK_DEFECT, defNode);
-
-    // the checker field is mandatory
-    def->checker = defNode.get<std::string>("checker");
-
-    bool verbosityLevelNeedsInit = false;
-
-    // read the events
-    TEvtList &evtListDst = def->events;
-    const pt::ptree &evtListSrc = defNode.get_child("events");
-    for (const pt::ptree::value_type &evtItem : evtListSrc) {
-        const pt::ptree &evtNode = evtItem.second;
-        this->reportUnknownNodes(NK_EVENT, evtNode);
-
-        DefEvent evt;
-        evt.fileName    = valueOf<std::string   >(evtNode, "file_name"  , "");
-        evt.line        = valueOf<int           >(evtNode, "line"       , 0);
-        evt.column      = valueOf<int           >(evtNode, "column"     , 0);
-        evt.event       = valueOf<std::string   >(evtNode, "event"      , "");
-        evt.msg         = valueOf<std::string   >(evtNode, "message"    , "");
-        evt.verbosityLevel = valueOf<int>(evtNode, "verbosity_level"    , -1);
-        if (-1 == evt.verbosityLevel)
-            verbosityLevelNeedsInit = true;
-
-        evtListDst.push_back(evt);
-    }
-
-    // read "defect_id", "cwe", and "function" if available
-    def->defectId = valueOf<int>        (defNode, "defect_id", 0);
-    def->cwe      = valueOf<int>        (defNode, "cwe"      , 0);
-    def->imp      = valueOf<int>        (defNode, "imp"      , 0);
-    def->function = valueOf<std::string>(defNode, "function", "");
-    def->language = valueOf<std::string>(defNode, "language", "");
-    def->tool     = valueOf<std::string>(defNode, "tool",     "");
-
-    if (defNode.not_found() == defNode.find("key_event_idx")) {
-        // key event not specified, try to guess it
-        if (!keDigger_.guessKeyEvent(def))
-            throw pt::ptree_error("failed to guess key event");
-    }
-    else {
-        // use the provided key_event_idx unless it is out of range
-        const int cntEvents = evtListDst.size();
-        const int defKeyEvent = defNode.get<int>("key_event_idx");
-        if (0 <= defKeyEvent && defKeyEvent < cntEvents)
-            def->keyEventIdx = defKeyEvent;
-        else
-            throw pt::ptree_error("key event out of range");
-    }
-
-    if (verbosityLevelNeedsInit)
-        // missing or incomplete verbosity_level, initialize it over
-        keDigger_.initVerbosity(def);
-
-    // read annotation if available
-    def->annotation = valueOf<std::string>(defNode, "annotation", "");
-
-    return true;
 }
 
 bool CovTreeDecoder::readNode(Defect *def)
