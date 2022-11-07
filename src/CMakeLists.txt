@@ -77,6 +77,7 @@ add_library(cs STATIC
     parser-gcc.cc
     parser-json.cc
     parser-json-cov.cc
+    parser-json-sarif.cc
     parser-json-simple.cc
     parser-xml.cc
     shared-string.cc
