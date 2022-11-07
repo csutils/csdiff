@@ -19,8 +19,8 @@
 
 #include "deflookup.hh"
 
+#include "msg-filter.hh"
 #include "parser.hh"
-#include "csfilter.hh"
 
 #include <map>
 

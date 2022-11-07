@@ -19,7 +19,7 @@
 
 #include "parser.hh"
 #include "abstract-filter.hh"
-#include "csfilter.hh"
+#include "msg-filter.hh"
 #include "parser-common.hh"
 #include "regex.hh"
 #include "version.hh"

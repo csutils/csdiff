@@ -18,7 +18,7 @@
  */
 
 #include "abstract-tree.hh"
-#include "csfilter.hh"
+#include "msg-filter.hh"
 #include "regex.hh"
 
 #include <boost/property_tree/json_parser.hpp>

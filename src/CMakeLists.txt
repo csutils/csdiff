@@ -65,12 +65,12 @@ add_library(cs STATIC
     abstract-filter.cc
     color.cc
     csdiff-core.cc
-    csfilter.cc
     csv-parser.cc
     cwe-mapper.cc
     cwe-name-lookup.cc
     deflookup.cc
     instream.cc
+    msg-filter.cc
     parser.cc
     parser-common.cc
     parser-cov.cc

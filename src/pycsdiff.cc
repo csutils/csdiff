@@ -18,7 +18,7 @@
  */
 
 #include "csdiff-core.hh"
-#include "csfilter.hh"
+#include "msg-filter.hh"
 #include "version.hh"
 
 #include <sstream>

@@ -18,8 +18,8 @@
  */
 
 #include "csdiff-core.hh"
-#include "csfilter.hh"
 #include "instream.hh"
+#include "msg-filter.hh"
 #include "regex.hh"
 #include "version.hh"
 
