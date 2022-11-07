@@ -21,22 +21,13 @@
 
 #include "abstract-tree.hh"
 #include "parser-common.hh"
-#include "parser-cov.hh"            // for KeyEventDigger
 #include "parser-gcc.hh"            // for GccPostProcessor
+#include "parser-json-cov.hh"
 #include "parser-json-simple.hh"
 #include "regex.hh"
 
 #include <boost/algorithm/string/predicate.hpp>
 #include <boost/property_tree/json_parser.hpp>
-
-/// tree decoder of the Coverity JSON format
-class CovTreeDecoder: public AbstractTreeDecoder {
-    public:
-        bool readNode(Defect *def) override;
-
-    private:
-        KeyEventDigger              keDigger;
-};
 
 /// tree decoder of the SARIF format
 class SarifTreeDecoder: public AbstractTreeDecoder {
@@ -190,58 +181,6 @@ bool JsonParser::getNext(Defect *def)
             d->dataError(e.what());
         }
     }
-}
-
-bool CovTreeDecoder::readNode(Defect *def)
-{
-    // move the iterator after we get the current position
-    const pt::ptree *pNode = this->nextNode();
-    if (!pNode)
-        // failed initialization or EOF
-        return false;
-
-    const pt::ptree &defNode = *pNode;
-
-    // read per-defect properties
-    def->checker = defNode.get<std::string>("checkerName");
-    def->function = valueOf<std::string>(defNode, "functionDisplayName", "");
-    def->language = valueOf<std::string>(defNode, "code-language", "");
-
-    // out of the supported tools, only Coverity produces this data format
-    def->tool = "coverity";
-
-    // read CWE if available
-    const pt::ptree *checkerProps;
-    if (findChildOf(&checkerProps, defNode, "checkerProperties"))
-        def->cwe = valueOf<int>(*checkerProps, "cweCategory", 0);
-
-    // count the events and allocate dst array
-    const pt::ptree &evtList = defNode.get_child("events");
-    def->events.resize(evtList.size());
-
-    // decode events one by one
-    unsigned idx = 0;
-    pt::ptree::const_iterator it;
-    for (it = evtList.begin(); it != evtList.end(); ++it, ++idx) {
-        const pt::ptree &evtNode = it->second;
-        DefEvent &evt = def->events[idx];
-
-        evt.fileName    = valueOf<std::string>(evtNode, "filePathname"    , "");
-        evt.line        = valueOf<int>        (evtNode, "lineNumber"      , 0 );
-        // TODO: read column?
-        evt.event       = valueOf<std::string>(evtNode, "eventTag"        , "");
-        evt.msg         = valueOf<std::string>(evtNode, "eventDescription", "");
-
-        if (evtNode.get<bool>("main"))
-            // this is a key event
-            // TODO: detect and report re-definitions of key events
-            def->keyEventIdx = idx;
-    }
-
-    // initialize verbosity level of all events
-    this->keDigger.initVerbosity(def);
-
-    return true;
 }
 
 void SarifTreeDecoder::updateCweMap(const pt::ptree *driverNode)
