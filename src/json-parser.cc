@@ -20,9 +20,9 @@
 #include "json-parser.hh"
 
 #include "abstract-tree.hh"
-#include "gcc-parser.hh"            // for GccPostProcessor
 #include "parser-common.hh"
 #include "parser-cov.hh"            // for KeyEventDigger
+#include "parser-gcc.hh"            // for GccPostProcessor
 #include "regex.hh"
 
 #include <set>

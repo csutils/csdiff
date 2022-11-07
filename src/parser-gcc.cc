@@ -17,7 +17,7 @@
  * along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "gcc-parser.hh"
+#include "parser-gcc.hh"
 
 #include "parser-common.hh"
 #include "regex.hh"

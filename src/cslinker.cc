@@ -20,9 +20,9 @@
 #include "parser.hh"
 #include "cwe-mapper.hh"
 #include "deflookup.hh"
-#include "gcc-parser.hh"
 #include "instream.hh"
 #include "json-writer.hh"
+#include "parser-gcc.hh"
 #include "version.hh"
 
 #include <boost/program_options.hpp>

@@ -72,7 +72,6 @@ add_library(cs STATIC
     cwe-mapper.cc
     cwe-name-lookup.cc
     deflookup.cc
-    gcc-parser.cc
     html-writer.cc
     instream.cc
     json-parser.cc
@@ -80,6 +79,7 @@ add_library(cs STATIC
     parser.cc
     parser-common.cc
     parser-cov.cc
+    parser-gcc.cc
     shared-string.cc
     version.cc
     xml-parser.cc

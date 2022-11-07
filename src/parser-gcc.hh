@@ -17,8 +17,8 @@
  * along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef H_GUARD_GCC_PARSER_H
-#define H_GUARD_GCC_PARSER_H
+#ifndef H_GUARD_PARSER_GCC_H
+#define H_GUARD_PARSER_GCC_H
 
 #include "parser.hh"
 
@@ -59,4 +59,4 @@ class GccPostProcessor {
 };
 
 
-#endif /* H_GUARD_GCC_PARSER_H */
+#endif /* H_GUARD_PARSER_GCC_H */
