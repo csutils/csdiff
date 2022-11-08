@@ -61,35 +61,8 @@ endif()
 add_definitions(-DBOOST_BIND_GLOBAL_PLACEHOLDERS)
 
 # cslib.a
-add_library(cs STATIC
-    abstract-filter.cc
-    color.cc
-    csdiff-core.cc
-    csv-parser.cc
-    cwe-mapper.cc
-    cwe-name-lookup.cc
-    deflookup.cc
-    instream.cc
-    msg-filter.cc
-    parser.cc
-    parser-common.cc
-    parser-cov.cc
-    parser-gcc.cc
-    parser-json.cc
-    parser-json-cov.cc
-    parser-json-gcc.cc
-    parser-json-sarif.cc
-    parser-json-shchk.cc
-    parser-json-simple.cc
-    parser-xml.cc
-    parser-xml-valgrind.cc
-    shared-string.cc
-    version.cc
-    writer.cc
-    writer-cov.cc
-    writer-html.cc
-    writer-json.cc
-)
+add_subdirectory(lib)
+include_directories(lib)
 
 # link cslib.a and boost libraries
 link_libraries(cs

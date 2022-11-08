@@ -25,7 +25,7 @@ SANITIZERS ?= OFF
 CMAKE_BUILD_TYPE ?= RelWithDebInfo
 
 .PHONY: all check clean sanitizers distclean distcheck distcheck-sanitizers \
-	fast install version.cc src/version.cc
+	fast install version.cc src/lib/version.cc
 
 all: version.cc
 	mkdir -p csdiff_build
@@ -47,7 +47,7 @@ sanitizers:
 	$(MAKE) -s all SANITIZERS=ON
 
 distclean:
-	if test -e .git; then rm -f src/version.cc; fi
+	if test -e .git; then rm -f src/lib/version.cc; fi
 	rm -rf csdiff_build
 
 distcheck: distclean
@@ -59,9 +59,9 @@ distcheck-sanitizers:
 install: all
 	$(MAKE) -C csdiff_build install
 
-version.cc: src/version.cc
+version.cc: src/lib/version.cc
 
-src/version.cc:
+src/lib/version.cc:
 	@if test -e .git; then \
 		cmd='git describe --always | sed -e "s/^csdiff-//" -e "s/-.*-/.$$(git log --pretty="%cd" --date=iso -1 | tr -d ":-" | tr " " . | cut -d. -f 1,2)./"'; \
 	else \
