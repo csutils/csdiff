@@ -1,0 +1,29 @@
+Error: OWASP_ZAP_WARNING (CWE-200):
+http://rhos-fedora-devel.usersys.redhat.com:5000: note: dynamically analyzed on Tue, 9 Aug 2022 14:38:31
+http://rhos-fedora-devel.usersys.redhat.com:5000/pets/id/pet_id: alert[90022]: Application Error Disclosure
+http://rhos-fedora-devel.usersys.redhat.com:5000/pets/id/pet_id: desc: <p>This page contains an error/warning message that may disclose sensitive information like the location of the file that produced the unhandled exception. This information can be used to launch further attacks against the web application. The alert could be a false positive if the error message is found inside a documentation page.</p>
+http://rhos-fedora-devel.usersys.redhat.com:5000/pets/id/pet_id: solution: <p>Review the source code of this page. Implement custom error pages. Consider implementing a mechanism to provide a unique error reference/identifier to the client (browser) while logging the details on the server side and not exposing them to the user.</p>
+http://rhos-fedora-devel.usersys.redhat.com:5000/pets/id/pet_id: method: GET
+http://rhos-fedora-devel.usersys.redhat.com:5000/pets/id/pet_id: evidence: HTTP/1.1 500 INTERNAL SERVER ERROR
+
+Error: OWASP_ZAP_WARNING (CWE-200):
+http://rhos-fedora-devel.usersys.redhat.com:5000: note: dynamically analyzed on Tue, 9 Aug 2022 14:38:31
+http://rhos-fedora-devel.usersys.redhat.com:5000/pets/id/pet_id: alert[10023]: Information Disclosure - Debug Error Messages
+http://rhos-fedora-devel.usersys.redhat.com:5000/pets/id/pet_id: desc: <p>The response appeared to contain common error messages returned by platforms such as ASP.NET, and Web-servers such as IIS and Apache. You can configure the list of common debug messages.</p>
+http://rhos-fedora-devel.usersys.redhat.com:5000/pets/id/pet_id: solution: <p>Disable debugging messages before pushing to production.</p>
+http://rhos-fedora-devel.usersys.redhat.com:5000/pets/id/pet_id: method: GET
+http://rhos-fedora-devel.usersys.redhat.com:5000/pets/id/pet_id: evidence: Internal Server Error
+
+Error: OWASP_ZAP_WARNING (CWE-693):
+http://rhos-fedora-devel.usersys.redhat.com:5000: note: dynamically analyzed on Tue, 9 Aug 2022 14:38:31
+http://rhos-fedora-devel.usersys.redhat.com:5000/docs/openapi.json: alert[10021]: X-Content-Type-Options Header Missing
+http://rhos-fedora-devel.usersys.redhat.com:5000/docs/openapi.json: desc: <p>The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</p>
+http://rhos-fedora-devel.usersys.redhat.com:5000/docs/openapi.json: solution: <p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p>
+http://rhos-fedora-devel.usersys.redhat.com:5000/docs/openapi.json: otherinfo: <p>This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.</p><p>At "High" threshold this scan rule will not alert on client or server error responses.</p>
+http://rhos-fedora-devel.usersys.redhat.com:5000/docs/openapi.json: reference: <p>http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx</p><p>https://owasp.org/www-community/Security_Headers</p>
+http://rhos-fedora-devel.usersys.redhat.com:5000/docs/openapi.json: method: GET
+http://rhos-fedora-devel.usersys.redhat.com:5000/docs/openapi.json: param: X-Content-Type-Options
+http://rhos-fedora-devel.usersys.redhat.com:5000/pets/: method: GET
+http://rhos-fedora-devel.usersys.redhat.com:5000/pets/: param: X-Content-Type-Options
+http://rhos-fedora-devel.usersys.redhat.com:5000/pets/name/pet_name: method: GET
+http://rhos-fedora-devel.usersys.redhat.com:5000/pets/name/pet_name: param: X-Content-Type-Options
