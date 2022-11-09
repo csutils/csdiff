@@ -44,8 +44,8 @@ bool CovTreeDecoder::readNode(Defect *def)
 
     // read per-defect properties
     def->checker = defNode.get<std::string>("checkerName");
-    def->function = valueOf<std::string>(defNode, "functionDisplayName", "");
-    def->language = valueOf<std::string>(defNode, "code-language", "");
+    def->function = valueOf<std::string>(defNode, "functionDisplayName");
+    def->language = valueOf<std::string>(defNode, "code-language");
 
     // out of the supported tools, only Coverity produces this data format
     def->tool = "coverity";
@@ -53,7 +53,7 @@ bool CovTreeDecoder::readNode(Defect *def)
     // read CWE if available
     const pt::ptree *checkerProps;
     if (findChildOf(&checkerProps, defNode, "checkerProperties"))
-        def->cwe = valueOf<int>(*checkerProps, "cweCategory", 0);
+        def->cwe = valueOf<int>(*checkerProps, "cweCategory");
 
     // count the events and allocate dst array
     const pt::ptree &evtList = defNode.get_child("events");
@@ -66,11 +66,11 @@ bool CovTreeDecoder::readNode(Defect *def)
         const pt::ptree &evtNode = it->second;
         DefEvent &evt = def->events[idx];
 
-        evt.fileName    = valueOf<std::string>(evtNode, "filePathname"    , "");
-        evt.line        = valueOf<int>        (evtNode, "lineNumber"      , 0 );
+        evt.fileName    = valueOf<std::string>(evtNode, "filePathname");
+        evt.line        = valueOf<int>        (evtNode, "lineNumber");
         // TODO: read column?
-        evt.event       = valueOf<std::string>(evtNode, "eventTag"        , "");
-        evt.msg         = valueOf<std::string>(evtNode, "eventDescription", "");
+        evt.event       = valueOf<std::string>(evtNode, "eventTag");
+        evt.msg         = valueOf<std::string>(evtNode, "eventDescription");
 
         if (evtNode.get<bool>("main"))
             // this is a key event

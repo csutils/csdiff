@@ -195,7 +195,7 @@ bool MsgFilter::setJSONFilter(InStream &input)
             const auto &filter = filter_rule.second;
             d->addMsgFilter(getStringValue(filter.get_child("checker")),
                             getStringValue(filter.get_child("regexp")),
-                            valueOf(filter, "replace", std::string{}));
+                            valueOf<std::string>(filter, "replace"));
         }
         return true;
     }

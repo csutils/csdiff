@@ -38,20 +38,20 @@ static bool scReadEvent(DefEvent *pEvt, const pt::ptree &evtNode)
 
     // read level (error, warning, note)
     string &evtName = pEvt->event;
-    evtName = valueOf<string>(evtNode, "level", "");
+    evtName = valueOf<string>(evtNode, "level");
     if (evtName.empty())
         return false;
 
     // read location
     pEvt->fileName = valueOf<string>(evtNode, "file", "<unknown>");
-    pEvt->line     = valueOf<int>   (evtNode, "line", 0);
-    pEvt->column   = valueOf<int>   (evtNode, "byte-column", 0);
+    pEvt->line     = valueOf<int>   (evtNode, "line");
+    pEvt->column   = valueOf<int>   (evtNode, "byte-column");
 
     // read message
     pEvt->msg = valueOf<string>(evtNode, "message", "<unknown>");
 
     // append [SC...] if available
-    const string code = valueOf<string>(evtNode, "code", "");
+    const string code = valueOf<string>(evtNode, "code");
     if (!code.empty())
         pEvt->msg += " [SC" + code + "]";
 

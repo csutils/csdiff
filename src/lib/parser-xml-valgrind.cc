@@ -110,7 +110,7 @@ void ValgrindTreeDecoder::readRoot(const pt::ptree *root)
     // only valgrind produces this data format
     d->defPrototype.tool = "valgrind";
 
-    const int pid = valueOf<int>(*root, "pid", 0);
+    const int pid = valueOf<int>(*root, "pid");
     if (!pid)
         // insufficient data
         return;
@@ -154,7 +154,7 @@ std::string readMsg(const pt::ptree &defNode)
 /// return true if the given frame is internal to valgrind itself
 bool isInternalFrame(const pt::ptree &frameNode)
 {
-    std::string obj = valueOf<std::string>(frameNode, "obj", "");
+    std::string obj = valueOf<std::string>(frameNode, "obj");
     if (obj.empty())
         return false;
 
@@ -183,7 +183,7 @@ void readStack(Defect *pDef, const pt::ptree &stackNode)
         noteEvt.verbosityLevel = /* note */ 1 + static_cast<int>(intFrame);
 
         // read function name if available
-        const std::string fn = valueOf<std::string>(frameNode, "fn", "");
+        const std::string fn = valueOf<std::string>(frameNode, "fn");
         noteEvt.msg += (fn.empty())
             ? "here"
             : fn + "()";
@@ -192,12 +192,12 @@ void readStack(Defect *pDef, const pt::ptree &stackNode)
         if (findChildOf(&fileNode, frameNode, "file")) {
             // read absolute path of the source file
             noteEvt.fileName = getStringValue(*fileNode);
-            const std::string dir = valueOf<std::string>(frameNode, "dir", "");
+            const std::string dir = valueOf<std::string>(frameNode, "dir");
             if (!dir.empty())
                 noteEvt.fileName = dir + "/" + noteEvt.fileName;
 
             // read line number
-            noteEvt.line = valueOf<int>(frameNode, "line", 0);
+            noteEvt.line = valueOf<int>(frameNode, "line");
             keyEventScore = 8;
         }
         else if (findChildOf(&fileNode, frameNode, "obj")) {
@@ -260,7 +260,7 @@ bool ValgrindTreeDecoder::readNode(Defect *pDef)
     keyEvent.msg = readMsg(defNode);
 
     // read "kind" of the report
-    const std::string kind = valueOf<std::string>(defNode, "kind", "");
+    const std::string kind = valueOf<std::string>(defNode, "kind");
     if (!kind.empty())
         keyEvent.event += "[" + kind + "]";
 

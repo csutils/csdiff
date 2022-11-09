@@ -54,7 +54,7 @@ void SarifTreeDecoder::Private::updateCweMap(const pt::ptree *driverNode)
 
     for (const auto &item : *rules) {
         const pt::ptree &rule = item.second;
-        const auto id = valueOf<std::string>(rule, "id", "");
+        const auto id = valueOf<std::string>(rule, "id");
         if (id.empty())
             // rule ID missing
             continue;
@@ -110,10 +110,10 @@ void SarifTreeDecoder::readScanProps(
 
     d->updateCweMap(driverNode);
 
-    const auto name = valueOf<std::string>(*driverNode, "name", "");
-    auto version = valueOf<std::string>(*driverNode, "version", "");
+    const auto name = valueOf<std::string>(*driverNode, "name");
+    auto version = valueOf<std::string>(*driverNode, "version");
     if (version.empty())
-        version = valueOf<std::string>(*driverNode, "semanticVersion", "");
+        version = valueOf<std::string>(*driverNode, "semanticVersion");
 
     if (name == "SnykCode") {
         // Snyk Code detected!
@@ -163,7 +163,7 @@ static void sarifReadLocation(DefEvent *pEvt, const pt::ptree &loc)
 
     const pt::ptree *al;
     if (findChildOf(&al, *pl, "artifactLocation")) {
-        const auto uri = valueOf<std::string>(*al, "uri", "");
+        const auto uri = valueOf<std::string>(*al, "uri");
         if (!uri.empty())
             // read file name
             pEvt->fileName = uri;
@@ -172,8 +172,8 @@ static void sarifReadLocation(DefEvent *pEvt, const pt::ptree &loc)
     const pt::ptree *reg;
     if (findChildOf(&reg, *pl, "region")) {
         // read line/col if available
-        pEvt->line = valueOf<int>(*reg, "startLine", 0);
-        pEvt->column = valueOf<int>(*reg, "startColumn", 0);
+        pEvt->line = valueOf<int>(*reg, "startLine");
+        pEvt->column = valueOf<int>(*reg, "startColumn");
     }
 }
 
@@ -287,8 +287,8 @@ static int sarifCweFromDefNode(const pt::ptree &defNode)
         if (!findChildOf(&tc, t, "toolComponent"))
             continue;
 
-        if (valueOf<std::string>(*tc, "name", "") == "cwe")
-            return valueOf<int>(t, "id", 0);
+        if (valueOf<std::string>(*tc, "name") == "cwe")
+            return valueOf<int>(t, "id");
     }
 
     // not found
@@ -314,7 +314,7 @@ bool SarifTreeDecoder::readNode(Defect *def)
     DefEvent &keyEvent = def->events.back();
 
     // read "rule" that triggered the report
-    const auto rule = valueOf<std::string>(defNode, "ruleId", "");
+    const auto rule = valueOf<std::string>(defNode, "ruleId");
     if (!rule.empty()) {
         boost::smatch sm;
         if (boost::regex_match(rule, sm, d->reRuleId)) {

@@ -38,7 +38,7 @@ static bool gccReadEvent(DefEvent *pEvt, const pt::ptree &evtNode)
 
     // read kind (error, warning, note)
     string &evtName = pEvt->event;
-    evtName = valueOf<string>(evtNode, "kind", "");
+    evtName = valueOf<string>(evtNode, "kind");
     if (evtName.empty())
         return false;
 
@@ -49,8 +49,8 @@ static bool gccReadEvent(DefEvent *pEvt, const pt::ptree &evtNode)
         const pt::ptree *caret;
         if (findChildOf(&caret, locs->begin()->second, "caret")) {
             pEvt->fileName  = valueOf<string>(*caret, "file", "<unknown>");
-            pEvt->line      = valueOf<int>   (*caret, "line", 0);
-            pEvt->column    = valueOf<int>   (*caret, "byte-column", 0);
+            pEvt->line      = valueOf<int>   (*caret, "line");
+            pEvt->column    = valueOf<int>   (*caret, "byte-column");
         }
     }
 
@@ -58,7 +58,7 @@ static bool gccReadEvent(DefEvent *pEvt, const pt::ptree &evtNode)
     pEvt->msg = valueOf<string>(evtNode, "message", "<unknown>");
 
     // read -W... if available
-    const string option = valueOf<string>(evtNode, "option", "");
+    const string option = valueOf<string>(evtNode, "option");
     if (!option.empty())
         pEvt->msg += " [" + option + "]";
 
@@ -97,7 +97,7 @@ bool GccTreeDecoder::readNode(Defect *def)
     // read CWE ID if available
     const pt::ptree *meta;
     if (findChildOf(&meta, defNode, "metadata"))
-        def->cwe = valueOf<int>(*meta, "cwe", 0);
+        def->cwe = valueOf<int>(*meta, "cwe");
 
     // apply post-processing rules
     d->postProc.apply(def);

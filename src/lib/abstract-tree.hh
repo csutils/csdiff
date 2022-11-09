@@ -104,7 +104,10 @@ bool findChildOf(TNode **pDst, TNode &node, const char *key)
 }
 
 template <typename T>
-inline T valueOf(const pt::ptree &node, const char *path, const T &defVal)
+inline T valueOf(
+        const pt::ptree                &node,
+        const char                     *path,
+        const T                        &defVal = T())
 {
     const boost::optional<T> &opt = node.get_optional<T>(path);
     return opt.get_value_or(defVal);

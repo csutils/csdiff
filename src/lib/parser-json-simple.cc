@@ -139,12 +139,12 @@ bool SimpleTreeDecoder::readNode(Defect *def)
         d->reportUnknownNodes(Private::NK_EVENT, evtNode);
 
         DefEvent evt;
-        evt.fileName    = valueOf<std::string   >(evtNode, "file_name"  , "");
-        evt.line        = valueOf<int           >(evtNode, "line"       , 0);
-        evt.column      = valueOf<int           >(evtNode, "column"     , 0);
-        evt.event       = valueOf<std::string   >(evtNode, "event"      , "");
-        evt.msg         = valueOf<std::string   >(evtNode, "message"    , "");
-        evt.verbosityLevel = valueOf<int>(evtNode, "verbosity_level"    , -1);
+        evt.fileName    = valueOf<std::string   >(evtNode, "file_name");
+        evt.line        = valueOf<int           >(evtNode, "line");
+        evt.column      = valueOf<int           >(evtNode, "column");
+        evt.event       = valueOf<std::string   >(evtNode, "event");
+        evt.msg         = valueOf<std::string   >(evtNode, "message");
+        evt.verbosityLevel = valueOf<int>(evtNode, "verbosity_level", -1);
         if (-1 == evt.verbosityLevel)
             verbosityLevelNeedsInit = true;
 
@@ -152,12 +152,12 @@ bool SimpleTreeDecoder::readNode(Defect *def)
     }
 
     // read "defect_id", "cwe", and "function" if available
-    def->defectId = valueOf<int>        (defNode, "defect_id", 0);
-    def->cwe      = valueOf<int>        (defNode, "cwe"      , 0);
-    def->imp      = valueOf<int>        (defNode, "imp"      , 0);
-    def->function = valueOf<std::string>(defNode, "function", "");
-    def->language = valueOf<std::string>(defNode, "language", "");
-    def->tool     = valueOf<std::string>(defNode, "tool",     "");
+    def->defectId = valueOf<int>        (defNode, "defect_id");
+    def->cwe      = valueOf<int>        (defNode, "cwe");
+    def->imp      = valueOf<int>        (defNode, "imp");
+    def->function = valueOf<std::string>(defNode, "function");
+    def->language = valueOf<std::string>(defNode, "language");
+    def->tool     = valueOf<std::string>(defNode, "tool");
 
     if (defNode.not_found() == defNode.find("key_event_idx")) {
         // key event not specified, try to guess it
@@ -179,7 +179,7 @@ bool SimpleTreeDecoder::readNode(Defect *def)
         d->keDigger.initVerbosity(def);
 
     // read annotation if available
-    def->annotation = valueOf<std::string>(defNode, "annotation", "");
+    def->annotation = valueOf<std::string>(defNode, "annotation");
 
     return true;
 }
