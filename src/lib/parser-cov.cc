@@ -279,6 +279,9 @@ KeyEventDigger::KeyEventDigger():
     d->hMap["GCC_ANALYZER_WARNING"] .insert("warning");
     d->hMap["GCC_ANALYZER_WARNING"] .insert("fatal error");
 
+    // OWASP ZAP uses "alert" as the key event
+    d->hMap["OWASP_ZAP_WARNING"]    .insert("alert");
+
     // events that should never be used as key events (excluding trace events)
     d->denyList.insert("another_instance");
     d->denyList.insert("comparison_remediation");

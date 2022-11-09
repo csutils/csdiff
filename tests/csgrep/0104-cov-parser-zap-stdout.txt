@@ -7,7 +7,7 @@
             "checker": "OWASP_ZAP_WARNING",
             "cwe": 200,
             "tool": "owasp-zap",
-            "key_event_idx": 5,
+            "key_event_idx": 1,
             "events": [
                 {
                     "file_name": "http://rhos-fedora-devel.usersys.redhat.com:5000",
@@ -21,7 +21,7 @@
                     "line": 0,
                     "event": "alert[90022]",
                     "message": "Application Error Disclosure",
-                    "verbosity_level": 1
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "http://rhos-fedora-devel.usersys.redhat.com:5000/pets/id/pet_id",
@@ -49,7 +49,7 @@
                     "line": 0,
                     "event": "evidence",
                     "message": "HTTP/1.1 500 INTERNAL SERVER ERROR",
-                    "verbosity_level": 0
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -57,7 +57,7 @@
             "checker": "OWASP_ZAP_WARNING",
             "cwe": 200,
             "tool": "owasp-zap",
-            "key_event_idx": 5,
+            "key_event_idx": 1,
             "events": [
                 {
                     "file_name": "http://rhos-fedora-devel.usersys.redhat.com:5000",
@@ -71,7 +71,7 @@
                     "line": 0,
                     "event": "alert[10023]",
                     "message": "Information Disclosure - Debug Error Messages",
-                    "verbosity_level": 1
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "http://rhos-fedora-devel.usersys.redhat.com:5000/pets/id/pet_id",
@@ -99,7 +99,7 @@
                     "line": 0,
                     "event": "evidence",
                     "message": "Internal Server Error",
-                    "verbosity_level": 0
+                    "verbosity_level": 1
                 }
             ]
         },
@@ -107,7 +107,7 @@
             "checker": "OWASP_ZAP_WARNING",
             "cwe": 693,
             "tool": "owasp-zap",
-            "key_event_idx": 11,
+            "key_event_idx": 1,
             "events": [
                 {
                     "file_name": "http://rhos-fedora-devel.usersys.redhat.com:5000",
@@ -121,7 +121,7 @@
                     "line": 0,
                     "event": "alert[10021]",
                     "message": "X-Content-Type-Options Header Missing",
-                    "verbosity_level": 1
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "http://rhos-fedora-devel.usersys.redhat.com:5000/docs/openapi.json",
@@ -191,7 +191,7 @@
                     "line": 0,
                     "event": "param",
                     "message": "X-Content-Type-Options",
-                    "verbosity_level": 0
+                    "verbosity_level": 1
                 }
             ]
         }
