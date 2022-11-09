@@ -36,6 +36,7 @@ add_library(cs STATIC
     parser-json-sarif.cc
     parser-json-shchk.cc
     parser-json-simple.cc
+    parser-json-zap.cc
     parser-xml.cc
     parser-xml-valgrind.cc
     shared-string.cc

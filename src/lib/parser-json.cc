@@ -24,6 +24,7 @@
 #include "parser-json-sarif.hh"
 #include "parser-json-shchk.hh"
 #include "parser-json-simple.hh"
+#include "parser-json-zap.hh"
 
 #include <boost/property_tree/json_parser.hpp>
 
@@ -83,6 +84,9 @@ JsonParser::JsonParser(InStream &input):
         else if (findChildOf(&node, d->root, "comments"))
             // ShellCheck JSON format
             d->decoder.reset(new ShellCheckTreeDecoder);
+        else if (findChildOf(&node, d->root, "site"))
+            // OWASP ZAP JSON format
+            d->decoder.reset(new ZapTreeDecoder);
         else if (first.not_found() != first.find("kind"))
             // GCC JSON format
             d->decoder.reset(new GccTreeDecoder);
