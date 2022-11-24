@@ -1,0 +1,879 @@
+{
+    "scan": {
+        "analyzer-version-clang": "15.0.0",
+        "analyzer-version-coverity": "2022.9.1",
+        "analyzer-version-cppcheck": "2.9",
+        "analyzer-version-gcc": "8.5.0",
+        "analyzer-version-gitleaks": "8.14.0",
+        "analyzer-version-shellcheck": "0.6.0",
+        "analyzer-version-unicontrol": "0.0.2",
+        "cov-compilation-unit-count": 475,
+        "cov-compilation-unit-ratio": 100,
+        "cov-lines-processed": 175872,
+        "cov-time-elapsed-analysis": "00:05:58",
+        "diffbase-analyzer-version-clang": "15.0.0",
+        "diffbase-analyzer-version-coverity": "2022.9.1",
+        "diffbase-analyzer-version-cppcheck": "2.9",
+        "diffbase-analyzer-version-gcc": "8.5.0",
+        "diffbase-analyzer-version-gitleaks": "8.14.0",
+        "diffbase-analyzer-version-shellcheck": "0.6.0",
+        "diffbase-analyzer-version-unicontrol": "0.0.2",
+        "diffbase-cov-compilation-unit-count": 475,
+        "diffbase-cov-compilation-unit-ratio": 100,
+        "diffbase-cov-lines-processed": 175911,
+        "diffbase-cov-time-elapsed-analysis": "00:05:47",
+        "diffbase-enabled-plugins": "clang, coverity, cppcheck, gcc, gitleaks, shellcheck, unicontrol",
+        "diffbase-exit-code": 0,
+        "diffbase-host": "cov03.lab.eng.brq2.redhat.com",
+        "diffbase-known-false-positives": "/usr/share/csmock/known-false-positives.js",
+        "diffbase-mock-config": "rhel-8-x86_64",
+        "diffbase-project-name": "cockpit-279-1.el8",
+        "diffbase-store-results-to": "/tmp/tmpgwkgy117/cockpit-279-1.el8.tar.xz",
+        "diffbase-time-created": "2022-11-23 23:15:53",
+        "diffbase-time-finished": "2022-11-23 23:31:59",
+        "diffbase-tool": "csmock",
+        "diffbase-tool-args": "'/usr/bin/csmock' '-t' 'gcc,clang,cppcheck,coverity,shellcheck,unicontrol,gitleaks' '-r' 'rhel-8-x86_64' '-o' '/tmp/tmpgwkgy117/cockpit-279-1.el8.tar.xz' '--use-host-cppcheck' '--gcc-analyze' '--unicontrol-notests' '--unicontrol-bidi-only' '/tmp/tmpgwkgy117/cockpit-279-1.el8.src.rpm'",
+        "diffbase-tool-version": "csmock-3.3.4.20221103.165645.g19d0671.internal-1.el8",
+        "enabled-plugins": "clang, coverity, cppcheck, gcc, gitleaks, shellcheck, unicontrol",
+        "exit-code": 0,
+        "host": "cov03.lab.eng.brq2.redhat.com",
+        "known-false-positives": "/usr/share/csmock/known-false-positives.js",
+        "mock-config": "rhel-8-x86_64",
+        "project-name": "cockpit-276.1-1.el8",
+        "store-results-to": "/tmp/tmp23jjubtm/cockpit-276.1-1.el8.tar.xz",
+        "time-created": "2022-11-23 19:45:18",
+        "time-finished": "2022-11-23 20:16:07",
+        "tool": "csmock",
+        "tool-args": "'/usr/bin/csmock' '-t' 'gcc,clang,cppcheck,coverity,shellcheck,unicontrol,gitleaks' '-r' 'rhel-8-x86_64' '-o' '/tmp/tmp23jjubtm/cockpit-276.1-1.el8.tar.xz' '--use-host-cppcheck' '--gcc-analyze' '--unicontrol-notests' '--unicontrol-bidi-only' '/tmp/tmp23jjubtm/cockpit-276.1-1.el8.src.rpm'",
+        "tool-version": "csmock-3.3.4.20221103.165645.g19d0671.internal-1.el8",
+        "title": "Fixed defects"
+    },
+    "defects": [
+        {
+            "checker": "GITLEAKS_WARNING",
+            "tool": "gitleaks",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "cockpit-276.1/src/bridge/mock-client.key",
+                    "line": 1,
+                    "column": 1,
+                    "event": "warning[private-key]",
+                    "message": "private-key has detected secret for file /builddir/build/BUILD/cockpit-276.1/src/bridge/mock-client.key.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    1|-> -----BEGIN PRIVATE KEY-----",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    2|   MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDyXWrTUHk39uJo",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    3|   UNrNS24+46sWws4LrstfWKITraC5yER/0XIRqCCUbO1c5IKlj+pfQdaYiQTc+qi1",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "GITLEAKS_WARNING",
+            "tool": "gitleaks",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "cockpit-276.1/src/bridge/mock-server.key",
+                    "line": 1,
+                    "column": 1,
+                    "event": "warning[private-key]",
+                    "message": "private-key has detected secret for file /builddir/build/BUILD/cockpit-276.1/src/bridge/mock-server.key.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    1|-> -----BEGIN PRIVATE KEY-----",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    2|   MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCVIGUG7rMuPRRX",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    3|   1XpMy0isxfI75XzmctX+nDIhuIW015zN4ELchFZTeUwTQfJDaRiWzopX1/FPQ9Lz",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "GITLEAKS_WARNING",
+            "tool": "gitleaks",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "cockpit-276.1/src/bridge/test-httpstream.c",
+                    "line": 600,
+                    "column": 5,
+                    "event": "warning[private-key]",
+                    "message": "private-key has detected secret for file /builddir/build/BUILD/cockpit-276.1/src/bridge/test-httpstream.c.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  598|   \"-----END CERTIFICATE-----\\\"\"",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  599|   \"}, \\\"key\\\": { \\\"data\\\": \"",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  600|-> \"\\\"-----BEGIN PRIVATE KEY-----\\n\"",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  601|   \"MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDyXWrTUHk39uJo\\n\"",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  602|   \"UNrNS24+46sWws4LrstfWKITraC5yER/0XIRqCCUbO1c5IKlj+pfQdaYiQTc+qi1\\n\"",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "GITLEAKS_WARNING",
+            "tool": "gitleaks",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "cockpit-276.1/src/ssh/mock_ecdsa_key",
+                    "line": 1,
+                    "column": 1,
+                    "event": "warning[private-key]",
+                    "message": "private-key has detected secret for file /builddir/build/BUILD/cockpit-276.1/src/ssh/mock_ecdsa_key.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    1|-> -----BEGIN OPENSSH PRIVATE KEY-----",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    2|   b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAaAAAABNlY2RzYS",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    3|   1zaGEyLW5pc3RwMjU2AAAACG5pc3RwMjU2AAAAQQSuD2S/4gae/4UIUb7AYejIP1LC1xiE",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "GITLEAKS_WARNING",
+            "tool": "gitleaks",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "cockpit-276.1/src/ssh/mock_rsa_key",
+                    "line": 1,
+                    "column": 1,
+                    "event": "warning[private-key]",
+                    "message": "private-key has detected secret for file /builddir/build/BUILD/cockpit-276.1/src/ssh/mock_rsa_key.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    1|-> -----BEGIN RSA PRIVATE KEY-----",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    2|   MIIEowIBAAKCAQEAmM6NOzgNB+n+6K1bp/ZyFYxmK5H/ALjw0nKlhs5SqQKkoqaE",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    3|   PaGP5sDjcCDruLoSoexU0AquafjWjievkOM/vsQc0jixbHil/s8i8YDRtvI5xdOl",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "GITLEAKS_WARNING",
+            "tool": "gitleaks",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "cockpit-276.1/src/ssh/test_rsa",
+                    "line": 1,
+                    "column": 1,
+                    "event": "warning[private-key]",
+                    "message": "private-key has detected secret for file /builddir/build/BUILD/cockpit-276.1/src/ssh/test_rsa.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    1|-> -----BEGIN RSA PRIVATE KEY-----",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    2|   MIIEowIBAAKCAQEAvkPEj9GX9I0v/3dxCUB73TgOYjxkXB/m2ecKnUYmYtEwgirA",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    3|   onCgZRMAvB7UaP5e6U/pNCXuZ+UgS0yU6tqEXD7MQ4YZiiNU1RaLe/gQ21NEx27h",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "GITLEAKS_WARNING",
+            "tool": "gitleaks",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "cockpit-276.1/src/tls/ca/alice.key",
+                    "line": 1,
+                    "column": 1,
+                    "event": "warning[private-key]",
+                    "message": "private-key has detected secret for file /builddir/build/BUILD/cockpit-276.1/src/tls/ca/alice.key.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    1|-> -----BEGIN RSA PRIVATE KEY-----",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    2|   MIIEogIBAAKCAQEAoLImK1+GT/Ftv5j285fmps27pkqCC+YO9Ps0u/w9mhXOLwZi",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    3|   0OEIIESPzS18BsWV/fhWT9O0sURu4RMWl4wqOBfXl1O29Qc5h9RDWlI4gBqsM+t/",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "GITLEAKS_WARNING",
+            "tool": "gitleaks",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "cockpit-276.1/src/tls/ca/bob.key",
+                    "line": 1,
+                    "column": 1,
+                    "event": "warning[private-key]",
+                    "message": "private-key has detected secret for file /builddir/build/BUILD/cockpit-276.1/src/tls/ca/bob.key.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    1|-> -----BEGIN RSA PRIVATE KEY-----",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    2|   MIIEpgIBAAKCAQEAuM6nsDPMX4eEVEaJeP8nS0hvMI0e11lGQZx5GONci6jUuH7H",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    3|   uyfgst34wvnutghtX3rRvzDO4j8m+VcUnY6UNenpYaJ5BqHosXuLwRKxjA3BvdKy",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "GITLEAKS_WARNING",
+            "tool": "gitleaks",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "cockpit-276.1/src/tls/ca/ca.key",
+                    "line": 1,
+                    "column": 1,
+                    "event": "warning[private-key]",
+                    "message": "private-key has detected secret for file /builddir/build/BUILD/cockpit-276.1/src/tls/ca/ca.key.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    1|-> -----BEGIN PRIVATE KEY-----",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    2|   MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDNj1H4uMEyMv96",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    3|   wW/0HJRzlr0znpdKVUKN65SSqr89OptxfwOa8I53nJcpinpcQSFtYHp9MUbttqVc",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "GITLEAKS_WARNING",
+            "tool": "gitleaks",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "cockpit-276.1/src/tls/cockpit-certificate-ensure.c",
+                    "line": 243,
+                    "column": 11,
+                    "event": "warning[private-key]",
+                    "message": "private-key has detected secret for file /builddir/build/BUILD/cockpit-276.1/src/tls/cockpit-certificate-ensure.c.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  241|   {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  242|     const char *pairs[][2] = {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  243|->       { \"-----BEGIN RSA PRIVATE KEY-----\", \"-----END RSA PRIVATE KEY-----\" },",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  244|         /* this is slightly asymmetrical -- parameters and private key occur in the same file */",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  245|         { \"-----BEGIN EC PARAMETERS-----\",   \"-----END EC PRIVATE KEY-----\" },",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "GITLEAKS_WARNING",
+            "tool": "gitleaks",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "cockpit-276.1/src/ws/mock-combined.crt",
+                    "line": 1,
+                    "column": 1,
+                    "event": "warning[private-key]",
+                    "message": "private-key has detected secret for file /builddir/build/BUILD/cockpit-276.1/src/ws/mock-combined.crt.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    1|-> -----BEGIN PRIVATE KEY-----",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    2|   MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCzuSes+7ghYHT+",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    3|   jrcAjMVF3jaGn+OcVGTSuxVzNY5zdqDTLt8GL24hhrxAJXy2SvKwye1L0Wjkcx6a",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "GITLEAKS_WARNING",
+            "tool": "gitleaks",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "cockpit-276.1/src/ws/mock-ecc.key",
+                    "line": 6,
+                    "column": 2,
+                    "event": "warning[private-key]",
+                    "message": "private-key has detected secret for file /builddir/build/BUILD/cockpit-276.1/src/ws/mock-ecc.key.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    4|   BggqhkjOPQMBBw==",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    5|   -----END EC PARAMETERS-----",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    6|-> -----BEGIN EC PRIVATE KEY-----",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    7|   MHcCAQEEIIdevEpPq+LmSqzcYwKk0MgKLcTn7vUNPpvvoJl9v/yEoAoGCCqGSM49",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    8|   AwEHoUQDQgAE5BRvKPl0iCppAFY4luyrbS6wIRAV6CY3PkhNpWgcRk40q7Ev85LM",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "GITLEAKS_WARNING",
+            "tool": "gitleaks",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "cockpit-276.1/test/data/100years/0-self-signed.key",
+                    "line": 1,
+                    "column": 1,
+                    "event": "warning[private-key]",
+                    "message": "private-key has detected secret for file /builddir/build/BUILD/cockpit-276.1/test/data/100years/0-self-signed.key.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    1|-> -----BEGIN PRIVATE KEY-----",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    2|   MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDukbLhxSdbsruC",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    3|   nnXexEZTK8JJ5LEtMi7rWbqUYsBRhePF0oYhu9ccMKN9g5T6U0t70vY6sl2+W2x9",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "GITLEAKS_WARNING",
+            "tool": "gitleaks",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "cockpit-276.1/test/data/expired/0-self-signed.key",
+                    "line": 1,
+                    "column": 1,
+                    "event": "warning[private-key]",
+                    "message": "private-key has detected secret for file /builddir/build/BUILD/cockpit-276.1/test/data/expired/0-self-signed.key.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    1|-> -----BEGIN PRIVATE KEY-----",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    2|   MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDTiYMZ9zTnBo6r",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    3|   mBOUaWQLPdxGJ+JshXEYuI0D/5MXd75DDrmM1UJyi4OAzyVzpQ8qyPuubKeMn1Ej",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "GITLEAKS_WARNING",
+            "tool": "gitleaks",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "cockpit-276.1/test/data/expired/1.key",
+                    "line": 1,
+                    "column": 1,
+                    "event": "warning[private-key]",
+                    "message": "private-key has detected secret for file /builddir/build/BUILD/cockpit-276.1/test/data/expired/1.key.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    1|-> -----BEGIN PRIVATE KEY-----",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    2|   MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDTiYMZ9zTnBo6r",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    3|   mBOUaWQLPdxGJ+JshXEYuI0D/5MXd75DDrmM1UJyi4OAzyVzpQ8qyPuubKeMn1Ej",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "GITLEAKS_WARNING",
+            "tool": "gitleaks",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "cockpit-276.1/test/data/expired/combined.cert",
+                    "line": 27,
+                    "column": 2,
+                    "event": "warning[private-key]",
+                    "message": "private-key has detected secret for file /builddir/build/BUILD/cockpit-276.1/test/data/expired/combined.cert.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   25|   jhGKovR4GG52LTmzMDfn4R0g9FwkK8c9+S6IYW/YMb0/rwnzZNdqRg==",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   26|   -----END CERTIFICATE-----",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   27|-> -----BEGIN PRIVATE KEY-----",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   28|   MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDTiYMZ9zTnBo6r",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   29|   mBOUaWQLPdxGJ+JshXEYuI0D/5MXd75DDrmM1UJyi4OAzyVzpQ8qyPuubKeMn1Ej",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "GITLEAKS_WARNING",
+            "tool": "gitleaks",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "cockpit-276.1/test/verify/check-connection",
+                    "line": 477,
+                    "column": 29,
+                    "event": "warning[generic-api-key]",
+                    "message": "generic-api-key has detected secret for file /builddir/build/BUILD/cockpit-276.1/test/verify/check-connection.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  475|               'Host': 'localhost:9090',",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  476|               'Origin': 'http://other-origin:9090',",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  477|->             'Sec-Websocket-Key': '3sc2c9IzwRUc3BlSIYwtSA==',",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  478|               'Sec-Websocket-Version': 13",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  479|           }",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "GITLEAKS_WARNING",
+            "tool": "gitleaks",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "cockpit-276.1/test/verify/files/cert-chain.key",
+                    "line": 1,
+                    "column": 1,
+                    "event": "warning[private-key]",
+                    "message": "private-key has detected secret for file /builddir/build/BUILD/cockpit-276.1/test/verify/files/cert-chain.key.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    1|-> -----BEGIN PRIVATE KEY-----",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    2|   MIICeAIBADANBgkqhkiG9w0BAQEFAASCAmIwggJeAgEAAoGBAKmd9yN41PjZ9EnU",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    3|   LLm2gaaiBZaV3W61XjUe/etEOU8m5ullhNiv0DGZNbt0ZgfL9aW8dbekTV9Qe8+Y",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "GITLEAKS_WARNING",
+            "tool": "gitleaks",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "cockpit-276.1/test/verify/files/ssh/id_ecdsa",
+                    "line": 1,
+                    "column": 1,
+                    "event": "warning[private-key]",
+                    "message": "private-key has detected secret for file /builddir/build/BUILD/cockpit-276.1/test/verify/files/ssh/id_ecdsa.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    1|-> -----BEGIN EC PRIVATE KEY-----",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    2|   MHcCAQEEIJe1hvpnasPsWMUOinLNwqbZx4TmFVe1+XJBUox1n8aroAoGCCqGSM49",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    3|   AwEHoUQDQgAEzsak3rpxXmypaI4Bs4gy7YlhS4D1yiaILN8zqt0IzM3OruC+l3JV",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "GITLEAKS_WARNING",
+            "tool": "gitleaks",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "cockpit-276.1/test/verify/files/ssh/id_ed25519",
+                    "line": 1,
+                    "column": 1,
+                    "event": "warning[private-key]",
+                    "message": "private-key has detected secret for file /builddir/build/BUILD/cockpit-276.1/test/verify/files/ssh/id_ed25519.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    1|-> -----BEGIN OPENSSH PRIVATE KEY-----",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    2|   b3BlbnNzaC1rZXktdjEAAAAACmFlczI1Ni1jdHIAAAAGYmNyeXB0AAAAGAAAABBxFawn02",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    3|   Gy2Roqjr/Wfgj0AAAAEAAAAAEAAAAzAAAAC3NzaC1lZDI1NTE5AAAAIEFGhZ5twoV3DEA4",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "GITLEAKS_WARNING",
+            "tool": "gitleaks",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "cockpit-276.1/test/verify/files/ssh/id_rsa",
+                    "line": 1,
+                    "column": 1,
+                    "event": "warning[private-key]",
+                    "message": "private-key has detected secret for file /builddir/build/BUILD/cockpit-276.1/test/verify/files/ssh/id_rsa.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    1|-> -----BEGIN RSA PRIVATE KEY-----",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    2|   Proc-Type: 4,ENCRYPTED",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    3|   DEK-Info: AES-128-CBC,6FB2545F53E2B528A133FF65060910E9",
+                    "verbosity_level": 1
+                }
+            ]
+        }
+    ]
+}

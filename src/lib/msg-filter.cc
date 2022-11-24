@@ -117,6 +117,11 @@ MsgFilter::MsgFilter():
             "^(use of uninitialized value '[^'<]+\\.<)[^>]+(>.[^']+)'",
             "\\1XXX\\2");
 
+    // abstract out source directory in /builddir/build/BUILD/...
+    d->addMsgFilter("GITLEAKS_WARNING",
+            "( has detected secret for file /builddir/build/BUILD/)[^/]+/",
+            "\\1.../");
+
     // auxiliary info provided by valgrind directly in the key event message
     d->addMsgFilter("VALGRIND_WARNING",
             " lost in loss record [0-9,]+ of [0-9,]+$", "");

@@ -78,5 +78,6 @@ test_csdiff(diff-misc 10-pylint-copr)
 test_csdiff(diff-misc 11-pylint-copr-json)
 test_csdiff(diff-misc 12-shellcheck-sc222x)
 test_csdiff(diff-misc 13-gcca-filt)
+test_csdiff(diff-misc 14-gitleaks-paths)
 
 add_subdirectory(filter-file)
