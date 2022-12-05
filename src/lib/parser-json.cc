@@ -117,6 +117,10 @@ const TScanProps& JsonParser::getScanProps() const
 
 bool JsonParser::getNext(Defect *def)
 {
+    if (!d->decoder)
+        // no decoder --> no data to read
+        return false;
+
     // error recovery loop
     for (;;) {
         try {

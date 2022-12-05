@@ -71,6 +71,10 @@ bool XmlParser::hasError() const
 
 bool XmlParser::getNext(Defect *pDef)
 {
+    if (!d->decoder)
+        // no decoder --> no data to read
+        return false;
+
     // error recovery loop
     for (;;) {
         try {
