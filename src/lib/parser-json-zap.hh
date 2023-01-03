@@ -38,6 +38,7 @@ class ZapTreeDecoder: public AbstractTreeDecoder {
     private:
         struct Private;
         std::unique_ptr<Private> d;
+        const pt::ptree* nextAlert();
 };
 
 #endif /* H_GUARD_PARSER_JSON_ZAP_H */

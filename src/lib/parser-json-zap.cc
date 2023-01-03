@@ -21,16 +21,22 @@
 
 struct ZapTreeDecoder::Private {
     std::string                     timeStamp;
-    Defect                          defPrototype = Defect("OWASP_ZAP_WARNING");
+    Defect                          sitePrototype;
+    Defect                          alertPrototype;
     const pt::ptree                *alertList = nullptr;
+    const pt::ptree                *instList = nullptr;
     pt::ptree::const_iterator       alertIter;
+    pt::ptree::const_iterator       instIter;
 
     Private()
     {
-        this->defPrototype.tool = "owasp-zap";
+        this->sitePrototype.checker = "OWASP_ZAP_WARNING";
+        this->sitePrototype.tool    = "owasp-zap";
     }
 
-    void readAlert(Defect *pDef, const pt::ptree &alertNode);
+    void readSiteProto(const pt::ptree &siteNode);
+    void readAlertProto(const pt::ptree &alertNode);
+    void readAlertInst(Defect *pDef, const pt::ptree &instNode);
 };
 
 template <typename TPropList>
@@ -51,33 +57,35 @@ void readNonEmptyProps(
     }
 }
 
-void ZapTreeDecoder::Private::readAlert(Defect *pDef, const pt::ptree &alertNode)
+void ZapTreeDecoder::Private::readSiteProto(const pt::ptree &siteNode)
 {
-    // read per-defect properties
-    *pDef = this->defPrototype;
-    pDef->cwe = valueOf<int>(alertNode, "cweid");
-    pDef->imp = (1 < valueOf<int>(alertNode, "riskcode"));
+    this->sitePrototype.events.clear();
+    const auto siteName = valueOf<std::string>(siteNode, "@name");
+    if (siteName.empty() || this->timeStamp.empty())
+        return;
 
-    // get "uri" for the key event
-    std::string uri;
-    const pt::ptree *instList = nullptr;
-    if (findChildOf(&instList, alertNode, "instances")) {
-        for (const auto &item : *instList) {
-            uri = valueOf<std::string>(item.second, "uri");
-            if (!uri.empty())
-                // found!
-                break;
-        }
-    }
+    // create a prototype "note" event
+    DefEvent siteEvt("note");
+    siteEvt.fileName = std::move(siteName);
+    siteEvt.msg = "dynamically analyzed on " + this->timeStamp;
+    siteEvt.verbosityLevel = /* info event */ 1;
+    this->sitePrototype.events.push_back(std::move(siteEvt));
+}
 
-    TEvtList &events = pDef->events;
-    if (uri.empty() && !events.empty())
-        // fallback to "uri" from the prototype event
-        uri = events.front().fileName;
+void ZapTreeDecoder::Private::readAlertProto(const pt::ptree &alertNode)
+{
+    // read per-alert properties
+    this->alertPrototype = this->sitePrototype;
+    this->alertPrototype.cwe = valueOf<int>(alertNode, "cweid");
+    this->alertPrototype.imp = (1 < valueOf<int>(alertNode, "riskcode"));
 
     // initialize key event
     DefEvent evt("alert");
-    evt.fileName = uri;
+
+    // get "uri" from the prototype event
+    TEvtList &events = this->alertPrototype.events;
+    if (!events.empty())
+        evt.fileName = events.front().fileName;
 
     // read "alertRef" if available
     const auto alertRef = valueOf<std::string>(alertNode, "alertRef");
@@ -88,29 +96,36 @@ void ZapTreeDecoder::Private::readAlert(Defect *pDef, const pt::ptree &alertNode
     evt.msg = valueOf<std::string>(alertNode, "alert");
 
     // append the key event
-    pDef->keyEventIdx = events.size();
+    this->alertPrototype.keyEventIdx = events.size();
     events.push_back(evt);
 
     // read other per-alert events if available
     evt.verbosityLevel = /* info event */ 1;
     const auto defProps = { "desc", "solution", "otherinfo", "reference" };
     readNonEmptyProps(&events, alertNode, evt, defProps);
+}
 
-    if (!instList)
-        // no instances to go through
-        return;
+void ZapTreeDecoder::Private::readAlertInst(
+        Defect                      *pDef,
+        const pt::ptree             &instNode)
+{
+    // start with the prototype initialized by readAlertProto()
+    *pDef = this->alertPrototype;
+    TEvtList &events = pDef->events;
+
+    // reinitialize events with "uri" specific for this instance (if available)
+    const std::string uri = valueOf<std::string>(instNode, "uri");
+    if (!uri.empty())
+        for (DefEvent &evt : events)
+            evt.fileName = uri;
+
+    // use the key event as a prototype for instance-specific events
+    DefEvent evtProto = events[pDef->keyEventIdx];
+    evtProto.verbosityLevel = /* info event */ 1;
 
     // read per-instance properties
     const auto instProps = { "method", "param", "attack", "evidence" };
-    for (const auto &item : *instList) {
-        const pt::ptree &instNode = item.second;
-        evt.fileName = valueOf<std::string>(instNode, "uri");
-        if (evt.fileName.empty())
-            // no "uri" for this instance
-            continue;
-
-        readNonEmptyProps(&events, instNode, evt, instProps);
-    }
+    readNonEmptyProps(&events, instNode, evtProto, instProps);
 }
 
 ZapTreeDecoder::ZapTreeDecoder():
@@ -131,14 +146,14 @@ void ZapTreeDecoder::readScanProps(
     d->timeStamp = valueOf<std::string>(*root, "@generated");
 }
 
-bool ZapTreeDecoder::readNode(Defect *pDef)
+const pt::ptree* ZapTreeDecoder::nextAlert()
 {
     // iterate over sites unless we are processing a site already
     while (!d->alertList || d->alertList->end() == d->alertIter) {
         const pt::ptree *siteNode = this->nextNode();
         if (!siteNode)
             // failed initialization or EOF
-            return false;
+            return nullptr;
 
         if (!findChildOf(&d->alertList, *siteNode, "alerts")) {
             // "alerts" node missing for this site
@@ -148,29 +163,48 @@ bool ZapTreeDecoder::readNode(Defect *pDef)
 
         // initialize iteration over alerts
         d->alertIter = d->alertList->begin();
+        d->instList = nullptr;
 
-        if (d->alertList->end() != d->alertIter) {
-            // site with alerts found -> update defect prototype based on site
-            d->defPrototype.events.clear();
-            const auto siteName = valueOf<std::string>(*siteNode, "@name");
-            if (!siteName.empty() && !d->timeStamp.empty()) {
-                // create a prototype "note" event
-                DefEvent siteEvt("note");
-                siteEvt.fileName = std::move(siteName);
-                siteEvt.msg = "dynamically analyzed on " + d->timeStamp;
-                siteEvt.verbosityLevel = /* info event */ 1;
-                d->defPrototype.events.push_back(std::move(siteEvt));
-            }
-
-            break;
-        }
+        if (!d->alertList->empty())
+            // site with alerts found --> update site prototype
+            d->readSiteProto(*siteNode);
     }
 
     // get the current alert and move to the next one
-    const auto itNow = d->alertIter++;
+    const auto itAlertNow = d->alertIter++;
+    return &itAlertNow->second;
+}
 
-    // process the current alert
-    d->readAlert(pDef, itNow->second);
+bool ZapTreeDecoder::readNode(Defect *pDef)
+{
+    if (!d->instList || d->instList->end() == d->instIter) {
+        // iterate over alerts
+        const pt::ptree *alertNode = this->nextAlert();
+        if (!alertNode)
+            // failed initialization or EOF
+            return false;
 
+        // process the current alert
+        d->readAlertProto(*alertNode);
+
+        // read the list of instances
+        if (!findChildOf(&d->instList, *alertNode, "instances")
+                || d->instList->empty())
+        {
+            // no instances for this alert --> emit the prototype
+            d->instList = nullptr;
+            *pDef = d->alertPrototype;
+            return true;
+        }
+
+        // initialize iteration over instances
+        d->instIter = d->instList->begin();
+    }
+
+    // get the current instance and move to the next one
+    const auto itInstNow = d->instIter++;
+
+    // process the current instance
+    d->readAlertInst(pDef, itInstNow->second);
     return true;
 }
