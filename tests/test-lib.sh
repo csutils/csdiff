@@ -1,3 +1,5 @@
+# shellcheck shell=sh
+
 # FIXME: copy-pasted from ../../CMakeLists.txt
 export JSFILTER_CMD="sed -e ':a;N;\$!ba;s|:\\n *\\[|: [|g'"
 
