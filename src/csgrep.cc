@@ -599,7 +599,7 @@ void printUsage(TStream &str, const TDesc &desc)
     desc.print(str);
 }
 
-template <class TDecorator, class TArg>
+template <class TDecorator, class TArg = std::string>
 bool chainDecoratorGeneric(
         AbstractWriter            **pEng,
         const po::variables_map    &vm,
@@ -757,8 +757,7 @@ int main(int argc, char *argv[])
     }
 
     // insert PathStripper into the chain if requested
-    if (!chainDecoratorGeneric<PathStripper, string>(&eng, vm,
-                "strip-path-prefix"))
+    if (!chainDecoratorGeneric<PathStripper>(&eng, vm, "strip-path-prefix"))
         return 1;
 
     // insert ScanPropSetter into the chain if requested
