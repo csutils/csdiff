@@ -369,6 +369,34 @@ class PathStripper: public GenericAbstractFilter {
         const size_t                prefSize_;
 };
 
+class PathPrepender: public GenericAbstractFilter {
+    public:
+        PathPrepender(AbstractWriter *agent, const std::string &prefix):
+            GenericAbstractFilter(agent),
+            prefix_(prefix)
+        {
+        }
+
+        void handleDef(const Defect &defOrig) override {
+            Defect def(defOrig);
+
+            // iterate through all events
+            for (DefEvent &evt : def.events) {
+                std::string &path = evt.fileName;
+                if (path.empty() || path[0] == '/')
+                    // not a relative path
+                    continue;
+
+                path.insert(0U, prefix_);
+            }
+
+            agent_->handleDef(def);
+        }
+
+    private:
+        const std::string           prefix_;
+};
+
 class DropScanProps: public GenericAbstractFilter {
     public:
         DropScanProps(AbstractWriter *agent):
@@ -682,6 +710,7 @@ int main(int argc, char *argv[])
             ("remove-duplicates,u",                             "remove defects that are not unique by their key event")
             ("set-scan-prop",       po::value<TStringList>(),   "NAME:VALUE pair to override the specified scan property")
             ("strip-path-prefix",   po::value<string>(),        "string prefix to strip from path (applied after all filters)")
+            ("prepend-path-prefix", po::value<string>(),        "string prefix to prepend to relative paths (applied after all filters)")
 
             ("ignore-case,i",                                   "ignore case when matching regular expressions")
             ("invert-match,v",                                  "select defects that do not match the selected criteria")
@@ -758,6 +787,10 @@ int main(int argc, char *argv[])
 
     // insert PathStripper into the chain if requested
     if (!chainDecoratorGeneric<PathStripper>(&eng, vm, "strip-path-prefix"))
+        return 1;
+
+    // insert PathPrepender into the chain if requested
+    if (!chainDecoratorGeneric<PathPrepender>(&eng, vm, "prepend-path-prefix"))
         return 1;
 
     // insert ScanPropSetter into the chain if requested

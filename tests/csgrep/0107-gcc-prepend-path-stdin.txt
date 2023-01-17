@@ -1,0 +1,175 @@
+Using built-in specs.
+COLLECT_GCC=/usr/bin/gcc
+COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/12/lto-wrapper
+OFFLOAD_TARGET_NAMES=nvptx-none
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-redhat-linux
+Configured with: ../configure --enable-bootstrap --enable-languages=c,c++,fortran,objc,obj-c++,ada,go,d,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-libstdcxx-backtrace --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl=/builddir/build/BUILD/gcc-12.2.1-20221121/obj-x86_64-redhat-linux/isl-install --enable-offload-targets=nvptx-none --without-cuda-driver --enable-offload-defaulted --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 12.2.1 20221121 (Red Hat 12.2.1-4) (GCC) 
+gcc: error: unrecognized command-line option '-V'
+gcc: fatal error: no input files
+compilation terminated.
+gcc: error: unrecognized command-line option '-qversion'; did you mean '--version'?
+gcc: fatal error: no input files
+compilation terminated.
+units-2.22/units.c: In function 'readunits': <--[gcc]
+units-2.22/units.c:807:41: warning: value computed is not used [-Wunused-value] <--[gcc]
+  807 | #define readerror (goterr=1) && errfile && fprintf
+      |                                         ^~
+units-2.22/units.c:1648:9: note: in expansion of macro 'readerror' <--[gcc]
+ 1648 |         readerror(errfile, "%s: %s on line %d of '%s'\n",
+      |         ^~~~~~~~~
+units-2.22/units.c:807:41: warning: value computed is not used [-Wunused-value] <--[gcc]
+  807 | #define readerror (goterr=1) && errfile && fprintf
+      |                                         ^~
+units-2.22/units.c:1657:11: note: in expansion of macro 'readerror' <--[gcc]
+ 1657 |           readerror(errfile, VAGUE_ERR);
+      |           ^~~~~~~~~
+units-2.22/units.c:807:41: warning: value computed is not used [-Wunused-value] <--[gcc]
+  807 | #define readerror (goterr=1) && errfile && fprintf
+      |                                         ^~
+units-2.22/units.c:1670:13: note: in expansion of macro 'readerror' <--[gcc]
+ 1670 |             readerror(errfile,
+      |             ^~~~~~~~~
+units-2.22/units.c:807:41: warning: value computed is not used [-Wunused-value] <--[gcc]
+  807 | #define readerror (goterr=1) && errfile && fprintf
+      |                                         ^~
+units-2.22/units.c:1674:13: note: in expansion of macro 'readerror' <--[gcc]
+ 1674 |             readerror(errfile,
+      |             ^~~~~~~~~
+units-2.22/units.c:807:41: warning: value computed is not used [-Wunused-value] <--[gcc]
+  807 | #define readerror (goterr=1) && errfile && fprintf
+      |                                         ^~
+units-2.22/units.c:1678:13: note: in expansion of macro 'readerror' <--[gcc]
+ 1678 |             readerror(errfile,
+      |             ^~~~~~~~~
+units-2.22/units.c:807:41: warning: value computed is not used [-Wunused-value] <--[gcc]
+  807 | #define readerror (goterr=1) && errfile && fprintf
+      |                                         ^~
+units-2.22/units.c:1686:15: note: in expansion of macro 'readerror' <--[gcc]
+ 1686 |               readerror(errfile,
+      |               ^~~~~~~~~
+units-2.22/units.c:807:41: warning: value computed is not used [-Wunused-value] <--[gcc]
+  807 | #define readerror (goterr=1) && errfile && fprintf
+      |                                         ^~
+units-2.22/units.c:1698:13: note: in expansion of macro 'readerror' <--[gcc]
+ 1698 |             readerror(errfile,
+      |             ^~~~~~~~~
+units-2.22/units.c:807:41: warning: value computed is not used [-Wunused-value] <--[gcc]
+  807 | #define readerror (goterr=1) && errfile && fprintf
+      |                                         ^~
+units-2.22/units.c:1708:13: note: in expansion of macro 'readerror' <--[gcc]
+ 1708 |             readerror(errfile,
+      |             ^~~~~~~~~
+units-2.22/units.c:807:41: warning: value computed is not used [-Wunused-value] <--[gcc]
+  807 | #define readerror (goterr=1) && errfile && fprintf
+      |                                         ^~
+units-2.22/units.c:1712:13: note: in expansion of macro 'readerror' <--[gcc]
+ 1712 |             readerror(errfile,
+      |             ^~~~~~~~~
+units-2.22/units.c:807:41: warning: value computed is not used [-Wunused-value] <--[gcc]
+  807 | #define readerror (goterr=1) && errfile && fprintf
+      |                                         ^~
+units-2.22/units.c:1724:13: note: in expansion of macro 'readerror' <--[gcc]
+ 1724 |             readerror(errfile,
+      |             ^~~~~~~~~
+units-2.22/units.c:807:41: warning: value computed is not used [-Wunused-value] <--[gcc]
+  807 | #define readerror (goterr=1) && errfile && fprintf
+      |                                         ^~
+units-2.22/units.c:1733:13: note: in expansion of macro 'readerror' <--[gcc]
+ 1733 |             readerror(errfile,"%s: nested utf8 not allowed, line %d of '%s'\n",
+      |             ^~~~~~~~~
+units-2.22/units.c:807:41: warning: value computed is not used [-Wunused-value] <--[gcc]
+  807 | #define readerror (goterr=1) && errfile && fprintf
+      |                                         ^~
+units-2.22/units.c:1740:13: note: in expansion of macro 'readerror' <--[gcc]
+ 1740 |             readerror(errfile,"%s: unmatched !endutf8 on line %d of '%s'\n",
+      |             ^~~~~~~~~
+units-2.22/units.c:807:41: warning: value computed is not used [-Wunused-value] <--[gcc]
+  807 | #define readerror (goterr=1) && errfile && fprintf
+      |                                         ^~
+units-2.22/units.c:1770:13: note: in expansion of macro 'readerror' <--[gcc]
+ 1770 |             readerror(errfile,
+      |             ^~~~~~~~~
+units-2.22/units.c:807:41: warning: value computed is not used [-Wunused-value] <--[gcc]
+  807 | #define readerror (goterr=1) && errfile && fprintf
+      |                                         ^~
+units-2.22/units.c:1774:13: note: in expansion of macro 'readerror' <--[gcc]
+ 1774 |             readerror(errfile,
+      |             ^~~~~~~~~
+units-2.22/units.c:807:41: warning: value computed is not used [-Wunused-value] <--[gcc]
+  807 | #define readerror (goterr=1) && errfile && fprintf
+      |                                         ^~
+units-2.22/units.c:1784:13: note: in expansion of macro 'readerror' <--[gcc]
+ 1784 |             readerror(errfile,VAGUE_ERR);
+      |             ^~~~~~~~~
+units-2.22/units.c:807:41: warning: value computed is not used [-Wunused-value] <--[gcc]
+  807 | #define readerror (goterr=1) && errfile && fprintf
+      |                                         ^~
+units-2.22/units.c:1793:13: note: in expansion of macro 'readerror' <--[gcc]
+ 1793 |             readerror(errfile,
+      |             ^~~~~~~~~
+units-2.22/units.c:807:41: warning: value computed is not used [-Wunused-value] <--[gcc]
+  807 | #define readerror (goterr=1) && errfile && fprintf
+      |                                         ^~
+units-2.22/units.c:1802:15: note: in expansion of macro 'readerror' <--[gcc]
+ 1802 |               readerror(errfile,
+      |               ^~~~~~~~~
+units-2.22/units.c:807:41: warning: value computed is not used [-Wunused-value] <--[gcc]
+  807 | #define readerror (goterr=1) && errfile && fprintf
+      |                                         ^~
+units-2.22/units.c:1824:15: note: in expansion of macro 'readerror' <--[gcc]
+ 1824 |               readerror(errfile, "%s:   file was included at line %d of file '%s'\n", progname,linenum, file);
+      |               ^~~~~~~~~
+units-2.22/units.c:807:41: warning: value computed is not used [-Wunused-value] <--[gcc]
+  807 | #define readerror (goterr=1) && errfile && fprintf
+      |                                         ^~
+units-2.22/units.c:1832:11: note: in expansion of macro 'readerror' <--[gcc]
+ 1832 |           readerror(errfile,VAGUE_ERR);
+      |           ^~~~~~~~~
+units-2.22/units.c:807:41: warning: value computed is not used [-Wunused-value] <--[gcc]
+  807 | #define readerror (goterr=1) && errfile && fprintf
+      |                                         ^~
+units-2.22/units.c:1844:11: note: in expansion of macro 'readerror' <--[gcc]
+ 1844 |           readerror(errfile,
+      |           ^~~~~~~~~
+units-2.22/units.c:807:41: warning: value computed is not used [-Wunused-value] <--[gcc]
+  807 | #define readerror (goterr=1) && errfile && fprintf
+      |                                         ^~
+units-2.22/units.c:1852:11: note: in expansion of macro 'readerror' <--[gcc]
+ 1852 |           readerror(errfile,
+      |           ^~~~~~~~~
+units-2.22/units.c:807:41: warning: value computed is not used [-Wunused-value] <--[gcc]
+  807 | #define readerror (goterr=1) && errfile && fprintf
+      |                                         ^~
+units-2.22/units.c:1858:9: note: in expansion of macro 'readerror' <--[gcc]
+ 1858 |         readerror(errfile,
+      |         ^~~~~~~~~
+units-2.22/units.c: In function 'checkcwd': <--[gcc]
+units-2.22/units.c:4148:9: warning: unused variable 'p' [-Wunused-variable] <--[gcc]
+ 4148 |   char *p;
+      |         ^
+units-2.22/units.c: In function 'printversion': <--[gcc]
+units-2.22/units.c:4768:9: warning: unused variable 'fp' [-Wunused-variable] <--[gcc]
+ 4768 |   FILE *fp, *histfile;
+      |         ^~
+units-2.22/units.c: In function 'showfunction': <--[gcc]
+units-2.22/units.c:2863:21: warning: 'not_dimensionless' may be used uninitialized [-Wmaybe-uninitialized] <--[gcc]
+ 2863 |     if (func->dimen && (not_dimensionless || unit.factor != 1)){
+      |         ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+units-2.22/units.c:2828:7: note: 'not_dimensionless' was declared here <--[gcc]
+ 2828 |   int not_dimensionless, i;
+      |       ^~~~~~~~~~~~~~~~~
+In file included from /usr/include/stdio.h:906, <--[gcc]
+                 from units-2.22/units.c:45: <--[gcc]
+In function 'printf',
+    inlined from 'checkfunc' at units.c:3698:9:
+/usr/include/bits/stdio2.h:86:10: warning: 'indent' may be used uninitialized [-Wmaybe-uninitialized] <--[gcc]
+   86 |   return __printf_chk (__USE_FORTIFY_LEVEL - 1, __fmt, __va_arg_pack ());
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+units-2.22/units.c: In function 'checkfunc': <--[gcc]
+units-2.22/units.c:3655:11: note: 'indent' was declared here <--[gcc]
+ 3655 |     char *indent;
+      |           ^~~~~~

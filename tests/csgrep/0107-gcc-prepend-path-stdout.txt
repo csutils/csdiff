@@ -1,0 +1,1407 @@
+{
+    "defects": [
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "tool": "gcc",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/gcc",
+                    "line": 0,
+                    "event": "error",
+                    "message": "unrecognized command-line option '-V'",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "tool": "gcc",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/gcc",
+                    "line": 0,
+                    "event": "fatal error",
+                    "message": "no input files",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "tool": "gcc",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/gcc",
+                    "line": 0,
+                    "event": "error",
+                    "message": "unrecognized command-line option '-qversion'; did you mean '--version'?",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "tool": "gcc",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/gcc",
+                    "line": 0,
+                    "event": "fatal error",
+                    "message": "no input files",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "tool": "gcc",
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 0,
+                    "event": "scope_hint",
+                    "message": "In function 'readunits'",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 807,
+                    "column": 41,
+                    "event": "warning[-Wunused-value]",
+                    "message": "value computed is not used",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  807 | #define readerror (goterr=1) && errfile && fprintf",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |                                         ^~",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 1648,
+                    "column": 9,
+                    "event": "note",
+                    "message": "in expansion of macro 'readerror'",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 1648 |         readerror(errfile, \"%s: %s on line %d of '%s'\\n\",",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |         ^~~~~~~~~",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "tool": "gcc",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 807,
+                    "column": 41,
+                    "event": "warning[-Wunused-value]",
+                    "message": "value computed is not used",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  807 | #define readerror (goterr=1) && errfile && fprintf",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |                                         ^~",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 1657,
+                    "column": 11,
+                    "event": "note",
+                    "message": "in expansion of macro 'readerror'",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 1657 |           readerror(errfile, VAGUE_ERR);",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |           ^~~~~~~~~",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "tool": "gcc",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 807,
+                    "column": 41,
+                    "event": "warning[-Wunused-value]",
+                    "message": "value computed is not used",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  807 | #define readerror (goterr=1) && errfile && fprintf",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |                                         ^~",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 1670,
+                    "column": 13,
+                    "event": "note",
+                    "message": "in expansion of macro 'readerror'",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 1670 |             readerror(errfile,",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |             ^~~~~~~~~",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "tool": "gcc",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 807,
+                    "column": 41,
+                    "event": "warning[-Wunused-value]",
+                    "message": "value computed is not used",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  807 | #define readerror (goterr=1) && errfile && fprintf",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |                                         ^~",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 1674,
+                    "column": 13,
+                    "event": "note",
+                    "message": "in expansion of macro 'readerror'",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 1674 |             readerror(errfile,",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |             ^~~~~~~~~",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "tool": "gcc",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 807,
+                    "column": 41,
+                    "event": "warning[-Wunused-value]",
+                    "message": "value computed is not used",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  807 | #define readerror (goterr=1) && errfile && fprintf",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |                                         ^~",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 1678,
+                    "column": 13,
+                    "event": "note",
+                    "message": "in expansion of macro 'readerror'",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 1678 |             readerror(errfile,",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |             ^~~~~~~~~",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "tool": "gcc",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 807,
+                    "column": 41,
+                    "event": "warning[-Wunused-value]",
+                    "message": "value computed is not used",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  807 | #define readerror (goterr=1) && errfile && fprintf",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |                                         ^~",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 1686,
+                    "column": 15,
+                    "event": "note",
+                    "message": "in expansion of macro 'readerror'",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 1686 |               readerror(errfile,",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |               ^~~~~~~~~",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "tool": "gcc",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 807,
+                    "column": 41,
+                    "event": "warning[-Wunused-value]",
+                    "message": "value computed is not used",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  807 | #define readerror (goterr=1) && errfile && fprintf",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |                                         ^~",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 1698,
+                    "column": 13,
+                    "event": "note",
+                    "message": "in expansion of macro 'readerror'",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 1698 |             readerror(errfile,",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |             ^~~~~~~~~",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "tool": "gcc",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 807,
+                    "column": 41,
+                    "event": "warning[-Wunused-value]",
+                    "message": "value computed is not used",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  807 | #define readerror (goterr=1) && errfile && fprintf",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |                                         ^~",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 1708,
+                    "column": 13,
+                    "event": "note",
+                    "message": "in expansion of macro 'readerror'",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 1708 |             readerror(errfile,",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |             ^~~~~~~~~",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "tool": "gcc",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 807,
+                    "column": 41,
+                    "event": "warning[-Wunused-value]",
+                    "message": "value computed is not used",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  807 | #define readerror (goterr=1) && errfile && fprintf",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |                                         ^~",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 1712,
+                    "column": 13,
+                    "event": "note",
+                    "message": "in expansion of macro 'readerror'",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 1712 |             readerror(errfile,",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |             ^~~~~~~~~",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "tool": "gcc",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 807,
+                    "column": 41,
+                    "event": "warning[-Wunused-value]",
+                    "message": "value computed is not used",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  807 | #define readerror (goterr=1) && errfile && fprintf",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |                                         ^~",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 1724,
+                    "column": 13,
+                    "event": "note",
+                    "message": "in expansion of macro 'readerror'",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 1724 |             readerror(errfile,",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |             ^~~~~~~~~",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "tool": "gcc",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 807,
+                    "column": 41,
+                    "event": "warning[-Wunused-value]",
+                    "message": "value computed is not used",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  807 | #define readerror (goterr=1) && errfile && fprintf",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |                                         ^~",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 1733,
+                    "column": 13,
+                    "event": "note",
+                    "message": "in expansion of macro 'readerror'",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 1733 |             readerror(errfile,\"%s: nested utf8 not allowed, line %d of '%s'\\n\",",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |             ^~~~~~~~~",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "tool": "gcc",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 807,
+                    "column": 41,
+                    "event": "warning[-Wunused-value]",
+                    "message": "value computed is not used",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  807 | #define readerror (goterr=1) && errfile && fprintf",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |                                         ^~",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 1740,
+                    "column": 13,
+                    "event": "note",
+                    "message": "in expansion of macro 'readerror'",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 1740 |             readerror(errfile,\"%s: unmatched !endutf8 on line %d of '%s'\\n\",",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |             ^~~~~~~~~",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "tool": "gcc",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 807,
+                    "column": 41,
+                    "event": "warning[-Wunused-value]",
+                    "message": "value computed is not used",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  807 | #define readerror (goterr=1) && errfile && fprintf",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |                                         ^~",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 1770,
+                    "column": 13,
+                    "event": "note",
+                    "message": "in expansion of macro 'readerror'",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 1770 |             readerror(errfile,",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |             ^~~~~~~~~",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "tool": "gcc",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 807,
+                    "column": 41,
+                    "event": "warning[-Wunused-value]",
+                    "message": "value computed is not used",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  807 | #define readerror (goterr=1) && errfile && fprintf",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |                                         ^~",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 1774,
+                    "column": 13,
+                    "event": "note",
+                    "message": "in expansion of macro 'readerror'",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 1774 |             readerror(errfile,",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |             ^~~~~~~~~",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "tool": "gcc",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 807,
+                    "column": 41,
+                    "event": "warning[-Wunused-value]",
+                    "message": "value computed is not used",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  807 | #define readerror (goterr=1) && errfile && fprintf",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |                                         ^~",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 1784,
+                    "column": 13,
+                    "event": "note",
+                    "message": "in expansion of macro 'readerror'",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 1784 |             readerror(errfile,VAGUE_ERR);",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |             ^~~~~~~~~",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "tool": "gcc",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 807,
+                    "column": 41,
+                    "event": "warning[-Wunused-value]",
+                    "message": "value computed is not used",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  807 | #define readerror (goterr=1) && errfile && fprintf",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |                                         ^~",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 1793,
+                    "column": 13,
+                    "event": "note",
+                    "message": "in expansion of macro 'readerror'",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 1793 |             readerror(errfile,",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |             ^~~~~~~~~",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "tool": "gcc",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 807,
+                    "column": 41,
+                    "event": "warning[-Wunused-value]",
+                    "message": "value computed is not used",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  807 | #define readerror (goterr=1) && errfile && fprintf",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |                                         ^~",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 1802,
+                    "column": 15,
+                    "event": "note",
+                    "message": "in expansion of macro 'readerror'",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 1802 |               readerror(errfile,",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |               ^~~~~~~~~",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "tool": "gcc",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 807,
+                    "column": 41,
+                    "event": "warning[-Wunused-value]",
+                    "message": "value computed is not used",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  807 | #define readerror (goterr=1) && errfile && fprintf",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |                                         ^~",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 1824,
+                    "column": 15,
+                    "event": "note",
+                    "message": "in expansion of macro 'readerror'",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 1824 |               readerror(errfile, \"%s:   file was included at line %d of file '%s'\\n\", progname,linenum, file);",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |               ^~~~~~~~~",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "tool": "gcc",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 807,
+                    "column": 41,
+                    "event": "warning[-Wunused-value]",
+                    "message": "value computed is not used",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  807 | #define readerror (goterr=1) && errfile && fprintf",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |                                         ^~",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 1832,
+                    "column": 11,
+                    "event": "note",
+                    "message": "in expansion of macro 'readerror'",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 1832 |           readerror(errfile,VAGUE_ERR);",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |           ^~~~~~~~~",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "tool": "gcc",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 807,
+                    "column": 41,
+                    "event": "warning[-Wunused-value]",
+                    "message": "value computed is not used",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  807 | #define readerror (goterr=1) && errfile && fprintf",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |                                         ^~",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 1844,
+                    "column": 11,
+                    "event": "note",
+                    "message": "in expansion of macro 'readerror'",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 1844 |           readerror(errfile,",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |           ^~~~~~~~~",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "tool": "gcc",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 807,
+                    "column": 41,
+                    "event": "warning[-Wunused-value]",
+                    "message": "value computed is not used",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  807 | #define readerror (goterr=1) && errfile && fprintf",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |                                         ^~",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 1852,
+                    "column": 11,
+                    "event": "note",
+                    "message": "in expansion of macro 'readerror'",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 1852 |           readerror(errfile,",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |           ^~~~~~~~~",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "tool": "gcc",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 807,
+                    "column": 41,
+                    "event": "warning[-Wunused-value]",
+                    "message": "value computed is not used",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  807 | #define readerror (goterr=1) && errfile && fprintf",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |                                         ^~",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 1858,
+                    "column": 9,
+                    "event": "note",
+                    "message": "in expansion of macro 'readerror'",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 1858 |         readerror(errfile,",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |         ^~~~~~~~~",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "tool": "gcc",
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 0,
+                    "event": "scope_hint",
+                    "message": "In function 'checkcwd'",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4148,
+                    "column": 9,
+                    "event": "warning[-Wunused-variable]",
+                    "message": "unused variable 'p'",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 4148 |   char *p;",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |         ^",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "tool": "gcc",
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 0,
+                    "event": "scope_hint",
+                    "message": "In function 'printversion'",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4768,
+                    "column": 9,
+                    "event": "warning[-Wunused-variable]",
+                    "message": "unused variable 'fp'",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 4768 |   FILE *fp, *histfile;",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |         ^~",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "tool": "gcc",
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 0,
+                    "event": "scope_hint",
+                    "message": "In function 'showfunction'",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 2863,
+                    "column": 21,
+                    "event": "warning[-Wmaybe-uninitialized]",
+                    "message": "'not_dimensionless' may be used uninitialized",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2863 |     if (func->dimen && (not_dimensionless || unit.factor != 1)){",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |         ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 2828,
+                    "column": 7,
+                    "event": "note",
+                    "message": "'not_dimensionless' was declared here",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2828 |   int not_dimensionless, i;",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |       ^~~~~~~~~~~~~~~~~",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "COMPILER_WARNING",
+            "language": "c/c++",
+            "tool": "gcc",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/usr/include/bits/stdio2.h",
+                    "line": 86,
+                    "column": 10,
+                    "event": "warning[-Wmaybe-uninitialized]",
+                    "message": "'indent' may be used uninitialized",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   86 |   return __printf_chk (__USE_FORTIFY_LEVEL - 1, __fmt, __va_arg_pack ());",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 0,
+                    "event": "scope_hint",
+                    "message": "In function 'checkfunc'",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 3655,
+                    "column": 11,
+                    "event": "note",
+                    "message": "'indent' was declared here",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 3655 |     char *indent;",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "      |           ^~~~~~",
+                    "verbosity_level": 1
+                }
+            ]
+        }
+    ]
+}
