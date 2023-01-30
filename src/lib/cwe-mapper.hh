@@ -28,7 +28,7 @@
 class CweMap: public AbstractCsvParser {
     public:
         CweMap();
-        ~CweMap();
+        ~CweMap() override;
 
         bool assignCwe(Defect &def) const;
         bool empty() const;
