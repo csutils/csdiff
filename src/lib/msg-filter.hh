@@ -54,7 +54,7 @@ class MsgFilter {
         MsgFilter();
         ~MsgFilter();
 
-        bool setJSONFilter(InStream &filter);
+        bool setJSONFilter(InStream &input);
 
         static MsgFilter *self_;
         struct Private;
