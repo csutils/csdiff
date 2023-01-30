@@ -36,7 +36,6 @@ CweNameLookup::CweNameLookup():
 
 CweNameLookup::~CweNameLookup()
 {
-    delete d;
 }
 
 bool CweNameLookup::handleLine(const TStringList &fields)

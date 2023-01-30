@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 Red Hat, Inc.
+ * Copyright (C) 2020-2023 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -38,7 +38,7 @@ class CweNameLookup: public AbstractCsvParser {
 
     private:
         struct Private;
-        Private *d;
+        std::unique_ptr<Private> d;
 };
 
 #endif /* H_GUARD_CWE_NAME_LOOKUP_H */
