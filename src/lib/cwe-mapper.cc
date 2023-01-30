@@ -48,10 +48,6 @@ CweMap::CweMap():
 {
 }
 
-CweMap::~CweMap()
-{
-}
-
 bool CweMap::empty() const
 {
     return d->mapByChk.empty();
@@ -157,10 +153,6 @@ CweMapDecorator::CweMapDecorator(AbstractWriter *writer, bool silent):
     d(new Private)
 {
     d->cweMap.setSilent(silent);
-}
-
-CweMapDecorator::~CweMapDecorator()
-{
 }
 
 void CweMapDecorator::handleDef(const Defect &orig)

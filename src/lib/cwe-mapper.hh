@@ -28,7 +28,7 @@
 class CweMap: public AbstractCsvParser {
     public:
         CweMap();
-        ~CweMap() override;
+        ~CweMap() override = default;
 
         bool assignCwe(Defect &def) const;
         bool empty() const;
@@ -45,7 +45,7 @@ class CweMapDecorator: public GenericAbstractFilter {
     public:
         /// @param writer the instance will be deleted on destruction
         CweMapDecorator(AbstractWriter *writer, bool silent);
-        ~CweMapDecorator() override;
+        ~CweMapDecorator() override = default;
 
         void handleDef(const Defect &def) override;
 
