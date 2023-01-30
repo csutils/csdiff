@@ -34,9 +34,7 @@ CweNameLookup::CweNameLookup():
 {
 }
 
-CweNameLookup::~CweNameLookup()
-{
-}
+CweNameLookup::~CweNameLookup() = default;
 
 bool CweNameLookup::handleLine(const TStringList &fields)
 {
