@@ -433,9 +433,8 @@ void SarifTreeEncoder::writeTo(std::ostream &str)
     PTree run0;
     run0.put_child("tool", tool);
 
-    if (!results_.empty())
-        // results
-        run0.put_child("results", results_);
+    // results
+    run0.put_child("results", results_);
 
     // mandatory: runs
     PTree runs;

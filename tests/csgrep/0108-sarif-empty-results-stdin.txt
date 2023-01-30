@@ -1,0 +1,22 @@
+{
+    "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+    "version": "2.1.0",
+    "inlineExternalProperties": [
+        {
+            "externalizedProperties": {
+                "tool": "vcs-diff-lint",
+                "tool-url": "https://github.com/fedora-copr/vcs-diff-lint#readme"
+            }
+        }
+    ],
+    "runs": [
+        {
+            "tool": {
+                "driver": {
+                    "name": "vcs-diff-lint",
+                    "informationUri": "https://github.com/fedora-copr/vcs-diff-lint#readme"
+                }
+            }
+        }
+    ]
+}
