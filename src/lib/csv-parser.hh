@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 Red Hat, Inc.
+ * Copyright (C) 2020-2023 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -36,7 +36,7 @@ class AbstractCsvParser {
         }
 
     protected:
-        typedef std::vector<std::string> TStringList;
+        using TStringList = std::vector<std::string>;
 
         virtual bool /* continue */ handleLine(const TStringList &) = 0;
         void parseError(const std::string &msg);

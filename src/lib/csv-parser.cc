@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 Red Hat, Inc.
+ * Copyright (C) 2020-2023 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -49,8 +49,8 @@ bool AbstractCsvParser::parse(InStream &ins)
     std::string line;
     for (d->lineno = 1; std::getline(str, line); d->lineno++) {
         // initialize tokenizer
-        typedef boost::escaped_list_separator<char>     TSeparator;
-        typedef boost::tokenizer<TSeparator>            TTokenizer;
+        using TSeparator = boost::escaped_list_separator<char>;
+        using TTokenizer = boost::tokenizer<TSeparator>;
         TTokenizer tok(line);
 
         // break the current line into fields
