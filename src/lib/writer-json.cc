@@ -508,6 +508,12 @@ void JsonWriter::flush()
     boost::iostreams::basic_regex_filter<char> reFilterTab(reTab, "\\\\t");
     str.push(reFilterTab);
 
+    // regex-based filter to replace "results": "" by "results": [] in SARIF
+    const RE reEmptyResults("(\"results\": )\"\"$");
+    boost::iostreams::basic_regex_filter<char>
+        reFilterEmp(reEmptyResults, "\\1[]");
+    str.push(reFilterEmp);
+
     str.push(d->str);
 
     // transfer scan properties if available
