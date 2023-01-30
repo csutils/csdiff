@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 Red Hat, Inc.
+ * Copyright (C) 2020-2023 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -24,7 +24,7 @@
 #include <map>
 
 struct CweNameLookup::Private {
-    typedef std::map<int, std::string> TMap;
+    using TMap = std::map<int, std::string>;
     TMap nameByCwe;
     const std::string emp;
 };
