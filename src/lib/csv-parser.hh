@@ -23,6 +23,7 @@
 #include "instream.hh"
 
 #include <vector>
+#include <memory>
 #include <string>
 
 class AbstractCsvParser {
@@ -45,7 +46,7 @@ class AbstractCsvParser {
 
     private:
         struct Private;
-        Private *d;
+        std::unique_ptr<Private> d;
 };
 
 #endif /* H_GUARD_CSV_PARSER_H */

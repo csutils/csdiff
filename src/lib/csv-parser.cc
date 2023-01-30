@@ -36,7 +36,6 @@ AbstractCsvParser::AbstractCsvParser():
 
 AbstractCsvParser::~AbstractCsvParser()
 {
-    delete d;
 }
 
 bool AbstractCsvParser::parse(InStream &ins)
