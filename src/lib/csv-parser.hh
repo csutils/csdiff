@@ -22,9 +22,9 @@
 
 #include "instream.hh"
 
-#include <vector>
 #include <memory>
 #include <string>
+#include <vector>
 
 class AbstractCsvParser {
     public:
