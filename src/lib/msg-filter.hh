@@ -23,6 +23,7 @@
 #include "instream.hh"
 
 #include <map>
+#include <memory>
 #include <string>
 #include <vector>
 
@@ -58,7 +59,7 @@ class MsgFilter {
 
         static MsgFilter *self_;
         struct Private;
-        Private *d;
+        std::unique_ptr<Private> d;
 };
 
 #endif /* H_GUARD_MSG_FILTER_H */

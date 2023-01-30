@@ -153,10 +153,7 @@ MsgFilter::MsgFilter():
     d->addMsgFilter("", "at least [0-9][0-9]* times.$");
 }
 
-MsgFilter::~MsgFilter()
-{
-    delete d;
-}
+MsgFilter::~MsgFilter() = default;
 
 void MsgFilter::setIgnorePath(bool enable)
 {
