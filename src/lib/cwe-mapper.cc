@@ -109,7 +109,7 @@ bool CweMap::assignCwe(Defect &def) const
     // lookup by event
     const Private::TNumByEvent &row = rowIt->second;
     const DefEvent &evt = def.events[def.keyEventIdx];
-    Private::TNumByEvent::const_iterator cweIt = row.find(evt.event);
+    auto cweIt = row.find(evt.event);
     if (row.end() == cweIt) {
         if (cweDst)
             // CWE already assigned, stay silent
