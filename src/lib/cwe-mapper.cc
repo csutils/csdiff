@@ -32,10 +32,10 @@ struct CweMap::Private {
     TMapByChk           mapByChk;
     ImpliedAttrDigger   digger;
 
-    bool detectedByTool(Defect def, const char *tool);
+    bool detectedByTool(Defect def, const char *tool) const;
 };
 
-bool CweMap::Private::detectedByTool(Defect def, const char *tool)
+bool CweMap::Private::detectedByTool(Defect def, const char *tool) const
 {
     // detect tool in case it is not explicitly specified
     this->digger.inferToolFromChecker(&def);
