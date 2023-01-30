@@ -50,7 +50,6 @@ CweMap::CweMap():
 
 CweMap::~CweMap()
 {
-    delete d;
 }
 
 bool CweMap::empty() const
@@ -162,7 +161,6 @@ CweMapDecorator::CweMapDecorator(AbstractWriter *writer, bool silent):
 
 CweMapDecorator::~CweMapDecorator()
 {
-    delete d;
 }
 
 void CweMapDecorator::handleDef(const Defect &orig)

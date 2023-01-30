@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Red Hat, Inc.
+ * Copyright (C) 2013-2023 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -38,7 +38,7 @@ class CweMap: public AbstractCsvParser {
 
     private:
         struct Private;
-        Private *d;
+        std::unique_ptr<Private> d;
 };
 
 class CweMapDecorator: public GenericAbstractFilter {
@@ -53,7 +53,7 @@ class CweMapDecorator: public GenericAbstractFilter {
 
     private:
         struct Private;
-        Private *d;
+        std::unique_ptr<Private> d;
 };
 
 #endif /* H_GUARD_CWE_MAPPER_H */
