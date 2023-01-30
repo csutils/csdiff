@@ -71,7 +71,7 @@ bool CweNameLookup::handleLine(const TStringList &fields)
 
 const std::string& CweNameLookup::lookup(const int cwe) const
 {
-    const Private::TMap::const_iterator it = d->nameByCwe.find(cwe);
+    const auto it = d->nameByCwe.find(cwe);
     return (d->nameByCwe.end() == it)
         ? d->emp
         : it->second;
