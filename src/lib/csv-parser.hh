@@ -30,7 +30,7 @@ class AbstractCsvParser {
     public:
         AbstractCsvParser();
         virtual ~AbstractCsvParser();
-        bool parse(InStream &str);
+        bool parse(InStream &ins);
 
         void setSilent(const bool silent) {
             this->silent = silent;
