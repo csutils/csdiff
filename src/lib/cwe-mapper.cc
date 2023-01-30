@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Red Hat, Inc.
+ * Copyright (C) 2013-2023 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -26,8 +26,8 @@
 // /////////////////////////////////////////////////////////////////////////////
 // implementation of CweMap
 struct CweMap::Private {
-    typedef std::map<std::string, int>              TNumByEvent;
-    typedef std::map<std::string, TNumByEvent>      TMapByChk;
+    using TNumByEvent = std::map<std::string, int>;
+    using TMapByChk   = std::map<std::string, TNumByEvent>;
 
     TMapByChk           mapByChk;
     ImpliedAttrDigger   digger;
