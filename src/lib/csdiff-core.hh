@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011-2012 Red Hat, Inc.
+ * Copyright (C) 2011-2023 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -17,9 +17,9 @@
  * along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "parser.hh"
 #include "color.hh"
 #include "instream.hh"
+#include "parser.hh"
 
 bool /* anyError */ diffScans(
         std::ostream               &strDst,
