@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011-2022 Red Hat, Inc.
+ * Copyright (C) 2011-2023 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -222,7 +222,7 @@ void MsgFilter::setFileNameSubstitution(
 
 std::string MsgFilter::filterMsg(
         const std::string &msg,
-        const std::string &checker)
+        const std::string &checker) const
 {
     std::string filtered = msg;
     for (const MsgReplace &rpl : d->repList)
@@ -235,7 +235,7 @@ std::string MsgFilter::filterMsg(
     return filtered;
 }
 
-std::string MsgFilter::filterPath(const std::string &origPath)
+std::string MsgFilter::filterPath(const std::string &origPath) const
 {
     std::string path = origPath;
 

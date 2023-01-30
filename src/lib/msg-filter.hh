@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011-2022 Red Hat, Inc.
+ * Copyright (C) 2011-2023 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -47,8 +47,8 @@ class MsgFilter {
 
         std::string filterMsg(
                 const std::string &msg,
-                const std::string &checker);
-        std::string filterPath(const std::string &path);
+                const std::string &checker) const;
+        std::string filterPath(const std::string &path) const;
 
     private:
         MsgFilter();
