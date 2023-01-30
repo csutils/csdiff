@@ -32,10 +32,10 @@ using TSubstMap = std::map<std::string, std::string>;
 class MsgFilter {
     public:
         // singleton
-        static MsgFilter* inst() {
+        static MsgFilter& inst() {
             return (self_)
-                ? (self_)
-                : (self_ = new MsgFilter);
+                ? *(self_)
+                : *(self_ = new MsgFilter);
         }
 
         void setIgnorePath(bool);

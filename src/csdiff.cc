@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011-2022 Red Hat, Inc.
+ * Copyright (C) 2011-2023 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -129,7 +129,7 @@ int main(int argc, char *argv[])
                 return 1;
             }
         }
-        MsgFilter::inst()->setFileNameSubstitution(sm[1], sm[2]);
+        MsgFilter::inst().setFileNameSubstitution(sm[1], sm[2]);
     }
 
     if (!vm.count("input-file")) {
@@ -144,7 +144,7 @@ int main(int argc, char *argv[])
     }
 
     if (vm.count("ignore-path"))
-        MsgFilter::inst()->setIgnorePath(true);
+        MsgFilter::inst().setIgnorePath(true);
 
     const bool swap = vm.count("fixed");
     const string &fnOld = files[swap];
@@ -155,7 +155,7 @@ int main(int argc, char *argv[])
 
     if (vm.count("filter-file")) {
         const TStringList &filterFiles = vm["filter-file"].as<TStringList>();
-        if (!MsgFilter::inst()->setFilterFiles(filterFiles, silent))
+        if (!MsgFilter::inst().setFilterFiles(filterFiles, silent))
             // an error message already printed out
             return 1;
     }

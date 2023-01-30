@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011 Red Hat, Inc.
+ * Copyright (C) 2011-2023 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -66,10 +66,10 @@ void DefLookup::hashDefect(const Defect &def)
     TDefByFile &row = d->stor[def.checker];
 
     const DefEvent &evt = def.events[def.keyEventIdx];
-    MsgFilter *filter = MsgFilter::inst();
-    TDefByEvt &col = row[filter->filterPath(evt.fileName)];
+    const MsgFilter &filter = MsgFilter::inst();
+    TDefByEvt &col = row[filter.filterPath(evt.fileName)];
     TDefByMsg &zCol = col[evt.event];
-    TDefList &cell = zCol[filter->filterMsg(evt.msg, def.checker)];
+    TDefList &cell = zCol[filter.filterMsg(evt.msg, def.checker)];
 
     cell.push_back(def);
 }
@@ -82,9 +82,9 @@ bool DefLookup::lookup(const Defect &def)
         return false;
 
     // simplify path
-    MsgFilter *filter = MsgFilter::inst();
+    const MsgFilter &filter = MsgFilter::inst();
     const DefEvent &evt = def.events[def.keyEventIdx];
-    const std::string path(filter->filterPath(evt.fileName));
+    const std::string path(filter.filterPath(evt.fileName));
 
     // look for file name
     TDefByFile &row = iRow->second;
@@ -108,7 +108,7 @@ bool DefLookup::lookup(const Defect &def)
     // look by msg
     TDefByMsg &zCol = iZCol->second;
     TDefByMsg::iterator iCell = zCol.find(
-            filter->filterMsg(evt.msg, def.checker));
+            filter.filterMsg(evt.msg, def.checker));
     if (zCol.end() == iCell)
         return false;
 

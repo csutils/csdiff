@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012 Red Hat, Inc.
+ * Copyright (C) 2012-2023 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -37,7 +37,7 @@ std::string diff_scans(
     InStream inNew(strNew, /* silent */ true);
 
     // FIXME: we need a better API to configure this
-    MsgFilter::inst()->setIgnorePath(true);
+    MsgFilter::inst().setIgnorePath(true);
 
     (void) diffScans(strDst, inOld, inNew);
     return strDst.str();

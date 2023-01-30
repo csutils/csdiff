@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011 - 2013 Red Hat, Inc.
+ * Copyright (C) 2011 - 2023 Red Hat, Inc.
  *
  * This file is part of csdiff.
  *
@@ -476,8 +476,8 @@ class DuplicateFilter: public AbstractFilter {
             DefEvent evt = def.events[def.keyEventIdx];
 
             // abstract out differences we do not deem important
-            evt.fileName = MsgFilter::inst()->filterPath(evt.fileName);
-            evt.msg = MsgFilter::inst()->filterMsg(evt.msg, def.checker);
+            evt.fileName = MsgFilter::inst().filterPath(evt.fileName);
+            evt.msg = MsgFilter::inst().filterMsg(evt.msg, def.checker);
 
             return lookup_.insert(evt)./* inserted */second;
         }
@@ -771,7 +771,7 @@ int main(int argc, char *argv[])
 
     if (vm.count("filter-file")) {
         const TStringList &filterFiles = vm["filter-file"].as<TStringList>();
-        if (!MsgFilter::inst()->setFilterFiles(filterFiles, silent))
+        if (!MsgFilter::inst().setFilterFiles(filterFiles, silent))
             // an error message already printed out
             return 1;
     }
