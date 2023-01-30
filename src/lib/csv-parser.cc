@@ -34,9 +34,7 @@ AbstractCsvParser::AbstractCsvParser():
 {
 }
 
-AbstractCsvParser::~AbstractCsvParser()
-{
-}
+AbstractCsvParser::~AbstractCsvParser() = default;
 
 bool AbstractCsvParser::parse(InStream &ins)
 {
