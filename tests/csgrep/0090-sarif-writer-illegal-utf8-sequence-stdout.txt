@@ -26,34 +26,7 @@
                     ],
                     "message": {
                         "text": "illegal sequence '�' will be replaced with '�'"
-                    },
-                    "codeFlows": [
-                        {
-                            "threadFlows": [
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "id": 0,
-                                                "physicalLocation": {
-                                                    "artifactLocation": {
-                                                        "uri": "test.c"
-                                                    }
-                                                },
-                                                "message": {
-                                                    "text": "illegal sequence '�' will be replaced with '�'"
-                                                }
-                                            },
-                                            "nestingLevel": 0,
-                                            "kinds": [
-                                                "warning"
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
+                    }
                 }
             ]
         }

@@ -368,32 +368,34 @@ void SarifTreeEncoder::appendDef(const Defect &def)
     sarifEncodeMsg(&result, keyEvt.msg);
 
     // other events
-    PTree flowLocs, relatedLocs;
-    for (unsigned i = 0; i < def.events.size(); ++i) {
-        if (def.events[i].event == "#")
-            sarifEncodeComment(&relatedLocs, def, i);
-        else
-            sarifEncodeEvt(&flowLocs, def, i);
+    if (1U < def.events.size()) {
+        PTree flowLocs, relatedLocs;
+        for (unsigned i = 0; i < def.events.size(); ++i) {
+            if (def.events[i].event == "#")
+                sarifEncodeComment(&relatedLocs, def, i);
+            else
+                sarifEncodeEvt(&flowLocs, def, i);
+        }
+
+        // locations
+        PTree tf;
+        tf.put_child("locations", flowLocs);
+
+        // threadFlows
+        PTree tfList;
+        appendNode(&tfList, tf);
+        PTree cf;
+        cf.put_child("threadFlows", tfList);
+
+        // codeFlows
+        PTree cfList;
+        appendNode(&cfList, cf);
+        result.put_child("codeFlows", cfList);
+
+        if (!relatedLocs.empty())
+            // our stash for comments
+            result.put_child("relatedLocations", relatedLocs);
     }
-
-    // locations
-    PTree tf;
-    tf.put_child("locations", flowLocs);
-
-    // threadFlows
-    PTree tfList;
-    appendNode(&tfList, tf);
-    PTree cf;
-    cf.put_child("threadFlows", tfList);
-
-    // codeFlows
-    PTree cfList;
-    appendNode(&cfList, cf);
-    result.put_child("codeFlows", cfList);
-
-    if (!relatedLocs.empty())
-        // our stash for comments
-        result.put_child("relatedLocations", relatedLocs);
 
     // append the `result` object to the `results` array
     appendNode(&results_, result);

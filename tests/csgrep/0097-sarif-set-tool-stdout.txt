@@ -39,38 +39,7 @@
                     ],
                     "message": {
                         "text": "Use 'cd ... || exit' or 'cd ... || return' in case cd fails."
-                    },
-                    "codeFlows": [
-                        {
-                            "threadFlows": [
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "id": 0,
-                                                "physicalLocation": {
-                                                    "artifactLocation": {
-                                                        "uri": "./contrib/guide/get_started/00-cleanup.sh"
-                                                    },
-                                                    "region": {
-                                                        "startLine": 6,
-                                                        "startColumn": 1
-                                                    }
-                                                },
-                                                "message": {
-                                                    "text": "Use 'cd ... || exit' or 'cd ... || return' in case cd fails."
-                                                }
-                                            },
-                                            "nestingLevel": 0,
-                                            "kinds": [
-                                                "warning[SC2164]"
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
+                    }
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2174]",
@@ -91,38 +60,7 @@
                     ],
                     "message": {
                         "text": "When used with -p, -m only applies to the deepest directory."
-                    },
-                    "codeFlows": [
-                        {
-                            "threadFlows": [
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "id": 0,
-                                                "physicalLocation": {
-                                                    "artifactLocation": {
-                                                        "uri": "./contrib/guide/get_started/12-datadir-create.sh"
-                                                    },
-                                                    "region": {
-                                                        "startLine": 4,
-                                                        "startColumn": 7
-                                                    }
-                                                },
-                                                "message": {
-                                                    "text": "When used with -p, -m only applies to the deepest directory."
-                                                }
-                                            },
-                                            "nestingLevel": 0,
-                                            "kinds": [
-                                                "warning[SC2174]"
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
+                    }
                 }
             ]
         }
