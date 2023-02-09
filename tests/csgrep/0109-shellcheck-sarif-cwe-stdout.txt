@@ -15,10 +15,13 @@
                             "properties": {
                                 "tags": [
                                     "ShellCheck"
+                                ],
+                                "cwe": [
+                                    "CWE-569"
                                 ]
                             },
                             "help": {
-                                "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC1035",
+                                "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC1035\nhttps://cwe.mitre.org/data/definitions/569.html",
                                 "markdown": "Defect reference: [SC1035](https://github.com/koalaman/shellcheck/wiki/SC1035)"
                             }
                         },
@@ -28,10 +31,13 @@
                             "properties": {
                                 "tags": [
                                     "ShellCheck"
+                                ],
+                                "cwe": [
+                                    "CWE-88"
                                 ]
                             },
                             "help": {
-                                "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC2068",
+                                "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC2068\nhttps://cwe.mitre.org/data/definitions/88.html",
                                 "markdown": "Defect reference: [SC2068](https://github.com/koalaman/shellcheck/wiki/SC2068)"
                             }
                         },
@@ -145,10 +151,13 @@
                             "properties": {
                                 "tags": [
                                     "ShellCheck"
+                                ],
+                                "cwe": [
+                                    "CWE-398"
                                 ]
                             },
                             "help": {
-                                "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC1090",
+                                "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC1090\nhttps://cwe.mitre.org/data/definitions/398.html",
                                 "markdown": "Defect reference: [SC1090](https://github.com/koalaman/shellcheck/wiki/SC1090)"
                             }
                         },
@@ -158,10 +167,13 @@
                             "properties": {
                                 "tags": [
                                     "ShellCheck"
+                                ],
+                                "cwe": [
+                                    "CWE-563"
                                 ]
                             },
                             "help": {
-                                "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC2034",
+                                "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC2034\nhttps://cwe.mitre.org/data/definitions/563.html",
                                 "markdown": "Defect reference: [SC2034](https://github.com/koalaman/shellcheck/wiki/SC2034)"
                             }
                         },
@@ -171,10 +183,13 @@
                             "properties": {
                                 "tags": [
                                     "ShellCheck"
+                                ],
+                                "cwe": [
+                                    "CWE-156"
                                 ]
                             },
                             "help": {
-                                "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC2046",
+                                "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC2046\nhttps://cwe.mitre.org/data/definitions/156.html",
                                 "markdown": "Defect reference: [SC2046](https://github.com/koalaman/shellcheck/wiki/SC2046)"
                             }
                         },
@@ -197,10 +212,13 @@
                             "properties": {
                                 "tags": [
                                     "ShellCheck"
+                                ],
+                                "cwe": [
+                                    "CWE-569"
                                 ]
                             },
                             "help": {
-                                "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC2089",
+                                "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC2089\nhttps://cwe.mitre.org/data/definitions/569.html",
                                 "markdown": "Defect reference: [SC2089](https://github.com/koalaman/shellcheck/wiki/SC2089)"
                             }
                         },
@@ -210,10 +228,13 @@
                             "properties": {
                                 "tags": [
                                     "ShellCheck"
+                                ],
+                                "cwe": [
+                                    "CWE-569"
                                 ]
                             },
                             "help": {
-                                "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC2090",
+                                "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC2090\nhttps://cwe.mitre.org/data/definitions/569.html",
                                 "markdown": "Defect reference: [SC2090](https://github.com/koalaman/shellcheck/wiki/SC2090)"
                             }
                         },
@@ -223,10 +244,13 @@
                             "properties": {
                                 "tags": [
                                     "ShellCheck"
+                                ],
+                                "cwe": [
+                                    "CWE-829"
                                 ]
                             },
                             "help": {
-                                "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC2091",
+                                "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC2091\nhttps://cwe.mitre.org/data/definitions/829.html",
                                 "markdown": "Defect reference: [SC2091](https://github.com/koalaman/shellcheck/wiki/SC2091)"
                             }
                         },
@@ -236,10 +260,13 @@
                             "properties": {
                                 "tags": [
                                     "ShellCheck"
+                                ],
+                                "cwe": [
+                                    "CWE-569"
                                 ]
                             },
                             "help": {
-                                "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC2124",
+                                "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC2124\nhttps://cwe.mitre.org/data/definitions/569.html",
                                 "markdown": "Defect reference: [SC2124](https://github.com/koalaman/shellcheck/wiki/SC2124)"
                             }
                         },
@@ -249,10 +276,13 @@
                             "properties": {
                                 "tags": [
                                     "ShellCheck"
+                                ],
+                                "cwe": [
+                                    "CWE-670"
                                 ]
                             },
                             "help": {
-                                "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC2128",
+                                "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC2128\nhttps://cwe.mitre.org/data/definitions/670.html",
                                 "markdown": "Defect reference: [SC2128](https://github.com/koalaman/shellcheck/wiki/SC2128)"
                             }
                         },
@@ -262,10 +292,13 @@
                             "properties": {
                                 "tags": [
                                     "ShellCheck"
+                                ],
+                                "cwe": [
+                                    "CWE-571"
                                 ]
                             },
                             "help": {
-                                "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC2155",
+                                "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC2155\nhttps://cwe.mitre.org/data/definitions/571.html",
                                 "markdown": "Defect reference: [SC2155](https://github.com/koalaman/shellcheck/wiki/SC2155)"
                             }
                         },
@@ -275,10 +308,13 @@
                             "properties": {
                                 "tags": [
                                     "ShellCheck"
+                                ],
+                                "cwe": [
+                                    "CWE-252"
                                 ]
                             },
                             "help": {
-                                "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC2164",
+                                "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC2164\nhttps://cwe.mitre.org/data/definitions/252.html",
                                 "markdown": "Defect reference: [SC2164](https://github.com/koalaman/shellcheck/wiki/SC2164)"
                             }
                         },
@@ -288,10 +324,13 @@
                             "properties": {
                                 "tags": [
                                     "ShellCheck"
+                                ],
+                                "cwe": [
+                                    "CWE-477"
                                 ]
                             },
                             "help": {
-                                "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC2166",
+                                "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC2166\nhttps://cwe.mitre.org/data/definitions/477.html",
                                 "markdown": "Defect reference: [SC2166](https://github.com/koalaman/shellcheck/wiki/SC2166)"
                             }
                         },
@@ -301,10 +340,13 @@
                             "properties": {
                                 "tags": [
                                     "ShellCheck"
+                                ],
+                                "cwe": [
+                                    "CWE-277"
                                 ]
                             },
                             "help": {
-                                "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC2174",
+                                "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC2174\nhttps://cwe.mitre.org/data/definitions/277.html",
                                 "markdown": "Defect reference: [SC2174](https://github.com/koalaman/shellcheck/wiki/SC2174)"
                             }
                         },
@@ -314,10 +356,13 @@
                             "properties": {
                                 "tags": [
                                     "ShellCheck"
+                                ],
+                                "cwe": [
+                                    "CWE-398"
                                 ]
                             },
                             "help": {
-                                "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC2178",
+                                "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC2178\nhttps://cwe.mitre.org/data/definitions/398.html",
                                 "markdown": "Defect reference: [SC2178](https://github.com/koalaman/shellcheck/wiki/SC2178)"
                             }
                         },
@@ -327,10 +372,13 @@
                             "properties": {
                                 "tags": [
                                     "ShellCheck"
+                                ],
+                                "cwe": [
+                                    "CWE-140"
                                 ]
                             },
                             "help": {
-                                "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC2206",
+                                "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC2206\nhttps://cwe.mitre.org/data/definitions/140.html",
                                 "markdown": "Defect reference: [SC2206](https://github.com/koalaman/shellcheck/wiki/SC2206)"
                             }
                         },
@@ -340,10 +388,13 @@
                             "properties": {
                                 "tags": [
                                     "ShellCheck"
+                                ],
+                                "cwe": [
+                                    "CWE-140"
                                 ]
                             },
                             "help": {
-                                "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC2207",
+                                "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC2207\nhttps://cwe.mitre.org/data/definitions/140.html",
                                 "markdown": "Defect reference: [SC2207](https://github.com/koalaman/shellcheck/wiki/SC2207)"
                             }
                         },
@@ -353,10 +404,13 @@
                             "properties": {
                                 "tags": [
                                     "ShellCheck"
+                                ],
+                                "cwe": [
+                                    "CWE-456"
                                 ]
                             },
                             "help": {
-                                "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC2209",
+                                "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC2209\nhttps://cwe.mitre.org/data/definitions/456.html",
                                 "markdown": "Defect reference: [SC2209](https://github.com/koalaman/shellcheck/wiki/SC2209)"
                             }
                         },

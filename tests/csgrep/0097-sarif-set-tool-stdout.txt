@@ -16,7 +16,35 @@
                 "driver": {
                     "name": "shellcheck",
                     "version": "",
-                    "informationUri": "https://www.shellcheck.net/"
+                    "informationUri": "https://www.shellcheck.net/",
+                    "rules": [
+                        {
+                            "id": "SHELLCHECK_WARNING: warning[SC2164]",
+                            "name": "SC2164",
+                            "properties": {
+                                "tags": [
+                                    "ShellCheck"
+                                ]
+                            },
+                            "help": {
+                                "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC2164",
+                                "markdown": "Defect reference: [SC2164](https://github.com/koalaman/shellcheck/wiki/SC2164)"
+                            }
+                        },
+                        {
+                            "id": "SHELLCHECK_WARNING: warning[SC2174]",
+                            "name": "SC2174",
+                            "properties": {
+                                "tags": [
+                                    "ShellCheck"
+                                ]
+                            },
+                            "help": {
+                                "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC2174",
+                                "markdown": "Defect reference: [SC2174](https://github.com/koalaman/shellcheck/wiki/SC2174)"
+                            }
+                        }
+                    ]
                 }
             },
             "results": [

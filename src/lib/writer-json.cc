@@ -153,10 +153,14 @@ class SarifTreeEncoder: public AbstractTreeEncoder {
 
     private:
         void initToolVersion();
-        void serializeCweMap();
+        void serializeRules();
 
-        typedef std::map<std::string, int>  TCweMap;
+        using TCweMap = std::map<std::string, int>;
         TCweMap                     cweMap_;
+
+        using TShellCheckMap = std::map<std::string, std::string>;
+        TShellCheckMap              shellCheckMap_;
+
         TScanProps                  scanProps_;
         PTree                       driver_;
         PTree                       results_;
@@ -215,31 +219,87 @@ void SarifTreeEncoder::initToolVersion()
         driver_.put<std::string>("informationUri", uri);
 }
 
-void SarifTreeEncoder::serializeCweMap()
+static void sarifEncodeShellCheckRule(PTree *rule, const std::string &ruleID)
+{
+    // name
+    rule->put<std::string>("name", ruleID);
+
+    // properties.tags[]
+    PTree tagList;
+    appendNode(&tagList, PTree({"ShellCheck"}));
+
+    PTree props;
+    props.put_child("tags", tagList);
+    rule->put_child("properties", props);
+
+    // help.text && help.markdown
+    PTree help;
+    const auto helpURI =
+        "https://github.com/koalaman/shellcheck/wiki/" + ruleID;
+    help.put<std::string>("text", "Defect reference: " + helpURI);
+
+    const auto helpMarkdown =
+        "Defect reference: [" + ruleID +"](" + helpURI + ")";
+    help.put<std::string>("markdown", helpMarkdown);
+
+    rule->put_child("help", help);
+}
+
+static void sarifEncodeCweRule(PTree *rule, const int cwe, bool append = false)
+{
+    PTree cweList;
+    const auto cweStr = std::to_string(cwe);
+    appendNode(&cweList, PTree("CWE-" + cweStr));
+
+    // properties.cwe[]
+    if (append) {
+        PTree &props = rule->get_child("properties");
+        props.put_child("cwe", cweList);
+    } else {
+        PTree props;
+        props.put_child("cwe", cweList);
+        rule->put_child("properties", props);
+    }
+
+    // help.text
+    const auto helpText =
+        "https://cwe.mitre.org/data/definitions/" + cweStr + ".html";
+
+    if (append) {
+        PTree &help = rule->get_child("help");
+        const auto &originalHelpText = help.get_child("text").get_value("");
+        help.put<std::string>("text", originalHelpText + '\n' + helpText);
+    } else {
+        PTree help;
+        help.put<std::string>("text", helpText);
+        rule->put_child("help", help);
+    }
+}
+
+void SarifTreeEncoder::serializeRules()
 {
     PTree ruleList;
 
-    for (const auto &item : cweMap_) {
+    for (const auto &item : shellCheckMap_) {
         PTree rule;
         const auto &id = item.first;
         rule.put<std::string>("id", id);
 
-        PTree cweList;
-        const auto cwe = item.second;
-        const auto cweStr = std::to_string(cwe);
-        appendNode(&cweList, PTree("CWE-" + cweStr));
+        sarifEncodeShellCheckRule(&rule, item.second);
+        if (1U == cweMap_.count(id))
+            sarifEncodeCweRule(&rule, cweMap_[id], /*append =*/ true);
 
-        // properties.cwe[]
-        PTree props;
-        props.put_child("cwe", cweList);
-        rule.put_child("properties", props);
+        appendNode(&ruleList, rule);
+    }
 
-        // help.text
-        PTree help;
-        const auto helpText =
-            "https://cwe.mitre.org/data/definitions/" + cweStr + ".html";
-        help.put<std::string>("text", helpText);
-        rule.put_child("help", help);
+    for (const auto &item : cweMap_) {
+        const auto &id = item.first;
+        if (1U == shellCheckMap_.count(id))
+            continue;
+
+        PTree rule;
+        rule.put<std::string>("id", id);
+        sarifEncodeCweRule(&rule, item.second);
 
         appendNode(&ruleList, rule);
     }
@@ -259,7 +319,8 @@ static void sarifEncodeMsg(PTree *pDst, const std::string& text)
     pDst->put_child("message", msg);
 }
 
-static void sarifEncodeLevel(PTree *result, const std::string &event) {
+static void sarifEncodeLevel(PTree *result, const std::string &event)
+{
     std::string level = event;
 
     // cut the [...] suffix from event if present
@@ -350,6 +411,16 @@ void SarifTreeEncoder::appendDef(const Defect &def)
     // checker (FIXME: suboptimal mapping to SARIF)
     const std::string ruleId = def.checker + ": " + keyEvt.event;
     result.put<std::string>("ruleId", ruleId);
+
+    if (def.checker == "SHELLCHECK_WARNING") {
+        boost::smatch sm;
+        static const RE reShellCheckMsg("(\\[)?(SC[0-9]+)(\\])?$");
+        boost::regex_search(keyEvt.event, sm, reShellCheckMsg);
+
+        // update ShellCheck rule map
+        shellCheckMap_[ruleId] = sm[2];
+    }
+
     if (def.cwe)
         // update CWE map
         cweMap_[ruleId] = def.cwe;
@@ -423,9 +494,9 @@ void SarifTreeEncoder::writeTo(std::ostream &str)
 
     this->initToolVersion();
 
-    if (!cweMap_.empty())
+    if (!cweMap_.empty() || !shellCheckMap_.empty())
         // needs to run before we pick driver_
-        this->serializeCweMap();
+        this->serializeRules();
 
     PTree tool;
     tool.put_child("driver", driver_);
