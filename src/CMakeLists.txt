@@ -100,7 +100,7 @@ install(TARGETS
 option(PYCSDIFF_PYTHON2 "Set to ON to build pycsdiff for Python 2" OFF)
 option(PYCSDIFF_PYTHON3 "Set to ON to build pycsdiff for Python 3" ON)
 
-macro(build_pycsdiff version boost_python_lib_names)
+macro(build_pycsdiff version)
     # check for Python libs (e.g. python${version}-devel on Fedora)
     # Interpreter is required for Python_SITEARCH
     find_package(Python${version} COMPONENTS Development Interpreter)
@@ -109,23 +109,16 @@ macro(build_pycsdiff version boost_python_lib_names)
             "The pycsdiff module for Python ${version} will NOT be built!")
     endif()
 
-    # find boost_python
-    find_library(BOOST_PYTHON${version}
-        NAMES ${boost_python_lib_names}
-        HINTS ${Boost_LIBRARY_DIRS})
-    if(BOOST_PYTHON${version})
-        message(STATUS "Found libboost_python: ${BOOST_PYTHON${version}}")
-    else()
-        message(FATAL_ERROR "libboost_python for Python ${version} NOT FOUND!")
-    endif()
-
+    # find boost_python${version}
+    find_package(Boost REQUIRED COMPONENTS python${version})
     message(STATUS "Python ${version} binding enabled. "
         "The pycsdiff module will be built!")
 
     add_library(pycsdiff_py${version} SHARED pycsdiff.cc)
     target_include_directories(pycsdiff_py${version} SYSTEM
         PRIVATE ${Python${version}_INCLUDE_DIRS})
-    target_link_libraries(pycsdiff_py${version} PRIVATE ${BOOST_PYTHON${version}})
+    target_link_libraries(pycsdiff_py${version}
+        PRIVATE ${Boost_PYTHON${version}_LIBRARY})
 
     # set correct name so that `python -c 'import pycsdiff' works`
     set_target_properties(pycsdiff_py${version} PROPERTIES
@@ -147,26 +140,11 @@ macro(build_pycsdiff version boost_python_lib_names)
 endmacro()
 
 if(PYCSDIFF_PYTHON2)
-    # boost_python has no suffix
-    set(BOOST_PYTHON_LIB_NAMES
-        boost_python)
-
-    build_pycsdiff(2 "${BOOST_PYTHON_LIB_NAMES}")
+    build_pycsdiff(2)
 endif()
 
 if(PYCSDIFF_PYTHON3)
-    # boost_python3 is used on RHEL-8.
-    # boost_python310 is used on Fedora 35.
-    set(BOOST_PYTHON_LIB_NAMES
-        boost_python311
-        boost_python310
-        boost_python39
-        boost_python38
-        boost_python37
-        boost_python36
-        boost_python3)
-
-    build_pycsdiff(3 "${BOOST_PYTHON_LIB_NAMES}")
+    build_pycsdiff(3)
 endif()
 
 # macro to generate a man page from the corresponding binary
