@@ -19,6 +19,7 @@
 
 #include "parser-json-simple.hh"
 
+#include "abstract-tree.hh"         // for findChildOf()
 #include "parser-cov.hh"            // for KeyEventDigger
 
 #include <set>
@@ -106,12 +107,10 @@ void SimpleTreeDecoder::readScanProps(
         TScanProps                 *pDst,
         const pt::ptree            *root)
 {
-    const pt::ptree emp;
-    const pt::ptree &scanNode =
-        root->get_child_optional("scan").get_value_or(emp);
-
-    for (const pt::ptree::value_type &item : scanNode)
-        (*pDst)[item.first] = item.second.data();
+    const pt::ptree *scanNode;
+    if (findChildOf(&scanNode, *root, "scan"))
+        for (const pt::ptree::value_type &item : *scanNode)
+            (*pDst)[item.first] = item.second.data();
 }
 
 bool SimpleTreeDecoder::readNode(Defect *def)
