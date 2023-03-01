@@ -100,13 +100,25 @@ Source0:    https://github.com/csutils/csdiff/releases/download/%{name}-%{versio
 # https://github.com/csutils/csmock/commit/48b09b3a
 Conflicts:  csmock-plugin-shellcheck <= 2.5
 
+# Use Boost 1.69 on EPEL 7
+%if 0%{?rhel} == 7
+BuildRequires: boost169-devel
+%endif
+# Use Boost 1.78 on EPEL 8 and 9
+%if 0%{?rhel} == 8 || 0%{?rhel} == 9
+BuildRequires: boost1.78-devel
+%endif
+# Use boost-devel everywhere else
+%if 0%{?rhel} > 9 || 0%{?fedora}
 BuildRequires: boost-devel
+%endif
+
 BuildRequires: cmake3
 BuildRequires: gcc-c++
 BuildRequires: help2man
 BuildRequires: make
 
-%if 0%{?rhel} && 0%{?rhel} < 9
+%if 0%{?rhel} == 7
 Provides: bundled(boost_nowide)
 %endif
 
@@ -129,16 +141,6 @@ code scan defect lists to find out added or fixed defects.
 %if %{with python3}
 %package -n python3-%{name}
 Summary:        Python interface to csdiff for Python 3
-
-# this package redefines %%{python3_pkgversion} to 36 because there is
-# no boost-python3-devel in epel-7 buildroot, only boost-python36-devel
-%if 0%{?rhel} == 7
-BuildRequires:  epel-rpm-macros
-%endif
-# in f33 boost-python3-devel was merged into boost-devel
-%if 0%{?rhel} && 0%{?rhel} < 9
-BuildRequires:  boost-python%{python3_pkgversion}-devel
-%endif
 BuildRequires:  python3-devel
 %py_provides    python3-%{name}
 
@@ -151,6 +153,12 @@ code scan defect lists to find out added or fixed defects.
 %autosetup
 
 %build
+%if 0%{?rhel} == 7
+# Set paths for CMake's FindBoost
+export BOOST_INCLUDEDIR=/usr/include/boost169
+export BOOST_LIBRARYDIR=/usr/lib64/boost169
+%endif
+
 make version.cc
 %cmake3                                    \\
     -DPYCSDIFF_PYTHON2=%{?with_python2:ON} \\
