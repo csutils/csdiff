@@ -24,12 +24,16 @@
 #include "shared-string-ptree.hh"
 #include "version.hh"
 
+#include <algorithm>
 #include <queue>
 
 #include <boost/iostreams/filtering_stream.hpp>
 #include <boost/iostreams/filter/regex.hpp>
+#include <boost/json/src.hpp>
+#include <boost/lexical_cast.hpp>
 #include <boost/nowide/utf/convert.hpp>
-#include <boost/property_tree/json_parser.hpp>
+
+using namespace boost::json;
 
 static inline std::string sanitizeUTF8(const std::string &str)
 {
@@ -40,7 +44,122 @@ static inline std::string sanitizeUTF8(const std::string &str)
     return convert_string<char>(str.data(), str.data() + str.size());
 }
 
-typedef SharedStringPTree PTree;
+static void prettyPrint(std::ostream&, const value&, std::string* = nullptr);
+
+static inline void prettyPrintArray(
+        std::ostream           &os,
+        const array            &arr,
+        std::string            *indent = nullptr)
+{
+        os << '[';
+        if (arr.empty()) {
+            os << ']';
+            return;
+        }
+
+        indent->append(4, ' ');
+
+        std::string sep{'\n'};
+        for (const auto &elem : arr) {
+            os << sep << *indent;
+            prettyPrint(os, elem, indent);
+            sep = ",\n";
+        }
+        os << '\n';
+
+        indent->resize(indent->size() - 4);
+        os << *indent << ']';
+
+}
+
+static inline void prettyPrintObject(
+        std::ostream           &os,
+        const object           &obj,
+        std::string            *indent = nullptr)
+{
+        os << '{';
+        if (obj.empty()) {
+            os << '}';
+            return;
+        }
+
+        indent->append(4, ' ');
+
+        std::string sep{'\n'};
+        for (const auto &elem : obj) {
+            os << sep << *indent << serialize(elem.key()) << ": ";
+            prettyPrint(os, elem.value(), indent);
+            sep = ",\n";
+        }
+        os << '\n';
+
+        indent->resize(indent->size() - 4);
+        os << *indent << '}';
+}
+
+static void prettyPrint(
+        std::ostream           &os,
+        const value            &jv,
+        std::string            *indent)
+{
+    std::string indent_;
+    if (!indent)
+        indent = &indent_;
+
+    switch (jv.kind()) {
+    case kind::array:
+        prettyPrintArray(os, jv.get_array(), indent);
+        break;
+
+    case kind::object:
+        prettyPrintObject(os, jv.get_object(), indent);
+        break;
+
+    case kind::string:
+        os << serialize(jv.get_string());
+        break;
+
+    case kind::uint64:
+        os << jv.get_uint64();
+        break;
+
+    case kind::int64:
+        os << jv.get_int64();
+        break;
+
+    case kind::double_:
+        os << jv.get_double();
+        break;
+
+    case kind::bool_:
+        os << jv.get_bool();
+        break;
+
+    case kind::null:
+        os << "null";
+        break;
+    }
+
+    if (indent->empty())
+        os << "\n";
+}
+
+// TODO: This should not necessary!  TScanProps should be able to contain
+// any type so that no conversions here are needed.
+static object serializeScanProps(const TScanProps &scanProps) {
+    static auto isDigit = [](unsigned char c){ return std::isdigit(c); };
+
+    object scan;
+    for (const auto &prop : scanProps) {
+        const auto &val = prop.second;
+        if (std::all_of(val.begin(), val.end(), isDigit))
+            scan[prop.first] = boost::lexical_cast<int>(val);
+        else
+            scan[prop.first] = val;
+    }
+
+    return scan;
+}
 
 class SimpleTreeEncoder: public AbstractTreeEncoder {
     public:
@@ -54,8 +173,8 @@ class SimpleTreeEncoder: public AbstractTreeEncoder {
         void writeTo(std::ostream &) override;
 
     private:
-        PTree                       root_;
-        PTree                      *pDefects_ = nullptr;
+        object                      root_;
+        array                      *pDefects_ = nullptr;
 };
 
 void SimpleTreeEncoder::importScanProps(const TScanProps &scanProps)
@@ -63,75 +182,69 @@ void SimpleTreeEncoder::importScanProps(const TScanProps &scanProps)
     if (scanProps.empty())
         return;
 
-    PTree scan;
-    for (TScanProps::const_reference prop : scanProps)
-        scan.put<std::string>(prop.first, prop.second);
-
-    root_.put_child("scan", scan);
+    root_["scan"] = serializeScanProps(scanProps);
 }
 
 void SimpleTreeEncoder::appendDef(const Defect &def)
 {
-    using std::string;
-
     // go through events
-    PTree evtList;
+    array evtList;
     for (const DefEvent &evt : def.events) {
-        PTree evtNode;
+        object evtNode;
 
         // describe the location
-        evtNode.put<string>("file_name", evt.fileName);
-        evtNode.put<int>("line", evt.line);
+        evtNode["file_name"] = evt.fileName;
+        evtNode["line"] = evt.line;
         if (0 < evt.column)
-            evtNode.put<int>("column", evt.column);
+            evtNode["column"] = evt.column;
 
         // describe the event
-        evtNode.put<string>("event", evt.event);
-        evtNode.put<string>("message", sanitizeUTF8(evt.msg));
-        evtNode.put<int>("verbosity_level", evt.verbosityLevel);
+        evtNode["event"] = evt.event;
+        evtNode["message"] = sanitizeUTF8(evt.msg);
+        evtNode["verbosity_level"] = evt.verbosityLevel;
 
         // append the event to the list
-        appendNode(&evtList, evtNode);
+        evtList.push_back(std::move(evtNode));
     }
 
     // create a node for a single defect
-    PTree defNode;
-    defNode.put<string>("checker", def.checker);
+    object defNode;
+    defNode["checker"] = def.checker;
     if (!def.annotation.empty())
-        defNode.put<string>("annotation", def.annotation);
+        defNode["annotation"] = def.annotation;
 
     // write "defect_id", "cwe", etc. if available
     if (0 < def.defectId)
-        defNode.put<int>("defect_id", def.defectId);
+        defNode["defect_id"] = def.defectId;
     if (0 < def.cwe)
-        defNode.put<int>("cwe", def.cwe);
+        defNode["cwe"] = def.cwe;
     if (0 < def.imp)
-        defNode.put<int>("imp", def.imp);
+        defNode["imp"] = def.imp;
     if (!def.function.empty())
-        defNode.put<string>("function", def.function);
+        defNode["function"] = def.function;
     if (!def.language.empty())
-        defNode.put<string>("language", def.language);
+        defNode["language"] = def.language;
     if (!def.tool.empty())
-        defNode.put<string>("tool", def.tool);
+        defNode["tool"] = def.tool;
 
-    defNode.put<int>("key_event_idx", def.keyEventIdx);
-    defNode.put_child("events", evtList);
+    defNode["key_event_idx"] = def.keyEventIdx;
+    defNode["events"] = std::move(evtList);
 
     // create the node representing the list of defects
     if (!pDefects_)
-        pDefects_ = &root_.put_child("defects", PTree());
+        pDefects_ = &root_["defects"].emplace_array();
 
     // append the node to the list
-    appendNode(pDefects_, defNode);
+    pDefects_->push_back(std::move(defNode));
 }
 
 void SimpleTreeEncoder::writeTo(std::ostream &str)
 {
     if (!pDefects_)
         // create an empty "defects" node to keep format detection working
-        pDefects_ = &root_.put_child("defects", PTree());
+        pDefects_ = &root_["defects"].emplace_array();
 
-    write_json(str, root_);
+    prettyPrint(str, root_);
 }
 
 // SARIF 2.1.0 is documented at:
@@ -162,8 +275,8 @@ class SarifTreeEncoder: public AbstractTreeEncoder {
         TShellCheckMap              shellCheckMap_;
 
         TScanProps                  scanProps_;
-        PTree                       driver_;
-        PTree                       results_;
+        object                      driver_;
+        array                       results_;
 };
 
 void SarifTreeEncoder::initToolVersion()
@@ -200,7 +313,7 @@ void SarifTreeEncoder::initToolVersion()
     }
 
     std::string uri;
-    if (tool.empty()) { 
+    if (tool.empty()) {
         // unable to read tool name --> fallback to csdiff as the tool
         tool = "csdiff";
         ver = CS_VERSION;
@@ -210,86 +323,83 @@ void SarifTreeEncoder::initToolVersion()
         // read "tool-url" scan property
         uri = it->second;
 
-    driver_.put<std::string>("name", tool);
+    driver_["name"] = std::move(tool);
 
     if (!ver.empty())
-        driver_.put<std::string>("version", ver);
+        driver_["version"] = std::move(ver);
 
     if (!uri.empty())
-        driver_.put<std::string>("informationUri", uri);
+        driver_["informationUri"] = std::move(uri);
 }
 
-static void sarifEncodeShellCheckRule(PTree *rule, const std::string &ruleID)
+static void sarifEncodeShellCheckRule(object *rule, const std::string &ruleID)
 {
     // name
-    rule->put<std::string>("name", ruleID);
+    rule->emplace("name", ruleID);
 
     // properties.tags[]
-    PTree tagList;
-    appendNode(&tagList, PTree({"ShellCheck"}));
-
-    PTree props;
-    props.put_child("tags", tagList);
-    rule->put_child("properties", props);
+    object props = {
+        { "tags", { "ShellCheck" } }
+    };
+    rule->emplace("properties", std::move(props));
 
     // help.text && help.markdown
-    PTree help;
-    const auto helpURI =
-        "https://github.com/koalaman/shellcheck/wiki/" + ruleID;
-    help.put<std::string>("text", "Defect reference: " + helpURI);
+    auto helpURI = "https://github.com/koalaman/shellcheck/wiki/" + ruleID;
+    auto helpMarkdown = "Defect reference: [" + ruleID +"](" + helpURI + ")";
 
-    const auto helpMarkdown =
-        "Defect reference: [" + ruleID +"](" + helpURI + ")";
-    help.put<std::string>("markdown", helpMarkdown);
+    object help = {
+        { "text", "Defect reference: " + helpURI },
+        { "markdown", std::move(helpMarkdown) }
+    };
 
-    rule->put_child("help", help);
+    rule->emplace("help", std::move(help));
 }
 
-static void sarifEncodeCweRule(PTree *rule, const int cwe, bool append = false)
+static void sarifEncodeCweRule(object *rule, const int cwe, bool append = false)
 {
-    PTree cweList;
-    const auto cweStr = std::to_string(cwe);
-    appendNode(&cweList, PTree("CWE-" + cweStr));
+    auto cweStr = std::to_string(cwe);
+    array cweList = { "CWE-" + cweStr };
 
     // properties.cwe[]
     if (append) {
-        PTree &props = rule->get_child("properties");
-        props.put_child("cwe", cweList);
+        object &props = rule->at("properties").as_object();
+        props["cwe"] = std::move(cweList);
     } else {
-        PTree props;
-        props.put_child("cwe", cweList);
-        rule->put_child("properties", props);
+        object props = {
+            { "cwe", std::move(cweList) }
+        };
+        rule->emplace("properties", std::move(props));
     }
 
     // help.text
-    const auto helpText =
+    auto helpText =
         "https://cwe.mitre.org/data/definitions/" + cweStr + ".html";
 
     if (append) {
-        PTree &help = rule->get_child("help");
-        const auto &originalHelpText = help.get_child("text").get_value("");
-        help.put<std::string>("text", originalHelpText + '\n' + helpText);
+        object &help = rule->at("help").as_object();
+        help["text"].as_string() += '\n' + std::move(helpText);
     } else {
-        PTree help;
-        help.put<std::string>("text", helpText);
-        rule->put_child("help", help);
+        object help = {
+            { "text", std::move(helpText) }
+        };
+        rule->emplace("help", help);
     }
 }
 
 void SarifTreeEncoder::serializeRules()
 {
-    PTree ruleList;
-
+    array ruleList;
     for (const auto &item : shellCheckMap_) {
-        PTree rule;
         const auto &id = item.first;
-        rule.put<std::string>("id", id);
+        object rule = {
+            { "id", id }
+        };
 
         sarifEncodeShellCheckRule(&rule, item.second);
         if (1U == cweMap_.count(id))
             sarifEncodeCweRule(&rule, cweMap_[id], /*append =*/ true);
 
-        appendNode(&ruleList, rule);
+        ruleList.push_back(std::move(rule));
     }
 
     for (const auto &item : cweMap_) {
@@ -297,14 +407,15 @@ void SarifTreeEncoder::serializeRules()
         if (1U == shellCheckMap_.count(id))
             continue;
 
-        PTree rule;
-        rule.put<std::string>("id", id);
-        sarifEncodeCweRule(&rule, item.second);
+        object rule = {
+            { "id", id }
+        };
 
-        appendNode(&ruleList, rule);
+        sarifEncodeCweRule(&rule, item.second);
+        ruleList.push_back(std::move(rule));
     }
 
-    driver_.put_child("rules", ruleList);
+    driver_["rules"] = std::move(ruleList);
 }
 
 void SarifTreeEncoder::importScanProps(const TScanProps &scanProps)
@@ -312,14 +423,16 @@ void SarifTreeEncoder::importScanProps(const TScanProps &scanProps)
     scanProps_ = scanProps;
 }
 
-static void sarifEncodeMsg(PTree *pDst, const std::string& text)
+static void sarifEncodeMsg(object *pDst, const std::string& text)
 {
-    PTree msg;
-    msg.put<std::string>("text", sanitizeUTF8(text));
-    pDst->put_child("message", msg);
+    object message = {
+        { "text", sanitizeUTF8(text) }
+    };
+
+    pDst->emplace("message", std::move(message) );
 }
 
-static void sarifEncodeLevel(PTree *result, const std::string &event)
+static void sarifEncodeLevel(object *result, const std::string &event)
 {
     std::string level = event;
 
@@ -332,85 +445,83 @@ static void sarifEncodeLevel(PTree *result, const std::string &event)
     for (const char *str : {"error", "warning", "note"}) {
         if (str == level) {
             // encode in the output if matched
-            result->put<std::string>("level", level);
+            result->emplace("level", std::move(level));
             return;
         }
     }
 }
 
-static void sarifEncodeLoc(PTree *pLoc, const Defect &def, unsigned idx)
+static void sarifEncodeLoc(object *pLoc, const Defect &def, unsigned idx)
 {
     // location ID within the result
-    pLoc->put<unsigned>("id", idx);
+    pLoc->emplace("id", idx);
 
     const DefEvent &evt = def.events[idx];
 
     // file name
-    PTree locArt;
-    locArt.put<std::string>("uri", evt.fileName);
-    PTree locPhy;
-    locPhy.put_child("artifactLocation", locArt);
+    object locPhy = {
+        { "artifactLocation", {
+            { "uri", evt.fileName }
+        }}
+    };
 
     // line/col
     if (evt.line) {
-        PTree reg;
-        reg.put<int>("startLine", evt.line);
-        if (evt.column)
-            reg.put<int>("startColumn", evt.column);
+        object reg = {
+            { "startLine", evt.line }
+        };
 
-        locPhy.put_child("region", reg);
+        if (evt.column)
+            reg["startColumn"] = evt.column;
+
+        locPhy["region"] = std::move(reg);
     }
 
     // location
-    pLoc->put_child("physicalLocation", locPhy);
+    pLoc->emplace("physicalLocation", std::move(locPhy));
 }
 
-static void sarifEncodeComment(PTree *pDst, const Defect &def, unsigned idx)
+static void sarifEncodeComment(array *pDst, const Defect &def, unsigned idx)
 {
-    PTree comment;
+    object comment;
 
     // needed for Github to see the SARIF data as valid
     sarifEncodeLoc(&comment, def, idx);
 
     sarifEncodeMsg(&comment, def.events[idx].msg);
-    appendNode(pDst, comment);
+    pDst->push_back(std::move(comment));
 }
 
-static void sarifEncodeEvt(PTree *pDst, const Defect &def, unsigned idx)
+static void sarifEncodeEvt(array *pDst, const Defect &def, unsigned idx)
 {
     const DefEvent &evt = def.events[idx];
 
     // location + message
-    PTree loc;
+    object loc;
     sarifEncodeLoc(&loc, def, idx);
     sarifEncodeMsg(&loc, evt.msg);
 
     // threadFlowLocation
-    PTree tfLoc;
-    tfLoc.put_child("location", loc);
-
-    // verbosityLevel
-    tfLoc.put<int>("nestingLevel", evt.verbosityLevel);
-
-    // event
-    PTree kind;
-    kind.put<std::string>("", evt.event);
-    PTree kindList;
-    appendNode(&kindList, kind);
-    tfLoc.put_child("kinds", kindList);
+    object tfLoc = {
+        { "location", std::move(loc) },
+        // verbosityLevel
+        { "nestingLevel", evt.verbosityLevel },
+        // event
+        { "kinds", { evt.event } }
+    };
 
     // append the threadFlowLocation object to the destination array
-    appendNode(pDst, tfLoc);
+    pDst->push_back(std::move(tfLoc));
 }
 
 void SarifTreeEncoder::appendDef(const Defect &def)
 {
     const DefEvent &keyEvt = def.events[def.keyEventIdx];
-    PTree result;
+    object result;
 
     // checker (FIXME: suboptimal mapping to SARIF)
     const std::string ruleId = def.checker + ": " + keyEvt.event;
-    result.put<std::string>("ruleId", ruleId);
+    result["ruleId"] = ruleId;
 
     if (def.checker == "SHELLCHECK_WARNING") {
         boost::smatch sm;
@@ -429,17 +540,15 @@ void SarifTreeEncoder::appendDef(const Defect &def)
     sarifEncodeLevel(&result, keyEvt.event);
 
     // key event location
-    PTree loc;
+    object loc;
     sarifEncodeLoc(&loc, def, def.keyEventIdx);
-    PTree keyLocs;
-    appendNode(&keyLocs, loc);
-    result.put_child("locations", keyLocs);
+    result["locations"] = array{std::move(loc)};
 
     // key msg
     sarifEncodeMsg(&result, keyEvt.msg);
 
     // other events
-    PTree flowLocs, relatedLocs;
+    array flowLocs, relatedLocs;
     for (unsigned i = 0; i < def.events.size(); ++i) {
         if (def.events[i].event == "#")
             sarifEncodeComment(&relatedLocs, def, i);
@@ -447,49 +556,36 @@ void SarifTreeEncoder::appendDef(const Defect &def)
             sarifEncodeEvt(&flowLocs, def, i);
     }
 
-    // locations
-    PTree tf;
-    tf.put_child("locations", flowLocs);
-
-    // threadFlows
-    PTree tfList;
-    appendNode(&tfList, tf);
-    PTree cf;
-    cf.put_child("threadFlows", tfList);
-
     // codeFlows
-    PTree cfList;
-    appendNode(&cfList, cf);
-    result.put_child("codeFlows", cfList);
+    result["codeFlows"] = {
+        // threadFlows
+        {{ "threadFlows", {
+            // locations
+            {{ "locations", std::move(flowLocs) }}
+        }}}
+    };
 
     if (!relatedLocs.empty())
         // our stash for comments
-        result.put_child("relatedLocations", relatedLocs);
+        result["relatedLocations"] = std::move(relatedLocs);
 
     // append the `result` object to the `results` array
-    appendNode(&results_, result);
+    results_.push_back(std::move(result));
 }
 
 void SarifTreeEncoder::writeTo(std::ostream &str)
 {
-    PTree root;
-
-    // mandatory: schema/version
-    root.put<std::string>("$schema",
-            "https://json.schemastore.org/sarif-2.1.0.json");
-    root.put<std::string>("version", "2.1.0");
+    object root = {
+        // mandatory: schema/version
+        { "$schema", "https://json.schemastore.org/sarif-2.1.0.json" },
+        { "version", "2.1.0" }
+    };
 
     if (!scanProps_.empty()) {
         // scan props
-        PTree props;
-        for (TScanProps::const_reference prop : scanProps_)
-            props.put<std::string>(prop.first, prop.second);
-
-        PTree extProps;
-        extProps.put_child("externalizedProperties", props);
-        PTree propsList;
-        appendNode(&propsList, extProps);
-        root.put_child("inlineExternalProperties", propsList);
+        root["inlineExternalProperties"] = {
+            {{ "externalizedProperties", serializeScanProps(scanProps_) }}
+        };
     }
 
     this->initToolVersion();
@@ -498,22 +594,20 @@ void SarifTreeEncoder::writeTo(std::ostream &str)
         // needs to run before we pick driver_
         this->serializeRules();
 
-    PTree tool;
-    tool.put_child("driver", driver_);
-
-    PTree run0;
-    run0.put_child("tool", tool);
+    object run0 = {
+        { "tool", {
+            { "driver", std::move(driver_) }
+        }}
+    };
 
     // results
-    run0.put_child("results", results_);
+    run0["results"] = std::move(results_);
 
     // mandatory: runs
-    PTree runs;
-    appendNode(&runs, run0);
-    root.put_child("runs", runs);
+    root["runs"] = array{std::move(run0)};
 
     // encode as JSON
-    write_json(str, root);
+    prettyPrint(str, root);
 }
 
 struct JsonWriter::Private {
