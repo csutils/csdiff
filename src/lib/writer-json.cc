@@ -27,8 +27,6 @@
 #include <algorithm>
 #include <queue>
 
-#include <boost/iostreams/filtering_stream.hpp>
-#include <boost/iostreams/filter/regex.hpp>
 #include <boost/json/src.hpp>
 #include <boost/lexical_cast.hpp>
 #include <boost/nowide/utf/convert.hpp>
@@ -656,31 +654,6 @@ void JsonWriter::handleDef(const Defect &def)
 
 void JsonWriter::flush()
 {
-    boost::iostreams::filtering_ostream str;
-
-    // create a regex-based filter to restore integral values wrapped as strings
-    const RE reInt(": \"([0-9]+)\"(,?)$");
-    boost::iostreams::basic_regex_filter<char> reFilter(reInt, ": \\1\\2");
-    str.push(reFilter);
-
-    // create a regex-based filter to replace \/ (produced by newer boost) by /
-    const RE reSlash("([^\\\\]*(?:\\\\\\\\)*)(?:\\\\(/))?");
-    boost::iostreams::basic_regex_filter<char> reFilterSlash(reSlash, "\\1\\2");
-    str.push(reFilterSlash);
-
-    // create a regex-based filter to replace \u0009 by \t
-    const RE reTab("\\\\u0009");
-    boost::iostreams::basic_regex_filter<char> reFilterTab(reTab, "\\\\t");
-    str.push(reFilterTab);
-
-    // regex-based filter to replace "results": "" by "results": [] in SARIF
-    const RE reEmptyResults("(\"results\": )\"\"$");
-    boost::iostreams::basic_regex_filter<char>
-        reFilterEmp(reEmptyResults, "\\1[]");
-    str.push(reFilterEmp);
-
-    str.push(d->str);
-
     // transfer scan properties if available
     d->encoder->importScanProps(d->scanProps);
 
@@ -689,5 +662,5 @@ void JsonWriter::flush()
         d->encoder->appendDef(d->defQueue.front());
 
     // finally encode the tree as JSON
-    d->encoder->writeTo(str);
+    d->encoder->writeTo(d->str);
 }
