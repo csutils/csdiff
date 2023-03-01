@@ -119,6 +119,7 @@ BuildRequires: help2man
 BuildRequires: make
 
 %if 0%{?rhel} == 7
+Provides: bundled(boost_json)
 Provides: bundled(boost_nowide)
 %endif
 

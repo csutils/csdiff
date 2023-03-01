@@ -40,14 +40,15 @@ find_package(Boost REQUIRED
                program_options
                regex
                system
-    OPTIONAL_COMPONENTS nowide)
+    OPTIONAL_COMPONENTS json
+                        nowide)
 include_directories(SYSTEM ${Boost_INCLUDE_DIRS})
 link_directories(${Boost_LIBRARY_DIRS})
 
-if(Boost_VERSION_STRING VERSION_LESS 1.74)
-    message(WARNING "System Boost libraries are too old (1.74+ recommended)."
-        " Using local version of Boost.Nowide!")
-    include_directories(SYSTEM ${CMAKE_SOURCE_DIR}/boost_1_74_0)
+if(Boost_VERSION_STRING VERSION_LESS 1.75)
+    message(WARNING "System Boost libraries are too old (1.75+ recommended)."
+        " Using local version of Boost.Nowide and Boost.JSON!")
+    include_directories(SYSTEM ${CMAKE_SOURCE_DIR}/boost_1_75_0)
 endif()
 
 # cslib.a

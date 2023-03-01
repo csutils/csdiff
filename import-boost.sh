@@ -10,9 +10,11 @@ import_from()
         | tar -xv "$@"
 }
 
-import_from 1.74.0                                                      \
-    boost_1_74_0/LICENSE_1_0.txt                                        \
-    boost_1_74_0/boost/nowide/config.hpp                                \
-    boost_1_74_0/boost/nowide/replacement.hpp                           \
-    boost_1_74_0/boost/nowide/utf/convert.hpp                           \
-    boost_1_74_0/boost/nowide/utf/utf.hpp                               \
+import_from 1.75.0                                                      \
+    boost_1_75_0/LICENSE_1_0.txt                                        \
+    boost_1_75_0/boost/nowide/config.hpp                                \
+    boost_1_75_0/boost/nowide/replacement.hpp                           \
+    boost_1_75_0/boost/nowide/utf/convert.hpp                           \
+    boost_1_75_0/boost/nowide/utf/utf.hpp                               \
+    boost_1_75_0/boost/json                                             \
+    boost_1_75_0/boost/json.hpp
