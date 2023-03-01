@@ -21,7 +21,6 @@
 
 #include "abstract-tree.hh"
 #include "regex.hh"
-#include "shared-string-ptree.hh"
 #include "version.hh"
 
 #include <algorithm>

@@ -39,7 +39,6 @@ add_library(cs STATIC
     parser-json-zap.cc
     parser-xml.cc
     parser-xml-valgrind.cc
-    shared-string.cc
     version.cc
     writer.cc
     writer-cov.cc
