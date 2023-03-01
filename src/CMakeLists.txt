@@ -47,18 +47,7 @@ if(Boost_VERSION_STRING VERSION_LESS 1.74)
     message(WARNING "System Boost libraries are too old (1.74+ recommended)."
         " Using local version of Boost.Nowide!")
     include_directories(SYSTEM ${CMAKE_SOURCE_DIR}/boost_1_74_0)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D'BOOST_LIKELY(x)=__builtin_expect(x, 1)'")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D'BOOST_UNLIKELY(x)=__builtin_expect(x, 0)'")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D'BOOST_FALLTHROUGH='")
 endif()
-
-# eliminate the following warning:
-#   /usr/include/boost/bind.hpp:36:1: note: ‘#pragma message: The practice
-#   of declaring the Bind placeholders (_1, _2, ...) in the global namespace
-#   is deprecated. Please use <boost/bind/bind.hpp> + using namespace
-#   boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain
-#   the current behavior.’
-add_definitions(-DBOOST_BIND_GLOBAL_PLACEHOLDERS)
 
 # cslib.a
 add_subdirectory(lib)

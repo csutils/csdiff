@@ -16,4 +16,3 @@ import_from 1.74.0                                                      \
     boost_1_74_0/boost/nowide/replacement.hpp                           \
     boost_1_74_0/boost/nowide/utf/convert.hpp                           \
     boost_1_74_0/boost/nowide/utf/utf.hpp                               \
-    boost_1_74_0/boost/property_tree/
