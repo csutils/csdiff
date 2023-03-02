@@ -39,7 +39,8 @@ find_package(Boost REQUIRED
     COMPONENTS filesystem
                program_options
                regex
-               system)
+               system
+    OPTIONAL_COMPONENTS nowide)
 include_directories(SYSTEM ${Boost_INCLUDE_DIRS})
 link_directories(${Boost_LIBRARY_DIRS})
 
