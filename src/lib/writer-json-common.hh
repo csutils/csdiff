@@ -20,9 +20,16 @@
 #ifndef H_GUARD_WRITER_JSON_COMMON_H
 #define H_GUARD_WRITER_JSON_COMMON_H
 
+#include "parser.hh"            // for TScanProps
+
 #include <string>
+
+#include <boost/json.hpp>
 
 /// sanitize byte sequences that are not valid in UTF-8 encoding
 std::string sanitizeUTF8(const std::string &str);
+
+/// serialize scan properties as a JSON object
+boost::json::object jsonSerializeScanProps(const TScanProps &scanProps);
 
 #endif /* H_GUARD_WRITER_JSON_COMMON_H */

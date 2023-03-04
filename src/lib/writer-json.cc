@@ -28,7 +28,6 @@
 #include <queue>
 
 #include <boost/json/src.hpp>
-#include <boost/lexical_cast.hpp>
 
 using namespace boost::json;
 
@@ -132,23 +131,6 @@ static void prettyPrint(
         os << "\n";
 }
 
-// TODO: This should not necessary!  TScanProps should be able to contain
-// any type so that no conversions here are needed.
-static object serializeScanProps(const TScanProps &scanProps) {
-    static auto isDigit = [](unsigned char c){ return std::isdigit(c); };
-
-    object scan;
-    for (const auto &prop : scanProps) {
-        const auto &val = prop.second;
-        if (std::all_of(val.begin(), val.end(), isDigit))
-            scan[prop.first] = boost::lexical_cast<int>(val);
-        else
-            scan[prop.first] = val;
-    }
-
-    return scan;
-}
-
 class SimpleTreeEncoder: public AbstractTreeEncoder {
     public:
         /// import supported scan properties
@@ -170,7 +152,7 @@ void SimpleTreeEncoder::importScanProps(const TScanProps &scanProps)
     if (scanProps.empty())
         return;
 
-    root_["scan"] = serializeScanProps(scanProps);
+    root_["scan"] = jsonSerializeScanProps(scanProps);
 }
 
 void SimpleTreeEncoder::appendDef(const Defect &def)
@@ -572,7 +554,7 @@ void SarifTreeEncoder::writeTo(std::ostream &str)
     if (!scanProps_.empty()) {
         // scan props
         root["inlineExternalProperties"] = {
-            {{ "externalizedProperties", serializeScanProps(scanProps_) }}
+            {{ "externalizedProperties", jsonSerializeScanProps(scanProps_) }}
         };
     }
 
