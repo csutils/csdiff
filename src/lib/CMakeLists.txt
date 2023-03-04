@@ -45,5 +45,6 @@ add_library(cs STATIC
     writer-html.cc
     writer-json.cc
     writer-json-common.cc
+    writer-json-sarif.cc
     writer-json-simple.cc
 )
