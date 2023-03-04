@@ -22,24 +22,15 @@
 #include "abstract-tree.hh"
 #include "regex.hh"
 #include "version.hh"
+#include "writer-json-common.hh"
 
 #include <algorithm>
 #include <queue>
 
 #include <boost/json/src.hpp>
 #include <boost/lexical_cast.hpp>
-#include <boost/nowide/utf/convert.hpp>
 
 using namespace boost::json;
-
-static inline std::string sanitizeUTF8(const std::string &str)
-{
-    using boost::nowide::utf::convert_string;
-
-    // every non-UTF8 sequence will be replaced with 0xEF 0xBF 0xBD which
-    // corresponds to REPLACEMENT CHARACTER U+FFFD
-    return convert_string<char>(str.data(), str.data() + str.size());
-}
 
 static void prettyPrint(std::ostream&, const value&, std::string* = nullptr);
 

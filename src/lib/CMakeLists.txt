@@ -44,4 +44,5 @@ add_library(cs STATIC
     writer-cov.cc
     writer-html.cc
     writer-json.cc
+    writer-json-common.cc
 )
