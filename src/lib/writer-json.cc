@@ -31,106 +31,6 @@
 
 using namespace boost::json;
 
-static void prettyPrint(std::ostream&, const value&, std::string* = nullptr);
-
-static inline void prettyPrintArray(
-        std::ostream           &os,
-        const array            &arr,
-        std::string            *indent = nullptr)
-{
-        os << '[';
-        if (arr.empty()) {
-            os << ']';
-            return;
-        }
-
-        indent->append(4, ' ');
-
-        std::string sep{'\n'};
-        for (const auto &elem : arr) {
-            os << sep << *indent;
-            prettyPrint(os, elem, indent);
-            sep = ",\n";
-        }
-        os << '\n';
-
-        indent->resize(indent->size() - 4);
-        os << *indent << ']';
-
-}
-
-static inline void prettyPrintObject(
-        std::ostream           &os,
-        const object           &obj,
-        std::string            *indent = nullptr)
-{
-        os << '{';
-        if (obj.empty()) {
-            os << '}';
-            return;
-        }
-
-        indent->append(4, ' ');
-
-        std::string sep{'\n'};
-        for (const auto &elem : obj) {
-            os << sep << *indent << serialize(elem.key()) << ": ";
-            prettyPrint(os, elem.value(), indent);
-            sep = ",\n";
-        }
-        os << '\n';
-
-        indent->resize(indent->size() - 4);
-        os << *indent << '}';
-}
-
-static void prettyPrint(
-        std::ostream           &os,
-        const value            &jv,
-        std::string            *indent)
-{
-    std::string indent_;
-    if (!indent)
-        indent = &indent_;
-
-    switch (jv.kind()) {
-    case kind::array:
-        prettyPrintArray(os, jv.get_array(), indent);
-        break;
-
-    case kind::object:
-        prettyPrintObject(os, jv.get_object(), indent);
-        break;
-
-    case kind::string:
-        os << serialize(jv.get_string());
-        break;
-
-    case kind::uint64:
-        os << jv.get_uint64();
-        break;
-
-    case kind::int64:
-        os << jv.get_int64();
-        break;
-
-    case kind::double_:
-        os << jv.get_double();
-        break;
-
-    case kind::bool_:
-        os << jv.get_bool();
-        break;
-
-    case kind::null:
-        os << "null";
-        break;
-    }
-
-    if (indent->empty())
-        os << "\n";
-}
-
 class SimpleTreeEncoder: public AbstractTreeEncoder {
     public:
         /// import supported scan properties
@@ -214,7 +114,7 @@ void SimpleTreeEncoder::writeTo(std::ostream &str)
         // create an empty "defects" node to keep format detection working
         pDefects_ = &root_["defects"].emplace_array();
 
-    prettyPrint(str, root_);
+    jsonPrettyPrint(str, root_);
 }
 
 // SARIF 2.1.0 is documented at:
@@ -577,7 +477,7 @@ void SarifTreeEncoder::writeTo(std::ostream &str)
     root["runs"] = array{std::move(run0)};
 
     // encode as JSON
-    prettyPrint(str, root);
+    jsonPrettyPrint(str, root);
 }
 
 struct JsonWriter::Private {

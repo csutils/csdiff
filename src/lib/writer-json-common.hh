@@ -32,4 +32,10 @@ std::string sanitizeUTF8(const std::string &str);
 /// serialize scan properties as a JSON object
 boost::json::object jsonSerializeScanProps(const TScanProps &scanProps);
 
+/// serialize JSON value into the give output stream
+void jsonPrettyPrint(
+        std::ostream               &os,
+        const boost::json::value   &jv,
+        std::string                *indent = nullptr);
+
 #endif /* H_GUARD_WRITER_JSON_COMMON_H */
