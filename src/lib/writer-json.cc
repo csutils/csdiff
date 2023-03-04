@@ -23,6 +23,7 @@
 #include "regex.hh"
 #include "version.hh"
 #include "writer-json-common.hh"
+#include "writer-json-simple.hh"
 
 #include <algorithm>
 #include <queue>
@@ -30,92 +31,6 @@
 #include <boost/json/src.hpp>
 
 using namespace boost::json;
-
-class SimpleTreeEncoder: public AbstractTreeEncoder {
-    public:
-        /// import supported scan properties
-        void importScanProps(const TScanProps &) override;
-
-        /// append single defect
-        void appendDef(const Defect &) override;
-
-        /// write everything to the given output stream
-        void writeTo(std::ostream &) override;
-
-    private:
-        object                      root_;
-        array                      *pDefects_ = nullptr;
-};
-
-void SimpleTreeEncoder::importScanProps(const TScanProps &scanProps)
-{
-    if (scanProps.empty())
-        return;
-
-    root_["scan"] = jsonSerializeScanProps(scanProps);
-}
-
-void SimpleTreeEncoder::appendDef(const Defect &def)
-{
-    // go through events
-    array evtList;
-    for (const DefEvent &evt : def.events) {
-        object evtNode;
-
-        // describe the location
-        evtNode["file_name"] = evt.fileName;
-        evtNode["line"] = evt.line;
-        if (0 < evt.column)
-            evtNode["column"] = evt.column;
-
-        // describe the event
-        evtNode["event"] = evt.event;
-        evtNode["message"] = sanitizeUTF8(evt.msg);
-        evtNode["verbosity_level"] = evt.verbosityLevel;
-
-        // append the event to the list
-        evtList.push_back(std::move(evtNode));
-    }
-
-    // create a node for a single defect
-    object defNode;
-    defNode["checker"] = def.checker;
-    if (!def.annotation.empty())
-        defNode["annotation"] = def.annotation;
-
-    // write "defect_id", "cwe", etc. if available
-    if (0 < def.defectId)
-        defNode["defect_id"] = def.defectId;
-    if (0 < def.cwe)
-        defNode["cwe"] = def.cwe;
-    if (0 < def.imp)
-        defNode["imp"] = def.imp;
-    if (!def.function.empty())
-        defNode["function"] = def.function;
-    if (!def.language.empty())
-        defNode["language"] = def.language;
-    if (!def.tool.empty())
-        defNode["tool"] = def.tool;
-
-    defNode["key_event_idx"] = def.keyEventIdx;
-    defNode["events"] = std::move(evtList);
-
-    // create the node representing the list of defects
-    if (!pDefects_)
-        pDefects_ = &root_["defects"].emplace_array();
-
-    // append the node to the list
-    pDefects_->push_back(std::move(defNode));
-}
-
-void SimpleTreeEncoder::writeTo(std::ostream &str)
-{
-    if (!pDefects_)
-        // create an empty "defects" node to keep format detection working
-        pDefects_ = &root_["defects"].emplace_array();
-
-    jsonPrettyPrint(str, root_);
-}
 
 // SARIF 2.1.0 is documented at:
 // https://docs.github.com/en/code-security/code-scanning/integrating-with-code-scanning/sarif-support-for-code-scanning
