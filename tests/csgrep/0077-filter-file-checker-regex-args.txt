@@ -1,1 +1,1 @@
---remove-duplicates --filter-file ../../../tests/csgrep/0077-filter-file-checker-regex-filter.json
+--remove-duplicates --filter-file "$PROJECT_ROOT/tests/csgrep/0077-filter-file-checker-regex-filter.json"

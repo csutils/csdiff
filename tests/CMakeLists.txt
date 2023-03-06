@@ -29,6 +29,9 @@ set(jsfilter "sed -e 's|\"version\": \"[^\"]*\"|\"version\": \"\"|g'")
 
 macro(add_test_wrap test_name cmd)
     add_test("${test_name}" bash -c "${cmd}")
+    set_tests_properties(${test_name} PROPERTIES
+        ENVIRONMENT "PROJECT_ROOT=${CMAKE_SOURCE_DIR}")
+
     set_tests_properties(${test_name} PROPERTIES COST ${test_cost})
     math(EXPR test_cost "${test_cost} - 1")
 endmacro()
