@@ -320,8 +320,8 @@ bool MultilineConcatenator::tryMerge(DefEvent *pEvt)
     if (smBase[/* -W suffix */ 2] != smExtra[/* -W suffix */ 2])
         return false;
 
-    assert(!smExtra[/* msg */ 1].str().empty());
-    const char *gap = (' ' == *smExtra[/* msg */ 1].str().begin()) ? "" : " ";
+    assert(!smExtra.str(/* msg */ 1).empty());
+    const char *gap = (' ' == smExtra.str(/* msg */ 1).front()) ? "" : " ";
 
     // concatenate both messages together
     pEvt->msg = smBase.str(/* msg */ 1) + gap
