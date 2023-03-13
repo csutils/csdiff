@@ -70,8 +70,8 @@ void SarifTreeDecoder::Private::updateCweMap(const pt::ptree *driverNode)
             continue;
 
         const std::string cweStr = cweList->begin()->second.data();
-        boost::smatch sm;
-        if (!boost::regex_match(cweStr, sm, this->reCwe))
+        std::smatch sm;
+        if (!std::regex_match(cweStr, sm, this->reCwe))
             // unable to parse cwe
             continue;
 
@@ -134,8 +134,8 @@ void SarifTreeDecoder::readScanProps(
         // GCC
         d->singleChecker = "COMPILER_WARNING";
 
-        boost::smatch sm;
-        if (boost::regex_match(version, sm, d->reVersion))
+        std::smatch sm;
+        if (std::regex_match(version, sm, d->reVersion))
             (*pDst)["analyzer-version-gcc"] = sm[/* version */ 1];
     }
 }
@@ -316,8 +316,8 @@ bool SarifTreeDecoder::readNode(Defect *def)
     // read "rule" that triggered the report
     const auto rule = valueOf<std::string>(defNode, "ruleId");
     if (!rule.empty()) {
-        boost::smatch sm;
-        if (boost::regex_match(rule, sm, d->reRuleId)) {
+        std::smatch sm;
+        if (std::regex_match(rule, sm, d->reRuleId)) {
             // csdiff format
             def->checker    = sm[/* checker  */ 1];
             keyEvent.event  = sm[/* keyEvent */ 2];

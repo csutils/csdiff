@@ -187,7 +187,7 @@ class MsgPredicate: public IPredicate {
 
         bool matchDef(const Defect &def) const override {
             for (const DefEvent &evt : def.events) {
-                if (boost::regex_search(evt.msg, re_))
+                if (std::regex_search(evt.msg, re_))
                     return true;
             }
 
@@ -211,7 +211,7 @@ class ToolPredicate: public IPredicate {
             Defect def = defOrig;
             digger_.inferToolFromChecker(&def, /* onlyIfMissing */ true);
 
-            return boost::regex_search(def.tool, re_);
+            return std::regex_search(def.tool, re_);
         }
 };
 
@@ -227,7 +227,7 @@ class KeyEventPredicate: public IPredicate {
 
         bool matchDef(const Defect &def) const override {
             const DefEvent &keyEvent = def.events[def.keyEventIdx];
-            return boost::regex_search(keyEvent.event, re_);
+            return std::regex_search(keyEvent.event, re_);
         }
 };
 
@@ -243,7 +243,7 @@ class ErrorPredicate: public IPredicate {
 
         bool matchDef(const Defect &def) const override {
             const DefEvent &evt = def.events[def.keyEventIdx];
-            return boost::regex_search(evt.msg, re_);
+            return std::regex_search(evt.msg, re_);
         }
 };
 
@@ -259,7 +259,7 @@ class PathPredicate: public IPredicate {
 
         bool matchDef(const Defect &def) const override {
             const DefEvent &evt = def.events[def.keyEventIdx];
-            return boost::regex_search(evt.fileName, re_);
+            return std::regex_search(evt.fileName, re_);
         }
 };
 
@@ -274,7 +274,7 @@ class CheckerPredicate: public IPredicate {
         }
 
         bool matchDef(const Defect &def) const override {
-            return boost::regex_search(def.checker, re_);
+            return std::regex_search(def.checker, re_);
         }
 };
 
@@ -289,7 +289,7 @@ class AnnotPredicate: public IPredicate {
         }
 
         bool matchDef(const Defect &def) const override {
-            return boost::regex_search(def.annotation, re_);
+            return std::regex_search(def.annotation, re_);
         }
 };
 
@@ -328,7 +328,7 @@ class SrcAnnotPredicate: public IPredicate {
                 goto fail;
             }
 
-            matched = boost::regex_search(line, re_);
+            matched = std::regex_search(line, re_);
 fail:
             fstr.close();
             return matched;
@@ -552,7 +552,7 @@ template <class TPred>
 bool appendPredIfNeeded(
         PredicateFilter                                 *pf,
         const po::variables_map                         &vm,
-        boost::regex_constants::syntax_option_type      flags,
+        std::regex_constants::syntax_option_type         flags,
         const char                                      *key)
 {
     if (!vm.count(key))
@@ -602,9 +602,9 @@ bool chainFilters(
     *pEng = pf;
 
     // common matching flags
-    boost::regex_constants::syntax_option_type flags = 0;
+    std::regex_constants::syntax_option_type flags{};
     if (vm.count("ignore-case"))
-        flags |= boost::regex_constants::icase;
+        flags |= std::regex_constants::icase;
 
     if (vm.count("invert-match"))
         pf->setInvertMatch();
