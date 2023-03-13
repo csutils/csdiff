@@ -23,6 +23,7 @@
 #include "regex.hh"
 
 #include <algorithm>
+#include <cassert>
 
 namespace GccParserImpl {
 
