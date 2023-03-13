@@ -101,8 +101,8 @@ std::string digTitle(const TScanProps &props) {
         const std::string &args = it->second;
         const RE reSrpm("^.*[ /']([^ /']*)\\.src\\.rpm.*$");
 
-        boost::smatch sm;
-        if (!boost::regex_match(args, sm, reSrpm))
+        std::smatch sm;
+        if (!std::regex_match(args, sm, reSrpm))
             return "";
 
         title = sm[/* NVR */ 1];
@@ -190,10 +190,10 @@ void writeScanProps(std::ostream &str, const TScanProps &props) {
 void linkifyShellCheckMsg(std::string *pMsg)
 {
     static const RE reShellCheckMsg("(\\[)?SC([0-9]+)(\\])?$");
-    *pMsg = boost::regex_replace(*pMsg, reShellCheckMsg,
-            "<a href=\"https://github.com/koalaman/shellcheck/wiki/SC\\2\""
-            " title=\"description of ShellCheck's checker SC\\2\">"
-            "\\1SC\\2\\3</a>");
+    *pMsg = std::regex_replace(*pMsg, reShellCheckMsg,
+            "<a href=\"https://github.com/koalaman/shellcheck/wiki/SC$2\""
+            " title=\"description of ShellCheck's checker SC$2\">"
+            "$1SC$2$3</a>");
 }
 
 void printCweLink(std::ostream &str, const int cwe, const std::string &cweName)
@@ -438,7 +438,7 @@ void HtmlWriter::Private::writeNewDefWarning(const Defect &def)
         // not lookup set
         return;
 
-    if (boost::regex_match(def.checker, this->checkerIgnRegex))
+    if (std::regex_match(def.checker, this->checkerIgnRegex))
         // user requested to ignore this checker for lookup
         return;
 
@@ -525,9 +525,9 @@ void HtmlWriter::handleDef(const Defect &def)
         else {
             d->str << " ";
 
-            boost::smatch sm;
+            std::smatch sm;
             const std::string &evtName = evt.event;
-            if (boost::regex_match(evtName, sm, d->reEvent)) {
+            if (std::regex_match(evtName, sm, d->reEvent)) {
                 std::string msgId = HtmlLib::escapeTextInline(sm[/* id */ 2]);
                 if (def.checker == "SHELLCHECK_WARNING")
                     linkifyShellCheckMsg(&msgId);

@@ -169,12 +169,12 @@ bool DockerFileTransformer::transformRunLine(std::string *pRunLine)
     TStringList execList = prefixCmd_;
 
     try {
-        boost::smatch sm;
-        if (boost::regex_match(*pRunLine, sm, reLineRunExec_))
+        std::smatch sm;
+        if (std::regex_match(*pRunLine, sm, reLineRunExec_))
             // RUN ["cmd", "arg1", "arg2", ...]
             appendExecArgs(&execList, sm[1]);
 
-        else if (boost::regex_match(*pRunLine, sm, reLineRun_))
+        else if (std::regex_match(*pRunLine, sm, reLineRun_))
             // RUN arbitrary shell code...
             appendShellExec(&execList, sm[1]);
 
@@ -215,18 +215,18 @@ bool DockerFileTransformer::transform(std::istream &in, std::ostream &out)
 
         if (readingRunLine) {
             // check for comment because it does not need to end with back-slash
-            if (boost::regex_match(line, reComment_))
+            if (std::regex_match(line, reComment_))
                 continue;
         }
-        else if (!boost::regex_match(line, reLineRun_)) {
+        else if (!std::regex_match(line, reLineRun_)) {
             // pass unrelated contents of Dockerfile unchanged
             out << line << std::endl;
             continue;
         }
 
         // check for line ending with back-slash (multi-line RUN)
-        boost::smatch sm;
-        const bool lineCont = boost::regex_match(line, sm, reLineCont_);
+        std::smatch sm;
+        const bool lineCont = std::regex_match(line, sm, reLineCont_);
         if (lineCont)
             line = sm[1];
 

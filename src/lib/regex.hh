@@ -20,8 +20,8 @@
 #ifndef H_GUARD_REGEX_H
 #define H_GUARD_REGEX_H
 
-#include <boost/regex.hpp>
+#include <regex>
 
-typedef boost::regex RE;
+using RE = std::regex;
 
 #endif /* H_GUARD_REGEX_H */

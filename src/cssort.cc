@@ -111,10 +111,10 @@ bool operator<(const DefByChecker &a, const DefByChecker &b)
         // sort ShellCheck warnings by the [SC1234] suffixes
         const RE reCode("^.* \\[SC([0-9]+)\\]$");
         std::string aCode, bCode;
-        boost::smatch sm;
-        if (boost::regex_match(ea.msg, sm, reCode))
+        std::smatch sm;
+        if (std::regex_match(ea.msg, sm, reCode))
             aCode = sm[1];
-        if (boost::regex_match(eb.msg, sm, reCode))
+        if (std::regex_match(eb.msg, sm, reCode))
             bCode = sm[1];
         if (aCode < bCode)
             return true;

@@ -270,9 +270,9 @@ void SarifTreeEncoder::appendDef(const Defect &def)
     result["ruleId"] = ruleId;
 
     if (def.checker == "SHELLCHECK_WARNING") {
-        boost::smatch sm;
+        std::smatch sm;
         static const RE reShellCheckMsg("(\\[)?(SC[0-9]+)(\\])?$");
-        boost::regex_search(keyEvt.event, sm, reShellCheckMsg);
+        std::regex_search(keyEvt.event, sm, reShellCheckMsg);
 
         // update ShellCheck rule map
         shellCheckMap_[ruleId] = sm[2];

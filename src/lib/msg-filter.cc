@@ -32,7 +32,9 @@ inline std::string regexReplaceWrap(
         const RE                &re,
         const std::string       &fmt)
 {
-    std::string output(boost::regex_replace(input, re, fmt));
+    std::string output = std::regex_replace(input, re, fmt,
+            // for backwards compatibility with \\n replacements
+            std::regex_constants::format_sed);
 #if DEBUG_SUBST > 1
     if (input != output)
         std::cerr << "regex_replace: " << input << " -> " << output << "\n";
@@ -196,7 +198,7 @@ bool MsgFilter::setJSONFilter(InStream &input)
         }
         return true;
     }
-    catch (boost::regex_error &e) {
+    catch (std::regex_error &e) {
         input.handleError(e.what());
         return false;
     }
@@ -223,7 +225,7 @@ std::string MsgFilter::filterMsg(
 {
     std::string filtered = msg;
     for (const MsgReplace &rpl : d->repList)
-        if (boost::regex_search(checker, rpl.reChecker))
+        if (std::regex_search(checker, rpl.reChecker))
             filtered = regexReplaceWrap(filtered, rpl.reMsg, rpl.replaceWith);
 
 #if DEBUG_SUBST > 1
@@ -249,20 +251,20 @@ std::string MsgFilter::filterPath(const std::string &origPath) const
     if (d->ignorePath)
         return regexReplaceWrap(path, d->reDir, "");
 
-    if (boost::regex_match(path, d->reTmpPath)) {
+    if (std::regex_match(path, d->reTmpPath)) {
         // filter random numbers in names of temporary generated files
-        std::string tmpPath = boost::regex_replace(path, d->reTmpCleaner, "/tmp/tmp.c");
+        std::string tmpPath = std::regex_replace(path, d->reTmpCleaner, "/tmp/tmp.c");
         return tmpPath;
     }
 
-    boost::smatch sm;
-    if (boost::regex_match(path, sm, d->rePyBuild)) {
+    std::smatch sm;
+    if (std::regex_match(path, sm, d->rePyBuild)) {
         // %{_builddir}/build/lib/setuptools/glob.py ->
         // %{_builddir}/setuptools/glob.py
-        path = sm[1] + sm[2];
+        path = sm.str(1) + sm.str(2);
     }
 
-    if (!boost::regex_match(path, sm, d->rePath))
+    if (!std::regex_match(path, sm, d->rePath))
         // no match
         return path;
 
@@ -271,7 +273,7 @@ std::string MsgFilter::filterPath(const std::string &origPath) const
 
     // try to kill the multiple version strings in paths (kernel, OpenLDAP, ...)
     nvr.resize(nvr.size() - 1);
-    std::string ver(boost::regex_replace(nvr, d->reKrn, ""));
+    std::string ver(std::regex_replace(nvr, d->reKrn, ""));
     const std::string krnPattern = d->strKrn + ver + "[^/]*/";
 
 #if DEBUG_SUBST > 2
@@ -281,7 +283,7 @@ std::string MsgFilter::filterPath(const std::string &origPath) const
 #endif
 
     const RE reKill(krnPattern);
-    core = boost::regex_replace(core, reKill, "");
+    core = std::regex_replace(core, reKill, "");
 
     // quirk for Coverity inconsistency in handling bison-generated file names
     std::string suff(sm[/* Bison suffix */ 3]);

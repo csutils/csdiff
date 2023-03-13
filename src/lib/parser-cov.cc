@@ -72,7 +72,7 @@ bool LineReader::getLine(std::string *pDst)
         return false;
 
     std::string nextLine;
-    while (boost::regex_search(line, reTrailLoc_)
+    while (std::regex_search(line, reTrailLoc_)
             && this->getLinePriv(&nextLine))
     {
         // merge the current line with the next line
@@ -81,7 +81,7 @@ bool LineReader::getLine(std::string *pDst)
     }
 
     // remove the "path:" prefix if matched
-    *pDst = boost::regex_replace(line, rePathPref_, "");
+    *pDst = std::regex_replace(line, rePathPref_, "");
 
     return true;
 }
@@ -161,25 +161,25 @@ EToken ErrFileLexer::readNext()
     if (!lineReader_.getLine(&line))
         return T_NULL;
 
-    if (boost::regex_match(line, reEmpty_))
+    if (std::regex_match(line, reEmpty_))
         return T_EMPTY;
 
-    boost::smatch sm;
+    std::smatch sm;
 
-    if (boost::regex_match(line, sm, reChecker_)) {
+    if (std::regex_match(line, sm, reChecker_)) {
         def_ = Defect(sm[/* checker */ 1]);
         def_.annotation = sm[/* annotation */ 2];
         return T_CHECKER;
     }
 
-    if (boost::regex_match(line, sm, reComment_)) {
+    if (std::regex_match(line, sm, reComment_)) {
         evt_ = DefEvent();
         evt_.event  = sm[/* #     */ 1];
         evt_.msg    = sm[/* msg   */ 2];
         return T_COMMENT;
     }
 
-    if (!boost::regex_match(line, sm, reEvent_)) {
+    if (!std::regex_match(line, sm, reEvent_)) {
         evt_.msg = line;
         return T_UNKNOWN;
     }
@@ -215,8 +215,8 @@ struct KeyEventDigger::Private {
 const std::string KeyEventDigger::Private::stripEvtName(const std::string &evt)
     const
 {
-    boost::smatch sm;
-    if (boost::regex_match(evt, sm, this->reEvtSuffix))
+    std::smatch sm;
+    if (std::regex_match(evt, sm, this->reEvtSuffix))
         return sm[/* bare evt */ 1];
 
     // no match
@@ -412,8 +412,8 @@ class AnnotHandler {
 
 void AnnotHandler::handleDef(Defect *pDef)
 {
-    boost::smatch sm;
-    if (boost::regex_match(pDef->annotation, sm, reCweAnnot_)) {
+    std::smatch sm;
+    if (std::regex_match(pDef->annotation, sm, reCweAnnot_)) {
         pDef->cwe = parse_int(sm[/* cwe */ 1]);
         pDef->annotation.clear();
     }

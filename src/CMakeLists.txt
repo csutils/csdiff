@@ -38,7 +38,6 @@ endif()
 find_package(Boost REQUIRED
     COMPONENTS filesystem
                program_options
-               regex
                system
     OPTIONAL_COMPONENTS json
                         nowide)
@@ -56,9 +55,7 @@ add_subdirectory(lib)
 include_directories(lib)
 
 # link cslib.a and boost libraries
-link_libraries(cs
-    ${Boost_PROGRAM_OPTIONS_LIBRARY}
-    ${Boost_REGEX_LIBRARY})
+link_libraries(cs ${Boost_PROGRAM_OPTIONS_LIBRARY})
 
 # the list of executables
 add_executable(csdiff       csdiff.cc)

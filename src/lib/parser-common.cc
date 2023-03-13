@@ -86,8 +86,8 @@ void ImpliedAttrDigger::inferToolFromChecker(
         // tool already assigned
         return;
 
-    boost::smatch sm;
-    if (boost::regex_match(pDef->checker, sm, d->reToolWarning)) {
+    std::smatch sm;
+    if (std::regex_match(pDef->checker, sm, d->reToolWarning)) {
         // extract tool="gcc-analyzer" out of checker="GCC_ANALYZER_WARNING"
         std::string tool = sm[/* tool */ 1];
         boost::algorithm::to_lower(tool);
