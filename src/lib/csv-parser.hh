@@ -39,6 +39,12 @@ class AbstractCsvParser {
     protected:
         using TStringList = std::vector<std::string>;
 
+        /// called for the first line only
+        virtual bool /* handled */ handleHeader(const TStringList &) {
+            // returning false causes handleLine() to be called as a fallback
+            return false;
+        }
+
         virtual bool /* continue */ handleLine(const TStringList &) = 0;
         void parseError(const std::string &msg);
 

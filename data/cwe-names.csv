@@ -1,3 +1,4 @@
+"cwe_id","name"
 "15","External Control of System or Configuration Setting"
 "19","Data Processing Errors"
 "20","Improper Input Validation"
@@ -306,7 +307,7 @@
 "663","Use of a Non-reentrant Function in a Concurrent Context"
 "664","Improper Control of a Resource Through its Lifetime"
 "665","Improper Initialization"
-"667", "Improper Locking"
+"667","Improper Locking"
 "670","Always-Incorrect Control Flow Implementation"
 "672","Operation on a Resource after Expiration or Release"
 "674","Uncontrolled Recursion"

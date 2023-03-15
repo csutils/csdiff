@@ -36,6 +36,14 @@ CweNameLookup::CweNameLookup():
 
 CweNameLookup::~CweNameLookup() = default;
 
+bool CweNameLookup::handleHeader(const TStringList &fields)
+{
+    // "cwe_id", "name" is recognized as the CSV header for cwe-names.csv
+    return 2U == fields.size()
+        && "cwe_id" == fields[0]
+        && "name" == fields[1];
+}
+
 bool CweNameLookup::handleLine(const TStringList &fields)
 {
     if (2U != fields.size()) {

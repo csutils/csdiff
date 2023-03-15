@@ -53,7 +53,11 @@ bool AbstractCsvParser::parse(InStream &ins)
         // break the current line into fields
         const TStringList fields(tok.begin(), tok.end());
 
-        // call the template method
+        // call the template method for CSV header
+        if (1 == d->lineno && /* handled */this->handleHeader(fields))
+            continue;
+
+        // call the template method for CSV data
         if (!/* continue */this->handleLine(fields))
             break;
     }
