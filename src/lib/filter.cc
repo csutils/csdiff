@@ -23,6 +23,7 @@
 
 #include <fstream>
 #include <iomanip>
+#include <queue>
 #include <set>
 #include <sstream>
 
@@ -209,10 +210,17 @@ bool DuplicateFilter::matchDef(const Defect &def)
 // implementation of RateLimitter
 
 struct RateLimitter::Private {
+    // counter of checker/key-event pairs
     using TKey = std::pair<std::string, std::string>;
     using TCnt = int;
     using TMap = std::map<TKey, TCnt>;
     TMap counter;
+
+    // list of defects where the limit was exceeded
+    using TErrorList = std::queue<Defect>;
+    TErrorList errors;
+
+    // rate limit set during initialization
     TCnt rateLimit;
 };
 
@@ -226,50 +234,59 @@ RateLimitter::RateLimitter(AbstractWriter *agent, int rateLimit):
 bool RateLimitter::matchDef(const Defect &def)
 {
     // resolve the checker/event pair for the key event
-    const DefEvent &evt = def.events[def.keyEventIdx];
+    DefEvent evt = def.events[def.keyEventIdx];
     const Private::TKey key(def.checker, evt.event);
 
     // increment the counter and get the current value
     const Private::TCnt cnt = ++d->counter[key];
 
     // check whether the specified limit is exceeded
-    return (cnt < d->rateLimit);
+    if (cnt < d->rateLimit)
+        return true;
+
+    if (cnt == d->rateLimit) {
+        // record defect prototype containing the key event only (without msg)
+        evt.msg.clear();
+
+        Defect defProto = def;
+        defProto.events.clear();
+        defProto.events.push_back(std::move(evt));
+        d->errors.push(std::move(defProto));
+    }
+
+    // limit exceeded
+    return false;
 }
 
 void RateLimitter::flush()
 {
-    for (const auto &item : d->counter) {
-        const Private::TCnt cnt = item.second;
-        if (cnt < d->rateLimit)
-            // limit not exceeded for this checker/event pair
-            continue;
+    for (; !d->errors.empty(); d->errors.pop()) {
+        Defect &def = d->errors.front();
 
-        // resolve the checker/event pair
-        const Private::TKey &key = item.first;
-        const std::string &checker = key.first;
-        const std::string &keyEvtName = key.second;
+        // resolve the count of occurrences for this checker/event pair
+        const DefEvent &keyEvt = def.events[def.keyEventIdx];
+        const Private::TKey key(def.checker, keyEvt.event);
+        const Private::TCnt cnt = d->counter[key];
 
         // construct an error event
         std::ostringstream err, note;
-        err << cnt << " occurrences of " << keyEvtName
+        err << cnt << " occurrences of " << keyEvt.event
             << " exceeded the specified limit "
             << d->rateLimit;
 
-        DefEvent evtErr("error[too-many]");
+        DefEvent &evtErr = def.events.back();
+        evtErr.event = "error[too-many]";
         evtErr.msg = err.str();
 
         // construct a note event
         note << (cnt - d->rateLimit) << " occurrences of "
-            << keyEvtName << " were discarded because of this";
+            << keyEvt.event << " were discarded because of this";
 
-        DefEvent evtNote("note");
+        DefEvent evtNote = evtErr;
+        evtNote.event = "note";
         evtNote.msg = note.str();
         evtNote.verbosityLevel = /* info */ 1;
-
-        // construct a defect containing the above events
-        Defect def(checker);
-        def.events.push_back(evtErr);
-        def.events.push_back(evtNote);
+        def.events.push_back(std::move(evtNote));
 
         // process the newly constructed defect by the chain of writers
         GenericAbstractFilter::handleDef(def);

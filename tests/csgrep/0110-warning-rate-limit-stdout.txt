@@ -1875,40 +1875,49 @@
         },
         {
             "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
-                    "file_name": "",
-                    "line": 0,
+                    "file_name": "./doc/example/compiler-etc-dependencies/example-sessions/ompi-defaults.sh",
+                    "line": 3,
+                    "column": 8,
                     "event": "error[too-many]",
                     "message": "115 occurrences of note[SC2086] exceeded the specified limit 16",
                     "verbosity_level": 0
                 },
                 {
-                    "file_name": "",
-                    "line": 0,
+                    "file_name": "./doc/example/compiler-etc-dependencies/example-sessions/ompi-defaults.sh",
+                    "line": 3,
+                    "column": 8,
                     "event": "note",
-                    "message": "99 occurrences of note[SC2086] were discarded because of this",
+                    "message": "99 occurrences of error[too-many] were discarded because of this",
                     "verbosity_level": 1
                 }
             ]
         },
         {
             "checker": "SHELLCHECK_WARNING",
+            "cwe": 140,
+            "language": "shell",
+            "tool": "shellcheck",
             "key_event_idx": 0,
             "events": [
                 {
-                    "file_name": "",
-                    "line": 0,
+                    "file_name": "./init/bash_completion.in",
+                    "line": 128,
+                    "column": 37,
                     "event": "error[too-many]",
                     "message": "29 occurrences of warning[SC2207] exceeded the specified limit 16",
                     "verbosity_level": 0
                 },
                 {
-                    "file_name": "",
-                    "line": 0,
+                    "file_name": "./init/bash_completion.in",
+                    "line": 128,
+                    "column": 37,
                     "event": "note",
-                    "message": "13 occurrences of warning[SC2207] were discarded because of this",
+                    "message": "13 occurrences of error[too-many] were discarded because of this",
                     "verbosity_level": 1
                 }
             ]
