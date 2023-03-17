@@ -1,0 +1,1917 @@
+{
+    "defects": [
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 252,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./contrib/guide/get_started/00-cleanup.sh",
+                    "line": 6,
+                    "column": 1,
+                    "event": "warning[SC2164]",
+                    "message": "Use 'cd ... || exit' or 'cd ... || return' in case cd fails.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 277,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./contrib/guide/get_started/12-datadir-create.sh",
+                    "line": 4,
+                    "column": 7,
+                    "event": "warning[SC2174]",
+                    "message": "When used with -p, -m only applies to the deepest directory.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./contrib/scripts/resetgnome",
+                    "line": 14,
+                    "column": 13,
+                    "event": "note[SC2006]",
+                    "message": "Use $(...) notation instead of legacy backticked `...`.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./contrib/scripts/resetgnome",
+                    "line": 15,
+                    "column": 25,
+                    "event": "note[SC2086]",
+                    "message": "Double quote to prevent globbing and word splitting.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./contrib/scripts/resetgnome",
+                    "line": 17,
+                    "column": 10,
+                    "event": "note[SC2006]",
+                    "message": "Use $(...) notation instead of legacy backticked `...`.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./contrib/scripts/resetgnome",
+                    "line": 18,
+                    "column": 14,
+                    "event": "note[SC2086]",
+                    "message": "Double quote to prevent globbing and word splitting.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./contrib/scripts/resetgnome",
+                    "line": 20,
+                    "column": 7,
+                    "event": "note[SC2086]",
+                    "message": "Double quote to prevent globbing and word splitting.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./contrib/scripts/resetgnome",
+                    "line": 20,
+                    "column": 44,
+                    "event": "note[SC2086]",
+                    "message": "Double quote to prevent globbing and word splitting.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./contrib/scripts/resetgnome",
+                    "line": 20,
+                    "column": 57,
+                    "event": "note[SC2086]",
+                    "message": "Double quote to prevent globbing and word splitting.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 398,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./contrib/template/.bash_profile",
+                    "line": 2,
+                    "column": 25,
+                    "event": "warning[SC1090]",
+                    "message": "ShellCheck can't follow non-constant source. Use a directive to specify location.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./contrib/template/.bashrc",
+                    "line": 21,
+                    "column": 3,
+                    "event": "note[SC1091]",
+                    "message": "Not following: /soft/rko-modules/tcl/init/bash was not specified as input (see shellcheck -x).",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./doc/example/compiler-etc-dependencies/example-sessions/bar-defaults.sh",
+                    "line": 3,
+                    "column": 8,
+                    "event": "note[SC2086]",
+                    "message": "Double quote to prevent globbing and word splitting.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./doc/example/compiler-etc-dependencies/example-sessions/bar-loads.sh",
+                    "line": 3,
+                    "column": 8,
+                    "event": "note[SC2086]",
+                    "message": "Double quote to prevent globbing and word splitting.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./doc/example/compiler-etc-dependencies/example-sessions/bar-switch.sh",
+                    "line": 3,
+                    "column": 8,
+                    "event": "note[SC2086]",
+                    "message": "Double quote to prevent globbing and word splitting.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./doc/example/compiler-etc-dependencies/example-sessions/common_code.sh",
+                    "line": 6,
+                    "column": 6,
+                    "event": "note[SC2268]",
+                    "message": "Avoid x-prefix in comparisons as it no longer serves a purpose.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./doc/example/compiler-etc-dependencies/example-sessions/common_code.sh",
+                    "line": 11,
+                    "column": 6,
+                    "event": "note[SC2268]",
+                    "message": "Avoid x-prefix in comparisons as it no longer serves a purpose.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 569,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./doc/example/compiler-etc-dependencies/example-sessions/common_code.sh",
+                    "line": 34,
+                    "column": 7,
+                    "event": "warning[SC2124]",
+                    "message": "Assigning an array to a string! Assign as array, or use * instead of @ to concatenate.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 563,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./doc/example/compiler-etc-dependencies/example-sessions/common_code.sh",
+                    "line": 45,
+                    "column": 2,
+                    "event": "warning[SC2034]",
+                    "message": "GCCGNU appears unused. Verify use (or export if used externally).",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 563,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./doc/example/compiler-etc-dependencies/example-sessions/common_code.sh",
+                    "line": 60,
+                    "column": 3,
+                    "event": "warning[SC2034]",
+                    "message": "AUTOFLAG appears unused. Verify use (or export if used externally).",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./doc/example/compiler-etc-dependencies/example-sessions/foo-avail1.sh",
+                    "line": 3,
+                    "column": 8,
+                    "event": "note[SC2086]",
+                    "message": "Double quote to prevent globbing and word splitting.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./doc/example/compiler-etc-dependencies/example-sessions/foo-avail2.sh",
+                    "line": 3,
+                    "column": 8,
+                    "event": "note[SC2086]",
+                    "message": "Double quote to prevent globbing and word splitting.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./doc/example/compiler-etc-dependencies/example-sessions/foo-defaults.sh",
+                    "line": 3,
+                    "column": 8,
+                    "event": "note[SC2086]",
+                    "message": "Double quote to prevent globbing and word splitting.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./doc/example/compiler-etc-dependencies/example-sessions/foo-loads.sh",
+                    "line": 3,
+                    "column": 8,
+                    "event": "note[SC2086]",
+                    "message": "Double quote to prevent globbing and word splitting.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./doc/example/compiler-etc-dependencies/example-sessions/foo-switch.sh",
+                    "line": 3,
+                    "column": 8,
+                    "event": "note[SC2086]",
+                    "message": "Double quote to prevent globbing and word splitting.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./doc/example/compiler-etc-dependencies/example-sessions/modavail.sh",
+                    "line": 3,
+                    "column": 8,
+                    "event": "note[SC2086]",
+                    "message": "Double quote to prevent globbing and word splitting.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./doc/example/compiler-etc-dependencies/example-sessions/modversion.sh",
+                    "line": 3,
+                    "column": 8,
+                    "event": "note[SC2086]",
+                    "message": "Double quote to prevent globbing and word splitting.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 569,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./doc/example/compiler-etc-dependencies/example-sessions/ompi-switch.sh.m431",
+                    "line": 4,
+                    "column": 7,
+                    "event": "warning[SC2124]",
+                    "message": "Assigning an array to a string! Assign as array, or use * instead of @ to concatenate.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 571,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./doc/example/source-script-in-modulefile/bar-2.1/bar-setup.sh",
+                    "line": 2,
+                    "column": 8,
+                    "event": "warning[SC2155]",
+                    "message": "Declare and assign separately to avoid masking return values.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 670,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./doc/example/source-script-in-modulefile/bar-2.1/bar-setup.sh",
+                    "line": 2,
+                    "column": 23,
+                    "event": "warning[SC2128]",
+                    "message": "Expanding an array without an index only gives the first element.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 571,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./doc/example/source-script-in-modulefile/foo-1.2/foo-setup.sh",
+                    "line": 3,
+                    "column": 8,
+                    "event": "warning[SC2155]",
+                    "message": "Declare and assign separately to avoid masking return values.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 670,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./doc/example/source-script-in-modulefile/foo-1.2/foo-setup.sh",
+                    "line": 3,
+                    "column": 23,
+                    "event": "warning[SC2128]",
+                    "message": "Expanding an array without an index only gives the first element.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 477,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/bash.in",
+                    "line": 27,
+                    "column": 47,
+                    "event": "warning[SC2166]",
+                    "message": "Prefer [ p ] && [ q ] as [ p -a q ] is not well defined.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 569,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/bash.in",
+                    "line": 32,
+                    "column": 31,
+                    "event": "warning[SC2089]",
+                    "message": "Quotes/backslashes will be treated literally. Use an array.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 569,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/bash.in",
+                    "line": 41,
+                    "column": 9,
+                    "event": "warning[SC2090]",
+                    "message": "Quotes/backslashes in this variable will not be respected.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 569,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/bash_completion.in",
+                    "line": 10,
+                    "column": 15,
+                    "event": "error[SC1035]",
+                    "message": "You are missing a required space here.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 477,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/bash_completion.in",
+                    "line": 10,
+                    "column": 27,
+                    "event": "warning[SC2166]",
+                    "message": "Prefer [ p ] && [ q ] as [ p -a q ] is not well defined.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 477,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/bash_completion.in",
+                    "line": 22,
+                    "column": 20,
+                    "event": "warning[SC2166]",
+                    "message": "Prefer [ p ] || [ q ] as [ p -o q ] is not well defined.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 140,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/bash_completion.in",
+                    "line": 52,
+                    "column": 25,
+                    "event": "warning[SC2207]",
+                    "message": "Prefer mapfile or read -a to split command output (or quote to avoid splitting).",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 140,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/bash_completion.in",
+                    "line": 68,
+                    "column": 27,
+                    "event": "warning[SC2207]",
+                    "message": "Prefer mapfile or read -a to split command output (or quote to avoid splitting).",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 140,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/bash_completion.in",
+                    "line": 69,
+                    "column": 33,
+                    "event": "warning[SC2207]",
+                    "message": "Prefer mapfile or read -a to split command output (or quote to avoid splitting).",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 140,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/bash_completion.in",
+                    "line": 70,
+                    "column": 25,
+                    "event": "warning[SC2207]",
+                    "message": "Prefer mapfile or read -a to split command output (or quote to avoid splitting).",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 140,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/bash_completion.in",
+                    "line": 72,
+                    "column": 33,
+                    "event": "warning[SC2207]",
+                    "message": "Prefer mapfile or read -a to split command output (or quote to avoid splitting).",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 140,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/bash_completion.in",
+                    "line": 74,
+                    "column": 33,
+                    "event": "warning[SC2207]",
+                    "message": "Prefer mapfile or read -a to split command output (or quote to avoid splitting).",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 140,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/bash_completion.in",
+                    "line": 75,
+                    "column": 33,
+                    "event": "warning[SC2207]",
+                    "message": "Prefer mapfile or read -a to split command output (or quote to avoid splitting).",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 140,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/bash_completion.in",
+                    "line": 76,
+                    "column": 33,
+                    "event": "warning[SC2207]",
+                    "message": "Prefer mapfile or read -a to split command output (or quote to avoid splitting).",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 140,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/bash_completion.in",
+                    "line": 89,
+                    "column": 33,
+                    "event": "warning[SC2207]",
+                    "message": "Prefer mapfile or read -a to split command output (or quote to avoid splitting).",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 140,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/bash_completion.in",
+                    "line": 90,
+                    "column": 33,
+                    "event": "warning[SC2207]",
+                    "message": "Prefer mapfile or read -a to split command output (or quote to avoid splitting).",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 140,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/bash_completion.in",
+                    "line": 94,
+                    "column": 33,
+                    "event": "warning[SC2207]",
+                    "message": "Prefer mapfile or read -a to split command output (or quote to avoid splitting).",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 140,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/bash_completion.in",
+                    "line": 96,
+                    "column": 33,
+                    "event": "warning[SC2207]",
+                    "message": "Prefer mapfile or read -a to split command output (or quote to avoid splitting).",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 398,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/bash_completion.in",
+                    "line": 105,
+                    "column": 21,
+                    "event": "warning[SC2178]",
+                    "message": "Variable was used as an array but is now assigned a string.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 398,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/bash_completion.in",
+                    "line": 106,
+                    "column": 21,
+                    "event": "warning[SC2178]",
+                    "message": "Variable was used as an array but is now assigned a string.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 140,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/bash_completion.in",
+                    "line": 108,
+                    "column": 33,
+                    "event": "warning[SC2207]",
+                    "message": "Prefer mapfile or read -a to split command output (or quote to avoid splitting).",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 140,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/bash_completion.in",
+                    "line": 109,
+                    "column": 33,
+                    "event": "warning[SC2207]",
+                    "message": "Prefer mapfile or read -a to split command output (or quote to avoid splitting).",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 829,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/bash_completion.in",
+                    "line": 116,
+                    "column": 4,
+                    "event": "warning[SC2091]",
+                    "message": "Remove surrounding $() to avoid executing output (or use eval if intentional).",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 563,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/bash_completion.in",
+                    "line": 118,
+                    "column": 34,
+                    "event": "warning[SC2034]",
+                    "message": "cmds appears unused. Verify use (or export if used externally).",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 563,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/bash_completion.in",
+                    "line": 118,
+                    "column": 39,
+                    "event": "warning[SC2034]",
+                    "message": "opts appears unused. Verify use (or export if used externally).",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 140,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/bash_completion.in",
+                    "line": 127,
+                    "column": 31,
+                    "event": "warning[SC2207]",
+                    "message": "Prefer mapfile or read -a to split command output (or quote to avoid splitting).",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 398,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/bash_completion.in",
+                    "line": 164,
+                    "column": 25,
+                    "event": "warning[SC2178]",
+                    "message": "Variable was used as an array but is now assigned a string.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 398,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/bash_completion.in",
+                    "line": 165,
+                    "column": 25,
+                    "event": "warning[SC2178]",
+                    "message": "Variable was used as an array but is now assigned a string.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 477,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/ksh.in",
+                    "line": 27,
+                    "column": 47,
+                    "event": "warning[SC2166]",
+                    "message": "Prefer [ p ] && [ q ] as [ p -a q ] is not well defined.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 569,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/ksh.in",
+                    "line": 32,
+                    "column": 31,
+                    "event": "warning[SC2089]",
+                    "message": "Quotes/backslashes will be treated literally. Use an array.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 569,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/ksh.in",
+                    "line": 41,
+                    "column": 9,
+                    "event": "warning[SC2090]",
+                    "message": "Quotes/backslashes in this variable will not be respected.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 156,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/profile.sh.in",
+                    "line": 10,
+                    "column": 23,
+                    "event": "warning[SC2046]",
+                    "message": "Quote this to prevent word splitting.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 398,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/profile.sh.in",
+                    "line": 14,
+                    "column": 6,
+                    "event": "warning[SC1090]",
+                    "message": "ShellCheck can't follow non-constant source. Use a directive to specify location.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/profile.sh.in",
+                    "line": 16,
+                    "column": 6,
+                    "event": "note[SC1091]",
+                    "message": "Not following: @initdir@/sh was not specified as input (see shellcheck -x).",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 477,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/sh.in",
+                    "line": 27,
+                    "column": 47,
+                    "event": "warning[SC2166]",
+                    "message": "Prefer [ p ] && [ q ] as [ p -a q ] is not well defined.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 569,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/sh.in",
+                    "line": 32,
+                    "column": 31,
+                    "event": "warning[SC2089]",
+                    "message": "Quotes/backslashes will be treated literally. Rewrite using set/\"$@\" or functions.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 569,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/sh.in",
+                    "line": 41,
+                    "column": 11,
+                    "event": "warning[SC2090]",
+                    "message": "Quotes/backslashes in this variable will not be respected.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/sh.in",
+                    "line": 59,
+                    "column": 14,
+                    "event": "warning[SC3045]",
+                    "message": "In POSIX sh, export -f is undefined.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/sh.in",
+                    "line": 60,
+                    "column": 14,
+                    "event": "warning[SC3045]",
+                    "message": "In POSIX sh, export -f is undefined.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/sh.in",
+                    "line": 61,
+                    "column": 20,
+                    "event": "warning[SC3045]",
+                    "message": "In POSIX sh, type -t is undefined.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./init/sh.in",
+                    "line": 62,
+                    "column": 17,
+                    "event": "warning[SC3045]",
+                    "message": "In POSIX sh, export -f is undefined.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/add.modules.in",
+                    "line": 22,
+                    "column": 9,
+                    "event": "note[SC2016]",
+                    "message": "Expressions don't expand in single quotes, use double quotes for that.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/add.modules.in",
+                    "line": 61,
+                    "column": 1,
+                    "event": "note[SC2162]",
+                    "message": "read without -r will mangle backslashes.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/add.modules.in",
+                    "line": 63,
+                    "column": 6,
+                    "event": "note[SC2268]",
+                    "message": "Avoid x-prefix in comparisons as it no longer serves a purpose.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/add.modules.in",
+                    "line": 102,
+                    "column": 9,
+                    "event": "note[SC2268]",
+                    "message": "Avoid x-prefix in comparisons as it no longer serves a purpose.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/add.modules.in",
+                    "line": 107,
+                    "column": 10,
+                    "event": "note[SC2268]",
+                    "message": "Avoid x-prefix in comparisons as it no longer serves a purpose.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/add.modules.in",
+                    "line": 127,
+                    "column": 12,
+                    "event": "note[SC2268]",
+                    "message": "Avoid x-prefix in comparisons as it no longer serves a purpose.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/add.modules.in",
+                    "line": 148,
+                    "column": 11,
+                    "event": "note[SC2268]",
+                    "message": "Avoid x-prefix in comparisons as it no longer serves a purpose.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/add.modules.in",
+                    "line": 153,
+                    "column": 10,
+                    "event": "note[SC2268]",
+                    "message": "Avoid x-prefix in comparisons as it no longer serves a purpose.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/add.modules.in",
+                    "line": 164,
+                    "column": 12,
+                    "event": "note[SC2268]",
+                    "message": "Avoid x-prefix in comparisons as it no longer serves a purpose.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 252,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/add.modules.in",
+                    "line": 190,
+                    "column": 1,
+                    "event": "warning[SC2164]",
+                    "message": "Use 'cd ... || exit' or 'cd ... || return' in case cd fails.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 156,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/add.modules.in",
+                    "line": 199,
+                    "column": 7,
+                    "event": "warning[SC2046]",
+                    "message": "Quote this to prevent word splitting.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/add.modules.in",
+                    "line": 199,
+                    "column": 7,
+                    "event": "note[SC2006]",
+                    "message": "Use $(...) notation instead of legacy backticked `...`.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/commit-msg",
+                    "line": 49,
+                    "column": 6,
+                    "event": "note[SC2181]",
+                    "message": "Check exit code directly with e.g. 'if mycmd;', not indirectly with $?.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 477,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/envml",
+                    "line": 83,
+                    "column": 15,
+                    "event": "warning[SC2166]",
+                    "message": "Prefer [ p ] || [ q ] as [ p -o q ] is not well defined.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 477,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/envml",
+                    "line": 83,
+                    "column": 31,
+                    "event": "warning[SC2166]",
+                    "message": "Prefer [ p ] || [ q ] as [ p -o q ] is not well defined.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 88,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/envml",
+                    "line": 89,
+                    "column": 12,
+                    "event": "error[SC2068]",
+                    "message": "Double quote array expansions to avoid re-splitting elements.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 563,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/envml",
+                    "line": 127,
+                    "column": 17,
+                    "event": "warning[SC2034]",
+                    "message": "module appears unused. Verify use (or export if used externally).",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 156,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/mkroot",
+                    "line": 75,
+                    "column": 37,
+                    "event": "warning[SC2046]",
+                    "message": "Quote this to prevent word splitting.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/mkroot",
+                    "line": 75,
+                    "column": 37,
+                    "event": "note[SC2006]",
+                    "message": "Use $(...) notation instead of legacy backticked `...`.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/mkroot",
+                    "line": 75,
+                    "column": 38,
+                    "event": "note[SC2012]",
+                    "message": "Use find instead of ls to better handle non-alphanumeric filenames.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 156,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/mkroot",
+                    "line": 77,
+                    "column": 38,
+                    "event": "warning[SC2046]",
+                    "message": "Quote this to prevent word splitting.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/mkroot",
+                    "line": 77,
+                    "column": 38,
+                    "event": "note[SC2006]",
+                    "message": "Use $(...) notation instead of legacy backticked `...`.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/mkroot",
+                    "line": 77,
+                    "column": 39,
+                    "event": "note[SC2012]",
+                    "message": "Use find instead of ls to better handle non-alphanumeric filenames.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 156,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/mkroot",
+                    "line": 88,
+                    "column": 30,
+                    "event": "warning[SC2046]",
+                    "message": "Quote this to prevent word splitting.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/mkroot",
+                    "line": 88,
+                    "column": 30,
+                    "event": "note[SC2006]",
+                    "message": "Use $(...) notation instead of legacy backticked `...`.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/mkroot",
+                    "line": 88,
+                    "column": 31,
+                    "event": "note[SC2012]",
+                    "message": "Use find instead of ls to better handle non-alphanumeric filenames.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/mt",
+                    "line": 35,
+                    "column": 6,
+                    "event": "note[SC2181]",
+                    "message": "Check exit code directly with e.g. 'if mycmd;', not indirectly with $?.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 456,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/mt",
+                    "line": 38,
+                    "column": 4,
+                    "event": "warning[SC2209]",
+                    "message": "Use var=$(command) to assign output (or quote to assign string).",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 456,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/mt",
+                    "line": 42,
+                    "column": 1,
+                    "event": "warning[SC2209]",
+                    "message": "Use var=$(command) to assign output (or quote to assign string).",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 88,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/mt",
+                    "line": 63,
+                    "column": 13,
+                    "event": "error[SC2068]",
+                    "message": "Double quote array expansions to avoid re-splitting elements.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 88,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/mt",
+                    "line": 63,
+                    "column": 34,
+                    "event": "error[SC2068]",
+                    "message": "Double quote array expansions to avoid re-splitting elements.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 140,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/mt",
+                    "line": 70,
+                    "column": 32,
+                    "event": "warning[SC2206]",
+                    "message": "Quote to prevent word splitting/globbing, or split robustly with mapfile or read -a.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 140,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/mt",
+                    "line": 70,
+                    "column": 43,
+                    "event": "warning[SC2206]",
+                    "message": "Quote to prevent word splitting/globbing, or split robustly with mapfile or read -a.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 140,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/mt",
+                    "line": 72,
+                    "column": 32,
+                    "event": "warning[SC2206]",
+                    "message": "Quote to prevent word splitting/globbing, or split robustly with mapfile or read -a.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 140,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/mt",
+                    "line": 72,
+                    "column": 43,
+                    "event": "warning[SC2206]",
+                    "message": "Quote to prevent word splitting/globbing, or split robustly with mapfile or read -a.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/mt",
+                    "line": 83,
+                    "column": 45,
+                    "event": "warning[SC2076]",
+                    "message": "Remove quotes from right-hand side of =~ to match as a regex rather than literally.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "cwe": 140,
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/mt",
+                    "line": 84,
+                    "column": 26,
+                    "event": "warning[SC2206]",
+                    "message": "Quote to prevent word splitting/globbing, or split robustly with mapfile or read -a.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/pre-commit",
+                    "line": 45,
+                    "column": 6,
+                    "event": "note[SC2181]",
+                    "message": "Check exit code directly with e.g. 'if mycmd;', not indirectly with $?.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/pre-commit",
+                    "line": 47,
+                    "column": 9,
+                    "event": "note[SC2181]",
+                    "message": "Check exit code directly with e.g. 'if mycmd;', not indirectly with $?.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/pre-commit",
+                    "line": 56,
+                    "column": 6,
+                    "event": "note[SC2181]",
+                    "message": "Check exit code directly with e.g. 'if mycmd;', not indirectly with $?.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./script/pre-commit",
+                    "line": 80,
+                    "column": 6,
+                    "event": "note[SC2181]",
+                    "message": "Check exit code directly with e.g. 'if mycmd;', not indirectly with $?.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "error[too-many]",
+                    "message": "115 occurrences of note[SC2086] exceeded the specified limit 16",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "note",
+                    "message": "99 occurrences of note[SC2086] were discarded because of this",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "error[too-many]",
+                    "message": "29 occurrences of warning[SC2207] exceeded the specified limit 16",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "note",
+                    "message": "13 occurrences of warning[SC2207] were discarded because of this",
+                    "verbosity_level": 1
+                }
+            ]
+        }
+    ]
+}

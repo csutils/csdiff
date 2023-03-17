@@ -203,3 +203,78 @@ bool DuplicateFilter::matchDef(const Defect &def)
 
     return d->lookup.insert(evt)./* inserted */second;
 }
+
+
+// /////////////////////////////////////////////////////////////////////////////
+// implementation of RateLimitter
+
+struct RateLimitter::Private {
+    using TKey = std::pair<std::string, std::string>;
+    using TCnt = int;
+    using TMap = std::map<TKey, TCnt>;
+    TMap counter;
+    TCnt rateLimit;
+};
+
+RateLimitter::RateLimitter(AbstractWriter *agent, int rateLimit):
+    AbstractFilter(agent),
+    d(new Private)
+{
+    d->rateLimit = rateLimit;
+}
+
+bool RateLimitter::matchDef(const Defect &def)
+{
+    // resolve the checker/event pair for the key event
+    const DefEvent &evt = def.events[def.keyEventIdx];
+    const Private::TKey key(def.checker, evt.event);
+
+    // increment the counter and get the current value
+    const Private::TCnt cnt = ++d->counter[key];
+
+    // check whether the specified limit is exceeded
+    return (cnt < d->rateLimit);
+}
+
+void RateLimitter::flush()
+{
+    for (const auto &item : d->counter) {
+        const Private::TCnt cnt = item.second;
+        if (cnt < d->rateLimit)
+            // limit not exceeded for this checker/event pair
+            continue;
+
+        // resolve the checker/event pair
+        const Private::TKey &key = item.first;
+        const std::string &checker = key.first;
+        const std::string &keyEvtName = key.second;
+
+        // construct an error event
+        std::ostringstream err, note;
+        err << cnt << " occurrences of " << keyEvtName
+            << " exceeded the specified limit "
+            << d->rateLimit;
+
+        DefEvent evtErr("error[too-many]");
+        evtErr.msg = err.str();
+
+        // construct a note event
+        note << (cnt - d->rateLimit) << " occurrences of "
+            << keyEvtName << " were discarded because of this";
+
+        DefEvent evtNote("note");
+        evtNote.msg = note.str();
+        evtNote.verbosityLevel = /* info */ 1;
+
+        // construct a defect containing the above events
+        Defect def(checker);
+        def.events.push_back(evtErr);
+        def.events.push_back(evtNote);
+
+        // process the newly constructed defect by the chain of writers
+        GenericAbstractFilter::handleDef(def);
+    }
+
+    // forward the call through the chain of writers
+    AbstractFilter::flush();
+}

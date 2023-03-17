@@ -162,4 +162,19 @@ class DuplicateFilter: public AbstractFilter {
         std::unique_ptr<Private> d;
 };
 
+/// collapses warnings if their count exceeds the specified limit
+class RateLimitter: public AbstractFilter {
+    public:
+        RateLimitter(AbstractWriter *agent, int rateLimit);
+        ~RateLimitter() override = default;
+        void flush() override;
+
+    protected:
+        bool matchDef(const Defect &) override;
+
+    private:
+        struct Private;
+        std::unique_ptr<Private> d;
+};
+
 #endif /* H_GUARD_FILTER_H */
