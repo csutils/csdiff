@@ -58,35 +58,6 @@ class GenericAbstractFilter: public AbstractWriter {
         }
 };
 
-/// decorator
-class EventPrunner: public GenericAbstractFilter {
-    private:
-        int thr_;
-
-    public:
-        EventPrunner(AbstractWriter *agent, int thr):
-            GenericAbstractFilter(agent),
-            thr_(thr)
-        {
-        }
-
-        void handleDef(const Defect &defOrig) override;
-};
-
-/// decorator
-class CtxEmbedder: public GenericAbstractFilter {
-    private:
-        int ctxLines_;
-
-    public:
-        CtxEmbedder(AbstractWriter *agent, const int ctxLines):
-            GenericAbstractFilter(agent),
-            ctxLines_(ctxLines)
-        {
-        }
-
-        void handleDef(const Defect &defOrig) override;
-};
 
 /// decorator
 class AbstractFilter: public GenericAbstractFilter {

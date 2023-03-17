@@ -24,6 +24,7 @@ add_library(cs STATIC
     cwe-mapper.cc
     cwe-name-lookup.cc
     deflookup.cc
+    filter.cc
     instream.cc
     msg-filter.cc
     parser.cc
