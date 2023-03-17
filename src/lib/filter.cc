@@ -19,8 +19,11 @@
 
 #include "filter.hh"
 
+#include "msg-filter.hh"
+
 #include <fstream>
 #include <iomanip>
+#include <set>
 #include <sstream>
 
 #include <boost/algorithm/string/replace.hpp>
@@ -135,4 +138,68 @@ void CtxEmbedder::handleDef(const Defect &defOrig)
     // close the file stream and forward the result
     fstr.close();
     agent_->handleDef(def);
+}
+
+
+// /////////////////////////////////////////////////////////////////////////////
+// implementation of ScanPropSetter
+
+ScanPropSetter::ScanPropSetter(
+        AbstractWriter             *agent,
+        const TStringList          &propList):
+    GenericAbstractFilter(agent)
+{
+    // iterate over the given NAME:VALUE strings
+    for (const std::string &str : propList) {
+        // split the string by the first occurrence of ':'
+        size_t ddAt = str.find(':');
+        if (std::string::npos == ddAt) {
+            const auto msg = "missing ':' in " + str;
+            throw std::runtime_error(msg);
+        }
+
+        // store the key/val pair into the vector
+        itemList_.emplace_back(
+                /* key */ str.substr(0, ddAt),
+                /* val */ str.substr(ddAt + 1));
+    }
+}
+
+void ScanPropSetter::setScanProps(const TScanProps &origProps)
+{
+    // we need to copy the given map
+    TScanProps props = origProps;
+
+    // apply specified changes
+    for (const auto &item : itemList_)
+        props[item./* key */first] = item./* val */second;
+
+    // forward the result
+    agent_->setScanProps(props);
+}
+
+
+// /////////////////////////////////////////////////////////////////////////////
+// implementation of DuplicateFilter
+
+struct DuplicateFilter::Private {
+    using TLookup = std::set<DefEvent>;
+    TLookup lookup;
+};
+
+DuplicateFilter::DuplicateFilter(AbstractWriter *agent):
+    AbstractFilter(agent),
+    d(new Private)
+{
+}
+
+bool DuplicateFilter::matchDef(const Defect &def)
+{
+    DefEvent evt = def.events[def.keyEventIdx];
+
+    // abstract out differences we do not deem important
+    evt.fileName = MsgFilter::inst().filterPath(evt.fileName);
+    evt.msg = MsgFilter::inst().filterMsg(evt.msg, def.checker);
+
+    return d->lookup.insert(evt)./* inserted */second;
 }

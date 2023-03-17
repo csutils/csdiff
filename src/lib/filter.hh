@@ -52,4 +52,114 @@ class CtxEmbedder: public GenericAbstractFilter {
         void handleDef(const Defect &defOrig) override;
 };
 
+class PathStripper: public GenericAbstractFilter {
+    public:
+        PathStripper(AbstractWriter *agent, const std::string &prefix):
+            GenericAbstractFilter(agent),
+            prefStr_(prefix),
+            prefSize_(prefix.size())
+        {
+        }
+
+        void handleDef(const Defect &defOrig) override {
+            Defect def(defOrig);
+
+            // iterate through all events
+            for (DefEvent &evt : def.events) {
+                std::string &path = evt.fileName;
+                if (path.size() < prefSize_)
+                    continue;
+
+                const std::string str(path, /* pos */ 0U, prefSize_);
+                if (str != prefStr_)
+                    continue;
+
+                // strip path prefix in this event
+                path.erase(/* pos */ 0U, prefSize_);
+            }
+
+            agent_->handleDef(def);
+        }
+
+    private:
+        const std::string           prefStr_;
+        const size_t                prefSize_;
+};
+
+class PathPrepender: public GenericAbstractFilter {
+    public:
+        PathPrepender(AbstractWriter *agent, const std::string &prefix):
+            GenericAbstractFilter(agent),
+            prefix_(prefix)
+        {
+        }
+
+        void handleDef(const Defect &defOrig) override {
+            Defect def(defOrig);
+
+            // iterate through all events
+            for (DefEvent &evt : def.events) {
+                std::string &path = evt.fileName;
+                if (path.empty() || path[0] == '/')
+                    // not a relative path
+                    continue;
+
+                path.insert(0U, prefix_);
+            }
+
+            agent_->handleDef(def);
+        }
+
+    private:
+        const std::string           prefix_;
+};
+
+class DropScanProps: public GenericAbstractFilter {
+    public:
+        DropScanProps(AbstractWriter *agent):
+            GenericAbstractFilter(agent)
+        {
+        }
+
+        /// ignore any given scan properties
+        void setScanProps(const TScanProps &) override { }
+
+        /// always return empty scan properties
+        const TScanProps& getScanProps() const override {
+            return emp_;
+        }
+
+    private:
+        const TScanProps emp_;
+};
+
+class ScanPropSetter: public GenericAbstractFilter {
+    public:
+        using TStringList = std::vector<std::string>;
+
+        ScanPropSetter(AbstractWriter *agent, const TStringList &propList);
+
+        /// override specified scan properties
+        void setScanProps(const TScanProps &origProps) override;
+
+    private:
+        // key/val pairs are stored in a vector
+        using TItem = std::pair<std::string, std::string>;
+        using TList = std::vector<TItem>;
+        TList itemList_;
+};
+
+class DuplicateFilter: public AbstractFilter {
+    public:
+        DuplicateFilter(AbstractWriter *agent);
+        ~DuplicateFilter() override = default;
+
+    protected:
+        bool matchDef(const Defect &def) override;
+
+    private:
+        struct Private;
+        std::unique_ptr<Private> d;
+};
+
 #endif /* H_GUARD_FILTER_H */
