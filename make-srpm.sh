@@ -92,7 +92,7 @@ Version:    $VER
 Release:    1%{?dist}
 Summary:    Non-interactive tools for processing code scan results in plain-text
 
-License:    GPLv3+
+License:    GPL-3.0-or-later
 URL:        https://github.com/csutils/csdiff
 Source0:    https://github.com/csutils/csdiff/releases/download/%{name}-%{version}/%{name}-%{version}.tar.xz
 
