@@ -2,7 +2,7 @@
 set -exo pipefail
 
 # set path to project root
-PROJECT_ROOT="../../"
+PROJECT_ROOT="../.."
 
 # import ${JSFILTER_CMD}
 . ../test-lib.sh

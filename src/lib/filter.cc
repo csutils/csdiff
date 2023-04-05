@@ -262,27 +262,28 @@ void RateLimitter::flush()
 {
     for (; !d->errors.empty(); d->errors.pop()) {
         Defect &def = d->errors.front();
+        DefEvent &evtErr = def.events.back();
+
+        // make a copy now because evtErr.event will be overwritten
+        DefEvent evtNote = evtErr;
 
         // resolve the count of occurrences for this checker/event pair
-        const DefEvent &keyEvt = def.events[def.keyEventIdx];
-        const Private::TKey key(def.checker, keyEvt.event);
+        const Private::TKey key(def.checker, evtErr.event);
         const Private::TCnt cnt = d->counter[key];
 
-        // construct an error event
+        // construct an error event in-place
         std::ostringstream err, note;
-        err << cnt << " occurrences of " << keyEvt.event
-            << " exceeded the specified limit "
+        err << cnt << " occurrences of "
+            << evtErr.event << " exceeded the specified limit "
             << d->rateLimit;
 
-        DefEvent &evtErr = def.events.back();
         evtErr.event = "error[too-many]";
         evtErr.msg = err.str();
 
         // construct a note event
         note << (cnt - d->rateLimit) << " occurrences of "
-            << keyEvt.event << " were discarded because of this";
+            << evtNote.event << " were discarded because of this";
 
-        DefEvent evtNote = evtErr;
         evtNote.event = "note";
         evtNote.msg = note.str();
         evtNote.verbosityLevel = /* info */ 1;

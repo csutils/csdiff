@@ -1892,7 +1892,7 @@
                     "line": 3,
                     "column": 8,
                     "event": "note",
-                    "message": "99 occurrences of error[too-many] were discarded because of this",
+                    "message": "99 occurrences of note[SC2086] were discarded because of this",
                     "verbosity_level": 1
                 }
             ]
@@ -1917,7 +1917,7 @@
                     "line": 128,
                     "column": 37,
                     "event": "note",
-                    "message": "13 occurrences of error[too-many] were discarded because of this",
+                    "message": "13 occurrences of warning[SC2207] were discarded because of this",
                     "verbosity_level": 1
                 }
             ]
