@@ -1,1 +1,1 @@
---quiet --path ^/builddir/build/BUILD/ --strip-path-prefix /builddir/build/BUILD/
+--ignore-parser-warnings --quiet --path ^/builddir/build/BUILD/ --strip-path-prefix /builddir/build/BUILD/
