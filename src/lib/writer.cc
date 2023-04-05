@@ -44,7 +44,7 @@ bool AbstractWriter::handleFile(Parser &parser)
         while (parser.getNext(&def))
             this->handleDef(def);
 
-        return !parser.hasError();
+        return ignoreParserWarnings_ || !parser.hasError();
 }
 
 bool AbstractWriter::handleFile(InStream &input)

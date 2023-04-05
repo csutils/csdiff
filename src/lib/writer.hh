@@ -58,10 +58,15 @@ class AbstractWriter {
 
         virtual void setScanProps(const TScanProps &);
 
+        void setIgnoreParserWarnings(const bool val) {
+            ignoreParserWarnings_ = val;
+        }
+
 
     private:
         EFileFormat                 inputFormat_ = FF_INVALID;
         const TScanProps            emptyProps_{};
+        bool                        ignoreParserWarnings_ = false;
 };
 
 using TWriterPtr = std::unique_ptr<AbstractWriter>;

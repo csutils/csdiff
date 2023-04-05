@@ -562,6 +562,7 @@ int main(int argc, char *argv[])
             ("prepend-path-prefix", po::value<string>(),        "string prefix to prepend to relative paths (applied after all filters)")
 
             ("ignore-case,i",                                   "ignore case when matching regular expressions")
+            ("ignore-parser-warnings",                          "if enabled, parser warnings about the input files do not affect exit code")
             ("invert-match,v",                                  "select defects that do not match the selected criteria")
             ("invert-regex,n",                                  "invert regular expressions in all predicates")
             ("filter-file,f",       po::value<TStringList>(),   "read custom filtering rules from a file in JSON format");
@@ -663,6 +664,9 @@ int main(int argc, char *argv[])
             || !chainDecoratorIntArg<CtxEmbedder>(&eng, vm, "embed-context"))
         // error message already printed, eng already feeed
         return 1;
+
+    if (vm.count("ignore-parser-warnings"))
+        eng->setIgnoreParserWarnings(true);
 
     bool hasError = false;
 
