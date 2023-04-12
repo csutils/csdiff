@@ -212,16 +212,14 @@ static void sarifEncodeLoc(object *pLoc, const Defect &def, unsigned idx)
     };
 
     // line/col
-    if (evt.line) {
-        object reg = {
-            { "startLine", evt.line }
-        };
+    object reg = {
+        { "startLine", evt.line }
+    };
 
-        if (evt.column)
-            reg["startColumn"] = evt.column;
+    if (evt.column)
+        reg["startColumn"] = evt.column;
 
-        locPhy["region"] = std::move(reg);
-    }
+    locPhy["region"] = std::move(reg);
 
     // location
     pLoc->emplace("physicalLocation", std::move(locPhy));
