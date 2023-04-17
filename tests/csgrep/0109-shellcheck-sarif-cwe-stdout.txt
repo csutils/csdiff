@@ -433,6 +433,9 @@
             "results": [
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2164]",
+                    "properties": {
+                        "cwe": "CWE-252"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -485,6 +488,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2174]",
+                    "properties": {
+                        "cwe": "CWE-277"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -901,6 +907,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC1090]",
+                    "properties": {
+                        "cwe": "CWE-398"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -1265,6 +1274,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2124]",
+                    "properties": {
+                        "cwe": "CWE-569"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -1317,6 +1329,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2034]",
+                    "properties": {
+                        "cwe": "CWE-563"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -1369,6 +1384,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2034]",
+                    "properties": {
+                        "cwe": "CWE-563"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -1941,6 +1959,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2124]",
+                    "properties": {
+                        "cwe": "CWE-569"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -2097,6 +2118,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2155]",
+                    "properties": {
+                        "cwe": "CWE-571"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -2149,6 +2173,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2128]",
+                    "properties": {
+                        "cwe": "CWE-670"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -2253,6 +2280,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2155]",
+                    "properties": {
+                        "cwe": "CWE-571"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -2305,6 +2335,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2128]",
+                    "properties": {
+                        "cwe": "CWE-670"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -2409,6 +2442,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2166]",
+                    "properties": {
+                        "cwe": "CWE-477"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -2565,6 +2601,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2089]",
+                    "properties": {
+                        "cwe": "CWE-569"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -2669,6 +2708,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2090]",
+                    "properties": {
+                        "cwe": "CWE-569"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -2825,6 +2867,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: error[SC1035]",
+                    "properties": {
+                        "cwe": "CWE-569"
+                    },
                     "level": "error",
                     "locations": [
                         {
@@ -2877,6 +2922,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2166]",
+                    "properties": {
+                        "cwe": "CWE-477"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -2929,6 +2977,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2166]",
+                    "properties": {
+                        "cwe": "CWE-477"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -3189,6 +3240,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2207]",
+                    "properties": {
+                        "cwe": "CWE-140"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -3397,6 +3451,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2207]",
+                    "properties": {
+                        "cwe": "CWE-140"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -3449,6 +3506,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2207]",
+                    "properties": {
+                        "cwe": "CWE-140"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -3501,6 +3561,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2207]",
+                    "properties": {
+                        "cwe": "CWE-140"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -3553,6 +3616,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2207]",
+                    "properties": {
+                        "cwe": "CWE-140"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -3605,6 +3671,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2207]",
+                    "properties": {
+                        "cwe": "CWE-140"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -3657,6 +3726,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2207]",
+                    "properties": {
+                        "cwe": "CWE-140"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -3709,6 +3781,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2207]",
+                    "properties": {
+                        "cwe": "CWE-140"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -4021,6 +4096,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2207]",
+                    "properties": {
+                        "cwe": "CWE-140"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -4073,6 +4151,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2207]",
+                    "properties": {
+                        "cwe": "CWE-140"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -4125,6 +4206,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2207]",
+                    "properties": {
+                        "cwe": "CWE-140"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -4177,6 +4261,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2207]",
+                    "properties": {
+                        "cwe": "CWE-140"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -4281,6 +4368,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2178]",
+                    "properties": {
+                        "cwe": "CWE-398"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -4333,6 +4423,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2178]",
+                    "properties": {
+                        "cwe": "CWE-398"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -4385,6 +4478,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2207]",
+                    "properties": {
+                        "cwe": "CWE-140"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -4437,6 +4533,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2207]",
+                    "properties": {
+                        "cwe": "CWE-140"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -4489,6 +4588,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2091]",
+                    "properties": {
+                        "cwe": "CWE-829"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -4541,6 +4643,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2034]",
+                    "properties": {
+                        "cwe": "CWE-563"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -4593,6 +4698,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2034]",
+                    "properties": {
+                        "cwe": "CWE-563"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -4801,6 +4909,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2207]",
+                    "properties": {
+                        "cwe": "CWE-140"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -4853,6 +4964,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2207]",
+                    "properties": {
+                        "cwe": "CWE-140"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -4905,6 +5019,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2207]",
+                    "properties": {
+                        "cwe": "CWE-140"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -4957,6 +5074,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2207]",
+                    "properties": {
+                        "cwe": "CWE-140"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -5009,6 +5129,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2207]",
+                    "properties": {
+                        "cwe": "CWE-140"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -5061,6 +5184,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2207]",
+                    "properties": {
+                        "cwe": "CWE-140"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -5113,6 +5239,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2207]",
+                    "properties": {
+                        "cwe": "CWE-140"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -5425,6 +5554,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2207]",
+                    "properties": {
+                        "cwe": "CWE-140"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -5477,6 +5609,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2207]",
+                    "properties": {
+                        "cwe": "CWE-140"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -5529,6 +5664,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2207]",
+                    "properties": {
+                        "cwe": "CWE-140"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -5581,6 +5719,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2207]",
+                    "properties": {
+                        "cwe": "CWE-140"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -5685,6 +5826,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2178]",
+                    "properties": {
+                        "cwe": "CWE-398"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -5737,6 +5881,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2178]",
+                    "properties": {
+                        "cwe": "CWE-398"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -5789,6 +5936,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2207]",
+                    "properties": {
+                        "cwe": "CWE-140"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -5841,6 +5991,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2207]",
+                    "properties": {
+                        "cwe": "CWE-140"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -5945,6 +6098,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2207]",
+                    "properties": {
+                        "cwe": "CWE-140"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -5997,6 +6153,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2207]",
+                    "properties": {
+                        "cwe": "CWE-140"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -6049,6 +6208,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2166]",
+                    "properties": {
+                        "cwe": "CWE-477"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -6205,6 +6367,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2089]",
+                    "properties": {
+                        "cwe": "CWE-569"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -6309,6 +6474,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2090]",
+                    "properties": {
+                        "cwe": "CWE-569"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -6465,6 +6633,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2046]",
+                    "properties": {
+                        "cwe": "CWE-156"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -6517,6 +6688,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC1090]",
+                    "properties": {
+                        "cwe": "CWE-398"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -6621,6 +6795,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2166]",
+                    "properties": {
+                        "cwe": "CWE-477"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -6777,6 +6954,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2089]",
+                    "properties": {
+                        "cwe": "CWE-569"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -6881,6 +7061,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2090]",
+                    "properties": {
+                        "cwe": "CWE-569"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -9689,6 +9872,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2164]",
+                    "properties": {
+                        "cwe": "CWE-252"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -9793,6 +9979,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2046]",
+                    "properties": {
+                        "cwe": "CWE-156"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -10105,6 +10294,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2166]",
+                    "properties": {
+                        "cwe": "CWE-477"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -10157,6 +10349,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2166]",
+                    "properties": {
+                        "cwe": "CWE-477"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -10209,6 +10404,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: error[SC2068]",
+                    "properties": {
+                        "cwe": "CWE-88"
+                    },
                     "level": "error",
                     "locations": [
                         {
@@ -10365,6 +10563,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2034]",
+                    "properties": {
+                        "cwe": "CWE-563"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -10469,6 +10670,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2046]",
+                    "properties": {
+                        "cwe": "CWE-156"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -10625,6 +10829,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2046]",
+                    "properties": {
+                        "cwe": "CWE-156"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -10781,6 +10988,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2046]",
+                    "properties": {
+                        "cwe": "CWE-156"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -11197,6 +11407,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2209]",
+                    "properties": {
+                        "cwe": "CWE-456"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -11249,6 +11462,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2209]",
+                    "properties": {
+                        "cwe": "CWE-456"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -11301,6 +11517,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: error[SC2068]",
+                    "properties": {
+                        "cwe": "CWE-88"
+                    },
                     "level": "error",
                     "locations": [
                         {
@@ -11353,6 +11572,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: error[SC2068]",
+                    "properties": {
+                        "cwe": "CWE-88"
+                    },
                     "level": "error",
                     "locations": [
                         {
@@ -11405,6 +11627,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2206]",
+                    "properties": {
+                        "cwe": "CWE-140"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -11457,6 +11682,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2206]",
+                    "properties": {
+                        "cwe": "CWE-140"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -11509,6 +11737,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2206]",
+                    "properties": {
+                        "cwe": "CWE-140"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -11561,6 +11792,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2206]",
+                    "properties": {
+                        "cwe": "CWE-140"
+                    },
                     "level": "warning",
                     "locations": [
                         {
@@ -11717,6 +11951,9 @@
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2206]",
+                    "properties": {
+                        "cwe": "CWE-140"
+                    },
                     "level": "warning",
                     "locations": [
                         {

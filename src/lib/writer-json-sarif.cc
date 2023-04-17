@@ -276,9 +276,14 @@ void SarifTreeEncoder::appendDef(const Defect &def)
         shellCheckMap_[ruleId] = sm[2];
     }
 
-    if (def.cwe)
+    if (def.cwe) {
         // update CWE map
         cweMap_[ruleId] = def.cwe;
+
+        // encode per-warning CWE property
+        object cweProp = {{ "cwe", "CWE-" + std::to_string(def.cwe) }};
+        result["properties"] = std::move(cweProp);
+    }
 
     // key event severity level
     sarifEncodeLevel(&result, keyEvt.event);
