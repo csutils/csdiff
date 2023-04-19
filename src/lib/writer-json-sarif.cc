@@ -258,6 +258,27 @@ static void sarifEncodeEvt(array *pDst, const Defect &def, unsigned idx)
     pDst->push_back(std::move(tfLoc));
 }
 
+void sarifEncodeSnippet(object &reg, const std::string &msg)
+{
+    // check whether the "snippet" node already exists
+    value &valSnip = reg["snippet"];
+    if (!valSnip.is_object()) {
+        // create the "text" node containing the header line
+        valSnip.emplace_object() = {
+            { "text", "Problem detected in this context:" }
+        };
+    }
+
+    // reuse the existing "snippet/text" nodes
+    string &strSnip = valSnip.get_object()["text"].get_string();
+
+    // use new-line as delimiter
+    strSnip += "\n";
+
+    // concatenate the snippet from this event
+    strSnip += msg;
+}
+
 void SarifTreeEncoder::appendDef(const Defect &def)
 {
     const DefEvent &keyEvt = def.events[def.keyEventIdx];
@@ -293,16 +314,30 @@ void SarifTreeEncoder::appendDef(const Defect &def)
     sarifEncodeLoc(&loc, def, def.keyEventIdx);
     result["locations"] = array{std::move(loc)};
 
+    // resolve key event region
+    value &valLoc = result["locations"].get_array().front();
+    value &valPhy = valLoc.get_object()["physicalLocation"];
+    object &reg = valPhy.get_object()["region"].get_object();
+
     // key msg
     sarifEncodeMsg(&result, keyEvt.msg);
 
     // other events
     array flowLocs, relatedLocs;
     for (unsigned i = 0; i < def.events.size(); ++i) {
-        if (def.events[i].event == "#")
-            sarifEncodeComment(&relatedLocs, def, i);
-        else
+        const DefEvent &evt = def.events[i];
+        if (evt.event != "#") {
+            // regular event
             sarifEncodeEvt(&flowLocs, def, i);
+            continue;
+        }
+
+        if (ctxEvtDetetor_.isAnyCtxLine(evt))
+            // code snippet
+            sarifEncodeSnippet(reg, evt.msg);
+
+        // any comment
+        sarifEncodeComment(&relatedLocs, def, i);
     }
 
     // codeFlows

@@ -21,6 +21,7 @@
 #define H_GUARD_WRITER_JSON_SARIF_H
 
 #include "abstract-tree.hh"
+#include "writer.hh"                // for CtxEventDetector
 
 #include <boost/json.hpp>
 
@@ -54,6 +55,7 @@ class SarifTreeEncoder: public AbstractTreeEncoder {
         TScanProps                  scanProps_;
         boost::json::object         driver_;
         boost::json::array          results_;
+        CtxEventDetector            ctxEvtDetetor_;
 };
 
 #endif /* H_GUARD_WRITER_JSON_SARIF_H */
