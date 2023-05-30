@@ -60,7 +60,7 @@ class AbstractTokenFilter: public ITokenizer {
         ITokenizer *agent_;
 };
 
-#define RE_LOCATION "([^ #:\"][^:\"]+)(?::([0-9]+))?(?::([0-9]+))?"
+#define RE_LOCATION "(?<file>[^ #:\"][^:\"]+)(?::(?<line>[0-9]+))?(?::(?<col>[0-9]+))?"
 #define RE_TOOL_SUFFIX "(?: <--\\[[^\\]]+\\])?$"
 #define RE_FNC_SMATCH "(\\(null\\)|[_A-Za-z][_A-Za-z0-9]*)\\(\\)"
 
@@ -99,9 +99,9 @@ class Tokenizer: public ITokenizer {
             RE("^" RE_LOCATION /* evt/msg */ ": (" RE_EVENT "): (.*)$");
 
         const RE reSmatch_ =
-            RE("^([^:]+):([0-9]+)() "       /* file:line */
-                RE_FNC_SMATCH               /* fnc       */
-                " ([a-z]+): (.*)$")         /* evt: msg  */;
+            RE("^(?<file>[^:]+):(?<line>[0-9]+)() "  /* file:line */
+                RE_FNC_SMATCH                        /* fnc       */
+                " ([a-z]+): (.*)$")                  /* evt: msg  */;
 };
 
 EToken Tokenizer::readNext(DefEvent *pEvt)
@@ -159,13 +159,13 @@ EToken Tokenizer::readNext(DefEvent *pEvt)
         return T_UNKNOWN;
 
     // read file name, event, and msg
-    pEvt->fileName    = sm[/* file */ 1];
+    pEvt->fileName    = sm["file"];
 
     // parse line number
-    pEvt->line = parse_int(sm[/* line */ 2]);
+    pEvt->line = parse_int(sm["line"]);
 
     // parse column number
-    pEvt->column = parse_int(sm[/* col */ 3]);
+    pEvt->column = parse_int(sm["col"]);
 
     return tok;
 }
