@@ -115,9 +115,8 @@ EToken Tokenizer::readNext(DefEvent *pEvt)
         return T_EMPTY;
 
     // drop CR at end of the line, coming from GCC in source code snippets
-    // NOTE: std::string::back/pop_back() would look better but requires C++11
-    if ('\r' == *line.rbegin())
-        line.resize(line.size() - 1U);
+    if ('\r' == line.back())
+        line.pop_back();
 
     lineNo_++;
 
