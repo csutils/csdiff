@@ -28,6 +28,7 @@ namespace GccParserImpl {
 
 enum EToken {
     T_NULL = 0,
+    T_EMPTY,
     T_UNKNOWN,
 
     T_INC,
@@ -110,9 +111,12 @@ EToken Tokenizer::readNext(DefEvent *pEvt)
     if (!std::getline(input_, line))
         return T_NULL;
 
+    if (line.empty())
+        return T_EMPTY;
+
     // drop CR at end of the line, coming from GCC in source code snippets
     // NOTE: std::string::back/pop_back() would look better but requires C++11
-    if (!line.empty() && '\r' == *line.rbegin())
+    if ('\r' == *line.rbegin())
         line.resize(line.size() - 1U);
 
     lineNo_++;
@@ -526,6 +530,9 @@ bool BasicGccParser::getNext(Defect *pDef)
                     this->handleError();
 
                 return this->exportAndReset(pDef);
+
+            case T_EMPTY:
+                continue;
 
             case T_INC:
             case T_SCOPE:
