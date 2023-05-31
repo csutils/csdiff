@@ -1,0 +1,31 @@
+Error: UBSAN_WARNING:
+byteorder.h:83:9: runtime error: load of misaligned address 0x556e3e877805 for type 'const uint32_t', which requires 4 byte alignment
+0x556e3e877805: note: pointer points here
+# b5 21 00 00 6c 00 00  07 ff 65 a0 b8 03 05 2f  74 65 78 74 0e 70 d6 f0  d2 4d 97 21 a4 81 00 00  a0
+#             ^
+/builddir/build/BUILD/rsync-3.2.3/byteorder.h:83: note: IVALu() at 0x556e3dc9349f
+/builddir/build/BUILD/rsync-3.2.3/byteorder.h:124: note: IVAL() at 0x556e3dc9349f
+/builddir/build/BUILD/rsync-3.2.3/io.c:921: note: raw_read_int() at 0x556e3dc9349f
+/builddir/build/BUILD/rsync-3.2.3/io.c:1441: note: read_a_msg() at 0x556e3dc9349f
+/builddir/build/BUILD/rsync-3.2.3/io.c:1853: note: read_buf() at 0x556e3dc93b23
+/builddir/build/BUILD/rsync-3.2.3/io.c:2241: note: read_ndx() at 0x556e3dc958d1
+/builddir/build/BUILD/rsync-3.2.3/rsync.c:330: note: read_ndx_and_attrs() at 0x556e3dc31316
+/builddir/build/BUILD/rsync-3.2.3/receiver.c:548: note: recv_files() at 0x556e3dc43f51
+/builddir/build/BUILD/rsync-3.2.3/main.c:1048: note: do_recv() at 0x556e3dc664b2
+/builddir/build/BUILD/rsync-3.2.3/main.c:1219: note: do_server_recv() at 0x556e3dc66fc7
+/builddir/build/BUILD/rsync-3.2.3/main.c:1253: note: start_server() at 0x556e3dc66fc7
+/builddir/build/BUILD/rsync-3.2.3/main.c:1226: note: child_main() at 0x556e3dc67418
+/builddir/build/BUILD/rsync-3.2.3/pipe.c:166: note: local_child() at 0x556e3dcca5f2
+/builddir/build/BUILD/rsync-3.2.3/main.c:650: note: do_cmd() at 0x556e3dc0bb33
+/builddir/build/BUILD/rsync-3.2.3/main.c:1576: note: start_client() at 0x556e3dc0bb33
+/builddir/build/BUILD/rsync-3.2.3/main.c:1819: note: main() at 0x556e3dc0bb33
+/lib64/libc.so.6: note: __libc_start_call_main() at 0x7fc94402950f
+/lib64/libc.so.6: note: __libc_start_main_alias_2() at 0x7fc9440295c8
+/builddir/build/BUILD/rsync-3.2.3/rsync: note: _start() at 0x556e3dc0f324
+
+Error: UBSAN_WARNING:
+test.c:2:23: runtime error: load of null pointer of type 'char'
+/home/lukas/csdiff/tests/csgrep/test.c:2: note: main() at 0x401147
+/lib64/libc.so.6: note: __libc_start_call_main() at 0x7f7851249b49
+/lib64/libc.so.6: note: __libc_start_main_alias_2() at 0x7f7851249c0a
+/home/lukas/csdiff/tests/csgrep/a.out: note: _start() at 0x401064

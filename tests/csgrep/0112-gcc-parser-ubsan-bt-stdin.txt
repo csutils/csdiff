@@ -1,0 +1,30 @@
+byteorder.h:83:9: runtime error: load of misaligned address 0x556e3e877805 for type 'const uint32_t', which requires 4 byte alignment
+0x556e3e877805: note: pointer points here
+ b5 21 00 00 6c 00 00  07 ff 65 a0 b8 03 05 2f  74 65 78 74 0e 70 d6 f0  d2 4d 97 21 a4 81 00 00  a0
+             ^
+    #0 0x556e3dc9349f in IVALu /builddir/build/BUILD/rsync-3.2.3/byteorder.h:83
+    #1 0x556e3dc9349f in IVAL /builddir/build/BUILD/rsync-3.2.3/byteorder.h:124
+    #2 0x556e3dc9349f in raw_read_int /builddir/build/BUILD/rsync-3.2.3/io.c:921
+    #3 0x556e3dc9349f in read_a_msg /builddir/build/BUILD/rsync-3.2.3/io.c:1441
+    #4 0x556e3dc93b23 in read_buf /builddir/build/BUILD/rsync-3.2.3/io.c:1853
+    #5 0x556e3dc958d1 in read_ndx /builddir/build/BUILD/rsync-3.2.3/io.c:2241
+    #6 0x556e3dc31316 in read_ndx_and_attrs /builddir/build/BUILD/rsync-3.2.3/rsync.c:330
+    #7 0x556e3dc43f51 in recv_files /builddir/build/BUILD/rsync-3.2.3/receiver.c:548
+    #8 0x556e3dc664b2 in do_recv /builddir/build/BUILD/rsync-3.2.3/main.c:1048
+    #9 0x556e3dc66fc7 in do_server_recv /builddir/build/BUILD/rsync-3.2.3/main.c:1219
+    #10 0x556e3dc66fc7 in start_server /builddir/build/BUILD/rsync-3.2.3/main.c:1253
+    #11 0x556e3dc67418 in child_main /builddir/build/BUILD/rsync-3.2.3/main.c:1226
+    #12 0x556e3dcca5f2 in local_child /builddir/build/BUILD/rsync-3.2.3/pipe.c:166
+    #13 0x556e3dc0bb33 in do_cmd /builddir/build/BUILD/rsync-3.2.3/main.c:650
+    #14 0x556e3dc0bb33 in start_client /builddir/build/BUILD/rsync-3.2.3/main.c:1576
+    #15 0x556e3dc0bb33 in main /builddir/build/BUILD/rsync-3.2.3/main.c:1819
+    #16 0x7fc94402950f in __libc_start_call_main (/lib64/libc.so.6+0x2950f)
+    #17 0x7fc9440295c8 in __libc_start_main_alias_2 (/lib64/libc.so.6+0x295c8)
+    #18 0x556e3dc0f324 in _start (/builddir/build/BUILD/rsync-3.2.3/rsync+0xbe324)
+
+test.c:2:23: runtime error: load of null pointer of type 'char'
+    #0 0x401147 in main /home/lukas/csdiff/tests/csgrep/test.c:2
+    #1 0x7f7851249b49 in __libc_start_call_main (/lib64/libc.so.6+0x27b49) (BuildId: 245240a31888ad5c11bbc55b18e02d87388f59a9)
+    #2 0x7f7851249c0a in __libc_start_main_alias_2 (/lib64/libc.so.6+0x27c0a) (BuildId: 245240a31888ad5c11bbc55b18e02d87388f59a9)
+    #3 0x401064 in _start (/home/lukas/csdiff/tests/csgrep/a.out+0x401064) (BuildId: 687486336bec7797f956f83fcb24faef18f1365c)
+

@@ -33,7 +33,7 @@
 #define RE_PATH_URL "http(?:s)?://[^:]+(?::[0-9]+)?[^:]+"
 #define RE_PATH RE_PATH_LOCAL "|" RE_PATH_URL
 
-#define RE_EVENT_GCC "(?:(?:(?:fatal|internal) )?[A-Za-z][A-Za-z0-9_-]+)(?:\\[[^ \\]]+\\])?"
+#define RE_EVENT_GCC "(?:(?:(?:fatal|internal|runtime) )?[A-Za-z][A-Za-z0-9_-]+)(?:\\[[^ \\]]+\\])?"
 #define RE_EVENT_PROSPECTOR "(?:[A-Z]+[0-9]+\\[[a-z0-9-]+\\])"
 #define RE_EVENT RE_EVENT_GCC "|" RE_EVENT_PROSPECTOR
 

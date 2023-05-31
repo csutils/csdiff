@@ -1,0 +1,5 @@
+byteorder.h:83:9: runtime error: load of misaligned address 0x556e3e877805 for type 'const uint32_t', which requires 4 byte alignment
+0x556e3e877805: note: pointer points here
+ b5 21 00 00 6c 00 00  07 ff 65 a0 b8 03 05 2f  74 65 78 74 0e 70 d6 f0  d2 4d 97 21 a4 81 00 00  a0
+             ^
+test.c:2:23: runtime error: load of null pointer of type 'char'

@@ -103,6 +103,13 @@ class Tokenizer: public ITokenizer {
             RE("^(?<file>[^:]+):(?<line>[0-9]+)() "  /* file:line */
                 RE_FNC_SMATCH                        /* fnc       */
                 " ([a-z]+): (.*)$")                  /* evt: msg  */;
+
+        const RE reUbsanScope_ =
+            RE("^\\s*#\\d+ (0x[[:xdigit:]]+) in ([^ ]+) " /* address, fnc */
+               /* file:line OR executable+address */
+               "(?:(?<file>[^:]+):(?<line>[0-9]+)|\\((?<file>[^+]+)\\+(?<line>0x[[:xdigit:]]+)\\))"
+               /* BuildId */
+               "(?: \\(BuildId: [[:xdigit:]]+\\))?$");
 };
 
 EToken Tokenizer::readNext(DefEvent *pEvt)
@@ -157,6 +164,11 @@ EToken Tokenizer::readNext(DefEvent *pEvt)
         pEvt->event = sm[/* evt */ 5];
         pEvt->msg   = sm[/* fnc */ 4] + "(): ";
         pEvt->msg  += sm[/* msg */ 6];
+    }
+    else if (boost::regex_match(line, sm, reUbsanScope_)) {
+        tok = T_MSG;
+        pEvt->event = "note";
+        pEvt->msg   = sm[/* fnc */ 2] + "() at " + sm[/* address */ 1];
     }
     else
         return T_UNKNOWN;
@@ -570,6 +582,7 @@ struct GccPostProcessor::Private {
     const ImpliedAttrDigger digger;
 
     void transGccAnal(Defect *pDef) const;
+    void transUbsan(Defect *pDef) const;
     void polishGccAnal(Defect *pDef) const;
     void polishClangAnal(Defect *pDef) const;
     void transSuffixGeneric(Defect *pDef, const std::string, const RE &) const;
@@ -617,6 +630,17 @@ void GccPostProcessor::Private::transGccAnal(Defect *pDef) const
     pDef->cwe = parse_int(sm[/* cwe */ 2]);
     // this invalidates sm
     keyEvt.msg = sm[/* msg */ 1];
+}
+
+void GccPostProcessor::Private::transUbsan(Defect *pDef) const
+{
+    if ("COMPILER_WARNING" != pDef->checker)
+        return;
+
+    // UBSAN always uses 'runtime error' for its key event
+    DefEvent &keyEvt = pDef->events[pDef->keyEventIdx];
+    if (keyEvt.event == "runtime error")
+        pDef->checker = "UBSAN_WARNING";
 }
 
 void GccPostProcessor::Private::polishGccAnal(Defect *pDef) const
@@ -677,6 +701,7 @@ void GccPostProcessor::Private::transSuffixGeneric(
 void GccPostProcessor::apply(Defect *pDef) const
 {
     d->transGccAnal(pDef);
+    d->transUbsan(pDef);
     d->transSuffixGeneric(pDef, "CLANG_WARNING",      d->reClangWarningEvt);
     d->transSuffixGeneric(pDef, "COMPILER_WARNING",   d->reGccWarningEvt);
     d->transSuffixGeneric(pDef, "SHELLCHECK_WARNING", d->reShellCheckId);
