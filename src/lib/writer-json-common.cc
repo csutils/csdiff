@@ -38,6 +38,10 @@ bool isNumber(const std::string &str)
 {
     static auto isDigit = [](unsigned char c){ return std::isdigit(c); };
 
+    if (str.empty())
+        // an empty string cannot be parsed as a number
+        return false;
+
     return std::all_of(str.begin(), str.end(), isDigit);
 }
 

@@ -1,0 +1,17 @@
+{
+    "scan": {
+        "enabled-plugins": "",
+        "exit-code": 0,
+        "host": "f37",
+        "known-false-positives": "/usr/share/csmock/known-false-positives.js",
+        "mock-config": "rhel-8-rhaos-x86_64",
+        "project-name": "openshift-clients-4.7.0-202103251046.p0.git.3957.c4da68b.el8",
+        "store-results-to": "/tmp/openshift-clients-4.7.0-202103251046.p0.git.3957.c4da68b.el8.tar.xz",
+        "time-created": "2023-06-19 10:27:13",
+        "time-finished": "2023-06-19 10:34:00",
+        "tool": "csmock",
+        "tool-args": "'/usr/bin/csmock' '-r' 'rhel-8-rhaos-x86_64' '-f' 'openshift-clients-4.7.0-202103251046.p0.git.3957.c4da68b.el8.src.rpm'",
+        "tool-version": "csmock-3.4.1.20230406.104621.gdb10285.internal-1.fc37"
+    },
+    "defects": []
+}
