@@ -33,16 +33,22 @@ std::string sanitizeUTF8(const std::string &str)
     return convert_string<char>(str.data(), str.data() + str.size());
 }
 
+/// return true if the given string represents a number
+bool isNumber(const std::string &str)
+{
+    static auto isDigit = [](unsigned char c){ return std::isdigit(c); };
+
+    return std::all_of(str.begin(), str.end(), isDigit);
+}
+
 // TODO: This should not necessary!  TScanProps should be able to contain
 // any type so that no conversions here are needed.
 object jsonSerializeScanProps(const TScanProps &scanProps)
 {
-    static auto isDigit = [](unsigned char c){ return std::isdigit(c); };
-
     object scan;
     for (const auto &prop : scanProps) {
         const auto &val = prop.second;
-        if (std::all_of(val.begin(), val.end(), isDigit))
+        if (isNumber(val))
             scan[prop.first] = boost::lexical_cast<int>(val);
         else
             scan[prop.first] = val;
