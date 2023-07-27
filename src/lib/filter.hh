@@ -177,4 +177,19 @@ class RateLimitter: public AbstractFilter {
         std::unique_ptr<Private> d;
 };
 
+/// Trim messages to avoid excessively long output
+class MsgTrimmer: public GenericAbstractFilter {
+    private:
+        size_t maxMsgLen_;
+
+    public:
+        MsgTrimmer(AbstractWriter *agent, const size_t maxMsgLen):
+            GenericAbstractFilter(agent),
+            maxMsgLen_(maxMsgLen)
+        {
+        }
+
+        void handleDef(const Defect &defOrig) override;
+};
+
 #endif /* H_GUARD_FILTER_H */

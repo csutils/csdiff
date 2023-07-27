@@ -1,0 +1,119 @@
+{
+    "defects": [
+        {
+            "checker": "GITLEAKS_WARNING",
+            "tool": "gitleaks",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./contrib/guide/get_started/00-cleanup.sh",
+                    "line": 6,
+                    "column": 1,
+                    "event": "warning[SC2164]",
+                    "message": "-----BEGIN RSA PRIVATE KEY----- [...]",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "./contrib/guide/get_started/00-cleanup.sh",
+                    "line": 6,
+                    "column": 1,
+                    "event": "note",
+                    "message": "trimmed 1 message(s) with length over 31",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "GITLEAKS_WARNING",
+            "tool": "gitleaks",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./contrib/guide/get_started/12-datadir-create.sh",
+                    "line": 4,
+                    "column": 7,
+                    "event": "warning[SC2174]",
+                    "message": "-----BEGIN RSA PRIVATE KEY----- [...]",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "./contrib/guide/get_started/12-datadir-create.sh",
+                    "line": 4,
+                    "column": 7,
+                    "event": "note",
+                    "message": "trimmed 1 message(s) with length over 31",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "GITLEAKS_WARNING",
+            "tool": "gitleaks",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./contrib/scripts/resetgnome",
+                    "line": 14,
+                    "column": 13,
+                    "event": "note[SC2006]",
+                    "message": "-----BEGIN RSA PRIVATE KEY----- [...]",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "./contrib/scripts/resetgnome",
+                    "line": 14,
+                    "column": 13,
+                    "event": "note",
+                    "message": "trimmed 1 message(s) with length over 31",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "GITLEAKS_WARNING",
+            "tool": "gitleaks",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./contrib/scripts/resetgnome",
+                    "line": 15,
+                    "column": 25,
+                    "event": "note[SC2086]",
+                    "message": "-----BEGIN RSA PRIVATE KEY----- [...]",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "./contrib/scripts/resetgnome",
+                    "line": 15,
+                    "column": 25,
+                    "event": "note",
+                    "message": "trimmed 1 message(s) with length over 31",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "GITLEAKS_WARNING",
+            "tool": "gitleaks",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "./contrib/scripts/resetgnome",
+                    "line": 17,
+                    "column": 10,
+                    "event": "note[SC2006]",
+                    "message": "-----BEGIN RSA PRIVATE KEY----- [...]",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "./contrib/scripts/resetgnome",
+                    "line": 17,
+                    "column": 10,
+                    "event": "note",
+                    "message": "trimmed 1 message(s) with length over 31",
+                    "verbosity_level": 1
+                }
+            ]
+        }
+    ]
+}

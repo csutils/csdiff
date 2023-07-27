@@ -556,6 +556,7 @@ int main(int argc, char *argv[])
             ("embed-context,U",     po::value<int>(),           "embed a number of lines of context from the source file for the key event")
             ("prune-events",        po::value<int>(),           "event is preserved if its verbosity level is below the given number")
             ("warning-rate-limit",  po::value<int>(),           "stop processing a warning if the count of its occurrences exceeds the specified limit")
+            ("limit-msg-len",       po::value<int>(),           "limit message length by a number provided")
             ("remove-duplicates,u",                             "remove defects that are not unique by their key event")
             ("set-scan-prop",       po::value<TStringList>(),   "NAME:VALUE pair to override the specified scan property")
             ("strip-path-prefix",   po::value<string>(),        "string prefix to strip from path (applied after all filters)")
@@ -661,6 +662,7 @@ int main(int argc, char *argv[])
 
     if (!chainDecoratorIntArg<EventPrunner>(&eng, vm, "prune-events")
             || !chainDecoratorIntArg<RateLimitter>(&eng, vm, "warning-rate-limit")
+            || !chainDecoratorIntArg<MsgTrimmer>(&eng, vm, "limit-msg-len")
             || !chainDecoratorIntArg<CtxEmbedder>(&eng, vm, "embed-context"))
         // error message already printed, eng already feeed
         return 1;

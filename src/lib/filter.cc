@@ -296,3 +296,43 @@ void RateLimitter::flush()
     // forward the call through the chain of writers
     AbstractFilter::flush();
 }
+
+// /////////////////////////////////////////////////////////////////////////////
+// implementation of MsgTrimmer
+
+void MsgTrimmer::handleDef(const Defect &defOrig)
+{
+    // create a copy so that we can write to it
+    Defect def = defOrig;
+    unsigned cntTrimmed = 0;
+
+    // iterate over events
+    for (DefEvent &evt : def.events) {
+        if (evt.msg.size() <= maxMsgLen_)
+            // no trimming needed
+            continue;
+
+        // trim this message as requested
+        evt.msg.resize(maxMsgLen_);
+        evt.msg += " [...]";
+        ++cntTrimmed;
+    }
+
+    if (cntTrimmed) {
+        // format a message about the message trimming
+        std::ostringstream noteMsg;
+        noteMsg << "trimmed " << cntTrimmed
+            << " message(s) with length over " << maxMsgLen_;
+
+        // take location from the key event and construct a note message
+        DefEvent note = def.events[def.keyEventIdx];
+        note.event = "note";
+        note.verbosityLevel = /* note */ 1;
+        note.msg = noteMsg.str();
+
+        // append the note about message trimming
+        def.events.push_back(std::move(note));
+    }
+
+    agent_->handleDef(def);
+}
