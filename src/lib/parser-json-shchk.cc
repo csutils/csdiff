@@ -45,7 +45,7 @@ static bool scReadEvent(DefEvent *pEvt, const pt::ptree &evtNode)
     // read location
     pEvt->fileName = valueOf<string>(evtNode, "file", "<unknown>");
     pEvt->line     = valueOf<int>   (evtNode, "line");
-    pEvt->column   = valueOf<int>   (evtNode, "byte-column");
+    pEvt->column   = valueOf<int>   (evtNode, "column");
 
     // read message
     pEvt->msg = valueOf<string>(evtNode, "message", "<unknown>");

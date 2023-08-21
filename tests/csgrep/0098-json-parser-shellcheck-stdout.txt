@@ -9,6 +9,7 @@
                 {
                     "file_name": "tests/test-lib.sh",
                     "line": 1,
+                    "column": 1,
                     "event": "error[SC2148]",
                     "message": "Tips depend on target shell and yours is unknown. Add a shebang or a 'shell' directive.",
                     "verbosity_level": 0
@@ -24,6 +25,7 @@
                 {
                     "file_name": "tests/cssort/sync-diff.sh",
                     "line": 2,
+                    "column": 8,
                     "event": "warning[SC2155]",
                     "message": "Declare and assign separately to avoid masking return values.",
                     "verbosity_level": 0
@@ -39,6 +41,7 @@
                 {
                     "file_name": "tests/cssort/sync-diff.sh",
                     "line": 5,
+                    "column": 8,
                     "event": "info[SC2086]",
                     "message": "Double quote to prevent globbing and word splitting.",
                     "verbosity_level": 0
@@ -54,6 +57,7 @@
                 {
                     "file_name": "tests/cssort/sync-diff.sh",
                     "line": 7,
+                    "column": 31,
                     "event": "info[SC2086]",
                     "message": "Double quote to prevent globbing and word splitting.",
                     "verbosity_level": 0
@@ -69,6 +73,7 @@
                 {
                     "file_name": "tests/cssort/sync-diff.sh",
                     "line": 9,
+                    "column": 33,
                     "event": "info[SC2086]",
                     "message": "Double quote to prevent globbing and word splitting.",
                     "verbosity_level": 0
@@ -84,6 +89,7 @@
                 {
                     "file_name": "tests/cssort/sync-diff.sh",
                     "line": 9,
+                    "column": 56,
                     "event": "info[SC2086]",
                     "message": "Double quote to prevent globbing and word splitting.",
                     "verbosity_level": 0
@@ -99,6 +105,7 @@
                 {
                     "file_name": "tests/cssort/sync-diff.sh",
                     "line": 10,
+                    "column": 33,
                     "event": "info[SC2086]",
                     "message": "Double quote to prevent globbing and word splitting.",
                     "verbosity_level": 0
@@ -114,6 +121,7 @@
                 {
                     "file_name": "tests/cssort/sync-diff.sh",
                     "line": 10,
+                    "column": 56,
                     "event": "info[SC2086]",
                     "message": "Double quote to prevent globbing and word splitting.",
                     "verbosity_level": 0
@@ -129,6 +137,7 @@
                 {
                     "file_name": "tests/cslinker/0002-xml-parser/runtest.sh",
                     "line": 6,
+                    "column": 3,
                     "event": "info[SC1091]",
                     "message": "Not following: ./../../test-lib.sh was not specified as input (see shellcheck -x).",
                     "verbosity_level": 0
@@ -144,6 +153,7 @@
                 {
                     "file_name": "tests/cslinker/0002-xml-parser/runtest.sh",
                     "line": 6,
+                    "column": 3,
                     "event": "info[SC2086]",
                     "message": "Double quote to prevent globbing and word splitting.",
                     "verbosity_level": 0
@@ -159,6 +169,7 @@
                 {
                     "file_name": "tests/cslinker/0001-smoke/runtest.sh",
                     "line": 6,
+                    "column": 3,
                     "event": "info[SC1091]",
                     "message": "Not following: ./../../test-lib.sh was not specified as input (see shellcheck -x).",
                     "verbosity_level": 0
@@ -174,6 +185,7 @@
                 {
                     "file_name": "tests/cslinker/0001-smoke/runtest.sh",
                     "line": 6,
+                    "column": 3,
                     "event": "info[SC2086]",
                     "message": "Double quote to prevent globbing and word splitting.",
                     "verbosity_level": 0
@@ -189,6 +201,7 @@
                 {
                     "file_name": "tests/csgrep/sync.sh",
                     "line": 1,
+                    "column": 1,
                     "event": "error[SC1071]",
                     "message": "ShellCheck only supports sh/bash/dash/ksh scripts. Sorry!",
                     "verbosity_level": 0
@@ -204,6 +217,7 @@
                 {
                     "file_name": "tests/csdiff/sync-diff.sh",
                     "line": 2,
+                    "column": 8,
                     "event": "warning[SC2155]",
                     "message": "Declare and assign separately to avoid masking return values.",
                     "verbosity_level": 0
@@ -219,6 +233,7 @@
                 {
                     "file_name": "tests/csdiff/sync-diff.sh",
                     "line": 2,
+                    "column": 16,
                     "event": "style[SC2006]",
                     "message": "Use $(...) notation instead of legacy backticked `...`.",
                     "verbosity_level": 0
@@ -234,6 +249,7 @@
                 {
                     "file_name": "tests/csdiff/sync-diff.sh",
                     "line": 5,
+                    "column": 8,
                     "event": "info[SC2086]",
                     "message": "Double quote to prevent globbing and word splitting.",
                     "verbosity_level": 0
@@ -249,6 +265,7 @@
                 {
                     "file_name": "tests/csdiff/sync-diff.sh",
                     "line": 10,
+                    "column": 24,
                     "event": "info[SC2086]",
                     "message": "Double quote to prevent globbing and word splitting.",
                     "verbosity_level": 0
@@ -264,6 +281,7 @@
                 {
                     "file_name": "tests/csdiff/sync-diff.sh",
                     "line": 10,
+                    "column": 39,
                     "event": "info[SC2086]",
                     "message": "Double quote to prevent globbing and word splitting.",
                     "verbosity_level": 0
@@ -279,6 +297,7 @@
                 {
                     "file_name": "tests/csdiff/sync-diff.sh",
                     "line": 10,
+                    "column": 56,
                     "event": "info[SC2086]",
                     "message": "Double quote to prevent globbing and word splitting.",
                     "verbosity_level": 0
@@ -294,6 +313,7 @@
                 {
                     "file_name": "tests/csdiff/sync-diff.sh",
                     "line": 11,
+                    "column": 24,
                     "event": "info[SC2086]",
                     "message": "Double quote to prevent globbing and word splitting.",
                     "verbosity_level": 0
@@ -309,6 +329,7 @@
                 {
                     "file_name": "tests/csdiff/sync-diff.sh",
                     "line": 11,
+                    "column": 39,
                     "event": "info[SC2086]",
                     "message": "Double quote to prevent globbing and word splitting.",
                     "verbosity_level": 0
@@ -324,6 +345,7 @@
                 {
                     "file_name": "tests/csdiff/sync-diff.sh",
                     "line": 11,
+                    "column": 56,
                     "event": "info[SC2086]",
                     "message": "Double quote to prevent globbing and word splitting.",
                     "verbosity_level": 0
@@ -339,6 +361,7 @@
                 {
                     "file_name": "tests/csdiff/sync-diff.sh",
                     "line": 12,
+                    "column": 24,
                     "event": "info[SC2086]",
                     "message": "Double quote to prevent globbing and word splitting.",
                     "verbosity_level": 0
@@ -354,6 +377,7 @@
                 {
                     "file_name": "tests/csdiff/sync-diff.sh",
                     "line": 12,
+                    "column": 39,
                     "event": "info[SC2086]",
                     "message": "Double quote to prevent globbing and word splitting.",
                     "verbosity_level": 0
@@ -369,6 +393,7 @@
                 {
                     "file_name": "tests/csdiff/sync-diff.sh",
                     "line": 12,
+                    "column": 56,
                     "event": "info[SC2086]",
                     "message": "Double quote to prevent globbing and word splitting.",
                     "verbosity_level": 0
@@ -384,6 +409,7 @@
                 {
                     "file_name": "tests/csdiff/sync-diff.sh",
                     "line": 13,
+                    "column": 24,
                     "event": "info[SC2086]",
                     "message": "Double quote to prevent globbing and word splitting.",
                     "verbosity_level": 0
@@ -399,6 +425,7 @@
                 {
                     "file_name": "tests/csdiff/sync-diff.sh",
                     "line": 13,
+                    "column": 39,
                     "event": "info[SC2086]",
                     "message": "Double quote to prevent globbing and word splitting.",
                     "verbosity_level": 0
@@ -414,6 +441,7 @@
                 {
                     "file_name": "tests/csdiff/sync-diff.sh",
                     "line": 13,
+                    "column": 56,
                     "event": "info[SC2086]",
                     "message": "Double quote to prevent globbing and word splitting.",
                     "verbosity_level": 0
@@ -429,6 +457,7 @@
                 {
                     "file_name": "tests/csdiff/sync-diff.sh",
                     "line": 25,
+                    "column": 25,
                     "event": "info[SC2086]",
                     "message": "Double quote to prevent globbing and word splitting.",
                     "verbosity_level": 0
@@ -444,6 +473,7 @@
                 {
                     "file_name": "tests/csdiff/sync-diff.sh",
                     "line": 25,
+                    "column": 44,
                     "event": "info[SC2086]",
                     "message": "Double quote to prevent globbing and word splitting.",
                     "verbosity_level": 0
@@ -459,6 +489,7 @@
                 {
                     "file_name": "tests/csdiff/sync-diff.sh",
                     "line": 25,
+                    "column": 59,
                     "event": "info[SC2086]",
                     "message": "Double quote to prevent globbing and word splitting.",
                     "verbosity_level": 0
@@ -474,6 +505,7 @@
                 {
                     "file_name": "tests/csdiff/sync-diff.sh",
                     "line": 25,
+                    "column": 76,
                     "event": "info[SC2086]",
                     "message": "Double quote to prevent globbing and word splitting.",
                     "verbosity_level": 0
@@ -489,6 +521,7 @@
                 {
                     "file_name": "tests/csdiff/sync-diff.sh",
                     "line": 26,
+                    "column": 25,
                     "event": "info[SC2086]",
                     "message": "Double quote to prevent globbing and word splitting.",
                     "verbosity_level": 0
@@ -504,6 +537,7 @@
                 {
                     "file_name": "tests/csdiff/sync-diff.sh",
                     "line": 26,
+                    "column": 44,
                     "event": "info[SC2086]",
                     "message": "Double quote to prevent globbing and word splitting.",
                     "verbosity_level": 0
@@ -519,6 +553,7 @@
                 {
                     "file_name": "tests/csdiff/sync-diff.sh",
                     "line": 26,
+                    "column": 59,
                     "event": "info[SC2086]",
                     "message": "Double quote to prevent globbing and word splitting.",
                     "verbosity_level": 0
@@ -534,6 +569,7 @@
                 {
                     "file_name": "tests/csdiff/sync-diff.sh",
                     "line": 26,
+                    "column": 76,
                     "event": "info[SC2086]",
                     "message": "Double quote to prevent globbing and word splitting.",
                     "verbosity_level": 0
@@ -549,6 +585,7 @@
                 {
                     "file_name": "tests/csdiff/sync-diff.sh",
                     "line": 27,
+                    "column": 25,
                     "event": "info[SC2086]",
                     "message": "Double quote to prevent globbing and word splitting.",
                     "verbosity_level": 0
@@ -564,6 +601,7 @@
                 {
                     "file_name": "tests/csdiff/sync-diff.sh",
                     "line": 27,
+                    "column": 44,
                     "event": "info[SC2086]",
                     "message": "Double quote to prevent globbing and word splitting.",
                     "verbosity_level": 0
@@ -579,6 +617,7 @@
                 {
                     "file_name": "tests/csdiff/sync-diff.sh",
                     "line": 27,
+                    "column": 59,
                     "event": "info[SC2086]",
                     "message": "Double quote to prevent globbing and word splitting.",
                     "verbosity_level": 0
@@ -594,6 +633,7 @@
                 {
                     "file_name": "tests/csdiff/sync-diff.sh",
                     "line": 27,
+                    "column": 76,
                     "event": "info[SC2086]",
                     "message": "Double quote to prevent globbing and word splitting.",
                     "verbosity_level": 0
@@ -609,6 +649,7 @@
                 {
                     "file_name": "tests/csdiff/sync-diff.sh",
                     "line": 28,
+                    "column": 25,
                     "event": "info[SC2086]",
                     "message": "Double quote to prevent globbing and word splitting.",
                     "verbosity_level": 0
@@ -624,6 +665,7 @@
                 {
                     "file_name": "tests/csdiff/sync-diff.sh",
                     "line": 28,
+                    "column": 44,
                     "event": "info[SC2086]",
                     "message": "Double quote to prevent globbing and word splitting.",
                     "verbosity_level": 0
@@ -639,6 +681,7 @@
                 {
                     "file_name": "tests/csdiff/sync-diff.sh",
                     "line": 28,
+                    "column": 59,
                     "event": "info[SC2086]",
                     "message": "Double quote to prevent globbing and word splitting.",
                     "verbosity_level": 0
@@ -654,6 +697,7 @@
                 {
                     "file_name": "tests/csdiff/sync-diff.sh",
                     "line": 28,
+                    "column": 76,
                     "event": "info[SC2086]",
                     "message": "Double quote to prevent globbing and word splitting.",
                     "verbosity_level": 0
@@ -669,6 +713,7 @@
                 {
                     "file_name": "tests/csdiff/diff-misc/sync.sh",
                     "line": 1,
+                    "column": 1,
                     "event": "error[SC1071]",
                     "message": "ShellCheck only supports sh/bash/dash/ksh scripts. Sorry!",
                     "verbosity_level": 0
@@ -684,6 +729,7 @@
                 {
                     "file_name": "make-srpm.sh",
                     "line": 41,
+                    "column": 8,
                     "event": "style[SC2001]",
                     "message": "See if you can use ${variable//search/replace} instead.",
                     "verbosity_level": 0
@@ -699,6 +745,7 @@
                 {
                     "file_name": "make-srpm.sh",
                     "line": 46,
+                    "column": 8,
                     "event": "style[SC2001]",
                     "message": "See if you can use ${variable//search/replace} instead.",
                     "verbosity_level": 0
@@ -714,6 +761,7 @@
                 {
                     "file_name": "make-srpm.sh",
                     "line": 58,
+                    "column": 19,
                     "event": "warning[SC2064]",
                     "message": "Use single quotes, otherwise this expands now rather than when signalled.",
                     "verbosity_level": 0

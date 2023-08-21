@@ -1,0 +1,15 @@
+{
+  "comments": [
+    {
+      "file": "innocent-script.sh",
+      "line": 6,
+      "endLine": 6,
+      "column": 1,
+      "endColumn": 11,
+      "level": "warning",
+      "code": 2034,
+      "message": "UNUSED_VAR appears unused. Verify use (or export if used externally).",
+      "fix": null
+    }
+  ]
+}
