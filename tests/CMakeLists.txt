@@ -34,6 +34,12 @@ macro(add_test_wrap test_name cmd)
 
     set_tests_properties(${test_name} PROPERTIES COST ${test_cost})
     math(EXPR test_cost "${test_cost} - 1")
+
+    # print whole stacktrace for UBSAN reports
+    if(SANITIZERS)
+        set_property(TEST ${test_name} APPEND PROPERTY
+                     ENVIRONMENT UBSAN_OPTIONS="print_stacktrace=1")
+    endif()
 endmacro()
 
 set(test_cost 1048576)

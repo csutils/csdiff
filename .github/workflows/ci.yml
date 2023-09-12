@@ -40,8 +40,6 @@ jobs:
       - name: Build and check
         run: |
           if [[ "${{ matrix.version }}" == 22.04 ]]; then
-            # Make UBSAN print whole stack traces
-            export UBSAN_OPTIONS="print_stacktrace=1"
             make distcheck-sanitizers
           else
             make distcheck
