@@ -120,10 +120,10 @@ int main(int argc, char *argv[])
     // there are probably better solutions for this (Custom Validations)
     if (vm.count("file-rename")) {
         const TStringList &substList = vm["file-rename"].as<TStringList>();
-        boost::smatch sm;
+        std::smatch sm;
         const RE reSubst("([^,]+),(.*)");
         for (const string &subst : substList) {
-            if (!boost::regex_match(subst, sm, reSubst)) {
+            if (!std::regex_match(subst, sm, reSubst)) {
                 std::cerr << "bad substitution format: " << subst
                     << std::endl << "use: -s OLD,NEW" << std::endl;
                 return 1;

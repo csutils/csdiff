@@ -135,11 +135,11 @@ CtxEventDetector::~CtxEventDetector() = default;
 bool CtxEventDetector::isAnyCtxLine(const DefEvent &evt) const
 {
     return (evt.event == "#")
-        && boost::regex_match(evt.msg, d->reAnyCtxLine);
+        && std::regex_match(evt.msg, d->reAnyCtxLine);
 }
 
 bool CtxEventDetector::isKeyCtxLine(const DefEvent &evt) const
 {
     return (evt.event == "#")
-        && boost::regex_match(evt.msg, d->reKeyCtxLine);
+        && std::regex_match(evt.msg, d->reKeyCtxLine);
 }

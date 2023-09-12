@@ -23,6 +23,7 @@
 #include "regex.hh"
 
 #include <algorithm>
+#include <cassert>
 
 namespace GccParserImpl {
 
@@ -131,39 +132,39 @@ EToken Tokenizer::readNext(DefEvent *pEvt)
     pEvt->msg = line;
 
     // check for line markers produced by gcc-9.2.1 (a.k.a. sidebar)
-    if (boost::regex_match(pEvt->msg, reSideBar_))
+    if (std::regex_match(pEvt->msg, reSideBar_))
         //  xxx.c:2:1: note: include '<stdlib.h>' or provide a declaration...
         //    1 | #include <stdio.h>
         //  +++ |+#include <stdlib.h>
         //    2 |
         return T_SIDEBAR;
 
-    if (boost::regex_match(line, reMarker_))
+    if (std::regex_match(line, reMarker_))
         return T_MARKER;
 
     EToken tok;
-    boost::smatch sm;
+    std::smatch sm;
 
-    if (boost::regex_match(line, sm, reMsg_)) {
+    if (std::regex_match(line, sm, reMsg_)) {
         tok = T_MSG;
         pEvt->event = sm[/* evt  */ 4];
         pEvt->msg   = sm[/* msg  */ 5];
     }
-    else if (boost::regex_match(line, sm, reScope_)) {
+    else if (std::regex_match(line, sm, reScope_)) {
         tok = T_SCOPE;
         pEvt->event = "scope_hint";
         pEvt->msg   = sm[/* msg  */ 4];
     }
-    else if (boost::regex_match(line, sm, reInc_)) {
+    else if (std::regex_match(line, sm, reInc_)) {
         tok = T_INC;
         pEvt->event = "included_from";
         pEvt->msg   = "Included from here.";
     }
-    else if (boost::regex_match(line, sm, reSmatch_)) {
+    else if (std::regex_match(line, sm, reSmatch_)) {
         tok = T_MSG;
-        pEvt->event = sm[/* evt */ 5];
-        pEvt->msg   = sm[/* fnc */ 4] + "(): ";
-        pEvt->msg  += sm[/* msg */ 6];
+        pEvt->event = sm.str(/* evt */ 5);
+        pEvt->msg   = sm.str(/* fnc */ 4) + "(): ";
+        pEvt->msg  += sm.str(/* msg */ 6);
     }
     else if (boost::regex_match(line, sm, reUbsanScope_)) {
         tok = T_MSG;
@@ -210,7 +211,7 @@ EToken NoiseFilter::readNext(DefEvent *pEvt)
         if (T_UNKNOWN != tok)
             return tok;
 
-        if (!boost::regex_match(pEvt->msg, reClangWarnCnt_))
+        if (!std::regex_match(pEvt->msg, reClangWarnCnt_))
             return tok;
     }
 }
@@ -323,24 +324,24 @@ bool MultilineConcatenator::tryMerge(DefEvent *pEvt)
         // different location info
         return false;
 
-    boost::smatch smBase;
-    if (!boost::regex_match(pEvt->msg, smBase, reBase_))
+    std::smatch smBase;
+    if (!std::regex_match(pEvt->msg, smBase, reBase_))
         return false;
 
-    boost::smatch smExtra;
-    if (!boost::regex_match(lastEvt_.msg, smExtra, reExtra_))
+    std::smatch smExtra;
+    if (!std::regex_match(lastEvt_.msg, smExtra, reExtra_))
         return false;
 
     // we need to drop the [-Wreason] suffix from the first message if same
     if (smBase[/* -W suffix */ 2] != smExtra[/* -W suffix */ 2])
         return false;
 
-    assert(!smExtra[/* msg */ 1].str().empty());
-    const char *gap = (' ' == *smExtra[/* msg */ 1].str().begin()) ? "" : " ";
+    assert(!smExtra.str(/* msg */ 1).empty());
+    const char *gap = (' ' == smExtra.str(/* msg */ 1).front()) ? "" : " ";
 
     // concatenate both messages together
-    pEvt->msg = smBase[/* msg */ 1] + gap
-        + smExtra[/* msg */1] + smExtra[/* suf */2];
+    pEvt->msg = smBase.str(/* msg */ 1) + gap
+        + smExtra.str(/* msg */ 1) + smExtra.str(/* suf */ 2);
 
     // clear the already merged token
     lastTok_ = T_NULL;
@@ -455,8 +456,8 @@ bool BasicGccParser::digCppcheckEvt(Defect *pDef)
         // this is just a comment, do not look for real events
         return false;
 
-    boost::smatch sm;
-    if (!boost::regex_match(keyEvt.msg, sm, reCppcheck_))
+    std::smatch sm;
+    if (!std::regex_match(keyEvt.msg, sm, reCppcheck_))
         return false;
 
     // format produced by cscppc, embed cppcheck checker's ID into the event
@@ -486,10 +487,10 @@ bool BasicGccParser::exportAndReset(Defect *pDef)
 
     DefEvent &keyEvt = def.events[def.keyEventIdx];
 
-    boost::smatch sm;
-    if (boost::regex_match(keyEvt.msg, sm, reTool_)) {
+    std::smatch sm;
+    if (std::regex_match(keyEvt.msg, sm, reTool_)) {
         const std::string tool = sm[/* tool */ 2].str();
-        if (boost::regex_match(tool, reClang_))
+        if (std::regex_match(tool, reClang_))
             // <--[clang] or <--[clang++]
             def.checker = "CLANG_WARNING";
 
@@ -505,11 +506,11 @@ bool BasicGccParser::exportAndReset(Defect *pDef)
             // <--[cppcheck] ... assume cppcheck running with --template=gcc
             def.checker = "CPPCHECK_WARNING";
     }
-    else if (boost::regex_match(keyEvt.event, reProspector_))
+    else if (std::regex_match(keyEvt.event, reProspector_))
         def.checker = "PROSPECTOR_WARNING";
-    else if (boost::regex_match(keyEvt.msg, reShellCheckMsg_))
+    else if (std::regex_match(keyEvt.msg, reShellCheckMsg_))
         def.checker = "SHELLCHECK_WARNING";
-    else if (boost::regex_match(keyEvt.msg, reSmatchMsg_))
+    else if (std::regex_match(keyEvt.msg, reSmatchMsg_))
         def.checker = "SMATCH_WARNING";
     else
         // no <--[TOOL] suffix given
@@ -517,7 +518,7 @@ bool BasicGccParser::exportAndReset(Defect *pDef)
 
     // drop the " <--[tool]" suffixes
     for (DefEvent &evt : def.events)
-        if (boost::regex_match(evt.msg, sm, reTool_))
+        if (std::regex_match(evt.msg, sm, reTool_))
             evt.msg = sm[/* msg */ 1];
 
     // export the current state and clear the data for next iteration
@@ -613,8 +614,8 @@ void GccPostProcessor::Private::transGccAnal(Defect *pDef) const
 
     // check for [-Wanalyzer-...] suffix in message of the key event
     DefEvent &keyEvt = pDef->events[pDef->keyEventIdx];
-    boost::smatch sm;
-    if (!boost::regex_match(keyEvt.msg, sm, this->reGccAnalCoreEvt))
+    std::smatch sm;
+    if (!std::regex_match(keyEvt.msg, sm, this->reGccAnalCoreEvt))
         return;
 
     // COMPILER_WARNING -> GCC_ANALYZER_WARNING
@@ -624,7 +625,7 @@ void GccPostProcessor::Private::transGccAnal(Defect *pDef) const
     keyEvt.msg = sm[/* msg */ 1];
 
     // pick CWE number if available
-    if (!boost::regex_match(keyEvt.msg, sm, this->reGccAnalCwe))
+    if (!std::regex_match(keyEvt.msg, sm, this->reGccAnalCwe))
         return;
 
     pDef->cwe = parse_int(sm[/* cwe */ 2]);
@@ -653,7 +654,7 @@ void GccPostProcessor::Private::polishGccAnal(Defect *pDef) const
             // not a "note" event
             continue;
 
-        if (!boost::regex_match(evt.msg, this->reGccAnalTraceEvt))
+        if (!std::regex_match(evt.msg, this->reGccAnalTraceEvt))
             // not a "trace" event either
             continue;
 
@@ -688,8 +689,8 @@ void GccPostProcessor::Private::transSuffixGeneric(
 
     // check for [...] suffix in message of the key event
     DefEvent &keyEvt = pDef->events[pDef->keyEventIdx];
-    boost::smatch sm;
-    if (!boost::regex_match(keyEvt.msg, sm, reEvt))
+    std::smatch sm;
+    if (!std::regex_match(keyEvt.msg, sm, reEvt))
         return;
 
     // append [...] to key event ID and remove it from event msg
@@ -756,7 +757,7 @@ bool GccParser::Private::checkMerge(DefEvent &keyEvt)
         return false;
 
     // check whether the warning comes with a location only
-    if (!boost::regex_match(keyEvt.msg, this->reLocation))
+    if (!std::regex_match(keyEvt.msg, this->reLocation))
         return false;
 
     // translate "warning" -> "note" so that we have an unambiguous key event
