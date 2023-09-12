@@ -57,6 +57,7 @@ include_directories(lib)
 
 # link cslib.a and boost libraries
 link_libraries(cs
+    ${Boost_FILESYSTEM_LIBRARY}
     ${Boost_PROGRAM_OPTIONS_LIBRARY}
     ${Boost_REGEX_LIBRARY})
 
@@ -67,13 +68,11 @@ add_executable(cshtml       cshtml.cc)
 add_executable(cslinker     cslinker.cc)
 add_executable(cssort       cssort.cc)
 target_link_libraries(cshtml
-    ${Boost_FILESYSTEM_LIBRARY}
     ${Boost_SYSTEM_LIBRARY})
 
 # experimental
 add_executable(cstrans-df-run cstrans-df-run.cc)
 target_link_libraries(cstrans-df-run
-    ${Boost_FILESYSTEM_LIBRARY}
     ${Boost_SYSTEM_LIBRARY})
 
 # declare what 'make install' should install

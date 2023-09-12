@@ -1,5 +1,5 @@
 Error: UBSAN_WARNING:
-byteorder.h:83:9: runtime error: load of misaligned address 0x556e3e877805 for type 'const uint32_t', which requires 4 byte alignment
+/builddir/build/BUILD/rsync-3.2.3/byteorder.h:83:9: runtime error: load of misaligned address 0x556e3e877805 for type 'const uint32_t', which requires 4 byte alignment
 0x556e3e877805: note: pointer points here
 # b5 21 00 00 6c 00 00  07 ff 65 a0 b8 03 05 2f  74 65 78 74 0e 70 d6 f0  d2 4d 97 21 a4 81 00 00  a0
 #             ^
@@ -24,7 +24,7 @@ byteorder.h:83:9: runtime error: load of misaligned address 0x556e3e877805 for t
 /builddir/build/BUILD/rsync-3.2.3/rsync: note: _start() at 0x556e3dc0f324
 
 Error: UBSAN_WARNING:
-test.c:2:23: runtime error: load of null pointer of type 'char'
+/home/lukas/csdiff/tests/csgrep/test.c:2:23: runtime error: load of null pointer of type 'char'
 /home/lukas/csdiff/tests/csgrep/test.c:2: note: main() at 0x401147
 /lib64/libc.so.6: note: __libc_start_call_main() at 0x7f7851249b49
 /lib64/libc.so.6: note: __libc_start_main_alias_2() at 0x7f7851249c0a

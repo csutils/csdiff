@@ -23,6 +23,7 @@
 #include "regex.hh"
 
 #include <algorithm>
+#include <boost/filesystem.hpp>
 
 namespace GccParserImpl {
 
@@ -639,8 +640,32 @@ void GccPostProcessor::Private::transUbsan(Defect *pDef) const
 
     // UBSAN always uses 'runtime error' for its key event
     DefEvent &keyEvt = pDef->events[pDef->keyEventIdx];
-    if (keyEvt.event == "runtime error")
-        pDef->checker = "UBSAN_WARNING";
+    if (keyEvt.event != "runtime error")
+        return;
+
+    pDef->checker = "UBSAN_WARNING";
+
+    // UBSAN may only use the base name for the file path in its key event.
+    // However, the top of the backtrace, if present, always contains the
+    // whole path to this file.
+    if (!keyEvt.fileName.empty() && keyEvt.fileName.front() == '/')
+        return;
+
+    using path = boost::filesystem::path;
+    const auto &keyFileName = path(keyEvt.fileName).filename();
+
+    for (const auto &evt : pDef->events) {
+        const auto &evtFileName = path(evt.fileName).filename();
+
+        // check that the basenames and line numbers match
+        if (&keyEvt != &evt
+                && keyFileName == evtFileName
+                && keyEvt.line == evt.line)
+        {
+            keyEvt.fileName = evt.fileName;
+            break;
+        }
+    }
 }
 
 void GccPostProcessor::Private::polishGccAnal(Defect *pDef) const
