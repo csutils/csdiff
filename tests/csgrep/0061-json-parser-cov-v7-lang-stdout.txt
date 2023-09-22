@@ -198,6 +198,7 @@
         {
             "checker": "RESOURCE_LEAK",
             "cwe": 404,
+            "imp": 1,
             "function": "bpf::output_probe(bpf::BPF_Output &, bpf::program &, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const &, unsigned int)",
             "language": "c/c++",
             "tool": "coverity",
@@ -652,6 +653,7 @@
         {
             "checker": "RESOURCE_LEAK",
             "cwe": 404,
+            "imp": 1,
             "function": "sql_stmt(sqlite3 *, char const *)",
             "language": "c/c++",
             "tool": "coverity",
@@ -810,6 +812,7 @@
         {
             "checker": "CTOR_DTOR_LEAK",
             "cwe": 401,
+            "imp": 1,
             "function": "location_context::location_context(target_symbol *, expression *)",
             "language": "c/c++",
             "tool": "coverity",
@@ -1269,6 +1272,7 @@
         {
             "checker": "RESOURCE_LEAK",
             "cwe": 404,
+            "imp": 1,
             "function": "parser::parse_components()",
             "language": "c/c++",
             "tool": "coverity",
@@ -2546,6 +2550,7 @@
         {
             "checker": "STRING_NULL",
             "cwe": 170,
+            "imp": 1,
             "function": "procfs_write_event_loop(procfsprobe_data *, bpf_transport_context *)",
             "language": "c/c++",
             "tool": "coverity",
@@ -3813,6 +3818,7 @@
         {
             "checker": "UNINIT",
             "cwe": 457,
+            "imp": 1,
             "function": "stapregex::rebalance_priorities(std::stack<stapregex::kernel_point, std::deque<stapregex::kernel_point, std::allocator<stapregex::kernel_point> > > &, std::stack<stapregex::kernel_point, std::deque<stapregex::kernel_point, std::allocator<stapregex::kernel_point> > > &)",
             "language": "c/c++",
             "tool": "coverity",
@@ -3844,6 +3850,7 @@
         {
             "checker": "UNINIT",
             "cwe": 457,
+            "imp": 1,
             "function": "stapregex::rebalance_priorities(std::stack<stapregex::kernel_point, std::deque<stapregex::kernel_point, std::allocator<stapregex::kernel_point> > > &, std::stack<stapregex::kernel_point, std::deque<stapregex::kernel_point, std::allocator<stapregex::kernel_point> > > &)",
             "language": "c/c++",
             "tool": "coverity",
@@ -3889,6 +3896,7 @@
         {
             "checker": "UNINIT",
             "cwe": 457,
+            "imp": 1,
             "function": "stapregex::rebalance_priorities(std::stack<stapregex::kernel_point, std::deque<stapregex::kernel_point, std::allocator<stapregex::kernel_point> > > &, std::stack<stapregex::kernel_point, std::deque<stapregex::kernel_point, std::allocator<stapregex::kernel_point> > > &)",
             "language": "c/c++",
             "tool": "coverity",
@@ -3993,6 +4001,7 @@
         {
             "checker": "RESOURCE_LEAK",
             "cwe": 404,
+            "imp": 1,
             "function": "parse_args",
             "language": "c/c++",
             "tool": "coverity",
@@ -4101,6 +4110,7 @@
         {
             "checker": "RESOURCE_LEAK",
             "cwe": 404,
+            "imp": 1,
             "function": "parse_args",
             "language": "c/c++",
             "tool": "coverity",
@@ -8286,6 +8296,7 @@
         {
             "checker": "RESOURCE_LEAK",
             "cwe": 404,
+            "imp": 1,
             "function": "send_relocation_modules",
             "language": "c/c++",
             "tool": "coverity",
@@ -8881,6 +8892,7 @@
         {
             "checker": "RESOURCE_LEAK",
             "cwe": 404,
+            "imp": 1,
             "function": "register_tapset_python(systemtap_session &)",
             "language": "c/c++",
             "tool": "coverity",
@@ -8919,6 +8931,7 @@
         {
             "checker": "RESOURCE_LEAK",
             "cwe": 404,
+            "imp": 1,
             "function": "utrace_var_expanding_visitor::visit_target_symbol_arg(target_symbol *)",
             "language": "c/c++",
             "tool": "coverity",
@@ -8978,6 +8991,7 @@
         {
             "checker": "RESOURCE_LEAK",
             "cwe": 404,
+            "imp": 1,
             "function": "register_tapset_utrace(systemtap_session &)",
             "language": "c/c++",
             "tool": "coverity",
@@ -9301,6 +9315,7 @@
         {
             "checker": "RESOURCE_LEAK",
             "cwe": 404,
+            "imp": 1,
             "function": "dwarf_var_expanding_visitor::visit_target_symbol_context(target_symbol *)",
             "language": "c/c++",
             "tool": "coverity",
@@ -9517,6 +9532,7 @@
         {
             "checker": "RESOURCE_LEAK",
             "cwe": 404,
+            "imp": 1,
             "function": "delete_statement_operand_visitor::visit_arrayindex(arrayindex *)",
             "language": "c/c++",
             "tool": "coverity",
@@ -10023,6 +10039,7 @@
         {
             "checker": "CTOR_DTOR_LEAK",
             "cwe": 401,
+            "imp": 1,
             "function": "std::_Hashtable<Dwarf *, std::pair<Dwarf * const, std::unordered_multimap<interned_string, Dwarf_Die, std::hash<interned_string>, std::equal_to<interned_string>, std::allocator<std::pair<interned_string const, Dwarf_Die> > > *>, std::allocator<std::pair<Dwarf * const, std::unordered_multimap<interned_string, Dwarf_Die, std::hash<interned_string>, std::equal_to<interned_string>, std::allocator<std::pair<interned_string const, Dwarf_Die> > > *> >, std::__detail::_Select1st, std::equal_to<Dwarf *>, std::hash<Dwarf *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<Dwarf * const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<Dwarf * const, std::unordered_multimap<interned_string, Dwarf_Die, std::hash<interned_string>, std::equal_to<interned_string>, std::allocator<std::pair<interned_string const, Dwarf_Die> > > *>, false> > > *, <std::piecewise_construct_t const &, std::tuple<Dwarf * const &>, std::tuple<>...> &&...)",
             "language": "c/c++",
             "tool": "coverity",
@@ -10061,6 +10078,7 @@
         {
             "checker": "CTOR_DTOR_LEAK",
             "cwe": 401,
+            "imp": 1,
             "function": "std::_Hashtable<Dwarf *, std::pair<Dwarf * const, std::vector<Dwarf_Die, std::allocator<Dwarf_Die> > *>, std::allocator<std::pair<Dwarf * const, std::vector<Dwarf_Die, std::allocator<Dwarf_Die> > *> >, std::__detail::_Select1st, std::equal_to<Dwarf *>, std::hash<Dwarf *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<Dwarf * const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<Dwarf * const, std::vector<Dwarf_Die, std::allocator<Dwarf_Die> > *>, false> > > *, <std::piecewise_construct_t const &, std::tuple<Dwarf * const &>, std::tuple<>...> &&...)",
             "language": "c/c++",
             "tool": "coverity",
@@ -10099,6 +10117,7 @@
         {
             "checker": "CTOR_DTOR_LEAK",
             "cwe": 401,
+            "imp": 1,
             "function": "std::_Hashtable<int, std::pair<int const, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, int> > > >, std::allocator<std::pair<int const, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, int> > > > >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<int const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<int const, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, int> > > >, false> > > *, <std::piecewise_construct_t const &, std::tuple<int const &>, std::tuple<>...> &&...)",
             "language": "c/c++",
             "tool": "coverity",
@@ -10137,6 +10156,7 @@
         {
             "checker": "CTOR_DTOR_LEAK",
             "cwe": 401,
+            "imp": 1,
             "function": "std::_Hashtable<interned_string, std::pair<interned_string const, Dwarf_Die>, std::allocator<std::pair<interned_string const, Dwarf_Die> >, std::__detail::_Select1st, std::equal_to<interned_string>, std::hash<interned_string>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, false> >::_Scoped_node::_Scoped_node<std::pair<char const *, Dwarf_Die> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<interned_string const, Dwarf_Die>, true> > > *, <std::pair<char const *, Dwarf_Die>...> &&...)",
             "language": "c/c++",
             "tool": "coverity",
@@ -10175,6 +10195,7 @@
         {
             "checker": "CTOR_DTOR_LEAK",
             "cwe": 401,
+            "imp": 1,
             "function": "std::_Hashtable<interned_string, std::pair<interned_string const, func_info *>, std::allocator<std::pair<interned_string const, func_info *> >, std::__detail::_Select1st, std::equal_to<interned_string>, std::hash<interned_string>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, false> >::_Scoped_node::_Scoped_node<std::pair<interned_string, func_info *> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<interned_string const, func_info *>, true> > > *, <std::pair<interned_string, func_info *>...> &&...)",
             "language": "c/c++",
             "tool": "coverity",
@@ -10213,6 +10234,7 @@
         {
             "checker": "CTOR_DTOR_LEAK",
             "cwe": 401,
+            "imp": 1,
             "function": "std::_Hashtable<interned_string, std::pair<interned_string const, generic_kprobe_derived_probe *>, std::allocator<std::pair<interned_string const, generic_kprobe_derived_probe *> >, std::__detail::_Select1st, std::equal_to<interned_string>, std::hash<interned_string>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, false> >::_Scoped_node::_Scoped_node<std::pair<interned_string, generic_kprobe_derived_probe *> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<interned_string const, generic_kprobe_derived_probe *>, true> > > *, <std::pair<interned_string, generic_kprobe_derived_probe *>...> &&...)",
             "language": "c/c++",
             "tool": "coverity",
@@ -10251,6 +10273,7 @@
         {
             "checker": "CTOR_DTOR_LEAK",
             "cwe": 401,
+            "imp": 1,
             "function": "std::_Hashtable<interned_string, std::pair<interned_string const, unsigned long>, std::allocator<std::pair<interned_string const, unsigned long> >, std::__detail::_Select1st, std::equal_to<interned_string>, std::hash<interned_string>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<interned_string const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<interned_string const, unsigned long>, true> > > *, <std::piecewise_construct_t const &, std::tuple<interned_string const &>, std::tuple<>...> &&...)",
             "language": "c/c++",
             "tool": "coverity",
@@ -10289,6 +10312,7 @@
         {
             "checker": "CTOR_DTOR_LEAK",
             "cwe": 401,
+            "imp": 1,
             "function": "std::_Hashtable<long, std::pair<long const, bpf::value *>, std::allocator<std::pair<long const, bpf::value *> >, std::__detail::_Select1st, std::equal_to<long>, std::hash<long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::pair<long, bpf::value *> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<long const, bpf::value *>, false> > > *, <std::pair<long, bpf::value *>...> &&...)",
             "language": "c/c++",
             "tool": "coverity",
@@ -10327,6 +10351,7 @@
         {
             "checker": "CTOR_DTOR_LEAK",
             "cwe": 401,
+            "imp": 1,
             "function": "std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Dwarf_Die>, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Dwarf_Die> >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Dwarf_Die>, true> > > *, <std::piecewise_construct_t const &, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const &>, std::tuple<>...> &&...)",
             "language": "c/c++",
             "tool": "coverity",
@@ -10365,6 +10390,7 @@
         {
             "checker": "CTOR_DTOR_LEAK",
             "cwe": 401,
+            "imp": 1,
             "function": "std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bpf::value *>, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bpf::value *> >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_Scoped_node::_Scoped_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, bpf::value *> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bpf::value *>, true> > > *, <std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, bpf::value *>...> &&...)",
             "language": "c/c++",
             "tool": "coverity",
@@ -10403,6 +10429,7 @@
         {
             "checker": "CTOR_DTOR_LEAK",
             "cwe": 401,
+            "imp": 1,
             "function": "std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, expression *>, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, expression *> >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, expression *>, true> > > *, <std::piecewise_construct_t const &, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const &>, std::tuple<>...> &&...)",
             "language": "c/c++",
             "tool": "coverity",
@@ -10441,6 +10468,7 @@
         {
             "checker": "CTOR_DTOR_LEAK",
             "cwe": 401,
+            "imp": 1,
             "function": "std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<Dwarf_Line_s *, std::allocator<Dwarf_Line_s *> > *>, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<Dwarf_Line_s *, std::allocator<Dwarf_Line_s *> > *> >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > &&>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<Dwarf_Line_s *, std::allocator<Dwarf_Line_s *> > *>, true> > > *, <std::piecewise_construct_t const &, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > &&>, std::tuple<>...> &&...)",
             "language": "c/c++",
             "tool": "coverity",
@@ -10479,6 +10507,7 @@
         {
             "checker": "CTOR_DTOR_LEAK",
             "cwe": 401,
+            "imp": 1,
             "function": "std::_Hashtable<unsigned int, std::pair<unsigned int const, unsigned int>, std::allocator<std::pair<unsigned int const, unsigned int> >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::pair<unsigned int, unsigned int> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned int const, unsigned int>, false> > > *, <std::pair<unsigned int, unsigned int>...> &&...)",
             "language": "c/c++",
             "tool": "coverity",
@@ -10517,6 +10546,7 @@
         {
             "checker": "CTOR_DTOR_LEAK",
             "cwe": 401,
+            "imp": 1,
             "function": "std::_Hashtable<unsigned long, std::pair<unsigned long const, block *>, std::allocator<std::pair<unsigned long const, block *> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::pair<unsigned long, block *> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, block *>, false> > > *, <std::pair<unsigned long, block *>...> &&...)",
             "language": "c/c++",
             "tool": "coverity",
@@ -10555,6 +10585,7 @@
         {
             "checker": "CTOR_DTOR_LEAK",
             "cwe": 401,
+            "imp": 1,
             "function": "std::_Hashtable<vardecl *, std::pair<vardecl * const, bpf::globals::map_slot>, std::allocator<std::pair<vardecl * const, bpf::globals::map_slot> >, std::__detail::_Select1st, std::equal_to<vardecl *>, std::hash<vardecl *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::pair<vardecl *, bpf::globals::map_slot> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<vardecl * const, bpf::globals::map_slot>, false> > > *, <std::pair<vardecl *, bpf::globals::map_slot>...> &&...)",
             "language": "c/c++",
             "tool": "coverity",
@@ -10593,6 +10624,7 @@
         {
             "checker": "CTOR_DTOR_LEAK",
             "cwe": 401,
+            "imp": 1,
             "function": "std::_Hashtable<vardecl *, std::pair<vardecl * const, int>, std::allocator<std::pair<vardecl * const, int> >, std::__detail::_Select1st, std::equal_to<vardecl *>, std::hash<vardecl *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<vardecl * const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<vardecl * const, int>, false> > > *, <std::piecewise_construct_t const &, std::tuple<vardecl * const &>, std::tuple<>...> &&...)",
             "language": "c/c++",
             "tool": "coverity",
@@ -10631,6 +10663,7 @@
         {
             "checker": "CTOR_DTOR_LEAK",
             "cwe": 401,
+            "imp": 1,
             "function": "std::_Hashtable<vardecl *, std::pair<vardecl * const, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, int> > > >, std::allocator<std::pair<vardecl * const, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, int> > > > >, std::__detail::_Select1st, std::equal_to<vardecl *>, std::hash<vardecl *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<vardecl * const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<vardecl * const, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, int> > > >, false> > > *, <std::piecewise_construct_t const &, std::tuple<vardecl * const &>, std::tuple<>...> &&...)",
             "language": "c/c++",
             "tool": "coverity",
@@ -10669,6 +10702,7 @@
         {
             "checker": "CTOR_DTOR_LEAK",
             "cwe": 401,
+            "imp": 1,
             "function": "std::_Hashtable<void *, std::pair<void * const, Dwarf_Die>, std::allocator<std::pair<void * const, Dwarf_Die> >, std::__detail::_Select1st, std::equal_to<void *>, std::hash<void *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::pair<void *, Dwarf_Die> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<void * const, Dwarf_Die>, false> > > *, <std::pair<void *, Dwarf_Die>...> &&...)",
             "language": "c/c++",
             "tool": "coverity",
@@ -10707,6 +10741,7 @@
         {
             "checker": "CTOR_DTOR_LEAK",
             "cwe": 401,
+            "imp": 1,
             "function": "std::_Hashtable<void *, std::pair<void * const, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Dwarf_Die, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Dwarf_Die> > > *>, std::allocator<std::pair<void * const, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Dwarf_Die, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Dwarf_Die> > > *> >, std::__detail::_Select1st, std::equal_to<void *>, std::hash<void *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<void * const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<void * const, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Dwarf_Die, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Dwarf_Die> > > *>, false> > > *, <std::piecewise_construct_t const &, std::tuple<void * const &>, std::tuple<>...> &&...)",
             "language": "c/c++",
             "tool": "coverity",
@@ -10745,6 +10780,7 @@
         {
             "checker": "CTOR_DTOR_LEAK",
             "cwe": 401,
+            "imp": 1,
             "function": "std::_Hashtable<void *, std::pair<void * const, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<Dwarf_Line_s *, std::allocator<Dwarf_Line_s *> > *, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<Dwarf_Line_s *, std::allocator<Dwarf_Line_s *> > *> > > *>, std::allocator<std::pair<void * const, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<Dwarf_Line_s *, std::allocator<Dwarf_Line_s *> > *, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<Dwarf_Line_s *, std::allocator<Dwarf_Line_s *> > *> > > *> >, std::__detail::_Select1st, std::equal_to<void *>, std::hash<void *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<void *&&>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<void * const, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<Dwarf_Line_s *, std::allocator<Dwarf_Line_s *> > *, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<Dwarf_Line_s *, std::allocator<Dwarf_Line_s *> > *> > > *>, false> > > *, <std::piecewise_construct_t const &, std::tuple<void *&&>, std::tuple<>...> &&...)",
             "language": "c/c++",
             "tool": "coverity",
@@ -10783,6 +10819,7 @@
         {
             "checker": "CTOR_DTOR_LEAK",
             "cwe": 401,
+            "imp": 1,
             "function": "std::_Hashtable<void *, std::pair<void * const, std::unordered_map<void *, Dwarf_Die, std::hash<void *>, std::equal_to<void *>, std::allocator<std::pair<void * const, Dwarf_Die> > > *>, std::allocator<std::pair<void * const, std::unordered_map<void *, Dwarf_Die, std::hash<void *>, std::equal_to<void *>, std::allocator<std::pair<void * const, Dwarf_Die> > > *> >, std::__detail::_Select1st, std::equal_to<void *>, std::hash<void *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<void * const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<void * const, std::unordered_map<void *, Dwarf_Die, std::hash<void *>, std::equal_to<void *>, std::allocator<std::pair<void * const, Dwarf_Die> > > *>, false> > > *, <std::piecewise_construct_t const &, std::tuple<void * const &>, std::tuple<>...> &&...)",
             "language": "c/c++",
             "tool": "coverity",
@@ -10821,6 +10858,7 @@
         {
             "checker": "CTOR_DTOR_LEAK",
             "cwe": 401,
+            "imp": 1,
             "function": "std::_Hashtable<void *, std::pair<void * const, std::unordered_multimap<interned_string, Dwarf_Die, std::hash<interned_string>, std::equal_to<interned_string>, std::allocator<std::pair<interned_string const, Dwarf_Die> > > *>, std::allocator<std::pair<void * const, std::unordered_multimap<interned_string, Dwarf_Die, std::hash<interned_string>, std::equal_to<interned_string>, std::allocator<std::pair<interned_string const, Dwarf_Die> > > *> >, std::__detail::_Select1st, std::equal_to<void *>, std::hash<void *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<void * const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<void * const, std::unordered_multimap<interned_string, Dwarf_Die, std::hash<interned_string>, std::equal_to<interned_string>, std::allocator<std::pair<interned_string const, Dwarf_Die> > > *>, false> > > *, <std::piecewise_construct_t const &, std::tuple<void * const &>, std::tuple<>...> &&...)",
             "language": "c/c++",
             "tool": "coverity",
@@ -10859,6 +10897,7 @@
         {
             "checker": "CTOR_DTOR_LEAK",
             "cwe": 401,
+            "imp": 1,
             "function": "std::_Hashtable<void *, std::pair<void * const, std::unordered_set<unsigned long, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<unsigned long> > *>, std::allocator<std::pair<void * const, std::unordered_set<unsigned long, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<unsigned long> > *> >, std::__detail::_Select1st, std::equal_to<void *>, std::hash<void *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<void * const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<void * const, std::unordered_set<unsigned long, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<unsigned long> > *>, false> > > *, <std::piecewise_construct_t const &, std::tuple<void * const &>, std::tuple<>...> &&...)",
             "language": "c/c++",
             "tool": "coverity",
@@ -10897,6 +10936,7 @@
         {
             "checker": "CTOR_DTOR_LEAK",
             "cwe": 401,
+            "imp": 1,
             "function": "std::_Hashtable<void *, std::pair<void * const, std::vector<Dwarf_Die, std::allocator<Dwarf_Die> > *>, std::allocator<std::pair<void * const, std::vector<Dwarf_Die, std::allocator<Dwarf_Die> > *> >, std::__detail::_Select1st, std::equal_to<void *>, std::hash<void *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<void * const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<void * const, std::vector<Dwarf_Die, std::allocator<Dwarf_Die> > *>, false> > > *, <std::piecewise_construct_t const &, std::tuple<void * const &>, std::tuple<>...> &&...)",
             "language": "c/c++",
             "tool": "coverity",
@@ -10935,6 +10975,7 @@
         {
             "checker": "CTOR_DTOR_LEAK",
             "cwe": 401,
+            "imp": 1,
             "function": "std::_Hashtable<void *, std::pair<void * const, std::vector<std::pair<Dwarf_Die, Dwarf_Die>, std::allocator<std::pair<Dwarf_Die, Dwarf_Die> > > *>, std::allocator<std::pair<void * const, std::vector<std::pair<Dwarf_Die, Dwarf_Die>, std::allocator<std::pair<Dwarf_Die, Dwarf_Die> > > *> >, std::__detail::_Select1st, std::equal_to<void *>, std::hash<void *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<void * const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<void * const, std::vector<std::pair<Dwarf_Die, Dwarf_Die>, std::allocator<std::pair<Dwarf_Die, Dwarf_Die> > > *>, false> > > *, <std::piecewise_construct_t const &, std::tuple<void * const &>, std::tuple<>...> &&...)",
             "language": "c/c++",
             "tool": "coverity",

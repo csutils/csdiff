@@ -50,10 +50,16 @@ bool CovTreeDecoder::readNode(Defect *def)
     // out of the supported tools, only Coverity produces this data format
     def->tool = "coverity";
 
-    // read CWE if available
+    // extract checker properties if available
     const pt::ptree *checkerProps;
-    if (findChildOf(&checkerProps, defNode, "checkerProperties"))
+    if (findChildOf(&checkerProps, defNode, "checkerProperties")) {
+        // read CWE if available
         def->cwe = valueOf<int>(*checkerProps, "cweCategory");
+
+        // treat defects with high impact as important
+        if ("High" == valueOf<std::string>(*checkerProps, "impact"))
+            def->imp = 1;
+    }
 
     // count the events and allocate dst array
     const pt::ptree &evtList = defNode.get_child("events");
