@@ -1,0 +1,3234 @@
+{
+    "defects": [
+        {
+            "checker": "RESOURCE_LEAK",
+            "cwe": 404,
+            "imp": 1,
+            "function": "bpf::output_probe(bpf::BPF_Output &, bpf::program &, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const &, unsigned int)",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 15,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/bpf-translate.cxx",
+                    "line": 4625,
+                    "event": "path",
+                    "message": "Condition \"i != std::vector<bpf::block *, std::allocator<bpf::block *> >::iterator(prog.blocks.end())\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/bpf-translate.cxx",
+                    "line": 4661,
+                    "event": "path",
+                    "message": "Condition \"buf\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/bpf-translate.cxx",
+                    "line": 4661,
+                    "event": "path",
+                    "message": "Condition \"(bool)buf\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/bpf-translate.cxx",
+                    "line": 4662,
+                    "event": "alloc_fn",
+                    "message": "Storage is returned from allocation function \"calloc\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/bpf-translate.cxx",
+                    "line": 4662,
+                    "event": "var_assign",
+                    "message": "Assigning: \"rel\" = storage returned from \"calloc(16UL, nreloc)\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/bpf-translate.cxx",
+                    "line": 4663,
+                    "event": "path",
+                    "message": "Condition \"rel\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/bpf-translate.cxx",
+                    "line": 4663,
+                    "event": "path",
+                    "message": "Condition \"(bool)rel\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/bpf-translate.cxx",
+                    "line": 4666,
+                    "event": "path",
+                    "message": "Condition \"bi != std::vector<bpf::block *, std::allocator<bpf::block *> >::iterator(prog.blocks.end())\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/bpf-translate.cxx",
+                    "line": 4719,
+                    "event": "path",
+                    "message": "Condition \"i == ninsns\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/bpf-translate.cxx",
+                    "line": 4719,
+                    "event": "path",
+                    "message": "Condition \"i == ninsns\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/bpf-translate.cxx",
+                    "line": 4719,
+                    "event": "path",
+                    "message": "Condition \"(bool)(i == ninsns)\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/bpf-translate.cxx",
+                    "line": 4720,
+                    "event": "path",
+                    "message": "Condition \"r == nreloc\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/bpf-translate.cxx",
+                    "line": 4720,
+                    "event": "path",
+                    "message": "Condition \"r == nreloc\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/bpf-translate.cxx",
+                    "line": 4720,
+                    "event": "path",
+                    "message": "Condition \"(bool)(r == nreloc)\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/bpf-translate.cxx",
+                    "line": 4732,
+                    "event": "path",
+                    "message": "Condition \"nreloc\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/bpf-translate.cxx",
+                    "line": 4744,
+                    "event": "leaked_storage",
+                    "message": "Variable \"rel\" going out of scope leaks the storage it points to.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "RESOURCE_LEAK",
+            "cwe": 404,
+            "imp": 1,
+            "function": "sql_stmt(sqlite3 *, char const *)",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 3,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/coveragedb.cxx",
+                    "line": 148,
+                    "event": "alloc_arg",
+                    "message": "\"sqlite3_exec\" allocates memory that is stored into \"errmsg\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/coveragedb.cxx",
+                    "line": 150,
+                    "event": "path",
+                    "message": "Condition \"ret != 0\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/coveragedb.cxx",
+                    "line": 151,
+                    "event": "noescape",
+                    "message": "Resource \"errmsg\" is not freed or pointed-to in \"operator <<\". [Note: The source code implementation of the function has been overridden by a builtin model.]",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/coveragedb.cxx",
+                    "line": 154,
+                    "event": "leaked_storage",
+                    "message": "Variable \"errmsg\" going out of scope leaks the storage it points to.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "CTOR_DTOR_LEAK",
+            "cwe": 401,
+            "imp": 1,
+            "function": "location_context::location_context(target_symbol *, expression *)",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/loc2stap.cxx",
+                    "line": 36,
+                    "event": "path",
+                    "message": "Condition \"pp\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/loc2stap.cxx",
+                    "line": 38,
+                    "event": "alloc_new",
+                    "message": "Allocating memory by calling \"new vardecl\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/loc2stap.cxx",
+                    "line": 38,
+                    "event": "assign",
+                    "message": "Assigning: \"v\" = \"new vardecl\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/loc2stap.cxx",
+                    "line": 42,
+                    "event": "assign",
+                    "message": "Assigning: \"this->pointer\" = \"v\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/loc2stap.cxx",
+                    "line": 46,
+                    "event": "path",
+                    "message": "Condition \"i < ee->components.size()\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/loc2stap.cxx",
+                    "line": 47,
+                    "event": "path",
+                    "message": "Condition \"ee->components[i].type == target_symbol::comp_expression_array_index\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/loc2stap.cxx",
+                    "line": 62,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/loc2stap.cxx",
+                    "line": 46,
+                    "event": "path",
+                    "message": "Condition \"i < ee->components.size()\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/loc2stap.cxx",
+                    "line": 47,
+                    "event": "path",
+                    "message": "Condition \"ee->components[i].type == target_symbol::comp_expression_array_index\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/loc2stap.cxx",
+                    "line": 62,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/loc2stap.cxx",
+                    "line": 46,
+                    "event": "path",
+                    "message": "Condition \"i < ee->components.size()\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/loc2stap.cxx",
+                    "line": 42,
+                    "event": "ctor_dtor_leak",
+                    "message": "The constructor allocates field \"pointer\" of \"location_context\" but there is no destructor.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "RESOURCE_LEAK",
+            "cwe": 404,
+            "imp": 1,
+            "function": "parser::parse_components()",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 32,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/parse.cxx",
+                    "line": 2546,
+                    "event": "path",
+                    "message": "Condition \"true /* 1 */\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/parse.cxx",
+                    "line": 2551,
+                    "event": "path",
+                    "message": "Condition \"pps.empty()\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/parse.cxx",
+                    "line": 2552,
+                    "event": "path",
+                    "message": "Falling through to end of if statement.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/parse.cxx",
+                    "line": 2585,
+                    "event": "path",
+                    "message": "Condition \"t\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/parse.cxx",
+                    "line": 2585,
+                    "event": "path",
+                    "message": "Condition \"t->type == tok_operator\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/parse.cxx",
+                    "line": 2585,
+                    "event": "path",
+                    "message": "Condition \"t->content == \".\"\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/parse.cxx",
+                    "line": 2594,
+                    "event": "path",
+                    "message": "Condition \"t\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/parse.cxx",
+                    "line": 2594,
+                    "event": "path",
+                    "message": "Condition \"t->type == tok_operator\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/parse.cxx",
+                    "line": 2594,
+                    "event": "path",
+                    "message": "Condition \"t->content == \"?\"\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/parse.cxx",
+                    "line": 2597,
+                    "event": "path",
+                    "message": "Condition \"i < pps.size()\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/parse.cxx",
+                    "line": 2599,
+                    "event": "path",
+                    "message": "Condition \"pps[i]->optional\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/parse.cxx",
+                    "line": 2599,
+                    "event": "path",
+                    "message": "Condition \"pps[i]->sufficient\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/parse.cxx",
+                    "line": 2602,
+                    "event": "path",
+                    "message": "Condition \"t->content == \"!\"\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/parse.cxx",
+                    "line": 2603,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/parse.cxx",
+                    "line": 2597,
+                    "event": "path",
+                    "message": "Condition \"i < pps.size()\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/parse.cxx",
+                    "line": 2599,
+                    "event": "path",
+                    "message": "Condition \"pps[i]->optional\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/parse.cxx",
+                    "line": 2599,
+                    "event": "path",
+                    "message": "Condition \"pps[i]->sufficient\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/parse.cxx",
+                    "line": 2602,
+                    "event": "path",
+                    "message": "Condition \"t->content == \"!\"\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/parse.cxx",
+                    "line": 2603,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/parse.cxx",
+                    "line": 2597,
+                    "event": "path",
+                    "message": "Condition \"i < pps.size()\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/parse.cxx",
+                    "line": 2610,
+                    "event": "path",
+                    "message": "Condition \"t\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/parse.cxx",
+                    "line": 2610,
+                    "event": "path",
+                    "message": "Condition \"t->type == tok_keyword\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/parse.cxx",
+                    "line": 2610,
+                    "event": "path",
+                    "message": "Condition \"t->content == \"if\"\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/parse.cxx",
+                    "line": 2614,
+                    "event": "path",
+                    "message": "Condition \"t\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/parse.cxx",
+                    "line": 2614,
+                    "event": "path",
+                    "message": "Condition \"t->type == tok_operator\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/parse.cxx",
+                    "line": 2614,
+                    "event": "path",
+                    "message": "Condition \"t->content == \"(\"\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/parse.cxx",
+                    "line": 2618,
+                    "event": "alloc_fn",
+                    "message": "Storage is returned from allocation function \"parse_expression\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/parse.cxx",
+                    "line": 2618,
+                    "event": "var_assign",
+                    "message": "Assigning: \"e\" = storage returned from \"this->parse_expression()\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/parse.cxx",
+                    "line": 2619,
+                    "event": "path",
+                    "message": "Condition \"i < pps.size()\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/parse.cxx",
+                    "line": 2627,
+                    "event": "path",
+                    "message": "Condition \"t\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/parse.cxx",
+                    "line": 2627,
+                    "event": "path",
+                    "message": "Condition \"t->type == tok_operator\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/parse.cxx",
+                    "line": 2627,
+                    "event": "path",
+                    "message": "Condition \"t->content == \")\"\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/parse.cxx",
+                    "line": 2630,
+                    "event": "leaked_storage",
+                    "message": "Variable \"e\" going out of scope leaks the storage it points to.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "STRING_NULL",
+            "cwe": 170,
+            "imp": 1,
+            "function": "procfs_write_event_loop(procfsprobe_data *, bpf_transport_context *)",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 5,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/stapbpf/stapbpf.cxx",
+                    "line": 1935,
+                    "event": "path",
+                    "message": "Condition \"true\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/stapbpf/stapbpf.cxx",
+                    "line": 1939,
+                    "event": "path",
+                    "message": "Condition \"fd == -1\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/stapbpf/stapbpf.cxx",
+                    "line": 1957,
+                    "event": "string_null_argument",
+                    "message": "Function \"read\" does not terminate string \"*buffer_feed\". [Note: The source code implementation of the function has been overridden by a builtin model.]",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/stapbpf/stapbpf.cxx",
+                    "line": 1959,
+                    "event": "path",
+                    "message": "Condition \"bytes_read == -1\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/stapbpf/stapbpf.cxx",
+                    "line": 1963,
+                    "event": "path",
+                    "message": "Condition \"bytes_read > 0\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/stapbpf/stapbpf.cxx",
+                    "line": 1964,
+                    "event": "string_null",
+                    "message": "Passing unterminated string \"buffer_feed\" to \"basic_string\", which expects a null-terminated string. [Note: The source code implementation of the function has been overridden by a builtin model.]",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "cwe": 457,
+            "imp": 1,
+            "function": "stapregex::rebalance_priorities(std::stack<stapregex::kernel_point, std::deque<stapregex::kernel_point, std::allocator<stapregex::kernel_point> > > &, std::stack<stapregex::kernel_point, std::deque<stapregex::kernel_point, std::allocator<stapregex::kernel_point> > > &)",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 2,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/stapregex-dfa.cxx",
+                    "line": 260,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"sorted_worklist\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/stapregex-dfa.cxx",
+                    "line": 261,
+                    "event": "path",
+                    "message": "Condition \"!worklist->empty()\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/stapregex-dfa.cxx",
+                    "line": 264,
+                    "event": "uninit_use_in_call",
+                    "message": "Using uninitialized value \"sorted_worklist.comp\" when calling \"push\".",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "cwe": 457,
+            "imp": 1,
+            "function": "stapregex::rebalance_priorities(std::stack<stapregex::kernel_point, std::deque<stapregex::kernel_point, std::allocator<stapregex::kernel_point> > > &, std::stack<stapregex::kernel_point, std::deque<stapregex::kernel_point, std::allocator<stapregex::kernel_point> > > &)",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 4,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/stapregex-dfa.cxx",
+                    "line": 261,
+                    "event": "path",
+                    "message": "Condition \"!worklist->empty()\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/stapregex-dfa.cxx",
+                    "line": 265,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/stapregex-dfa.cxx",
+                    "line": 261,
+                    "event": "path",
+                    "message": "Condition \"!worklist->empty()\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/stapregex-dfa.cxx",
+                    "line": 269,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"new_priorities\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/stapregex-dfa.cxx",
+                    "line": 270,
+                    "event": "uninit_use_in_call",
+                    "message": "Using uninitialized value \"new_priorities.comp\" when calling \"push\".",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "cwe": 457,
+            "imp": 1,
+            "function": "stapregex::rebalance_priorities(std::stack<stapregex::kernel_point, std::deque<stapregex::kernel_point, std::allocator<stapregex::kernel_point> > > &, std::stack<stapregex::kernel_point, std::deque<stapregex::kernel_point, std::allocator<stapregex::kernel_point> > > &)",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 8,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/stapregex-dfa.cxx",
+                    "line": 261,
+                    "event": "path",
+                    "message": "Condition \"!worklist->empty()\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/stapregex-dfa.cxx",
+                    "line": 265,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/stapregex-dfa.cxx",
+                    "line": 261,
+                    "event": "path",
+                    "message": "Condition \"!worklist->empty()\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/stapregex-dfa.cxx",
+                    "line": 268,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"sorted_priorities\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/stapregex-dfa.cxx",
+                    "line": 271,
+                    "event": "path",
+                    "message": "Condition \"new_priorities.size() < sorted_worklist.size()\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/stapregex-dfa.cxx",
+                    "line": 276,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/stapregex-dfa.cxx",
+                    "line": 271,
+                    "event": "path",
+                    "message": "Condition \"new_priorities.size() < sorted_worklist.size()\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/stapregex-dfa.cxx",
+                    "line": 277,
+                    "event": "path",
+                    "message": "Condition \"i < sorted_worklist.size()\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/stapregex-dfa.cxx",
+                    "line": 280,
+                    "event": "uninit_use_in_call",
+                    "message": "Using uninitialized value \"sorted_priorities.comp\" when calling \"push\".",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "RESOURCE_LEAK",
+            "cwe": 404,
+            "imp": 1,
+            "function": "parse_args",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 13,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 140,
+                    "event": "path",
+                    "message": "Condition \"isatty(2)\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 140,
+                    "event": "path",
+                    "message": "Condition \"getenv(\"TERM\")\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 140,
+                    "event": "path",
+                    "message": "Condition \"strcmp((getenv(\"TERM\") ?: \"notdumb\"), \"dumb\")\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 143,
+                    "event": "path",
+                    "message": "Condition \"(c = getopt(argc, argv, \"ALu::vihb:t:dc:o:x:N:S:DwRr:VT:C:M:F:\")) != -1\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 148,
+                    "event": "path",
+                    "message": "Switch case value \"117\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 151,
+                    "event": "path",
+                    "message": "Condition \"optarg\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 152,
+                    "event": "alloc_fn",
+                    "message": "Storage is returned from allocation function \"strdup\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 152,
+                    "event": "var_assign",
+                    "message": "Assigning: \"uprobes_path\" = storage returned from \"strdup(optarg)\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 153,
+                    "event": "path",
+                    "message": "Breaking from switch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 278,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 143,
+                    "event": "path",
+                    "message": "Condition \"(c = getopt(argc, argv, \"ALu::vihb:t:dc:o:x:N:S:DwRr:VT:C:M:F:\")) != -1\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 148,
+                    "event": "path",
+                    "message": "Switch case value \"117\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 151,
+                    "event": "path",
+                    "message": "Condition \"optarg\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 152,
+                    "event": "overwrite_var",
+                    "message": "Overwriting \"uprobes_path\" in \"uprobes_path = strdup(optarg)\" leaks the storage that \"uprobes_path\" points to.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "RESOURCE_LEAK",
+            "cwe": 404,
+            "imp": 1,
+            "function": "parse_args",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 122,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 140,
+                    "event": "path",
+                    "message": "Condition \"isatty(2)\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 140,
+                    "event": "path",
+                    "message": "Condition \"getenv(\"TERM\")\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 140,
+                    "event": "path",
+                    "message": "Condition \"strcmp((getenv(\"TERM\") ?: \"notdumb\"), \"dumb\")\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 143,
+                    "event": "path",
+                    "message": "Condition \"(c = getopt(argc, argv, \"ALu::vihb:t:dc:o:x:N:S:DwRr:VT:C:M:F:\")) != -1\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 148,
+                    "event": "path",
+                    "message": "Switch case value \"117\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 151,
+                    "event": "path",
+                    "message": "Condition \"optarg\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 153,
+                    "event": "path",
+                    "message": "Breaking from switch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 278,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 143,
+                    "event": "path",
+                    "message": "Condition \"(c = getopt(argc, argv, \"ALu::vihb:t:dc:o:x:N:S:DwRr:VT:C:M:F:\")) != -1\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 148,
+                    "event": "path",
+                    "message": "Switch case value \"118\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 156,
+                    "event": "path",
+                    "message": "Breaking from switch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 278,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 143,
+                    "event": "path",
+                    "message": "Condition \"(c = getopt(argc, argv, \"ALu::vihb:t:dc:o:x:N:S:DwRr:VT:C:M:F:\")) != -1\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 148,
+                    "event": "path",
+                    "message": "Switch case value \"118\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 156,
+                    "event": "path",
+                    "message": "Breaking from switch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 278,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 143,
+                    "event": "path",
+                    "message": "Condition \"(c = getopt(argc, argv, \"ALu::vihb:t:dc:o:x:N:S:DwRr:VT:C:M:F:\")) != -1\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 148,
+                    "event": "path",
+                    "message": "Switch case value \"119\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 159,
+                    "event": "path",
+                    "message": "Breaking from switch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 278,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 143,
+                    "event": "path",
+                    "message": "Condition \"(c = getopt(argc, argv, \"ALu::vihb:t:dc:o:x:N:S:DwRr:VT:C:M:F:\")) != -1\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 148,
+                    "event": "path",
+                    "message": "Switch case value \"98\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 162,
+                    "event": "path",
+                    "message": "Condition \"buffer_size < 1\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 162,
+                    "event": "path",
+                    "message": "Condition \"buffer_size > 4095\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 166,
+                    "event": "path",
+                    "message": "Breaking from switch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 278,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 143,
+                    "event": "path",
+                    "message": "Condition \"(c = getopt(argc, argv, \"ALu::vihb:t:dc:o:x:N:S:DwRr:VT:C:M:F:\")) != -1\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 148,
+                    "event": "path",
+                    "message": "Switch case value \"116\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 170,
+                    "event": "path",
+                    "message": "Breaking from switch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 278,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 143,
+                    "event": "path",
+                    "message": "Condition \"(c = getopt(argc, argv, \"ALu::vihb:t:dc:o:x:N:S:DwRr:VT:C:M:F:\")) != -1\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 148,
+                    "event": "path",
+                    "message": "Switch case value \"116\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 170,
+                    "event": "path",
+                    "message": "Breaking from switch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 278,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 143,
+                    "event": "path",
+                    "message": "Condition \"(c = getopt(argc, argv, \"ALu::vihb:t:dc:o:x:N:S:DwRr:VT:C:M:F:\")) != -1\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 148,
+                    "event": "path",
+                    "message": "Switch case value \"78\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 174,
+                    "event": "path",
+                    "message": "Condition \"target_namespaces_pid < 1\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 178,
+                    "event": "path",
+                    "message": "Breaking from switch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 278,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 143,
+                    "event": "path",
+                    "message": "Condition \"(c = getopt(argc, argv, \"ALu::vihb:t:dc:o:x:N:S:DwRr:VT:C:M:F:\")) != -1\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 148,
+                    "event": "path",
+                    "message": "Switch case value \"100\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 182,
+                    "event": "path",
+                    "message": "Breaking from switch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 278,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 143,
+                    "event": "path",
+                    "message": "Condition \"(c = getopt(argc, argv, \"ALu::vihb:t:dc:o:x:N:S:DwRr:VT:C:M:F:\")) != -1\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 148,
+                    "event": "path",
+                    "message": "Switch case value \"99\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 185,
+                    "event": "path",
+                    "message": "Breaking from switch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 278,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 143,
+                    "event": "path",
+                    "message": "Condition \"(c = getopt(argc, argv, \"ALu::vihb:t:dc:o:x:N:S:DwRr:VT:C:M:F:\")) != -1\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 148,
+                    "event": "path",
+                    "message": "Switch case value \"111\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 188,
+                    "event": "path",
+                    "message": "Breaking from switch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 278,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 143,
+                    "event": "path",
+                    "message": "Condition \"(c = getopt(argc, argv, \"ALu::vihb:t:dc:o:x:N:S:DwRr:VT:C:M:F:\")) != -1\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 148,
+                    "event": "path",
+                    "message": "Switch case value \"105\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 191,
+                    "event": "path",
+                    "message": "Breaking from switch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 278,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 143,
+                    "event": "path",
+                    "message": "Condition \"(c = getopt(argc, argv, \"ALu::vihb:t:dc:o:x:N:S:DwRr:VT:C:M:F:\")) != -1\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 148,
+                    "event": "path",
+                    "message": "Switch case value \"82\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 194,
+                    "event": "path",
+                    "message": "Breaking from switch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 278,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 143,
+                    "event": "path",
+                    "message": "Condition \"(c = getopt(argc, argv, \"ALu::vihb:t:dc:o:x:N:S:DwRr:VT:C:M:F:\")) != -1\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 148,
+                    "event": "path",
+                    "message": "Switch case value \"65\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 197,
+                    "event": "path",
+                    "message": "Breaking from switch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 278,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 143,
+                    "event": "path",
+                    "message": "Condition \"(c = getopt(argc, argv, \"ALu::vihb:t:dc:o:x:N:S:DwRr:VT:C:M:F:\")) != -1\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 148,
+                    "event": "path",
+                    "message": "Switch case value \"76\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 200,
+                    "event": "path",
+                    "message": "Breaking from switch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 278,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 143,
+                    "event": "path",
+                    "message": "Condition \"(c = getopt(argc, argv, \"ALu::vihb:t:dc:o:x:N:S:DwRr:VT:C:M:F:\")) != -1\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 148,
+                    "event": "path",
+                    "message": "Switch case value \"68\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 203,
+                    "event": "path",
+                    "message": "Breaking from switch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 278,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 143,
+                    "event": "path",
+                    "message": "Condition \"(c = getopt(argc, argv, \"ALu::vihb:t:dc:o:x:N:S:DwRr:VT:C:M:F:\")) != -1\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 148,
+                    "event": "path",
+                    "message": "Switch case value \"70\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 206,
+                    "event": "path",
+                    "message": "Condition \"relay_basedir_fd < 0\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 210,
+                    "event": "path",
+                    "message": "Breaking from switch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 278,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 143,
+                    "event": "path",
+                    "message": "Condition \"(c = getopt(argc, argv, \"ALu::vihb:t:dc:o:x:N:S:DwRr:VT:C:M:F:\")) != -1\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 148,
+                    "event": "path",
+                    "message": "Switch case value \"70\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 206,
+                    "event": "path",
+                    "message": "Condition \"relay_basedir_fd < 0\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 210,
+                    "event": "path",
+                    "message": "Breaking from switch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 278,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 143,
+                    "event": "path",
+                    "message": "Condition \"(c = getopt(argc, argv, \"ALu::vihb:t:dc:o:x:N:S:DwRr:VT:C:M:F:\")) != -1\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 148,
+                    "event": "path",
+                    "message": "Switch case value \"83\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 212,
+                    "event": "path",
+                    "message": "Condition \"optarg != NULL\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 212,
+                    "event": "path",
+                    "message": "Falling through to end of if statement.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 215,
+                    "event": "path",
+                    "message": "Condition \"s[0] == ','\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 217,
+                    "event": "path",
+                    "message": "Condition \"s[0] != 0\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 221,
+                    "event": "path",
+                    "message": "Breaking from switch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 278,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 143,
+                    "event": "path",
+                    "message": "Condition \"(c = getopt(argc, argv, \"ALu::vihb:t:dc:o:x:N:S:DwRr:VT:C:M:F:\")) != -1\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 148,
+                    "event": "path",
+                    "message": "Switch case value \"83\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 212,
+                    "event": "path",
+                    "message": "Condition \"optarg != NULL\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 212,
+                    "event": "path",
+                    "message": "Falling through to end of if statement.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 215,
+                    "event": "path",
+                    "message": "Condition \"s[0] == ','\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 217,
+                    "event": "path",
+                    "message": "Condition \"s[0] != 0\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 221,
+                    "event": "path",
+                    "message": "Breaking from switch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 278,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 143,
+                    "event": "path",
+                    "message": "Condition \"(c = getopt(argc, argv, \"ALu::vihb:t:dc:o:x:N:S:DwRr:VT:C:M:F:\")) != -1\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 148,
+                    "event": "path",
+                    "message": "Switch case value \"83\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 212,
+                    "event": "path",
+                    "message": "Condition \"optarg != NULL\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 212,
+                    "event": "path",
+                    "message": "Falling through to end of if statement.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 215,
+                    "event": "path",
+                    "message": "Condition \"s[0] == ','\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 217,
+                    "event": "path",
+                    "message": "Condition \"s[0] != 0\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 221,
+                    "event": "path",
+                    "message": "Breaking from switch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 278,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 143,
+                    "event": "path",
+                    "message": "Condition \"(c = getopt(argc, argv, \"ALu::vihb:t:dc:o:x:N:S:DwRr:VT:C:M:F:\")) != -1\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 148,
+                    "event": "path",
+                    "message": "Switch case value \"114\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 223,
+                    "event": "path",
+                    "message": "Condition \"optarg != NULL\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 223,
+                    "event": "path",
+                    "message": "Falling through to end of if statement.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 226,
+                    "event": "path",
+                    "message": "Condition \"s[0] == ':'\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 227,
+                    "event": "alloc_fn",
+                    "message": "Storage is returned from allocation function \"strdup\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 227,
+                    "event": "var_assign",
+                    "message": "Assigning: \"remote_uri\" = storage returned from \"strdup(&s[1])\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 229,
+                    "event": "path",
+                    "message": "Condition \"remote_id < 0\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 229,
+                    "event": "path",
+                    "message": "Condition \"remote_uri == NULL\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 229,
+                    "event": "path",
+                    "message": "Condition \"remote_uri[0] == 0\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 233,
+                    "event": "path",
+                    "message": "Breaking from switch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 278,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 143,
+                    "event": "path",
+                    "message": "Condition \"(c = getopt(argc, argv, \"ALu::vihb:t:dc:o:x:N:S:DwRr:VT:C:M:F:\")) != -1\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 148,
+                    "event": "path",
+                    "message": "Switch case value \"114\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 223,
+                    "event": "path",
+                    "message": "Condition \"optarg != NULL\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 223,
+                    "event": "path",
+                    "message": "Falling through to end of if statement.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 226,
+                    "event": "path",
+                    "message": "Condition \"s[0] == ':'\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/common.c",
+                    "line": 227,
+                    "event": "overwrite_var",
+                    "message": "Overwriting \"remote_uri\" in \"remote_uri = strdup(&s[1])\" leaks the storage that \"remote_uri\" points to.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "RESOURCE_LEAK",
+            "cwe": 404,
+            "imp": 1,
+            "function": "send_relocation_modules",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 24,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/staprun.c",
+                    "line": 700,
+                    "event": "path",
+                    "message": "Condition \"r == 1\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/staprun.c",
+                    "line": 700,
+                    "event": "path",
+                    "message": "Condition \"r == 2\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/staprun.c",
+                    "line": 703,
+                    "event": "path",
+                    "message": "Condition \"i < globbuf.gl_pathc\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/staprun.c",
+                    "line": 719,
+                    "event": "path",
+                    "message": "Condition \"!section_name\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/staprun.c",
+                    "line": 719,
+                    "event": "path",
+                    "message": "Continuing loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/staprun.c",
+                    "line": 703,
+                    "event": "path",
+                    "message": "Condition \"i < globbuf.gl_pathc\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/staprun.c",
+                    "line": 719,
+                    "event": "path",
+                    "message": "Condition \"!section_name\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/staprun.c",
+                    "line": 719,
+                    "event": "path",
+                    "message": "Continuing loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/staprun.c",
+                    "line": 703,
+                    "event": "path",
+                    "message": "Condition \"i < globbuf.gl_pathc\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/staprun.c",
+                    "line": 719,
+                    "event": "path",
+                    "message": "Condition \"!section_name\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/staprun.c",
+                    "line": 722,
+                    "event": "path",
+                    "message": "Condition \"!strcmp(section_name, \".\")\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/staprun.c",
+                    "line": 723,
+                    "event": "path",
+                    "message": "Condition \"!strcmp(section_name, \"..\")\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/staprun.c",
+                    "line": 726,
+                    "event": "path",
+                    "message": "Condition \"!module_name\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/staprun.c",
+                    "line": 729,
+                    "event": "path",
+                    "message": "Condition \"!module_name\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/staprun.c",
+                    "line": 732,
+                    "event": "path",
+                    "message": "Condition \"!module_name\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/staprun.c",
+                    "line": 736,
+                    "event": "path",
+                    "message": "Condition \"!module_name_end\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/staprun.c",
+                    "line": 738,
+                    "event": "alloc_fn",
+                    "message": "Storage is returned from allocation function \"fopen\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/staprun.c",
+                    "line": 738,
+                    "event": "var_assign",
+                    "message": "Assigning: \"secfile\" = storage returned from \"fopen(module_section_file, \"r\")\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/staprun.c",
+                    "line": 739,
+                    "event": "path",
+                    "message": "Condition \"!secfile\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/staprun.c",
+                    "line": 741,
+                    "event": "noescape",
+                    "message": "Resource \"secfile\" is not freed or pointed-to in \"fscanf\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/staprun.c",
+                    "line": 741,
+                    "event": "path",
+                    "message": "Condition \"1 == fscanf(secfile, \"0x%llx\", &section_address)\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/staprun.c",
+                    "line": 750,
+                    "event": "path",
+                    "message": "Condition \"strstr(section_name, \"init.\") != NULL\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/staprun.c",
+                    "line": 761,
+                    "event": "path",
+                    "message": "Condition \"strcmp(section_name, \".gnu.linkonce.this_module\")\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/staprun.c",
+                    "line": 765,
+                    "event": "noescape",
+                    "message": "Resource \"secfile\" is not freed or pointed-to in \"fileno\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/staprun/staprun.c",
+                    "line": 774,
+                    "event": "leaked_storage",
+                    "message": "Variable \"secfile\" going out of scope leaks the storage it points to.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "RESOURCE_LEAK",
+            "cwe": 404,
+            "imp": 1,
+            "function": "register_tapset_python(systemtap_session &)",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 3,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/tapset-python.cxx",
+                    "line": 713,
+                    "event": "alloc_fn",
+                    "message": "Storage is returned from allocation function \"operator new\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/tapset-python.cxx",
+                    "line": 713,
+                    "event": "var_assign",
+                    "message": "Assigning: \"builder\" = storage returned from \"new python_builder\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/tapset-python.cxx",
+                    "line": 725,
+                    "event": "path",
+                    "message": "Condition \"i < roots.size()\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/tapset-python.cxx",
+                    "line": 740,
+                    "event": "leaked_storage",
+                    "message": "Variable \"builder\" going out of scope leaks the storage it points to.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "RESOURCE_LEAK",
+            "cwe": 404,
+            "imp": 1,
+            "function": "utrace_var_expanding_visitor::visit_target_symbol_arg(target_symbol *)",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 6,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/tapset-utrace.cxx",
+                    "line": 487,
+                    "event": "path",
+                    "message": "Condition \"this->flags != UDPF_SYSCALL\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/tapset-utrace.cxx",
+                    "line": 490,
+                    "event": "path",
+                    "message": "Condition \"e->name == \"$$parms\"\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/tapset-utrace.cxx",
+                    "line": 497,
+                    "event": "path",
+                    "message": "Condition \"i < 6\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/tapset-utrace.cxx",
+                    "line": 499,
+                    "event": "path",
+                    "message": "Condition \"i > 0\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/tapset-utrace.cxx",
+                    "line": 502,
+                    "event": "alloc_fn",
+                    "message": "Storage is returned from allocation function \"operator new\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/tapset-utrace.cxx",
+                    "line": 502,
+                    "event": "var_assign",
+                    "message": "Assigning: \"tsym\" = storage returned from \"new target_symbol\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/tapset-utrace.cxx",
+                    "line": 517,
+                    "event": "leaked_storage",
+                    "message": "Variable \"tsym\" going out of scope leaks the storage it points to.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "RESOURCE_LEAK",
+            "cwe": 404,
+            "imp": 1,
+            "function": "register_tapset_utrace(systemtap_session &)",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 3,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/tapset-utrace.cxx",
+                    "line": 1347,
+                    "event": "alloc_fn",
+                    "message": "Storage is returned from allocation function \"operator new\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/tapset-utrace.cxx",
+                    "line": 1347,
+                    "event": "var_assign",
+                    "message": "Assigning: \"builder\" = storage returned from \"new utrace_builder\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/tapset-utrace.cxx",
+                    "line": 1354,
+                    "event": "path",
+                    "message": "Condition \"i < roots.size()\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/tapset-utrace.cxx",
+                    "line": 1375,
+                    "event": "leaked_storage",
+                    "message": "Variable \"builder\" going out of scope leaks the storage it points to.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "RESOURCE_LEAK",
+            "cwe": 404,
+            "imp": 1,
+            "function": "dwarf_var_expanding_visitor::visit_target_symbol_context(target_symbol *)",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 9,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/tapsets.cxx",
+                    "line": 4442,
+                    "event": "path",
+                    "message": "Condition \"pending_interrupts\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/tapsets.cxx",
+                    "line": 4447,
+                    "event": "path",
+                    "message": "Condition \"null_die(this->scope_die)\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/tapsets.cxx",
+                    "line": 4454,
+                    "event": "alloc_fn",
+                    "message": "Storage is returned from allocation function \"operator new\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/tapsets.cxx",
+                    "line": 4454,
+                    "event": "var_assign",
+                    "message": "Assigning: \"tsym\" = storage returned from \"new target_symbol(e)\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/tapsets.cxx",
+                    "line": 4464,
+                    "event": "path",
+                    "message": "Condition \"this->q.has_return\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/tapsets.cxx",
+                    "line": 4464,
+                    "event": "path",
+                    "message": "Condition \"e->name == \"$$return\"\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/tapsets.cxx",
+                    "line": 4489,
+                    "event": "path",
+                    "message": "Condition \"i < scopes.size()\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/tapsets.cxx",
+                    "line": 4491,
+                    "event": "path",
+                    "message": "Condition \"dwarf_tag(scopes[i]) == DW_TAG_compile_unit\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/tapsets.cxx",
+                    "line": 4492,
+                    "event": "path",
+                    "message": "Breaking from loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/tapsets.cxx",
+                    "line": 4570,
+                    "event": "leaked_storage",
+                    "message": "Variable \"tsym\" going out of scope leaks the storage it points to.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "RESOURCE_LEAK",
+            "cwe": 404,
+            "imp": 1,
+            "function": "delete_statement_operand_visitor::visit_arrayindex(arrayindex *)",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 21,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/translate.cxx",
+                    "line": 4515,
+                    "event": "path",
+                    "message": "Condition \"array\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/translate.cxx",
+                    "line": 4518,
+                    "event": "path",
+                    "message": "Condition \"i < e->indexes.size()\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/translate.cxx",
+                    "line": 4519,
+                    "event": "path",
+                    "message": "Condition \"e->indexes[i] == NULL\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/translate.cxx",
+                    "line": 4522,
+                    "event": "path",
+                    "message": "Breaking from loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/translate.cxx",
+                    "line": 4525,
+                    "event": "path",
+                    "message": "Condition \"!array_slice\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/translate.cxx",
+                    "line": 4542,
+                    "event": "path",
+                    "message": "Condition \"i < e->indexes.size()\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/translate.cxx",
+                    "line": 4544,
+                    "event": "path",
+                    "message": "Condition \"e->indexes[i]\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/translate.cxx",
+                    "line": 4549,
+                    "event": "path",
+                    "message": "Condition \"mvar.is_parallel()\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/translate.cxx",
+                    "line": 4551,
+                    "event": "path",
+                    "message": "Falling through to end of if statement.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/translate.cxx",
+                    "line": 4561,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/translate.cxx",
+                    "line": 4542,
+                    "event": "path",
+                    "message": "Condition \"i < e->indexes.size()\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/translate.cxx",
+                    "line": 4544,
+                    "event": "path",
+                    "message": "Condition \"e->indexes[i]\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/translate.cxx",
+                    "line": 4549,
+                    "event": "path",
+                    "message": "Condition \"mvar.is_parallel()\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/translate.cxx",
+                    "line": 4551,
+                    "event": "path",
+                    "message": "Falling through to end of if statement.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/translate.cxx",
+                    "line": 4561,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/translate.cxx",
+                    "line": 4542,
+                    "event": "path",
+                    "message": "Condition \"i < e->indexes.size()\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/translate.cxx",
+                    "line": 4544,
+                    "event": "path",
+                    "message": "Condition \"e->indexes[i]\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/translate.cxx",
+                    "line": 4555,
+                    "event": "path",
+                    "message": "Condition \"mvar.is_parallel()\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/translate.cxx",
+                    "line": 4557,
+                    "event": "alloc_fn",
+                    "message": "Storage is returned from allocation function \"operator new\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/translate.cxx",
+                    "line": 4557,
+                    "event": "var_assign",
+                    "message": "Assigning: \"asvar\" = storage returned from \"new tmpvar(this->parent->gensym(r->index_types[i]))\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/translate.cxx",
+                    "line": 4558,
+                    "event": "noescape",
+                    "message": "Resource \"asvar\" is not freed or pointed-to in \"push_back\". [Note: The source code implementation of the function has been overridden by a builtin model.]",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/systemtap-4.4/translate.cxx",
+                    "line": 4559,
+                    "event": "leaked_storage",
+                    "message": "Variable \"asvar\" going out of scope leaks the storage it points to.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "CTOR_DTOR_LEAK",
+            "cwe": 401,
+            "imp": 1,
+            "function": "std::_Hashtable<Dwarf *, std::pair<Dwarf * const, std::unordered_multimap<interned_string, Dwarf_Die, std::hash<interned_string>, std::equal_to<interned_string>, std::allocator<std::pair<interned_string const, Dwarf_Die> > > *>, std::allocator<std::pair<Dwarf * const, std::unordered_multimap<interned_string, Dwarf_Die, std::hash<interned_string>, std::equal_to<interned_string>, std::allocator<std::pair<interned_string const, Dwarf_Die> > > *> >, std::__detail::_Select1st, std::equal_to<Dwarf *>, std::hash<Dwarf *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<Dwarf * const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<Dwarf * const, std::unordered_multimap<interned_string, Dwarf_Die, std::hash<interned_string>, std::equal_to<interned_string>, std::allocator<std::pair<interned_string const, Dwarf_Die> > > *>, false> > > *, <std::piecewise_construct_t const &, std::tuple<Dwarf * const &>, std::tuple<>...> &&...)",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "alloc_fn",
+                    "message": "Calling allocation function \"_M_allocate_node\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "assign",
+                    "message": "Assigning: \"this->_M_node\" = \"__h->_M_allocate_node(std::forward(__args), std::forward(__args), std::forward(__args))\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "ctor_dtor_leak",
+                    "message": "The constructor allocates field \"_M_node\" of \"std::_Hashtable<Dwarf *, std::pair<Dwarf * const, std::unordered_multimap<interned_string, Dwarf_Die, std::hash<interned_string>, std::equal_to<interned_string>, std::allocator<std::pair<interned_string const, Dwarf_Die> > > *>, std::allocator<std::pair<Dwarf * const, std::unordered_multimap<interned_string, Dwarf_Die, std::hash<interned_string>, std::equal_to<interned_string>, std::allocator<std::pair<interned_string const, Dwarf_Die> > > *> >, std::__detail::_Select1st, std::equal_to<Dwarf *>, std::hash<Dwarf *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node\" but the destructor and whatever functions it calls do not free it.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 276,
+                    "event": "destructor",
+                    "message": "This is the destructor implementation.",
+                    "verbosity_level": 2
+                }
+            ]
+        },
+        {
+            "checker": "CTOR_DTOR_LEAK",
+            "cwe": 401,
+            "imp": 1,
+            "function": "std::_Hashtable<Dwarf *, std::pair<Dwarf * const, std::vector<Dwarf_Die, std::allocator<Dwarf_Die> > *>, std::allocator<std::pair<Dwarf * const, std::vector<Dwarf_Die, std::allocator<Dwarf_Die> > *> >, std::__detail::_Select1st, std::equal_to<Dwarf *>, std::hash<Dwarf *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<Dwarf * const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<Dwarf * const, std::vector<Dwarf_Die, std::allocator<Dwarf_Die> > *>, false> > > *, <std::piecewise_construct_t const &, std::tuple<Dwarf * const &>, std::tuple<>...> &&...)",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "alloc_fn",
+                    "message": "Calling allocation function \"_M_allocate_node\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "assign",
+                    "message": "Assigning: \"this->_M_node\" = \"__h->_M_allocate_node(std::forward(__args), std::forward(__args), std::forward(__args))\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "ctor_dtor_leak",
+                    "message": "The constructor allocates field \"_M_node\" of \"std::_Hashtable<Dwarf *, std::pair<Dwarf * const, std::vector<Dwarf_Die, std::allocator<Dwarf_Die> > *>, std::allocator<std::pair<Dwarf * const, std::vector<Dwarf_Die, std::allocator<Dwarf_Die> > *> >, std::__detail::_Select1st, std::equal_to<Dwarf *>, std::hash<Dwarf *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node\" but the destructor and whatever functions it calls do not free it.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 276,
+                    "event": "destructor",
+                    "message": "This is the destructor implementation.",
+                    "verbosity_level": 2
+                }
+            ]
+        },
+        {
+            "checker": "CTOR_DTOR_LEAK",
+            "cwe": 401,
+            "imp": 1,
+            "function": "std::_Hashtable<int, std::pair<int const, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, int> > > >, std::allocator<std::pair<int const, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, int> > > > >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<int const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<int const, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, int> > > >, false> > > *, <std::piecewise_construct_t const &, std::tuple<int const &>, std::tuple<>...> &&...)",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "alloc_fn",
+                    "message": "Calling allocation function \"_M_allocate_node\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "assign",
+                    "message": "Assigning: \"this->_M_node\" = \"__h->_M_allocate_node(std::forward(__args), std::forward(__args), std::forward(__args))\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "ctor_dtor_leak",
+                    "message": "The constructor allocates field \"_M_node\" of \"std::_Hashtable<int, std::pair<int const, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, int> > > >, std::allocator<std::pair<int const, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, int> > > > >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node\" but the destructor and whatever functions it calls do not free it.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 276,
+                    "event": "destructor",
+                    "message": "This is the destructor implementation.",
+                    "verbosity_level": 2
+                }
+            ]
+        },
+        {
+            "checker": "CTOR_DTOR_LEAK",
+            "cwe": 401,
+            "imp": 1,
+            "function": "std::_Hashtable<interned_string, std::pair<interned_string const, Dwarf_Die>, std::allocator<std::pair<interned_string const, Dwarf_Die> >, std::__detail::_Select1st, std::equal_to<interned_string>, std::hash<interned_string>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, false> >::_Scoped_node::_Scoped_node<std::pair<char const *, Dwarf_Die> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<interned_string const, Dwarf_Die>, true> > > *, <std::pair<char const *, Dwarf_Die>...> &&...)",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "alloc_fn",
+                    "message": "Calling allocation function \"_M_allocate_node\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "assign",
+                    "message": "Assigning: \"this->_M_node\" = \"__h->_M_allocate_node(std::forward(__args))\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "ctor_dtor_leak",
+                    "message": "The constructor allocates field \"_M_node\" of \"std::_Hashtable<interned_string, std::pair<interned_string const, Dwarf_Die>, std::allocator<std::pair<interned_string const, Dwarf_Die> >, std::__detail::_Select1st, std::equal_to<interned_string>, std::hash<interned_string>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, false> >::_Scoped_node\" but the destructor and whatever functions it calls do not free it.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 276,
+                    "event": "destructor",
+                    "message": "This is the destructor implementation.",
+                    "verbosity_level": 2
+                }
+            ]
+        },
+        {
+            "checker": "CTOR_DTOR_LEAK",
+            "cwe": 401,
+            "imp": 1,
+            "function": "std::_Hashtable<interned_string, std::pair<interned_string const, func_info *>, std::allocator<std::pair<interned_string const, func_info *> >, std::__detail::_Select1st, std::equal_to<interned_string>, std::hash<interned_string>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, false> >::_Scoped_node::_Scoped_node<std::pair<interned_string, func_info *> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<interned_string const, func_info *>, true> > > *, <std::pair<interned_string, func_info *>...> &&...)",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "alloc_fn",
+                    "message": "Calling allocation function \"_M_allocate_node\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "assign",
+                    "message": "Assigning: \"this->_M_node\" = \"__h->_M_allocate_node(std::forward(__args))\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "ctor_dtor_leak",
+                    "message": "The constructor allocates field \"_M_node\" of \"std::_Hashtable<interned_string, std::pair<interned_string const, func_info *>, std::allocator<std::pair<interned_string const, func_info *> >, std::__detail::_Select1st, std::equal_to<interned_string>, std::hash<interned_string>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, false> >::_Scoped_node\" but the destructor and whatever functions it calls do not free it.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 276,
+                    "event": "destructor",
+                    "message": "This is the destructor implementation.",
+                    "verbosity_level": 2
+                }
+            ]
+        },
+        {
+            "checker": "CTOR_DTOR_LEAK",
+            "cwe": 401,
+            "imp": 1,
+            "function": "std::_Hashtable<interned_string, std::pair<interned_string const, generic_kprobe_derived_probe *>, std::allocator<std::pair<interned_string const, generic_kprobe_derived_probe *> >, std::__detail::_Select1st, std::equal_to<interned_string>, std::hash<interned_string>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, false> >::_Scoped_node::_Scoped_node<std::pair<interned_string, generic_kprobe_derived_probe *> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<interned_string const, generic_kprobe_derived_probe *>, true> > > *, <std::pair<interned_string, generic_kprobe_derived_probe *>...> &&...)",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "alloc_fn",
+                    "message": "Calling allocation function \"_M_allocate_node\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "assign",
+                    "message": "Assigning: \"this->_M_node\" = \"__h->_M_allocate_node(std::forward(__args))\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "ctor_dtor_leak",
+                    "message": "The constructor allocates field \"_M_node\" of \"std::_Hashtable<interned_string, std::pair<interned_string const, generic_kprobe_derived_probe *>, std::allocator<std::pair<interned_string const, generic_kprobe_derived_probe *> >, std::__detail::_Select1st, std::equal_to<interned_string>, std::hash<interned_string>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, false> >::_Scoped_node\" but the destructor and whatever functions it calls do not free it.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 276,
+                    "event": "destructor",
+                    "message": "This is the destructor implementation.",
+                    "verbosity_level": 2
+                }
+            ]
+        },
+        {
+            "checker": "CTOR_DTOR_LEAK",
+            "cwe": 401,
+            "imp": 1,
+            "function": "std::_Hashtable<interned_string, std::pair<interned_string const, unsigned long>, std::allocator<std::pair<interned_string const, unsigned long> >, std::__detail::_Select1st, std::equal_to<interned_string>, std::hash<interned_string>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<interned_string const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<interned_string const, unsigned long>, true> > > *, <std::piecewise_construct_t const &, std::tuple<interned_string const &>, std::tuple<>...> &&...)",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "alloc_fn",
+                    "message": "Calling allocation function \"_M_allocate_node\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "assign",
+                    "message": "Assigning: \"this->_M_node\" = \"__h->_M_allocate_node(std::forward(__args), std::forward(__args), std::forward(__args))\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "ctor_dtor_leak",
+                    "message": "The constructor allocates field \"_M_node\" of \"std::_Hashtable<interned_string, std::pair<interned_string const, unsigned long>, std::allocator<std::pair<interned_string const, unsigned long> >, std::__detail::_Select1st, std::equal_to<interned_string>, std::hash<interned_string>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_Scoped_node\" but the destructor and whatever functions it calls do not free it.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 276,
+                    "event": "destructor",
+                    "message": "This is the destructor implementation.",
+                    "verbosity_level": 2
+                }
+            ]
+        },
+        {
+            "checker": "CTOR_DTOR_LEAK",
+            "cwe": 401,
+            "imp": 1,
+            "function": "std::_Hashtable<long, std::pair<long const, bpf::value *>, std::allocator<std::pair<long const, bpf::value *> >, std::__detail::_Select1st, std::equal_to<long>, std::hash<long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::pair<long, bpf::value *> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<long const, bpf::value *>, false> > > *, <std::pair<long, bpf::value *>...> &&...)",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "alloc_fn",
+                    "message": "Calling allocation function \"_M_allocate_node\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "assign",
+                    "message": "Assigning: \"this->_M_node\" = \"__h->_M_allocate_node(std::forward(__args))\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "ctor_dtor_leak",
+                    "message": "The constructor allocates field \"_M_node\" of \"std::_Hashtable<long, std::pair<long const, bpf::value *>, std::allocator<std::pair<long const, bpf::value *> >, std::__detail::_Select1st, std::equal_to<long>, std::hash<long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node\" but the destructor and whatever functions it calls do not free it.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 276,
+                    "event": "destructor",
+                    "message": "This is the destructor implementation.",
+                    "verbosity_level": 2
+                }
+            ]
+        },
+        {
+            "checker": "CTOR_DTOR_LEAK",
+            "cwe": 401,
+            "imp": 1,
+            "function": "std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Dwarf_Die>, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Dwarf_Die> >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Dwarf_Die>, true> > > *, <std::piecewise_construct_t const &, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const &>, std::tuple<>...> &&...)",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "alloc_fn",
+                    "message": "Calling allocation function \"_M_allocate_node\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "assign",
+                    "message": "Assigning: \"this->_M_node\" = \"__h->_M_allocate_node(std::forward(__args), std::forward(__args), std::forward(__args))\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "ctor_dtor_leak",
+                    "message": "The constructor allocates field \"_M_node\" of \"std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Dwarf_Die>, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Dwarf_Die> >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_Scoped_node\" but the destructor and whatever functions it calls do not free it.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 276,
+                    "event": "destructor",
+                    "message": "This is the destructor implementation.",
+                    "verbosity_level": 2
+                }
+            ]
+        },
+        {
+            "checker": "CTOR_DTOR_LEAK",
+            "cwe": 401,
+            "imp": 1,
+            "function": "std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bpf::value *>, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bpf::value *> >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_Scoped_node::_Scoped_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, bpf::value *> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bpf::value *>, true> > > *, <std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, bpf::value *>...> &&...)",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "alloc_fn",
+                    "message": "Calling allocation function \"_M_allocate_node\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "assign",
+                    "message": "Assigning: \"this->_M_node\" = \"__h->_M_allocate_node(std::forward(__args))\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "ctor_dtor_leak",
+                    "message": "The constructor allocates field \"_M_node\" of \"std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bpf::value *>, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bpf::value *> >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_Scoped_node\" but the destructor and whatever functions it calls do not free it.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 276,
+                    "event": "destructor",
+                    "message": "This is the destructor implementation.",
+                    "verbosity_level": 2
+                }
+            ]
+        },
+        {
+            "checker": "CTOR_DTOR_LEAK",
+            "cwe": 401,
+            "imp": 1,
+            "function": "std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, expression *>, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, expression *> >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, expression *>, true> > > *, <std::piecewise_construct_t const &, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const &>, std::tuple<>...> &&...)",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "alloc_fn",
+                    "message": "Calling allocation function \"_M_allocate_node\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "assign",
+                    "message": "Assigning: \"this->_M_node\" = \"__h->_M_allocate_node(std::forward(__args), std::forward(__args), std::forward(__args))\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "ctor_dtor_leak",
+                    "message": "The constructor allocates field \"_M_node\" of \"std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, expression *>, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, expression *> >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_Scoped_node\" but the destructor and whatever functions it calls do not free it.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 276,
+                    "event": "destructor",
+                    "message": "This is the destructor implementation.",
+                    "verbosity_level": 2
+                }
+            ]
+        },
+        {
+            "checker": "CTOR_DTOR_LEAK",
+            "cwe": 401,
+            "imp": 1,
+            "function": "std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<Dwarf_Line_s *, std::allocator<Dwarf_Line_s *> > *>, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<Dwarf_Line_s *, std::allocator<Dwarf_Line_s *> > *> >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > &&>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<Dwarf_Line_s *, std::allocator<Dwarf_Line_s *> > *>, true> > > *, <std::piecewise_construct_t const &, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > &&>, std::tuple<>...> &&...)",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "alloc_fn",
+                    "message": "Calling allocation function \"_M_allocate_node\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "assign",
+                    "message": "Assigning: \"this->_M_node\" = \"__h->_M_allocate_node(std::forward(__args), std::forward(__args), std::forward(__args))\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "ctor_dtor_leak",
+                    "message": "The constructor allocates field \"_M_node\" of \"std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<Dwarf_Line_s *, std::allocator<Dwarf_Line_s *> > *>, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<Dwarf_Line_s *, std::allocator<Dwarf_Line_s *> > *> >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_Scoped_node\" but the destructor and whatever functions it calls do not free it.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 276,
+                    "event": "destructor",
+                    "message": "This is the destructor implementation.",
+                    "verbosity_level": 2
+                }
+            ]
+        },
+        {
+            "checker": "CTOR_DTOR_LEAK",
+            "cwe": 401,
+            "imp": 1,
+            "function": "std::_Hashtable<unsigned int, std::pair<unsigned int const, unsigned int>, std::allocator<std::pair<unsigned int const, unsigned int> >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::pair<unsigned int, unsigned int> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned int const, unsigned int>, false> > > *, <std::pair<unsigned int, unsigned int>...> &&...)",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "alloc_fn",
+                    "message": "Calling allocation function \"_M_allocate_node\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "assign",
+                    "message": "Assigning: \"this->_M_node\" = \"__h->_M_allocate_node(std::forward(__args))\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "ctor_dtor_leak",
+                    "message": "The constructor allocates field \"_M_node\" of \"std::_Hashtable<unsigned int, std::pair<unsigned int const, unsigned int>, std::allocator<std::pair<unsigned int const, unsigned int> >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node\" but the destructor and whatever functions it calls do not free it.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 276,
+                    "event": "destructor",
+                    "message": "This is the destructor implementation.",
+                    "verbosity_level": 2
+                }
+            ]
+        },
+        {
+            "checker": "CTOR_DTOR_LEAK",
+            "cwe": 401,
+            "imp": 1,
+            "function": "std::_Hashtable<unsigned long, std::pair<unsigned long const, block *>, std::allocator<std::pair<unsigned long const, block *> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::pair<unsigned long, block *> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, block *>, false> > > *, <std::pair<unsigned long, block *>...> &&...)",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "alloc_fn",
+                    "message": "Calling allocation function \"_M_allocate_node\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "assign",
+                    "message": "Assigning: \"this->_M_node\" = \"__h->_M_allocate_node(std::forward(__args))\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "ctor_dtor_leak",
+                    "message": "The constructor allocates field \"_M_node\" of \"std::_Hashtable<unsigned long, std::pair<unsigned long const, block *>, std::allocator<std::pair<unsigned long const, block *> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node\" but the destructor and whatever functions it calls do not free it.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 276,
+                    "event": "destructor",
+                    "message": "This is the destructor implementation.",
+                    "verbosity_level": 2
+                }
+            ]
+        },
+        {
+            "checker": "CTOR_DTOR_LEAK",
+            "cwe": 401,
+            "imp": 1,
+            "function": "std::_Hashtable<vardecl *, std::pair<vardecl * const, bpf::globals::map_slot>, std::allocator<std::pair<vardecl * const, bpf::globals::map_slot> >, std::__detail::_Select1st, std::equal_to<vardecl *>, std::hash<vardecl *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::pair<vardecl *, bpf::globals::map_slot> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<vardecl * const, bpf::globals::map_slot>, false> > > *, <std::pair<vardecl *, bpf::globals::map_slot>...> &&...)",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "alloc_fn",
+                    "message": "Calling allocation function \"_M_allocate_node\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "assign",
+                    "message": "Assigning: \"this->_M_node\" = \"__h->_M_allocate_node(std::forward(__args))\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "ctor_dtor_leak",
+                    "message": "The constructor allocates field \"_M_node\" of \"std::_Hashtable<vardecl *, std::pair<vardecl * const, bpf::globals::map_slot>, std::allocator<std::pair<vardecl * const, bpf::globals::map_slot> >, std::__detail::_Select1st, std::equal_to<vardecl *>, std::hash<vardecl *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node\" but the destructor and whatever functions it calls do not free it.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 276,
+                    "event": "destructor",
+                    "message": "This is the destructor implementation.",
+                    "verbosity_level": 2
+                }
+            ]
+        },
+        {
+            "checker": "CTOR_DTOR_LEAK",
+            "cwe": 401,
+            "imp": 1,
+            "function": "std::_Hashtable<vardecl *, std::pair<vardecl * const, int>, std::allocator<std::pair<vardecl * const, int> >, std::__detail::_Select1st, std::equal_to<vardecl *>, std::hash<vardecl *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<vardecl * const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<vardecl * const, int>, false> > > *, <std::piecewise_construct_t const &, std::tuple<vardecl * const &>, std::tuple<>...> &&...)",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "alloc_fn",
+                    "message": "Calling allocation function \"_M_allocate_node\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "assign",
+                    "message": "Assigning: \"this->_M_node\" = \"__h->_M_allocate_node(std::forward(__args), std::forward(__args), std::forward(__args))\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "ctor_dtor_leak",
+                    "message": "The constructor allocates field \"_M_node\" of \"std::_Hashtable<vardecl *, std::pair<vardecl * const, int>, std::allocator<std::pair<vardecl * const, int> >, std::__detail::_Select1st, std::equal_to<vardecl *>, std::hash<vardecl *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node\" but the destructor and whatever functions it calls do not free it.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 276,
+                    "event": "destructor",
+                    "message": "This is the destructor implementation.",
+                    "verbosity_level": 2
+                }
+            ]
+        },
+        {
+            "checker": "CTOR_DTOR_LEAK",
+            "cwe": 401,
+            "imp": 1,
+            "function": "std::_Hashtable<vardecl *, std::pair<vardecl * const, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, int> > > >, std::allocator<std::pair<vardecl * const, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, int> > > > >, std::__detail::_Select1st, std::equal_to<vardecl *>, std::hash<vardecl *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<vardecl * const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<vardecl * const, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, int> > > >, false> > > *, <std::piecewise_construct_t const &, std::tuple<vardecl * const &>, std::tuple<>...> &&...)",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "alloc_fn",
+                    "message": "Calling allocation function \"_M_allocate_node\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "assign",
+                    "message": "Assigning: \"this->_M_node\" = \"__h->_M_allocate_node(std::forward(__args), std::forward(__args), std::forward(__args))\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "ctor_dtor_leak",
+                    "message": "The constructor allocates field \"_M_node\" of \"std::_Hashtable<vardecl *, std::pair<vardecl * const, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, int> > > >, std::allocator<std::pair<vardecl * const, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, int> > > > >, std::__detail::_Select1st, std::equal_to<vardecl *>, std::hash<vardecl *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node\" but the destructor and whatever functions it calls do not free it.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 276,
+                    "event": "destructor",
+                    "message": "This is the destructor implementation.",
+                    "verbosity_level": 2
+                }
+            ]
+        },
+        {
+            "checker": "CTOR_DTOR_LEAK",
+            "cwe": 401,
+            "imp": 1,
+            "function": "std::_Hashtable<void *, std::pair<void * const, Dwarf_Die>, std::allocator<std::pair<void * const, Dwarf_Die> >, std::__detail::_Select1st, std::equal_to<void *>, std::hash<void *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::pair<void *, Dwarf_Die> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<void * const, Dwarf_Die>, false> > > *, <std::pair<void *, Dwarf_Die>...> &&...)",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "alloc_fn",
+                    "message": "Calling allocation function \"_M_allocate_node\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "assign",
+                    "message": "Assigning: \"this->_M_node\" = \"__h->_M_allocate_node(std::forward(__args))\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "ctor_dtor_leak",
+                    "message": "The constructor allocates field \"_M_node\" of \"std::_Hashtable<void *, std::pair<void * const, Dwarf_Die>, std::allocator<std::pair<void * const, Dwarf_Die> >, std::__detail::_Select1st, std::equal_to<void *>, std::hash<void *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node\" but the destructor and whatever functions it calls do not free it.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 276,
+                    "event": "destructor",
+                    "message": "This is the destructor implementation.",
+                    "verbosity_level": 2
+                }
+            ]
+        },
+        {
+            "checker": "CTOR_DTOR_LEAK",
+            "cwe": 401,
+            "imp": 1,
+            "function": "std::_Hashtable<void *, std::pair<void * const, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Dwarf_Die, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Dwarf_Die> > > *>, std::allocator<std::pair<void * const, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Dwarf_Die, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Dwarf_Die> > > *> >, std::__detail::_Select1st, std::equal_to<void *>, std::hash<void *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<void * const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<void * const, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Dwarf_Die, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Dwarf_Die> > > *>, false> > > *, <std::piecewise_construct_t const &, std::tuple<void * const &>, std::tuple<>...> &&...)",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "alloc_fn",
+                    "message": "Calling allocation function \"_M_allocate_node\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "assign",
+                    "message": "Assigning: \"this->_M_node\" = \"__h->_M_allocate_node(std::forward(__args), std::forward(__args), std::forward(__args))\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "ctor_dtor_leak",
+                    "message": "The constructor allocates field \"_M_node\" of \"std::_Hashtable<void *, std::pair<void * const, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Dwarf_Die, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Dwarf_Die> > > *>, std::allocator<std::pair<void * const, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Dwarf_Die, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Dwarf_Die> > > *> >, std::__detail::_Select1st, std::equal_to<void *>, std::hash<void *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node\" but the destructor and whatever functions it calls do not free it.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 276,
+                    "event": "destructor",
+                    "message": "This is the destructor implementation.",
+                    "verbosity_level": 2
+                }
+            ]
+        },
+        {
+            "checker": "CTOR_DTOR_LEAK",
+            "cwe": 401,
+            "imp": 1,
+            "function": "std::_Hashtable<void *, std::pair<void * const, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<Dwarf_Line_s *, std::allocator<Dwarf_Line_s *> > *, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<Dwarf_Line_s *, std::allocator<Dwarf_Line_s *> > *> > > *>, std::allocator<std::pair<void * const, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<Dwarf_Line_s *, std::allocator<Dwarf_Line_s *> > *, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<Dwarf_Line_s *, std::allocator<Dwarf_Line_s *> > *> > > *> >, std::__detail::_Select1st, std::equal_to<void *>, std::hash<void *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<void *&&>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<void * const, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<Dwarf_Line_s *, std::allocator<Dwarf_Line_s *> > *, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<Dwarf_Line_s *, std::allocator<Dwarf_Line_s *> > *> > > *>, false> > > *, <std::piecewise_construct_t const &, std::tuple<void *&&>, std::tuple<>...> &&...)",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "alloc_fn",
+                    "message": "Calling allocation function \"_M_allocate_node\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "assign",
+                    "message": "Assigning: \"this->_M_node\" = \"__h->_M_allocate_node(std::forward(__args), std::forward(__args), std::forward(__args))\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "ctor_dtor_leak",
+                    "message": "The constructor allocates field \"_M_node\" of \"std::_Hashtable<void *, std::pair<void * const, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<Dwarf_Line_s *, std::allocator<Dwarf_Line_s *> > *, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<Dwarf_Line_s *, std::allocator<Dwarf_Line_s *> > *> > > *>, std::allocator<std::pair<void * const, std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<Dwarf_Line_s *, std::allocator<Dwarf_Line_s *> > *, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<Dwarf_Line_s *, std::allocator<Dwarf_Line_s *> > *> > > *> >, std::__detail::_Select1st, std::equal_to<void *>, std::hash<void *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node\" but the destructor and whatever functions it calls do not free it.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 276,
+                    "event": "destructor",
+                    "message": "This is the destructor implementation.",
+                    "verbosity_level": 2
+                }
+            ]
+        },
+        {
+            "checker": "CTOR_DTOR_LEAK",
+            "cwe": 401,
+            "imp": 1,
+            "function": "std::_Hashtable<void *, std::pair<void * const, std::unordered_map<void *, Dwarf_Die, std::hash<void *>, std::equal_to<void *>, std::allocator<std::pair<void * const, Dwarf_Die> > > *>, std::allocator<std::pair<void * const, std::unordered_map<void *, Dwarf_Die, std::hash<void *>, std::equal_to<void *>, std::allocator<std::pair<void * const, Dwarf_Die> > > *> >, std::__detail::_Select1st, std::equal_to<void *>, std::hash<void *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<void * const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<void * const, std::unordered_map<void *, Dwarf_Die, std::hash<void *>, std::equal_to<void *>, std::allocator<std::pair<void * const, Dwarf_Die> > > *>, false> > > *, <std::piecewise_construct_t const &, std::tuple<void * const &>, std::tuple<>...> &&...)",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "alloc_fn",
+                    "message": "Calling allocation function \"_M_allocate_node\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "assign",
+                    "message": "Assigning: \"this->_M_node\" = \"__h->_M_allocate_node(std::forward(__args), std::forward(__args), std::forward(__args))\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "ctor_dtor_leak",
+                    "message": "The constructor allocates field \"_M_node\" of \"std::_Hashtable<void *, std::pair<void * const, std::unordered_map<void *, Dwarf_Die, std::hash<void *>, std::equal_to<void *>, std::allocator<std::pair<void * const, Dwarf_Die> > > *>, std::allocator<std::pair<void * const, std::unordered_map<void *, Dwarf_Die, std::hash<void *>, std::equal_to<void *>, std::allocator<std::pair<void * const, Dwarf_Die> > > *> >, std::__detail::_Select1st, std::equal_to<void *>, std::hash<void *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node\" but the destructor and whatever functions it calls do not free it.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 276,
+                    "event": "destructor",
+                    "message": "This is the destructor implementation.",
+                    "verbosity_level": 2
+                }
+            ]
+        },
+        {
+            "checker": "CTOR_DTOR_LEAK",
+            "cwe": 401,
+            "imp": 1,
+            "function": "std::_Hashtable<void *, std::pair<void * const, std::unordered_multimap<interned_string, Dwarf_Die, std::hash<interned_string>, std::equal_to<interned_string>, std::allocator<std::pair<interned_string const, Dwarf_Die> > > *>, std::allocator<std::pair<void * const, std::unordered_multimap<interned_string, Dwarf_Die, std::hash<interned_string>, std::equal_to<interned_string>, std::allocator<std::pair<interned_string const, Dwarf_Die> > > *> >, std::__detail::_Select1st, std::equal_to<void *>, std::hash<void *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<void * const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<void * const, std::unordered_multimap<interned_string, Dwarf_Die, std::hash<interned_string>, std::equal_to<interned_string>, std::allocator<std::pair<interned_string const, Dwarf_Die> > > *>, false> > > *, <std::piecewise_construct_t const &, std::tuple<void * const &>, std::tuple<>...> &&...)",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "alloc_fn",
+                    "message": "Calling allocation function \"_M_allocate_node\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "assign",
+                    "message": "Assigning: \"this->_M_node\" = \"__h->_M_allocate_node(std::forward(__args), std::forward(__args), std::forward(__args))\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "ctor_dtor_leak",
+                    "message": "The constructor allocates field \"_M_node\" of \"std::_Hashtable<void *, std::pair<void * const, std::unordered_multimap<interned_string, Dwarf_Die, std::hash<interned_string>, std::equal_to<interned_string>, std::allocator<std::pair<interned_string const, Dwarf_Die> > > *>, std::allocator<std::pair<void * const, std::unordered_multimap<interned_string, Dwarf_Die, std::hash<interned_string>, std::equal_to<interned_string>, std::allocator<std::pair<interned_string const, Dwarf_Die> > > *> >, std::__detail::_Select1st, std::equal_to<void *>, std::hash<void *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node\" but the destructor and whatever functions it calls do not free it.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 276,
+                    "event": "destructor",
+                    "message": "This is the destructor implementation.",
+                    "verbosity_level": 2
+                }
+            ]
+        },
+        {
+            "checker": "CTOR_DTOR_LEAK",
+            "cwe": 401,
+            "imp": 1,
+            "function": "std::_Hashtable<void *, std::pair<void * const, std::unordered_set<unsigned long, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<unsigned long> > *>, std::allocator<std::pair<void * const, std::unordered_set<unsigned long, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<unsigned long> > *> >, std::__detail::_Select1st, std::equal_to<void *>, std::hash<void *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<void * const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<void * const, std::unordered_set<unsigned long, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<unsigned long> > *>, false> > > *, <std::piecewise_construct_t const &, std::tuple<void * const &>, std::tuple<>...> &&...)",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "alloc_fn",
+                    "message": "Calling allocation function \"_M_allocate_node\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "assign",
+                    "message": "Assigning: \"this->_M_node\" = \"__h->_M_allocate_node(std::forward(__args), std::forward(__args), std::forward(__args))\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "ctor_dtor_leak",
+                    "message": "The constructor allocates field \"_M_node\" of \"std::_Hashtable<void *, std::pair<void * const, std::unordered_set<unsigned long, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<unsigned long> > *>, std::allocator<std::pair<void * const, std::unordered_set<unsigned long, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<unsigned long> > *> >, std::__detail::_Select1st, std::equal_to<void *>, std::hash<void *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node\" but the destructor and whatever functions it calls do not free it.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 276,
+                    "event": "destructor",
+                    "message": "This is the destructor implementation.",
+                    "verbosity_level": 2
+                }
+            ]
+        },
+        {
+            "checker": "CTOR_DTOR_LEAK",
+            "cwe": 401,
+            "imp": 1,
+            "function": "std::_Hashtable<void *, std::pair<void * const, std::vector<Dwarf_Die, std::allocator<Dwarf_Die> > *>, std::allocator<std::pair<void * const, std::vector<Dwarf_Die, std::allocator<Dwarf_Die> > *> >, std::__detail::_Select1st, std::equal_to<void *>, std::hash<void *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<void * const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<void * const, std::vector<Dwarf_Die, std::allocator<Dwarf_Die> > *>, false> > > *, <std::piecewise_construct_t const &, std::tuple<void * const &>, std::tuple<>...> &&...)",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "alloc_fn",
+                    "message": "Calling allocation function \"_M_allocate_node\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "assign",
+                    "message": "Assigning: \"this->_M_node\" = \"__h->_M_allocate_node(std::forward(__args), std::forward(__args), std::forward(__args))\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "ctor_dtor_leak",
+                    "message": "The constructor allocates field \"_M_node\" of \"std::_Hashtable<void *, std::pair<void * const, std::vector<Dwarf_Die, std::allocator<Dwarf_Die> > *>, std::allocator<std::pair<void * const, std::vector<Dwarf_Die, std::allocator<Dwarf_Die> > *> >, std::__detail::_Select1st, std::equal_to<void *>, std::hash<void *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node\" but the destructor and whatever functions it calls do not free it.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 276,
+                    "event": "destructor",
+                    "message": "This is the destructor implementation.",
+                    "verbosity_level": 2
+                }
+            ]
+        },
+        {
+            "checker": "CTOR_DTOR_LEAK",
+            "cwe": 401,
+            "imp": 1,
+            "function": "std::_Hashtable<void *, std::pair<void * const, std::vector<std::pair<Dwarf_Die, Dwarf_Die>, std::allocator<std::pair<Dwarf_Die, Dwarf_Die> > > *>, std::allocator<std::pair<void * const, std::vector<std::pair<Dwarf_Die, Dwarf_Die>, std::allocator<std::pair<Dwarf_Die, Dwarf_Die> > > *> >, std::__detail::_Select1st, std::equal_to<void *>, std::hash<void *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const &, std::tuple<void * const &>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<void * const, std::vector<std::pair<Dwarf_Die, Dwarf_Die>, std::allocator<std::pair<Dwarf_Die, Dwarf_Die> > > *>, false> > > *, <std::piecewise_construct_t const &, std::tuple<void * const &>, std::tuple<>...> &&...)",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "alloc_fn",
+                    "message": "Calling allocation function \"_M_allocate_node\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "assign",
+                    "message": "Assigning: \"this->_M_node\" = \"__h->_M_allocate_node(std::forward(__args), std::forward(__args), std::forward(__args))\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 272,
+                    "event": "ctor_dtor_leak",
+                    "message": "The constructor allocates field \"_M_node\" of \"std::_Hashtable<void *, std::pair<void * const, std::vector<std::pair<Dwarf_Die, Dwarf_Die>, std::allocator<std::pair<Dwarf_Die, Dwarf_Die> > > *>, std::allocator<std::pair<void * const, std::vector<std::pair<Dwarf_Die, Dwarf_Die>, std::allocator<std::pair<Dwarf_Die, Dwarf_Die> > > *> >, std::__detail::_Select1st, std::equal_to<void *>, std::hash<void *>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node\" but the destructor and whatever functions it calls do not free it.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/usr/include/c++/10/bits/hashtable.h",
+                    "line": 276,
+                    "event": "destructor",
+                    "message": "This is the destructor implementation.",
+                    "verbosity_level": 2
+                }
+            ]
+        }
+    ]
+}

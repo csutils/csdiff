@@ -215,6 +215,23 @@ class ToolPredicate: public IPredicate {
         }
 };
 
+class ImpLevelFilter: public AbstractFilter {
+    private:
+        const int minLevel_;
+
+    public:
+        ImpLevelFilter(AbstractWriter *agent, const int minLevel):
+            AbstractFilter(agent),
+            minLevel_(minLevel)
+        {
+        }
+
+    protected:
+        bool matchDef(const Defect &def) override {
+            return minLevel_ <= def.imp;
+        }
+};
+
 class KeyEventPredicate: public IPredicate {
     private:
         const RE re_;
@@ -526,7 +543,7 @@ bool chainFilters(
         return false;
     }
 
-    return true;
+    return chainDecoratorIntArg<ImpLevelFilter>(pEng, vm, "imp-level");
 }
 
 int main(int argc, char *argv[])
@@ -552,6 +569,7 @@ int main(int argc, char *argv[])
             ("tool",                po::value<string>(),        "defect matches if it was detected by tool that matches the given regex")
             ("annot",               po::value<string>(),        "defect matches if its annotation matches the given regex")
             ("src-annot",           po::value<string>(),        "defect matches if an annotation in the _source_ file matches the given regex")
+            ("imp-level",           po::value<int>(),           "defect matches if the importance level is greater or equal than the given number")
 
             ("drop-scan-props",                                 "do not propagate scan properties")
             ("embed-context,U",     po::value<int>(),           "embed a number of lines of context from the source file for the key event")
