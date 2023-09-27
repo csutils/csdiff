@@ -519,13 +519,14 @@ bool chainFilters(
     if (vm.count("invert-regex"))
         pf->setInvertEachMatch();
 
-    if (chainFiltersCore(pf, vm, flags))
-        return true;
+    if (!chainFiltersCore(pf, vm, flags)) {
+        // failed to create the chain of filters
+        delete pf;
+        *pEng = 0;
+        return false;
+    }
 
-    // failed to create the chain of filters
-    delete pf;
-    *pEng = 0;
-    return false;
+    return true;
 }
 
 int main(int argc, char *argv[])
