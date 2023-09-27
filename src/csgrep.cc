@@ -425,50 +425,6 @@ bool appendPredIfNeeded(
     return true;
 }
 
-template <typename TFlags>
-bool chainFiltersCore(
-        PredicateFilter                                 *pf,
-        const po::variables_map                         &vm,
-        const TFlags                                    flags)
-{
-    return appendPredIfNeeded<AnnotPredicate>     (pf, vm, flags, "annot")
-        && appendPredIfNeeded<CheckerPredicate>   (pf, vm, flags, "checker")
-        && appendPredIfNeeded<ErrorPredicate>     (pf, vm, flags, "error")
-        && appendPredIfNeeded<KeyEventPredicate>  (pf, vm, flags, "event")
-        && appendPredIfNeeded<MsgPredicate>       (pf, vm, flags, "msg")
-        && appendPredIfNeeded<PathPredicate>      (pf, vm, flags, "path")
-        && appendPredIfNeeded<SrcAnnotPredicate>  (pf, vm, flags, "src-annot")
-        && appendPredIfNeeded<ToolPredicate>      (pf, vm, flags, "tool");
-}
-
-bool chainFilters(
-        AbstractWriter                                  **pEng,
-        const po::variables_map                         &vm)
-{
-    // insert a filter predicate into the chain
-    PredicateFilter *pf = new PredicateFilter(*pEng);
-    *pEng = pf;
-
-    // common matching flags
-    boost::regex_constants::syntax_option_type flags = 0;
-    if (vm.count("ignore-case"))
-        flags |= boost::regex_constants::icase;
-
-    if (vm.count("invert-match"))
-        pf->setInvertMatch();
-
-    if (vm.count("invert-regex"))
-        pf->setInvertEachMatch();
-
-    if (chainFiltersCore(pf, vm, flags))
-        return true;
-
-    // failed to create the chain of filters
-    delete pf;
-    *pEng = 0;
-    return false;
-}
-
 template <class TDesc, class TStream>
 void printUsage(TStream &str, const TDesc &desc)
 {
@@ -526,6 +482,50 @@ bool chainDecoratorIntArg(
     // chain the decorator
     *pEng = new TDecorator(*pEng, val);
     return true;
+}
+
+template <typename TFlags>
+bool chainFiltersCore(
+        PredicateFilter                                 *pf,
+        const po::variables_map                         &vm,
+        const TFlags                                    flags)
+{
+    return appendPredIfNeeded<AnnotPredicate>     (pf, vm, flags, "annot")
+        && appendPredIfNeeded<CheckerPredicate>   (pf, vm, flags, "checker")
+        && appendPredIfNeeded<ErrorPredicate>     (pf, vm, flags, "error")
+        && appendPredIfNeeded<KeyEventPredicate>  (pf, vm, flags, "event")
+        && appendPredIfNeeded<MsgPredicate>       (pf, vm, flags, "msg")
+        && appendPredIfNeeded<PathPredicate>      (pf, vm, flags, "path")
+        && appendPredIfNeeded<SrcAnnotPredicate>  (pf, vm, flags, "src-annot")
+        && appendPredIfNeeded<ToolPredicate>      (pf, vm, flags, "tool");
+}
+
+bool chainFilters(
+        AbstractWriter                                  **pEng,
+        const po::variables_map                         &vm)
+{
+    // insert a filter predicate into the chain
+    PredicateFilter *pf = new PredicateFilter(*pEng);
+    *pEng = pf;
+
+    // common matching flags
+    boost::regex_constants::syntax_option_type flags = 0;
+    if (vm.count("ignore-case"))
+        flags |= boost::regex_constants::icase;
+
+    if (vm.count("invert-match"))
+        pf->setInvertMatch();
+
+    if (vm.count("invert-regex"))
+        pf->setInvertEachMatch();
+
+    if (chainFiltersCore(pf, vm, flags))
+        return true;
+
+    // failed to create the chain of filters
+    delete pf;
+    *pEng = 0;
+    return false;
 }
 
 int main(int argc, char *argv[])
