@@ -1,0 +1,195 @@
+{
+    "scan": {
+        "analyzer-version-coverity": "2023.6.1",
+        "cov-compilation-unit-count": 4,
+        "cov-compilation-unit-ratio": 100,
+        "cov-lines-processed": 21739,
+        "cov-time-elapsed-analysis": "00:00:16",
+        "enabled-plugins": "coverity",
+        "exit-code": 0,
+        "host": "f38",
+        "known-false-positives": "/usr/share/csmock/known-false-positives.js",
+        "mock-config": "rhel-9-x86_64",
+        "project-name": "units-2.22-5.fc40",
+        "store-results-to": "/tmp/units-2.22-5.fc40.tar.xz",
+        "time-created": "2023-10-07 12:59:19",
+        "time-finished": "2023-10-07 13:01:50",
+        "tool": "csmock",
+        "tool-args": "'/usr/bin/csmock' '-r' 'rhel-9-x86_64' '-f' '/home/kdudka/fedora/units/units-2.22-5.fc40.src.rpm' '-t' 'coverity'",
+        "tool-version": "csmock-3.4.2.20231007.124455.gac2e01e.limit_results-1.fc38"
+    },
+    "defects": [
+        {
+            "checker": "FORWARD_NULL",
+            "cwe": 476,
+            "function": "processargs",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4988,
+                    "event": "error[too-many]",
+                    "message": "1 occurrences of var_deref_model exceeded the specified limit 1",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4988,
+                    "event": "note",
+                    "message": "0 occurrences of var_deref_model were discarded because of this",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "FORWARD_NULL",
+            "cwe": 476,
+            "function": "processargs",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5058,
+                    "event": "error[too-many]",
+                    "message": "3 occurrences of var_deref_op exceeded the specified limit 1",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5058,
+                    "event": "note",
+                    "message": "2 occurrences of var_deref_op were discarded because of this",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "OVERRUN",
+            "cwe": 119,
+            "imp": 1,
+            "function": "findhome",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4600,
+                    "event": "error[too-many]",
+                    "message": "2 occurrences of alloc_strlen exceeded the specified limit 1",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4600,
+                    "event": "note",
+                    "message": "1 occurrences of alloc_strlen were discarded because of this",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "RESOURCE_LEAK",
+            "cwe": 772,
+            "imp": 1,
+            "function": "screensize",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 3811,
+                    "event": "error[too-many]",
+                    "message": "1 occurrences of leaked_handle exceeded the specified limit 1",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 3811,
+                    "event": "note",
+                    "message": "0 occurrences of leaked_handle were discarded because of this",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "RESOURCE_LEAK",
+            "cwe": 772,
+            "imp": 1,
+            "function": "printversion",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4786,
+                    "event": "error[too-many]",
+                    "message": "2 occurrences of leaked_storage exceeded the specified limit 1",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4786,
+                    "event": "note",
+                    "message": "1 occurrences of leaked_storage were discarded because of this",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "TOCTOU",
+            "cwe": 367,
+            "function": "openfile",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 402,
+                    "event": "error[too-many]",
+                    "message": "1 occurrences of fs_check_call exceeded the specified limit 1",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 402,
+                    "event": "note",
+                    "message": "0 occurrences of fs_check_call were discarded because of this",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "cwe": 457,
+            "imp": 1,
+            "function": "fgetslong",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 550,
+                    "event": "error[too-many]",
+                    "message": "1 occurrences of uninit_use_in_call exceeded the specified limit 1",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 550,
+                    "event": "note",
+                    "message": "0 occurrences of uninit_use_in_call were discarded because of this",
+                    "verbosity_level": 1
+                }
+            ]
+        }
+    ]
+}

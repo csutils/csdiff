@@ -249,6 +249,7 @@ bool RateLimitter::matchDef(const Defect &def)
         evt.msg.clear();
 
         Defect defProto = def;
+        defProto.keyEventIdx = 0U;
         defProto.events.clear();
         defProto.events.push_back(std::move(evt));
         d->errors.push(std::move(defProto));

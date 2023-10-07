@@ -1,0 +1,1826 @@
+{
+    "scan": {
+        "analyzer-version-coverity": "2023.6.1",
+        "cov-compilation-unit-count": 4,
+        "cov-compilation-unit-ratio": 100,
+        "cov-lines-processed": 21739,
+        "cov-time-elapsed-analysis": "00:00:16",
+        "enabled-plugins": "coverity",
+        "exit-code": 0,
+        "host": "f38",
+        "known-false-positives": "/usr/share/csmock/known-false-positives.js",
+        "mock-config": "rhel-9-x86_64",
+        "project-name": "units-2.22-5.fc40",
+        "store-results-to": "/tmp/units-2.22-5.fc40.tar.xz",
+        "time-created": "2023-10-07 12:59:19",
+        "time-finished": "2023-10-07 13:01:50",
+        "tool": "csmock",
+        "tool-args": "'/usr/bin/csmock' '-r' 'rhel-9-x86_64' '-f' '/home/kdudka/fedora/units/units-2.22-5.fc40.src.rpm' '-t' 'coverity'",
+        "tool-version": "csmock-3.4.2.20231007.124455.gac2e01e.limit_results-1.fc38"
+    },
+    "defects": [
+        {
+            "checker": "FORWARD_NULL",
+            "cwe": 476,
+            "function": "processargs",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 24,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4969,
+                    "event": "path",
+                    "message": "Condition \"-1 != (optchar = getopt_long(argc, argv, shortoptions, longoptions, &optindex))\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4972,
+                    "event": "path",
+                    "message": "Switch case value \"109\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4975,
+                    "event": "path",
+                    "message": "Breaking from switch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5078,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4969,
+                    "event": "path",
+                    "message": "Condition \"-1 != (optchar = getopt_long(argc, argv, shortoptions, longoptions, &optindex))\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4972,
+                    "event": "path",
+                    "message": "Switch case value \"100\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4988,
+                    "event": "path",
+                    "message": "Condition \"checksigdigits(optarg) < 0\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4992,
+                    "event": "path",
+                    "message": "Breaking from switch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5078,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4969,
+                    "event": "path",
+                    "message": "Condition \"-1 != (optchar = getopt_long(argc, argv, shortoptions, longoptions, &optindex))\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4972,
+                    "event": "path",
+                    "message": "Switch case value \"102\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5005,
+                    "event": "path",
+                    "message": "Condition \"unitsfiles[ind]\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5005,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5005,
+                    "event": "path",
+                    "message": "Condition \"unitsfiles[ind]\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5005,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5005,
+                    "event": "path",
+                    "message": "Condition \"unitsfiles[ind]\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5006,
+                    "event": "path",
+                    "message": "Condition \"ind == 25\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5011,
+                    "event": "path",
+                    "message": "Condition \"optarg\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5011,
+                    "event": "var_compare_op",
+                    "message": "Comparing \"optarg\" to null implies that \"optarg\" might be null.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5015,
+                    "event": "path",
+                    "message": "Condition \"!unitsfiles[ind]\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5019,
+                    "event": "path",
+                    "message": "Breaking from switch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5078,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4969,
+                    "event": "path",
+                    "message": "Condition \"-1 != (optchar = getopt_long(argc, argv, shortoptions, longoptions, &optindex))\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4972,
+                    "event": "path",
+                    "message": "Switch case value \"100\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4988,
+                    "event": "var_deref_model",
+                    "message": "Passing null pointer \"optarg\" to \"checksigdigits\", which dereferences it.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 4986|            /* numeric output format */",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 4987|            case 'd':",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 4988|->             if (checksigdigits(optarg) < 0)",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 4989|                 exit(EXIT_FAILURE);",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 4990|               else    /* ignore anything given with 'o' option */",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "FORWARD_NULL",
+            "cwe": 476,
+            "function": "processargs",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 37,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4969,
+                    "event": "path",
+                    "message": "Condition \"-1 != (optchar = getopt_long(argc, argv, shortoptions, longoptions, &optindex))\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4972,
+                    "event": "path",
+                    "message": "Switch case value \"109\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4975,
+                    "event": "path",
+                    "message": "Breaking from switch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5078,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4969,
+                    "event": "path",
+                    "message": "Condition \"-1 != (optchar = getopt_long(argc, argv, shortoptions, longoptions, &optindex))\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4972,
+                    "event": "path",
+                    "message": "Switch case value \"100\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4988,
+                    "event": "path",
+                    "message": "Condition \"checksigdigits(optarg) < 0\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4992,
+                    "event": "path",
+                    "message": "Breaking from switch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5078,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4969,
+                    "event": "path",
+                    "message": "Condition \"-1 != (optchar = getopt_long(argc, argv, shortoptions, longoptions, &optindex))\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4972,
+                    "event": "path",
+                    "message": "Switch case value \"102\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5005,
+                    "event": "path",
+                    "message": "Condition \"unitsfiles[ind]\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5005,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5005,
+                    "event": "path",
+                    "message": "Condition \"unitsfiles[ind]\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5005,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5005,
+                    "event": "path",
+                    "message": "Condition \"unitsfiles[ind]\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5006,
+                    "event": "path",
+                    "message": "Condition \"ind == 25\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5011,
+                    "event": "path",
+                    "message": "Condition \"optarg\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5011,
+                    "event": "var_compare_op",
+                    "message": "Comparing \"optarg\" to null implies that \"optarg\" might be null.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5015,
+                    "event": "path",
+                    "message": "Condition \"!unitsfiles[ind]\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5019,
+                    "event": "path",
+                    "message": "Breaking from switch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5078,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4969,
+                    "event": "path",
+                    "message": "Condition \"-1 != (optchar = getopt_long(argc, argv, shortoptions, longoptions, &optindex))\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4972,
+                    "event": "path",
+                    "message": "Switch case value \"76\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5022,
+                    "event": "path",
+                    "message": "Breaking from switch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5078,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4969,
+                    "event": "path",
+                    "message": "Condition \"-1 != (optchar = getopt_long(argc, argv, shortoptions, longoptions, &optindex))\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4972,
+                    "event": "path",
+                    "message": "Switch case value \"108\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5025,
+                    "event": "path",
+                    "message": "Breaking from switch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5078,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4969,
+                    "event": "path",
+                    "message": "Condition \"-1 != (optchar = getopt_long(argc, argv, shortoptions, longoptions, &optindex))\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4972,
+                    "event": "path",
+                    "message": "Switch case value \"73\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5051,
+                    "event": "path",
+                    "message": "Breaking from switch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5078,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4969,
+                    "event": "path",
+                    "message": "Condition \"-1 != (optchar = getopt_long(argc, argv, shortoptions, longoptions, &optindex))\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4972,
+                    "event": "path",
+                    "message": "Switch case value \"117\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5057,
+                    "event": "alias_transfer",
+                    "message": "Assigning: \"unitsys\" = \"optarg\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5058,
+                    "event": "var_deref_op",
+                    "message": "Dereferencing null pointer \"unitsys\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 5056|            case 'u':",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 5057|               unitsys = optarg;",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 5058|->             for(ind=0;unitsys[ind];ind++)",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 5059|                 unitsys[ind] = tolower(unitsys[ind]);",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 5060|               break;",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "FORWARD_NULL",
+            "cwe": 476,
+            "function": "processargs",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 36,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4969,
+                    "event": "path",
+                    "message": "Condition \"-1 != (optchar = getopt_long(argc, argv, shortoptions, longoptions, &optindex))\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4972,
+                    "event": "path",
+                    "message": "Switch case value \"109\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4975,
+                    "event": "path",
+                    "message": "Breaking from switch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5078,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4969,
+                    "event": "path",
+                    "message": "Condition \"-1 != (optchar = getopt_long(argc, argv, shortoptions, longoptions, &optindex))\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4972,
+                    "event": "path",
+                    "message": "Switch case value \"100\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4988,
+                    "event": "path",
+                    "message": "Condition \"checksigdigits(optarg) < 0\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4992,
+                    "event": "path",
+                    "message": "Breaking from switch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5078,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4969,
+                    "event": "path",
+                    "message": "Condition \"-1 != (optchar = getopt_long(argc, argv, shortoptions, longoptions, &optindex))\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4972,
+                    "event": "path",
+                    "message": "Switch case value \"102\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5005,
+                    "event": "path",
+                    "message": "Condition \"unitsfiles[ind]\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5005,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5005,
+                    "event": "path",
+                    "message": "Condition \"unitsfiles[ind]\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5005,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5005,
+                    "event": "path",
+                    "message": "Condition \"unitsfiles[ind]\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5006,
+                    "event": "path",
+                    "message": "Condition \"ind == 25\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5011,
+                    "event": "path",
+                    "message": "Condition \"optarg\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5011,
+                    "event": "var_compare_op",
+                    "message": "Comparing \"optarg\" to null implies that \"optarg\" might be null.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5015,
+                    "event": "path",
+                    "message": "Condition \"!unitsfiles[ind]\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5019,
+                    "event": "path",
+                    "message": "Breaking from switch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5078,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4969,
+                    "event": "path",
+                    "message": "Condition \"-1 != (optchar = getopt_long(argc, argv, shortoptions, longoptions, &optindex))\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4972,
+                    "event": "path",
+                    "message": "Switch case value \"76\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5022,
+                    "event": "path",
+                    "message": "Breaking from switch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5078,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4969,
+                    "event": "path",
+                    "message": "Condition \"-1 != (optchar = getopt_long(argc, argv, shortoptions, longoptions, &optindex))\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4972,
+                    "event": "path",
+                    "message": "Switch case value \"108\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5025,
+                    "event": "path",
+                    "message": "Breaking from switch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5078,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4969,
+                    "event": "path",
+                    "message": "Condition \"-1 != (optchar = getopt_long(argc, argv, shortoptions, longoptions, &optindex))\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4972,
+                    "event": "path",
+                    "message": "Switch case value \"73\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5051,
+                    "event": "path",
+                    "message": "Breaking from switch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5078,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4969,
+                    "event": "path",
+                    "message": "Condition \"-1 != (optchar = getopt_long(argc, argv, shortoptions, longoptions, &optindex))\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4972,
+                    "event": "path",
+                    "message": "Switch case value \"72\".",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5066,
+                    "event": "var_deref_op",
+                    "message": "Dereferencing null pointer \"optarg\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 5064|   #ifdef READLINE     ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 5065|            case 'H':",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 5066|->            if (emptystr(optarg))",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 5067|                 historyfile=NULL;",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 5068|               else",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "FORWARD_NULL",
+            "cwe": 476,
+            "function": "showunitlist",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 18,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5449,
+                    "event": "path",
+                    "message": "Condition \"have->factor < 0\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5450,
+                    "event": "assign_zero",
+                    "message": "Assigning: \"lastunitstr\" = \"NULL\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5454,
+                    "event": "path",
+                    "message": "Condition \"flags.round\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5456,
+                    "event": "path",
+                    "message": "Condition \"*(wantstr + strlen(wantstr) - 1) == ';'\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5458,
+                    "event": "path",
+                    "message": "Condition \"lastwantstr = strrchr(wantstr, 59)\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5462,
+                    "event": "path",
+                    "message": "Condition \"wantstr\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5463,
+                    "event": "path",
+                    "message": "Condition \"nextunitstr = strchr(wantstr, 59)\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5471,
+                    "event": "path",
+                    "message": "Condition \"*wantstr == 0\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5474,
+                    "event": "path",
+                    "message": "Condition \"processunit(&want, wantstr, -1)\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5479,
+                    "event": "path",
+                    "message": "Condition \"firstunit\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5483,
+                    "event": "path",
+                    "message": "Condition \"compareunits(have, &want, ignore_dimless)\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5490,
+                    "event": "path",
+                    "message": "Condition \"flags.round\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5492,
+                    "event": "path",
+                    "message": "Condition \"lastwantstr\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5506,
+                    "event": "path",
+                    "message": "Condition \"flags.verbose == 2\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5509,
+                    "event": "path",
+                    "message": "Falling through to end of if statement.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5513,
+                    "event": "path",
+                    "message": "Condition \"0 == (sigdigits = getsigdigits(have->factor, remainder, 10))\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5514,
+                    "event": "path",
+                    "message": "Breaking from loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5575,
+                    "event": "path",
+                    "message": "Condition \"!value_shown\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 5577,
+                    "event": "var_deref_op",
+                    "message": "Dereferencing null pointer \"lastunitstr\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 5575|     if (!value_shown) {  /* provide output if every value rounded to zero */",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 5576|       logputs(\"0 \");",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 5577|->     if (isdecimal(*lastunitstr))",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 5578|         logputs(\"* \");",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 5579|       logputs(lastunitstr);",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "OVERRUN",
+            "cwe": 119,
+            "imp": 1,
+            "function": "findhome",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 3,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4598,
+                    "event": "path",
+                    "message": "Condition \"homedir\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4598,
+                    "event": "path",
+                    "message": "Condition \"*homedir\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4599,
+                    "event": "path",
+                    "message": "Condition \"stat(homedir, &statbuf) != 0\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4600,
+                    "event": "alloc_strlen",
+                    "message": "Allocating insufficient memory for the terminating null of the string.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4602,
+                    "event": "path",
+                    "message": "Falling through to end of if statement.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4607,
+                    "event": "path",
+                    "message": "Condition \"!allocated\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 4598|     if (nonempty(homedir)) {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 4599|       if (stat(homedir, &statbuf) != 0) {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 4600|->       *errmsg = malloc(strlen(notfound)+strlen(homedir));",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 4601|         sprintf(*errmsg, notfound, homedir);",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 4602|       }",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "OVERRUN",
+            "cwe": 119,
+            "imp": 1,
+            "function": "findhome",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 4,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4598,
+                    "event": "path",
+                    "message": "Condition \"homedir\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4598,
+                    "event": "path",
+                    "message": "Condition \"*homedir\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4599,
+                    "event": "path",
+                    "message": "Condition \"stat(homedir, &statbuf) != 0\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4603,
+                    "event": "path",
+                    "message": "Condition \"!(statbuf.st_mode & 16384)\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4604,
+                    "event": "alloc_strlen",
+                    "message": "Allocating insufficient memory for the terminating null of the string.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4607,
+                    "event": "path",
+                    "message": "Condition \"!allocated\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 4602|       }",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 4603|       else if (!(statbuf.st_mode & S_IFDIR)) {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 4604|->       *errmsg = malloc(strlen(notadir)+strlen(homedir));",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 4605|         sprintf(*errmsg, notadir, homedir);",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 4606|       }",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "RESOURCE_LEAK",
+            "cwe": 772,
+            "imp": 1,
+            "function": "screensize",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 5,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 3806,
+                    "event": "open_fn",
+                    "message": "Returning handle opened by \"open\". [Note: The source code implementation of the function has been overridden by a user model.]",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 3806,
+                    "event": "var_assign",
+                    "message": "Assigning: \"fd\" = handle returned from \"open(\"/dev/tty\", 2)\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 3807,
+                    "event": "path",
+                    "message": "Condition \"fd >= 0\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 3807,
+                    "event": "noescape",
+                    "message": "Resource \"fd\" is not freed or pointed-to in \"ioctl\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 3807,
+                    "event": "path",
+                    "message": "Condition \"ioctl(fd, 21523, &ws) == 0\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 3811,
+                    "event": "leaked_handle",
+                    "message": "Handle variable \"fd\" going out of scope leaks the handle.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 3809|   #endif",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 3810|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 3811|->    return lines;",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 3812|   }",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 3813|   ",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "RESOURCE_LEAK",
+            "cwe": 772,
+            "imp": 1,
+            "function": "printversion",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 4,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4773,
+                    "event": "path",
+                    "message": "Condition \"flags.verbose == 0\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4784,
+                    "event": "path",
+                    "message": "Condition \"flags.verbose == 2\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4785,
+                    "event": "path",
+                    "message": "Condition \"!fullprogname\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4786,
+                    "event": "alloc_fn",
+                    "message": "Storage is returned from allocation function \"getprogdir\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4786,
+                    "event": "leaked_storage",
+                    "message": "Ignoring storage allocated by \"getprogdir(progname, &fullprogname)\" leaks it.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 4784|     if (flags.verbose == 2) {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 4785|       if (!fullprogname)",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 4786|->       getprogdir(progname, &fullprogname);",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 4787|       if (fullprogname)",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 4788|         printf(\"\\n%s program is %s\\n\", progname, fullprogname);",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "RESOURCE_LEAK",
+            "cwe": 772,
+            "imp": 1,
+            "function": "printversion",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 34,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4773,
+                    "event": "path",
+                    "message": "Condition \"flags.verbose == 0\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4784,
+                    "event": "path",
+                    "message": "Condition \"flags.verbose == 2\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4785,
+                    "event": "path",
+                    "message": "Condition \"!fullprogname\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4787,
+                    "event": "path",
+                    "message": "Condition \"fullprogname\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4794,
+                    "event": "path",
+                    "message": "Condition \"isfullpath(\"/usr/share/units/definitions.units\")\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4795,
+                    "event": "path",
+                    "message": "Falling through to end of if statement.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4799,
+                    "event": "path",
+                    "message": "Condition \"flags.verbose < 2\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4802,
+                    "event": "path",
+                    "message": "Condition \"flags.verbose == 2\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4804,
+                    "event": "path",
+                    "message": "Condition \"u_unitsfile\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4805,
+                    "event": "path",
+                    "message": "Falling through to end of if statement.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4811,
+                    "event": "path",
+                    "message": "Condition \"unitsfiles[0]\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4813,
+                    "event": "path",
+                    "message": "Condition \"!isfullpath(\"/usr/share/units/definitions.units\")\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4817,
+                    "event": "path",
+                    "message": "Falling through to end of if statement.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4824,
+                    "event": "path",
+                    "message": "Condition \"homedir_error\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4825,
+                    "event": "path",
+                    "message": "Falling through to end of if statement.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4831,
+                    "event": "path",
+                    "message": "Condition \"flags.verbose == 2\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4834,
+                    "event": "path",
+                    "message": "Condition \"m_unitsfile\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4837,
+                    "event": "path",
+                    "message": "Falling through to end of if statement.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4841,
+                    "event": "alloc_fn",
+                    "message": "Storage is returned from allocation function \"personalfile\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4841,
+                    "event": "var_assign",
+                    "message": "Assigning: \"p_unitsfile\" = storage returned from \"personalfile(\"MYUNITSFILE\", homeunitsfile, 1, &exists)\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4842,
+                    "event": "path",
+                    "message": "Condition \"p_unitsfile\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4843,
+                    "event": "noescape",
+                    "message": "Resource \"p_unitsfile\" is not freed or pointed-to in \"printf\". [Note: The source code implementation of the function has been overridden by a builtin model.]",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4844,
+                    "event": "path",
+                    "message": "Condition \"!exists\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4845,
+                    "event": "path",
+                    "message": "Condition \"homedir_error\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4845,
+                    "event": "path",
+                    "message": "Condition \"m_unitsfile\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4845,
+                    "event": "path",
+                    "message": "Condition \"*m_unitsfile\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4846,
+                    "event": "path",
+                    "message": "Falling through to end of if statement.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4852,
+                    "event": "path",
+                    "message": "Falling through to end of if statement.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4857,
+                    "event": "path",
+                    "message": "Condition \"flags.verbose == 2\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4859,
+                    "event": "path",
+                    "message": "Condition \"historyfile\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4862,
+                    "event": "path",
+                    "message": "Condition \"!histfile\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4863,
+                    "event": "path",
+                    "message": "Condition \"homedir_error\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4864,
+                    "event": "path",
+                    "message": "Falling through to end of if statement.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4867,
+                    "event": "path",
+                    "message": "Falling through to end of if statement.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 4900,
+                    "event": "leaked_storage",
+                    "message": "Variable \"p_unitsfile\" going out of scope leaks the storage it points to.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 4898|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 4899|     printf(\"\\n%s\\n\\n\", LICENSE);",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 4900|-> }",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 4901|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 4902|   void",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "TOCTOU",
+            "cwe": 367,
+            "function": "openfile",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 402,
+                    "event": "fs_check_call",
+                    "message": "Calling function \"stat\" to perform check on \"file\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 402,
+                    "event": "path",
+                    "message": "Condition \"stat(file, &statbuf) == 0\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 402,
+                    "event": "path",
+                    "message": "Condition \"statbuf.st_mode & 16384\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 406,
+                    "event": "toctou",
+                    "message": "Calling function \"fopen\" that uses \"file\" after a check function. This can cause a time-of-check, time-of-use race condition.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  400|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  401|     struct stat statbuf;",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  402|->   if (stat(file, &statbuf)==0 && statbuf.st_mode & S_IFDIR){",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  403|       errno=EISDIR;",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  404|       return NULL;",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "UNINIT",
+            "cwe": 457,
+            "imp": 1,
+            "function": "fgetslong",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 4,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 546,
+                    "event": "var_decl",
+                    "message": "Declaring variable \"dummy\" without initializer.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 547,
+                    "event": "path",
+                    "message": "Condition \"!count\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 548,
+                    "event": "assign",
+                    "message": "Assigning: \"count\" = \"&dummy\", which points to uninitialized data.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 549,
+                    "event": "path",
+                    "message": "Condition \"!*bufsize\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
+                    "line": 550,
+                    "event": "uninit_use_in_call",
+                    "message": "Using uninitialized value \"*count\" when calling \"fgetscont\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  548|       count = &dummy;",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  549|     if (!*bufsize) growbuffer(buf,bufsize);",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  550|->   if (!fgetscont(*buf, *bufsize, file, count))",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  551|       return 0;",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  552|     while (lastchar(*buf) != '\\n' && !feof(file)){",
+                    "verbosity_level": 1
+                }
+            ]
+        }
+    ]
+}
