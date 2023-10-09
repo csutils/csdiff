@@ -1,0 +1,79 @@
+Error: COMPILER_WARNING:
+Python-3.12.0/Modules/_io/bufferedio.c: scope_hint: In function ‘_io_BufferedRandom___init__’
+Python-3.12.0/Modules/_io/bufferedio.c:2692:1: warning[-Wmissing-profile]: ‘/builddir/build/BUILD/Python-3.12.0/build/optimized/bufferedio.gcda’ profile count data file not found
+# 2690|                 Py_TPFLAGS_IMMUTABLETYPE),
+# 2691|       .slots = bufferedrandom_slots,
+# 2692|-> };
+
+Error: COMPILER_WARNING:
+Python-3.12.0/Modules/_testcapi/exceptions.c: scope_hint: In function ‘_PyTestCapi_Init_Exceptions’
+Python-3.12.0/Modules/_testcapi/exceptions.c:414:1: warning[-Wmissing-profile]: ‘/builddir/build/BUILD/Python-3.12.0/build/optimized/exceptions.gcda’ profile count data file not found
+#  412|   
+#  413|       return 0;
+#  414|-> }
+
+Error: COMPILER_WARNING:
+Python-3.12.0/Modules/_tkinter.c: scope_hint: In function ‘PyInit__tkinter’
+Python-3.12.0/Modules/_tkinter.c:3361:1: warning[-Wmissing-profile]: ‘/builddir/build/BUILD/Python-3.12.0/build/optimized/_tkinter.gcda’ profile count data file not found
+# 3359|   
+# 3360|       return m;
+# 3361|-> }
+
+Error: COMPILER_WARNING:
+Python-3.12.0/Modules/cjkcodecs/multibytecodec.c: scope_hint: In function ‘PyInit__multibytecodec’
+Python-3.12.0/Modules/cjkcodecs/multibytecodec.c:2084:1: warning[-Wmissing-profile]: ‘/builddir/build/BUILD/Python-3.12.0/build/optimized/multibytecodec.gcda’ profile count data file not found
+# 2082|   {
+# 2083|       return PyModuleDef_Init(&_multibytecodecmodule);
+# 2084|-> }
+
+Error: COMPILER_WARNING:
+Python-3.12.0/Objects/codeobject.c: scope_hint: In function ‘_Py_MakeShimCode’
+Python-3.12.0/Objects/codeobject.c:2400:1: warning[-Wmissing-profile]: ‘/builddir/build/BUILD/Python-3.12.0/build/optimized/codeobject.gcda’ profile count data file not found
+# 2398|       Py_XDECREF(lines);
+# 2399|       return codeobj;
+# 2400|-> }
+
+Error: COMPILER_WARNING:
+Python-3.12.0/Objects/exceptions.c: scope_hint: In function ‘_PyException_AddNote’
+Python-3.12.0/Objects/exceptions.c:3844:1: warning[-Wmissing-profile]: ‘/builddir/build/BUILD/Python-3.12.0/build/optimized/exceptions.gcda’ profile count data file not found
+# 3842|       Py_XDECREF(r);
+# 3843|       return res;
+# 3844|-> }
+# 3845|   
+
+Error: COMPILER_WARNING:
+Python-3.12.0/Python/_warnings.c: scope_hint: In function ‘_PyWarnings_Fini’
+Python-3.12.0/Python/_warnings.c:1481:1: warning[-Wmissing-profile]: ‘/builddir/build/BUILD/Python-3.12.0/build/optimized/_warnings.gcda’ profile count data file not found
+# 1479|   {
+# 1480|       warnings_clear_state(&interp->warnings);
+# 1481|-> }
+
+Error: COMPILER_WARNING:
+Python-3.12.0/Python/errors.c: scope_hint: In function ‘PyErr_ProgramTextObject’
+Python-3.12.0/Python/errors.c:1951:1: warning[-Wmissing-profile]: ‘/builddir/build/BUILD/Python-3.12.0/build/optimized/errors.gcda’ profile count data file not found
+# 1949|   {
+# 1950|       return _PyErr_ProgramDecodedTextObject(filename, lineno, NULL);
+# 1951|-> }
+# 1952|   
+# 1953|   #ifdef __cplusplus
+
+Error: COMPILER_WARNING:
+Python-3.12.0/Python/flowgraph.c: scope_hint: In function ‘_PyCfg_OptimizeCodeUnit’
+Python-3.12.0/Python/flowgraph.c:2218:1: warning[-Wmissing-profile]: ‘/builddir/build/BUILD/Python-3.12.0/build/optimized/flowgraph.gcda’ profile count data file not found
+# 2216|       RETURN_IF_ERROR(resolve_line_numbers(g, firstlineno));
+# 2217|       return SUCCESS;
+# 2218|-> }
+
+Error: COMPILER_WARNING:
+Python-3.12.0/Python/hamt.c: scope_hint: In function ‘hamt_py_keys’
+Python-3.12.0/Python/hamt.c:2894:1: warning[-Wmissing-profile]: ‘/builddir/build/BUILD/Python-3.12.0/build/optimized/hamt.gcda’ profile count data file not found
+# 2892|       .tp_free = PyObject_GC_Del,
+# 2893|       .tp_hash = PyObject_HashNotImplemented,
+# 2894|-> };
+
+Error: COMPILER_WARNING:
+Python-3.12.0/Python/sysmodule.c: scope_hint: In function ‘PySys_FormatStderr’
+Python-3.12.0/Python/sysmodule.c:3892:1: warning[-Wmissing-profile]: ‘/builddir/build/BUILD/Python-3.12.0/build/optimized/sysmodule.gcda’ profile count data file not found
+# 3890|       sys_format(&_Py_ID(stderr), stderr, format, va);
+# 3891|       va_end(va);
+# 3892|-> }
