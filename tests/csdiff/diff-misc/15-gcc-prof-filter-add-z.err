@@ -1,0 +1,1678 @@
+Error: CLANG_WARNING:
+Python-3.12.0rc3/Objects/listobject.c:3: included_from: Included from here.
+Python-3.12.0rc3/Include/Python.h:60: included_from: Included from here.
+Python-3.12.0rc3/Include/listobject.h:45: included_from: Included from here.
+Python-3.12.0rc3/Include/cpython/listobject.h:44:26: warning[core.NullDereference]: Array access (via field 'ob_item') results in a null pointer dereference
+Python-3.12.0rc3/Objects/listobject.c:2804:10: note: Assuming 'kwnames' is equal to null
+Python-3.12.0rc3/Include/cpython/modsupport.h:33:6: note: expanded from macro '_PyArg_NoKwnames'
+Python-3.12.0rc3/Objects/listobject.c:2804:10: note: Left side of '||' is true
+Python-3.12.0rc3/Include/cpython/modsupport.h:33:24: note: expanded from macro '_PyArg_NoKwnames'
+Python-3.12.0rc3/Objects/listobject.c:2804:5: note: Taking false branch
+Python-3.12.0rc3/Objects/listobject.c:2808:10: note: 1 is not equal to 9223372036854775807
+Python-3.12.0rc3/Include/cpython/modsupport.h:43:8: note: expanded from macro '_PyArg_CheckPositional'
+Python-3.12.0rc3/Include/cpython/modsupport.h:37:29: note: expanded from macro '_Py_ANY_VARARGS'
+Python-3.12.0rc3/Objects/listobject.c:2808:10: note: Left side of '&&' is true
+Python-3.12.0rc3/Include/cpython/modsupport.h:43:7: note: expanded from macro '_PyArg_CheckPositional'
+Python-3.12.0rc3/Objects/listobject.c:2808:10: note: Assuming 'nargs' is >= 0
+Python-3.12.0rc3/Include/cpython/modsupport.h:43:32: note: expanded from macro '_PyArg_CheckPositional'
+Python-3.12.0rc3/Objects/listobject.c:2808:10: note: Left side of '&&' is true
+Python-3.12.0rc3/Include/cpython/modsupport.h:43:7: note: expanded from macro '_PyArg_CheckPositional'
+Python-3.12.0rc3/Objects/listobject.c:2808:10: note: Assuming 'nargs' is <= 1
+Python-3.12.0rc3/Include/cpython/modsupport.h:43:52: note: expanded from macro '_PyArg_CheckPositional'
+Python-3.12.0rc3/Objects/listobject.c:2808:10: note: Left side of '||' is true
+Python-3.12.0rc3/Include/cpython/modsupport.h:44:6: note: expanded from macro '_PyArg_CheckPositional'
+Python-3.12.0rc3/Objects/listobject.c:2808:5: note: Taking false branch
+Python-3.12.0rc3/Objects/listobject.c:2813:9: note: Assuming 'list' is not equal to NULL
+Python-3.12.0rc3/Objects/listobject.c:2813:5: note: Taking false branch
+Python-3.12.0rc3/Objects/listobject.c:2816:9: note: Assuming 'nargs' is not equal to 0
+Python-3.12.0rc3/Objects/listobject.c:2816:5: note: Taking true branch
+Python-3.12.0rc3/Objects/listobject.c:2817:13: note: Calling 'list___init___impl'
+Python-3.12.0rc3/Objects/listobject.c:2788:9: note: Assuming field 'ob_item' is equal to NULL
+Python-3.12.0rc3/Objects/listobject.c:2788:5: note: Taking false branch
+Python-3.12.0rc3/Objects/listobject.c:2791:9: note: Assuming 'iterable' is not equal to NULL
+Python-3.12.0rc3/Objects/listobject.c:2791:5: note: Taking true branch
+Python-3.12.0rc3/Objects/listobject.c:2792:24: note: Calling 'list_extend'
+Python-3.12.0rc3/Objects/listobject.c:870:9: note: Assuming the condition is false
+Python-3.12.0rc3/Include/listobject.h:26:31: note: expanded from macro 'PyList_CheckExact'
+Python-3.12.0rc3/Include/object.h:254:32: note: expanded from macro 'Py_IS_TYPE'
+Python-3.12.0rc3/Objects/listobject.c:870:9: note: Left side of '||' is false
+Python-3.12.0rc3/Include/listobject.h:26:31: note: expanded from macro 'PyList_CheckExact'
+Python-3.12.0rc3/Include/object.h:254:32: note: expanded from macro 'Py_IS_TYPE'
+Python-3.12.0rc3/Objects/listobject.c:870:40: note: Assuming the condition is false
+Python-3.12.0rc3/Include/tupleobject.h:28:32: note: expanded from macro 'PyTuple_CheckExact'
+Python-3.12.0rc3/Include/object.h:254:32: note: expanded from macro 'Py_IS_TYPE'
+Python-3.12.0rc3/Objects/listobject.c:870:9: note: Left side of '||' is false
+Python-3.12.0rc3/Include/listobject.h:26:31: note: expanded from macro 'PyList_CheckExact'
+Python-3.12.0rc3/Include/object.h:254:32: note: expanded from macro 'Py_IS_TYPE'
+Python-3.12.0rc3/Objects/listobject.c:871:17: note: Assuming 'self' is not equal to 'iterable'
+Python-3.12.0rc3/Objects/listobject.c:870:5: note: Taking false branch
+Python-3.12.0rc3/Objects/listobject.c:913:9: note: Assuming 'it' is not equal to NULL
+Python-3.12.0rc3/Objects/listobject.c:913:5: note: Taking false branch
+Python-3.12.0rc3/Objects/listobject.c:919:9: note: Assuming 'n' is >= 0
+Python-3.12.0rc3/Objects/listobject.c:919:5: note: Taking false branch
+Python-3.12.0rc3/Objects/listobject.c:924:9: note: Assuming the condition is true
+Python-3.12.0rc3/Objects/listobject.c:924:5: note: Taking true branch
+Python-3.12.0rc3/Objects/listobject.c:943:5: note: Loop condition is true.  Entering loop body
+Python-3.12.0rc3/Objects/listobject.c:945:13: note: Assuming 'item' is not equal to NULL
+Python-3.12.0rc3/Objects/listobject.c:945:9: note: Taking false branch
+Python-3.12.0rc3/Objects/listobject.c:954:13: note: Assuming the condition is true
+Python-3.12.0rc3/Include/object.h:237:23: note: expanded from macro 'Py_SIZE'
+Python-3.12.0rc3/Objects/listobject.c:954:9: note: Taking true branch
+Python-3.12.0rc3/Objects/listobject.c:956:13: note: Calling 'PyList_SET_ITEM'
+Python-3.12.0rc3/Include/cpython/listobject.h:47:5: note: expanded from macro 'PyList_SET_ITEM'
+Python-3.12.0rc3/Include/cpython/listobject.h:44:26: note: Array access (via field 'ob_item') results in a null pointer dereference
+#   42|   PyList_SET_ITEM(PyObject *op, Py_ssize_t index, PyObject *value) {
+#   43|       PyListObject *list = _PyList_CAST(op);
+#   44|->     list->ob_item[index] = value;
+#   45|   }
+#   46|   #define PyList_SET_ITEM(op, index, value) \
+
+Error: GCC_ANALYZER_WARNING (CWE-476):
+Python-3.12.0rc3/Include/object.h:954: included_from: Included from here.
+Python-3.12.0rc3/Include/Python.h:44: included_from: Included from here.
+Python-3.12.0rc3/Python/import.c:3: included_from: Included from here.
+Python-3.12.0rc3/Python/import.c: scope_hint: In function ‘remove_importlib_frames’
+Python-3.12.0rc3/Include/cpython/object.h:374:25: warning[-Wanalyzer-null-dereference]: dereference of NULL ‘_tmp_dst_ptr’
+Python-3.12.0rc3/Python/import.c:2543:13: note: in expansion of macro ‘Py_XSETREF’
+Python-3.12.0rc3/Python/import.c:3278:1: note: (1) entry to ‘_PyImport_GetModuleAttrString’
+Python-3.12.0rc3/Python/import.c:3281:8: note: (2) following ‘false’ branch (when ‘pmodname’ is non-NULL)...
+Python-3.12.0rc3/Python/import.c:3284:27: note: (3) ...to here
+Python-3.12.0rc3/Python/import.c:3285:8: note: (4) following ‘false’ branch (when ‘pattrname’ is non-NULL)...
+Python-3.12.0rc3/Python/import.c:3289:24: note: (5) ...to here
+Python-3.12.0rc3/Python/import.c:3289:24: note: (6) calling ‘_PyImport_GetModuleAttr’ from ‘_PyImport_GetModuleAttrString’
+Python-3.12.0rc3/Python/import.c:3266:1: note: (7) entry to ‘_PyImport_GetModuleAttr’
+Python-3.12.0rc3/Python/import.c:3268:21: note: (8) calling ‘PyImport_Import’ from ‘_PyImport_GetModuleAttr’
+Python-3.12.0rc3/Python/import.c:2984:1: note: (9) entry to ‘PyImport_Import’
+Python-3.12.0rc3/Python/import.c:2993:8: note: (10) following ‘false’ branch (when ‘from_list’ is non-NULL)...
+Python-3.12.0rc3/Python/import.c:2998:15: note: (11) ...to here
+Python-3.12.0rc3/Python/import.c:2999:8: note: (12) following ‘false’ branch (when ‘globals’ is NULL)...
+Python-3.12.0rc3/Python/import.c:3007:20: note: (13) ...to here
+Python-3.12.0rc3/Python/import.c:3007:20: note: (14) calling ‘PyImport_ImportModuleLevel’ from ‘PyImport_Import’
+Python-3.12.0rc3/Python/import.c:2935:1: note: (15) entry to ‘PyImport_ImportModuleLevel’
+Python-3.12.0rc3/Python/import.c:2940:8: note: (16) following ‘false’ branch (when ‘nameobj’ is non-NULL)...
+Python-3.12.0rc3/Python/import.c:2942:11: note: (17) ...to here
+Python-3.12.0rc3/Python/import.c:2942:11: note: (18) calling ‘PyImport_ImportModuleLevelObject’ from ‘PyImport_ImportModuleLevel’
+Python-3.12.0rc3/Python/import.c:2788:1: note: (19) entry to ‘PyImport_ImportModuleLevelObject’
+Python-3.12.0rc3/Python/import.c:2800:8: note: (20) following ‘false’ branch (when ‘name’ is non-NULL)...
+Python-3.12.0rc3/Include/object.h:972:41: note: (21) ...to here
+Python-3.12.0rc3/Include/unicodeobject.h:115:5: note: in expansion of macro ‘PyType_FastSubclass’
+Python-3.12.0rc3/Python/import.c:2808:10: note: in expansion of macro ‘PyUnicode_Check’
+Python-3.12.0rc3/Include/object.h:803:26: note: (22) calling ‘Py_XDECREF’ from ‘PyImport_ImportModuleLevelObject’
+Python-3.12.0rc3/Python/import.c:2925:5: note: in expansion of macro ‘Py_XDECREF’
+Python-3.12.0rc3/Include/object.h:796:20: note: (23) entry to ‘Py_XDECREF’
+Python-3.12.0rc3/Include/object.h:798:8: note: (24) following ‘false’ branch (when ‘op’ is NULL)...
+Python-3.12.0rc3/Include/object.h:801:1: note: (25) ...to here
+Python-3.12.0rc3/Include/object.h:803:26: note: (26) returning to ‘PyImport_ImportModuleLevelObject’ from ‘Py_XDECREF’
+Python-3.12.0rc3/Python/import.c:2925:5: note: in expansion of macro ‘Py_XDECREF’
+Python-3.12.0rc3/Include/object.h:803:26: note: (27) calling ‘Py_XDECREF’ from ‘PyImport_ImportModuleLevelObject’
+Python-3.12.0rc3/Python/import.c:2926:5: note: in expansion of macro ‘Py_XDECREF’
+Python-3.12.0rc3/Include/object.h:796:20: note: (28) entry to ‘Py_XDECREF’
+Python-3.12.0rc3/Include/object.h:798:8: note: (29) following ‘false’ branch (when ‘op’ is NULL)...
+Python-3.12.0rc3/Include/object.h:801:1: note: (30) ...to here
+Python-3.12.0rc3/Include/object.h:803:26: note: (31) returning to ‘PyImport_ImportModuleLevelObject’ from ‘Py_XDECREF’
+Python-3.12.0rc3/Python/import.c:2926:5: note: in expansion of macro ‘Py_XDECREF’
+Python-3.12.0rc3/Include/object.h:803:26: note: (32) calling ‘Py_XDECREF’ from ‘PyImport_ImportModuleLevelObject’
+Python-3.12.0rc3/Python/import.c:2927:5: note: in expansion of macro ‘Py_XDECREF’
+Python-3.12.0rc3/Include/object.h:796:20: note: (33) entry to ‘Py_XDECREF’
+Python-3.12.0rc3/Include/object.h:798:8: note: (34) following ‘false’ branch (when ‘op’ is NULL)...
+Python-3.12.0rc3/Include/object.h:801:1: note: (35) ...to here
+Python-3.12.0rc3/Include/object.h:803:26: note: (36) returning to ‘PyImport_ImportModuleLevelObject’ from ‘Py_XDECREF’
+Python-3.12.0rc3/Python/import.c:2927:5: note: in expansion of macro ‘Py_XDECREF’
+Python-3.12.0rc3/Python/import.c:2928:8: note: (37) following ‘true’ branch (when ‘final_mod’ is NULL)...
+Python-3.12.0rc3/Python/import.c:2929:9: note: (38) ...to here
+Python-3.12.0rc3/Python/import.c:2929:9: note: (39) calling ‘remove_importlib_frames’ from ‘PyImport_ImportModuleLevelObject’
+Python-3.12.0rc3/Python/import.c:2497:1: note: (40) entry to ‘remove_importlib_frames’
+Python-3.12.0rc3/Python/import.c:2504:29: note: (41) ‘outer_link’ is NULL
+Python-3.12.0rc3/Python/import.c:2512:8: note: (42) following ‘false’ branch...
+Python-3.12.0rc3/Python/import.c:2516:9: note: (43) ...to here
+Python-3.12.0rc3/Include/Python.h:35: included_from: Included from here.
+Python-3.12.0rc3/Python/import.c:2520:5: note: (44) following ‘false’ branch...
+Python-3.12.0rc3/Python/import.c:2521:15: note: (45) ...to here
+Python-3.12.0rc3/Python/import.c:2524:15: note: (46) following ‘true’ branch (when ‘tb’ is non-NULL)...
+Python-3.12.0rc3/Include/object.h:254:32: note: (47) ...to here
+Python-3.12.0rc3/Include/traceback.h:14:30: note: in expansion of macro ‘Py_IS_TYPE’
+Python-3.12.0rc3/Python/import.c:2525:16: note: in expansion of macro ‘PyTraceBack_Check’
+Python-3.12.0rc3/Python/import.c:2525:9: note: (48) following ‘false’ branch...
+Python-3.12.0rc3/Python/import.c:2526:28: note: (49) ...to here
+Python-3.12.0rc3/Python/import.c:2534:12: note: (50) following ‘false’ branch (when ‘now_in_importlib == 0’)...
+Python-3.12.0rc3/Python/import.c:2538:22: note: (51) ...to here
+Python-3.12.0rc3/Python/import.c:2540:12: note: (52) following ‘false’ branch (when ‘in_importlib == 0’)...
+Python-3.12.0rc3/Python/import.c:2547:23: note: (53) ...to here
+Python-3.12.0rc3/Python/import.c:2524:15: note: (54) following ‘true’ branch (when ‘tb’ is non-NULL)...
+Python-3.12.0rc3/Include/object.h:254:32: note: (55) ...to here
+Python-3.12.0rc3/Include/traceback.h:14:30: note: in expansion of macro ‘Py_IS_TYPE’
+Python-3.12.0rc3/Python/import.c:2525:16: note: in expansion of macro ‘PyTraceBack_Check’
+Python-3.12.0rc3/Python/import.c:2525:9: note: (56) following ‘false’ branch...
+Python-3.12.0rc3/Python/import.c:2526:28: note: (57) ...to here
+Python-3.12.0rc3/Include/cpython/object.h:373:26: note: (58) ‘outer_link’ is NULL
+Python-3.12.0rc3/Python/import.c:2543:13: note: in expansion of macro ‘Py_XSETREF’
+Python-3.12.0rc3/Include/cpython/object.h:374:25: note: (59) dereference of NULL ‘_tmp_dst_ptr’
+Python-3.12.0rc3/Python/import.c:2543:13: note: in expansion of macro ‘Py_XSETREF’
+#  372|       do { \
+#  373|           _Py_TYPEOF(dst)* _tmp_dst_ptr = &(dst); \
+#  374|->         _Py_TYPEOF(dst) _tmp_old_dst = (*_tmp_dst_ptr); \
+#  375|           *_tmp_dst_ptr = (src); \
+#  376|           Py_XDECREF(_tmp_old_dst); \
+
+Error: GCC_ANALYZER_WARNING (CWE-476):
+Python-3.12.0rc3/Include/object.h:283:17: warning[-Wanalyzer-null-dereference]: dereference of NULL ‘list’
+Python-3.12.0rc3/Modules/_sre/sre.c: scope_hint: In function ‘expand_template.part.0’
+Python-3.12.0rc3/Modules/_sre/sre.c:2815:1: note: (1) entry to ‘expand_template.part.0’
+Python-3.12.0rc3/Modules/_sre/sre.c:2828:8: note: (2) following ‘false’ branch...
+Python-3.12.0rc3/Include/object.h:972:41: note: (3) ...to here
+Python-3.12.0rc3/Include/unicodeobject.h:115:5: note: in expansion of macro ‘PyType_FastSubclass’
+Python-3.12.0rc3/Modules/_sre/sre.c:2829:10: note: in expansion of macro ‘PyUnicode_Check’
+Python-3.12.0rc3/Modules/_sre/sre.c:2828:53: note: (4) following ‘false’ branch...
+Python-3.12.0rc3/Include/object.h:829:26: note: (5) ...to here
+Python-3.12.0rc3/Modules/_sre/sre.c:2838:20: note: in expansion of macro ‘Py_NewRef’
+Python-3.12.0rc3/Modules/_sre/sre.c:2860:8: note: (6) following ‘false’ branch...
+Python-3.12.0rc3/Include/object.h:286:33: note: (7) inlined call to ‘Py_SET_SIZE’ from ‘expand_template.part.0’
+Python-3.12.0rc3/Modules/_sre/sre.c:2864:9: note: in expansion of macro ‘Py_SET_SIZE’
+Python-3.12.0rc3/Include/object.h:283:17: note: (8) ...to here
+Python-3.12.0rc3/Include/object.h:283:17: note: (9) dereference of NULL ‘list’
+#  281|       assert(ob->ob_base.ob_type != &PyLong_Type);
+#  282|       assert(ob->ob_base.ob_type != &PyBool_Type);
+#  283|->     ob->ob_size = size;
+#  284|   }
+#  285|   #if !defined(Py_LIMITED_API) || Py_LIMITED_API+0 < 0x030b0000
+
+Error: CLANG_WARNING:
+Python-3.12.0rc3/Modules/_sre/sre.c:43: included_from: Included from here.
+Python-3.12.0rc3/Include/Python.h:44: included_from: Included from here.
+Python-3.12.0rc3/Include/object.h:283:17: warning[core.NullDereference]: Access to field 'ob_size' results in a dereference of a null pointer (loaded from variable 'ob')
+Python-3.12.0rc3/Modules/_sre/sre.c:2197:9: note: 'filter' is not equal to NULL
+Python-3.12.0rc3/Modules/_sre/sre.c:2197:5: note: Taking false branch
+Python-3.12.0rc3/Modules/_sre/sre.c:2200:24: note: Calling 'expand_template'
+Python-3.12.0rc3/Modules/_sre/sre.c:2817:9: note: Assuming the condition is false
+Python-3.12.0rc3/Include/object.h:237:23: note: expanded from macro 'Py_SIZE'
+Python-3.12.0rc3/Modules/_sre/sre.c:2817:5: note: Taking false branch
+Python-3.12.0rc3/Modules/_sre/sre.c:2827:5: note: 'list' initialized to a null pointer value
+Python-3.12.0rc3/Modules/_sre/sre.c:2828:9: note: Assuming the condition is false
+Python-3.12.0rc3/Modules/_sre/sre.c:2828:9: note: Left side of '||' is false
+Python-3.12.0rc3/Modules/_sre/sre.c:2828:5: note: Taking false branch
+Python-3.12.0rc3/Modules/_sre/sre.c:2839:28: note: Assuming the condition is false
+Python-3.12.0rc3/Modules/_sre/sre.c:2839:5: note: Loop condition is false. Execution continues on line 2860
+Python-3.12.0rc3/Modules/_sre/sre.c:2860:5: note: Taking false branch
+Python-3.12.0rc3/Modules/_sre/sre.c:2864:9: note: Passing null pointer value via 1st parameter 'ob'
+Python-3.12.0rc3/Include/object.h:286:45: note: expanded from macro 'Py_SET_SIZE'
+Python-3.12.0rc3/Include/object.h:202:31: note: expanded from macro '_PyVarObject_CAST'
+Python-3.12.0rc3/Include/pyport.h:24:30: note: expanded from macro '_Py_CAST'
+Python-3.12.0rc3/Modules/_sre/sre.c:2864:9: note: Calling 'Py_SET_SIZE'
+Python-3.12.0rc3/Include/object.h:286:33: note: expanded from macro 'Py_SET_SIZE'
+Python-3.12.0rc3/Include/object.h:283:17: note: Access to field 'ob_size' results in a dereference of a null pointer (loaded from variable 'ob')
+#  281|       assert(ob->ob_base.ob_type != &PyLong_Type);
+#  282|       assert(ob->ob_base.ob_type != &PyBool_Type);
+#  283|->     ob->ob_size = size;
+#  284|   }
+#  285|   #if !defined(Py_LIMITED_API) || Py_LIMITED_API+0 < 0x030b0000
+
+Error: GCC_ANALYZER_WARNING (CWE-476):
+Python-3.12.0rc3/Modules/_cursesmodule.c: scope_hint: In function ‘_curses_initscr_impl’
+Python-3.12.0rc3/Modules/_cursesmodule.c:3352:29: warning[-Wanalyzer-null-dereference]: dereference of NULL ‘winobj’
+Python-3.12.0rc3/Modules/_cursesmodule.c:3251:1: note: (1) entry to ‘_curses_initscr_impl’
+Python-3.12.0rc3/Modules/_cursesmodule.c:3257:8: note: (2) following ‘false’ branch...
+Python-3.12.0rc3/Modules/_cursesmodule.c:3262:11: note: (3) ...to here
+Python-3.12.0rc3/Modules/_cursesmodule.c:3264:8: note: (4) following ‘false’ branch (when ‘win’ is non-NULL)...
+Python-3.12.0rc3/Modules/_cursesmodule.c:3269:41: note: (5) ...to here
+Python-3.12.0rc3/Modules/_cursesmodule.c:3351:38: note: (6) calling ‘PyCursesWindow_New’ from ‘_curses_initscr_impl’
+Python-3.12.0rc3/Modules/_cursesmodule.c:670:1: note: (7) entry to ‘PyCursesWindow_New’
+Python-3.12.0rc3/Modules/_cursesmodule.c:674:8: note: (8) following ‘true’ branch (when ‘encoding’ is NULL)...
+Python-3.12.0rc3/Modules/_cursesmodule.c:684:31: note: (9) ...to here
+Python-3.12.0rc3/Modules/_cursesmodule.c:688:12: note: (10) following ‘true’ branch (when ‘encoding’ is NULL)...
+Python-3.12.0rc3/Modules/_cursesmodule.c:689:22: note: (11) ...to here
+/usr/include/locale.h:28: included_from: Included from here.
+Python-3.12.0rc3/Include/internal/pycore_fileutils.h:11: included_from: Included from here.
+Python-3.12.0rc3/Include/internal/pycore_unicodeobject.h:11: included_from: Included from here.
+Python-3.12.0rc3/Include/internal/pycore_interp.h:34: included_from: Included from here.
+Python-3.12.0rc3/Include/internal/pycore_runtime.h:18: included_from: Included from here.
+Python-3.12.0rc3/Include/internal/pycore_long.h:12: included_from: Included from here.
+Python-3.12.0rc3/Modules/_cursesmodule.c:110: included_from: Included from here.
+Python-3.12.0rc3/Modules/_cursesmodule.c:693:28: note: (12) ‘0’ is NULL
+Python-3.12.0rc3/Modules/_cursesmodule.c:3351:38: note: (13) returning to ‘_curses_initscr_impl’ from ‘PyCursesWindow_New’
+Python-3.12.0rc3/Modules/_cursesmodule.c:3351:38: note: (14) ‘winobj’ is NULL
+Python-3.12.0rc3/Modules/_cursesmodule.c:3353:12: note: (15) ‘winobj’ is NULL
+Python-3.12.0rc3/Modules/_cursesmodule.c:3352:29: note: (16) dereference of NULL ‘winobj’
+# 3350|   
+# 3351|       winobj = (PyCursesWindowObject *)PyCursesWindow_New(win, NULL);
+# 3352|->     screen_encoding = winobj->encoding;
+# 3353|       return (PyObject *)winobj;
+# 3354|   }
+
+Error: GCC_ANALYZER_WARNING (CWE-476):
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:38:11: warning[-Wanalyzer-possible-null-dereference]: dereference of possibly-NULL ‘block_state’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:84:3: note: in definition of macro ‘KRML_LOOP1’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:97:3: note: in expansion of macro ‘KRML_LOOP2’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:113:3: note: in expansion of macro ‘KRML_LOOP4’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:150:3: note: in expansion of macro ‘KRML_LOOP8’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:214:40: note: in expansion of macro ‘KRML_UNROLL_FOR’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:32:3: note: in expansion of macro ‘KRML_MAYBE_FOR8’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c: scope_hint: In function ‘python_hashlib_Hacl_Streaming_SHA2_create_in_256’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:49:28: note: (1) this call could return NULL
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:498:39: note: in expansion of macro ‘KRML_HOST_CALLOC’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:504:3: note: (2) inlined call to ‘Hacl_SHA2_Scalar32_sha256_init’ from ‘python_hashlib_Hacl_Streaming_SHA2_create_in_256’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:38:11: note: (3) ‘block_state’ could be NULL: unchecked value from (1)
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:84:3: note: in definition of macro ‘KRML_LOOP1’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:97:3: note: in expansion of macro ‘KRML_LOOP2’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:113:3: note: in expansion of macro ‘KRML_LOOP4’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:150:3: note: in expansion of macro ‘KRML_LOOP8’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:214:40: note: in expansion of macro ‘KRML_UNROLL_FOR’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:32:3: note: in expansion of macro ‘KRML_MAYBE_FOR8’
+#   36|       uint32_t *os = hash;
+#   37|       uint32_t x = Hacl_Impl_SHA2_Generic_h256[i];
+#   38|->     os[i] = x;);
+#   39|   }
+#   40|   
+
+Error: GCC_ANALYZER_WARNING (CWE-476):
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:233:11: warning[-Wanalyzer-possible-null-dereference]: dereference of possibly-NULL ‘block_state’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:84:3: note: in definition of macro ‘KRML_LOOP1’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:97:3: note: in expansion of macro ‘KRML_LOOP2’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:113:3: note: in expansion of macro ‘KRML_LOOP4’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:150:3: note: in expansion of macro ‘KRML_LOOP8’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:214:40: note: in expansion of macro ‘KRML_UNROLL_FOR’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:227:3: note: in expansion of macro ‘KRML_MAYBE_FOR8’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c: scope_hint: In function ‘python_hashlib_Hacl_Streaming_SHA2_create_in_224’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:49:28: note: (1) this call could return NULL
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:823:39: note: in expansion of macro ‘KRML_HOST_CALLOC’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:829:3: note: (2) inlined call to ‘Hacl_SHA2_Scalar32_sha224_init’ from ‘python_hashlib_Hacl_Streaming_SHA2_create_in_224’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:233:11: note: (3) ‘block_state’ could be NULL: unchecked value from (1)
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:84:3: note: in definition of macro ‘KRML_LOOP1’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:97:3: note: in expansion of macro ‘KRML_LOOP2’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:113:3: note: in expansion of macro ‘KRML_LOOP4’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:150:3: note: in expansion of macro ‘KRML_LOOP8’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:214:40: note: in expansion of macro ‘KRML_UNROLL_FOR’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:227:3: note: in expansion of macro ‘KRML_MAYBE_FOR8’
+#  231|       uint32_t *os = hash;
+#  232|       uint32_t x = Hacl_Impl_SHA2_Generic_h224[i];
+#  233|->     os[i] = x;);
+#  234|   }
+#  235|   
+
+Error: GCC_ANALYZER_WARNING (CWE-476):
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:266:11: warning[-Wanalyzer-possible-null-dereference]: dereference of possibly-NULL ‘block_state’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:84:3: note: in definition of macro ‘KRML_LOOP1’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:97:3: note: in expansion of macro ‘KRML_LOOP2’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:113:3: note: in expansion of macro ‘KRML_LOOP4’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:150:3: note: in expansion of macro ‘KRML_LOOP8’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:214:40: note: in expansion of macro ‘KRML_UNROLL_FOR’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:260:3: note: in expansion of macro ‘KRML_MAYBE_FOR8’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c: scope_hint: In function ‘python_hashlib_Hacl_Streaming_SHA2_create_in_512’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:49:28: note: (1) this call could return NULL
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:924:39: note: in expansion of macro ‘KRML_HOST_CALLOC’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.h:34: included_from: Included from here.
+Python-3.12.0rc3/Modules/_hacl/internal/Hacl_Hash_SHA2.h:39: included_from: Included from here.
+Python-3.12.0rc3/Modules/_hacl/python_hacl_namespaces.h:28:40: note: (2) inlined call to ‘python_hashlib_Hacl_SHA2_Scalar32_sha512_init’ from ‘python_hashlib_Hacl_Streaming_SHA2_create_in_512’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:930:3: note: in expansion of macro ‘Hacl_SHA2_Scalar32_sha512_init’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:266:11: note: (3) ‘block_state’ could be NULL: unchecked value from (1)
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:84:3: note: in definition of macro ‘KRML_LOOP1’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:97:3: note: in expansion of macro ‘KRML_LOOP2’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:113:3: note: in expansion of macro ‘KRML_LOOP4’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:150:3: note: in expansion of macro ‘KRML_LOOP8’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:214:40: note: in expansion of macro ‘KRML_UNROLL_FOR’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:260:3: note: in expansion of macro ‘KRML_MAYBE_FOR8’
+#  264|       uint64_t *os = hash;
+#  265|       uint64_t x = Hacl_Impl_SHA2_Generic_h512[i];
+#  266|->     os[i] = x;);
+#  267|   }
+#  268|   
+
+Error: GCC_ANALYZER_WARNING (CWE-476):
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:461:11: warning[-Wanalyzer-possible-null-dereference]: dereference of possibly-NULL ‘block_state’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:84:3: note: in definition of macro ‘KRML_LOOP1’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:97:3: note: in expansion of macro ‘KRML_LOOP2’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:113:3: note: in expansion of macro ‘KRML_LOOP4’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:150:3: note: in expansion of macro ‘KRML_LOOP8’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:214:40: note: in expansion of macro ‘KRML_UNROLL_FOR’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:455:3: note: in expansion of macro ‘KRML_MAYBE_FOR8’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c: scope_hint: In function ‘python_hashlib_Hacl_Streaming_SHA2_create_in_384’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:49:28: note: (1) this call could return NULL
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:1247:39: note: in expansion of macro ‘KRML_HOST_CALLOC’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:1253:3: note: (2) inlined call to ‘Hacl_SHA2_Scalar32_sha384_init’ from ‘python_hashlib_Hacl_Streaming_SHA2_create_in_384’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:461:11: note: (3) ‘block_state’ could be NULL: unchecked value from (1)
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:84:3: note: in definition of macro ‘KRML_LOOP1’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:97:3: note: in expansion of macro ‘KRML_LOOP2’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:113:3: note: in expansion of macro ‘KRML_LOOP4’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:150:3: note: in expansion of macro ‘KRML_LOOP8’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:214:40: note: in expansion of macro ‘KRML_UNROLL_FOR’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:455:3: note: in expansion of macro ‘KRML_MAYBE_FOR8’
+#  459|       uint64_t *os = hash;
+#  460|       uint64_t x = Hacl_Impl_SHA2_Generic_h384[i];
+#  461|->     os[i] = x;);
+#  462|   }
+#  463|   
+
+Error: GCC_ANALYZER_WARNING (CWE-476):
+Python-3.12.0rc3/Modules/_hacl/include/krml/FStar_UInt_8_16_32_64.h:15: included_from: Included from here.
+Python-3.12.0rc3/Modules/_hacl/include/krml/FStar_UInt128_Verified.h:10: included_from: Included from here.
+Python-3.12.0rc3/Modules/_hacl/include/krml/types.h:14: included_from: Included from here.
+Python-3.12.0rc3/Modules/_hacl/internal/Hacl_Hash_SHA2.h:34: included_from: Included from here.
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:26: included_from: Included from here.
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c: scope_hint: In function ‘Hacl_SHA2_Scalar32_sha384_init’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:461:11: warning[-Wanalyzer-possible-null-dereference]: dereference of possibly-NULL ‘hash’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:84:3: note: in definition of macro ‘KRML_LOOP1’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:97:3: note: in expansion of macro ‘KRML_LOOP2’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:113:3: note: in expansion of macro ‘KRML_LOOP4’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:150:3: note: in expansion of macro ‘KRML_LOOP8’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:214:40: note: in expansion of macro ‘KRML_UNROLL_FOR’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:455:3: note: in expansion of macro ‘KRML_MAYBE_FOR8’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.h:34: included_from: Included from here.
+Python-3.12.0rc3/Modules/_hacl/internal/Hacl_Hash_SHA2.h:39: included_from: Included from here.
+Python-3.12.0rc3/Modules/_hacl/python_hacl_namespaces.h:19:43: note: (1) entry to ‘python_hashlib_Hacl_Streaming_SHA2_create_in_384’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:1244:29: note: in expansion of macro ‘Hacl_Streaming_SHA2_create_in_384’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:49:28: note: (2) this call could return NULL
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:1247:39: note: in expansion of macro ‘KRML_HOST_CALLOC’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:1253:3: note: (3) calling ‘Hacl_SHA2_Scalar32_sha384_init’ from ‘python_hashlib_Hacl_Streaming_SHA2_create_in_384’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:453:6: note: (4) entry to ‘Hacl_SHA2_Scalar32_sha384_init’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:461:11: note: (5) ‘os + (long unsigned int)i * 8’ could be NULL: unchecked value from (2)
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:84:3: note: in definition of macro ‘KRML_LOOP1’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:97:3: note: in expansion of macro ‘KRML_LOOP2’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:113:3: note: in expansion of macro ‘KRML_LOOP4’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:150:3: note: in expansion of macro ‘KRML_LOOP8’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:214:40: note: in expansion of macro ‘KRML_UNROLL_FOR’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:455:3: note: in expansion of macro ‘KRML_MAYBE_FOR8’
+#  459|       uint64_t *os = hash;
+#  460|       uint64_t x = Hacl_Impl_SHA2_Generic_h384[i];
+#  461|->     os[i] = x;);
+#  462|   }
+#  463|   
+
+Error: GCC_ANALYZER_WARNING (CWE-476):
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c: scope_hint: In function ‘python_hashlib_Hacl_Streaming_SHA2_create_in_256’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:503:9: warning[-Wanalyzer-possible-null-dereference]: dereference of possibly-NULL ‘p’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:45:28: note: (1) this call could return NULL
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:502:38: note: in expansion of macro ‘KRML_HOST_MALLOC’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:503:9: note: (2) ‘p’ could be NULL: unchecked value from (1)
+#  501|     Hacl_Streaming_MD_state_32
+#  502|     *p = (Hacl_Streaming_MD_state_32 *)KRML_HOST_MALLOC(sizeof (Hacl_Streaming_MD_state_32));
+#  503|->   p[0U] = s;
+#  504|     Hacl_SHA2_Scalar32_sha256_init(block_state);
+#  505|     return p;
+
+Error: GCC_ANALYZER_WARNING (CWE-688):
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c: scope_hint: In function ‘python_hashlib_Hacl_Streaming_SHA2_copy_256’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:521:3: warning[-Wanalyzer-possible-null-argument]: use of possibly-NULL ‘buf’ where non-null expected
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:49:28: note: (1) this call could return NULL
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:520:29: note: in expansion of macro ‘KRML_HOST_CALLOC’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:521:3: note: (2) argument 1 (‘buf’) from (1) could be NULL where non-null expected
+Python-3.12.0rc3/Modules/_hacl/internal/Hacl_Hash_SHA2.h:33: included_from: Included from here.
+/usr/include/string.h:43:14: note: argument 1 of ‘memcpy’ must be non-null
+#  519|     uint64_t total_len0 = scrut.total_len;
+#  520|     uint8_t *buf = (uint8_t *)KRML_HOST_CALLOC((uint32_t)64U, sizeof (uint8_t));
+#  521|->   memcpy(buf, buf0, (uint32_t)64U * sizeof (uint8_t));
+#  522|     uint32_t *block_state = (uint32_t *)KRML_HOST_CALLOC((uint32_t)8U, sizeof (uint32_t));
+#  523|     memcpy(block_state, block_state0, (uint32_t)8U * sizeof (uint32_t));
+
+Error: GCC_ANALYZER_WARNING (CWE-688):
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:523:3: warning[-Wanalyzer-possible-null-argument]: use of possibly-NULL ‘block_state’ where non-null expected
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:49:28: note: (1) this call could return NULL
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:522:39: note: in expansion of macro ‘KRML_HOST_CALLOC’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:523:3: note: (2) argument 1 (‘block_state’) from (1) could be NULL where non-null expected
+/usr/include/string.h:43:14: note: argument 1 of ‘memcpy’ must be non-null
+#  521|     memcpy(buf, buf0, (uint32_t)64U * sizeof (uint8_t));
+#  522|     uint32_t *block_state = (uint32_t *)KRML_HOST_CALLOC((uint32_t)8U, sizeof (uint32_t));
+#  523|->   memcpy(block_state, block_state0, (uint32_t)8U * sizeof (uint32_t));
+#  524|     Hacl_Streaming_MD_state_32
+#  525|     s = { .block_state = block_state, .buf = buf, .total_len = total_len0 };
+
+Error: GCC_ANALYZER_WARNING (CWE-476):
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:528:9: warning[-Wanalyzer-possible-null-dereference]: dereference of possibly-NULL ‘p’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:45:28: note: (1) this call could return NULL
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:527:38: note: in expansion of macro ‘KRML_HOST_MALLOC’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:528:9: note: (2) ‘p’ could be NULL: unchecked value from (1)
+#  526|     Hacl_Streaming_MD_state_32
+#  527|     *p = (Hacl_Streaming_MD_state_32 *)KRML_HOST_MALLOC(sizeof (Hacl_Streaming_MD_state_32));
+#  528|->   p[0U] = s;
+#  529|     return p;
+#  530|   }
+
+Error: GCC_ANALYZER_WARNING (CWE-476):
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c: scope_hint: In function ‘python_hashlib_Hacl_Streaming_SHA2_create_in_224’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:828:9: warning[-Wanalyzer-possible-null-dereference]: dereference of possibly-NULL ‘p’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:45:28: note: (1) this call could return NULL
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:827:38: note: in expansion of macro ‘KRML_HOST_MALLOC’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:828:9: note: (2) ‘p’ could be NULL: unchecked value from (1)
+#  826|     Hacl_Streaming_MD_state_32
+#  827|     *p = (Hacl_Streaming_MD_state_32 *)KRML_HOST_MALLOC(sizeof (Hacl_Streaming_MD_state_32));
+#  828|->   p[0U] = s;
+#  829|     Hacl_SHA2_Scalar32_sha224_init(block_state);
+#  830|     return p;
+
+Error: GCC_ANALYZER_WARNING (CWE-476):
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c: scope_hint: In function ‘python_hashlib_Hacl_Streaming_SHA2_create_in_512’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:929:9: warning[-Wanalyzer-possible-null-dereference]: dereference of possibly-NULL ‘p’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:45:28: note: (1) this call could return NULL
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:928:38: note: in expansion of macro ‘KRML_HOST_MALLOC’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:929:9: note: (2) ‘p’ could be NULL: unchecked value from (1)
+#  927|     Hacl_Streaming_MD_state_64
+#  928|     *p = (Hacl_Streaming_MD_state_64 *)KRML_HOST_MALLOC(sizeof (Hacl_Streaming_MD_state_64));
+#  929|->   p[0U] = s;
+#  930|     Hacl_SHA2_Scalar32_sha512_init(block_state);
+#  931|     return p;
+
+Error: GCC_ANALYZER_WARNING (CWE-688):
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c: scope_hint: In function ‘python_hashlib_Hacl_Streaming_SHA2_copy_512’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:947:3: warning[-Wanalyzer-possible-null-argument]: use of possibly-NULL ‘buf’ where non-null expected
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:49:28: note: (1) this call could return NULL
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:946:29: note: in expansion of macro ‘KRML_HOST_CALLOC’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:947:3: note: (2) argument 1 (‘buf’) from (1) could be NULL where non-null expected
+/usr/include/string.h:43:14: note: argument 1 of ‘memcpy’ must be non-null
+#  945|     uint64_t total_len0 = scrut.total_len;
+#  946|     uint8_t *buf = (uint8_t *)KRML_HOST_CALLOC((uint32_t)128U, sizeof (uint8_t));
+#  947|->   memcpy(buf, buf0, (uint32_t)128U * sizeof (uint8_t));
+#  948|     uint64_t *block_state = (uint64_t *)KRML_HOST_CALLOC((uint32_t)8U, sizeof (uint64_t));
+#  949|     memcpy(block_state, block_state0, (uint32_t)8U * sizeof (uint64_t));
+
+Error: GCC_ANALYZER_WARNING (CWE-688):
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:949:3: warning[-Wanalyzer-possible-null-argument]: use of possibly-NULL ‘block_state’ where non-null expected
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:49:28: note: (1) this call could return NULL
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:948:39: note: in expansion of macro ‘KRML_HOST_CALLOC’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:949:3: note: (2) argument 1 (‘block_state’) from (1) could be NULL where non-null expected
+/usr/include/string.h:43:14: note: argument 1 of ‘memcpy’ must be non-null
+#  947|     memcpy(buf, buf0, (uint32_t)128U * sizeof (uint8_t));
+#  948|     uint64_t *block_state = (uint64_t *)KRML_HOST_CALLOC((uint32_t)8U, sizeof (uint64_t));
+#  949|->   memcpy(block_state, block_state0, (uint32_t)8U * sizeof (uint64_t));
+#  950|     Hacl_Streaming_MD_state_64
+#  951|     s = { .block_state = block_state, .buf = buf, .total_len = total_len0 };
+
+Error: GCC_ANALYZER_WARNING (CWE-476):
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:954:9: warning[-Wanalyzer-possible-null-dereference]: dereference of possibly-NULL ‘p’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:45:28: note: (1) this call could return NULL
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:953:38: note: in expansion of macro ‘KRML_HOST_MALLOC’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:954:9: note: (2) ‘p’ could be NULL: unchecked value from (1)
+#  952|     Hacl_Streaming_MD_state_64
+#  953|     *p = (Hacl_Streaming_MD_state_64 *)KRML_HOST_MALLOC(sizeof (Hacl_Streaming_MD_state_64));
+#  954|->   p[0U] = s;
+#  955|     return p;
+#  956|   }
+
+Error: GCC_ANALYZER_WARNING (CWE-476):
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c: scope_hint: In function ‘python_hashlib_Hacl_Streaming_SHA2_create_in_384’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:1252:9: warning[-Wanalyzer-possible-null-dereference]: dereference of possibly-NULL ‘p’
+Python-3.12.0rc3/Modules/_hacl/include/krml/internal/target.h:45:28: note: (1) this call could return NULL
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:1251:38: note: in expansion of macro ‘KRML_HOST_MALLOC’
+Python-3.12.0rc3/Modules/_hacl/Hacl_Hash_SHA2.c:1252:9: note: (2) ‘p’ could be NULL: unchecked value from (1)
+# 1250|     Hacl_Streaming_MD_state_64
+# 1251|     *p = (Hacl_Streaming_MD_state_64 *)KRML_HOST_MALLOC(sizeof (Hacl_Streaming_MD_state_64));
+# 1252|->   p[0U] = s;
+# 1253|     Hacl_SHA2_Scalar32_sha384_init(block_state);
+# 1254|     return p;
+
+Error: CLANG_WARNING:
+Python-3.12.0rc3/Modules/_sre/sre.c:226: included_from: Included from here.
+Python-3.12.0rc3/Modules/_sre/sre_lib.h:1796:41: warning[deadcode.DeadStores]: Although the value stored to 'ptr' is used in the enclosing expression, the value is never actually read from 'ptr'
+Python-3.12.0rc3/Modules/_sre/sre_lib.h:1796:41: note: Although the value stored to 'ptr' is used in the enclosing expression, the value is never actually read from 'ptr'
+# 1794|                pattern[1] == SRE_AT_BEGINNING_STRING))
+# 1795|           {
+# 1796|->             state->start = state->ptr = ptr = end;
+# 1797|               return 0;
+# 1798|           }
+
+Error: GCC_ANALYZER_WARNING (CWE-465):
+Python-3.12.0rc3/Modules/_ssl.c: scope_hint: In function ‘PySSLSession_richcompare’
+Python-3.12.0rc3/Modules/_ssl.c:4953:8: warning[-Wanalyzer-deref-before-check]: check of ‘left’ for NULL after already dereferencing it
+Python-3.12.0rc3/Modules/_ssl.c:4951:51: note: (1) pointer ‘left’ is dereferenced here
+Python-3.12.0rc3/Modules/_ssl.c:4953:8: note: (2) pointer ‘left’ is checked for NULL here but it was already dereferenced at (1)
+# 4951|       PyTypeObject *sesstype = ((PySSLSession*)left)->ctx->state->PySSLSession_Type;
+# 4952|   
+# 4953|->     if (left == NULL || right == NULL) {
+# 4954|           PyErr_BadInternalCall();
+# 4955|           return NULL;
+
+Error: GCC_ANALYZER_WARNING (CWE-688):
+Python-3.12.0rc3/Modules/posixmodule.c: scope_hint: In function ‘os_readlink_impl’
+Python-3.12.0rc3/Modules/posixmodule.c:9615:18: warning[-Wanalyzer-null-argument]: use of NULL ‘path.narrow’ where non-null expected
+Python-3.12.0rc3/Modules/posixmodule.c:14878: included_from: Included from here.
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5801:1: note: (1) entry to ‘os_readlink’
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5831:12: note: (2) ‘path.narrow’ is NULL
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5838:10: note: (3) calling ‘path_converter’ from ‘os_readlink’
+Python-3.12.0rc3/Modules/posixmodule.c:1149:1: note: (4) entry to ‘path_converter’
+Python-3.12.0rc3/Modules/posixmodule.c:1169:9: note: (5) calling ‘path_cleanup’ from ‘path_converter’
+Python-3.12.0rc3/Modules/posixmodule.c:1139:1: note: (6) entry to ‘path_cleanup’
+Python-3.12.0rc3/Include/Python.h:44: included_from: Included from here.
+Python-3.12.0rc3/Modules/posixmodule.c:12: included_from: Included from here.
+Python-3.12.0rc3/Include/object.h:766:12: note: (7) following ‘false’ branch (when ‘_tmp_old_op’ is NULL)...
+Python-3.12.0rc3/Modules/posixmodule.c:1144:5: note: in expansion of macro ‘Py_CLEAR’
+Python-3.12.0rc3/Include/object.h:765:24: note: (8) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:1145:5: note: in expansion of macro ‘Py_CLEAR’
+Python-3.12.0rc3/Include/object.h:766:12: note: (9) following ‘false’ branch (when ‘_tmp_old_op’ is NULL)...
+Python-3.12.0rc3/Modules/posixmodule.c:1145:5: note: in expansion of macro ‘Py_CLEAR’
+Python-3.12.0rc3/Modules/posixmodule.c:1146:1: note: (10) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:1169:9: note: (11) returning to ‘path_converter’ from ‘path_cleanup’
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5838:10: note: (12) returning to ‘os_readlink’ from ‘path_converter’
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5838:8: note: (13) following ‘false’ branch...
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5841:8: note: (14) ...to here
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5848:20: note: (15) calling ‘os_readlink_impl’ from ‘os_readlink’
+Python-3.12.0rc3/Modules/posixmodule.c:9595:1: note: (16) entry to ‘os_readlink_impl’
+Python-3.12.0rc3/Modules/posixmodule.c:9607:8: note: (17) following ‘false’ branch (when ‘dir_fd == -100’)...
+Python-3.12.0rc3/Modules/posixmodule.c:9615:18: note: (18) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:9615:18: note: (19) ‘path.narrow’ is NULL
+Python-3.12.0rc3/Modules/posixmodule.c:9615:18: note: (20) argument 1 (‘*path.narrow’) NULL where non-null expected
+Python-3.12.0rc3/Include/Python.h:29: included_from: Included from here.
+/usr/include/unistd.h:838:16: note: argument 1 of ‘readlink’ must be non-null
+# 9613|       } else
+# 9614|   #endif
+# 9615|->         length = readlink(path->narrow, buffer, MAXPATHLEN);
+# 9616|       Py_END_ALLOW_THREADS
+# 9617|   
+
+Error: GCC_ANALYZER_WARNING (CWE-688):
+Python-3.12.0rc3/Modules/posixmodule.c: scope_hint: In function ‘os_symlink_impl’
+Python-3.12.0rc3/Modules/posixmodule.c:9888:22: warning[-Wanalyzer-null-argument]: use of NULL ‘dst.narrow’ where non-null expected
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5885:1: note: (1) entry to ‘os_symlink’
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5915:12: note: (2) ‘src.narrow’ is NULL
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5916:12: note: (3) ‘dst.narrow’ is NULL
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5924:10: note: (4) calling ‘path_converter’ from ‘os_symlink’
+Python-3.12.0rc3/Modules/posixmodule.c:1149:1: note: (5) entry to ‘path_converter’
+Python-3.12.0rc3/Modules/posixmodule.c:1169:9: note: (6) calling ‘path_cleanup’ from ‘path_converter’
+Python-3.12.0rc3/Modules/posixmodule.c:1139:1: note: (7) entry to ‘path_cleanup’
+Python-3.12.0rc3/Include/object.h:766:12: note: (8) following ‘false’ branch (when ‘_tmp_old_op’ is NULL)...
+Python-3.12.0rc3/Modules/posixmodule.c:1144:5: note: in expansion of macro ‘Py_CLEAR’
+Python-3.12.0rc3/Include/object.h:765:24: note: (9) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:1145:5: note: in expansion of macro ‘Py_CLEAR’
+Python-3.12.0rc3/Include/object.h:766:12: note: (10) following ‘false’ branch (when ‘_tmp_old_op’ is NULL)...
+Python-3.12.0rc3/Modules/posixmodule.c:1145:5: note: in expansion of macro ‘Py_CLEAR’
+Python-3.12.0rc3/Modules/posixmodule.c:1146:1: note: (11) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:1169:9: note: (12) returning to ‘path_converter’ from ‘path_cleanup’
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5924:10: note: (13) returning to ‘os_symlink’ from ‘path_converter’
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5924:8: note: (14) following ‘false’ branch...
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5927:10: note: (15) ...to here
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5927:10: note: (16) calling ‘path_converter’ from ‘os_symlink’
+Python-3.12.0rc3/Modules/posixmodule.c:1149:1: note: (17) entry to ‘path_converter’
+Python-3.12.0rc3/Modules/posixmodule.c:1168:8: note: (18) following ‘false’ branch (when ‘o’ is non-NULL)...
+Python-3.12.0rc3/Modules/posixmodule.c:1174:34: note: (19) ...to here
+Python-3.12.0rc3/Include/object.h:662:25: note: (20) inlined call to ‘Py_INCREF’ from ‘path_converter’
+Python-3.12.0rc3/Modules/posixmodule.c:1176:5: note: in expansion of macro ‘Py_INCREF’
+Python-3.12.0rc3/Include/object.h:644:8: note: (21) following ‘false’ branch (when ‘new_refcnt != 0’)...
+Python-3.12.0rc3/Include/object.h:647:40: note: (22) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c: scope_hint: In function ‘os_symlink_impl’
+Python-3.12.0rc3/Modules/posixmodule.c:1178:8: note: (23) following ‘true’ branch...
+Python-3.12.0rc3/Modules/posixmodule.c:1179:20: note: (24) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:1183:22: note: (25) ‘dst.narrow’ is NULL
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5927:10: note: (26) returning to ‘os_symlink’ from ‘path_converter’
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5927:8: note: (27) following ‘false’ branch...
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5930:8: note: (28) ...to here
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5950:20: note: (29) calling ‘os_symlink_impl’ from ‘os_symlink’
+Python-3.12.0rc3/Modules/posixmodule.c:9808:1: note: (30) entry to ‘os_symlink_impl’
+Python-3.12.0rc3/Modules/posixmodule.c:9825:8: note: (31) following ‘false’ branch...
+Python-3.12.0rc3/Modules/posixmodule.c:9878:13: note: (32) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:9886:8: note: (33) following ‘true’ branch (when ‘dir_fd != -100’)...
+Python-3.12.0rc3/Modules/posixmodule.c:9888:22: note: (34) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:9888:22: note: (35) ‘dst.narrow’ is NULL
+Python-3.12.0rc3/Modules/posixmodule.c:9888:22: note: (36) argument 3 (‘*dst.narrow’) NULL where non-null expected
+/usr/include/unistd.h:847:12: note: argument 3 of ‘symlinkat’ must be non-null
+# 9886|       if (dir_fd != DEFAULT_DIR_FD) {
+# 9887|           if (HAVE_SYMLINKAT_RUNTIME) {
+# 9888|->             result = symlinkat(src->narrow, dir_fd, dst->narrow);
+# 9889|           } else {
+# 9890|               symlinkat_unavailable = 1;
+
+Error: GCC_ANALYZER_WARNING (CWE-688):
+Python-3.12.0rc3/Modules/posixmodule.c:9894:18: warning[-Wanalyzer-null-argument]: use of NULL ‘dst.narrow’ where non-null expected
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5885:1: note: (1) entry to ‘os_symlink’
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5915:12: note: (2) ‘src.narrow’ is NULL
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5916:12: note: (3) ‘dst.narrow’ is NULL
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5924:10: note: (4) calling ‘path_converter’ from ‘os_symlink’
+Python-3.12.0rc3/Modules/posixmodule.c:1149:1: note: (5) entry to ‘path_converter’
+Python-3.12.0rc3/Modules/posixmodule.c:1169:9: note: (6) calling ‘path_cleanup’ from ‘path_converter’
+Python-3.12.0rc3/Modules/posixmodule.c:1139:1: note: (7) entry to ‘path_cleanup’
+Python-3.12.0rc3/Include/object.h:766:12: note: (8) following ‘false’ branch (when ‘_tmp_old_op’ is NULL)...
+Python-3.12.0rc3/Modules/posixmodule.c:1144:5: note: in expansion of macro ‘Py_CLEAR’
+Python-3.12.0rc3/Include/object.h:765:24: note: (9) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:1145:5: note: in expansion of macro ‘Py_CLEAR’
+Python-3.12.0rc3/Include/object.h:766:12: note: (10) following ‘false’ branch (when ‘_tmp_old_op’ is NULL)...
+Python-3.12.0rc3/Modules/posixmodule.c:1145:5: note: in expansion of macro ‘Py_CLEAR’
+Python-3.12.0rc3/Modules/posixmodule.c:1146:1: note: (11) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:1169:9: note: (12) returning to ‘path_converter’ from ‘path_cleanup’
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5924:10: note: (13) returning to ‘os_symlink’ from ‘path_converter’
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5924:8: note: (14) following ‘false’ branch...
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5927:10: note: (15) ...to here
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5927:10: note: (16) calling ‘path_converter’ from ‘os_symlink’
+Python-3.12.0rc3/Modules/posixmodule.c:1149:1: note: (17) entry to ‘path_converter’
+Python-3.12.0rc3/Modules/posixmodule.c:1169:9: note: (18) calling ‘path_cleanup’ from ‘path_converter’
+Python-3.12.0rc3/Modules/posixmodule.c:1139:1: note: (19) entry to ‘path_cleanup’
+Python-3.12.0rc3/Include/object.h:766:12: note: (20) following ‘false’ branch (when ‘_tmp_old_op’ is NULL)...
+Python-3.12.0rc3/Modules/posixmodule.c:1144:5: note: in expansion of macro ‘Py_CLEAR’
+Python-3.12.0rc3/Include/object.h:765:24: note: (21) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:1145:5: note: in expansion of macro ‘Py_CLEAR’
+Python-3.12.0rc3/Include/object.h:766:12: note: (22) following ‘false’ branch (when ‘_tmp_old_op’ is NULL)...
+Python-3.12.0rc3/Modules/posixmodule.c:1145:5: note: in expansion of macro ‘Py_CLEAR’
+Python-3.12.0rc3/Modules/posixmodule.c:1146:1: note: (23) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:1169:9: note: (24) returning to ‘path_converter’ from ‘path_cleanup’
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5927:10: note: (25) returning to ‘os_symlink’ from ‘path_converter’
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5927:8: note: (26) following ‘false’ branch...
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5930:8: note: (27) ...to here
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5950:20: note: (28) calling ‘os_symlink_impl’ from ‘os_symlink’
+Python-3.12.0rc3/Modules/posixmodule.c:9808:1: note: (29) entry to ‘os_symlink_impl’
+Python-3.12.0rc3/Modules/posixmodule.c:9825:9: note: (30) following ‘false’ branch (when ‘dir_fd == -100’)...
+cc1: note: (31) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:9825:8: note: (32) following ‘false’ branch...
+Python-3.12.0rc3/Modules/posixmodule.c:9878:13: note: (33) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:9878:13: note: (34) ‘dst.narrow’ is NULL
+Python-3.12.0rc3/Modules/posixmodule.c:9878:8: note: (35) following ‘false’ branch...
+Python-3.12.0rc3/Include/Python.h:95: included_from: Included from here.
+Python-3.12.0rc3/Include/ceval.h:144:33: note: (36) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:9884:5: note: in expansion of macro ‘Py_BEGIN_ALLOW_THREADS’
+Python-3.12.0rc3/Modules/posixmodule.c:9886:8: note: (37) following ‘false’ branch (when ‘dir_fd == -100’)...
+Python-3.12.0rc3/Modules/posixmodule.c:9894:18: note: (38) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:9894:18: note: (39) ‘dst.narrow’ is NULL
+Python-3.12.0rc3/Modules/posixmodule.c:9894:18: note: (40) ‘dst.narrow’ is NULL
+Python-3.12.0rc3/Modules/posixmodule.c:9894:18: note: (41) argument 2 (‘*dst.narrow’) NULL where non-null expected
+/usr/include/unistd.h:832:12: note: argument 2 of ‘symlink’ must be non-null
+# 9892|       } else
+# 9893|   #endif
+# 9894|->         result = symlink(src->narrow, dst->narrow);
+# 9895|       Py_END_ALLOW_THREADS
+# 9896|   
+
+Error: GCC_ANALYZER_WARNING (CWE-688):
+Python-3.12.0rc3/Modules/posixmodule.c:9894:18: warning[-Wanalyzer-null-argument]: use of NULL ‘src.narrow’ where non-null expected
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5885:1: note: (1) entry to ‘os_symlink’
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5915:12: note: (2) ‘src.narrow’ is NULL
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5916:12: note: (3) ‘dst.narrow’ is NULL
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5924:10: note: (4) calling ‘path_converter’ from ‘os_symlink’
+Python-3.12.0rc3/Modules/posixmodule.c:1149:1: note: (5) entry to ‘path_converter’
+Python-3.12.0rc3/Modules/posixmodule.c:1169:9: note: (6) calling ‘path_cleanup’ from ‘path_converter’
+Python-3.12.0rc3/Modules/posixmodule.c:1139:1: note: (7) entry to ‘path_cleanup’
+Python-3.12.0rc3/Include/object.h:766:12: note: (8) following ‘false’ branch (when ‘_tmp_old_op’ is NULL)...
+Python-3.12.0rc3/Modules/posixmodule.c:1144:5: note: in expansion of macro ‘Py_CLEAR’
+Python-3.12.0rc3/Include/object.h:765:24: note: (9) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:1145:5: note: in expansion of macro ‘Py_CLEAR’
+Python-3.12.0rc3/Include/object.h:766:12: note: (10) following ‘false’ branch (when ‘_tmp_old_op’ is NULL)...
+Python-3.12.0rc3/Modules/posixmodule.c:1145:5: note: in expansion of macro ‘Py_CLEAR’
+Python-3.12.0rc3/Modules/posixmodule.c:1146:1: note: (11) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:1169:9: note: (12) returning to ‘path_converter’ from ‘path_cleanup’
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5924:10: note: (13) returning to ‘os_symlink’ from ‘path_converter’
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5924:8: note: (14) following ‘false’ branch...
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5927:10: note: (15) ...to here
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5927:10: note: (16) calling ‘path_converter’ from ‘os_symlink’
+Python-3.12.0rc3/Modules/posixmodule.c:1149:1: note: (17) entry to ‘path_converter’
+Python-3.12.0rc3/Modules/posixmodule.c:1168:8: note: (18) following ‘false’ branch (when ‘o’ is non-NULL)...
+Python-3.12.0rc3/Modules/posixmodule.c:1174:34: note: (19) ...to here
+Python-3.12.0rc3/Include/object.h:662:25: note: (20) inlined call to ‘Py_INCREF’ from ‘path_converter’
+Python-3.12.0rc3/Modules/posixmodule.c:1176:5: note: in expansion of macro ‘Py_INCREF’
+Python-3.12.0rc3/Include/object.h:644:8: note: (21) following ‘true’ branch (when ‘new_refcnt == 0’)...
+Python-3.12.0rc3/Modules/posixmodule.c: scope_hint: In function ‘os_symlink_impl’
+Python-3.12.0rc3/Modules/posixmodule.c:1178:8: note: (22) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:1191:31: note: (23) following ‘false’ branch...
+cc1: note: (24) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:1248:12: note: (25) following ‘false’ branch...
+Python-3.12.0rc3/Include/bytesobject.h:62: included_from: Included from here.
+Python-3.12.0rc3/Include/Python.h:50: included_from: Included from here.
+Python-3.12.0rc3/Include/cpython/bytesobject.h:45:32: note: (26) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:1283:14: note: in expansion of macro ‘PyBytes_GET_SIZE’
+Python-3.12.0rc3/Modules/posixmodule.c:1285:8: note: (27) following ‘false’ branch...
+Python-3.12.0rc3/Modules/posixmodule.c:1317:16: note: (28) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:1319:8: note: (29) following ‘true’ branch...
+Python-3.12.0rc3/Include/object.h:709:23: note: (30) inlined call to ‘Py_DECREF’ from ‘path_converter’
+Python-3.12.0rc3/Modules/posixmodule.c:1322:9: note: in expansion of macro ‘Py_DECREF’
+Python-3.12.0rc3/Include/object.h:248:28: note: (31) inlined call to ‘_Py_IsImmortal’ from ‘Py_DECREF’
+Python-3.12.0rc3/Include/object.h:701:9: note: in expansion of macro ‘_Py_IsImmortal’
+Python-3.12.0rc3/Include/object.h:243:35: note: (32) ...to here
+Python-3.12.0rc3/Include/pyport.h:24:38: note: in definition of macro ‘_Py_CAST’
+Python-3.12.0rc3/Include/object.h:701:8: note: (33) following ‘true’ branch...
+Python-3.12.0rc3/Modules/posixmodule.c: scope_hint: In function ‘os_symlink_impl’
+Python-3.12.0rc3/Modules/posixmodule.c:1328:14: note: (34) ...to here
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5927:10: note: (35) returning to ‘os_symlink’ from ‘path_converter’
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5927:8: note: (36) following ‘false’ branch...
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5930:8: note: (37) ...to here
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:5950:20: note: (38) calling ‘os_symlink_impl’ from ‘os_symlink’
+Python-3.12.0rc3/Modules/posixmodule.c:9808:1: note: (39) entry to ‘os_symlink_impl’
+Python-3.12.0rc3/Modules/posixmodule.c:9825:9: note: (40) following ‘false’ branch (when ‘dir_fd == -100’)...
+cc1: note: (41) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:9825:8: note: (42) following ‘false’ branch...
+Python-3.12.0rc3/Modules/posixmodule.c:9878:13: note: (43) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:9878:13: note: (44) ‘src.narrow’ is NULL
+Python-3.12.0rc3/Modules/posixmodule.c:9878:8: note: (45) following ‘false’ branch...
+Python-3.12.0rc3/Include/ceval.h:144:33: note: (46) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:9884:5: note: in expansion of macro ‘Py_BEGIN_ALLOW_THREADS’
+Python-3.12.0rc3/Modules/posixmodule.c:9886:8: note: (47) following ‘false’ branch (when ‘dir_fd == -100’)...
+Python-3.12.0rc3/Modules/posixmodule.c:9894:18: note: (48) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:9894:18: note: (49) ‘src.narrow’ is NULL
+Python-3.12.0rc3/Modules/posixmodule.c:9894:18: note: (50) argument 1 (‘*src.narrow’) NULL where non-null expected
+/usr/include/unistd.h:832:12: note: argument 1 of ‘symlink’ must be non-null
+# 9892|       } else
+# 9893|   #endif
+# 9894|->         result = symlink(src->narrow, dst->narrow);
+# 9895|       Py_END_ALLOW_THREADS
+# 9896|   
+
+Error: GCC_ANALYZER_WARNING (CWE-688):
+Python-3.12.0rc3/Modules/posixmodule.c: scope_hint: In function ‘os_open_impl’
+Python-3.12.0rc3/Modules/posixmodule.c:10208:18: warning[-Wanalyzer-null-argument]: use of NULL ‘path.narrow’ where non-null expected
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:6158:1: note: (1) entry to ‘os_open’
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:6188:12: note: (2) ‘path.narrow’ is NULL
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:6198:10: note: (3) calling ‘path_converter’ from ‘os_open’
+Python-3.12.0rc3/Modules/posixmodule.c:1149:1: note: (4) entry to ‘path_converter’
+Python-3.12.0rc3/Modules/posixmodule.c:1169:9: note: (5) calling ‘path_cleanup’ from ‘path_converter’
+Python-3.12.0rc3/Modules/posixmodule.c:1139:1: note: (6) entry to ‘path_cleanup’
+Python-3.12.0rc3/Include/object.h:766:12: note: (7) following ‘false’ branch (when ‘_tmp_old_op’ is NULL)...
+Python-3.12.0rc3/Modules/posixmodule.c:1144:5: note: in expansion of macro ‘Py_CLEAR’
+Python-3.12.0rc3/Include/object.h:765:24: note: (8) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:1145:5: note: in expansion of macro ‘Py_CLEAR’
+Python-3.12.0rc3/Include/object.h:766:12: note: (9) following ‘false’ branch (when ‘_tmp_old_op’ is NULL)...
+Python-3.12.0rc3/Modules/posixmodule.c:1145:5: note: in expansion of macro ‘Py_CLEAR’
+Python-3.12.0rc3/Modules/posixmodule.c:1146:1: note: (10) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:1169:9: note: (11) returning to ‘path_converter’ from ‘path_cleanup’
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:6198:10: note: (12) returning to ‘os_open’ from ‘path_converter’
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:6198:8: note: (13) following ‘false’ branch...
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:6201:13: note: (14) ...to here
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:6225:21: note: (15) calling ‘os_open_impl’ from ‘os_open’
+Python-3.12.0rc3/Modules/posixmodule.c:10166:1: note: (16) entry to ‘os_open_impl’
+Python-3.12.0rc3/Modules/posixmodule.c:10187:8: note: (17) following ‘false’ branch...
+cc1: note: (18) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:10198:12: note: (19) following ‘false’ branch (when ‘dir_fd == -100’)...
+Python-3.12.0rc3/Modules/posixmodule.c:10208:18: note: (20) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:10208:18: note: (21) ‘path.narrow’ is NULL
+Python-3.12.0rc3/Modules/posixmodule.c:10208:18: note: (22) argument 1 (‘*path.narrow’) NULL where non-null expected
+/usr/include/features.h:503: included_from: Included from here.
+/usr/include/bits/libc-header-start.h:33: included_from: Included from here.
+/usr/include/stdlib.h:26: included_from: Included from here.
+Python-3.12.0rc3/Include/Python.h:23: included_from: Included from here.
+/usr/include/fcntl.h:212:12: note: argument 1 of ‘open’ must be non-null
+#10206|           } else
+#10207|   #endif /* HAVE_OPENAT */
+#10208|->             fd = open(path->narrow, flags, mode);
+#10209|   #endif /* !MS_WINDOWS */
+#10210|           Py_END_ALLOW_THREADS
+
+Error: GCC_ANALYZER_WARNING (CWE-775):
+Python-3.12.0rc3/Modules/posixmodule.c: scope_hint: In function ‘os_dup2_impl’
+Python-3.12.0rc3/Modules/posixmodule.c:10388:13: warning[-Wanalyzer-fd-leak]: leak of file descriptor ‘res’
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:6380:1: note: (1) entry to ‘os_dup2’
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:6416:8: note: (2) following ‘false’ branch...
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:6419:10: note: (3) ...to here
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:6431:8: note: (4) following ‘false’ branch...
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:6434:1: note: (5) ...to here
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:6435:21: note: (6) calling ‘os_dup2_impl’ from ‘os_dup2’
+Python-3.12.0rc3/Modules/posixmodule.c:10315:1: note: (7) entry to ‘os_dup2_impl’
+Python-3.12.0rc3/Modules/posixmodule.c:10362:8: note: (8) following ‘true’ branch (when ‘inheritable == 0’)...
+Python-3.12.0rc3/Modules/posixmodule.c:10362:36: note: (9) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:10362:22: note: (10) following ‘false’ branch...
+Python-3.12.0rc3/Modules/posixmodule.c:10376:35: note: (11) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:10376:21: note: (12) following ‘true’ branch...
+Python-3.12.0rc3/Include/ceval.h:144:33: note: (13) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:10379:9: note: in expansion of macro ‘Py_BEGIN_ALLOW_THREADS’
+Python-3.12.0rc3/Modules/posixmodule.c:10380:15: note: (14) opened here
+Python-3.12.0rc3/Modules/posixmodule.c:10382:12: note: (15) assuming ‘res’ is a valid file descriptor (>= 0)
+Python-3.12.0rc3/Modules/posixmodule.c:10382:12: note: (16) following ‘false’ branch (when ‘res >= 0’)...
+Python-3.12.0rc3/Modules/posixmodule.c:10387:12: note: (17) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:10387:12: note: (18) following ‘true’ branch...
+Python-3.12.0rc3/Modules/posixmodule.c:10388:13: note: (19) ...to here (20) ‘res’ leaks here; was opened at (14)
+#10386|   
+#10387|           if (!inheritable && _Py_set_inheritable(fd2, 0, NULL) < 0) {
+#10388|->             close(fd2);
+#10389|               return -1;
+#10390|           }
+
+Error: GCC_ANALYZER_WARNING (CWE-688):
+Python-3.12.0rc3/Modules/posixmodule.c: scope_hint: In function ‘os_mkfifo_impl’
+Python-3.12.0rc3/Modules/posixmodule.c:11627:22: warning[-Wanalyzer-null-argument]: use of NULL ‘path.narrow’ where non-null expected
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:7754:1: note: (1) entry to ‘os_mkfifo’
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:7784:12: note: (2) ‘path.narrow’ is NULL
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:7792:10: note: (3) calling ‘path_converter’ from ‘os_mkfifo’
+Python-3.12.0rc3/Modules/posixmodule.c:1149:1: note: (4) entry to ‘path_converter’
+Python-3.12.0rc3/Modules/posixmodule.c:1169:9: note: (5) calling ‘path_cleanup’ from ‘path_converter’
+Python-3.12.0rc3/Modules/posixmodule.c:1139:1: note: (6) entry to ‘path_cleanup’
+Python-3.12.0rc3/Include/object.h:766:12: note: (7) following ‘false’ branch (when ‘_tmp_old_op’ is NULL)...
+Python-3.12.0rc3/Modules/posixmodule.c:1144:5: note: in expansion of macro ‘Py_CLEAR’
+Python-3.12.0rc3/Include/object.h:765:24: note: (8) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:1145:5: note: in expansion of macro ‘Py_CLEAR’
+Python-3.12.0rc3/Include/object.h:766:12: note: (9) following ‘false’ branch (when ‘_tmp_old_op’ is NULL)...
+Python-3.12.0rc3/Modules/posixmodule.c:1145:5: note: in expansion of macro ‘Py_CLEAR’
+Python-3.12.0rc3/Modules/posixmodule.c:1146:1: note: (10) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:1169:9: note: (11) returning to ‘path_converter’ from ‘path_cleanup’
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:7792:10: note: (12) returning to ‘os_mkfifo’ from ‘path_converter’
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:7792:8: note: (13) following ‘false’ branch...
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:7795:8: note: (14) ...to here
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:7815:20: note: (15) calling ‘os_mkfifo_impl’ from ‘os_mkfifo’
+Python-3.12.0rc3/Modules/posixmodule.c:11605:1: note: (16) entry to ‘os_mkfifo_impl’
+Python-3.12.0rc3/Modules/posixmodule.c:11617:12: note: (17) following ‘false’ branch (when ‘dir_fd == -100’)...
+Python-3.12.0rc3/Modules/posixmodule.c:11627:22: note: (18) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:11627:22: note: (19) ‘path.narrow’ is NULL
+Python-3.12.0rc3/Modules/posixmodule.c:11627:22: note: (20) argument 1 (‘*path.narrow’) NULL where non-null expected
+Python-3.12.0rc3/Include/pyport.h:221: included_from: Included from here.
+/usr/include/sys/stat.h:418:12: note: argument 1 of ‘mkfifo’ must be non-null
+#11625|           } else
+#11626|   #endif
+#11627|->             result = mkfifo(path->narrow, mode);
+#11628|           Py_END_ALLOW_THREADS
+#11629|       } while (result != 0 && errno == EINTR &&
+
+Error: GCC_ANALYZER_WARNING (CWE-688):
+Python-3.12.0rc3/Modules/posixmodule.c: scope_hint: In function ‘os_mknod_impl’
+Python-3.12.0rc3/Modules/posixmodule.c:11696:22: warning[-Wanalyzer-null-argument]: use of NULL ‘path.narrow’ where non-null expected
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:7854:1: note: (1) entry to ‘os_mknod’
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:7884:12: note: (2) ‘path.narrow’ is NULL
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:7890:8: note: (3) following ‘false’ branch...
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:7893:10: note: (4) ...to here
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:7893:10: note: (5) calling ‘path_converter’ from ‘os_mknod’
+Python-3.12.0rc3/Modules/posixmodule.c:1149:1: note: (6) entry to ‘path_converter’
+Python-3.12.0rc3/Modules/posixmodule.c:1169:9: note: (7) calling ‘path_cleanup’ from ‘path_converter’
+Python-3.12.0rc3/Modules/posixmodule.c:1139:1: note: (8) entry to ‘path_cleanup’
+Python-3.12.0rc3/Include/object.h:766:12: note: (9) following ‘false’ branch (when ‘_tmp_old_op’ is NULL)...
+Python-3.12.0rc3/Modules/posixmodule.c:1144:5: note: in expansion of macro ‘Py_CLEAR’
+Python-3.12.0rc3/Include/object.h:765:24: note: (10) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:1145:5: note: in expansion of macro ‘Py_CLEAR’
+Python-3.12.0rc3/Include/object.h:766:12: note: (11) following ‘false’ branch (when ‘_tmp_old_op’ is NULL)...
+Python-3.12.0rc3/Modules/posixmodule.c:1145:5: note: in expansion of macro ‘Py_CLEAR’
+Python-3.12.0rc3/Modules/posixmodule.c:1146:1: note: (12) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:1169:9: note: (13) returning to ‘path_converter’ from ‘path_cleanup’
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:7893:10: note: (14) returning to ‘os_mknod’ from ‘path_converter’
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:7893:8: note: (15) following ‘false’ branch...
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:7896:8: note: (16) ...to here
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:7924:20: note: (17) calling ‘os_mknod_impl’ from ‘os_mknod’
+Python-3.12.0rc3/Modules/posixmodule.c:11673:1: note: (18) entry to ‘os_mknod_impl’
+Python-3.12.0rc3/Modules/posixmodule.c:11686:12: note: (19) following ‘false’ branch (when ‘dir_fd == -100’)...
+Python-3.12.0rc3/Modules/posixmodule.c:11696:22: note: (20) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:11696:22: note: (21) ‘path.narrow’ is NULL
+Python-3.12.0rc3/Modules/posixmodule.c:11696:22: note: (22) argument 1 (‘*path.narrow’) NULL where non-null expected
+/usr/include/sys/stat.h:404:12: note: argument 1 of ‘mknod’ must be non-null
+#11694|           } else
+#11695|   #endif
+#11696|->             result = mknod(path->narrow, mode, device);
+#11697|           Py_END_ALLOW_THREADS
+#11698|       } while (result != 0 && errno == EINTR &&
+
+Error: GCC_ANALYZER_WARNING (CWE-688):
+Python-3.12.0rc3/Modules/posixmodule.c: scope_hint: In function ‘os_truncate_impl’
+Python-3.12.0rc3/Modules/posixmodule.c:11850:14: warning[-Wanalyzer-null-argument]: use of NULL ‘path.narrow’ where non-null expected
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:8109:1: note: (1) entry to ‘os_truncate’
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:8138:12: note: (2) ‘path.narrow’ is NULL
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:8142:8: note: (3) following ‘false’ branch...
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:8145:10: note: (4) ...to here
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:8145:10: note: (5) calling ‘path_converter’ from ‘os_truncate’
+Python-3.12.0rc3/Modules/posixmodule.c:1149:1: note: (6) entry to ‘path_converter’
+Python-3.12.0rc3/Modules/posixmodule.c:1169:9: note: (7) calling ‘path_cleanup’ from ‘path_converter’
+Python-3.12.0rc3/Modules/posixmodule.c:1139:1: note: (8) entry to ‘path_cleanup’
+Python-3.12.0rc3/Include/object.h:766:12: note: (9) following ‘false’ branch (when ‘_tmp_old_op’ is NULL)...
+Python-3.12.0rc3/Modules/posixmodule.c:1144:5: note: in expansion of macro ‘Py_CLEAR’
+Python-3.12.0rc3/Include/object.h:765:24: note: (10) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:1145:5: note: in expansion of macro ‘Py_CLEAR’
+Python-3.12.0rc3/Include/object.h:766:12: note: (11) following ‘false’ branch (when ‘_tmp_old_op’ is NULL)...
+Python-3.12.0rc3/Modules/posixmodule.c:1145:5: note: in expansion of macro ‘Py_CLEAR’
+Python-3.12.0rc3/Modules/posixmodule.c:1146:1: note: (12) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:1169:9: note: (13) returning to ‘path_converter’ from ‘path_cleanup’
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:8145:10: note: (14) returning to ‘os_truncate’ from ‘path_converter’
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:8145:8: note: (15) following ‘false’ branch...
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:8148:10: note: (16) ...to here
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:8148:8: note: (17) following ‘false’ branch...
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:8151:20: note: (18) ...to here
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:8151:20: note: (19) calling ‘os_truncate_impl’ from ‘os_truncate’
+Python-3.12.0rc3/Modules/posixmodule.c:11822:1: note: (20) entry to ‘os_truncate_impl’
+Python-3.12.0rc3/Modules/posixmodule.c:11830:8: note: (21) following ‘false’ branch...
+Python-3.12.0rc3/Modules/posixmodule.c:11833:9: note: (22) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:11833:8: note: (23) following ‘false’ branch...
+Python-3.12.0rc3/Include/ceval.h:144:33: note: (24) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:11837:5: note: in expansion of macro ‘Py_BEGIN_ALLOW_THREADS’
+Python-3.12.0rc3/Modules/posixmodule.c:11850:14: note: (25) ‘path.narrow’ is NULL
+Python-3.12.0rc3/Modules/posixmodule.c:11850:14: note: (26) argument 1 (‘*path.narrow’) NULL where non-null expected
+/usr/include/unistd.h:1030:12: note: argument 1 of ‘truncate’ must be non-null
+#11848|       }
+#11849|   #else
+#11850|->     result = truncate(path->narrow, length);
+#11851|   #endif
+#11852|       _Py_END_SUPPRESS_IPH
+
+Error: GCC_ANALYZER_WARNING (CWE-688):
+Python-3.12.0rc3/Modules/posixmodule.c: scope_hint: In function ‘os_statvfs_impl’
+Python-3.12.0rc3/Modules/posixmodule.c:12430:18: warning[-Wanalyzer-null-argument]: use of NULL ‘path.narrow’ where non-null expected
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:9017:1: note: (1) entry to ‘os_statvfs’
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:9046:12: note: (2) ‘path.narrow’ is NULL
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:9049:8: note: (3) following ‘false’ branch...
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:9052:10: note: (4) ...to here
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:9052:10: note: (5) calling ‘path_converter’ from ‘os_statvfs’
+Python-3.12.0rc3/Modules/posixmodule.c:1149:1: note: (6) entry to ‘path_converter’
+Python-3.12.0rc3/Modules/posixmodule.c:1169:9: note: (7) calling ‘path_cleanup’ from ‘path_converter’
+Python-3.12.0rc3/Modules/posixmodule.c:1139:1: note: (8) entry to ‘path_cleanup’
+Python-3.12.0rc3/Include/object.h:766:12: note: (9) following ‘false’ branch (when ‘_tmp_old_op’ is NULL)...
+Python-3.12.0rc3/Modules/posixmodule.c:1144:5: note: in expansion of macro ‘Py_CLEAR’
+Python-3.12.0rc3/Include/object.h:765:24: note: (10) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:1145:5: note: in expansion of macro ‘Py_CLEAR’
+Python-3.12.0rc3/Include/object.h:766:12: note: (11) following ‘false’ branch (when ‘_tmp_old_op’ is NULL)...
+Python-3.12.0rc3/Modules/posixmodule.c:1145:5: note: in expansion of macro ‘Py_CLEAR’
+Python-3.12.0rc3/Modules/posixmodule.c:1146:1: note: (12) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:1169:9: note: (13) returning to ‘path_converter’ from ‘path_cleanup’
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:9052:10: note: (14) returning to ‘os_statvfs’ from ‘path_converter’
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:9052:8: note: (15) following ‘false’ branch...
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:9055:20: note: (16) ...to here
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:9055:20: note: (17) calling ‘os_statvfs_impl’ from ‘os_statvfs’
+Python-3.12.0rc3/Modules/posixmodule.c:12417:1: note: (18) entry to ‘os_statvfs_impl’
+Python-3.12.0rc3/Modules/posixmodule.c:12425:8: note: (19) following ‘false’ branch...
+Python-3.12.0rc3/Modules/posixmodule.c:12430:18: note: (20) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:12430:18: note: (21) ‘path.narrow’ is NULL
+Python-3.12.0rc3/Modules/posixmodule.c:12430:18: note: (22) argument 1 (‘*path.narrow’) NULL where non-null expected
+/usr/include/sys/statvfs.h:56:12: note: argument 1 of ‘statvfs’ must be non-null
+#12428|       else
+#12429|   #endif
+#12430|->         result = statvfs(path->narrow, &st);
+#12431|       Py_END_ALLOW_THREADS
+#12432|   
+
+Error: GCC_ANALYZER_WARNING (CWE-688):
+Python-3.12.0rc3/Modules/posixmodule.c: scope_hint: In function ‘os_pathconf_impl’
+Python-3.12.0rc3/Modules/posixmodule.c:12706:17: warning[-Wanalyzer-null-argument]: use of NULL ‘path.narrow’ where non-null expected
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:9194:1: note: (1) entry to ‘os_pathconf’
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:9223:12: note: (2) ‘path.narrow’ is NULL
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:9228:8: note: (3) following ‘false’ branch...
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:9231:10: note: (4) ...to here
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:9231:10: note: (5) calling ‘path_converter’ from ‘os_pathconf’
+Python-3.12.0rc3/Modules/posixmodule.c:1149:1: note: (6) entry to ‘path_converter’
+Python-3.12.0rc3/Modules/posixmodule.c:1169:9: note: (7) calling ‘path_cleanup’ from ‘path_converter’
+Python-3.12.0rc3/Modules/posixmodule.c:1139:1: note: (8) entry to ‘path_cleanup’
+Python-3.12.0rc3/Include/object.h:766:12: note: (9) following ‘false’ branch (when ‘_tmp_old_op’ is NULL)...
+Python-3.12.0rc3/Modules/posixmodule.c:1144:5: note: in expansion of macro ‘Py_CLEAR’
+Python-3.12.0rc3/Include/object.h:765:24: note: (10) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:1145:5: note: in expansion of macro ‘Py_CLEAR’
+Python-3.12.0rc3/Include/object.h:766:12: note: (11) following ‘false’ branch (when ‘_tmp_old_op’ is NULL)...
+Python-3.12.0rc3/Modules/posixmodule.c:1145:5: note: in expansion of macro ‘Py_CLEAR’
+Python-3.12.0rc3/Modules/posixmodule.c:1146:1: note: (12) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:1169:9: note: (13) returning to ‘path_converter’ from ‘path_cleanup’
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:9231:10: note: (14) returning to ‘os_pathconf’ from ‘path_converter’
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:9231:8: note: (15) following ‘false’ branch...
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:9234:10: note: (16) ...to here
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:9234:8: note: (17) following ‘false’ branch...
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:9237:21: note: (18) ...to here
+Python-3.12.0rc3/Modules/clinic/posixmodule.c.h:9237:21: note: (19) calling ‘os_pathconf_impl’ from ‘os_pathconf’
+Python-3.12.0rc3/Modules/posixmodule.c:12695:1: note: (20) entry to ‘os_pathconf_impl’
+Python-3.12.0rc3/Modules/posixmodule.c:12702:8: note: (21) following ‘false’ branch...
+Python-3.12.0rc3/Modules/posixmodule.c:12706:17: note: (22) ...to here
+Python-3.12.0rc3/Modules/posixmodule.c:12706:17: note: (23) ‘path.narrow’ is NULL
+Python-3.12.0rc3/Modules/posixmodule.c:12706:17: note: (24) argument 1 (‘*path.narrow’) NULL where non-null expected
+/usr/include/unistd.h:633:17: note: argument 1 of ‘pathconf’ must be non-null
+#12704|       else
+#12705|   #endif
+#12706|->         limit = pathconf(path->narrow, name);
+#12707|       if (limit == -1 && errno != 0) {
+#12708|           if (errno == EINVAL)
+
+Error: GCC_ANALYZER_WARNING (CWE-457):
+Python-3.12.0rc3/Objects/bytesobject.c: scope_hint: In function ‘PyBytes_FromStringAndSize’
+Python-3.12.0rc3/Objects/bytesobject.c:127:24: warning[-Wanalyzer-use-of-uninitialized-value]: use of uninitialized value ‘*str’
+Python-3.12.0rc3/Objects/bytesobject.c:42:37: note: in definition of macro ‘CHARACTER’
+Python-3.12.0rc3/Objects/bytesobject.c:2835:1: note: (1) entry to ‘PyBytes_FromObject’
+Python-3.12.0rc3/Objects/bytesobject.c:2839:8: note: (2) following ‘false’ branch (when ‘x’ is non-NULL)...
+Python-3.12.0rc3/Include/Python.h:44: included_from: Included from here.
+Python-3.12.0rc3/Objects/bytesobject.c:5: included_from: Included from here.
+Python-3.12.0rc3/Include/object.h:254:32: note: (3) inlined call to ‘Py_IS_TYPE’ from ‘PyBytes_FromObject’
+Python-3.12.0rc3/Include/bytesobject.h:32:32: note: in expansion of macro ‘Py_IS_TYPE’
+Python-3.12.0rc3/Objects/bytesobject.c:2844:9: note: in expansion of macro ‘PyBytes_CheckExact’
+Python-3.12.0rc3/Include/object.h:223:23: note: (4) inlined call to ‘Py_TYPE’ from ‘Py_IS_TYPE’
+Python-3.12.0rc3/Include/object.h:251:12: note: in expansion of macro ‘Py_TYPE’
+Python-3.12.0rc3/Include/object.h:220:14: note: (5) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c: scope_hint: In function ‘PyBytes_FromStringAndSize’
+Python-3.12.0rc3/Objects/bytesobject.c:2844:8: note: (6) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:2849:9: note: (7) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:2849:8: note: (8) following ‘false’ branch...
+Python-3.12.0rc3/Include/object.h:254:32: note: (9) inlined call to ‘Py_IS_TYPE’ from ‘PyBytes_FromObject’
+Python-3.12.0rc3/Include/listobject.h:26:31: note: in expansion of macro ‘Py_IS_TYPE’
+Python-3.12.0rc3/Objects/bytesobject.c:2852:9: note: in expansion of macro ‘PyList_CheckExact’
+Python-3.12.0rc3/Include/object.h:223:23: note: (10) inlined call to ‘Py_TYPE’ from ‘Py_IS_TYPE’
+Python-3.12.0rc3/Include/object.h:251:12: note: in expansion of macro ‘Py_TYPE’
+Python-3.12.0rc3/Include/object.h:220:14: note: (11) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c: scope_hint: In function ‘PyBytes_FromStringAndSize’
+Python-3.12.0rc3/Objects/bytesobject.c:2852:8: note: (12) following ‘true’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:2853:16: note: (13) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:2853:16: note: (14) calling ‘_PyBytes_FromList’ from ‘PyBytes_FromObject’
+Python-3.12.0rc3/Objects/bytesobject.c:2694:1: note: (15) entry to ‘_PyBytes_FromList’
+Python-3.12.0rc3/Objects/bytesobject.c:2700:20: note: (16) region created on stack here
+Python-3.12.0rc3/Objects/bytesobject.c:2703:11: note: (17) calling ‘_PyBytesWriter_Alloc’ from ‘_PyBytes_FromList’
+Python-3.12.0rc3/Objects/bytesobject.c:3452:1: note: (18) entry to ‘_PyBytesWriter_Alloc’
+Python-3.12.0rc3/Objects/bytesobject.c:3478:12: note: (19) inlined call to ‘_PyBytesWriter_Prepare’ from ‘_PyBytesWriter_Alloc’
+Python-3.12.0rc3/Objects/bytesobject.c:3429:8: note: (20) following ‘true’ branch (when ‘size == 0’)...
+Python-3.12.0rc3/Objects/bytesobject.c: scope_hint: In function ‘PyBytes_FromStringAndSize’
+Python-3.12.0rc3/Objects/bytesobject.c:3478:12: note: (21) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:2703:11: note: (22) returning to ‘_PyBytes_FromList’ from ‘_PyBytesWriter_Alloc’
+Python-3.12.0rc3/Objects/bytesobject.c:2704:8: note: (23) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:2706:25: note: (24) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:2709:19: note: (25) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:2731:12: note: (26) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:2731:12: note: (27) calling ‘_PyBytesWriter_Finish’ from ‘_PyBytes_FromList’
+Python-3.12.0rc3/Objects/bytesobject.c:3482:1: note: (28) entry to ‘_PyBytesWriter_Finish’
+Python-3.12.0rc3/Objects/bytesobject.c:3489:12: note: (29) inlined call to ‘_PyBytesWriter_GetSize’ from ‘_PyBytesWriter_Finish’
+Python-3.12.0rc3/Objects/bytesobject.c:3307:25: note: (30) calling ‘_PyBytesWriter_AsString’ from ‘_PyBytesWriter_Finish’
+Python-3.12.0rc3/Objects/bytesobject.c: scope_hint: In function ‘PyBytes_FromStringAndSize’
+Python-3.12.0rc3/Objects/bytesobject.c:3288:1: note: (31) entry to ‘_PyBytesWriter_AsString’
+Python-3.12.0rc3/Objects/bytesobject.c:3290:8: note: (32) following ‘true’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3292:16: note: (33) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3489:12: note: (34) inlined call to ‘_PyBytesWriter_GetSize’ from ‘_PyBytesWriter_Finish’
+Python-3.12.0rc3/Objects/bytesobject.c:3307:25: note: (35) returning to ‘_PyBytesWriter_Finish’ from ‘_PyBytesWriter_AsString’
+Python-3.12.0rc3/Objects/bytesobject.c: scope_hint: In function ‘PyBytes_FromStringAndSize’
+Python-3.12.0rc3/Objects/bytesobject.c:3490:8: note: (36) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3495:20: note: (37) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3495:13: note: (38) following ‘true’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3496:19: note: (39) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3496:12: note: (40) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3500:54: note: (41) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3500:22: note: (42) calling ‘PyBytes_FromStringAndSize’ from ‘_PyBytesWriter_Finish’
+Python-3.12.0rc3/Objects/bytesobject.c:118:1: note: (43) entry to ‘PyBytes_FromStringAndSize’
+Python-3.12.0rc3/Objects/bytesobject.c:121:8: note: (44) following ‘false’ branch (when ‘size >= 0’)...
+Python-3.12.0rc3/Objects/bytesobject.c:126:14: note: (45) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:126:8: note: (46) following ‘true’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:127:24: note: (47) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:42:37: note: in definition of macro ‘CHARACTER’
+Python-3.12.0rc3/Objects/bytesobject.c:127:24: note: (48) use of uninitialized value ‘*str’ here
+Python-3.12.0rc3/Objects/bytesobject.c:42:37: note: in definition of macro ‘CHARACTER’
+#  125|       }
+#  126|       if (size == 1 && str != NULL) {
+#  127|->         op = CHARACTER(*str & 255);
+#  128|           return Py_NewRef(op);
+#  129|       }
+
+Error: GCC_ANALYZER_WARNING (CWE-457):
+Python-3.12.0rc3/Objects/bytesobject.c: scope_hint: In function ‘PyBytes_FromStringAndSize’
+Python-3.12.0rc3/Objects/bytesobject.c:140:5: warning[-Wanalyzer-use-of-uninitialized-value]: use of uninitialized value ‘str’
+Python-3.12.0rc3/Objects/bytesobject.c:2835:1: note: (1) entry to ‘PyBytes_FromObject’
+Python-3.12.0rc3/Objects/bytesobject.c:2839:8: note: (2) following ‘false’ branch (when ‘x’ is non-NULL)...
+Python-3.12.0rc3/Include/Python.h:44: included_from: Included from here.
+Python-3.12.0rc3/Objects/bytesobject.c:5: included_from: Included from here.
+Python-3.12.0rc3/Include/object.h:254:32: note: (3) ...to here
+Python-3.12.0rc3/Include/bytesobject.h:32:32: note: in expansion of macro ‘Py_IS_TYPE’
+Python-3.12.0rc3/Objects/bytesobject.c:2844:9: note: in expansion of macro ‘PyBytes_CheckExact’
+Python-3.12.0rc3/Objects/bytesobject.c:2844:8: note: (4) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:2849:9: note: (5) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:2849:8: note: (6) following ‘false’ branch...
+Python-3.12.0rc3/Include/object.h:254:32: note: (7) ...to here
+Python-3.12.0rc3/Include/listobject.h:26:31: note: in expansion of macro ‘Py_IS_TYPE’
+Python-3.12.0rc3/Objects/bytesobject.c:2852:9: note: in expansion of macro ‘PyList_CheckExact’
+Python-3.12.0rc3/Objects/bytesobject.c:2852:8: note: (8) following ‘false’ branch...
+Python-3.12.0rc3/Include/object.h:254:32: note: (9) ...to here
+Python-3.12.0rc3/Include/tupleobject.h:28:32: note: in expansion of macro ‘Py_IS_TYPE’
+Python-3.12.0rc3/Objects/bytesobject.c:2855:9: note: in expansion of macro ‘PyTuple_CheckExact’
+Python-3.12.0rc3/Objects/bytesobject.c:2855:8: note: (10) following ‘false’ branch...
+Python-3.12.0rc3/Include/object.h:972:41: note: (11) ...to here
+Python-3.12.0rc3/Include/unicodeobject.h:115:5: note: in expansion of macro ‘PyType_FastSubclass’
+Python-3.12.0rc3/Objects/bytesobject.c:2858:10: note: in expansion of macro ‘PyUnicode_Check’
+Python-3.12.0rc3/Objects/bytesobject.c:2858:8: note: (12) following ‘true’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:2859:14: note: (13) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:2860:12: note: (14) following ‘true’ branch (when ‘it’ is non-NULL)...
+Python-3.12.0rc3/Objects/bytesobject.c:2861:22: note: (15) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:2861:22: note: (16) calling ‘_PyBytes_FromIterator’ from ‘PyBytes_FromObject’
+Python-3.12.0rc3/Objects/bytesobject.c:2773:1: note: (17) entry to ‘_PyBytes_FromIterator’
+Python-3.12.0rc3/Objects/bytesobject.c:2777:20: note: (18) region created on stack here
+Python-3.12.0rc3/Objects/bytesobject.c:2785:11: note: (19) calling ‘_PyBytesWriter_Alloc’ from ‘_PyBytes_FromIterator’
+Python-3.12.0rc3/Objects/bytesobject.c:3452:1: note: (20) entry to ‘_PyBytesWriter_Alloc’
+Python-3.12.0rc3/Include/Python.h:35: included_from: Included from here.
+Python-3.12.0rc3/Objects/bytesobject.c:3455:5: note: (21) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3456:5: note: (22) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3456:5: note: (23) following ‘false’ branch (when ‘size >= 0’)...
+Python-3.12.0rc3/Objects/bytesobject.c:3458:30: note: (24) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3478:12: note: (25) calling ‘_PyBytesWriter_Prepare’ from ‘_PyBytesWriter_Alloc’
+Python-3.12.0rc3/Objects/bytesobject.c:3422:1: note: (26) entry to ‘_PyBytesWriter_Prepare’
+Python-3.12.0rc3/Objects/bytesobject.c:3426:12: note: (27) calling ‘_PyBytesWriter_CheckConsistency’ from ‘_PyBytesWriter_Prepare’
+Python-3.12.0rc3/Objects/bytesobject.c:3316:1: note: (28) entry to ‘_PyBytesWriter_CheckConsistency’
+Python-3.12.0rc3/Objects/bytesobject.c:3320:8: note: (29) following ‘true’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3321:22: note: (30) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3321:9: note: (31) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3332:15: note: (32) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3332:8: note: (33) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3338:23: note: (34) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3338:5: note: (35) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3339:23: note: (36) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3339:5: note: (37) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3341:13: note: (38) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3341:13: note: (39) calling ‘_PyBytesWriter_AsString’ from ‘_PyBytesWriter_CheckConsistency’
+Python-3.12.0rc3/Objects/bytesobject.c:3288:1: note: (40) entry to ‘_PyBytesWriter_AsString’
+Python-3.12.0rc3/Objects/bytesobject.c:3290:8: note: (41) following ‘true’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3291:22: note: (42) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3291:9: note: (43) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3292:16: note: (44) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3341:13: note: (45) returning to ‘_PyBytesWriter_CheckConsistency’ from ‘_PyBytesWriter_AsString’
+Python-3.12.0rc3/Objects/bytesobject.c:3342:5: note: (46) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3344:25: note: (47) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3345:5: note: (48) following ‘false’ branch (when ‘str’ is non-NULL)...
+Python-3.12.0rc3/Objects/bytesobject.c:3346:5: note: (49) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3346:5: note: (50) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3347:12: note: (51) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3426:12: note: (52) returning to ‘_PyBytesWriter_Prepare’ from ‘_PyBytesWriter_CheckConsistency’
+Python-3.12.0rc3/Objects/bytesobject.c:3426:5: note: (53) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3427:5: note: (54) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3427:5: note: (55) following ‘false’ branch (when ‘size >= 0’)...
+Python-3.12.0rc3/Objects/bytesobject.c:3429:8: note: (56) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3429:8: note: (57) following ‘true’ branch (when ‘size == 0’)...
+Python-3.12.0rc3/Objects/bytesobject.c:3431:16: note: (58) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3478:12: note: (59) returning to ‘_PyBytesWriter_Alloc’ from ‘_PyBytesWriter_Prepare’
+Python-3.12.0rc3/Objects/bytesobject.c:2785:11: note: (60) returning to ‘_PyBytes_FromIterator’ from ‘_PyBytesWriter_Alloc’
+Python-3.12.0rc3/Objects/bytesobject.c:2786:8: note: (61) following ‘false’ branch (when ‘str’ is non-NULL)...
+Python-3.12.0rc3/Objects/bytesobject.c:2788:25: note: (62) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:2798:12: note: (63) following ‘true’ branch (when ‘item’ is NULL)...
+Python-3.12.0rc3/Objects/bytesobject.c:2799:17: note: (64) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:2799:16: note: (65) following ‘false’ branch...
+cc1: note: (66) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:2827:12: note: (67) calling ‘_PyBytesWriter_Finish’ from ‘_PyBytes_FromIterator’
+Python-3.12.0rc3/Objects/bytesobject.c:3482:1: note: (68) entry to ‘_PyBytesWriter_Finish’
+Python-3.12.0rc3/Objects/bytesobject.c:3487:12: note: (69) calling ‘_PyBytesWriter_CheckConsistency’ from ‘_PyBytesWriter_Finish’
+Python-3.12.0rc3/Objects/bytesobject.c:3316:1: note: (70) entry to ‘_PyBytesWriter_CheckConsistency’
+Python-3.12.0rc3/Objects/bytesobject.c:3320:8: note: (71) following ‘true’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3321:22: note: (72) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3321:9: note: (73) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3332:15: note: (74) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3332:8: note: (75) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3338:23: note: (76) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3338:5: note: (77) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3339:23: note: (78) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3339:5: note: (79) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3341:13: note: (80) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3341:13: note: (81) calling ‘_PyBytesWriter_AsString’ from ‘_PyBytesWriter_CheckConsistency’
+Python-3.12.0rc3/Objects/bytesobject.c:3288:1: note: (82) entry to ‘_PyBytesWriter_AsString’
+Python-3.12.0rc3/Objects/bytesobject.c:3290:8: note: (83) following ‘true’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3291:22: note: (84) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3291:9: note: (85) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3292:16: note: (86) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3341:13: note: (87) returning to ‘_PyBytesWriter_CheckConsistency’ from ‘_PyBytesWriter_AsString’
+Python-3.12.0rc3/Objects/bytesobject.c:3342:5: note: (88) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3344:25: note: (89) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3345:5: note: (90) following ‘false’ branch (when ‘str’ is non-NULL)...
+Python-3.12.0rc3/Objects/bytesobject.c:3346:5: note: (91) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3346:5: note: (92) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3347:12: note: (93) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3487:12: note: (94) returning to ‘_PyBytesWriter_Finish’ from ‘_PyBytesWriter_CheckConsistency’
+Python-3.12.0rc3/Objects/bytesobject.c:3487:5: note: (95) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3489:12: note: (96) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3489:12: note: (97) calling ‘_PyBytesWriter_GetSize’ from ‘_PyBytesWriter_Finish’
+Python-3.12.0rc3/Objects/bytesobject.c:3305:1: note: (98) entry to ‘_PyBytesWriter_GetSize’
+Python-3.12.0rc3/Objects/bytesobject.c:3307:25: note: (99) calling ‘_PyBytesWriter_AsString’ from ‘_PyBytesWriter_GetSize’
+Python-3.12.0rc3/Objects/bytesobject.c:3288:1: note: (100) entry to ‘_PyBytesWriter_AsString’
+Python-3.12.0rc3/Objects/bytesobject.c:3290:8: note: (101) following ‘true’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3291:22: note: (102) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3291:9: note: (103) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3292:16: note: (104) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3307:25: note: (105) returning to ‘_PyBytesWriter_GetSize’ from ‘_PyBytesWriter_AsString’
+Python-3.12.0rc3/Objects/bytesobject.c:3308:5: note: (106) following ‘false’ branch (when ‘str’ is non-NULL)...
+Python-3.12.0rc3/Objects/bytesobject.c:3309:5: note: (107) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3309:5: note: (108) following ‘false’ branch (when ‘str >= start’)...
+Python-3.12.0rc3/Objects/bytesobject.c:3310:16: note: (109) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3310:5: note: (110) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3311:16: note: (111) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3489:12: note: (112) returning to ‘_PyBytesWriter_Finish’ from ‘_PyBytesWriter_GetSize’
+Python-3.12.0rc3/Objects/bytesobject.c:3490:8: note: (113) following ‘false’ branch (when ‘size != 0’)...
+Python-3.12.0rc3/Objects/bytesobject.c:3495:20: note: (114) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3495:13: note: (115) following ‘true’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3496:19: note: (116) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3496:12: note: (117) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3500:54: note: (118) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3500:22: note: (119) calling ‘PyBytes_FromStringAndSize’ from ‘_PyBytesWriter_Finish’
+Python-3.12.0rc3/Objects/bytesobject.c:118:1: note: (120) entry to ‘PyBytes_FromStringAndSize’
+Python-3.12.0rc3/Objects/bytesobject.c:121:8: note: (121) following ‘false’ branch (when ‘size >= 0’)...
+Python-3.12.0rc3/Objects/bytesobject.c:126:8: note: (122) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:126:8: note: (123) following ‘false’ branch (when ‘size != 1’)...
+Python-3.12.0rc3/Objects/bytesobject.c:130:8: note: (124) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:130:8: note: (125) following ‘false’ branch (when ‘size != 0’)...
+Python-3.12.0rc3/Objects/bytesobject.c:134:27: note: (126) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:134:27: note: (127) calling ‘_PyBytes_FromSize’ from ‘PyBytes_FromStringAndSize’
+Python-3.12.0rc3/Objects/bytesobject.c:83:1: note: (128) entry to ‘_PyBytes_FromSize’
+Python-3.12.0rc3/Objects/bytesobject.c:86:5: note: (129) following ‘false’ branch (when ‘size >= 0’)...
+Python-3.12.0rc3/Objects/bytesobject.c:88:8: note: (130) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:88:8: note: (131) following ‘false’ branch (when ‘size != 0’)...
+Python-3.12.0rc3/Objects/bytesobject.c:92:9: note: (132) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:92:8: note: (133) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:99:8: note: (134) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:99:8: note: (135) following ‘false’ branch (when ‘use_calloc == 0’)...
+Python-3.12.0rc3/Objects/bytesobject.c:102:31: note: (136) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:103:8: note: (137) following ‘true’ branch (when ‘op’ is NULL)...
+Python-3.12.0rc3/Objects/bytesobject.c:104:16: note: (138) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:134:27: note: (139) returning to ‘PyBytes_FromStringAndSize’ from ‘_PyBytes_FromSize’
+Python-3.12.0rc3/Objects/bytesobject.c:135:8: note: (140) following ‘false’ branch (when ‘op’ is non-NULL)...
+Python-3.12.0rc3/Objects/bytesobject.c:137:8: note: (141) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:137:8: note: (142) following ‘false’ branch (when ‘str’ is non-NULL)...
+Python-3.12.0rc3/Objects/bytesobject.c:140:5: note: (143) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:140:5: note: (144) use of uninitialized value ‘str’ here
+#  138|           return (PyObject *) op;
+#  139|   
+#  140|->     memcpy(op->ob_sval, str, size);
+#  141|       return (PyObject *) op;
+#  142|   }
+
+Error: GCC_ANALYZER_WARNING (CWE-457):
+Python-3.12.0rc3/Objects/bytesobject.c: scope_hint: In function ‘_PyBytesWriter_Resize’
+Python-3.12.0rc3/Objects/bytesobject.c:3399:13: warning[-Wanalyzer-use-of-uninitialized-value]: use of uninitialized value ‘&*writer.small_buffer’
+Python-3.12.0rc3/Objects/bytesobject.c:2835:1: note: (1) entry to ‘PyBytes_FromObject’
+Python-3.12.0rc3/Objects/bytesobject.c:2839:8: note: (2) following ‘false’ branch (when ‘x’ is non-NULL)...
+Python-3.12.0rc3/Include/object.h:254:32: note: (3) ...to here
+Python-3.12.0rc3/Include/bytesobject.h:32:32: note: in expansion of macro ‘Py_IS_TYPE’
+Python-3.12.0rc3/Objects/bytesobject.c:2844:9: note: in expansion of macro ‘PyBytes_CheckExact’
+Python-3.12.0rc3/Objects/bytesobject.c:2844:8: note: (4) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:2849:9: note: (5) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:2849:8: note: (6) following ‘false’ branch...
+Python-3.12.0rc3/Include/object.h:254:32: note: (7) ...to here
+Python-3.12.0rc3/Include/listobject.h:26:31: note: in expansion of macro ‘Py_IS_TYPE’
+Python-3.12.0rc3/Objects/bytesobject.c:2852:9: note: in expansion of macro ‘PyList_CheckExact’
+Python-3.12.0rc3/Objects/bytesobject.c:2852:8: note: (8) following ‘true’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:2853:16: note: (9) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:2853:16: note: (10) calling ‘_PyBytes_FromList’ from ‘PyBytes_FromObject’
+Python-3.12.0rc3/Objects/bytesobject.c:2694:1: note: (11) entry to ‘_PyBytes_FromList’
+Python-3.12.0rc3/Objects/bytesobject.c:2700:20: note: (12) region created on stack here
+Python-3.12.0rc3/Include/cpython/listobject.h:37:29: note: (13) calling ‘PyList_GET_SIZE’ from ‘_PyBytes_FromList’
+Python-3.12.0rc3/Objects/bytesobject.c:2696:26: note: in expansion of macro ‘PyList_GET_SIZE’
+Python-3.12.0rc3/Include/cpython/listobject.h:33:26: note: (14) entry to ‘PyList_GET_SIZE’
+Python-3.12.0rc3/Include/cpython/listobject.h:29:6: note: (15) following ‘false’ branch...
+Python-3.12.0rc3/Include/cpython/listobject.h:34:26: note: in expansion of macro ‘_PyList_CAST’
+Python-3.12.0rc3/Include/cpython/listobject.h:34:19: note: (16) ...to here
+Python-3.12.0rc3/Include/object.h:237:23: note: (17) calling ‘Py_SIZE’ from ‘PyList_GET_SIZE’
+Python-3.12.0rc3/Include/cpython/listobject.h:35:12: note: in expansion of macro ‘Py_SIZE’
+Python-3.12.0rc3/Include/object.h:230:26: note: (18) entry to ‘Py_SIZE’
+Python-3.12.0rc3/Include/object.h:231:5: note: (19) following ‘false’ branch...
+Python-3.12.0rc3/Include/object.h:232:14: note: (20) ...to here
+Python-3.12.0rc3/Include/object.h:232:5: note: (21) following ‘false’ branch...
+Python-3.12.0rc3/Include/object.h:233:18: note: (22) ...to here
+Python-3.12.0rc3/Include/object.h:237:23: note: (23) returning to ‘PyList_GET_SIZE’ from ‘Py_SIZE’
+Python-3.12.0rc3/Include/cpython/listobject.h:35:12: note: in expansion of macro ‘Py_SIZE’
+Python-3.12.0rc3/Include/cpython/listobject.h:37:29: note: (24) returning to ‘_PyBytes_FromList’ from ‘PyList_GET_SIZE’
+Python-3.12.0rc3/Objects/bytesobject.c:2696:26: note: in expansion of macro ‘PyList_GET_SIZE’
+Python-3.12.0rc3/Objects/bytesobject.c:2703:11: note: (25) calling ‘_PyBytesWriter_Alloc’ from ‘_PyBytes_FromList’
+Python-3.12.0rc3/Objects/bytesobject.c:3452:1: note: (26) entry to ‘_PyBytesWriter_Alloc’
+Python-3.12.0rc3/Objects/bytesobject.c:3455:5: note: (27) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3456:5: note: (28) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3456:5: note: (29) following ‘false’ branch (when ‘size >= 0’)...
+Python-3.12.0rc3/Objects/bytesobject.c:3458:30: note: (30) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3478:12: note: (31) calling ‘_PyBytesWriter_Prepare’ from ‘_PyBytesWriter_Alloc’
+Python-3.12.0rc3/Objects/bytesobject.c:3422:1: note: (32) entry to ‘_PyBytesWriter_Prepare’
+Python-3.12.0rc3/Objects/bytesobject.c:3426:12: note: (33) calling ‘_PyBytesWriter_CheckConsistency’ from ‘_PyBytesWriter_Prepare’
+Python-3.12.0rc3/Objects/bytesobject.c:3316:1: note: (34) entry to ‘_PyBytesWriter_CheckConsistency’
+Python-3.12.0rc3/Objects/bytesobject.c:3320:8: note: (35) following ‘true’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3321:22: note: (36) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3321:9: note: (37) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3332:15: note: (38) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3332:8: note: (39) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3338:23: note: (40) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3338:5: note: (41) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3339:23: note: (42) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3339:5: note: (43) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3341:13: note: (44) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3341:13: note: (45) calling ‘_PyBytesWriter_AsString’ from ‘_PyBytesWriter_CheckConsistency’
+Python-3.12.0rc3/Objects/bytesobject.c:3288:1: note: (46) entry to ‘_PyBytesWriter_AsString’
+Python-3.12.0rc3/Objects/bytesobject.c:3290:8: note: (47) following ‘true’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3291:22: note: (48) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3291:9: note: (49) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3292:16: note: (50) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3341:13: note: (51) returning to ‘_PyBytesWriter_CheckConsistency’ from ‘_PyBytesWriter_AsString’
+Python-3.12.0rc3/Objects/bytesobject.c:3342:5: note: (52) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3344:25: note: (53) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3345:5: note: (54) following ‘false’ branch (when ‘str’ is non-NULL)...
+Python-3.12.0rc3/Objects/bytesobject.c:3346:5: note: (55) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3346:5: note: (56) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3347:12: note: (57) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3426:12: note: (58) returning to ‘_PyBytesWriter_Prepare’ from ‘_PyBytesWriter_CheckConsistency’
+Python-3.12.0rc3/Objects/bytesobject.c:3426:5: note: (59) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3427:5: note: (60) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3427:5: note: (61) following ‘false’ branch (when ‘size >= 0’)...
+Python-3.12.0rc3/Objects/bytesobject.c:3429:8: note: (62) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3429:8: note: (63) following ‘false’ branch (when ‘size != 0’)...
+Python-3.12.0rc3/Objects/bytesobject.c:3434:15: note: (64) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3434:8: note: (65) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3439:26: note: (66) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3441:8: note: (67) following ‘true’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3442:15: note: (68) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3442:15: note: (69) calling ‘_PyBytesWriter_Resize’ from ‘_PyBytesWriter_Prepare’
+Python-3.12.0rc3/Objects/bytesobject.c:3352:1: note: (70) entry to ‘_PyBytesWriter_Resize’
+Python-3.12.0rc3/Objects/bytesobject.c:3356:12: note: (71) calling ‘_PyBytesWriter_CheckConsistency’ from ‘_PyBytesWriter_Resize’
+Python-3.12.0rc3/Objects/bytesobject.c:3316:1: note: (72) entry to ‘_PyBytesWriter_CheckConsistency’
+Python-3.12.0rc3/Objects/bytesobject.c:3320:8: note: (73) following ‘true’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3321:22: note: (74) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3321:9: note: (75) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3332:15: note: (76) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3332:8: note: (77) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3338:23: note: (78) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3338:5: note: (79) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3339:23: note: (80) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3339:5: note: (81) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3341:13: note: (82) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3341:13: note: (83) calling ‘_PyBytesWriter_AsString’ from ‘_PyBytesWriter_CheckConsistency’
+Python-3.12.0rc3/Objects/bytesobject.c:3288:1: note: (84) entry to ‘_PyBytesWriter_AsString’
+Python-3.12.0rc3/Objects/bytesobject.c:3290:8: note: (85) following ‘true’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3291:22: note: (86) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3291:9: note: (87) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3292:16: note: (88) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3341:13: note: (89) returning to ‘_PyBytesWriter_CheckConsistency’ from ‘_PyBytesWriter_AsString’
+Python-3.12.0rc3/Objects/bytesobject.c:3342:5: note: (90) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3344:25: note: (91) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3345:5: note: (92) following ‘false’ branch (when ‘str’ is non-NULL)...
+Python-3.12.0rc3/Objects/bytesobject.c:3346:5: note: (93) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3346:5: note: (94) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3347:12: note: (95) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3356:12: note: (96) returning to ‘_PyBytesWriter_Resize’ from ‘_PyBytesWriter_CheckConsistency’
+Python-3.12.0rc3/Objects/bytesobject.c:3356:5: note: (97) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3357:18: note: (98) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3357:5: note: (99) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3359:15: note: (100) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3360:8: note: (101) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3366:11: note: (102) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3366:11: note: (103) calling ‘_PyBytesWriter_GetSize’ from ‘_PyBytesWriter_Resize’
+Python-3.12.0rc3/Objects/bytesobject.c:3305:1: note: (104) entry to ‘_PyBytesWriter_GetSize’
+Python-3.12.0rc3/Objects/bytesobject.c:3307:25: note: (105) calling ‘_PyBytesWriter_AsString’ from ‘_PyBytesWriter_GetSize’
+Python-3.12.0rc3/Objects/bytesobject.c:3288:1: note: (106) entry to ‘_PyBytesWriter_AsString’
+Python-3.12.0rc3/Objects/bytesobject.c:3290:8: note: (107) following ‘true’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3291:22: note: (108) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3291:9: note: (109) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3292:16: note: (110) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3307:25: note: (111) returning to ‘_PyBytesWriter_GetSize’ from ‘_PyBytesWriter_AsString’
+Python-3.12.0rc3/Objects/bytesobject.c:3308:5: note: (112) following ‘false’ branch (when ‘str’ is non-NULL)...
+Python-3.12.0rc3/Objects/bytesobject.c:3309:5: note: (113) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3309:5: note: (114) following ‘false’ branch (when ‘str >= start’)...
+Python-3.12.0rc3/Objects/bytesobject.c:3310:16: note: (115) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3310:5: note: (116) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3311:16: note: (117) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3366:11: note: (118) returning to ‘_PyBytesWriter_Resize’ from ‘_PyBytesWriter_GetSize’
+Python-3.12.0rc3/Objects/bytesobject.c:3367:8: note: (119) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3384:22: note: (120) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3384:9: note: (121) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3386:19: note: (122) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3386:12: note: (123) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3389:30: note: (124) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3389:30: note: (125) calling ‘PyBytes_FromStringAndSize’ from ‘_PyBytesWriter_Resize’
+Python-3.12.0rc3/Objects/bytesobject.c:118:1: note: (126) entry to ‘PyBytes_FromStringAndSize’
+Python-3.12.0rc3/Objects/bytesobject.c:121:8: note: (127) following ‘false’ branch (when ‘size >= 0’)...
+Python-3.12.0rc3/Objects/bytesobject.c:126:8: note: (128) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:126:8: note: (129) following ‘false’ branch (when ‘size != 1’)...
+Python-3.12.0rc3/Objects/bytesobject.c:130:8: note: (130) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:130:8: note: (131) following ‘false’ branch (when ‘size != 0’)...
+Python-3.12.0rc3/Objects/bytesobject.c:134:27: note: (132) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:134:27: note: (133) calling ‘_PyBytes_FromSize’ from ‘PyBytes_FromStringAndSize’
+Python-3.12.0rc3/Objects/bytesobject.c:83:1: note: (134) entry to ‘_PyBytes_FromSize’
+Python-3.12.0rc3/Objects/bytesobject.c:86:5: note: (135) following ‘false’ branch (when ‘size >= 0’)...
+Python-3.12.0rc3/Objects/bytesobject.c:88:8: note: (136) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:88:8: note: (137) following ‘false’ branch (when ‘size != 0’)...
+Python-3.12.0rc3/Objects/bytesobject.c:92:9: note: (138) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:92:8: note: (139) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:99:8: note: (140) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:99:8: note: (141) following ‘false’ branch (when ‘use_calloc == 0’)...
+Python-3.12.0rc3/Objects/bytesobject.c:102:31: note: (142) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:103:8: note: (143) following ‘true’ branch (when ‘op’ is NULL)...
+Python-3.12.0rc3/Objects/bytesobject.c:104:16: note: (144) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:134:27: note: (145) returning to ‘PyBytes_FromStringAndSize’ from ‘_PyBytes_FromSize’
+Python-3.12.0rc3/Objects/bytesobject.c:135:8: note: (146) following ‘false’ branch (when ‘op’ is non-NULL)...
+Python-3.12.0rc3/Objects/bytesobject.c:137:8: note: (147) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:137:8: note: (148) following ‘true’ branch (when ‘str’ is NULL)...
+Python-3.12.0rc3/Objects/bytesobject.c:138:16: note: (149) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3389:30: note: (150) returning to ‘_PyBytesWriter_Resize’ from ‘PyBytes_FromStringAndSize’
+Python-3.12.0rc3/Objects/bytesobject.c:3390:12: note: (151) following ‘false’ branch...
+Python-3.12.0rc3/Objects/bytesobject.c:3393:12: note: (152) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3393:12: note: (153) following ‘true’ branch (when ‘pos != 0’)...
+Python-3.12.0rc3/Objects/bytesobject.c:3395:23: note: (154) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3395:16: note: (155) following ‘false’ branch...
+Python-3.12.0rc3/Include/bytesobject.h:62: included_from: Included from here.
+Python-3.12.0rc3/Include/Python.h:50: included_from: Included from here.
+Python-3.12.0rc3/Include/cpython/bytesobject.h:39:31: note: (156) ...to here
+Python-3.12.0rc3/Objects/bytesobject.c:3398:24: note: in expansion of macro ‘PyBytes_AS_STRING’
+Python-3.12.0rc3/Include/cpython/bytesobject.h:39:31: note: (157) calling ‘PyBytes_AS_STRING’ from ‘_PyBytesWriter_Resize’
+Python-3.12.0rc3/Objects/bytesobject.c:3398:24: note: in expansion of macro ‘PyBytes_AS_STRING’
+Python-3.12.0rc3/Include/cpython/bytesobject.h:35:21: note: (158) entry to ‘PyBytes_AS_STRING’
+Python-3.12.0rc3/Include/cpython/bytesobject.h:33:6: note: (159) following ‘false’ branch...
+Python-3.12.0rc3/Include/cpython/bytesobject.h:37:12: note: in expansion of macro ‘_PyBytes_CAST’
+Python-3.12.0rc3/Include/cpython/bytesobject.h:33:5: note: (160) ...to here
+Python-3.12.0rc3/Include/cpython/bytesobject.h:37:12: note: in expansion of macro ‘_PyBytes_CAST’
+Python-3.12.0rc3/Include/cpython/bytesobject.h:39:31: note: (161) returning to ‘_PyBytesWriter_Resize’ from ‘PyBytes_AS_STRING’
+Python-3.12.0rc3/Objects/bytesobject.c:3398:24: note: in expansion of macro ‘PyBytes_AS_STRING’
+Python-3.12.0rc3/Objects/bytesobject.c:3399:13: note: (162) use of uninitialized value ‘&*writer.small_buffer’ here
+# 3397|               else
+# 3398|                   dest = PyBytes_AS_STRING(writer->buffer);
+# 3399|->             memcpy(dest,
+# 3400|                         writer->small_buffer,
+# 3401|                         pos);
+
+Error: GCC_ANALYZER_WARNING (CWE-476):
+Python-3.12.0rc3/Objects/memoryobject.c: scope_hint: In function ‘init_flags’
+Python-3.12.0rc3/Objects/memoryobject.c:239:19: warning[-Wanalyzer-null-dereference]: dereference of NULL ‘*mv.view.shape’
+Python-3.12.0rc3/Objects/memoryobject.c:620:13: note: in expansion of macro ‘MV_CONTIGUOUS_NDIM1’
+Python-3.12.0rc3/Objects/memoryobject.c:2548:1: note: (1) entry to ‘memory_subscript’
+Python-3.12.0rc3/Objects/memoryobject.c:183:8: note: (2) following ‘false’ branch...
+Python-3.12.0rc3/Objects/memoryobject.c:2553:5: note: in expansion of macro ‘CHECK_RELEASED’
+Python-3.12.0rc3/Objects/memoryobject.c:2555:13: note: (3) ...to here
+Python-3.12.0rc3/Objects/memoryobject.c:2555:8: note: (4) following ‘false’ branch...
+Python-3.12.0rc3/Objects/memoryobject.c:2572:9: note: (5) inlined call to ‘_PyIndex_Check’ from ‘memory_subscript’
+Python-3.12.0rc3/Include/Python.h:44: included_from: Included from here.
+Python-3.12.0rc3/Objects/memoryobject.c:13: included_from: Included from here.
+Python-3.12.0rc3/Include/object.h:223:23: note: (6) inlined call to ‘Py_TYPE’ from ‘_PyIndex_Check’
+Python-3.12.0rc3/Include/internal/pycore_abstract.h:15:37: note: in expansion of macro ‘Py_TYPE’
+Python-3.12.0rc3/Include/object.h:220:14: note: (7) ...to here
+Python-3.12.0rc3/Objects/memoryobject.c: scope_hint: In function ‘init_flags’
+Python-3.12.0rc3/Objects/memoryobject.c:2579:13: note: (8) following ‘true’ branch...
+Python-3.12.0rc3/Objects/memoryobject.c:197:45: note: (9) ...to here
+Python-3.12.0rc3/Objects/memoryobject.c:2580:9: note: in expansion of macro ‘CHECK_RESTRICTED’
+Python-3.12.0rc3/Objects/memoryobject.c:197:8: note: (10) following ‘false’ branch...
+Python-3.12.0rc3/Objects/memoryobject.c:2580:9: note: in expansion of macro ‘CHECK_RESTRICTED’
+Python-3.12.0rc3/Objects/memoryobject.c:2583:40: note: (11) ...to here
+Python-3.12.0rc3/Objects/memoryobject.c:2583:40: note: (12) calling ‘mbuf_add_view’ from ‘memory_subscript’
+Python-3.12.0rc3/Objects/memoryobject.c:674:1: note: (13) entry to ‘mbuf_add_view’
+Python-3.12.0rc3/Objects/memoryobject.c:679:8: note: (14) following ‘false’ branch (when ‘src’ is non-NULL)...
+Python-3.12.0rc3/Objects/memoryobject.c:682:12: note: (15) ...to here
+Python-3.12.0rc3/Objects/memoryobject.c:682:8: note: (16) following ‘false’ branch...
+Python-3.12.0rc3/Objects/memoryobject.c:689:10: note: (17) ...to here
+Python-3.12.0rc3/Objects/memoryobject.c:690:8: note: (18) following ‘false’ branch...
+Python-3.12.0rc3/Objects/memoryobject.c:693:10: note: (19) ...to here
+Python-3.12.0rc3/Objects/memoryobject.c:695:5: note: (20) calling ‘init_shape_strides’ from ‘mbuf_add_view’
+Python-3.12.0rc3/Objects/memoryobject.c:554:1: note: (21) entry to ‘init_shape_strides’
+Python-3.12.0rc3/Objects/memoryobject.c:558:8: note: (22) following ‘true’ branch...
+Python-3.12.0rc3/Objects/memoryobject.c:559:21: note: (23) ...to here
+Python-3.12.0rc3/Objects/memoryobject.c:559:21: note: (24) ‘0’ is NULL
+Python-3.12.0rc3/Objects/memoryobject.c:560:23: note: (25) ‘0’ is NULL
+Python-3.12.0rc3/Objects/memoryobject.c:695:5: note: (26) returning to ‘mbuf_add_view’ from ‘init_shape_strides’
+Python-3.12.0rc3/Objects/memoryobject.c:696:5: note: (27) calling ‘init_suboffsets’ from ‘mbuf_add_view’
+Python-3.12.0rc3/Objects/memoryobject.c:581:1: note: (28) entry to ‘init_suboffsets’
+Python-3.12.0rc3/Objects/memoryobject.c:585:8: note: (29) following ‘true’ branch...
+Python-3.12.0rc3/Objects/memoryobject.c:586:26: note: (30) ...to here
+Python-3.12.0rc3/Objects/memoryobject.c:586:26: note: (31) ‘0’ is NULL
+Python-3.12.0rc3/Objects/memoryobject.c:696:5: note: (32) returning to ‘mbuf_add_view’ from ‘init_suboffsets’
+Python-3.12.0rc3/Objects/memoryobject.c:697:5: note: (33) calling ‘init_flags’ from ‘mbuf_add_view’
+Python-3.12.0rc3/Objects/memoryobject.c:609:1: note: (34) entry to ‘init_flags’
+Python-3.12.0rc3/Objects/memoryobject.c:614:5: note: (35) following ‘case 1:’ branch...
+Python-3.12.0rc3/Objects/memoryobject.c:619:5: note: (36) ...to here
+Python-3.12.0rc3/Objects/memoryobject.c:239:12: note: (37) ‘*mv.view.shape’ is NULL
+Python-3.12.0rc3/Objects/memoryobject.c:620:13: note: in expansion of macro ‘MV_CONTIGUOUS_NDIM1’
+Python-3.12.0rc3/Objects/memoryobject.c:239:19: note: (38) dereference of NULL ‘*(const Py_buffer *)((char *)mv + 56).shape’
+Python-3.12.0rc3/Objects/memoryobject.c:620:13: note: in expansion of macro ‘MV_CONTIGUOUS_NDIM1’
+#  237|   /* Fast contiguity test. Caller must ensure suboffsets==NULL and ndim==1. */
+#  238|   #define MV_CONTIGUOUS_NDIM1(view) \
+#  239|->     ((view)->shape[0] == 1 || (view)->strides[0] == (view)->itemsize)
+#  240|   
+#  241|   /* getbuffer() requests */
+
+Error: GCC_ANALYZER_WARNING (CWE-476):
+Python-3.12.0rc3/Objects/memoryobject.c: scope_hint: In function ‘init_flags’
+Python-3.12.0rc3/Objects/memoryobject.c:239:19: warning[-Wanalyzer-null-dereference]: dereference of NULL ‘*mv.view.strides’
+Python-3.12.0rc3/Objects/memoryobject.c:620:13: note: in expansion of macro ‘MV_CONTIGUOUS_NDIM1’
+Python-3.12.0rc3/Objects/memoryobject.c:2548:1: note: (1) entry to ‘memory_subscript’
+Python-3.12.0rc3/Objects/memoryobject.c:183:8: note: (2) following ‘false’ branch...
+Python-3.12.0rc3/Objects/memoryobject.c:2553:5: note: in expansion of macro ‘CHECK_RELEASED’
+Python-3.12.0rc3/Objects/memoryobject.c:2555:13: note: (3) ...to here
+Python-3.12.0rc3/Objects/memoryobject.c:2555:8: note: (4) following ‘false’ branch...
+Python-3.12.0rc3/Objects/memoryobject.c:2572:9: note: (5) inlined call to ‘_PyIndex_Check’ from ‘memory_subscript’
+Python-3.12.0rc3/Include/Python.h:44: included_from: Included from here.
+Python-3.12.0rc3/Objects/memoryobject.c:13: included_from: Included from here.
+Python-3.12.0rc3/Include/object.h:223:23: note: (6) inlined call to ‘Py_TYPE’ from ‘_PyIndex_Check’
+Python-3.12.0rc3/Include/internal/pycore_abstract.h:15:37: note: in expansion of macro ‘Py_TYPE’
+Python-3.12.0rc3/Include/object.h:220:14: note: (7) ...to here
+Python-3.12.0rc3/Objects/memoryobject.c: scope_hint: In function ‘init_flags’
+Python-3.12.0rc3/Objects/memoryobject.c:2579:13: note: (8) following ‘true’ branch...
+Python-3.12.0rc3/Objects/memoryobject.c:197:45: note: (9) ...to here
+Python-3.12.0rc3/Objects/memoryobject.c:2580:9: note: in expansion of macro ‘CHECK_RESTRICTED’
+Python-3.12.0rc3/Objects/memoryobject.c:197:8: note: (10) following ‘false’ branch...
+Python-3.12.0rc3/Objects/memoryobject.c:2580:9: note: in expansion of macro ‘CHECK_RESTRICTED’
+Python-3.12.0rc3/Objects/memoryobject.c:2583:40: note: (11) ...to here
+Python-3.12.0rc3/Objects/memoryobject.c:2583:40: note: (12) calling ‘mbuf_add_view’ from ‘memory_subscript’
+Python-3.12.0rc3/Objects/memoryobject.c:674:1: note: (13) entry to ‘mbuf_add_view’
+Python-3.12.0rc3/Objects/memoryobject.c:679:8: note: (14) following ‘false’ branch (when ‘src’ is non-NULL)...
+Python-3.12.0rc3/Objects/memoryobject.c:682:12: note: (15) ...to here
+Python-3.12.0rc3/Objects/memoryobject.c:682:8: note: (16) following ‘false’ branch...
+Python-3.12.0rc3/Objects/memoryobject.c:689:10: note: (17) ...to here
+Python-3.12.0rc3/Objects/memoryobject.c:690:8: note: (18) following ‘false’ branch...
+Python-3.12.0rc3/Objects/memoryobject.c:693:10: note: (19) ...to here
+Python-3.12.0rc3/Objects/memoryobject.c:695:5: note: (20) calling ‘init_shape_strides’ from ‘mbuf_add_view’
+Python-3.12.0rc3/Objects/memoryobject.c:554:1: note: (21) entry to ‘init_shape_strides’
+Python-3.12.0rc3/Objects/memoryobject.c:558:8: note: (22) following ‘true’ branch...
+Python-3.12.0rc3/Objects/memoryobject.c:559:21: note: (23) ...to here
+Python-3.12.0rc3/Objects/memoryobject.c:559:21: note: (24) ‘0’ is NULL
+Python-3.12.0rc3/Objects/memoryobject.c:560:23: note: (25) ‘0’ is NULL
+Python-3.12.0rc3/Objects/memoryobject.c:695:5: note: (26) returning to ‘mbuf_add_view’ from ‘init_shape_strides’
+Python-3.12.0rc3/Objects/memoryobject.c:696:5: note: (27) calling ‘init_suboffsets’ from ‘mbuf_add_view’
+Python-3.12.0rc3/Objects/memoryobject.c:581:1: note: (28) entry to ‘init_suboffsets’
+Python-3.12.0rc3/Objects/memoryobject.c:585:8: note: (29) following ‘true’ branch...
+Python-3.12.0rc3/Objects/memoryobject.c:586:26: note: (30) ...to here
+Python-3.12.0rc3/Objects/memoryobject.c:586:26: note: (31) ‘0’ is NULL
+Python-3.12.0rc3/Objects/memoryobject.c:696:5: note: (32) returning to ‘mbuf_add_view’ from ‘init_suboffsets’
+Python-3.12.0rc3/Objects/memoryobject.c:697:5: note: (33) calling ‘init_flags’ from ‘mbuf_add_view’
+Python-3.12.0rc3/Objects/memoryobject.c:609:1: note: (34) entry to ‘init_flags’
+Python-3.12.0rc3/Objects/memoryobject.c:614:5: note: (35) following ‘case 1:’ branch...
+Python-3.12.0rc3/Objects/memoryobject.c:619:5: note: (36) ...to here
+Python-3.12.0rc3/Objects/memoryobject.c:239:12: note: (37) ‘*mv.view.strides’ is NULL
+Python-3.12.0rc3/Objects/memoryobject.c:620:13: note: in expansion of macro ‘MV_CONTIGUOUS_NDIM1’
+Python-3.12.0rc3/Objects/memoryobject.c:239:19: note: (38) dereference of NULL ‘*(const Py_buffer *)((char *)mv + 56).shape’
+Python-3.12.0rc3/Objects/memoryobject.c:620:13: note: in expansion of macro ‘MV_CONTIGUOUS_NDIM1’
+#  237|   /* Fast contiguity test. Caller must ensure suboffsets==NULL and ndim==1. */
+#  238|   #define MV_CONTIGUOUS_NDIM1(view) \
+#  239|->     ((view)->shape[0] == 1 || (view)->strides[0] == (view)->itemsize)
+#  240|   
+#  241|   /* getbuffer() requests */
+
+Error: CLANG_WARNING:
+Python-3.12.0rc3/Objects/bytearrayobject.c:1119: included_from: Included from here.
+Python-3.12.0rc3/Objects/stringlib/split.h:65:9: warning[deadcode.DeadStores]: Although the value stored to 'j' is used in the enclosing expression, the value is never actually read from 'j'
+Python-3.12.0rc3/Objects/stringlib/split.h:65:9: note: Although the value stored to 'j' is used in the enclosing expression, the value is never actually read from 'j'
+#   63|           return NULL;
+#   64|   
+#   65|->     i = j = 0;
+#   66|       while (maxcount-- > 0) {
+#   67|           while (i < str_len && STRINGLIB_ISSPACE(str[i]))
+
+Error: CLANG_WARNING:
+Python-3.12.0rc3/Objects/stringlib/split.h:164:9: warning[deadcode.DeadStores]: Although the value stored to 'j' is used in the enclosing expression, the value is never actually read from 'j'
+Python-3.12.0rc3/Objects/stringlib/split.h:164:9: note: Although the value stored to 'j' is used in the enclosing expression, the value is never actually read from 'j'
+#  162|           return NULL;
+#  163|   
+#  164|->     i = j = 0;
+#  165|       while (maxcount-- > 0) {
+#  166|           pos = FASTSEARCH(str+i, str_len-i, sep, sep_len, -1, FAST_SEARCH);
+
+Error: CLANG_WARNING:
+Python-3.12.0rc3/Objects/stringlib/split.h:204:9: warning[deadcode.DeadStores]: Although the value stored to 'j' is used in the enclosing expression, the value is never actually read from 'j'
+Python-3.12.0rc3/Objects/stringlib/split.h:204:9: note: Although the value stored to 'j' is used in the enclosing expression, the value is never actually read from 'j'
+#  202|           return NULL;
+#  203|   
+#  204|->     i = j = str_len - 1;
+#  205|       while (maxcount-- > 0) {
+#  206|           while (i >= 0 && STRINGLIB_ISSPACE(str[i]))
+
+Error: GCC_ANALYZER_WARNING (CWE-476):
+Python-3.12.0rc3/Python/ceval.c: scope_hint: In function ‘initialize_locals’
+Python-3.12.0rc3/Python/ceval.c:1342:19: warning[-Wanalyzer-null-dereference]: dereference of NULL ‘args’
+Python-3.12.0rc3/Python/ceval.c:545:1: note: (1) entry to ‘PyEval_EvalCode’
+Python-3.12.0rc3/Python/ceval.c:552:8: note: (2) following ‘false’ branch...
+Python-3.12.0rc3/Python/ceval.c:555:24: note: (3) ...to here
+Python-3.12.0rc3/Python/ceval.c:566:8: note: (4) following ‘false’ branch...
+Python-3.12.0rc3/Python/ceval.c:570:21: note: (5) ...to here
+Python-3.12.0rc3/Python/ceval.c:570:21: note: (6) calling ‘_PyEval_Vector’ from ‘PyEval_EvalCode’
+Python-3.12.0rc3/Python/ceval.c:1651:1: note: (7) entry to ‘_PyEval_Vector’
+Python-3.12.0rc3/Python/ceval.c:1660:26: note: (8) following ‘false’ branch (when ‘i >= argcount’)...
+Python-3.12.0rc3/Python/ceval.c:1663:8: note: (9) ...to here
+Python-3.12.0rc3/Python/ceval.c:1663:8: note: (10) following ‘false’ branch (when ‘kwnames’ is NULL)...
+Python-3.12.0rc3/Python/ceval.c:1669:34: note: (11) ...to here
+Python-3.12.0rc3/Python/ceval.c:1669:34: note: (12) calling ‘_PyEvalFramePushAndInit’ from ‘_PyEval_Vector’
+Python-3.12.0rc3/Python/ceval.c:1575:1: note: (13) entry to ‘_PyEvalFramePushAndInit’
+Python-3.12.0rc3/Python/ceval.c:1582:8: note: (14) following ‘false’ branch...
+Python-3.12.0rc3/Python/ceval.c:1585:5: note: (15) ...to here
+Python-3.12.0rc3/Python/ceval.c:1585:5: note: (16) calling ‘_PyFrame_Initialize’ from ‘_PyEvalFramePushAndInit’
+Python-3.12.0rc3/Include/internal/pycore_instruments.h:7: included_from: Included from here.
+Python-3.12.0rc3/Include/internal/pycore_interp.h:28: included_from: Included from here.
+Python-3.12.0rc3/Include/internal/pycore_runtime.h:18: included_from: Included from here.
+Python-3.12.0rc3/Include/internal/pycore_pystate.h:11: included_from: Included from here.
+Python-3.12.0rc3/Include/internal/pycore_call.h:11: included_from: Included from here.
+Python-3.12.0rc3/Python/ceval.c:7: included_from: Included from here.
+Python-3.12.0rc3/Include/internal/pycore_frame.h:117:1: note: (17) entry to ‘_PyFrame_Initialize’
+Python-3.12.0rc3/Include/internal/pycore_frame.h:132:38: note: (18) following ‘false’ branch...
+Python-3.12.0rc3/Include/internal/pycore_frame.h:135:1: note: (19) ...to here
+Python-3.12.0rc3/Python/ceval.c:1585:5: note: (20) returning to ‘_PyEvalFramePushAndInit’ from ‘_PyFrame_Initialize’
+Python-3.12.0rc3/Python/ceval.c:1586:9: note: (21) calling ‘initialize_locals’ from ‘_PyEvalFramePushAndInit’
+Python-3.12.0rc3/Python/ceval.c:1307:1: note: (22) entry to ‘initialize_locals’
+Python-3.12.0rc3/Python/ceval.c:1317:8: note: (23) following ‘false’ branch...
+Python-3.12.0rc3/Python/ceval.c:1335:22: note: (24) ...to here
+Python-3.12.0rc3/Python/ceval.c:1341:19: note: (25) following ‘true’ branch...
+Python-3.12.0rc3/Python/ceval.c:1342:27: note: (26) ...to here
+Python-3.12.0rc3/Python/ceval.c:1342:27: note: (27) ‘args’ is NULL
+Python-3.12.0rc3/Python/ceval.c:1342:19: note: (28) dereference of NULL ‘args + (long unsigned int)j * 8’
+# 1340|       }
+# 1341|       for (j = 0; j < n; j++) {
+# 1342|->         PyObject *x = args[j];
+# 1343|           assert(localsplus[j] == NULL);
+# 1344|           localsplus[j] = x;
+
+Error: GCC_ANALYZER_WARNING (CWE-404):
+Python-3.12.0rc3/Python/getargs.c: scope_hint: In function ‘PyArg_UnpackTuple’
+Python-3.12.0rc3/Python/getargs.c:2867:1: warning[-Wanalyzer-va-list-leak]: missing call to ‘va_end’
+Python-3.12.0rc3/Python/getargs.c:2848:1: note: (1) entry to ‘PyArg_UnpackTuple’
+Python-3.12.0rc3/Python/getargs.c:2855:8: note: (2) following ‘false’ branch...
+Python-3.12.0rc3/Include/Python.h:39: included_from: Included from here.
+Python-3.12.0rc3/Include/object.h:972:41: note: (3) ...to here
+Python-3.12.0rc3/Include/pymacro.h:156:37: note: in definition of macro ‘_Py_RVALUE’
+Python-3.12.0rc3/Include/tupleobject.h:27:18: note: in expansion of macro ‘PyType_FastSubclass’
+Python-3.12.0rc3/Include/cpython/tupleobject.h:18:13: note: in expansion of macro ‘PyTuple_Check’
+Python-3.12.0rc3/Include/internal/pycore_tuple.h:64:39: note: in expansion of macro ‘_PyTuple_CAST’
+Python-3.12.0rc3/Python/getargs.c:2860:13: note: in expansion of macro ‘_PyTuple_ITEMS’
+Python-3.12.0rc3/Include/cpython/tupleobject.h:18:6: note: (4) following ‘false’ branch...
+Python-3.12.0rc3/Include/pymacro.h:156:37: note: in definition of macro ‘_Py_RVALUE’
+Python-3.12.0rc3/Include/internal/pycore_tuple.h:64:39: note: in expansion of macro ‘_PyTuple_CAST’
+Python-3.12.0rc3/Python/getargs.c:2860:13: note: in expansion of macro ‘_PyTuple_ITEMS’
+Python-3.12.0rc3/Python/getargs.c:2860:11: note: (5) ...to here
+Python-3.12.0rc3/Include/tupleobject.h:39: included_from: Included from here.
+Python-3.12.0rc3/Include/Python.h:59: included_from: Included from here.
+Python-3.12.0rc3/Include/cpython/tupleobject.h:26:30: note: (6) calling ‘PyTuple_GET_SIZE’ from ‘PyArg_UnpackTuple’
+Python-3.12.0rc3/Python/getargs.c:2861:13: note: in expansion of macro ‘PyTuple_GET_SIZE’
+Python-3.12.0rc3/Include/cpython/tupleobject.h:22:26: note: (7) entry to ‘PyTuple_GET_SIZE’
+Python-3.12.0rc3/Include/cpython/tupleobject.h:18:6: note: (8) following ‘false’ branch...
+Python-3.12.0rc3/Include/cpython/tupleobject.h:23:28: note: in expansion of macro ‘_PyTuple_CAST’
+Python-3.12.0rc3/Include/cpython/tupleobject.h:23:20: note: (9) ...to here
+Python-3.12.0rc3/Include/Python.h:44: included_from: Included from here.
+Python-3.12.0rc3/Include/object.h:237:23: note: (10) calling ‘Py_SIZE’ from ‘PyTuple_GET_SIZE’
+Python-3.12.0rc3/Include/cpython/tupleobject.h:24:12: note: in expansion of macro ‘Py_SIZE’
+Python-3.12.0rc3/Include/object.h:230:26: note: (11) entry to ‘Py_SIZE’
+Python-3.12.0rc3/Include/object.h:231:5: note: (12) following ‘false’ branch...
+Python-3.12.0rc3/Include/object.h:232:14: note: (13) ...to here
+Python-3.12.0rc3/Include/object.h:232:5: note: (14) following ‘false’ branch...
+Python-3.12.0rc3/Include/object.h:233:18: note: (15) ...to here
+Python-3.12.0rc3/Include/object.h:237:23: note: (16) returning to ‘PyTuple_GET_SIZE’ from ‘Py_SIZE’
+Python-3.12.0rc3/Include/cpython/tupleobject.h:24:12: note: in expansion of macro ‘Py_SIZE’
+Python-3.12.0rc3/Include/cpython/tupleobject.h:26:30: note: (17) returning to ‘PyArg_UnpackTuple’ from ‘PyTuple_GET_SIZE’
+Python-3.12.0rc3/Python/getargs.c:2861:13: note: in expansion of macro ‘PyTuple_GET_SIZE’
+Python-3.12.0rc3/Python/getargs.c:2863:5: note: (18) ‘va_start’ called here
+Python-3.12.0rc3/Python/getargs.c:2864:14: note: (19) calling ‘unpack_stack’ from ‘PyArg_UnpackTuple’
+Python-3.12.0rc3/Python/getargs.c:2830:1: note: (20) entry to ‘unpack_stack’
+Python-3.12.0rc3/Python/getargs.c:2836:10: note: (21) calling ‘_PyArg_CheckPositional’ from ‘unpack_stack’
+Python-3.12.0rc3/Python/getargs.c:2786:1: note: (22) entry to ‘_PyArg_CheckPositional’
+Python-3.12.0rc3/Python/getargs.c:2789:5: note: (23) following ‘false’ branch (when ‘min >= 0’)...
+Python-3.12.0rc3/Python/getargs.c:2790:5: note: (24) ...to here
+Python-3.12.0rc3/Python/getargs.c:2790:5: note: (25) following ‘false’ branch (when ‘min <= max’)...
+Python-3.12.0rc3/Python/getargs.c:2792:8: note: (26) ...to here
+Python-3.12.0rc3/Python/getargs.c:2836:10: note: (27) returning to ‘unpack_stack’ from ‘_PyArg_CheckPositional’
+Python-3.12.0rc3/Python/getargs.c:2840:19: note: (28) following ‘false’ branch (when ‘i >= nargs’)...
+Python-3.12.0rc3/Python/getargs.c:2844:12: note: (29) ...to here
+Python-3.12.0rc3/Python/getargs.c:2864:14: note: (30) returning to ‘PyArg_UnpackTuple’ from ‘unpack_stack’
+Python-3.12.0rc3/Python/getargs.c:2867:1: note: (31) missing call to ‘va_end’ to match ‘va_start’ at (18)
+# 2865|       va_end(vargs);
+# 2866|       return retval;
+# 2867|-> }
+# 2868|   
+# 2869|   int
+
+Error: GCC_ANALYZER_WARNING (CWE-404):
+Python-3.12.0rc3/Python/getargs.c: scope_hint: In function ‘_PyArg_UnpackStack’
+Python-3.12.0rc3/Python/getargs.c:2880:1: warning[-Wanalyzer-va-list-leak]: missing call to ‘va_end’
+Python-3.12.0rc3/Python/getargs.c:2870:1: note: (1) entry to ‘_PyArg_UnpackStack’
+Python-3.12.0rc3/Python/getargs.c:2876:5: note: (2) ‘va_start’ called here
+Python-3.12.0rc3/Python/getargs.c:2877:14: note: (3) calling ‘unpack_stack’ from ‘_PyArg_UnpackStack’
+Python-3.12.0rc3/Python/getargs.c:2830:1: note: (4) entry to ‘unpack_stack’
+Python-3.12.0rc3/Python/getargs.c:2836:10: note: (5) calling ‘_PyArg_CheckPositional’ from ‘unpack_stack’
+Python-3.12.0rc3/Python/getargs.c:2786:1: note: (6) entry to ‘_PyArg_CheckPositional’
+Python-3.12.0rc3/Include/Python.h:35: included_from: Included from here.
+Python-3.12.0rc3/Python/getargs.c:4: included_from: Included from here.
+Python-3.12.0rc3/Python/getargs.c:2789:5: note: (7) following ‘false’ branch (when ‘min >= 0’)...
+Python-3.12.0rc3/Python/getargs.c:2790:5: note: (8) ...to here
+Python-3.12.0rc3/Python/getargs.c:2790:5: note: (9) following ‘false’ branch (when ‘min <= max’)...
+Python-3.12.0rc3/Python/getargs.c:2792:8: note: (10) ...to here
+Python-3.12.0rc3/Python/getargs.c:2836:10: note: (11) returning to ‘unpack_stack’ from ‘_PyArg_CheckPositional’
+Python-3.12.0rc3/Python/getargs.c:2840:19: note: (12) following ‘false’ branch (when ‘i >= nargs’)...
+Python-3.12.0rc3/Python/getargs.c:2844:12: note: (13) ...to here
+Python-3.12.0rc3/Python/getargs.c:2877:14: note: (14) returning to ‘_PyArg_UnpackStack’ from ‘unpack_stack’
+Python-3.12.0rc3/Python/getargs.c:2880:1: note: (15) missing call to ‘va_end’ to match ‘va_start’ at (2)
+# 2878|       va_end(vargs);
+# 2879|       return retval;
+# 2880|-> }
+# 2881|   
+# 2882|   
