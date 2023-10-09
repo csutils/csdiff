@@ -130,6 +130,11 @@ MsgFilter::MsgFilter():
     d->addMsgFilter("SHELLCHECK_WARNING",
             " on line [0-9]+\\.$", " on line NNNN.");
 
+    // ignore profile count data file not found errors
+    d->addMsgFilter("COMPILER_WARNING",
+            "‘.*’( profile count data file not found)",
+            "...\1");
+
     // pylint reports, either raw, or prospector-wrapped
     const std::string pylintCheckers = "PROSPECTOR_WARNING|PYLINT_WARNING";
 
