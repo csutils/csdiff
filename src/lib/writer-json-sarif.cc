@@ -25,12 +25,14 @@
 
 using namespace boost::json;
 
-struct SarifTreeEncoder::Private {
-    using TCweMap = std::map<std::string, int>;
-    TCweMap                     cweMap;
+struct RuleProps {
+    int                 cweId;
+    std::string         scRuleId;
+};
 
-    using TShellCheckMap = std::map<std::string, std::string>;
-    TShellCheckMap              shellCheckMap;
+struct SarifTreeEncoder::Private {
+    using TRuleMap = std::map<std::string, RuleProps>;
+    TRuleMap                    ruleMap;
 
     TScanProps                  scanProps;
     boost::json::object         driver;
@@ -158,29 +160,21 @@ static void sarifEncodeCweRule(object *rule, const int cwe, bool append = false)
 void SarifTreeEncoder::Private::serializeRules()
 {
     array ruleList;
-    for (const auto &item : this->shellCheckMap) {
+    for (const auto &item : this->ruleMap) {
         const auto &id = item.first;
-        object rule = {
-            { "id", id }
-        };
-
-        sarifEncodeShellCheckRule(&rule, item.second);
-        if (1U == this->cweMap.count(id))
-            sarifEncodeCweRule(&rule, this->cweMap[id], /*append =*/ true);
-
-        ruleList.push_back(std::move(rule));
-    }
-
-    for (const auto &item : this->cweMap) {
-        const auto &id = item.first;
-        if (1U == this->shellCheckMap.count(id))
-            continue;
+        const RuleProps &rp = item.second;
 
         object rule = {
             { "id", id }
         };
 
-        sarifEncodeCweRule(&rule, item.second);
+        const bool haveScRule = !rp.scRuleId.empty();
+        if (haveScRule)
+            sarifEncodeShellCheckRule(&rule, rp.scRuleId);
+
+        if (rp.cweId)
+            sarifEncodeCweRule(&rule, rp.cweId, /*append =*/ haveScRule);
+
         ruleList.push_back(std::move(rule));
     }
 
@@ -316,13 +310,13 @@ void SarifTreeEncoder::appendDef(const Defect &def)
         static const RE reShellCheckMsg("(\\[)?(SC[0-9]+)(\\])?$");
         boost::regex_search(keyEvt.event, sm, reShellCheckMsg);
 
-        // update ShellCheck rule map
-        d->shellCheckMap[ruleId] = sm[2];
+        // update ShellCheck rule ID
+        d->ruleMap[ruleId].scRuleId = sm[2];
     }
 
     if (def.cwe) {
-        // update CWE map
-        d->cweMap[ruleId] = def.cwe;
+        // update CWE ID
+        d->ruleMap[ruleId].cweId = def.cwe;
 
         // encode per-warning CWE property
         object cweProp = {{ "cwe", "CWE-" + std::to_string(def.cwe) }};
@@ -397,7 +391,7 @@ void SarifTreeEncoder::writeTo(std::ostream &str)
 
     d->initToolVersion();
 
-    if (!d->cweMap.empty() || !d->shellCheckMap.empty())
+    if (!d->ruleMap.empty())
         // needs to run before we pick d->driver
         d->serializeRules();
 
