@@ -109,10 +109,9 @@ static void sarifEncodeShellCheckRule(object *rule, const std::string &ruleID)
     rule->emplace("name", ruleID);
 
     // properties.tags[]
-    object props = {
-        { "tags", { "ShellCheck" } }
-    };
-    rule->emplace("properties", std::move(props));
+    array tags = { "ShellCheck" };
+    object &props = rule->at("properties").as_object();
+    props["tags"] = std::move(tags);
 
     // help.text && help.markdown
     auto helpURI = "https://github.com/koalaman/shellcheck/wiki/" + ruleID;
@@ -132,15 +131,8 @@ static void sarifEncodeCweRule(object *rule, const int cwe, bool append = false)
     array cweList = { "CWE-" + cweStr };
 
     // properties.cwe[]
-    if (append) {
-        object &props = rule->at("properties").as_object();
-        props["cwe"] = std::move(cweList);
-    } else {
-        object props = {
-            { "cwe", std::move(cweList) }
-        };
-        rule->emplace("properties", std::move(props));
-    }
+    object &props = rule->at("properties").as_object();
+    props["cwe"] = std::move(cweList);
 
     // help.text
     auto helpText =
@@ -165,7 +157,8 @@ void SarifTreeEncoder::Private::serializeRules()
         const RuleProps &rp = item.second;
 
         object rule = {
-            { "id", id }
+            { "id", id },
+            { "properties", object() }
         };
 
         const bool haveScRule = !rp.scRuleId.empty();

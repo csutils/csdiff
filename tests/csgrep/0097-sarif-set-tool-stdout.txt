@@ -20,12 +20,12 @@
                     "rules": [
                         {
                             "id": "SHELLCHECK_WARNING: warning[SC2164]",
-                            "name": "SC2164",
                             "properties": {
                                 "tags": [
                                     "ShellCheck"
                                 ]
                             },
+                            "name": "SC2164",
                             "help": {
                                 "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC2164",
                                 "markdown": "Defect reference: [SC2164](https://github.com/koalaman/shellcheck/wiki/SC2164)"
@@ -33,12 +33,12 @@
                         },
                         {
                             "id": "SHELLCHECK_WARNING: warning[SC2174]",
-                            "name": "SC2174",
                             "properties": {
                                 "tags": [
                                     "ShellCheck"
                                 ]
                             },
+                            "name": "SC2174",
                             "help": {
                                 "text": "Defect reference: https://github.com/koalaman/shellcheck/wiki/SC2174",
                                 "markdown": "Defect reference: [SC2174](https://github.com/koalaman/shellcheck/wiki/SC2174)"
