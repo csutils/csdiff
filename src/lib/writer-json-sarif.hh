@@ -31,7 +31,8 @@
 // validation: https://sarifweb.azurewebsites.net/Validation
 class SarifTreeEncoder: public AbstractTreeEncoder {
     public:
-        SarifTreeEncoder() = default;
+        SarifTreeEncoder();
+        ~SarifTreeEncoder();
 
         /// import supported scan properties
         void importScanProps(const TScanProps &) override;
@@ -43,19 +44,8 @@ class SarifTreeEncoder: public AbstractTreeEncoder {
         void writeTo(std::ostream &) override;
 
     private:
-        void initToolVersion();
-        void serializeRules();
-
-        using TCweMap = std::map<std::string, int>;
-        TCweMap                     cweMap_;
-
-        using TShellCheckMap = std::map<std::string, std::string>;
-        TShellCheckMap              shellCheckMap_;
-
-        TScanProps                  scanProps_;
-        boost::json::object         driver_;
-        boost::json::array          results_;
-        CtxEventDetector            ctxEvtDetetor_;
+        struct Private;
+        std::unique_ptr<Private> d;
 };
 
 #endif /* H_GUARD_WRITER_JSON_SARIF_H */

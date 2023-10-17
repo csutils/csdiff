@@ -25,17 +25,40 @@
 
 using namespace boost::json;
 
-void SarifTreeEncoder::initToolVersion()
+struct SarifTreeEncoder::Private {
+    using TCweMap = std::map<std::string, int>;
+    TCweMap                     cweMap;
+
+    using TShellCheckMap = std::map<std::string, std::string>;
+    TShellCheckMap              shellCheckMap;
+
+    TScanProps                  scanProps;
+    boost::json::object         driver;
+    boost::json::array          results;
+    CtxEventDetector            ctxEvtDetetor;
+
+    void initToolVersion();
+    void serializeRules();
+};
+
+SarifTreeEncoder::SarifTreeEncoder():
+    d(new Private)
+{
+}
+
+SarifTreeEncoder::~SarifTreeEncoder() = default;
+
+void SarifTreeEncoder::Private::initToolVersion()
 {
     std::string tool;
-    auto it = scanProps_.find("tool");
-    if (scanProps_.end() != it)
+    auto it = this->scanProps.find("tool");
+    if (this->scanProps.end() != it)
         // read "tool" scan property
         tool = it->second;
 
     std::string ver;
-    it = scanProps_.find("tool-version");
-    if (scanProps_.end() != it) {
+    it = this->scanProps.find("tool-version");
+    if (this->scanProps.end() != it) {
         // read "tool-version" scan property
         ver = it->second;
 
@@ -65,17 +88,17 @@ void SarifTreeEncoder::initToolVersion()
         ver = CS_VERSION;
         uri = "https://github.com/csutils/csdiff";
     }
-    else if (scanProps_.end() != (it = scanProps_.find("tool-url")))
+    else if (this->scanProps.end() != (it = this->scanProps.find("tool-url")))
         // read "tool-url" scan property
         uri = it->second;
 
-    driver_["name"] = std::move(tool);
+    this->driver["name"] = std::move(tool);
 
     if (!ver.empty())
-        driver_["version"] = std::move(ver);
+        this->driver["version"] = std::move(ver);
 
     if (!uri.empty())
-        driver_["informationUri"] = std::move(uri);
+        this->driver["informationUri"] = std::move(uri);
 }
 
 static void sarifEncodeShellCheckRule(object *rule, const std::string &ruleID)
@@ -132,25 +155,25 @@ static void sarifEncodeCweRule(object *rule, const int cwe, bool append = false)
     }
 }
 
-void SarifTreeEncoder::serializeRules()
+void SarifTreeEncoder::Private::serializeRules()
 {
     array ruleList;
-    for (const auto &item : shellCheckMap_) {
+    for (const auto &item : this->shellCheckMap) {
         const auto &id = item.first;
         object rule = {
             { "id", id }
         };
 
         sarifEncodeShellCheckRule(&rule, item.second);
-        if (1U == cweMap_.count(id))
-            sarifEncodeCweRule(&rule, cweMap_[id], /*append =*/ true);
+        if (1U == this->cweMap.count(id))
+            sarifEncodeCweRule(&rule, this->cweMap[id], /*append =*/ true);
 
         ruleList.push_back(std::move(rule));
     }
 
-    for (const auto &item : cweMap_) {
+    for (const auto &item : this->cweMap) {
         const auto &id = item.first;
-        if (1U == shellCheckMap_.count(id))
+        if (1U == this->shellCheckMap.count(id))
             continue;
 
         object rule = {
@@ -161,12 +184,12 @@ void SarifTreeEncoder::serializeRules()
         ruleList.push_back(std::move(rule));
     }
 
-    driver_["rules"] = std::move(ruleList);
+    this->driver["rules"] = std::move(ruleList);
 }
 
 void SarifTreeEncoder::importScanProps(const TScanProps &scanProps)
 {
-    scanProps_ = scanProps;
+    d->scanProps = scanProps;
 }
 
 static void sarifEncodeMsg(object *pDst, const std::string& text)
@@ -294,12 +317,12 @@ void SarifTreeEncoder::appendDef(const Defect &def)
         boost::regex_search(keyEvt.event, sm, reShellCheckMsg);
 
         // update ShellCheck rule map
-        shellCheckMap_[ruleId] = sm[2];
+        d->shellCheckMap[ruleId] = sm[2];
     }
 
     if (def.cwe) {
         // update CWE map
-        cweMap_[ruleId] = def.cwe;
+        d->cweMap[ruleId] = def.cwe;
 
         // encode per-warning CWE property
         object cweProp = {{ "cwe", "CWE-" + std::to_string(def.cwe) }};
@@ -332,7 +355,7 @@ void SarifTreeEncoder::appendDef(const Defect &def)
             continue;
         }
 
-        if (ctxEvtDetetor_.isAnyCtxLine(evt))
+        if (d->ctxEvtDetetor.isAnyCtxLine(evt))
             // code snippet
             sarifEncodeSnippet(reg, evt.msg);
 
@@ -354,7 +377,7 @@ void SarifTreeEncoder::appendDef(const Defect &def)
         result["relatedLocations"] = std::move(relatedLocs);
 
     // append the `result` object to the `results` array
-    results_.push_back(std::move(result));
+    d->results.push_back(std::move(result));
 }
 
 void SarifTreeEncoder::writeTo(std::ostream &str)
@@ -365,27 +388,27 @@ void SarifTreeEncoder::writeTo(std::ostream &str)
         { "version", "2.1.0" }
     };
 
-    if (!scanProps_.empty()) {
+    if (!d->scanProps.empty()) {
         // scan props
         root["inlineExternalProperties"] = {
-            {{ "externalizedProperties", jsonSerializeScanProps(scanProps_) }}
+            {{ "externalizedProperties", jsonSerializeScanProps(d->scanProps) }}
         };
     }
 
-    this->initToolVersion();
+    d->initToolVersion();
 
-    if (!cweMap_.empty() || !shellCheckMap_.empty())
-        // needs to run before we pick driver_
-        this->serializeRules();
+    if (!d->cweMap.empty() || !d->shellCheckMap.empty())
+        // needs to run before we pick d->driver
+        d->serializeRules();
 
     object run0 = {
         { "tool", {
-            { "driver", std::move(driver_) }
+            { "driver", std::move(d->driver) }
         }}
     };
 
     // results
-    run0["results"] = std::move(results_);
+    run0["results"] = std::move(d->results);
 
     // mandatory: runs
     root["runs"] = array{std::move(run0)};
