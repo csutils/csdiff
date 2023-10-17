@@ -28,6 +28,7 @@ using namespace boost::json;
 struct RuleProps {
     int                 cweId;
     std::string         scRuleId;
+    std::string         tool;
 };
 
 struct SarifTreeEncoder::Private {
@@ -164,6 +165,12 @@ void SarifTreeEncoder::Private::serializeRules()
         const bool haveScRule = !rp.scRuleId.empty();
         if (haveScRule)
             sarifEncodeShellCheckRule(&rule, rp.scRuleId);
+        else if (!rp.tool.empty()) {
+            // encode tool tag
+            array tags = { rp.tool };
+            object &props = rule["properties"].as_object();
+            props["tags"] = std::move(tags);
+        }
 
         if (rp.cweId)
             sarifEncodeCweRule(&rule, rp.cweId, /*append =*/ haveScRule);
@@ -315,6 +322,10 @@ void SarifTreeEncoder::appendDef(const Defect &def)
         object cweProp = {{ "cwe", "CWE-" + std::to_string(def.cwe) }};
         result["properties"] = std::move(cweProp);
     }
+
+    if (!def.tool.empty())
+        // update tool for this rule
+        d->ruleMap[ruleId].tool = def.tool;
 
     // key event severity level
     sarifEncodeLevel(&result, keyEvt.event);

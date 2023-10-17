@@ -7,7 +7,17 @@
                 "driver": {
                     "name": "csdiff",
                     "version": "",
-                    "informationUri": "https://github.com/csutils/csdiff"
+                    "informationUri": "https://github.com/csutils/csdiff",
+                    "rules": [
+                        {
+                            "id": "COMPILER_WARNING: warning",
+                            "properties": {
+                                "tags": [
+                                    "gcc"
+                                ]
+                            }
+                        }
+                    ]
                 }
             },
             "results": [
