@@ -59,7 +59,7 @@ class DockerFileTransformer {
         const RE reLineRunExec_ = RE("^RUN  *\\[(.*)\\] *$");
 
         /// match ... in ... BS-NL
-        const RE reLineCont_    = RE("(^.*[^\\\\])\\\\$");
+        const RE reLineCont_    = RE("(^.*[^\\\\])\\\\ *$");
 
         /// match in-line comments
         const RE reComment_     = RE("^\\s*#.*$");

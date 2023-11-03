@@ -27,9 +27,7 @@ RUN ["/opt/cov-sa-2019.09/bin/cov-build", "--dir=/cov", "--append-log", "sh", "-
 
 # Rootless/unprivileged buildah configurations
 # https://github.com/containers/buildah/blob/main/docs/tutorials/05-openshift-rootless-build.md
-RUN ["/opt/cov-sa-2019.09/bin/cov-build", "--dir=/cov", "--append-log", "sh", "-c", "touch /etc/subgid /etc/subuid &&     chmod g=u /etc/subgid /etc/subuid /etc/passwd &&     echo 'podman:100000:65536' > /etc/subuid && echo 'podman:100000:65536' > /etc/subgid && \tmkdir -p /home/podman/.config/containers &&     (echo '[storage]';echo 'driver = \"vfs\"') > /home/podman/.config/containers/storage.conf && \\ "]
-    sed -i 's/short-name-mode="enforcing"/short-name-mode="permissive"/g' /etc/containers/registries.conf && \
-	mkdir /certs /home/podman/.config/cni && chown podman:podman /certs /home/podman/.config/cni
+RUN ["/opt/cov-sa-2019.09/bin/cov-build", "--dir=/cov", "--append-log", "sh", "-c", "touch /etc/subgid /etc/subuid &&     chmod g=u /etc/subgid /etc/subuid /etc/passwd &&     echo 'podman:100000:65536' > /etc/subuid && echo 'podman:100000:65536' > /etc/subgid && \tmkdir -p /home/podman/.config/containers &&     (echo '[storage]';echo 'driver = \"vfs\"') > /home/podman/.config/containers/storage.conf &&     sed -i 's/short-name-mode=\"enforcing\"/short-name-mode=\"permissive\"/g' /etc/containers/registries.conf && \tmkdir /certs /home/podman/.config/cni && chown podman:podman /certs /home/podman/.config/cni"]
 
 VOLUME ["/tmp", "/certs"]
 
