@@ -62,7 +62,7 @@ class DockerFileTransformer {
         const RE reLineCont_    = RE("(^.*[^\\\\])\\\\$");
 
         /// match in-line comments
-        const RE reComment_     = RE("^ *#.*$");
+        const RE reComment_     = RE("^\\s*#.*$");
 };
 
 /// parse serialized list in the form: "item1", "item2", ...

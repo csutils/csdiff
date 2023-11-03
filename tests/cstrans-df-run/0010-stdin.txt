@@ -1,0 +1,49 @@
+#@follow_tag(registry-proxy.engineering.redhat.com/rh-osbs/openshift-golang-builder:v1.19.10-202306161322.el8.g42c8e14)
+FROM registry-proxy.engineering.redhat.com/rh-osbs/openshift-golang-builder:v1.19.10-202306161322.el8.g42c8e14 AS builder
+
+COPY $REMOTE_SOURCE $REMOTE_SOURCE_DIR
+WORKDIR $REMOTE_SOURCE_DIR/app
+USER root
+RUN dnf install -y --setopt=tsflags=nodocs git
+RUN sed -i 's/CGO_ENABLED=0 //;s/containers_image_openpgp/& strictfipsruntime/' Makefile
+RUN go mod vendor && \
+    GOEXPERIMENT=strictfipsruntime make build VERSION=${CI_CONTAINER_VERSION}
+
+#@follow_tag(registry.redhat.io/ubi8/podman)
+FROM registry.redhat.io/ubi8/podman:8.8-14.1697647490
+
+LABEL com.redhat.component="quay-builder-container"
+LABEL name="quay/quay-builder-rhel8"
+LABEL version=${CI_CONTAINER_VERSION}
+LABEL io.k8s.display-name="Red Hat Quay - Builder"
+LABEL io.k8s.description="Red Hat Quay image builder"
+LABEL summary="Red Hat Quay image builder"
+LABEL maintainer "hgovinda@redhat.com"
+
+COPY --from=builder $REMOTE_SOURCE_DIR/app/bin/quay-builder /usr/local/bin/quay-builder
+COPY --from=builder $REMOTE_SOURCE_DIR/app/buildpack/ssh-git.sh /ssh-git.sh
+COPY --from=builder $REMOTE_SOURCE_DIR/app/entrypoint.sh /home/podman/entrypoint.sh
+
+RUN set -ex\
+	; dnf install -y --setopt=tsflags=nodocs --setopt=skip_missing_names_on_install=False git wget \
+	; dnf -y update && dnf -y -q clean all
+
+# Rootless/unprivileged buildah configurations
+# https://github.com/containers/buildah/blob/main/docs/tutorials/05-openshift-rootless-build.md
+RUN touch /etc/subgid /etc/subuid && \
+    chmod g=u /etc/subgid /etc/subuid /etc/passwd && \
+    echo 'podman:100000:65536' > /etc/subuid && echo 'podman:100000:65536' > /etc/subgid && \
+	# Set driver to VFS, which doesn't require host modifications compared to overlay
+	# Set shortname aliasing to permissive - https://www.redhat.com/sysadmin/container-image-short-names
+	mkdir -p /home/podman/.config/containers && \
+    (echo '[storage]';echo 'driver = "vfs"') > /home/podman/.config/containers/storage.conf && \ 
+    sed -i 's/short-name-mode="enforcing"/short-name-mode="permissive"/g' /etc/containers/registries.conf && \
+	mkdir /certs /home/podman/.config/cni && chown podman:podman /certs /home/podman/.config/cni
+
+VOLUME ["/tmp", "/certs"]
+
+WORKDIR /home/podman
+
+USER podman
+
+ENTRYPOINT ["sh", "/home/podman/entrypoint.sh"]
