@@ -192,4 +192,19 @@ class MsgTrimmer: public GenericAbstractFilter {
         void handleDef(const Defect &defOrig) override;
 };
 
+/// set importance level on all defects to the specified value
+class ImpLevelSetter: public GenericAbstractFilter {
+    private:
+        const int impLevel_;
+
+    public:
+        ImpLevelSetter(AbstractWriter *agent, const int impLevel):
+            GenericAbstractFilter(agent),
+            impLevel_(impLevel)
+        {
+        }
+
+        void handleDef(const Defect &defOrig) override;
+};
+
 #endif /* H_GUARD_FILTER_H */

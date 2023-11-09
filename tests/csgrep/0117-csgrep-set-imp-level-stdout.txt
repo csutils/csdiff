@@ -1,0 +1,1216 @@
+{
+    "scan": {
+        "analyzer-version-coverity": "2023.3.4",
+        "analyzer-version-snyk-code": "1.1232.0",
+        "cov-compilation-unit-count": 28067,
+        "cov-compilation-unit-ratio": 99,
+        "cov-lines-processed": 368781,
+        "cov-time-elapsed-analysis": "00:04:45",
+        "dist-git-url": "https://pkgs.devel.redhat.com/git/containers/windows-machine-config-operator#6be8f30d892a73b87e995e571548f539951547fa",
+        "exit-code": 0,
+        "host": "osh-worker-004.osh-001.prod.iad2.dc.redhat.com",
+        "known-false-positives": "/usr/share/csmock/known-false-positives.js",
+        "project-name": "windows-machine-config-operator-container-9.0.0-95",
+        "remote-sources": "[{'name': None, 'url': 'https://cachito.engineering.redhat.com/api/v1/requests/997685', 'archives': ['remote-source.json', 'remote-source.tar.gz']}]",
+        "store-results-to": "/tmp/tmpvhatmpjl/windows-machine-config-operator-container-9.0.0-95.tar.xz",
+        "time-created": "2023-10-08 04:29:58",
+        "time-finished": "2023-10-08 05:15:32",
+        "tool": "cspodman",
+        "tool-args": "'/usr/bin/cspodman' '--force-global-cleanup-on-exit' '-t' 'gitleaks,snyk,cppcheck,unicontrol,coverity,clang,shellcheck,gcc' '-o' '/tmp/tmpvhatmpjl/windows-machine-config-operator-container-9.0.0-95.tar.xz' '--use-host-cppcheck' '--gcc-analyze' '--unicontrol-notests' '--unicontrol-bidi-only' 'windows-machine-config-operator-container-9.0.0-95'",
+        "tool-version": "cspodman-0.3.0.20231007.160209.g6d7b21a-1.el9"
+    },
+    "defects": [
+        {
+            "checker": "OS_CMD_INJECTION",
+            "cwe": 78,
+            "function": "k8s.io/kubernetes/pkg/kubelet.journalServer.ServeHTTP(net/http.ResponseWriter, *net/http.Request)",
+            "language": "go",
+            "tool": "coverity",
+            "key_event_idx": 4,
+            "events": [
+                {
+                    "file_name": "/remote-source/build/windows-machine-config-operator/kubelet/_output/local/go/src/k8s.io/kubernetes/pkg/kubelet/kubelet_server_journal.go",
+                    "line": 71,
+                    "event": "taint",
+                    "message": "The field \"req.URL\" is a source of untrusted data.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/remote-source/build/windows-machine-config-operator/kubelet/_output/local/go/src/k8s.io/kubernetes/pkg/kubelet/kubelet_server_journal.go",
+                    "line": 71,
+                    "event": "identity",
+                    "message": "Calling \"Query\". This call assigns \"req.URL.RawQuery\" to \"<return value>\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/remote-source/build/windows-machine-config-operator/kubelet/_output/local/go/src/k8s.io/kubernetes/pkg/kubelet/kubelet_server_journal.go",
+                    "line": 71,
+                    "event": "identity",
+                    "message": "Calling \"newNodeLogQuery\". This call assigns \"req.URL.Query().since\" to \"(<return value>.$0).options.ocAdm.Since\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/remote-source/build/windows-machine-config-operator/kubelet/_output/local/go/src/k8s.io/kubernetes/pkg/kubelet/kubelet_server_journal.go",
+                    "line": 71,
+                    "event": "assign",
+                    "message": "Assigning: \"nlq\" = \"newNodeLogQuery(req.URL.Query())\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/remote-source/build/windows-machine-config-operator/kubelet/_output/local/go/src/k8s.io/kubernetes/pkg/kubelet/kubelet_server_journal.go",
+                    "line": 91,
+                    "event": "os_cmd_sink",
+                    "message": "Calling \"Copy\". Passing the tainted value \"nlq.options.ocAdm.Since\" to the process-invoking API may allow an attacker to modify the intention of the command.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/remote-source/build/windows-machine-config-operator/kubelet/_output/local/go/src/k8s.io/kubernetes/pkg/kubelet/kubelet_server_journal.go",
+                    "line": 91,
+                    "event": "remediation",
+                    "message": "Ensure the tainted data cannot modify the intent of the OS command. If possible, use a safer library or API call instead.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SENSITIVE_DATA_LEAK",
+            "cwe": 317,
+            "function": "k8s.io/kubernetes/pkg/kubelet/server.Server.getContainerLogs(*github.com/emicklei/go-restful/v3.Request, *github.com/emicklei/go-restful/v3.Response)",
+            "language": "go",
+            "tool": "coverity",
+            "key_event_idx": 2,
+            "events": [
+                {
+                    "file_name": "/remote-source/build/windows-machine-config-operator/kubelet/_output/local/go/src/k8s.io/kubernetes/pkg/kubelet/server/server.go",
+                    "line": 735,
+                    "event": "sensitive_data",
+                    "message": "Calling \"GetKubeletContainerLogs\". This call stores sensitive data in \"<return value>\". (The interface method resolves to \"kubelet.Kubelet.GetKubeletContainerLogs(Context, string, string, v1.PodLogOptions *, Writer, Writer)\".)",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/remote-source/build/windows-machine-config-operator/kubelet/_output/local/go/src/k8s.io/kubernetes/pkg/kubelet/server/server.go",
+                    "line": 735,
+                    "event": "assign",
+                    "message": "Assigning: \"err\" = \"s.host.GetKubeletContainerLogs(ctx, GetPodFullName(pod), containerName, logOptions, fw, fw)\". Now \"err\" contains sensitive data.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/remote-source/build/windows-machine-config-operator/kubelet/_output/local/go/src/k8s.io/kubernetes/pkg/kubelet/server/server.go",
+                    "line": 736,
+                    "event": "sink",
+                    "message": "Calling \"WriteError\". This shows the sensitive data \"err\" in a user interface. It may be exposed to unintended individuals.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/remote-source/build/windows-machine-config-operator/kubelet/_output/local/go/src/k8s.io/kubernetes/pkg/kubelet/server/server.go",
+                    "line": 736,
+                    "event": "remediation",
+                    "message": "Do not leak this data to a user interface.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "XSS",
+            "cwe": 79,
+            "function": "k8s.io/kubernetes/pkg/kubelet/server.Server.getAttach(*github.com/emicklei/go-restful/v3.Request, *github.com/emicklei/go-restful/v3.Response)",
+            "language": "go",
+            "tool": "coverity",
+            "key_event_idx": 4,
+            "events": [
+                {
+                    "file_name": "/remote-source/build/windows-machine-config-operator/kubelet/_output/local/go/src/k8s.io/kubernetes/pkg/kubelet/server/server.go",
+                    "line": 837,
+                    "event": "taint",
+                    "message": "Calling \"getExecRequestParams\". This call taints \"<return value>.containerName\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/remote-source/build/windows-machine-config-operator/kubelet/_output/local/go/src/k8s.io/kubernetes/pkg/kubelet/server/server.go",
+                    "line": 837,
+                    "event": "assign",
+                    "message": "Assigning a tainted string to \"params\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/remote-source/build/windows-machine-config-operator/kubelet/_output/local/go/src/k8s.io/kubernetes/pkg/kubelet/server/server.go",
+                    "line": 851,
+                    "event": "identity",
+                    "message": "Calling \"GetAttach\". This call assigns \"params.containerName\" to \"<return value>.$1\". Now \"<return value>.$1\" is tainted. (The interface method resolves to \"kubelet.Kubelet.GetAttach(Context, string, types.UID, string, remotecommand.Options)\".)",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/remote-source/build/windows-machine-config-operator/kubelet/_output/local/go/src/k8s.io/kubernetes/pkg/kubelet/server/server.go",
+                    "line": 851,
+                    "event": "assign",
+                    "message": "Assigning: \"err\" = \"s.host.GetAttach(request.Request.Context(), podFullName, params.podUID, params.containerName, *streamOpts)\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/remote-source/build/windows-machine-config-operator/kubelet/_output/local/go/src/k8s.io/kubernetes/pkg/kubelet/server/server.go",
+                    "line": 853,
+                    "event": "sink",
+                    "message": "Calling \"WriteError\". This call uses \"err\" for sensitive computation.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/remote-source/build/windows-machine-config-operator/kubelet/_output/local/go/src/k8s.io/kubernetes/pkg/kubelet/server/server.go",
+                    "line": 853,
+                    "event": "remediation",
+                    "message": "Escape non-constant data appropriately before concatenating it into HTML. The specific sequence of escapers necessary to make data safe depends on its syntactic position in the HTML. Allowing only safe characters (whitelisting) sometimes suffices to avoid XSS vulnerabilities, but only the strictest whitelists prevent all attacks.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "XSS",
+            "cwe": 79,
+            "function": "k8s.io/kubernetes/pkg/kubelet/server.Server.getExec(*github.com/emicklei/go-restful/v3.Request, *github.com/emicklei/go-restful/v3.Response)",
+            "language": "go",
+            "tool": "coverity",
+            "key_event_idx": 4,
+            "events": [
+                {
+                    "file_name": "/remote-source/build/windows-machine-config-operator/kubelet/_output/local/go/src/k8s.io/kubernetes/pkg/kubelet/server/server.go",
+                    "line": 862,
+                    "event": "taint",
+                    "message": "Calling \"getExecRequestParams\". This call taints \"<return value>.containerName\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/remote-source/build/windows-machine-config-operator/kubelet/_output/local/go/src/k8s.io/kubernetes/pkg/kubelet/server/server.go",
+                    "line": 862,
+                    "event": "assign",
+                    "message": "Assigning a tainted string to \"params\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/remote-source/build/windows-machine-config-operator/kubelet/_output/local/go/src/k8s.io/kubernetes/pkg/kubelet/server/server.go",
+                    "line": 876,
+                    "event": "identity",
+                    "message": "Calling \"GetExec\". This call assigns \"params.containerName\" to \"<return value>.$1\". Now \"<return value>.$1\" is tainted. (The interface method resolves to \"kubelet.Kubelet.GetExec(Context, string, types.UID, string, []string, remotecommand.Options)\".)",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/remote-source/build/windows-machine-config-operator/kubelet/_output/local/go/src/k8s.io/kubernetes/pkg/kubelet/server/server.go",
+                    "line": 876,
+                    "event": "assign",
+                    "message": "Assigning: \"err\" = \"s.host.GetExec(request.Request.Context(), podFullName, params.podUID, params.containerName, params.cmd, *streamOpts)\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/remote-source/build/windows-machine-config-operator/kubelet/_output/local/go/src/k8s.io/kubernetes/pkg/kubelet/server/server.go",
+                    "line": 878,
+                    "event": "sink",
+                    "message": "Calling \"WriteError\". This call uses \"err\" for sensitive computation.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/remote-source/build/windows-machine-config-operator/kubelet/_output/local/go/src/k8s.io/kubernetes/pkg/kubelet/server/server.go",
+                    "line": 878,
+                    "event": "remediation",
+                    "message": "Escape non-constant data appropriately before concatenating it into HTML. The specific sequence of escapers necessary to make data safe depends on its syntactic position in the HTML. Allowing only safe characters (whitelisting) sometimes suffices to avoid XSS vulnerabilities, but only the strictest whitelists prevent all attacks.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "XSS",
+            "cwe": 79,
+            "function": "k8s.io/kubernetes/pkg/kubelet/server.Server.checkpoint(*github.com/emicklei/go-restful/v3.Request, *github.com/emicklei/go-restful/v3.Response)",
+            "language": "go",
+            "tool": "coverity",
+            "key_event_idx": 6,
+            "events": [
+                {
+                    "file_name": "/remote-source/build/windows-machine-config-operator/kubelet/_output/local/go/src/k8s.io/kubernetes/pkg/kubelet/server/server.go",
+                    "line": 957,
+                    "event": "taint",
+                    "message": "Calling \"PathParameter\". Reading data from an HTTP request, which is considered tainted",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/remote-source/build/windows-machine-config-operator/kubelet/_output/local/go/src/k8s.io/kubernetes/pkg/kubelet/server/server.go",
+                    "line": 957,
+                    "event": "assign",
+                    "message": "Assigning: \"containerName\" = \"request.PathParameter(\"containerName\")\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/remote-source/build/windows-machine-config-operator/kubelet/_output/local/go/src/k8s.io/kubernetes/pkg/kubelet/server/server.go",
+                    "line": 990,
+                    "event": "assign",
+                    "message": "Assigning: \"options\" = \"&v1.CheckpointContainerRequest{\"\", \"\", 0, {}, 0}\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/remote-source/build/windows-machine-config-operator/kubelet/_output/local/go/src/k8s.io/kubernetes/pkg/kubelet/server/server.go",
+                    "line": 1008,
+                    "event": "identity",
+                    "message": "Calling \"CheckpointContainer\". This call assigns \"containerName\" to \"options.Location\". Now \"options.Location\" is tainted. (The interface method resolves to \"kubelet.Kubelet.CheckpointContainer(Context, types.UID, string, string, v1.CheckpointContainerRequest *)\".)",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/remote-source/build/windows-machine-config-operator/kubelet/_output/local/go/src/k8s.io/kubernetes/pkg/kubelet/server/server.go",
+                    "line": 1021,
+                    "event": "assign",
+                    "message": "Assigning: \"<storage from new>[0]\" = \"options.Location\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/remote-source/build/windows-machine-config-operator/kubelet/_output/local/go/src/k8s.io/kubernetes/pkg/kubelet/server/server.go",
+                    "line": 1021,
+                    "event": "identity",
+                    "message": "Calling \"Sprintf\". This call assigns \"{options.Location}\" to \"<return value>\". Now \"<return value>\" is tainted.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/remote-source/build/windows-machine-config-operator/kubelet/_output/local/go/src/k8s.io/kubernetes/pkg/kubelet/server/server.go",
+                    "line": 1021,
+                    "event": "sink",
+                    "message": "Calling \"writeJSONResponse\". This call uses \"([]byte)Sprintf(\"{\\\"items\\\":[\\\"%s\\\"]}\", options.Location)\" for sensitive computation.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/remote-source/build/windows-machine-config-operator/kubelet/_output/local/go/src/k8s.io/kubernetes/pkg/kubelet/server/server.go",
+                    "line": 1021,
+                    "event": "remediation",
+                    "message": "Escape non-constant data appropriately before concatenating it into HTML. The specific sequence of escapers necessary to make data safe depends on its syntactic position in the HTML. Allowing only safe characters (whitelisting) sometimes suffices to avoid XSS vulnerabilities, but only the strictest whitelists prevent all attacks.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SENSITIVE_DATA_LEAK",
+            "cwe": 317,
+            "function": "k8s.io/kubernetes/pkg/kubelet/server.Server.checkpoint(*github.com/emicklei/go-restful/v3.Request, *github.com/emicklei/go-restful/v3.Response)",
+            "language": "go",
+            "tool": "coverity",
+            "key_event_idx": 4,
+            "events": [
+                {
+                    "file_name": "/remote-source/build/windows-machine-config-operator/kubelet/_output/local/go/src/k8s.io/kubernetes/pkg/kubelet/server/server.go",
+                    "line": 990,
+                    "event": "assign",
+                    "message": "Assigning: \"options\" = \"&v1.CheckpointContainerRequest{\"\", \"\", 0, {}, 0}\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/remote-source/build/windows-machine-config-operator/kubelet/_output/local/go/src/k8s.io/kubernetes/pkg/kubelet/server/server.go",
+                    "line": 1008,
+                    "event": "sensitive_data",
+                    "message": "Calling \"CheckpointContainer\". This call stores sensitive data in \"options.Location\". (The interface method resolves to \"kubelet.Kubelet.CheckpointContainer(Context, types.UID, string, string, v1.CheckpointContainerRequest *)\".)",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/remote-source/build/windows-machine-config-operator/kubelet/_output/local/go/src/k8s.io/kubernetes/pkg/kubelet/server/server.go",
+                    "line": 1021,
+                    "event": "assign",
+                    "message": "Assigning: \"<storage from new>[0]\" = \"options.Location\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/remote-source/build/windows-machine-config-operator/kubelet/_output/local/go/src/k8s.io/kubernetes/pkg/kubelet/server/server.go",
+                    "line": 1021,
+                    "event": "identity",
+                    "message": "Calling \"Sprintf\". This call assigns \"{options.Location}\" to \"<return value>\". Now \"<return value>\" contains sensitive data.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/remote-source/build/windows-machine-config-operator/kubelet/_output/local/go/src/k8s.io/kubernetes/pkg/kubelet/server/server.go",
+                    "line": 1021,
+                    "event": "sink",
+                    "message": "Calling \"writeJSONResponse\". This shows the sensitive data \"([]byte)Sprintf(\"{\\\"items\\\":[\\\"%s\\\"]}\", options.Location)\" in a user interface. It may be exposed to unintended individuals.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/remote-source/build/windows-machine-config-operator/kubelet/_output/local/go/src/k8s.io/kubernetes/pkg/kubelet/server/server.go",
+                    "line": 1021,
+                    "event": "remediation",
+                    "message": "Do not leak this data to a user interface.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 79,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/cloud-provider-azure/kubetest2-aks/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go",
+                    "line": 147,
+                    "column": 10,
+                    "event": "error[go/XSS]",
+                    "message": "Unsanitized input from an HTTP header flows into Write, where it is used to render an HTML page returned to the user. This may result in a Reflected Cross-Site Scripting attack (XSS).",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 79,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/cloud-provider-azure/pkg/azclient/configloader/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go",
+                    "line": 147,
+                    "column": 10,
+                    "event": "error[go/XSS]",
+                    "message": "Unsanitized input from an HTTP header flows into Write, where it is used to render an HTML page returned to the user. This may result in a Reflected Cross-Site Scripting attack (XSS).",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 209,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/cloud-provider-azure/pkg/azclient/configloader/vendor/github.com/onsi/ginkgo/v2/internal/suite.go",
+                    "line": 360,
+                    "column": 3,
+                    "event": "error[go/ErrorMessage]",
+                    "message": "Information exposure through error stack trace in fmt.Printf.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 79,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/cloud-provider-azure/pkg/azclient/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go",
+                    "line": 147,
+                    "column": 10,
+                    "event": "error[go/XSS]",
+                    "message": "Unsanitized input from an HTTP header flows into Write, where it is used to render an HTML page returned to the user. This may result in a Reflected Cross-Site Scripting attack (XSS).",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 209,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/cloud-provider-azure/pkg/azclient/vendor/github.com/onsi/ginkgo/v2/internal/suite.go",
+                    "line": 360,
+                    "column": 3,
+                    "event": "error[go/ErrorMessage]",
+                    "message": "Information exposure through error stack trace in fmt.Printf.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 918,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/cloud-provider-azure/vendor/github.com/Azure/go-autorest/autorest/azure/rp.go",
+                    "line": 94,
+                    "column": 3,
+                    "event": "error[go/Ssrf]",
+                    "message": "Unsanitized input from an HTTP header flows into _, where it is used as an URL to perform a request. This may result in a Server-Side Request Forgery vulnerability.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 79,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/cloud-provider-azure/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go",
+                    "line": 147,
+                    "column": 10,
+                    "event": "error[go/XSS]",
+                    "message": "Unsanitized input from an HTTP header flows into Write, where it is used to render an HTML page returned to the user. This may result in a Reflected Cross-Site Scripting attack (XSS).",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 209,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/cloud-provider-azure/vendor/github.com/onsi/ginkgo/v2/internal/suite.go",
+                    "line": 360,
+                    "column": 3,
+                    "event": "error[go/ErrorMessage]",
+                    "message": "Information exposure through error stack trace in fmt.Printf.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 23,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/cloud-provider-azure/vendor/go.uber.org/zap/sink.go",
+                    "line": 139,
+                    "column": 9,
+                    "event": "error[go/PT]",
+                    "message": "Unsanitized input from the request URL flows into os.OpenFile, where it is used as a path. This may result in a Path Traversal vulnerability and allow an attacker to open arbitrary files.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 78,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/containerd/pkg/process/io_util.go",
+                    "line": 38,
+                    "column": 9,
+                    "event": "error[go/CommandInjection]",
+                    "message": "Unsanitized input from the request URL flows into golang.org.x.sys.execabs.Command, where it is used as a shell command. This may result in a Command Injection vulnerability.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 330,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/containerd/vendor/github.com/containerd/imgcrypt/images/encryption/encryption.go",
+                    "line": 222,
+                    "column": 36,
+                    "event": "error[go/InsecurelyGeneratedPassword]",
+                    "message": "Weak random generator math.rand.Int is used to create a password in a cryptological or password-generating function. Consider using crypto/rand to generate strong passwords.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 330,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/containerd/vendor/github.com/containerd/imgcrypt/images/encryption/encryption.go",
+                    "line": 222,
+                    "column": 48,
+                    "event": "error[go/InsecurelyGeneratedPassword]",
+                    "message": "Weak random generator math.rand.Int is used to create a password in a cryptological or password-generating function. Consider using crypto/rand to generate strong passwords.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 330,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/containerd/vendor/github.com/containerd/imgcrypt/images/encryption/encryption.go",
+                    "line": 227,
+                    "column": 34,
+                    "event": "error[go/InsecurelyGeneratedPassword]",
+                    "message": "Weak random generator math.rand.Int is used to create a password in variable fmt.Errorf. Consider using crypto/rand to generate strong passwords.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 330,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/containerd/vendor/github.com/containerd/imgcrypt/images/encryption/encryption.go",
+                    "line": 241,
+                    "column": 33,
+                    "event": "error[go/InsecurelyGeneratedPassword]",
+                    "message": "Weak random generator math.rand.Int is used to create a password in variable fmt.Errorf. Consider using crypto/rand to generate strong passwords.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 330,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/containerd/vendor/github.com/containerd/imgcrypt/images/encryption/encryption.go",
+                    "line": 323,
+                    "column": 40,
+                    "event": "error[go/InsecurelyGeneratedPassword]",
+                    "message": "Weak random generator math.rand.Int is used to create a password in variable fmt.Errorf. Consider using crypto/rand to generate strong passwords.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 330,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/containerd/vendor/github.com/containerd/imgcrypt/images/encryption/encryption.go",
+                    "line": 338,
+                    "column": 40,
+                    "event": "error[go/InsecurelyGeneratedPassword]",
+                    "message": "Weak random generator math.rand.Int is used to create a password in variable fmt.Errorf. Consider using crypto/rand to generate strong passwords.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 330,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/containerd/vendor/github.com/containerd/imgcrypt/images/encryption/encryption.go",
+                    "line": 357,
+                    "column": 40,
+                    "event": "error[go/InsecurelyGeneratedPassword]",
+                    "message": "Weak random generator math.rand.Int is used to create a password in variable fmt.Errorf. Consider using crypto/rand to generate strong passwords.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 209,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/containernetworking-plugins/vendor/github.com/onsi/ginkgo/v2/internal/suite.go",
+                    "line": 358,
+                    "column": 3,
+                    "event": "error[go/ErrorMessage]",
+                    "message": "Information exposure through error stack trace in fmt.Printf.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 78,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/hcsshim/cmd/gcstools/generichook.go",
+                    "line": 41,
+                    "column": 13,
+                    "event": "error[go/CommandInjection]",
+                    "message": "Unsanitized input from a CLI argument flows into os.exec.Command, where it is used as a shell command. This may result in a Command Injection vulnerability.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 78,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/hcsshim/internal/cmd/io_binary.go",
+                    "line": 150,
+                    "column": 9,
+                    "event": "error[go/CommandInjection]",
+                    "message": "Unsanitized input from the request URL flows into os.exec.CommandContext, where it is used as a shell command. This may result in a Command Injection vulnerability.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 547,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/kube-proxy/staging/src/k8s.io/apiserver/pkg/admission/plugin/webhook/testcerts/certs.go",
+                    "line": 22,
+                    "column": 5,
+                    "event": "error[go/HardcodedNonCryptoSecret]",
+                    "message": "Avoid hardcoding values that are meant to be secret. Found a hardcoded string used in CAKey.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 547,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/kube-proxy/staging/src/k8s.io/apiserver/pkg/admission/plugin/webhook/testcerts/certs.go",
+                    "line": 71,
+                    "column": 5,
+                    "event": "error[go/HardcodedNonCryptoSecret]",
+                    "message": "Avoid hardcoding values that are meant to be secret. Found a hardcoded string used in BadCAKey.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 547,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/kube-proxy/staging/src/k8s.io/apiserver/pkg/admission/plugin/webhook/testcerts/certs.go",
+                    "line": 120,
+                    "column": 5,
+                    "event": "error[go/HardcodedNonCryptoSecret]",
+                    "message": "Avoid hardcoding values that are meant to be secret. Found a hardcoded string used in ServerKey.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 547,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/kube-proxy/staging/src/k8s.io/apiserver/pkg/admission/plugin/webhook/testcerts/certs.go",
+                    "line": 169,
+                    "column": 5,
+                    "event": "error[go/HardcodedNonCryptoSecret]",
+                    "message": "Avoid hardcoding values that are meant to be secret. Found a hardcoded string used in ClientKey.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 78,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/kube-proxy/staging/src/k8s.io/component-base/logs/kube-log-runner/kube-log-runner.go",
+                    "line": 77,
+                    "column": 9,
+                    "event": "error[go/CommandInjection]",
+                    "message": "Unsanitized input from a CLI argument flows into os.exec.Command, where it is used as a shell command. This may result in a Command Injection vulnerability.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 79,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/kube-proxy/staging/src/k8s.io/kubectl/pkg/cmd/edit/testdata/record.go",
+                    "line": 132,
+                    "column": 4,
+                    "event": "error[go/XSS]",
+                    "message": "Unsanitized input from the request body flows into Write, where it is used to render an HTML page returned to the user. This may result in a Reflected Cross-Site Scripting attack (XSS).",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 918,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/kube-proxy/vendor/github.com/Azure/go-autorest/autorest/azure/rp.go",
+                    "line": 94,
+                    "column": 3,
+                    "event": "error[go/Ssrf]",
+                    "message": "Unsanitized input from an HTTP header flows into _, where it is used as an URL to perform a request. This may result in a Server-Side Request Forgery vulnerability.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 209,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/kube-proxy/vendor/github.com/onsi/ginkgo/v2/internal/suite.go",
+                    "line": 358,
+                    "column": 3,
+                    "event": "error[go/ErrorMessage]",
+                    "message": "Information exposure through error stack trace in fmt.Printf.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 23,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/kube-proxy/vendor/github.com/vmware/govmomi/simulator/http_nfc_lease.go",
+                    "line": 73,
+                    "column": 13,
+                    "event": "error[go/PT]",
+                    "message": "Unsanitized input from the request URL flows into os.Open, where it is used as a path. This may result in a Path Traversal vulnerability and allow an attacker to open arbitrary files.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 547,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/kube-proxy/vendor/github.com/vmware/govmomi/simulator/internal/testcert.go",
+                    "line": 49,
+                    "column": 5,
+                    "event": "error[go/HardcodedNonCryptoSecret]",
+                    "message": "Avoid hardcoding values that are meant to be secret. Found a hardcoded string used in LocalhostKey.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 23,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/kube-proxy/vendor/github.com/vmware/govmomi/toolbox/hgfs/archive.go",
+                    "line": 253,
+                    "column": 13,
+                    "event": "error[go/PT]",
+                    "message": "Unsanitized input from the request URL flows into os.OpenFile, where it is used as a path. This may result in a Path Traversal vulnerability and allow an attacker to open arbitrary files.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 23,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/kube-proxy/vendor/github.com/vmware/govmomi/toolbox/hgfs/archive.go",
+                    "line": 262,
+                    "column": 10,
+                    "event": "error[go/PT]",
+                    "message": "Unsanitized input from the request URL flows into os.Symlink, where it is used as a path. This may result in a Path Traversal vulnerability and allow an attacker to create arbitrary symlinks.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 23,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/kube-proxy/vendor/github.com/vmware/govmomi/vapi/simulator/simulator.go",
+                    "line": 1135,
+                    "column": 13,
+                    "event": "error[go/PT]",
+                    "message": "Unsanitized input from an HTTP header flows into os.RemoveAll, where it is used as a path. This may result in a Path Traversal vulnerability and allow an attacker to delete arbitrary files.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 23,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/kube-proxy/vendor/github.com/vmware/govmomi/vapi/simulator/simulator.go",
+                    "line": 1628,
+                    "column": 13,
+                    "event": "error[go/PT]",
+                    "message": "Unsanitized input from the request URL flows into os.Open, where it is used as a path. This may result in a Path Traversal vulnerability and allow an attacker to open arbitrary files.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 23,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/kube-proxy/vendor/go.uber.org/zap/sink.go",
+                    "line": 139,
+                    "column": 9,
+                    "event": "error[go/PT]",
+                    "message": "Unsanitized input from the request URL flows into os.OpenFile, where it is used as a path. This may result in a Path Traversal vulnerability and allow an attacker to open arbitrary files.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 209,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/kubelet/openshift-hack/e2e/namespace.go",
+                    "line": 113,
+                    "column": 2,
+                    "event": "error[go/ErrorMessage]",
+                    "message": "Information exposure through error stack trace in fmt.Fprintln.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 547,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/kubelet/staging/src/k8s.io/apiserver/pkg/admission/plugin/webhook/testcerts/certs.go",
+                    "line": 22,
+                    "column": 5,
+                    "event": "error[go/HardcodedNonCryptoSecret]",
+                    "message": "Avoid hardcoding values that are meant to be secret. Found a hardcoded string used in CAKey.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 547,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/kubelet/staging/src/k8s.io/apiserver/pkg/admission/plugin/webhook/testcerts/certs.go",
+                    "line": 71,
+                    "column": 5,
+                    "event": "error[go/HardcodedNonCryptoSecret]",
+                    "message": "Avoid hardcoding values that are meant to be secret. Found a hardcoded string used in BadCAKey.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 547,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/kubelet/staging/src/k8s.io/apiserver/pkg/admission/plugin/webhook/testcerts/certs.go",
+                    "line": 120,
+                    "column": 5,
+                    "event": "error[go/HardcodedNonCryptoSecret]",
+                    "message": "Avoid hardcoding values that are meant to be secret. Found a hardcoded string used in ServerKey.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 547,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/kubelet/staging/src/k8s.io/apiserver/pkg/admission/plugin/webhook/testcerts/certs.go",
+                    "line": 169,
+                    "column": 5,
+                    "event": "error[go/HardcodedNonCryptoSecret]",
+                    "message": "Avoid hardcoding values that are meant to be secret. Found a hardcoded string used in ClientKey.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 78,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/kubelet/staging/src/k8s.io/component-base/logs/kube-log-runner/kube-log-runner.go",
+                    "line": 77,
+                    "column": 9,
+                    "event": "error[go/CommandInjection]",
+                    "message": "Unsanitized input from a CLI argument flows into os.exec.Command, where it is used as a shell command. This may result in a Command Injection vulnerability.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 79,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/kubelet/staging/src/k8s.io/kubectl/pkg/cmd/edit/testdata/record.go",
+                    "line": 132,
+                    "column": 4,
+                    "event": "error[go/XSS]",
+                    "message": "Unsanitized input from the request body flows into Write, where it is used to render an HTML page returned to the user. This may result in a Reflected Cross-Site Scripting attack (XSS).",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 918,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/kubelet/vendor/github.com/Azure/go-autorest/autorest/azure/rp.go",
+                    "line": 94,
+                    "column": 3,
+                    "event": "error[go/Ssrf]",
+                    "message": "Unsanitized input from an HTTP header flows into _, where it is used as an URL to perform a request. This may result in a Server-Side Request Forgery vulnerability.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 209,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/kubelet/vendor/github.com/onsi/ginkgo/v2/internal/suite.go",
+                    "line": 365,
+                    "column": 3,
+                    "event": "error[go/ErrorMessage]",
+                    "message": "Information exposure through error stack trace in fmt.Printf.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 23,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/kubelet/vendor/github.com/vmware/govmomi/simulator/http_nfc_lease.go",
+                    "line": 73,
+                    "column": 13,
+                    "event": "error[go/PT]",
+                    "message": "Unsanitized input from the request URL flows into os.Open, where it is used as a path. This may result in a Path Traversal vulnerability and allow an attacker to open arbitrary files.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 547,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/kubelet/vendor/github.com/vmware/govmomi/simulator/internal/testcert.go",
+                    "line": 49,
+                    "column": 5,
+                    "event": "error[go/HardcodedNonCryptoSecret]",
+                    "message": "Avoid hardcoding values that are meant to be secret. Found a hardcoded string used in LocalhostKey.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 23,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/kubelet/vendor/github.com/vmware/govmomi/toolbox/hgfs/archive.go",
+                    "line": 253,
+                    "column": 13,
+                    "event": "error[go/PT]",
+                    "message": "Unsanitized input from the request URL flows into os.OpenFile, where it is used as a path. This may result in a Path Traversal vulnerability and allow an attacker to open arbitrary files.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 23,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/kubelet/vendor/github.com/vmware/govmomi/toolbox/hgfs/archive.go",
+                    "line": 262,
+                    "column": 10,
+                    "event": "error[go/PT]",
+                    "message": "Unsanitized input from the request URL flows into os.Symlink, where it is used as a path. This may result in a Path Traversal vulnerability and allow an attacker to create arbitrary symlinks.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 23,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/kubelet/vendor/github.com/vmware/govmomi/vapi/simulator/simulator.go",
+                    "line": 1135,
+                    "column": 13,
+                    "event": "error[go/PT]",
+                    "message": "Unsanitized input from an HTTP header flows into os.RemoveAll, where it is used as a path. This may result in a Path Traversal vulnerability and allow an attacker to delete arbitrary files.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 23,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/kubelet/vendor/github.com/vmware/govmomi/vapi/simulator/simulator.go",
+                    "line": 1628,
+                    "column": 13,
+                    "event": "error[go/PT]",
+                    "message": "Unsanitized input from the request URL flows into os.Open, where it is used as a path. This may result in a Path Traversal vulnerability and allow an attacker to open arbitrary files.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 23,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/kubelet/vendor/go.uber.org/zap/sink.go",
+                    "line": 139,
+                    "column": 9,
+                    "event": "error[go/PT]",
+                    "message": "Unsanitized input from the request URL flows into os.OpenFile, where it is used as a path. This may result in a Path Traversal vulnerability and allow an attacker to open arbitrary files.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 209,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/ovn-kubernetes/go-controller/vendor/sigs.k8s.io/controller-runtime/pkg/log/log.go",
+                    "line": 59,
+                    "column": 4,
+                    "event": "error[go/ErrorMessage]",
+                    "message": "Information exposure through error stack trace in fmt.Fprintf.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 209,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/vendor/github.com/go-imports-organizer/goio/main.go",
+                    "line": 193,
+                    "column": 4,
+                    "event": "error[go/ErrorMessage]",
+                    "message": "Information exposure through error stack trace in fmt.Fprintf.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 209,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/vendor/sigs.k8s.io/controller-runtime/pkg/log/log.go",
+                    "line": 59,
+                    "column": 4,
+                    "event": "error[go/ErrorMessage]",
+                    "message": "Information exposure through error stack trace in fmt.Fprintf.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 79,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/app/windows_exporter/exporter.go",
+                    "line": 500,
+                    "column": 3,
+                    "event": "error[go/XSS]",
+                    "message": "Unsanitized input from the request URL flows into Write, where it is used to render an HTML page returned to the user. This may result in a Reflected Cross-Site Scripting attack (XSS).",
+                    "verbosity_level": 0
+                }
+            ]
+        }
+    ]
+}

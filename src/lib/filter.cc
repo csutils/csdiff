@@ -337,3 +337,14 @@ void MsgTrimmer::handleDef(const Defect &defOrig)
 
     agent_->handleDef(def);
 }
+
+
+// /////////////////////////////////////////////////////////////////////////////
+// implementation of ImpLevelSetter
+
+void ImpLevelSetter::handleDef(const Defect &defOrig)
+{
+    Defect def = defOrig;
+    def.imp = impLevel_;
+    agent_->handleDef(def);
+}
