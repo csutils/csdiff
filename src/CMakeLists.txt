@@ -105,7 +105,7 @@ macro(build_pycsdiff version)
     message(STATUS "Python ${version} binding enabled. "
         "The pycsdiff module will be built!")
 
-    add_library(pycsdiff_py${version} SHARED pycsdiff.cc)
+    add_library(pycsdiff_py${version} MODULE pycsdiff.cc)
     target_link_libraries(pycsdiff_py${version}
         PRIVATE ${Boost_PYTHON${PYTHON_VERSION_SUFFIX}_LIBRARY}
                 Python${version}::Module)
