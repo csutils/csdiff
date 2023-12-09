@@ -106,10 +106,9 @@ macro(build_pycsdiff version)
         "The pycsdiff module will be built!")
 
     add_library(pycsdiff_py${version} SHARED pycsdiff.cc)
-    target_include_directories(pycsdiff_py${version} SYSTEM
-        PRIVATE ${Python${version}_INCLUDE_DIRS})
     target_link_libraries(pycsdiff_py${version}
-        PRIVATE ${Boost_PYTHON${PYTHON_VERSION_SUFFIX}_LIBRARY})
+        PRIVATE ${Boost_PYTHON${PYTHON_VERSION_SUFFIX}_LIBRARY}
+                Python${version}::Module)
 
     # set correct name so that `python -c 'import pycsdiff' works`
     set_target_properties(pycsdiff_py${version} PROPERTIES

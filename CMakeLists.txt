@@ -15,7 +15,7 @@
 # You should have received a copy of the GNU General Public License
 # along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
 
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 3.15)
 project(csdiff CXX)
 enable_testing()
 
