@@ -1,0 +1,34 @@
+---
+name: macOS CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  ubuntu:
+    name: macOS ${{ matrix.version }} (${{ matrix.compiler }})
+    strategy:
+      fail-fast: false
+      matrix:
+        compiler: [clang++]
+        version: [latest]
+
+    runs-on: macos-${{ matrix.version }}
+    env:
+      CXX: ${{ matrix.compiler }}
+      CXXFLAGS: -Werror
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          brew upgrade
+          brew install boost boost-python3 help2man
+
+      - name: Build and check
+        run: make distcheck
