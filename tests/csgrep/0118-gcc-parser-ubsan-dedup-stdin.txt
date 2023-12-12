@@ -1,0 +1,596 @@
+Error: UBSAN_WARNING:
+rsync-3.2.7/log.c:633:8: runtime error: member access within misaligned address 0xaaaacf6f4a14 for type 'struct file_struct', which requires 8 byte alignment
+0xaaaacf6f4a14: note: pointer points here
+#  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  a4 81 00 00 00 00 00 00
+#              ^
+rsync-3.2.7/log.c:633: note: log_formatted() at 0xaaaab5fa4fa0
+rsync-3.2.7/log.c:868: note: log_delete() at 0xaaaab5fa59d4
+rsync-3.2.7/delete.c:180: note: delete_item() at 0xaaaab5fac460
+rsync-3.2.7/generator.c:342: note: delete_in_dir() at 0xaaaab5f6326c
+rsync-3.2.7/generator.c:2303: note: generate_files() at 0xaaaab5f75f6c
+rsync-3.2.7/main.c:1112: note: do_recv() at 0xaaaab5f99854
+rsync-3.2.7/main.c:1368: note: client_run() at 0xaaaab5f9b804
+rsync-3.2.7/main.c:1597: note: start_client() at 0xaaaab5f422a4
+rsync-3.2.7/main.c:1857: note: main() at 0xaaaab5f422a4
+/lib64/libc.so.6: note: __libc_start_call_main() at 0xffffa6dd09d8
+/lib64/libc.so.6: note: __libc_start_main@GLIBC_2.17() at 0xffffa6dd0aac
+rsync-3.2.7/rsync: note: _start() at 0xaaaab5f451ec
+#  631|                         } else
+#  632|                                 c = f_name(file, NULL);
+#  633|->                       if (S_ISDIR(file->mode))
+#  634|                                 strlcat(c, "/", MAXPATHLEN);
+#  635|                         n = c;
+
+Error: UBSAN_WARNING:
+rsync-3.2.7/log.c:633:8: runtime error: member access within misaligned address 0xaaaad4d39d44 for type 'struct file_struct', which requires 8 byte alignment
+0xaaaad4d39d44: note: pointer points here
+#  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  a4 81 00 00 00 00 00 00
+#              ^
+rsync-3.2.7/log.c:633: note: log_formatted() at 0xaaaacbd04fa0
+rsync-3.2.7/log.c:868: note: log_delete() at 0xaaaacbd059d4
+rsync-3.2.7/delete.c:180: note: delete_item() at 0xaaaacbd0c460
+rsync-3.2.7/generator.c:342: note: delete_in_dir() at 0xaaaacbcc326c
+rsync-3.2.7/generator.c:381: note: do_delete_pass() at 0xaaaacbcc38f4
+rsync-3.2.7/generator.c:2260: note: generate_files() at 0xaaaacbcd5cb0
+rsync-3.2.7/main.c:1112: note: do_recv() at 0xaaaacbcf9854
+rsync-3.2.7/main.c:1368: note: client_run() at 0xaaaacbcfb804
+rsync-3.2.7/main.c:1597: note: start_client() at 0xaaaacbca22a4
+rsync-3.2.7/main.c:1857: note: main() at 0xaaaacbca22a4
+/lib64/libc.so.6: note: __libc_start_call_main() at 0xffff86af09d8
+/lib64/libc.so.6: note: __libc_start_main@GLIBC_2.17() at 0xffff86af0aac
+rsync-3.2.7/rsync: note: _start() at 0xaaaacbca51ec
+#  631|                         } else
+#  632|                                 c = f_name(file, NULL);
+#  633|->                       if (S_ISDIR(file->mode))
+#  634|                                 strlcat(c, "/", MAXPATHLEN);
+#  635|                         n = c;
+
+Error: UBSAN_WARNING:
+rsync-3.2.7/log.c:633:8: runtime error: member access within misaligned address 0xaaaadd32c984 for type 'struct file_struct', which requires 8 byte alignment
+0xaaaadd32c984: note: pointer points here
+#  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  a4 81 00 00 00 00 00 00
+#              ^
+rsync-3.2.7/log.c:633: note: log_formatted() at 0xaaaad5204fa0
+rsync-3.2.7/log.c:868: note: log_delete() at 0xaaaad52059d4
+rsync-3.2.7/delete.c:180: note: delete_item() at 0xaaaad520c460
+rsync-3.2.7/generator.c:342: note: delete_in_dir() at 0xaaaad51c326c
+rsync-3.2.7/generator.c:2303: note: generate_files() at 0xaaaad51d5f6c
+rsync-3.2.7/main.c:1112: note: do_recv() at 0xaaaad51f9854
+rsync-3.2.7/main.c:1368: note: client_run() at 0xaaaad51fb804
+rsync-3.2.7/main.c:1597: note: start_client() at 0xaaaad51a22a4
+rsync-3.2.7/main.c:1857: note: main() at 0xaaaad51a22a4
+/lib64/libc.so.6: note: __libc_start_call_main() at 0xffffb2d909d8
+/lib64/libc.so.6: note: __libc_start_main@GLIBC_2.17() at 0xffffb2d90aac
+rsync-3.2.7/rsync: note: _start() at 0xaaaad51a51ec
+#  631|                         } else
+#  632|                                 c = f_name(file, NULL);
+#  633|->                       if (S_ISDIR(file->mode))
+#  634|                                 strlcat(c, "/", MAXPATHLEN);
+#  635|                         n = c;
+
+Error: UBSAN_WARNING:
+rsync-3.2.7/log.c:633:8: runtime error: member access within misaligned address 0xaaaae66b6b24 for type 'struct file_struct', which requires 8 byte alignment
+0xaaaae66b6b24: note: pointer points here
+#  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  a4 81 00 00 00 00 00 00
+#              ^
+rsync-3.2.7/log.c:633: note: log_formatted() at 0xaaaac66d4fa0
+rsync-3.2.7/log.c:868: note: log_delete() at 0xaaaac66d59d4
+rsync-3.2.7/delete.c:180: note: delete_item() at 0xaaaac66dc460
+rsync-3.2.7/generator.c:342: note: delete_in_dir() at 0xaaaac669326c
+rsync-3.2.7/generator.c:2303: note: generate_files() at 0xaaaac66a5f6c
+rsync-3.2.7/main.c:1112: note: do_recv() at 0xaaaac66c9854
+rsync-3.2.7/main.c:1368: note: client_run() at 0xaaaac66cb804
+rsync-3.2.7/main.c:1597: note: start_client() at 0xaaaac66722a4
+rsync-3.2.7/main.c:1857: note: main() at 0xaaaac66722a4
+/lib64/libc.so.6: note: __libc_start_call_main() at 0xffffaca809d8
+/lib64/libc.so.6: note: __libc_start_main@GLIBC_2.17() at 0xffffaca80aac
+rsync-3.2.7/rsync: note: _start() at 0xaaaac66751ec
+#  631|                         } else
+#  632|                                 c = f_name(file, NULL);
+#  633|->                       if (S_ISDIR(file->mode))
+#  634|                                 strlcat(c, "/", MAXPATHLEN);
+#  635|                         n = c;
+
+Error: UBSAN_WARNING:
+rsync-3.2.7/log.c:633:8: runtime error: member access within misaligned address 0xaaaaea00c664 for type 'struct file_struct', which requires 8 byte alignment
+0xaaaaea00c664: note: pointer points here
+#  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  ed 41 00 00 00 00 00 00
+#              ^
+rsync-3.2.7/log.c:633: note: log_formatted() at 0xaaaad2424fa0
+rsync-3.2.7/log.c:868: note: log_delete() at 0xaaaad24259d4
+rsync-3.2.7/delete.c:180: note: delete_item() at 0xaaaad242c68c
+rsync-3.2.7/delete.c:107: note: delete_dir_contents() at 0xaaaad242cb74
+rsync-3.2.7/delete.c:149: note: delete_item() at 0xaaaad242c654
+rsync-3.2.7/generator.c:342: note: delete_in_dir() at 0xaaaad23e326c
+rsync-3.2.7/generator.c:2303: note: generate_files() at 0xaaaad23f5f6c
+rsync-3.2.7/main.c:1112: note: do_recv() at 0xaaaad2419854
+rsync-3.2.7/main.c:1368: note: client_run() at 0xaaaad241b804
+rsync-3.2.7/main.c:1597: note: start_client() at 0xaaaad23c22a4
+rsync-3.2.7/main.c:1857: note: main() at 0xaaaad23c22a4
+/lib64/libc.so.6: note: __libc_start_call_main() at 0xffff9f4709d8
+/lib64/libc.so.6: note: __libc_start_main@GLIBC_2.17() at 0xffff9f470aac
+rsync-3.2.7/rsync: note: _start() at 0xaaaad23c51ec
+#  631|                         } else
+#  632|                                 c = f_name(file, NULL);
+#  633|->                       if (S_ISDIR(file->mode))
+#  634|                                 strlcat(c, "/", MAXPATHLEN);
+#  635|                         n = c;
+
+Error: UBSAN_WARNING:
+rsync-3.2.7/log.c:858:13: runtime error: member access within misaligned address 0xaaaac44277f4 for type 'struct file_struct', which requires 8 byte alignment
+0xaaaac44277f4: note: pointer points here
+#  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+#              ^
+rsync-3.2.7/log.c:858: note: log_delete() at 0xaaaab7e65b2c
+rsync-3.2.7/delete.c:180: note: delete_item() at 0xaaaab7e6c460
+rsync-3.2.7/generator.c:342: note: delete_in_dir() at 0xaaaab7e2326c
+rsync-3.2.7/generator.c:2303: note: generate_files() at 0xaaaab7e35f6c
+rsync-3.2.7/main.c:1112: note: do_recv() at 0xaaaab7e59854
+rsync-3.2.7/main.c:1225: note: do_server_recv() at 0xaaaab7e5af2c
+rsync-3.2.7/main.c:1259: note: start_server() at 0xaaaab7e5af2c
+rsync-3.2.7/main.c:1232: note: child_main() at 0xaaaab7e5b5fc
+rsync-3.2.7/pipe.c:166: note: local_child() at 0xaaaab7e01da8
+rsync-3.2.7/main.c:644: note: do_cmd() at 0xaaaab7e01da8
+rsync-3.2.7/main.c:1586: note: start_client() at 0xaaaab7e01da8
+rsync-3.2.7/main.c:1857: note: main() at 0xaaaab7e01da8
+/lib64/libc.so.6: note: __libc_start_call_main() at 0xffff947c09d8
+/lib64/libc.so.6: note: __libc_start_main@GLIBC_2.17() at 0xffff947c0aac
+rsync-3.2.7/rsync: note: _start() at 0xaaaab7e051ec
+#  856|         }
+#  857|
+#  858|->       file->mode = mode;
+#  859|
+#  860|         if (am_server && protocol_version >= 29 && len < MAXPATHLEN) {
+
+Error: UBSAN_WARNING:
+rsync-3.2.7/log.c:858:13: runtime error: member access within misaligned address 0xaaaac4c72304 for type 'struct file_struct', which requires 8 byte alignment
+0xaaaac4c72304: note: pointer points here
+#  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+#              ^
+rsync-3.2.7/log.c:858: note: log_delete() at 0xaaaab5955b2c
+rsync-3.2.7/delete.c:180: note: delete_item() at 0xaaaab595c460
+rsync-3.2.7/delete.c:107: note: delete_dir_contents() at 0xaaaab595cb74
+rsync-3.2.7/delete.c:149: note: delete_item() at 0xaaaab595c654
+rsync-3.2.7/generator.c:342: note: delete_in_dir() at 0xaaaab591326c
+rsync-3.2.7/generator.c:2303: note: generate_files() at 0xaaaab5925f6c
+rsync-3.2.7/main.c:1112: note: do_recv() at 0xaaaab5949854
+rsync-3.2.7/main.c:1225: note: do_server_recv() at 0xaaaab594af2c
+rsync-3.2.7/main.c:1259: note: start_server() at 0xaaaab594af2c
+rsync-3.2.7/main.c:1232: note: child_main() at 0xaaaab594b5fc
+rsync-3.2.7/pipe.c:166: note: local_child() at 0xaaaab58f1da8
+rsync-3.2.7/main.c:644: note: do_cmd() at 0xaaaab58f1da8
+rsync-3.2.7/main.c:1586: note: start_client() at 0xaaaab58f1da8
+rsync-3.2.7/main.c:1857: note: main() at 0xaaaab58f1da8
+/lib64/libc.so.6: note: __libc_start_call_main() at 0xffff96e409d8
+/lib64/libc.so.6: note: __libc_start_main@GLIBC_2.17() at 0xffff96e40aac
+rsync-3.2.7/rsync: note: _start() at 0xaaaab58f51ec
+#  856|         }
+#  857|
+#  858|->       file->mode = mode;
+#  859|
+#  860|         if (am_server && protocol_version >= 29 && len < MAXPATHLEN) {
+
+Error: UBSAN_WARNING:
+rsync-3.2.7/log.c:858:13: runtime error: member access within misaligned address 0xaaaacf6f4a14 for type 'struct file_struct', which requires 8 byte alignment
+0xaaaacf6f4a14: note: pointer points here
+#  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+#              ^
+rsync-3.2.7/log.c:858: note: log_delete() at 0xaaaab5fa5b2c
+rsync-3.2.7/delete.c:180: note: delete_item() at 0xaaaab5fac460
+rsync-3.2.7/generator.c:342: note: delete_in_dir() at 0xaaaab5f6326c
+rsync-3.2.7/generator.c:2303: note: generate_files() at 0xaaaab5f75f6c
+rsync-3.2.7/main.c:1112: note: do_recv() at 0xaaaab5f99854
+rsync-3.2.7/main.c:1368: note: client_run() at 0xaaaab5f9b804
+rsync-3.2.7/main.c:1597: note: start_client() at 0xaaaab5f422a4
+rsync-3.2.7/main.c:1857: note: main() at 0xaaaab5f422a4
+/lib64/libc.so.6: note: __libc_start_call_main() at 0xffffa6dd09d8
+/lib64/libc.so.6: note: __libc_start_main@GLIBC_2.17() at 0xffffa6dd0aac
+rsync-3.2.7/rsync: note: _start() at 0xaaaab5f451ec
+#  856|         }
+#  857|
+#  858|->       file->mode = mode;
+#  859|
+#  860|         if (am_server && protocol_version >= 29 && len < MAXPATHLEN) {
+
+Error: UBSAN_WARNING:
+rsync-3.2.7/log.c:858:13: runtime error: member access within misaligned address 0xaaaad4d39d44 for type 'struct file_struct', which requires 8 byte alignment
+0xaaaad4d39d44: note: pointer points here
+#  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+#              ^
+rsync-3.2.7/log.c:858: note: log_delete() at 0xaaaacbd05b2c
+rsync-3.2.7/delete.c:180: note: delete_item() at 0xaaaacbd0c460
+rsync-3.2.7/generator.c:342: note: delete_in_dir() at 0xaaaacbcc326c
+rsync-3.2.7/generator.c:381: note: do_delete_pass() at 0xaaaacbcc38f4
+rsync-3.2.7/generator.c:2260: note: generate_files() at 0xaaaacbcd5cb0
+rsync-3.2.7/main.c:1112: note: do_recv() at 0xaaaacbcf9854
+rsync-3.2.7/main.c:1368: note: client_run() at 0xaaaacbcfb804
+rsync-3.2.7/main.c:1597: note: start_client() at 0xaaaacbca22a4
+rsync-3.2.7/main.c:1857: note: main() at 0xaaaacbca22a4
+/lib64/libc.so.6: note: __libc_start_call_main() at 0xffff86af09d8
+/lib64/libc.so.6: note: __libc_start_main@GLIBC_2.17() at 0xffff86af0aac
+rsync-3.2.7/rsync: note: _start() at 0xaaaacbca51ec
+#  856|         }
+#  857|
+#  858|->       file->mode = mode;
+#  859|
+#  860|         if (am_server && protocol_version >= 29 && len < MAXPATHLEN) {
+
+Error: UBSAN_WARNING:
+rsync-3.2.7/log.c:858:13: runtime error: member access within misaligned address 0xaaaad500e814 for type 'struct file_struct', which requires 8 byte alignment
+0xaaaad500e814: note: pointer points here
+#  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+#              ^
+rsync-3.2.7/log.c:858: note: log_delete() at 0xaaaaba5c5b2c
+rsync-3.2.7/delete.c:180: note: delete_item() at 0xaaaaba5cc460
+rsync-3.2.7/generator.c:342: note: delete_in_dir() at 0xaaaaba58326c
+rsync-3.2.7/generator.c:2303: note: generate_files() at 0xaaaaba595f6c
+rsync-3.2.7/main.c:1112: note: do_recv() at 0xaaaaba5b9854
+rsync-3.2.7/main.c:1225: note: do_server_recv() at 0xaaaaba5baf2c
+rsync-3.2.7/main.c:1259: note: start_server() at 0xaaaaba5baf2c
+rsync-3.2.7/main.c:1232: note: child_main() at 0xaaaaba5bb5fc
+rsync-3.2.7/pipe.c:166: note: local_child() at 0xaaaaba561da8
+rsync-3.2.7/main.c:644: note: do_cmd() at 0xaaaaba561da8
+rsync-3.2.7/main.c:1586: note: start_client() at 0xaaaaba561da8
+rsync-3.2.7/main.c:1857: note: main() at 0xaaaaba561da8
+/lib64/libc.so.6: note: __libc_start_call_main() at 0xffff9fda09d8
+/lib64/libc.so.6: note: __libc_start_main@GLIBC_2.17() at 0xffff9fda0aac
+rsync-3.2.7/rsync: note: _start() at 0xaaaaba5651ec
+#  856|         }
+#  857|
+#  858|->       file->mode = mode;
+#  859|
+#  860|         if (am_server && protocol_version >= 29 && len < MAXPATHLEN) {
+
+Error: UBSAN_WARNING:
+rsync-3.2.7/log.c:858:13: runtime error: member access within misaligned address 0xaaaadd32c984 for type 'struct file_struct', which requires 8 byte alignment
+0xaaaadd32c984: note: pointer points here
+#  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+#              ^
+rsync-3.2.7/log.c:858: note: log_delete() at 0xaaaad5205b2c
+rsync-3.2.7/delete.c:180: note: delete_item() at 0xaaaad520c460
+rsync-3.2.7/generator.c:342: note: delete_in_dir() at 0xaaaad51c326c
+rsync-3.2.7/generator.c:2303: note: generate_files() at 0xaaaad51d5f6c
+rsync-3.2.7/main.c:1112: note: do_recv() at 0xaaaad51f9854
+rsync-3.2.7/main.c:1368: note: client_run() at 0xaaaad51fb804
+rsync-3.2.7/main.c:1597: note: start_client() at 0xaaaad51a22a4
+rsync-3.2.7/main.c:1857: note: main() at 0xaaaad51a22a4
+/lib64/libc.so.6: note: __libc_start_call_main() at 0xffffb2d909d8
+/lib64/libc.so.6: note: __libc_start_main@GLIBC_2.17() at 0xffffb2d90aac
+rsync-3.2.7/rsync: note: _start() at 0xaaaad51a51ec
+#  856|         }
+#  857|
+#  858|->       file->mode = mode;
+#  859|
+#  860|         if (am_server && protocol_version >= 29 && len < MAXPATHLEN) {
+
+Error: UBSAN_WARNING:
+rsync-3.2.7/log.c:858:13: runtime error: member access within misaligned address 0xaaaae66b6b24 for type 'struct file_struct', which requires 8 byte alignment
+0xaaaae66b6b24: note: pointer points here
+#  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+#              ^
+rsync-3.2.7/log.c:858: note: log_delete() at 0xaaaac66d5b2c
+rsync-3.2.7/delete.c:180: note: delete_item() at 0xaaaac66dc460
+rsync-3.2.7/generator.c:342: note: delete_in_dir() at 0xaaaac669326c
+rsync-3.2.7/generator.c:2303: note: generate_files() at 0xaaaac66a5f6c
+rsync-3.2.7/main.c:1112: note: do_recv() at 0xaaaac66c9854
+rsync-3.2.7/main.c:1368: note: client_run() at 0xaaaac66cb804
+rsync-3.2.7/main.c:1597: note: start_client() at 0xaaaac66722a4
+rsync-3.2.7/main.c:1857: note: main() at 0xaaaac66722a4
+/lib64/libc.so.6: note: __libc_start_call_main() at 0xffffaca809d8
+/lib64/libc.so.6: note: __libc_start_main@GLIBC_2.17() at 0xffffaca80aac
+rsync-3.2.7/rsync: note: _start() at 0xaaaac66751ec
+#  856|         }
+#  857|
+#  858|->       file->mode = mode;
+#  859|
+#  860|         if (am_server && protocol_version >= 29 && len < MAXPATHLEN) {
+
+Error: UBSAN_WARNING:
+rsync-3.2.7/log.c:858:13: runtime error: member access within misaligned address 0xaaaaea00c664 for type 'struct file_struct', which requires 8 byte alignment
+0xaaaaea00c664: note: pointer points here
+#  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+#              ^
+rsync-3.2.7/log.c:858: note: log_delete() at 0xaaaad2425b2c
+rsync-3.2.7/delete.c:180: note: delete_item() at 0xaaaad242c68c
+rsync-3.2.7/delete.c:107: note: delete_dir_contents() at 0xaaaad242cb74
+rsync-3.2.7/delete.c:149: note: delete_item() at 0xaaaad242c654
+rsync-3.2.7/generator.c:342: note: delete_in_dir() at 0xaaaad23e326c
+rsync-3.2.7/generator.c:2303: note: generate_files() at 0xaaaad23f5f6c
+rsync-3.2.7/main.c:1112: note: do_recv() at 0xaaaad2419854
+rsync-3.2.7/main.c:1368: note: client_run() at 0xaaaad241b804
+rsync-3.2.7/main.c:1597: note: start_client() at 0xaaaad23c22a4
+rsync-3.2.7/main.c:1857: note: main() at 0xaaaad23c22a4
+/lib64/libc.so.6: note: __libc_start_call_main() at 0xffff9f4709d8
+/lib64/libc.so.6: note: __libc_start_main@GLIBC_2.17() at 0xffff9f470aac
+rsync-3.2.7/rsync: note: _start() at 0xaaaad23c51ec
+#  856|         }
+#  857|
+#  858|->       file->mode = mode;
+#  859|
+#  860|         if (am_server && protocol_version >= 29 && len < MAXPATHLEN) {
+
+Error: UBSAN_WARNING:
+rsync-3.2.7/log.c:858:13: runtime error: member access within misaligned address 0xaaaaecfa65f4 for type 'struct file_struct', which requires 8 byte alignment
+0xaaaaecfa65f4: note: pointer points here
+#  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+#              ^
+rsync-3.2.7/log.c:858: note: log_delete() at 0xaaaaad195b2c
+rsync-3.2.7/delete.c:180: note: delete_item() at 0xaaaaad19c460
+rsync-3.2.7/generator.c:262: note: do_delayed_deletions() at 0xaaaaad165e74
+rsync-3.2.7/generator.c:2405: note: generate_files() at 0xaaaaad165e74
+rsync-3.2.7/main.c:1112: note: do_recv() at 0xaaaaad189854
+rsync-3.2.7/main.c:1225: note: do_server_recv() at 0xaaaaad18af2c
+rsync-3.2.7/main.c:1259: note: start_server() at 0xaaaaad18af2c
+rsync-3.2.7/main.c:1232: note: child_main() at 0xaaaaad18b5fc
+rsync-3.2.7/pipe.c:166: note: local_child() at 0xaaaaad131da8
+rsync-3.2.7/main.c:644: note: do_cmd() at 0xaaaaad131da8
+rsync-3.2.7/main.c:1586: note: start_client() at 0xaaaaad131da8
+rsync-3.2.7/main.c:1857: note: main() at 0xaaaaad131da8
+/lib64/libc.so.6: note: __libc_start_call_main() at 0xffffaa8909d8
+/lib64/libc.so.6: note: __libc_start_main@GLIBC_2.17() at 0xffffaa890aac
+rsync-3.2.7/rsync: note: _start() at 0xaaaaad1351ec
+#  856|         }
+#  857|
+#  858|->       file->mode = mode;
+#  859|
+#  860|         if (am_server && protocol_version >= 29 && len < MAXPATHLEN) {
+
+Error: UBSAN_WARNING:
+rsync-3.2.7/log.c:858:13: runtime error: member access within misaligned address 0xaaaaedd9caf4 for type 'struct file_struct', which requires 8 byte alignment
+0xaaaaedd9caf4: note: pointer points here
+#  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+#              ^
+rsync-3.2.7/log.c:858: note: log_delete() at 0xaaaac15e5b2c
+rsync-3.2.7/delete.c:180: note: delete_item() at 0xaaaac15ec460
+rsync-3.2.7/generator.c:342: note: delete_in_dir() at 0xaaaac15a326c
+rsync-3.2.7/generator.c:381: note: do_delete_pass() at 0xaaaac15a38f4
+rsync-3.2.7/generator.c:2260: note: generate_files() at 0xaaaac15b5cb0
+rsync-3.2.7/main.c:1112: note: do_recv() at 0xaaaac15d9854
+rsync-3.2.7/main.c:1225: note: do_server_recv() at 0xaaaac15daf2c
+rsync-3.2.7/main.c:1259: note: start_server() at 0xaaaac15daf2c
+rsync-3.2.7/main.c:1232: note: child_main() at 0xaaaac15db5fc
+rsync-3.2.7/pipe.c:166: note: local_child() at 0xaaaac1581da8
+rsync-3.2.7/main.c:644: note: do_cmd() at 0xaaaac1581da8
+rsync-3.2.7/main.c:1586: note: start_client() at 0xaaaac1581da8
+rsync-3.2.7/main.c:1857: note: main() at 0xaaaac1581da8
+/lib64/libc.so.6: note: __libc_start_call_main() at 0xffff91e009d8
+/lib64/libc.so.6: note: __libc_start_main@GLIBC_2.17() at 0xffff91e00aac
+rsync-3.2.7/rsync: note: _start() at 0xaaaac15851ec
+#  856|         }
+#  857|
+#  858|->       file->mode = mode;
+#  859|
+#  860|         if (am_server && protocol_version >= 29 && len < MAXPATHLEN) {
+
+Error: UBSAN_WARNING:
+rsync-3.2.7/log.c:858:13: runtime error: member access within misaligned address 0xaaaaee3862fc for type 'struct file_struct', which requires 8 byte alignment
+0xaaaaee3862fc: note: pointer points here
+#  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+#              ^
+rsync-3.2.7/log.c:858: note: log_delete() at 0xaaaaaf075b2c
+rsync-3.2.7/delete.c:180: note: delete_item() at 0xaaaaaf07c460
+rsync-3.2.7/generator.c:342: note: delete_in_dir() at 0xaaaaaf03326c
+rsync-3.2.7/generator.c:2303: note: generate_files() at 0xaaaaaf045f6c
+rsync-3.2.7/main.c:1112: note: do_recv() at 0xaaaaaf069854
+rsync-3.2.7/main.c:1225: note: do_server_recv() at 0xaaaaaf06af2c
+rsync-3.2.7/main.c:1259: note: start_server() at 0xaaaaaf06af2c
+rsync-3.2.7/main.c:1232: note: child_main() at 0xaaaaaf06b5fc
+rsync-3.2.7/pipe.c:166: note: local_child() at 0xaaaaaf011da8
+rsync-3.2.7/main.c:644: note: do_cmd() at 0xaaaaaf011da8
+rsync-3.2.7/main.c:1586: note: start_client() at 0xaaaaaf011da8
+rsync-3.2.7/main.c:1857: note: main() at 0xaaaaaf011da8
+/lib64/libc.so.6: note: __libc_start_call_main() at 0xffffb41009d8
+/lib64/libc.so.6: note: __libc_start_main@GLIBC_2.17() at 0xffffb4100aac
+rsync-3.2.7/rsync: note: _start() at 0xaaaaaf0151ec
+#  856|         }
+#  857|
+#  858|->       file->mode = mode;
+#  859|
+#  860|         if (am_server && protocol_version >= 29 && len < MAXPATHLEN) {
+
+Error: UBSAN_WARNING:
+rsync-3.2.7/log.c:858:13: runtime error: member access within misaligned address 0xaaaaf5cf4234 for type 'struct file_struct', which requires 8 byte alignment
+0xaaaaf5cf4234: note: pointer points here
+#  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+#              ^
+rsync-3.2.7/log.c:858: note: log_delete() at 0xaaaad4f35b2c
+rsync-3.2.7/delete.c:180: note: delete_item() at 0xaaaad4f3c460
+rsync-3.2.7/generator.c:342: note: delete_in_dir() at 0xaaaad4ef326c
+rsync-3.2.7/generator.c:2303: note: generate_files() at 0xaaaad4f05f6c
+rsync-3.2.7/main.c:1112: note: do_recv() at 0xaaaad4f29854
+rsync-3.2.7/main.c:1225: note: do_server_recv() at 0xaaaad4f2af2c
+rsync-3.2.7/main.c:1259: note: start_server() at 0xaaaad4f2af2c
+rsync-3.2.7/main.c:1232: note: child_main() at 0xaaaad4f2b5fc
+rsync-3.2.7/pipe.c:166: note: local_child() at 0xaaaad4ed1da8
+rsync-3.2.7/main.c:644: note: do_cmd() at 0xaaaad4ed1da8
+rsync-3.2.7/main.c:1586: note: start_client() at 0xaaaad4ed1da8
+rsync-3.2.7/main.c:1857: note: main() at 0xaaaad4ed1da8
+/lib64/libc.so.6: note: __libc_start_call_main() at 0xffff8bd309d8
+/lib64/libc.so.6: note: __libc_start_main@GLIBC_2.17() at 0xffff8bd30aac
+rsync-3.2.7/rsync: note: _start() at 0xaaaad4ed51ec
+#  856|         }
+#  857|
+#  858|->       file->mode = mode;
+#  859|
+#  860|         if (am_server && protocol_version >= 29 && len < MAXPATHLEN) {
+
+Error: UBSAN_WARNING:
+rsync-3.2.7/log.c:858:13: runtime error: member access within misaligned address 0xaaaafe6398c4 for type 'struct file_struct', which requires 8 byte alignment
+0xaaaafe6398c4: note: pointer points here
+#  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+#              ^
+rsync-3.2.7/log.c:858: note: log_delete() at 0xaaaae0995b2c
+rsync-3.2.7/delete.c:180: note: delete_item() at 0xaaaae099c460
+rsync-3.2.7/generator.c:342: note: delete_in_dir() at 0xaaaae095326c
+rsync-3.2.7/generator.c:2303: note: generate_files() at 0xaaaae0965f6c
+rsync-3.2.7/main.c:1112: note: do_recv() at 0xaaaae0989854
+rsync-3.2.7/main.c:1225: note: do_server_recv() at 0xaaaae098af2c
+rsync-3.2.7/main.c:1259: note: start_server() at 0xaaaae098af2c
+rsync-3.2.7/main.c:1232: note: child_main() at 0xaaaae098b5fc
+rsync-3.2.7/pipe.c:166: note: local_child() at 0xaaaae0931da8
+rsync-3.2.7/main.c:644: note: do_cmd() at 0xaaaae0931da8
+rsync-3.2.7/main.c:1586: note: start_client() at 0xaaaae0931da8
+rsync-3.2.7/main.c:1857: note: main() at 0xaaaae0931da8
+/lib64/libc.so.6: note: __libc_start_call_main() at 0xffff7fa309d8
+/lib64/libc.so.6: note: __libc_start_main@GLIBC_2.17() at 0xffff7fa30aac
+rsync-3.2.7/rsync: note: _start() at 0xaaaae09351ec
+#  856|         }
+#  857|
+#  858|->       file->mode = mode;
+#  859|
+#  860|         if (am_server && protocol_version >= 29 && len < MAXPATHLEN) {
+
+Error: UBSAN_WARNING:
+rsync-3.2.7/log.c:858:13: runtime error: member access within misaligned address 0xaaab003ad654 for type 'struct file_struct', which requires 8 byte alignment
+0xaaab003ad654: note: pointer points here
+#  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+#              ^
+rsync-3.2.7/log.c:858: note: log_delete() at 0xaaaacce85b2c
+rsync-3.2.7/delete.c:180: note: delete_item() at 0xaaaacce8c460
+rsync-3.2.7/generator.c:342: note: delete_in_dir() at 0xaaaacce4326c
+rsync-3.2.7/generator.c:2303: note: generate_files() at 0xaaaacce55f6c
+rsync-3.2.7/main.c:1112: note: do_recv() at 0xaaaacce79854
+rsync-3.2.7/main.c:1225: note: do_server_recv() at 0xaaaacce7af2c
+rsync-3.2.7/main.c:1259: note: start_server() at 0xaaaacce7af2c
+rsync-3.2.7/main.c:1232: note: child_main() at 0xaaaacce7b5fc
+rsync-3.2.7/pipe.c:166: note: local_child() at 0xaaaacce21da8
+rsync-3.2.7/main.c:644: note: do_cmd() at 0xaaaacce21da8
+rsync-3.2.7/main.c:1586: note: start_client() at 0xaaaacce21da8
+rsync-3.2.7/main.c:1857: note: main() at 0xaaaacce21da8
+/lib64/libc.so.6: note: __libc_start_call_main() at 0xffff858609d8
+/lib64/libc.so.6: note: __libc_start_main@GLIBC_2.17() at 0xffff85860aac
+rsync-3.2.7/rsync: note: _start() at 0xaaaacce251ec
+#  856|         }
+#  857|
+#  858|->       file->mode = mode;
+#  859|
+#  860|         if (am_server && protocol_version >= 29 && len < MAXPATHLEN) {
+
+Error: UBSAN_WARNING:
+rsync-3.2.7/log.c:858:13: runtime error: member access within misaligned address 0xaaab038cd374 for type 'struct file_struct', which requires 8 byte alignment
+0xaaab038cd374: note: pointer points here
+#  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+#              ^
+rsync-3.2.7/log.c:858: note: log_delete() at 0xaaaadbc85b2c
+rsync-3.2.7/delete.c:180: note: delete_item() at 0xaaaadbc8c460
+rsync-3.2.7/generator.c:262: note: do_delayed_deletions() at 0xaaaadbc55e74
+rsync-3.2.7/generator.c:2405: note: generate_files() at 0xaaaadbc55e74
+rsync-3.2.7/main.c:1112: note: do_recv() at 0xaaaadbc79854
+rsync-3.2.7/main.c:1225: note: do_server_recv() at 0xaaaadbc7af2c
+rsync-3.2.7/main.c:1259: note: start_server() at 0xaaaadbc7af2c
+rsync-3.2.7/main.c:1232: note: child_main() at 0xaaaadbc7b5fc
+rsync-3.2.7/pipe.c:166: note: local_child() at 0xaaaadbc21da8
+rsync-3.2.7/main.c:644: note: do_cmd() at 0xaaaadbc21da8
+rsync-3.2.7/main.c:1586: note: start_client() at 0xaaaadbc21da8
+rsync-3.2.7/main.c:1857: note: main() at 0xaaaadbc21da8
+/lib64/libc.so.6: note: __libc_start_call_main() at 0xffff963509d8
+/lib64/libc.so.6: note: __libc_start_main@GLIBC_2.17() at 0xffff96350aac
+rsync-3.2.7/rsync: note: _start() at 0xaaaadbc251ec
+#  856|         }
+#  857|
+#  858|->       file->mode = mode;
+#  859|
+#  860|         if (am_server && protocol_version >= 29 && len < MAXPATHLEN) {
+
+Error: UBSAN_WARNING:
+rsync-3.2.7/log.c:858:13: runtime error: member access within misaligned address 0xaaab173968a4 for type 'struct file_struct', which requires 8 byte alignment
+0xaaab173968a4: note: pointer points here
+#  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+#              ^
+rsync-3.2.7/log.c:858: note: log_delete() at 0xaaaadf1d5b2c
+rsync-3.2.7/delete.c:180: note: delete_item() at 0xaaaadf1dc460
+rsync-3.2.7/generator.c:342: note: delete_in_dir() at 0xaaaadf19326c
+rsync-3.2.7/generator.c:2303: note: generate_files() at 0xaaaadf1a5f6c
+rsync-3.2.7/main.c:1112: note: do_recv() at 0xaaaadf1c9854
+rsync-3.2.7/main.c:1225: note: do_server_recv() at 0xaaaadf1caf2c
+rsync-3.2.7/main.c:1259: note: start_server() at 0xaaaadf1caf2c
+rsync-3.2.7/main.c:1854: note: main() at 0xaaaadf174344
+/lib64/libc.so.6: note: __libc_start_call_main() at 0xffffbb4609d8
+/lib64/libc.so.6: note: __libc_start_main@GLIBC_2.17() at 0xffffbb460aac
+rsync-3.2.7/rsync: note: _start() at 0xaaaadf1751ec
+#  856|         }
+#  857|
+#  858|->       file->mode = mode;
+#  859|
+#  860|         if (am_server && protocol_version >= 29 && len < MAXPATHLEN) {
+
+Error: UBSAN_WARNING:
+rsync-3.2.7/log.c:858:13: runtime error: member access within misaligned address 0xaaab18434534 for type 'struct file_struct', which requires 8 byte alignment
+0xaaab18434534: note: pointer points here
+#  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+#              ^
+rsync-3.2.7/log.c:858: note: log_delete() at 0xaaaae8f35b2c
+rsync-3.2.7/delete.c:180: note: delete_item() at 0xaaaae8f3c460
+rsync-3.2.7/generator.c:342: note: delete_in_dir() at 0xaaaae8ef326c
+rsync-3.2.7/generator.c:2303: note: generate_files() at 0xaaaae8f05f6c
+rsync-3.2.7/main.c:1112: note: do_recv() at 0xaaaae8f29854
+rsync-3.2.7/main.c:1225: note: do_server_recv() at 0xaaaae8f2af2c
+rsync-3.2.7/main.c:1259: note: start_server() at 0xaaaae8f2af2c
+rsync-3.2.7/main.c:1232: note: child_main() at 0xaaaae8f2b5fc
+rsync-3.2.7/pipe.c:166: note: local_child() at 0xaaaae8ed1da8
+rsync-3.2.7/main.c:644: note: do_cmd() at 0xaaaae8ed1da8
+rsync-3.2.7/main.c:1586: note: start_client() at 0xaaaae8ed1da8
+rsync-3.2.7/main.c:1857: note: main() at 0xaaaae8ed1da8
+/lib64/libc.so.6: note: __libc_start_call_main() at 0xffffa83209d8
+/lib64/libc.so.6: note: __libc_start_main@GLIBC_2.17() at 0xffffa8320aac
+rsync-3.2.7/rsync: note: _start() at 0xaaaae8ed51ec
+#  856|         }
+#  857|
+#  858|->       file->mode = mode;
+#  859|
+#  860|         if (am_server && protocol_version >= 29 && len < MAXPATHLEN) {
+
+Error: UBSAN_WARNING:
+rsync-3.2.7/log.c:858:13: runtime error: member access within misaligned address 0xaaab1c1e94c4 for type 'struct file_struct', which requires 8 byte alignment
+0xaaab1c1e94c4: note: pointer points here
+#  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+#              ^
+rsync-3.2.7/log.c:858: note: log_delete() at 0xaaaae97f5b2c
+rsync-3.2.7/delete.c:180: note: delete_item() at 0xaaaae97fc68c
+rsync-3.2.7/delete.c:107: note: delete_dir_contents() at 0xaaaae97fcb74
+rsync-3.2.7/delete.c:149: note: delete_item() at 0xaaaae97fc654
+rsync-3.2.7/generator.c:342: note: delete_in_dir() at 0xaaaae97b326c
+rsync-3.2.7/generator.c:2303: note: generate_files() at 0xaaaae97c5f6c
+rsync-3.2.7/main.c:1112: note: do_recv() at 0xaaaae97e9854
+rsync-3.2.7/main.c:1225: note: do_server_recv() at 0xaaaae97eaf2c
+rsync-3.2.7/main.c:1259: note: start_server() at 0xaaaae97eaf2c
+rsync-3.2.7/main.c:1232: note: child_main() at 0xaaaae97eb5fc
+rsync-3.2.7/pipe.c:166: note: local_child() at 0xaaaae9791da8
+rsync-3.2.7/main.c:644: note: do_cmd() at 0xaaaae9791da8
+rsync-3.2.7/main.c:1586: note: start_client() at 0xaaaae9791da8
+rsync-3.2.7/main.c:1857: note: main() at 0xaaaae9791da8
+/lib64/libc.so.6: note: __libc_start_call_main() at 0xffffaefb09d8
+/lib64/libc.so.6: note: __libc_start_main@GLIBC_2.17() at 0xffffaefb0aac
+rsync-3.2.7/rsync: note: _start() at 0xaaaae97951ec
+#  856|         }
+#  857|
+#  858|->       file->mode = mode;
+#  859|
+#  860|         if (am_server && protocol_version >= 29 && len < MAXPATHLEN) {
+
+Error: UBSAN_WARNING:
+rsync-3.2.7/log.c:858:13: runtime error: member access within misaligned address 0xaaab20a640cc for type 'struct file_struct', which requires 8 byte alignment
+0xaaab20a640cc: note: pointer points here
+#  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+#              ^
+rsync-3.2.7/log.c:858: note: log_delete() at 0xaaaae5cb5b2c
+rsync-3.2.7/delete.c:180: note: delete_item() at 0xaaaae5cbc460
+rsync-3.2.7/generator.c:342: note: delete_in_dir() at 0xaaaae5c7326c
+rsync-3.2.7/generator.c:381: note: do_delete_pass() at 0xaaaae5c738f4
+rsync-3.2.7/generator.c:2407: note: generate_files() at 0xaaaae5c85cc8
+rsync-3.2.7/main.c:1112: note: do_recv() at 0xaaaae5ca9854
+rsync-3.2.7/main.c:1225: note: do_server_recv() at 0xaaaae5caaf2c
+rsync-3.2.7/main.c:1259: note: start_server() at 0xaaaae5caaf2c
+rsync-3.2.7/main.c:1232: note: child_main() at 0xaaaae5cab5fc
+rsync-3.2.7/pipe.c:166: note: local_child() at 0xaaaae5c51da8
+rsync-3.2.7/main.c:644: note: do_cmd() at 0xaaaae5c51da8
+rsync-3.2.7/main.c:1586: note: start_client() at 0xaaaae5c51da8
+rsync-3.2.7/main.c:1857: note: main() at 0xaaaae5c51da8
+/lib64/libc.so.6: note: __libc_start_call_main() at 0xffff9ec109d8
+/lib64/libc.so.6: note: __libc_start_main@GLIBC_2.17() at 0xffff9ec10aac
+rsync-3.2.7/rsync: note: _start() at 0xaaaae5c551ec
+#  856|         }
+#  857|
+#  858|->       file->mode = mode;
+#  859|
+#  860|         if (am_server && protocol_version >= 29 && len < MAXPATHLEN) {

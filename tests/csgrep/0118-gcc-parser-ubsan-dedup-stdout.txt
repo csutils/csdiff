@@ -1,0 +1,48 @@
+Error: UBSAN_WARNING:
+rsync-3.2.7/log.c:633:8: runtime error: member access within misaligned address 0xaaaacf6f4a14 for type 'struct file_struct', which requires 8 byte alignment
+0xaaaacf6f4a14: note: pointer points here
+#  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  a4 81 00 00 00 00 00 00
+#              ^
+rsync-3.2.7/log.c:633: note: log_formatted() at 0xaaaab5fa4fa0
+rsync-3.2.7/log.c:868: note: log_delete() at 0xaaaab5fa59d4
+rsync-3.2.7/delete.c:180: note: delete_item() at 0xaaaab5fac460
+rsync-3.2.7/generator.c:342: note: delete_in_dir() at 0xaaaab5f6326c
+rsync-3.2.7/generator.c:2303: note: generate_files() at 0xaaaab5f75f6c
+rsync-3.2.7/main.c:1112: note: do_recv() at 0xaaaab5f99854
+rsync-3.2.7/main.c:1368: note: client_run() at 0xaaaab5f9b804
+rsync-3.2.7/main.c:1597: note: start_client() at 0xaaaab5f422a4
+rsync-3.2.7/main.c:1857: note: main() at 0xaaaab5f422a4
+/lib64/libc.so.6: note: __libc_start_call_main() at 0xffffa6dd09d8
+/lib64/libc.so.6: note: __libc_start_main@GLIBC_2.17() at 0xffffa6dd0aac
+rsync-3.2.7/rsync: note: _start() at 0xaaaab5f451ec
+#  631|                         } else
+#  632|                                 c = f_name(file, NULL);
+#  633|->                       if (S_ISDIR(file->mode))
+#  634|                                 strlcat(c, "/", MAXPATHLEN);
+#  635|                         n = c;
+
+Error: UBSAN_WARNING:
+rsync-3.2.7/log.c:858:13: runtime error: member access within misaligned address 0xaaaac44277f4 for type 'struct file_struct', which requires 8 byte alignment
+0xaaaac44277f4: note: pointer points here
+#  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+#              ^
+rsync-3.2.7/log.c:858: note: log_delete() at 0xaaaab7e65b2c
+rsync-3.2.7/delete.c:180: note: delete_item() at 0xaaaab7e6c460
+rsync-3.2.7/generator.c:342: note: delete_in_dir() at 0xaaaab7e2326c
+rsync-3.2.7/generator.c:2303: note: generate_files() at 0xaaaab7e35f6c
+rsync-3.2.7/main.c:1112: note: do_recv() at 0xaaaab7e59854
+rsync-3.2.7/main.c:1225: note: do_server_recv() at 0xaaaab7e5af2c
+rsync-3.2.7/main.c:1259: note: start_server() at 0xaaaab7e5af2c
+rsync-3.2.7/main.c:1232: note: child_main() at 0xaaaab7e5b5fc
+rsync-3.2.7/pipe.c:166: note: local_child() at 0xaaaab7e01da8
+rsync-3.2.7/main.c:644: note: do_cmd() at 0xaaaab7e01da8
+rsync-3.2.7/main.c:1586: note: start_client() at 0xaaaab7e01da8
+rsync-3.2.7/main.c:1857: note: main() at 0xaaaab7e01da8
+/lib64/libc.so.6: note: __libc_start_call_main() at 0xffff947c09d8
+/lib64/libc.so.6: note: __libc_start_main@GLIBC_2.17() at 0xffff947c0aac
+rsync-3.2.7/rsync: note: _start() at 0xaaaab7e051ec
+#  856|         }
+#  857|
+#  858|->       file->mode = mode;
+#  859|
+#  860|         if (am_server && protocol_version >= 29 && len < MAXPATHLEN) {

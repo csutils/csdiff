@@ -156,6 +156,9 @@ MsgFilter::MsgFilter():
 
     // used by IDENTIFIER_TYPO (but applies generally)
     d->addMsgFilter("", "at least [0-9][0-9]* times.$");
+
+    // squash UBSAN reports that only differ in the address
+    d->addMsgFilter("UBSAN_WARNING", "0x[[:xdigit:]]+");
 }
 
 MsgFilter::~MsgFilter() = default;
