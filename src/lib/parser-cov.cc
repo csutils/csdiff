@@ -180,7 +180,7 @@ EToken ErrFileLexer::readNext()
     }
 
     if (!boost::regex_match(line, sm, reEvent_)) {
-        evt_.msg = line;
+        evt_.msg = std::move(line);
         return T_UNKNOWN;
     }
 

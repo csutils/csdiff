@@ -412,5 +412,5 @@ void SarifTreeEncoder::writeTo(std::ostream &str)
     root["runs"] = array{std::move(run0)};
 
     // encode as JSON
-    jsonPrettyPrint(str, root);
+    jsonPrettyPrint(str, std::move(root));
 }

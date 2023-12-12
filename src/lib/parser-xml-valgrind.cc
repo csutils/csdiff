@@ -123,7 +123,7 @@ void ValgrindTreeDecoder::readRoot(const pt::ptree *root)
     // create a note event in the defect prototype
     d->defPrototype.events.push_back(DefEvent("note"));
     DefEvent &noteEvt = d->defPrototype.events.back();
-    noteEvt.fileName = exe;
+    noteEvt.fileName = std::move(exe);
 
     // record PID and command-line args
     std::ostringstream str;

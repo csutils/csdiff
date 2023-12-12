@@ -121,14 +121,14 @@ void SarifTreeDecoder::readScanProps(
 
         if (!version.empty())
             // record tool version of Snyk Code
-            (*pDst)["analyzer-version-snyk-code"] = version;
+            (*pDst)["analyzer-version-snyk-code"] = std::move(version);
     }
     else if (name == "gitleaks") {
         // gitleaks
         d->singleChecker = "GITLEAKS_WARNING";
 
         if (!version.empty())
-            (*pDst)["analyzer-version-gitleaks"] = version;
+            (*pDst)["analyzer-version-gitleaks"] = std::move(version);
     }
     else if (boost::starts_with(name, "GNU C")) {
         // GCC

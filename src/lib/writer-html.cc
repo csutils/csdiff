@@ -271,7 +271,7 @@ void HtmlWriterCore::writeHeaderOnce(
         title = titleFallback_;
 
     // initialize a HTML document
-    HtmlLib::initHtml(str_, title);
+    HtmlLib::initHtml(str_, std::move(title));
     if (!plainTextUrl.empty())
         HtmlLib::writeLink(str_, plainTextUrl, "[Show plain-text results]");
 

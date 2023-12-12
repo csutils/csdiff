@@ -170,7 +170,7 @@ int main(int argc, char *argv[])
         // initialize CWE names lookup
         CweNameLookup cweNames;
         if (!fnCweNames.empty()) {
-            InStream strCweNames(fnCweNames);
+            InStream strCweNames(std::move(fnCweNames));
             cweNames.parse(strCweNames);
             writer.setCweNameLookup(&cweNames);
         }

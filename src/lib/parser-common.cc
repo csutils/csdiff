@@ -97,7 +97,7 @@ void ImpliedAttrDigger::inferToolFromChecker(
             // we use COMPILER_WARNING for "gcc" due to historical reasons
             tool = "gcc";
 
-        pDef->tool = tool;
+        pDef->tool = std::move(tool);
     }
     else
         // no tool matched --> assume coverity
