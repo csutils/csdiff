@@ -91,6 +91,10 @@ option(PYCSDIFF_PYTHON2 "Set to ON to build pycsdiff for Python 2" OFF)
 option(PYCSDIFF_PYTHON3 "Set to ON to build pycsdiff for Python 3" ON)
 
 macro(build_pycsdiff version)
+    # make FindPython use system Python version
+    # https://gitlab.kitware.com/cmake/cmake/-/merge_requests/8287
+    set(Python${version}_FIND_UNVERSIONED_NAMES FIRST)
+
     # check for Python libs (e.g. python${version}-devel on Fedora)
     # Interpreter is required for Python_SITEARCH
     find_package(Python${version} COMPONENTS Development Interpreter)
