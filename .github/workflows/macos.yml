@@ -8,7 +8,7 @@ on:
     branches: [main]
 
 jobs:
-  ubuntu:
+  macos:
     name: macOS ${{ matrix.version }} (${{ matrix.compiler }})
     strategy:
       fail-fast: false
