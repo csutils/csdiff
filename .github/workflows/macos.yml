@@ -27,7 +27,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          brew upgrade
+          brew update
           brew install boost boost-python3 help2man
 
       - name: Build and check
