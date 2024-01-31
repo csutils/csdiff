@@ -1,0 +1,140 @@
+Error: SIGMA.least_privilege_violation (CWE-284):
+unpacked_remote_sources/collector/app/ansible/roles/create-vm/tasks/main.yml:71: Sigma main event: The Google Cloud Compute instance enables the project-wide SSH keys, which could be used to login into all the virtual machine instances within the project. If one VM is compromised, the stolen SSH key will introduce security risks to all instances within the project.
+unpacked_remote_sources/collector/app/ansible/roles/create-vm/tasks/main.yml:71: remediation: Explicitly set the `metadata.block-project-ssh-keys` property to `yes`, as the default value is `no`.
+
+Error: SIGMA.xss (CWE-79):
+unpacked_remote_sources/collector/app/builder/third_party/civetweb/test/x.php:7: Sigma event: reading tainted data from _POST with key x
+unpacked_remote_sources/collector/app/builder/third_party/civetweb/test/x.php:7: Sigma event: $_POST["x"] is a source of tainted data
+unpacked_remote_sources/collector/app/builder/third_party/civetweb/test/x.php:7: Sigma event: calling __builtin__.echo
+unpacked_remote_sources/collector/app/builder/third_party/civetweb/test/x.php:7: Sigma main event: Untrusted user-supplied data is inserted into a context that can execute JavaScript without adequate validation, escaping, or filtering. A user can execute arbitrary JavaScript on a web page viewed or accessed by another user, potentially allowing session hijacking, disclosing sensitive data in the DOM, or viewing of keyboard and mouse events.
+unpacked_remote_sources/collector/app/builder/third_party/civetweb/test/x.php:7: remediation: Escape non-constant data appropriately before concatenating it into HTML. The specific sequence of escapers necessary to make data safe depends on its syntactic position in the HTML. Allowing only safe characters sometimes suffices to avoid XSS vulnerabilities, but only the strictest allow lists prevent all attacks.
+
+Error: SIGMA.outdated_target_sdk_version (CWE-1032):
+unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/android/binder/java/io/grpc/binder/cpp/exampleclient/AndroidManifest.xml:6: Sigma main event: The application is not configured to target the latest Android operating system version, as is best practice. Applications targeting older Android versions do not take advantage of several security features and improvements introduced on later Android versions.
+unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/android/binder/java/io/grpc/binder/cpp/exampleclient/AndroidManifest.xml:6: remediation: Set the `android:targetSdkVersion` attribute to the most recent Android API.
+
+Error: SIGMA.unsafe_min_sdk_version (CWE-1035):
+unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/android/binder/java/io/grpc/binder/cpp/exampleclient/AndroidManifest.xml:6: Sigma main event: The application supports unsafe Android versions as the `android:minSdkVersion` value is known to be unsafe. Allowing your application to execute on old Android versions is unsafe, as other applications may exploit operating system weaknesses and perform a variety of attacks to your application.
+unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/android/binder/java/io/grpc/binder/cpp/exampleclient/AndroidManifest.xml:6: remediation: Use a known safe `minSdkVersion`, such as 30.
+
+Error: SIGMA.outdated_target_sdk_version (CWE-1032):
+unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/android/binder/java/io/grpc/binder/cpp/exampleserver/AndroidManifest_endpoint.xml:4: Sigma main event: The application is not configured to target the latest Android operating system version, as is best practice. Applications targeting older Android versions do not take advantage of several security features and improvements introduced on later Android versions.
+unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/android/binder/java/io/grpc/binder/cpp/exampleserver/AndroidManifest_endpoint.xml:4: remediation: Set the `android:targetSdkVersion` attribute to the most recent Android API.
+
+Error: SIGMA.unsafe_min_sdk_version (CWE-1035):
+unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/android/binder/java/io/grpc/binder/cpp/exampleserver/AndroidManifest_endpoint.xml:4: Sigma main event: The application supports unsafe Android versions as the `android:minSdkVersion` value is known to be unsafe. Allowing your application to execute on old Android versions is unsafe, as other applications may exploit operating system weaknesses and perform a variety of attacks to your application.
+unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/android/binder/java/io/grpc/binder/cpp/exampleserver/AndroidManifest_endpoint.xml:4: remediation: Use a known safe `minSdkVersion`, such as 30.
+
+Error: SIGMA.outdated_target_sdk_version (CWE-1032):
+unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/csharp/HelloworldXamarin/HelloworldXamarin.Android/Properties/AndroidManifest.xml:3: Sigma main event: The application is not configured to target the latest Android operating system version, as is best practice. Applications targeting older Android versions do not take advantage of several security features and improvements introduced on later Android versions.
+unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/csharp/HelloworldXamarin/HelloworldXamarin.Android/Properties/AndroidManifest.xml:3: remediation: Set the `android:targetSdkVersion` attribute to the most recent Android API.
+
+Error: SIGMA.unsafe_min_sdk_version (CWE-1035):
+unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/csharp/HelloworldXamarin/HelloworldXamarin.Android/Properties/AndroidManifest.xml:3: Sigma main event: The application supports unsafe Android versions as the `android:minSdkVersion` value is known to be unsafe. Allowing your application to execute on old Android versions is unsafe, as other applications may exploit operating system weaknesses and perform a variety of attacks to your application.
+unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/csharp/HelloworldXamarin/HelloworldXamarin.Android/Properties/AndroidManifest.xml:3: remediation: Use a known safe `minSdkVersion`, such as 30.
+
+Error: SIGMA.missing_tls (CWE-319):
+unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/node/dynamic_codegen/greeter_client.js:45: Sigma main event: The application creates a gRPC connection to a gRPC client or server without encryption. As a result, application data is transmitted over an insecure channel where it can be read and modified by attackers.
+unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/node/dynamic_codegen/greeter_client.js:45: remediation: Create a secure TLS connection by using the `grpc.credentials.createSsl()` function for a client connection and the `grpc.ServerCredentials.createSsl()` function for a connection established on a server.
+
+Error: SIGMA.missing_tls (CWE-319):
+unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/node/dynamic_codegen/greeter_server.js:47: Sigma main event: The application creates a gRPC connection to a gRPC client or server without encryption. As a result, application data is transmitted over an insecure channel where it can be read and modified by attackers.
+unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/node/dynamic_codegen/greeter_server.js:47: remediation: Create a secure TLS connection by using the `grpc.credentials.createSsl()` function for a client connection and the `grpc.ServerCredentials.createSsl()` function for a connection established on a server.
+
+Error: SIGMA.missing_tls (CWE-319):
+unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/node/dynamic_codegen/route_guide/route_guide_client.js:38: Sigma main event: The application creates a gRPC connection to a gRPC client or server without encryption. As a result, application data is transmitted over an insecure channel where it can be read and modified by attackers.
+unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/node/dynamic_codegen/route_guide/route_guide_client.js:38: remediation: Create a secure TLS connection by using the `grpc.credentials.createSsl()` function for a client connection and the `grpc.ServerCredentials.createSsl()` function for a connection established on a server.
+
+Error: SIGMA.missing_tls (CWE-319):
+unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/node/dynamic_codegen/route_guide/route_guide_server.js:233: Sigma main event: The application creates a gRPC connection to a gRPC client or server without encryption. As a result, application data is transmitted over an insecure channel where it can be read and modified by attackers.
+unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/node/dynamic_codegen/route_guide/route_guide_server.js:233: remediation: Create a secure TLS connection by using the `grpc.credentials.createSsl()` function for a client connection and the `grpc.ServerCredentials.createSsl()` function for a connection established on a server.
+
+Error: SIGMA.missing_tls (CWE-319):
+unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/node/static_codegen/greeter_client.js:36: Sigma main event: The application creates a gRPC connection to a gRPC client or server without encryption. As a result, application data is transmitted over an insecure channel where it can be read and modified by attackers.
+unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/node/static_codegen/greeter_client.js:36: remediation: Create a secure TLS connection by using the `grpc.credentials.createSsl()` function for a client connection and the `grpc.ServerCredentials.createSsl()` function for a connection established on a server.
+
+Error: SIGMA.missing_tls (CWE-319):
+unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/node/static_codegen/greeter_server.js:40: Sigma main event: The application creates a gRPC connection to a gRPC client or server without encryption. As a result, application data is transmitted over an insecure channel where it can be read and modified by attackers.
+unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/node/static_codegen/greeter_server.js:40: remediation: Create a secure TLS connection by using the `grpc.credentials.createSsl()` function for a client connection and the `grpc.ServerCredentials.createSsl()` function for a connection established on a server.
+
+Error: SIGMA.missing_tls (CWE-319):
+unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/node/static_codegen/route_guide/route_guide_client.js:30: Sigma main event: The application creates a gRPC connection to a gRPC client or server without encryption. As a result, application data is transmitted over an insecure channel where it can be read and modified by attackers.
+unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/node/static_codegen/route_guide/route_guide_client.js:30: remediation: Create a secure TLS connection by using the `grpc.credentials.createSsl()` function for a client connection and the `grpc.ServerCredentials.createSsl()` function for a connection established on a server.
+
+Error: SIGMA.missing_tls (CWE-319):
+unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/node/static_codegen/route_guide/route_guide_server.js:223: Sigma main event: The application creates a gRPC connection to a gRPC client or server without encryption. As a result, application data is transmitted over an insecure channel where it can be read and modified by attackers.
+unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/node/static_codegen/route_guide/route_guide_server.js:223: remediation: Create a secure TLS connection by using the `grpc.credentials.createSsl()` function for a client connection and the `grpc.ServerCredentials.createSsl()` function for a connection established on a server.
+
+Error: SIGMA.missing_tls (CWE-319):
+unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/node/xds/greeter_client.js:48: Sigma main event: The application creates a gRPC connection to a gRPC client or server without encryption. As a result, application data is transmitted over an insecure channel where it can be read and modified by attackers.
+unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/node/xds/greeter_client.js:48: remediation: Create a secure TLS connection by using the `grpc.credentials.createSsl()` function for a client connection and the `grpc.ServerCredentials.createSsl()` function for a connection established on a server.
+
+Error: SIGMA.missing_tls (CWE-319):
+unpacked_remote_sources/collector/app/builder/third_party/grpc/src/php/tests/generated_code/math_server.js:123: Sigma main event: The application creates a gRPC connection to a gRPC client or server without encryption. As a result, application data is transmitted over an insecure channel where it can be read and modified by attackers.
+unpacked_remote_sources/collector/app/builder/third_party/grpc/src/php/tests/generated_code/math_server.js:123: remediation: Create a secure TLS connection by using the `grpc.credentials.createSsl()` function for a client connection and the `grpc.ServerCredentials.createSsl()` function for a connection established on a server.
+
+Error: SIGMA.container_requesting_net_raw (CWE-269):
+unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/operator/bundle/manifests/rhacs-operator.clusterserviceversion.yaml:919: Sigma main event: The Kubernetes container requests the `NET_RAW` capability, either explicitly or by default, granting access to the host's network interfaces.
+unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/operator/bundle/manifests/rhacs-operator.clusterserviceversion.yaml:919: remediation: Explicitly remove the `NET_RAW` capability for a container by adding either `NET_RAW` or `ALL` to the `securityContext.capabilities.drop` list, avoid adding the `NET_RAW` capability to the `securityContext.capabilities.add` list.
+
+Error: SIGMA.container_requesting_net_raw (CWE-269):
+unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/operator/config/manager/manager.yaml:49: Sigma main event: The Kubernetes container requests the `NET_RAW` capability, either explicitly or by default, granting access to the host's network interfaces.
+unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/operator/config/manager/manager.yaml:49: remediation: Explicitly remove the `NET_RAW` capability for a container by adding either `NET_RAW` or `ALL` to the `securityContext.capabilities.drop` list, avoid adding the `NET_RAW` capability to the `securityContext.capabilities.add` list.
+
+Error: SIGMA.container_storing_secret_in_environment_variable (CWE-526):
+unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/roxctl/deployment/check/testdata/deployment.yaml:29: Sigma main event: The Kubernetes container stores secrets in environment variables, which could be leaked if the environment is logged.
+unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/roxctl/deployment/check/testdata/deployment.yaml:29: remediation: Provide access to secrets via volume mounts instead of setting `valueFrom.secretKeyRef` in `env`.
+
+Error: SIGMA.container_sharing_host_network_namespace (CWE-269):
+unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/scripts/ci/clair/psp.yaml:40: Sigma main event: The Kubernetes container uses the host network namespace, giving it full access to the host's network interfaces.
+unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/scripts/ci/clair/psp.yaml:40: remediation: Restrict the container to the private network by removing the `spec.hostNetwork` field, or explicitly setting the value to `false`.
+
+Error: SIGMA.container_sharing_host_network_namespace (CWE-269):
+unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/scripts/ci/psp/psp.yaml:42: Sigma main event: The Kubernetes container uses the host network namespace, giving it full access to the host's network interfaces.
+unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/scripts/ci/psp/psp.yaml:42: remediation: Restrict the container to the private network by removing the `spec.hostNetwork` field, or explicitly setting the value to `false`.
+
+Error: SIGMA.automounting_service_account_token (CWE-284):
+unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/sensor/tests/resource/pod/yaml/nginx-pod.yaml:8: Sigma main event: The service account token is automatically mounted for a `Kubernetes.Pod` or `Kubernetes.ServiceAccount`. Auto-mounting the service account token means this shared bearer token will be written to the container file system at `/var/run/secrets/kubernetes.io/serviceaccount`. If an attacker were to compromise the container, this token can easily be used to elevate privileges, interact with the Kubernetes API, and pivot to other resources.
+unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/sensor/tests/resource/pod/yaml/nginx-pod.yaml:8: remediation: Disable the automount feature by explicitly setting the `automountServiceAccountToken` attribute to `false`. If this field is missing, it should be added to the resource specification. There may be scenarios where the service account token must be automounted due to backwards compatibility with certain tooling. In these cases, one must evaluate the risk of using automounted tokens and implement mitigating controls if necessary.
+
+Error: SIGMA.automounting_service_account_token (CWE-284):
+unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/tests/yamls/multi-container-pod.yaml:9: Sigma main event: The service account token is automatically mounted for a `Kubernetes.Pod` or `Kubernetes.ServiceAccount`. Auto-mounting the service account token means this shared bearer token will be written to the container file system at `/var/run/secrets/kubernetes.io/serviceaccount`. If an attacker were to compromise the container, this token can easily be used to elevate privileges, interact with the Kubernetes API, and pivot to other resources.
+unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/tests/yamls/multi-container-pod.yaml:9: remediation: Disable the automount feature by explicitly setting the `automountServiceAccountToken` attribute to `false`. If this field is missing, it should be added to the resource specification. There may be scenarios where the service account token must be automounted due to backwards compatibility with certain tooling. In these cases, one must evaluate the risk of using automounted tokens and implement mitigating controls if necessary.
+
+Error: SIGMA.automounting_service_account_token (CWE-284):
+unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/tests/yamls/pod.yaml:10: Sigma main event: The service account token is automatically mounted for a `Kubernetes.Pod` or `Kubernetes.ServiceAccount`. Auto-mounting the service account token means this shared bearer token will be written to the container file system at `/var/run/secrets/kubernetes.io/serviceaccount`. If an attacker were to compromise the container, this token can easily be used to elevate privileges, interact with the Kubernetes API, and pivot to other resources.
+unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/tests/yamls/pod.yaml:10: remediation: Disable the automount feature by explicitly setting the `automountServiceAccountToken` attribute to `false`. If this field is missing, it should be added to the resource specification. There may be scenarios where the service account token must be automounted due to backwards compatibility with certain tooling. In these cases, one must evaluate the risk of using automounted tokens and implement mitigating controls if necessary.
+
+Error: SIGMA.container_running_as_root (CWE-269):
+unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/webhookserver/chart/templates/server.yaml:39: Sigma main event: The Kubernetes container is allowed to run as the root user. This may allow attackers to gain the root privileges of the host when the container is compromised.
+unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/webhookserver/chart/templates/server.yaml:39: remediation: Explicitly set the `securityContext.runAsNonRoot` value to `true` to prevent the container from running as a root-level user.
+
+Error: SNYK_CODE_WARNING (CWE-547):
+unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/ui/apps/platform/cypress/constants/AccessControlPage.js:90:17: error[javascript/HardcodedNonCryptoSecret]: Avoid hardcoding values that are meant to be secret. Found a hardcoded string used in here.
+
+Error: SNYK_CODE_WARNING (CWE-547):
+unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/ui/apps/platform/cypress/constants/AccessPage.js:45:9: error[javascript/HardcodedNonCryptoSecret]: Avoid hardcoding values that are meant to be secret. Found a hardcoded string used in here.
+
+Error: SNYK_CODE_WARNING (CWE-547):
+unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/ui/apps/platform/cypress/constants/AccessPage.js:46:9: error[javascript/HardcodedNonCryptoSecret]: Avoid hardcoding values that are meant to be secret. Found a hardcoded string used in here.
+
+Error: SNYK_CODE_WARNING (CWE-547):
+unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/ui/apps/platform/cypress/constants/AccessPage.js:47:9: error[javascript/HardcodedNonCryptoSecret]: Avoid hardcoding values that are meant to be secret. Found a hardcoded string used in here.
+
+Error: SNYK_CODE_WARNING (CWE-547):
+unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/ui/apps/platform/cypress/constants/IntegrationsPage.js:62:9: error[javascript/HardcodedNonCryptoSecret]: Avoid hardcoding values that are meant to be secret. Found a hardcoded string used in here.
+
+Error: SNYK_CODE_WARNING (CWE-547):
+unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/ui/apps/platform/src/Containers/AccessControl/AuthProviders/ConfigurationFormFields.tsx:42:9: error[javascript/HardcodedNonCryptoSecret]: Avoid hardcoding values that are meant to be secret. Found a hardcoded string used in here.
+
+Error: SNYK_CODE_WARNING (CWE-547):
+unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/ui/apps/platform/src/Containers/AccessControl/AuthProviders/ConfigurationFormFields.tsx:44:9: error[javascript/HardcodedNonCryptoSecret]: Avoid hardcoding values that are meant to be secret. Found a hardcoded string used in here.
+
+Error: SNYK_CODE_WARNING (CWE-547):
+unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/ui/apps/platform/src/Containers/AccessControl/AuthProviders/ConfigurationFormFields.tsx:50:9: error[javascript/HardcodedNonCryptoSecret]: Avoid hardcoding values that are meant to be secret. Found a hardcoded string used in here.
+
+Error: SNYK_CODE_WARNING (CWE-547):
+unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/ui/apps/platform/src/Containers/ConfigManagement/List/Secrets.js:33:5: error[javascript/HardcodedNonCryptoSecret]: Avoid hardcoding values that are meant to be secret. Found a hardcoded string used in here.
+
+Error: SNYK_CODE_WARNING (CWE-547):
+unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/ui/apps/platform/src/constants/sortFields.js:234:5: error[javascript/HardcodedNonCryptoSecret]: Avoid hardcoding values that are meant to be secret. Found a hardcoded string used in here.

@@ -1,0 +1,779 @@
+{
+    "defects": [
+        {
+            "checker": "SIGMA.least_privilege_violation",
+            "cwe": 284,
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/ansible/roles/create-vm/tasks/main.yml",
+                    "line": 71,
+                    "event": "Sigma main event",
+                    "message": "The Google Cloud Compute instance enables the project-wide SSH keys, which could be used to login into all the virtual machine instances within the project. If one VM is compromised, the stolen SSH key will introduce security risks to all instances within the project.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/ansible/roles/create-vm/tasks/main.yml",
+                    "line": 71,
+                    "event": "remediation",
+                    "message": "Explicitly set the `metadata.block-project-ssh-keys` property to `yes`, as the default value is `no`.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SIGMA.xss",
+            "cwe": 79,
+            "tool": "coverity",
+            "key_event_idx": 3,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/builder/third_party/civetweb/test/x.php",
+                    "line": 7,
+                    "event": "Sigma event",
+                    "message": "reading tainted data from _POST with key x",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/builder/third_party/civetweb/test/x.php",
+                    "line": 7,
+                    "event": "Sigma event",
+                    "message": "$_POST[\"x\"] is a source of tainted data",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/builder/third_party/civetweb/test/x.php",
+                    "line": 7,
+                    "event": "Sigma event",
+                    "message": "calling __builtin__.echo",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/builder/third_party/civetweb/test/x.php",
+                    "line": 7,
+                    "event": "Sigma main event",
+                    "message": "Untrusted user-supplied data is inserted into a context that can execute JavaScript without adequate validation, escaping, or filtering. A user can execute arbitrary JavaScript on a web page viewed or accessed by another user, potentially allowing session hijacking, disclosing sensitive data in the DOM, or viewing of keyboard and mouse events.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/builder/third_party/civetweb/test/x.php",
+                    "line": 7,
+                    "event": "remediation",
+                    "message": "Escape non-constant data appropriately before concatenating it into HTML. The specific sequence of escapers necessary to make data safe depends on its syntactic position in the HTML. Allowing only safe characters sometimes suffices to avoid XSS vulnerabilities, but only the strictest allow lists prevent all attacks.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SIGMA.outdated_target_sdk_version",
+            "cwe": 1032,
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/android/binder/java/io/grpc/binder/cpp/exampleclient/AndroidManifest.xml",
+                    "line": 6,
+                    "event": "Sigma main event",
+                    "message": "The application is not configured to target the latest Android operating system version, as is best practice. Applications targeting older Android versions do not take advantage of several security features and improvements introduced on later Android versions.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/android/binder/java/io/grpc/binder/cpp/exampleclient/AndroidManifest.xml",
+                    "line": 6,
+                    "event": "remediation",
+                    "message": "Set the `android:targetSdkVersion` attribute to the most recent Android API.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SIGMA.unsafe_min_sdk_version",
+            "cwe": 1035,
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/android/binder/java/io/grpc/binder/cpp/exampleclient/AndroidManifest.xml",
+                    "line": 6,
+                    "event": "Sigma main event",
+                    "message": "The application supports unsafe Android versions as the `android:minSdkVersion` value is known to be unsafe. Allowing your application to execute on old Android versions is unsafe, as other applications may exploit operating system weaknesses and perform a variety of attacks to your application.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/android/binder/java/io/grpc/binder/cpp/exampleclient/AndroidManifest.xml",
+                    "line": 6,
+                    "event": "remediation",
+                    "message": "Use a known safe `minSdkVersion`, such as 30.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SIGMA.outdated_target_sdk_version",
+            "cwe": 1032,
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/android/binder/java/io/grpc/binder/cpp/exampleserver/AndroidManifest_endpoint.xml",
+                    "line": 4,
+                    "event": "Sigma main event",
+                    "message": "The application is not configured to target the latest Android operating system version, as is best practice. Applications targeting older Android versions do not take advantage of several security features and improvements introduced on later Android versions.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/android/binder/java/io/grpc/binder/cpp/exampleserver/AndroidManifest_endpoint.xml",
+                    "line": 4,
+                    "event": "remediation",
+                    "message": "Set the `android:targetSdkVersion` attribute to the most recent Android API.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SIGMA.unsafe_min_sdk_version",
+            "cwe": 1035,
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/android/binder/java/io/grpc/binder/cpp/exampleserver/AndroidManifest_endpoint.xml",
+                    "line": 4,
+                    "event": "Sigma main event",
+                    "message": "The application supports unsafe Android versions as the `android:minSdkVersion` value is known to be unsafe. Allowing your application to execute on old Android versions is unsafe, as other applications may exploit operating system weaknesses and perform a variety of attacks to your application.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/android/binder/java/io/grpc/binder/cpp/exampleserver/AndroidManifest_endpoint.xml",
+                    "line": 4,
+                    "event": "remediation",
+                    "message": "Use a known safe `minSdkVersion`, such as 30.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SIGMA.outdated_target_sdk_version",
+            "cwe": 1032,
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/csharp/HelloworldXamarin/HelloworldXamarin.Android/Properties/AndroidManifest.xml",
+                    "line": 3,
+                    "event": "Sigma main event",
+                    "message": "The application is not configured to target the latest Android operating system version, as is best practice. Applications targeting older Android versions do not take advantage of several security features and improvements introduced on later Android versions.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/csharp/HelloworldXamarin/HelloworldXamarin.Android/Properties/AndroidManifest.xml",
+                    "line": 3,
+                    "event": "remediation",
+                    "message": "Set the `android:targetSdkVersion` attribute to the most recent Android API.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SIGMA.unsafe_min_sdk_version",
+            "cwe": 1035,
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/csharp/HelloworldXamarin/HelloworldXamarin.Android/Properties/AndroidManifest.xml",
+                    "line": 3,
+                    "event": "Sigma main event",
+                    "message": "The application supports unsafe Android versions as the `android:minSdkVersion` value is known to be unsafe. Allowing your application to execute on old Android versions is unsafe, as other applications may exploit operating system weaknesses and perform a variety of attacks to your application.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/csharp/HelloworldXamarin/HelloworldXamarin.Android/Properties/AndroidManifest.xml",
+                    "line": 3,
+                    "event": "remediation",
+                    "message": "Use a known safe `minSdkVersion`, such as 30.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SIGMA.missing_tls",
+            "cwe": 319,
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/node/dynamic_codegen/greeter_client.js",
+                    "line": 45,
+                    "event": "Sigma main event",
+                    "message": "The application creates a gRPC connection to a gRPC client or server without encryption. As a result, application data is transmitted over an insecure channel where it can be read and modified by attackers.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/node/dynamic_codegen/greeter_client.js",
+                    "line": 45,
+                    "event": "remediation",
+                    "message": "Create a secure TLS connection by using the `grpc.credentials.createSsl()` function for a client connection and the `grpc.ServerCredentials.createSsl()` function for a connection established on a server.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SIGMA.missing_tls",
+            "cwe": 319,
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/node/dynamic_codegen/greeter_server.js",
+                    "line": 47,
+                    "event": "Sigma main event",
+                    "message": "The application creates a gRPC connection to a gRPC client or server without encryption. As a result, application data is transmitted over an insecure channel where it can be read and modified by attackers.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/node/dynamic_codegen/greeter_server.js",
+                    "line": 47,
+                    "event": "remediation",
+                    "message": "Create a secure TLS connection by using the `grpc.credentials.createSsl()` function for a client connection and the `grpc.ServerCredentials.createSsl()` function for a connection established on a server.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SIGMA.missing_tls",
+            "cwe": 319,
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/node/dynamic_codegen/route_guide/route_guide_client.js",
+                    "line": 38,
+                    "event": "Sigma main event",
+                    "message": "The application creates a gRPC connection to a gRPC client or server without encryption. As a result, application data is transmitted over an insecure channel where it can be read and modified by attackers.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/node/dynamic_codegen/route_guide/route_guide_client.js",
+                    "line": 38,
+                    "event": "remediation",
+                    "message": "Create a secure TLS connection by using the `grpc.credentials.createSsl()` function for a client connection and the `grpc.ServerCredentials.createSsl()` function for a connection established on a server.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SIGMA.missing_tls",
+            "cwe": 319,
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/node/dynamic_codegen/route_guide/route_guide_server.js",
+                    "line": 233,
+                    "event": "Sigma main event",
+                    "message": "The application creates a gRPC connection to a gRPC client or server without encryption. As a result, application data is transmitted over an insecure channel where it can be read and modified by attackers.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/node/dynamic_codegen/route_guide/route_guide_server.js",
+                    "line": 233,
+                    "event": "remediation",
+                    "message": "Create a secure TLS connection by using the `grpc.credentials.createSsl()` function for a client connection and the `grpc.ServerCredentials.createSsl()` function for a connection established on a server.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SIGMA.missing_tls",
+            "cwe": 319,
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/node/static_codegen/greeter_client.js",
+                    "line": 36,
+                    "event": "Sigma main event",
+                    "message": "The application creates a gRPC connection to a gRPC client or server without encryption. As a result, application data is transmitted over an insecure channel where it can be read and modified by attackers.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/node/static_codegen/greeter_client.js",
+                    "line": 36,
+                    "event": "remediation",
+                    "message": "Create a secure TLS connection by using the `grpc.credentials.createSsl()` function for a client connection and the `grpc.ServerCredentials.createSsl()` function for a connection established on a server.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SIGMA.missing_tls",
+            "cwe": 319,
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/node/static_codegen/greeter_server.js",
+                    "line": 40,
+                    "event": "Sigma main event",
+                    "message": "The application creates a gRPC connection to a gRPC client or server without encryption. As a result, application data is transmitted over an insecure channel where it can be read and modified by attackers.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/node/static_codegen/greeter_server.js",
+                    "line": 40,
+                    "event": "remediation",
+                    "message": "Create a secure TLS connection by using the `grpc.credentials.createSsl()` function for a client connection and the `grpc.ServerCredentials.createSsl()` function for a connection established on a server.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SIGMA.missing_tls",
+            "cwe": 319,
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/node/static_codegen/route_guide/route_guide_client.js",
+                    "line": 30,
+                    "event": "Sigma main event",
+                    "message": "The application creates a gRPC connection to a gRPC client or server without encryption. As a result, application data is transmitted over an insecure channel where it can be read and modified by attackers.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/node/static_codegen/route_guide/route_guide_client.js",
+                    "line": 30,
+                    "event": "remediation",
+                    "message": "Create a secure TLS connection by using the `grpc.credentials.createSsl()` function for a client connection and the `grpc.ServerCredentials.createSsl()` function for a connection established on a server.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SIGMA.missing_tls",
+            "cwe": 319,
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/node/static_codegen/route_guide/route_guide_server.js",
+                    "line": 223,
+                    "event": "Sigma main event",
+                    "message": "The application creates a gRPC connection to a gRPC client or server without encryption. As a result, application data is transmitted over an insecure channel where it can be read and modified by attackers.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/node/static_codegen/route_guide/route_guide_server.js",
+                    "line": 223,
+                    "event": "remediation",
+                    "message": "Create a secure TLS connection by using the `grpc.credentials.createSsl()` function for a client connection and the `grpc.ServerCredentials.createSsl()` function for a connection established on a server.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SIGMA.missing_tls",
+            "cwe": 319,
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/node/xds/greeter_client.js",
+                    "line": 48,
+                    "event": "Sigma main event",
+                    "message": "The application creates a gRPC connection to a gRPC client or server without encryption. As a result, application data is transmitted over an insecure channel where it can be read and modified by attackers.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/builder/third_party/grpc/examples/node/xds/greeter_client.js",
+                    "line": 48,
+                    "event": "remediation",
+                    "message": "Create a secure TLS connection by using the `grpc.credentials.createSsl()` function for a client connection and the `grpc.ServerCredentials.createSsl()` function for a connection established on a server.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SIGMA.missing_tls",
+            "cwe": 319,
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/builder/third_party/grpc/src/php/tests/generated_code/math_server.js",
+                    "line": 123,
+                    "event": "Sigma main event",
+                    "message": "The application creates a gRPC connection to a gRPC client or server without encryption. As a result, application data is transmitted over an insecure channel where it can be read and modified by attackers.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/builder/third_party/grpc/src/php/tests/generated_code/math_server.js",
+                    "line": 123,
+                    "event": "remediation",
+                    "message": "Create a secure TLS connection by using the `grpc.credentials.createSsl()` function for a client connection and the `grpc.ServerCredentials.createSsl()` function for a connection established on a server.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SIGMA.container_requesting_net_raw",
+            "cwe": 269,
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/operator/bundle/manifests/rhacs-operator.clusterserviceversion.yaml",
+                    "line": 919,
+                    "event": "Sigma main event",
+                    "message": "The Kubernetes container requests the `NET_RAW` capability, either explicitly or by default, granting access to the host's network interfaces.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/operator/bundle/manifests/rhacs-operator.clusterserviceversion.yaml",
+                    "line": 919,
+                    "event": "remediation",
+                    "message": "Explicitly remove the `NET_RAW` capability for a container by adding either `NET_RAW` or `ALL` to the `securityContext.capabilities.drop` list, avoid adding the `NET_RAW` capability to the `securityContext.capabilities.add` list.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SIGMA.container_requesting_net_raw",
+            "cwe": 269,
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/operator/config/manager/manager.yaml",
+                    "line": 49,
+                    "event": "Sigma main event",
+                    "message": "The Kubernetes container requests the `NET_RAW` capability, either explicitly or by default, granting access to the host's network interfaces.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/operator/config/manager/manager.yaml",
+                    "line": 49,
+                    "event": "remediation",
+                    "message": "Explicitly remove the `NET_RAW` capability for a container by adding either `NET_RAW` or `ALL` to the `securityContext.capabilities.drop` list, avoid adding the `NET_RAW` capability to the `securityContext.capabilities.add` list.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SIGMA.container_storing_secret_in_environment_variable",
+            "cwe": 526,
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/roxctl/deployment/check/testdata/deployment.yaml",
+                    "line": 29,
+                    "event": "Sigma main event",
+                    "message": "The Kubernetes container stores secrets in environment variables, which could be leaked if the environment is logged.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/roxctl/deployment/check/testdata/deployment.yaml",
+                    "line": 29,
+                    "event": "remediation",
+                    "message": "Provide access to secrets via volume mounts instead of setting `valueFrom.secretKeyRef` in `env`.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SIGMA.container_sharing_host_network_namespace",
+            "cwe": 269,
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/scripts/ci/clair/psp.yaml",
+                    "line": 40,
+                    "event": "Sigma main event",
+                    "message": "The Kubernetes container uses the host network namespace, giving it full access to the host's network interfaces.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/scripts/ci/clair/psp.yaml",
+                    "line": 40,
+                    "event": "remediation",
+                    "message": "Restrict the container to the private network by removing the `spec.hostNetwork` field, or explicitly setting the value to `false`.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SIGMA.container_sharing_host_network_namespace",
+            "cwe": 269,
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/scripts/ci/psp/psp.yaml",
+                    "line": 42,
+                    "event": "Sigma main event",
+                    "message": "The Kubernetes container uses the host network namespace, giving it full access to the host's network interfaces.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/scripts/ci/psp/psp.yaml",
+                    "line": 42,
+                    "event": "remediation",
+                    "message": "Restrict the container to the private network by removing the `spec.hostNetwork` field, or explicitly setting the value to `false`.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SIGMA.automounting_service_account_token",
+            "cwe": 284,
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/sensor/tests/resource/pod/yaml/nginx-pod.yaml",
+                    "line": 8,
+                    "event": "Sigma main event",
+                    "message": "The service account token is automatically mounted for a `Kubernetes.Pod` or `Kubernetes.ServiceAccount`. Auto-mounting the service account token means this shared bearer token will be written to the container file system at `/var/run/secrets/kubernetes.io/serviceaccount`. If an attacker were to compromise the container, this token can easily be used to elevate privileges, interact with the Kubernetes API, and pivot to other resources.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/sensor/tests/resource/pod/yaml/nginx-pod.yaml",
+                    "line": 8,
+                    "event": "remediation",
+                    "message": "Disable the automount feature by explicitly setting the `automountServiceAccountToken` attribute to `false`. If this field is missing, it should be added to the resource specification. There may be scenarios where the service account token must be automounted due to backwards compatibility with certain tooling. In these cases, one must evaluate the risk of using automounted tokens and implement mitigating controls if necessary.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SIGMA.automounting_service_account_token",
+            "cwe": 284,
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/tests/yamls/multi-container-pod.yaml",
+                    "line": 9,
+                    "event": "Sigma main event",
+                    "message": "The service account token is automatically mounted for a `Kubernetes.Pod` or `Kubernetes.ServiceAccount`. Auto-mounting the service account token means this shared bearer token will be written to the container file system at `/var/run/secrets/kubernetes.io/serviceaccount`. If an attacker were to compromise the container, this token can easily be used to elevate privileges, interact with the Kubernetes API, and pivot to other resources.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/tests/yamls/multi-container-pod.yaml",
+                    "line": 9,
+                    "event": "remediation",
+                    "message": "Disable the automount feature by explicitly setting the `automountServiceAccountToken` attribute to `false`. If this field is missing, it should be added to the resource specification. There may be scenarios where the service account token must be automounted due to backwards compatibility with certain tooling. In these cases, one must evaluate the risk of using automounted tokens and implement mitigating controls if necessary.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SIGMA.automounting_service_account_token",
+            "cwe": 284,
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/tests/yamls/pod.yaml",
+                    "line": 10,
+                    "event": "Sigma main event",
+                    "message": "The service account token is automatically mounted for a `Kubernetes.Pod` or `Kubernetes.ServiceAccount`. Auto-mounting the service account token means this shared bearer token will be written to the container file system at `/var/run/secrets/kubernetes.io/serviceaccount`. If an attacker were to compromise the container, this token can easily be used to elevate privileges, interact with the Kubernetes API, and pivot to other resources.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/tests/yamls/pod.yaml",
+                    "line": 10,
+                    "event": "remediation",
+                    "message": "Disable the automount feature by explicitly setting the `automountServiceAccountToken` attribute to `false`. If this field is missing, it should be added to the resource specification. There may be scenarios where the service account token must be automounted due to backwards compatibility with certain tooling. In these cases, one must evaluate the risk of using automounted tokens and implement mitigating controls if necessary.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SIGMA.container_running_as_root",
+            "cwe": 269,
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/webhookserver/chart/templates/server.yaml",
+                    "line": 39,
+                    "event": "Sigma main event",
+                    "message": "The Kubernetes container is allowed to run as the root user. This may allow attackers to gain the root privileges of the host when the container is compromised.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/webhookserver/chart/templates/server.yaml",
+                    "line": 39,
+                    "event": "remediation",
+                    "message": "Explicitly set the `securityContext.runAsNonRoot` value to `true` to prevent the container from running as a root-level user.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 547,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/ui/apps/platform/cypress/constants/AccessControlPage.js",
+                    "line": 90,
+                    "column": 17,
+                    "event": "error[javascript/HardcodedNonCryptoSecret]",
+                    "message": "Avoid hardcoding values that are meant to be secret. Found a hardcoded string used in here.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 547,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/ui/apps/platform/cypress/constants/AccessPage.js",
+                    "line": 45,
+                    "column": 9,
+                    "event": "error[javascript/HardcodedNonCryptoSecret]",
+                    "message": "Avoid hardcoding values that are meant to be secret. Found a hardcoded string used in here.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 547,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/ui/apps/platform/cypress/constants/AccessPage.js",
+                    "line": 46,
+                    "column": 9,
+                    "event": "error[javascript/HardcodedNonCryptoSecret]",
+                    "message": "Avoid hardcoding values that are meant to be secret. Found a hardcoded string used in here.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 547,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/ui/apps/platform/cypress/constants/AccessPage.js",
+                    "line": 47,
+                    "column": 9,
+                    "event": "error[javascript/HardcodedNonCryptoSecret]",
+                    "message": "Avoid hardcoding values that are meant to be secret. Found a hardcoded string used in here.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 547,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/ui/apps/platform/cypress/constants/IntegrationsPage.js",
+                    "line": 62,
+                    "column": 9,
+                    "event": "error[javascript/HardcodedNonCryptoSecret]",
+                    "message": "Avoid hardcoding values that are meant to be secret. Found a hardcoded string used in here.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 547,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/ui/apps/platform/src/Containers/AccessControl/AuthProviders/ConfigurationFormFields.tsx",
+                    "line": 42,
+                    "column": 9,
+                    "event": "error[javascript/HardcodedNonCryptoSecret]",
+                    "message": "Avoid hardcoding values that are meant to be secret. Found a hardcoded string used in here.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 547,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/ui/apps/platform/src/Containers/AccessControl/AuthProviders/ConfigurationFormFields.tsx",
+                    "line": 44,
+                    "column": 9,
+                    "event": "error[javascript/HardcodedNonCryptoSecret]",
+                    "message": "Avoid hardcoding values that are meant to be secret. Found a hardcoded string used in here.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 547,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/ui/apps/platform/src/Containers/AccessControl/AuthProviders/ConfigurationFormFields.tsx",
+                    "line": 50,
+                    "column": 9,
+                    "event": "error[javascript/HardcodedNonCryptoSecret]",
+                    "message": "Avoid hardcoding values that are meant to be secret. Found a hardcoded string used in here.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 547,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/ui/apps/platform/src/Containers/ConfigManagement/List/Secrets.js",
+                    "line": 33,
+                    "column": 5,
+                    "event": "error[javascript/HardcodedNonCryptoSecret]",
+                    "message": "Avoid hardcoding values that are meant to be secret. Found a hardcoded string used in here.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 547,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/collector/app/collector/proto/third_party/stackrox/ui/apps/platform/src/constants/sortFields.js",
+                    "line": 234,
+                    "column": 5,
+                    "event": "error[javascript/HardcodedNonCryptoSecret]",
+                    "message": "Avoid hardcoding values that are meant to be secret. Found a hardcoded string used in here.",
+                    "verbosity_level": 0
+                }
+            ]
+        }
+    ]
+}

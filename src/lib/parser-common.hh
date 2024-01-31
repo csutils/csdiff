@@ -35,7 +35,8 @@
 
 #define RE_EVENT_GCC "(?:(?:(?:fatal|internal|runtime) )?[A-Za-z][A-Za-z0-9_-]+)(?:\\[[^ \\]]+\\])?"
 #define RE_EVENT_PROSPECTOR "(?:[A-Z]+[0-9]+\\[[a-z0-9-]+\\])"
-#define RE_EVENT RE_EVENT_GCC "|" RE_EVENT_PROSPECTOR
+#define RE_EVENT_SIGMA "(?:Sigma (?:main )?event)"
+#define RE_EVENT RE_EVENT_GCC "|" RE_EVENT_PROSPECTOR "|" RE_EVENT_SIGMA
 
 int parse_int(const std::string &, int fallback = 0);
 
