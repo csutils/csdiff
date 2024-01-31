@@ -362,9 +362,9 @@ void SarifTreeEncoder::appendDef(const Defect &def)
     }
 
     // codeFlows
-    result["codeFlows"] = {
+    result["codeFlows"] = array{
         // threadFlows
-        {{ "threadFlows", {
+        {{ "threadFlows", array{
             // locations
             {{ "locations", std::move(flowLocs) }}
         }}}
@@ -388,7 +388,7 @@ void SarifTreeEncoder::writeTo(std::ostream &str)
 
     if (!d->scanProps.empty()) {
         // scan props
-        root["inlineExternalProperties"] = {
+        root["inlineExternalProperties"] = array{
             {{ "externalizedProperties", jsonSerializeScanProps(d->scanProps) }}
         };
     }
