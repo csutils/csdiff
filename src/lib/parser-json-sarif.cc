@@ -130,6 +130,13 @@ void SarifTreeDecoder::readScanProps(
         if (!version.empty())
             (*pDst)["analyzer-version-gitleaks"] = std::move(version);
     }
+    else if (name == "Semgrep OSS") {
+        // semgrep
+        d->singleChecker = "SEMGREP_WARNING";
+
+        if (!version.empty())
+            (*pDst)["analyzer-version-semgrep"] = std::move(version);
+    }
     else if (boost::starts_with(name, "GNU C")) {
         // GCC
         d->singleChecker = "COMPILER_WARNING";
