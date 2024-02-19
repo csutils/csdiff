@@ -247,6 +247,8 @@ KeyEventDigger::KeyEventDigger():
     d->hMap["FORWARD_NULL"]              .insert("var_deref_model");
     d->hMap["LOCK"]                      .insert("double_lock");
     d->hMap["LOCK"]                      .insert("double_unlock");
+    d->hMap["LOCK_EVASION"]              .insert("thread1_overwrites_value_in_field");
+    d->hMap["LOCK_EVASION"]              .insert("thread2_checks_field_early");
     d->hMap["MISSING_BREAK"]             .insert("unterminated_case");
     d->hMap["NESTING_INDENT_MISMATCH"]   .insert("dangling_else");
     d->hMap["NESTING_INDENT_MISMATCH"]   .insert("multi_stmt_macro");
