@@ -296,6 +296,7 @@ KeyEventDigger::KeyEventDigger():
     d->denyList.insert("remediation");
     d->denyList.insert("rounding_remediation");
     d->denyList.insert("scope_hint");
+    d->denyList.insert("use_same_locks_for_read_and_modify");
 
     // trace events
     d->traceEvts.insert("break");

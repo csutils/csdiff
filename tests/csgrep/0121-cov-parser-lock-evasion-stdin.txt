@@ -1,0 +1,13 @@
+Error: LOCK_EVASION (CWE-543):
+p11-kit-0.23.22/p11-kit/rpc-client.c:808: thread1_checks_field: Thread1 uses the value read from field "initialized_forkid" in the condition "module->initialized_forkid == p11_forkid". It sees that the condition is true. Control is switched to Thread2.
+p11-kit-0.23.22/p11-kit/rpc-client.c:808: thread2_checks_field: Thread2 uses the value read from field "initialized_forkid" in the condition "module->initialized_forkid == p11_forkid". It sees that the condition is true.
+p11-kit-0.23.22/p11-kit/rpc-client.c:811: thread2_acquires_lock: Thread2 acquires lock "rpc_client.mutex".
+p11-kit-0.23.22/p11-kit/rpc-client.c:826: thread2_modifies_field: Thread2 sets "initialized_forkid" to a new value. Note that this write can be reordered at runtime to occur before instructions that do not access this field within this locked region. After Thread2 leaves the critical section, control is switched back to Thread1.
+p11-kit-0.23.22/p11-kit/rpc-client.c:811: thread1_acquires_lock: Thread1 acquires lock "rpc_client.mutex".
+p11-kit-0.23.22/p11-kit/rpc-client.c:826: thread1_overwrites_value_in_field: Thread1 sets "initialized_forkid" to a new value. Now the two threads have an inconsistent view of "initialized_forkid" and updates to fields correlated with "initialized_forkid" may be lost.
+p11-kit-0.23.22/p11-kit/rpc-client.c:808: use_same_locks_for_read_and_modify: Guard the modification of "initialized_forkid" and the read used to decide whether to modify "initialized_forkid" with the same set of locks.
+#  824|   	}
+#  825|   
+#  826|-> 	module->initialized_forkid = 0;
+#  827|   
+#  828|   	p11_mutex_unlock (&module->mutex);

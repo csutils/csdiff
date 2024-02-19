@@ -1,0 +1,96 @@
+{
+    "defects": [
+        {
+            "checker": "LOCK_EVASION",
+            "cwe": 543,
+            "tool": "coverity",
+            "key_event_idx": 5,
+            "events": [
+                {
+                    "file_name": "p11-kit-0.23.22/p11-kit/rpc-client.c",
+                    "line": 808,
+                    "event": "thread1_checks_field",
+                    "message": "Thread1 uses the value read from field \"initialized_forkid\" in the condition \"module->initialized_forkid == p11_forkid\". It sees that the condition is true. Control is switched to Thread2.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "p11-kit-0.23.22/p11-kit/rpc-client.c",
+                    "line": 808,
+                    "event": "thread2_checks_field",
+                    "message": "Thread2 uses the value read from field \"initialized_forkid\" in the condition \"module->initialized_forkid == p11_forkid\". It sees that the condition is true.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "p11-kit-0.23.22/p11-kit/rpc-client.c",
+                    "line": 811,
+                    "event": "thread2_acquires_lock",
+                    "message": "Thread2 acquires lock \"rpc_client.mutex\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "p11-kit-0.23.22/p11-kit/rpc-client.c",
+                    "line": 826,
+                    "event": "thread2_modifies_field",
+                    "message": "Thread2 sets \"initialized_forkid\" to a new value. Note that this write can be reordered at runtime to occur before instructions that do not access this field within this locked region. After Thread2 leaves the critical section, control is switched back to Thread1.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "p11-kit-0.23.22/p11-kit/rpc-client.c",
+                    "line": 811,
+                    "event": "thread1_acquires_lock",
+                    "message": "Thread1 acquires lock \"rpc_client.mutex\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "p11-kit-0.23.22/p11-kit/rpc-client.c",
+                    "line": 826,
+                    "event": "thread1_overwrites_value_in_field",
+                    "message": "Thread1 sets \"initialized_forkid\" to a new value. Now the two threads have an inconsistent view of \"initialized_forkid\" and updates to fields correlated with \"initialized_forkid\" may be lost.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "p11-kit-0.23.22/p11-kit/rpc-client.c",
+                    "line": 808,
+                    "event": "use_same_locks_for_read_and_modify",
+                    "message": "Guard the modification of \"initialized_forkid\" and the read used to decide whether to modify \"initialized_forkid\" with the same set of locks.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  824|   \t}",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  825|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  826|-> \tmodule->initialized_forkid = 0;",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  827|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  828|   \tp11_mutex_unlock (&module->mutex);",
+                    "verbosity_level": 1
+                }
+            ]
+        }
+    ]
+}
