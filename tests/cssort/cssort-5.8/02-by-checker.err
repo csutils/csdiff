@@ -1263,10 +1263,26 @@ Error: STRING_OVERFLOW:
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/emit_mm.c:3169: fixed_size_dest: You might overrun the 512 byte fixed-size string "cp->CCFLAGS" by copying "MMFLAGS" without checking the length.
 
 Error: STRING_OVERFLOW:
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/emit_mm.c:3224: fixed_size_dest: You might overrun the 128 byte fixed-size string "znam" by copying "nam" without checking the length.
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/emit_mm.c:3224: parameter_as_source: Note: This defect has an elevated risk because the source argument is a parameter of the current function.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/emit_mm.c:3238: fixed_size_dest: You might overrun the 128 byte fixed-size string "bnam" by copying "nam" without checking the length.
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/emit_mm.c:3238: parameter_as_source: Note: This defect has an elevated risk because the source argument is a parameter of the current function.
+
+Error: STRING_OVERFLOW:
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/emit_mm.c:3949: fixed_size_dest: You might overrun the 256 byte fixed-size string "cp->CC" by copying "MCC" without checking the length.
 
 Error: STRING_OVERFLOW:
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/emit_mm.c:3951: fixed_size_dest: You might overrun the 512 byte fixed-size string "cp->CCFLAGS" by copying "MMFLAGS" without checking the length.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/fc.c:477: fixed_size_dest: You might overrun the 80 byte fixed-size string "fnam" by copying "fnam0" without checking the length.
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/fc.c:477: parameter_as_source: Note: This defect has an elevated risk because the source argument is a parameter of the current function.
+
+Error: STRING_OVERFLOW:
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:472: fixed_size_dest: You might overrun the 128 byte fixed-size string "fnam" by copying "nam" without checking the length.
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:472: parameter_as_source: Note: This defect has an elevated risk because the source argument is a parameter of the current function.
 
 Error: STRING_OVERFLOW:
 /builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:749: fixed_size_dest: You might overrun the 256 byte fixed-size string "Nauth" by copying "authN[Nbest]" without checking the length.
@@ -1303,22 +1319,6 @@ Error: STRING_OVERFLOW:
 
 Error: STRING_OVERFLOW:
 /builddir/build/BUILD/ATLAS/tune/blas/gemv/mvsearch.c:760: fixed_size_dest: You might overrun the 512 byte fixed-size string "Sccflags" by copying "ccflagsN[Sbest]" without checking the length.
-
-Error: STRING_OVERFLOW:
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/emit_mm.c:3224: fixed_size_dest: You might overrun the 128 byte fixed-size string "znam" by copying "nam" without checking the length.
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/emit_mm.c:3224: parameter_as_source: Note: This defect has an elevated risk because the source argument is a parameter of the current function.
-
-Error: STRING_OVERFLOW:
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/emit_mm.c:3238: fixed_size_dest: You might overrun the 128 byte fixed-size string "bnam" by copying "nam" without checking the length.
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/emit_mm.c:3238: parameter_as_source: Note: This defect has an elevated risk because the source argument is a parameter of the current function.
-
-Error: STRING_OVERFLOW:
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/fc.c:477: fixed_size_dest: You might overrun the 80 byte fixed-size string "fnam" by copying "fnam0" without checking the length.
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/fc.c:477: parameter_as_source: Note: This defect has an elevated risk because the source argument is a parameter of the current function.
-
-Error: STRING_OVERFLOW:
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:472: fixed_size_dest: You might overrun the 128 byte fixed-size string "fnam" by copying "nam" without checking the length.
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:472: parameter_as_source: Note: This defect has an elevated risk because the source argument is a parameter of the current function.
 
 Error: STRING_SIZE:
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/fc.c:630: var_assign_var: Assigning: "fnam" = "args[1]". Both are now tainted.

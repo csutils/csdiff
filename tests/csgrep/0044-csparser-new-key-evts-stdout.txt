@@ -32,7 +32,7 @@ Error: LOCK_INVERSION:
 ldapjdk-4.19/java-sdk/ldapjdk/netscape/ldap/LDAPConnThread.java:254:9: getlock: Acquiring lock named "LDAPConnThread.m_sendRequestLock".
 
 Error: NESTING_INDENT_MISMATCH:
-qtbase-everywhere-src-5.11.1/qmake/library/qmakeevaluator.cpp:810: dangling_else: The indentation of this "else" clause to column 9 suggests that it was intended to go with the "if" statement indicated by the "intended_if" event, but it actually goes with the "if" indicated by the "actual_if" event because that "if" does not have any other "else" clause.
+qtbase-everywhere-src-5.11.1/qmake/library/qmakeevaluator.cpp:810: actual_if: The "else" clause indicated by the "dangling_else" event actually goes with this "if" statement, contrary to what its indentation suggests.
 
 Error: NESTING_INDENT_MISMATCH:
 mutt-1.9.3/sort.c:207: multi_stmt_macro: The macro on this line expands into multiple statements, only the first of which is nested within the preceding parent while the rest are not.
@@ -44,7 +44,7 @@ Error: NESTING_INDENT_MISMATCH:
 qt-everywhere-opensource-src-4.8.7/tools/qdoc3/doc.cpp:2482: uncle: This  statement is indented to column 13, as if it were nested within the preceding parent statement, but it is not.
 
 Error: STREAM_FORMAT_STATE:
-nss-3.36.1/nss/cpputil/databuffer.h:92: format_changed: "setfill" changes the format state of "stream" for category fill.
+nss-3.36.1/nss/cpputil/databuffer.h:95: format_restored: "dec" changes the format state of "stream" for category basefield.
 
 Error: UNINTENDED_INTEGER_DIVISION:
 xfig-3.2.6a/src/e_scale.c:315: integer_division: Dividing integer expressions "fix_y + y" and "2", and then converting the integer quotient to type "double". Any remainder, or fractional part of the quotient, is ignored.
