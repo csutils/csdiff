@@ -227,12 +227,12 @@ KeyEventDigger::KeyEventDigger():
     d(new Private)
 {
     // register checker-specific key events
-    d->hMap["BAD_CHECK_OF_WAIT_COND"].insert("wait_cond_improperly_checked");
-    d->hMap["BAD_LOCK_OBJECT"]      .insert("boxed_lock");
-    d->hMap["BAD_LOCK_OBJECT"]      .insert("lock_on_assigned_field");
-    d->hMap["BAD_LOCK_OBJECT"]      .insert("single_thread_lock");
-    d->hMap["CALL_SUPER"]           .insert("missing_super_call");
-    d->hMap["CHECKED_RETURN"]       .insert("check_return");
+    d->hMap["BAD_CHECK_OF_WAIT_COND"]    .insert("wait_cond_improperly_checked");
+    d->hMap["BAD_LOCK_OBJECT"]           .insert("boxed_lock");
+    d->hMap["BAD_LOCK_OBJECT"]           .insert("lock_on_assigned_field");
+    d->hMap["BAD_LOCK_OBJECT"]           .insert("single_thread_lock");
+    d->hMap["CALL_SUPER"]                .insert("missing_super_call");
+    d->hMap["CHECKED_RETURN"]            .insert("check_return");
     d->hMap["CONSTANT_EXPRESSION_RESULT"].insert("extra_high_bits");
     d->hMap["CONSTANT_EXPRESSION_RESULT"].insert("logical_vs_bitwise");
     d->hMap["CONSTANT_EXPRESSION_RESULT"].insert("missing_parentheses");
@@ -240,31 +240,31 @@ KeyEventDigger::KeyEventDigger():
     d->hMap["CONSTANT_EXPRESSION_RESULT"].insert("pointless_expression");
     d->hMap["CONSTANT_EXPRESSION_RESULT"].insert("result_independent_of_operands");
     d->hMap["CONSTANT_EXPRESSION_RESULT"].insert("same_on_both_sides");
-    d->hMap["EXPLICIT_THIS_EXPECTED"].insert("implicit_this_used");
-    d->hMap["FORWARD_NULL"]         .insert("deref_parm");
-    d->hMap["FORWARD_NULL"]         .insert("dereference");
-    d->hMap["FORWARD_NULL"]         .insert("var_deref_op");
-    d->hMap["FORWARD_NULL"]         .insert("var_deref_model");
-    d->hMap["LOCK"]                 .insert("double_lock");
-    d->hMap["LOCK"]                 .insert("double_unlock");
-    d->hMap["MISSING_BREAK"]        .insert("unterminated_case");
-    d->hMap["NESTING_INDENT_MISMATCH"].insert("dangling_else");
-    d->hMap["NESTING_INDENT_MISMATCH"].insert("multi_stmt_macro");
-    d->hMap["NESTING_INDENT_MISMATCH"].insert("on_same_line");
-    d->hMap["NESTING_INDENT_MISMATCH"].insert("uncle");
-    d->hMap["ORDER_REVERSAL"]       .insert("lock_acquire");
-    d->hMap["OVERRUN_STATIC"]       .insert("index_parm");
-    d->hMap["OVERRUN_STATIC"]       .insert("overrun-buffer-arg");
-    d->hMap["OVERRUN_STATIC"]       .insert("overrun-local");
-    d->hMap["STREAM_FORMAT_STATE"]  .insert("format_changed");
-    d->hMap["UNINIT"]               .insert("uninit_use");
-    d->hMap["UNINIT"]               .insert("uninit_use_in_call");
-    d->hMap["UNINIT_CTOR"]          .insert("uninit_member");
-    d->hMap["USE_AFTER_FREE"]       .insert("deref_after_free");
-    d->hMap["USE_AFTER_FREE"]       .insert("deref_arg");
-    d->hMap["USE_AFTER_FREE"]       .insert("double_free");
-    d->hMap["USE_AFTER_FREE"]       .insert("pass_freed_arg");
-    d->hMap["USE_AFTER_FREE"]       .insert("use_after_free");
+    d->hMap["EXPLICIT_THIS_EXPECTED"]    .insert("implicit_this_used");
+    d->hMap["FORWARD_NULL"]              .insert("deref_parm");
+    d->hMap["FORWARD_NULL"]              .insert("dereference");
+    d->hMap["FORWARD_NULL"]              .insert("var_deref_op");
+    d->hMap["FORWARD_NULL"]              .insert("var_deref_model");
+    d->hMap["LOCK"]                      .insert("double_lock");
+    d->hMap["LOCK"]                      .insert("double_unlock");
+    d->hMap["MISSING_BREAK"]             .insert("unterminated_case");
+    d->hMap["NESTING_INDENT_MISMATCH"]   .insert("dangling_else");
+    d->hMap["NESTING_INDENT_MISMATCH"]   .insert("multi_stmt_macro");
+    d->hMap["NESTING_INDENT_MISMATCH"]   .insert("on_same_line");
+    d->hMap["NESTING_INDENT_MISMATCH"]   .insert("uncle");
+    d->hMap["ORDER_REVERSAL"]            .insert("lock_acquire");
+    d->hMap["OVERRUN_STATIC"]            .insert("index_parm");
+    d->hMap["OVERRUN_STATIC"]            .insert("overrun-buffer-arg");
+    d->hMap["OVERRUN_STATIC"]            .insert("overrun-local");
+    d->hMap["STREAM_FORMAT_STATE"]       .insert("format_changed");
+    d->hMap["UNINIT"]                    .insert("uninit_use");
+    d->hMap["UNINIT"]                    .insert("uninit_use_in_call");
+    d->hMap["UNINIT_CTOR"]               .insert("uninit_member");
+    d->hMap["USE_AFTER_FREE"]            .insert("deref_after_free");
+    d->hMap["USE_AFTER_FREE"]            .insert("deref_arg");
+    d->hMap["USE_AFTER_FREE"]            .insert("double_free");
+    d->hMap["USE_AFTER_FREE"]            .insert("pass_freed_arg");
+    d->hMap["USE_AFTER_FREE"]            .insert("use_after_free");
 
     // we use COMPILER_WARNING as checker for compiler errors/warnings
     d->hMap["COMPILER_WARNING"]     .insert("error");
