@@ -523,11 +523,6 @@ Error: DEADCODE:
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/xqf.c:164: dead_error_line: Execution cannot reach this expression "0" inside statement "n[0] = box_num((old_val ? 1...".
 
 Error: FORWARD_NULL:
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/page.c:1562: var_compare_op: Comparing "pf->pf_org" to null implies that "pf->pf_org" might be null.
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/page.c:1566: var_deref_model: Passing null variable "pf->pf_org" to function "pg_move_cursors", which dereferences it.
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/insert.c:431: deref_parm: Directly dereferencing parameter "buf_from".
-
-Error: FORWARD_NULL:
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/sparql_core.c:3748: var_compare_op: Comparing "parent" to null implies that "parent" might be null.
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/sparql_core.c:3751: var_deref_op: Dereferencing null variable "parent".
 
@@ -560,10 +555,6 @@ Error: FORWARD_NULL:
 Error: FORWARD_NULL:
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/bif_imap.c:210: var_compare_op: Comparing "a" to null implies that "a" might be null.
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/bif_imap.c:213: var_deref_op: Dereferencing null variable "a".
-
-Error: FORWARD_NULL:
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/http.c:3359: var_compare_op: Comparing "ws->ws_req_line" to null implies that "ws->ws_req_line" might be null.
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/http.c:3525: var_deref_model: Passing null variable "ws->ws_req_line" to function "strchr", which dereferences it. (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)
 
 Error: FORWARD_NULL:
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/nquad_p.y:303: assign_zero: Assigning: "ttlp_arg->ttlp_last_complete_uri" = 0.
@@ -2058,6 +2049,14 @@ Error: UNINIT:
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/binsrc/tests/virtdriver.c:170: var_decl: Declaring variable "ta" without initializer.
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/binsrc/tests/virtdriver.c:189: uninit_use_in_call: Using uninitialized value "ta.ta_is_on" when calling "ta_init".
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/binsrc/tests/time.c:55: read_parm_fld: Reading a parameter field.
+
+Error: UNINIT:
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/xslt.c:734: var_decl: Declaring variable "val" without initializer.
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/xslt.c:809: uninit_use: Using uninitialized value "*val".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/xslt.c:809: uninit_use: Using uninitialized value "val".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/xslt.c:811: uninit_use_in_call: Using uninitialized value "val" when calling "box_hash".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkhashext.c:298: read_parm: Reading a parameter value.
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/xslt.c:818: uninit_use: Using uninitialized value "val".
 
 Error: UNREACHABLE:
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/sqlbif.c:9370: unreachable: This code cannot be reached: "goto cvt_error;".

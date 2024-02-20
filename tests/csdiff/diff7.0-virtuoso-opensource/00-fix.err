@@ -128,11 +128,6 @@ virtuoso-opensource-6.1.2/libsrc/Wi/bif_date.c:148: assignment: Assigning: "ymd_
 virtuoso-opensource-6.1.2/libsrc/Wi/bif_date.c:252: dead_error_begin: Execution cannot reach this statement "err_msg_ret[0] = "Datetime ...".
 
 Error: FORWARD_NULL:
-virtuoso-opensource-6.1.2/libsrc/Wi/blob.c:1706: var_compare_op: Comparing "migr_buf" to null implies that "migr_buf" might be null.
-virtuoso-opensource-6.1.2/libsrc/Wi/blob.c:1721: var_deref_model: Passing null variable "migr_buf" to function "page_leave_inner", which dereferences it.
-virtuoso-opensource-6.1.2/libsrc/Wi/gate.c:424: deref_parm: Directly dereferencing parameter "buf".
-
-Error: FORWARD_NULL:
 virtuoso-opensource-6.1.2/libsrc/Wi/sparql_tree.c:3224: assign_zero: Assigning: "esub_res" = 0.
 virtuoso-opensource-6.1.2/libsrc/Wi/sparql_tree.c:3272: var_deref_op: Dereferencing null variable "esub_res".
 
@@ -158,13 +153,6 @@ Error: FORWARD_NULL:
 virtuoso-opensource-6.1.2/libsrc/Wi/map_schema.c:418: var_compare_op: Comparing "attr_component->cm_type.spec.attribute.ann.sql_field" to null implies that "attr_component->cm_type.spec.attribute.ann.sql_field" might be null.
 virtuoso-opensource-6.1.2/libsrc/Wi/map_schema.c:439: var_deref_model: Passing null variable "(caddr_t)attr_component->cm_type.spec.attribute.ann.sql_field" to function "box_dv_uname_string", which dereferences it.
 virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:2125: deref_parm_in_call: Function "strlen" dereferences parameter "string". (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)
-
-Error: FORWARD_NULL:
-virtuoso-opensource-6.1.2/libsrc/Wi/http.c:3266: var_compare_op: Comparing "ws->ws_req_line" to null implies that "ws->ws_req_line" might be null.
-virtuoso-opensource-6.1.2/libsrc/Wi/http.c:3432: var_deref_model: Passing null variable "ws->ws_req_line" to function "strchr", which dereferences it. (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)
-virtuoso-opensource-6.1.2/libsrc/Wi/http.c:3443: var_deref_model: Passing null variable "ws->ws_req_line" to function "ws_dav", which dereferences it.
-virtuoso-opensource-6.1.2/libsrc/Wi/bif_dav.c:304: deref_parm_in_call: Function "ws_dav_put" dereferences parameter "ws->ws_req_line".
-virtuoso-opensource-6.1.2/libsrc/Wi/bif_dav.c:168: deref_parm_in_call: Function "strchr" dereferences parameter "ws->ws_req_line". (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)
 
 Error: FORWARD_NULL:
 virtuoso-opensource-6.1.2/libsrc/Wi/sparql_tree.c:3896: var_compare_op: Comparing "tree" to null implies that "tree" might be null.
@@ -1493,6 +1481,10 @@ Error: UNINIT:
 virtuoso-opensource-6.1.2/libsrc/Wi/sparql_core.c:3858: var_decl: Declaring variable "sqlvals" without initializer.
 virtuoso-opensource-6.1.2/libsrc/Wi/sparql_core.c:3906: uninit_use_in_call: Using uninitialized value "sqlvals[0]" when calling "spar_make_literal_from_sql_box".
 virtuoso-opensource-6.1.2/libsrc/Wi/sparql_core.c:3796: read_parm: Reading a parameter value.
+
+Error: UNINIT:
+virtuoso-opensource-6.1.2/libsrc/Wi/xslt.c:669: var_decl: Declaring variable "val" without initializer.
+virtuoso-opensource-6.1.2/libsrc/Wi/xslt.c:726: uninit_use: Using uninitialized value "val".
 
 Error: UNREACHABLE:
 virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:5312: unreachable: This code cannot be reached: "dk_free_box(r_text);".

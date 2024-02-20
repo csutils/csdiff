@@ -366,7 +366,8 @@ bool KeyEventDigger::guessKeyEvent(Defect *def)
         // use the corresponding set of events from d->hMap
         pKeyEvents = &it->second;
 
-    for (int idx = evtCount - 1U; idx >= 0; --idx) {
+    // look for an explicitly defined key event
+    for (unsigned idx = 0U; idx < evtCount; ++idx) {
         const DefEvent &evt = evtList[idx];
         const std::string evtName = d->stripEvtName(evt.event);
         if (!pKeyEvents->count(evtName))
