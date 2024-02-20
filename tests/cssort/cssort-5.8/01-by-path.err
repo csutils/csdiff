@@ -296,10 +296,6 @@ Error: CHECKED_RETURN:
 /builddir/build/BUILD/netpbm-10.35.58/converter/pbm/xbmtopbm.c:112: example_checked: "sscanf(line, "#define %s %d", name_and_type, &v)" has its value checked in "sscanf(line, "#define %s %d", name_and_type, &v) == 2".
 /builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtoarbtxt.c:294: unchecked_value: No check of the return value of "sscanf(objstr, "%s", typstr)".
 
-Error: BAD_FREE:
-/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/readframe.c:327: address_free: "Frame_Resize" frees address of "tempFrame".
-/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/frame.c:835: freed_arg: "free" frees parameter "mf".
-
 Error: CHECKED_RETURN:
 /builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/param.c:178: check_return: Calling function "sscanf" without checking return value (as is done elsewhere 154 out of 182 times).
 /builddir/build/BUILD/netpbm-10.35.58/lib/colorname.c:125: example_checked: "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname)" has its value checked in "sscanf(buf, "%ld %ld %ld %[^\n]", &retval.r, &retval.g, &retval.b, colorname) == 4".
@@ -389,6 +385,10 @@ Error: DEADCODE:
 /builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/postdct.c:238: dead_error_condition: On this path, the condition "level == 0" cannot be true.
 /builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/postdct.c:220: cannot_single: After this line (or expression), the value of "level" cannot be 0.
 /builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/postdct.c:239: dead_error_line: Execution cannot reach this statement "coeff = 0;".
+
+Error: BAD_FREE:
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/readframe.c:327: address_free: "Frame_Resize" frees address of "tempFrame".
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/frame.c:835: freed_arg: "free" frees parameter "mf".
 
 Error: CHECKED_RETURN:
 /builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/specifics.c:264: check_return: Calling function "sscanf" without checking return value (as is done elsewhere 154 out of 182 times).

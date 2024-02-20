@@ -733,9 +733,10 @@ Error: RESOURCE_LEAK:
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/rdf_core.c:2253: overwrite_var: Overwriting "box_to_delete" in call "box_to_delete = name = localized_name" leaks the storage that "box_to_delete" points to.
 
 Error: RESOURCE_LEAK:
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/sqlcost.c:1084: alloc_fn: Calling allocation function "box_to_any".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/row.c:1565: alloc_fn: Storage is returned from allocation function "box_to_any_1".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/row.c:1551: alloc_fn: Storage is returned from allocation function "dk_alloc_box".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/sqlcost.c:1124: alloc_fn: Calling allocation function "box_cast_to".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/sqlbif.c:9408: alloc_fn: Storage is returned from allocation function "box_cast".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/sqlbif.c:9203: alloc_fn: Storage is returned from allocation function "box_copy_tree".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:1198: alloc_fn: Storage is returned from allocation function "dk_alloc_box".
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:173: alloc_fn: Storage is returned from allocation function "dk_alloc".
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkernel.c:5267: alloc_fn: Storage is returned from allocation function "malloc".
@@ -745,12 +746,14 @@ Error: RESOURCE_LEAK:
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:173: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:185: return_alloc: Returning allocated memory "ptr".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/row.c:1551: var_assign: Assigning: "box" = "dk_alloc_box(len + 1, 182)".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/row.c:1552: noescape: Variable "box" is not freed or pointed-to in function "memcpy".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/row.c:1554: return_alloc: Returning allocated memory "box".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/row.c:1565: return_alloc_fn: Directly returning storage allocated by "box_to_any_1".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/sqlcost.c:1084: var_assign: Assigning: "data" =  storage returned from "box_to_any(data, &err)".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/sqlcost.c:1088: leaked_storage: Returning without freeing "data"leaks the storage that it points to.
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:1198: var_assign: Assigning: "copy" = "dk_alloc_box(len, tag)".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:1200: noescape: Variable "copy" is not freed or pointed-to in function "memcpy".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:1201: return_alloc: Returning allocated memory "copy".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/sqlbif.c:9203: return_alloc_fn: Directly returning storage allocated by "box_copy_tree".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/sqlbif.c:9408: var_assign: Assigning: "string_value" = "box_cast(qst, data, proposed, data_dtp)".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/sqlbif.c:9428: return_alloc: Returning allocated memory "string_value".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/sqlcost.c:1124: var_assign: Assigning: "data" =  storage returned from "box_cast_to(NULL, data, dtp, target_dtp, sp->sp_cl.cl_sqt.sqt_precision, sp->sp_cl.cl_sqt.sqt_scale, &err)".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/sqlcost.c:1129: leaked_storage: Returning without freeing "data"leaks the storage that it points to.
 
 Error: RESOURCE_LEAK:
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/binsrc/tests/dbdump.c:4211: alloc_fn: Calling allocation function "get_sql_col_type_def".
@@ -862,24 +865,6 @@ Error: RESOURCE_LEAK:
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/bif_soap.c:8794: leaked_storage: Variable "value" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/bif_soap.c:8882: alloc_fn: Calling allocation function "box_copy_tree".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:1198: alloc_fn: Storage is returned from allocation function "dk_alloc_box".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:173: alloc_fn: Storage is returned from allocation function "dk_alloc".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkernel.c:5267: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkernel.c:5267: var_assign: Assigning: "thing" = "malloc(size)".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkernel.c:5294: return_alloc: Returning allocated memory "thing".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:173: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:185: return_alloc: Returning allocated memory "ptr".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:1198: var_assign: Assigning: "copy" = "dk_alloc_box(len, tag)".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:1200: noescape: Variable "copy" is not freed or pointed-to in function "memcpy".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:1201: return_alloc: Returning allocated memory "copy".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/bif_soap.c:8882: noescape: Variable "box_copy_tree((box_t)entity)" is not freed or pointed-to in function "list".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/bif_soap.c:8882: leaked_storage: Failing to save storage allocated by "box_copy_tree((box_t)entity)" leaks it.
-
-Error: RESOURCE_LEAK:
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/bif_soap.c:9754: alloc_fn: Calling allocation function "box_cast_to".
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/sqlbif.c:9408: alloc_fn: Storage is returned from allocation function "box_cast".
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/sqlbif.c:9203: alloc_fn: Storage is returned from allocation function "box_copy_tree".
@@ -903,62 +888,6 @@ Error: RESOURCE_LEAK:
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/bif_soap.c:9759: leaked_storage: Variable "wide" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/http.c:10913: alloc_fn: Calling allocation function "box_copy".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:1147: alloc_fn: Storage is returned from allocation function "dk_alloc_box".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:173: alloc_fn: Storage is returned from allocation function "dk_alloc".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkernel.c:5267: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkernel.c:5267: var_assign: Assigning: "thing" = "malloc(size)".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkernel.c:5294: return_alloc: Returning allocated memory "thing".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:173: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:185: return_alloc: Returning allocated memory "ptr".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:1147: var_assign: Assigning: "copy" = "dk_alloc_box(len, tag)".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:1149: noescape: Variable "copy" is not freed or pointed-to in function "memcpy".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:1150: return_alloc: Returning allocated memory "copy".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/http.c:10913: var_assign: Assigning: "type" =  storage returned from "box_copy(temp[inx2 + 1])".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/http.c:10932: leaked_storage: Variable "type" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/http.c:10833: alloc_fn: Calling allocation function "box_copy".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:1147: alloc_fn: Storage is returned from allocation function "dk_alloc_box".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:173: alloc_fn: Storage is returned from allocation function "dk_alloc".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkernel.c:5267: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkernel.c:5267: var_assign: Assigning: "thing" = "malloc(size)".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkernel.c:5294: return_alloc: Returning allocated memory "thing".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:173: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:185: return_alloc: Returning allocated memory "ptr".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:1147: var_assign: Assigning: "copy" = "dk_alloc_box(len, tag)".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:1149: noescape: Variable "copy" is not freed or pointed-to in function "memcpy".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:1150: return_alloc: Returning allocated memory "copy".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/http.c:10833: var_assign: Assigning: "my_ctype" =  storage returned from "box_copy((caddr_t)line)".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/http.c:10837: noescape: Variable "my_ctype" is not freed or pointed-to in function "snprintf".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/http.c:10932: leaked_storage: Variable "my_ctype" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/http.c:10907: alloc_fn: Calling allocation function "box_copy_tree".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:1198: alloc_fn: Storage is returned from allocation function "dk_alloc_box".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:173: alloc_fn: Storage is returned from allocation function "dk_alloc".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkernel.c:5267: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkernel.c:5267: var_assign: Assigning: "thing" = "malloc(size)".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkernel.c:5294: return_alloc: Returning allocated memory "thing".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:173: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:185: return_alloc: Returning allocated memory "ptr".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:1198: var_assign: Assigning: "copy" = "dk_alloc_box(len, tag)".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:1200: noescape: Variable "copy" is not freed or pointed-to in function "memcpy".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:1201: return_alloc: Returning allocated memory "copy".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/http.c:10907: var_assign: Assigning: "data" =  storage returned from "box_copy_tree(list_array[inx + 1])".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/http.c:10907: overwrite_var: Overwriting "data" in call "data = box_copy_tree(list_array[inx + 1])" leaks the storage that "data" points to.
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/http.c:10917: noescape: Variable "data" is not freed or pointed-to in function "list".
-
-Error: RESOURCE_LEAK:
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/http.c:10925: alloc_fn: Calling allocation function "dk_alloc_box".
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:173: alloc_fn: Storage is returned from allocation function "dk_alloc".
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
@@ -972,28 +901,6 @@ Error: RESOURCE_LEAK:
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/http.c:10925: var_assign: Assigning: "resid" =  storage returned from "dk_alloc_box((unsigned int)(0xffffffU & (unsigned int const *)id[-1]) + 5U, 182)".
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/http.c:10926: noescape: Variable "resid" is not freed or pointed-to in function "memcpy".
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/http.c:10928: leaked_storage: Variable "resid" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/http.c:10911: alloc_fn: Calling allocation function "box_copy".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:1147: alloc_fn: Storage is returned from allocation function "dk_alloc_box".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:173: alloc_fn: Storage is returned from allocation function "dk_alloc".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkernel.c:5267: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkernel.c:5267: var_assign: Assigning: "thing" = "malloc(size)".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkernel.c:5294: return_alloc: Returning allocated memory "thing".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:173: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:185: return_alloc: Returning allocated memory "ptr".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:1147: var_assign: Assigning: "copy" = "dk_alloc_box(len, tag)".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:1149: noescape: Variable "copy" is not freed or pointed-to in function "memcpy".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:1150: return_alloc: Returning allocated memory "copy".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/http.c:10911: var_assign: Assigning: "id" =  storage returned from "box_copy(temp[inx2 + 1])".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/http.c:10916: noescape: Variable "id" is not freed or pointed-to in function "unbox_ptrlong".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:951:25: noescape: "unbox_ptrlong" does not free or save its pointer parameter "box".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/http.c:10916: noescape: Variable "unbox_ptrlong(id)" is not freed or pointed-to in function "strcmp".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/http.c:10917: noescape: Variable "id" is not freed or pointed-to in function "list".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/http.c:10932: leaked_storage: Variable "id" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/http.c:10957: alloc_fn: Calling allocation function "box_copy".
@@ -1150,6 +1057,62 @@ Error: RESOURCE_LEAK:
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/bif_xper.c:4505: leaked_storage: Variable "ptr" going out of scope leaks the storage it points to.
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/bif_xper.c:4510: leaked_storage: Variable "box" going out of scope leaks the storage it points to.
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/bif_xper.c:4510: leaked_storage: Variable "ptr" going out of scope leaks the storage it points to.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/http.c:9941: alloc_fn: Calling allocation function "box_copy".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:1147: alloc_fn: Storage is returned from allocation function "dk_alloc_box".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:173: alloc_fn: Storage is returned from allocation function "dk_alloc".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkernel.c:5267: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkernel.c:5267: var_assign: Assigning: "thing" = "malloc(size)".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkernel.c:5294: return_alloc: Returning allocated memory "thing".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:173: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:185: return_alloc: Returning allocated memory "ptr".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:1147: var_assign: Assigning: "copy" = "dk_alloc_box(len, tag)".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:1149: noescape: Variable "copy" is not freed or pointed-to in function "memcpy".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:1150: return_alloc: Returning allocated memory "copy".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/http.c:9941: noescape: Variable "box_copy(func)" is not freed or pointed-to in function "list".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/http.c:9941: leaked_storage: Failing to save storage allocated by "box_copy(func)" leaks it.
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/http.c:5076: alloc_fn: Calling allocation function "box_copy".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:1147: alloc_fn: Storage is returned from allocation function "dk_alloc_box".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:173: alloc_fn: Storage is returned from allocation function "dk_alloc".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkernel.c:5267: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkernel.c:5267: var_assign: Assigning: "thing" = "malloc(size)".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkernel.c:5294: return_alloc: Returning allocated memory "thing".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:173: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:185: return_alloc: Returning allocated memory "ptr".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:1147: var_assign: Assigning: "copy" = "dk_alloc_box(len, tag)".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:1149: noescape: Variable "copy" is not freed or pointed-to in function "memcpy".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:1150: return_alloc: Returning allocated memory "copy".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/http.c:5076: leaked_storage: Failing to save storage allocated by "box_copy(ws->ws_client_ip)" leaks it.
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/http.c:5076: leaked_storage: Failing to save storage allocated by "box_copy(ws->ws_path_string)" leaks it.
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/http.c:5076: noescape: Variable "box_copy(ws->ws_client_ip)" is not freed or pointed-to in function "list".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/http.c:5076: noescape: Variable "box_copy(ws->ws_path_string)" is not freed or pointed-to in function "list".
+
+Error: RESOURCE_LEAK:
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/http.c:9576: alloc_fn: Calling allocation function "box_copy".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:1147: alloc_fn: Storage is returned from allocation function "dk_alloc_box".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:173: alloc_fn: Storage is returned from allocation function "dk_alloc".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkernel.c:5267: alloc_fn: Storage is returned from allocation function "malloc".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkernel.c:5267: var_assign: Assigning: "thing" = "malloc(size)".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkernel.c:5294: return_alloc: Returning allocated memory "thing".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkalloc.c:586: var_assign: Assigning: "thing" = "dk_alloc_reserve_malloc(align_sz, 1)".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkalloc.c:620: return_alloc: Returning allocated memory "thing".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:173: var_assign: Assigning: "ptr" = "dk_alloc(align_bytes)".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:185: return_alloc: Returning allocated memory "ptr".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:1147: var_assign: Assigning: "copy" = "dk_alloc_box(len, tag)".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:1149: noescape: Variable "copy" is not freed or pointed-to in function "memcpy".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkbox.c:1150: return_alloc: Returning allocated memory "copy".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/http.c:9576: var_assign: Assigning: "check_copy" =  storage returned from "box_copy(check)".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/http.c:9587: leaked_storage: Variable "check_copy" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/http.c:3837: alloc_fn: Calling allocation function "box_dv_short_string".

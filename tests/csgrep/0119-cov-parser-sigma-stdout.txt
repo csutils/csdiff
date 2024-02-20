@@ -26,14 +26,14 @@
             "checker": "SIGMA.xss",
             "cwe": 79,
             "tool": "coverity",
-            "key_event_idx": 3,
+            "key_event_idx": 0,
             "events": [
                 {
                     "file_name": "unpacked_remote_sources/collector/app/builder/third_party/civetweb/test/x.php",
                     "line": 7,
                     "event": "Sigma event",
                     "message": "reading tainted data from _POST with key x",
-                    "verbosity_level": 1
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "unpacked_remote_sources/collector/app/builder/third_party/civetweb/test/x.php",
@@ -54,7 +54,7 @@
                     "line": 7,
                     "event": "Sigma main event",
                     "message": "Untrusted user-supplied data is inserted into a context that can execute JavaScript without adequate validation, escaping, or filtering. A user can execute arbitrary JavaScript on a web page viewed or accessed by another user, potentially allowing session hijacking, disclosing sensitive data in the DOM, or viewing of keyboard and mouse events.",
-                    "verbosity_level": 0
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "unpacked_remote_sources/collector/app/builder/third_party/civetweb/test/x.php",

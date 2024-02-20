@@ -423,17 +423,11 @@ Error: RESOURCE_LEAK:
 /builddir/build/BUILD/libssh-0.5.0/src/known_hosts.c:576: leaked_storage: Variable "host" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
-/builddir/build/BUILD/libssh-0.5.0/examples/libssh_scp.c:186: alloc_fn: Calling allocation function "ssh_basename".
-/builddir/build/BUILD/libssh-0.5.0/src/misc.c:558: alloc_fn: Storage is returned from allocation function "strdup".
-/builddir/build/BUILD/libssh-0.5.0/src/misc.c:558: return_alloc_fn: Directly returning storage allocated by "strdup".
-/builddir/build/BUILD/libssh-0.5.0/examples/libssh_scp.c:186: var_assign: Assigning: "filename" =  storage returned from "ssh_basename(src->path)".
+/builddir/build/BUILD/libssh-0.5.0/examples/libssh_scp.c:197: alloc_fn: Calling allocation function "strdup".
+/builddir/build/BUILD/libssh-0.5.0/examples/libssh_scp.c:197: var_assign: Assigning: "filename" =  storage returned from "strdup(ssh_scp_request_get_filename(src->scp))".
 /builddir/build/BUILD/libssh-0.5.0/examples/libssh_scp.c:215: leaked_storage: Variable "filename" going out of scope leaks the storage it points to.
 /builddir/build/BUILD/libssh-0.5.0/examples/libssh_scp.c:219: noescape: Variable "filename" is not freed or pointed-to in function "fopen".
-/builddir/build/BUILD/libssh-0.5.0/examples/libssh_scp.c:221: noescape: Variable "filename" is not freed or pointed-to in function "fprintf".
-/builddir/build/BUILD/libssh-0.5.0/examples/libssh_scp.c:224: leaked_storage: Variable "filename" going out of scope leaks the storage it points to.
-/builddir/build/BUILD/libssh-0.5.0/examples/libssh_scp.c:255: leaked_storage: Variable "filename" going out of scope leaks the storage it points to.
-/builddir/build/BUILD/libssh-0.5.0/examples/libssh_scp.c:261: leaked_storage: Variable "filename" going out of scope leaks the storage it points to.
-/builddir/build/BUILD/libssh-0.5.0/examples/libssh_scp.c:268: leaked_storage: Variable "filename" going out of scope leaks the storage it points to.
+/builddir/build/BUILD/libssh-0.5.0/examples/libssh_scp.c:236: leaked_storage: Variable "filename" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
 /builddir/build/BUILD/libssh-0.5.0/src/sftp.c:539: alloc_fn: Calling allocation function "sftp_packet_read".

@@ -378,31 +378,31 @@ bool KeyEventDigger::guessKeyEvent(Defect *def)
         return true;
     }
 
-    // use the last event as key event by default (unless deny-listed)
-    for (int pass = 0; pass < 2; ++pass) {
-        for (int idx = evtCount - 1U; idx >= 0; --idx) {
-            const DefEvent &evt = evtList[idx];
-            if (evt.event == "#")
-                // never use comment as the key event
-                continue;
+    // take the first eligible key event
+    bool valid = false;
+    for (unsigned idx = 0; idx < evtCount; ++idx) {
+        const DefEvent &evt = evtList[idx];
+        if (evt.event == "#")
+            // never use comment as the key event
+            continue;
 
-
-            // never use trace or deny-listed event as the key event
-            // (but pick the last one of there are no other events)
-            if (!pass) {
-                const std::string &evtName = evt.event;
-                if (d->traceEvts.count(evtName) || d->denyList.count(evtName))
-                    continue;
-            }
-
-            // matched
+        if (!valid) {
+            // at least we found an event which is not a comment
             def->keyEventIdx = idx;
-            return true;
+            valid = true;
         }
+
+        // skip trace and deny-listed events
+        const std::string &evtName = evt.event;
+        if (d->traceEvts.count(evtName) || d->denyList.count(evtName))
+            continue;
+
+        // matched
+        def->keyEventIdx = idx;
+        return true;
     }
 
-    // no valid key event
-    return false;
+    return valid;
 }
 
 void KeyEventDigger::initVerbosity(Defect *def)

@@ -1,10 +1,10 @@
 Error: BAD_FREE:
-/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/readframe.c:327: address_free: "Frame_Resize" frees address of "tempFrame".
-/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/frame.c:835: freed_arg: "free" frees parameter "mf".
-
-Error: BAD_FREE:
 /builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/param.c:352: address_free: "mergeInputSource" frees address of "subInputSource".
 /builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/param.c:298: freed_arg: "free" frees parameter "addedSourceP".
+
+Error: BAD_FREE:
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/readframe.c:327: address_free: "Frame_Resize" frees address of "tempFrame".
+/builddir/build/BUILD/netpbm-10.35.58/converter/ppm/ppmtompeg/frame.c:835: freed_arg: "free" frees parameter "mf".
 
 Error: BAD_SIZEOF:
 /builddir/build/BUILD/netpbm-10.35.58/converter/other/jpeg2000/libjasper/jpc/jpc_enc.c:2109: bad_sizeof: Taking the size of binary expression "tcmpt->numstepsizes * sizeof (uint_fast16_t) /*8*/" is suspicious.  Did you intend "sizeof(tcmpt->numstepsizes) * sizeof (uint_fast16_t) /*8*/"?

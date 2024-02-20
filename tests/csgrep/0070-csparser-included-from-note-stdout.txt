@@ -5,14 +5,14 @@
             "cwe": 758,
             "language": "c/c++",
             "tool": "gcc",
-            "key_event_idx": 10,
+            "key_event_idx": 0,
             "events": [
                 {
                     "file_name": "boost_1_75_0/boost/smart_ptr/detail/sp_thread_sleep.hpp",
                     "line": 22,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": 1
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "boost_1_75_0/boost/smart_ptr/detail/yield_k.hpp",
@@ -83,7 +83,7 @@
                     "column": 34,
                     "event": "note",
                     "message": "'#pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.'",
-                    "verbosity_level": 0
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
@@ -127,14 +127,14 @@
             "cwe": 758,
             "language": "c/c++",
             "tool": "gcc",
-            "key_event_idx": 11,
+            "key_event_idx": 0,
             "events": [
                 {
                     "file_name": "boost_1_75_0/boost/smart_ptr/detail/sp_thread_sleep.hpp",
                     "line": 22,
                     "event": "included_from",
                     "message": "Included from here.",
-                    "verbosity_level": 1
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "boost_1_75_0/boost/smart_ptr/detail/yield_k.hpp",
@@ -212,7 +212,7 @@
                     "column": 34,
                     "event": "note",
                     "message": "'#pragma message: This header is deprecated. Use <iterator> instead.'",
-                    "verbosity_level": 0
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "",
