@@ -26,7 +26,19 @@
 #include "parser-json-simple.hh"
 #include "parser-json-zap.hh"
 
+#include <boost/algorithm/string/trim.hpp>
 #include <boost/property_tree/json_parser.hpp>
+
+void removeTrailingNewLines(Defect *pDef)
+{
+    const auto isNewLine = [](const char c){ return c == '\n'; };
+
+    // go through all events and remove trailing new-lines from messages
+    // because they cannot be propagated through the plain-text format
+    // (and could cause artificial differences when compared with JSON)
+    for (DefEvent &evt : pDef->events)
+        boost::trim_right_if(evt.msg, isNewLine);
+}
 
 struct JsonParser::Private {
     using TDecoderPtr = std::unique_ptr<AbstractTreeDecoder>;
@@ -135,6 +147,9 @@ bool JsonParser::getNext(Defect *def)
             const bool ok = d->decoder->readNode(def);
             if (ok)
                 d->defNumber++;
+
+            // remove trailing new-lines from messages
+            removeTrailingNewLines(def);
 
             return ok;
         }
