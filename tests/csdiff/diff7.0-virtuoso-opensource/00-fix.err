@@ -128,12 +128,22 @@ virtuoso-opensource-6.1.2/libsrc/Wi/bif_date.c:148: assignment: Assigning: "ymd_
 virtuoso-opensource-6.1.2/libsrc/Wi/bif_date.c:252: dead_error_begin: Execution cannot reach this statement "err_msg_ret[0] = "Datetime ...".
 
 Error: FORWARD_NULL:
+virtuoso-opensource-6.1.2/libsrc/Wi/blob.c:1706: var_compare_op: Comparing "migr_buf" to null implies that "migr_buf" might be null.
+virtuoso-opensource-6.1.2/libsrc/Wi/blob.c:1721: var_deref_model: Passing null variable "migr_buf" to function "page_leave_inner", which dereferences it.
+virtuoso-opensource-6.1.2/libsrc/Wi/gate.c:424: deref_parm: Directly dereferencing parameter "buf".
+
+Error: FORWARD_NULL:
 virtuoso-opensource-6.1.2/libsrc/Wi/sparql_tree.c:3224: assign_zero: Assigning: "esub_res" = 0.
 virtuoso-opensource-6.1.2/libsrc/Wi/sparql_tree.c:3272: var_deref_op: Dereferencing null variable "esub_res".
 
 Error: FORWARD_NULL:
 virtuoso-opensource-6.1.2/libsrc/Wi/rdfinf.c:1806: var_compare_op: Comparing "p_dfe" to null implies that "p_dfe" might be null.
 virtuoso-opensource-6.1.2/libsrc/Wi/rdfinf.c:1818: var_deref_op: Dereferencing null variable "p_dfe".
+
+Error: FORWARD_NULL:
+virtuoso-opensource-6.1.2/binsrc/tests/dbdump.c:4151: var_compare_op: Comparing "tl->name" to null implies that "tl->name" might be null.
+virtuoso-opensource-6.1.2/binsrc/tests/dbdump.c:4153: var_deref_model: Passing null variable "(char *)tl->name" to function "escapify_and_form_dest_name", which dereferences it.
+virtuoso-opensource-6.1.2/binsrc/tests/dbdump.c:1029: deref_parm_in_call: Function "strncpy" dereferences parameter "whole_table_name". (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)
 
 Error: FORWARD_NULL:
 virtuoso-opensource-6.1.2/libsrc/Tidy/tidy.c:809: assign_zero: Assigning: "out.tio.tio_data.lm_memblock" = 0.
@@ -153,6 +163,13 @@ Error: FORWARD_NULL:
 virtuoso-opensource-6.1.2/libsrc/Wi/map_schema.c:418: var_compare_op: Comparing "attr_component->cm_type.spec.attribute.ann.sql_field" to null implies that "attr_component->cm_type.spec.attribute.ann.sql_field" might be null.
 virtuoso-opensource-6.1.2/libsrc/Wi/map_schema.c:439: var_deref_model: Passing null variable "(caddr_t)attr_component->cm_type.spec.attribute.ann.sql_field" to function "box_dv_uname_string", which dereferences it.
 virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:2125: deref_parm_in_call: Function "strlen" dereferences parameter "string". (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)
+
+Error: FORWARD_NULL:
+virtuoso-opensource-6.1.2/libsrc/Wi/http.c:3266: var_compare_op: Comparing "ws->ws_req_line" to null implies that "ws->ws_req_line" might be null.
+virtuoso-opensource-6.1.2/libsrc/Wi/http.c:3432: var_deref_model: Passing null variable "ws->ws_req_line" to function "strchr", which dereferences it. (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)
+virtuoso-opensource-6.1.2/libsrc/Wi/http.c:3443: var_deref_model: Passing null variable "ws->ws_req_line" to function "ws_dav", which dereferences it.
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_dav.c:304: deref_parm_in_call: Function "ws_dav_put" dereferences parameter "ws->ws_req_line".
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_dav.c:168: deref_parm_in_call: Function "strchr" dereferences parameter "ws->ws_req_line". (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)
 
 Error: FORWARD_NULL:
 virtuoso-opensource-6.1.2/libsrc/Wi/sparql_tree.c:3896: var_compare_op: Comparing "tree" to null implies that "tree" might be null.
@@ -1453,10 +1470,3 @@ virtuoso-opensource-6.1.2/libsrc/Wi/rdfinf.c:2028: returned_pointer: Pointer "co
 
 Error: UNUSED_VALUE:
 virtuoso-opensource-6.1.2/libsrc/Wi/replsri.c:608: returned_pointer: Pointer "err" returned by "qr_rec_exec(tp_item, cli, &lc_item, qi, NULL, 3L, ":0", db_name, 1L, ":1", obj_name, 1L, ":2", (long)obj_type, 0L)" is never used.
-
-Error: USE_AFTER_FREE:
-virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:12161: freed_arg: "lc_free" frees "lc".
-virtuoso-opensource-6.1.2/libsrc/Wi/sqlrun.c:3838: freed_arg: "dk_free" frees parameter "lc".
-virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:680: freed_arg: "free" frees parameter "ptr".
-virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:12174: deref_arg: Calling "lc_next" dereferences freed pointer "lc".
-virtuoso-opensource-6.1.2/libsrc/Wi/sqlrun.c:3787: deref_parm: Directly dereferencing parameter "lc".

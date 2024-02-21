@@ -213,11 +213,6 @@ Error: DEADCODE:
 /builddir/build/BUILD/icu/source/i18n/ucol_tok.cpp:824: dead_error_line: Execution cannot reach this statement "tempStuff.remove();".
 
 Error: FORWARD_NULL:
-/builddir/build/BUILD/icu/source/common/uloc.c:1651: var_compare_op: Comparing "result" to null implies that "result" might be null.
-/builddir/build/BUILD/icu/source/common/uloc.c:1855: var_deref_model: Passing null variable "result" to function "u_terminateChars_48", which dereferences it.
-/builddir/build/BUILD/icu/source/common/ustring.c:1451: deref_parm: Directly dereferencing parameter "dest".
-
-Error: FORWARD_NULL:
 /builddir/build/BUILD/icu/source/common/rbbi.cpp:1864: var_compare_op: Comparing "this->fUnhandledBreakEngine" to null implies that "this->fUnhandledBreakEngine" might be null.
 /builddir/build/BUILD/icu/source/common/rbbi.cpp:1880: var_deref_model: Passing null variable "this->fUnhandledBreakEngine" to function "icu_48::UnhandledEngine::handleCharacter(int, int)", which dereferences it. (The dereference happens because this is a virtual function call.)
 
@@ -226,65 +221,8 @@ Error: FORWARD_NULL:
 /builddir/build/BUILD/icu/source/common/bytestriebuilder.cpp:166: var_deref_model: Passing null variable "newElements" to function "memcpy", which dereferences it. (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)
 
 Error: FORWARD_NULL:
-/builddir/build/BUILD/icu/source/common/punycode.c:193: var_compare_op: Comparing "dest" to null implies that "dest" might be null.
-/builddir/build/BUILD/icu/source/common/punycode.c:368: var_deref_model: Passing null variable "dest" to function "u_terminateUChars_48", which dereferences it.
-/builddir/build/BUILD/icu/source/common/ustring.c:1445: deref_parm: Directly dereferencing parameter "dest".
-
-Error: FORWARD_NULL:
-/builddir/build/BUILD/icu/source/common/serv.cpp:448: var_compare_op: Comparing "this->serviceCache" to null implies that "this->serviceCache" might be null.
-/builddir/build/BUILD/icu/source/common/serv.cpp:457: var_deref_model: Passing null variable "this->serviceCache" to function "icu_48::Hashtable::setValueDeleter(void (*)(void *))", which dereferences it.
-/builddir/build/BUILD/icu/source/common/hash.h:150: deref_parm: Directly dereferencing parameter "this".
-
-Error: FORWARD_NULL:
-/builddir/build/BUILD/icu/source/common/ubidiwrt.c:375: var_compare_op: Comparing "dest" to null implies that "dest" might be null.
-/builddir/build/BUILD/icu/source/common/ubidiwrt.c:385: var_deref_model: Passing null variable "dest" to function "u_terminateUChars_48", which dereferences it.
-/builddir/build/BUILD/icu/source/common/ustring.c:1445: deref_parm: Directly dereferencing parameter "dest".
-
-Error: FORWARD_NULL:
 /builddir/build/BUILD/icu/source/common/ucharstriebuilder.cpp:112: var_compare_op: Comparing "newElements" to null implies that "newElements" might be null.
 /builddir/build/BUILD/icu/source/common/ucharstriebuilder.cpp:116: var_deref_model: Passing null variable "newElements" to function "memcpy", which dereferences it. (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)
-
-Error: FORWARD_NULL:
-/builddir/build/BUILD/icu/source/common/usprep.cpp:679: var_compare_op: Comparing "dest" to null implies that "dest" might be null.
-/builddir/build/BUILD/icu/source/common/usprep.cpp:817: var_deref_model: Passing null variable "dest" to function "u_terminateUChars_48", which dereferences it.
-/builddir/build/BUILD/icu/source/common/ustring.c:1445: deref_parm: Directly dereferencing parameter "dest".
-
-Error: FORWARD_NULL:
-/builddir/build/BUILD/icu/source/common/uidna.cpp:598: var_compare_op: Comparing "dest" to null implies that "dest" might be null.
-/builddir/build/BUILD/icu/source/common/uidna.cpp:607: var_deref_model: Passing null variable "dest" to function "u_terminateUChars_48", which dereferences it.
-/builddir/build/BUILD/icu/source/common/ustring.c:1445: deref_parm: Directly dereferencing parameter "dest".
-
-Error: FORWARD_NULL:
-/builddir/build/BUILD/icu/source/common/uidna.cpp:678: var_compare_op: Comparing "dest" to null implies that "dest" might be null.
-/builddir/build/BUILD/icu/source/common/uidna.cpp:758: var_deref_model: Passing null variable "dest" to function "u_terminateUChars_48", which dereferences it.
-/builddir/build/BUILD/icu/source/common/ustring.c:1445: deref_parm: Directly dereferencing parameter "dest".
-
-Error: FORWARD_NULL:
-/builddir/build/BUILD/icu/source/common/uidna.cpp:771: var_compare_op: Comparing "dest" to null implies that "dest" might be null.
-/builddir/build/BUILD/icu/source/common/uidna.cpp:857: var_deref_model: Passing null variable "dest" to function "u_terminateUChars_48", which dereferences it.
-/builddir/build/BUILD/icu/source/common/ustring.c:1445: deref_parm: Directly dereferencing parameter "dest".
-
-Error: FORWARD_NULL:
-/builddir/build/BUILD/icu/source/common/unistr.cpp:665: var_compare_op: Comparing "srcChars" to null implies that "srcChars" might be null.
-/builddir/build/BUILD/icu/source/common/unistr.cpp:669: var_deref_model: Passing null variable "srcChars + srcStart" to function "uprv_strCompare_48", which dereferences it.
-/builddir/build/BUILD/icu/source/common/ustring.c:702: deref_parm: Directly dereferencing parameter "s2".
-
-Error: FORWARD_NULL:
-/builddir/build/BUILD/icu/source/common/unorm.cpp:139: var_compare_op: Comparing "dest" to null implies that "dest" might be null.
-/builddir/build/BUILD/icu/source/common/unorm.cpp:150: var_deref_model: Passing null variable "dest" to function "u_terminateUChars_48", which dereferences it.
-/builddir/build/BUILD/icu/source/common/ustring.c:1445: deref_parm: Directly dereferencing parameter "dest".
-
-Error: FORWARD_NULL:
-/builddir/build/BUILD/icu/source/common/ustrcase.c:482: var_compare_op: Comparing "dest" to null implies that "dest" might be null.
-/builddir/build/BUILD/icu/source/common/ustrcase.c:499: alias_transfer: Assigning null: "temp" = "dest".
-/builddir/build/BUILD/icu/source/common/ustrcase.c:505: var_deref_model: Passing null variable "temp" to function "ustr_foldCase_48", which dereferences it.
-/builddir/build/BUILD/icu/source/common/ustrcase.c:433: deref_parm: Directly dereferencing parameter "dest".
-/builddir/build/BUILD/icu/source/common/ustrcase.c:514: var_deref_model: Passing null variable "temp" to function "_caseMap", which dereferences it.
-/builddir/build/BUILD/icu/source/common/ustrcase.c:144: deref_parm: Directly dereferencing parameter "dest".
-/builddir/build/BUILD/icu/source/common/ustrcase.c:520: var_deref_model: Passing null variable "temp" to function "_caseMap", which dereferences it.
-/builddir/build/BUILD/icu/source/common/ustrcase.c:530: var_deref_model: Passing null variable "temp" to function "_toTitle", which dereferences it.
-/builddir/build/BUILD/icu/source/common/ustrcase.c:303: deref_parm_in_call: Function "appendResult" dereferences parameter "dest".
-/builddir/build/BUILD/icu/source/common/ustrcase.c:57: deref_parm: Directly dereferencing parameter "dest".
 
 Error: FORWARD_NULL:
 /builddir/build/BUILD/icu/source/common/uprops.cpp:586: var_compare_op: Comparing "dest" to null implies that "dest" might be null.
@@ -293,100 +231,8 @@ Error: FORWARD_NULL:
 /builddir/build/BUILD/icu/source/common/uprops.cpp:624: var_deref_model: Passing null variable "dest" to function "u_terminateUChars_48", which dereferences it.
 
 Error: FORWARD_NULL:
-/builddir/build/BUILD/icu/source/common/ushape.c:1418: var_compare_op: Comparing "dest" to null implies that "dest" might be null.
-/builddir/build/BUILD/icu/source/common/ushape.c:1460: var_deref_model: Passing null variable "dest" to function "u_terminateUChars_48", which dereferences it.
-/builddir/build/BUILD/icu/source/common/ustring.c:1445: deref_parm: Directly dereferencing parameter "dest".
-
-Error: FORWARD_NULL:
-/builddir/build/BUILD/icu/source/common/ustrtrns.c:748: var_compare_op: Comparing "dest" to null implies that "dest" might be null.
-/builddir/build/BUILD/icu/source/common/ustrtrns.c:943: var_deref_model: Passing null variable "dest" to function "u_terminateUChars_48", which dereferences it.
-/builddir/build/BUILD/icu/source/common/ustring.c:1445: deref_parm: Directly dereferencing parameter "dest".
-
-Error: FORWARD_NULL:
-/builddir/build/BUILD/icu/source/common/ustrtrns.c:1520: var_compare_op: Comparing "dest" to null implies that "dest" might be null.
-/builddir/build/BUILD/icu/source/common/ustrtrns.c:1638: var_deref_model: Passing null variable "dest" to function "u_terminateChars_48", which dereferences it.
-/builddir/build/BUILD/icu/source/common/ustring.c:1451: deref_parm: Directly dereferencing parameter "dest".
-
-Error: FORWARD_NULL:
-/builddir/build/BUILD/icu/source/common/utext.cpp:2197: var_compare_op: Comparing "dest" to null implies that "dest" might be null.
-/builddir/build/BUILD/icu/source/common/utext.cpp:2226: var_deref_model: Passing null variable "dest" to function "u_terminateUChars_48", which dereferences it.
-/builddir/build/BUILD/icu/source/common/ustring.c:1445: deref_parm: Directly dereferencing parameter "dest".
-
-Error: FORWARD_NULL:
-/builddir/build/BUILD/icu/source/common/utext.cpp:2476: var_compare_op: Comparing "dest" to null implies that "dest" might be null.
-/builddir/build/BUILD/icu/source/common/utext.cpp:2498: var_deref_model: Passing null variable "dest" to function "u_terminateUChars_48", which dereferences it.
-/builddir/build/BUILD/icu/source/common/ustring.c:1445: deref_parm: Directly dereferencing parameter "dest".
-
-Error: FORWARD_NULL:
-/builddir/build/BUILD/icu/source/i18n/ucurr.cpp:403: var_compare_op: Comparing "buff" to null implies that "buff" might be null.
-/builddir/build/BUILD/icu/source/i18n/ucurr.cpp:425: var_deref_model: Passing null variable "buff" to function "u_strcpy_48", which dereferences it.
-/builddir/build/BUILD/icu/source/common/ustring.c:968: deref_parm: Directly dereferencing parameter "dst".
-/builddir/build/BUILD/icu/source/i18n/ucurr.cpp:475: var_deref_model: Passing null variable "buff" to function "u_strcpy_48", which dereferences it.
-/builddir/build/BUILD/icu/source/i18n/ucurr.cpp:479: var_deref_model: Passing null variable "buff" to function "u_terminateUChars_48", which dereferences it.
-/builddir/build/BUILD/icu/source/common/ustring.c:1445: deref_parm: Directly dereferencing parameter "dest".
-
-Error: FORWARD_NULL:
-/builddir/build/BUILD/icu/source/i18n/plurrule.cpp:348: assign_zero: Assigning: "curAndConstraint" = 0.
-/builddir/build/BUILD/icu/source/i18n/plurrule.cpp:367: var_deref_model: Passing null variable "curAndConstraint" to function "icu_48::AndConstraint::add()", which dereferences it.
-/builddir/build/BUILD/icu/source/i18n/plurrule.cpp:858: deref_parm: Directly dereferencing parameter "this".
-/builddir/build/BUILD/icu/source/i18n/plurrule.cpp:384: var_deref_op: Dereferencing null variable "curAndConstraint".
-/builddir/build/BUILD/icu/source/i18n/plurrule.cpp:387: var_deref_op: Dereferencing null variable "curAndConstraint".
-/builddir/build/BUILD/icu/source/i18n/plurrule.cpp:390: var_deref_op: Dereferencing null variable "curAndConstraint".
-/builddir/build/BUILD/icu/source/i18n/plurrule.cpp:394: var_deref_op: Dereferencing null variable "curAndConstraint".
-/builddir/build/BUILD/icu/source/i18n/plurrule.cpp:397: var_deref_op: Dereferencing null variable "curAndConstraint".
-/builddir/build/BUILD/icu/source/i18n/plurrule.cpp:411: var_deref_op: Dereferencing null variable "curAndConstraint".
-
-Error: FORWARD_NULL:
-/builddir/build/BUILD/icu/source/i18n/alphaindex.cpp:891: var_compare_op: Comparing "str" to null implies that "str" might be null.
-/builddir/build/BUILD/icu/source/i18n/alphaindex.cpp:895: var_deref_model: Passing null variable "str" to function "icu_48::UnicodeString::length() const", which dereferences it.
-/builddir/build/BUILD/icu/source/common/unicode/unistr.h:3512: deref_parm: Directly dereferencing parameter "this".
-
-Error: FORWARD_NULL:
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:2768: var_deref_model: Passing null variable "source->iterator" to function "collIter_bos(icu_48::collIterate *)", which dereferences it.
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:376: deref_parm: Directly dereferencing parameter "source->iterator".
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:2828: var_deref_model: Passing null variable "source->iterator" to function "collIter_eos(icu_48::collIterate *)", which dereferences it.
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:331: deref_parm: Directly dereferencing parameter "s->iterator".
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:2846: var_deref_model: Passing null variable "source->iterator" to function "getNextNormalizedChar(icu_48::collIterate *)", which dereferences it.
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:2294: deref_parm: Directly dereferencing parameter "data->iterator".
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:2869: var_compare_op: Comparing "source->iterator" to null implies that "source->iterator" might be null.
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:2882: var_deref_model: Passing null variable "source->iterator" to function "getNextNormalizedChar(icu_48::collIterate *)", which dereferences it.
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:2959: var_deref_model: Passing null variable "source->iterator" to function "getNextNormalizedChar(icu_48::collIterate *)", which dereferences it.
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3120: var_deref_model: Passing null variable "source->iterator" to function "collIter_eos(icu_48::collIterate *)", which dereferences it.
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3121: var_deref_model: Passing null variable "source->iterator" to function "getNextNormalizedChar(icu_48::collIterate *)", which dereferences it.
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3123: var_deref_model: Passing null variable "source->iterator" to function "collIter_eos(icu_48::collIterate *)", which dereferences it.
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3125: var_deref_model: Passing null variable "source->iterator" to function "getNextNormalizedChar(icu_48::collIterate *)", which dereferences it.
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3295: var_deref_model: Passing null variable "source->iterator" to function "collIter_eos(icu_48::collIterate *)", which dereferences it.
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3295: var_deref_model: Passing null variable "source->iterator" to function "getNextNormalizedChar(icu_48::collIterate *)", which dereferences it.
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3316: var_deref_op: Dereferencing null variable "source->iterator".
-
-Error: FORWARD_NULL:
-/builddir/build/BUILD/icu/source/i18n/ucol_bld.cpp:935: var_compare_op: Comparing "src->UCA" to null implies that "src->UCA" might be null.
-/builddir/build/BUILD/icu/source/i18n/ucol_bld.cpp:888: var_deref_model: Passing null variable "src->UCA" to function "uprv_init_collIterate_48", which dereferences it.
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:140: deref_parm_in_call: Function "IInit_collIterate(UCollator const *, unsigned short const *, int, icu_48::collIterate *, UErrorCode *)" dereferences parameter "collator".
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:125: deref_parm: Directly dereferencing parameter "collator".
-
-Error: FORWARD_NULL:
-/builddir/build/BUILD/icu/source/i18n/ucol_res.cpp:185: assign_zero: Assigning: "result" = 0.
-/builddir/build/BUILD/icu/source/i18n/ucol_res.cpp:266: identity_transfer: Passing variable "result" as argument 2 to function "ucol_initCollator_48(UCA->image, result, UCA, status)", which returns that argument.
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:880: var_assign_parm: Assigning: "result" = "fillIn".
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:976: return_var: Returning "result", which is a copy of a parameter.
-/builddir/build/BUILD/icu/source/i18n/ucol_res.cpp:266: alias_transfer: Assigning null: "result" = "ucol_initCollator_48(UCA->image, result, UCA, status)".
-/builddir/build/BUILD/icu/source/i18n/ucol_res.cpp:267: var_deref_model: Passing null variable "result" to function "ucol_setOptionsFromHeader_48", which dereferences it.
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:808: deref_parm: Directly dereferencing parameter "result".
-
-Error: FORWARD_NULL:
 /builddir/build/BUILD/icu/source/i18n/ucol.cpp:303: var_compare_op: Comparing "this->offsetStore" to null implies that "this->offsetStore" might be null.
 /builddir/build/BUILD/icu/source/i18n/ucol.cpp:319: dereference: Incrementing "this->offsetStore", which might be null.
-
-Error: FORWARD_NULL:
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3547: var_compare_op: Comparing "source->iterator" to null implies that "source->iterator" might be null.
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3519: var_deref_model: Passing null variable "source->iterator" to function "getPrevNormalizedChar(icu_48::collIterate *, UErrorCode *)", which dereferences it.
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:2659: deref_parm: Directly dereferencing parameter "data->iterator".
-
-Error: FORWARD_NULL:
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3547: var_compare_op: Comparing "source->pos" to null implies that "source->pos" might be null.
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3519: var_deref_model: Passing null variable "source->pos" to function "getPrevNormalizedChar(icu_48::collIterate *, UErrorCode *)", which dereferences it.
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:2662: deref_parm: Directly dereferencing parameter "data->pos".
 
 Error: FORWARD_NULL:
 /builddir/build/BUILD/icu/source/i18n/bms.cpp:149: assign_zero: Assigning: "bms->targetString" = 0.
@@ -394,11 +240,6 @@ Error: FORWARD_NULL:
 /builddir/build/BUILD/icu/source/i18n/bmsearch.cpp:648: deref_parm_in_call: Function "icu_48::Target::setTargetString(icu_48::UnicodeString const *)" dereferences parameter "targetString".
 /builddir/build/BUILD/icu/source/i18n/bmsearch.cpp:164: deref_parm_in_call: Function "icu_48::UnicodeString::getBuffer() const" dereferences parameter "target".
 /builddir/build/BUILD/icu/source/common/unicode/unistr.h:3540: deref_parm: Directly dereferencing parameter "this".
-
-Error: FORWARD_NULL:
-/builddir/build/BUILD/icu/source/i18n/umsg.cpp:633: var_compare_op: Comparing "dest" to null implies that "dest" might be null.
-/builddir/build/BUILD/icu/source/i18n/umsg.cpp:706: var_deref_model: Passing null variable "dest" to function "u_terminateUChars_48", which dereferences it.
-/builddir/build/BUILD/icu/source/common/ustring.c:1445: deref_parm: Directly dereferencing parameter "dest".
 
 Error: FORWARD_NULL:
 /builddir/build/BUILD/icu/source/i18n/msgfmt.cpp:296: assign_zero: Assigning: "this->argTypes" = 0.
@@ -415,26 +256,6 @@ Error: FORWARD_NULL:
 /builddir/build/BUILD/icu/source/i18n/rematch.cpp:511: var_deref_model: Passing null variable "dest" to function "utext_nativeLength_48", which dereferences it.
 /builddir/build/BUILD/icu/source/common/utext.cpp:82: deref_parm: Directly dereferencing parameter "ut".
 /builddir/build/BUILD/icu/source/i18n/rematch.cpp:528: var_deref_model: Passing null variable "dest" to function "utext_nativeLength_48", which dereferences it.
-
-Error: FORWARD_NULL:
-/builddir/build/BUILD/icu/source/i18n/smpdtfmt.cpp:281: assign_zero: Assigning: "this->fNumberFormatters" = 0.
-/builddir/build/BUILD/icu/source/i18n/smpdtfmt.cpp:288: var_deref_model: Passing null variable "this->fNumberFormatters" to function "icu_48::SimpleDateFormat::processOverrideString(icu_48::Locale const &, icu_48::UnicodeString const &, signed char, UErrorCode &)", which dereferences it.
-/builddir/build/BUILD/icu/source/i18n/smpdtfmt.cpp:1476: deref_parm: Directly dereferencing parameter "this->fNumberFormatters".
-
-Error: FORWARD_NULL:
-/builddir/build/BUILD/icu/source/i18n/smpdtfmt.cpp:325: assign_zero: Assigning: "this->fNumberFormatters" = 0.
-/builddir/build/BUILD/icu/source/i18n/smpdtfmt.cpp:334: var_deref_model: Passing null variable "this->fNumberFormatters" to function "icu_48::SimpleDateFormat::processOverrideString(icu_48::Locale const &, icu_48::UnicodeString const &, signed char, UErrorCode &)", which dereferences it.
-/builddir/build/BUILD/icu/source/i18n/smpdtfmt.cpp:1476: deref_parm: Directly dereferencing parameter "this->fNumberFormatters".
-
-Error: FORWARD_NULL:
-/builddir/build/BUILD/icu/source/i18n/ucol_res.cpp:563: var_compare_op: Comparing "buffer" to null implies that "buffer" might be null.
-/builddir/build/BUILD/icu/source/i18n/ucol_res.cpp:572: var_deref_model: Passing null variable "buffer" to function "u_terminateUChars_48", which dereferences it.
-/builddir/build/BUILD/icu/source/common/ustring.c:1445: deref_parm: Directly dereferencing parameter "dest".
-
-Error: FORWARD_NULL:
-/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:680: var_compare_op: Comparing "countToPatterns" to null implies that "countToPatterns" might be null.
-/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:714: var_deref_model: Passing null variable "countToPatterns" to function "icu_48::Hashtable::get(icu_48::UnicodeString const &) const", which dereferences it.
-/builddir/build/BUILD/icu/source/common/hash.h:166: deref_parm: Directly dereferencing parameter "this".
 
 Error: FORWARD_NULL:
 /builddir/build/BUILD/icu/source/i18n/ucal.cpp:274: dynamic_cast: Dynamic cast to pointer "dynamic_cast <struct icu_48::GregorianCalendar const *>(cpp_cal)" can return null.
@@ -473,12 +294,6 @@ Error: FORWARD_NULL:
 /builddir/build/BUILD/icu/source/i18n/unum.cpp:796: dynamic_cast: Dynamic cast to pointer "dynamic_cast <struct icu_48::RuleBasedNumberFormat const *>(nf)" can return null.
 /builddir/build/BUILD/icu/source/i18n/unum.cpp:796: alias_transfer: Assigning null: "rbnf" = "dynamic_cast <struct icu_48::RuleBasedNumberFormat const *>(nf)".
 /builddir/build/BUILD/icu/source/i18n/unum.cpp:798: var_deref_model: Passing null variable "rbnf" to function "icu_48::RuleBasedNumberFormat::getRules() const", which dereferences it. (The dereference happens because this is a virtual function call.)
-
-Error: FORWARD_NULL:
-/builddir/build/BUILD/icu/source/i18n/uregex.cpp:1362: var_compare_op: Comparing "*destBuf" to null implies that "*destBuf" might be null.
-/builddir/build/BUILD/icu/source/i18n/uregex.cpp:1376: alias_transfer: Assigning null: "dest" = "*destBuf".
-/builddir/build/BUILD/icu/source/i18n/uregex.cpp:1498: var_deref_model: Passing null variable "dest + destIdx" to function "uregex_group_48", which dereferences it.
-/builddir/build/BUILD/icu/source/i18n/uregex.cpp:666: deref_parm: Directly dereferencing parameter "dest".
 
 Error: FORWARD_NULL:
 /builddir/build/BUILD/icu/source/i18n/uregex.cpp:1916: var_compare_op: Comparing "destBuf" to null implies that "destBuf" might be null.
@@ -1226,13 +1041,6 @@ Error: USE_AFTER_FREE:
 /builddir/build/BUILD/icu/source/common/usprep.cpp:809: freed_arg: "uprv_free_48" frees "b1".
 /builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
 /builddir/build/BUILD/icu/source/common/usprep.cpp:814: pass_freed_arg: Passing freed pointer "b2" as an argument to function "uprv_free_48".
-
-Error: USE_AFTER_FREE:
-/builddir/build/BUILD/icu/source/common/ustrcase.c:499: alias: Assigning: "temp" = "dest". Now both point to the same storage.
-/builddir/build/BUILD/icu/source/common/ustrcase.c:545: freed_arg: "uprv_free_48" frees "temp".
-/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
-/builddir/build/BUILD/icu/source/common/ustrcase.c:549: deref_arg: Calling "u_terminateUChars_48" dereferences freed pointer "dest".
-/builddir/build/BUILD/icu/source/common/ustring.c:1445: deref_parm: Directly dereferencing parameter "dest".
 
 Error: USE_AFTER_FREE:
 /builddir/build/BUILD/icu/source/common/ustrcase.c:499: alias: Assigning: "temp" = "dest". Now both point to the same storage.

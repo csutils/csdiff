@@ -230,6 +230,7 @@ KeyEventDigger::KeyEventDigger():
     d->hMap["ALLOC_FREE_MISMATCH"]       .insert("free");
     d->hMap["ARRAY_VS_SINGLETON"]        .insert("callee_ptr_arith");
     d->hMap["ARRAY_VS_SINGLETON"]        .insert("ptr_arith");
+    d->hMap["ATOMICITY"]                 .insert("use");
     d->hMap["BAD_CHECK_OF_WAIT_COND"]    .insert("wait_cond_improperly_checked");
     d->hMap["BAD_FREE"]                  .insert("incorrect_free");
     d->hMap["BAD_LOCK_OBJECT"]           .insert("boxed_lock");
@@ -240,25 +241,12 @@ KeyEventDigger::KeyEventDigger():
     d->hMap["CALL_SUPER"]                .insert("missing_super_call");
     d->hMap["CHECKED_RETURN"]            .insert("check_return");
     d->hMap["CHROOT"]                    .insert("chroot_call");
-    d->hMap["CONSTANT_EXPRESSION_RESULT"].insert("extra_high_bits");
-    d->hMap["CONSTANT_EXPRESSION_RESULT"].insert("logical_vs_bitwise");
-    d->hMap["CONSTANT_EXPRESSION_RESULT"].insert("missing_parentheses");
-    d->hMap["CONSTANT_EXPRESSION_RESULT"].insert("operator_confusion");
-    d->hMap["CONSTANT_EXPRESSION_RESULT"].insert("pointless_expression");
-    d->hMap["CONSTANT_EXPRESSION_RESULT"].insert("result_independent_of_operands");
-    d->hMap["CONSTANT_EXPRESSION_RESULT"].insert("same_on_both_sides");
     d->hMap["CTOR_DTOR_LEAK"]            .insert("alloc_fn");
     d->hMap["CTOR_DTOR_LEAK"]            .insert("alloc_new");
     d->hMap["DEADCODE"]                  .insert("dead_error_begin");
     d->hMap["DEADCODE"]                  .insert("dead_error_line");
     d->hMap["EXPLICIT_THIS_EXPECTED"]    .insert("implicit_this_used");
-    d->hMap["FORWARD_NULL"]              .insert("deref_parm");
-    d->hMap["FORWARD_NULL"]              .insert("dereference");
-    d->hMap["FORWARD_NULL"]              .insert("property_access");
-    d->hMap["FORWARD_NULL"]              .insert("var_deref_op");
-    d->hMap["FORWARD_NULL"]              .insert("var_deref_model");
     d->hMap["HARDCODED_CREDENTIALS"]     .insert("sink");
-    d->hMap["INVALIDATE_ITERATOR"]       .insert("increment_iterator");
     d->hMap["LOCK"]                      .insert("double_lock");
     d->hMap["LOCK"]                      .insert("double_unlock");
     d->hMap["LOCK"]                      .insert("missing_unlock");
@@ -272,16 +260,9 @@ KeyEventDigger::KeyEventDigger():
     d->hMap["NESTING_INDENT_MISMATCH"]   .insert("multi_stmt_macro");
     d->hMap["NESTING_INDENT_MISMATCH"]   .insert("on_same_line");
     d->hMap["NESTING_INDENT_MISMATCH"]   .insert("uncle");
-    d->hMap["NULL_RETURNS"]              .insert("dereference");
     d->hMap["ORDER_REVERSAL"]            .insert("lock_order");
     d->hMap["OVERLAPPING_COPY"]          .insert("overlapping_assignment");
     d->hMap["OVERLAPPING_COPY"]          .insert("overlapping_copy");
-    d->hMap["OVERRUN"]                   .insert("alloc_strlen");
-    d->hMap["OVERRUN"]                   .insert("illegal_address");
-    d->hMap["OVERRUN"]                   .insert("overrun-buffer-arg");
-    d->hMap["OVERRUN"]                   .insert("overrun-buffer-val");
-    d->hMap["OVERRUN"]                   .insert("overrun-call");
-    d->hMap["OVERRUN"]                   .insert("overrun-local");
     d->hMap["OVERRUN_STATIC"]            .insert("index_parm");
     d->hMap["OVERRUN_STATIC"]            .insert("overrun-buffer-arg");
     d->hMap["OVERRUN_STATIC"]            .insert("overrun-local");
@@ -290,8 +271,6 @@ KeyEventDigger::KeyEventDigger():
     d->hMap["RESOURCE_LEAK"]             .insert("overwrite_var");
     d->hMap["REVERSE_INULL"]             .insert("check_after_deref");
     d->hMap["REVERSE_NEGATIVE"]          .insert("check_after_sink");
-    d->hMap["RETURN_LOCAL"]              .insert("return_local_addr_identity");
-    d->hMap["RETURN_LOCAL"]              .insert("use_invalid");
     d->hMap["STREAM_FORMAT_STATE"]       .insert("end_of_path");
     d->hMap["STRING_OVERFLOW"]           .insert("fixed_size_dest");
     d->hMap["TAINTED_SCALAR"]            .insert("tainted_data");
@@ -305,15 +284,10 @@ KeyEventDigger::KeyEventDigger():
     d->hMap["UNUSED_VALUE"]              .insert("assigned_value");
     d->hMap["UNUSED_VALUE"]              .insert("returned_pointer");
     d->hMap["UNUSED_VALUE"]              .insert("returned_value");
-    d->hMap["USE_AFTER_FREE"]            .insert("deref_after_free");
-    d->hMap["USE_AFTER_FREE"]            .insert("deref_arg");
-    d->hMap["USE_AFTER_FREE"]            .insert("double_close");
-    d->hMap["USE_AFTER_FREE"]            .insert("double_free");
-    d->hMap["USE_AFTER_FREE"]            .insert("pass_freed_arg");
-    d->hMap["USE_AFTER_FREE"]            .insert("use_after_free");
     d->hMap["VARARGS"]                   .insert("missing_va_end");
     d->hMap["WRAPPER_ESCAPE"]            .insert("escape");
     d->hMap["WRAPPER_ESCAPE"]            .insert("use_after_free");
+    d->hMap["URL_MANIPULATION"]          .insert("url_manipulation_sink");
 
     // we use COMPILER_WARNING as checker for compiler errors/warnings
     d->hMap["COMPILER_WARNING"]     .insert("error");
@@ -332,9 +306,17 @@ KeyEventDigger::KeyEventDigger():
     d->hMap["OWASP_ZAP_WARNING"]    .insert("alert");
 
     // list of checkers where we take the _last_ matched key event
+    d->searchBackwards.insert("CONSTANT_EXPRESSION_RESULT");
+    d->searchBackwards.insert("FORWARD_NULL");
+    d->searchBackwards.insert("LOCK");
+    d->searchBackwards.insert("INVALIDATE_ITERATOR");
+    d->searchBackwards.insert("NULL_RETURNS");
+    d->searchBackwards.insert("OVERRUN");
     d->searchBackwards.insert("RESOURCE_LEAK");
+    d->searchBackwards.insert("RETURN_LOCAL");
     d->searchBackwards.insert("UNINIT");
     d->searchBackwards.insert("UNINIT_CTOR");
+    d->searchBackwards.insert("USE_AFTER_FREE");
 
     // events that should never be used as key events (excluding trace events)
     d->denyList.insert("another_instance");
@@ -446,7 +428,9 @@ bool KeyEventDigger::guessKeyEvent(Defect *def)
 
         // matched
         def->keyEventIdx = idx;
-        return true;
+        if (!d->searchBackwards.count(def->checker))
+            // checker not listed in d->searchBackwards --> take the first match
+            break;
     }
 
     return valid;

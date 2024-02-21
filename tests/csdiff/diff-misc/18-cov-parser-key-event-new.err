@@ -1,0 +1,1564 @@
+Error: OVERRUN (CWE-119):
+e2fsprogs-1.46.5/util/symlinks.c:50: path: Condition "NULL == strstr(s, old)", taking false branch.
+e2fsprogs-1.46.5/util/symlinks.c:53: path: Condition "new", taking true branch.
+e2fsprogs-1.46.5/util/symlinks.c:56: path: Condition "newlen > oldlen", taking true branch.
+e2fsprogs-1.46.5/util/symlinks.c:57: buffer_alloc: Calling allocating function "malloc" which allocates "strlen(s)" bytes.
+e2fsprogs-1.46.5/util/symlinks.c:57: var_assign: Assigning: "tmp" = "malloc(strlen(s))".
+e2fsprogs-1.46.5/util/symlinks.c:57: path: Condition "(tmp = malloc(strlen(s))) == NULL", taking false branch.
+e2fsprogs-1.46.5/util/symlinks.c:63: path: Condition "NULL != (s = strstr(s, old))", taking true branch.
+e2fsprogs-1.46.5/util/symlinks.c:66: path: Condition "new", taking true branch.
+e2fsprogs-1.46.5/util/symlinks.c:67: path: Condition "newlen > oldlen", taking true branch.
+e2fsprogs-1.46.5/util/symlinks.c:68: strcpy_overrun: "strcpy", whose first argument "tmp" has length equal to "strlen" of its second argument "s", will overrun its first argument because of the terminating null.
+#   66|   		if (new) {
+#   67|   			if (newlen > oldlen)
+#   68|-> 				old_s = strcpy(tmp, s);
+#   69|   			p = new;
+#   70|   			while (*p)
+
+Error: RETURN_LOCAL (CWE-562):
+elfutils-0.189/src/ar.c:157: path: Condition "argc > 1", taking true branch.
+elfutils-0.189/src/ar.c:157: path: Condition "argv[1][0] != '-'", taking true branch.
+elfutils-0.189/src/ar.c:160: local_ptr_alloc: Stack allocation: "__builtin_alloca(len + 1UL)".
+elfutils-0.189/src/ar.c:160: local_ptr_assign_ptr: Assigning: "newp" = "__builtin_alloca(len + 1UL)".
+elfutils-0.189/src/ar.c:163: escape_local_addr_alias: Returning, through "argv[1]", pointer "newp" which points to local variable "__builtin_alloca(len + 1UL)".
+elfutils-0.189/src/ar.c:175: path: Condition "ipos != ipos_none", taking true branch.
+elfutils-0.189/src/ar.c:178: path: Condition "operation != oper_move", taking true branch.
+elfutils-0.189/src/ar.c:178: path: Condition "operation != oper_replace", taking false branch.
+elfutils-0.189/src/ar.c:182: path: Condition "remaining == argc", taking false branch.
+elfutils-0.189/src/ar.c:196: path: Condition "instance_specifed", taking false branch.
+elfutils-0.189/src/ar.c:222: path: Condition "dont_replace_existing", taking false branch.
+elfutils-0.189/src/ar.c:222: path: Condition "allow_truncate_fname", taking false branch.
+elfutils-0.189/src/ar.c:228: path: Condition "remaining == argc", taking false branch.
+elfutils-0.189/src/ar.c:240: path: Switch case value "oper_replace".
+elfutils-0.189/src/ar.c:266: path: Breaking from switch.
+elfutils-0.189/src/ar.c:274: return: Returning here.
+#  161|         newp[0] = '-';
+#  162|         memcpy (&newp[1], argv[1], len);
+#  163|->       argv[1] = newp;
+#  164|       }
+#  165|   
+
+Error: USE_AFTER_FREE (CWE-672):
+gawk-5.1.0/io.c:2121: path: Condition "extfd >= 0", taking false branch.
+gawk-5.1.0/io.c:2121: path: Condition "inetfile(str, strlen(str), NULL)", taking false branch.
+gawk-5.1.0/io.c:2161: path: Condition "find_two_way_processor(str, rp)", taking false branch.
+gawk-5.1.0/io.c:2166: path: Condition "!no_ptys", taking true branch.
+gawk-5.1.0/io.c:2166: path: Condition "pty_vs_pipe(str)", taking true branch.
+gawk-5.1.0/io.c:2181: path: Condition "!initialized", taking true branch.
+gawk-5.1.0/io.c:2190: path: Condition "stat(slavenam, &statb) >= 0", taking true branch.
+gawk-5.1.0/io.c:2192: path: Breaking from loop.
+gawk-5.1.0/io.c:2205: path: Condition "master >= 0", taking true branch.
+gawk-5.1.0/io.c:2211: path: Condition "tem != NULL", taking true branch.
+gawk-5.1.0/io.c:2213: path: Jumping to label "got_the_pty".
+gawk-5.1.0/io.c:2264: closed_arg: "fork_and_open_slave_pty(char const *, int, char const *, pid_t *)" closes "master".
+gawk-5.1.0/io.c:2264: path: Condition "!fork_and_open_slave_pty(slavenam, master, str, &pid)", taking true branch.
+gawk-5.1.0/io.c:2268: pass_closed_arg: Passing closed handle "master" as an argument to "iop_alloc".
+# 2266|   
+# 2267|   		rp->pid = pid;
+# 2268|-> 		rp->iop = iop_alloc(master, str, 0);
+# 2269|   		find_input_parser(rp->iop);
+# 2270|   		iop_finish(rp->iop);
+
+Error: ATOMICITY (CWE-667):
+glib-2.68.4/gio/gcontenttype.c:472: path: Condition "type != NULL", taking true branch.
+glib-2.68.4/gio/gcontenttype.c:472: path: Falling through to end of if statement.
+glib-2.68.4/gio/gcontenttype.c:472: path: Condition "({...; _g_boolean_var_;})", taking true branch.
+glib-2.68.4/gio/gcontenttype.c:472: path: Falling through to end of if statement.
+glib-2.68.4/gio/gcontenttype.c:474: lock: Locking "&g__gio_xdgmime_lock".
+glib-2.68.4/gio/gcontenttype.c:475: def: Assigning data that might be protected by the lock to "type".
+glib-2.68.4/gio/gcontenttype.c:477: path: Condition "type_comment_cache == NULL", taking true branch.
+glib-2.68.4/gio/gcontenttype.c:482: unlock: Unlocking "&g__gio_xdgmime_lock". "type" might now be unreliable because other threads can now change the data that it depends on.
+glib-2.68.4/gio/gcontenttype.c:484: path: Condition "comment != NULL", taking false branch.
+glib-2.68.4/gio/gcontenttype.c:489: lockagain: Locking "&g__gio_xdgmime_lock" again.
+glib-2.68.4/gio/gcontenttype.c:490: use: Using an unreliable value of "type" inside the second locked section. If the data that "type" depends on was changed by another thread, this use might be incorrect.
+#  488|   
+#  489|     G_LOCK (gio_xdgmime);
+#  490|->   g_hash_table_insert (type_comment_cache,
+#  491|                          g_strdup (type),
+#  492|                          g_strdup (comment));
+
+Error: ATOMICITY (CWE-667):
+glib-2.68.4/gio/gcontenttype.c:472: path: Condition "type != NULL", taking true branch.
+glib-2.68.4/gio/gcontenttype.c:472: path: Falling through to end of if statement.
+glib-2.68.4/gio/gcontenttype.c:472: path: Condition "({...; _g_boolean_var_;})", taking true branch.
+glib-2.68.4/gio/gcontenttype.c:472: path: Falling through to end of if statement.
+glib-2.68.4/gio/gcontenttype.c:474: lock: Locking "&g__gio_xdgmime_lock".
+glib-2.68.4/gio/gcontenttype.c:477: path: Condition "type_comment_cache == NULL", taking true branch.
+glib-2.68.4/gio/gcontenttype.c:478: def: Assigning data that might be protected by the lock to "type_comment_cache".
+glib-2.68.4/gio/gcontenttype.c:482: unlock: Unlocking "&g__gio_xdgmime_lock". "type_comment_cache" might now be unreliable because other threads can now change the data that it depends on.
+glib-2.68.4/gio/gcontenttype.c:484: path: Condition "comment != NULL", taking false branch.
+glib-2.68.4/gio/gcontenttype.c:489: lockagain: Locking "&g__gio_xdgmime_lock" again.
+glib-2.68.4/gio/gcontenttype.c:490: use: Using an unreliable value of "type_comment_cache" inside the second locked section. If the data that "type_comment_cache" depends on was changed by another thread, this use might be incorrect.
+#  488|   
+#  489|     G_LOCK (gio_xdgmime);
+#  490|->   g_hash_table_insert (type_comment_cache,
+#  491|                          g_strdup (type),
+#  492|                          g_strdup (comment));
+
+Error: ATOMICITY (CWE-667):
+glib-2.68.4/gio/gdbusconnection.c:2257: path: Condition "!alive", taking false branch.
+glib-2.68.4/gio/gdbusconnection.c:2274: lock: Locking "&connection->lock".
+glib-2.68.4/gio/gdbusconnection.c:2275: def: Assigning data that might be protected by the lock to "filters".
+glib-2.68.4/gio/gdbusconnection.c:2276: unlock: Unlocking "&connection->lock". "filters" might now be unreliable because other threads can now change the data that it depends on.
+glib-2.68.4/gio/gdbusconnection.c:2279: path: Condition "filters[n]", taking true branch.
+glib-2.68.4/gio/gdbusconnection.c:2285: path: Condition "message == NULL", taking true branch.
+glib-2.68.4/gio/gdbusconnection.c:2286: path: Breaking from loop.
+glib-2.68.4/gio/gdbusconnection.c:2290: lockagain: Locking "&connection->lock" again.
+glib-2.68.4/gio/gdbusconnection.c:2291: use: Using an unreliable value of "filters" inside the second locked section. If the data that "filters" depends on was changed by another thread, this use might be incorrect.
+# 2289|   
+# 2290|     CONNECTION_LOCK (connection);
+# 2291|->   free_filter_list (filters);
+# 2292|     CONNECTION_UNLOCK (connection);
+# 2293|   
+
+Error: ATOMICITY (CWE-667):
+glib-2.68.4/gio/gdbusconnection.c:2355: path: Condition "!alive", taking false branch.
+glib-2.68.4/gio/gdbusconnection.c:2367: lock: Locking "&connection->lock".
+glib-2.68.4/gio/gdbusconnection.c:2368: def: Assigning data that might be protected by the lock to "filters".
+glib-2.68.4/gio/gdbusconnection.c:2369: unlock: Unlocking "&connection->lock". "filters" might now be unreliable because other threads can now change the data that it depends on.
+glib-2.68.4/gio/gdbusconnection.c:2372: path: Condition "filters[n]", taking true branch.
+glib-2.68.4/gio/gdbusconnection.c:2379: path: Condition "message == NULL", taking true branch.
+glib-2.68.4/gio/gdbusconnection.c:2380: path: Breaking from loop.
+glib-2.68.4/gio/gdbusconnection.c:2383: lockagain: Locking "&connection->lock" again.
+glib-2.68.4/gio/gdbusconnection.c:2384: use: Using an unreliable value of "filters" inside the second locked section. If the data that "filters" depends on was changed by another thread, this use might be incorrect.
+# 2382|   
+# 2383|     CONNECTION_LOCK (connection);
+# 2384|->   free_filter_list (filters);
+# 2385|     CONNECTION_UNLOCK (connection);
+# 2386|   
+
+Error: ATOMICITY (CWE-667):
+glib-2.68.4/gio/gdbusobjectmanagerclient.c:1258: path: Condition "manager == NULL", taking false branch.
+glib-2.68.4/gio/gdbusobjectmanagerclient.c:1261: lock: Locking "&manager->priv->lock".
+glib-2.68.4/gio/gdbusobjectmanagerclient.c:1263: def: Assigning data that might be protected by the lock to "new_name_owner".
+glib-2.68.4/gio/gdbusobjectmanagerclient.c:1266: path: Condition "g_strcmp0(old_name_owner, new_name_owner) != 0", taking false branch.
+glib-2.68.4/gio/gdbusobjectmanagerclient.c:1296: unlock: Unlocking "&manager->priv->lock". "new_name_owner" might now be unreliable because other threads can now change the data that it depends on.
+glib-2.68.4/gio/gdbusobjectmanagerclient.c:1299: path: Condition "new_name_owner != NULL", taking true branch.
+glib-2.68.4/gio/gdbusobjectmanagerclient.c:1317: path: Condition "value == NULL", taking true branch.
+glib-2.68.4/gio/gdbusobjectmanagerclient.c:1325: path: Falling through to end of if statement.
+glib-2.68.4/gio/gdbusobjectmanagerclient.c:1335: lockagain: Locking "&manager->priv->lock" again.
+glib-2.68.4/gio/gdbusobjectmanagerclient.c:1336: use: Using an unreliable value of "new_name_owner" inside the second locked section. If the data that "new_name_owner" depends on was changed by another thread, this use might be incorrect.
+# 1334|          */
+# 1335|         g_mutex_lock (&manager->priv->lock);
+# 1336|->       manager->priv->name_owner = new_name_owner;
+# 1337|         g_mutex_unlock (&manager->priv->lock);
+# 1338|         g_object_notify (G_OBJECT (manager), "name-owner");
+
+Error: URL_MANIPULATION (CWE-918):
+glib-2.68.4/gio/gsocket.c:5415: path: Condition "!__inst", taking false branch.
+glib-2.68.4/gio/gsocket.c:5415: path: Condition "__inst->g_class", taking true branch.
+glib-2.68.4/gio/gsocket.c:5415: path: Condition "__inst->g_class->g_type == __t", taking true branch.
+glib-2.68.4/gio/gsocket.c:5415: path: Falling through to end of if statement.
+glib-2.68.4/gio/gsocket.c:5415: path: Condition "({...; __r;})", taking true branch.
+glib-2.68.4/gio/gsocket.c:5415: path: Falling through to end of if statement.
+glib-2.68.4/gio/gsocket.c:5415: path: Condition "({...; _g_boolean_var_;})", taking true branch.
+glib-2.68.4/gio/gsocket.c:5415: path: Falling through to end of if statement.
+glib-2.68.4/gio/gsocket.c:5419: path: Condition "!check_socket(socket, error)", taking false branch.
+glib-2.68.4/gio/gsocket.c:5422: path: Condition "!check_timeout(socket, error)", taking false branch.
+glib-2.68.4/gio/gsocket.c:5425: path: Condition "g_cancellable_set_error_if_cancelled(cancellable, error)", taking false branch.
+glib-2.68.4/gio/gsocket.c:5428: path: Condition "num_vectors == -1", taking true branch.
+glib-2.68.4/gio/gsocket.c:5430: path: Condition "vectors[num_vectors].buffer != NULL", taking true branch.
+glib-2.68.4/gio/gsocket.c:5433: path: Jumping back to the beginning of the loop.
+glib-2.68.4/gio/gsocket.c:5430: path: Condition "vectors[num_vectors].buffer != NULL", taking true branch.
+glib-2.68.4/gio/gsocket.c:5433: path: Jumping back to the beginning of the loop.
+glib-2.68.4/gio/gsocket.c:5430: path: Condition "vectors[num_vectors].buffer != NULL", taking false branch.
+glib-2.68.4/gio/gsocket.c:5436: path: Condition "num_vectors == 0", taking false branch.
+glib-2.68.4/gio/gsocket.c:5454: path: Condition "flags != NULL", taking true branch.
+glib-2.68.4/gio/gsocket.c:5466: path: Condition "_message->address", taking true branch.
+glib-2.68.4/gio/gsocket.c:5466: path: Falling through to end of if statement.
+glib-2.68.4/gio/gsocket.c:5466: path: Condition "1 /* (((sizeof (*_msg->msg_iov) == sizeof (*_message->vectors) && sizeof (_msg->msg_iov->iov_base) == sizeof (_message->vectors->buffer)) && (glong)__builtin_offsetof() == (glong)__builtin_offsetof()) && sizeof (_msg->msg_iov->iov_len) == sizeof (_message->vectors->size)) && (glong)__builtin_offsetof() == (glong)__builtin_offsetof() */", taking true branch.
+glib-2.68.4/gio/gsocket.c:5466: path: Falling through to end of if statement.
+glib-2.68.4/gio/gsocket.c:5466: path: Condition "_message->control_messages == NULL", taking true branch.
+glib-2.68.4/gio/gsocket.c:5466: path: Falling through to end of if statement.
+glib-2.68.4/gio/gsocket.c:5469: path: Condition "1", taking true branch.
+glib-2.68.4/gio/gsocket.c:5473: path: Condition "result < 0", taking true branch.
+glib-2.68.4/gio/gsocket.c:5473: path: Condition "get_socket_errno() == 22", taking true branch.
+glib-2.68.4/gio/gsocket.c:5481: path: Condition "result < 0", taking true branch.
+glib-2.68.4/gio/gsocket.c:5485: path: Condition "errsv == 4", taking true branch.
+glib-2.68.4/gio/gsocket.c:5486: path: Continuing loop.
+glib-2.68.4/gio/gsocket.c:5469: path: Condition "1", taking true branch.
+glib-2.68.4/gio/gsocket.c:5471: tainted_argument: Calling function "recvmsg" taints argument "msg".
+glib-2.68.4/gio/gsocket.c:5473: path: Condition "result < 0", taking false branch.
+glib-2.68.4/gio/gsocket.c:5481: path: Condition "result < 0", taking false branch.
+glib-2.68.4/gio/gsocket.c:5502: path: Breaking from loop.
+glib-2.68.4/gio/gsocket.c:5505: url_manipulation_sink: Constructing a URL using the tainted value "*msg.msg_name" and passing it to "input_message_from_msghdr". This may allow an attacker to access or modify critical or sensitive files, or redirect to a malicious website.
+glib-2.68.4/gio/gsocket.c:5505: remediation: URL manipulation vulnerabilities can be addressed by proper input validation. Allow listing the allowed scheme and authority, and deny listing characters that allow unsafe path traversal in the path and query parts of the URL can improve security.
+# 5503|         }
+# 5504|   
+# 5505|->     input_message_from_msghdr (&msg, &input_message, socket);
+# 5506|   
+# 5507|       if (flags != NULL)
+
+Error: RETURN_LOCAL (CWE-562):
+glib-2.68.4/glib/ggettext.c:221: path: Condition "translation == msgctxtid", taking true branch.
+glib-2.68.4/glib/ggettext.c:223: path: Condition "msgidoffset > 0", taking false branch.
+glib-2.68.4/glib/ggettext.c:227: path: Condition "sep", taking true branch.
+glib-2.68.4/glib/ggettext.c:232: local_ptr_alloc: Stack allocation: "__builtin_alloca(strlen(msgctxtid) + 1UL)".
+glib-2.68.4/glib/ggettext.c:232: local_ptr_assign_ptr: Assigning: "tmp" = "__builtin_alloca(strlen(msgctxtid) + 1UL)".
+glib-2.68.4/glib/ggettext.c:236: identity_transfer: Passing "tmp" as argument 2 to function "g_dgettext", which returns that argument.
+glib-2.68.4/glib/ggettext.c:236: local_ptr_assign_ptr: Assigning: "translation" = "g_dgettext(domain, tmp)".
+glib-2.68.4/glib/ggettext.c:238: path: Condition "translation == tmp", taking false branch.
+glib-2.68.4/glib/ggettext.c:243: return_local_alloc_alias: Returning pointer "translation" which points to space allocated on the stack by "__builtin_alloca(strlen(msgctxtid) + 1UL)".
+#  241|       }
+#  242|   
+#  243|->   return translation;
+#  244|   }
+#  245|   
+
+Error: RETURN_LOCAL (CWE-562):
+glib-2.68.4/glib/ggettext.c:281: local_ptr_alloc: Stack allocation: "__builtin_alloca(msgctxt_len + msgid_len)".
+glib-2.68.4/glib/ggettext.c:281: local_ptr_assign_ptr: Assigning: "msg_ctxt_id" = "__builtin_alloca(msgctxt_len + msgid_len)".
+glib-2.68.4/glib/ggettext.c:287: identity_transfer: Passing "msg_ctxt_id" as argument 2 to function "g_dgettext", which returns that argument.
+glib-2.68.4/glib/ggettext.c:287: local_ptr_assign_ptr: Assigning: "translation" = "g_dgettext(domain, msg_ctxt_id)".
+glib-2.68.4/glib/ggettext.c:289: path: Condition "translation == msg_ctxt_id", taking false branch.
+glib-2.68.4/glib/ggettext.c:299: return_local_alloc_alias: Returning pointer "translation" which points to space allocated on the stack by "__builtin_alloca(msgctxt_len + msgid_len)".
+#  297|       }
+#  298|   
+#  299|->   return translation;
+#  300|   }
+#  301|   
+
+Error: ATOMICITY (CWE-667):
+glib-2.68.4/glib/gmain.c:4081: path: Condition "!g_main_context_acquire(context)", taking false branch.
+glib-2.68.4/glib/gmain.c:4098: lock: Locking "&context->mutex".
+glib-2.68.4/glib/gmain.c:4100: path: Condition "!context->cached_poll_array", taking true branch.
+glib-2.68.4/glib/gmain.c:4103: path: Condition "__s == 1", taking false branch.
+glib-2.68.4/glib/gmain.c:4103: path: Condition "0", taking false branch.
+glib-2.68.4/glib/gmain.c:4107: def: Assigning data that might be protected by the lock to "fds".
+glib-2.68.4/glib/gmain.c:4109: unlock: Unlocking "&context->mutex". "fds" might now be unreliable because other threads can now change the data that it depends on.
+glib-2.68.4/glib/gmain.c:4111: unlock: Unlocking "context->mutex". "fds" might now be unreliable because other threads can now change the data that it depends on.
+glib-2.68.4/glib/gmain.c:4113: unlock: Unlocking "context->mutex". "fds" might now be unreliable because other threads can now change the data that it depends on.
+glib-2.68.4/glib/gmain.c:4113: path: Condition "(nfds = g_main_context_query(context, max_priority, &timeout, fds, allocated_nfds)) > allocated_nfds", taking true branch.
+glib-2.68.4/glib/gmain.c:4116: lockagain: Locking "&context->mutex" again.
+glib-2.68.4/glib/gmain.c:4117: use: Using an unreliable value of "fds" inside the second locked section. If the data that "fds" depends on was changed by another thread, this use might be incorrect.
+# 4115|       {
+# 4116|         LOCK_CONTEXT (context);
+# 4117|->       g_free (fds);
+# 4118|         context->cached_poll_array_size = allocated_nfds = nfds;
+# 4119|         context->cached_poll_array = fds = g_new (GPollFD, nfds);
+
+Error: ATOMICITY (CWE-667):
+glib-2.68.4/gobject/gsignal.c:2150: path: Condition "instance_and_params != NULL", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2150: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gsignal.c:2150: path: Condition "({...; _g_boolean_var_;})", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2150: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gsignal.c:2152: path: Condition "g_type_check_instance((GTypeInstance *)(GTypeInstance *)instance)", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2152: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gsignal.c:2152: path: Condition "({...; _g_boolean_var_;})", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2152: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gsignal.c:2154: lock: Locking "&g__g_signal_mutex_lock".
+glib-2.68.4/gobject/gsignal.c:2156: path: Condition "emission", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2160: path: Condition "node != NULL", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2160: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gsignal.c:2160: path: Condition "({...; _g_boolean_var_;})", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2160: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gsignal.c:2164: path: Condition "emission->chain_type != 4UL /* (GType)(1 << 2) */", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2168: path: Condition "cc != NULL", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2168: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gsignal.c:2168: path: Condition "({...; _g_boolean_var_;})", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2168: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gsignal.c:2171: def: Assigning data that might be protected by the lock to "restore_type".
+glib-2.68.4/gobject/gsignal.c:2173: path: Condition "cc", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2173: path: Condition "cc->instance_type != restore_type", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2178: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gsignal.c:2181: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gsignal.c:2185: path: Condition "closure", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2188: unlock: Unlocking "&g__g_signal_mutex_lock". "restore_type" might now be unreliable because other threads can now change the data that it depends on.
+glib-2.68.4/gobject/gsignal.c:2194: lockagain: Locking "&g__g_signal_mutex_lock" again.
+glib-2.68.4/gobject/gsignal.c:2195: use: Using an unreliable value of "restore_type" inside the second locked section. If the data that "restore_type" depends on was changed by another thread, this use might be incorrect.
+# 2193|   			&emission->ihint);
+# 2194|         SIGNAL_LOCK ();
+# 2195|->       emission->chain_type = restore_type;
+# 2196|       }
+# 2197|     SIGNAL_UNLOCK ();
+
+Error: ATOMICITY (CWE-667):
+glib-2.68.4/gobject/gsignal.c:2225: path: Condition "g_type_check_instance((GTypeInstance *)(GTypeInstance *)instance)", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2225: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gsignal.c:2225: path: Condition "({...; _g_boolean_var_;})", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2225: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gsignal.c:2227: lock: Locking "&g__g_signal_mutex_lock".
+glib-2.68.4/gobject/gsignal.c:2229: path: Condition "emission", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2233: path: Condition "node != NULL", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2233: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gsignal.c:2233: path: Condition "({...; _g_boolean_var_;})", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2233: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gsignal.c:2237: path: Condition "emission->chain_type != 4UL /* (GType)(1 << 2) */", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2241: path: Condition "cc != NULL", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2241: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gsignal.c:2241: path: Condition "({...; _g_boolean_var_;})", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2241: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gsignal.c:2246: path: Condition "cc", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2246: path: Condition "cc->instance_type != restore_type", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2249: def: Assigning data that might be protected by the lock to "chain_type".
+glib-2.68.4/gobject/gsignal.c:2251: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gsignal.c:2254: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gsignal.c:2258: path: Condition "closure", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2273: path: Condition "i < node->n_params", taking false branch.
+glib-2.68.4/gobject/gsignal.c:2301: unlock: Unlocking "&g__g_signal_mutex_lock". "chain_type" might now be unreliable because other threads can now change the data that it depends on.
+glib-2.68.4/gobject/gsignal.c:2304: lockagain: Locking "&g__g_signal_mutex_lock" again.
+glib-2.68.4/gobject/gsignal.c:2306: use: Using an unreliable value of "chain_type" inside the second locked section. If the data that "chain_type" depends on was changed by another thread, this use might be incorrect.
+# 2304|         SIGNAL_LOCK ();
+# 2305|   
+# 2306|->       emission->chain_type = chain_type;
+# 2307|         SIGNAL_UNLOCK ();
+# 2308|   
+
+Error: ATOMICITY (CWE-667):
+glib-2.68.4/gobject/gsignal.c:2225: path: Condition "g_type_check_instance((GTypeInstance *)(GTypeInstance *)instance)", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2225: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gsignal.c:2225: path: Condition "({...; _g_boolean_var_;})", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2225: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gsignal.c:2227: lock: Locking "&g__g_signal_mutex_lock".
+glib-2.68.4/gobject/gsignal.c:2229: path: Condition "emission", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2233: path: Condition "node != NULL", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2233: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gsignal.c:2233: path: Condition "({...; _g_boolean_var_;})", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2233: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gsignal.c:2237: path: Condition "emission->chain_type != 4UL /* (GType)(1 << 2) */", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2241: path: Condition "cc != NULL", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2241: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gsignal.c:2241: path: Condition "({...; _g_boolean_var_;})", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2241: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gsignal.c:2244: def: Assigning data that might be protected by the lock to "restore_type".
+glib-2.68.4/gobject/gsignal.c:2246: path: Condition "cc", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2246: path: Condition "cc->instance_type != restore_type", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2251: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gsignal.c:2254: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gsignal.c:2258: path: Condition "closure", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2273: path: Condition "i < node->n_params", taking false branch.
+glib-2.68.4/gobject/gsignal.c:2301: unlock: Unlocking "&g__g_signal_mutex_lock". "restore_type" might now be unreliable because other threads can now change the data that it depends on.
+glib-2.68.4/gobject/gsignal.c:2307: unlock: Unlocking "&g__g_signal_mutex_lock". "restore_type" might now be unreliable because other threads can now change the data that it depends on.
+glib-2.68.4/gobject/gsignal.c:2309: path: Condition "signal_return_type == 4UL /* (GType)(1 << 2) */", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2316: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gsignal.c:2351: path: Condition "i < n_params", taking false branch.
+glib-2.68.4/gobject/gsignal.c:2357: lockagain: Locking "&g__g_signal_mutex_lock" again.
+glib-2.68.4/gobject/gsignal.c:2358: use: Using an unreliable value of "restore_type" inside the second locked section. If the data that "restore_type" depends on was changed by another thread, this use might be incorrect.
+# 2356|   
+# 2357|         SIGNAL_LOCK ();
+# 2358|->       emission->chain_type = restore_type;
+# 2359|       }
+# 2360|     SIGNAL_UNLOCK ();
+
+Error: ATOMICITY (CWE-667):
+glib-2.68.4/gobject/gsignal.c:2879: path: Condition "mlist", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2882: path: Condition "mlist->handler->sequential_number", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2886: lock: Locking "&g__g_signal_mutex_lock".
+glib-2.68.4/gobject/gsignal.c:2888: def: Assigning data that might be protected by the lock to "mlist".
+glib-2.68.4/gobject/gsignal.c:2889: path: Jumping back to the beginning of the loop.
+glib-2.68.4/gobject/gsignal.c:2879: path: Condition "mlist", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2882: path: Condition "mlist->handler->sequential_number", taking true branch.
+glib-2.68.4/gobject/gsignal.c:2884: unlock: Unlocking "&g__g_signal_mutex_lock". "mlist" might now be unreliable because other threads can now change the data that it depends on.
+glib-2.68.4/gobject/gsignal.c:2886: lockagain: Locking "&g__g_signal_mutex_lock" again.
+glib-2.68.4/gobject/gsignal.c:2888: use: Using an unreliable value of "mlist" inside the second locked section. If the data that "mlist" depends on was changed by another thread, this use might be incorrect.
+# 2886|   	  SIGNAL_LOCK ();
+# 2887|   	}
+# 2888|->       mlist = handler_match_free1_R (mlist, instance);
+# 2889|       }
+# 2890|     
+
+Error: ATOMICITY (CWE-667):
+glib-2.68.4/gobject/gsignal.c:3276: path: Condition "g_type_check_instance((GTypeInstance *)(GTypeInstance *)instance)", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3276: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gsignal.c:3276: path: Condition "({...; _g_boolean_var_;})", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3276: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gsignal.c:3277: path: Condition "signal_id > 0", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3277: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gsignal.c:3277: path: Condition "({...; _g_boolean_var_;})", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3277: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gsignal.c:3279: lock: Locking "&g__g_signal_mutex_lock".
+glib-2.68.4/gobject/gsignal.c:3281: path: Condition "!node", taking false branch.
+glib-2.68.4/gobject/gsignal.c:3281: path: Condition "!g_type_is_a(((GTypeClass *)((GTypeInstance *)instance)->g_class)->g_type, node->itype)", taking false branch.
+glib-2.68.4/gobject/gsignal.c:3288: path: Condition "detail", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3288: path: Condition "!(node->flags & G_SIGNAL_DETAILED)", taking false branch.
+glib-2.68.4/gobject/gsignal.c:3296: path: Condition "!node->single_va_closure_is_valid", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3299: path: Condition "node->single_va_closure != NULL", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3308: path: Condition "node->single_va_closure != (void *)0x1", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3308: path: Condition "!_g_closure_is_void(node->single_va_closure, instance)", taking false branch.
+glib-2.68.4/gobject/gsignal.c:3324: path: Condition "_g_object_has_signal_handler((GObject *)instance)", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3325: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gsignal.c:3329: path: Condition "hlist", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3329: path: Condition "fastpath", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3329: path: Condition "l != NULL", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3331: path: Condition "!l->block_count", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3331: path: Condition "!l->detail", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3334: path: Condition "closure != NULL", taking false branch.
+glib-2.68.4/gobject/gsignal.c:3334: path: Condition "!_g_closure_supports_invoke_va(l->closure)", taking false branch.
+glib-2.68.4/gobject/gsignal.c:3343: path: Condition "l->after", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3344: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gsignal.c:3349: path: Jumping back to the beginning of the loop.
+glib-2.68.4/gobject/gsignal.c:3329: path: Condition "fastpath", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3329: path: Condition "l != NULL", taking false branch.
+glib-2.68.4/gobject/gsignal.c:3351: path: Condition "fastpath", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3351: path: Condition "closure == NULL", taking false branch.
+glib-2.68.4/gobject/gsignal.c:3359: path: Condition "closure != NULL", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3359: path: Condition "(node->flags & G_SIGNAL_NO_RECURSE) != 0", taking false branch.
+glib-2.68.4/gobject/gsignal.c:3362: path: Condition "fastpath", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3373: def: Assigning data that might be protected by the lock to "signal_id".
+glib-2.68.4/gobject/gsignal.c:3375: path: Condition "rtype == 4UL /* (GType)(1 << 2) */", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3376: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gsignal.c:3390: path: Condition "fastpath_handler", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3393: unlock: Unlocking "&g__g_signal_mutex_lock". "signal_id" might now be unreliable because other threads can now change the data that it depends on.
+glib-2.68.4/gobject/gsignal.c:3397: path: Condition "rtype != 4UL /* (GType)(1 << 2) */", taking false branch.
+glib-2.68.4/gobject/gsignal.c:3400: path: Condition "accumulator", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3403: path: Condition "closure != NULL", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3420: path: Condition "fastpath_handler", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3415: lockagain: Locking "&g__g_signal_mutex_lock" again.
+glib-2.68.4/gobject/gsignal.c:3421: use: Using an unreliable value of "signal_id" inside the second locked section. If the data that "signal_id" depends on was changed by another thread, this use might be incorrect.
+# 3419|   
+# 3420|             if (fastpath_handler)
+# 3421|->             handler_unref_R (signal_id, instance, fastpath_handler);
+# 3422|   
+# 3423|   	  SIGNAL_UNLOCK ();
+
+Error: ATOMICITY (CWE-667):
+glib-2.68.4/gobject/gsignal.c:3620: lock: Locking "&g__g_signal_mutex_lock".
+glib-2.68.4/gobject/gsignal.c:3621: def: Assigning data that might be protected by the lock to "signal_id".
+glib-2.68.4/gobject/gsignal.c:3623: path: Condition "node->flags & G_SIGNAL_NO_RECURSE", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3627: path: Condition "node", taking false branch.
+glib-2.68.4/gobject/gsignal.c:3635: path: Condition "accumulator", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3637: unlock: Unlocking "&g__g_signal_mutex_lock". "signal_id" might now be unreliable because other threads can now change the data that it depends on.
+glib-2.68.4/gobject/gsignal.c:3641: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gsignal.c:3655: path: Condition "handler_list", taking false branch.
+glib-2.68.4/gobject/gsignal.c:3640: lockagain: Locking "&g__g_signal_mutex_lock" again.
+glib-2.68.4/gobject/gsignal.c:3658: use: Using an unreliable value of "signal_id" inside the second locked section. If the data that "signal_id" depends on was changed by another thread, this use might be incorrect.
+# 3656|       handler_unref_R (signal_id, instance, handler_list);
+# 3657|     max_sequential_handler_number = g_handler_sequential_number;
+# 3658|->   hlist = handler_list_lookup (signal_id, instance);
+# 3659|     handler_list = hlist ? hlist->handlers : NULL;
+# 3660|     if (handler_list)
+
+Error: ATOMICITY (CWE-667):
+glib-2.68.4/gobject/gsignal.c:3623: path: Condition "node->flags & G_SIGNAL_NO_RECURSE", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3627: path: Condition "node", taking false branch.
+glib-2.68.4/gobject/gsignal.c:3635: path: Condition "accumulator", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3640: lock: Locking "&g__g_signal_mutex_lock".
+glib-2.68.4/gobject/gsignal.c:3641: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gsignal.c:3655: path: Condition "handler_list", taking false branch.
+glib-2.68.4/gobject/gsignal.c:3659: path: Condition "hlist", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3660: path: Condition "handler_list", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3665: path: Condition "node->flags & G_SIGNAL_RUN_FIRST", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3665: path: Condition "class_closure", taking false branch.
+glib-2.68.4/gobject/gsignal.c:3689: path: Condition "node->emission_hooks", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3695: def: Assigning data that might be protected by the lock to "hook".
+glib-2.68.4/gobject/gsignal.c:3696: path: Condition "hook", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3700: path: Condition "!signal_hook->detail", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3704: path: Condition "(((GHook *)hook)->flags & G_HOOK_FLAG_IN_CALL) != 0", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3706: unlock: Unlocking "&g__g_signal_mutex_lock". "hook" might now be unreliable because other threads can now change the data that it depends on.
+glib-2.68.4/gobject/gsignal.c:3707: path: Condition "!hook_func(&emission.ihint, node->n_params + 1, instance_and_params, hook->data)", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3709: path: Condition "!was_in_call", taking false branch.
+glib-2.68.4/gobject/gsignal.c:3711: path: Condition "need_destroy", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3708: lockagain: Locking "&g__g_signal_mutex_lock" again.
+glib-2.68.4/gobject/gsignal.c:3712: use: Using an unreliable value of "hook" inside the second locked section. If the data that "hook" depends on was changed by another thread, this use might be incorrect.
+# 3710|   		hook->flags &= ~G_HOOK_FLAG_IN_CALL;
+# 3711|   	      if (need_destroy)
+# 3712|-> 		g_hook_destroy_link (node->emission_hooks, hook);
+# 3713|   	    }
+# 3714|   	  hook = g_hook_next_valid (node->emission_hooks, hook, may_recurse);
+
+Error: ATOMICITY (CWE-667):
+glib-2.68.4/gobject/gsignal.c:3623: path: Condition "node->flags & G_SIGNAL_NO_RECURSE", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3627: path: Condition "node", taking false branch.
+glib-2.68.4/gobject/gsignal.c:3635: path: Condition "accumulator", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3641: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gsignal.c:3655: path: Condition "handler_list", taking false branch.
+glib-2.68.4/gobject/gsignal.c:3659: path: Condition "hlist", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3660: path: Condition "handler_list", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3665: path: Condition "node->flags & G_SIGNAL_RUN_FIRST", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3665: path: Condition "class_closure", taking false branch.
+glib-2.68.4/gobject/gsignal.c:3689: path: Condition "node->emission_hooks", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3696: path: Condition "hook", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3700: path: Condition "!signal_hook->detail", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3704: path: Condition "(((GHook *)hook)->flags & G_HOOK_FLAG_IN_CALL) != 0", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3707: path: Condition "!hook_func(&emission.ihint, node->n_params + 1, instance_and_params, hook->data)", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3708: lock: Locking "&g__g_signal_mutex_lock".
+glib-2.68.4/gobject/gsignal.c:3709: path: Condition "!was_in_call", taking false branch.
+glib-2.68.4/gobject/gsignal.c:3711: path: Condition "need_destroy", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3714: def: Assigning data that might be protected by the lock to "hook".
+glib-2.68.4/gobject/gsignal.c:3715: path: Jumping back to the beginning of the loop.
+glib-2.68.4/gobject/gsignal.c:3696: path: Condition "hook", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3700: path: Condition "!signal_hook->detail", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3704: path: Condition "(((GHook *)hook)->flags & G_HOOK_FLAG_IN_CALL) != 0", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3706: unlock: Unlocking "&g__g_signal_mutex_lock". "hook" might now be unreliable because other threads can now change the data that it depends on.
+glib-2.68.4/gobject/gsignal.c:3707: path: Condition "!hook_func(&emission.ihint, node->n_params + 1, instance_and_params, hook->data)", taking false branch.
+glib-2.68.4/gobject/gsignal.c:3709: path: Condition "!was_in_call", taking false branch.
+glib-2.68.4/gobject/gsignal.c:3711: path: Condition "need_destroy", taking false branch.
+glib-2.68.4/gobject/gsignal.c:3708: lockagain: Locking "&g__g_signal_mutex_lock" again.
+glib-2.68.4/gobject/gsignal.c:3714: use: Using an unreliable value of "hook" inside the second locked section. If the data that "hook" depends on was changed by another thread, this use might be incorrect.
+# 3712|   		g_hook_destroy_link (node->emission_hooks, hook);
+# 3713|   	    }
+# 3714|-> 	  hook = g_hook_next_valid (node->emission_hooks, hook, may_recurse);
+# 3715|   	}
+# 3716|         
+
+Error: ATOMICITY (CWE-667):
+glib-2.68.4/gobject/gsignal.c:3620: lock: Locking "&g__g_signal_mutex_lock".
+glib-2.68.4/gobject/gsignal.c:3621: def: Assigning data that might be protected by the lock to "signal_id".
+glib-2.68.4/gobject/gsignal.c:3623: path: Condition "node->flags & G_SIGNAL_NO_RECURSE", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3627: path: Condition "node", taking false branch.
+glib-2.68.4/gobject/gsignal.c:3635: path: Condition "accumulator", taking false branch.
+glib-2.68.4/gobject/gsignal.c:3655: path: Condition "handler_list", taking false branch.
+glib-2.68.4/gobject/gsignal.c:3659: path: Condition "hlist", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3660: path: Condition "handler_list", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3665: path: Condition "node->flags & G_SIGNAL_RUN_FIRST", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3665: path: Condition "class_closure", taking false branch.
+glib-2.68.4/gobject/gsignal.c:3689: path: Condition "node->emission_hooks", taking false branch.
+glib-2.68.4/gobject/gsignal.c:3721: path: Condition "handler_list", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3731: path: Condition "handler->after", taking false branch.
+glib-2.68.4/gobject/gsignal.c:3737: path: Condition "!handler->block_count", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3737: path: Condition "!handler->detail", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3737: path: Condition "handler->sequential_number < max_sequential_handler_number", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3740: unlock: Unlocking "&g__g_signal_mutex_lock". "signal_id" might now be unreliable because other threads can now change the data that it depends on.
+glib-2.68.4/gobject/gsignal.c:3746: path: Condition "!accumulate(&emission.ihint, emission_return, &accu, accumulator)", taking false branch.
+glib-2.68.4/gobject/gsignal.c:3752: path: Condition "emission.state == EMISSION_RUN", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3753: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gsignal.c:3757: path: Condition "tmp", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3749: lockagain: Locking "&g__g_signal_mutex_lock" again.
+glib-2.68.4/gobject/gsignal.c:3759: use: Using an unreliable value of "signal_id" inside the second locked section. If the data that "signal_id" depends on was changed by another thread, this use might be incorrect.
+# 3757|   	  if (tmp)
+# 3758|   	    handler_ref (tmp);
+# 3759|-> 	  handler_unref_R (signal_id, instance, handler_list);
+# 3760|   	  handler_list = handler;
+# 3761|   	  handler = tmp;
+
+Error: ATOMICITY (CWE-667):
+glib-2.68.4/gobject/gsignal.c:3620: lock: Locking "&g__g_signal_mutex_lock".
+glib-2.68.4/gobject/gsignal.c:3621: def: Assigning data that might be protected by the lock to "signal_id".
+glib-2.68.4/gobject/gsignal.c:3623: path: Condition "node->flags & G_SIGNAL_NO_RECURSE", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3627: path: Condition "node", taking false branch.
+glib-2.68.4/gobject/gsignal.c:3635: path: Condition "accumulator", taking false branch.
+glib-2.68.4/gobject/gsignal.c:3655: path: Condition "handler_list", taking false branch.
+glib-2.68.4/gobject/gsignal.c:3659: path: Condition "hlist", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3660: path: Condition "handler_list", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3665: path: Condition "node->flags & G_SIGNAL_RUN_FIRST", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3665: path: Condition "class_closure", taking false branch.
+glib-2.68.4/gobject/gsignal.c:3689: path: Condition "node->emission_hooks", taking false branch.
+glib-2.68.4/gobject/gsignal.c:3721: path: Condition "handler_list", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3731: path: Condition "handler->after", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3735: path: Breaking from loop.
+glib-2.68.4/gobject/gsignal.c:3765: path: Condition "emission.state == EMISSION_STOP", taking false branch.
+glib-2.68.4/gobject/gsignal.c:3767: path: Condition "emission.state == EMISSION_RESTART", taking false branch.
+glib-2.68.4/gobject/gsignal.c:3774: path: Condition "node->flags & G_SIGNAL_RUN_LAST", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3774: path: Condition "class_closure", taking false branch.
+glib-2.68.4/gobject/gsignal.c:3798: path: Condition "handler_list", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3808: path: Condition "handler->after", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3808: path: Condition "!handler->block_count", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3808: path: Condition "!handler->detail", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3808: path: Condition "handler->sequential_number < max_sequential_handler_number", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3811: unlock: Unlocking "&g__g_signal_mutex_lock". "signal_id" might now be unreliable because other threads can now change the data that it depends on.
+glib-2.68.4/gobject/gsignal.c:3817: path: Condition "!accumulate(&emission.ihint, emission_return, &accu, accumulator)", taking false branch.
+glib-2.68.4/gobject/gsignal.c:3823: path: Condition "emission.state == EMISSION_RUN", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3824: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gsignal.c:3828: path: Condition "tmp", taking true branch.
+glib-2.68.4/gobject/gsignal.c:3820: lockagain: Locking "&g__g_signal_mutex_lock" again.
+glib-2.68.4/gobject/gsignal.c:3830: use: Using an unreliable value of "signal_id" inside the second locked section. If the data that "signal_id" depends on was changed by another thread, this use might be incorrect.
+# 3828|   	  if (tmp)
+# 3829|   	    handler_ref (tmp);
+# 3830|-> 	  handler_unref_R (signal_id, instance, handler);
+# 3831|   	  handler = tmp;
+# 3832|   	}
+
+Error: ATOMICITY (CWE-667):
+glib-2.68.4/gobject/gtype.c:2386: path: Condition "node != NULL", taking true branch.
+glib-2.68.4/gobject/gtype.c:2386: path: Condition "node->plugin != NULL", taking true branch.
+glib-2.68.4/gobject/gtype.c:2386: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gtype.c:2386: path: Condition "({...; _g_boolean_var_;})", taking true branch.
+glib-2.68.4/gobject/gtype.c:2386: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gtype.c:2388: path: Condition "!node->data", taking false branch.
+glib-2.68.4/gobject/gtype.c:2388: path: Condition "0", taking false branch.
+glib-2.68.4/gobject/gtype.c:2388: path: Condition "(guint)({...; (gint)gaig_temp;}) == 0", taking false branch.
+glib-2.68.4/gobject/gtype.c:2396: path: Condition "node->is_classed", taking true branch.
+glib-2.68.4/gobject/gtype.c:2396: path: Condition "node->data", taking true branch.
+glib-2.68.4/gobject/gtype.c:2396: path: Condition "node->data->class.class", taking true branch.
+glib-2.68.4/gobject/gtype.c:2396: path: Condition "static_n_class_cache_funcs", taking true branch.
+glib-2.68.4/gobject/gtype.c:2396: path: Condition "!uncached", taking true branch.
+glib-2.68.4/gobject/gtype.c:2402: path: Condition "i < static_n_class_cache_funcs", taking true branch.
+glib-2.68.4/gobject/gtype.c:2411: path: Condition "!node->data", taking false branch.
+glib-2.68.4/gobject/gtype.c:2411: path: Condition "0", taking false branch.
+glib-2.68.4/gobject/gtype.c:2411: path: Condition "(guint)({...; (gint)gaig_temp;}) == 0", taking false branch.
+glib-2.68.4/gobject/gtype.c:2413: path: Condition "need_break", taking true branch.
+glib-2.68.4/gobject/gtype.c:2414: path: Breaking from loop.
+glib-2.68.4/gobject/gtype.c:2417: lock: Locking "&type_rw_lock".
+glib-2.68.4/gobject/gtype.c:2421: path: Condition "0", taking false branch.
+glib-2.68.4/gobject/gtype.c:2421: path: Condition "__atomic_fetch_sub_4((int *)&node->ref_count, 1, 5) == 1", taking true branch.
+glib-2.68.4/gobject/gtype.c:2421: path: Condition "({...; __atomic_fetch_sub_4((int *)&node->ref_count, 1, 5) == 1;})", taking true branch.
+glib-2.68.4/gobject/gtype.c:2426: path: Condition "node->is_instantiatable", taking true branch.
+glib-2.68.4/gobject/gtype.c:2431: def: Assigning data that might be protected by the lock to "tdata".
+glib-2.68.4/gobject/gtype.c:2432: path: Condition "node->is_classed", taking true branch.
+glib-2.68.4/gobject/gtype.c:2432: path: Condition "tdata->class.class", taking true branch.
+glib-2.68.4/gobject/gtype.c:2434: path: Condition "(IFaceEntries *)node->_prot.iface_entries.data != NULL", taking true branch.
+glib-2.68.4/gobject/gtype.c:2438: unlock: Unlocking "&type_rw_lock". "tdata" might now be unreliable because other threads can now change the data that it depends on.
+glib-2.68.4/gobject/gtype.c:2441: path: Falling through to end of if statement.
+glib-2.68.4/gobject/gtype.c:2440: lockagain: Locking "&type_rw_lock" again.
+glib-2.68.4/gobject/gtype.c:2466: use: Using an unreliable value of "tdata" inside the second locked section. If the data that "tdata" depends on was changed by another thread, this use might be incorrect.
+# 2464|          * by allocating it in one chunk with tdata
+# 2465|          */
+# 2466|->       g_free (tdata);
+# 2467|         
+# 2468|         G_WRITE_UNLOCK (&type_rw_lock);
+
+Error: RETURN_LOCAL (CWE-562):
+db-5.3.28/lang/sql/generated/sqlite3.c:81070: path: Condition "pNew == NULL", taking true branch.
+db-5.3.28/lang/sql/generated/sqlite3.c:81071: local_ptr_assign_local: Assigning: "pNew" = "&standin" (address of local variable "standin").
+db-5.3.28/lang/sql/generated/sqlite3.c:81074: path: Condition "pEList == NULL", taking false branch.
+db-5.3.28/lang/sql/generated/sqlite3.c:81083: path: Condition "isDistinct", taking true branch.
+db-5.3.28/lang/sql/generated/sqlite3.c:81091: path: Condition "db->mallocFailed", taking false branch.
+db-5.3.28/lang/sql/generated/sqlite3.c:81096: return_local_addr_alias: Returning pointer "pNew" which points to local variable "standin".
+#81094|       pNew = 0;
+#81095|     }
+#81096|->   return pNew;
+#81097|   }
+#81098|   
+
+Error: ATOMICITY (CWE-667):
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:458: path: Condition "ldap_int_global_options.ldo_debug & 1", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:458: path: Condition "bind != NULL", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:465: path: Condition "lc == NULL", taking false branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:470: path: Condition "use_ldsb", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:471: path: Condition "ld->ldc->ldc_sb != NULL", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:471: path: Falling through to end of if statement.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:474: path: Falling through to end of if statement.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:483: path: Condition "connect", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:486: path: Condition "ld->ldc->ldc_options.ldo_booleans & (16UL /* (unsigned long)1 << 4 */)", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:488: path: Condition "*srvp != NULL", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:492: path: Condition "rc != -1", taking false branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:505: path: Jumping back to the beginning of the loop.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:488: path: Condition "*srvp != NULL", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:492: path: Condition "rc != -1", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:496: path: Condition "rc == 0", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:499: path: Condition "ld->ldc->ldc_options.ldo_urllist_proc", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:499: path: Condition "!async", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:503: path: Breaking from loop.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:507: path: Condition "srv == NULL", taking false branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:517: path: Condition "!lc->lconn_server", taking false branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:526: path: Condition "async", taking false branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:530: path: Condition "connect", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:532: path: Condition "lc->lconn_server->lud_exts", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:534: path: Condition "ext", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:541: path: Condition "m_req", taking false branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:543: path: Condition "m_res", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:545: path: Condition "m_res", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:546: lock: Locking "&ld->ldc->ldc_conn_mutex".
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:547: path: Condition "m_req", taking false branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:551: path: Condition "rc != 0", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:551: path: Condition "ext == 2", taking false branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:560: path: Condition "bind != NULL", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:570: path: Condition "ld->ldc->ldc_options.ldo_rebind_proc != NULL", taking false branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:608: def: Assigning data that might be protected by the lock to "savedefconn".
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:612: path: Condition "ldap_int_global_options.ldo_debug & 1", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:615: path: Condition "m_req", taking false branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:616: unlock: Unlocking "&ld->ldc->ldc_conn_mutex". "savedefconn" might now be unreliable because other threads can now change the data that it depends on.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:617: path: Condition "m_res", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:617: unlock: Unlocking "&ld->ldc->ldc_res_mutex". "savedefconn" might now be unreliable because other threads can now change the data that it depends on.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:620: path: Condition "rc != 0", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:623: path: Falling through to end of if statement.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:661: path: Condition "m_res", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:663: path: Condition "m_req", taking false branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:662: lockagain: Locking "&ld->ldc->ldc_conn_mutex" again.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/request.c:664: use: Using an unreliable value of "savedefconn" inside the second locked section. If the data that "savedefconn" depends on was changed by another thread, this use might be incorrect.
+#  662|   			LDAP_MUTEX_LOCK( &ld->ld_conn_mutex );
+#  663|   			LDAP_REQ_LOCK_IF(m_req);
+#  664|-> 			ld->ld_defconn = savedefconn;
+#  665|   			--lc->lconn_refcnt;
+#  666|   
+
+Error: ATOMICITY (CWE-667):
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/tpool.c:956: path: Condition "pool != NULL", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/tpool.c:956: path: Falling through to end of if statement.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/tpool.c:958: path: Condition "i < 32", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/tpool.c:960: path: Jumping back to the beginning of the loop.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/tpool.c:958: path: Condition "i < 32", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/tpool.c:960: path: Jumping back to the beginning of the loop.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/tpool.c:958: path: Condition "i < 32", taking false branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/tpool.c:964: path: Condition "++i_ < 8UL /* sizeof (ctx.ltu_id) */", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/tpool.c:964: path: Jumping back to the beginning of the loop.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/tpool.c:964: path: Condition "++i_ < 8UL /* sizeof (ctx.ltu_id) */", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/tpool.c:964: path: Jumping back to the beginning of the loop.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/tpool.c:964: path: Condition "++i_ < 8UL /* sizeof (ctx.ltu_id) */", taking false branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/tpool.c:968: path: Condition "pool->ltp_pause", taking false branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/tpool.c:981: path: Condition "kctx = thread_keys[keyslot].ctx", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/tpool.c:981: path: Condition "kctx != &ldap_int_main_thrctx + 1", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/tpool.c:983: path: Jumping back to the beginning of the loop.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/tpool.c:981: path: Condition "kctx = thread_keys[keyslot].ctx", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/tpool.c:981: path: Condition "kctx != &ldap_int_main_thrctx + 1", taking false branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/tpool.c:987: lock: Locking "&pq->ltp_mutex".
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/tpool.c:991: path: Condition "true", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/tpool.c:993: def: Assigning data that might be protected by the lock to "task".
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/tpool.c:994: path: Condition "task == NULL", taking false branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/tpool.c:1049: path: Condition "(work_list->stqh_first = work_list->stqh_first->ltt_next.q.stqe_next) == NULL", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/tpool.c:1051: unlock: Unlocking "&pq->ltp_mutex". "task" might now be unreliable because other threads can now change the data that it depends on.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/tpool.c:1055: lockagain: Locking "&pq->ltp_mutex" again.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/tpool.c:1056: use: Using an unreliable value of "task" inside the second locked section. If the data that "task" depends on was changed by another thread, this use might be incorrect.
+# 1054|   
+# 1055|   		ldap_pvt_thread_mutex_lock(&pq->ltp_mutex);
+# 1056|-> 		LDAP_SLIST_INSERT_HEAD(&pq->ltp_free_list, task, ltt_next.l);
+# 1057|   	}
+# 1058|    done:
+
+Error: OVERRUN (CWE-120):
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/util-int.c:960: path: Switch case value "10".
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/util-int.c:970: path: Condition "__a->__in6_u.__u6_addr32[0] == 0", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/util-int.c:970: path: Condition "__a->__in6_u.__u6_addr32[1] == 0", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/util-int.c:970: path: Condition "__a->__in6_u.__u6_addr32[2] == __bswap_32(65535)", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/util-int.c:970: path: Condition "({...; __a->__in6_u.__u6_addr32[0] == 0 && __a->__in6_u.__u6_addr32[1] == 0 && __a->__in6_u.__u6_addr32[2] == __bswap_32(65535);})", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/util-int.c:979: path: Condition "!addr", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/util-int.c:979: alias: Assigning: "addr" = ""unknown"". "addr" now points to byte 0 of ""unknown"" (which consists of 8 bytes).
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/util-int.c:980: path: Condition "addr != addrbuf->bv_val + 3", taking false branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/util-int.c:985: sprintf_overrun: "sprintf" will overrun its first argument "addr + len" which can accommodate 1 bytes.  The number of bytes written may be 3 bytes, including the terminating null.
+#  983|   			} else {
+#  984|   				int len = strlen( addr );
+#  985|-> 				addrbuf->bv_len = sprintf( addr+len, ":%d",
+#  986|   				 (unsigned) ntohs( sa->sa_in6_addr.sin6_port ) ) + len + 3;
+#  987|   			}
+
+Error: OVERRUN (CWE-120):
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/util-int.c:960: path: Switch case value "2".
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/util-int.c:1013: path: Condition "!addr", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/util-int.c:1013: alias: Assigning: "addr" = ""unknown"". "addr" now points to byte 0 of ""unknown"" (which consists of 8 bytes).
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/util-int.c:1014: path: Condition "addr != addrbuf->bv_val + 3", taking false branch.
+openldap-2.6.3/openldap-2.6.3/libraries/libldap/util-int.c:1019: sprintf_overrun: "sprintf" will overrun its first argument "addr + len" which can accommodate 1 bytes.  The number of bytes written may be 3 bytes, including the terminating null.
+# 1017|   		} else {
+# 1018|   			int len = strlen( addr );
+# 1019|-> 			addrbuf->bv_len = sprintf( addr+len, ":%d",
+# 1020|   			 (unsigned) ntohs( sa->sa_in_addr.sin_port ) ) + len + 3;
+# 1021|   		}
+
+Error: LOCK (CWE-665):
+openldap-2.6.3/openldap-2.6.3/libraries/librewrite/ldapmap.c:99: path: Condition "fname != NULL", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/librewrite/ldapmap.c:99: path: Falling through to end of if statement.
+openldap-2.6.3/openldap-2.6.3/libraries/librewrite/ldapmap.c:100: path: Condition "argv != NULL", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/librewrite/ldapmap.c:100: path: Falling through to end of if statement.
+openldap-2.6.3/openldap-2.6.3/libraries/librewrite/ldapmap.c:103: path: Condition "data == NULL", taking false branch.
+openldap-2.6.3/openldap-2.6.3/libraries/librewrite/ldapmap.c:107: path: Condition "argc < 1", taking false branch.
+openldap-2.6.3/openldap-2.6.3/libraries/librewrite/ldapmap.c:116: path: Condition "strncasecmp(uri, "uri=", 4UL /* sizeof ("uri=") - 1 */) == 0", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/librewrite/ldapmap.c:121: path: Condition "data->lm_url == NULL", taking false branch.
+openldap-2.6.3/openldap-2.6.3/libraries/librewrite/ldapmap.c:126: path: Condition "ldap_url_parse(uri, &data->lm_lud) != 0", taking false branch.
+openldap-2.6.3/openldap-2.6.3/libraries/librewrite/ldapmap.c:136: path: Condition "p[1] == '/'", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/librewrite/ldapmap.c:136: path: Falling through to end of if statement.
+openldap-2.6.3/openldap-2.6.3/libraries/librewrite/ldapmap.c:137: path: Condition "(p = strchr(p + 2, 47)) != NULL", taking false branch.
+openldap-2.6.3/openldap-2.6.3/libraries/librewrite/ldapmap.c:141: path: Condition "data->lm_lud->lud_attrs == NULL", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/librewrite/ldapmap.c:145: path: Falling through to end of if statement.
+openldap-2.6.3/openldap-2.6.3/libraries/librewrite/ldapmap.c:173: path: Condition "argc > 0", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/librewrite/ldapmap.c:174: path: Condition "strncasecmp(argv[0], "binddn=", 7UL /* sizeof ("binddn=") - 1 */) == 0", taking false branch.
+openldap-2.6.3/openldap-2.6.3/libraries/librewrite/ldapmap.c:201: path: Condition "strncasecmp(argv[0], "bindpw=", 7UL /* sizeof ("bindpw=") - 1 */) == 0", taking false branch.
+openldap-2.6.3/openldap-2.6.3/libraries/librewrite/ldapmap.c:208: path: Condition "strncasecmp(argv[0], "credentials=", 12UL /* sizeof ("credentials=") - 1 */) == 0", taking false branch.
+openldap-2.6.3/openldap-2.6.3/libraries/librewrite/ldapmap.c:215: path: Condition "strncasecmp(argv[0], "bindwhen=", 9UL /* sizeof ("bindwhen=") - 1 */) == 0", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/librewrite/ldapmap.c:218: path: Condition "strcasecmp(p, "now") == 0", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/librewrite/ldapmap.c:227: path: Condition "rc != 0", taking false branch.
+openldap-2.6.3/openldap-2.6.3/libraries/librewrite/ldapmap.c:237: unlock: "ldap_pvt_thread_mutex_init" initializes and leaves "data->lm_mutex" unlocked.
+openldap-2.6.3/openldap-2.6.3/libraries/librewrite/ldapmap.c:240: path: Falling through to end of if statement.
+openldap-2.6.3/openldap-2.6.3/libraries/librewrite/ldapmap.c:253: path: Falling through to end of if statement.
+openldap-2.6.3/openldap-2.6.3/libraries/librewrite/ldapmap.c:277: path: Jumping back to the beginning of the loop.
+openldap-2.6.3/openldap-2.6.3/libraries/librewrite/ldapmap.c:173: path: Condition "argc > 0", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/librewrite/ldapmap.c:174: path: Condition "strncasecmp(argv[0], "binddn=", 7UL /* sizeof ("binddn=") - 1 */) == 0", taking false branch.
+openldap-2.6.3/openldap-2.6.3/libraries/librewrite/ldapmap.c:201: path: Condition "strncasecmp(argv[0], "bindpw=", 7UL /* sizeof ("bindpw=") - 1 */) == 0", taking false branch.
+openldap-2.6.3/openldap-2.6.3/libraries/librewrite/ldapmap.c:208: path: Condition "strncasecmp(argv[0], "credentials=", 12UL /* sizeof ("credentials=") - 1 */) == 0", taking false branch.
+openldap-2.6.3/openldap-2.6.3/libraries/librewrite/ldapmap.c:215: path: Condition "strncasecmp(argv[0], "bindwhen=", 9UL /* sizeof ("bindwhen=") - 1 */) == 0", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/librewrite/ldapmap.c:218: path: Condition "strcasecmp(p, "now") == 0", taking false branch.
+openldap-2.6.3/openldap-2.6.3/libraries/librewrite/ldapmap.c:240: path: Condition "strcasecmp(p, "later") == 0", taking true branch.
+openldap-2.6.3/openldap-2.6.3/libraries/librewrite/ldapmap.c:244: double_initialization: "ldap_pvt_thread_mutex_init" initializes "data->lm_mutex" while it is already initialized.
+#  242|   
+#  243|   #ifdef USE_REWRITE_LDAP_PVT_THREADS
+#  244|-> 				ldap_pvt_thread_mutex_init( &data->lm_mutex );
+#  245|   #endif /* USE_REWRITE_LDAP_PVT_THREADS */
+#  246|   
+
+Error: ATOMICITY (CWE-667):
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:202: path: Condition "ldap_pvt_thread_mutex_lock(&client->c_mutex) != 0", taking false branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:205: path: Condition "pin", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:212: path: Condition "slap_debug & 8", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:212: path: Condition "ldap_syslog & 8", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:218: path: Condition "pinned_op", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:219: path: Condition "op->o_tag == pinned_op->o_tag", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:219: path: Falling through to end of if statement.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:237: path: Condition "op->o_upstream == NULL", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:237: path: Falling through to end of if statement.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:241: path: Condition "rc == 0", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:241: path: Falling through to end of if statement.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:262: path: Condition "(copy = ber_alloc()) == NULL", taking false branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:268: path: Condition "tag == 18446744073709551615UL /* (ber_tag_t)-1 */", taking false branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:272: path: Condition "version != 3", taking false branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:281: path: Condition "tag == 18446744073709551615UL /* (ber_tag_t)-1 */", taking false branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:287: path: Condition "!(client->c_auth.bv_val == NULL)", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:293: path: Condition "tag == 128UL /* (ber_tag_t)128U */", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:294: path: Condition "!(binddn.bv_len == 0)", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:304: path: Condition "!(client->c_sasl_bind_mech.bv_val == NULL)", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:308: path: Falling through to end of if statement.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:337: path: Condition "rc == 0", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:337: path: Falling through to end of if statement.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:341: path: Condition "ldap_pvt_thread_mutex_unlock(&client->c_mutex) != 0", taking false branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:343: path: Condition "pin", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:344: lock: Locking "&op->o_link_mutex".
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:344: path: Condition "ldap_pvt_thread_mutex_lock(&op->o_link_mutex) != 0", taking false branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:345: def: Assigning data that might be protected by the lock to "upstream".
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:346: unlock: Unlocking "&op->o_link_mutex". "upstream" might now be unreliable because other threads can now change the data that it depends on.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:346: path: Condition "ldap_pvt_thread_mutex_unlock(&op->o_link_mutex) != 0", taking false branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:349: path: Condition "upstream", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:350: path: Condition "ldap_pvt_thread_mutex_lock(&upstream->c_io_mutex) != 0", taking false branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:351: path: Condition "ldap_pvt_thread_mutex_lock(&upstream->c_mutex) != 0", taking false branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:352: path: Condition "!__atomic_load_8(&upstream->c_live, 2)", taking false branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:361: path: Condition "upstream", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:363: path: Falling through to end of if statement.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:375: path: Condition "!upstream", taking false branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:394: path: Condition "ber == NULL", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:394: path: Condition "(ber = ber_alloc()) == NULL", taking false branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:420: path: Condition "!pin", taking false branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:424: path: Condition "pin", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:426: path: Condition "tag == 128UL /* (ber_tag_t)128U */", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:429: path: Falling through to end of if statement.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:351: lockagain: Locking "&upstream->c_mutex" again.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/bind.c:439: use: Using an unreliable value of "upstream" inside the second locked section. If the data that "upstream" depends on was changed by another thread, this use might be incorrect.
+#  437|       }
+#  438|   
+#  439|->     op->o_upstream = upstream;
+#  440|       op->o_upstream_connid = upstream->c_connid;
+#  441|       op->o_upstream_msgid = upstream->c_next_msgid++;
+
+Error: ATOMICITY (CWE-667):
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/operation.c:650: path: Condition "slap_debug & 1", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/operation.c:650: path: Condition "ldap_syslog & 1", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/operation.c:652: path: Condition "!lload_timeout_api", taking false branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/operation.c:656: path: Condition "tier", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/operation.c:659: path: Condition "b != (void *)&tier->t_backends", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/operation.c:662: path: Condition "ldap_pvt_thread_mutex_lock(&b->b_mutex) != 0", taking false branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/operation.c:663: path: Condition "b->b_n_ops_executing == 0", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/operation.c:664: path: Condition "ldap_pvt_thread_mutex_unlock(&b->b_mutex) != 0", taking false branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/operation.c:665: path: Continuing loop.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/operation.c:659: path: Condition "b != (void *)&tier->t_backends", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/operation.c:662: path: Condition "ldap_pvt_thread_mutex_lock(&b->b_mutex) != 0", taking false branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/operation.c:663: path: Condition "b->b_n_ops_executing == 0", taking false branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/operation.c:670: path: Condition "slap_debug & 1", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/operation.c:670: path: Condition "ldap_syslog & 1", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/operation.c:676: path: Condition "slap_debug & 1", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/operation.c:676: path: Condition "ldap_syslog & 1", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/operation.c:683: path: Condition "ldap_pvt_thread_mutex_unlock(&b->b_mutex) != 0", taking false branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/operation.c:684: path: Jumping back to the beginning of the loop.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/operation.c:659: path: Condition "b != (void *)&tier->t_backends", taking false branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/operation.c:685: path: Jumping back to the beginning of the loop.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/operation.c:656: path: Condition "tier", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/operation.c:659: path: Condition "b != (void *)&tier->t_backends", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/operation.c:662: lock: Locking "&b->b_mutex".
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/operation.c:662: path: Condition "ldap_pvt_thread_mutex_lock(&b->b_mutex) != 0", taking false branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/operation.c:663: path: Condition "b->b_n_ops_executing == 0", taking false branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/operation.c:668: def: Assigning data that might be protected by the lock to "epoch".
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/operation.c:670: path: Condition "slap_debug & 1", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/operation.c:670: path: Condition "ldap_syslog & 1", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/operation.c:673: unlock: Unlocking "&b->b_mutex". "epoch" might now be unreliable because other threads can now change the data that it depends on.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/operation.c:676: path: Condition "slap_debug & 1", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/operation.c:676: path: Condition "ldap_syslog & 1", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/operation.c:673: lockagain: Locking "&b->b_mutex" again.
+openldap-2.6.3/openldap-2.6.3/servers/lloadd/operation.c:682: use: Using an unreliable value of "epoch" inside the second locked section. If the data that "epoch" depends on was changed by another thread, this use might be incorrect.
+#  680|                       connection_timeout, &threshold );
+#  681|   
+#  682|->             epoch_leave( epoch );
+#  683|               checked_unlock( &b->b_mutex );
+#  684|           }
+
+Error: ATOMICITY (CWE-667):
+openldap-2.6.3/openldap-2.6.3/servers/slapd/back-ldap/bind.c:795: path: Condition "li->li_isquarantined", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/back-ldap/bind.c:799: path: Condition "li->li_quarantine.ri_interval", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/back-ldap/bind.c:801: path: Condition "li->li_isquarantined == 1", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/back-ldap/bind.c:802: path: Condition "ri->ri_num[ri->ri_idx] == -2", taking false branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/back-ldap/bind.c:802: path: Condition "time(NULL) < ri->ri_last + ri->ri_interval[ri->ri_idx]", taking false branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/back-ldap/bind.c:804: path: Condition "!dont_retry", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/back-ldap/bind.c:805: path: Condition "slap_debug & -1", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/back-ldap/bind.c:805: path: Condition "ldap_syslog & -1", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/back-ldap/bind.c:815: path: Condition "dont_retry", taking false branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/back-ldap/bind.c:826: path: Condition "op->o_do_not_cache", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/back-ldap/bind.c:829: path: Condition "op->o_hdr->oh_conn->c_is_tls", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/back-ldap/bind.c:831: path: Falling through to end of if statement.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/back-ldap/bind.c:889: path: Condition "lookupconn", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/back-ldap/bind.c:891: lock: Locking "&li->li_conninfo.lai_mutex".
+openldap-2.6.3/openldap-2.6.3/servers/slapd/back-ldap/bind.c:892: path: Condition "(void *)lc_curr.lc_base.lcb_conn >= NULL", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/back-ldap/bind.c:892: path: Condition "(void *)lc_curr.lc_base.lcb_conn < (void *)0x6", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/back-ldap/bind.c:894: def: Assigning data that might be protected by the lock to "lc".
+openldap-2.6.3/openldap-2.6.3/servers/slapd/back-ldap/bind.c:894: path: Condition "lc", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/back-ldap/bind.c:898: path: Condition "!(lc->lc_lcflags & 0x10U)", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/back-ldap/bind.c:898: path: Condition "lc->lc_base.lcb_refcnt == 0", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/back-ldap/bind.c:899: path: Breaking from loop.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/back-ldap/bind.c:903: path: Condition "lc != NULL", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/back-ldap/bind.c:904: path: Condition "lc != *((struct lc_conn_priv_q *)li->li_conn_priv[(unsigned long)lc->lc_base.lcb_conn].lic_priv.tqh_last)->tqh_last", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/back-ldap/bind.c:907: path: Condition "lc->lc_q.tqe_next != NULL", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/back-ldap/bind.c:907: path: Falling through to end of if statement.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/back-ldap/bind.c:914: path: Falling through to end of if statement.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/back-ldap/bind.c:920: path: Falling through to end of if statement.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/back-ldap/bind.c:927: path: Condition "lc != NULL", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/back-ldap/bind.c:929: path: Condition "lc->lc_lcflags & 0x10U", taking false branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/back-ldap/bind.c:939: path: Condition "lc != NULL", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/back-ldap/bind.c:940: path: Condition "op->o_tag == 96UL /* (ber_tag_t)96U */", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/back-ldap/bind.c:942: path: Condition "li->li_idassert.si_flags & 2U", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/back-ldap/bind.c:942: path: Falling through to end of if statement.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/back-ldap/bind.c:949: unlock: Unlocking "&li->li_conninfo.lai_mutex". "lc" might now be unreliable because other threads can now change the data that it depends on.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/back-ldap/bind.c:953: path: Condition "lc == NULL", taking false branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/back-ldap/bind.c:1120: path: Condition "li->li_idle_timeout != 0", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/back-ldap/bind.c:1120: path: Condition "op->o_time > lc->lc_base.lcb_time + li->li_idle_timeout", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/back-ldap/bind.c:1127: lockagain: Locking "&li->li_conninfo.lai_mutex" again.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/back-ldap/bind.c:1133: use: Using an unreliable value of "lc" inside the second locked section. If the data that "lc" depends on was changed by another thread, this use might be incorrect.
+# 1131|   #endif /* LDAP_BACK_PRINT_CONNTREE */
+# 1132|   
+# 1133|-> 			(void)ldap_back_conn_delete( li, lc );
+# 1134|   			LDAP_BACK_CONN_TAINTED_SET( lc );
+# 1135|   
+
+Error: RETURN_LOCAL (CWE-562):
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/accesslog.c:2409: path: Condition "e", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/accesslog.c:2411: path: Condition "!a", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/accesslog.c:2414: path: Condition "a", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/accesslog.c:2419: local_ptr_assign_local: Assigning: "op->o_bd" = "&db" (address of local variable "db").
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/accesslog.c:2435: path: Condition "slap_debug & 0x4000", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/accesslog.c:2435: path: Condition "ldap_syslog & 0x4000", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/accesslog.c:2442: out_of_scope: Variable "db" goes out of scope.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/accesslog.c:2444: path: Condition "a", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/accesslog.c:2450: use_invalid_in_call: In "be_entry_release_rw(op, e, 0)", using "op->o_bd", which points to an out-of-scope variable "db".
+# 2448|   			slap_sort_csn_sids( li->li_mincsn, li->li_sids, li->li_numcsns, NULL );
+# 2449|   		}
+# 2450|-> 		be_entry_release_rw( op, e, 0 );
+# 2451|   	} else {
+# 2452|   		SlapReply rs = {REP_RESULT};
+
+Error: ATOMICITY (CWE-667):
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/refint.c:796: path: Condition "ip", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/refint.c:807: path: Jumping back to the beginning of the loop.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/refint.c:796: path: Condition "ip", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/refint.c:807: path: Jumping back to the beginning of the loop.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/refint.c:796: path: Condition "ip", taking false branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/refint.c:809: path: Condition "true", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/refint.c:813: path: Condition "ldap_pvt_thread_pool_pausing(&connection_pool) > 0", taking false branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/refint.c:819: lock: Locking "&id->qmutex".
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/refint.c:820: def: Assigning data that might be protected by the lock to "rq".
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/refint.c:821: path: Condition "rq", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/refint.c:823: path: Condition "!id->qhead", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/refint.c:826: unlock: Unlocking "&id->qmutex". "rq" might now be unreliable because other threads can now change the data that it depends on.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/refint.c:827: path: Condition "!rq", taking false branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/refint.c:830: path: Condition "fptr", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/refint.c:834: path: Condition "rq->do_sub", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/refint.c:835: path: Falling through to end of if statement.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/refint.c:838: path: Jumping back to the beginning of the loop.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/refint.c:830: path: Condition "fptr", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/refint.c:834: path: Condition "rq->do_sub", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/refint.c:835: path: Falling through to end of if statement.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/refint.c:838: path: Jumping back to the beginning of the loop.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/refint.c:830: path: Condition "fptr", taking false branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/refint.c:858: path: Condition "rq->db != NULL", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/refint.c:862: path: Falling through to end of if statement.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/refint.c:878: path: Condition "dp", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/refint.c:880: path: Condition "ra", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/refint.c:887: path: Jumping back to the beginning of the loop.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/refint.c:880: path: Condition "ra", taking false branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/refint.c:891: path: Jumping back to the beginning of the loop.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/refint.c:878: path: Condition "dp", taking false branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/refint.c:893: path: Condition "rc == 51", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/refint.c:896: lockagain: Locking "&id->qmutex" again.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/refint.c:898: use: Using an unreliable value of "rq" inside the second locked section. If the data that "rq" depends on was changed by another thread, this use might be incorrect.
+#  896|   			ldap_pvt_thread_mutex_lock( &id->qmutex );
+#  897|   			rq->next = id->qhead;
+#  898|-> 			id->qhead = rq;
+#  899|   			if ( !id->qtail )
+#  900|   				id->qtail = rq;
+
+Error: ATOMICITY (CWE-667):
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/syncprov.c:2010: path: Condition "!sl->sl_num", taking false branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/syncprov.c:2014: path: Condition "sl->sl_num > 0", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/syncprov.c:2014: path: Falling through to end of if statement.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/syncprov.c:2016: path: Condition "i < sl->sl_numcsns", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/syncprov.c:2018: path: Condition "minsid < sl->sl_sids[i]", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/syncprov.c:2020: path: Breaking from loop.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/syncprov.c:2031: path: Condition "i == sl->sl_numcsns", taking false branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/syncprov.c:2034: path: Condition "!do_play", taking false branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/syncprov.c:2052: lock: Locking "&sl->sl_mutex".
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/syncprov.c:2057: path: Condition "sl->sl_entries", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/syncprov.c:2057: path: Falling through to end of if statement.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/syncprov.c:2065: path: Condition "ndel > 0", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/syncprov.c:2065: path: Condition "entry", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/syncprov.c:2068: path: Condition "!entry", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/syncprov.c:2069: def: Assigning data that might be protected by the lock to "entry".
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/syncprov.c:2077: unlock: Unlocking "&sl->sl_mutex". "entry" might now be unreliable because other threads can now change the data that it depends on.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/syncprov.c:2079: path: Condition "k < srs->sr_state.numcsns", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/syncprov.c:2080: path: Condition "se->se_sid == srs->sr_state.sids[k]", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/syncprov.c:2081: path: Condition "se->se_csn.bv_len < srs->sr_state.ctxcsn[k].bv_len", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/syncprov.c:2082: path: Breaking from loop.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/syncprov.c:2085: path: Condition "ndel <= 0", taking true branch.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/syncprov.c:2087: path: Continuing loop.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/syncprov.c:2086: lockagain: Locking "&sl->sl_mutex" again.
+openldap-2.6.3/openldap-2.6.3/servers/slapd/overlays/syncprov.c:2133: use: Using an unreliable value of "entry" inside the second locked section. If the data that "entry" depends on was changed by another thread, this use might be incorrect.
+# 2131|   		}
+# 2132|   		ldap_pvt_thread_rdwr_rlock( &sl->sl_mutex );
+# 2133|-> 	} while ( (entry = ldap_tavl_next( entry, TAVL_DIR_RIGHT )) != NULL );
+# 2134|   	ldap_pvt_thread_rdwr_runlock( &sl->sl_mutex );
+# 2135|   	ldap_pvt_thread_rdwr_wlock( &sl->sl_mutex );
+
+Error: FORWARD_NULL (CWE-476):
+Python-3.9.18/Lib/_collections_abc.py:1007: path: Condition "start !== None", taking false branch.
+Python-3.9.18/Lib/_collections_abc.py:1007: null_check: Comparing "start" to a null-like value implies that "start" might be null-like.
+Python-3.9.18/Lib/_collections_abc.py:1009: path: Condition "stop !== None", taking true branch.
+Python-3.9.18/Lib/_collections_abc.py:1009: path: Condition "stop < 0", taking true branch.
+Python-3.9.18/Lib/_collections_abc.py:1012: alias_transfer: Assigning: "i" = "start".
+Python-3.9.18/Lib/_collections_abc.py:1013: path: Condition "stop === None", taking true branch.
+Python-3.9.18/Lib/_collections_abc.py:1016: path: Condition "v === value", taking false branch.
+Python-3.9.18/Lib/_collections_abc.py:1016: path: Condition "v == value", taking false branch.
+Python-3.9.18/Lib/_collections_abc.py:1020: invalid_operation: Invalid operation on null-like value "i".
+# 1018|               except IndexError:
+# 1019|                   break
+# 1020|->             i += 1
+# 1021|           raise ValueError
+# 1022|   
+
+Error: FORWARD_NULL (CWE-476):
+Python-3.9.18/Lib/codeop.py:73: path: Condition "line", taking true branch.
+Python-3.9.18/Lib/codeop.py:73: path: Condition "line[0] != "#"", taking true branch.
+Python-3.9.18/Lib/codeop.py:74: path: Jumping to label "__coverity_break_target_0".
+Python-3.9.18/Lib/codeop.py:79: assign_null: Assigning: "err1" = "None".
+Python-3.9.18/Lib/codeop.py:83: path: Falling through to end of try statement.
+Python-3.9.18/Lib/codeop.py:93: path: Falling through to end of try statement.
+Python-3.9.18/Lib/codeop.py:98: path: Falling through to end of try statement.
+Python-3.9.18/Lib/codeop.py:103: path: Condition "code", taking false branch.
+Python-3.9.18/Lib/codeop.py:105: path: Condition "!code1", taking true branch.
+Python-3.9.18/Lib/codeop.py:105: path: Condition "repr(err1) == repr(err2)", taking true branch.
+Python-3.9.18/Lib/codeop.py:106: null_throw: Throwing null exception "err1".
+#  104|               return code
+#  105|           if not code1 and repr(err1) == repr(err2):
+#  106|->             raise err1
+#  107|       finally:
+#  108|           err1 = err2 = None
+
+Error: FORWARD_NULL (CWE-476):
+Python-3.9.18/Lib/lib2to3/pgen2/tokenize.py:353: assign_null: Assigning: "contline" = "None".
+Python-3.9.18/Lib/lib2to3/pgen2/tokenize.py:362: path: Condition "1", taking true branch.
+Python-3.9.18/Lib/lib2to3/pgen2/tokenize.py:364: path: Falling through to end of try statement.
+Python-3.9.18/Lib/lib2to3/pgen2/tokenize.py:370: path: Condition "contstr", taking true branch.
+Python-3.9.18/Lib/lib2to3/pgen2/tokenize.py:371: path: Condition "!line", taking false branch.
+Python-3.9.18/Lib/lib2to3/pgen2/tokenize.py:374: path: Condition "endmatch", taking true branch.
+Python-3.9.18/Lib/lib2to3/pgen2/tokenize.py:376: invalid_operation: Invalid operation on null-like value "contline".
+#  374|               if endmatch:
+#  375|                   pos = end = endmatch.end(0)
+#  376|->                 yield (STRING, contstr + line[:end],
+#  377|                          strstart, (lnum, end), contline + line)
+#  378|                   contstr, needcont = '', 0
+
+Error: FORWARD_NULL (CWE-476):
+Python-3.9.18/Lib/lib2to3/pgen2/tokenize.py:353: assign_null: Assigning: "contline" = "None".
+Python-3.9.18/Lib/lib2to3/pgen2/tokenize.py:362: path: Condition "1", taking true branch.
+Python-3.9.18/Lib/lib2to3/pgen2/tokenize.py:364: path: Falling through to end of try statement.
+Python-3.9.18/Lib/lib2to3/pgen2/tokenize.py:370: path: Condition "contstr", taking true branch.
+Python-3.9.18/Lib/lib2to3/pgen2/tokenize.py:371: path: Condition "!line", taking false branch.
+Python-3.9.18/Lib/lib2to3/pgen2/tokenize.py:374: path: Condition "endmatch", taking false branch.
+Python-3.9.18/Lib/lib2to3/pgen2/tokenize.py:380: path: Condition "needcont", taking true branch.
+Python-3.9.18/Lib/lib2to3/pgen2/tokenize.py:380: path: Condition "line[-2:None:None] != "\\\n"", taking true branch.
+Python-3.9.18/Lib/lib2to3/pgen2/tokenize.py:380: path: Condition "line[-3:None:None] != "\\\r\n"", taking false branch.
+Python-3.9.18/Lib/lib2to3/pgen2/tokenize.py:388: invalid_operation: Invalid operation on null-like value "contline".
+#  386|               else:
+#  387|                   contstr = contstr + line
+#  388|->                 contline = contline + line
+#  389|                   continue
+#  390|   
+
+Error: FORWARD_NULL (CWE-476):
+Python-3.9.18/Lib/tokenize.py:433: assign_null: Assigning: "contline" = "None".
+Python-3.9.18/Lib/tokenize.py:436: path: Condition "encoding !== None", taking true branch.
+Python-3.9.18/Lib/tokenize.py:437: path: Condition "encoding == "utf-8-sig"", taking true branch.
+Python-3.9.18/Lib/tokenize.py:443: path: Condition "True", taking true branch.
+Python-3.9.18/Lib/tokenize.py:454: path: Condition "encoding !== None", taking true branch.
+Python-3.9.18/Lib/tokenize.py:459: path: Condition "contstr", taking true branch.
+Python-3.9.18/Lib/tokenize.py:460: path: Condition "!line", taking false branch.
+Python-3.9.18/Lib/tokenize.py:463: path: Condition "endmatch", taking true branch.
+Python-3.9.18/Lib/tokenize.py:465: invalid_operation: Invalid operation on null-like value "contline".
+#  463|               if endmatch:
+#  464|                   pos = end = endmatch.end(0)
+#  465|->                 yield TokenInfo(STRING, contstr + line[:end],
+#  466|                          strstart, (lnum, end), contline + line)
+#  467|                   contstr, needcont = '', 0
+
+Error: FORWARD_NULL (CWE-476):
+Python-3.9.18/Lib/tokenize.py:433: assign_null: Assigning: "contline" = "None".
+Python-3.9.18/Lib/tokenize.py:436: path: Condition "encoding !== None", taking true branch.
+Python-3.9.18/Lib/tokenize.py:437: path: Condition "encoding == "utf-8-sig"", taking true branch.
+Python-3.9.18/Lib/tokenize.py:443: path: Condition "True", taking true branch.
+Python-3.9.18/Lib/tokenize.py:454: path: Condition "encoding !== None", taking true branch.
+Python-3.9.18/Lib/tokenize.py:459: path: Condition "contstr", taking true branch.
+Python-3.9.18/Lib/tokenize.py:460: path: Condition "!line", taking false branch.
+Python-3.9.18/Lib/tokenize.py:463: path: Condition "endmatch", taking false branch.
+Python-3.9.18/Lib/tokenize.py:469: path: Condition "needcont", taking true branch.
+Python-3.9.18/Lib/tokenize.py:469: path: Condition "line[-2:None:None] != "\\\n"", taking true branch.
+Python-3.9.18/Lib/tokenize.py:469: path: Condition "line[-3:None:None] != "\\\r\n"", taking false branch.
+Python-3.9.18/Lib/tokenize.py:477: invalid_operation: Invalid operation on null-like value "contline".
+#  475|               else:
+#  476|                   contstr = contstr + line
+#  477|->                 contline = contline + line
+#  478|                   continue
+#  479|   
+
+Error: FORWARD_NULL (CWE-476):
+Python-3.9.18/Lib/turtle.py:2934: path: Condition "t11 === t12", taking true branch.
+Python-3.9.18/Lib/turtle.py:2934: path: Condition "t12 === t21", taking true branch.
+Python-3.9.18/Lib/turtle.py:2934: path: Condition "t21 === t22", taking true branch.
+Python-3.9.18/Lib/turtle.py:2934: path: Condition "t22 === None", taking false branch.
+Python-3.9.18/Lib/turtle.py:2937: path: Condition "t11 !== None", taking false branch.
+Python-3.9.18/Lib/turtle.py:2937: null_check: Comparing "t11" to a null-like value implies that "t11" might be null-like.
+Python-3.9.18/Lib/turtle.py:2938: path: Condition "t12 !== None", taking true branch.
+Python-3.9.18/Lib/turtle.py:2939: path: Condition "t21 !== None", taking true branch.
+Python-3.9.18/Lib/turtle.py:2940: path: Condition "t22 !== None", taking true branch.
+Python-3.9.18/Lib/turtle.py:2941: invalid_operation: Invalid operation on null-like value "t11".
+# 2939|           if t21 is not None: m21 = t21
+# 2940|           if t22 is not None: m22 = t22
+# 2941|->         if t11 * t22 - t12 * t21 == 0:
+# 2942|               raise TurtleGraphicsError("Bad shape transform matrix: must not be singular")
+# 2943|           self._shapetrafo = (m11, m12, m21, m22)
+
+Error: FORWARD_NULL (CWE-476):
+Python-3.9.18/Lib/turtle.py:2934: path: Condition "t11 === t12", taking true branch.
+Python-3.9.18/Lib/turtle.py:2934: path: Condition "t12 === t21", taking true branch.
+Python-3.9.18/Lib/turtle.py:2934: path: Condition "t21 === t22", taking true branch.
+Python-3.9.18/Lib/turtle.py:2934: path: Condition "t22 === None", taking false branch.
+Python-3.9.18/Lib/turtle.py:2937: path: Condition "t11 !== None", taking true branch.
+Python-3.9.18/Lib/turtle.py:2938: path: Condition "t12 !== None", taking false branch.
+Python-3.9.18/Lib/turtle.py:2938: null_check: Comparing "t12" to a null-like value implies that "t12" might be null-like.
+Python-3.9.18/Lib/turtle.py:2939: path: Condition "t21 !== None", taking true branch.
+Python-3.9.18/Lib/turtle.py:2940: path: Condition "t22 !== None", taking true branch.
+Python-3.9.18/Lib/turtle.py:2941: invalid_operation: Invalid operation on null-like value "t12".
+# 2939|           if t21 is not None: m21 = t21
+# 2940|           if t22 is not None: m22 = t22
+# 2941|->         if t11 * t22 - t12 * t21 == 0:
+# 2942|               raise TurtleGraphicsError("Bad shape transform matrix: must not be singular")
+# 2943|           self._shapetrafo = (m11, m12, m21, m22)
+
+Error: FORWARD_NULL (CWE-476):
+Python-3.9.18/Lib/turtle.py:2934: path: Condition "t11 === t12", taking true branch.
+Python-3.9.18/Lib/turtle.py:2934: path: Condition "t12 === t21", taking true branch.
+Python-3.9.18/Lib/turtle.py:2934: path: Condition "t21 === t22", taking false branch.
+Python-3.9.18/Lib/turtle.py:2937: path: Condition "t11 !== None", taking true branch.
+Python-3.9.18/Lib/turtle.py:2938: path: Condition "t12 !== None", taking false branch.
+Python-3.9.18/Lib/turtle.py:2939: path: Condition "t21 !== None", taking false branch.
+Python-3.9.18/Lib/turtle.py:2939: null_check: Comparing "t21" to a null-like value implies that "t21" might be null-like.
+Python-3.9.18/Lib/turtle.py:2940: path: Condition "t22 !== None", taking true branch.
+Python-3.9.18/Lib/turtle.py:2941: invalid_operation: Invalid operation on null-like value "t21".
+# 2939|           if t21 is not None: m21 = t21
+# 2940|           if t22 is not None: m22 = t22
+# 2941|->         if t11 * t22 - t12 * t21 == 0:
+# 2942|               raise TurtleGraphicsError("Bad shape transform matrix: must not be singular")
+# 2943|           self._shapetrafo = (m11, m12, m21, m22)
+
+Error: FORWARD_NULL (CWE-476):
+Python-3.9.18/Lib/turtle.py:2934: path: Condition "t11 === t12", taking true branch.
+Python-3.9.18/Lib/turtle.py:2934: path: Condition "t12 === t21", taking true branch.
+Python-3.9.18/Lib/turtle.py:2934: path: Condition "t21 === t22", taking false branch.
+Python-3.9.18/Lib/turtle.py:2937: path: Condition "t11 !== None", taking true branch.
+Python-3.9.18/Lib/turtle.py:2938: path: Condition "t12 !== None", taking true branch.
+Python-3.9.18/Lib/turtle.py:2939: path: Condition "t21 !== None", taking true branch.
+Python-3.9.18/Lib/turtle.py:2940: path: Condition "t22 !== None", taking false branch.
+Python-3.9.18/Lib/turtle.py:2940: null_check: Comparing "t22" to a null-like value implies that "t22" might be null-like.
+Python-3.9.18/Lib/turtle.py:2941: invalid_operation: Invalid operation on null-like value "t22".
+# 2939|           if t21 is not None: m21 = t21
+# 2940|           if t22 is not None: m22 = t22
+# 2941|->         if t11 * t22 - t12 * t21 == 0:
+# 2942|               raise TurtleGraphicsError("Bad shape transform matrix: must not be singular")
+# 2943|           self._shapetrafo = (m11, m12, m21, m22)
+
+Error: FORWARD_NULL (CWE-476):
+Python-3.9.18/Lib/uuid.py:170: path: Condition "({hex, bytes, bytes_le, fields, int}).count(None) != 4", taking false branch.
+Python-3.9.18/Lib/uuid.py:173: path: Condition "hex !== None", taking true branch.
+Python-3.9.18/Lib/uuid.py:176: path: Condition "len(hex) != 32", taking false branch.
+Python-3.9.18/Lib/uuid.py:179: path: Condition "bytes_le !== None", taking true branch.
+Python-3.9.18/Lib/uuid.py:180: path: Condition "len(bytes_le) != 16", taking false branch.
+Python-3.9.18/Lib/uuid.py:184: path: Condition "bytes !== None", taking true branch.
+Python-3.9.18/Lib/uuid.py:185: path: Condition "len(bytes) != 16", taking false branch.
+Python-3.9.18/Lib/uuid.py:187: path: Condition "isinstance(bytes, bytes_)", taking true branch.
+Python-3.9.18/Lib/uuid.py:189: path: Condition "fields !== None", taking false branch.
+Python-3.9.18/Lib/uuid.py:209: path: Condition "int !== None", taking false branch.
+Python-3.9.18/Lib/uuid.py:209: null_check: Comparing "int" to a null-like value implies that "int" might be null-like.
+Python-3.9.18/Lib/uuid.py:212: path: Condition "version !== None", taking true branch.
+Python-3.9.18/Lib/uuid.py:213: path: Condition "1 <= version", taking true branch.
+Python-3.9.18/Lib/uuid.py:213: path: Condition "version <= 5", taking true branch.
+Python-3.9.18/Lib/uuid.py:216: invalid_operation: Invalid operation on null-like value "int".
+#  214|                   raise ValueError('illegal version number')
+#  215|               # Set the variant to RFC 4122.
+#  216|->             int &= ~(0xc000 << 48)
+#  217|               int |= 0x8000 << 48
+#  218|               # Set the version number.
+
+Error: RETURN_LOCAL (CWE-562):
+Python-3.9.18/Modules/faulthandler.c:1181: local_ptr_assign_local: Assigning: "sp" = "(uintptr_t)&buffer" (address of local variable "buffer").
+Python-3.9.18/Modules/faulthandler.c:1183: path: Condition "sp < min_sp", taking true branch.
+Python-3.9.18/Modules/faulthandler.c:1184: return_local_addr_alias: Returning pointer "sp" which points to local variable "buffer".
+# 1182|       *depth += 1;
+# 1183|       if (sp < min_sp || max_sp < sp)
+# 1184|->         return sp;
+# 1185|       buffer[0] = 1;
+# 1186|       buffer[4095] = 0;
+
+Error: FORWARD_NULL (CWE-476):
+Python-3.9.18/Tools/i18n/msgfmt.py:100: assign_undefined: Assigning: "msgstr" = "undefined".
+Python-3.9.18/Tools/i18n/msgfmt.py:105: path: Condition "filename.endswith(".po")", taking true branch.
+Python-3.9.18/Tools/i18n/msgfmt.py:106: path: Falling through to end of if statement.
+Python-3.9.18/Tools/i18n/msgfmt.py:109: path: Condition "outfile === None", taking true branch.
+Python-3.9.18/Tools/i18n/msgfmt.py:132: path: Condition "l[0] == "#"", taking true branch.
+Python-3.9.18/Tools/i18n/msgfmt.py:132: path: Condition "section == STR", taking false branch.
+Python-3.9.18/Tools/i18n/msgfmt.py:137: path: Condition "l[None:2:None] == "#,"", taking true branch.
+Python-3.9.18/Tools/i18n/msgfmt.py:137: path: Condition ""fuzzy" in l", taking true branch.
+Python-3.9.18/Tools/i18n/msgfmt.py:140: path: Condition "l[0] == "#"", taking true branch.
+Python-3.9.18/Tools/i18n/msgfmt.py:141: path: Continuing loop.
+Python-3.9.18/Tools/i18n/msgfmt.py:132: path: Condition "l[0] == "#"", taking false branch.
+Python-3.9.18/Tools/i18n/msgfmt.py:137: path: Condition "l[None:2:None] == "#,"", taking true branch.
+Python-3.9.18/Tools/i18n/msgfmt.py:137: path: Condition ""fuzzy" in l", taking true branch.
+Python-3.9.18/Tools/i18n/msgfmt.py:140: path: Condition "l[0] == "#"", taking false branch.
+Python-3.9.18/Tools/i18n/msgfmt.py:143: path: Condition "l.startswith("msgctxt")", taking true branch.
+Python-3.9.18/Tools/i18n/msgfmt.py:144: path: Condition "section == STR", taking false branch.
+Python-3.9.18/Tools/i18n/msgfmt.py:190: path: Condition "!l", taking true branch.
+Python-3.9.18/Tools/i18n/msgfmt.py:191: path: Continuing loop.
+Python-3.9.18/Tools/i18n/msgfmt.py:132: path: Condition "l[0] == "#"", taking false branch.
+Python-3.9.18/Tools/i18n/msgfmt.py:137: path: Condition "l[None:2:None] == "#,"", taking true branch.
+Python-3.9.18/Tools/i18n/msgfmt.py:137: path: Condition ""fuzzy" in l", taking true branch.
+Python-3.9.18/Tools/i18n/msgfmt.py:140: path: Condition "l[0] == "#"", taking false branch.
+Python-3.9.18/Tools/i18n/msgfmt.py:143: path: Condition "l.startswith("msgctxt")", taking false branch.
+Python-3.9.18/Tools/i18n/msgfmt.py:149: path: Condition "l.startswith("msgid")", taking false branch.
+Python-3.9.18/Tools/i18n/msgfmt.py:163: path: Condition "l.startswith("msgid_plural")", taking false branch.
+Python-3.9.18/Tools/i18n/msgfmt.py:172: path: Condition "l.startswith("msgstr")", taking true branch.
+Python-3.9.18/Tools/i18n/msgfmt.py:174: path: Condition "l.startswith("msgstr[")", taking false branch.
+Python-3.9.18/Tools/i18n/msgfmt.py:183: path: Condition "is_plural", taking false branch.
+Python-3.9.18/Tools/i18n/msgfmt.py:190: path: Condition "!l", taking false branch.
+Python-3.9.18/Tools/i18n/msgfmt.py:193: path: Condition "section == CTXT", taking false branch.
+Python-3.9.18/Tools/i18n/msgfmt.py:195: path: Condition "section == ID", taking false branch.
+Python-3.9.18/Tools/i18n/msgfmt.py:197: path: Condition "section == STR", taking true branch.
+Python-3.9.18/Tools/i18n/msgfmt.py:198: invalid_operation: Invalid operation on null-like value "msgstr".
+#  196|               msgid += l.encode(encoding)
+#  197|           elif section == STR:
+#  198|->             msgstr += l.encode(encoding)
+#  199|           else:
+#  200|               print('Syntax error on %s:%d' % (infile, lno), \
+
+Error: FORWARD_NULL (CWE-476):
+Python-3.9.18/Tools/scripts/mailerdaemon.py:167: assign_undefined: Assigning: "list" = "undefined".
+Python-3.9.18/Tools/scripts/mailerdaemon.py:175: call: Calling the null-like value "list".
+#  173|   
+#  174|       # find all numeric file names and sort them
+#  175|->     files = list(filter(lambda fn, pat=pat: pat.match(fn) is not None, os.listdir('.')))
+#  176|       files.sort(sort_numeric)
+#  177|   
+
+Error: USE_AFTER_FREE (CWE-672):
+systemd-252/src/test/test-async.c:24: path: Condition "!!(fd >= 0)", taking true branch.
+systemd-252/src/test/test-async.c:25: closed_arg: "asynchronous_close(int)" closes "fd".
+systemd-252/src/test/test-async.c:27: path: Condition "!!(asynchronous_job(async_func, NULL) >= 0)", taking true branch.
+systemd-252/src/test/test-async.c:29: path: Condition "!!(asynchronous_sync(NULL) >= 0)", taking true branch.
+systemd-252/src/test/test-async.c:33: pass_closed_arg: Passing closed handle "fd" as an argument to "fcntl".
+#   31|           sleep(1);
+#   32|   
+#   33|->         assert_se(fcntl(fd, F_GETFD) == -1);
+#   34|           assert_se(test_async);
+#   35|   
+
+Error: USE_AFTER_FREE (CWE-672):
+systemd-252/src/test/test-fd-util.c:402: path: Condition "!!(fd1 >= 0)", taking true branch.
+systemd-252/src/test/test-fd-util.c:404: path: Condition "!!(fstat(fd1, &st1) >= 0)", taking true branch.
+systemd-252/src/test/test-fd-util.c:405: path: Condition "!!((st1.st_mode & 61440) == 16384)", taking true branch.
+systemd-252/src/test/test-fd-util.c:408: path: Condition "!!(fl >= 0)", taking true branch.
+systemd-252/src/test/test-fd-util.c:409: path: Condition "!!((~fl & 0x10000) == 0)", taking true branch.
+systemd-252/src/test/test-fd-util.c:410: path: Condition "!!((~fl & 0x200000) == 0)", taking true branch.
+systemd-252/src/test/test-fd-util.c:413: path: Condition "!!(fd2 >= 0)", taking true branch.
+systemd-252/src/test/test-fd-util.c:415: path: Condition "!!(fstat(fd2, &st2) >= 0)", taking true branch.
+systemd-252/src/test/test-fd-util.c:416: path: Condition "!!((st2.st_mode & 61440) == 16384)", taking true branch.
+systemd-252/src/test/test-fd-util.c:417: path: Condition "!!(st1.st_ino == st2.st_ino)", taking true branch.
+systemd-252/src/test/test-fd-util.c:418: path: Condition "!!(st1.st_rdev == st2.st_rdev)", taking true branch.
+systemd-252/src/test/test-fd-util.c:421: path: Condition "!!(fl >= 0)", taking true branch.
+systemd-252/src/test/test-fd-util.c:422: path: Condition "!!((~fl & 0x10000) == 0)", taking true branch.
+systemd-252/src/test/test-fd-util.c:423: path: Condition "!!!((~fl & 0x200000) == 0)", taking true branch.
+systemd-252/src/test/test-fd-util.c:428: path: Condition "!!(fd1 >= 0)", taking true branch.
+systemd-252/src/test/test-fd-util.c:430: path: Condition "!!(fstat(fd1, &st1) >= 0)", taking true branch.
+systemd-252/src/test/test-fd-util.c:431: path: Condition "!!((st1.st_mode & 61440) == 16384)", taking true branch.
+systemd-252/src/test/test-fd-util.c:432: path: Condition "!!(st1.st_ino == st2.st_ino)", taking true branch.
+systemd-252/src/test/test-fd-util.c:433: path: Condition "!!(st1.st_rdev == st2.st_rdev)", taking true branch.
+systemd-252/src/test/test-fd-util.c:436: path: Condition "!!(fl >= 0)", taking true branch.
+systemd-252/src/test/test-fd-util.c:437: path: Condition "!!((~fl & 0x10000) == 0)", taking true branch.
+systemd-252/src/test/test-fd-util.c:438: path: Condition "!!((~fl & 0x200000) == 0)", taking true branch.
+systemd-252/src/test/test-fd-util.c:444: path: Condition "!!(fd1 >= 0)", taking true branch.
+systemd-252/src/test/test-fd-util.c:446: path: Condition "!!(fstat(fd1, &st1) >= 0)", taking true branch.
+systemd-252/src/test/test-fd-util.c:447: path: Condition "!!((st1.st_mode & 61440) == 32768)", taking true branch.
+systemd-252/src/test/test-fd-util.c:450: path: Condition "!!(fl >= 0)", taking true branch.
+systemd-252/src/test/test-fd-util.c:451: path: Condition "!!!((~fl & 0x10000) == 0)", taking true branch.
+systemd-252/src/test/test-fd-util.c:452: path: Condition "!!((~fl & 0x200000) == 0)", taking true branch.
+systemd-252/src/test/test-fd-util.c:454: path: Condition "!!(fd_reopen(fd1, 589824 /* (0 | 0x10000) | 0x80000 */) == -20)", taking true branch.
+systemd-252/src/test/test-fd-util.c:456: path: Condition "!!(fd2 >= 0)", taking true branch.
+systemd-252/src/test/test-fd-util.c:458: path: Condition "!!(fstat(fd2, &st2) >= 0)", taking true branch.
+systemd-252/src/test/test-fd-util.c:459: path: Condition "!!((st2.st_mode & 61440) == 32768)", taking true branch.
+systemd-252/src/test/test-fd-util.c:460: path: Condition "!!(st1.st_ino == st2.st_ino)", taking true branch.
+systemd-252/src/test/test-fd-util.c:461: path: Condition "!!(st1.st_rdev == st2.st_rdev)", taking true branch.
+systemd-252/src/test/test-fd-util.c:464: path: Condition "!!(fl >= 0)", taking true branch.
+systemd-252/src/test/test-fd-util.c:465: path: Condition "!!!((~fl & 0x10000) == 0)", taking true branch.
+systemd-252/src/test/test-fd-util.c:466: path: Condition "!!!((~fl & 0x200000) == 0)", taking true branch.
+systemd-252/src/test/test-fd-util.c:470: path: Condition "!!(fd_reopen(fd2, 2686976 /* (0x10000 | 0x200000) | 0x80000 */) == -20)", taking true branch.
+systemd-252/src/test/test-fd-util.c:472: path: Condition "!!(fd1 >= 0)", taking true branch.
+systemd-252/src/test/test-fd-util.c:474: path: Condition "!!(fstat(fd1, &st1) >= 0)", taking true branch.
+systemd-252/src/test/test-fd-util.c:475: path: Condition "!!((st1.st_mode & 61440) == 32768)", taking true branch.
+systemd-252/src/test/test-fd-util.c:476: path: Condition "!!(st1.st_ino == st2.st_ino)", taking true branch.
+systemd-252/src/test/test-fd-util.c:477: path: Condition "!!(st1.st_rdev == st2.st_rdev)", taking true branch.
+systemd-252/src/test/test-fd-util.c:480: path: Condition "!!(fl >= 0)", taking true branch.
+systemd-252/src/test/test-fd-util.c:481: path: Condition "!!!((~fl & 0x10000) == 0)", taking true branch.
+systemd-252/src/test/test-fd-util.c:482: path: Condition "!!((~fl & 0x200000) == 0)", taking true branch.
+systemd-252/src/test/test-fd-util.c:485: closed_arg: "safe_close(int)" closes "fd1".
+systemd-252/src/test/test-fd-util.c:486: pass_closed_arg: Passing closed handle "fd1" as an argument to "fd_reopen".
+#  484|           /* Also check the right error is generated if the fd is already closed */
+#  485|           safe_close(fd1);
+#  486|->         assert_se(fd_reopen(fd1, O_RDONLY|O_CLOEXEC) == -EBADF);
+#  487|           fd1 = -1;
+#  488|   }
+
+Error: INVALIDATE_ITERATOR (CWE-119):
+tzdata-2023c/javazic-1.8/build/tools/tzdb/ZoneRulesBuilder.java:523: path: Condition "lastRuleList.size() == 1", taking false branch.
+tzdata-2023c/javazic-1.8/build/tools/tzdb/ZoneRulesBuilder.java:528: path: Condition "windowEnd.equals(build.tools.tzdb.LocalDateTime.MAX)", taking true branch.
+tzdata-2023c/javazic-1.8/build/tools/tzdb/ZoneRulesBuilder.java:531: enhanced_for: Starting an iteration on "lastRuleList".
+tzdata-2023c/javazic-1.8/build/tools/tzdb/ZoneRulesBuilder.java:531: path: Iterating over another element of "lastRuleList".
+tzdata-2023c/javazic-1.8/build/tools/tzdb/ZoneRulesBuilder.java:532: modify_iterable: Call to "addRule" modifies "Iterable" "this.lastRuleList" which invalidates the iterator for the loop on that "Iterable".
+tzdata-2023c/javazic-1.8/build/tools/tzdb/ZoneRulesBuilder.java:535: path: Jumping back to the beginning of the loop.
+tzdata-2023c/javazic-1.8/build/tools/tzdb/ZoneRulesBuilder.java:531: invalid_loop: Attempting to obtain another element from "lastRuleList" after it's been modified.
+#  529|                   // setup at least one real rule, which closes off other windows nicely
+#  530|                   maxLastRuleStartYear = Math.max(maxLastRuleStartYear, windowStartYear) + 1;
+#  531|->                 for (TZRule lastRule : lastRuleList) {
+#  532|                       addRule(lastRule.year, maxLastRuleStartYear, lastRule.month, lastRule.dayOfMonthIndicator,
+#  533|                           lastRule.dayOfWeek, lastRule.time, lastRule.timeEndOfDay, lastRule.timeDefinition, lastRule.savingAmountSecs);
+
+Error: INVALIDATE_ITERATOR (CWE-119):
+tzdata-2023c/javazic-1.8/build/tools/tzdb/ZoneRulesBuilder.java:523: path: Condition "lastRuleList.size() == 1", taking false branch.
+tzdata-2023c/javazic-1.8/build/tools/tzdb/ZoneRulesBuilder.java:528: path: Condition "windowEnd.equals(build.tools.tzdb.LocalDateTime.MAX)", taking false branch.
+tzdata-2023c/javazic-1.8/build/tools/tzdb/ZoneRulesBuilder.java:544: enhanced_for: Starting an iteration on "lastRuleList".
+tzdata-2023c/javazic-1.8/build/tools/tzdb/ZoneRulesBuilder.java:544: path: Iterating over another element of "lastRuleList".
+tzdata-2023c/javazic-1.8/build/tools/tzdb/ZoneRulesBuilder.java:545: modify_iterable: Call to "addRule" modifies "Iterable" "this.lastRuleList" which invalidates the iterator for the loop on that "Iterable".
+tzdata-2023c/javazic-1.8/build/tools/tzdb/ZoneRulesBuilder.java:547: path: Jumping back to the beginning of the loop.
+tzdata-2023c/javazic-1.8/build/tools/tzdb/ZoneRulesBuilder.java:544: invalid_loop: Attempting to obtain another element from "lastRuleList" after it's been modified.
+#  542|                   // convert all within the endYear limit
+#  543|                   int endYear = windowEnd.getYear();
+#  544|->                 for (TZRule lastRule : lastRuleList) {
+#  545|                       addRule(lastRule.year, endYear + 1, lastRule.month, lastRule.dayOfMonthIndicator,
+#  546|                           lastRule.dayOfWeek, lastRule.time, lastRule.timeEndOfDay, lastRule.timeDefinition, lastRule.savingAmountSecs);
+
+Error: RESOURCE_LEAK (CWE-404):
+tzdata-2023c/javazic/rht/tools/javazic/Gen.java:63: path: Condition "!outputDir.endsWith(java.io.File.separator)", taking true branch.
+tzdata-2023c/javazic/rht/tools/javazic/Gen.java:71: path: Condition "index != -1", taking false branch.
+tzdata-2023c/javazic/rht/tools/javazic/Gen.java:77: new_resource: "new java.io.FileOutputStream(outputDir + zonefile.substring(index + 1))" creates a new resource.
+tzdata-2023c/javazic/rht/tools/javazic/Gen.java:77: var_assign: Assigning: "fos" = resource returned from "new java.io.FileOutputStream(outputDir + zonefile.substring(index + 1))".
+tzdata-2023c/javazic/rht/tools/javazic/Gen.java:79: var_assign: Assigning: "dos" = resource returned from "new java.io.DataOutputStream(fos)".
+tzdata-2023c/javazic/rht/tools/javazic/Gen.java:82: noescape: Resource "dos" is not closed or saved in "write".
+tzdata-2023c/javazic/rht/tools/javazic/Gen.java:82: path: Throwing "java.io.IOException" (or subclass) from call to "write".
+tzdata-2023c/javazic/rht/tools/javazic/Gen.java:82: leaked_resource: Variable "dos" going out of scope leaks the resource it refers to.
+tzdata-2023c/javazic/rht/tools/javazic/Gen.java:82: leaked_resource: Variable "fos" going out of scope leaks the resource it refers to.
+#   80|   
+#   81|   	    /* Output Label */
+#   82|-> 	    dos.write(ZoneInfoFile.JAVAZI_LABEL, 0,
+#   83|   		      ZoneInfoFile.JAVAZI_LABEL.length);
+#   84|   
+
+Error: FORWARD_NULL (CWE-476):
+tzdata-2023c/javazic/rht/tools/javazic/Gen.java:63: path: Condition "!outputDir.endsWith(java.io.File.separator)", taking true branch.
+tzdata-2023c/javazic/rht/tools/javazic/Gen.java:71: path: Condition "index != -1", taking false branch.
+tzdata-2023c/javazic/rht/tools/javazic/Gen.java:89: path: Condition "transitions != null", taking true branch.
+tzdata-2023c/javazic/rht/tools/javazic/Gen.java:93: path: Condition "dstOffsets == null", taking true branch.
+tzdata-2023c/javazic/rht/tools/javazic/Gen.java:93: path: Condition "offsets != null", taking false branch.
+tzdata-2023c/javazic/rht/tools/javazic/Gen.java:93: path: Condition "dstOffsets != null", taking false branch.
+tzdata-2023c/javazic/rht/tools/javazic/Gen.java:93: var_compare_op: Comparing "dstOffsets" to null implies that "dstOffsets" might be null.
+tzdata-2023c/javazic/rht/tools/javazic/Gen.java:104: path: Condition "i < size", taking true branch.
+tzdata-2023c/javazic/rht/tools/javazic/Gen.java:108: null_method_call: Calling a method on null object "dstOffsets".
+#  106|   		     * (NOT: offset's index is 0.)
+#  107|   		     */
+#  108|-> 		    if ((dstoffset =
+#  109|   			 ((Integer)dstOffsets.get(i)).intValue()) == -1) {
+#  110|   			dstoffset = 0;
+
+Error: RESOURCE_LEAK (CWE-404):
+tzdata-2023c/javazic/rht/tools/javazic/Gen.java:205: path: Condition "!outputDir.endsWith(java.io.File.separator)", taking true branch.
+tzdata-2023c/javazic/rht/tools/javazic/Gen.java:213: new_resource: "new java.io.RandomAccessFile(outputDir + "ZoneInfoMappings", "rw")" creates a new resource.
+tzdata-2023c/javazic/rht/tools/javazic/Gen.java:213: var_assign: Assigning: "raf" = resource returned from "new java.io.RandomAccessFile(outputDir + "ZoneInfoMappings", "rw")".
+tzdata-2023c/javazic/rht/tools/javazic/Gen.java:218: path: Condition "roi == null", taking false branch.
+tzdata-2023c/javazic/rht/tools/javazic/Gen.java:226: path: Condition "roit == null", taking false branch.
+tzdata-2023c/javazic/rht/tools/javazic/Gen.java:226: path: Condition "roit.size() != roi_size", taking false branch.
+tzdata-2023c/javazic/rht/tools/javazic/Gen.java:232: noescape: Resource "raf" is not closed or saved in "write".
+tzdata-2023c/javazic/rht/tools/javazic/Gen.java:232: path: Throwing "java.io.IOException" (or subclass) from call to "write".
+tzdata-2023c/javazic/rht/tools/javazic/Gen.java:232: leaked_resource: Variable "raf" going out of scope leaks the resource it refers to.
+#  230|   
+#  231|   	    /* Output Label */
+#  232|-> 	    raf.write(ZoneInfoFile.JAVAZM_LABEL, 0,
+#  233|   		      ZoneInfoFile.JAVAZM_LABEL.length);
+#  234|   
+
+Error: RESOURCE_LEAK (CWE-404):
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:136: path: Condition "set == null", taking true branch.
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:143: path: Condition "!outputDir.endsWith(java.io.File.separator)", taking true branch.
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:149: path: Condition "index != -1", taking false branch.
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:158: path: Condition "index != -1", taking true branch.
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:166: path: Condition "mapList == null", taking true branch.
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:166: path: Condition "rht.tools.javazic.Main.getMapFile() != null", taking true branch.
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:167: new_resource: "new java.io.FileReader(rht.tools.javazic.Main.getMapFile())" creates a new resource.
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:167: var_assign: Assigning: "fr" = resource returned from "new java.io.FileReader(rht.tools.javazic.Main.getMapFile())".
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:168: var_assign: Assigning: "in" = resource returned from "new java.io.BufferedReader(fr)".
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:171: noescape: Resource "in" is not closed or saved in "readLine".
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:171: path: Throwing "java.io.IOException" (or subclass) from call to "readLine".
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:171: leaked_resource: Variable "in" going out of scope leaks the resource it refers to.
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:171: leaked_resource: Variable "fr" going out of scope leaks the resource it refers to.
+#  169|   		mapList = new HashMap<String,LatitudeAndLongitude>();
+#  170|   		String line;
+#  171|-> 		while ((line = in.readLine()) != null) {
+#  172|   		    // skip blank and comment lines
+#  173|   		    if (line.length() == 0 || line.charAt(0) == '#') {
+
+Error: RESOURCE_LEAK (CWE-404):
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:136: path: Condition "set == null", taking true branch.
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:143: path: Condition "!outputDir.endsWith(java.io.File.separator)", taking true branch.
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:149: path: Condition "index != -1", taking false branch.
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:158: path: Condition "index != -1", taking true branch.
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:166: path: Condition "mapList == null", taking true branch.
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:166: path: Condition "rht.tools.javazic.Main.getMapFile() != null", taking true branch.
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:171: path: Condition "(line = in.readLine()) != null", taking false branch.
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:187: new_resource: "new java.io.FileWriter(outputDir + zonefile.substring(index + 1))" creates a new resource.
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:187: var_assign: Assigning: "fw" = resource returned from "new java.io.FileWriter(outputDir + zonefile.substring(index + 1))".
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:188: var_assign: Assigning: "out" = resource returned from "new java.io.BufferedWriter(fw)".
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:190: noescape: Resource "out" is not closed or saved in "write".
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:190: path: Throwing "java.io.IOException" (or subclass) from call to "write".
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:190: leaked_resource: Variable "out" going out of scope leaks the resource it refers to.
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:190: leaked_resource: Variable "fw" going out of scope leaks the resource it refers to.
+#  188|   	    BufferedWriter out = new BufferedWriter(fw);
+#  189|   
+#  190|-> 	    out.write(header1 + new Date() + header3 + zonename + header4);
+#  191|   	    out.write(body1 + "<FONT size=\"+2\"><B>" + zonename + "</B></FONT>");
+#  192|   	    LatitudeAndLongitude location = (LatitudeAndLongitude)mapList.get(zonename);
+
+Error: FORWARD_NULL (CWE-476):
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:136: path: Condition "set == null", taking true branch.
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:143: path: Condition "!outputDir.endsWith(java.io.File.separator)", taking true branch.
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:149: path: Condition "index != -1", taking false branch.
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:158: path: Condition "index != -1", taking true branch.
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:166: path: Condition "mapList == null", taking true branch.
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:166: var_compare_op: Comparing "mapList" to null implies that "mapList" might be null.
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:166: path: Condition "rht.tools.javazic.Main.getMapFile() != null", taking false branch.
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:192: null_method_call: Calling a method on null object "mapList".
+#  190|   	    out.write(header1 + new Date() + header3 + zonename + header4);
+#  191|   	    out.write(body1 + "<FONT size=\"+2\"><B>" + zonename + "</B></FONT>");
+#  192|-> 	    LatitudeAndLongitude location = (LatitudeAndLongitude)mapList.get(zonename);
+#  193|   	    if (location != null) {
+#  194|   		int deg, min, sec;
+
+Error: RESOURCE_LEAK (CWE-404):
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:401: path: Condition "a == null", taking false branch.
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:409: path: Condition "!outputDir.endsWith(java.io.File.separator)", taking true branch.
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:418: new_resource: "new java.io.FileWriter(outputDir + "index.html", false)" creates a new resource.
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:418: var_assign: Assigning: "fw1" = resource returned from "new java.io.FileWriter(outputDir + "index.html", false)".
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:419: var_assign: Assigning: "out1" = resource returned from "new java.io.BufferedWriter(fw1)".
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:421: noescape: Resource "out1" is not closed or saved in "write".
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:421: path: Throwing "java.io.IOException" (or subclass) from call to "write".
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:421: leaked_resource: Variable "out1" going out of scope leaks the resource it refers to.
+tzdata-2023c/javazic/rht/tools/javazic/GenDoc.java:421: leaked_resource: Variable "fw1" going out of scope leaks the resource it refers to.
+#  419|   	    out1 = new BufferedWriter(fw1);
+#  420|   
+#  421|-> 	    out1.write(header1 + new Date() + header2 + Main.getVersionName() +
+#  422|   		       header4 +
+#  423|   		       "<FRAMESET cols=\"20%,80%\">\n" +
+
+Error: RESOURCE_LEAK (CWE-404):
+tzdata-2023c/javazic/rht/tools/javazic/Simple.java:107: path: Condition "!outputDir.endsWith(java.io.File.separator)", taking true branch.
+tzdata-2023c/javazic/rht/tools/javazic/Simple.java:112: new_resource: "new java.io.FileWriter(outputDir + "TimeZoneData.java", false)" creates a new resource.
+tzdata-2023c/javazic/rht/tools/javazic/Simple.java:112: var_assign: Assigning: "fw" = resource returned from "new java.io.FileWriter(outputDir + "TimeZoneData.java", false)".
+tzdata-2023c/javazic/rht/tools/javazic/Simple.java:114: var_assign: Assigning: "out" = resource returned from "new java.io.BufferedWriter(fw)".
+tzdata-2023c/javazic/rht/tools/javazic/Simple.java:116: noescape: Resource "out" is not closed or saved in "write".
+tzdata-2023c/javazic/rht/tools/javazic/Simple.java:116: path: Throwing "java.io.IOException" (or subclass) from call to "write".
+tzdata-2023c/javazic/rht/tools/javazic/Simple.java:116: leaked_resource: Variable "out" going out of scope leaks the resource it refers to.
+tzdata-2023c/javazic/rht/tools/javazic/Simple.java:116: leaked_resource: Variable "fw" going out of scope leaks the resource it refers to.
+#  114|   	    BufferedWriter out = new BufferedWriter(fw);
+#  115|   
+#  116|-> 	    out.write("import java.util.SimpleTimeZone;\n\n");
+#  117|   	    out.write("    static SimpleTimeZone zones[] = {\n");
+#  118|   
+
+Error: RESOURCE_LEAK (CWE-404):
+tzdata-2023c/javazic/rht/util/calendar/LocalGregorianCalendar.java:129: new_resource: "new java.io.FileInputStream(fname)" creates a new resource.
+tzdata-2023c/javazic/rht/util/calendar/LocalGregorianCalendar.java:129: noescape: Resource "new java.io.FileInputStream(fname)" is not closed or saved in "load".
+tzdata-2023c/javazic/rht/util/calendar/LocalGregorianCalendar.java:129: leaked_resource: Failing to save or close resource created by "new java.io.FileInputStream(fname)" leaks it.
+#  127|   		public Object run() throws IOException {
+#  128|   		    Properties props = new Properties();
+#  129|-> 		    props.load(new FileInputStream(fname));
+#  130|   		    return props;
+#  131|   		}
+
+Error: NULL_RETURNS (CWE-476):
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfo.java:525: returned_null: "getZoneIDs" returns "null" (checked 0 out of 2 times).
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfo.java:525: var_assigned: Assigning: "idList" = "null" return value from "getZoneIDs".
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfo.java:527: path: Condition "excluded != null", taking true branch.
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfo.java:529: null_method_call: Calling a method on null object "idList".
+#  527|   	if (excluded != null) {
+#  528|   	    // List all zones from the idList and excluded lists
+#  529|-> 	    List<String> list = new ArrayList<String>(idList.size() + excluded.size());
+#  530|   	    list.addAll(idList);
+#  531|   	    list.addAll(excluded);
+
+Error: NULL_RETURNS (CWE-476):
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfo.java:525: returned_null: "getZoneIDs" returns "null" (checked 0 out of 2 times).
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfo.java:525: var_assigned: Assigning: "idList" = "null" return value from "getZoneIDs".
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfo.java:527: path: Condition "excluded != null", taking false branch.
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfo.java:534: null_method_call: Calling a method on null object "idList".
+#  532|   	    idList = list;
+#  533|   	}
+#  534|-> 	String[] ids = new String[idList.size()];
+#  535|   	return idList.toArray(ids);
+#  536|       }
+
+Error: NULL_RETURNS (CWE-476):
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfo.java:551: returned_null: "getRawOffsets" returns "null" (checked 0 out of 1 times).
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfo.java:551: var_assigned: Assigning: "rawOffsets" = "null" return value from "getRawOffsets".
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfo.java:554: null_array_length: Accessing length of null array "rawOffsets".
+#  552|   
+#  553|       loop:
+#  554|-> 	for (int index = 0; index < rawOffsets.length; index++) {
+#  555|   	    if (rawOffsets[index] == rawOffset) {
+#  556|   		byte[] indices = ZoneInfoFile.getRawOffsetIndices();
+
+Error: NULL_RETURNS (CWE-476):
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfo.java:554: path: Condition "index < rawOffsets.length", taking true branch.
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfo.java:555: path: Condition "rawOffsets[index] == rawOffset", taking true branch.
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfo.java:557: path: Condition "i < indices.length", taking true branch.
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfo.java:558: path: Condition "indices[i] == index", taking false branch.
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfo.java:565: path: Jumping back to the beginning of the loop.
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfo.java:557: path: Condition "i < indices.length", taking false branch.
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfo.java:567: path: Jumping back to the beginning of the loop.
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfo.java:554: path: Condition "index < rawOffsets.length", taking true branch.
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfo.java:555: path: Condition "rawOffsets[index] == rawOffset", taking true branch.
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfo.java:556: returned_null: "getRawOffsetIndices" returns "null" (checked 0 out of 1 times).
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfo.java:556: var_assigned: Assigning: "indices" = "null" return value from "getRawOffsetIndices".
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfo.java:557: null_array_length: Accessing length of null array "indices".
+#  555|   	    if (rawOffsets[index] == rawOffset) {
+#  556|   		byte[] indices = ZoneInfoFile.getRawOffsetIndices();
+#  557|-> 		for (int i = 0; i < indices.length; i++) {
+#  558|   		    if (indices[i] == index) {
+#  559|   			matched.add(IDs.get(i++));
+
+Error: NULL_RETURNS (CWE-476):
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfo.java:550: returned_null: "getZoneIDs" returns "null" (checked 0 out of 2 times).
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfo.java:550: var_assigned: Assigning: "IDs" = "null" return value from "getZoneIDs".
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfo.java:554: path: Condition "index < rawOffsets.length", taking true branch.
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfo.java:555: path: Condition "rawOffsets[index] == rawOffset", taking true branch.
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfo.java:557: path: Condition "i < indices.length", taking true branch.
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfo.java:558: path: Condition "indices[i] == index", taking true branch.
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfo.java:559: null_method_call: Calling a method on null object "IDs".
+#  557|   		for (int i = 0; i < indices.length; i++) {
+#  558|   		    if (indices[i] == index) {
+#  559|-> 			matched.add(IDs.get(i++));
+#  560|   			while (i < indices.length && indices[i] == index) {
+#  561|   			    matched.add(IDs.get(i++));
+
+Error: NULL_RETURNS (CWE-476):
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfo.java:601: path: Condition "zi == null", taking true branch.
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfo.java:604: returned_null: "getAliasTable" returns "null" (checked 0 out of 1 times).
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfo.java:604: var_assigned: Assigning: "map" = "null" return value from "getAliasTable".
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfo.java:606: null_method_call: Calling a method on null object "map".
+#  604|   		Map<String, String> map = getAliasTable();
+#  605|   		String alias = ID;
+#  606|-> 		while ((alias = map.get(alias)) != null) {
+#  607|   		    zi = ZoneInfoFile.getZoneInfo(alias);
+#  608|   		    if (zi != null) {
+
+Error: RESOURCE_LEAK (CWE-404):
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfoFile.java:1045: path: Condition "!file.canRead()", taking false branch.
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfoFile.java:1051: new_resource: "new java.io.FileInputStream(file)" creates a new resource.
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfoFile.java:1051: var_assign: Assigning: "fis" = resource returned from "new java.io.FileInputStream(file)".
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfoFile.java:1053: noescape: Resource "fis" is not closed or saved in "read".
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfoFile.java:1053: path: Throwing "java.io.IOException" (or subclass) from call to "read"; exiting method with uncaught exception.
+tzdata-2023c/javazic/rht/util/calendar/ZoneInfoFile.java:1053: leaked_resource: Variable "fis" going out of scope leaks the resource it refers to.
+# 1051|   		    FileInputStream fis = new FileInputStream(file);
+# 1052|   
+# 1053|-> 		    if (fis.read(buf) != filesize) {
+# 1054|   			fis.close();
+# 1055|   			throw new IOException("read error on " + fname);

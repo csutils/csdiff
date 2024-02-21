@@ -189,25 +189,6 @@ Error: NULL_RETURNS:
 /builddir/build/BUILD/libssh-0.5.0/src/messages.c:908: var_assigned: Assigning: "msg" = null return value from "ssh_message_new".
 /builddir/build/BUILD/libssh-0.5.0/src/messages.c:909: dereference: Dereferencing a null pointer "msg".
 
-Error: NULL_RETURNS:
-/builddir/build/BUILD/libssh-0.5.0/src/server.c:809: returned_null: Function "ssh_string_from_char" returns null (checked 79 out of 87 times).
-/builddir/build/BUILD/libssh-0.5.0/src/string.c:99: return_null: Explicitly returning NULL.
-/builddir/build/BUILD/libssh-0.5.0/src/auth.c:381: example_assign: Assigning: "user" = return value from "ssh_string_from_char(session->username)".
-/builddir/build/BUILD/libssh-0.5.0/src/auth.c:386: example_checked: "user" has its value checked in "user == NULL".
-/builddir/build/BUILD/libssh-0.5.0/src/auth.c:383: example_assign: Assigning: "user" = return value from "ssh_string_from_char(username)".
-/builddir/build/BUILD/libssh-0.5.0/src/auth.c:386: example_checked: "user" has its value checked in "user == NULL".
-/builddir/build/BUILD/libssh-0.5.0/src/auth.c:417: example_assign: Assigning: "method" = return value from "ssh_string_from_char("none")".
-/builddir/build/BUILD/libssh-0.5.0/src/auth.c:418: example_checked: "method" has its value checked in "method == NULL".
-/builddir/build/BUILD/libssh-0.5.0/src/auth.c:422: example_assign: Assigning: "service" = return value from "ssh_string_from_char("ssh-connection")".
-/builddir/build/BUILD/libssh-0.5.0/src/auth.c:423: example_checked: "service" has its value checked in "service == NULL".
-/builddir/build/BUILD/libssh-0.5.0/src/auth.c:519: example_assign: Assigning: "user" = return value from "ssh_string_from_char(session->username)".
-/builddir/build/BUILD/libssh-0.5.0/src/auth.c:524: example_checked: "user" has its value checked in "user == NULL".
-/builddir/build/BUILD/libssh-0.5.0/src/server.c:809: var_assigned: Assigning: "algo" = null return value from "ssh_string_from_char".
-/builddir/build/BUILD/libssh-0.5.0/src/server.c:811: dereference: Dereferencing a pointer that might be null "algo" when calling "ssh_message_auth_reply_pk_ok".
-/builddir/build/BUILD/libssh-0.5.0/src/server.c:796: deref_parm_in_call: Function "buffer_add_ssh_string" dereferences parameter "algo".
-/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:213: deref_parm_in_call: Function "buffer_add_data" dereferences parameter "string".
-/builddir/build/BUILD/libssh-0.5.0/src/buffer.c:191: deref_parm_in_call: Function "memcpy" dereferences parameter "data". (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)
-
 Error: RESOURCE_LEAK:
 /builddir/build/BUILD/libssh-0.5.0/src/auth.c:1222: alloc_fn: Calling allocation function "publickey_to_string".
 /builddir/build/BUILD/libssh-0.5.0/src/keys.c:717: alloc_fn: Storage is returned from allocation function "ssh_string_new".

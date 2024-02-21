@@ -333,6 +333,22 @@ Error: MISSING_BREAK:
 /builddir/build/BUILD/ATLAS/tune/blas/level3/tsmfc.c:106: fallthrough: The above case falls through to this one.
 
 Error: NULL_RETURNS:
+/builddir/build/BUILD/ATLAS/CONFIG/src/SpewMakeInc.c:409: example_assign: Assigning: "fpout" = return value from "fopen(outfile, "w")".
+/builddir/build/BUILD/ATLAS/CONFIG/src/SpewMakeInc.c:410: example_checked: "fpout" has its value checked in "fpout".
+/builddir/build/BUILD/ATLAS/CONFIG/src/atlconf_misc.c:329: example_assign: Assigning: "fp" = return value from "fopen(tnam, "r")".
+/builddir/build/BUILD/ATLAS/CONFIG/src/atlconf_misc.c:330: example_checked: "fp" has its value checked in "fp".
+/builddir/build/BUILD/ATLAS/CONFIG/src/atlconf_misc.c:380: example_assign: Assigning: "fp" = return value from "fopen(fnam, "r")".
+/builddir/build/BUILD/ATLAS/CONFIG/src/atlconf_misc.c:381: example_checked: "fp" has its value checked in "fp == NULL".
+/builddir/build/BUILD/ATLAS/CONFIG/src/atlconf_misc.c:414: example_assign: Assigning: "fp" = return value from "fopen(fnam, "r")".
+/builddir/build/BUILD/ATLAS/CONFIG/src/atlconf_misc.c:415: example_checked: "fp" has its value checked in "fp == NULL".
+/builddir/build/BUILD/ATLAS/CONFIG/src/atlconf_misc.c:169: example_assign: Assigning: "fp" = return value from "fopen(nam, "r")".
+/builddir/build/BUILD/ATLAS/CONFIG/src/atlconf_misc.c:170: example_checked: "fp" has its value checked in "fp == NULL".
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:718: returned_null: Function "fopen" returns null (checked 233 out of 267 times).
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:718: var_assigned: Assigning: "fp" = null return value from "fopen".
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:719: dereference: Dereferencing a pointer that might be null "fp" when calling "PutInstLogFile".
+/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:665: deref_parm_in_call: Function "fprintf" dereferences parameter "fp".
+
+Error: NULL_RETURNS:
 /builddir/build/BUILD/ATLAS/CONFIG/src/SpewMakeInc.c:685: example_checked: "strstr(comps[6], "ifort")" has its value checked in "strstr(comps[6], "ifort")".
 /builddir/build/BUILD/ATLAS/CONFIG/src/atlconf_misc.c:689: example_checked: "strstr(res, "(GCC)")" has its value checked in "strstr(res, "(GCC)")".
 /builddir/build/BUILD/ATLAS/CONFIG/src/atlconf_misc.c:709: example_checked: "strstr(res, "Apple")" has its value checked in "strstr(res, "Apple")".
@@ -391,22 +407,6 @@ Error: NULL_RETURNS:
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:238: returned_null: Function "fopen" returns null (checked 233 out of 267 times).
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:238: var_assigned: Assigning: "NBf" = null return value from "fopen".
 /builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:239: dereference: Dereferencing a pointer that might be null "NBf" when calling "fprintf".
-
-Error: NULL_RETURNS:
-/builddir/build/BUILD/ATLAS/CONFIG/src/SpewMakeInc.c:409: example_assign: Assigning: "fpout" = return value from "fopen(outfile, "w")".
-/builddir/build/BUILD/ATLAS/CONFIG/src/SpewMakeInc.c:410: example_checked: "fpout" has its value checked in "fpout".
-/builddir/build/BUILD/ATLAS/CONFIG/src/atlconf_misc.c:329: example_assign: Assigning: "fp" = return value from "fopen(tnam, "r")".
-/builddir/build/BUILD/ATLAS/CONFIG/src/atlconf_misc.c:330: example_checked: "fp" has its value checked in "fp".
-/builddir/build/BUILD/ATLAS/CONFIG/src/atlconf_misc.c:380: example_assign: Assigning: "fp" = return value from "fopen(fnam, "r")".
-/builddir/build/BUILD/ATLAS/CONFIG/src/atlconf_misc.c:381: example_checked: "fp" has its value checked in "fp == NULL".
-/builddir/build/BUILD/ATLAS/CONFIG/src/atlconf_misc.c:414: example_assign: Assigning: "fp" = return value from "fopen(fnam, "r")".
-/builddir/build/BUILD/ATLAS/CONFIG/src/atlconf_misc.c:415: example_checked: "fp" has its value checked in "fp == NULL".
-/builddir/build/BUILD/ATLAS/CONFIG/src/atlconf_misc.c:169: example_assign: Assigning: "fp" = return value from "fopen(nam, "r")".
-/builddir/build/BUILD/ATLAS/CONFIG/src/atlconf_misc.c:170: example_checked: "fp" has its value checked in "fp == NULL".
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:718: returned_null: Function "fopen" returns null (checked 233 out of 267 times).
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:718: var_assigned: Assigning: "fp" = null return value from "fopen".
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:719: dereference: Dereferencing a pointer that might be null "fp" when calling "PutInstLogFile".
-/builddir/build/BUILD/ATLAS/tune/blas/gemm/mmsearch.c:665: deref_parm_in_call: Function "fprintf" dereferences parameter "fp".
 
 Error: NULL_RETURNS:
 /builddir/build/BUILD/ATLAS/CONFIG/src/SpewMakeInc.c:409: example_assign: Assigning: "fpout" = return value from "fopen(outfile, "w")".

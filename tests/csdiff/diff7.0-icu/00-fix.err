@@ -228,72 +228,10 @@ icu/source/common/rbbi.cpp:1821: var_compare_op: Comparing "this->fUnhandledBrea
 icu/source/common/rbbi.cpp:1837: var_deref_model: Passing null variable "this->fUnhandledBreakEngine" to function "icu_44::UnhandledEngine::handleCharacter(int, int)", which dereferences it. (The dereference happens because this is a virtual function call.)
 
 Error: FORWARD_NULL:
-icu/source/common/uloc.c:1590: var_compare_op: Comparing "result" to null implies that "result" might be null.
-icu/source/common/uloc.c:1794: var_deref_model: Passing null variable "result" to function "u_terminateChars_44", which dereferences it.
-icu/source/common/ustring.c:1451: deref_parm: Directly dereferencing parameter "dest".
-
-Error: FORWARD_NULL:
-icu/source/common/ustrcase.c:485: var_compare_op: Comparing "dest" to null implies that "dest" might be null.
-icu/source/common/ustrcase.c:502: alias_transfer: Assigning null: "temp" = "dest".
-icu/source/common/ustrcase.c:508: var_deref_model: Passing null variable "temp" to function "ustr_foldCase_44", which dereferences it.
-icu/source/common/ustrcase.c:436: deref_parm: Directly dereferencing parameter "dest".
-icu/source/common/ustrcase.c:517: var_deref_model: Passing null variable "temp" to function "_caseMap", which dereferences it.
-icu/source/common/ustrcase.c:144: deref_parm: Directly dereferencing parameter "dest".
-icu/source/common/ustrcase.c:523: var_deref_model: Passing null variable "temp" to function "_caseMap", which dereferences it.
-icu/source/common/ustrcase.c:533: var_deref_model: Passing null variable "temp" to function "_toTitle", which dereferences it.
-icu/source/common/ustrcase.c:306: deref_parm_in_call: Function "appendResult" dereferences parameter "dest".
-icu/source/common/ustrcase.c:57: deref_parm: Directly dereferencing parameter "dest".
-
-Error: FORWARD_NULL:
-icu/source/common/punycode.c:193: var_compare_op: Comparing "dest" to null implies that "dest" might be null.
-icu/source/common/punycode.c:366: var_deref_model: Passing null variable "dest" to function "u_terminateUChars_44", which dereferences it.
-icu/source/common/ustring.c:1445: deref_parm: Directly dereferencing parameter "dest".
-
-Error: FORWARD_NULL:
-icu/source/common/serv.cpp:451: var_compare_op: Comparing "this->serviceCache" to null implies that "this->serviceCache" might be null.
-icu/source/common/serv.cpp:460: var_deref_model: Passing null variable "this->serviceCache" to function "icu_44::Hashtable::setValueDeleter(void (*)(void *))", which dereferences it.
-icu/source/common/hash.h:150: deref_parm: Directly dereferencing parameter "this".
-
-Error: FORWARD_NULL:
-icu/source/common/ubidiwrt.c:375: var_compare_op: Comparing "dest" to null implies that "dest" might be null.
-icu/source/common/ubidiwrt.c:385: var_deref_model: Passing null variable "dest" to function "u_terminateUChars_44", which dereferences it.
-icu/source/common/ustring.c:1445: deref_parm: Directly dereferencing parameter "dest".
-
-Error: FORWARD_NULL:
-icu/source/common/usprep.cpp:675: var_compare_op: Comparing "dest" to null implies that "dest" might be null.
-icu/source/common/usprep.cpp:813: var_deref_model: Passing null variable "dest" to function "u_terminateUChars_44", which dereferences it.
-icu/source/common/ustring.c:1445: deref_parm: Directly dereferencing parameter "dest".
-
-Error: FORWARD_NULL:
-icu/source/common/uidna.cpp:598: var_compare_op: Comparing "dest" to null implies that "dest" might be null.
-icu/source/common/uidna.cpp:607: var_deref_model: Passing null variable "dest" to function "u_terminateUChars_44", which dereferences it.
-icu/source/common/ustring.c:1445: deref_parm: Directly dereferencing parameter "dest".
-
-Error: FORWARD_NULL:
-icu/source/common/uidna.cpp:678: var_compare_op: Comparing "dest" to null implies that "dest" might be null.
-icu/source/common/uidna.cpp:758: var_deref_model: Passing null variable "dest" to function "u_terminateUChars_44", which dereferences it.
-icu/source/common/ustring.c:1445: deref_parm: Directly dereferencing parameter "dest".
-
-Error: FORWARD_NULL:
-icu/source/common/uidna.cpp:771: var_compare_op: Comparing "dest" to null implies that "dest" might be null.
-icu/source/common/uidna.cpp:857: var_deref_model: Passing null variable "dest" to function "u_terminateUChars_44", which dereferences it.
-icu/source/common/ustring.c:1445: deref_parm: Directly dereferencing parameter "dest".
-
-Error: FORWARD_NULL:
 icu/source/common/uniset_props.cpp:117: var_compare_op: Comparing "set" to null implies that "set" might be null.
 icu/source/common/uniset_props.cpp:120: var_deref_model: Passing null variable "set" to function "icu_44::UnicodeSet::freeze()", which dereferences it.
 icu/source/common/uniset.cpp:2086: deref_parm_in_call: Function "icu_44::UnicodeSet::isFrozen() const" dereferences parameter "this".
 icu/source/common/unicode/uniset.h:1616: deref_parm: Directly dereferencing parameter "this".
-
-Error: FORWARD_NULL:
-icu/source/common/unistr.cpp:664: var_compare_op: Comparing "srcChars" to null implies that "srcChars" might be null.
-icu/source/common/unistr.cpp:668: var_deref_model: Passing null variable "srcChars + srcStart" to function "uprv_strCompare_44", which dereferences it.
-icu/source/common/ustring.c:702: deref_parm: Directly dereferencing parameter "s2".
-
-Error: FORWARD_NULL:
-icu/source/common/unorm.cpp:496: var_compare_op: Comparing "dest" to null implies that "dest" might be null.
-icu/source/common/unorm.cpp:507: var_deref_model: Passing null variable "dest" to function "u_terminateUChars_44", which dereferences it.
-icu/source/common/ustring.c:1445: deref_parm: Directly dereferencing parameter "dest".
 
 Error: FORWARD_NULL:
 icu/source/common/uprops.cpp:599: var_compare_op: Comparing "dest" to null implies that "dest" might be null.
@@ -302,137 +240,12 @@ icu/source/common/ustring.c:1445: deref_parm: Directly dereferencing parameter "
 icu/source/common/uprops.cpp:637: var_deref_model: Passing null variable "dest" to function "u_terminateUChars_44", which dereferences it.
 
 Error: FORWARD_NULL:
-icu/source/common/ushape.c:1425: var_compare_op: Comparing "dest" to null implies that "dest" might be null.
-icu/source/common/ushape.c:1467: var_deref_model: Passing null variable "dest" to function "u_terminateUChars_44", which dereferences it.
-icu/source/common/ustring.c:1445: deref_parm: Directly dereferencing parameter "dest".
-
-Error: FORWARD_NULL:
-icu/source/common/ustrtrns.c:748: var_compare_op: Comparing "dest" to null implies that "dest" might be null.
-icu/source/common/ustrtrns.c:943: var_deref_model: Passing null variable "dest" to function "u_terminateUChars_44", which dereferences it.
-icu/source/common/ustring.c:1445: deref_parm: Directly dereferencing parameter "dest".
-
-Error: FORWARD_NULL:
-icu/source/common/ustrtrns.c:1520: var_compare_op: Comparing "dest" to null implies that "dest" might be null.
-icu/source/common/ustrtrns.c:1638: var_deref_model: Passing null variable "dest" to function "u_terminateChars_44", which dereferences it.
-icu/source/common/ustring.c:1451: deref_parm: Directly dereferencing parameter "dest".
-
-Error: FORWARD_NULL:
-icu/source/common/utext.cpp:2203: var_compare_op: Comparing "dest" to null implies that "dest" might be null.
-icu/source/common/utext.cpp:2232: var_deref_model: Passing null variable "dest" to function "u_terminateUChars_44", which dereferences it.
-icu/source/common/ustring.c:1445: deref_parm: Directly dereferencing parameter "dest".
-
-Error: FORWARD_NULL:
-icu/source/common/utext.cpp:2482: var_compare_op: Comparing "dest" to null implies that "dest" might be null.
-icu/source/common/utext.cpp:2504: var_deref_model: Passing null variable "dest" to function "u_terminateUChars_44", which dereferences it.
-icu/source/common/ustring.c:1445: deref_parm: Directly dereferencing parameter "dest".
-
-Error: FORWARD_NULL:
-icu/source/i18n/ucurr.cpp:358: var_compare_op: Comparing "buff" to null implies that "buff" might be null.
-icu/source/i18n/ucurr.cpp:378: var_deref_model: Passing null variable "buff" to function "u_strcpy_44", which dereferences it.
-icu/source/common/ustring.c:968: deref_parm: Directly dereferencing parameter "dst".
-icu/source/i18n/ucurr.cpp:428: var_deref_model: Passing null variable "buff" to function "u_strcpy_44", which dereferences it.
-icu/source/i18n/ucurr.cpp:432: var_deref_model: Passing null variable "buff" to function "u_terminateUChars_44", which dereferences it.
-icu/source/common/ustring.c:1445: deref_parm: Directly dereferencing parameter "dest".
-
-Error: FORWARD_NULL:
-icu/source/i18n/plurrule.cpp:289: assign_zero: Assigning: "curAndConstraint" = 0.
-icu/source/i18n/plurrule.cpp:308: var_deref_model: Passing null variable "curAndConstraint" to function "icu_44::AndConstraint::add()", which dereferences it.
-icu/source/i18n/plurrule.cpp:622: deref_parm: Directly dereferencing parameter "this".
-icu/source/i18n/plurrule.cpp:325: var_deref_op: Dereferencing null variable "curAndConstraint".
-icu/source/i18n/plurrule.cpp:328: var_deref_op: Dereferencing null variable "curAndConstraint".
-icu/source/i18n/plurrule.cpp:331: var_deref_op: Dereferencing null variable "curAndConstraint".
-icu/source/i18n/plurrule.cpp:335: var_deref_op: Dereferencing null variable "curAndConstraint".
-icu/source/i18n/plurrule.cpp:338: var_deref_op: Dereferencing null variable "curAndConstraint".
-icu/source/i18n/plurrule.cpp:352: var_deref_op: Dereferencing null variable "curAndConstraint".
-
-Error: FORWARD_NULL:
-icu/source/i18n/ucol.cpp:2624: var_deref_model: Passing null variable "source->iterator" to function "collIter_bos(collIterate *)", which dereferences it.
-icu/source/i18n/ucol.cpp:339: deref_parm: Directly dereferencing parameter "source->iterator".
-icu/source/i18n/ucol.cpp:2684: var_deref_model: Passing null variable "source->iterator" to function "collIter_eos(collIterate *)", which dereferences it.
-icu/source/i18n/ucol.cpp:294: deref_parm: Directly dereferencing parameter "s->iterator".
-icu/source/i18n/ucol.cpp:2702: var_deref_model: Passing null variable "source->iterator" to function "getNextNormalizedChar(collIterate *)", which dereferences it.
-icu/source/i18n/ucol.cpp:2141: deref_parm: Directly dereferencing parameter "data->iterator".
-icu/source/i18n/ucol.cpp:2725: var_compare_op: Comparing "source->iterator" to null implies that "source->iterator" might be null.
-icu/source/i18n/ucol.cpp:2738: var_deref_model: Passing null variable "source->iterator" to function "getNextNormalizedChar(collIterate *)", which dereferences it.
-icu/source/i18n/ucol.cpp:2815: var_deref_model: Passing null variable "source->iterator" to function "getNextNormalizedChar(collIterate *)", which dereferences it.
-icu/source/i18n/ucol.cpp:2976: var_deref_model: Passing null variable "source->iterator" to function "collIter_eos(collIterate *)", which dereferences it.
-icu/source/i18n/ucol.cpp:2977: var_deref_model: Passing null variable "source->iterator" to function "getNextNormalizedChar(collIterate *)", which dereferences it.
-icu/source/i18n/ucol.cpp:2979: var_deref_model: Passing null variable "source->iterator" to function "collIter_eos(collIterate *)", which dereferences it.
-icu/source/i18n/ucol.cpp:2981: var_deref_model: Passing null variable "source->iterator" to function "getNextNormalizedChar(collIterate *)", which dereferences it.
-icu/source/i18n/ucol.cpp:3148: var_deref_model: Passing null variable "source->iterator" to function "collIter_eos(collIterate *)", which dereferences it.
-icu/source/i18n/ucol.cpp:3148: var_deref_model: Passing null variable "source->iterator" to function "getNextNormalizedChar(collIterate *)", which dereferences it.
-icu/source/i18n/ucol.cpp:3169: var_deref_op: Dereferencing null variable "source->iterator".
-
-Error: FORWARD_NULL:
-icu/source/i18n/ucol.cpp:3412: var_compare_op: Comparing "source->iterator" to null implies that "source->iterator" might be null.
-icu/source/i18n/ucol.cpp:3384: var_deref_model: Passing null variable "source->iterator" to function "getPrevNormalizedChar(collIterate *, UErrorCode *)", which dereferences it.
-icu/source/i18n/ucol.cpp:2515: deref_parm: Directly dereferencing parameter "data->iterator".
-
-Error: FORWARD_NULL:
-icu/source/i18n/ucol.cpp:3412: var_compare_op: Comparing "source->pos" to null implies that "source->pos" might be null.
-icu/source/i18n/ucol.cpp:3384: var_deref_model: Passing null variable "source->pos" to function "getPrevNormalizedChar(collIterate *, UErrorCode *)", which dereferences it.
-icu/source/i18n/ucol.cpp:2518: deref_parm: Directly dereferencing parameter "data->pos".
-
-Error: FORWARD_NULL:
 icu/source/i18n/ucol.cpp:1933: var_compare_op: Comparing "data->fcdPosition" to null implies that "data->fcdPosition" might be null.
 icu/source/i18n/ucol.cpp:1974: var_deref_model: Passing null variable "data->fcdPosition" to function "ucol_prv_getSpecialPrevCE_44", which dereferences it.
 icu/source/i18n/ucol.cpp:4006: var_assign_parm: Assigning: "prev" = "source->fcdPosition".
 icu/source/i18n/ucol.cpp:4008: deref_var: Dereferencing "prev", which equals a pointer parameter.
 icu/source/i18n/ucol.cpp:1999: var_deref_model: Passing null variable "data->fcdPosition" to function "ucol_prv_getSpecialPrevCE_44", which dereferences it.
 icu/source/i18n/ucol.cpp:2014: var_deref_model: Passing null variable "data->fcdPosition" to function "ucol_prv_getSpecialPrevCE_44", which dereferences it.
-
-Error: FORWARD_NULL:
-icu/source/i18n/bms.cpp:147: assign_zero: Assigning: "bms->targetString" = 0.
-icu/source/i18n/bms.cpp:150: var_deref_model: Passing null variable "bms->targetString" to function "icu_44::BoyerMooreSearch::setTargetString(icu_44::UnicodeString const *, UErrorCode &)", which dereferences it.
-icu/source/i18n/bmsearch.cpp:648: deref_parm_in_call: Function "icu_44::Target::setTargetString(icu_44::UnicodeString const *)" dereferences parameter "targetString".
-icu/source/i18n/bmsearch.cpp:164: deref_parm_in_call: Function "icu_44::UnicodeString::getBuffer() const" dereferences parameter "target".
-icu/source/common/unicode/unistr.h:3515: deref_parm: Directly dereferencing parameter "this".
-
-Error: FORWARD_NULL:
-icu/source/i18n/ucol_bld.cpp:928: var_compare_op: Comparing "src->UCA" to null implies that "src->UCA" might be null.
-icu/source/i18n/ucol_bld.cpp:881: var_deref_model: Passing null variable "src->UCA" to function "uprv_init_collIterate_44", which dereferences it.
-icu/source/i18n/ucol.cpp:126: deref_parm_in_call: Function "IInit_collIterate(UCollator const *, unsigned short const *, int, collIterate *, UErrorCode *)" dereferences parameter "collator".
-icu/source/i18n/ucol.cpp:111: deref_parm: Directly dereferencing parameter "collator".
-
-Error: FORWARD_NULL:
-icu/source/i18n/ucol_res.cpp:180: assign_zero: Assigning: "result" = 0.
-icu/source/i18n/ucol_res.cpp:260: identity_transfer: Passing variable "result" as argument 2 to function "ucol_initCollator_44(UCA->image, result, UCA, status)", which returns that argument.
-icu/source/i18n/ucol.cpp:789: var_assign_parm: Assigning: "result" = "fillIn".
-icu/source/i18n/ucol.cpp:907: return_var: Returning "result", which is a copy of a parameter.
-icu/source/i18n/ucol_res.cpp:260: alias_transfer: Assigning null: "result" = "ucol_initCollator_44(UCA->image, result, UCA, status)".
-icu/source/i18n/ucol_res.cpp:261: var_deref_model: Passing null variable "result" to function "ucol_setOptionsFromHeader_44", which dereferences it.
-icu/source/i18n/ucol.cpp:720: deref_parm: Directly dereferencing parameter "result".
-
-Error: FORWARD_NULL:
-icu/source/i18n/umsg.cpp:630: var_compare_op: Comparing "dest" to null implies that "dest" might be null.
-icu/source/i18n/umsg.cpp:703: var_deref_model: Passing null variable "dest" to function "u_terminateUChars_44", which dereferences it.
-icu/source/common/ustring.c:1445: deref_parm: Directly dereferencing parameter "dest".
-
-Error: FORWARD_NULL:
-icu/source/i18n/plurfmt.cpp:312: var_compare_op: Comparing "this->fParsedValuesHash" to null implies that "this->fParsedValuesHash" might be null.
-icu/source/i18n/plurfmt.cpp:321: var_deref_model: Passing null variable "this->fParsedValuesHash" to function "icu_44::Hashtable::get(icu_44::UnicodeString const &) const", which dereferences it.
-icu/source/common/hash.h:166: deref_parm: Directly dereferencing parameter "this".
-
-Error: FORWARD_NULL:
-icu/source/i18n/smpdtfmt.cpp:231: assign_zero: Assigning: "this->fNumberFormatters" = 0.
-icu/source/i18n/smpdtfmt.cpp:238: var_deref_model: Passing null variable "this->fNumberFormatters" to function "icu_44::SimpleDateFormat::processOverrideString(icu_44::Locale const &, icu_44::UnicodeString const &, signed char, UErrorCode &)", which dereferences it.
-icu/source/i18n/smpdtfmt.cpp:1398: deref_parm: Directly dereferencing parameter "this->fNumberFormatters".
-
-Error: FORWARD_NULL:
-icu/source/i18n/smpdtfmt.cpp:273: assign_zero: Assigning: "this->fNumberFormatters" = 0.
-icu/source/i18n/smpdtfmt.cpp:282: var_deref_model: Passing null variable "this->fNumberFormatters" to function "icu_44::SimpleDateFormat::processOverrideString(icu_44::Locale const &, icu_44::UnicodeString const &, signed char, UErrorCode &)", which dereferences it.
-icu/source/i18n/smpdtfmt.cpp:1398: deref_parm: Directly dereferencing parameter "this->fNumberFormatters".
-
-Error: FORWARD_NULL:
-icu/source/i18n/ucol_res.cpp:514: var_compare_op: Comparing "buffer" to null implies that "buffer" might be null.
-icu/source/i18n/ucol_res.cpp:523: var_deref_model: Passing null variable "buffer" to function "u_terminateUChars_44", which dereferences it.
-icu/source/common/ustring.c:1445: deref_parm: Directly dereferencing parameter "dest".
-
-Error: FORWARD_NULL:
-icu/source/i18n/uregex.cpp:1214: var_compare_op: Comparing "*destBuf" to null implies that "*destBuf" might be null.
-icu/source/i18n/uregex.cpp:1228: alias_transfer: Assigning null: "dest" = "*destBuf".
-icu/source/i18n/uregex.cpp:1350: var_deref_model: Passing null variable "dest + destIdx" to function "uregex_group_44", which dereferences it.
-icu/source/i18n/uregex.cpp:629: deref_parm: Directly dereferencing parameter "dest".
 
 Error: FORWARD_NULL:
 icu/source/i18n/uspoof_impl.cpp:38: var_compare_op: Comparing "allowedCharsSet" to null implies that "allowedCharsSet" might be null.
@@ -816,13 +629,6 @@ icu/source/i18n/ucurr.cpp:1875: returned_pointer: Pointer "s" returned by "ures_
 
 Error: UNUSED_VALUE:
 icu/source/tools/gencase/store.c:777: returned_pointer: Pointer "row" returned by "upvec_getRow_44(pv, i, NULL, &end)" is never used.
-
-Error: USE_AFTER_FREE:
-icu/source/common/ustrcase.c:502: alias: Assigning: "temp" = "dest". Now both point to the same storage.
-icu/source/common/ustrcase.c:548: freed_arg: "uprv_free_44" frees "temp".
-icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
-icu/source/common/ustrcase.c:552: deref_arg: Calling "u_terminateUChars_44" dereferences freed pointer "dest".
-icu/source/common/ustring.c:1445: deref_parm: Directly dereferencing parameter "dest".
 
 Error: USE_AFTER_FREE:
 icu/source/common/ustrcase.c:502: alias: Assigning: "temp" = "dest". Now both point to the same storage.

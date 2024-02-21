@@ -523,6 +523,11 @@ Error: DEADCODE:
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/xqf.c:164: dead_error_line: Execution cannot reach this expression "0" inside statement "n[0] = box_num((old_val ? 1...".
 
 Error: FORWARD_NULL:
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/page.c:1562: var_compare_op: Comparing "pf->pf_org" to null implies that "pf->pf_org" might be null.
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/page.c:1566: var_deref_model: Passing null variable "pf->pf_org" to function "pg_move_cursors", which dereferences it.
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/insert.c:431: deref_parm: Directly dereferencing parameter "buf_from".
+
+Error: FORWARD_NULL:
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/sparql_core.c:3748: var_compare_op: Comparing "parent" to null implies that "parent" might be null.
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/sparql_core.c:3751: var_deref_op: Dereferencing null variable "parent".
 
@@ -543,6 +548,13 @@ Error: FORWARD_NULL:
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/binsrc/tests/dbdump.c:2502: var_deref_op: Dereferencing null variable "cl".
 
 Error: FORWARD_NULL:
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/binsrc/tests/dbdump.c:4151: var_compare_op: Comparing "tl->name" to null implies that "tl->name" might be null.
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/binsrc/tests/dbdump.c:4153: var_deref_model: Passing null variable "(char *)tl->name" to function "escapify_and_form_dest_name", which dereferences it.
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/binsrc/tests/dbdump.c:1026: deref_parm_in_call: Function "substitute_tablename_expr" dereferences parameter "(unsigned char *)whole_table_name".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/binsrc/tests/dbdump.c:2045: deref_parm_in_call: Function "chestrdup" dereferences parameter "(char *)whole_tablename_org".
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/binsrc/tests/dbdump.c:697: deref_parm_in_call: Function "strdup" dereferences parameter "str". (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)
+
+Error: FORWARD_NULL:
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/bif_file.c:5059: assign_zero: Assigning: "data" = 0.
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/bif_file.c:5188: var_deref_model: Passing null variable "data" to function "session_buffered_read", which dereferences it.
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkses2.c:483: deref_parm_in_call: Function "memcpy" dereferences parameter "buffer". (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)
@@ -555,6 +567,10 @@ Error: FORWARD_NULL:
 Error: FORWARD_NULL:
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/bif_imap.c:210: var_compare_op: Comparing "a" to null implies that "a" might be null.
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/bif_imap.c:213: var_deref_op: Dereferencing null variable "a".
+
+Error: FORWARD_NULL:
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/http.c:3359: var_compare_op: Comparing "ws->ws_req_line" to null implies that "ws->ws_req_line" might be null.
+/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/http.c:3525: var_deref_model: Passing null variable "ws->ws_req_line" to function "strchr", which dereferences it. (The dereference is assumed on the basis of the 'nonnull' parameter attribute.)
 
 Error: FORWARD_NULL:
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/nquad_p.y:303: assign_zero: Assigning: "ttlp_arg->ttlp_last_complete_uri" = 0.
@@ -2051,10 +2067,3 @@ Error: UNUSED_VALUE:
 
 Error: UNUSED_VALUE:
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/sqlbif.c:11500: returned_pointer: Pointer "proc_qr" returned by "sql_compile(text, cli, &err, -1)" is never used.
-
-Error: USE_AFTER_FREE:
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/xpf.c:5300: freed_arg: "lc_free" frees "lc".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/sqlrun.c:3848: freed_arg: "dk_free" frees parameter "lc".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkalloc.c:680: freed_arg: "free" frees parameter "ptr".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/xpf.c:5308: deref_arg: Calling "lc_free" dereferences freed pointer "lc".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/sqlrun.c:3841: deref_parm: Directly dereferencing parameter "lc".
