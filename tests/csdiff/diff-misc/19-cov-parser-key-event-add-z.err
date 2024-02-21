@@ -1,0 +1,9 @@
+Error: SOCKET_ACCEPT_ALL_ORIGINS (CWE-942):
+grafana-9.2.10/vendor/github.com/gorilla/websocket/server.go:302: go_socketio_all_origins: The function "function anonymous%1" always returns "true".
+grafana-9.2.10/vendor/github.com/gorilla/websocket/server.go:302: go_socketio_all_origins: The function "Upgrader.CheckOrigin()" always returns "true" to accept requests from all origins.
+grafana-9.2.10/vendor/github.com/gorilla/websocket/server.go:302: go_socketio_all_origins: Modify the "Upgrader.CheckOrigin()" function to only return "true" for trusted origins, or remove the function completely since the default "Upgrader" will only create "WebSocket" connections with clients from the same origin.
+#  300|   		// don't return errors to maintain backwards compatibility
+#  301|   	}
+#  302|-> 	u.CheckOrigin = func(r *http.Request) bool {
+#  303|   		// allow all connections by default
+#  304|   		return true

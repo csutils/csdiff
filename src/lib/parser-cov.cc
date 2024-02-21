@@ -241,26 +241,31 @@ KeyEventDigger::KeyEventDigger():
     d->hMap["CALL_SUPER"]                .insert("missing_super_call");
     d->hMap["CHECKED_RETURN"]            .insert("check_return");
     d->hMap["CHROOT"]                    .insert("chroot_call");
+    d->hMap["COM.BAD_FREE"]              .insert("free");
     d->hMap["CTOR_DTOR_LEAK"]            .insert("alloc_fn");
     d->hMap["CTOR_DTOR_LEAK"]            .insert("alloc_new");
     d->hMap["DEADCODE"]                  .insert("dead_error_begin");
     d->hMap["DEADCODE"]                  .insert("dead_error_line");
     d->hMap["EXPLICIT_THIS_EXPECTED"]    .insert("implicit_this_used");
-    d->hMap["HARDCODED_CREDENTIALS"]     .insert("sink");
     d->hMap["LOCK"]                      .insert("double_lock");
     d->hMap["LOCK"]                      .insert("double_unlock");
     d->hMap["LOCK"]                      .insert("missing_unlock");
     d->hMap["LOCK_EVASION"]              .insert("thread1_overwrites_value_in_field");
     d->hMap["LOCK_EVASION"]              .insert("thread2_checks_field_early");
+    d->hMap["LOCK_INVERSION"]            .insert("lock_order");
+    d->hMap["INFINITE_LOOP"]             .insert("loop_top");
     d->hMap["MISSING_BREAK"]             .insert("unterminated_case");
     d->hMap["MISSING_RESTORE"]           .insert("end_of_path");
     d->hMap["MISSING_RESTORE"]           .insert("end_of_scope");
+    d->hMap["MISSING_RESTORE"]           .insert("exception");
     d->hMap["MULTIPLE_INIT_SMART_PTRS"]  .insert("multiple_init_smart_ptr");
     d->hMap["NESTING_INDENT_MISMATCH"]   .insert("actual_if");
     d->hMap["NESTING_INDENT_MISMATCH"]   .insert("multi_stmt_macro");
     d->hMap["NESTING_INDENT_MISMATCH"]   .insert("on_same_line");
     d->hMap["NESTING_INDENT_MISMATCH"]   .insert("uncle");
+    d->hMap["OPEN_REDIRECT"]             .insert("sink");
     d->hMap["ORDER_REVERSAL"]            .insert("lock_order");
+    d->hMap["OS_CMD_INJECTION"]          .insert("os_cmd_sink");
     d->hMap["OVERLAPPING_COPY"]          .insert("overlapping_assignment");
     d->hMap["OVERLAPPING_COPY"]          .insert("overlapping_copy");
     d->hMap["OVERRUN_STATIC"]            .insert("index_parm");
@@ -271,8 +276,9 @@ KeyEventDigger::KeyEventDigger():
     d->hMap["RESOURCE_LEAK"]             .insert("overwrite_var");
     d->hMap["REVERSE_INULL"]             .insert("check_after_deref");
     d->hMap["REVERSE_NEGATIVE"]          .insert("check_after_sink");
+    d->hMap["SENSITIVE_DATA_LEAK"]       .insert("sink");
+    d->hMap["SERVLET_ATOMICITY"]         .insert("set_attribute");
     d->hMap["STREAM_FORMAT_STATE"]       .insert("end_of_path");
-    d->hMap["STRING_OVERFLOW"]           .insert("fixed_size_dest");
     d->hMap["TAINTED_SCALAR"]            .insert("tainted_data");
     d->hMap["TOCTOU"]                    .insert("fs_check_call");
     d->hMap["UNEXPECTED_CONTROL_FLOW"]   .insert("continue_in_do_while_false");
@@ -280,14 +286,10 @@ KeyEventDigger::KeyEventDigger():
     d->hMap["UNINIT"]                    .insert("uninit_use_in_call");
     d->hMap["UNINIT_CTOR"]               .insert("member_not_init_in_gen_ctor");
     d->hMap["UNINIT_CTOR"]               .insert("uninit_member");
-    d->hMap["UNUSED_VALUE"]              .insert("assigned_pointer");
-    d->hMap["UNUSED_VALUE"]              .insert("assigned_value");
-    d->hMap["UNUSED_VALUE"]              .insert("returned_pointer");
-    d->hMap["UNUSED_VALUE"]              .insert("returned_value");
+    d->hMap["UNLOCKED_ACCESS"]           .insert("thread_unsafe_modification");
     d->hMap["VARARGS"]                   .insert("missing_va_end");
     d->hMap["WRAPPER_ESCAPE"]            .insert("escape");
     d->hMap["WRAPPER_ESCAPE"]            .insert("use_after_free");
-    d->hMap["URL_MANIPULATION"]          .insert("url_manipulation_sink");
 
     // we use COMPILER_WARNING as checker for compiler errors/warnings
     d->hMap["COMPILER_WARNING"]     .insert("error");
@@ -306,17 +308,27 @@ KeyEventDigger::KeyEventDigger():
     d->hMap["OWASP_ZAP_WARNING"]    .insert("alert");
 
     // list of checkers where we take the _last_ matched key event
+    d->searchBackwards.insert("COMPILER_WARNING");
     d->searchBackwards.insert("CONSTANT_EXPRESSION_RESULT");
+    d->searchBackwards.insert("DELETE_ARRAY");
     d->searchBackwards.insert("FORWARD_NULL");
+    d->searchBackwards.insert("HARDCODED_CREDENTIALS");
+    d->searchBackwards.insert("HEADER_INJECTION");
+    d->searchBackwards.insert("INSUFFICIENT_LOGGING");
     d->searchBackwards.insert("LOCK");
     d->searchBackwards.insert("INVALIDATE_ITERATOR");
     d->searchBackwards.insert("NULL_RETURNS");
     d->searchBackwards.insert("OVERRUN");
+    d->searchBackwards.insert("PATH_MANIPULATION");
     d->searchBackwards.insert("RESOURCE_LEAK");
     d->searchBackwards.insert("RETURN_LOCAL");
     d->searchBackwards.insert("UNINIT");
     d->searchBackwards.insert("UNINIT_CTOR");
+    d->searchBackwards.insert("UNUSED_VALUE");
+    d->searchBackwards.insert("URL_MANIPULATION");
     d->searchBackwards.insert("USE_AFTER_FREE");
+    d->searchBackwards.insert("VOLATILE_ATOMICITY");
+    d->searchBackwards.insert("WRITE_CONST_FIELD");
 
     // events that should never be used as key events (excluding trace events)
     d->denyList.insert("another_instance");
@@ -409,6 +421,7 @@ bool KeyEventDigger::guessKeyEvent(Defect *def)
 
     // take the first eligible key event
     bool valid = false;
+    bool eligible = false;
     for (unsigned idx = 0; idx < evtCount; ++idx) {
         const DefEvent &evt = evtList[idx];
         if (evt.event == "#")
@@ -421,6 +434,11 @@ bool KeyEventDigger::guessKeyEvent(Defect *def)
             valid = true;
         }
 
+        const bool findLastMatch = d->searchBackwards.count(def->checker);
+        if (findLastMatch && !eligible)
+            // no eligible event yet --> select the _last_ valid event
+            def->keyEventIdx = idx;
+
         // skip trace and deny-listed events
         const std::string &evtName = evt.event;
         if (d->traceEvts.count(evtName) || d->denyList.count(evtName))
@@ -428,7 +446,8 @@ bool KeyEventDigger::guessKeyEvent(Defect *def)
 
         // matched
         def->keyEventIdx = idx;
-        if (!d->searchBackwards.count(def->checker))
+        eligible = true;
+        if (!findLastMatch)
             // checker not listed in d->searchBackwards --> take the first match
             break;
     }
