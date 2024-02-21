@@ -1064,7 +1064,7 @@ virtuoso-opensource-6.1.2/libsrc/Wi/bif_phrasematch.c:1223: noescape: Variable "
 virtuoso-opensource-6.1.2/libsrc/Wi/bif_phrasematch.c:1223: noescape: Variable "box_dv_short_string(apc->apc_name)" is not freed or pointed-to in function "list".
 
 Error: RESOURCE_LEAK:
-virtuoso-opensource-6.1.2/libsrc/Wi/bif_soap.c:4030: alloc_fn: Calling allocation function "box_dv_short_string".
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_soap.c:5993: alloc_fn: Calling allocation function "box_dv_short_string".
 virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1286: alloc_fn: Storage is returned from allocation function "dk_alloc_box".
 virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:171: alloc_fn: Storage is returned from allocation function "dk_alloc".
 virtuoso-opensource-6.1.2/libsrc/Dk/Dkalloc.c:586: alloc_fn: Storage is returned from allocation function "dk_alloc_reserve_malloc".
@@ -1078,10 +1078,10 @@ virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:181: return_alloc: Returning allocat
 virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1286: var_assign: Assigning: "box" = "dk_alloc_box(len, 182)".
 virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1287: noescape: Variable "box" is not freed or pointed-to in function "memcpy".
 virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1289: return_alloc: Returning allocated memory "box".
-virtuoso-opensource-6.1.2/libsrc/Wi/bif_soap.c:4030: leaked_storage: Failing to save storage allocated by "box_dv_short_string("")" leaks it.
-virtuoso-opensource-6.1.2/libsrc/Wi/bif_soap.c:4030: leaked_storage: Failing to save storage allocated by "box_dv_short_string(((soap_version == 1) ? "urn:schemas-xmlsoap-org:soap.v1" : ((soap_version == 11) ? "http://schemas.xmlsoap.org/soap/envelope/" : ((soap_version == 12) ? "http://www.w3.org/2003/05/soap-envelope" : NULL))))" leaks it.
-virtuoso-opensource-6.1.2/libsrc/Wi/bif_soap.c:4030: noescape: Variable "box_dv_short_string("")" is not freed or pointed-to in function "list".
-virtuoso-opensource-6.1.2/libsrc/Wi/bif_soap.c:4030: noescape: Variable "box_dv_short_string(((soap_version == 1) ? "urn:schemas-xmlsoap-org:soap.v1" : ((soap_version == 11) ? "http://schemas.xmlsoap.org/soap/envelope/" : ((soap_version == 12) ? "http://www.w3.org/2003/05/soap-envelope" : NULL))))" is not freed or pointed-to in function "list".
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_soap.c:5993: leaked_storage: Failing to save storage allocated by "box_dv_short_string("")" leaks it.
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_soap.c:5993: leaked_storage: Failing to save storage allocated by "box_dv_short_string(((ssc.soap_version == 1) ? "urn:schemas-xmlsoap-org:soap.v1" : ((ssc.soap_version == 11) ? "http://schemas.xmlsoap.org/soap/envelope/" : ((ssc.soap_version == 12) ? "http://www.w3.org/2003/05/soap-envelope" : NULL))))" leaks it.
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_soap.c:5993: noescape: Variable "box_dv_short_string("")" is not freed or pointed-to in function "list".
+virtuoso-opensource-6.1.2/libsrc/Wi/bif_soap.c:5993: noescape: Variable "box_dv_short_string(((ssc.soap_version == 1) ? "urn:schemas-xmlsoap-org:soap.v1" : ((ssc.soap_version == 11) ? "http://schemas.xmlsoap.org/soap/envelope/" : ((ssc.soap_version == 12) ? "http://www.w3.org/2003/05/soap-envelope" : NULL))))" is not freed or pointed-to in function "list".
 
 Error: RESOURCE_LEAK:
 virtuoso-opensource-6.1.2/libsrc/Wi/sqltype.c:4806: alloc_fn: Calling allocation function "box_copy_tree".
@@ -1444,10 +1444,6 @@ Error: UNINIT:
 virtuoso-opensource-6.1.2/libsrc/Wi/sparql_core.c:3858: var_decl: Declaring variable "sqlvals" without initializer.
 virtuoso-opensource-6.1.2/libsrc/Wi/sparql_core.c:3906: uninit_use_in_call: Using uninitialized value "sqlvals[0]" when calling "spar_make_literal_from_sql_box".
 virtuoso-opensource-6.1.2/libsrc/Wi/sparql_core.c:3796: read_parm: Reading a parameter value.
-
-Error: UNINIT:
-virtuoso-opensource-6.1.2/libsrc/Wi/xslt.c:669: var_decl: Declaring variable "val" without initializer.
-virtuoso-opensource-6.1.2/libsrc/Wi/xslt.c:726: uninit_use: Using uninitialized value "val".
 
 Error: UNREACHABLE:
 virtuoso-opensource-6.1.2/libsrc/Wi/ddlrun.c:5312: unreachable: This code cannot be reached: "dk_free_box(r_text);".

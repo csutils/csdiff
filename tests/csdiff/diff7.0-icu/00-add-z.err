@@ -661,26 +661,6 @@ Error: RESOURCE_LEAK:
 /builddir/build/BUILD/icu/source/i18n/decimfmt.cpp:3333: leaked_storage: Variable "fmt" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3535: alloc_fn: Calling allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3535: var_assign: Assigning: "strbuffer" =  storage returned from "uprv_malloc_48(sizeof (UChar) /*2*/ * (newsize + 128))".
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3542: var_assign: Assigning: "UCharOffset" = "strbuffer".
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3543: noescape: Variable "UCharOffset" is not freed or pointed-to in function "memcpy".
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3535: overwrite_var: Overwriting "strbuffer" in call "strbuffer = (UChar *)uprv_malloc_48(sizeof (UChar) /*2*/ * (newsize + 128))" leaks the storage that "strbuffer" points to.
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3542: overwrite_var: Overwriting "UCharOffset" in call "UCharOffset = strbuffer + newsize" leaks the storage that "UCharOffset" points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3535: alloc_fn: Calling allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3535: var_assign: Assigning: "strbuffer" =  storage returned from "uprv_malloc_48(sizeof (UChar) /*2*/ * (newsize + 128))".
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3542: var_assign: Assigning: "UCharOffset" = "strbuffer".
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3543: noescape: Variable "UCharOffset" is not freed or pointed-to in function "memcpy".
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3535: overwrite_var: Overwriting "strbuffer" in call "strbuffer = (UChar *)uprv_malloc_48(sizeof (UChar) /*2*/ * (newsize + 128))" leaks the storage that "strbuffer" points to.
-/builddir/build/BUILD/icu/source/i18n/ucol.cpp:3540: leaked_storage: Variable "UCharOffset" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
 /builddir/build/BUILD/icu/source/i18n/ucurr.cpp:1864: alloc_fn: Calling allocation function "uprv_malloc_48".
 /builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
 /builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
@@ -1218,19 +1198,7 @@ Error: UNINIT_CTOR:
 
 Error: UNINIT_CTOR:
 /builddir/build/BUILD/icu/source/i18n/uspoof_impl.h:108: member_decl: Class member declaration for fChecks.
-/builddir/build/BUILD/icu/source/i18n/uspoof_impl.cpp:62: uninit_member: Non-static class member fChecks is not initialized in this constructor nor in any functions that it calls.
-
-Error: UNINIT_CTOR:
-/builddir/build/BUILD/icu/source/i18n/uspoof_impl.h:108: member_decl: Class member declaration for fChecks.
 /builddir/build/BUILD/icu/source/i18n/uspoof_impl.cpp:32: uninit_member: Non-static class member fChecks is not initialized in this constructor nor in any functions that it calls.
-
-Error: UNINIT_CTOR:
-/builddir/build/BUILD/icu/source/tools/toolutil/package.cpp:418: uninit_member: Non-static class member inStrings is not initialized in this constructor nor in any functions that it calls.
-/builddir/build/BUILD/icu/source/tools/toolutil/package.cpp:418: uninit_member: Non-static class member isMissingItems is not initialized in this constructor nor in any functions that it calls.
-/builddir/build/BUILD/icu/source/tools/toolutil/package.cpp:418: uninit_member: Non-static class member outStrings is not initialized in this constructor nor in any functions that it calls.
-/builddir/build/BUILD/icu/source/tools/toolutil/package.h:156: member_decl: Class member declaration for inStrings.
-/builddir/build/BUILD/icu/source/tools/toolutil/package.h:156: member_decl: Class member declaration for outStrings.
-/builddir/build/BUILD/icu/source/tools/toolutil/package.h:167: member_decl: Class member declaration for isMissingItems.
 
 Error: UNINIT_CTOR:
 /builddir/build/BUILD/icu/source/tools/toolutil/denseranges.cpp:28: uninit_member: Non-static class member gapLengths is not initialized in this constructor nor in any functions that it calls.

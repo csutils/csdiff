@@ -206,7 +206,7 @@ struct KeyEventDigger::Private {
     typedef std::set<std::string>                   TSet;
     typedef std::map<std::string, TSet>             TMap;
     TMap hMap;
-    TSet denyList, traceEvts;
+    TSet denyList, traceEvts, searchBackwards;
     const RE reEvtSuffix = RE("^(.*)\\[[^ \\]]+\\]$");
     const std::string stripEvtName(const std::string &) const;
 };
@@ -331,6 +331,11 @@ KeyEventDigger::KeyEventDigger():
     // OWASP ZAP uses "alert" as the key event
     d->hMap["OWASP_ZAP_WARNING"]    .insert("alert");
 
+    // list of checkers where we take the _last_ matched key event
+    d->searchBackwards.insert("RESOURCE_LEAK");
+    d->searchBackwards.insert("UNINIT");
+    d->searchBackwards.insert("UNINIT_CTOR");
+
     // events that should never be used as key events (excluding trace events)
     d->denyList.insert("another_instance");
     d->denyList.insert("comparison_remediation");
@@ -402,6 +407,7 @@ bool KeyEventDigger::guessKeyEvent(Defect *def)
         pKeyEvents = &it->second;
 
     // look for an explicitly defined key event
+    bool found = false;
     for (unsigned idx = 0U; idx < evtCount; ++idx) {
         const DefEvent &evt = evtList[idx];
         const std::string evtName = d->stripEvtName(evt.event);
@@ -410,8 +416,14 @@ bool KeyEventDigger::guessKeyEvent(Defect *def)
 
         // matched
         def->keyEventIdx = idx;
-        return true;
+        found = true;
+        if (!d->searchBackwards.count(def->checker))
+            // checker not listed in d->searchBackwards --> take the first match
+            break;
     }
+
+    if (found)
+        return true;
 
     // take the first eligible key event
     bool valid = false;

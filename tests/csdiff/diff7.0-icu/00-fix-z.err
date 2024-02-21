@@ -579,26 +579,6 @@ icu/source/i18n/tzrule.cpp:78:15: noescape: "icu_44::TimeZoneRule::getDSTSavings
 icu/source/i18n/basictz.cpp:520: leaked_storage: Variable "res_initial" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
-icu/source/i18n/ucol.cpp:3400: alloc_fn: Calling allocation function "uprv_malloc_44".
-icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-icu/source/i18n/ucol.cpp:3400: var_assign: Assigning: "strbuffer" =  storage returned from "uprv_malloc_44(sizeof (UChar) /*2*/ * (newsize + 128))".
-icu/source/i18n/ucol.cpp:3407: var_assign: Assigning: "UCharOffset" = "strbuffer".
-icu/source/i18n/ucol.cpp:3408: noescape: Variable "UCharOffset" is not freed or pointed-to in function "memcpy".
-icu/source/i18n/ucol.cpp:3400: overwrite_var: Overwriting "strbuffer" in call "strbuffer = (UChar *)uprv_malloc_44(sizeof (UChar) /*2*/ * (newsize + 128))" leaks the storage that "strbuffer" points to.
-icu/source/i18n/ucol.cpp:3407: overwrite_var: Overwriting "UCharOffset" in call "UCharOffset = strbuffer + newsize" leaks the storage that "UCharOffset" points to.
-
-Error: RESOURCE_LEAK:
-icu/source/i18n/ucol.cpp:3400: alloc_fn: Calling allocation function "uprv_malloc_44".
-icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-icu/source/i18n/ucol.cpp:3400: var_assign: Assigning: "strbuffer" =  storage returned from "uprv_malloc_44(sizeof (UChar) /*2*/ * (newsize + 128))".
-icu/source/i18n/ucol.cpp:3407: var_assign: Assigning: "UCharOffset" = "strbuffer".
-icu/source/i18n/ucol.cpp:3408: noescape: Variable "UCharOffset" is not freed or pointed-to in function "memcpy".
-icu/source/i18n/ucol.cpp:3400: overwrite_var: Overwriting "strbuffer" in call "strbuffer = (UChar *)uprv_malloc_44(sizeof (UChar) /*2*/ * (newsize + 128))" leaks the storage that "strbuffer" points to.
-icu/source/i18n/ucol.cpp:3405: leaked_storage: Variable "UCharOffset" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
 icu/source/i18n/ucol_elm.cpp:1249: alloc_fn: Calling allocation function "uprv_malloc_44".
 icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
 icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
@@ -765,12 +745,6 @@ icu/source/i18n/plurfmt.cpp:70: uninit_member: Non-static class member replacedN
 Error: UNINIT_CTOR:
 icu/source/i18n/uspoof_impl.h:111: member_decl: Class member declaration for fChecks.
 icu/source/i18n/uspoof_impl.h:115: member_decl: Class member declaration for fCheckMask.
-icu/source/i18n/uspoof_impl.cpp:62: uninit_member: Non-static class member fCheckMask is not initialized in this constructor nor in any functions that it calls.
-icu/source/i18n/uspoof_impl.cpp:62: uninit_member: Non-static class member fChecks is not initialized in this constructor nor in any functions that it calls.
-
-Error: UNINIT_CTOR:
-icu/source/i18n/uspoof_impl.h:111: member_decl: Class member declaration for fChecks.
-icu/source/i18n/uspoof_impl.h:115: member_decl: Class member declaration for fCheckMask.
 icu/source/i18n/uspoof_impl.cpp:32: uninit_member: Non-static class member fCheckMask is not initialized in this constructor nor in any functions that it calls.
 icu/source/i18n/uspoof_impl.cpp:32: uninit_member: Non-static class member fChecks is not initialized in this constructor nor in any functions that it calls.
 icu/source/i18n/uspoof_impl.cpp:44: uninit_member: Non-static class member fCheckMask is not initialized in this constructor nor in any functions that it calls.
@@ -836,20 +810,6 @@ icu/source/tools/toolutil/package.cpp:411: uninit_member: Non-static class membe
 icu/source/tools/toolutil/package.cpp:411: uninit_member: Non-static class member field items.name is not initialized in this constructor nor in any functions that it calls.
 icu/source/tools/toolutil/package.h:37: member_decl: Class member declaration for name.
 icu/source/tools/toolutil/package.h:38: member_decl: Class member declaration for data.
-
-Error: UNINIT_CTOR:
-icu/source/tools/toolutil/package.cpp:411: uninit_member: Non-static class member field items.isDataOwned is not initialized in this constructor nor in any functions that it calls.
-icu/source/tools/toolutil/package.cpp:411: uninit_member: Non-static class member field items.length is not initialized in this constructor nor in any functions that it calls.
-icu/source/tools/toolutil/package.cpp:411: uninit_member: Non-static class member field items.type is not initialized in this constructor nor in any functions that it calls.
-icu/source/tools/toolutil/package.cpp:411: uninit_member: Non-static class member inStrings is not initialized in this constructor nor in any functions that it calls.
-icu/source/tools/toolutil/package.cpp:411: uninit_member: Non-static class member isMissingItems is not initialized in this constructor nor in any functions that it calls.
-icu/source/tools/toolutil/package.cpp:411: uninit_member: Non-static class member outStrings is not initialized in this constructor nor in any functions that it calls.
-icu/source/tools/toolutil/package.h:39: member_decl: Class member declaration for length.
-icu/source/tools/toolutil/package.h:40: member_decl: Class member declaration for isDataOwned.
-icu/source/tools/toolutil/package.h:41: member_decl: Class member declaration for type.
-icu/source/tools/toolutil/package.h:151: member_decl: Class member declaration for inStrings.
-icu/source/tools/toolutil/package.h:151: member_decl: Class member declaration for outStrings.
-icu/source/tools/toolutil/package.h:162: member_decl: Class member declaration for isMissingItems.
 
 Error: UNUSED_VALUE:
 icu/source/i18n/ucurr.cpp:1875: returned_pointer: Pointer "s" returned by "ures_getStringByKey_44(currencyRes, "id", &resLen, &localStatus)" is never used.

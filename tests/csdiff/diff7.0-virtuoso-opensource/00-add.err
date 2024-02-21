@@ -2013,14 +2013,6 @@ Error: UNINIT:
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/binsrc/tests/virtdriver.c:189: uninit_use_in_call: Using uninitialized value "ta.ta_is_on" when calling "ta_init".
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/binsrc/tests/time.c:55: read_parm_fld: Reading a parameter field.
 
-Error: UNINIT:
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/xslt.c:734: var_decl: Declaring variable "val" without initializer.
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/xslt.c:809: uninit_use: Using uninitialized value "*val".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/xslt.c:809: uninit_use: Using uninitialized value "val".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/xslt.c:811: uninit_use_in_call: Using uninitialized value "val" when calling "box_hash".
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Dk/Dkhashext.c:298: read_parm: Reading a parameter value.
-/builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/xslt.c:818: uninit_use: Using uninitialized value "val".
-
 Error: UNREACHABLE:
 /builddir/build/BUILD/virtuoso-opensource-6.1.3/libsrc/Wi/sqlbif.c:9370: unreachable: This code cannot be reached: "goto cvt_error;".
 

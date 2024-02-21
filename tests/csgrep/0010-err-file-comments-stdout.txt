@@ -187,7 +187,7 @@
             "checker": "UNINIT",
             "cwe": 457,
             "tool": "coverity",
-            "key_event_idx": 4,
+            "key_event_idx": 6,
             "events": [
                 {
                     "file_name": "",
@@ -222,7 +222,7 @@
                     "line": 6528,
                     "event": "uninit_use_in_call",
                     "message": "Using uninitialized value \"checkPoint.nextMulti\" when calling \"MultiXactSetNextMXact(MultiXactId, MultiXactOffset)\".",
-                    "verbosity_level": 0
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/multixact.c",
@@ -237,7 +237,7 @@
                     "line": 6528,
                     "event": "uninit_use_in_call",
                     "message": "Using uninitialized value \"checkPoint.nextMultiOffset\" when calling \"MultiXactSetNextMXact(MultiXactId, MultiXactOffset)\".",
-                    "verbosity_level": 1
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/multixact.c",
@@ -398,7 +398,7 @@
             "checker": "UNINIT",
             "cwe": 457,
             "tool": "coverity",
-            "key_event_idx": 2,
+            "key_event_idx": 4,
             "events": [
                 {
                     "file_name": "",
@@ -419,7 +419,7 @@
                     "line": 6529,
                     "event": "uninit_use_in_call",
                     "message": "Using uninitialized value \"checkPoint.oldestXid\" when calling \"SetTransactionIdLimit(TransactionId, Oid)\".",
-                    "verbosity_level": 0
+                    "verbosity_level": 1
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/varsup.c",
@@ -434,7 +434,7 @@
                     "line": 6529,
                     "event": "uninit_use_in_call",
                     "message": "Using uninitialized value \"checkPoint.oldestXidDB\" when calling \"SetTransactionIdLimit(TransactionId, Oid)\".",
-                    "verbosity_level": 1
+                    "verbosity_level": 0
                 },
                 {
                     "file_name": "postgresql-9.2.4/src/backend/access/transam/varsup.c",

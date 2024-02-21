@@ -2185,6 +2185,16 @@ dracut-046/install/dracut-install.c:1123:29: note: Potential leak of memory poin
 # 1125|   
 
 Error: RESOURCE_LEAK (CWE-772):
+dracut-046/install/dracut-install.c:932: alloc_fn: Storage is returned from allocation function "strdup".
+dracut-046/install/dracut-install.c:932: var_assign: Assigning: "logdir" = storage returned from "strdup(optarg)".
+dracut-046/install/dracut-install.c:932: overwrite_var: Overwriting "logdir" in "logdir = strdup(optarg)" leaks the storage that "logdir" points to.
+#  930|                           break;
+#  931|                   case 'L':
+#  932|->                         logdir = strdup(optarg);
+#  933|                           break;
+#  934|                   case ARG_KERNELDIR:
+
+Error: RESOURCE_LEAK (CWE-772):
 dracut-046/install/dracut-install.c:935: alloc_fn: Storage is returned from allocation function "strdup".
 dracut-046/install/dracut-install.c:935: var_assign: Assigning: "kerneldir" = storage returned from "strdup(optarg)".
 dracut-046/install/dracut-install.c:936: noescape: Resource "kerneldir" is not freed or pointed-to in "strncmp".
@@ -2199,16 +2209,6 @@ dracut-046/install/dracut-install.c:935: overwrite_var: Overwriting "kerneldir" 
 #  935|->                         kerneldir = strdup(optarg);
 #  936|                           if ((strncmp("/lib/modules/", kerneldir, 13) != 0)
 #  937|                               && (strncmp("/usr/lib/modules/", kerneldir, 17) != 0)) {
-
-Error: RESOURCE_LEAK (CWE-772):
-dracut-046/install/dracut-install.c:932: alloc_fn: Storage is returned from allocation function "strdup".
-dracut-046/install/dracut-install.c:932: var_assign: Assigning: "logdir" = storage returned from "strdup(optarg)".
-dracut-046/install/dracut-install.c:932: overwrite_var: Overwriting "logdir" in "logdir = strdup(optarg)" leaks the storage that "logdir" points to.
-#  930|                           break;
-#  931|                   case 'L':
-#  932|->                         logdir = strdup(optarg);
-#  933|                           break;
-#  934|                   case ARG_KERNELDIR:
 
 Error: RESOURCE_LEAK (CWE-772):
 dracut-046/install/dracut-install.c:945: alloc_fn: Storage is returned from allocation function "strv_split".

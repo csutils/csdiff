@@ -4076,13 +4076,6 @@ Error: UNINIT:
 /builddir/build/BUILD/ATLAS/interfaces/lapack/C/src/clapack_ztrtri.c:75: uninit_use: Using uninitialized value "ierr".
 
 Error: UNINIT:
-/builddir/build/BUILD/ATLAS/src/blas/level1/ATL_rotmg.c:38: var_decl: Declaring variable "h11" without initializer.
-/builddir/build/BUILD/ATLAS/src/blas/level1/ATL_rotmg.c:106: uninit_use: Using uninitialized value "h11".
-/builddir/build/BUILD/ATLAS/src/blas/level1/ATL_rotmg.c:120: uninit_use: Using uninitialized value "h11".
-/builddir/build/BUILD/ATLAS/src/blas/level1/ATL_rotmg.c:186: uninit_use: Using uninitialized value "h11".
-/builddir/build/BUILD/ATLAS/src/blas/level1/ATL_rotmg.c:188: uninit_use: Using uninitialized value "h11".
-
-Error: UNINIT:
 /builddir/build/BUILD/ATLAS/src/blas/level1/ATL_rotmg.c:38: var_decl: Declaring variable "h12" without initializer.
 /builddir/build/BUILD/ATLAS/src/blas/level1/ATL_rotmg.c:107: uninit_use: Using uninitialized value "h12".
 /builddir/build/BUILD/ATLAS/src/blas/level1/ATL_rotmg.c:121: uninit_use: Using uninitialized value "h12".
@@ -4097,6 +4090,13 @@ Error: UNINIT:
 /builddir/build/BUILD/ATLAS/src/blas/level1/ATL_rotmg.c:176: uninit_use: Using uninitialized value "h21".
 /builddir/build/BUILD/ATLAS/src/blas/level1/ATL_rotmg.c:186: uninit_use: Using uninitialized value "h21".
 /builddir/build/BUILD/ATLAS/src/blas/level1/ATL_rotmg.c:187: uninit_use: Using uninitialized value "h21".
+
+Error: UNINIT:
+/builddir/build/BUILD/ATLAS/src/blas/level1/ATL_rotmg.c:38: var_decl: Declaring variable "h11" without initializer.
+/builddir/build/BUILD/ATLAS/src/blas/level1/ATL_rotmg.c:106: uninit_use: Using uninitialized value "h11".
+/builddir/build/BUILD/ATLAS/src/blas/level1/ATL_rotmg.c:120: uninit_use: Using uninitialized value "h11".
+/builddir/build/BUILD/ATLAS/src/blas/level1/ATL_rotmg.c:186: uninit_use: Using uninitialized value "h11".
+/builddir/build/BUILD/ATLAS/src/blas/level1/ATL_rotmg.c:188: uninit_use: Using uninitialized value "h11".
 
 Error: UNINIT:
 /builddir/build/BUILD/ATLAS/src/blas/level1/ATL_rotmg.c:38: var_decl: Declaring variable "h22" without initializer.
