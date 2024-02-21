@@ -1,3 +1,15 @@
+Error: ARRAY_VS_SINGLETON:
+icu/source/common/ucnvmbcs.c:5514: address_of: Taking address with "&cnv->subChar1" yields a singleton pointer.
+icu/source/common/ucnvmbcs.c:5514: assign: Assigning: "subchar" = "(char *)&cnv->subChar1".
+icu/source/common/ucnvmbcs.c:5555: callee_ptr_arith: Passing "subchar" to function "ucnv_cbFromUWriteBytes_44" which uses it as an array. This might corrupt or misinterpret adjacent memory locations.
+icu/source/common/ucnv_cb.c:45: callee_ptr_arith: Performing pointer arithmetic on "source" in callee "ucnv_fromUWriteBytes_44".
+icu/source/common/ucnv_cnv.c:59: ptr_arith: Performing pointer arithmetic on "bytes" in expression "bytes++".
+
+Error: ARRAY_VS_SINGLETON:
+icu/source/io/uprntf_p.c:254: address_of: Taking address with "&arg" yields a singleton pointer.
+icu/source/io/uprntf_p.c:254: callee_ptr_arith: Passing "(char const *)&arg" to function "ufmt_defaultCPToUnicode_44" which uses it as an array. This might corrupt or misinterpret adjacent memory locations.
+icu/source/io/ufmt_cmn.c:233: callee_ptr_arith: Performing pointer arithmetic on "s" in callee "strlen".
+
 Error: BAD_FREE:
 icu/source/common/udata.c:176: address_free: "udata_checkCommonData_44" frees address of "tData".
 icu/source/common/ucmndata.c:278: freed_arg: "udata_close_44" frees parameter "udm".
@@ -68,6 +80,11 @@ Error: BAD_FREE:
 icu/source/common/udata.c:991: address_free: "udata_checkCommonData_44" frees address of "dataMemory".
 icu/source/common/ucmndata.c:278: freed_arg: "udata_close_44" frees parameter "udm".
 icu/source/common/udatamem.c:94: freed_arg: "uprv_free_44" frees parameter "pData".
+icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+
+Error: BAD_FREE:
+icu/source/common/uloc.c:2200: array_assign: Assigning: "j" = "smallBuffer".
+icu/source/common/uloc.c:2294: incorrect_free: "uprv_free_44" frees incorrect pointer "j".
 icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
 
 Error: BAD_FREE:
@@ -527,62 +544,6 @@ icu/source/common/icuplug.c:755: noescape: Variable "f" is not freed or pointed-
 icu/source/common/icuplug.c:821: leaked_storage: Variable "f" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
-icu/source/common/locutil.cpp:200: alloc_fn: Calling allocation function "icu_44::UMemory::operator new(unsigned long)".
-icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_44".
-icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_44".
-icu/source/common/locutil.cpp:200: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_44::Hashtable::Hashtable(UErrorCode &)".
-icu/source/common/hash.h:130:19: noescape: "icu_44::Hashtable::Hashtable(UErrorCode &)" does not free or save its pointer parameter "this".
-icu/source/common/locutil.cpp:200: var_assign: Assigning: "cache" =  storage returned from "new icu_44::Hashtable(status)".
-icu/source/common/locutil.cpp:202: leaked_storage: Variable "cache" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-icu/source/common/rbbisetb.cpp:360: alloc_fn: Calling allocation function "icu_44::UMemory::operator new(unsigned long)".
-icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_44".
-icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_44".
-icu/source/common/rbbisetb.cpp:360: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_44::RBBINode::RBBINode(icu_44::RBBINode::NodeType)".
-icu/source/common/rbbinode.cpp:46:11: noescape: "icu_44::RBBINode::RBBINode(icu_44::RBBINode::NodeType)" does not free or save its pointer parameter "this".
-icu/source/common/rbbisetb.cpp:360: var_assign: Assigning: "leafNode" =  storage returned from "new icu_44::RBBINode(_ZN6icu_448RBBINode8leafCharE)".
-icu/source/common/rbbisetb.cpp:376: leaked_storage: Variable "leafNode" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-icu/source/common/rbbirb.cpp:294: alloc_fn: Calling allocation function "icu_44::RBBIRuleBuilder::flattenData()".
-icu/source/common/rbbirb.cpp:169: alloc_fn: Storage is returned from allocation function "uprv_malloc_44".
-icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-icu/source/common/rbbirb.cpp:169: var_assign: Assigning: "data" = "uprv_malloc_44(totalSize)".
-icu/source/common/rbbirb.cpp:174: noescape: Variable "data" is not freed or pointed-to in function "memset".
-icu/source/common/rbbirb.cpp:209: var_assign: Assigning: "ruleStatusTable" = "data".
-icu/source/common/rbbirb.cpp:216: return_alloc: Returning allocated memory "data".
-icu/source/common/rbbirb.cpp:294: var_assign: Assigning: "data" =  storage returned from "builder.flattenData()".
-icu/source/common/rbbirb.cpp:296: leaked_storage: Variable "data" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-icu/source/common/serv.cpp:530: alloc_fn: Calling allocation function "icu_44::UMemory::operator new(unsigned long)".
-icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_44".
-icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_44".
-icu/source/common/serv.cpp:530: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_44::UnicodeString::UnicodeString(icu_44::UnicodeString const &)".
-icu/source/common/unistr.cpp:324:16: noescape: "icu_44::UnicodeString::UnicodeString(icu_44::UnicodeString const &)" does not free or save its pointer parameter "this".
-icu/source/common/serv.cpp:530: var_assign: Assigning: "idToCache" =  storage returned from "new icu_44::UnicodeString(currentDescriptor)".
-icu/source/common/serv.cpp:531: noescape: Variable "idToCache" is not freed or pointed-to in function "icu_44::UnicodeString::isBogus() const".
-icu/source/common/unicode/unistr.h:3498:16: noescape: "icu_44::UnicodeString::isBogus() const" does not free or save its pointer parameter "this".
-icu/source/common/serv.cpp:533: leaked_storage: Variable "idToCache" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-icu/source/common/uloc.c:2269: alloc_fn: Calling allocation function "uprv_realloc_44".
-icu/source/common/cmemory.c:55: alloc_fn: Storage is returned from allocation function "uprv_malloc_44".
-icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-icu/source/common/cmemory.c:55: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_44".
-icu/source/common/uloc.c:2269: var_assign: Assigning: "j" =  storage returned from "uprv_realloc_44(j, sizeof (j[0]) /*16*/ * jSize * 2UL)".
-icu/source/common/uloc.c:2243: leaked_storage: Variable "j" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
 icu/source/common/ushape.c:797: alloc_fn: Calling allocation function "uprv_malloc_44".
 icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
 icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
@@ -590,77 +551,6 @@ icu/source/common/ushape.c:797: var_assign: Assigning: "tempbuffer" =  storage r
 icu/source/common/ushape.c:805: noescape: Variable "tempbuffer" is not freed or pointed-to in function "memset".
 icu/source/common/ushape.c:823: noescape: Variable "tempbuffer" is not freed or pointed-to in function "memcpy".
 icu/source/common/ushape.c:844: overwrite_var: Overwriting "tempbuffer" in call "tempbuffer = (UChar *)uprv_malloc_44((sourceLength + 1) * 2)" leaks the storage that "tempbuffer" points to.
-
-Error: RESOURCE_LEAK:
-icu/source/i18n/nfrule.cpp:101: alloc_fn: Calling allocation function "icu_44::UMemory::operator new(unsigned long)".
-icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_44".
-icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_44".
-icu/source/i18n/nfrule.cpp:101: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_44::NFRule::NFRule(icu_44::RuleBasedNumberFormat const *)".
-icu/source/i18n/nfrule.cpp:32:9: noescape: "icu_44::NFRule::NFRule(icu_44::RuleBasedNumberFormat const *)" does not free or save its pointer parameter "this".
-icu/source/i18n/nfrule.cpp:101: var_assign: Assigning: "rule1" =  storage returned from "new icu_44::NFRule(rbnf)".
-icu/source/i18n/nfrule.cpp:107: noescape: Variable "rule1" is not freed or pointed-to in function "icu_44::NFRule::parseRuleDescriptor(icu_44::UnicodeString &, UErrorCode &)".
-icu/source/i18n/nfrule.cpp:222:9: noescape: "icu_44::NFRule::parseRuleDescriptor(icu_44::UnicodeString &, UErrorCode &)" does not free or save its pointer parameter "this".
-icu/source/i18n/nfrule.cpp:118: noescape: Variable "rule1" is not freed or pointed-to in function "icu_44::NFRule::getType() const".
-icu/source/i18n/nfrule.h:56:15: noescape: "icu_44::NFRule::getType() const" does not free or save its pointer parameter "this".
-icu/source/i18n/nfrule.cpp:118: noescape: Variable "rule1" is not freed or pointed-to in function "icu_44::NFRule::getType() const".
-icu/source/i18n/nfrule.cpp:133: noescape: Variable "rule1" is not freed or pointed-to in function "icu_44::NFRule::getType() const".
-icu/source/i18n/nfrule.cpp:147: leaked_storage: Variable "rule1" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-icu/source/i18n/rbt_pars.cpp:547: alloc_fn: Calling allocation function "icu_44::TransliteratorIDParser::parseFilterID(icu_44::UnicodeString const &, int &)".
-icu/source/i18n/tridpars.cpp:224: alloc_fn: Storage is returned from allocation function "icu_44::TransliteratorIDParser::specsToID(icu_44::TransliteratorIDParser::Specs const *, int)".
-icu/source/i18n/tridpars.cpp:839: alloc_fn: Storage is returned from allocation function "icu_44::UMemory::operator new(unsigned long)".
-icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_44".
-icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_44".
-icu/source/i18n/tridpars.cpp:839: var_assign: Assigning: "<storage from new>" = "icu_44::UMemory::operator new(152UL)".
-icu/source/i18n/tridpars.cpp:839: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_44::TransliteratorIDParser::SingleID::SingleID(icu_44::UnicodeString const &, icu_44::UnicodeString const &)".
-icu/source/i18n/tridpars.cpp:67:35: noescape: "icu_44::TransliteratorIDParser::SingleID::SingleID(icu_44::UnicodeString const &, icu_44::UnicodeString const &)" does not free or save its pointer parameter "this".
-icu/source/i18n/tridpars.cpp:839: return_alloc: Returning allocated memory "new icu_44::TransliteratorIDParser::SingleID(canonID, basicID)".
-icu/source/i18n/tridpars.cpp:224: var_assign: Assigning: "single" = "icu_44::TransliteratorIDParser::specsToID(specs, 0)".
-icu/source/i18n/tridpars.cpp:229: return_alloc: Returning allocated memory "single".
-icu/source/i18n/rbt_pars.cpp:547: var_assign: Assigning: "single" =  storage returned from "icu_44::TransliteratorIDParser::parseFilterID(rule, iref)".
-icu/source/i18n/rbt_pars.cpp:552: leaked_storage: Variable "single" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-icu/source/i18n/tridpars.cpp:131: alloc_fn: Calling allocation function "icu_44::TransliteratorIDParser::parseFilterID(icu_44::UnicodeString const &, int &, signed char)".
-icu/source/i18n/tridpars.cpp:801: alloc_fn: Storage is returned from allocation function "icu_44::UMemory::operator new(unsigned long)".
-icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_44".
-icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_44".
-icu/source/i18n/tridpars.cpp:801: var_assign: Assigning: "<storage from new>" = "icu_44::UMemory::operator new(208UL)".
-icu/source/i18n/tridpars.cpp:801: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_44::TransliteratorIDParser::Specs::Specs(icu_44::UnicodeString const &, icu_44::UnicodeString const &, icu_44::UnicodeString const &, signed char, icu_44::UnicodeString const &)".
-icu/source/i18n/tridpars.cpp:50:32: noescape: "icu_44::TransliteratorIDParser::Specs::Specs(icu_44::UnicodeString const &, icu_44::UnicodeString const &, icu_44::UnicodeString const &, signed char, icu_44::UnicodeString const &)" does not free or save its pointer parameter "this".
-icu/source/i18n/tridpars.cpp:801: return_alloc: Returning allocated memory "new icu_44::TransliteratorIDParser::Specs(source, target, variant, sawSource, filter)".
-icu/source/i18n/tridpars.cpp:131: var_assign: Assigning: "specsB" =  storage returned from "icu_44::TransliteratorIDParser::parseFilterID(id, pos, 1)".
-icu/source/i18n/tridpars.cpp:136: leaked_storage: Variable "specsB" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-icu/source/i18n/tridpars.cpp:122: alloc_fn: Calling allocation function "icu_44::TransliteratorIDParser::parseFilterID(icu_44::UnicodeString const &, int &, signed char)".
-icu/source/i18n/tridpars.cpp:801: alloc_fn: Storage is returned from allocation function "icu_44::UMemory::operator new(unsigned long)".
-icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_44".
-icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_44".
-icu/source/i18n/tridpars.cpp:801: var_assign: Assigning: "<storage from new>" = "icu_44::UMemory::operator new(208UL)".
-icu/source/i18n/tridpars.cpp:801: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_44::TransliteratorIDParser::Specs::Specs(icu_44::UnicodeString const &, icu_44::UnicodeString const &, icu_44::UnicodeString const &, signed char, icu_44::UnicodeString const &)".
-icu/source/i18n/tridpars.cpp:50:32: noescape: "icu_44::TransliteratorIDParser::Specs::Specs(icu_44::UnicodeString const &, icu_44::UnicodeString const &, icu_44::UnicodeString const &, signed char, icu_44::UnicodeString const &)" does not free or save its pointer parameter "this".
-icu/source/i18n/tridpars.cpp:801: return_alloc: Returning allocated memory "new icu_44::TransliteratorIDParser::Specs(source, target, variant, sawSource, filter)".
-icu/source/i18n/tridpars.cpp:122: var_assign: Assigning: "specsA" =  storage returned from "icu_44::TransliteratorIDParser::parseFilterID(id, pos, 1)".
-icu/source/i18n/tridpars.cpp:148: noescape: Variable "specsA" is not freed or pointed-to in function "icu_44::TransliteratorIDParser::specsToID(icu_44::TransliteratorIDParser::Specs const *, int)".
-icu/source/i18n/tridpars.cpp:812:48: noescape: "icu_44::TransliteratorIDParser::specsToID(icu_44::TransliteratorIDParser::Specs const *, int)" does not free or save its pointer parameter "specs".
-icu/source/i18n/tridpars.cpp:154: leaked_storage: Variable "specsA" going out of scope leaks the storage it points to.
-icu/source/i18n/tridpars.cpp:163: noescape: Variable "specsA" is not freed or pointed-to in function "icu_44::TransliteratorIDParser::specsToID(icu_44::TransliteratorIDParser::Specs const *, int)".
-icu/source/i18n/tridpars.cpp:170: leaked_storage: Variable "specsA" going out of scope leaks the storage it points to.
-icu/source/i18n/tridpars.cpp:182: noescape: Variable "specsA" is not freed or pointed-to in function "icu_44::TransliteratorIDParser::specsToID(icu_44::TransliteratorIDParser::Specs const *, int)".
-icu/source/i18n/tridpars.cpp:184: noescape: Variable "specsA" is not freed or pointed-to in function "icu_44::TransliteratorIDParser::specsToSpecialInverse(icu_44::TransliteratorIDParser::Specs const &, UErrorCode &)".
-icu/source/i18n/tridpars.cpp:850:60: noescape: "icu_44::TransliteratorIDParser::specsToSpecialInverse(icu_44::TransliteratorIDParser::Specs const &, UErrorCode &)" does not free or save its pointer parameter "specs".
-icu/source/i18n/tridpars.cpp:186: noescape: Variable "specsA" is not freed or pointed-to in function "icu_44::TransliteratorIDParser::specsToID(icu_44::TransliteratorIDParser::Specs const *, int)".
-icu/source/i18n/tridpars.cpp:192: leaked_storage: Variable "specsA" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
 icu/source/i18n/basictz.cpp:340: alloc_fn: Calling allocation function "icu_44::UMemory::operator new(unsigned long)".
@@ -709,73 +599,12 @@ icu/source/i18n/ucol.cpp:3400: overwrite_var: Overwriting "strbuffer" in call "s
 icu/source/i18n/ucol.cpp:3405: leaked_storage: Variable "UCharOffset" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
-icu/source/i18n/colldata.cpp:331: alloc_fn: Calling allocation function "icu_44::UMemory::operator new(unsigned long)".
-icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_44".
-icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_44".
-icu/source/i18n/colldata.cpp:331: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_44::StringList::StringList(UErrorCode &)".
-icu/source/i18n/colldata.cpp:200:13: noescape: "icu_44::StringList::StringList(UErrorCode &)" does not free or save its pointer parameter "this".
-icu/source/i18n/colldata.cpp:331: var_assign: Assigning: "strings" =  storage returned from "new icu_44::StringList(status)".
-icu/source/i18n/colldata.cpp:335: leaked_storage: Variable "strings" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
 icu/source/i18n/ucol_elm.cpp:1249: alloc_fn: Calling allocation function "uprv_malloc_44".
 icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
 icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
 icu/source/i18n/ucol_elm.cpp:1249: var_assign: Assigning: "composed" =  storage returned from "uprv_malloc_44(sizeof (UCAElements) /*2600*/)".
 icu/source/i18n/ucol_elm.cpp:1255: noescape: Variable "composed" is not freed or pointed-to in function "memcpy".
 icu/source/i18n/ucol_elm.cpp:1272: leaked_storage: Variable "composed" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-icu/source/i18n/ucol_elm.cpp:231: alloc_fn: Calling allocation function "uprv_malloc_44".
-icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-icu/source/i18n/ucol_elm.cpp:231: var_assign: Assigning: "r" =  storage returned from "uprv_malloc_44(sizeof (tempUCATable) /*96*/)".
-icu/source/i18n/ucol_elm.cpp:237: noescape: Variable "r" is not freed or pointed-to in function "memset".
-icu/source/i18n/ucol_elm.cpp:377: leaked_storage: Variable "r" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-icu/source/i18n/dtptngen.cpp:1269: alloc_fn: Calling allocation function "icu_44::UMemory::operator new(unsigned long)".
-icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_44".
-icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_44".
-icu/source/i18n/dtptngen.cpp:1269: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_44::PtnElem::PtnElem(icu_44::UnicodeString const &, icu_44::UnicodeString const &)".
-icu/source/i18n/dtptngen.cpp:1986:10: noescape: "icu_44::PtnElem::PtnElem(icu_44::UnicodeString const &, icu_44::UnicodeString const &)" does not free or save its pointer parameter "this".
-icu/source/i18n/dtptngen.cpp:1269: var_assign: Assigning: "curElem" =  storage returned from "new icu_44::PtnElem(otherElem->basePattern, otherElem->pattern)".
-icu/source/i18n/dtptngen.cpp:1280: leaked_storage: Variable "curElem" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-icu/source/i18n/gregocal.cpp:1330: alloc_fn: Calling allocation function "icu_44::UMemory::operator new(unsigned long)".
-icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_44".
-icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_44".
-icu/source/i18n/gregocal.cpp:1330: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_44::GregorianCalendar::GregorianCalendar(UErrorCode &)".
-icu/source/i18n/gregocal.cpp:152:20: noescape: "icu_44::GregorianCalendar::GregorianCalendar(UErrorCode &)" does not free or save its pointer parameter "this".
-icu/source/i18n/gregocal.cpp:1330: var_assign: Assigning: "calendar" =  storage returned from "new icu_44::GregorianCalendar(status)".
-icu/source/i18n/gregocal.cpp:1349: leaked_storage: Variable "calendar" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-icu/source/i18n/olsontz.cpp:820: alloc_fn: Calling allocation function "icu_44::UMemory::operator new(unsigned long)".
-icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_44".
-icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_44".
-icu/source/i18n/olsontz.cpp:820: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_44::TimeArrayTimeZoneRule::TimeArrayTimeZoneRule(icu_44::UnicodeString const &, int, int, double const *, int, icu_44::DateTimeRule::TimeRuleType)".
-icu/source/i18n/tzrule.cpp:400:24: noescape: "icu_44::TimeArrayTimeZoneRule::TimeArrayTimeZoneRule(icu_44::UnicodeString const &, int, int, double const *, int, icu_44::DateTimeRule::TimeRuleType)" does not free or save its pointer parameter "this".
-icu/source/i18n/olsontz.cpp:820: var_assign: Assigning: "firstFinalRule" =  storage returned from "new icu_44::TimeArrayTimeZoneRule(tzid, this->finalZone->getRawOffset(), 0, &startTime, 1, _ZN6icu_4412DateTimeRule8UTC_TIMEE)".
-icu/source/i18n/olsontz.cpp:842: leaked_storage: Variable "firstFinalRule" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-icu/source/i18n/olsontz.cpp:718: alloc_fn: Calling allocation function "uprv_malloc_44".
-icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-icu/source/i18n/olsontz.cpp:718: var_assign: Assigning: "times" =  storage returned from "uprv_malloc_44(sizeof (UDate) /*8*/ * transCount)".
-icu/source/i18n/olsontz.cpp:754: noescape: Variable "times" is not freed or pointed-to in function "icu_44::TimeArrayTimeZoneRule::TimeArrayTimeZoneRule(icu_44::UnicodeString const &, int, int, double const *, int, icu_44::DateTimeRule::TimeRuleType)".
-icu/source/i18n/tzrule.cpp:403:59: noescape: "icu_44::TimeArrayTimeZoneRule::TimeArrayTimeZoneRule(icu_44::UnicodeString const &, int, int, double const *, int, icu_44::DateTimeRule::TimeRuleType)" does not free or save its pointer parameter "startTimes".
-icu/source/i18n/olsontz.cpp:760: leaked_storage: Variable "times" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
 icu/source/i18n/plurrule.cpp:225: alloc_fn: Calling allocation function "icu_44::PluralRules::getKeywords(UErrorCode &) const".
@@ -791,71 +620,6 @@ icu/source/i18n/plurrule.cpp:188: var_assign: Assigning: "nameEnumerator" = "new
 icu/source/i18n/plurrule.cpp:191: return_alloc: Returning allocated memory "nameEnumerator".
 icu/source/i18n/plurrule.cpp:225: var_assign: Assigning: "myKeywordList" =  storage returned from "this->getKeywords(status)".
 icu/source/i18n/plurrule.cpp:231: leaked_storage: Variable "myKeywordList" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-icu/source/i18n/rbtz.cpp:644: alloc_fn: Calling allocation function "icu_44::UMemory::operator new(unsigned long)".
-icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_44".
-icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_44".
-icu/source/i18n/rbtz.cpp:644: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_44::UVector::UVector(int, UErrorCode &)".
-icu/source/common/uvector.cpp:39:10: noescape: "icu_44::UVector::UVector(int, UErrorCode &)" does not free or save its pointer parameter "this".
-icu/source/i18n/rbtz.cpp:644: var_assign: Assigning: "rules" =  storage returned from "new icu_44::UVector(size, ec)".
-icu/source/i18n/rbtz.cpp:646: leaked_storage: Variable "rules" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-icu/source/i18n/timezone.cpp:1085: alloc_fn: Calling allocation function "icu_44::UMemory::operator new(unsigned long)".
-icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_44".
-icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_44".
-icu/source/i18n/timezone.cpp:1085: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_44::SimpleTimeZone::SimpleTimeZone(int, icu_44::UnicodeString const &, signed char, signed char, signed char, int, signed char, signed char, signed char, int, int, UErrorCode &)".
-icu/source/i18n/simpletz.cpp:102:17: noescape: "icu_44::SimpleTimeZone::SimpleTimeZone(int, icu_44::UnicodeString const &, signed char, signed char, signed char, int, signed char, signed char, signed char, int, int, UErrorCode &)" does not free or save its pointer parameter "this".
-icu/source/i18n/timezone.cpp:1085: var_assign: Assigning: "tz" =  storage returned from "new icu_44::SimpleTimeZone(rawOffset, tempID, 5, 1, 0, 0, 7, 1, 0, 0, this->getDSTSavings(), status)".
-icu/source/i18n/timezone.cpp:1093: leaked_storage: Variable "tz" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-icu/source/i18n/tmutfmt.cpp:474: alloc_fn: Calling allocation function "icu_44::TimeUnitFormat::initHash(UErrorCode &)".
-icu/source/i18n/tmutfmt.cpp:821: alloc_fn: Storage is returned from allocation function "icu_44::UMemory::operator new(unsigned long)".
-icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_44".
-icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_44".
-icu/source/i18n/tmutfmt.cpp:821: var_assign: Assigning: "<storage from new>" = "icu_44::UMemory::operator new(88UL)".
-icu/source/i18n/tmutfmt.cpp:821: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_44::Hashtable::Hashtable(signed char, UErrorCode &)".
-icu/source/common/hash.h:119:19: noescape: "icu_44::Hashtable::Hashtable(signed char, UErrorCode &)" does not free or save its pointer parameter "this".
-icu/source/i18n/tmutfmt.cpp:821: var_assign: Assigning: "hTable" = "new icu_44::Hashtable(1, status)".
-icu/source/i18n/tmutfmt.cpp:825: noescape: Variable "hTable" is not freed or pointed-to in function "icu_44::Hashtable::setValueComparator(signed char (*)(UHashTok, UHashTok))".
-icu/source/common/hash.h:197:37: noescape: "icu_44::Hashtable::setValueComparator(signed char (*)(UHashTok, UHashTok))" does not free or save its pointer parameter "this".
-icu/source/i18n/tmutfmt.cpp:826: return_alloc: Returning allocated memory "hTable".
-icu/source/i18n/tmutfmt.cpp:474: var_assign: Assigning: "countToPatterns" =  storage returned from "this->initHash(err)".
-icu/source/i18n/tmutfmt.cpp:498: noescape: Variable "countToPatterns" is not freed or pointed-to in function "icu_44::Hashtable::get(icu_44::UnicodeString const &) const".
-icu/source/common/hash.h:165:25: noescape: "icu_44::Hashtable::get(icu_44::UnicodeString const &) const" does not free or save its pointer parameter "this".
-icu/source/i18n/tmutfmt.cpp:504: noescape: Variable "countToPatterns" is not freed or pointed-to in function "icu_44::Hashtable::put(icu_44::UnicodeString const &, void *, UErrorCode &)".
-icu/source/common/hash.h:157:25: noescape: "icu_44::Hashtable::put(icu_44::UnicodeString const &, void *, UErrorCode &)" does not free or save its pointer parameter "this".
-icu/source/i18n/tmutfmt.cpp:528: leaked_storage: Variable "countToPatterns" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-icu/source/i18n/vtzone.cpp:1711: alloc_fn: Calling allocation function "icu_44::UMemory::operator new(unsigned long)".
-icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_44".
-icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_44".
-icu/source/i18n/vtzone.cpp:1711: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_44::UVector::UVector(void (*)(void *), signed char (*)(UHashTok, UHashTok), UErrorCode &)".
-icu/source/common/uvector.cpp:49:10: noescape: "icu_44::UVector::UVector(void (*)(void *), signed char (*)(UHashTok, UHashTok), UErrorCode &)" does not free or save its pointer parameter "this".
-icu/source/i18n/vtzone.cpp:1711: var_assign: Assigning: "customProps" =  storage returned from "new icu_44::UVector(uhash_deleteUnicodeString_44, uhash_compareUnicodeString_44, status)".
-icu/source/i18n/vtzone.cpp:1713: leaked_storage: Variable "customProps" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-icu/source/tools/gencnval/gencnval.c:968: alloc_fn: Calling allocation function "uprv_malloc_44".
-icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-icu/source/tools/gencnval/gencnval.c:968: var_assign: Assigning: "uniqueAliasesToConverter" =  storage returned from "uprv_malloc_44(knownAliasesCount * sizeof (uint16_t) /*2*/)".
-icu/source/tools/gencnval/gencnval.c:971: noescape: Variable "uniqueAliasesToConverter" is not freed or pointed-to in function "resolveAliases".
-icu/source/tools/gencnval/gencnval.c:832:52: noescape: "resolveAliases" does not free or save its pointer parameter "uniqueAliasToConverterArr".
-icu/source/tools/gencnval/gencnval.c:1024: noescape: Variable "uniqueAliasesToConverter" is not freed or pointed-to in function "udata_writeBlock".
-icu/source/tools/toolutil/unewdata.c:215:53: noescape: "udata_writeBlock" does not free or save its pointer parameter "s".
-icu/source/tools/gencnval/gencnval.c:1059: leaked_storage: Variable "uniqueAliasesToConverter" going out of scope leaks the storage it points to.
 
 Error: REVERSE_INULL:
 icu/source/common/uniset_props.cpp:195: deref_ptr_in_call: Dereferencing pointer "incl".

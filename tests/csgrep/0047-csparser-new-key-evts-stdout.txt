@@ -1,8 +1,8 @@
 Error: NULL_RETURNS:
-/builddir/build/BUILD/dbus-1.10.24/dbus/dbus-connection.c:637: returned_null: "_dbus_list_get_last_link" returns null (checked 7 out of 8 times).
+/builddir/build/BUILD/dbus-1.10.24/dbus/dbus-connection.c:641: dereference: Dereferencing a pointer that might be null "link" when calling "_dbus_list_unlink".
 
 Error: NULL_RETURNS:
-/builddir/build/BUILD/dbus-1.10.24/dbus/dbus-connection.c:3985: returned_null: "_dbus_list_pop_first_link" returns null (checked 10 out of 12 times).
+/builddir/build/BUILD/dbus-1.10.24/dbus/dbus-connection.c:4007: dereference: Dereferencing a null pointer "link".
 
 Error: NULL_RETURNS:
-/builddir/build/BUILD/dbus-1.10.24/dbus/dbus-mainloop.c:246: returned_null: "_dbus_hash_table_lookup_pollable" returns null (checked 4 out of 5 times).
+/builddir/build/BUILD/dbus-1.10.24/dbus/dbus-mainloop.c:252: dereference: Dereferencing a pointer that might be null "watches" when calling "_dbus_list_get_first_link".

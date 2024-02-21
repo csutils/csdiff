@@ -287,6 +287,22 @@ virtuoso-opensource-6.1.2/libsrc/Wi/replsri.c:721: var_assigned: Assigning: "ra"
 virtuoso-opensource-6.1.2/libsrc/Wi/replsri.c:737: dereference: Dereferencing a null pointer "ra".
 
 Error: NULL_RETURNS:
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:4366: returned_null: Function "bif_string_or_wide_or_null_arg" returns null (checked 15 out of 18 times).
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:409: return_null: Explicitly returning NULL.
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2318: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "repeat")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2328: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2462: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "ltrim")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2472: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2505: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "rtrim")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2515: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2548: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "trim")".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2561: example_checked: "str" has its value checked in "NULL == str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2823: example_assign: Assigning: "src_str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, me)".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2842: example_checked: "src_str" has its value checked in "NULL == src_str".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:4366: var_assigned: Assigning: "str1" = null return value from "bif_string_or_wide_or_null_arg".
+virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:4369: dereference: Dereferencing a null pointer "str1".
+
+Error: NULL_RETURNS:
 virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:12282: returned_null: Function "bif_string_or_wide_or_null_arg" returns null (checked 15 out of 18 times).
 virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:409: return_null: Explicitly returning NULL.
 virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2318: example_assign: Assigning: "str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 0, "repeat")".
@@ -429,14 +445,6 @@ virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2823: example_assign: Assigning: "s
 virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2842: example_checked: "src_str" has its value checked in "NULL == src_str".
 virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2823: var_assigned: Assigning: "src_str" = null return value from "bif_string_or_wide_or_null_arg".
 virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2832: dereference: Dereferencing a null pointer "src_str".
-
-Error: NULL_RETURNS:
-virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2825: returned_null: Function "bif_string_or_wide_or_null_arg" returns null (checked 1 out of 1 times).
-virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:409: return_null: Explicitly returning NULL.
-virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2825: example_assign: Assigning: "to_str" = return value from "bif_string_or_wide_or_null_arg(qst, args, 2, me)".
-virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2842: example_checked: "to_str" has its value checked in "NULL == to_str".
-virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2825: var_assigned: Assigning: "to_str" = null return value from "bif_string_or_wide_or_null_arg".
-virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2834: dereference: Dereferencing a null pointer "to_str".
 
 Error: NULL_RETURNS:
 virtuoso-opensource-6.1.2/libsrc/Wi/sqlbif.c:2505: returned_null: Function "bif_string_or_wide_or_null_arg" returns null (checked 15 out of 18 times).
@@ -1312,7 +1320,7 @@ virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1119: noescape: Variable "copy" is n
 virtuoso-opensource-6.1.2/libsrc/Dk/Dkbox.c:1120: return_alloc: Returning allocated memory "copy".
 virtuoso-opensource-6.1.2/libsrc/Wi/xmlsql.c:4373: return_alloc_fn: Directly returning storage allocated by "box_copy".
 virtuoso-opensource-6.1.2/libsrc/Wi/xmlsql.c:4609: var_assign: Assigning: "ins_val" =  storage returned from "xs_idnval(xs_idn, xs_var, pairsb[ix - nparsa + 1])".
-virtuoso-opensource-6.1.2/libsrc/Wi/xmlsql.c:4700: leaked_storage: Variable "ins_val" going out of scope leaks the storage it points to.
+virtuoso-opensource-6.1.2/libsrc/Wi/xmlsql.c:4604: overwrite_var: Overwriting "ins_val" in call "ins_val = (caddr_t)xs_idnval(xs_idn, xs_var, pairsa[ix + 1])" leaks the storage that "ins_val" points to.
 
 Error: RESOURCE_LEAK:
 virtuoso-opensource-6.1.2/libsrc/Wi/xmltree.c:6777: alloc_fn: Calling allocation function "box_copy_tree".

@@ -1,4 +1,15 @@
 Error: ARRAY_VS_SINGLETON:
+fftw-3.2.2/double/rdft/problem.c:230: address_of: Taking address with "&kind" yields a singleton pointer.
+fftw-3.2.2/double/rdft/problem.c:230: callee_ptr_arith: Passing "&kind" to function "fftw_mkproblem_rdft_d" which uses it as an array. This might corrupt or misinterpret adjacent memory locations.
+fftw-3.2.2/double/rdft/problem.c:213: callee_ptr_arith: Performing pointer arithmetic on "kind" in callee "fftw_mkproblem_rdft".
+fftw-3.2.2/double/rdft/problem.c:154: ptr_arith: Performing pointer arithmetic on "kind" in expression "kind + i".
+
+Error: ARRAY_VS_SINGLETON:
+fftw-3.2.2/double/rdft/problem.c:223: address_of: Taking address with "&kind" yields a singleton pointer.
+fftw-3.2.2/double/rdft/problem.c:223: callee_ptr_arith: Passing "&kind" to function "fftw_mkproblem_rdft" which uses it as an array. This might corrupt or misinterpret adjacent memory locations.
+fftw-3.2.2/double/rdft/problem.c:154: ptr_arith: Performing pointer arithmetic on "kind" in expression "kind + i".
+
+Error: ARRAY_VS_SINGLETON:
 fftw-3.2.2/long/rdft/problem.c:230: address_of: Taking address with "&kind" yields a singleton pointer.
 fftw-3.2.2/long/rdft/problem.c:230: callee_ptr_arith: Passing "&kind" to function "fftwl_mkproblem_rdft_d" which uses it as an array. This might corrupt or misinterpret adjacent memory locations.
 fftw-3.2.2/long/rdft/problem.c:213: callee_ptr_arith: Performing pointer arithmetic on "kind" in callee "fftwl_mkproblem_rdft".
@@ -8,17 +19,6 @@ Error: ARRAY_VS_SINGLETON:
 fftw-3.2.2/long/rdft/problem.c:223: address_of: Taking address with "&kind" yields a singleton pointer.
 fftw-3.2.2/long/rdft/problem.c:223: callee_ptr_arith: Passing "&kind" to function "fftwl_mkproblem_rdft" which uses it as an array. This might corrupt or misinterpret adjacent memory locations.
 fftw-3.2.2/long/rdft/problem.c:154: ptr_arith: Performing pointer arithmetic on "kind" in expression "kind + i".
-
-Error: ARRAY_VS_SINGLETON:
-fftw-3.2.2/single/rdft/problem.c:230: address_of: Taking address with "&kind" yields a singleton pointer.
-fftw-3.2.2/single/rdft/problem.c:230: callee_ptr_arith: Passing "&kind" to function "fftwf_mkproblem_rdft_d" which uses it as an array. This might corrupt or misinterpret adjacent memory locations.
-fftw-3.2.2/single/rdft/problem.c:213: callee_ptr_arith: Performing pointer arithmetic on "kind" in callee "fftwf_mkproblem_rdft".
-fftw-3.2.2/single/rdft/problem.c:154: ptr_arith: Performing pointer arithmetic on "kind" in expression "kind + i".
-
-Error: ARRAY_VS_SINGLETON:
-fftw-3.2.2/single/rdft/problem.c:223: address_of: Taking address with "&kind" yields a singleton pointer.
-fftw-3.2.2/single/rdft/problem.c:223: callee_ptr_arith: Passing "&kind" to function "fftwf_mkproblem_rdft" which uses it as an array. This might corrupt or misinterpret adjacent memory locations.
-fftw-3.2.2/single/rdft/problem.c:154: ptr_arith: Performing pointer arithmetic on "kind" in expression "kind + i".
 
 Error: BAD_FREE:
 fftw-3.2.2/double/rdft/vrank3-transpose.c:753: address_free: Using "&pln->super.super" to refer to containing object "*pln" freed by "fftw_plan_destroy_internal".

@@ -56,7 +56,7 @@ Error: VOLATILE_ATOMICITY:
 apache-tomcat-9.0.7.redhat-10-src/java/org/apache/tomcat/websocket/WsFrameBase.java:951: read_volatile: Reading "payloadWritten", a volatile field, without any lock held.
 
 Error: BAD_FREE (CWE-763):
-bind-9.11.3/lib/isc-pkcs11/mem.c:1592: address_assign: Assigning: "si" = "&(size_info *)ptr[-2]".
+bind-9.11.3/lib/isc-pkcs11/mem.c:1608: incorrect_free: "mem_put" frees incorrect pointer "si".
 
 Error: LOCK (CWE-667):
 389-ds-base-1.3.8.4/ldap/servers/plugins/replication/repl5_ruv.c:1428: double_unlock: "slapi_rwlock_unlock" unlocks "ruv->lock" while it is unlocked.

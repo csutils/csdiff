@@ -1,3 +1,15 @@
+Error: ARRAY_VS_SINGLETON:
+/builddir/build/BUILD/icu/source/common/ucnvmbcs.c:5517: address_of: Taking address with "&cnv->subChar1" yields a singleton pointer.
+/builddir/build/BUILD/icu/source/common/ucnvmbcs.c:5517: assign: Assigning: "subchar" = "(char *)&cnv->subChar1".
+/builddir/build/BUILD/icu/source/common/ucnvmbcs.c:5558: callee_ptr_arith: Passing "subchar" to function "ucnv_cbFromUWriteBytes_48" which uses it as an array. This might corrupt or misinterpret adjacent memory locations.
+/builddir/build/BUILD/icu/source/common/ucnv_cb.c:45: callee_ptr_arith: Performing pointer arithmetic on "source" in callee "ucnv_fromUWriteBytes_48".
+/builddir/build/BUILD/icu/source/common/ucnv_cnv.c:59: ptr_arith: Performing pointer arithmetic on "bytes" in expression "bytes++".
+
+Error: ARRAY_VS_SINGLETON:
+/builddir/build/BUILD/icu/source/io/uprntf_p.c:254: address_of: Taking address with "&arg" yields a singleton pointer.
+/builddir/build/BUILD/icu/source/io/uprntf_p.c:254: callee_ptr_arith: Passing "(char const *)&arg" to function "ufmt_defaultCPToUnicode_48" which uses it as an array. This might corrupt or misinterpret adjacent memory locations.
+/builddir/build/BUILD/icu/source/io/ufmt_cmn.c:233: callee_ptr_arith: Performing pointer arithmetic on "s" in callee "strlen".
+
 Error: BAD_FREE:
 /builddir/build/BUILD/icu/source/common/udata.cpp:202: address_free: "udata_checkCommonData_48" frees address of "tData".
 /builddir/build/BUILD/icu/source/common/ucmndata.c:358: freed_arg: "udata_close_48" frees parameter "udm".
@@ -68,6 +80,11 @@ Error: BAD_FREE:
 /builddir/build/BUILD/icu/source/common/udata.cpp:875: address_free: "udata_checkCommonData_48" frees address of "dataMemory".
 /builddir/build/BUILD/icu/source/common/ucmndata.c:358: freed_arg: "udata_close_48" frees parameter "udm".
 /builddir/build/BUILD/icu/source/common/udatamem.c:94: freed_arg: "uprv_free_48" frees parameter "pData".
+/builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
+
+Error: BAD_FREE:
+/builddir/build/BUILD/icu/source/common/uloc.c:2272: array_assign: Assigning: "j" = "smallBuffer".
+/builddir/build/BUILD/icu/source/common/uloc.c:2366: incorrect_free: "uprv_free_48" frees incorrect pointer "j".
 /builddir/build/BUILD/icu/source/common/cmemory.c:79: freed_arg: "free" frees parameter "buffer".
 
 Error: BAD_FREE:
@@ -617,62 +634,6 @@ Error: RESOURCE_LEAK:
 /builddir/build/BUILD/icu/source/common/uloc_tag.c:2075: leaked_storage: Variable "t" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/common/locutil.cpp:198: alloc_fn: Calling allocation function "icu_48::UMemory::operator new(unsigned long)".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/locutil.cpp:198: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::Hashtable::Hashtable(UErrorCode &)".
-/builddir/build/BUILD/icu/source/common/hash.h:130:19: noescape: "icu_48::Hashtable::Hashtable(UErrorCode &)" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/common/locutil.cpp:198: var_assign: Assigning: "cache" =  storage returned from "new icu_48::Hashtable(status)".
-/builddir/build/BUILD/icu/source/common/locutil.cpp:200: leaked_storage: Variable "cache" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/common/rbbisetb.cpp:360: alloc_fn: Calling allocation function "icu_48::UMemory::operator new(unsigned long)".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/rbbisetb.cpp:360: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::RBBINode::RBBINode(icu_48::RBBINode::NodeType)".
-/builddir/build/BUILD/icu/source/common/rbbinode.cpp:46:11: noescape: "icu_48::RBBINode::RBBINode(icu_48::RBBINode::NodeType)" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/common/rbbisetb.cpp:360: var_assign: Assigning: "leafNode" =  storage returned from "new icu_48::RBBINode(_ZN6icu_488RBBINode8leafCharE)".
-/builddir/build/BUILD/icu/source/common/rbbisetb.cpp:376: leaked_storage: Variable "leafNode" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/common/rbbirb.cpp:294: alloc_fn: Calling allocation function "icu_48::RBBIRuleBuilder::flattenData()".
-/builddir/build/BUILD/icu/source/common/rbbirb.cpp:169: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/common/rbbirb.cpp:169: var_assign: Assigning: "data" = "uprv_malloc_48(totalSize)".
-/builddir/build/BUILD/icu/source/common/rbbirb.cpp:174: noescape: Variable "data" is not freed or pointed-to in function "memset".
-/builddir/build/BUILD/icu/source/common/rbbirb.cpp:209: var_assign: Assigning: "ruleStatusTable" = "data".
-/builddir/build/BUILD/icu/source/common/rbbirb.cpp:216: return_alloc: Returning allocated memory "data".
-/builddir/build/BUILD/icu/source/common/rbbirb.cpp:294: var_assign: Assigning: "data" =  storage returned from "builder.flattenData()".
-/builddir/build/BUILD/icu/source/common/rbbirb.cpp:296: leaked_storage: Variable "data" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/common/serv.cpp:527: alloc_fn: Calling allocation function "icu_48::UMemory::operator new(unsigned long)".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/serv.cpp:527: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::UnicodeString::UnicodeString(icu_48::UnicodeString const &)".
-/builddir/build/BUILD/icu/source/common/unistr.cpp:325:16: noescape: "icu_48::UnicodeString::UnicodeString(icu_48::UnicodeString const &)" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/common/serv.cpp:527: var_assign: Assigning: "idToCache" =  storage returned from "new icu_48::UnicodeString(currentDescriptor)".
-/builddir/build/BUILD/icu/source/common/serv.cpp:528: noescape: Variable "idToCache" is not freed or pointed-to in function "icu_48::UnicodeString::isBogus() const".
-/builddir/build/BUILD/icu/source/common/unicode/unistr.h:3523:16: noescape: "icu_48::UnicodeString::isBogus() const" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/common/serv.cpp:530: leaked_storage: Variable "idToCache" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/common/uloc.c:2341: alloc_fn: Calling allocation function "uprv_realloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:55: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:55: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/uloc.c:2341: var_assign: Assigning: "j" =  storage returned from "uprv_realloc_48(j, sizeof (j[0]) /*16*/ * jSize * 2UL)".
-/builddir/build/BUILD/icu/source/common/uloc.c:2315: leaked_storage: Variable "j" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
 /builddir/build/BUILD/icu/source/common/uloc_tag.c:1353: alloc_fn: Calling allocation function "uprv_malloc_48".
 /builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
 /builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
@@ -700,85 +661,6 @@ Error: RESOURCE_LEAK:
 /builddir/build/BUILD/icu/source/i18n/decimfmt.cpp:3333: leaked_storage: Variable "fmt" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/i18n/nfrule.cpp:100: alloc_fn: Calling allocation function "icu_48::UMemory::operator new(unsigned long)".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/i18n/nfrule.cpp:100: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::NFRule::NFRule(icu_48::RuleBasedNumberFormat const *)".
-/builddir/build/BUILD/icu/source/i18n/nfrule.cpp:31:9: noescape: "icu_48::NFRule::NFRule(icu_48::RuleBasedNumberFormat const *)" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/i18n/nfrule.cpp:100: var_assign: Assigning: "rule1" =  storage returned from "new icu_48::NFRule(rbnf)".
-/builddir/build/BUILD/icu/source/i18n/nfrule.cpp:106: noescape: Variable "rule1" is not freed or pointed-to in function "icu_48::NFRule::parseRuleDescriptor(icu_48::UnicodeString &, UErrorCode &)".
-/builddir/build/BUILD/icu/source/i18n/nfrule.cpp:221:9: noescape: "icu_48::NFRule::parseRuleDescriptor(icu_48::UnicodeString &, UErrorCode &)" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/i18n/nfrule.cpp:117: noescape: Variable "rule1" is not freed or pointed-to in function "icu_48::NFRule::getType() const".
-/builddir/build/BUILD/icu/source/i18n/nfrule.h:56:15: noescape: "icu_48::NFRule::getType() const" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/i18n/nfrule.cpp:117: noescape: Variable "rule1" is not freed or pointed-to in function "icu_48::NFRule::getType() const".
-/builddir/build/BUILD/icu/source/i18n/nfrule.cpp:132: noescape: Variable "rule1" is not freed or pointed-to in function "icu_48::NFRule::getType() const".
-/builddir/build/BUILD/icu/source/i18n/nfrule.cpp:146: leaked_storage: Variable "rule1" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/i18n/rbt_pars.cpp:548: alloc_fn: Calling allocation function "icu_48::TransliteratorIDParser::parseFilterID(icu_48::UnicodeString const &, int &)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:224: alloc_fn: Storage is returned from allocation function "icu_48::TransliteratorIDParser::specsToID(icu_48::TransliteratorIDParser::Specs const *, int)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:839: alloc_fn: Storage is returned from allocation function "icu_48::UMemory::operator new(unsigned long)".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:839: var_assign: Assigning: "<storage from new>" = "icu_48::UMemory::operator new(128UL)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:839: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::TransliteratorIDParser::SingleID::SingleID(icu_48::UnicodeString const &, icu_48::UnicodeString const &)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:67:35: noescape: "icu_48::TransliteratorIDParser::SingleID::SingleID(icu_48::UnicodeString const &, icu_48::UnicodeString const &)" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:839: return_alloc: Returning allocated memory "new icu_48::TransliteratorIDParser::SingleID(canonID, basicID)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:224: var_assign: Assigning: "single" = "icu_48::TransliteratorIDParser::specsToID(specs, 0)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:229: return_alloc: Returning allocated memory "single".
-/builddir/build/BUILD/icu/source/i18n/rbt_pars.cpp:548: var_assign: Assigning: "single" =  storage returned from "icu_48::TransliteratorIDParser::parseFilterID(rule, iref)".
-/builddir/build/BUILD/icu/source/i18n/rbt_pars.cpp:553: leaked_storage: Variable "single" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:131: alloc_fn: Calling allocation function "icu_48::TransliteratorIDParser::parseFilterID(icu_48::UnicodeString const &, int &, signed char)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:801: alloc_fn: Storage is returned from allocation function "icu_48::UMemory::operator new(unsigned long)".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:801: var_assign: Assigning: "<storage from new>" = "icu_48::UMemory::operator new(176UL)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:801: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::TransliteratorIDParser::Specs::Specs(icu_48::UnicodeString const &, icu_48::UnicodeString const &, icu_48::UnicodeString const &, signed char, icu_48::UnicodeString const &)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:50:32: noescape: "icu_48::TransliteratorIDParser::Specs::Specs(icu_48::UnicodeString const &, icu_48::UnicodeString const &, icu_48::UnicodeString const &, signed char, icu_48::UnicodeString const &)" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:801: return_alloc: Returning allocated memory "new icu_48::TransliteratorIDParser::Specs(source, target, variant, sawSource, filter)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:131: var_assign: Assigning: "specsB" =  storage returned from "icu_48::TransliteratorIDParser::parseFilterID(id, pos, 1)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:136: leaked_storage: Variable "specsB" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:122: alloc_fn: Calling allocation function "icu_48::TransliteratorIDParser::parseFilterID(icu_48::UnicodeString const &, int &, signed char)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:801: alloc_fn: Storage is returned from allocation function "icu_48::UMemory::operator new(unsigned long)".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:801: var_assign: Assigning: "<storage from new>" = "icu_48::UMemory::operator new(176UL)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:801: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::TransliteratorIDParser::Specs::Specs(icu_48::UnicodeString const &, icu_48::UnicodeString const &, icu_48::UnicodeString const &, signed char, icu_48::UnicodeString const &)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:50:32: noescape: "icu_48::TransliteratorIDParser::Specs::Specs(icu_48::UnicodeString const &, icu_48::UnicodeString const &, icu_48::UnicodeString const &, signed char, icu_48::UnicodeString const &)" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:801: return_alloc: Returning allocated memory "new icu_48::TransliteratorIDParser::Specs(source, target, variant, sawSource, filter)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:122: var_assign: Assigning: "specsA" =  storage returned from "icu_48::TransliteratorIDParser::parseFilterID(id, pos, 1)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:148: noescape: Variable "specsA" is not freed or pointed-to in function "icu_48::TransliteratorIDParser::specsToID(icu_48::TransliteratorIDParser::Specs const *, int)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:812:48: noescape: "icu_48::TransliteratorIDParser::specsToID(icu_48::TransliteratorIDParser::Specs const *, int)" does not free or save its pointer parameter "specs".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:154: leaked_storage: Variable "specsA" going out of scope leaks the storage it points to.
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:163: noescape: Variable "specsA" is not freed or pointed-to in function "icu_48::TransliteratorIDParser::specsToID(icu_48::TransliteratorIDParser::Specs const *, int)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:170: leaked_storage: Variable "specsA" going out of scope leaks the storage it points to.
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:182: noescape: Variable "specsA" is not freed or pointed-to in function "icu_48::TransliteratorIDParser::specsToID(icu_48::TransliteratorIDParser::Specs const *, int)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:184: noescape: Variable "specsA" is not freed or pointed-to in function "icu_48::TransliteratorIDParser::specsToSpecialInverse(icu_48::TransliteratorIDParser::Specs const &, UErrorCode &)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:850:60: noescape: "icu_48::TransliteratorIDParser::specsToSpecialInverse(icu_48::TransliteratorIDParser::Specs const &, UErrorCode &)" does not free or save its pointer parameter "specs".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:186: noescape: Variable "specsA" is not freed or pointed-to in function "icu_48::TransliteratorIDParser::specsToID(icu_48::TransliteratorIDParser::Specs const *, int)".
-/builddir/build/BUILD/icu/source/i18n/tridpars.cpp:192: leaked_storage: Variable "specsA" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/i18n/ucol_elm.cpp:231: alloc_fn: Calling allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/i18n/ucol_elm.cpp:231: var_assign: Assigning: "r" =  storage returned from "uprv_malloc_48(sizeof (tempUCATable) /*96*/)".
-/builddir/build/BUILD/icu/source/i18n/ucol_elm.cpp:237: noescape: Variable "r" is not freed or pointed-to in function "memset".
-/builddir/build/BUILD/icu/source/i18n/ucol_elm.cpp:377: leaked_storage: Variable "r" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
 /builddir/build/BUILD/icu/source/i18n/ucol.cpp:3535: alloc_fn: Calling allocation function "uprv_malloc_48".
 /builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
 /builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
@@ -799,129 +681,11 @@ Error: RESOURCE_LEAK:
 /builddir/build/BUILD/icu/source/i18n/ucol.cpp:3540: leaked_storage: Variable "UCharOffset" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/i18n/colldata.cpp:335: alloc_fn: Calling allocation function "icu_48::UMemory::operator new(unsigned long)".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/i18n/colldata.cpp:335: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::StringList::StringList(UErrorCode &)".
-/builddir/build/BUILD/icu/source/i18n/colldata.cpp:200:13: noescape: "icu_48::StringList::StringList(UErrorCode &)" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/i18n/colldata.cpp:335: var_assign: Assigning: "strings" =  storage returned from "new icu_48::StringList(status)".
-/builddir/build/BUILD/icu/source/i18n/colldata.cpp:339: leaked_storage: Variable "strings" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/i18n/dtptngen.cpp:1269: alloc_fn: Calling allocation function "icu_48::UMemory::operator new(unsigned long)".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/i18n/dtptngen.cpp:1269: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::PtnElem::PtnElem(icu_48::UnicodeString const &, icu_48::UnicodeString const &)".
-/builddir/build/BUILD/icu/source/i18n/dtptngen.cpp:1986:10: noescape: "icu_48::PtnElem::PtnElem(icu_48::UnicodeString const &, icu_48::UnicodeString const &)" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/i18n/dtptngen.cpp:1269: var_assign: Assigning: "curElem" =  storage returned from "new icu_48::PtnElem(otherElem->basePattern, otherElem->pattern)".
-/builddir/build/BUILD/icu/source/i18n/dtptngen.cpp:1280: leaked_storage: Variable "curElem" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/i18n/gregocal.cpp:1330: alloc_fn: Calling allocation function "icu_48::UMemory::operator new(unsigned long)".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/i18n/gregocal.cpp:1330: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::GregorianCalendar::GregorianCalendar(UErrorCode &)".
-/builddir/build/BUILD/icu/source/i18n/gregocal.cpp:152:20: noescape: "icu_48::GregorianCalendar::GregorianCalendar(UErrorCode &)" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/i18n/gregocal.cpp:1330: var_assign: Assigning: "calendar" =  storage returned from "new icu_48::GregorianCalendar(status)".
-/builddir/build/BUILD/icu/source/i18n/gregocal.cpp:1349: leaked_storage: Variable "calendar" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/i18n/olsontz.cpp:831: alloc_fn: Calling allocation function "icu_48::UMemory::operator new(unsigned long)".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/i18n/olsontz.cpp:831: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::TimeArrayTimeZoneRule::TimeArrayTimeZoneRule(icu_48::UnicodeString const &, int, int, double const *, int, icu_48::DateTimeRule::TimeRuleType)".
-/builddir/build/BUILD/icu/source/i18n/tzrule.cpp:400:24: noescape: "icu_48::TimeArrayTimeZoneRule::TimeArrayTimeZoneRule(icu_48::UnicodeString const &, int, int, double const *, int, icu_48::DateTimeRule::TimeRuleType)" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/i18n/olsontz.cpp:831: var_assign: Assigning: "firstFinalRule" =  storage returned from "new icu_48::TimeArrayTimeZoneRule(tzid, this->finalZone->getRawOffset(), 0, &startTime, 1, _ZN6icu_4812DateTimeRule8UTC_TIMEE)".
-/builddir/build/BUILD/icu/source/i18n/olsontz.cpp:853: leaked_storage: Variable "firstFinalRule" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/i18n/olsontz.cpp:729: alloc_fn: Calling allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/i18n/olsontz.cpp:729: var_assign: Assigning: "times" =  storage returned from "uprv_malloc_48(sizeof (UDate) /*8*/ * transCount)".
-/builddir/build/BUILD/icu/source/i18n/olsontz.cpp:765: noescape: Variable "times" is not freed or pointed-to in function "icu_48::TimeArrayTimeZoneRule::TimeArrayTimeZoneRule(icu_48::UnicodeString const &, int, int, double const *, int, icu_48::DateTimeRule::TimeRuleType)".
-/builddir/build/BUILD/icu/source/i18n/tzrule.cpp:403:59: noescape: "icu_48::TimeArrayTimeZoneRule::TimeArrayTimeZoneRule(icu_48::UnicodeString const &, int, int, double const *, int, icu_48::DateTimeRule::TimeRuleType)" does not free or save its pointer parameter "startTimes".
-/builddir/build/BUILD/icu/source/i18n/olsontz.cpp:771: leaked_storage: Variable "times" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/i18n/rbtz.cpp:646: alloc_fn: Calling allocation function "icu_48::UMemory::operator new(unsigned long)".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/i18n/rbtz.cpp:646: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::UVector::UVector(int, UErrorCode &)".
-/builddir/build/BUILD/icu/source/common/uvector.cpp:39:10: noescape: "icu_48::UVector::UVector(int, UErrorCode &)" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/i18n/rbtz.cpp:646: var_assign: Assigning: "rules" =  storage returned from "new icu_48::UVector(size, ec)".
-/builddir/build/BUILD/icu/source/i18n/rbtz.cpp:648: leaked_storage: Variable "rules" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/i18n/timezone.cpp:1303: alloc_fn: Calling allocation function "icu_48::UMemory::operator new(unsigned long)".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/i18n/timezone.cpp:1303: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::SimpleTimeZone::SimpleTimeZone(int, icu_48::UnicodeString const &, signed char, signed char, signed char, int, signed char, signed char, signed char, int, int, UErrorCode &)".
-/builddir/build/BUILD/icu/source/i18n/simpletz.cpp:104:17: noescape: "icu_48::SimpleTimeZone::SimpleTimeZone(int, icu_48::UnicodeString const &, signed char, signed char, signed char, int, signed char, signed char, signed char, int, int, UErrorCode &)" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/i18n/timezone.cpp:1303: var_assign: Assigning: "tz" =  storage returned from "new icu_48::SimpleTimeZone(rawOffset, tempID, 5, 1, 0, 0, 7, 1, 0, 0, this->getDSTSavings(), status)".
-/builddir/build/BUILD/icu/source/i18n/timezone.cpp:1311: leaked_storage: Variable "tz" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:475: alloc_fn: Calling allocation function "icu_48::TimeUnitFormat::initHash(UErrorCode &)".
-/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:843: alloc_fn: Storage is returned from allocation function "icu_48::UMemory::operator new(unsigned long)".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:843: var_assign: Assigning: "<storage from new>" = "icu_48::UMemory::operator new(88UL)".
-/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:843: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::Hashtable::Hashtable(signed char, UErrorCode &)".
-/builddir/build/BUILD/icu/source/common/hash.h:119:19: noescape: "icu_48::Hashtable::Hashtable(signed char, UErrorCode &)" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:843: var_assign: Assigning: "hTable" = "new icu_48::Hashtable(1, status)".
-/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:851: noescape: Variable "hTable" is not freed or pointed-to in function "icu_48::Hashtable::setValueComparator(signed char (*)(UHashTok, UHashTok))".
-/builddir/build/BUILD/icu/source/common/hash.h:197:37: noescape: "icu_48::Hashtable::setValueComparator(signed char (*)(UHashTok, UHashTok))" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:852: return_alloc: Returning allocated memory "hTable".
-/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:475: var_assign: Assigning: "countToPatterns" =  storage returned from "this->initHash(err)".
-/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:498: noescape: Variable "countToPatterns" is not freed or pointed-to in function "icu_48::Hashtable::get(icu_48::UnicodeString const &) const".
-/builddir/build/BUILD/icu/source/common/hash.h:165:25: noescape: "icu_48::Hashtable::get(icu_48::UnicodeString const &) const" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:503: noescape: Variable "countToPatterns" is not freed or pointed-to in function "icu_48::Hashtable::put(icu_48::UnicodeString const &, void *, UErrorCode &)".
-/builddir/build/BUILD/icu/source/common/hash.h:157:25: noescape: "icu_48::Hashtable::put(icu_48::UnicodeString const &, void *, UErrorCode &)" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/i18n/tmutfmt.cpp:527: leaked_storage: Variable "countToPatterns" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
 /builddir/build/BUILD/icu/source/i18n/ucurr.cpp:1864: alloc_fn: Calling allocation function "uprv_malloc_48".
 /builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
 /builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
 /builddir/build/BUILD/icu/source/i18n/ucurr.cpp:1864: var_assign: Assigning: "entry" =  storage returned from "uprv_malloc_48(sizeof (IsoCodeEntry) /*24*/)".
 /builddir/build/BUILD/icu/source/i18n/ucurr.cpp:1874: leaked_storage: Variable "entry" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/i18n/vtzone.cpp:1744: alloc_fn: Calling allocation function "icu_48::UMemory::operator new(unsigned long)".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: alloc_fn: Storage is returned from allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/common/uobject.cpp:60: return_alloc_fn: Directly returning storage allocated by "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/i18n/vtzone.cpp:1744: noescape: Variable "<storage from new>" is not freed or pointed-to in function "icu_48::UVector::UVector(void (*)(void *), signed char (*)(UHashTok, UHashTok), UErrorCode &)".
-/builddir/build/BUILD/icu/source/common/uvector.cpp:49:10: noescape: "icu_48::UVector::UVector(void (*)(void *), signed char (*)(UHashTok, UHashTok), UErrorCode &)" does not free or save its pointer parameter "this".
-/builddir/build/BUILD/icu/source/i18n/vtzone.cpp:1744: var_assign: Assigning: "customProps" =  storage returned from "new icu_48::UVector(uhash_deleteUnicodeString_48, uhash_compareUnicodeString_48, status)".
-/builddir/build/BUILD/icu/source/i18n/vtzone.cpp:1746: leaked_storage: Variable "customProps" going out of scope leaks the storage it points to.
-
-Error: RESOURCE_LEAK:
-/builddir/build/BUILD/icu/source/tools/gencnval/gencnval.c:968: alloc_fn: Calling allocation function "uprv_malloc_48".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: alloc_fn: Storage is returned from allocation function "malloc".
-/builddir/build/BUILD/icu/source/common/cmemory.c:45: return_alloc_fn: Directly returning storage allocated by "malloc".
-/builddir/build/BUILD/icu/source/tools/gencnval/gencnval.c:968: var_assign: Assigning: "uniqueAliasesToConverter" =  storage returned from "uprv_malloc_48(knownAliasesCount * sizeof (uint16_t) /*2*/)".
-/builddir/build/BUILD/icu/source/tools/gencnval/gencnval.c:971: noescape: Variable "uniqueAliasesToConverter" is not freed or pointed-to in function "resolveAliases".
-/builddir/build/BUILD/icu/source/tools/gencnval/gencnval.c:832:52: noescape: "resolveAliases" does not free or save its pointer parameter "uniqueAliasToConverterArr".
-/builddir/build/BUILD/icu/source/tools/gencnval/gencnval.c:1024: noescape: Variable "uniqueAliasesToConverter" is not freed or pointed-to in function "udata_writeBlock".
-/builddir/build/BUILD/icu/source/tools/toolutil/unewdata.c:215:53: noescape: "udata_writeBlock" does not free or save its pointer parameter "s".
-/builddir/build/BUILD/icu/source/tools/gencnval/gencnval.c:1059: leaked_storage: Variable "uniqueAliasesToConverter" going out of scope leaks the storage it points to.
 
 Error: RESOURCE_LEAK:
 /builddir/build/BUILD/icu/source/tools/genrb/parse.c:659: alloc_fn: Calling allocation function "uprv_malloc_48".
