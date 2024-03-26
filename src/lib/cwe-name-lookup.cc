@@ -53,7 +53,7 @@ bool CweNameLookup::handleLine(const TStringList &fields)
 
     // parse CWE number
     const std::string &cweId = fields[/* CWE */ 0];
-    const int cwe = parse_int(cweId, -1);
+    const int cwe = parseInt(cweId, -1);
     if (cwe < 0) {
         // we use "unmapped" for findings without any CWE assigned
         // as discussed in https://github.com/csutils/csdiff/pull/61

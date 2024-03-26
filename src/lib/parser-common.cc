@@ -25,7 +25,7 @@
 #include <boost/algorithm/string/replace.hpp>
 #include <boost/lexical_cast.hpp>
 
-int parse_int(const std::string &str, const int fallback)
+int parseInt(const std::string &str, const int fallback)
 {
     try {
         return boost::lexical_cast<int>(str);

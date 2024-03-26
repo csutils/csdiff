@@ -190,10 +190,10 @@ EToken ErrFileLexer::readNext()
     evt_.msg        = sm[/* msg   */ 5];
 
     // parse line number
-    evt_.line = parse_int(sm[/* line */ 2]);
+    evt_.line = parseInt(sm[/* line */ 2]);
 
     // parse column number
-    evt_.column = parse_int(sm[/* col */ 3]);
+    evt_.column = parseInt(sm[/* col */ 3]);
 
     return T_EVENT;
 }
@@ -479,7 +479,7 @@ void AnnotHandler::handleDef(Defect *pDef)
 {
     boost::smatch sm;
     if (boost::regex_match(pDef->annotation, sm, reCweAnnot_)) {
-        pDef->cwe = parse_int(sm[/* cwe */ 1]);
+        pDef->cwe = parseInt(sm[/* cwe */ 1]);
         pDef->annotation.clear();
     }
 }
