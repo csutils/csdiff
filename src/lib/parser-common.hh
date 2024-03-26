@@ -38,7 +38,7 @@
 #define RE_EVENT_SIGMA "(?:Sigma (?:main )?event)"
 #define RE_EVENT RE_EVENT_GCC "|" RE_EVENT_PROSPECTOR "|" RE_EVENT_SIGMA
 
-int parse_int(const std::string &, int fallback = 0);
+int parseInt(const std::string &, int fallback = 0);
 
 class ImpliedAttrDigger {
     public:

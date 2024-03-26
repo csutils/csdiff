@@ -178,10 +178,10 @@ EToken Tokenizer::readNext(DefEvent *pEvt)
     pEvt->fileName    = sm["file"];
 
     // parse line number
-    pEvt->line = parse_int(sm["line"]);
+    pEvt->line = parseInt(sm["line"]);
 
     // parse column number
-    pEvt->column = parse_int(sm["col"]);
+    pEvt->column = parseInt(sm["col"]);
 
     return tok;
 }
@@ -467,7 +467,7 @@ bool BasicGccParser::digCppcheckEvt(Defect *pDef)
     keyEvt.event += "]";
 
     // store CWE if available
-    pDef->cwe = parse_int(sm[/* cwe */ 2]);
+    pDef->cwe = parseInt(sm[/* cwe */ 2]);
 
     // this assignment invalidates sm!
     keyEvt.msg = sm[/* msg */ 3];
@@ -628,7 +628,7 @@ void GccPostProcessor::Private::transGccAnal(Defect *pDef) const
     if (!boost::regex_match(keyEvt.msg, sm, this->reGccAnalCwe))
         return;
 
-    pDef->cwe = parse_int(sm[/* cwe */ 2]);
+    pDef->cwe = parseInt(sm[/* cwe */ 2]);
     // this invalidates sm
     keyEvt.msg = sm[/* msg */ 1];
 }
