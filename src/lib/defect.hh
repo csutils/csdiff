@@ -20,6 +20,7 @@
 #ifndef H_GUARD_DEFECT_H
 #define H_GUARD_DEFECT_H
 
+#include <limits>
 #include <map>
 #include <string>
 #include <vector>
@@ -54,6 +55,10 @@ struct DefEvent {
     /// 0 = key event,  1 = info event,  2 = trace event
     int                 verbosityLevel  = 0;
 
+    using TNumDiff = unsigned short;
+    TNumDiff            hSize           = 0; //< endColumn - startColumn
+    TNumDiff            vSize           = 0; //< endLine - startLine
+
     DefEvent() { }
 
     explicit DefEvent(const std::string &event):
@@ -61,6 +66,15 @@ struct DefEvent {
     {
     }
 };
+
+///< return (end - beg) if it is positive and fits into target type, 0 otherwise
+inline DefEvent::TNumDiff diffNums(const int beg, const int end)
+{
+    const int diff = end - beg;
+    return (0 < diff && diff < std::numeric_limits<DefEvent::TNumDiff>::max())
+        ? diff
+        : 0;
+}
 
 inline bool cmpEvents(bool *pResult, const DefEvent &a, const DefEvent &b)
 {
@@ -70,6 +84,8 @@ inline bool cmpEvents(bool *pResult, const DefEvent &a, const DefEvent &b)
     RETURN_BY_REF_IF_COMPARED(a, b, event);
     RETURN_BY_REF_IF_COMPARED(a, b, msg);
     RETURN_BY_REF_IF_COMPARED(a, b, verbosityLevel);
+    RETURN_BY_REF_IF_COMPARED(a, b, hSize);
+    RETURN_BY_REF_IF_COMPARED(a, b, vSize);
 
     // incomparable events
     return false;

@@ -12,6 +12,7 @@
                     "file_name": "gzip-1.9/tests/list",
                     "line": 28,
                     "column": 1,
+                    "h_size": 19,
                     "event": "warning[rules.semgrep-rules.bash.lang.best-practice.useless-cat]",
                     "message": "Useless call to 'cat' in a pipeline. Use '<' and '>' for any command to read from a file or write to a file.",
                     "verbosity_level": 0
@@ -27,6 +28,7 @@
                     "file_name": "gzip-1.9/build-aux/ar-lib",
                     "line": 95,
                     "column": 5,
+                    "h_size": 43,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -42,6 +44,7 @@
                     "file_name": "gzip-1.9/build-aux/ar-lib",
                     "line": 204,
                     "column": 9,
+                    "h_size": 38,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -57,6 +60,7 @@
                     "file_name": "gzip-1.9/build-aux/ar-lib",
                     "line": 222,
                     "column": 11,
+                    "h_size": 39,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -72,6 +76,7 @@
                     "file_name": "gzip-1.9/build-aux/ar-lib",
                     "line": 227,
                     "column": 5,
+                    "h_size": 28,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -87,6 +92,7 @@
                     "file_name": "gzip-1.9/build-aux/ar-lib",
                     "line": 229,
                     "column": 7,
+                    "h_size": 41,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -102,6 +108,7 @@
                     "file_name": "gzip-1.9/build-aux/ar-lib",
                     "line": 260,
                     "column": 5,
+                    "h_size": 48,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -117,6 +124,7 @@
                     "file_name": "gzip-1.9/build-aux/ar-lib",
                     "line": 262,
                     "column": 5,
+                    "h_size": 32,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -132,6 +140,7 @@
                     "file_name": "gzip-1.9/build-aux/ar-lib",
                     "line": 269,
                     "column": 3,
+                    "h_size": 28,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -147,6 +156,7 @@
                     "file_name": "gzip-1.9/build-aux/compile",
                     "line": 105,
                     "column": 8,
+                    "h_size": 7,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -162,6 +172,7 @@
                     "file_name": "gzip-1.9/build-aux/compile",
                     "line": 228,
                     "column": 3,
+                    "h_size": 22,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -177,6 +188,7 @@
                     "file_name": "gzip-1.9/build-aux/compile",
                     "line": 338,
                     "column": 1,
+                    "h_size": 9,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -192,6 +204,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 141,
                     "column": 2,
+                    "h_size": 22,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -207,6 +220,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 152,
                     "column": 8,
+                    "h_size": 25,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -222,6 +236,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 172,
                     "column": 6,
+                    "h_size": 13,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -237,6 +252,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 173,
                     "column": 6,
+                    "h_size": 17,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -252,6 +268,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 182,
                     "column": 9,
+                    "h_size": 26,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -267,6 +284,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 183,
                     "column": 11,
+                    "h_size": 26,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -282,6 +300,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 195,
                     "column": 3,
+                    "h_size": 22,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -297,6 +316,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 196,
                     "column": 21,
+                    "h_size": 18,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -312,6 +332,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 214,
                     "column": 8,
+                    "h_size": 26,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -327,6 +348,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 227,
                     "column": 12,
+                    "h_size": 21,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -342,6 +364,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 237,
                     "column": 2,
+                    "h_size": 57,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -357,6 +380,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 241,
                     "column": 2,
+                    "h_size": 58,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -372,6 +396,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 245,
                     "column": 2,
+                    "h_size": 61,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -387,6 +412,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 248,
                     "column": 2,
+                    "h_size": 53,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -402,6 +428,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 251,
                     "column": 2,
+                    "h_size": 54,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -417,6 +444,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 254,
                     "column": 2,
+                    "h_size": 43,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -432,6 +460,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 257,
                     "column": 2,
+                    "h_size": 52,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -447,6 +476,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 260,
                     "column": 2,
+                    "h_size": 36,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -462,6 +492,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 313,
                     "column": 2,
+                    "h_size": 134,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -477,6 +508,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 313,
                     "column": 32,
+                    "h_size": 21,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -492,6 +524,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 317,
                     "column": 2,
+                    "h_size": 14,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -507,6 +540,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 331,
                     "column": 2,
+                    "h_size": 37,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -522,6 +556,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 334,
                     "column": 2,
+                    "h_size": 37,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -537,6 +572,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 346,
                     "column": 2,
+                    "h_size": 37,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -552,6 +588,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 373,
                     "column": 2,
+                    "h_size": 76,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -567,6 +604,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 373,
                     "column": 37,
+                    "h_size": 21,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -582,6 +620,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 376,
                     "column": 26,
+                    "h_size": 21,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -597,6 +636,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 379,
                     "column": 26,
+                    "h_size": 21,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -612,6 +652,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 382,
                     "column": 2,
+                    "h_size": 37,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -627,6 +668,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 385,
                     "column": 2,
+                    "h_size": 22,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -642,6 +684,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 392,
                     "column": 4,
+                    "h_size": 28,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -657,6 +700,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 398,
                     "column": 2,
+                    "h_size": 70,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -672,6 +716,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 398,
                     "column": 31,
+                    "h_size": 21,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -687,6 +732,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 404,
                     "column": 26,
+                    "h_size": 21,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -702,6 +748,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 413,
                     "column": 23,
+                    "h_size": 21,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -717,6 +764,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 416,
                     "column": 2,
+                    "h_size": 35,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -732,6 +780,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 423,
                     "column": 3,
+                    "h_size": 35,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -747,6 +796,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 426,
                     "column": 3,
+                    "h_size": 36,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -762,6 +812,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 431,
                     "column": 2,
+                    "h_size": 39,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -777,6 +828,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 442,
                     "column": 2,
+                    "h_size": 36,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -792,6 +844,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 445,
                     "column": 2,
+                    "h_size": 36,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -807,6 +860,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 448,
                     "column": 2,
+                    "h_size": 36,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -822,6 +876,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 451,
                     "column": 2,
+                    "h_size": 36,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -837,6 +892,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 454,
                     "column": 2,
+                    "h_size": 36,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -852,6 +908,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 457,
                     "column": 2,
+                    "h_size": 38,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -867,6 +924,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 460,
                     "column": 2,
+                    "h_size": 39,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -882,6 +940,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 463,
                     "column": 2,
+                    "h_size": 42,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -897,6 +956,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 469,
                     "column": 2,
+                    "h_size": 36,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -912,6 +972,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 472,
                     "column": 2,
+                    "h_size": 35,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -927,6 +988,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 475,
                     "column": 2,
+                    "h_size": 44,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -942,6 +1004,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 478,
                     "column": 2,
+                    "h_size": 22,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -957,6 +1020,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 500,
                     "column": 2,
+                    "h_size": 32,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -972,6 +1036,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 502,
                     "column": 17,
+                    "h_size": 16,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -987,6 +1052,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 504,
                     "column": 2,
+                    "h_size": 37,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -1002,6 +1068,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 535,
                     "column": 3,
+                    "h_size": 33,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -1017,6 +1084,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 537,
                     "column": 3,
+                    "h_size": 36,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -1032,6 +1100,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 540,
                     "column": 6,
+                    "h_size": 33,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -1047,6 +1116,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 557,
                     "column": 21,
+                    "h_size": 21,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -1062,6 +1132,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 571,
                     "column": 2,
+                    "h_size": 39,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -1077,6 +1148,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 575,
                     "column": 3,
+                    "h_size": 22,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -1092,6 +1164,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 587,
                     "column": 6,
+                    "h_size": 32,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -1107,6 +1180,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 587,
                     "column": 55,
+                    "h_size": 6,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -1122,6 +1196,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 601,
                     "column": 5,
+                    "h_size": 34,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -1137,6 +1212,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 612,
                     "column": 2,
+                    "h_size": 34,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -1152,6 +1228,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 621,
                     "column": 2,
+                    "h_size": 33,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -1167,6 +1244,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 636,
                     "column": 12,
+                    "h_size": 21,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -1182,6 +1260,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 656,
                     "column": 7,
+                    "h_size": 22,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -1197,6 +1276,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 690,
                     "column": 8,
+                    "h_size": 42,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -1212,6 +1292,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 690,
                     "column": 76,
+                    "h_size": 6,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -1227,6 +1308,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 696,
                     "column": 6,
+                    "h_size": 22,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -1242,6 +1324,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 707,
                     "column": 26,
+                    "h_size": 28,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -1257,6 +1340,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 715,
                     "column": 2,
+                    "h_size": 34,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -1272,6 +1356,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 718,
                     "column": 12,
+                    "h_size": 21,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -1287,6 +1372,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 719,
                     "column": 2,
+                    "h_size": 28,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -1302,6 +1388,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 722,
                     "column": 2,
+                    "h_size": 22,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -1317,6 +1404,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 748,
                     "column": 2,
+                    "h_size": 32,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -1332,6 +1420,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 748,
                     "column": 51,
+                    "h_size": 6,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -1347,6 +1436,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 769,
                     "column": 6,
+                    "h_size": 36,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -1362,6 +1452,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 771,
                     "column": 6,
+                    "h_size": 34,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -1377,6 +1468,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 796,
                     "column": 2,
+                    "h_size": 36,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -1392,6 +1484,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 799,
                     "column": 2,
+                    "h_size": 49,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -1407,6 +1500,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 805,
                     "column": 2,
+                    "h_size": 36,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -1422,6 +1516,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 808,
                     "column": 2,
+                    "h_size": 43,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -1437,6 +1532,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 811,
                     "column": 2,
+                    "h_size": 36,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -1452,6 +1548,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 814,
                     "column": 2,
+                    "h_size": 41,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -1467,6 +1564,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 819,
                     "column": 15,
+                    "h_size": 21,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -1482,6 +1580,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 824,
                     "column": 15,
+                    "h_size": 21,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0
@@ -1497,6 +1596,7 @@
                     "file_name": "gzip-1.9/build-aux/config.guess",
                     "line": 828,
                     "column": 2,
+                    "h_size": 45,
                     "event": "warning[rules.semgrep-rules.bash.lang.correctness.unquoted-variable-expansion-in-command]",
                     "message": "Variable expansions must be double-quoted so as to prevent being split into multiple pieces according to whitespace or whichever separator is specified by the IFS variable. If you really wish to split the variable's contents, you may use a variable that starts with an underscore e.g. $_X instead of $X, and semgrep will ignore it. If what you need is an array, consider using a proper bash array.",
                     "verbosity_level": 0

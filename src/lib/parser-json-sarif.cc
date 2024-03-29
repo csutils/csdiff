@@ -178,9 +178,17 @@ static void sarifReadLocation(DefEvent *pEvt, const pt::ptree &loc)
 
     const pt::ptree *reg;
     if (findChildOf(&reg, *pl, "region")) {
-        // read line/col if available
-        pEvt->line = valueOf<int>(*reg, "startLine");
-        pEvt->column = valueOf<int>(*reg, "startColumn");
+        // read line
+        if ((pEvt->line = valueOf<int>(*reg, "startLine"))) {
+            const int endLine = valueOf<int>(*reg, "endLine");
+            pEvt->vSize = diffNums(pEvt->line, endLine);
+        }
+
+        // read column
+        if ((pEvt->column = valueOf<int>(*reg, "startColumn"))) {
+            const int endColumn = valueOf<int>(*reg, "endColumn");
+            pEvt->hSize = diffNums(pEvt->column, endColumn);
+        }
     }
 }
 

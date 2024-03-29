@@ -71,8 +71,10 @@ SimpleTreeDecoder::Private::Private(InStream &input):
         "column",
         "event",
         "file_name",
+        "h_size",
         "line",
         "message",
+        "v_size",
         "verbosity_level",
     };
 }
@@ -134,6 +136,8 @@ bool SimpleTreeDecoder::readNode(Defect *def)
     TEvtList &evtListDst = def->events;
     const pt::ptree &evtListSrc = defNode.get_child("events");
     for (const pt::ptree::value_type &evtItem : evtListSrc) {
+        using TNumDiff = DefEvent::TNumDiff;
+
         const pt::ptree &evtNode = evtItem.second;
         d->reportUnknownNodes(Private::NK_EVENT, evtNode);
 
@@ -141,6 +145,8 @@ bool SimpleTreeDecoder::readNode(Defect *def)
         evt.fileName    = valueOf<std::string   >(evtNode, "file_name");
         evt.line        = valueOf<int           >(evtNode, "line");
         evt.column      = valueOf<int           >(evtNode, "column");
+        evt.hSize       = valueOf<TNumDiff      >(evtNode, "h_size");
+        evt.vSize       = valueOf<TNumDiff      >(evtNode, "v_size");
         evt.event       = valueOf<std::string   >(evtNode, "event");
         evt.msg         = valueOf<std::string   >(evtNode, "message");
         evt.verbosityLevel = valueOf<int>(evtNode, "verbosity_level", -1);

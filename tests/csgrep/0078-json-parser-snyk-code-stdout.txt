@@ -12,6 +12,7 @@
                     "file_name": "Src/prompt.c",
                     "line": 1806,
                     "column": 6,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -27,6 +28,7 @@
                     "file_name": "Src/prompt.c",
                     "line": 1866,
                     "column": 3,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -42,6 +44,7 @@
                     "file_name": "Src/prompt.c",
                     "line": 2102,
                     "column": 2,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -57,6 +60,7 @@
                     "file_name": "Src/prompt.c",
                     "line": 2109,
                     "column": 6,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -72,6 +76,7 @@
                     "file_name": "Src/prompt.c",
                     "line": 2122,
                     "column": 2,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -87,6 +92,7 @@
                     "file_name": "Src/Modules/zftp.c",
                     "line": 554,
                     "column": 5,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -102,6 +108,7 @@
                     "file_name": "Src/Modules/zutil.c",
                     "line": 1160,
                     "column": 6,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -117,6 +124,7 @@
                     "file_name": "Src/Modules/zutil.c",
                     "line": 1167,
                     "column": 3,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -132,6 +140,7 @@
                     "file_name": "Src/Modules/zutil.c",
                     "line": 1669,
                     "column": 3,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -147,6 +156,7 @@
                     "file_name": "Src/Modules/zutil.c",
                     "line": 1988,
                     "column": 7,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -162,6 +172,7 @@
                     "file_name": "Src/Modules/zutil.c",
                     "line": 1998,
                     "column": 8,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -177,6 +188,7 @@
                     "file_name": "Src/Zle/complist.c",
                     "line": 2911,
                     "column": 13,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -192,6 +204,7 @@
                     "file_name": "Src/string.c",
                     "line": 40,
                     "column": 5,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -207,6 +220,7 @@
                     "file_name": "Src/string.c",
                     "line": 71,
                     "column": 5,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -222,6 +236,7 @@
                     "file_name": "Src/string.c",
                     "line": 84,
                     "column": 5,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -237,6 +252,7 @@
                     "file_name": "Src/string.c",
                     "line": 121,
                     "column": 5,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -252,6 +268,7 @@
                     "file_name": "Src/string.c",
                     "line": 122,
                     "column": 5,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -267,6 +284,7 @@
                     "file_name": "Src/string.c",
                     "line": 123,
                     "column": 5,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -282,6 +300,7 @@
                     "file_name": "Src/string.c",
                     "line": 136,
                     "column": 5,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -297,6 +316,7 @@
                     "file_name": "Src/string.c",
                     "line": 137,
                     "column": 5,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -312,6 +332,7 @@
                     "file_name": "Src/string.c",
                     "line": 138,
                     "column": 5,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -327,6 +348,7 @@
                     "file_name": "Src/string.c",
                     "line": 153,
                     "column": 5,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -342,6 +364,7 @@
                     "file_name": "Src/string.c",
                     "line": 154,
                     "column": 5,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -357,6 +380,7 @@
                     "file_name": "Src/string.c",
                     "line": 167,
                     "column": 5,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -372,6 +396,7 @@
                     "file_name": "Src/string.c",
                     "line": 168,
                     "column": 5,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -387,6 +412,7 @@
                     "file_name": "Src/parse.c",
                     "line": 3332,
                     "column": 2,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -402,6 +428,7 @@
                     "file_name": "Src/Zle/compcore.c",
                     "line": 1412,
                     "column": 5,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -417,6 +444,7 @@
                     "file_name": "Src/Zle/compcore.c",
                     "line": 1565,
                     "column": 5,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -432,6 +460,7 @@
                     "file_name": "Src/Zle/zle_hist.c",
                     "line": 1640,
                     "column": 6,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -447,6 +476,7 @@
                     "file_name": "Src/Zle/zle_hist.c",
                     "line": 1903,
                     "column": 3,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -462,6 +492,7 @@
                     "file_name": "Src/Modules/parameter.c",
                     "line": 231,
                     "column": 6,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -477,6 +508,7 @@
                     "file_name": "Src/Modules/parameter.c",
                     "line": 270,
                     "column": 7,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -492,6 +524,7 @@
                     "file_name": "Src/hashtable.c",
                     "line": 666,
                     "column": 3,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -507,6 +540,7 @@
                     "file_name": "Src/hist.c",
                     "line": 2380,
                     "column": 6,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -522,6 +556,7 @@
                     "file_name": "Src/Zle/zle_tricky.c",
                     "line": 682,
                     "column": 6,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -537,6 +572,7 @@
                     "file_name": "Src/Zle/zle_tricky.c",
                     "line": 943,
                     "column": 2,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -552,6 +588,7 @@
                     "file_name": "Src/Zle/zle_tricky.c",
                     "line": 959,
                     "column": 5,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -567,6 +604,7 @@
                     "file_name": "Src/Zle/zle_tricky.c",
                     "line": 2848,
                     "column": 5,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -582,6 +620,7 @@
                     "file_name": "Src/Zle/zle_misc.c",
                     "line": 841,
                     "column": 6,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -597,6 +636,7 @@
                     "file_name": "Src/Zle/zle_misc.c",
                     "line": 1242,
                     "column": 5,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -612,6 +652,7 @@
                     "file_name": "Src/Zle/zle_misc.c",
                     "line": 1339,
                     "column": 3,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -627,6 +668,7 @@
                     "file_name": "Src/Zle/zle_misc.c",
                     "line": 1404,
                     "column": 7,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -642,6 +684,7 @@
                     "file_name": "Src/Zle/zle_misc.c",
                     "line": 1410,
                     "column": 7,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -657,6 +700,7 @@
                     "file_name": "Src/jobs.c",
                     "line": 1461,
                     "column": 2,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -672,6 +716,7 @@
                     "file_name": "Src/subst.c",
                     "line": 417,
                     "column": 3,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -687,6 +732,7 @@
                     "file_name": "Src/subst.c",
                     "line": 418,
                     "column": 3,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -702,6 +748,7 @@
                     "file_name": "Src/subst.c",
                     "line": 427,
                     "column": 3,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -717,6 +764,7 @@
                     "file_name": "Src/subst.c",
                     "line": 428,
                     "column": 6,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -732,6 +780,7 @@
                     "file_name": "Src/subst.c",
                     "line": 429,
                     "column": 12,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -747,6 +796,7 @@
                     "file_name": "Src/subst.c",
                     "line": 828,
                     "column": 2,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -762,6 +812,7 @@
                     "file_name": "Src/subst.c",
                     "line": 833,
                     "column": 6,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -777,6 +828,7 @@
                     "file_name": "Src/subst.c",
                     "line": 3790,
                     "column": 4,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -792,6 +844,7 @@
                     "file_name": "Src/subst.c",
                     "line": 3833,
                     "column": 7,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -807,6 +860,7 @@
                     "file_name": "Src/subst.c",
                     "line": 3995,
                     "column": 6,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -822,6 +876,7 @@
                     "file_name": "Src/subst.c",
                     "line": 3999,
                     "column": 3,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -837,6 +892,7 @@
                     "file_name": "Src/subst.c",
                     "line": 4002,
                     "column": 6,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -852,6 +908,7 @@
                     "file_name": "Src/input.c",
                     "line": 464,
                     "column": 2,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -867,6 +924,7 @@
                     "file_name": "Src/glob.c",
                     "line": 290,
                     "column": 5,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -882,6 +940,7 @@
                     "file_name": "Src/glob.c",
                     "line": 291,
                     "column": 5,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -897,6 +956,7 @@
                     "file_name": "Src/glob.c",
                     "line": 660,
                     "column": 7,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -912,6 +972,7 @@
                     "file_name": "Src/glob.c",
                     "line": 2448,
                     "column": 7,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -927,6 +988,7 @@
                     "file_name": "Src/glob.c",
                     "line": 2452,
                     "column": 7,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -942,6 +1004,7 @@
                     "file_name": "Src/Modules/tcp.c",
                     "line": 82,
                     "column": 5,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -957,6 +1020,7 @@
                     "file_name": "Src/compat.c",
                     "line": 73,
                     "column": 5,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -972,6 +1036,7 @@
                     "file_name": "Src/Zle/compctl.c",
                     "line": 2242,
                     "column": 4,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -987,6 +1052,7 @@
                     "file_name": "Src/Zle/compctl.c",
                     "line": 2828,
                     "column": 5,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -1002,6 +1068,7 @@
                     "file_name": "Src/Zle/compctl.c",
                     "line": 2832,
                     "column": 5,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -1017,6 +1084,7 @@
                     "file_name": "Src/Zle/compctl.c",
                     "line": 3262,
                     "column": 2,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -1032,6 +1100,7 @@
                     "file_name": "Src/Zle/compctl.c",
                     "line": 3266,
                     "column": 6,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -1047,6 +1116,7 @@
                     "file_name": "Src/Zle/compctl.c",
                     "line": 3268,
                     "column": 6,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -1062,6 +1132,7 @@
                     "file_name": "Src/Zle/compctl.c",
                     "line": 3323,
                     "column": 7,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -1077,6 +1148,7 @@
                     "file_name": "Src/Zle/compctl.c",
                     "line": 3383,
                     "column": 6,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -1092,6 +1164,7 @@
                     "file_name": "Src/Zle/compctl.c",
                     "line": 3387,
                     "column": 6,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -1107,6 +1180,7 @@
                     "file_name": "Src/Zle/compctl.c",
                     "line": 3430,
                     "column": 3,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -1122,6 +1196,7 @@
                     "file_name": "Src/Zle/compctl.c",
                     "line": 3467,
                     "column": 8,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -1137,6 +1212,7 @@
                     "file_name": "Src/Zle/compctl.c",
                     "line": 3483,
                     "column": 4,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -1152,6 +1228,7 @@
                     "file_name": "Src/Zle/compctl.c",
                     "line": 3541,
                     "column": 8,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -1167,6 +1244,7 @@
                     "file_name": "Src/Zle/compctl.c",
                     "line": 3584,
                     "column": 9,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -1182,6 +1260,7 @@
                     "file_name": "Src/Zle/zle_vi.c",
                     "line": 110,
                     "column": 6,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -1197,6 +1276,7 @@
                     "file_name": "Src/Modules/zftp.c",
                     "line": 557,
                     "column": 2,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcat can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncat instead.",
                     "verbosity_level": 0
@@ -1212,6 +1292,7 @@
                     "file_name": "Src/Modules/zftp.c",
                     "line": 3026,
                     "column": 5,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcat can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncat instead.",
                     "verbosity_level": 0
@@ -1227,6 +1308,7 @@
                     "file_name": "Src/Zle/complist.c",
                     "line": 2240,
                     "column": 13,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcat can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncat instead.",
                     "verbosity_level": 0
@@ -1242,6 +1324,7 @@
                     "file_name": "Src/Zle/complist.c",
                     "line": 2242,
                     "column": 13,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcat can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncat instead.",
                     "verbosity_level": 0
@@ -1257,6 +1340,7 @@
                     "file_name": "Src/string.c",
                     "line": 203,
                     "column": 12,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcat can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncat instead.",
                     "verbosity_level": 0
@@ -1272,6 +1356,7 @@
                     "file_name": "Src/Zle/compresult.c",
                     "line": 512,
                     "column": 2,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcat can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncat instead.",
                     "verbosity_level": 0
@@ -1287,6 +1372,7 @@
                     "file_name": "Src/Zle/compcore.c",
                     "line": 1413,
                     "column": 5,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcat can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncat instead.",
                     "verbosity_level": 0
@@ -1302,6 +1388,7 @@
                     "file_name": "Src/Zle/compcore.c",
                     "line": 1414,
                     "column": 5,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcat can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncat instead.",
                     "verbosity_level": 0
@@ -1317,6 +1404,7 @@
                     "file_name": "Src/Modules/parameter.c",
                     "line": 233,
                     "column": 6,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcat can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncat instead.",
                     "verbosity_level": 0
@@ -1332,6 +1420,7 @@
                     "file_name": "Src/Modules/parameter.c",
                     "line": 272,
                     "column": 7,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcat can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncat instead.",
                     "verbosity_level": 0
@@ -1347,6 +1436,7 @@
                     "file_name": "Src/Modules/parameter.c",
                     "line": 418,
                     "column": 3,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcat can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncat instead.",
                     "verbosity_level": 0
@@ -1362,6 +1452,7 @@
                     "file_name": "Src/Modules/parameter.c",
                     "line": 420,
                     "column": 3,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcat can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncat instead.",
                     "verbosity_level": 0
@@ -1377,6 +1468,7 @@
                     "file_name": "Src/Modules/parameter.c",
                     "line": 496,
                     "column": 8,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcat can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncat instead.",
                     "verbosity_level": 0
@@ -1392,6 +1484,7 @@
                     "file_name": "Src/Modules/parameter.c",
                     "line": 498,
                     "column": 8,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcat can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncat instead.",
                     "verbosity_level": 0
@@ -1407,6 +1500,7 @@
                     "file_name": "Src/Modules/parameter.c",
                     "line": 1260,
                     "column": 2,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcat can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncat instead.",
                     "verbosity_level": 0
@@ -1422,6 +1516,7 @@
                     "file_name": "Src/Zle/zleparameter.c",
                     "line": 48,
                     "column": 2,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcat can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncat instead.",
                     "verbosity_level": 0
@@ -1437,6 +1532,7 @@
                     "file_name": "Src/Zle/zleparameter.c",
                     "line": 50,
                     "column": 2,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcat can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncat instead.",
                     "verbosity_level": 0
@@ -1452,6 +1548,7 @@
                     "file_name": "Src/Zle/zle_refresh.c",
                     "line": 446,
                     "column": 6,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcat can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncat instead.",
                     "verbosity_level": 0
@@ -1467,6 +1564,7 @@
                     "file_name": "Src/subst.c",
                     "line": 4223,
                     "column": 5,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcat can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncat instead.",
                     "verbosity_level": 0
@@ -1482,6 +1580,7 @@
                     "file_name": "Src/glob.c",
                     "line": 2322,
                     "column": 3,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcat can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncat instead.",
                     "verbosity_level": 0
@@ -1497,6 +1596,7 @@
                     "file_name": "Src/glob.c",
                     "line": 2401,
                     "column": 3,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcat can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncat instead.",
                     "verbosity_level": 0
@@ -1512,6 +1612,7 @@
                     "file_name": "Src/glob.c",
                     "line": 2484,
                     "column": 2,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcat can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncat instead.",
                     "verbosity_level": 0
@@ -1527,6 +1628,7 @@
                     "file_name": "Src/Zle/compctl.c",
                     "line": 3433,
                     "column": 3,
+                    "h_size": 5,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcat can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncat instead.",
                     "verbosity_level": 0
@@ -1542,6 +1644,7 @@
                     "file_name": "Src/prompt.c",
                     "line": 724,
                     "column": 3,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -1557,6 +1660,7 @@
                     "file_name": "Src/prompt.c",
                     "line": 733,
                     "column": 3,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -1572,6 +1676,7 @@
                     "file_name": "Src/prompt.c",
                     "line": 846,
                     "column": 7,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -1587,6 +1692,7 @@
                     "file_name": "Src/prompt.c",
                     "line": 858,
                     "column": 3,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -1602,6 +1708,7 @@
                     "file_name": "Src/prompt.c",
                     "line": 1787,
                     "column": 18,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -1617,6 +1724,7 @@
                     "file_name": "Src/prompt.c",
                     "line": 2113,
                     "column": 9,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -1632,6 +1740,7 @@
                     "file_name": "Src/module.c",
                     "line": 3463,
                     "column": 6,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -1647,6 +1756,7 @@
                     "file_name": "Src/Modules/zftp.c",
                     "line": 1025,
                     "column": 6,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -1662,6 +1772,7 @@
                     "file_name": "Src/Zle/complist.c",
                     "line": 1198,
                     "column": 4,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -1677,6 +1788,7 @@
                     "file_name": "Src/Zle/complist.c",
                     "line": 1205,
                     "column": 4,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -1692,6 +1804,7 @@
                     "file_name": "Src/Zle/complist.c",
                     "line": 1207,
                     "column": 4,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -1707,6 +1820,7 @@
                     "file_name": "Src/Zle/complist.c",
                     "line": 1213,
                     "column": 4,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -1722,6 +1836,7 @@
                     "file_name": "Src/Zle/complist.c",
                     "line": 1219,
                     "column": 4,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -1737,6 +1852,7 @@
                     "file_name": "Src/Zle/complist.c",
                     "line": 1220,
                     "column": 4,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -1752,6 +1868,7 @@
                     "file_name": "Src/Zle/complist.c",
                     "line": 1229,
                     "column": 8,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -1767,6 +1884,7 @@
                     "file_name": "Src/Zle/complist.c",
                     "line": 1241,
                     "column": 8,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -1782,6 +1900,7 @@
                     "file_name": "Src/Zle/complist.c",
                     "line": 2561,
                     "column": 21,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -1797,6 +1916,7 @@
                     "file_name": "Src/Zle/compresult.c",
                     "line": 505,
                     "column": 6,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -1812,6 +1932,7 @@
                     "file_name": "Src/Zle/compresult.c",
                     "line": 1069,
                     "column": 7,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -1827,6 +1948,7 @@
                     "file_name": "Src/Zle/compresult.c",
                     "line": 1102,
                     "column": 7,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -1842,6 +1964,7 @@
                     "file_name": "Src/Modules/parameter.c",
                     "line": 664,
                     "column": 2,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -1857,6 +1980,7 @@
                     "file_name": "Src/Modules/parameter.c",
                     "line": 696,
                     "column": 2,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -1872,6 +1996,7 @@
                     "file_name": "Src/Modules/parameter.c",
                     "line": 735,
                     "column": 6,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -1887,6 +2012,7 @@
                     "file_name": "Src/Modules/parameter.c",
                     "line": 759,
                     "column": 6,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -1902,6 +2028,7 @@
                     "file_name": "Src/Modules/parameter.c",
                     "line": 1357,
                     "column": 3,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -1917,6 +2044,7 @@
                     "file_name": "Src/Modules/parameter.c",
                     "line": 1363,
                     "column": 6,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -1932,6 +2060,7 @@
                     "file_name": "Src/Modules/parameter.c",
                     "line": 1368,
                     "column": 2,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -1947,6 +2076,7 @@
                     "file_name": "Src/hashtable.c",
                     "line": 652,
                     "column": 5,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -1962,6 +2092,7 @@
                     "file_name": "Src/text.c",
                     "line": 104,
                     "column": 2,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -1977,6 +2108,7 @@
                     "file_name": "Src/text.c",
                     "line": 107,
                     "column": 2,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -1992,6 +2124,7 @@
                     "file_name": "Src/pattern.c",
                     "line": 2586,
                     "column": 4,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -2007,6 +2140,7 @@
                     "file_name": "Src/pattern.c",
                     "line": 2591,
                     "column": 4,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -2022,6 +2156,7 @@
                     "file_name": "Src/hist.c",
                     "line": 3301,
                     "column": 2,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -2037,6 +2172,7 @@
                     "file_name": "Src/cond.c",
                     "line": 116,
                     "column": 6,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -2052,6 +2188,7 @@
                     "file_name": "Src/Zle/zle_misc.c",
                     "line": 844,
                     "column": 2,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -2067,6 +2204,7 @@
                     "file_name": "Src/Zle/zle_misc.c",
                     "line": 848,
                     "column": 5,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -2082,6 +2220,7 @@
                     "file_name": "Src/Modules/stat.c",
                     "line": 50,
                     "column": 2,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -2097,6 +2236,7 @@
                     "file_name": "Src/Modules/stat.c",
                     "line": 135,
                     "column": 2,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -2112,6 +2252,7 @@
                     "file_name": "Src/Modules/stat.c",
                     "line": 151,
                     "column": 6,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -2127,6 +2268,7 @@
                     "file_name": "Src/Modules/stat.c",
                     "line": 164,
                     "column": 2,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -2142,6 +2284,7 @@
                     "file_name": "Src/Modules/stat.c",
                     "line": 180,
                     "column": 6,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -2157,6 +2300,7 @@
                     "file_name": "Src/Modules/stat.c",
                     "line": 194,
                     "column": 2,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -2172,6 +2316,7 @@
                     "file_name": "Src/Modules/stat.c",
                     "line": 213,
                     "column": 5,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -2187,6 +2332,7 @@
                     "file_name": "Src/Modules/stat.c",
                     "line": 239,
                     "column": 2,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -2202,6 +2348,7 @@
                     "file_name": "Src/Zle/zle_refresh.c",
                     "line": 438,
                     "column": 2,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -2217,6 +2364,7 @@
                     "file_name": "Src/jobs.c",
                     "line": 2550,
                     "column": 4,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -2232,6 +2380,7 @@
                     "file_name": "Src/jobs.c",
                     "line": 2554,
                     "column": 4,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -2247,6 +2396,7 @@
                     "file_name": "Src/jobs.c",
                     "line": 2558,
                     "column": 4,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -2262,6 +2412,7 @@
                     "file_name": "Src/jobs.c",
                     "line": 2562,
                     "column": 7,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -2277,6 +2428,7 @@
                     "file_name": "Src/jobs.c",
                     "line": 2873,
                     "column": 5,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -2292,6 +2444,7 @@
                     "file_name": "Src/jobs.c",
                     "line": 2879,
                     "column": 6,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -2307,6 +2460,7 @@
                     "file_name": "Src/signals.c",
                     "line": 1361,
                     "column": 6,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -2322,6 +2476,7 @@
                     "file_name": "Src/subst.c",
                     "line": 1511,
                     "column": 2,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -2337,6 +2492,7 @@
                     "file_name": "Src/subst.c",
                     "line": 3596,
                     "column": 2,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -2352,6 +2508,7 @@
                     "file_name": "Src/Modules/datetime.c",
                     "line": 229,
                     "column": 5,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -2367,6 +2524,7 @@
                     "file_name": "Src/Modules/datetime.c",
                     "line": 231,
                     "column": 5,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -2382,6 +2540,7 @@
                     "file_name": "Src/Builtins/sched.c",
                     "line": 359,
                     "column": 2,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -2397,6 +2556,7 @@
                     "file_name": "Src/Builtins/sched.c",
                     "line": 366,
                     "column": 2,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -2412,6 +2572,7 @@
                     "file_name": "Src/glob.c",
                     "line": 2321,
                     "column": 3,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -2427,6 +2588,7 @@
                     "file_name": "Src/glob.c",
                     "line": 2399,
                     "column": 3,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -2442,6 +2604,7 @@
                     "file_name": "Src/glob.c",
                     "line": 2579,
                     "column": 2,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -2457,6 +2620,7 @@
                     "file_name": "Src/glob.c",
                     "line": 2584,
                     "column": 2,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -2472,6 +2636,7 @@
                     "file_name": "Src/glob.c",
                     "line": 2590,
                     "column": 2,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -2487,6 +2652,7 @@
                     "file_name": "Src/Modules/system.c",
                     "line": 521,
                     "column": 2,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -2502,6 +2668,7 @@
                     "file_name": "Src/Zle/zle_keymap.c",
                     "line": 1286,
                     "column": 2,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -2517,6 +2684,7 @@
                     "file_name": "Src/Zle/compctl.c",
                     "line": 3767,
                     "column": 2,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -2532,6 +2700,7 @@
                     "file_name": "Src/Zle/compctl.c",
                     "line": 3891,
                     "column": 7,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -2547,6 +2716,7 @@
                     "file_name": "Src/Modules/curses.c",
                     "line": 1231,
                     "column": 7,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0

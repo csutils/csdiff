@@ -229,13 +229,19 @@ static void sarifEncodeLoc(object *pLoc, const Defect &def, unsigned idx)
     };
 
     if (evt.line) {
-        // line/col
+        // line start/end
         object reg = {
             { "startLine", evt.line }
         };
+        if (0 < evt.vSize)
+            reg["endLine"] = evt.line + evt.vSize;
 
-        if (evt.column)
+        // column start/end
+        if (evt.column) {
             reg["startColumn"] = evt.column;
+            if (0 < evt.hSize)
+                reg["endColumn"] = evt.column + evt.hSize;
+        }
 
         locPhy["region"] = std::move(reg);
     }

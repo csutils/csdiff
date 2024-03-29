@@ -43,6 +43,10 @@ void SimpleTreeEncoder::appendDef(const Defect &def)
         evtNode["line"] = evt.line;
         if (0 < evt.column)
             evtNode["column"] = evt.column;
+        if (0 < evt.hSize)
+            evtNode["h_size"] = evt.hSize;
+        if (0 < evt.vSize)
+            evtNode["v_size"] = evt.vSize;
 
         // describe the event
         evtNode["event"] = evt.event;

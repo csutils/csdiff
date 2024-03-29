@@ -14,6 +14,7 @@
                     "file_name": "<source>",
                     "line": 7,
                     "column": 5,
+                    "h_size": 9,
                     "event": "warning[-Wanalyzer-double-free]",
                     "message": "double-'free' of 'ptr'",
                     "verbosity_level": 0
@@ -22,6 +23,7 @@
                     "file_name": "<source>",
                     "line": 5,
                     "column": 8,
+                    "h_size": 1,
                     "event": "branch_true",
                     "message": "following 'true' branch (when 'flag != 0')...",
                     "verbosity_level": 1
@@ -30,6 +32,7 @@
                     "file_name": "<source>",
                     "line": 6,
                     "column": 9,
+                    "h_size": 9,
                     "event": "branch_true",
                     "message": "...to here",
                     "verbosity_level": 1
@@ -38,6 +41,7 @@
                     "file_name": "<source>",
                     "line": 6,
                     "column": 9,
+                    "h_size": 9,
                     "event": "release_memory",
                     "message": "first 'free' here",
                     "verbosity_level": 1
@@ -46,6 +50,7 @@
                     "file_name": "<source>",
                     "line": 7,
                     "column": 5,
+                    "h_size": 9,
                     "event": "danger",
                     "message": "second 'free' here; first 'free' was at (3)",
                     "verbosity_level": 1

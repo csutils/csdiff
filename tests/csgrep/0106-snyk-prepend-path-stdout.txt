@@ -13,6 +13,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 624,
                     "column": 39,
+                    "h_size": 4,
                     "event": "warning[cpp/DerefNull]",
                     "message": "(BETA Suggestion) A pointer is possibly assigned to NULL then used. NULL pointer use can lead to program crashes.",
                     "verbosity_level": 0
@@ -29,6 +30,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 788,
                     "column": 6,
+                    "h_size": 4,
                     "event": "warning[cpp/DerefNull]",
                     "message": "(BETA Suggestion) A pointer is possibly assigned the return value of a standard library function that may return NULL and is not checked before use. NULL pointer use can lead to program crashes.",
                     "verbosity_level": 0
@@ -45,6 +47,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 3898,
                     "column": 6,
+                    "h_size": 6,
                     "event": "warning[cpp/DerefNull]",
                     "message": "(BETA Suggestion) A pointer is possibly assigned the return value of a standard library function that may return NULL and is not checked before use. NULL pointer use can lead to program crashes.",
                     "verbosity_level": 0
@@ -61,6 +64,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 5267,
                     "column": 13,
+                    "h_size": 33,
                     "event": "warning[cpp/DerefNull]",
                     "message": "(BETA Suggestion) A pointer is possibly assigned the return value of a standard library function that may return NULL and is not checked before use. NULL pointer use can lead to program crashes.",
                     "verbosity_level": 0
@@ -77,6 +81,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 519,
                     "column": 41,
+                    "h_size": 11,
                     "event": "warning[cpp/UserControlledPointer]",
                     "message": "(BETA Suggestion) User input from a file flows into pointer arithmetic, where it is used to set a pointer's address. As a result an attacker might be able to control where the pointer is pointing and either manipulate memory or expose values otherwise meant to be hidden.",
                     "verbosity_level": 0
@@ -93,6 +98,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 524,
                     "column": 20,
+                    "h_size": 11,
                     "event": "warning[cpp/UserControlledPointer]",
                     "message": "(BETA Suggestion) User input from a file flows into pointer arithmetic, where it is used to set a pointer's address. As a result an attacker might be able to control where the pointer is pointing and either manipulate memory or expose values otherwise meant to be hidden.",
                     "verbosity_level": 0
@@ -109,6 +115,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 1145,
                     "column": 42,
+                    "h_size": 15,
                     "event": "warning[cpp/UserControlledPointer]",
                     "message": "(BETA Suggestion) User input from an environment variable flows into the & operator, where it is used to set a pointer's address. As a result an attacker might be able to control where the pointer is pointing and either manipulate memory or expose values otherwise meant to be hidden.",
                     "verbosity_level": 0
@@ -125,6 +132,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 1146,
                     "column": 42,
+                    "h_size": 15,
                     "event": "warning[cpp/UserControlledPointer]",
                     "message": "(BETA Suggestion) User input from an environment variable flows into the & operator, where it is used to set a pointer's address. As a result an attacker might be able to control where the pointer is pointing and either manipulate memory or expose values otherwise meant to be hidden.",
                     "verbosity_level": 0
@@ -141,6 +149,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4122,
                     "column": 44,
+                    "h_size": 15,
                     "event": "warning[cpp/UserControlledPointer]",
                     "message": "(BETA Suggestion) User input from an environment variable flows into pointer arithmetic, where it is used to set a pointer's address. As a result an attacker might be able to control where the pointer is pointing and either manipulate memory or expose values otherwise meant to be hidden.",
                     "verbosity_level": 0
@@ -157,6 +166,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 6169,
                     "column": 25,
+                    "h_size": 20,
                     "event": "warning[cpp/UserControlledPointer]",
                     "message": "(BETA Suggestion) User input from an environment variable flows into pointer arithmetic, where it is used to set a pointer's address. As a result an attacker might be able to control where the pointer is pointing and either manipulate memory or expose values otherwise meant to be hidden.",
                     "verbosity_level": 0
@@ -173,6 +183,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 2113,
                     "column": 10,
+                    "h_size": 6,
                     "event": "error[cpp/BufferOverflow]",
                     "message": "Unsanitized input from an environment variable flows into strcpy, where it is used . This may result in a buffer overflow vulnerability.",
                     "verbosity_level": 0
@@ -189,6 +200,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4125,
                     "column": 11,
+                    "h_size": 6,
                     "event": "error[cpp/BufferOverflow]",
                     "message": "Unsanitized input from an environment variable flows into strcpy, where it is used . This may result in a buffer overflow vulnerability.",
                     "verbosity_level": 0
@@ -205,6 +217,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4317,
                     "column": 5,
+                    "h_size": 6,
                     "event": "error[cpp/BufferOverflow]",
                     "message": "Unsanitized input from an environment variable flows into strcpy, where it is used . This may result in a buffer overflow vulnerability.",
                     "verbosity_level": 0
@@ -221,6 +234,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4410,
                     "column": 5,
+                    "h_size": 6,
                     "event": "error[cpp/BufferOverflow]",
                     "message": "Unsanitized input from an environment variable flows into strcpy, where it is used . This may result in a buffer overflow vulnerability.",
                     "verbosity_level": 0
@@ -237,6 +251,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4423,
                     "column": 5,
+                    "h_size": 6,
                     "event": "error[cpp/BufferOverflow]",
                     "message": "Unsanitized input from an environment variable flows into strcpy, where it is used . This may result in a buffer overflow vulnerability.",
                     "verbosity_level": 0
@@ -253,6 +268,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4443,
                     "column": 5,
+                    "h_size": 6,
                     "event": "error[cpp/BufferOverflow]",
                     "message": "Unsanitized input from an environment variable flows into strcpy, where it is used . This may result in a buffer overflow vulnerability.",
                     "verbosity_level": 0
@@ -269,6 +285,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4523,
                     "column": 5,
+                    "h_size": 6,
                     "event": "error[cpp/BufferOverflow]",
                     "message": "Unsanitized input from an environment variable flows into strcpy, where it is used . This may result in a buffer overflow vulnerability.",
                     "verbosity_level": 0
@@ -285,6 +302,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4536,
                     "column": 5,
+                    "h_size": 6,
                     "event": "error[cpp/BufferOverflow]",
                     "message": "Unsanitized input from an environment variable flows into strcpy, where it is used . This may result in a buffer overflow vulnerability.",
                     "verbosity_level": 0
@@ -301,6 +319,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4584,
                     "column": 7,
+                    "h_size": 6,
                     "event": "error[cpp/BufferOverflow]",
                     "message": "Unsanitized input from an environment variable flows into strcpy, where it is used . This may result in a buffer overflow vulnerability.",
                     "verbosity_level": 0
@@ -317,6 +336,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4659,
                     "column": 5,
+                    "h_size": 6,
                     "event": "error[cpp/BufferOverflow]",
                     "message": "Unsanitized input from an environment variable flows into strcpy, where it is used . This may result in a buffer overflow vulnerability.",
                     "verbosity_level": 0
@@ -333,6 +353,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 5644,
                     "column": 9,
+                    "h_size": 6,
                     "event": "error[cpp/BufferOverflow]",
                     "message": "Unsanitized input from an environment variable flows into strcpy, where it is used . This may result in a buffer overflow vulnerability.",
                     "verbosity_level": 0
@@ -349,6 +370,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 5925,
                     "column": 9,
+                    "h_size": 6,
                     "event": "error[cpp/BufferOverflow]",
                     "message": "Unsanitized input from an environment variable flows into strcpy, where it is used . This may result in a buffer overflow vulnerability.",
                     "verbosity_level": 0
@@ -365,6 +387,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 6166,
                     "column": 8,
+                    "h_size": 6,
                     "event": "error[cpp/BufferOverflow]",
                     "message": "Unsanitized input from an environment variable flows into strcpy, where it is used . This may result in a buffer overflow vulnerability.",
                     "verbosity_level": 0
@@ -381,6 +404,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 6169,
                     "column": 8,
+                    "h_size": 6,
                     "event": "error[cpp/BufferOverflow]",
                     "message": "Unsanitized input from an environment variable flows into strcpy, where it is used . This may result in a buffer overflow vulnerability.",
                     "verbosity_level": 0
@@ -397,6 +421,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 2115,
                     "column": 10,
+                    "h_size": 6,
                     "event": "error[cpp/BufferOverflow]",
                     "message": "Unsanitized input from an environment variable flows into strcat, where it is used . This may result in a buffer overflow vulnerability.",
                     "verbosity_level": 0
@@ -413,6 +438,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4411,
                     "column": 5,
+                    "h_size": 6,
                     "event": "error[cpp/BufferOverflow]",
                     "message": "Unsanitized input from an environment variable flows into strcat, where it is used . This may result in a buffer overflow vulnerability.",
                     "verbosity_level": 0
@@ -429,6 +455,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4425,
                     "column": 5,
+                    "h_size": 6,
                     "event": "error[cpp/BufferOverflow]",
                     "message": "Unsanitized input from an environment variable flows into strcat, where it is used . This may result in a buffer overflow vulnerability.",
                     "verbosity_level": 0
@@ -445,6 +472,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4585,
                     "column": 7,
+                    "h_size": 6,
                     "event": "error[cpp/BufferOverflow]",
                     "message": "Unsanitized input from an environment variable flows into strcat, where it is used . This may result in a buffer overflow vulnerability.",
                     "verbosity_level": 0
@@ -461,6 +489,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 6167,
                     "column": 8,
+                    "h_size": 6,
                     "event": "error[cpp/BufferOverflow]",
                     "message": "Unsanitized input from an environment variable flows into strcat, where it is used . This may result in a buffer overflow vulnerability.",
                     "verbosity_level": 0
@@ -477,6 +506,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 6168,
                     "column": 8,
+                    "h_size": 6,
                     "event": "error[cpp/BufferOverflow]",
                     "message": "Unsanitized input from an environment variable flows into memset, where it is used . This may result in a buffer overflow vulnerability.",
                     "verbosity_level": 0
@@ -493,6 +523,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 364,
                     "column": 7,
+                    "h_size": 6,
                     "event": "note[cpp/SystemInformationLeak]",
                     "message": "System data (the environment variable UNITSFILE) flows into printf. This information leak might help an attacker to gather information about the system and plan an attack.",
                     "verbosity_level": 0
@@ -509,6 +540,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 3644,
                     "column": 7,
+                    "h_size": 6,
                     "event": "note[cpp/SystemInformationLeak]",
                     "message": "System data (the environment variable UNITSFILE) flows into printf. This information leak might help an attacker to gather information about the system and plan an attack.",
                     "verbosity_level": 0
@@ -525,6 +557,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 3720,
                     "column": 5,
+                    "h_size": 6,
                     "event": "note[cpp/SystemInformationLeak]",
                     "message": "System data (the environment variable UNITSFILE) flows into printf. This information leak might help an attacker to gather information about the system and plan an attack.",
                     "verbosity_level": 0
@@ -541,6 +574,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4805,
                     "column": 7,
+                    "h_size": 6,
                     "event": "note[cpp/SystemInformationLeak]",
                     "message": "System data (the environment variable UNITSFILE) flows into printf. This information leak might help an attacker to gather information about the system and plan an attack.",
                     "verbosity_level": 0
@@ -557,6 +591,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4820,
                     "column": 9,
+                    "h_size": 6,
                     "event": "note[cpp/SystemInformationLeak]",
                     "message": "System data (the environment variable UNITSFILE) flows into printf. This information leak might help an attacker to gather information about the system and plan an attack.",
                     "verbosity_level": 0
@@ -573,6 +608,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4850,
                     "column": 11,
+                    "h_size": 6,
                     "event": "note[cpp/SystemInformationLeak]",
                     "message": "System data (the environment variable UNITSFILE) flows into printf. This information leak might help an attacker to gather information about the system and plan an attack.",
                     "verbosity_level": 0
@@ -589,6 +625,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4860,
                     "column": 7,
+                    "h_size": 6,
                     "event": "note[cpp/SystemInformationLeak]",
                     "message": "System data (the environment variable UNITSFILE) flows into printf. This information leak might help an attacker to gather information about the system and plan an attack.",
                     "verbosity_level": 0
@@ -605,6 +642,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4863,
                     "column": 9,
+                    "h_size": 6,
                     "event": "note[cpp/SystemInformationLeak]",
                     "message": "System data (the environment variable UNITSFILE) flows into printf. This information leak might help an attacker to gather information about the system and plan an attack.",
                     "verbosity_level": 0
@@ -621,6 +659,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4886,
                     "column": 7,
+                    "h_size": 6,
                     "event": "note[cpp/SystemInformationLeak]",
                     "message": "System data (the environment variable UNITSFILE) flows into printf. This information leak might help an attacker to gather information about the system and plan an attack.",
                     "verbosity_level": 0
@@ -637,6 +676,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 5329,
                     "column": 7,
+                    "h_size": 6,
                     "event": "note[cpp/SystemInformationLeak]",
                     "message": "System data (the environment variable UNITSFILE) flows into printf. This information leak might help an attacker to gather information about the system and plan an attack.",
                     "verbosity_level": 0
@@ -653,6 +693,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4827,
                     "column": 7,
+                    "h_size": 6,
                     "event": "note[cpp/SystemInformationLeak]",
                     "message": "System data (the environment variable HOME) flows into printf. This information leak might help an attacker to gather information about the system and plan an attack.",
                     "verbosity_level": 0
@@ -669,6 +710,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4893,
                     "column": 7,
+                    "h_size": 6,
                     "event": "note[cpp/SystemInformationLeak]",
                     "message": "System data (the environment variable HOME) flows into printf. This information leak might help an attacker to gather information about the system and plan an attack.",
                     "verbosity_level": 0
@@ -685,6 +727,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4908,
                     "column": 5,
+                    "h_size": 6,
                     "event": "note[cpp/SystemInformationLeak]",
                     "message": "System data (the environment variable HOME) flows into printf. This information leak might help an attacker to gather information about the system and plan an attack.",
                     "verbosity_level": 0
@@ -701,6 +744,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4879,
                     "column": 7,
+                    "h_size": 6,
                     "event": "note[cpp/SystemInformationLeak]",
                     "message": "System data (the environment variable UNITSLOCALEMAP) flows into printf. This information leak might help an attacker to gather information about the system and plan an attack.",
                     "verbosity_level": 0
@@ -717,6 +761,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 402,
                     "column": 12,
+                    "h_size": 4,
                     "event": "warning[cpp/TOCTOU]",
                     "message": "(BETA Suggestion) The state of the file at the path being checked could be changed before the later operation using the same file path. In between the check and access the file could be modified and lead to the program performing an unexpected file operation. Where possible, use functions that perform checks as they open files, or use file descriptors.",
                     "verbosity_level": 0
@@ -733,6 +778,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4600,
                     "column": 17,
+                    "h_size": 6,
                     "event": "error[cpp/MemoryManagementControl]",
                     "message": "Unsanitized input from an environment variable flows into malloc, where it is used to allocate memory. This may result in a denial of service attack. An attacker can attempt to allocate very large amounts of memory.",
                     "verbosity_level": 0
@@ -749,6 +795,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4604,
                     "column": 17,
+                    "h_size": 6,
                     "event": "error[cpp/MemoryManagementControl]",
                     "message": "Unsanitized input from an environment variable flows into malloc, where it is used to allocate memory. This may result in a denial of service attack. An attacker can attempt to allocate very large amounts of memory.",
                     "verbosity_level": 0
@@ -765,6 +812,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 587,
                     "column": 4,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -781,6 +829,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 1541,
                     "column": 3,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -797,6 +846,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 1809,
                     "column": 15,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -813,6 +863,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 1811,
                     "column": 15,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -829,6 +880,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 1812,
                     "column": 15,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -845,6 +897,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 2077,
                     "column": 10,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -861,6 +914,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 2087,
                     "column": 13,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -877,6 +931,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 2098,
                     "column": 13,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -893,6 +948,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 2113,
                     "column": 10,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -909,6 +965,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 3123,
                     "column": 5,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -925,6 +982,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4125,
                     "column": 11,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -941,6 +999,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4161,
                     "column": 5,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -957,6 +1016,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4258,
                     "column": 9,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -973,6 +1033,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4317,
                     "column": 5,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -989,6 +1050,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4328,
                     "column": 7,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -1005,6 +1067,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4410,
                     "column": 5,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -1021,6 +1084,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4423,
                     "column": 5,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -1037,6 +1101,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4442,
                     "column": 5,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -1053,6 +1118,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4443,
                     "column": 5,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -1069,6 +1135,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4523,
                     "column": 5,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -1085,6 +1152,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4536,
                     "column": 5,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -1101,6 +1169,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4584,
                     "column": 7,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -1117,6 +1186,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4659,
                     "column": 5,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -1133,6 +1203,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 5400,
                     "column": 7,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -1149,6 +1220,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 5625,
                     "column": 9,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -1165,6 +1237,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 5632,
                     "column": 9,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -1181,6 +1254,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 5644,
                     "column": 9,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -1197,6 +1271,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 5925,
                     "column": 9,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -1213,6 +1288,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 6166,
                     "column": 8,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -1229,6 +1305,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 6169,
                     "column": 8,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcpy can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncpy instead.",
                     "verbosity_level": 0
@@ -1245,6 +1322,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 1543,
                     "column": 3,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcat can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncat instead.",
                     "verbosity_level": 0
@@ -1261,6 +1339,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 2115,
                     "column": 10,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcat can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncat instead.",
                     "verbosity_level": 0
@@ -1277,6 +1356,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4126,
                     "column": 11,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcat can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncat instead.",
                     "verbosity_level": 0
@@ -1293,6 +1373,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4162,
                     "column": 5,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcat can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncat instead.",
                     "verbosity_level": 0
@@ -1309,6 +1390,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4270,
                     "column": 11,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcat can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncat instead.",
                     "verbosity_level": 0
@@ -1325,6 +1407,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4411,
                     "column": 5,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcat can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncat instead.",
                     "verbosity_level": 0
@@ -1341,6 +1424,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4424,
                     "column": 5,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcat can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncat instead.",
                     "verbosity_level": 0
@@ -1357,6 +1441,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4425,
                     "column": 5,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcat can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncat instead.",
                     "verbosity_level": 0
@@ -1373,6 +1458,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4524,
                     "column": 5,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcat can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncat instead.",
                     "verbosity_level": 0
@@ -1389,6 +1475,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4537,
                     "column": 5,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcat can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncat instead.",
                     "verbosity_level": 0
@@ -1405,6 +1492,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4538,
                     "column": 5,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcat can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncat instead.",
                     "verbosity_level": 0
@@ -1421,6 +1509,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4585,
                     "column": 7,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcat can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncat instead.",
                     "verbosity_level": 0
@@ -1437,6 +1526,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4662,
                     "column": 7,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcat can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncat instead.",
                     "verbosity_level": 0
@@ -1453,6 +1543,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4663,
                     "column": 5,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcat can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncat instead.",
                     "verbosity_level": 0
@@ -1469,6 +1560,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 5627,
                     "column": 11,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcat can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncat instead.",
                     "verbosity_level": 0
@@ -1485,6 +1577,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 6167,
                     "column": 8,
+                    "h_size": 6,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using strcat can lead to severe buffer overflow vulnerabilities. Use the safe alternative strncat instead.",
                     "verbosity_level": 0
@@ -1501,6 +1594,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4601,
                     "column": 7,
+                    "h_size": 7,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -1517,6 +1611,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 4605,
                     "column": 7,
+                    "h_size": 7,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
@@ -1533,6 +1628,7 @@
                     "file_name": "/builddir/build/BUILD/units-2.22/units.c",
                     "line": 5845,
                     "column": 5,
+                    "h_size": 7,
                     "event": "warning[cpp/BufferOverflowUnsafeFunction]",
                     "message": "Using sprintf can lead to severe buffer overflow vulnerabilities. Use the safe alternative snprintf instead.",
                     "verbosity_level": 0
