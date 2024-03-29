@@ -240,7 +240,10 @@ std::string MsgFilter::filterMsg(
     return filtered;
 }
 
-std::string MsgFilter::filterPath(const std::string &origPath) const
+std::string MsgFilter::filterPath(
+        const std::string              &origPath,
+        const bool                      forceFullPath)
+    const
 {
     std::string path = origPath;
 
@@ -254,7 +257,7 @@ std::string MsgFilter::filterPath(const std::string &origPath) const
         }
     }
 
-    if (d->ignorePath)
+    if (!forceFullPath && d->ignorePath)
         return regexReplaceWrap(path, d->reDir, "");
 
     if (boost::regex_match(path, d->reTmpPath)) {

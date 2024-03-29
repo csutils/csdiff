@@ -114,7 +114,10 @@
                                 }
                             ]
                         }
-                    ]
+                    ],
+                    "fingerprints": {
+                        "csdiff/v0": "61cbb5622fd6f7ecc6874d697c60a8f22dca4d38"
+                    }
                 },
                 {
                     "ruleId": "SHELLCHECK_WARNING: warning[SC2174]",
@@ -170,7 +173,10 @@
                                 }
                             ]
                         }
-                    ]
+                    ],
+                    "fingerprints": {
+                        "csdiff/v0": "90d1cbfb163c912344bd9fa55a0dc86570b5dc74"
+                    }
                 }
             ]
         }

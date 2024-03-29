@@ -49,7 +49,10 @@ class MsgFilter {
         std::string filterMsg(
                 const std::string &msg,
                 const std::string &checker) const;
-        std::string filterPath(const std::string &path) const;
+        std::string filterPath(
+                const std::string &path,
+                bool forceFullPath = false)
+            const;
 
     private:
         MsgFilter();

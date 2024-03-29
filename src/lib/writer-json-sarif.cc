@@ -19,6 +19,7 @@
 
 #include "writer-json-sarif.hh"
 
+#include "finger-print.hh"
 #include "regex.hh"
 #include "version.hh"
 #include "writer-json-common.hh"
@@ -192,6 +193,31 @@ void SarifTreeEncoder::Private::serializeRules()
     }
 
     this->driver["rules"] = std::move(ruleList);
+}
+
+static void sarifEncodeFingerPrints(object *pResult, const Defect &def)
+{
+    // interface to compute fingerprints
+    const FingerPrinter fp(def);
+
+    // collect the array of fingerprints
+    object fps;
+    for (int v = 0; v < FPV_MAX; ++v) {
+        // compute a fingerprint of version `v`
+        const EFingerPrintVer fpv = static_cast<EFingerPrintVer>(v);
+        const std::string fingerPrint = fp.getHash(fpv);
+        if (fingerPrint.empty())
+            // fingerprint computation failed
+            continue;
+
+        // construct the "version" -> "value" pair
+        const std::string label = "csdiff/v" + std::to_string(v);
+        fps.emplace(label, fingerPrint);
+    }
+
+    // if the array is non-empty, append it to the result
+    if (!fps.empty())
+        (*pResult)["fingerprints"] = std::move(fps);
 }
 
 void SarifTreeEncoder::importScanProps(const TScanProps &scanProps)
@@ -396,6 +422,9 @@ void SarifTreeEncoder::appendDef(const Defect &def)
     if (!relatedLocs.empty())
         // our stash for comments
         result["relatedLocations"] = std::move(relatedLocs);
+
+    // SARIF fingerprints
+    sarifEncodeFingerPrints(&result, def);
 
     // append the `result` object to the `results` array
     d->results.push_back(std::move(result));

@@ -25,6 +25,7 @@ add_library(cs STATIC
     cwe-name-lookup.cc
     deflookup.cc
     filter.cc
+    finger-print.cc
     instream.cc
     msg-filter.cc
     parser.cc
