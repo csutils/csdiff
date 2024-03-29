@@ -21,10 +21,57 @@
 
 #include "hash-util.hh"
 #include "msg-filter.hh"
+#include "parser-common.hh"                 // for parseInt()
+#include "regex.hh"
 
 #include <cassert>
 
 #include <boost/uuid/name_generator.hpp>    // for boost::uuids::detail::sha1
+
+static std::string findLineContent(const int lineNumber, const TEvtList &evts)
+{
+    // line content for the key event as produced by `csgrep --embed-context`
+    static const RE reLineCont = RE("^ *([0-9]+) *\\|-> (.*)$");
+    assert(0 < lineNumber);
+
+    // go through all events
+    for (const DefEvent &evt : evts) {
+        if ("#" != evt.event)
+            // not a comment
+            continue;
+
+        boost::smatch sm;
+        if (!boost::regex_match(evt.msg, sm, reLineCont))
+            // not a line content
+            continue;
+
+        if (lineNumber != parseInt(sm[/* line number */ 1]))
+            // line number mismatch
+            continue;
+
+        // found!
+        return sm[/* line content */ 2];
+    }
+
+    return /* not found */ "";
+}
+
+static void readLineContent(std::string *pDst, const Defect &def)
+{
+    const DefEvent &keyEvt = def.events[def.keyEventIdx];
+    if (keyEvt.line <= 0)
+        // no valid line number for the key event
+        return;
+
+    std::string content = findLineContent(keyEvt.line, def.events);
+    if (content.empty())
+        // no line content found
+        return;
+
+    // remove all white-spaces
+    static const RE reSpace = RE("\\s+");
+    *pDst = boost::regex_replace(content, reSpace, "");
+}
 
 /// return SHA1 hash of `str` as hex-encoded string
 static inline std::string computeHexSHA1(const std::string &str)
@@ -59,6 +106,9 @@ FingerPrinter::FingerPrinter(const Defect &def):
         /* file path */ path            + sep +
         /* key event */ keyEvt.event    + sep +
         /* message   */ filt.filterMsg(keyEvt.msg, def.checker);
+
+    // try to read line content without white-spaces
+    readLineContent(&d->lineContent, def);
 }
 
 FingerPrinter::~FingerPrinter() = default;
