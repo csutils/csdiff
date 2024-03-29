@@ -42,10 +42,20 @@ static bool scReadEvent(DefEvent *pEvt, const pt::ptree &evtNode)
     if (evtName.empty())
         return false;
 
-    // read location
+    // read path
     pEvt->fileName = valueOf<string>(evtNode, "file", "<unknown>");
-    pEvt->line     = valueOf<int>   (evtNode, "line");
-    pEvt->column   = valueOf<int>   (evtNode, "column");
+
+    // read line
+    if ((pEvt->line = valueOf<int>(evtNode, "line"))) {
+        const int endLine = valueOf<int>(evtNode, "endLine");
+        pEvt->vSize = diffNums(pEvt->line, endLine);
+    }
+
+    // read column
+    if ((pEvt->column = valueOf<int>(evtNode, "column"))) {
+        const int endColumn = valueOf<int>(evtNode, "endColumn");
+        pEvt->hSize = diffNums(pEvt->column, endColumn);
+    }
 
     // read message
     pEvt->msg = valueOf<string>(evtNode, "message", "<unknown>");
