@@ -1,0 +1,7 @@
+Error: SHELLCHECK_WARNING (CWE-475):
+/usr/lib/dracut/modules.d/01fips/fips.sh:81:5: warning[SC2039]: In POSIX sh, 'local' is undefined.
+#   79|   fips_load_crypto() {
+#   80|       local _k
+#   81|->     local _v
+#   82|       local _module
+#   83|       local _found

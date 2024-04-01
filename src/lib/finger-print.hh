@@ -38,6 +38,9 @@ class FingerPrinter {
         /// return fingerprint of the selected kind
         std::string getHash(EFingerPrintVer) const;
 
+        /// return line content without spaces (empty string if not available)
+        std::string getLineContent() const;
+
     private:
         struct Private;
         std::unique_ptr<Private> d;

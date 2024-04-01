@@ -132,3 +132,8 @@ std::string FingerPrinter::getHash(const EFingerPrintVer fpv) const
     // return SHA1 hash from basicData AND lineContent
     return computeHexSHA1(d->basicData + sep + d->lineContent);
 }
+
+std::string FingerPrinter::getLineContent() const
+{
+    return d->lineContent;
+}

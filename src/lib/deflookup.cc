@@ -19,6 +19,7 @@
 
 #include "deflookup.hh"
 
+#include "finger-print.hh"
 #include "msg-filter.hh"
 #include "parser.hh"
 
@@ -79,8 +80,29 @@ void DefLookup::hashDefect(const Defect &def)
     defList.push_back(def);
 }
 
-static bool defLookupCore(TDefList &defList)
+static bool defLookupCore(TDefList &defList, const Defect &lookFor)
 {
+    // look by line content without spaces if available
+    const std::string lineCont = FingerPrinter(lookFor).getLineContent();
+    if (!lineCont.empty()) {
+        bool fullLineContCoverage = true;
+
+        for (auto it = defList.begin(); it != defList.end(); ++it) {
+            const std::string lineContNow = FingerPrinter(*it).getLineContent();
+            if (lineContNow.empty())
+                fullLineContCoverage = false;
+            else if (lineCont == lineContNow) {
+                // matched by line content without spaces
+                defList.erase(it);
+                return true;
+            }
+        }
+
+        if (fullLineContCoverage)
+            // we had line content for all lines but none of them matched
+            return false;
+    }
+
     // just remove an arbitrary one
     // TODO: add some other criteria in order to make the match more precise
     defList.resize(defList.size() - 1U);
@@ -132,7 +154,7 @@ bool DefLookup::lookup(const Defect &def)
     // process the resulting list of defects sequentially
     TDefList &defList = itByMsg->second;
     assert(!defList.empty());
-    if (!defLookupCore(defList))
+    if (!defLookupCore(defList, def))
         return false;
 
     // remove empty maps to speed up subsequent lookups

@@ -1181,25 +1181,314 @@ ModemManager-1.6.0/libmm-glib/mm-sms-properties.c:163:12: note: Access to field 
 #  165|   
 
 Error: COMPILER_WARNING:
-ModemManager-1.6.0/plugins/cinterion/mm-broadband-modem-cinterion.c:1303:9: warning: 'g_simple_async_result_set_error' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:122) [-Wdeprecated-declarations]
-#         g_simple_async_result_set_error (simple,
+ModemManager-1.6.0/plugins/altair/mm-broadband-modem-altair-lte.c:823:9: warning: 'g_simple_async_result_set_op_res_gboolean' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
 #         ^
-# 1301|       bandstr = mm_broadband_modem_take_and_convert_to_current_charset (MM_BROADBAND_MODEM (self), bandstr);
-# 1302|       if (!bandstr) {
-# 1303|->         g_simple_async_result_set_error (simple,
-# 1304|                                            MM_CORE_ERROR,
-# 1305|                                            MM_CORE_ERROR_UNSUPPORTED,
+#  821|           /* Our own setup now */
+#  822|           set_3gpp_unsolicited_events_handlers (MM_BROADBAND_MODEM_ALTAIR_LTE (self), TRUE);
+#  823|->         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#  824|       }
+#  825|   
 
 Error: COMPILER_WARNING:
-ModemManager-1.6.0/plugins/cinterion/mm-broadband-modem-cinterion.c: scope_hint: In function 'after_sim_unlock_context_complete_and_free'
-ModemManager-1.6.0/plugins/cinterion/mm-broadband-modem-cinterion.c:1546:5: warning: 'g_simple_async_result_complete' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:104) [-Wdeprecated-declarations]
-#     g_simple_async_result_complete (ctx->result);
+ModemManager-1.6.0/plugins/altair/mm-broadband-modem-altair-lte.c:859:9: warning: 'g_simple_async_result_set_op_res_gboolean' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#         ^
+#  857|           g_simple_async_result_take_error (simple, error);
+#  858|       else
+#  859|->         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#  860|       g_simple_async_result_complete (simple);
+#  861|       g_object_unref (simple);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/plugins/cinterion/mm-broadband-modem-cinterion.c:682:13: warning: 'g_simple_async_result_set_op_res_gpointer' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:75) [-Wdeprecated-declarations]
+#             g_simple_async_result_set_op_res_gpointer (operation_result,
+#             ^
+#  680|               /* We'll default to use SMONG then */
+#  681|               self->priv->sind_psinfo = FALSE;
+#  682|->             g_simple_async_result_set_op_res_gpointer (operation_result,
+#  683|                                                          GUINT_TO_POINTER (act),
+#  684|                                                          NULL);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/plugins/cinterion/mm-broadband-modem-cinterion.c:690:9: warning: 'g_simple_async_result_set_error' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:122) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_error (operation_result,
+#         ^
+#  688|           self->priv->sind_psinfo = TRUE;
+#  689|   
+#  690|->         g_simple_async_result_set_error (operation_result,
+#  691|                                            MM_CORE_ERROR,
+#  692|                                            MM_CORE_ERROR_INVALID_ARGS,
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/plugins/cinterion/mm-broadband-modem-cinterion.c:1381:5: warning: 'g_simple_async_result_complete' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:104) [-Wdeprecated-declarations]
+#     g_simple_async_result_complete (operation_result);
 #     ^
-# 1544|   {
-# 1545|       g_assert (ctx->timeout_id == 0);
-# 1546|->     g_simple_async_result_complete (ctx->result);
-# 1547|       g_object_unref (ctx->result);
-# 1548|       g_object_unref (ctx->self);
+# 1379|           g_simple_async_result_set_op_res_gboolean (operation_result, TRUE);
+# 1380|   
+# 1381|->     g_simple_async_result_complete (operation_result);
+# 1382|       g_object_unref (operation_result);
+# 1383|   }
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/plugins/huawei/mm-broadband-modem-huawei.c:1809:9: warning: 'g_simple_async_result_set_op_res_gboolean' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#         ^
+# 1807|           /* Our own setup now */
+# 1808|           set_3gpp_unsolicited_events_handlers (MM_BROADBAND_MODEM_HUAWEI (self), TRUE);
+# 1809|->         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+# 1810|       }
+# 1811|   
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/plugins/huawei/mm-broadband-modem-huawei.c:1845:9: warning: 'g_simple_async_result_set_op_res_gboolean' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#         ^
+# 1843|           g_simple_async_result_take_error (simple, error);
+# 1844|       else
+# 1845|->         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+# 1846|       g_simple_async_result_complete (simple);
+# 1847|       g_object_unref (simple);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/plugins/huawei/mm-broadband-modem-huawei.c:2549:9: warning: 'g_simple_async_result_set_op_res_gboolean' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#         ^
+# 2547|           /* Our own setup now */
+# 2548|           set_cdma_unsolicited_events_handlers (MM_BROADBAND_MODEM_HUAWEI (self), TRUE);
+# 2549|->         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+# 2550|       }
+# 2551|   
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/plugins/huawei/mm-broadband-modem-huawei.c:2580:5: warning: 'g_simple_async_result_set_op_res_gboolean' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#     g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (result), TRUE);
+#     ^
+# 2578|       /* Otherwise just run our setup and complete */
+# 2579|       set_cdma_unsolicited_events_handlers (MM_BROADBAND_MODEM_HUAWEI (self), TRUE);
+# 2580|->     g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (result), TRUE);
+# 2581|       g_simple_async_result_complete_in_idle (result);
+# 2582|       g_object_unref (result);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/plugins/huawei/mm-broadband-modem-huawei.c:2595:9: warning: 'g_simple_async_result_set_op_res_gboolean' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#         ^
+# 2593|           g_simple_async_result_take_error (simple, error);
+# 2594|       else
+# 2595|->         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+# 2596|       g_simple_async_result_complete (simple);
+# 2597|       g_object_unref (simple);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/plugins/huawei/mm-broadband-modem-huawei.c:2626:5: warning: 'g_simple_async_result_set_op_res_gboolean' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#     g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (result), TRUE);
+#     ^
+# 2624|   
+# 2625|       /* Otherwise we're done */
+# 2626|->     g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (result), TRUE);
+# 2627|       g_simple_async_result_complete_in_idle (result);
+# 2628|       g_object_unref (result);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/plugins/huawei/mm-broadband-modem-huawei.c:3034:9: warning: 'g_simple_async_result_set_op_res_gboolean' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#         ^
+# 3032|           /* Our own setup now */
+# 3033|           set_voice_unsolicited_events_handlers (MM_BROADBAND_MODEM_HUAWEI (self), TRUE);
+# 3034|->         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+# 3035|       }
+# 3036|   
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/plugins/huawei/mm-broadband-modem-huawei.c:3070:9: warning: 'g_simple_async_result_set_op_res_gboolean' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#         ^
+# 3068|           g_simple_async_result_take_error (simple, error);
+# 3069|       else
+# 3070|->         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+# 3071|       g_simple_async_result_complete (simple);
+# 3072|       g_object_unref (simple);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/plugins/icera/mm-broadband-modem-icera.c:679:9: warning: 'g_simple_async_result_set_op_res_gboolean' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#         ^
+#  677|           /* Our own setup now */
+#  678|           set_unsolicited_events_handlers (MM_BROADBAND_MODEM_ICERA (self), TRUE);
+#  679|->         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#  680|       }
+#  681|   
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/plugins/icera/mm-broadband-modem-icera.c:711:9: warning: 'g_simple_async_result_set_op_res_gboolean' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#         ^
+#  709|           g_simple_async_result_take_error (simple, error);
+#  710|       else
+#  711|->         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#  712|       g_simple_async_result_complete (simple);
+#  713|       g_object_unref (simple);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/plugins/mbm/mm-broadband-modem-mbm.c:958:9: warning: 'g_simple_async_result_set_op_res_gboolean' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#         ^
+#  956|           /* Our own setup now */
+#  957|           set_unsolicited_events_handlers (MM_BROADBAND_MODEM_MBM (self), TRUE);
+#  958|->         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#  959|       }
+#  960|   
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/plugins/mbm/mm-broadband-modem-mbm.c:994:9: warning: 'g_simple_async_result_set_op_res_gboolean' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#         ^
+#  992|           g_simple_async_result_take_error (simple, error);
+#  993|       else
+#  994|->         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#  995|       g_simple_async_result_complete (simple);
+#  996|       g_object_unref (simple);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/plugins/mtk/mm-broadband-modem-mtk.c:717:9: warning: 'g_simple_async_result_set_op_res_gboolean' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#         ^
+#  715|           set_unsolicited_events_handlers (MM_BROADBAND_MODEM_MTK (self),
+#  716|                                            TRUE);
+#  717|->         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#  718|       }
+#  719|   
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/plugins/mtk/mm-broadband-modem-mtk.c:753:9: warning: 'g_simple_async_result_set_op_res_gboolean' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#         ^
+#  751|           g_simple_async_result_take_error (simple, error);
+#  752|       else
+#  753|->         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#  754|       g_simple_async_result_complete (simple);
+#  755|       g_object_unref (simple);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/plugins/option/mm-broadband-modem-hso.c:309:9: warning: 'g_simple_async_result_set_op_res_gboolean' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#         ^
+#  307|               NULL);
+#  308|   
+#  309|->         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#  310|       }
+#  311|   
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/plugins/option/mm-broadband-modem-hso.c:345:9: warning: 'g_simple_async_result_set_op_res_gboolean' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#         ^
+#  343|           g_simple_async_result_take_error (simple, error);
+#  344|       else
+#  345|->         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#  346|       g_simple_async_result_complete (simple);
+#  347|       g_object_unref (simple);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/plugins/option/mm-broadband-modem-option.c:914:9: warning: 'g_simple_async_result_set_op_res_gboolean' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#         ^
+#  912|           /* Our own setup now */
+#  913|           set_unsolicited_events_handlers (MM_BROADBAND_MODEM_OPTION (self), TRUE);
+#  914|->         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#  915|       }
+#  916|   
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/plugins/option/mm-broadband-modem-option.c:950:9: warning: 'g_simple_async_result_set_op_res_gboolean' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#         ^
+#  948|           g_simple_async_result_take_error (simple, error);
+#  949|       else
+#  950|->         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#  951|       g_simple_async_result_complete (simple);
+#  952|       g_object_unref (simple);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/plugins/simtech/mm-broadband-modem-simtech.c:138:9: warning: 'g_simple_async_result_set_op_res_gboolean' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#         ^
+#  136|           /* Our own setup now */
+#  137|           set_unsolicited_events_handlers (MM_BROADBAND_MODEM_SIMTECH (self), TRUE);
+#  138|->         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#  139|       }
+#  140|   
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/plugins/simtech/mm-broadband-modem-simtech.c:174:9: warning: 'g_simple_async_result_set_op_res_gboolean' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#         ^
+#  172|           g_simple_async_result_take_error (simple, error);
+#  173|       else
+#  174|->         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#  175|       g_simple_async_result_complete (simple);
+#  176|       g_object_unref (simple);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/plugins/via/mm-broadband-modem-via.c:358:9: warning: 'g_simple_async_result_set_op_res_gboolean' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#         ^
+#  356|           /* Our own setup now */
+#  357|           set_unsolicited_events_handlers (MM_BROADBAND_MODEM_VIA (self), TRUE);
+#  358|->         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#  359|       }
+#  360|   
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/plugins/via/mm-broadband-modem-via.c:394:9: warning: 'g_simple_async_result_set_op_res_gboolean' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#         ^
+#  392|           g_simple_async_result_take_error (simple, error);
+#  393|       else
+#  394|->         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#  395|       g_simple_async_result_complete (simple);
+#  396|       g_object_unref (simple);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/plugins/zte/mm-broadband-modem-zte-icera.c:71:9: warning: 'g_simple_async_result_set_op_res_gboolean' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#         ^
+#   69|                                                          MM_BROADBAND_MODEM_ZTE_ICERA (self)->priv->unsolicited_setup,
+#   70|                                                          TRUE);
+#   71|->         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#   72|       }
+#   73|   
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/plugins/zte/mm-broadband-modem-zte-icera.c:107:9: warning: 'g_simple_async_result_set_op_res_gboolean' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#         ^
+#  105|           g_simple_async_result_take_error (simple, error);
+#  106|       else
+#  107|->         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#  108|       g_simple_async_result_complete (simple);
+#  109|       g_object_unref (simple);
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/plugins/zte/mm-broadband-modem-zte.c:636:9: warning: 'g_simple_async_result_set_op_res_gboolean' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#         ^
+#  634|                                                          MM_BROADBAND_MODEM_ZTE (self)->priv->unsolicited_setup,
+#  635|                                                          TRUE);
+#  636|->         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#  637|       }
+#  638|   
+
+Error: COMPILER_WARNING:
+ModemManager-1.6.0/plugins/zte/mm-broadband-modem-zte.c:672:9: warning: 'g_simple_async_result_set_op_res_gboolean' is deprecated (declared at /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88) [-Wdeprecated-declarations]
+#         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#         ^
+#  670|           g_simple_async_result_take_error (simple, error);
+#  671|       else
+#  672|->         g_simple_async_result_set_op_res_gboolean (G_SIMPLE_ASYNC_RESULT (res), TRUE);
+#  673|       g_simple_async_result_complete (simple);
+#  674|       g_object_unref (simple);
 
 Error: CLANG_WARNING:
 ModemManager-1.6.0/src/mm-bearer-mbim.c:1134:13: warning: Function call argument is an uninitialized value
