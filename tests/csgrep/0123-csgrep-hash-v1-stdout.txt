@@ -1,0 +1,310 @@
+{
+    "defects": [
+        {
+            "checker": "CERT STR34-C",
+            "cwe": 704,
+            "tool": "coverity",
+            "hash_v1": "04ada3961e3b0981a8d1d3d465e237608ba32829",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "wget-1.21.1/lib/base32.c",
+                    "line": 97,
+                    "event": "cert_str34_c_violation",
+                    "message": "Casting character \"b32str[(to_uchar(in[2]) << 1) + (--inlen ? to_uchar(in[3]) >> 7 : 0) & 0x1f]\" to larger integer size directly.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   95|         *out++ =",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   96|           (inlen",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   97|->          ? b32str[((to_uchar (in[2]) << 1)",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   98|                      + (--inlen ? to_uchar (in[3]) >> 7 : 0))",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   99|                     & 0x1f]",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "CERT DCL37-C",
+            "cwe": 758,
+            "tool": "coverity",
+            "hash_v1": "043d9a35cdeaa2ece61c573c8657402be7a8baa1",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "wget-1.21.1/lib/time.h",
+                    "line": 39,
+                    "event": "cert_dcl37_c_violation",
+                    "message": "The reserved identifier \"_GL_TIME_H\", which is reserved for use as identifiers with file scope in both the ordinary and tag name spaces, is defined.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   37|   #else",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   38|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   39|-> # define _GL_TIME_H",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   40|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   41|   /* mingw's <time.h> provides the functions asctime_r, ctime_r, gmtime_r,",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "CERT DCL37-C",
+            "cwe": 758,
+            "tool": "coverity",
+            "hash_v1": "04508c4a836eb7019933a7715e50f9ae676d79ca",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "wget-1.21.1/src/connect.c",
+                    "line": 697,
+                    "event": "cert_dcl37_c_violation",
+                    "message": "The reserved identifier \"__arr\", which is reserved for use as identifiers with file scope in both the ordinary and tag name spaces, is declared.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  695|         exit (WGET_EXIT_GENERIC_ERROR);",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  696|       }",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  697|->   FD_ZERO (&fdset);",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  698|     FD_SET (fd, &fdset);",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  699|     if (wait_for & WAIT_FOR_READ)",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "CERT EXP40-C",
+            "cwe": 758,
+            "tool": "coverity",
+            "hash_v1": "046d627dc432f70113773c8d8bc4b8532f9bb9ee",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "wget-1.21.1/src/http.c",
+                    "line": 256,
+                    "event": "cert_exp40_c_violation",
+                    "message": "Casting pointer \"value\" with type \"char const *\" to type \"void *\" allows an object defined with a const-qualified type to be modified through use of an lvalue with non-const-qualified type.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  254|             release_header (hdr);",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  255|             hdr->name = (void *)name;",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  256|->           hdr->value = (void *)value;",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  257|             hdr->release_policy = release_policy;",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  258|             return;",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "CERT EXP40-C",
+            "cwe": 758,
+            "tool": "coverity",
+            "hash_v1": "046d627dc432f70113773c8d8bc4b8532f9bb9ee",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "wget-1.21.1/src/http.c",
+                    "line": 271,
+                    "event": "cert_exp40_c_violation",
+                    "message": "Casting pointer \"value\" with type \"char const *\" to type \"void *\" allows an object defined with a const-qualified type to be modified through use of an lvalue with non-const-qualified type.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  269|     hdr = &req->headers[req->hcount++];",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  270|     hdr->name = (void *)name;",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  271|->   hdr->value = (void *)value;",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  272|     hdr->release_policy = release_policy;",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  273|   }",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "CERT INT31-C",
+            "cwe": 192,
+            "tool": "coverity",
+            "hash_v1": "04d36b11df941defc930c1ad1ba5578cb7a545aa",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "wget-1.21.1/src/utils.c",
+                    "line": 2404,
+                    "event": "cert_int31_c_violation",
+                    "message": "Casting \"0xffUL & (value >> 8)\" from \"unsigned long\" to \"unsigned char\" without checking its value may result in lost or misinterpreted data.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2402|         if (size)",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2403|           {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2404|->           *q++ = 0xff & value >> 8;",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2405|             size--;",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2406|           }",
+                    "verbosity_level": 1
+                }
+            ]
+        }
+    ]
+}

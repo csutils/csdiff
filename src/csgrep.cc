@@ -19,6 +19,7 @@
 
 #include "abstract-filter.hh"
 #include "filter.hh"
+#include "finger-print.hh"
 #include "msg-filter.hh"
 #include "parser.hh"
 #include "parser-common.hh"
@@ -229,6 +230,36 @@ class ImpLevelFilter: public AbstractFilter {
     protected:
         bool matchDef(const Defect &def) override {
             return minLevel_ <= def.imp;
+        }
+};
+
+class FingerPrintFilter: public AbstractFilter {
+    private:
+        const std::string hashPrefix_;
+
+    public:
+        FingerPrintFilter(AbstractWriter *agent, const std::string &hashPrefix):
+            AbstractFilter(agent),
+            hashPrefix_(hashPrefix)
+        {
+        }
+
+    protected:
+        bool matchDef(const Defect &def) override {
+            const FingerPrinter fp(def);
+            std::string hash = fp.getHash(FPV_CSDIFF_WITH_LINE_CONTENT);
+            if (hash.empty())
+                // fingerprint not available for this finding
+                return false;
+
+            const size_t prefixLen = hashPrefix_.size();
+            if (hash.size() < prefixLen)
+                // the prefix we are looking for is longer than the hash itself
+                return false;
+
+            // make size of the hash equal to size of the prefix and compare
+            hash.resize(prefixLen);
+            return (hashPrefix_ == hash);
         }
 };
 
@@ -543,7 +574,8 @@ bool chainFilters(
         return false;
     }
 
-    return chainDecoratorIntArg<ImpLevelFilter>(pEng, vm, "imp-level");
+    return chainDecoratorGeneric<FingerPrintFilter>(pEng, vm, "hash-v1")
+        && chainDecoratorIntArg<ImpLevelFilter>    (pEng, vm, "imp-level");
 }
 
 int main(int argc, char *argv[])
@@ -565,6 +597,7 @@ int main(int argc, char *argv[])
             ("path",                po::value<string>(),        "defect matches if the path of its key event matches the given regex")
             ("event",               po::value<string>(),        "defect matches if its key event matches the given regex (each defect has exactly one key event, which determines its location in the code)")
             ("error",               po::value<string>(),        "defect matches if the message of its key event matches the given regex")
+            ("hash-v1",             po::value<string>(),        "defect matches if its csdiff/v1 fingerprint starts with the given prefix")
             ("msg",                 po::value<string>(),        "defect matches if any of its messages matches the given regex")
             ("tool",                po::value<string>(),        "defect matches if it was detected by tool that matches the given regex")
             ("annot",               po::value<string>(),        "defect matches if its annotation matches the given regex")
