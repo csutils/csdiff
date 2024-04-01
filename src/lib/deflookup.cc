@@ -31,7 +31,7 @@ typedef std::map<std::string, TDefByEvt>        TDefByFile;
 typedef std::map<std::string, TDefByFile>       TDefByChecker;
 
 struct DefLookup::Private {
-    TDefByChecker                    stor;
+    TDefByChecker                    byChecker;
     bool                             usePartialResults;
 };
 
@@ -63,37 +63,41 @@ DefLookup::~DefLookup()
 
 void DefLookup::hashDefect(const Defect &def)
 {
-    TDefByFile &row = d->stor[def.checker];
+    // categorize by checker
+    TDefByFile &byPath = d->byChecker[def.checker];
 
+    // categorize by path
     const DefEvent &evt = def.events[def.keyEventIdx];
     const MsgFilter &filter = MsgFilter::inst();
-    TDefByEvt &col = row[filter.filterPath(evt.fileName)];
-    TDefByMsg &zCol = col[evt.event];
-    TDefList &cell = zCol[filter.filterMsg(evt.msg, def.checker)];
+    TDefByEvt &byEvt = byPath[filter.filterPath(evt.fileName)];
 
-    cell.push_back(def);
+    // categorize by key event and msg
+    TDefByMsg &byMsg = byEvt[evt.event];
+    TDefList &defList = byMsg[filter.filterMsg(evt.msg, def.checker)];
+
+    defList.push_back(def);
 }
 
 bool DefLookup::lookup(const Defect &def)
 {
     // look for defect class
-    TDefByChecker::iterator iRow = d->stor.find(def.checker);
-    if (d->stor.end() == iRow)
+    TDefByChecker::iterator itByChecker = d->byChecker.find(def.checker);
+    if (d->byChecker.end() == itByChecker)
         return false;
 
     // simplify path
     const MsgFilter &filter = MsgFilter::inst();
     const DefEvent &evt = def.events[def.keyEventIdx];
-    const std::string path(filter.filterPath(evt.fileName));
+    const std::string path = filter.filterPath(evt.fileName);
 
     // look for file name
-    TDefByFile &row = iRow->second;
-    TDefByFile::iterator iCol = row.find(path);
-    if (row.end() == iCol)
+    TDefByFile &byPath = itByChecker->second;
+    TDefByFile::iterator itByPath = byPath.find(path);
+    if (byPath.end() == itByPath)
         return false;
 
-    TDefByEvt &col = iCol->second;
-    if (!d->usePartialResults && col.end() != col.find("internal warning"))
+    TDefByEvt &byEvt = itByPath->second;
+    if (!d->usePartialResults && byEvt.end() != byEvt.find("internal warning"))
         // if the analyzer produced an "internal warning" diagnostic message,
         // we assume partial results, which cannot be reliably used for
         // differential scan ==> pretend we found what we had been looking
@@ -101,23 +105,23 @@ bool DefLookup::lookup(const Defect &def)
         return true;
 
     // look by key event
-    TDefByEvt::iterator iZCol = col.find(evt.event);
-    if (col.end() == iZCol)
+    TDefByEvt::iterator itByEvent = byEvt.find(evt.event);
+    if (byEvt.end() == itByEvent)
         return false;
 
     // look by msg
-    TDefByMsg &zCol = iZCol->second;
-    TDefByMsg::iterator iCell = zCol.find(
-            filter.filterMsg(evt.msg, def.checker));
-    if (zCol.end() == iCell)
+    TDefByMsg &byMsg = itByEvent->second;
+    const std::string msg = filter.filterMsg(evt.msg, def.checker);
+    TDefByMsg::iterator itByMsg = byMsg.find(msg);
+    if (byMsg.end() == itByMsg)
         return false;
 
     // FIXME: nasty over-approximation
-    TDefList &defs = iCell->second;
-    unsigned cnt = defs.size();
+    TDefList &defList = itByMsg->second;
+    unsigned cnt = defList.size();
     if (cnt)
         // just remove an arbitrary one
-        defs.resize(cnt - 1);
+        defList.resize(cnt - 1);
     else
         return false;
 
