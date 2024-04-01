@@ -78,6 +78,19 @@ void DefLookup::hashDefect(const Defect &def)
     defList.push_back(def);
 }
 
+static bool defLookupCore(TDefList &defList)
+{
+    // just remove an arbitrary one
+    // TODO: add some other criteria in order to make the match more precise
+    unsigned cnt = defList.size();
+    if (cnt)
+        defList.resize(cnt - 1);
+    else
+        return false;
+
+    return true;
+}
+
 bool DefLookup::lookup(const Defect &def)
 {
     // look for defect class
@@ -116,15 +129,11 @@ bool DefLookup::lookup(const Defect &def)
     if (byMsg.end() == itByMsg)
         return false;
 
-    // FIXME: nasty over-approximation
+    // process the resulting list of defects sequentially
     TDefList &defList = itByMsg->second;
-    unsigned cnt = defList.size();
-    if (cnt)
-        // just remove an arbitrary one
-        defList.resize(cnt - 1);
-    else
+    if (!defLookupCore(defList))
         return false;
 
-    // TODO: add some other criteria in order to make the match more precise
+    // found!
     return true;
 }
