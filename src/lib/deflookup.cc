@@ -22,6 +22,7 @@
 #include "msg-filter.hh"
 #include "parser.hh"
 
+#include <cassert>
 #include <map>
 
 typedef std::vector<Defect>                     TDefList;
@@ -82,11 +83,7 @@ static bool defLookupCore(TDefList &defList)
 {
     // just remove an arbitrary one
     // TODO: add some other criteria in order to make the match more precise
-    unsigned cnt = defList.size();
-    if (cnt)
-        defList.resize(cnt - 1);
-    else
-        return false;
+    defList.resize(defList.size() - 1U);
 
     return true;
 }
@@ -105,11 +102,13 @@ bool DefLookup::lookup(const Defect &def)
 
     // look for file name
     TDefByFile &byPath = itByChecker->second;
+    assert(!byPath.empty());
     TDefByFile::iterator itByPath = byPath.find(path);
     if (byPath.end() == itByPath)
         return false;
 
     TDefByEvt &byEvt = itByPath->second;
+    assert(!byEvt.empty());
     if (!d->usePartialResults && byEvt.end() != byEvt.find("internal warning"))
         // if the analyzer produced an "internal warning" diagnostic message,
         // we assume partial results, which cannot be reliably used for
@@ -124,6 +123,7 @@ bool DefLookup::lookup(const Defect &def)
 
     // look by msg
     TDefByMsg &byMsg = itByEvent->second;
+    assert(!byMsg.empty());
     const std::string msg = filter.filterMsg(evt.msg, def.checker);
     TDefByMsg::iterator itByMsg = byMsg.find(msg);
     if (byMsg.end() == itByMsg)
@@ -131,8 +131,22 @@ bool DefLookup::lookup(const Defect &def)
 
     // process the resulting list of defects sequentially
     TDefList &defList = itByMsg->second;
+    assert(!defList.empty());
     if (!defLookupCore(defList))
         return false;
+
+    // remove empty maps to speed up subsequent lookups
+    if (defList.empty()) {
+        byMsg.erase(itByMsg);
+        if (byMsg.empty()) {
+            byEvt.erase(itByEvent);
+            if (byEvt.empty()) {
+                byPath.erase(itByPath);
+                if (byPath.empty())
+                    d->byChecker.erase(itByChecker);
+            }
+        }
+    }
 
     // found!
     return true;
