@@ -31,11 +31,12 @@ void SimpleTreeEncoder::importScanProps(const TScanProps &scanProps)
     root_["scan"] = jsonSerializeScanProps(scanProps);
 }
 
-void SimpleTreeEncoder::appendDef(const Defect &def)
+static array simpleEncodeEvents(const TEvtList &events)
 {
-    // go through events
     array evtList;
-    for (const DefEvent &evt : def.events) {
+
+    // go through events
+    for (const DefEvent &evt : events) {
         object evtNode;
 
         // describe the location
@@ -57,13 +58,18 @@ void SimpleTreeEncoder::appendDef(const Defect &def)
         evtList.push_back(std::move(evtNode));
     }
 
+    return evtList;
+}
+
+void SimpleTreeEncoder::appendDef(const Defect &def)
+{
     // create a node for a single defect
     object defNode;
     defNode["checker"] = def.checker;
+
+    // encode optional per-finding properties
     if (!def.annotation.empty())
         defNode["annotation"] = def.annotation;
-
-    // write "defect_id", "cwe", etc. if available
     if (0 < def.defectId)
         defNode["defect_id"] = def.defectId;
     if (0 < def.cwe)
@@ -77,8 +83,9 @@ void SimpleTreeEncoder::appendDef(const Defect &def)
     if (!def.tool.empty())
         defNode["tool"] = def.tool;
 
+    // encode events
     defNode["key_event_idx"] = def.keyEventIdx;
-    defNode["events"] = std::move(evtList);
+    defNode["events"] = simpleEncodeEvents(def.events);
 
     // create the node representing the list of defects
     if (!pDefects_)
