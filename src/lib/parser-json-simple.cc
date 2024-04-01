@@ -60,6 +60,7 @@ SimpleTreeDecoder::Private::Private(InStream &input):
         "defect_id",
         "events",
         "function",
+        "hash_v1",
         "imp",
         "key_event_idx",
         "language",

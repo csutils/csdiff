@@ -19,6 +19,7 @@
 
 #include "writer-json-simple.hh"
 
+#include "finger-print.hh"
 #include "writer-json-common.hh"
 
 using namespace boost::json;
@@ -82,6 +83,12 @@ void SimpleTreeEncoder::appendDef(const Defect &def)
         defNode["language"] = def.language;
     if (!def.tool.empty())
         defNode["tool"] = def.tool;
+
+    // encode fingerprint if available
+    const FingerPrinter fp(def);
+    const std::string hash = fp.getHash(FPV_CSDIFF_WITH_LINE_CONTENT);
+    if (!hash.empty())
+        defNode["hash_v1"] = hash;
 
     // encode events
     defNode["key_event_idx"] = def.keyEventIdx;
