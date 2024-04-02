@@ -74,7 +74,7 @@ bool CovTreeDecoder::readNode(Defect *def)
 
         evt.fileName    = valueOf<std::string>(evtNode, "filePathname");
         evt.line        = valueOf<int>        (evtNode, "lineNumber");
-        // TODO: read column?
+        evt.column      = valueOf<int>        (evtNode, "columnNumber");
         evt.event       = valueOf<std::string>(evtNode, "eventTag");
         evt.msg         = valueOf<std::string>(evtNode, "eventDescription");
 
