@@ -1,0 +1,70 @@
+{
+    "defects": [
+        {
+            "checker": "HARDCODED_CREDENTIALS",
+            "cwe": 798,
+            "function": "<script>",
+            "language": "python",
+            "tool": "coverity",
+            "key_event_idx": 2,
+            "events": [
+                {
+                    "file_name": "/tmp/cspodmanu0m_p6ko/istio-proxyv2/unpacked_remote_sources/istio/app/samples/bookinfo/src/productpage/productpage.py",
+                    "line": 47,
+                    "column": 1,
+                    "event": "assign",
+                    "message": "Assigning: \"app\" = \"Flask(__name__)\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/tmp/cspodmanu0m_p6ko/istio-proxyv2/unpacked_remote_sources/istio/app/samples/bookinfo/src/productpage/productpage.py",
+                    "line": 56,
+                    "column": 1,
+                    "event": "assign",
+                    "message": "Assigning: \"app.secret_key\" = \"b\"_5#y2L\\\"F4Q8z\\n\\xec]/\"\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/tmp/cspodmanu0m_p6ko/istio-proxyv2/unpacked_remote_sources/istio/app/samples/bookinfo/src/productpage/productpage.py",
+                    "line": 56,
+                    "column": 1,
+                    "event": "credentials_use",
+                    "message": "\"app.secret_key\" uses the constant string as credentials.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/tmp/cspodmanu0m_p6ko/istio-proxyv2/unpacked_remote_sources/istio/app/samples/bookinfo/src/productpage/productpage.py",
+                    "line": 56,
+                    "column": 1,
+                    "event": "remediation",
+                    "message": "Credentials should be stored in a configuration file or database that is inaccessible to unauthorized users.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SIGMA.access_to_secret",
+            "cwe": 284,
+            "function": "null",
+            "language": "text",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/tmp/cspodmanu0m_p6ko/istio-proxyv2/unpacked_remote_sources/istio/app/manifests/charts/istio-control/istio-discovery/templates/role.yaml",
+                    "line": 17,
+                    "event": "Sigma main event",
+                    "message": "The `secrets` resource is granted `get`, `list`, or `watch` access on the Kubernetes API. This can allow an attacker to view Kubernetes cluster or external resources whose credentials are stored in `secrets`.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/tmp/cspodmanu0m_p6ko/istio-proxyv2/unpacked_remote_sources/istio/app/manifests/charts/istio-control/istio-discovery/templates/role.yaml",
+                    "line": 17,
+                    "event": "remediation",
+                    "message": "Avoid granting `get`, `list`, or `watch` permissions for `secrets`.",
+                    "verbosity_level": 1
+                }
+            ]
+        }
+    ]
+}
