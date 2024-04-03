@@ -76,6 +76,7 @@
                                 },
                                 "region": {
                                     "startLine": 30,
+                                    "endLine": 30,
                                     "snippet": {
                                         "text": "Problem detected in this context:\n   28|   #include <boost/program_options.hpp>\n   29|   \n   30|-> int main(int argc, char *argv[])\n   31|   {\n   32|       using std::string;"
                                     }
@@ -99,7 +100,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csdiff.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 30
+                                                        "startLine": 30,
+                                                        "endLine": 30
                                                     }
                                                 },
                                                 "message": {
@@ -119,7 +121,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csdiff.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 122
+                                                        "startLine": 122,
+                                                        "endLine": 122
                                                     }
                                                 },
                                                 "message": {
@@ -208,6 +211,7 @@
                                 },
                                 "region": {
                                     "startLine": 30,
+                                    "endLine": 30,
                                     "snippet": {
                                         "text": "Problem detected in this context:\n   28|   #include <boost/program_options.hpp>\n   29|   \n   30|-> int main(int argc, char *argv[])\n   31|   {\n   32|       using std::string;"
                                     }
@@ -231,7 +235,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csdiff.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 30
+                                                        "startLine": 30,
+                                                        "endLine": 30
                                                     }
                                                 },
                                                 "message": {
@@ -251,7 +256,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csdiff.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 169
+                                                        "startLine": 169,
+                                                        "endLine": 169
                                                     }
                                                 },
                                                 "message": {
@@ -340,6 +346,7 @@
                                 },
                                 "region": {
                                     "startLine": 30,
+                                    "endLine": 30,
                                     "snippet": {
                                         "text": "Problem detected in this context:\n   28|   #include <boost/program_options.hpp>\n   29|   \n   30|-> int main(int argc, char *argv[])\n   31|   {\n   32|       using std::string;"
                                     }
@@ -363,7 +370,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csdiff.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 30
+                                                        "startLine": 30,
+                                                        "endLine": 30
                                                     }
                                                 },
                                                 "message": {
@@ -383,7 +391,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csdiff.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 124
+                                                        "startLine": 124,
+                                                        "endLine": 124
                                                     }
                                                 },
                                                 "message": {
@@ -472,6 +481,7 @@
                                 },
                                 "region": {
                                     "startLine": 30,
+                                    "endLine": 30,
                                     "snippet": {
                                         "text": "Problem detected in this context:\n   28|   #include <boost/program_options.hpp>\n   29|   \n   30|-> int main(int argc, char *argv[])\n   31|   {\n   32|       using std::string;"
                                     }
@@ -495,7 +505,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csdiff.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 30
+                                                        "startLine": 30,
+                                                        "endLine": 30
                                                     }
                                                 },
                                                 "message": {
@@ -515,7 +526,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csdiff.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 126
+                                                        "startLine": 126,
+                                                        "endLine": 126
                                                     }
                                                 },
                                                 "message": {
@@ -604,6 +616,7 @@
                                 },
                                 "region": {
                                     "startLine": 563,
+                                    "endLine": 563,
                                     "snippet": {
                                         "text": "Problem detected in this context:\n  561|   }\n  562|   \n  563|-> int main(int argc, char *argv[])\n  564|   {\n  565|       using std::string;"
                                     }
@@ -627,7 +640,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csgrep.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 563
+                                                        "startLine": 563,
+                                                        "endLine": 563
                                                     }
                                                 },
                                                 "message": {
@@ -647,7 +661,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csgrep.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 650
+                                                        "startLine": 650,
+                                                        "endLine": 650
                                                     }
                                                 },
                                                 "message": {
@@ -736,6 +751,7 @@
                                 },
                                 "region": {
                                     "startLine": 563,
+                                    "endLine": 563,
                                     "snippet": {
                                         "text": "Problem detected in this context:\n  561|   }\n  562|   \n  563|-> int main(int argc, char *argv[])\n  564|   {\n  565|       using std::string;"
                                     }
@@ -759,7 +775,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csgrep.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 563
+                                                        "startLine": 563,
+                                                        "endLine": 563
                                                     }
                                                 },
                                                 "message": {
@@ -779,7 +796,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csgrep.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 597
+                                                        "startLine": 597,
+                                                        "endLine": 597
                                                     }
                                                 },
                                                 "message": {
@@ -868,6 +886,7 @@
                                 },
                                 "region": {
                                     "startLine": 563,
+                                    "endLine": 563,
                                     "snippet": {
                                         "text": "Problem detected in this context:\n  561|   }\n  562|   \n  563|-> int main(int argc, char *argv[])\n  564|   {\n  565|       using std::string;"
                                     }
@@ -891,7 +910,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csgrep.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 563
+                                                        "startLine": 563,
+                                                        "endLine": 563
                                                     }
                                                 },
                                                 "message": {
@@ -911,7 +931,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csgrep.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 651
+                                                        "startLine": 651,
+                                                        "endLine": 651
                                                     }
                                                 },
                                                 "message": {
@@ -1000,6 +1021,7 @@
                                 },
                                 "region": {
                                     "startLine": 54,
+                                    "endLine": 54,
                                     "snippet": {
                                         "text": "Problem detected in this context:\n   52|   }\n   53|   \n   54|-> int main(int argc, char *argv[])\n   55|   {\n   56|       using std::string;"
                                     }
@@ -1023,7 +1045,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cshtml.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 54
+                                                        "startLine": 54,
+                                                        "endLine": 54
                                                     }
                                                 },
                                                 "message": {
@@ -1043,7 +1066,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cshtml.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 129
+                                                        "startLine": 129,
+                                                        "endLine": 129
                                                     }
                                                 },
                                                 "message": {
@@ -1132,6 +1156,7 @@
                                 },
                                 "region": {
                                     "startLine": 54,
+                                    "endLine": 54,
                                     "snippet": {
                                         "text": "Problem detected in this context:\n   52|   }\n   53|   \n   54|-> int main(int argc, char *argv[])\n   55|   {\n   56|       using std::string;"
                                     }
@@ -1155,7 +1180,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cshtml.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 54
+                                                        "startLine": 54,
+                                                        "endLine": 54
                                                     }
                                                 },
                                                 "message": {
@@ -1175,7 +1201,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cshtml.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 74
+                                                        "startLine": 74,
+                                                        "endLine": 74
                                                     }
                                                 },
                                                 "message": {
@@ -1264,6 +1291,7 @@
                                 },
                                 "region": {
                                     "startLine": 152,
+                                    "endLine": 152,
                                     "snippet": {
                                         "text": "Problem detected in this context:\n  150|   }\n  151|   \n  152|-> int main(int argc, char *argv[])\n  153|   {\n  154|       using std::string;"
                                     }
@@ -1287,7 +1315,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cslinker.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 152
+                                                        "startLine": 152,
+                                                        "endLine": 152
                                                     }
                                                 },
                                                 "message": {
@@ -1307,7 +1336,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cslinker.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 209
+                                                        "startLine": 209,
+                                                        "endLine": 209
                                                     }
                                                 },
                                                 "message": {
@@ -1396,6 +1426,7 @@
                                 },
                                 "region": {
                                     "startLine": 152,
+                                    "endLine": 152,
                                     "snippet": {
                                         "text": "Problem detected in this context:\n  150|   }\n  151|   \n  152|-> int main(int argc, char *argv[])\n  153|   {\n  154|       using std::string;"
                                     }
@@ -1419,7 +1450,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cslinker.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 152
+                                                        "startLine": 152,
+                                                        "endLine": 152
                                                     }
                                                 },
                                                 "message": {
@@ -1439,7 +1471,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cslinker.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 237
+                                                        "startLine": 237,
+                                                        "endLine": 237
                                                     }
                                                 },
                                                 "message": {
@@ -1528,6 +1561,7 @@
                                 },
                                 "region": {
                                     "startLine": 152,
+                                    "endLine": 152,
                                     "snippet": {
                                         "text": "Problem detected in this context:\n  150|   }\n  151|   \n  152|-> int main(int argc, char *argv[])\n  153|   {\n  154|       using std::string;"
                                     }
@@ -1551,7 +1585,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cslinker.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 152
+                                                        "startLine": 152,
+                                                        "endLine": 152
                                                     }
                                                 },
                                                 "message": {
@@ -1571,7 +1606,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cslinker.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 224
+                                                        "startLine": 224,
+                                                        "endLine": 224
                                                     }
                                                 },
                                                 "message": {
@@ -1660,6 +1696,7 @@
                                 },
                                 "region": {
                                     "startLine": 152,
+                                    "endLine": 152,
                                     "snippet": {
                                         "text": "Problem detected in this context:\n  150|   }\n  151|   \n  152|-> int main(int argc, char *argv[])\n  153|   {\n  154|       using std::string;"
                                     }
@@ -1683,7 +1720,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cslinker.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 152
+                                                        "startLine": 152,
+                                                        "endLine": 152
                                                     }
                                                 },
                                                 "message": {
@@ -1703,7 +1741,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cslinker.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 229
+                                                        "startLine": 229,
+                                                        "endLine": 229
                                                     }
                                                 },
                                                 "message": {
@@ -1792,6 +1831,7 @@
                                 },
                                 "region": {
                                     "startLine": 152,
+                                    "endLine": 152,
                                     "snippet": {
                                         "text": "Problem detected in this context:\n  150|   }\n  151|   \n  152|-> int main(int argc, char *argv[])\n  153|   {\n  154|       using std::string;"
                                     }
@@ -1815,7 +1855,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cslinker.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 152
+                                                        "startLine": 152,
+                                                        "endLine": 152
                                                     }
                                                 },
                                                 "message": {
@@ -1835,7 +1876,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cslinker.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 224
+                                                        "startLine": 224,
+                                                        "endLine": 224
                                                     }
                                                 },
                                                 "message": {
@@ -1924,6 +1966,7 @@
                                 },
                                 "region": {
                                     "startLine": 161,
+                                    "endLine": 161,
                                     "snippet": {
                                         "text": "Problem detected in this context:\n  159|   }\n  160|   \n  161|-> int main(int argc, char *argv[])\n  162|   {\n  163|       using std::string;"
                                     }
@@ -1947,7 +1990,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cssort.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 161
+                                                        "startLine": 161,
+                                                        "endLine": 161
                                                     }
                                                 },
                                                 "message": {
@@ -1967,7 +2011,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cssort.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 239
+                                                        "startLine": 239,
+                                                        "endLine": 239
                                                     }
                                                 },
                                                 "message": {
@@ -2056,6 +2101,7 @@
                                 },
                                 "region": {
                                     "startLine": 161,
+                                    "endLine": 161,
                                     "snippet": {
                                         "text": "Problem detected in this context:\n  159|   }\n  160|   \n  161|-> int main(int argc, char *argv[])\n  162|   {\n  163|       using std::string;"
                                     }
@@ -2079,7 +2125,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cssort.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 161
+                                                        "startLine": 161,
+                                                        "endLine": 161
                                                     }
                                                 },
                                                 "message": {
@@ -2099,7 +2146,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cssort.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 175
+                                                        "startLine": 175,
+                                                        "endLine": 175
                                                     }
                                                 },
                                                 "message": {
@@ -2188,6 +2236,7 @@
                                 },
                                 "region": {
                                     "startLine": 161,
+                                    "endLine": 161,
                                     "snippet": {
                                         "text": "Problem detected in this context:\n  159|   }\n  160|   \n  161|-> int main(int argc, char *argv[])\n  162|   {\n  163|       using std::string;"
                                     }
@@ -2211,7 +2260,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cssort.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 161
+                                                        "startLine": 161,
+                                                        "endLine": 161
                                                     }
                                                 },
                                                 "message": {
@@ -2231,7 +2281,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cssort.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 236
+                                                        "startLine": 236,
+                                                        "endLine": 236
                                                     }
                                                 },
                                                 "message": {
@@ -2320,6 +2371,7 @@
                                 },
                                 "region": {
                                     "startLine": 300,
+                                    "endLine": 300,
                                     "snippet": {
                                         "text": "Problem detected in this context:\n  298|   }\n  299|   \n  300|-> int main(int argc, char *argv[])\n  301|   {\n  302|       // used also in diagnostic messages"
                                     }
@@ -2343,7 +2395,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cstrans-df-run.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 300
+                                                        "startLine": 300,
+                                                        "endLine": 300
                                                     }
                                                 },
                                                 "message": {
@@ -2363,7 +2416,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cstrans-df-run.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 358
+                                                        "startLine": 358,
+                                                        "endLine": 358
                                                     }
                                                 },
                                                 "message": {
@@ -2452,6 +2506,7 @@
                                 },
                                 "region": {
                                     "startLine": 300,
+                                    "endLine": 300,
                                     "snippet": {
                                         "text": "Problem detected in this context:\n  298|   }\n  299|   \n  300|-> int main(int argc, char *argv[])\n  301|   {\n  302|       // used also in diagnostic messages"
                                     }
@@ -2475,7 +2530,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cstrans-df-run.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 300
+                                                        "startLine": 300,
+                                                        "endLine": 300
                                                     }
                                                 },
                                                 "message": {
@@ -2495,7 +2551,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cstrans-df-run.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 365
+                                                        "startLine": 365,
+                                                        "endLine": 365
                                                     }
                                                 },
                                                 "message": {
@@ -2584,6 +2641,7 @@
                                 },
                                 "region": {
                                     "startLine": 300,
+                                    "endLine": 300,
                                     "snippet": {
                                         "text": "Problem detected in this context:\n  298|   }\n  299|   \n  300|-> int main(int argc, char *argv[])\n  301|   {\n  302|       // used also in diagnostic messages"
                                     }
@@ -2607,7 +2665,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cstrans-df-run.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 300
+                                                        "startLine": 300,
+                                                        "endLine": 300
                                                     }
                                                 },
                                                 "message": {
@@ -2627,7 +2686,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/cstrans-df-run.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 369
+                                                        "startLine": 369,
+                                                        "endLine": 369
                                                     }
                                                 },
                                                 "message": {
@@ -2716,6 +2776,7 @@
                                 },
                                 "region": {
                                     "startLine": 36,
+                                    "endLine": 36,
                                     "snippet": {
                                         "text": "Problem detected in this context:\n   34|       d(new Private)\n   35|   {\n   36|-> }\n   37|   \n   38|   AbstractCsvParser::~AbstractCsvParser()"
                                     }
@@ -2739,7 +2800,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csv-parser.hh"
                                                     },
                                                     "region": {
-                                                        "startLine": 44
+                                                        "startLine": 44,
+                                                        "endLine": 44
                                                     }
                                                 },
                                                 "message": {
@@ -2759,7 +2821,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/csv-parser.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 36
+                                                        "startLine": 36,
+                                                        "endLine": 36
                                                     }
                                                 },
                                                 "message": {
@@ -2848,6 +2911,7 @@
                                 },
                                 "region": {
                                     "startLine": 347,
+                                    "endLine": 347,
                                     "snippet": {
                                         "text": "Problem detected in this context:\n  345|           str(str_)\n  346|       {\n  347|->     }\n  348|   };\n  349|   "
                                     }
@@ -2871,7 +2935,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/json-writer.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 342
+                                                        "startLine": 342,
+                                                        "endLine": 342
                                                     }
                                                 },
                                                 "message": {
@@ -2891,7 +2956,8 @@
                                                         "uri": "csdiff-2.3.0.20220405.151039.gdb041e9.sarif/src/json-writer.cc"
                                                     },
                                                     "region": {
-                                                        "startLine": 347
+                                                        "startLine": 347,
+                                                        "endLine": 347
                                                     }
                                                 },
                                                 "message": {
