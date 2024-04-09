@@ -228,15 +228,17 @@ static void sarifEncodeLoc(object *pLoc, const Defect &def, unsigned idx)
         }}
     };
 
-    // line/col
-    object reg = {
-        { "startLine", evt.line }
-    };
+    if (evt.line) {
+        // line/col
+        object reg = {
+            { "startLine", evt.line }
+        };
 
-    if (evt.column)
-        reg["startColumn"] = evt.column;
+        if (evt.column)
+            reg["startColumn"] = evt.column;
 
-    locPhy["region"] = std::move(reg);
+        locPhy["region"] = std::move(reg);
+    }
 
     // location
     pLoc->emplace("physicalLocation", std::move(locPhy));
@@ -275,8 +277,13 @@ static void sarifEncodeEvt(array *pDst, const Defect &def, unsigned idx)
     pDst->push_back(std::move(tfLoc));
 }
 
-void sarifEncodeSnippet(object &reg, const std::string &msg)
+void sarifEncodeSnippet(object &result, const std::string &msg)
 {
+    // resolve key event region
+    value &valLoc = result["locations"].get_array().front();
+    value &valPhy = valLoc.get_object()["physicalLocation"];
+    object &reg = valPhy.get_object()["region"].get_object();
+
     // check whether the "snippet" node already exists
     value &valSnip = reg["snippet"];
     if (!valSnip.is_object()) {
@@ -335,11 +342,6 @@ void SarifTreeEncoder::appendDef(const Defect &def)
     sarifEncodeLoc(&loc, def, def.keyEventIdx);
     result["locations"] = array{std::move(loc)};
 
-    // resolve key event region
-    value &valLoc = result["locations"].get_array().front();
-    value &valPhy = valLoc.get_object()["physicalLocation"];
-    object &reg = valPhy.get_object()["region"].get_object();
-
     // key msg
     sarifEncodeMsg(&result, keyEvt.msg);
 
@@ -355,7 +357,7 @@ void SarifTreeEncoder::appendDef(const Defect &def)
 
         if (d->ctxEvtDetetor.isAnyCtxLine(evt))
             // code snippet
-            sarifEncodeSnippet(reg, evt.msg);
+            sarifEncodeSnippet(result, evt.msg);
 
         // any comment
         sarifEncodeComment(&relatedLocs, def, i);
