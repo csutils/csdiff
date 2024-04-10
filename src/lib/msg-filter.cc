@@ -275,7 +275,7 @@ std::string MsgFilter::filterPath(const std::string &origPath) const
         return path;
 
     std::string nvr (sm[/* NVR  */ 1]);
-    std::string core(sm[/* core */ 2]);
+    path = sm[/* core */ 2];
 
     // try to kill the multiple version strings in paths (kernel, OpenLDAP, ...)
     nvr.resize(nvr.size() - 1);
@@ -289,15 +289,15 @@ std::string MsgFilter::filterPath(const std::string &origPath) const
 #endif
 
     const RE reKill(krnPattern);
-    core = boost::regex_replace(core, reKill, "");
+    path = boost::regex_replace(path, reKill, "");
 
     // quirk for Coverity inconsistency in handling bison-generated file names
     std::string suff(sm[/* Bison suffix */ 3]);
     if (!suff.empty())
-        core += ".c";
+        path += ".c";
 
 #if DEBUG_SUBST
-    std::cerr << "filterPath: " << path << " -> " << core << "\n";
+    std::cerr << "filterPath: " << origPath << " -> " << path << "\n";
 #endif
-    return core;
+    return path;
 }
