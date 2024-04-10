@@ -1,0 +1,23 @@
+Error: SHELLCHECK_WARNING (CWE-398):
+/usr/libexec/kselftests/drivers/net/netdevsim/ethtool-common.sh:31:8: error[SC1073]: Couldn't parse this test expression. Fix to allow more checks.
+#   29|       [ -z "$exp_fail" ] && cop="-ne" || cop="-eq"
+#   30|   
+#   31|->     if [ $code $cop 0 ]; then
+#   32|   	((num_errors++))
+#   33|   	return
+
+Error: SHELLCHECK_WARNING (CWE-398):
+/usr/src/kernels/4.18.0-513.5.1.el8.x86_64+debug/scripts/decode_stacktrace.sh:116:6: error[SC1073]: Couldn't parse this test expression. Fix to allow more checks.
+#  114|   
+#  115|   		# Format timestamps with tabs
+#  116|-> 		if [[ ${words[$i]} == \[ && ${words[$i+1]} == *\] ]]; then
+#  117|   			unset words[$i]
+#  118|   			words[$i+1]=$(printf "[%13s\n" "${words[$i+1]}")
+
+Error: SHELLCHECK_WARNING (CWE-398):
+/usr/src/kernels/4.18.0-513.5.1.el8.x86_64/scripts/decode_stacktrace.sh:116:6: error[SC1073]: Couldn't parse this test expression. Fix to allow more checks.
+#  114|   
+#  115|   		# Format timestamps with tabs
+#  116|-> 		if [[ ${words[$i]} == \[ && ${words[$i+1]} == *\] ]]; then
+#  117|   			unset words[$i]
+#  118|   			words[$i+1]=$(printf "[%13s\n" "${words[$i+1]}")

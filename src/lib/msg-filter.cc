@@ -263,6 +263,11 @@ std::string MsgFilter::filterPath(const std::string &origPath) const
         return tmpPath;
     }
 
+    // "/usr/src/kernels/4.18.0-552.el8.x86_64+debug/..."
+    // -> "/usr/src/kernels/VERSION-RELEASE+debug/..."
+    const RE reKrnUsrSrc("^(/usr/src/kernels/)[^/-]+-[^/-]+((?:\\+debug)?/.*)$");
+    path = regexReplaceWrap(path, reKrnUsrSrc, "\\1VERSION-RELEASE\\2");
+
     boost::smatch sm;
     if (boost::regex_match(path, sm, d->rePyBuild)) {
         // %{_builddir}/build/lib/setuptools/glob.py ->
