@@ -69,7 +69,7 @@ struct MsgFilter::Private {
     const RE reKrn = RE(strKrn);
     const RE reDir = RE("^([^:]*/)");
     const RE reFile = RE("[^/]+$");
-    const RE rePath = RE("^(?:/builddir/build/BUILD/)?([^/]+/)(.*)(\\.[ly])?$");
+    const RE rePath = RE("^(?:/builddir/build/BUILD/)?([^/]+)/(.*)(\\.[ly])?$");
     const RE rePyBuild = RE("^((?:/builddir/build/BUILD/)?[^/]+/)build/lib/(.*)$");
     const RE reTmpPath = RE("^(/var)?/tmp/(.*)$");
     const RE reTmpCleaner = RE("(.*)");
@@ -279,12 +279,11 @@ std::string MsgFilter::filterPath(const std::string &origPath) const
         // no match
         return path;
 
-    std::string nvr (sm[/* NVR  */ 1]);
+    const std::string nvr = sm[/* NVR  */ 1];
     path = sm[/* core */ 2];
 
     // try to kill the multiple version strings in paths (kernel, OpenLDAP, ...)
-    nvr.resize(nvr.size() - 1);
-    std::string ver(boost::regex_replace(nvr, d->reKrn, ""));
+    const std::string ver = boost::regex_replace(nvr, d->reKrn, "");
     const std::string krnPattern = d->strKrn + ver + "[^/]*/";
 
 #if DEBUG_SUBST > 2
