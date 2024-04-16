@@ -66,7 +66,7 @@ struct MsgFilter::Private {
     TSubstMap fileSubsts;
 
     const std::string strKrn = "^[a-zA-Z+]+";
-    const RE reKrn = RE(strKrn);
+    const RE reKrn = RE(strKrn + /* convert el8_9 -> el8 */ "|_[0-9]+$");
     const RE reDir = RE("^([^:]*/)");
     const RE reFile = RE("[^/]+$");
     const RE rePath = RE("^(?:/builddir/build/BUILD/)?([^/]+)/(.*)(\\.[ly])?$");

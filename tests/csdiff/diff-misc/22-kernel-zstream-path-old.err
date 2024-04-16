@@ -1,0 +1,11 @@
+Error: UNINIT (CWE-457):
+kernel-4.18.0-513.5.1.el8_9/linux-4.18.0-513.5.1.el8.x86_64/arch/x86/crypto/chacha20_glue.c:71: var_decl: Declaring variable "walk" without initializer.
+kernel-4.18.0-513.5.1.el8_9/linux-4.18.0-513.5.1.el8.x86_64/arch/x86/crypto/chacha20_glue.c:74: path: Condition "__cond", taking false branch.
+kernel-4.18.0-513.5.1.el8_9/linux-4.18.0-513.5.1.el8.x86_64/arch/x86/crypto/chacha20_glue.c:77: path: Condition "req->cryptlen <= 64", taking false branch.
+kernel-4.18.0-513.5.1.el8_9/linux-4.18.0-513.5.1.el8.x86_64/arch/x86/crypto/chacha20_glue.c:77: path: Condition "!may_use_simd()", taking false branch.
+kernel-4.18.0-513.5.1.el8_9/linux-4.18.0-513.5.1.el8.x86_64/arch/x86/crypto/chacha20_glue.c:80: uninit_use_in_call: Using uninitialized value "walk.flags" when calling "skcipher_walk_virt".
+#   78|   		return crypto_chacha20_crypt(req);
+#   79|   
+#   80|-> 	err = skcipher_walk_virt(&walk, req, true);
+#   81|   
+#   82|   	crypto_chacha20_init(state, ctx, walk.iv);

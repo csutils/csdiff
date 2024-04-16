@@ -85,6 +85,7 @@ test_csdiff(diff-misc 17-cov-parser-key-event)
 test_csdiff(diff-misc 18-cov-parser-key-event)
 test_csdiff(diff-misc 19-cov-parser-key-event)
 test_csdiff(diff-misc 21-kernel-shell-code)
+test_csdiff(diff-misc 22-kernel-zstream-path)
 test_csdiff(diff-misc 23-cov-parser-key-event)
 
 add_subdirectory(filter-file)
