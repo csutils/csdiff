@@ -1,0 +1,1738 @@
+{
+    "scan": {
+        "analyzer-version-clang": "17.0.6",
+        "analyzer-version-coverity": "2023.12.0",
+        "analyzer-version-cppcheck": "2.9",
+        "analyzer-version-gcc": "14.0.1",
+        "analyzer-version-gcc-analyzer": "14.0.1",
+        "analyzer-version-shellcheck": "0.7.1",
+        "analyzer-version-snyk-code": "1.1233.0",
+        "analyzer-version-unicontrol": "0.0.2",
+        "cov-compilation-unit-count": 155,
+        "cov-compilation-unit-ratio": 100,
+        "cov-lines-processed": 204774,
+        "cov-time-elapsed-analysis": "00:00:42",
+        "enabled-plugins": "clang, coverity, cppcheck, gcc, shellcheck, snyk, unicontrol",
+        "exit-code": 0,
+        "host": "osh-worker-002.osh-001.prod.iad2.dc.redhat.com",
+        "known-false-positives": "/usr/share/csmock/known-false-positives.js",
+        "mock-config": "rhel-10-beta-x86_64",
+        "project-name": "zstd-1.5.5-5.el10",
+        "snyk-scanned-files-coverage": 98,
+        "snyk-scanned-files-success": 278,
+        "snyk-scanned-files-total": 283,
+        "store-results-to": "/tmp/tmph4m04_cj/zstd-1.5.5-5.el10.tar.xz",
+        "time-created": "2024-03-28 05:49:59",
+        "time-finished": "2024-03-28 06:00:53",
+        "tool": "csmock",
+        "tool-args": "'/usr/bin/csmock' '-r' 'rhel-10-beta-x86_64' '-t' 'coverity,snyk,cppcheck,gcc,clang,shellcheck,unicontrol' '-o' '/tmp/tmph4m04_cj/zstd-1.5.5-5.el10.tar.xz' '--keep-going' '--use-host-cppcheck' '--gcc-analyze' '--unicontrol-notests' '--unicontrol-bidi-only' '/tmp/tmph4m04_cj/zstd-1.5.5-5.el10.src.rpm'",
+        "tool-version": "csmock-3.5.3.20240320.172417.g96ec7cf.internal-1.el9"
+    },
+    "defects": [
+        {
+            "checker": "INTEGER_OVERFLOW",
+            "cwe": 125,
+            "function": "HUF_readDTableX2_wksp",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "zstd-1.5.5/lib/decompress/huf_decompress.c",
+                    "line": 1160,
+                    "event": "underflow",
+                    "message": "The decrement operator on the unsigned variable \"maxW\" might result in an underflow.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "zstd-1.5.5/lib/decompress/huf_decompress.c",
+                    "line": 1160,
+                    "event": "deref_overflow",
+                    "message": "\"maxW\", which might have underflowed, is passed to \"wksp->rankStats[maxW]\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 1158|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 1159|       /* find maxWeight */",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 1160|->     for (maxW = tableLog; wksp->rankStats[maxW]==0; maxW--) {}  /* necessarily finds a solution before 0 */",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 1161|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 1162|       /* Get start index of each weight */",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "INTEGER_OVERFLOW",
+            "cwe": 125,
+            "function": "HUF_readDTableX2_wksp",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 4,
+            "events": [
+                {
+                    "file_name": "zstd-1.5.5/lib/decompress/huf_decompress.c",
+                    "line": 1160,
+                    "event": "underflow",
+                    "message": "The decrement operator on the unsigned variable \"maxW\" might result in an underflow.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "zstd-1.5.5/lib/decompress/huf_decompress.c",
+                    "line": 1193,
+                    "event": "overflow",
+                    "message": "The expression \"tableLog + 1U - maxW\" is deemed underflowed because at least one of its arguments has underflowed.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "zstd-1.5.5/lib/decompress/huf_decompress.c",
+                    "line": 1193,
+                    "event": "assign",
+                    "message": "Assigning: \"minBits\" = \"tableLog + 1U - maxW\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "zstd-1.5.5/lib/decompress/huf_decompress.c",
+                    "line": 1195,
+                    "event": "assign",
+                    "message": "Assigning: \"consumed\" = \"minBits\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "zstd-1.5.5/lib/decompress/huf_decompress.c",
+                    "line": 1196,
+                    "event": "deref_overflow",
+                    "message": "\"consumed\", which might have underflowed, is passed to \"wksp->rankVal[consumed]\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 1194|               U32 consumed;",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 1195|               for (consumed = minBits; consumed < maxTableLog - minBits + 1; consumed++) {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 1196|->                 U32* const rankValPtr = wksp->rankVal[consumed];",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 1197|                   U32 w;",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 1198|                   for (w = 1; w < maxW+1; w++) {",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "INTEGER_OVERFLOW",
+            "cwe": 125,
+            "function": "HUFv05_readDTableX4",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "zstd-1.5.5/lib/legacy/zstd_v05.c",
+                    "line": 2170,
+                    "event": "underflow",
+                    "message": "The decrement operator on the unsigned variable \"maxW\" might result in an underflow.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "zstd-1.5.5/lib/legacy/zstd_v05.c",
+                    "line": 2170,
+                    "event": "deref_overflow",
+                    "message": "\"maxW\", which might have underflowed, is passed to \"rankStats[maxW]\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2168|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2169|       /* find maxWeight */",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2170|->     for (maxW = tableLog; rankStats[maxW]==0; maxW--) {}  /* necessarily finds a solution before 0 */",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2171|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2172|       /* Get start index of each weight */",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "INTEGER_OVERFLOW",
+            "cwe": 125,
+            "function": "HUFv05_readDTableX4",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 4,
+            "events": [
+                {
+                    "file_name": "zstd-1.5.5/lib/legacy/zstd_v05.c",
+                    "line": 2170,
+                    "event": "underflow",
+                    "message": "The decrement operator on the unsigned variable \"maxW\" might result in an underflow.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "zstd-1.5.5/lib/legacy/zstd_v05.c",
+                    "line": 2198,
+                    "event": "overflow",
+                    "message": "The expression \"tableLog + 1U - maxW\" is deemed underflowed because at least one of its arguments has underflowed.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "zstd-1.5.5/lib/legacy/zstd_v05.c",
+                    "line": 2198,
+                    "event": "assign",
+                    "message": "Assigning: \"minBits\" = \"tableLog + 1U - maxW\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "zstd-1.5.5/lib/legacy/zstd_v05.c",
+                    "line": 2208,
+                    "event": "assign",
+                    "message": "Assigning: \"consumed\" = \"minBits\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "zstd-1.5.5/lib/legacy/zstd_v05.c",
+                    "line": 2209,
+                    "event": "deref_overflow",
+                    "message": "\"consumed\", which might have underflowed, is passed to \"rankVal[consumed]\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2207|           }",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2208|           for (consumed = minBits; consumed <= memLog - minBits; consumed++) {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2209|->             U32* rankValPtr = rankVal[consumed];",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2210|               for (w = 1; w <= maxW; w++) {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2211|                   rankValPtr[w] = rankVal0[w] >> consumed;",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "INTEGER_OVERFLOW",
+            "cwe": 125,
+            "function": "HUFv06_readDTableX4",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "zstd-1.5.5/lib/legacy/zstd_v06.c",
+                    "line": 2304,
+                    "event": "underflow",
+                    "message": "The decrement operator on the unsigned variable \"maxW\" might result in an underflow.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "zstd-1.5.5/lib/legacy/zstd_v06.c",
+                    "line": 2304,
+                    "event": "deref_overflow",
+                    "message": "\"maxW\", which might have underflowed, is passed to \"rankStats[maxW]\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2302|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2303|       /* find maxWeight */",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2304|->     for (maxW = tableLog; rankStats[maxW]==0; maxW--) {}  /* necessarily finds a solution before 0 */",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2305|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2306|       /* Get start index of each weight */",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "INTEGER_OVERFLOW",
+            "cwe": 125,
+            "function": "HUFv06_readDTableX4",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 4,
+            "events": [
+                {
+                    "file_name": "zstd-1.5.5/lib/legacy/zstd_v06.c",
+                    "line": 2304,
+                    "event": "underflow",
+                    "message": "The decrement operator on the unsigned variable \"maxW\" might result in an underflow.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "zstd-1.5.5/lib/legacy/zstd_v06.c",
+                    "line": 2338,
+                    "event": "overflow",
+                    "message": "The expression \"tableLog + 1U - maxW\" is deemed underflowed because at least one of its arguments has underflowed.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "zstd-1.5.5/lib/legacy/zstd_v06.c",
+                    "line": 2338,
+                    "event": "assign",
+                    "message": "Assigning: \"minBits\" = \"tableLog + 1U - maxW\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "zstd-1.5.5/lib/legacy/zstd_v06.c",
+                    "line": 2340,
+                    "event": "assign",
+                    "message": "Assigning: \"consumed\" = \"minBits\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "zstd-1.5.5/lib/legacy/zstd_v06.c",
+                    "line": 2341,
+                    "event": "deref_overflow",
+                    "message": "\"consumed\", which might have underflowed, is passed to \"rankVal[consumed]\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2339|               U32 consumed;",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2340|               for (consumed = minBits; consumed < memLog - minBits + 1; consumed++) {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2341|->                 U32* const rankValPtr = rankVal[consumed];",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2342|                   U32 w;",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2343|                   for (w = 1; w < maxW+1; w++) {",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "INTEGER_OVERFLOW",
+            "cwe": 125,
+            "function": "HUFv07_readDTableX4",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "zstd-1.5.5/lib/legacy/zstd_v07.c",
+                    "line": 2113,
+                    "event": "underflow",
+                    "message": "The decrement operator on the unsigned variable \"maxW\" might result in an underflow.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "zstd-1.5.5/lib/legacy/zstd_v07.c",
+                    "line": 2113,
+                    "event": "deref_overflow",
+                    "message": "\"maxW\", which might have underflowed, is passed to \"rankStats[maxW]\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2111|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2112|       /* find maxWeight */",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2113|->     for (maxW = tableLog; rankStats[maxW]==0; maxW--) {}  /* necessarily finds a solution before 0 */",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2114|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2115|       /* Get start index of each weight */",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "INTEGER_OVERFLOW",
+            "cwe": 125,
+            "function": "HUFv07_readDTableX4",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 4,
+            "events": [
+                {
+                    "file_name": "zstd-1.5.5/lib/legacy/zstd_v07.c",
+                    "line": 2113,
+                    "event": "underflow",
+                    "message": "The decrement operator on the unsigned variable \"maxW\" might result in an underflow.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "zstd-1.5.5/lib/legacy/zstd_v07.c",
+                    "line": 2147,
+                    "event": "overflow",
+                    "message": "The expression \"tableLog + 1U - maxW\" is deemed underflowed because at least one of its arguments has underflowed.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "zstd-1.5.5/lib/legacy/zstd_v07.c",
+                    "line": 2147,
+                    "event": "assign",
+                    "message": "Assigning: \"minBits\" = \"tableLog + 1U - maxW\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "zstd-1.5.5/lib/legacy/zstd_v07.c",
+                    "line": 2149,
+                    "event": "assign",
+                    "message": "Assigning: \"consumed\" = \"minBits\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "zstd-1.5.5/lib/legacy/zstd_v07.c",
+                    "line": 2150,
+                    "event": "deref_overflow",
+                    "message": "\"consumed\", which might have underflowed, is passed to \"rankVal[consumed]\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2148|               U32 consumed;",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2149|               for (consumed = minBits; consumed < maxTableLog - minBits + 1; consumed++) {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2150|->                 U32* const rankValPtr = rankVal[consumed];",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2151|                   U32 w;",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 2152|                   for (w = 1; w < maxW+1; w++) {",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "INTEGER_OVERFLOW",
+            "cwe": 190,
+            "function": "BMK_benchMemAdvancedNoAlloc",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 6,
+            "events": [
+                {
+                    "file_name": "zstd-1.5.5/programs/benchzstd.c",
+                    "line": 336,
+                    "event": "tainted_data_return",
+                    "message": "Called function \"ZSTD_findDecompressedSize(srcPtr, fileSizes[fileNb])\", and a possible return value is known to be less than zero.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "zstd-1.5.5/programs/benchzstd.c",
+                    "line": 336,
+                    "event": "cast_underflow",
+                    "message": "An assign of a possibly negative number to an unsigned type, which might trigger an underflow.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "zstd-1.5.5/programs/benchzstd.c",
+                    "line": 343,
+                    "event": "overflow",
+                    "message": "The expression \"totalDSize64 += fSize64\" is deemed underflowed because at least one of its arguments has underflowed.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "zstd-1.5.5/programs/benchzstd.c",
+                    "line": 343,
+                    "event": "overflow",
+                    "message": "The expression \"totalDSize64 += fSize64\" is deemed underflowed because at least one of its arguments has underflowed.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "zstd-1.5.5/programs/benchzstd.c",
+                    "line": 343,
+                    "event": "overflow",
+                    "message": "The expression \"totalDSize64 += fSize64\" is deemed underflowed because at least one of its arguments has underflowed.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "zstd-1.5.5/programs/benchzstd.c",
+                    "line": 346,
+                    "event": "cast_overflow",
+                    "message": "An assign that casts to a different type, which might trigger an overflow.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "zstd-1.5.5/programs/benchzstd.c",
+                    "line": 352,
+                    "event": "overflow_sink",
+                    "message": "\"decodedSize\", which might have underflowed, is passed to \"malloc(decodedSize)\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  350|                   RETURN_ERROR(32, BMK_benchOutcome_t, \"decompressed size is too large for local system\");",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  351|               }",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  352|->             *resultBufferPtr = malloc(decodedSize);",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  353|               if (!(*resultBufferPtr)) {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  354|                   RETURN_ERROR(33, BMK_benchOutcome_t, \"allocation error: not enough memory\");",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "INTEGER_OVERFLOW",
+            "cwe": 190,
+            "function": "DiB_loadFiles",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 4,
+            "events": [
+                {
+                    "file_name": "zstd-1.5.5/programs/dibio.c",
+                    "line": 130,
+                    "event": "tainted_data_return",
+                    "message": "Called function \"DiB_getFileSize(fileNamesTable[fileIndex])\", and a possible return value may be less than zero.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "zstd-1.5.5/programs/dibio.c",
+                    "line": 130,
+                    "event": "assign",
+                    "message": "Assigning: \"fileSize\" = \"DiB_getFileSize(fileNamesTable[fileIndex])\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "zstd-1.5.5/programs/dibio.c",
+                    "line": 156,
+                    "event": "overflow",
+                    "message": "The expression \"fileSize - fileDataLoaded\" is deemed overflowed because at least one of its arguments has overflowed.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "zstd-1.5.5/programs/dibio.c",
+                    "line": 156,
+                    "event": "assign",
+                    "message": "Assigning: \"chunkSize\" = \"((size_t)(fileSize - fileDataLoaded) < targetChunkSize) ? (size_t)(fileSize - fileDataLoaded) : targetChunkSize\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "zstd-1.5.5/programs/dibio.c",
+                    "line": 160,
+                    "event": "overflow_sink",
+                    "message": "\"chunkSize\", which might have underflowed, is passed to \"fread(buff + totalDataLoaded, 1UL, chunkSize, f)\". [Note: The source code implementation of the function has been overridden by a builtin model.]",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  158|                       break;",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  159|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  160|->                 if (fread( buff+totalDataLoaded, 1, chunkSize, f ) != chunkSize)",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  161|                       EXM_THROW(11, \"Pb reading %s\", fileNamesTable[fileIndex]);",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  162|                   sampleSizes[nbSamplesLoaded++] = chunkSize;",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "BAD_CHECK_OF_WAIT_COND",
+            "function": "antlr.debug.DebuggingCharScanner.goToSleep()",
+            "language": "java",
+            "tool": "coverity",
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "antlr-2.7.7/antlr/debug/DebuggingCharScanner.java",
+                    "line": 84,
+                    "column": 40,
+                    "event": "lock_acquire",
+                    "message": "Acquiring lock \"DebuggingCharScanner.this\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "antlr-2.7.7/antlr/debug/DebuggingCharScanner.java",
+                    "line": 85,
+                    "column": 8,
+                    "event": "dead_wait",
+                    "message": "A wait is performed without ensuring that the condition is not already satisfied while holding lock \"DebuggingCharScanner.this\". This can cause a deadlock if the notification happens before the lock is acquired.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "antlr-2.7.7/antlr/debug/DebuggingCharScanner.java",
+                    "line": 85,
+                    "column": 8,
+                    "event": "remediation",
+                    "message": "Acquire the lock, then check the wait condition in a loop, without releasing with the lock before the wait. This will prevent deadlocks and failed conditions from spurious wakeups.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   83|   \t}",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   84|   \tpublic synchronized void goToSleep() {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   85|-> \t\ttry {wait();}",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   86|   \t\tcatch (InterruptedException e) {\t}\t\t",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   87|   \t}",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "BAD_CHECK_OF_WAIT_COND",
+            "function": "antlr.debug.LLkDebuggingParser.goToSleep()",
+            "language": "java",
+            "tool": "coverity",
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "antlr-2.7.7/antlr/debug/LLkDebuggingParser.java",
+                    "line": 92,
+                    "column": 40,
+                    "event": "lock_acquire",
+                    "message": "Acquiring lock \"LLkDebuggingParser.this\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "antlr-2.7.7/antlr/debug/LLkDebuggingParser.java",
+                    "line": 93,
+                    "column": 8,
+                    "event": "dead_wait",
+                    "message": "A wait is performed without ensuring that the condition is not already satisfied while holding lock \"LLkDebuggingParser.this\". This can cause a deadlock if the notification happens before the lock is acquired.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "antlr-2.7.7/antlr/debug/LLkDebuggingParser.java",
+                    "line": 93,
+                    "column": 8,
+                    "event": "remediation",
+                    "message": "Acquire the lock, then check the wait condition in a loop, without releasing with the lock before the wait. This will prevent deadlocks and failed conditions from spurious wakeups.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   91|   \t}",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   92|   \tpublic synchronized void goToSleep() {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   93|-> \t\ttry {wait();}",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   94|   \t\tcatch (InterruptedException e) {\t}\t\t",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   95|   \t}",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "BAD_CHECK_OF_WAIT_COND",
+            "function": "antlr.debug.DebuggingCharScanner.goToSleep()",
+            "language": "java",
+            "tool": "coverity",
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "antlr-2.7.7/src/antlr/debug/DebuggingCharScanner.java",
+                    "line": 84,
+                    "column": 40,
+                    "event": "lock_acquire",
+                    "message": "Acquiring lock \"DebuggingCharScanner.this\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "antlr-2.7.7/src/antlr/debug/DebuggingCharScanner.java",
+                    "line": 85,
+                    "column": 8,
+                    "event": "dead_wait",
+                    "message": "A wait is performed without ensuring that the condition is not already satisfied while holding lock \"DebuggingCharScanner.this\". This can cause a deadlock if the notification happens before the lock is acquired.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "antlr-2.7.7/src/antlr/debug/DebuggingCharScanner.java",
+                    "line": 85,
+                    "column": 8,
+                    "event": "remediation",
+                    "message": "Acquire the lock, then check the wait condition in a loop, without releasing with the lock before the wait. This will prevent deadlocks and failed conditions from spurious wakeups.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   83|   \t}",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   84|   \tpublic synchronized void goToSleep() {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   85|-> \t\ttry {wait();}",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   86|   \t\tcatch (InterruptedException e) {\t}\t\t",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   87|   \t}",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "BAD_CHECK_OF_WAIT_COND",
+            "function": "antlr.debug.LLkDebuggingParser.goToSleep()",
+            "language": "java",
+            "tool": "coverity",
+            "key_event_idx": 1,
+            "events": [
+                {
+                    "file_name": "antlr-2.7.7/src/antlr/debug/LLkDebuggingParser.java",
+                    "line": 92,
+                    "column": 40,
+                    "event": "lock_acquire",
+                    "message": "Acquiring lock \"LLkDebuggingParser.this\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "antlr-2.7.7/src/antlr/debug/LLkDebuggingParser.java",
+                    "line": 93,
+                    "column": 8,
+                    "event": "dead_wait",
+                    "message": "A wait is performed without ensuring that the condition is not already satisfied while holding lock \"LLkDebuggingParser.this\". This can cause a deadlock if the notification happens before the lock is acquired.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "antlr-2.7.7/src/antlr/debug/LLkDebuggingParser.java",
+                    "line": 93,
+                    "column": 8,
+                    "event": "remediation",
+                    "message": "Acquire the lock, then check the wait condition in a loop, without releasing with the lock before the wait. This will prevent deadlocks and failed conditions from spurious wakeups.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   91|   \t}",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   92|   \tpublic synchronized void goToSleep() {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   93|-> \t\ttry {wait();}",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   94|   \t\tcatch (InterruptedException e) {\t}\t\t",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   95|   \t}",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SIGMA.xss",
+            "cwe": 79,
+            "function": "opensearch_xml_results(Unknown, Dictionary( Unknown,Unknown ))Void",
+            "language": "php",
+            "tool": "coverity",
+            "key_event_idx": 10,
+            "events": [
+                {
+                    "file_name": "doxygen-1.10.0/templates/html/search_opensearch.php",
+                    "line": 5,
+                    "event": "Sigma event",
+                    "message": "reading tainted data from _GET with key query",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "doxygen-1.10.0/templates/html/search_opensearch.php",
+                    "line": 5,
+                    "event": "Sigma event",
+                    "message": "$_GET['query'] is a source of tainted data",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "doxygen-1.10.0/templates/html/search_opensearch.php",
+                    "line": 5,
+                    "event": "Sigma event",
+                    "message": "assigning the tainted data to query",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "doxygen-1.10.0/templates/html/search_opensearch.php",
+                    "line": 6,
+                    "event": "Sigma event",
+                    "message": "calling __builtin__.preg_replace assigns to <return>",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "doxygen-1.10.0/templates/html/search_opensearch.php",
+                    "line": 6,
+                    "event": "Sigma event",
+                    "message": "calling __builtin__.preg_replace taints <return>",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "doxygen-1.10.0/templates/html/search_opensearch.php",
+                    "line": 6,
+                    "event": "Sigma event",
+                    "message": "assigning the tainted data to query",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "doxygen-1.10.0/templates/html/search_opensearch.php",
+                    "line": 19,
+                    "event": "Sigma event",
+                    "message": "calling opensearch_xml_results sinks query",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "doxygen-1.10.0/templates/html/search_opensearch.php",
+                    "line": 70,
+                    "event": "Sigma event",
+                    "message": "assigning the tainted data to result",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "doxygen-1.10.0/templates/html/search_opensearch.php",
+                    "line": 85,
+                    "event": "Sigma event",
+                    "message": "assigning the tainted data to result",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "doxygen-1.10.0/templates/html/search_opensearch.php",
+                    "line": 89,
+                    "event": "Sigma event",
+                    "message": "calling __builtin__.echo",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "doxygen-1.10.0/templates/html/search_opensearch.php",
+                    "line": 89,
+                    "event": "Sigma main event",
+                    "message": "Untrusted user-supplied data is inserted into a context that can execute JavaScript without adequate validation, escaping, or filtering. A user can execute arbitrary JavaScript on a web page viewed or accessed by another user, potentially allowing session hijacking, disclosing sensitive data in the DOM, or viewing of keyboard and mouse events.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "doxygen-1.10.0/templates/html/search_opensearch.php",
+                    "line": 89,
+                    "event": "remediation",
+                    "message": "Escape non-constant data appropriately before concatenating it into HTML. The specific sequence of escapers necessary to make data safe depends on its syntactic position in the HTML. Allowing only safe characters sometimes suffices to avoid XSS vulnerabilities, but only the strictest allow lists prevent all attacks.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   87|   </SearchSuggestion>",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   88|   END_FRAG;",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   89|->   echo $result;",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   90|   }",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   91|   ",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SIGMA.xss",
+            "cwe": 79,
+            "function": "opensearch_json_results(Unknown, Dictionary( Unknown,Unknown ))Void",
+            "language": "php",
+            "tool": "coverity",
+            "key_event_idx": 7,
+            "events": [
+                {
+                    "file_name": "doxygen-1.10.0/templates/html/search_opensearch.php",
+                    "line": 5,
+                    "event": "Sigma event",
+                    "message": "reading tainted data from _GET with key query",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "doxygen-1.10.0/templates/html/search_opensearch.php",
+                    "line": 5,
+                    "event": "Sigma event",
+                    "message": "assigning the tainted data to query",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "doxygen-1.10.0/templates/html/search_opensearch.php",
+                    "line": 5,
+                    "event": "Sigma event",
+                    "message": "$_GET['query'] is a source of tainted data",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "doxygen-1.10.0/templates/html/search_opensearch.php",
+                    "line": 6,
+                    "event": "Sigma event",
+                    "message": "calling __builtin__.preg_replace assigns to <return>",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "doxygen-1.10.0/templates/html/search_opensearch.php",
+                    "line": 6,
+                    "event": "Sigma event",
+                    "message": "assigning the tainted data to query",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "doxygen-1.10.0/templates/html/search_opensearch.php",
+                    "line": 16,
+                    "event": "Sigma event",
+                    "message": "calling opensearch_json_results sinks query",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "doxygen-1.10.0/templates/html/search_opensearch.php",
+                    "line": 120,
+                    "event": "Sigma event",
+                    "message": "calling __builtin__.print",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "doxygen-1.10.0/templates/html/search_opensearch.php",
+                    "line": 120,
+                    "event": "Sigma main event",
+                    "message": "Untrusted user-supplied data is inserted into a context that can execute JavaScript without adequate validation, escaping, or filtering. A user can execute arbitrary JavaScript on a web page viewed or accessed by another user, potentially allowing session hijacking, disclosing sensitive data in the DOM, or viewing of keyboard and mouse events.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "doxygen-1.10.0/templates/html/search_opensearch.php",
+                    "line": 120,
+                    "event": "remediation",
+                    "message": "Escape non-constant data appropriately before concatenating it into HTML. The specific sequence of escapers necessary to make data safe depends on its syntactic position in the HTML. Allowing only safe characters sometimes suffices to avoid XSS vulnerabilities, but only the strictest allow lists prevent all attacks.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  118|       $i++;",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  119|     }",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  120|->   print \"[\\\"$query\\\", [$json_words],[$json_descriptions]]\";",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  121|   }",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  122|   ",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SIGMA.xss",
+            "cwe": 79,
+            "function": "invalid_format(Unknown, Dictionary( Unknown,Unknown ))Void",
+            "language": "php",
+            "tool": "coverity",
+            "key_event_idx": 8,
+            "events": [
+                {
+                    "file_name": "doxygen-1.10.0/templates/html/search_opensearch.php",
+                    "line": 5,
+                    "event": "Sigma event",
+                    "message": "reading tainted data from _GET with key query",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "doxygen-1.10.0/templates/html/search_opensearch.php",
+                    "line": 5,
+                    "event": "Sigma event",
+                    "message": "$_GET['query'] is a source of tainted data",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "doxygen-1.10.0/templates/html/search_opensearch.php",
+                    "line": 5,
+                    "event": "Sigma event",
+                    "message": "assigning the tainted data to query",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "doxygen-1.10.0/templates/html/search_opensearch.php",
+                    "line": 6,
+                    "event": "Sigma event",
+                    "message": "calling __builtin__.preg_replace assigns to <return>",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "doxygen-1.10.0/templates/html/search_opensearch.php",
+                    "line": 6,
+                    "event": "Sigma event",
+                    "message": "calling __builtin__.preg_replace taints <return>",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "doxygen-1.10.0/templates/html/search_opensearch.php",
+                    "line": 6,
+                    "event": "Sigma event",
+                    "message": "assigning the tainted data to query",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "doxygen-1.10.0/templates/html/search_opensearch.php",
+                    "line": 22,
+                    "event": "Sigma event",
+                    "message": "calling invalid_format sinks query",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "doxygen-1.10.0/templates/html/search_opensearch.php",
+                    "line": 125,
+                    "event": "Sigma event",
+                    "message": "calling __builtin__.print",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "doxygen-1.10.0/templates/html/search_opensearch.php",
+                    "line": 125,
+                    "event": "Sigma main event",
+                    "message": "Untrusted user-supplied data is inserted into a context that can execute JavaScript without adequate validation, escaping, or filtering. A user can execute arbitrary JavaScript on a web page viewed or accessed by another user, potentially allowing session hijacking, disclosing sensitive data in the DOM, or viewing of keyboard and mouse events.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "doxygen-1.10.0/templates/html/search_opensearch.php",
+                    "line": 125,
+                    "event": "remediation",
+                    "message": "Escape non-constant data appropriately before concatenating it into HTML. The specific sequence of escapers necessary to make data safe depends on its syntactic position in the HTML. Allowing only safe characters sometimes suffices to avoid XSS vulnerabilities, but only the strictest allow lists prevent all attacks.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  123|   function invalid_format($query, array $results)",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  124|   {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  125|->   print \"Search results for '$query':\\n\\n\";",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  126|     print_r($results);",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  127|   }",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "XSS",
+            "cwe": 79,
+            "function": "github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local.Server.handler(net/http.ResponseWriter, *net/http.Request)",
+            "language": "go",
+            "tool": "coverity",
+            "key_event_idx": 7,
+            "events": [
+                {
+                    "file_name": "osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go",
+                    "line": 140,
+                    "column": 2,
+                    "event": "taint",
+                    "message": "The field \"r.URL\" is a source of untrusted data.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go",
+                    "line": 140,
+                    "column": 2,
+                    "event": "identity",
+                    "message": "Calling \"Query\". This call assigns \"r.URL.RawQuery\" to \"<return value>\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go",
+                    "line": 140,
+                    "column": 2,
+                    "event": "assign",
+                    "message": "Assigning: \"q\" = \"r.URL.Query()\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go",
+                    "line": 142,
+                    "column": 2,
+                    "event": "identity",
+                    "message": "Calling \"Get\". This call returns \"q\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go",
+                    "line": 142,
+                    "column": 2,
+                    "event": "assign",
+                    "message": "Assigning: \"headerErr\" = \"q.Get(\"error\")\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go",
+                    "line": 147,
+                    "column": 10,
+                    "event": "assign",
+                    "message": "Assigning: \"<storage from new>[0]\" = \"headerErr\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go",
+                    "line": 147,
+                    "column": 10,
+                    "event": "identity",
+                    "message": "Calling \"Sprintf\". This call assigns \"{headerErr, desc}\" to \"<return value>\". Now \"<return value>\" is tainted.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go",
+                    "line": 147,
+                    "column": 10,
+                    "event": "sink",
+                    "message": "Calling \"Write\". This call uses \"([]byte)Sprintf(\"\\n<!DOCTYPE html>\\n<html>\\n<head>\\n    <meta charset=\\\"utf-8\\\" />\\n    <title>Authentication Failed</title>\\n</head>\\n<body>\\n\\t<p>Authentication failed. You can return to the application. Feel free to close this browser tab.</p>\\n\\t<p>Error details: error %s error_description: %s</p>\\n</body>\\n</html>\\n\", headerErr, desc)\" for sensitive computation. (The interface method resolves to \"ochttp.trackingResponseWriter.Write([]byte)\".)",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go",
+                    "line": 147,
+                    "column": 10,
+                    "event": "remediation",
+                    "message": "Escape non-constant data appropriately before concatenating it into HTML. The specific sequence of escapers necessary to make data safe depends on its syntactic position in the HTML. Allowing only safe characters (whitelisting) sometimes suffices to avoid XSS vulnerabilities, but only the strictest whitelists prevent all attacks.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  145|   \t\t// Note: It is a little weird we handle some errors by not going to the failPage. If they all should,",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  146|   \t\t// change this to s.error() and make s.error() write the failPage instead of an error code.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  147|-> \t\t_, _ = w.Write([]byte(fmt.Sprintf(failPage, headerErr, desc)))",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  148|   \t\ts.putResult(Result{Err: fmt.Errorf(desc)})",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  149|   \t\treturn",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "XSS",
+            "cwe": 79,
+            "function": "github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local.Server.handler(net/http.ResponseWriter, *net/http.Request)",
+            "language": "go",
+            "tool": "coverity",
+            "key_event_idx": 7,
+            "events": [
+                {
+                    "file_name": "osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go",
+                    "line": 140,
+                    "column": 2,
+                    "event": "taint",
+                    "message": "The field \"r.URL\" is a source of untrusted data.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go",
+                    "line": 140,
+                    "column": 2,
+                    "event": "identity",
+                    "message": "Calling \"Query\". This call assigns \"r.URL.RawQuery\" to \"<return value>\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go",
+                    "line": 140,
+                    "column": 2,
+                    "event": "assign",
+                    "message": "Assigning: \"q\" = \"r.URL.Query()\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go",
+                    "line": 142,
+                    "column": 2,
+                    "event": "identity",
+                    "message": "Calling \"Get\". This call returns \"q\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go",
+                    "line": 142,
+                    "column": 2,
+                    "event": "assign",
+                    "message": "Assigning: \"headerErr\" = \"q.Get(\"error\")\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go",
+                    "line": 147,
+                    "column": 10,
+                    "event": "assign",
+                    "message": "Assigning: \"<storage from new>[0]\" = \"headerErr\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go",
+                    "line": 147,
+                    "column": 10,
+                    "event": "identity",
+                    "message": "Calling \"Sprintf\". This call assigns \"{headerErr, desc}\" to \"<return value>\". Now \"<return value>\" is tainted.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go",
+                    "line": 147,
+                    "column": 10,
+                    "event": "sink",
+                    "message": "Calling \"Write\". This call uses \"([]byte)Sprintf(\"\\n<!DOCTYPE html>\\n<html>\\n<head>\\n    <meta charset=\\\"utf-8\\\" />\\n    <title>Authentication Failed</title>\\n</head>\\n<body>\\n\\t<p>Authentication failed. You can return to the application. Feel free to close this browser tab.</p>\\n\\t<p>Error details: error %s error_description: %s</p>\\n</body>\\n</html>\\n\", headerErr, desc)\" for sensitive computation. (The interface method resolves to \"otelhttp.respWriterWrapper.Write([]byte)\".)",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go",
+                    "line": 147,
+                    "column": 10,
+                    "event": "remediation",
+                    "message": "Escape non-constant data appropriately before concatenating it into HTML. The specific sequence of escapers necessary to make data safe depends on its syntactic position in the HTML. Allowing only safe characters (whitelisting) sometimes suffices to avoid XSS vulnerabilities, but only the strictest whitelists prevent all attacks.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  145|   \t\t// Note: It is a little weird we handle some errors by not going to the failPage. If they all should,",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  146|   \t\t// change this to s.error() and make s.error() write the failPage instead of an error code.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  147|-> \t\t_, _ = w.Write([]byte(fmt.Sprintf(failPage, headerErr, desc)))",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  148|   \t\ts.putResult(Result{Err: fmt.Errorf(desc)})",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  149|   \t\treturn",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "XSS",
+            "cwe": 79,
+            "function": "github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local.Server.handler(net/http.ResponseWriter, *net/http.Request)",
+            "language": "go",
+            "tool": "coverity",
+            "key_event_idx": 7,
+            "events": [
+                {
+                    "file_name": "osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go",
+                    "line": 140,
+                    "column": 2,
+                    "event": "taint",
+                    "message": "The field \"r.URL\" is a source of untrusted data.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go",
+                    "line": 140,
+                    "column": 2,
+                    "event": "identity",
+                    "message": "Calling \"Query\". This call assigns \"r.URL.RawQuery\" to \"<return value>\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go",
+                    "line": 140,
+                    "column": 2,
+                    "event": "assign",
+                    "message": "Assigning: \"q\" = \"r.URL.Query()\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go",
+                    "line": 142,
+                    "column": 2,
+                    "event": "identity",
+                    "message": "Calling \"Get\". This call returns \"q\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go",
+                    "line": 142,
+                    "column": 2,
+                    "event": "assign",
+                    "message": "Assigning: \"headerErr\" = \"q.Get(\"error\")\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go",
+                    "line": 147,
+                    "column": 10,
+                    "event": "assign",
+                    "message": "Assigning: \"<storage from new>[0]\" = \"headerErr\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go",
+                    "line": 147,
+                    "column": 10,
+                    "event": "identity",
+                    "message": "Calling \"Sprintf\". This call assigns \"{headerErr, desc}\" to \"<return value>\". Now \"<return value>\" is tainted.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go",
+                    "line": 147,
+                    "column": 10,
+                    "event": "sink",
+                    "message": "Calling \"Write\". This call uses \"([]byte)Sprintf(\"\\n<!DOCTYPE html>\\n<html>\\n<head>\\n    <meta charset=\\\"utf-8\\\" />\\n    <title>Authentication Failed</title>\\n</head>\\n<body>\\n\\t<p>Authentication failed. You can return to the application. Feel free to close this browser tab.</p>\\n\\t<p>Error details: error %s error_description: %s</p>\\n</body>\\n</html>\\n\", headerErr, desc)\" for sensitive computation. (The interface method resolves to \"v4.Response.Write([]byte)\".)",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go",
+                    "line": 147,
+                    "column": 10,
+                    "event": "remediation",
+                    "message": "Escape non-constant data appropriately before concatenating it into HTML. The specific sequence of escapers necessary to make data safe depends on its syntactic position in the HTML. Allowing only safe characters (whitelisting) sometimes suffices to avoid XSS vulnerabilities, but only the strictest whitelists prevent all attacks.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  145|   \t\t// Note: It is a little weird we handle some errors by not going to the failPage. If they all should,",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  146|   \t\t// change this to s.error() and make s.error() write the failPage instead of an error code.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  147|-> \t\t_, _ = w.Write([]byte(fmt.Sprintf(failPage, headerErr, desc)))",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  148|   \t\ts.putResult(Result{Err: fmt.Errorf(desc)})",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  149|   \t\treturn",
+                    "verbosity_level": 1
+                }
+            ]
+        }
+    ]
+}

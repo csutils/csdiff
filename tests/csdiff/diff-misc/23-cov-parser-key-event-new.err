@@ -1,0 +1,246 @@
+Error: INTEGER_OVERFLOW (CWE-125):
+zstd-1.5.5/lib/decompress/huf_decompress.c:1160: underflow: The decrement operator on the unsigned variable "maxW" might result in an underflow.
+zstd-1.5.5/lib/decompress/huf_decompress.c:1160: deref_overflow: "maxW", which might have underflowed, is passed to "wksp->rankStats[maxW]".
+# 1158|   
+# 1159|       /* find maxWeight */
+# 1160|->     for (maxW = tableLog; wksp->rankStats[maxW]==0; maxW--) {}  /* necessarily finds a solution before 0 */
+# 1161|   
+# 1162|       /* Get start index of each weight */
+
+Error: INTEGER_OVERFLOW (CWE-125):
+zstd-1.5.5/lib/decompress/huf_decompress.c:1160: underflow: The decrement operator on the unsigned variable "maxW" might result in an underflow.
+zstd-1.5.5/lib/decompress/huf_decompress.c:1193: overflow: The expression "tableLog + 1U - maxW" is deemed underflowed because at least one of its arguments has underflowed.
+zstd-1.5.5/lib/decompress/huf_decompress.c:1193: assign: Assigning: "minBits" = "tableLog + 1U - maxW".
+zstd-1.5.5/lib/decompress/huf_decompress.c:1195: assign: Assigning: "consumed" = "minBits".
+zstd-1.5.5/lib/decompress/huf_decompress.c:1196: deref_overflow: "consumed", which might have underflowed, is passed to "wksp->rankVal[consumed]".
+# 1194|               U32 consumed;
+# 1195|               for (consumed = minBits; consumed < maxTableLog - minBits + 1; consumed++) {
+# 1196|->                 U32* const rankValPtr = wksp->rankVal[consumed];
+# 1197|                   U32 w;
+# 1198|                   for (w = 1; w < maxW+1; w++) {
+
+Error: INTEGER_OVERFLOW (CWE-125):
+zstd-1.5.5/lib/legacy/zstd_v05.c:2170: underflow: The decrement operator on the unsigned variable "maxW" might result in an underflow.
+zstd-1.5.5/lib/legacy/zstd_v05.c:2170: deref_overflow: "maxW", which might have underflowed, is passed to "rankStats[maxW]".
+# 2168|   
+# 2169|       /* find maxWeight */
+# 2170|->     for (maxW = tableLog; rankStats[maxW]==0; maxW--) {}  /* necessarily finds a solution before 0 */
+# 2171|   
+# 2172|       /* Get start index of each weight */
+
+Error: INTEGER_OVERFLOW (CWE-125):
+zstd-1.5.5/lib/legacy/zstd_v05.c:2170: underflow: The decrement operator on the unsigned variable "maxW" might result in an underflow.
+zstd-1.5.5/lib/legacy/zstd_v05.c:2198: overflow: The expression "tableLog + 1U - maxW" is deemed underflowed because at least one of its arguments has underflowed.
+zstd-1.5.5/lib/legacy/zstd_v05.c:2198: assign: Assigning: "minBits" = "tableLog + 1U - maxW".
+zstd-1.5.5/lib/legacy/zstd_v05.c:2208: assign: Assigning: "consumed" = "minBits".
+zstd-1.5.5/lib/legacy/zstd_v05.c:2209: deref_overflow: "consumed", which might have underflowed, is passed to "rankVal[consumed]".
+# 2207|           }
+# 2208|           for (consumed = minBits; consumed <= memLog - minBits; consumed++) {
+# 2209|->             U32* rankValPtr = rankVal[consumed];
+# 2210|               for (w = 1; w <= maxW; w++) {
+# 2211|                   rankValPtr[w] = rankVal0[w] >> consumed;
+
+Error: INTEGER_OVERFLOW (CWE-125):
+zstd-1.5.5/lib/legacy/zstd_v06.c:2304: underflow: The decrement operator on the unsigned variable "maxW" might result in an underflow.
+zstd-1.5.5/lib/legacy/zstd_v06.c:2304: deref_overflow: "maxW", which might have underflowed, is passed to "rankStats[maxW]".
+# 2302|   
+# 2303|       /* find maxWeight */
+# 2304|->     for (maxW = tableLog; rankStats[maxW]==0; maxW--) {}  /* necessarily finds a solution before 0 */
+# 2305|   
+# 2306|       /* Get start index of each weight */
+
+Error: INTEGER_OVERFLOW (CWE-125):
+zstd-1.5.5/lib/legacy/zstd_v06.c:2304: underflow: The decrement operator on the unsigned variable "maxW" might result in an underflow.
+zstd-1.5.5/lib/legacy/zstd_v06.c:2338: overflow: The expression "tableLog + 1U - maxW" is deemed underflowed because at least one of its arguments has underflowed.
+zstd-1.5.5/lib/legacy/zstd_v06.c:2338: assign: Assigning: "minBits" = "tableLog + 1U - maxW".
+zstd-1.5.5/lib/legacy/zstd_v06.c:2340: assign: Assigning: "consumed" = "minBits".
+zstd-1.5.5/lib/legacy/zstd_v06.c:2341: deref_overflow: "consumed", which might have underflowed, is passed to "rankVal[consumed]".
+# 2339|               U32 consumed;
+# 2340|               for (consumed = minBits; consumed < memLog - minBits + 1; consumed++) {
+# 2341|->                 U32* const rankValPtr = rankVal[consumed];
+# 2342|                   U32 w;
+# 2343|                   for (w = 1; w < maxW+1; w++) {
+
+Error: INTEGER_OVERFLOW (CWE-125):
+zstd-1.5.5/lib/legacy/zstd_v07.c:2113: underflow: The decrement operator on the unsigned variable "maxW" might result in an underflow.
+zstd-1.5.5/lib/legacy/zstd_v07.c:2113: deref_overflow: "maxW", which might have underflowed, is passed to "rankStats[maxW]".
+# 2111|   
+# 2112|       /* find maxWeight */
+# 2113|->     for (maxW = tableLog; rankStats[maxW]==0; maxW--) {}  /* necessarily finds a solution before 0 */
+# 2114|   
+# 2115|       /* Get start index of each weight */
+
+Error: INTEGER_OVERFLOW (CWE-125):
+zstd-1.5.5/lib/legacy/zstd_v07.c:2113: underflow: The decrement operator on the unsigned variable "maxW" might result in an underflow.
+zstd-1.5.5/lib/legacy/zstd_v07.c:2147: overflow: The expression "tableLog + 1U - maxW" is deemed underflowed because at least one of its arguments has underflowed.
+zstd-1.5.5/lib/legacy/zstd_v07.c:2147: assign: Assigning: "minBits" = "tableLog + 1U - maxW".
+zstd-1.5.5/lib/legacy/zstd_v07.c:2149: assign: Assigning: "consumed" = "minBits".
+zstd-1.5.5/lib/legacy/zstd_v07.c:2150: deref_overflow: "consumed", which might have underflowed, is passed to "rankVal[consumed]".
+# 2148|               U32 consumed;
+# 2149|               for (consumed = minBits; consumed < maxTableLog - minBits + 1; consumed++) {
+# 2150|->                 U32* const rankValPtr = rankVal[consumed];
+# 2151|                   U32 w;
+# 2152|                   for (w = 1; w < maxW+1; w++) {
+
+Error: INTEGER_OVERFLOW (CWE-190):
+zstd-1.5.5/programs/benchzstd.c:336: tainted_data_return: Called function "ZSTD_findDecompressedSize(srcPtr, fileSizes[fileNb])", and a possible return value is known to be less than zero.
+zstd-1.5.5/programs/benchzstd.c:336: cast_underflow: An assign of a possibly negative number to an unsigned type, which might trigger an underflow.
+zstd-1.5.5/programs/benchzstd.c:343: overflow: The expression "totalDSize64 += fSize64" is deemed underflowed because at least one of its arguments has underflowed.
+zstd-1.5.5/programs/benchzstd.c:343: overflow: The expression "totalDSize64 += fSize64" is deemed underflowed because at least one of its arguments has underflowed.
+zstd-1.5.5/programs/benchzstd.c:343: overflow: The expression "totalDSize64 += fSize64" is deemed underflowed because at least one of its arguments has underflowed.
+zstd-1.5.5/programs/benchzstd.c:346: cast_overflow: An assign that casts to a different type, which might trigger an overflow.
+zstd-1.5.5/programs/benchzstd.c:352: overflow_sink: "decodedSize", which might have underflowed, is passed to "malloc(decodedSize)".
+#  350|                   RETURN_ERROR(32, BMK_benchOutcome_t, "decompressed size is too large for local system");
+#  351|               }
+#  352|->             *resultBufferPtr = malloc(decodedSize);
+#  353|               if (!(*resultBufferPtr)) {
+#  354|                   RETURN_ERROR(33, BMK_benchOutcome_t, "allocation error: not enough memory");
+
+Error: INTEGER_OVERFLOW (CWE-190):
+zstd-1.5.5/programs/dibio.c:130: tainted_data_return: Called function "DiB_getFileSize(fileNamesTable[fileIndex])", and a possible return value may be less than zero.
+zstd-1.5.5/programs/dibio.c:130: assign: Assigning: "fileSize" = "DiB_getFileSize(fileNamesTable[fileIndex])".
+zstd-1.5.5/programs/dibio.c:156: overflow: The expression "fileSize - fileDataLoaded" is deemed overflowed because at least one of its arguments has overflowed.
+zstd-1.5.5/programs/dibio.c:156: assign: Assigning: "chunkSize" = "((size_t)(fileSize - fileDataLoaded) < targetChunkSize) ? (size_t)(fileSize - fileDataLoaded) : targetChunkSize".
+zstd-1.5.5/programs/dibio.c:160: overflow_sink: "chunkSize", which might have underflowed, is passed to "fread(buff + totalDataLoaded, 1UL, chunkSize, f)". [Note: The source code implementation of the function has been overridden by a builtin model.]
+#  158|                       break;
+#  159|   
+#  160|->                 if (fread( buff+totalDataLoaded, 1, chunkSize, f ) != chunkSize)
+#  161|                       EXM_THROW(11, "Pb reading %s", fileNamesTable[fileIndex]);
+#  162|                   sampleSizes[nbSamplesLoaded++] = chunkSize;
+Error: BAD_CHECK_OF_WAIT_COND:
+antlr-2.7.7/antlr/debug/DebuggingCharScanner.java:84:40: lock_acquire: Acquiring lock "DebuggingCharScanner.this".
+antlr-2.7.7/antlr/debug/DebuggingCharScanner.java:85:8: dead_wait: A wait is performed without ensuring that the condition is not already satisfied while holding lock "DebuggingCharScanner.this". This can cause a deadlock if the notification happens before the lock is acquired.
+antlr-2.7.7/antlr/debug/DebuggingCharScanner.java:85:8: remediation: Acquire the lock, then check the wait condition in a loop, without releasing with the lock before the wait. This will prevent deadlocks and failed conditions from spurious wakeups.
+#   83|   	}
+#   84|   	public synchronized void goToSleep() {
+#   85|-> 		try {wait();}
+#   86|   		catch (InterruptedException e) {	}		
+#   87|   	}
+
+Error: BAD_CHECK_OF_WAIT_COND:
+antlr-2.7.7/antlr/debug/LLkDebuggingParser.java:92:40: lock_acquire: Acquiring lock "LLkDebuggingParser.this".
+antlr-2.7.7/antlr/debug/LLkDebuggingParser.java:93:8: dead_wait: A wait is performed without ensuring that the condition is not already satisfied while holding lock "LLkDebuggingParser.this". This can cause a deadlock if the notification happens before the lock is acquired.
+antlr-2.7.7/antlr/debug/LLkDebuggingParser.java:93:8: remediation: Acquire the lock, then check the wait condition in a loop, without releasing with the lock before the wait. This will prevent deadlocks and failed conditions from spurious wakeups.
+#   91|   	}
+#   92|   	public synchronized void goToSleep() {
+#   93|-> 		try {wait();}
+#   94|   		catch (InterruptedException e) {	}		
+#   95|   	}
+
+Error: BAD_CHECK_OF_WAIT_COND:
+antlr-2.7.7/src/antlr/debug/DebuggingCharScanner.java:84:40: lock_acquire: Acquiring lock "DebuggingCharScanner.this".
+antlr-2.7.7/src/antlr/debug/DebuggingCharScanner.java:85:8: dead_wait: A wait is performed without ensuring that the condition is not already satisfied while holding lock "DebuggingCharScanner.this". This can cause a deadlock if the notification happens before the lock is acquired.
+antlr-2.7.7/src/antlr/debug/DebuggingCharScanner.java:85:8: remediation: Acquire the lock, then check the wait condition in a loop, without releasing with the lock before the wait. This will prevent deadlocks and failed conditions from spurious wakeups.
+#   83|   	}
+#   84|   	public synchronized void goToSleep() {
+#   85|-> 		try {wait();}
+#   86|   		catch (InterruptedException e) {	}		
+#   87|   	}
+
+Error: BAD_CHECK_OF_WAIT_COND:
+antlr-2.7.7/src/antlr/debug/LLkDebuggingParser.java:92:40: lock_acquire: Acquiring lock "LLkDebuggingParser.this".
+antlr-2.7.7/src/antlr/debug/LLkDebuggingParser.java:93:8: dead_wait: A wait is performed without ensuring that the condition is not already satisfied while holding lock "LLkDebuggingParser.this". This can cause a deadlock if the notification happens before the lock is acquired.
+antlr-2.7.7/src/antlr/debug/LLkDebuggingParser.java:93:8: remediation: Acquire the lock, then check the wait condition in a loop, without releasing with the lock before the wait. This will prevent deadlocks and failed conditions from spurious wakeups.
+#   91|   	}
+#   92|   	public synchronized void goToSleep() {
+#   93|-> 		try {wait();}
+#   94|   		catch (InterruptedException e) {	}		
+#   95|   	}
+Error: SIGMA.xss (CWE-79):
+doxygen-1.10.0/templates/html/search_opensearch.php:5: Sigma event: reading tainted data from _GET with key query
+doxygen-1.10.0/templates/html/search_opensearch.php:5: Sigma event: $_GET['query'] is a source of tainted data
+doxygen-1.10.0/templates/html/search_opensearch.php:5: Sigma event: assigning the tainted data to query
+doxygen-1.10.0/templates/html/search_opensearch.php:6: Sigma event: calling __builtin__.preg_replace assigns to <return>
+doxygen-1.10.0/templates/html/search_opensearch.php:6: Sigma event: calling __builtin__.preg_replace taints <return>
+doxygen-1.10.0/templates/html/search_opensearch.php:6: Sigma event: assigning the tainted data to query
+doxygen-1.10.0/templates/html/search_opensearch.php:19: Sigma event: calling opensearch_xml_results sinks query
+doxygen-1.10.0/templates/html/search_opensearch.php:70: Sigma event: assigning the tainted data to result
+doxygen-1.10.0/templates/html/search_opensearch.php:85: Sigma event: assigning the tainted data to result
+doxygen-1.10.0/templates/html/search_opensearch.php:89: Sigma event: calling __builtin__.echo
+doxygen-1.10.0/templates/html/search_opensearch.php:89: Sigma main event: Untrusted user-supplied data is inserted into a context that can execute JavaScript without adequate validation, escaping, or filtering. A user can execute arbitrary JavaScript on a web page viewed or accessed by another user, potentially allowing session hijacking, disclosing sensitive data in the DOM, or viewing of keyboard and mouse events.
+doxygen-1.10.0/templates/html/search_opensearch.php:89: remediation: Escape non-constant data appropriately before concatenating it into HTML. The specific sequence of escapers necessary to make data safe depends on its syntactic position in the HTML. Allowing only safe characters sometimes suffices to avoid XSS vulnerabilities, but only the strictest allow lists prevent all attacks.
+#   87|   </SearchSuggestion>
+#   88|   END_FRAG;
+#   89|->   echo $result;
+#   90|   }
+#   91|   
+
+Error: SIGMA.xss (CWE-79):
+doxygen-1.10.0/templates/html/search_opensearch.php:5: Sigma event: reading tainted data from _GET with key query
+doxygen-1.10.0/templates/html/search_opensearch.php:5: Sigma event: assigning the tainted data to query
+doxygen-1.10.0/templates/html/search_opensearch.php:5: Sigma event: $_GET['query'] is a source of tainted data
+doxygen-1.10.0/templates/html/search_opensearch.php:6: Sigma event: calling __builtin__.preg_replace assigns to <return>
+doxygen-1.10.0/templates/html/search_opensearch.php:6: Sigma event: assigning the tainted data to query
+doxygen-1.10.0/templates/html/search_opensearch.php:16: Sigma event: calling opensearch_json_results sinks query
+doxygen-1.10.0/templates/html/search_opensearch.php:120: Sigma event: calling __builtin__.print
+doxygen-1.10.0/templates/html/search_opensearch.php:120: Sigma main event: Untrusted user-supplied data is inserted into a context that can execute JavaScript without adequate validation, escaping, or filtering. A user can execute arbitrary JavaScript on a web page viewed or accessed by another user, potentially allowing session hijacking, disclosing sensitive data in the DOM, or viewing of keyboard and mouse events.
+doxygen-1.10.0/templates/html/search_opensearch.php:120: remediation: Escape non-constant data appropriately before concatenating it into HTML. The specific sequence of escapers necessary to make data safe depends on its syntactic position in the HTML. Allowing only safe characters sometimes suffices to avoid XSS vulnerabilities, but only the strictest allow lists prevent all attacks.
+#  118|       $i++;
+#  119|     }
+#  120|->   print "[\"$query\", [$json_words],[$json_descriptions]]";
+#  121|   }
+#  122|   
+
+Error: SIGMA.xss (CWE-79):
+doxygen-1.10.0/templates/html/search_opensearch.php:5: Sigma event: reading tainted data from _GET with key query
+doxygen-1.10.0/templates/html/search_opensearch.php:5: Sigma event: $_GET['query'] is a source of tainted data
+doxygen-1.10.0/templates/html/search_opensearch.php:5: Sigma event: assigning the tainted data to query
+doxygen-1.10.0/templates/html/search_opensearch.php:6: Sigma event: calling __builtin__.preg_replace assigns to <return>
+doxygen-1.10.0/templates/html/search_opensearch.php:6: Sigma event: calling __builtin__.preg_replace taints <return>
+doxygen-1.10.0/templates/html/search_opensearch.php:6: Sigma event: assigning the tainted data to query
+doxygen-1.10.0/templates/html/search_opensearch.php:22: Sigma event: calling invalid_format sinks query
+doxygen-1.10.0/templates/html/search_opensearch.php:125: Sigma event: calling __builtin__.print
+doxygen-1.10.0/templates/html/search_opensearch.php:125: Sigma main event: Untrusted user-supplied data is inserted into a context that can execute JavaScript without adequate validation, escaping, or filtering. A user can execute arbitrary JavaScript on a web page viewed or accessed by another user, potentially allowing session hijacking, disclosing sensitive data in the DOM, or viewing of keyboard and mouse events.
+doxygen-1.10.0/templates/html/search_opensearch.php:125: remediation: Escape non-constant data appropriately before concatenating it into HTML. The specific sequence of escapers necessary to make data safe depends on its syntactic position in the HTML. Allowing only safe characters sometimes suffices to avoid XSS vulnerabilities, but only the strictest allow lists prevent all attacks.
+#  123|   function invalid_format($query, array $results)
+#  124|   {
+#  125|->   print "Search results for '$query':\n\n";
+#  126|     print_r($results);
+#  127|   }
+Error: XSS (CWE-79):
+osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go:140:2: taint: The field "r.URL" is a source of untrusted data.
+osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go:140:2: identity: Calling "Query". This call assigns "r.URL.RawQuery" to "<return value>".
+osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go:140:2: assign: Assigning: "q" = "r.URL.Query()".
+osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go:142:2: identity: Calling "Get". This call returns "q".
+osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go:142:2: assign: Assigning: "headerErr" = "q.Get("error")".
+osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go:147:10: assign: Assigning: "<storage from new>[0]" = "headerErr".
+osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go:147:10: identity: Calling "Sprintf". This call assigns "{headerErr, desc}" to "<return value>". Now "<return value>" is tainted.
+osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go:147:10: sink: Calling "Write". This call uses "([]byte)Sprintf("\n<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"utf-8\" />\n    <title>Authentication Failed</title>\n</head>\n<body>\n\t<p>Authentication failed. You can return to the application. Feel free to close this browser tab.</p>\n\t<p>Error details: error %s error_description: %s</p>\n</body>\n</html>\n", headerErr, desc)" for sensitive computation. (The interface method resolves to "ochttp.trackingResponseWriter.Write([]byte)".)
+osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go:147:10: remediation: Escape non-constant data appropriately before concatenating it into HTML. The specific sequence of escapers necessary to make data safe depends on its syntactic position in the HTML. Allowing only safe characters (whitelisting) sometimes suffices to avoid XSS vulnerabilities, but only the strictest whitelists prevent all attacks.
+#  145|   		// Note: It is a little weird we handle some errors by not going to the failPage. If they all should,
+#  146|   		// change this to s.error() and make s.error() write the failPage instead of an error code.
+#  147|-> 		_, _ = w.Write([]byte(fmt.Sprintf(failPage, headerErr, desc)))
+#  148|   		s.putResult(Result{Err: fmt.Errorf(desc)})
+#  149|   		return
+
+Error: XSS (CWE-79):
+osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go:140:2: taint: The field "r.URL" is a source of untrusted data.
+osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go:140:2: identity: Calling "Query". This call assigns "r.URL.RawQuery" to "<return value>".
+osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go:140:2: assign: Assigning: "q" = "r.URL.Query()".
+osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go:142:2: identity: Calling "Get". This call returns "q".
+osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go:142:2: assign: Assigning: "headerErr" = "q.Get("error")".
+osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go:147:10: assign: Assigning: "<storage from new>[0]" = "headerErr".
+osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go:147:10: identity: Calling "Sprintf". This call assigns "{headerErr, desc}" to "<return value>". Now "<return value>" is tainted.
+osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go:147:10: sink: Calling "Write". This call uses "([]byte)Sprintf("\n<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"utf-8\" />\n    <title>Authentication Failed</title>\n</head>\n<body>\n\t<p>Authentication failed. You can return to the application. Feel free to close this browser tab.</p>\n\t<p>Error details: error %s error_description: %s</p>\n</body>\n</html>\n", headerErr, desc)" for sensitive computation. (The interface method resolves to "otelhttp.respWriterWrapper.Write([]byte)".)
+osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go:147:10: remediation: Escape non-constant data appropriately before concatenating it into HTML. The specific sequence of escapers necessary to make data safe depends on its syntactic position in the HTML. Allowing only safe characters (whitelisting) sometimes suffices to avoid XSS vulnerabilities, but only the strictest whitelists prevent all attacks.
+#  145|   		// Note: It is a little weird we handle some errors by not going to the failPage. If they all should,
+#  146|   		// change this to s.error() and make s.error() write the failPage instead of an error code.
+#  147|-> 		_, _ = w.Write([]byte(fmt.Sprintf(failPage, headerErr, desc)))
+#  148|   		s.putResult(Result{Err: fmt.Errorf(desc)})
+#  149|   		return
+
+Error: XSS (CWE-79):
+osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go:140:2: taint: The field "r.URL" is a source of untrusted data.
+osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go:140:2: identity: Calling "Query". This call assigns "r.URL.RawQuery" to "<return value>".
+osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go:140:2: assign: Assigning: "q" = "r.URL.Query()".
+osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go:142:2: identity: Calling "Get". This call returns "q".
+osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go:142:2: assign: Assigning: "headerErr" = "q.Get("error")".
+osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go:147:10: assign: Assigning: "<storage from new>[0]" = "headerErr".
+osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go:147:10: identity: Calling "Sprintf". This call assigns "{headerErr, desc}" to "<return value>". Now "<return value>" is tainted.
+osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go:147:10: sink: Calling "Write". This call uses "([]byte)Sprintf("\n<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"utf-8\" />\n    <title>Authentication Failed</title>\n</head>\n<body>\n\t<p>Authentication failed. You can return to the application. Feel free to close this browser tab.</p>\n\t<p>Error details: error %s error_description: %s</p>\n</body>\n</html>\n", headerErr, desc)" for sensitive computation. (The interface method resolves to "v4.Response.Write([]byte)".)
+osbuild-composer-100/_build/src/github.com/osbuild/osbuild-composer/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/local/server.go:147:10: remediation: Escape non-constant data appropriately before concatenating it into HTML. The specific sequence of escapers necessary to make data safe depends on its syntactic position in the HTML. Allowing only safe characters (whitelisting) sometimes suffices to avoid XSS vulnerabilities, but only the strictest whitelists prevent all attacks.
+#  145|   		// Note: It is a little weird we handle some errors by not going to the failPage. If they all should,
+#  146|   		// change this to s.error() and make s.error() write the failPage instead of an error code.
+#  147|-> 		_, _ = w.Write([]byte(fmt.Sprintf(failPage, headerErr, desc)))
+#  148|   		s.putResult(Result{Err: fmt.Errorf(desc)})
+#  149|   		return

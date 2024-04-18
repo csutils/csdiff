@@ -231,6 +231,7 @@ KeyEventDigger::KeyEventDigger():
     d->hMap["ARRAY_VS_SINGLETON"]        .insert("callee_ptr_arith");
     d->hMap["ARRAY_VS_SINGLETON"]        .insert("ptr_arith");
     d->hMap["ATOMICITY"]                 .insert("use");
+    d->hMap["BAD_CHECK_OF_WAIT_COND"]    .insert("dead_wait");
     d->hMap["BAD_CHECK_OF_WAIT_COND"]    .insert("wait_cond_improperly_checked");
     d->hMap["BAD_FREE"]                  .insert("incorrect_free");
     d->hMap["BAD_LOCK_OBJECT"]           .insert("boxed_lock");
@@ -290,6 +291,7 @@ KeyEventDigger::KeyEventDigger():
     d->hMap["VARARGS"]                   .insert("missing_va_end");
     d->hMap["WRAPPER_ESCAPE"]            .insert("escape");
     d->hMap["WRAPPER_ESCAPE"]            .insert("use_after_free");
+    d->hMap["XSS"]                       .insert("sink");
 
     // we use COMPILER_WARNING as checker for compiler errors/warnings
     d->hMap["COMPILER_WARNING"]     .insert("error");
@@ -315,8 +317,9 @@ KeyEventDigger::KeyEventDigger():
     d->searchBackwards.insert("HARDCODED_CREDENTIALS");
     d->searchBackwards.insert("HEADER_INJECTION");
     d->searchBackwards.insert("INSUFFICIENT_LOGGING");
-    d->searchBackwards.insert("LOCK");
+    d->searchBackwards.insert("INTEGER_OVERFLOW");
     d->searchBackwards.insert("INVALIDATE_ITERATOR");
+    d->searchBackwards.insert("LOCK");
     d->searchBackwards.insert("NULL_RETURNS");
     d->searchBackwards.insert("OVERRUN");
     d->searchBackwards.insert("PATH_MANIPULATION");
@@ -379,6 +382,19 @@ KeyEventDigger::~KeyEventDigger()
     delete d;
 }
 
+/// FIXME: will not be needed with c++20
+bool startsWith(std::string input, const std::string &prefix)
+{
+    const size_t prefixLen = prefix.size();
+    if (input.size() < prefixLen)
+        // the input is shorter than the prefix we are looking for
+        return false;
+
+    // cut the input beyond prefixLen and compare for equality
+    input.resize(prefixLen);
+    return (input == prefix);
+}
+
 bool KeyEventDigger::guessKeyEvent(Defect *def)
 {
     const std::vector<DefEvent> &evtList = def->events;
@@ -390,15 +406,20 @@ bool KeyEventDigger::guessKeyEvent(Defect *def)
     const Private::TSet *pKeyEvents = &defKeyEvent;
 
     Private::TMap::const_iterator it = d->hMap.find(def->checker);
-    if (d->hMap.end() == it) {
+    if (d->hMap.end() != it) {
+        // use the corresponding set of events from d->hMap
+        pKeyEvents = &it->second;
+    }
+    else if (startsWith(def->checker, "SIGMA.")) {
+        // all SIGMA.* checkers use the same key event
+        defKeyEvent.insert("Sigma main event");
+    }
+    else {
         // no override for the checker -> match the lowered checker name
         std::string str(def->checker);
         boost::algorithm::to_lower(str);
         defKeyEvent.insert(str);
     }
-    else
-        // use the corresponding set of events from d->hMap
-        pKeyEvents = &it->second;
 
     // look for an explicitly defined key event
     bool found = false;
