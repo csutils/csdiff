@@ -338,8 +338,12 @@ void SarifTreeEncoder::appendDef(const Defect &def)
         // update tool for this rule
         d->ruleMap[ruleId].tool = def.tool;
 
-    // key event severity level
-    sarifEncodeLevel(&result, keyEvt.event);
+    if (0 < def.imp)
+        // if the "imp" flag is set, promote this finding to "Important"
+        result.emplace("level", "error");
+    else
+        // key event severity level
+        sarifEncodeLevel(&result, keyEvt.event);
 
     // key event location
     object loc;
