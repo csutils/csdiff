@@ -1,0 +1,23 @@
+Error: SHELLCHECK_WARNING:
+src/functions.sh:309:46: warning[SC2154]: GITHUB_REF is referenced but not assigned.
+#  307|     is_debug && local verbose=--verbose
+#  308|   
+#  309|->   echo '{"commit_oid":"'"${HEAD}"'","ref":"'"${GITHUB_REF//merge/head}"'","analysis_key":"differential-shellcheck","sarif":"'"$(gzip -c output.sarif | base64 -w0)"'","tool_names":["differential-shellcheck"]}' > payload.json
+#  310|   
+#  311|     local curl_args=(
+
+Error: SHELLCHECK_WARNING:
+src/functions.sh:309:129: info[SC2312]: Consider invoking this command separately to avoid masking its return value (or use '|| true' to ignore).
+#  307|     is_debug && local verbose=--verbose
+#  308|   
+#  309|->   echo '{"commit_oid":"'"${HEAD}"'","ref":"'"${GITHUB_REF//merge/head}"'","analysis_key":"differential-shellcheck","sarif":"'"$(gzip -c output.sarif | base64 -w0)"'","tool_names":["differential-shellcheck"]}' > payload.json
+#  310|   
+#  311|     local curl_args=(
+
+Error: SHELLCHECK_WARNING:
+src/functions.sh:309:152: info[SC2312]: Consider invoking this command separately to avoid masking its return value (or use '|| true' to ignore).
+#  307|     is_debug && local verbose=--verbose
+#  308|   
+#  309|->   echo '{"commit_oid":"'"${HEAD}"'","ref":"'"${GITHUB_REF//merge/head}"'","analysis_key":"differential-shellcheck","sarif":"'"$(gzip -c output.sarif | base64 -w0)"'","tool_names":["differential-shellcheck"]}' > payload.json
+#  310|   
+#  311|     local curl_args=(

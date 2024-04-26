@@ -1,0 +1,616 @@
+{
+    "defects": [
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "src/functions.sh",
+                    "line": 5,
+                    "column": 3,
+                    "event": "info[SC1091]",
+                    "message": "Not following: summary.sh: openBinaryFile: does not exist (No such file or directory)",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    3|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    4|   # shellcheck source=summary.sh",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    5|-> . \"${SCRIPT_DIR=}summary.sh\"",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    6|   # shellcheck source=validation.sh",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    7|   . \"${SCRIPT_DIR=}validation.sh\"",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "src/functions.sh",
+                    "line": 7,
+                    "column": 3,
+                    "event": "info[SC1091]",
+                    "message": "Not following: validation.sh: openBinaryFile: does not exist (No such file or directory)",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    5|   . \"${SCRIPT_DIR=}summary.sh\"",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    6|   # shellcheck source=validation.sh",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    7|-> . \"${SCRIPT_DIR=}validation.sh\"",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    8|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "    9|   # Function that determine if FULL scan is requested",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "src/functions.sh",
+                    "line": 23,
+                    "column": 17,
+                    "event": "warning[SC2154]",
+                    "message": "INPUT_DIFF_SCAN is referenced but not assigned.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   21|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   22|       \"manual\")",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   23|->       is_false \"${INPUT_DIFF_SCAN}\" && return 0",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   24|         ;;",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   25|   ",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "src/functions.sh",
+                    "line": 99,
+                    "column": 8,
+                    "event": "info[SC2086]",
+                    "message": "Double quote to prevent globbing and word splitting.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   97|     done",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   98|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   99|->   eval $output=\\(\"${scripts_for_scanning[*]@Q}\"\\)",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  100|     [[ ${UNIT_TESTS:-1} -eq 0 ]] && eval echo \"\\${${output}[@]@Q}\"",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  101|   }",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "src/functions.sh",
+                    "line": 99,
+                    "column": 8,
+                    "event": "style[SC2250]",
+                    "message": "Prefer putting braces around variable references even when not strictly required.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   97|     done",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   98|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   99|->   eval $output=\\(\"${scripts_for_scanning[*]@Q}\"\\)",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  100|     [[ ${UNIT_TESTS:-1} -eq 0 ]] && eval echo \"\\${${output}[@]@Q}\"",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  101|   }",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "src/functions.sh",
+                    "line": 135,
+                    "column": 6,
+                    "event": "info[SC2312]",
+                    "message": "Consider invoking this command separately to avoid masking its return value (or use '|| true' to ignore).",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  133|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  134|     # shell shebangs detection",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  135|->   if head -n1 \"${file}\" | grep --quiet -E '^\\s*((#|!)|(#\\s*!)|(!\\s*#))\\s*(/usr(/local)?)?/bin/(env\\s+)?(sh|ash|bash|dash|ksh|bats)\\b'; then",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  136|       return 0",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  137|     fi",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "src/functions.sh",
+                    "line": 277,
+                    "column": 12,
+                    "event": "warning[SC2154]",
+                    "message": "INPUT_EXTERNAL_SOURCES is referenced but not assigned.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  275|   # Function to execute shellcheck command with all relevant options",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  276|   execute_shellcheck () {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  277|->   is_true \"${INPUT_EXTERNAL_SOURCES}\" && local external_sources=--external-sources",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  278|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  279|     local shellcheck_args=(",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "src/functions.sh",
+                    "line": 309,
+                    "column": 46,
+                    "event": "warning[SC2154]",
+                    "message": "GITHUB_REF is referenced but not assigned.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  307|     is_debug && local verbose=--verbose",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  308|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  309|->   echo '{\"commit_oid\":\"'\"${HEAD}\"'\",\"ref\":\"'\"${GITHUB_REF//merge/head}\"'\",\"analysis_key\":\"differential-shellcheck\",\"sarif\":\"'\"$(gzip -c output.sarif | base64 -w0)\"'\",\"tool_names\":[\"differential-shellcheck\"]}' > payload.json",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  310|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  311|     local curl_args=(",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "src/functions.sh",
+                    "line": 309,
+                    "column": 129,
+                    "event": "info[SC2312]",
+                    "message": "Consider invoking this command separately to avoid masking its return value (or use '|| true' to ignore).",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  307|     is_debug && local verbose=--verbose",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  308|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  309|->   echo '{\"commit_oid\":\"'\"${HEAD}\"'\",\"ref\":\"'\"${GITHUB_REF//merge/head}\"'\",\"analysis_key\":\"differential-shellcheck\",\"sarif\":\"'\"$(gzip -c output.sarif | base64 -w0)\"'\",\"tool_names\":[\"differential-shellcheck\"]}' > payload.json",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  310|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  311|     local curl_args=(",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "src/functions.sh",
+                    "line": 309,
+                    "column": 152,
+                    "event": "info[SC2312]",
+                    "message": "Consider invoking this command separately to avoid masking its return value (or use '|| true' to ignore).",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  307|     is_debug && local verbose=--verbose",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  308|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  309|->   echo '{\"commit_oid\":\"'\"${HEAD}\"'\",\"ref\":\"'\"${GITHUB_REF//merge/head}\"'\",\"analysis_key\":\"differential-shellcheck\",\"sarif\":\"'\"$(gzip -c output.sarif | base64 -w0)\"'\",\"tool_names\":[\"differential-shellcheck\"]}' > payload.json",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  310|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  311|     local curl_args=(",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "src/functions.sh",
+                    "line": 331,
+                    "column": 24,
+                    "event": "info[SC2312]",
+                    "message": "Consider invoking this command separately to avoid masking its return value (or use '|| true' to ignore).",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  329|   get_shellcheck_version () {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  330|     local shellcheck_version",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  331|->   shellcheck_version=$(shellcheck --version | grep -w \"version:\" | cut -s -d ' ' -f 2)",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  332|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  333|     echo \"${shellcheck_version}\"",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "tool": "shellcheck",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "src/functions.sh",
+                    "line": 331,
+                    "column": 47,
+                    "event": "info[SC2312]",
+                    "message": "Consider invoking this command separately to avoid masking its return value (or use '|| true' to ignore).",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  329|   get_shellcheck_version () {",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  330|     local shellcheck_version",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  331|->   shellcheck_version=$(shellcheck --version | grep -w \"version:\" | cut -s -d ' ' -f 2)",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  332|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  333|     echo \"${shellcheck_version}\"",
+                    "verbosity_level": 1
+                }
+            ]
+        }
+    ]
+}

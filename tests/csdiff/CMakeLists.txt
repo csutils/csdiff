@@ -88,5 +88,6 @@ test_csdiff(diff-misc 20-shellcheck-line-content)
 test_csdiff(diff-misc 21-kernel-shell-code)
 test_csdiff(diff-misc 22-kernel-zstream-path)
 test_csdiff(diff-misc 23-cov-parser-key-event)
+test_csdiff(diff-misc 24-shellcheck-line-content)
 
 add_subdirectory(filter-file)
