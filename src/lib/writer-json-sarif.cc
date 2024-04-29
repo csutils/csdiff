@@ -109,6 +109,12 @@ static void sarifEncodeShellCheckRule(object *rule, const std::string &ruleID)
     // name
     rule->emplace("name", ruleID);
 
+    // shortDescription
+    object shortDesc = {
+        { "text", ruleID }
+    };
+    rule->emplace("shortDescription", std::move(shortDesc));
+
     // properties.tags[]
     array tags = { "ShellCheck" };
     object &props = rule->at("properties").as_object();
@@ -117,13 +123,20 @@ static void sarifEncodeShellCheckRule(object *rule, const std::string &ruleID)
     // help.text && help.markdown
     auto helpURI = "https://github.com/koalaman/shellcheck/wiki/" + ruleID;
     auto helpMarkdown = "Defect reference: [" + ruleID +"](" + helpURI + ")";
+    auto helpText = "Defect reference: " + std::move(helpURI);
 
     object help = {
-        { "text", "Defect reference: " + helpURI },
+        { "text", helpText },
         { "markdown", std::move(helpMarkdown) }
     };
 
     rule->emplace("help", std::move(help));
+
+    // fullDescription
+    object fullDesc = {
+        { "text", std::move(helpText) }
+    };
+    rule->emplace("fullDescription", std::move(fullDesc));
 }
 
 static void sarifEncodeCweRule(object *rule, const int cwe, bool append = false)
@@ -192,7 +205,7 @@ static void sarifEncodeMsg(object *pDst, const std::string& text)
         { "text", sanitizeUTF8(text) }
     };
 
-    pDst->emplace("message", std::move(message) );
+    pDst->emplace("message", std::move(message));
 }
 
 static void sarifEncodeLevel(object *result, const std::string &event)
