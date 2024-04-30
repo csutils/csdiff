@@ -68,7 +68,13 @@ if [[ "$1" != "--generate-spec" ]]; then
     git archive --prefix="$NV/" --format="tar" HEAD -- . > "$SRC_TAR" \
                                             || die "failed to export sources"
 
-    xz -c "$SRC_TAR" > "$SRC"               || die "failed to compress sources"
+    # use pxz (threaded xz) if available to speed up the compression
+    if pxz --version | grep '^Parallel PXZ' > /dev/null; then
+        XZ=pxz
+    else
+        XZ=xz
+    fi
+    $XZ -c "$SRC_TAR" > "$SRC" || die "failed to compress sources with ${XZ}"
 fi
 
 SPEC="./$PKG.spec"
