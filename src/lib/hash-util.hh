@@ -32,9 +32,7 @@ std::string hexHashStr(const TSrc &src)
     eng.process_bytes(src.data(), src.size());
 
     // export the hash as an array of unsigned int
-    // FIXME: std::remove_reference is needed on el7 (boost-1.53)
-    using TDst = typename TEng::digest_type;
-    typename std::remove_reference<TDst>::type dst;
+    typename TEng::digest_type dst;
     eng.get_digest(dst);
 
     // convert the hash to a vector of unsigned int
