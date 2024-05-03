@@ -42,7 +42,7 @@ std::string titleFromFileName(const std::string &fileName)
         // no version information -> bailing out
         return "";
 
-    const RE reTitle("^(?:.*/)?([^/]*)\\.(?:err|js)$");
+    const RE reTitle("^(?:.*/)?([^/]*)\\.(?:err|js|json)$");
 
     boost::smatch sm;
     if (!boost::regex_match(fileName, sm, reTitle))
@@ -64,7 +64,7 @@ int main(int argc, char *argv[])
     namespace po = boost::program_options;
     po::variables_map vm;
     po::options_description desc(string("Usage: ") + name
-            + " [options] proj.js, where options are", /* line_length */ 0x80);
+            + " [options] proj.json, where options are", /* line_length */ 0x80);
 
     typedef std::vector<string> TStringList;
     string defUrlTemplate, fnBase, checkerIgnRegex, plainTextUrl, spPosition;
