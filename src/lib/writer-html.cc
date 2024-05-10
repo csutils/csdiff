@@ -50,10 +50,28 @@ namespace HtmlLib {
     void initHtml(std::ostream &str, std::string title) {
         escapeText(title);
 
-        str << "<!DOCTYPE html>\n\
-<html>\n\
-<head><title>" << title << "</title></head>\n\
-<body style='background: white;'>\n<h1>" << title << "</h1>\n";
+        str << R"(<!DOCTYPE html>
+<html>
+<head>
+    <title>)" << title << R"(</title>
+    <style>
+        body { background-color: white; }
+        pre { white-space: pre-wrap; }
+        .checker { background:#C0FF00; }
+        .ctxLine { color:#000000; }
+        .infoEvent { color:#808080; }
+        .infoEventComment { color:#00C0C0; }
+        .traceEvent { color: #C0C0C0; }
+        .newDefect { color: #00FF00; }
+        .parseWarning { color: #FF0000; }
+        .impFlag { color: #FF0000; font-weight: bold; }
+        #scanProps { font-family: monospace; }
+        .oddRow { background-color: #EEE; }
+        .scanPropName { padding-right: 8px; white-space: nowrap; }
+    </style>
+</head>
+<body>
+<h1>)" << title << "</h1>\n";
     }
 
     void writeLink(
@@ -74,7 +92,7 @@ namespace HtmlLib {
     }
 
     void initPre(std::ostream &str) {
-        str << "<pre style='white-space: pre-wrap;'>\n";
+        str << "<pre>\n";
     }
 
     void finalizePre(std::ostream &str) {
@@ -133,7 +151,7 @@ void writeParseWarnings(std::ostream &str, const TScanProps &props) {
         const int count = boost::lexical_cast<int>(itCount->second);
         const int ratio = boost::lexical_cast<float>(itRatio->second);
         if (ratio < parsingRatioThr)
-            str << "<p><b style='color: #FF0000;'>warning:</b> "
+            str << "<p><b class='parseWarning'>warning:</b> "
                 "low parsing ratio: " << ratio << "%</p>\n";
 
         itCount = props.find("diffbase-cov-compilation-unit-count");
@@ -149,12 +167,12 @@ void writeParseWarnings(std::ostream &str, const TScanProps &props) {
         const int baseCount = boost::lexical_cast<int>(itCount->second);
         const int baseRatio = boost::lexical_cast<float>(itRatio->second);
         if (baseRatio < parsingRatioThr && baseRatio < ratio)
-            str << "<p><b style='color: #FF0000;'>warning:</b> "
+            str << "<p><b class='parseWarning'>warning:</b> "
                 "low parsing ratio in diff base: "
                 << baseRatio << "%</p>\n";
 
         if (!count || 100 * baseCount / count < parsingOldToNewRatioThr)
-            str << "<p><b style='color: #FF0000;'>warning:</b> "
+            str << "<p><b class='parseWarning'>warning:</b> "
                 "low count of parsed units in diff base: "
                 << baseCount << "</p>\n";
     }
@@ -169,16 +187,15 @@ void writeScanProps(std::ostream &str, const TScanProps &props) {
 
     HtmlLib::initSection(str, "Scan Properties");
 
-    str << "<table style='font-family: monospace;'>\n";
+    str << "<table id='scanProps'>\n";
     int i = 0;
 
     for (TScanProps::const_reference item : props) {
-        const char *trStyle = "";
+        const char *trClass = "";
         if (++i & 1)
-            trStyle = " style='background-color: #EEE;'";
+            trClass = " class='oddRow'";
 
-        const char *tdStyle0 = "padding-right: 8px; white-space: nowrap;";
-        str << "<tr" << trStyle << "><td style='" << tdStyle0 << "'>"
+        str << "<tr" << trClass << "><td class='scanPropName'>"
             << item.first << "</td><td>" << item.second << "</td></tr>\n";
     }
 
@@ -445,7 +462,7 @@ void HtmlWriter::Private::writeNewDefWarning(const Defect &def)
         return;
 
     // a newly introduced defect
-    this->str << " <span style='color: #00FF00;'>[<b>warning:</b> "
+    this->str << " <span class='newDefect'>[<b>warning:</b> "
         << this->newDefMsg << "]</span>";
 }
 
@@ -456,7 +473,7 @@ void HtmlWriter::handleDef(const Defect &def)
     // HTML anchor
     d->str << "<a id='def" << ++(d->defCnt) << "'></a>";
 
-    d->str << "<b>Error: <span style='background: #C0FF00;'>"
+    d->str << "<b>Error: <span class='checker'>"
         << HtmlLib::escapeTextInline(def.checker) << "</span>";
 
     const int cwe = def.cwe;
@@ -482,7 +499,7 @@ void HtmlWriter::handleDef(const Defect &def)
 
     if (0 < def.imp) {
         // highlight the "imp" flag
-        d->str << " <span style='color: #FF0000; font-weight: bold;'>"
+        d->str << " <span class='impFlag'>"
             "[important]</span>";
     }
 
@@ -498,13 +515,13 @@ void HtmlWriter::handleDef(const Defect &def)
         switch (evt.verbosityLevel) {
             case 1:
                 if (isComment)
-                    d->str << "<span style='color: #00C0C0;'>";
+                    d->str << "<span class='infoEventComment'>";
                 else
-                    d->str << "<span style='color: #808080;'>";
+                    d->str << "<span class='infoEvent'>";
                 break;
 
             case 2:
-                d->str << "<span style='color: #C0C0C0;'>";
+                d->str << "<span class='traceEvent'>";
                 break;
         }
 
@@ -543,10 +560,10 @@ void HtmlWriter::handleDef(const Defect &def)
         static CtxEventDetector detector;
         const bool isCtxLine = detector.isAnyCtxLine(evt);
         if (isCtxLine) {
-            const char *color = (detector.isKeyCtxLine(evt))
-                ? "000000"
-                : "C0C0C0";
-            d->str << "<span style='color: #" << color << ";'>";
+            const char *styleClass = (detector.isKeyCtxLine(evt))
+                ? "ctxLine"
+                : "traceEvent";
+            d->str << "<span class='" << styleClass << "'>";
         }
 
         // translate message text
