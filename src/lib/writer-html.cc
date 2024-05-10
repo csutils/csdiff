@@ -476,7 +476,7 @@ void HtmlWriter::handleDef(const Defect &def)
     d->writeLinkToDetails(def);
 
     // link to self
-    d->str << " <a href ='#def"
+    d->str << " <a href='#def"
         << d->defCnt << "'>[#def"
         << d->defCnt << "]</a>";
 
