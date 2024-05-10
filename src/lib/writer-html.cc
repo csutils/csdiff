@@ -50,10 +50,8 @@ namespace HtmlLib {
     void initHtml(std::ostream &str, std::string title) {
         escapeText(title);
 
-        str << "<?xml version='1.0' encoding='utf-8'?>\n\
-<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.1//EN' \
-'http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd'>\n\
-<html xmlns='http://www.w3.org/1999/xhtml'>\n\
+        str << "<!DOCTYPE html>\n\
+<html>\n\
 <head><title>" << title << "</title></head>\n\
 <body style='background: white;'>\n<h1>" << title << "</h1>\n";
     }
