@@ -456,7 +456,7 @@ void HtmlWriter::handleDef(const Defect &def)
     d->core.writeHeaderOnce(d->scanProps, d->plainTextUrl);
 
     // HTML anchor
-    d->str << "<a name='def" << ++(d->defCnt) << "'/>";
+    d->str << "<a id='def" << ++(d->defCnt) << "'></a>";
 
     d->str << "<b>Error: <span style='background: #C0FF00;'>"
         << HtmlLib::escapeTextInline(def.checker) << "</span>";
