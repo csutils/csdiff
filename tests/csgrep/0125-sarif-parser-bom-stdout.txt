@@ -1,0 +1,245 @@
+{
+    "scan": {
+        "analyzer-version-snyk-code": "1.0.0"
+    },
+    "defects": [
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 290,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "vendor/krb5-src/krb5/src/lib/krb5/krb/t_princ.c",
+                    "line": 381,
+                    "column": 26,
+                    "h_size": 22,
+                    "event": "note[cpp/WeakGuard]",
+                    "message": "An hardcoded domain name is compared in strcmp. This check could lead to a bypass since the domain name can be spoofed or controlled by an attacker.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 290,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "vendor/krb5-src/krb5/src/wconfig.c",
+                    "line": 140,
+                    "column": 21,
+                    "h_size": 12,
+                    "event": "note[cpp/WeakGuard]",
+                    "message": "An hardcoded domain name is compared in strcmp. This check could lead to a bypass since the domain name can be spoofed or controlled by an attacker.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 290,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "vendor/krb5-src/krb5/src/wconfig.c",
+                    "line": 145,
+                    "column": 21,
+                    "h_size": 13,
+                    "event": "note[cpp/WeakGuard]",
+                    "message": "An hardcoded domain name is compared in strcmp. This check could lead to a bypass since the domain name can be spoofed or controlled by an attacker.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 190,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "vendor/sasl2-sys/sasl2/utils/smtptest.c",
+                    "line": 360,
+                    "column": 3,
+                    "h_size": 4,
+                    "event": "note[cpp/IntegerOverflow/test]",
+                    "message": "Unsanitized input from a file flows into an addition operator (+), where it is used in integer arithmetic. This may result in an integer overflow vulnerability.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 190,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "vendor/krb5-src/krb5/src/tests/asn.1/trval.c",
+                    "line": 161,
+                    "column": 19,
+                    "h_size": 7,
+                    "event": "note[cpp/IntegerOverflow/test]",
+                    "message": "Unsanitized input from a file flows into an addition operator (+), where it is used in integer arithmetic. This may result in an integer overflow vulnerability.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 190,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "vendor/krb5-src/krb5/src/tests/asn.1/trval.c",
+                    "line": 161,
+                    "column": 30,
+                    "h_size": 2,
+                    "event": "note[cpp/IntegerOverflow/test]",
+                    "message": "Unsanitized input from a file flows into an addition operator (+), where it is used in integer arithmetic. This may result in an integer overflow vulnerability.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 190,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "vendor/rdkafka-sys/librdkafka/tests/0098-consumer-txn.cpp",
+                    "line": 307,
+                    "column": 35,
+                    "h_size": 7,
+                    "event": "note[cpp/IntegerOverflow/test]",
+                    "message": "Unsanitized input from a file flows into an addition operator (+), where it is used in integer arithmetic. This may result in an integer overflow vulnerability.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 190,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "vendor/rdkafka-sys/librdkafka/tests/0098-consumer-txn.cpp",
+                    "line": 444,
+                    "column": 7,
+                    "h_size": 29,
+                    "event": "note[cpp/IntegerOverflow/test]",
+                    "message": "Unsanitized input from a file flows into an addition operator (+), where it is used in integer arithmetic. This may result in an integer overflow vulnerability.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 190,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "vendor/lz4-sys/liblz4/tests/abiTest.c",
+                    "line": 81,
+                    "column": 27,
+                    "h_size": 26,
+                    "event": "note[cpp/IntegerOverflow/test]",
+                    "message": "Unsanitized input from a file flows into a subtraction operator (-), where it is used in integer arithmetic. This may result in an integer overflow vulnerability.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 190,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "vendor/krb5-src/krb5/src/tests/asn.1/trval.c",
+                    "line": 126,
+                    "column": 17,
+                    "h_size": 2,
+                    "event": "note[cpp/IntegerOverflow/test]",
+                    "message": "Unsanitized input from a file flows into a subtraction operator (-), where it is used in integer arithmetic. This may result in an integer overflow vulnerability.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 190,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "vendor/krb5-src/krb5/src/tests/asn.1/trval.c",
+                    "line": 128,
+                    "column": 17,
+                    "h_size": 2,
+                    "event": "note[cpp/IntegerOverflow/test]",
+                    "message": "Unsanitized input from a file flows into a subtraction operator (-), where it is used in integer arithmetic. This may result in an integer overflow vulnerability.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 190,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "vendor/krb5-src/krb5/src/tests/asn.1/trval.c",
+                    "line": 130,
+                    "column": 17,
+                    "h_size": 2,
+                    "event": "note[cpp/IntegerOverflow/test]",
+                    "message": "Unsanitized input from a file flows into a subtraction operator (-), where it is used in integer arithmetic. This may result in an integer overflow vulnerability.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 190,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "vendor/openssl-src/openssl/test/confdump.c",
+                    "line": 37,
+                    "column": 25,
+                    "h_size": 10,
+                    "event": "note[cpp/IntegerOverflow/test]",
+                    "message": "Unsanitized input from a command line argument flows into a subtraction operator (-), where it is used in integer arithmetic. This may result in an integer overflow vulnerability.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 190,
+            "tool": "snyk-code",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "vendor/lz4-sys/liblz4/tests/fuzzer.c",
+                    "line": 378,
+                    "column": 95,
+                    "h_size": 9,
+                    "event": "note[cpp/IntegerOverflow/test]",
+                    "message": "Unsanitized input from a command line argument flows into a subtraction operator (-), where it is used in integer arithmetic. This may result in an integer overflow vulnerability.",
+                    "verbosity_level": 0
+                }
+            ]
+        }
+    ]
+}

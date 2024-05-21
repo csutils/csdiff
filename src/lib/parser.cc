@@ -34,7 +34,9 @@ static inline std::unique_ptr<T> make_unique(InStream &input) {
 AbstractParserPtr createParser(InStream &input)
 {
     // skip all white-spaces and sniff the first two chars from the input
-    InStreamLookAhead head(input, 2U, /* skipWhiteSpaces */ true);
+    InStreamLookAhead head(input, 2U,
+            /* skipBOM         */ true,
+            /* skipWhiteSpaces */ true);
 
     switch (head[0]) {
         case '{':

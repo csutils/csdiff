@@ -57,21 +57,37 @@ void InStream::handleError(const std::string &msg, const unsigned long line)
 InStreamLookAhead::InStreamLookAhead(
         InStream               &input,
         const unsigned          size,
+        const bool              skipBOM,
         bool                    skipWhiteSpaces)
 {
     std::istream &inStr = input.str();
 
-    // read `size` chars from input
-    while (buf_.size() < size) {
-        const int c = inStr.get();
-        if (skipWhiteSpaces && isspace(c) && !!inStr)
+    int c = inStr.get();
+    if (skipBOM
+            // try to read BOM ... [0xEF, 0xBB, 0xBF]
+            && (0xEF == c)
+            && (0xBB == (c = inStr.get()))
+            && (0xBF == (c = inStr.get())))
+        // BOM successfully read -> read the next char
+        c = inStr.get();
+
+    // read chars from input
+    for (;;) {
+        if (skipWhiteSpaces && isspace(c))
             // skip a white-space
-            continue;
+            goto next;
 
         // only the leading white-spaces are skipped
         skipWhiteSpaces = false;
 
+        // append one char to the buffer
         buf_.push_back(c);
+        if (size <= buf_.size())
+            // the requested number of chars have been read
+            break;
+next:
+        // read the next char
+        c = inStr.get();
     }
 
     // put the chars back to the input stream

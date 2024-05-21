@@ -62,7 +62,8 @@ class InStreamLookAhead {
         InStreamLookAhead(
                 InStream       &input,
                 unsigned        size,
-                bool            skipWhiteSpaces = false);
+                bool            skipBOM,
+                bool            skipWhiteSpaces);
 
         char operator[](const unsigned idx) const {
             return buf_.at(idx);
