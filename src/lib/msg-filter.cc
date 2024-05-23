@@ -65,15 +65,6 @@ struct MsgFilter::Private {
     TMsgReplaceList repList;
     TSubstMap fileSubsts;
 
-    const std::string strKrn = "^[a-zA-Z+]+";
-    const RE reKrn = RE(strKrn + /* convert el8_9 -> el8 */ "|_[0-9]+$");
-    const RE reDir = RE("^([^:]*/)");
-    const RE reFile = RE("[^/]+$");
-    const RE rePath = RE("^(?:/builddir/build/BUILD/)?([^/]+)/(.*)(\\.[ly])?$");
-    const RE rePyBuild = RE("^((?:/builddir/build/BUILD/)?[^/]+/)build/lib/(.*)$");
-    const RE reTmpPath = RE("^(/var)?/tmp/(.*)$");
-    const RE reTmpCleaner = RE("(.*)");
-
     void addMsgFilter(
             const std::string          &checker,
             const std::string          &regexp,
@@ -247,10 +238,13 @@ std::string MsgFilter::filterPath(
 {
     std::string path = origPath;
 
+    static const RE reDir("^([^:]*/)");
+
     TSubstMap &substMap = d->fileSubsts;
     if (!substMap.empty()) {
-        std::string base = regexReplaceWrap(origPath, d->reDir, "");
-        std::string dir = regexReplaceWrap(origPath, d->reFile, "");
+        std::string base = regexReplaceWrap(origPath, reDir, "");
+        static const RE reFile("[^/]+$");
+        std::string dir = regexReplaceWrap(origPath, reFile, "");
         if (substMap.find(base) != substMap.end()) {
             const std::string &substWith = substMap[base];
             path = dir + substWith;
@@ -258,27 +252,31 @@ std::string MsgFilter::filterPath(
     }
 
     if (!forceFullPath && d->ignorePath)
-        return regexReplaceWrap(path, d->reDir, "");
+        return regexReplaceWrap(path, reDir, "");
 
-    if (boost::regex_match(path, d->reTmpPath)) {
+    static const RE reTmpPath("^(/var)?/tmp/(.*)$");
+    if (boost::regex_match(path, reTmpPath)) {
         // filter random numbers in names of temporary generated files
-        std::string tmpPath = boost::regex_replace(path, d->reTmpCleaner, "/tmp/tmp.c");
+        static const RE reTmpCleaner("(.*)");
+        std::string tmpPath = boost::regex_replace(path, reTmpCleaner, "/tmp/tmp.c");
         return tmpPath;
     }
 
     // "/usr/src/kernels/4.18.0-552.el8.x86_64+debug/..."
     // -> "/usr/src/kernels/VERSION-RELEASE+debug/..."
-    const RE reKrnUsrSrc("^(/usr/src/kernels/)[^/-]+-[^/-]+((?:\\+debug)?/.*)$");
+    static const RE reKrnUsrSrc("^(/usr/src/kernels/)[^/-]+-[^/-]+((?:\\+debug)?/.*)$");
     path = regexReplaceWrap(path, reKrnUsrSrc, "\\1VERSION-RELEASE\\2");
 
     boost::smatch sm;
-    if (boost::regex_match(path, sm, d->rePyBuild)) {
+    static const RE rePyBuild("^((?:/builddir/build/BUILD/)?[^/]+/)build/lib/(.*)$");
+    if (boost::regex_match(path, sm, rePyBuild)) {
         // %{_builddir}/build/lib/setuptools/glob.py ->
         // %{_builddir}/setuptools/glob.py
         path = sm[1] + sm[2];
     }
 
-    if (!boost::regex_match(path, sm, d->rePath))
+    static const RE rePath("^(?:/builddir/build/BUILD/)?([^/]+)/(.*)(\\.[ly])?$");
+    if (!boost::regex_match(path, sm, rePath))
         // no match
         return path;
 
@@ -286,8 +284,10 @@ std::string MsgFilter::filterPath(
     path = sm[/* core */ 2];
 
     // try to kill the multiple version strings in paths (kernel, OpenLDAP, ...)
-    const std::string ver = boost::regex_replace(nvr, d->reKrn, "");
-    const std::string krnPattern = d->strKrn + ver + "[^/]*/";
+    static const std::string strKrn = "^[a-zA-Z+]+";
+    static const RE reKrn(strKrn + /* convert el8_9 -> el8 */ "|_[0-9]+$");
+    const std::string ver = boost::regex_replace(nvr, reKrn, "");
+    const std::string krnPattern = strKrn + ver + "[^/]*/";
 
 #if DEBUG_SUBST > 2
     std::cerr << "nvr: " << nvr << "\n";
