@@ -254,6 +254,12 @@ std::string MsgFilter::filterPath(
     if (!forceFullPath && d->ignorePath)
         return regexReplaceWrap(path, reDir, "");
 
+    // adapt paths from llvm-17 source tree to match the llvm-19 source tree
+    static const RE reLLVM17("^(llvm-17\\.[^/]*)"
+            "((?:/redhat-linux-build)?)/"
+            "(include|lib|tools|unittests|utils)");
+    path = boost::regex_replace(path, reLLVM17, "\\1/llvm\\2/\\3");
+
     static const RE reTmpPath("^(/var)?/tmp/(.*)$");
     if (boost::regex_match(path, reTmpPath)) {
         // filter random numbers in names of temporary generated files
