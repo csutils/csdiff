@@ -29,3 +29,50 @@ Error: UBSAN_WARNING:
 /lib64/libc.so.6: note: __libc_start_call_main() at 0x7f7851249b49
 /lib64/libc.so.6: note: __libc_start_main_alias_2() at 0x7f7851249c0a
 /home/lukas/csdiff/tests/csgrep/a.out: note: _start() at 0x401064
+
+Error: UBSAN_WARNING:
+/builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:78798:14: runtime error: load of address 0xffffe5ed7a60 with insufficient space for an object of type 'struct MemPage *'
+0xffffe5ed7a60: note: pointer points here
+# 55 55 ff ff  18 cc f8 f0 aa aa 00 00  d8 f4 f8 f0 aa aa 00 00  90 7a ed e5 ff ff 00 00  90 98 e6 c3
+#              ^
+/builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:78798: note: balance_nonroot() at 0xaaaac3eeb080
+/builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:79258: note: balance() at 0xaaaac3eebbe4
+/builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:79713: note: sqlite3BtreeInsert() at 0xaaaac3eee854
+/builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:98386: note: sqlite3VdbeExec() at 0xaaaac3f26af4
+/builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:90778: note: sqlite3Step() at 0xaaaac3f44258
+/builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:90839: note: sqlite3_step() at 0xaaaac3f44258
+/builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:239717: note: fts5DataWrite() at 0xaaaac4178538
+/builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:243173: note: fts5WriteFlushLeaf() at 0xaaaac418c4fc
+/builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:243336: note: fts5WriteAppendPoslistData() at 0xaaaac418ce70
+/builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:243494: note: fts5MergeChunkCallback() at 0xaaaac418ce70
+/builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:242342: note: fts5ChunkIterate() at 0xaaaac4184390
+/builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:243611: note: fts5IndexMergeLevel() at 0xaaaac4196718
+/builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:243733: note: fts5IndexMerge() at 0xaaaac4198a08
+/builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:243769: note: fts5IndexAutomerge() at 0xaaaac4199744
+/builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:244491: note: fts5FlushOneHash() at 0xaaaac4199744
+/builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:244508: note: fts5IndexFlush() at 0xaaaac4199744
+/builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:245168: note: sqlite3Fts5IndexSync() at 0xaaaac41c9340
+/builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:252166: note: sqlite3Fts5StorageSync() at 0xaaaac41c9340
+/builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:250555: note: sqlite3Fts5FlushToDisk() at 0xaaaac41b0684
+/builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:249687: note: fts5SyncMethod() at 0xaaaac41b0684
+/builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:155322: note: sqlite3VtabSync() at 0xaaaac3f0dc64
+/builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:87306: note: vdbeCommit() at 0xaaaac3f0dc64
+/builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:87780: note: sqlite3VdbeHalt() at 0xaaaac3f0dc64
+/builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:93967: note: sqlite3VdbeExec() at 0xaaaac3f322e4
+/builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:90778: note: sqlite3Step() at 0xaaaac3f44258
+/builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:90839: note: sqlite3_step() at 0xaaaac3f44258
+/builddir/build/BUILD/sqlite-src-3450300/src/tclsqlite.c:1703: note: dbEvalStep() at 0xaaaac3e4f83c
+/builddir/build/BUILD/sqlite-src-3450300/src/tclsqlite.c:2834: note: DbObjCmd() at 0xaaaac3e53cf4
+/lib64/libtcl8.6.so: note: TclNRRunCallbacks() at 0xffff97f1f278
+/lib64/libtcl8.6.so: note: () at 0xffff97fb2a10
+/lib64/libtcl8.6.so: note: () at 0xffff97fb672c
+/lib64/libtcl8.6.so: note: TclNRRunCallbacks() at 0xffff97f1f278
+/lib64/libtcl8.6.so: note: () at 0xffff97f414c8
+/lib64/libtcl8.6.so: note: TclNRRunCallbacks() at 0xffff97f1f278
+/lib64/libtcl8.6.so: note: () at 0xffff97f2409c
+/lib64/libtcl8.6.so: note: Tcl_Eval() at 0xffff97f248e8
+/lib64/libtcl8.6.so: note: Tcl_GlobalEval() at 0xffff97f26d20
+/builddir/build/BUILD/sqlite-src-3450300/src/tclsqlite.c:4067: note: main() at 0xaaaac3d212d8
+/lib64/libc.so.6: note: __libc_start_call_main() at 0xffff97450b18
+/lib64/libc.so.6: note: __libc_start_main_alias_1() at 0xffff97450bf8
+/builddir/build/BUILD/sqlite-src-3450300/testfixture: note: _start() at 0xaaaac3d2152c

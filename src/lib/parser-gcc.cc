@@ -106,7 +106,7 @@ class Tokenizer: public ITokenizer {
                 " ([a-z]+): (.*)$")                  /* evt: msg  */;
 
         const RE reUbsanScope_ =
-            RE("^\\s*#\\d+ (0x[[:xdigit:]]+) in ([^ ]+) " /* address, fnc */
+            RE("^\\s*#\\d+ (0x[[:xdigit:]]+) (?:in ([^ ]+))? " /* address, fnc */
                /* file:line OR executable+address */
                "(?:(?<file>[^:]+):(?<line>[0-9]+)|\\((?<file>[^+]+)\\+(?<line>0x[[:xdigit:]]+)\\))"
                /* BuildId */

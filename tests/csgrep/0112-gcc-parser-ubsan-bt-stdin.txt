@@ -28,3 +28,49 @@ test.c:2:23: runtime error: load of null pointer of type 'char'
     #2 0x7f7851249c0a in __libc_start_main_alias_2 (/lib64/libc.so.6+0x27c0a) (BuildId: 245240a31888ad5c11bbc55b18e02d87388f59a9)
     #3 0x401064 in _start (/home/lukas/csdiff/tests/csgrep/a.out+0x401064) (BuildId: 687486336bec7797f956f83fcb24faef18f1365c)
 
+sqlite3.c:78798:14: runtime error: load of address 0xffffe5ed7a60 with insufficient space for an object of type 'struct MemPage *'
+0xffffe5ed7a60: note: pointer points here
+ 55 55 ff ff  18 cc f8 f0 aa aa 00 00  d8 f4 f8 f0 aa aa 00 00  90 7a ed e5 ff ff 00 00  90 98 e6 c3
+              ^
+    #0 0xaaaac3eeb080 in balance_nonroot /builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:78798
+    #1 0xaaaac3eebbe4 in balance /builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:79258
+    #2 0xaaaac3eee854 in sqlite3BtreeInsert /builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:79713
+    #3 0xaaaac3f26af4 in sqlite3VdbeExec /builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:98386
+    #4 0xaaaac3f44258 in sqlite3Step /builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:90778
+    #5 0xaaaac3f44258 in sqlite3_step /builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:90839
+    #6 0xaaaac4178538 in fts5DataWrite /builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:239717
+    #7 0xaaaac418c4fc in fts5WriteFlushLeaf /builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:243173
+    #8 0xaaaac418ce70 in fts5WriteAppendPoslistData /builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:243336
+    #9 0xaaaac418ce70 in fts5MergeChunkCallback /builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:243494
+    #10 0xaaaac4184390 in fts5ChunkIterate /builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:242342
+    #11 0xaaaac4196718 in fts5IndexMergeLevel /builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:243611
+    #12 0xaaaac4198a08 in fts5IndexMerge /builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:243733
+    #13 0xaaaac4199744 in fts5IndexAutomerge /builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:243769
+    #14 0xaaaac4199744 in fts5FlushOneHash /builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:244491
+    #15 0xaaaac4199744 in fts5IndexFlush /builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:244508
+    #16 0xaaaac41c9340 in sqlite3Fts5IndexSync /builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:245168
+    #17 0xaaaac41c9340 in sqlite3Fts5StorageSync /builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:252166
+    #18 0xaaaac41b0684 in sqlite3Fts5FlushToDisk /builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:250555
+    #19 0xaaaac41b0684 in fts5SyncMethod /builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:249687
+    #20 0xaaaac3f0dc64 in sqlite3VtabSync /builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:155322
+    #21 0xaaaac3f0dc64 in vdbeCommit /builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:87306
+    #22 0xaaaac3f0dc64 in sqlite3VdbeHalt /builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:87780
+    #23 0xaaaac3f322e4 in sqlite3VdbeExec /builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:93967
+    #24 0xaaaac3f44258 in sqlite3Step /builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:90778
+    #25 0xaaaac3f44258 in sqlite3_step /builddir/build/BUILD/sqlite-src-3450300/sqlite3.c:90839
+    #26 0xaaaac3e4f83c in dbEvalStep /builddir/build/BUILD/sqlite-src-3450300/src/tclsqlite.c:1703
+    #27 0xaaaac3e53cf4 in DbObjCmd /builddir/build/BUILD/sqlite-src-3450300/src/tclsqlite.c:2834
+    #28 0xffff97f1f278 in TclNRRunCallbacks (/lib64/libtcl8.6.so+0x3f278) (BuildId: 6681f6d2989dff0182ead7761158953094731212)
+    #29 0xffff97fb2a10  (/lib64/libtcl8.6.so+0xd2a10) (BuildId: 6681f6d2989dff0182ead7761158953094731212)
+    #30 0xffff97fb672c  (/lib64/libtcl8.6.so+0xd672c) (BuildId: 6681f6d2989dff0182ead7761158953094731212)
+    #31 0xffff97f1f278 in TclNRRunCallbacks (/lib64/libtcl8.6.so+0x3f278) (BuildId: 6681f6d2989dff0182ead7761158953094731212)
+    #32 0xffff97f414c8  (/lib64/libtcl8.6.so+0x614c8) (BuildId: 6681f6d2989dff0182ead7761158953094731212)
+    #33 0xffff97f1f278 in TclNRRunCallbacks (/lib64/libtcl8.6.so+0x3f278) (BuildId: 6681f6d2989dff0182ead7761158953094731212)
+    #34 0xffff97f2409c  (/lib64/libtcl8.6.so+0x4409c) (BuildId: 6681f6d2989dff0182ead7761158953094731212)
+    #35 0xffff97f248e8 in Tcl_Eval (/lib64/libtcl8.6.so+0x448e8) (BuildId: 6681f6d2989dff0182ead7761158953094731212)
+    #36 0xffff97f26d20 in Tcl_GlobalEval (/lib64/libtcl8.6.so+0x46d20) (BuildId: 6681f6d2989dff0182ead7761158953094731212)
+    #37 0xaaaac3d212d8 in main /builddir/build/BUILD/sqlite-src-3450300/src/tclsqlite.c:4067
+    #38 0xffff97450b18 in __libc_start_call_main (/lib64/libc.so.6+0x30b18) (BuildId: 3f82f45ee0e1b19906cd2d3fd296899ac039e47d)
+    #39 0xffff97450bf8 in __libc_start_main_alias_1 (/lib64/libc.so.6+0x30bf8) (BuildId: 3f82f45ee0e1b19906cd2d3fd296899ac039e47d)
+    #40 0xaaaac3d2152c in _start (/builddir/build/BUILD/sqlite-src-3450300/testfixture+0x3d152c) (BuildId: b4a4d7d64793b93a2a7cb13668ce679845aba51b)
+
