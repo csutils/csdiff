@@ -281,6 +281,9 @@ void RateLimitter::flush()
         evtErr.event = "error[too-many]";
         evtErr.msg = err.str();
 
+        // drop location from the key event to ease finding deduplication
+        evtErr.clearLoc();
+
         // construct a note event
         note << (cnt - d->rateLimit) << " occurrences of "
             << evtNote.event << " were discarded because of this";

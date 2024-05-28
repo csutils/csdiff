@@ -1880,9 +1880,8 @@
             "key_event_idx": 0,
             "events": [
                 {
-                    "file_name": "./doc/example/compiler-etc-dependencies/example-sessions/ompi-defaults.sh",
-                    "line": 3,
-                    "column": 8,
+                    "file_name": "",
+                    "line": 0,
                     "event": "error[too-many]",
                     "message": "115 occurrences of note[SC2086] exceeded the specified limit 16",
                     "verbosity_level": 0
@@ -1905,9 +1904,8 @@
             "key_event_idx": 0,
             "events": [
                 {
-                    "file_name": "./init/bash_completion.in",
-                    "line": 128,
-                    "column": 37,
+                    "file_name": "",
+                    "line": 0,
                     "event": "error[too-many]",
                     "message": "29 occurrences of warning[SC2207] exceeded the specified limit 16",
                     "verbosity_level": 0

@@ -65,6 +65,15 @@ struct DefEvent {
         event(event)
     {
     }
+
+    void clearLoc()
+    {
+        this->fileName.clear();
+        this->line = 0;
+        this->column = 0;
+        this->hSize = 0;
+        this->vSize = 0;
+    }
 };
 
 ///< return (end - beg) if it is positive and fits into target type, 0 otherwise

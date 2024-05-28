@@ -28,8 +28,8 @@
             "key_event_idx": 0,
             "events": [
                 {
-                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
-                    "line": 4988,
+                    "file_name": "",
+                    "line": 0,
                     "event": "error[too-many]",
                     "message": "1 occurrences of var_deref_model exceeded the specified limit 1",
                     "verbosity_level": 0
@@ -52,8 +52,8 @@
             "key_event_idx": 0,
             "events": [
                 {
-                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
-                    "line": 5058,
+                    "file_name": "",
+                    "line": 0,
                     "event": "error[too-many]",
                     "message": "3 occurrences of var_deref_op exceeded the specified limit 1",
                     "verbosity_level": 0
@@ -77,8 +77,8 @@
             "key_event_idx": 0,
             "events": [
                 {
-                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
-                    "line": 4600,
+                    "file_name": "",
+                    "line": 0,
                     "event": "error[too-many]",
                     "message": "2 occurrences of alloc_strlen exceeded the specified limit 1",
                     "verbosity_level": 0
@@ -102,8 +102,8 @@
             "key_event_idx": 0,
             "events": [
                 {
-                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
-                    "line": 3811,
+                    "file_name": "",
+                    "line": 0,
                     "event": "error[too-many]",
                     "message": "1 occurrences of leaked_handle exceeded the specified limit 1",
                     "verbosity_level": 0
@@ -127,8 +127,8 @@
             "key_event_idx": 0,
             "events": [
                 {
-                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
-                    "line": 4786,
+                    "file_name": "",
+                    "line": 0,
                     "event": "error[too-many]",
                     "message": "2 occurrences of leaked_storage exceeded the specified limit 1",
                     "verbosity_level": 0
@@ -151,8 +151,8 @@
             "key_event_idx": 0,
             "events": [
                 {
-                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
-                    "line": 402,
+                    "file_name": "",
+                    "line": 0,
                     "event": "error[too-many]",
                     "message": "1 occurrences of fs_check_call exceeded the specified limit 1",
                     "verbosity_level": 0
@@ -176,8 +176,8 @@
             "key_event_idx": 0,
             "events": [
                 {
-                    "file_name": "/builddir/build/BUILD/units-2.22/units.c",
-                    "line": 550,
+                    "file_name": "",
+                    "line": 0,
                     "event": "error[too-many]",
                     "message": "1 occurrences of uninit_use_in_call exceeded the specified limit 1",
                     "verbosity_level": 0
