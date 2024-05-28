@@ -189,16 +189,18 @@ EToken ErrFileLexer::readNext()
         return T_UNKNOWN;
     }
 
-    // read file name, event, and msg
-    evt_.fileName   = sm[/* file  */ 1];
-    evt_.event      = sm[/* event */ 4];
-    evt_.msg        = sm[/* msg   */ 5];
+    // read file name
+    evt_.fileName = sm[/* file */ 1];
+    if (evt_.fileName == "<unknown>")
+        evt_.fileName.clear();
 
-    // parse line number
+    // parse line/col
     evt_.line = parseInt(sm[/* line */ 2]);
-
-    // parse column number
     evt_.column = parseInt(sm[/* col */ 3]);
+
+    // read event and msg
+    evt_.event = sm[/* event */ 4];
+    evt_.msg = sm[/* msg */ 5];
 
     return T_EVENT;
 }
