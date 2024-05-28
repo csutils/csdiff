@@ -65,16 +65,8 @@ void CovWriter::handleDef(const Defect &def)
         if (!isKeyEvt)
             str << d->cw.setColor(C_DARK_GRAY);
 
-        if (!evt.fileName.empty())
-            str << evt.fileName << ":";
-        
-        if (0 < evt.line)
-            str << evt.line << ":";
-
-        if (0 < evt.column)
-            str << evt.column << ":";
-
         if (evt.event == "#") {
+            // comment --> ignore location info
             str << d->cw.setColor(C_LIGHT_CYAN) << "#";
 
             static CtxEventDetector detector;
@@ -86,6 +78,20 @@ void CovWriter::handleDef(const Defect &def)
             }
         }
         else {
+            // write file name
+            std::string fn = evt.fileName;
+            if (fn.empty())
+                fn = "<unknown>";
+            str << fn << ":";
+        
+            // write line/col
+            if (0 < evt.line) {
+                str << evt.line << ":";
+                if (0 < evt.column)
+                    str << evt.column << ":";
+            }
+
+            // write event
             str << " ";
             if (!evt.event.empty())
                 str << d->cw.setColorIf(isKeyEvt, C_WHITE) << evt.event
