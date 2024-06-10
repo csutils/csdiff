@@ -1,0 +1,26 @@
+{
+    "defects": [
+        {
+            "checker": "SIGMA.container_requesting_net_raw",
+            "cwe": 269,
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "unpacked_remote_sources/cachito-gomod-with-deps/app/vertical-pod-autoscaler/hack/e2e/k8s-metrics-server.yaml",
+                    "line": 184,
+                    "event": "Sigma main event",
+                    "message": "The Kubernetes container requests the `NET_RAW` capability, either explicitly or by default, granting access to the host's network interfaces.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "unpacked_remote_sources/cachito-gomod-with-deps/app/vertical-pod-autoscaler/hack/e2e/k8s-metrics-server.yaml",
+                    "line": 184,
+                    "event": "remediation",
+                    "message": "Explicitly remove the `NET_RAW` capability for a container by adding either `NET_RAW` or `ALL` to the `securityContext.capabilities.drop` list, avoid adding the `NET_RAW` capability to the `securityContext.capabilities.add` list.",
+                    "verbosity_level": 1
+                }
+            ]
+        }
+    ]
+}

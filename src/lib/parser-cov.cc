@@ -32,7 +32,7 @@
 #include <boost/algorithm/string.hpp>
 
 #define RE_CHECKER_LINE_ANNOT " *\\([^)]+\\)"
-#define RE_CHECKER_LINE_SUFFIX "(?: \\[#def[0-9]+\\])?"
+#define RE_CHECKER_LINE_SUFFIX "(?: \\[#def[0-9]+\\])?(?: \\[important\\])?"
 
 namespace CovParserImpl {
 

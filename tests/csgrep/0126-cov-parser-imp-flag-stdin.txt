@@ -1,0 +1,3 @@
+Error: SIGMA.container_requesting_net_raw (CWE-269): [#def1] [important]
+unpacked_remote_sources/cachito-gomod-with-deps/app/vertical-pod-autoscaler/hack/e2e/k8s-metrics-server.yaml:184: Sigma main event: The Kubernetes container requests the `NET_RAW` capability, either explicitly or by default, granting access to the host's network interfaces.
+unpacked_remote_sources/cachito-gomod-with-deps/app/vertical-pod-autoscaler/hack/e2e/k8s-metrics-server.yaml:184: remediation: Explicitly remove the `NET_RAW` capability for a container by adding either `NET_RAW` or `ALL` to the `securityContext.capabilities.drop` list, avoid adding the `NET_RAW` capability to the `securityContext.capabilities.add` list.
