@@ -31,6 +31,9 @@
 
 #include <boost/algorithm/string.hpp>
 
+#define RE_CHECKER_LINE_ANNOT " *\\([^)]+\\)"
+#define RE_CHECKER_LINE_SUFFIX "(?: \\[#def[0-9]+\\])?"
+
 namespace CovParserImpl {
 
 class LineReader {
@@ -147,8 +150,10 @@ class ErrFileLexer {
         const RE reComment_ =
             RE("^(#)(.*)$");
 
-        const RE reChecker_ =
-            RE("^Error: *(" RE_CHECKER_NAME ")( *\\([^)]+\\))? *:(?: \\[#def[0-9]+\\])?$");
+        const RE reChecker_ = RE(
+                "^Error: *(" RE_CHECKER_NAME ")"
+                "(" RE_CHECKER_LINE_ANNOT ")? *:"
+                RE_CHECKER_LINE_SUFFIX "$");
 
         const RE reEvent_ =
             RE(/* location */ "^(" RE_PATH ")(?::([0-9]+|<[Uu]nknown>))?(?::([0-9]+))?"
