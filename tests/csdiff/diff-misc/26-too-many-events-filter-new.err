@@ -1,0 +1,15 @@
+Error: SNYK_CODE_WARNING (CWE-190):
+<unknown>: error[too-many]: 1573 occurrences of warning[cpp/IntegerOverflow] exceeded the specified limit 1024
+sqlite-src-3260000/tsrc/testfile3.c:1304:5: note: 573 occurrences of warning[cpp/IntegerOverflow] were discarded because of this
+
+Error: SNYK_CODE_WARNING (CWE-190):
+<unknown>: error[memleak]: 1573 occurrences of warning[cpp/memleak] exceeded the specified limit 1024
+sqlite-src-3260000/tsrc/testfile3.c:1304:5: note: 573 occurrences of warning[cpp/IntegerOverflow] were discarded because of this
+
+Error: SNYK_CODE_WARNING (CWE-89):
+sqlite-src-3260000/tool/speedtest8.c:219:11: error[cpp/Sqli]: Unsanitized input from a file flows into sqlite3_prepare_v2, where it is used in an SQL query. This may result in an SQL injection vulnerability.
+#  217|             nStmt++;
+#  218|             nByte += n;
+#  219|->           prepareAndRun(db, &zSql[i], bQuiet);
+#  220|           }
+#  221|           zSql[j] = ';';

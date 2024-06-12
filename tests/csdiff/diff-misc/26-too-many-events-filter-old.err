@@ -1,0 +1,7 @@
+Error: SNYK_CODE_WARNING (CWE-190):
+<unknown>: error[too-many]: 1573 occurrences of warning[cpp/IntegerOverflow] exceeded the specified limit 1024
+sqlite-src-3260000/tsrc/fts3.c:1304:5: note: 573 occurrences of warning[cpp/IntegerOverflow] were discarded because of this
+
+Error: SNYK_CODE_WARNING (CWE-190):
+<unknown>: error[memleak]: 15173 occurrences of warning[cpp/memleak] exceeded the specified limit 102123
+sqlite-src-3260000/tsrc/testfile3.c:1304:5: note: 573 occurrences of warning[cpp/IntegerOverflow] were discarded because of this

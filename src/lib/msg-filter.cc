@@ -78,6 +78,11 @@ MsgFilter::MsgFilter():
     d(new Private)
 {
     d->addMsgFilter("", "[0-9][0-9]* out of [0-9][0-9]* times");
+
+    // abstract out the number of occurrences and rate limit in error[too-many] findings
+    d->addMsgFilter("", "^[0-9]+ (occurrences of warning\\[.*\\] exceeded the specified limit) [0-9]+$",
+            "NNNN \\1 NNNN");
+
     d->addMsgFilter("UNUSED_VALUE",
             "\\(instance [0-9]+\\)");
     d->addMsgFilter("STRING_OVERFLOW",

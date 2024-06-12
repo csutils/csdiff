@@ -1,0 +1,7 @@
+Error: SNYK_CODE_WARNING (CWE-89):
+sqlite-src-3260000/tool/speedtest8.c:219:11: error[cpp/Sqli]: Unsanitized input from a file flows into sqlite3_prepare_v2, where it is used in an SQL query. This may result in an SQL injection vulnerability.
+#  217|             nStmt++;
+#  218|             nByte += n;
+#  219|->           prepareAndRun(db, &zSql[i], bQuiet);
+#  220|           }
+#  221|           zSql[j] = ';';
