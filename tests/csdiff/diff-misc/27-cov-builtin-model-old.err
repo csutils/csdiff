@@ -1,0 +1,23 @@
+Error: FORWARD_NULL (CWE-476):
+kernel-999/arch/x86/boot/compressed/kaslr.c:266:2: path: Condition "!args", taking false branch.
+kernel-999/arch/x86/boot/compressed/kaslr.c:271:2: path: Condition "!tmp_cmdline", taking false branch.
+kernel-999/arch/x86/boot/compressed/kaslr.c:281:2: path: Condition "*args", taking true branch.
+kernel-999/arch/x86/boot/compressed/kaslr.c:284:3: path: Condition "!val", taking false branch.
+kernel-999/arch/x86/boot/compressed/kaslr.c:287:3: path: Condition "!strcmp(param, "memmap")", taking true branch.
+kernel-999/arch/x86/boot/compressed/kaslr.c:289:3: path: Falling through to end of if statement.
+kernel-999/arch/x86/boot/compressed/kaslr.c:305:2: path: Jumping back to the beginning of the loop.
+kernel-999/arch/x86/boot/compressed/kaslr.c:281:2: path: Condition "*args", taking true branch.
+kernel-999/arch/x86/boot/compressed/kaslr.c:284:3: path: Condition "!val", taking true branch.
+kernel-999/arch/x86/boot/compressed/kaslr.c:284:3: var_compare_op: Comparing "val" to null implies that "val" might be null.
+kernel-999/arch/x86/boot/compressed/kaslr.c:284:3: path: Condition "strcmp(param, "--") == 0", taking false branch.
+kernel-999/arch/x86/boot/compressed/kaslr.c:287:3: path: Condition "!strcmp(param, "memmap")", taking false branch.
+kernel-999/arch/x86/boot/compressed/kaslr.c:289:10: path: Condition "1", taking true branch.
+kernel-999/arch/x86/boot/compressed/kaslr.c:289:10: path: Condition "strstr(param, "hugepages")", taking false branch.
+kernel-999/arch/x86/boot/compressed/kaslr.c:291:10: path: Condition "!strcmp(param, "mem")", taking true branch.
+kernel-999/arch/x86/boot/compressed/kaslr.c:292:4: alias_transfer: Assigning: "p" = "val".
+kernel-999/arch/x86/boot/compressed/kaslr.c:294:4: var_deref_model: Passing null pointer "p" to "strcmp", which dereferences it.
+#  292|                         char *p = val;
+#  293|   
+#  294|->                       if (!strcmp(p, "nopentium"))
+#  295|                                 continue;
+#  296|                         mem_size = memparse(p, &p);

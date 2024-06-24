@@ -83,10 +83,12 @@ MsgFilter::MsgFilter():
     d->addMsgFilter("", "^[0-9]+ (occurrences of warning\\[.*\\] exceeded the specified limit) [0-9]+$",
             "NNNN \\1 NNNN");
 
-    d->addMsgFilter("UNUSED_VALUE",
-            "\\(instance [0-9]+\\)");
-    d->addMsgFilter("STRING_OVERFLOW",
-            "You might overrun the [0-9][0-9]* byte");
+    // whether a builtin model was used or not is insignificant for matching the finding
+    d->addMsgFilter("", " \\[Note: The source code implementation of the function has been overridden by a builtin model.\\]$");
+
+    d->addMsgFilter("UNUSED_VALUE", "\\(instance [0-9]+\\)");
+    d->addMsgFilter("STRING_OVERFLOW", "You might overrun the [0-9][0-9]* byte");
+
     // ignore changes in parameters -> it is still the same UNUSED_VALUE
     d->addMsgFilter("UNUSED_VALUE",
             "returned by \"([^\\(]+)\\(.*\\)\"",
