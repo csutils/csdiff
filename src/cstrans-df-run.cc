@@ -50,16 +50,19 @@ class DockerFileTransformer {
         const bool          verbose_;           ///< --verbose on cmd-line
         int                 lineNum_;           ///< line number being read
 
-        bool transformRunLine(std::string *);
+        void transformRunLine(std::string *);
 
         /// match ... in RUN ...
         const RE reLineRun_     = RE("^RUN (.*)$");
 
-        /// match ... in RUN [...]
-        const RE reLineRunExec_ = RE("^RUN  *\\[(.*)\\] *$");
-
         /// match ... in ... BS-NL
         const RE reLineCont_    = RE("(^.*[^\\\\])\\\\ *$");
+
+        // split RUN directive with options from the actual command
+        const RE reLineRunOpts_ = RE("^(RUN +(?:--[A-Za-z0-9_]+=[^ ]+ +)*)(.*)$");
+
+        /// match ... in RUN [...]
+        const RE reLineRunExec_ = RE("^\\[(.*)\\] *$");
 
         /// match in-line comments
         const RE reComment_     = RE("^\\s*#.*$");
@@ -148,10 +151,10 @@ std::string runQuoteArg(std::string arg)
     return arg;
 }
 
-std::string runLineFromExecList(const TStringList &execList)
+std::string runCmdFromExecList(const TStringList &execList)
 {
     // construct RUN ["cmd", "arg1", "arg2", ...] from execList
-    std::string runLine = "RUN [";
+    std::string runLine = "[";
     int i = 0;
     for (const std::string &arg : execList) {
         if (i++)
@@ -163,32 +166,28 @@ std::string runLineFromExecList(const TStringList &execList)
     return runLine;
 }
 
-bool DockerFileTransformer::transformRunLine(std::string *pRunLine)
+void DockerFileTransformer::transformRunLine(std::string *pRunLine)
 {
+    // split RUN directive with options from the actual command
+    boost::smatch sm;
+    if (!boost::regex_match(*pRunLine, sm, reLineRunOpts_))
+        // should never happen
+        throw std::runtime_error("internal error");
+
+    std::string newRunLine = sm[1];
+    const std::string cmd = sm[2];
+
     // start with the prefix specified on cmd-line
     TStringList execList = prefixCmd_;
 
-    try {
-        boost::smatch sm;
-        if (boost::regex_match(*pRunLine, sm, reLineRunExec_))
-            // RUN ["cmd", "arg1", "arg2", ...]
-            appendExecArgs(&execList, sm[1]);
+    if (boost::regex_match(cmd, sm, reLineRunExec_))
+        // ["cmd", "arg1", "arg2", ...]
+        appendExecArgs(&execList, sm[1]);
+    else
+        // arbitrary shell code...
+        appendShellExec(&execList, cmd);
 
-        else if (boost::regex_match(*pRunLine, sm, reLineRun_))
-            // RUN arbitrary shell code...
-            appendShellExec(&execList, sm[1]);
-
-        else
-            // should never happen
-            throw std::runtime_error("internal error");
-    }
-    catch (const std::runtime_error &e) {
-        std::cerr << prog_name << "error: parsing error on line "
-            << lineNum_ << ": " << e.what() << std::endl;
-        return false;
-    }
-
-    const std::string newRunLine = runLineFromExecList(execList);
+    newRunLine += runCmdFromExecList(execList);
     if (verbose_) {
         // diagnostic output printed with --verbose
         std::cerr << prog_name << " <<< " << *pRunLine << std::endl;
@@ -197,7 +196,6 @@ bool DockerFileTransformer::transformRunLine(std::string *pRunLine)
 
     // return the result of a successful transformation
     *pRunLine = newRunLine;
-    return true;
 }
 
 bool DockerFileTransformer::transform(std::istream &in, std::ostream &out)
@@ -237,8 +235,14 @@ bool DockerFileTransformer::transform(std::istream &in, std::ostream &out)
             continue;
 
         // transform the linearized RUN line
-        if (!this->transformRunLine(&runLine))
+        try {
+            this->transformRunLine(&runLine);
+        }
+        catch (const std::runtime_error &e) {
+            std::cerr << prog_name << "error: parsing error on line "
+                << lineNum_ << ": " << e.what() << std::endl;
             anyError = true;
+        }
 
         // write the transformed RUN line and update state
         out << runLine << std::endl;
