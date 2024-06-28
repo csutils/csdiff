@@ -50,7 +50,7 @@ class DockerFileTransformer {
         const bool          verbose_;           ///< --verbose on cmd-line
         int                 lineNum_;           ///< line number being read
 
-        bool transformRunLine(std::string *);
+        void transformRunLine(std::string *);
 
         /// match ... in RUN ...
         const RE reLineRun_     = RE("^RUN (.*)$");
@@ -163,30 +163,23 @@ std::string runLineFromExecList(const TStringList &execList)
     return runLine;
 }
 
-bool DockerFileTransformer::transformRunLine(std::string *pRunLine)
+void DockerFileTransformer::transformRunLine(std::string *pRunLine)
 {
     // start with the prefix specified on cmd-line
     TStringList execList = prefixCmd_;
 
-    try {
-        boost::smatch sm;
-        if (boost::regex_match(*pRunLine, sm, reLineRunExec_))
-            // RUN ["cmd", "arg1", "arg2", ...]
-            appendExecArgs(&execList, sm[1]);
+    boost::smatch sm;
+    if (boost::regex_match(*pRunLine, sm, reLineRunExec_))
+        // RUN ["cmd", "arg1", "arg2", ...]
+        appendExecArgs(&execList, sm[1]);
 
-        else if (boost::regex_match(*pRunLine, sm, reLineRun_))
-            // RUN arbitrary shell code...
-            appendShellExec(&execList, sm[1]);
+    else if (boost::regex_match(*pRunLine, sm, reLineRun_))
+        // RUN arbitrary shell code...
+        appendShellExec(&execList, sm[1]);
 
-        else
-            // should never happen
-            throw std::runtime_error("internal error");
-    }
-    catch (const std::runtime_error &e) {
-        std::cerr << prog_name << "error: parsing error on line "
-            << lineNum_ << ": " << e.what() << std::endl;
-        return false;
-    }
+    else
+        // should never happen
+        throw std::runtime_error("internal error");
 
     const std::string newRunLine = runLineFromExecList(execList);
     if (verbose_) {
@@ -197,7 +190,6 @@ bool DockerFileTransformer::transformRunLine(std::string *pRunLine)
 
     // return the result of a successful transformation
     *pRunLine = newRunLine;
-    return true;
 }
 
 bool DockerFileTransformer::transform(std::istream &in, std::ostream &out)
@@ -237,8 +229,14 @@ bool DockerFileTransformer::transform(std::istream &in, std::ostream &out)
             continue;
 
         // transform the linearized RUN line
-        if (!this->transformRunLine(&runLine))
+        try {
+            this->transformRunLine(&runLine);
+        }
+        catch (const std::runtime_error &e) {
+            std::cerr << prog_name << "error: parsing error on line "
+                << lineNum_ << ": " << e.what() << std::endl;
             anyError = true;
+        }
 
         // write the transformed RUN line and update state
         out << runLine << std::endl;
