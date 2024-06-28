@@ -1,0 +1,38 @@
+## Python cuda base #################################################################
+FROM cuda-base AS python-cuda-base
+
+ENV VIRTUAL_ENV=/opt/vllm
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+
+# install cuda and common dependencies
+RUN --mount=type=cache,target=/root/.cache/pip \
+    --mount=type=bind,source=requirements-common.txt,target=requirements-common.txt \
+    --mount=type=bind,source=requirements-cuda.txt,target=requirements-cuda.txt \
+    pip install \
+        -r requirements-cuda.txt
+
+## Development #################################################################
+FROM python-cuda-base AS dev
+
+# install build and runtime dependencies
+RUN --mount=type=cache,target=/root/.cache/pip \
+    --mount=type=bind,source=requirements-common.txt,target=requirements-common.txt \
+    --mount=type=bind,source=requirements-cuda.txt,target=requirements-cuda.txt \
+    --mount=type=bind,source=requirements-dev.txt,target=requirements-dev.txt \
+    --mount=type=bind,source=requirements-lint.txt,target=requirements-lint.txt \
+    --mount=type=bind,source=requirements-test.txt,target=requirements-test.txt \
+    pip3 install \
+        -r requirements-cuda.txt \
+        -r requirements-dev.txt
+
+## Builder #####################################################################
+FROM dev AS build
+
+# install build dependencies
+RUN --mount=type=cache,target=/root/.cache/pip \
+    --mount=type=bind,source=requirements-build.txt,target=requirements-build.txt \
+    pip install -r requirements-build.txt
+
+# install compiler cache to speed up compilation leveraging local or remote caching
+# git is required for the cutlass kernels
+RUN rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm && rpm -ql epel-release && microdnf install -y git ccache && microdnf clean all

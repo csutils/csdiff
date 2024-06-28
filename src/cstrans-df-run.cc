@@ -55,11 +55,14 @@ class DockerFileTransformer {
         /// match ... in RUN ...
         const RE reLineRun_     = RE("^RUN (.*)$");
 
-        /// match ... in RUN [...]
-        const RE reLineRunExec_ = RE("^RUN  *\\[(.*)\\] *$");
-
         /// match ... in ... BS-NL
         const RE reLineCont_    = RE("(^.*[^\\\\])\\\\ *$");
+
+        // split RUN directive with options from the actual command
+        const RE reLineRunOpts_ = RE("^(RUN +(?:--[A-Za-z0-9_]+=[^ ]+ +)*)(.*)$");
+
+        /// match ... in RUN [...]
+        const RE reLineRunExec_ = RE("^\\[(.*)\\] *$");
 
         /// match in-line comments
         const RE reComment_     = RE("^\\s*#.*$");
@@ -148,10 +151,10 @@ std::string runQuoteArg(std::string arg)
     return arg;
 }
 
-std::string runLineFromExecList(const TStringList &execList)
+std::string runCmdFromExecList(const TStringList &execList)
 {
     // construct RUN ["cmd", "arg1", "arg2", ...] from execList
-    std::string runLine = "RUN [";
+    std::string runLine = "[";
     int i = 0;
     for (const std::string &arg : execList) {
         if (i++)
@@ -165,23 +168,26 @@ std::string runLineFromExecList(const TStringList &execList)
 
 void DockerFileTransformer::transformRunLine(std::string *pRunLine)
 {
-    // start with the prefix specified on cmd-line
-    TStringList execList = prefixCmd_;
-
+    // split RUN directive with options from the actual command
     boost::smatch sm;
-    if (boost::regex_match(*pRunLine, sm, reLineRunExec_))
-        // RUN ["cmd", "arg1", "arg2", ...]
-        appendExecArgs(&execList, sm[1]);
-
-    else if (boost::regex_match(*pRunLine, sm, reLineRun_))
-        // RUN arbitrary shell code...
-        appendShellExec(&execList, sm[1]);
-
-    else
+    if (!boost::regex_match(*pRunLine, sm, reLineRunOpts_))
         // should never happen
         throw std::runtime_error("internal error");
 
-    const std::string newRunLine = runLineFromExecList(execList);
+    std::string newRunLine = sm[1];
+    const std::string cmd = sm[2];
+
+    // start with the prefix specified on cmd-line
+    TStringList execList = prefixCmd_;
+
+    if (boost::regex_match(cmd, sm, reLineRunExec_))
+        // ["cmd", "arg1", "arg2", ...]
+        appendExecArgs(&execList, sm[1]);
+    else
+        // arbitrary shell code...
+        appendShellExec(&execList, cmd);
+
+    newRunLine += runCmdFromExecList(execList);
     if (verbose_) {
         // diagnostic output printed with --verbose
         std::cerr << prog_name << " <<< " << *pRunLine << std::endl;
