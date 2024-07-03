@@ -195,7 +195,7 @@ void DockerFileTransformer::transformRunLine(std::string *pRunLine)
     }
 
     // return the result of a successful transformation
-    *pRunLine = newRunLine;
+    *pRunLine = std::move(newRunLine);
 }
 
 bool DockerFileTransformer::transform(std::istream &in, std::ostream &out)
