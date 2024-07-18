@@ -1,0 +1,270 @@
+Error: CPPCHECK_WARNING:
+units-2.22/getopt.c: information[normalCheckLevelMaxBranches]: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.
+
+Error: CPPCHECK_WARNING:
+units-2.22/parse.tab.c: information[normalCheckLevelMaxBranches]: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.
+
+Error: GCC_ANALYZER_WARNING (CWE-457):
+units-2.22/parse.tab.c: scope_hint: In function ‘unitsparse’
+units-2.22/parse.tab.c:600:7: warning[-Wanalyzer-use-of-uninitialized-value]: use of uninitialized value ‘yyss’
+units-2.22/parse.tab.c:585:9: note: in expansion of macro ‘YYCOPY’
+units-2.22/parse.tab.c:1445:9: note: in expansion of macro ‘YYSTACK_RELOCATE’
+units-2.22/parse.y:534:7: note: in expansion of macro ‘yyparse’
+units-2.22/parse.tab.c:1312:1: note: in expansion of macro ‘yyparse’
+units-2.22/parse.tab.c:585:9: note: in expansion of macro ‘YYCOPY’
+units-2.22/parse.tab.c:1445:9: note: in expansion of macro ‘YYSTACK_RELOCATE’
+units-2.22/parse.tab.c:585:9: note: in expansion of macro ‘YYCOPY’
+units-2.22/parse.tab.c:1445:9: note: in expansion of macro ‘YYSTACK_RELOCATE’
+#  598|   #  if defined __GNUC__ && 1 < __GNUC__
+#  599|   #   define YYCOPY(Dst, Src, Count) \
+#  600|->       __builtin_memcpy (Dst, Src, YY_CAST (YYSIZE_T, (Count)) * sizeof (*(Src)))
+#  601|   #  else
+#  602|   #   define YYCOPY(Dst, Src, Count)              \
+
+Error: CPPCHECK_WARNING:
+units-2.22/units.c: information[normalCheckLevelMaxBranches]: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.
+
+Error: GCC_ANALYZER_WARNING (CWE-401):
+units-2.22/units.c: scope_hint: In function ‘growbuffer’
+units-2.22/units.c:386:10: warning[-Wanalyzer-malloc-leak]: leak of ‘buffer’
+#  384|     *bufsize += BUFGROW;
+#  385|     if (usemalloc)
+#  386|->     *buf = malloc(*bufsize);
+#  387|     else
+#  388|       *buf = realloc(*buf,*bufsize);
+
+Error: GCC_ANALYZER_WARNING (CWE-401):
+units-2.22/units.c:388:10: warning[-Wanalyzer-malloc-leak]: leak of ‘buffer’
+#  386|       *buf = malloc(*bufsize);
+#  387|     else
+#  388|->     *buf = realloc(*buf,*bufsize);
+#  389|     if (!*buf){
+#  390|       fprintf(stderr, "%s: memory allocation error (growbuffer)\n",progname);  
+
+Error: CLANG_WARNING:
+units-2.22/units.c:502:8: warning[core.NullDereference]: Dereference of null pointer (loaded from variable 'string')
+#  500|   replacectrlchars(char *string)
+#  501|   {
+#  502|->   for(;*string;string++)
+#  503|       if (iscntrl(*string))
+#  504|         *string = ' ';
+
+Error: CLANG_WARNING:
+units-2.22/units.c:518:3: warning[core.uninitialized.Assign]: The expression is an uninitialized value. The computed value will also be garbage
+#  516|     if (!fgets(buf,size,file))
+#  517|       return 0;
+#  518|->   (*count)++;
+#  519|     while(strlen(buf)>=2 && 0==strcmp(buf+strlen(buf)-2,"\\\n")){
+#  520|       (*count)++;
+
+Error: CPPCHECK_WARNING (CWE-476):
+units-2.22/units.c:624: error[nullPointer]: Null pointer dereference
+#  622|     len = strlen(str)+1;
+#  623|     widestr = mymalloc(sizeof(wchar_t)*len, "(strwidth)");
+#  624|->   len = mbsrtowcs(widestr, &str, len, NULL);
+#  625|   
+#  626|     if (len==-1){
+
+Error: COMPILER_WARNING (CWE-563):
+units-2.22/units.c: scope_hint: In function ‘readunits’
+units-2.22/units.c:807:41: warning[-Wunused-value]: value computed is not used
+#  807 | #define readerror (goterr=1) && errfile && fprintf
+#      |                                         ^~
+units-2.22/units.c:1648:9: note: in expansion of macro ‘readerror’
+# 1648 |         readerror(errfile, "%s: %s on line %d of '%s'\n",
+#      |         ^~~~~~~~~
+#  805|   
+#  806|   
+#  807|-> #define readerror (goterr=1) && errfile && fprintf
+#  808|   
+#  809|   #define VAGUE_ERR "%s: error in units file '%s' line %d\n", \
+
+Error: CLANG_WARNING:
+units-2.22/units.c:1230:13: warning[unix.Malloc]: Potential leak of memory pointed to by 'domain_min'
+# 1228|           if (i==FN_UNITS){
+# 1229|             if (forward_dim || inverse_dim){
+# 1230|->             REPEAT_ERR;
+# 1231|               return E_BADFILE;
+# 1232|             }
+
+Error: CLANG_WARNING:
+units-2.22/units.c:1230:13: warning[unix.Malloc]: Potential leak of memory pointed to by 'forward_dim'
+# 1228|           if (i==FN_UNITS){
+# 1229|             if (forward_dim || inverse_dim){
+# 1230|->             REPEAT_ERR;
+# 1231|               return E_BADFILE;
+# 1232|             }
+
+Error: CLANG_WARNING:
+units-2.22/units.c:1230:13: warning[unix.Malloc]: Potential leak of memory pointed to by 'inverse_dim'
+# 1228|           if (i==FN_UNITS){
+# 1229|             if (forward_dim || inverse_dim){
+# 1230|->             REPEAT_ERR;
+# 1231|               return E_BADFILE;
+# 1232|             }
+
+Error: CLANG_WARNING:
+units-2.22/units.c:1233:25: warning[core.CallAndMessage]: 1st function call argument is an uninitialized value
+# 1231|               return E_BADFILE;
+# 1232|             }
+# 1233|->           forward_dim = dupstr(first);
+# 1234|             if (second)
+# 1235|               inverse_dim = dupstr(second);
+
+Error: CLANG_WARNING:
+units-2.22/units.c:1243:17: warning[core.CallAndMessage]: 1st function call argument is an uninitialized value
+# 1241|               return E_BADFILE;
+# 1242|             }
+# 1243|->           err = extract_interval(first,second,&domain_min, &domain_max);
+# 1244|             domain_min_open = firstopen;
+# 1245|             domain_max_open = secondopen;
+
+Error: CLANG_WARNING:
+units-2.22/units.c:1268:17: warning[core.CallAndMessage]: 1st function call argument is an uninitialized value
+# 1266|               return E_BADFILE;
+# 1267|             }
+# 1268|->           err = extract_interval(first,second,&range_min, &range_max);
+# 1269|             range_min_open = firstopen;
+# 1270|             range_max_open = secondopen;
+
+Error: CPPCHECK_WARNING (CWE-401):
+units-2.22/units.c:1411: error[memleakOnRealloc]: Common realloc mistake: 'tab' nulled but not freed upon failure
+# 1409|       if (tabpt>=tablealloc){
+# 1410|         tablealloc+=20;
+# 1411|->       tab = (struct pair *)realloc(tab,sizeof(struct pair)*tablealloc);
+# 1412|         if (!tab){
+# 1413|           if (errfile) fprintf(errfile, "%s: memory allocation error (newtable)\n",
+
+Error: CLANG_WARNING:
+units-2.22/units.c:1891:4: warning[unix.Malloc]: Potential leak of memory pointed to by 'permfile'
+# 1889|         }
+# 1890|      }
+# 1891|->    fclose(unitfile);
+# 1892|      free(line);
+# 1893|      if (unitcount)
+
+Error: CPPCHECK_WARNING (CWE-476):
+units-2.22/units.c:2391: error[ctunullpointer]: Null pointer dereference: first
+# 2389|   {
+# 2390|      return
+# 2391|->       compareproducts(first->numerator, second->numerator, isdimless) ||
+# 2392|         compareproducts(first->denominator, second->denominator, isdimless);
+# 2393|   }
+
+Error: GCC_ANALYZER_WARNING (CWE-457):
+units-2.22/units.c: scope_hint: In function ‘showfunction’
+units-2.22/units.c:2847:23: warning[-Wanalyzer-use-of-uninitialized-value]: use of uninitialized value ‘not_dimensionless’
+# 2845|       if (func->domain_min && func->domain_max) {
+# 2846|         logprintf(num_format.format, *func->domain_min);
+# 2847|->       if (func->dimen && (not_dimensionless || unit.factor != 1)){
+# 2848|           if (isdecimal(*func->dimen))
+# 2849|             logputs(" *");
+
+Error: GCC_ANALYZER_WARNING (CWE-457):
+units-2.22/units.c:2872:8: warning[-Wanalyzer-use-of-uninitialized-value]: use of uninitialized value ‘not_dimensionless’
+# 2870|       logputchar('\n');
+# 2871|       for(i=strwidth(deftext);i;i--) logputchar(' ');
+# 2872|->     if (not_dimensionless) 
+# 2873|         logprintf("%s has units %s",func->param, func->dimen);
+# 2874|       else
+
+Error: COMPILER_WARNING (CWE-457):
+units-2.22/units.c: scope_hint: In function ‘showfunction’
+units-2.22/units.c:2872:8: warning[-Wmaybe-uninitialized]: ‘not_dimensionless’ may be used uninitialized
+# 2872 |     if (not_dimensionless)
+#      |        ^
+units-2.22/units.c:2828:7: note: ‘not_dimensionless’ was declared here
+# 2828 |   int not_dimensionless, i;
+#      |       ^~~~~~~~~~~~~~~~~
+# 2870|       logputchar('\n');
+# 2871|       for(i=strwidth(deftext);i;i--) logputchar(' ');
+# 2872|->     if (not_dimensionless) 
+# 2873|         logprintf("%s has units %s",func->param, func->dimen);
+# 2874|       else
+
+Error: CPPCHECK_WARNING (CWE-457):
+units-2.22/units.c:3698: error[legacyUninitvar]: Uninitialized variable: indent
+# 3696|         if (errors[i]) {
+# 3697|           lastchar(unittext) = '0'+i;
+# 3698|->         printf("%s%s(",indent,infunc->name);
+# 3699|           printf(num_format.format, factor);
+# 3700|           printf("%s): %s\n", unittext, errormsg[errors[i]]);
+
+Error: CLANG_WARNING:
+units-2.22/units.c:4069:13: warning[core.NullDereference]: Dereference of null pointer (loaded from variable 'curbuiltin')
+# 4067|       }
+# 4068|       if (checktype == CU_BUILTIN){
+# 4069|->       while(*curbuiltin){
+# 4070|           if (startswith(*curbuiltin,text))
+# 4071|             output = dupstr(*curbuiltin);
+
+Error: COMPILER_WARNING (CWE-563):
+units-2.22/units.c: scope_hint: In function ‘checkcwd’
+units-2.22/units.c:4148:9: warning[-Wunused-variable]: unused variable ‘p’
+# 4148 |   char *p;
+#      |         ^
+# 4146|   {
+# 4147|     FILE *fp;
+# 4148|->   char *p;
+# 4149|   
+# 4150|     fp = openfile(file, "r");
+
+Error: GCC_ANALYZER_WARNING (CWE-401):
+units-2.22/units.c: scope_hint: In function ‘getprogdir’
+units-2.22/units.c:4296:10: warning[-Wanalyzer-malloc-leak]: leak of ‘progdir’
+# 4294|     *p = '\0';  
+# 4295|    
+# 4296|->   return progdir; 
+# 4297|   }
+# 4298|   
+
+Error: CPPCHECK_WARNING (CWE-672):
+units-2.22/units.c:4553: error[deallocret]: Returning/dereferencing 'file' after it is deallocated / released
+# 4551|     else {
+# 4552|       fclose(testfile);
+# 4553|->     return file;
+# 4554|     }
+# 4555|   }
+
+Error: COMPILER_WARNING (CWE-563):
+units-2.22/units.c: scope_hint: In function ‘printversion’
+units-2.22/units.c:4768:9: warning[-Wunused-variable]: unused variable ‘fp’
+# 4768 |   FILE *fp, *histfile;
+#      |         ^~
+# 4766|     char *m_unitsfile;         /* personal units data file from HOME_UNITS_ENV */
+# 4767|     char *p_unitsfile;         /* personal units data file */
+# 4768|->   FILE *fp, *histfile;
+# 4769|   #ifdef _WIN32
+# 4770|     char *localemap;
+
+Error: CLANG_WARNING:
+units-2.22/units.c:4845:13: warning[unix.Malloc]: Potential leak of memory pointed to by 'p_unitsfile'
+# 4843|         printf("Personal units data file is '%s'\n", p_unitsfile);
+# 4844|         if (!exists){
+# 4845|->         if (homedir_error && !nonempty(m_unitsfile))
+# 4846|             printf("  (File invalid: %s)\n", homedir_error);
+# 4847|           else if (errno==ENOENT && !nonempty(m_unitsfile))
+
+Error: CLANG_WARNING:
+units-2.22/units.c:5155:26: warning[core.NonNullParamChecker]: Null pointer passed to 1st parameter expecting 'nonnull'
+# 5153|     char savechar;
+# 5154|   
+# 5155|->   if (flags.unitlists && strchr(unitstr, UNITSEPCHAR)){
+# 5156|       puts("Unit list not allowed");
+# 5157|       return 1;
+
+Error: CPPCHECK_WARNING (CWE-476):
+units-2.22/units.c:5577: warning[nullPointer]: Possible null pointer dereference: lastunitstr
+# 5575|     if (!value_shown) {  /* provide output if every value rounded to zero */
+# 5576|       logputs("0 ");
+# 5577|->     if (isdecimal(*lastunitstr))
+# 5578|         logputs("* ");
+# 5579|       logputs(lastunitstr);
+
+Error: CLANG_WARNING:
+units-2.22/units.c:5577:19: warning[core.NullDereference]: Dereference of null pointer (loaded from variable 'lastunitstr')
+# 5575|     if (!value_shown) {  /* provide output if every value rounded to zero */
+# 5576|       logputs("0 ");
+# 5577|->     if (isdecimal(*lastunitstr))
+# 5578|         logputs("* ");
+# 5579|       logputs(lastunitstr);

@@ -1,0 +1,8 @@
+Error: CPPCHECK_WARNING:
+units-2.22/getopt.c: information[normalCheckLevelMaxBranches]: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.
+
+Error: CPPCHECK_WARNING:
+units-2.22/parse.tab.c: information[normalCheckLevelMaxBranches]: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.
+
+Error: CPPCHECK_WARNING:
+units-2.22/units.c: information[normalCheckLevelMaxBranches]: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.
