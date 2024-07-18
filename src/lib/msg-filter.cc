@@ -133,6 +133,11 @@ MsgFilter::MsgFilter():
             "‘.*’( profile count data file not found)",
             "...\1");
 
+    // ignore limiting analysis of branches warnings
+    d->addMsgFilter("CPPCHECK_WARNING",
+            "‘.*’( Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.)",
+            "...\1");
+
     // pylint reports, either raw, or prospector-wrapped
     const std::string pylintCheckers = "PROSPECTOR_WARNING|PYLINT_WARNING";
 
