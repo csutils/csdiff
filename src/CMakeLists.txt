@@ -82,6 +82,22 @@ install(TARGETS
     cstrans-df-run
     DESTINATION ${CMAKE_INSTALL_BINDIR})
 
+# optionally build statically linked csgrep-static
+option(CSGREP_STATIC "Set to ON to build the csgrep-static executable" OFF)
+if(CSGREP_STATIC)
+    add_executable(csgrep-static csgrep.cc)
+    target_link_options(csgrep-static PRIVATE "-static")
+
+    # FIXME: do not hardcode paths to boost static libs
+    target_link_libraries(csgrep-static cs
+        /usr/lib64/libboost_filesystem.a
+        /usr/lib64/libboost_program_options.a
+        /usr/lib64/libboost_regex.a)
+
+    install(TARGETS csgrep-static
+        DESTINATION ${CMAKE_INSTALL_LIBEXECDIR})
+endif()
+
 # pycsdiff - python binding of csdiff
 option(PYCSDIFF_PYTHON2 "Set to ON to build pycsdiff for Python 2" OFF)
 option(PYCSDIFF_PYTHON3 "Set to ON to build pycsdiff for Python 3" ON)
