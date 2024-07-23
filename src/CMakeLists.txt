@@ -55,25 +55,21 @@ endif()
 add_subdirectory(lib)
 include_directories(lib)
 
-# link cslib.a and boost libraries
-link_libraries(cs
-    ${Boost_FILESYSTEM_LIBRARY}
-    ${Boost_PROGRAM_OPTIONS_LIBRARY}
-    ${Boost_REGEX_LIBRARY})
-
 # the list of executables
 add_executable(csdiff       csdiff.cc)
 add_executable(csgrep       csgrep.cc)
 add_executable(cshtml       cshtml.cc)
 add_executable(cslinker     cslinker.cc)
 add_executable(cssort       cssort.cc)
-target_link_libraries(cshtml
-    ${Boost_SYSTEM_LIBRARY})
-
-# experimental
 add_executable(cstrans-df-run cstrans-df-run.cc)
-target_link_libraries(cstrans-df-run
-    ${Boost_SYSTEM_LIBRARY})
+
+# link cslib.a and boost libraries
+foreach(tgt csdiff csgrep cshtml cslinker cssort cstrans-df-run)
+    target_link_libraries(${tgt} cs
+        ${Boost_FILESYSTEM_LIBRARY}
+        ${Boost_PROGRAM_OPTIONS_LIBRARY}
+        ${Boost_REGEX_LIBRARY})
+endforeach()
 
 # declare what 'make install' should install
 include(GNUInstallDirs)
@@ -111,7 +107,10 @@ macro(build_pycsdiff version)
 
     add_library(pycsdiff_py${version} MODULE pycsdiff.cc)
     target_link_libraries(pycsdiff_py${version}
-        PRIVATE ${Boost_PYTHON${PYTHON_VERSION_SUFFIX}_LIBRARY}
+        PRIVATE cs
+                ${Boost_FILESYSTEM_LIBRARY}
+                ${Boost_REGEX_LIBRARY}
+                ${Boost_PYTHON${PYTHON_VERSION_SUFFIX}_LIBRARY}
                 Python${version}::Module)
 
     # set correct name so that `python -c 'import pycsdiff' works`
