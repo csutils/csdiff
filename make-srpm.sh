@@ -90,6 +90,13 @@ cat > "$SPEC" << EOF
 %bcond_without python2
 %endif
 
+# build csdiff-static on RHEL-10+ and Fedora
+%if 0%{?rhel} > 9 || 0%{?fedora}
+%bcond_without static
+%else
+%bcond_with static
+%endif
+
 # python3 support is optional
 %bcond_without python3
 
@@ -134,6 +141,18 @@ This package contains the csdiff tool for comparing code scan defect lists in
 order to find out added or fixed defects, and the csgrep utility for filtering
 defect lists using various filtering predicates.
 
+%if %{with static}
+%package static
+Summary:        Statically linked csgrep-static executable
+BuildRequires:  boost-static
+BuildRequires:  glibc-static
+BuildRequires:  libstdc++-static
+
+%description static
+This pacakge contains a statically linked csgrep-static executable needed
+for context embedding in legacy build environments.
+%endif
+
 %if %{with python2}
 %package -n python2-%{name}
 Summary:        Python interface to csdiff for Python 2
@@ -168,6 +187,7 @@ export BOOST_LIBRARYDIR=/usr/lib64/boost169
 
 make version.cc
 %cmake3                                    \\
+    -DCSGREP_STATIC=%{?with_static:ON}     \\
     -DPYCSDIFF_PYTHON2=%{?with_python2:ON} \\
     -DPYCSDIFF_PYTHON3=%{?with_python3:ON}
 %cmake3_build
@@ -194,6 +214,11 @@ make version.cc
 %{_mandir}/man1/cslinker.1*
 %{_mandir}/man1/cssort.1*
 %{_mandir}/man1/cstrans-df-run.1*
+
+%if %{with static}
+%files static
+%{_libexecdir}/csgrep-static
+%endif
 
 %if %{with python2}
 %files -n python2-%{name}
