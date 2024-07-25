@@ -128,7 +128,7 @@ std::string digTitle(const TScanProps &props) {
 
     it = props.find("diffbase-project-name");
     if (NA != it) {
-        title += " - defects not occurring in ";
+        title += " - findings not occurring in ";
         title += it->second;
     }
 
@@ -296,7 +296,7 @@ void HtmlWriterCore::writeHeaderOnce(
         writeScanProps(str_, props);
 
     // initialize the section for defects
-    HtmlLib::initSection(str_, "List of Defects");
+    HtmlLib::initSection(str_, "List of Findings");
     HtmlLib::initPre(str_);
 
     headerWritten_ = true;
@@ -399,11 +399,11 @@ void HtmlWriter::setDiffBase(
         : it->second;
 
     if (projName.empty()) {
-        d->newDefMsg = "newly introduced defect";
+        d->newDefMsg = "newly introduced finding";
         return;
     }
 
-    d->newDefMsg += "defect not occurring in <b>";
+    d->newDefMsg += "finding not occurring in <b>";
     d->newDefMsg += projName;
     d->newDefMsg += "</b>";
 }
