@@ -62,7 +62,7 @@ namespace HtmlLib {
         .infoEvent { color:#808080; }
         .infoEventComment { color:#00C0C0; }
         .traceEvent { color: #C0C0C0; }
-        .newDefect { color: #00FF00; }
+        .newFinding { color: #00FF00; }
         .parseWarning { color: #FF0000; }
         .impFlag { color: #FF0000; font-weight: bold; }
         #scanProps { font-family: monospace; }
@@ -462,7 +462,7 @@ void HtmlWriter::Private::writeNewDefWarning(const Defect &def)
         return;
 
     // a newly introduced defect
-    this->str << " <span class='newDefect'>[<b>warning:</b> "
+    this->str << " <span class='newFinding'>[<b>warning:</b> "
         << this->newDefMsg << "]</span>";
 }
 
