@@ -21,7 +21,7 @@
 <body>
 <h1>curl-7.60.0-1.el8+7</h1>
 <a href='scan-results.err'>[Show plain-text results]</a>
-<h2>List of Defects</h2>
+<h2>List of Findings</h2>
 <pre>
 <a id='def1'></a><b>Error: <span class='checker'>SHELLCHECK_WARNING</span>:</b> <a href='#def1'>[#def1]</a>
 /usr/bin/curl-config:25:1: warning[<b><a href="https://github.com/koalaman/shellcheck/wiki/SC2034" title="description of ShellCheck's checker SC2034">SC2034</a></b>]: exec_prefix appears unused. Verify it or export it.
@@ -79,7 +79,7 @@ curl-7.60.0/lib/connect.c:1372: <b>overrun-buffer-arg</b>: Overrunning struct ty
 <span class='infoEventComment'>#<span class='traceEvent'> 1373|   </span></span>
 <span class='infoEventComment'>#<span class='traceEvent'> 1374|     if(data-&gt;set.fopensocket) {</span></span>
 
-<a id='def7'></a><b>Error: <span class='checker'>CPPCHECK_WARNING</span> (<a href="https://cwe.mitre.org/data/definitions/456.html" title="definition of CWE-456 by MITRE">CWE-456</a>):</b> <a href='#def7'>[#def7]</a> <span class='newDefect'>[<b>warning:</b> defect not occurring in <b>curl-7.29.0-46.el7</b>]</span>
+<a id='def7'></a><b>Error: <span class='checker'>CPPCHECK_WARNING</span> (<a href="https://cwe.mitre.org/data/definitions/456.html" title="definition of CWE-456 by MITRE">CWE-456</a>):</b> <a href='#def7'>[#def7]</a> <span class='newDefect'>[<b>warning:</b> finding not occurring in <b>curl-7.29.0-46.el7</b>]</span>
 curl-7.60.0/lib/curl_ntlm_core.c:414: error[<b>uninitvar</b>]: Uninitialized variable: ks
 <span class='infoEventComment'>#<span class='traceEvent'>  412|     DES_key_schedule ks;</span></span>
 <span class='infoEventComment'>#<span class='traceEvent'>  413|   </span></span>
@@ -98,7 +98,7 @@ curl-7.60.0/lib/curl_ntlm_core.c:481: <b>dead_error_line</b>: Execution cannot r
 <span class='infoEventComment'>#<span class='traceEvent'>  482|   </span></span>
 <span class='infoEventComment'>#<span class='traceEvent'>  483|     {</span></span>
 
-<a id='def9'></a><b>Error: <span class='checker'>CPPCHECK_WARNING</span> (<a href="https://cwe.mitre.org/data/definitions/456.html" title="definition of CWE-456 by MITRE">CWE-456</a>):</b> <a href='#def9'>[#def9]</a> <span class='newDefect'>[<b>warning:</b> defect not occurring in <b>curl-7.29.0-46.el7</b>]</span>
+<a id='def9'></a><b>Error: <span class='checker'>CPPCHECK_WARNING</span> (<a href="https://cwe.mitre.org/data/definitions/456.html" title="definition of CWE-456 by MITRE">CWE-456</a>):</b> <a href='#def9'>[#def9]</a> <span class='newDefect'>[<b>warning:</b> finding not occurring in <b>curl-7.29.0-46.el7</b>]</span>
 curl-7.60.0/lib/curl_ntlm_core.c:489: error[<b>uninitvar</b>]: Uninitialized variable: ks
 <span class='infoEventComment'>#<span class='traceEvent'>  487|       DES_key_schedule ks;</span></span>
 <span class='infoEventComment'>#<span class='traceEvent'>  488|   </span></span>
@@ -106,7 +106,7 @@ curl-7.60.0/lib/curl_ntlm_core.c:489: error[<b>uninitvar</b>]: Uninitialized var
 <span class='infoEventComment'>#<span class='traceEvent'>  490|       DES_ecb_encrypt((DES_cblock *)magic, (DES_cblock *)lmbuffer,</span></span>
 <span class='infoEventComment'>#<span class='traceEvent'>  491|                       DESKEY(ks), DES_ENCRYPT);</span></span>
 
-<a id='def10'></a><b>Error: <span class='checker'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="definition of CWE-561 by MITRE">CWE-561</a>):</b> <a href='#def10'>[#def10]</a> <span class='newDefect'>[<b>warning:</b> defect not occurring in <b>curl-7.29.0-46.el7</b>]</span>
+<a id='def10'></a><b>Error: <span class='checker'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="definition of CWE-561 by MITRE">CWE-561</a>):</b> <a href='#def10'>[#def10]</a> <span class='newDefect'>[<b>warning:</b> finding not occurring in <b>curl-7.29.0-46.el7</b>]</span>
 <span class='infoEvent'>curl-7.60.0/lib/curl_ntlm_core.c:571: <b>assignment</b>: Assigning: &quot;result&quot; = &quot;((void)data) , CURLE_OK&quot;.</span>
 <span class='infoEvent'>curl-7.60.0/lib/curl_ntlm_core.c:572: <b>const</b>: At condition &quot;result&quot;, the value of &quot;result&quot; must be equal to 0.</span>
 <span class='infoEvent'>curl-7.60.0/lib/curl_ntlm_core.c:572: <b>dead_error_condition</b>: The condition &quot;result&quot; cannot be true.</span>
@@ -117,7 +117,7 @@ curl-7.60.0/lib/curl_ntlm_core.c:573: <b>dead_error_line</b>: Execution cannot r
 <span class='infoEventComment'>#<span class='traceEvent'>  574|   </span></span>
 <span class='infoEventComment'>#<span class='traceEvent'>  575|     {</span></span>
 
-<a id='def11'></a><b>Error: <span class='checker'>TAINTED_STRING</span> (<a href="https://cwe.mitre.org/data/definitions/20.html" title="definition of CWE-20 by MITRE">CWE-20</a>):</b> <a href='#def11'>[#def11]</a> <span class='newDefect'>[<b>warning:</b> defect not occurring in <b>curl-7.29.0-46.el7</b>]</span>
+<a id='def11'></a><b>Error: <span class='checker'>TAINTED_STRING</span> (<a href="https://cwe.mitre.org/data/definitions/20.html" title="definition of CWE-20 by MITRE">CWE-20</a>):</b> <a href='#def11'>[#def11]</a> <span class='newDefect'>[<b>warning:</b> finding not occurring in <b>curl-7.29.0-46.el7</b>]</span>
 <span class='traceEvent'>curl-7.60.0/lib/curl_ntlm_wb.c:129: <b>cond_false</b>: Condition &quot;conn-&gt;ntlm_auth_hlpr_socket != -1&quot;, taking false branch.</span>
 <span class='traceEvent'>curl-7.60.0/lib/curl_ntlm_wb.c:129: <b>cond_false</b>: Condition &quot;conn-&gt;ntlm_auth_hlpr_pid&quot;, taking false branch.</span>
 <span class='traceEvent'>curl-7.60.0/lib/curl_ntlm_wb.c:131: <b>if_end</b>: End of if statement.</span>
@@ -156,7 +156,7 @@ curl-7.60.0/lib/curl_ntlm_wb.c:220: <b>tainted_string</b>: Passing tainted strin
 <span class='infoEventComment'>#<span class='traceEvent'>  221|               &quot;--helper-protocol&quot;, &quot;ntlmssp-client-1&quot;,</span></span>
 <span class='infoEventComment'>#<span class='traceEvent'>  222|               &quot;--use-cached-creds&quot;,</span></span>
 
-<a id='def12'></a><b>Error: <span class='checker'>TAINTED_STRING</span> (<a href="https://cwe.mitre.org/data/definitions/20.html" title="definition of CWE-20 by MITRE">CWE-20</a>):</b> <a href='#def12'>[#def12]</a> <span class='newDefect'>[<b>warning:</b> defect not occurring in <b>curl-7.29.0-46.el7</b>]</span>
+<a id='def12'></a><b>Error: <span class='checker'>TAINTED_STRING</span> (<a href="https://cwe.mitre.org/data/definitions/20.html" title="definition of CWE-20 by MITRE">CWE-20</a>):</b> <a href='#def12'>[#def12]</a> <span class='newDefect'>[<b>warning:</b> finding not occurring in <b>curl-7.29.0-46.el7</b>]</span>
 <span class='traceEvent'>curl-7.60.0/lib/curl_ntlm_wb.c:129: <b>cond_false</b>: Condition &quot;conn-&gt;ntlm_auth_hlpr_socket != -1&quot;, taking false branch.</span>
 <span class='traceEvent'>curl-7.60.0/lib/curl_ntlm_wb.c:129: <b>cond_false</b>: Condition &quot;conn-&gt;ntlm_auth_hlpr_pid&quot;, taking false branch.</span>
 <span class='traceEvent'>curl-7.60.0/lib/curl_ntlm_wb.c:131: <b>if_end</b>: End of if statement.</span>
@@ -258,16 +258,16 @@ curl-7.60.0/lib/curl_ntlm_wb.c:227: <b>toctou</b>: Calling function &quot;execl&
 <span class='infoEventComment'>#<span class='traceEvent'>  228|               &quot;--helper-protocol&quot;, &quot;ntlmssp-client-1&quot;,</span></span>
 <span class='infoEventComment'>#<span class='traceEvent'>  229|               &quot;--use-cached-creds&quot;,</span></span>
 
-<a id='def15'></a><b>Error: <span class='checker'>CLANG_WARNING</span>:</b> <a href='#def15'>[#def15]</a> <span class='newDefect'>[<b>warning:</b> defect not occurring in <b>curl-7.29.0-46.el7</b>]</span>
+<a id='def15'></a><b>Error: <span class='checker'>CLANG_WARNING</span>:</b> <a href='#def15'>[#def15]</a> <span class='newDefect'>[<b>warning:</b> finding not occurring in <b>curl-7.29.0-46.el7</b>]</span>
 curl-7.60.0/lib/formdata.c: <b>internal warning</b>: child 19175 timed out after 30s
 
-<a id='def16'></a><b>Error: <span class='checker'>CLANG_WARNING</span>:</b> <a href='#def16'>[#def16]</a> <span class='newDefect'>[<b>warning:</b> defect not occurring in <b>curl-7.29.0-46.el7</b>]</span>
+<a id='def16'></a><b>Error: <span class='checker'>CLANG_WARNING</span>:</b> <a href='#def16'>[#def16]</a> <span class='newDefect'>[<b>warning:</b> finding not occurring in <b>curl-7.29.0-46.el7</b>]</span>
 curl-7.60.0/lib/formdata.c: <b>internal warning</b>: child 31044 timed out after 30s
 
-<a id='def17'></a><b>Error: <span class='checker'>CLANG_WARNING</span>:</b> <a href='#def17'>[#def17]</a> <span class='newDefect'>[<b>warning:</b> defect not occurring in <b>curl-7.29.0-46.el7</b>]</span>
+<a id='def17'></a><b>Error: <span class='checker'>CLANG_WARNING</span>:</b> <a href='#def17'>[#def17]</a> <span class='newDefect'>[<b>warning:</b> finding not occurring in <b>curl-7.29.0-46.el7</b>]</span>
 curl-7.60.0/lib/ftp.c: <b>internal warning</b>: child 31022 timed out after 30s
 
-<a id='def18'></a><b>Error: <span class='checker'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="definition of CWE-561 by MITRE">CWE-561</a>):</b> <a href='#def18'>[#def18]</a> <span class='newDefect'>[<b>warning:</b> defect not occurring in <b>curl-7.29.0-46.el7</b>]</span>
+<a id='def18'></a><b>Error: <span class='checker'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="definition of CWE-561 by MITRE">CWE-561</a>):</b> <a href='#def18'>[#def18]</a> <span class='newDefect'>[<b>warning:</b> finding not occurring in <b>curl-7.29.0-46.el7</b>]</span>
 <span class='infoEvent'>curl-7.60.0/lib/ftp.c:3975: <b>assignment</b>: Assigning: &quot;result&quot; = &quot;((void)conn-&gt;data) , CURLE_OK&quot;.</span>
 <span class='infoEvent'>curl-7.60.0/lib/ftp.c:3977: <b>const</b>: At condition &quot;result&quot;, the value of &quot;result&quot; must be equal to 0.</span>
 <span class='infoEvent'>curl-7.60.0/lib/ftp.c:3977: <b>dead_error_condition</b>: The condition &quot;result&quot; cannot be true.</span>
@@ -278,7 +278,7 @@ curl-7.60.0/lib/ftp.c:3978: <b>dead_error_line</b>: Execution cannot reach this 
 <span class='infoEventComment'>#<span class='traceEvent'> 3979|   </span></span>
 <span class='infoEventComment'>#<span class='traceEvent'> 3980|     for(;;) {</span></span>
 
-<a id='def19'></a><b>Error: <span class='checker'>CONSTANT_EXPRESSION_RESULT</span> (<a href="https://cwe.mitre.org/data/definitions/398.html" title="definition of CWE-398 by MITRE">CWE-398</a>):</b> <a href='#def19'>[#def19]</a> <span class='newDefect'>[<b>warning:</b> defect not occurring in <b>curl-7.29.0-46.el7</b>]</span>
+<a id='def19'></a><b>Error: <span class='checker'>CONSTANT_EXPRESSION_RESULT</span> (<a href="https://cwe.mitre.org/data/definitions/398.html" title="definition of CWE-398 by MITRE">CWE-398</a>):</b> <a href='#def19'>[#def19]</a> <span class='newDefect'>[<b>warning:</b> finding not occurring in <b>curl-7.29.0-46.el7</b>]</span>
 curl-7.60.0/lib/getinfo.c:159: <b>result_independent_of_operands</b>: &quot;data-&gt;info.filetime &gt; 9223372036854775807L&quot; is always false regardless of the values of its operands. This occurs as the logical operand of &quot;if&quot;.
 <span class='infoEventComment'>#<span class='traceEvent'>  157|       break;</span></span>
 <span class='infoEventComment'>#<span class='traceEvent'>  158|     case CURLINFO_FILETIME:</span></span>
@@ -286,7 +286,7 @@ curl-7.60.0/lib/getinfo.c:159: <b>result_independent_of_operands</b>: &quot;data
 <span class='infoEventComment'>#<span class='traceEvent'>  160|         *param_longp = LONG_MAX;</span></span>
 <span class='infoEventComment'>#<span class='traceEvent'>  161|       else if(data-&gt;info.filetime &lt; LONG_MIN)</span></span>
 
-<a id='def20'></a><b>Error: <span class='checker'>CONSTANT_EXPRESSION_RESULT</span> (<a href="https://cwe.mitre.org/data/definitions/398.html" title="definition of CWE-398 by MITRE">CWE-398</a>):</b> <a href='#def20'>[#def20]</a> <span class='newDefect'>[<b>warning:</b> defect not occurring in <b>curl-7.29.0-46.el7</b>]</span>
+<a id='def20'></a><b>Error: <span class='checker'>CONSTANT_EXPRESSION_RESULT</span> (<a href="https://cwe.mitre.org/data/definitions/398.html" title="definition of CWE-398 by MITRE">CWE-398</a>):</b> <a href='#def20'>[#def20]</a> <span class='newDefect'>[<b>warning:</b> finding not occurring in <b>curl-7.29.0-46.el7</b>]</span>
 curl-7.60.0/lib/getinfo.c:161: <b>result_independent_of_operands</b>: &quot;data-&gt;info.filetime &lt; -9223372036854775808L /* -9223372036854775807L - 1L */&quot; is always false regardless of the values of its operands. This occurs as the logical operand of &quot;if&quot;.
 <span class='infoEventComment'>#<span class='traceEvent'>  159|       if(data-&gt;info.filetime &gt; LONG_MAX)</span></span>
 <span class='infoEventComment'>#<span class='traceEvent'>  160|         *param_longp = LONG_MAX;</span></span>
@@ -294,7 +294,7 @@ curl-7.60.0/lib/getinfo.c:161: <b>result_independent_of_operands</b>: &quot;data
 <span class='infoEventComment'>#<span class='traceEvent'>  162|         *param_longp = LONG_MIN;</span></span>
 <span class='infoEventComment'>#<span class='traceEvent'>  163|       else</span></span>
 
-<a id='def21'></a><b>Error: <span class='checker'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="definition of CWE-561 by MITRE">CWE-561</a>):</b> <a href='#def21'>[#def21]</a> <span class='newDefect'>[<b>warning:</b> defect not occurring in <b>curl-7.29.0-46.el7</b>]</span>
+<a id='def21'></a><b>Error: <span class='checker'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="definition of CWE-561 by MITRE">CWE-561</a>):</b> <a href='#def21'>[#def21]</a> <span class='newDefect'>[<b>warning:</b> finding not occurring in <b>curl-7.29.0-46.el7</b>]</span>
 <span class='infoEvent'>curl-7.60.0/lib/http.c:1086: <b>assignment</b>: Assigning: &quot;result&quot; = &quot;((void)conn-&gt;data) , CURLE_OK&quot;.</span>
 <span class='infoEvent'>curl-7.60.0/lib/http.c:1088: <b>const</b>: At condition &quot;result&quot;, the value of &quot;result&quot; must be equal to 0.</span>
 <span class='infoEvent'>curl-7.60.0/lib/http.c:1088: <b>dead_error_condition</b>: The condition &quot;result&quot; cannot be true.</span>
@@ -316,7 +316,7 @@ curl-7.60.0/lib/http.c:3569: <b>dead_error_line</b>: Execution cannot reach this
 <span class='infoEventComment'>#<span class='traceEvent'> 3570|   </span></span>
 <span class='infoEventComment'>#<span class='traceEvent'> 3571|       /* Check for Content-Length: header lines to get size */</span></span>
 
-<a id='def23'></a><b>Error: <span class='checker'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="definition of CWE-561 by MITRE">CWE-561</a>):</b> <a href='#def23'>[#def23]</a> <span class='newDefect'>[<b>warning:</b> defect not occurring in <b>curl-7.29.0-46.el7</b>]</span>
+<a id='def23'></a><b>Error: <span class='checker'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="definition of CWE-561 by MITRE">CWE-561</a>):</b> <a href='#def23'>[#def23]</a> <span class='newDefect'>[<b>warning:</b> finding not occurring in <b>curl-7.29.0-46.el7</b>]</span>
 <span class='infoEvent'>curl-7.60.0/lib/http_chunks.c:157: <b>assignment</b>: Assigning: &quot;result&quot; = &quot;((void)conn-&gt;data) , CURLE_OK&quot;.</span>
 <span class='infoEvent'>curl-7.60.0/lib/http_chunks.c:159: <b>const</b>: At condition &quot;result&quot;, the value of &quot;result&quot; must be equal to 0.</span>
 <span class='infoEvent'>curl-7.60.0/lib/http_chunks.c:159: <b>dead_error_condition</b>: The condition &quot;result&quot; cannot be true.</span>
@@ -338,7 +338,7 @@ curl-7.60.0/lib/http_chunks.c:242: <b>dead_error_line</b>: Execution cannot reac
 <span class='infoEventComment'>#<span class='traceEvent'>  243|   </span></span>
 <span class='infoEventComment'>#<span class='traceEvent'>  244|             if(!data-&gt;set.http_te_skip) {</span></span>
 
-<a id='def25'></a><b>Error: <span class='checker'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="definition of CWE-561 by MITRE">CWE-561</a>):</b> <a href='#def25'>[#def25]</a> <span class='newDefect'>[<b>warning:</b> defect not occurring in <b>curl-7.29.0-46.el7</b>]</span>
+<a id='def25'></a><b>Error: <span class='checker'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="definition of CWE-561 by MITRE">CWE-561</a>):</b> <a href='#def25'>[#def25]</a> <span class='newDefect'>[<b>warning:</b> finding not occurring in <b>curl-7.29.0-46.el7</b>]</span>
 <span class='infoEvent'>curl-7.60.0/lib/http_proxy.c:413: <b>assignment</b>: Assigning: &quot;result&quot; = &quot;((void)data) , CURLE_OK&quot;.</span>
 <span class='infoEvent'>curl-7.60.0/lib/http_proxy.c:416: <b>const</b>: At condition &quot;result&quot;, the value of &quot;result&quot; must be equal to 0.</span>
 <span class='infoEvent'>curl-7.60.0/lib/http_proxy.c:416: <b>dead_error_condition</b>: The condition &quot;result&quot; cannot be true.</span>
@@ -349,7 +349,7 @@ curl-7.60.0/lib/http_proxy.c:417: <b>dead_error_line</b>: Execution cannot reach
 <span class='infoEventComment'>#<span class='traceEvent'>  418|   </span></span>
 <span class='infoEventComment'>#<span class='traceEvent'>  419|           /* output debug if that is requested */</span></span>
 
-<a id='def26'></a><b>Error: <span class='checker'>CLANG_WARNING</span>:</b> <a href='#def26'>[#def26]</a> <span class='newDefect'>[<b>warning:</b> defect not occurring in <b>curl-7.29.0-46.el7</b>]</span>
+<a id='def26'></a><b>Error: <span class='checker'>CLANG_WARNING</span>:</b> <a href='#def26'>[#def26]</a> <span class='newDefect'>[<b>warning:</b> finding not occurring in <b>curl-7.29.0-46.el7</b>]</span>
 curl-7.60.0/lib/multi.c: <b>internal warning</b>: child 32119 timed out after 30s
 
 <a id='def27'></a><b>Error: <span class='checker'>FORWARD_NULL</span> (<a href="https://cwe.mitre.org/data/definitions/476.html" title="definition of CWE-476 by MITRE">CWE-476</a>):</b> <a href='#def27'>[#def27]</a>
@@ -698,7 +698,7 @@ curl-7.60.0/lib/multi.c:1056: <b>var_deref_op</b>: Dereferencing null pointer &q
 <span class='infoEventComment'>#<span class='traceEvent'> 1057|       ufds[nfds].events = 0;</span></span>
 <span class='infoEventComment'>#<span class='traceEvent'> 1058|       if(extra_fds[i].events &amp; CURL_WAIT_POLLIN)</span></span>
 
-<a id='def30'></a><b>Error: <span class='checker'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="definition of CWE-561 by MITRE">CWE-561</a>):</b> <a href='#def30'>[#def30]</a> <span class='newDefect'>[<b>warning:</b> defect not occurring in <b>curl-7.29.0-46.el7</b>]</span>
+<a id='def30'></a><b>Error: <span class='checker'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="definition of CWE-561 by MITRE">CWE-561</a>):</b> <a href='#def30'>[#def30]</a> <span class='newDefect'>[<b>warning:</b> finding not occurring in <b>curl-7.29.0-46.el7</b>]</span>
 <span class='infoEvent'>curl-7.60.0/lib/sendf.c:441: <b>assignment</b>: Assigning: &quot;nread&quot; = &quot;0L&quot;.</span>
 <span class='infoEvent'>curl-7.60.0/lib/sendf.c:442: <b>const</b>: At condition &quot;nread &gt; 0L&quot;, the value of &quot;nread&quot; must be equal to 0.</span>
 <span class='infoEvent'>curl-7.60.0/lib/sendf.c:442: <b>dead_error_condition</b>: The condition &quot;nread &gt; 0L&quot; cannot be true.</span>
@@ -709,7 +709,7 @@ curl-7.60.0/lib/sendf.c:443: <b>dead_error_begin</b>: Execution cannot reach thi
 <span class='infoEventComment'>#<span class='traceEvent'>  444|       return nread;</span></span>
 <span class='infoEventComment'>#<span class='traceEvent'>  445|     }</span></span>
 
-<a id='def31'></a><b>Error: <span class='checker'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="definition of CWE-561 by MITRE">CWE-561</a>):</b> <a href='#def31'>[#def31]</a> <span class='newDefect'>[<b>warning:</b> defect not occurring in <b>curl-7.29.0-46.el7</b>]</span>
+<a id='def31'></a><b>Error: <span class='checker'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="definition of CWE-561 by MITRE">CWE-561</a>):</b> <a href='#def31'>[#def31]</a> <span class='newDefect'>[<b>warning:</b> finding not occurring in <b>curl-7.29.0-46.el7</b>]</span>
 <span class='infoEvent'>curl-7.60.0/lib/sendf.c:657: <b>assignment</b>: Assigning: &quot;result&quot; = &quot;((void)data) , CURLE_OK&quot;.</span>
 <span class='infoEvent'>curl-7.60.0/lib/sendf.c:659: <b>const</b>: At condition &quot;result&quot;, the value of &quot;result&quot; must be equal to 0.</span>
 <span class='infoEvent'>curl-7.60.0/lib/sendf.c:659: <b>dead_error_condition</b>: The condition &quot;result&quot; cannot be true.</span>
@@ -720,7 +720,7 @@ curl-7.60.0/lib/sendf.c:660: <b>dead_error_line</b>: Execution cannot reach this
 <span class='infoEventComment'>#<span class='traceEvent'>  661|   </span></span>
 <span class='infoEventComment'>#<span class='traceEvent'>  662|   #ifdef CURL_DO_LINEEND_CONV</span></span>
 
-<a id='def32'></a><b>Error: <span class='checker'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="definition of CWE-561 by MITRE">CWE-561</a>):</b> <a href='#def32'>[#def32]</a> <span class='newDefect'>[<b>warning:</b> defect not occurring in <b>curl-7.29.0-46.el7</b>]</span>
+<a id='def32'></a><b>Error: <span class='checker'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="definition of CWE-561 by MITRE">CWE-561</a>):</b> <a href='#def32'>[#def32]</a> <span class='newDefect'>[<b>warning:</b> finding not occurring in <b>curl-7.29.0-46.el7</b>]</span>
 <span class='infoEvent'>curl-7.60.0/lib/smb.c:734: <b>assignment</b>: Assigning: &quot;next_state&quot; = &quot;SMB_DONE&quot;.</span>
 <span class='infoEvent'>curl-7.60.0/lib/smb.c:773: <b>assignment</b>: Assigning: &quot;next_state&quot; = &quot;SMB_OPEN&quot;.</span>
 <span class='infoEvent'>curl-7.60.0/lib/smb.c:779: <b>assignment</b>: Assigning: &quot;next_state&quot; = &quot;SMB_TREE_DISCONNECT&quot;.</span>
@@ -768,7 +768,7 @@ curl-7.60.0/lib/socks_gssapi.c:89: <b>fixed_size_dest</b>: You might overrun the
 <span class='infoEventComment'>#<span class='traceEvent'>   90|           gss_release_buffer(&amp;min_stat, &amp;status_string);</span></span>
 <span class='infoEventComment'>#<span class='traceEvent'>   91|           break;</span></span>
 
-<a id='def35'></a><b>Error: <span class='checker'>CLANG_WARNING</span>:</b> <a href='#def35'>[#def35]</a> <span class='newDefect'>[<b>warning:</b> defect not occurring in <b>curl-7.29.0-46.el7</b>]</span>
+<a id='def35'></a><b>Error: <span class='checker'>CLANG_WARNING</span>:</b> <a href='#def35'>[#def35]</a> <span class='newDefect'>[<b>warning:</b> finding not occurring in <b>curl-7.29.0-46.el7</b>]</span>
 curl-7.60.0/lib/ssh-libssh.c:1116:15: <b>warning</b>: Null pointer passed as an argument to a &apos;nonnull&apos; parameter
 <span class='infoEventComment'>#             (strlen(protop-&gt;path) &gt; 1))) {</span>
 <span class='infoEventComment'>#              ^      ~~~~~~~~~~~~</span>
@@ -918,7 +918,7 @@ curl-7.60.0/lib/ssh-libssh.c:1116:15: <b>warning</b>: Null pointer passed as an 
 <span class='infoEventComment'>#<span class='traceEvent'> 1117|                  /* try to create the path remotely */</span></span>
 <span class='infoEventComment'>#<span class='traceEvent'> 1118|                  rc = 0;</span></span>
 
-<a id='def36'></a><b>Error: <span class='checker'>CLANG_WARNING</span>:</b> <a href='#def36'>[#def36]</a> <span class='newDefect'>[<b>warning:</b> defect not occurring in <b>curl-7.29.0-46.el7</b>]</span>
+<a id='def36'></a><b>Error: <span class='checker'>CLANG_WARNING</span>:</b> <a href='#def36'>[#def36]</a> <span class='newDefect'>[<b>warning:</b> finding not occurring in <b>curl-7.29.0-46.el7</b>]</span>
 curl-7.60.0/lib/ssh-libssh.c:1208:10: <b>warning</b>: Null pointer passed as an argument to a &apos;nonnull&apos; parameter
 <span class='infoEventComment'>#      if(strlen(protop-&gt;path) &gt; 1) {</span>
 <span class='infoEventComment'>#         ^      ~~~~~~~~~~~~</span>
@@ -1037,7 +1037,7 @@ curl-7.60.0/lib/ssh-libssh.c:1208:10: <b>warning</b>: Null pointer passed as an 
 <span class='infoEventComment'>#<span class='traceEvent'> 1209|           sshc-&gt;slash_pos = protop-&gt;path + 1; /* ignore the leading &apos;/&apos; */</span></span>
 <span class='infoEventComment'>#<span class='traceEvent'> 1210|           state(conn, SSH_SFTP_CREATE_DIRS);</span></span>
 
-<a id='def37'></a><b>Error: <span class='checker'>FORWARD_NULL</span> (<a href="https://cwe.mitre.org/data/definitions/476.html" title="definition of CWE-476 by MITRE">CWE-476</a>):</b> <a href='#def37'>[#def37]</a> <span class='newDefect'>[<b>warning:</b> defect not occurring in <b>curl-7.29.0-46.el7</b>]</span>
+<a id='def37'></a><b>Error: <span class='checker'>FORWARD_NULL</span> (<a href="https://cwe.mitre.org/data/definitions/476.html" title="definition of CWE-476 by MITRE">CWE-476</a>):</b> <a href='#def37'>[#def37]</a> <span class='newDefect'>[<b>warning:</b> finding not occurring in <b>curl-7.29.0-46.el7</b>]</span>
 <span class='traceEvent'>curl-7.60.0/src/tool_getparam.c:2140: <b>cond_true</b>: Condition &quot;i &lt; argc&quot;, taking true branch.</span>
 <span class='traceEvent'>curl-7.60.0/src/tool_getparam.c:2140: <b>cond_true</b>: Condition &quot;!result&quot;, taking true branch.</span>
 <span class='traceEvent'>curl-7.60.0/src/tool_getparam.c:2143: <b>cond_true</b>: Condition &quot;stillflags&quot;, taking true branch.</span>
@@ -1188,7 +1188,7 @@ curl-7.60.0/lib/tftp.c:1158: <b>string_null</b>: Passing unterminated string &qu
 <span class='infoEventComment'>#<span class='traceEvent'> 1159|                                        (const char *)state-&gt;rpacket.data + 2,</span></span>
 <span class='infoEventComment'>#<span class='traceEvent'> 1160|                                        state-&gt;rbytes-2);</span></span>
 
-<a id='def39'></a><b>Error: <span class='checker'>NEGATIVE_RETURNS</span> (<a href="https://cwe.mitre.org/data/definitions/394.html" title="definition of CWE-394 by MITRE">CWE-394</a>):</b> <a href='#def39'>[#def39]</a> <span class='newDefect'>[<b>warning:</b> defect not occurring in <b>curl-7.29.0-46.el7</b>]</span>
+<a id='def39'></a><b>Error: <span class='checker'>NEGATIVE_RETURNS</span> (<a href="https://cwe.mitre.org/data/definitions/394.html" title="definition of CWE-394 by MITRE">CWE-394</a>):</b> <a href='#def39'>[#def39]</a> <span class='newDefect'>[<b>warning:</b> finding not occurring in <b>curl-7.29.0-46.el7</b>]</span>
 <span class='traceEvent'>curl-7.60.0/lib/transfer.c:131: <b>cond_true</b>: Condition &quot;data-&gt;req.upload_chunky&quot;, taking true branch.</span>
 <span class='traceEvent'>curl-7.60.0/lib/transfer.c:144: <b>cond_false</b>: Condition &quot;nread == 268435456&quot;, taking false branch.</span>
 <span class='traceEvent'>curl-7.60.0/lib/transfer.c:148: <b>if_end</b>: End of if statement.</span>
@@ -1217,13 +1217,13 @@ curl-7.60.0/lib/transfer.c:219: <b>negative_returns</b>: &quot;hexlen&quot; is p
 <span class='infoEventComment'>#<span class='traceEvent'>  220|   </span></span>
 <span class='infoEventComment'>#<span class='traceEvent'>  221|       /* always append ASCII CRLF to the data */</span></span>
 
-<a id='def40'></a><b>Error: <span class='checker'>CLANG_WARNING</span>:</b> <a href='#def40'>[#def40]</a> <span class='newDefect'>[<b>warning:</b> defect not occurring in <b>curl-7.29.0-46.el7</b>]</span>
+<a id='def40'></a><b>Error: <span class='checker'>CLANG_WARNING</span>:</b> <a href='#def40'>[#def40]</a> <span class='newDefect'>[<b>warning:</b> finding not occurring in <b>curl-7.29.0-46.el7</b>]</span>
 curl-7.60.0/lib/url.c: <b>internal warning</b>: child 19172 timed out after 30s
 
-<a id='def41'></a><b>Error: <span class='checker'>CLANG_WARNING</span>:</b> <a href='#def41'>[#def41]</a> <span class='newDefect'>[<b>warning:</b> defect not occurring in <b>curl-7.29.0-46.el7</b>]</span>
+<a id='def41'></a><b>Error: <span class='checker'>CLANG_WARNING</span>:</b> <a href='#def41'>[#def41]</a> <span class='newDefect'>[<b>warning:</b> finding not occurring in <b>curl-7.29.0-46.el7</b>]</span>
 curl-7.60.0/lib/url.c: <b>internal warning</b>: child 31100 timed out after 30s
 
-<a id='def42'></a><b>Error: <span class='checker'>NEGATIVE_RETURNS</span> (<a href="https://cwe.mitre.org/data/definitions/394.html" title="definition of CWE-394 by MITRE">CWE-394</a>):</b> <a href='#def42'>[#def42]</a> <span class='newDefect'>[<b>warning:</b> defect not occurring in <b>curl-7.29.0-46.el7</b>]</span>
+<a id='def42'></a><b>Error: <span class='checker'>NEGATIVE_RETURNS</span> (<a href="https://cwe.mitre.org/data/definitions/394.html" title="definition of CWE-394 by MITRE">CWE-394</a>):</b> <a href='#def42'>[#def42]</a> <span class='newDefect'>[<b>warning:</b> finding not occurring in <b>curl-7.29.0-46.el7</b>]</span>
 <span class='traceEvent'>curl-7.60.0/lib/vauth/ntlm.c:541: <b>cond_true</b>: Condition &quot;!user&quot;, taking true branch.</span>
 <span class='traceEvent'>curl-7.60.0/lib/vauth/ntlm.c:544: <b>cond_false</b>: Condition &quot;user&quot;, taking false branch.</span>
 <span class='traceEvent'>curl-7.60.0/lib/vauth/ntlm.c:550: <b>else_branch</b>: Reached else branch.</span>
@@ -1266,7 +1266,7 @@ curl-7.60.0/lib/vauth/ntlm.c:810: <b>negative_returns</b>: Using variable &quot;
 <span class='infoEventComment'>#<span class='traceEvent'>  811|     else</span></span>
 <span class='infoEventComment'>#<span class='traceEvent'>  812|       memcpy(&amp;ntlmbuf[size], domain, domlen);</span></span>
 
-<a id='def43'></a><b>Error: <span class='checker'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="definition of CWE-561 by MITRE">CWE-561</a>):</b> <a href='#def43'>[#def43]</a> <span class='newDefect'>[<b>warning:</b> defect not occurring in <b>curl-7.29.0-46.el7</b>]</span>
+<a id='def43'></a><b>Error: <span class='checker'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="definition of CWE-561 by MITRE">CWE-561</a>):</b> <a href='#def43'>[#def43]</a> <span class='newDefect'>[<b>warning:</b> finding not occurring in <b>curl-7.29.0-46.el7</b>]</span>
 <span class='infoEvent'>curl-7.60.0/lib/vauth/ntlm.c:833: <b>assignment</b>: Assigning: &quot;result&quot; = &quot;((void)data) , CURLE_OK&quot;.</span>
 <span class='infoEvent'>curl-7.60.0/lib/vauth/ntlm.c:835: <b>const</b>: At condition &quot;result&quot;, the value of &quot;result&quot; must be equal to 0.</span>
 <span class='infoEvent'>curl-7.60.0/lib/vauth/ntlm.c:835: <b>dead_error_condition</b>: The condition &quot;result&quot; cannot be true.</span>
@@ -1277,7 +1277,7 @@ curl-7.60.0/lib/vauth/ntlm.c:836: <b>dead_error_line</b>: Execution cannot reach
 <span class='infoEventComment'>#<span class='traceEvent'>  837|   </span></span>
 <span class='infoEventComment'>#<span class='traceEvent'>  838|     /* Return with binary blob encoded into base64 */</span></span>
 
-<a id='def44'></a><b>Error: <span class='checker'>COMPILER_WARNING</span>:</b> <a href='#def44'>[#def44]</a> <span class='newDefect'>[<b>warning:</b> defect not occurring in <b>curl-7.29.0-46.el7</b>]</span>
+<a id='def44'></a><b>Error: <span class='checker'>COMPILER_WARNING</span>:</b> <a href='#def44'>[#def44]</a> <span class='newDefect'>[<b>warning:</b> finding not occurring in <b>curl-7.29.0-46.el7</b>]</span>
 <span class='infoEvent'>curl-7.60.0/lib/vtls/openssl.c: <b>scope_hint</b>: In function &apos;ossl_connect_step1&apos;</span>
 curl-7.60.0/lib/vtls/openssl.c:2217:5: warning[<b>-Wdeprecated-declarations</b>]: &apos;SSLv3_client_method&apos; is deprecated
 <span class='infoEventComment'>#     req_method = SSLv3_client_method();</span>
@@ -1295,7 +1295,7 @@ curl-7.60.0/lib/vtls/openssl.c:2217:5: warning[<b>-Wdeprecated-declarations</b>]
 <span class='infoEventComment'>#<span class='traceEvent'> 2218|       use_sni(FALSE);</span></span>
 <span class='infoEventComment'>#<span class='traceEvent'> 2219|       break;</span></span>
 
-<a id='def45'></a><b>Error: <span class='checker'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="definition of CWE-561 by MITRE">CWE-561</a>):</b> <a href='#def45'>[#def45]</a> <span class='newDefect'>[<b>warning:</b> defect not occurring in <b>curl-7.29.0-46.el7</b>]</span>
+<a id='def45'></a><b>Error: <span class='checker'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="definition of CWE-561 by MITRE">CWE-561</a>):</b> <a href='#def45'>[#def45]</a> <span class='newDefect'>[<b>warning:</b> finding not occurring in <b>curl-7.29.0-46.el7</b>]</span>
 <span class='infoEvent'>curl-7.60.0/lib/vtls/openssl.c:2214: <b>cond_cannot_single</b>: Condition &quot;ssl_authtype == CURL_TLSAUTH_SRP&quot;, taking false branch. Now the value of &quot;ssl_authtype&quot; cannot be equal to 1.</span>
 <span class='infoEvent'>curl-7.60.0/lib/vtls/openssl.c:2309: <b>cannot_single</b>: At condition &quot;ssl_authtype == CURL_TLSAUTH_SRP&quot;, the value of &quot;ssl_authtype&quot; cannot be equal to 1.</span>
 <span class='infoEvent'>curl-7.60.0/lib/vtls/openssl.c:2309: <b>dead_error_condition</b>: The condition &quot;ssl_authtype == CURL_TLSAUTH_SRP&quot; cannot be true.</span>
@@ -1306,7 +1306,7 @@ curl-7.60.0/lib/vtls/openssl.c:2310: <b>dead_error_line</b>: Execution cannot re
 <span class='infoEventComment'>#<span class='traceEvent'> 2311|       }</span></span>
 <span class='infoEventComment'>#<span class='traceEvent'> 2312|   #endif</span></span>
 
-<a id='def46'></a><b>Error: <span class='checker'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="definition of CWE-561 by MITRE">CWE-561</a>):</b> <a href='#def46'>[#def46]</a> <span class='newDefect'>[<b>warning:</b> defect not occurring in <b>curl-7.29.0-46.el7</b>]</span>
+<a id='def46'></a><b>Error: <span class='checker'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="definition of CWE-561 by MITRE">CWE-561</a>):</b> <a href='#def46'>[#def46]</a> <span class='newDefect'>[<b>warning:</b> finding not occurring in <b>curl-7.29.0-46.el7</b>]</span>
 <span class='infoEvent'>curl-7.60.0/lib/vtls/openssl.c:2181: <b>equality_cond</b>: Jumping to case &quot;CURL_SSLVERSION_DEFAULT&quot;.</span>
 <span class='infoEvent'>curl-7.60.0/lib/vtls/openssl.c:2182: <b>equality_cond</b>: Jumping to case &quot;CURL_SSLVERSION_TLSv1&quot;.</span>
 <span class='infoEvent'>curl-7.60.0/lib/vtls/openssl.c:2183: <b>equality_cond</b>: Jumping to case &quot;CURL_SSLVERSION_TLSv1_0&quot;.</span>
@@ -1323,7 +1323,7 @@ curl-7.60.0/lib/vtls/openssl.c:2339: <b>dead_error_begin</b>: Execution cannot r
 <span class='infoEventComment'>#<span class='traceEvent'> 2340|   #ifndef OPENSSL_NO_SSL2</span></span>
 <span class='infoEventComment'>#<span class='traceEvent'> 2341|       ctx_options |= SSL_OP_NO_SSLv3;</span></span>
 
-<a id='def47'></a><b>Error: <span class='checker'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="definition of CWE-561 by MITRE">CWE-561</a>):</b> <a href='#def47'>[#def47]</a> <span class='newDefect'>[<b>warning:</b> defect not occurring in <b>curl-7.29.0-46.el7</b>]</span>
+<a id='def47'></a><b>Error: <span class='checker'>DEADCODE</span> (<a href="https://cwe.mitre.org/data/definitions/561.html" title="definition of CWE-561 by MITRE">CWE-561</a>):</b> <a href='#def47'>[#def47]</a> <span class='newDefect'>[<b>warning:</b> finding not occurring in <b>curl-7.29.0-46.el7</b>]</span>
 <span class='infoEvent'>curl-7.60.0/lib/vtls/openssl.c:2181: <b>equality_cond</b>: Jumping to case &quot;CURL_SSLVERSION_DEFAULT&quot;.</span>
 <span class='infoEvent'>curl-7.60.0/lib/vtls/openssl.c:2182: <b>equality_cond</b>: Jumping to case &quot;CURL_SSLVERSION_TLSv1&quot;.</span>
 <span class='infoEvent'>curl-7.60.0/lib/vtls/openssl.c:2183: <b>equality_cond</b>: Jumping to case &quot;CURL_SSLVERSION_TLSv1_0&quot;.</span>
@@ -1359,7 +1359,7 @@ curl-7.60.0/src/tool_dirhie.c:143: <b>toctou</b>: Calling function &quot;mkdir&q
 <span class='infoEventComment'>#<span class='traceEvent'>  144|             show_dir_errno(errors, dirbuildup);</span></span>
 <span class='infoEventComment'>#<span class='traceEvent'>  145|             result = CURLE_WRITE_ERROR;</span></span>
 
-<a id='def49'></a><b>Error: <span class='checker'>COPY_PASTE_ERROR</span> (<a href="https://cwe.mitre.org/data/definitions/398.html" title="definition of CWE-398 by MITRE">CWE-398</a>):</b> <a href='#def49'>[#def49]</a> <span class='newDefect'>[<b>warning:</b> defect not occurring in <b>curl-7.29.0-46.el7</b>]</span>
+<a id='def49'></a><b>Error: <span class='checker'>COPY_PASTE_ERROR</span> (<a href="https://cwe.mitre.org/data/definitions/398.html" title="definition of CWE-398 by MITRE">CWE-398</a>):</b> <a href='#def49'>[#def49]</a> <span class='newDefect'>[<b>warning:</b> finding not occurring in <b>curl-7.29.0-46.el7</b>]</span>
 <span class='infoEvent'>curl-7.60.0/tests/python_dependencies/impacket/ntlm.py:595: <b>original</b>: &quot;user.decode&quot; looks like the original copy.</span>
 curl-7.60.0/tests/python_dependencies/impacket/ntlm.py:603: <b>copy_paste_error</b>: &quot;user&quot; in &quot;user.decode&quot; looks like a copy-paste error.
 <span class='infoEvent'>curl-7.60.0/tests/python_dependencies/impacket/ntlm.py:603: <b>remediation</b>: Should it say &quot;domain&quot; instead?</span>
@@ -1369,7 +1369,7 @@ curl-7.60.0/tests/python_dependencies/impacket/ntlm.py:603: <b>copy_paste_error<
 <span class='infoEventComment'>#<span class='traceEvent'>  604|   </span></span>
 <span class='infoEventComment'>#<span class='traceEvent'>  605|       ntlmChallenge = NTLMAuthChallenge(type2)</span></span>
 
-<a id='def50'></a><b>Error: <span class='checker'>FORWARD_NULL</span> (<a href="https://cwe.mitre.org/data/definitions/476.html" title="definition of CWE-476 by MITRE">CWE-476</a>):</b> <a href='#def50'>[#def50]</a> <span class='newDefect'>[<b>warning:</b> defect not occurring in <b>curl-7.29.0-46.el7</b>]</span>
+<a id='def50'></a><b>Error: <span class='checker'>FORWARD_NULL</span> (<a href="https://cwe.mitre.org/data/definitions/476.html" title="definition of CWE-476 by MITRE">CWE-476</a>):</b> <a href='#def50'>[#def50]</a> <span class='newDefect'>[<b>warning:</b> finding not occurring in <b>curl-7.29.0-46.el7</b>]</span>
 <span class='infoEvent'>curl-7.60.0/tests/python_dependencies/impacket/smb.py:3504: <b>assign_undefined</b>: Assigning: &quot;readAndX&quot; = &quot;undefined&quot;.</span>
 <span class='traceEvent'>curl-7.60.0/tests/python_dependencies/impacket/smb.py:3504: <b>cond_true</b>: Condition &quot;!max_size&quot;, taking true branch.</span>
 <span class='traceEvent'>curl-7.60.0/tests/python_dependencies/impacket/smb.py:3505: <b>cond_true</b>: Condition &quot;self._dialects_parameters[&quot;Capabilities&quot;] &amp; SMB.CAP_LARGE_READX&quot;, taking true branch.</span>
@@ -1391,7 +1391,7 @@ curl-7.60.0/tests/python_dependencies/impacket/smb.py:3542: <b>property_access</
 <span class='infoEventComment'>#<span class='traceEvent'> 3543|           else:</span></span>
 <span class='infoEventComment'>#<span class='traceEvent'> 3544|               self.sendSMB(smb)</span></span>
 
-<a id='def51'></a><b>Error: <span class='checker'>IDENTICAL_BRANCHES</span>:</b> <a href='#def51'>[#def51]</a> <span class='newDefect'>[<b>warning:</b> defect not occurring in <b>curl-7.29.0-46.el7</b>]</span>
+<a id='def51'></a><b>Error: <span class='checker'>IDENTICAL_BRANCHES</span>:</b> <a href='#def51'>[#def51]</a> <span class='newDefect'>[<b>warning:</b> finding not occurring in <b>curl-7.29.0-46.el7</b>]</span>
 curl-7.60.0/tests/python_dependencies/impacket/smb.py:3775: <b>identical_branches</b>: Ternary expression on condition &quot;self.__flags2 &amp; SMB.FLAGS2_UNICODE&quot; has identical then and else expressions: &quot;&quot;&quot;&quot;. Should one of the expressions be modified, or the entire ternary expression replaced?
 <span class='infoEventComment'>#<span class='traceEvent'> 3773|               findFirstParameter[&apos;InformationLevel&apos;] = SMB_FIND_FILE_BOTH_DIRECTORY_INFO</span></span>
 <span class='infoEventComment'>#<span class='traceEvent'> 3774|               findFirstParameter[&apos;SearchStorageType&apos;] = 0</span></span>
@@ -1399,7 +1399,7 @@ curl-7.60.0/tests/python_dependencies/impacket/smb.py:3775: <b>identical_branche
 <span class='infoEventComment'>#<span class='traceEvent'> 3776|               self.send_trans2(tid, SMB.TRANS2_FIND_FIRST2, &apos;\x00&apos;, findFirstParameter, &apos;&apos;)</span></span>
 <span class='infoEventComment'>#<span class='traceEvent'> 3777|               files = [ ]</span></span>
 
-<a id='def52'></a><b>Error: <span class='checker'>IDENTICAL_BRANCHES</span>:</b> <a href='#def52'>[#def52]</a> <span class='newDefect'>[<b>warning:</b> defect not occurring in <b>curl-7.29.0-46.el7</b>]</span>
+<a id='def52'></a><b>Error: <span class='checker'>IDENTICAL_BRANCHES</span>:</b> <a href='#def52'>[#def52]</a> <span class='newDefect'>[<b>warning:</b> finding not occurring in <b>curl-7.29.0-46.el7</b>]</span>
 curl-7.60.0/tests/python_dependencies/impacket/smb.py:3818: <b>identical_branches</b>: Ternary expression on condition &quot;self.__flags2 &amp; SMB.FLAGS2_UNICODE&quot; has identical then and else expressions: &quot;&quot;&quot;&quot;. Should one of the expressions be modified, or the entire ternary expression replaced?
 <span class='infoEventComment'>#<span class='traceEvent'> 3816|                           findNextParameter[&apos;ResumeKey&apos;] = 0</span></span>
 <span class='infoEventComment'>#<span class='traceEvent'> 3817|                           findNextParameter[&apos;Flags&apos;] = SMB_FIND_RETURN_RESUME_KEYS | SMB_FIND_CLOSE_AT_EOS</span></span>
@@ -1407,7 +1407,7 @@ curl-7.60.0/tests/python_dependencies/impacket/smb.py:3818: <b>identical_branche
 <span class='infoEventComment'>#<span class='traceEvent'> 3819|                           self.send_trans2(tid, SMB.TRANS2_FIND_NEXT2, &apos;\x00&apos;, findNextParameter, &apos;&apos;)</span></span>
 <span class='infoEventComment'>#<span class='traceEvent'> 3820|                           findData = &apos;&apos;</span></span>
 
-<a id='def53'></a><b>Error: <span class='checker'>FORWARD_NULL</span> (<a href="https://cwe.mitre.org/data/definitions/476.html" title="definition of CWE-476 by MITRE">CWE-476</a>):</b> <a href='#def53'>[#def53]</a> <span class='newDefect'>[<b>warning:</b> defect not occurring in <b>curl-7.29.0-46.el7</b>]</span>
+<a id='def53'></a><b>Error: <span class='checker'>FORWARD_NULL</span> (<a href="https://cwe.mitre.org/data/definitions/476.html" title="definition of CWE-476 by MITRE">CWE-476</a>):</b> <a href='#def53'>[#def53]</a> <span class='newDefect'>[<b>warning:</b> finding not occurring in <b>curl-7.29.0-46.el7</b>]</span>
 <span class='infoEvent'>curl-7.60.0/tests/python_dependencies/impacket/smbserver.py:2066: <b>assign_undefined</b>: Assigning: &quot;mode&quot; = &quot;undefined&quot;.</span>
 <span class='traceEvent'>curl-7.60.0/tests/python_dependencies/impacket/smbserver.py:2077: <b>cond_false</b>: Condition &quot;connData[&quot;ConnectedShares&quot;].has_key(recvPacket[&quot;Tid&quot;])&quot;, taking false branch.</span>
 <span class='traceEvent'>curl-7.60.0/tests/python_dependencies/impacket/smbserver.py:2085: <b>else_branch</b>: Reached else branch.</span>
