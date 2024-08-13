@@ -1,0 +1,34 @@
+Error: SNYK_CODE_WARNING (CWE-89):
+project-koku-koku-5c7647f/koku/masu/api/db_performance/dbp_views.py:483:24: error[python/Sqli]: Unsanitized input from the HTTP request body flows into execute, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+#  481|           with DBPerformanceStats(get_identity_username(request), CONFIGURATOR) as dbp:
+#  482|               try:
+#  483|->                 data = dbp.explain_sql(query_params["sql_statement"])
+#  484|               except ProgrammingError as e:
+#  485|                   data = {"query_plan": f"{type(e).__name__}: {str(e)}"}
+# dbp.explain_sql parses and sanitizes the inputted query params. The query is then run through a read-only db connection.
+
+Error: IDENTIFIER_TYPO (CWE-688):
+project-koku-koku-30de2cf/koku/api/settings/tags/mapping/utils.py:96: identifier_typo: Using "provider__uuid" appears to be a typo:
+* Identifier "provider__uuid" is only known to be referenced here, or in copies of this code.
+* Identifier "provider_uuid" is referenced elsewhere at least 216 times.
+project-koku-koku-30de2cf/koku/api/settings/tags/mapping/utils.py:96: remediation: Should identifier "provider__uuid" be replaced by "provider_uuid"?
+project-koku-koku-30de2cf/dev/scripts/trino_query.py:11: identifier_use: Example 1: Using identifier "provider_uuid" (2 total uses in this function).
+project-koku-koku-30de2cf/koku/api/provider/models.py:224: identifier_use: Example 2: Using identifier "provider_uuid".
+project-koku-koku-30de2cf/koku/api/report/ocp/query_handler.py:147: identifier_use: Example 3: Using identifier "provider_uuid".
+project-koku-koku-30de2cf/koku/api/test_utils.py:303: identifier_use: Example 4: Using identifier "provider_uuid".
+project-koku-koku-30de2cf/koku/cost_models/cost_model_manager.py:123: identifier_use: Example 5: Using identifier "provider_uuid".
+#   94|               provider_uuids = (
+#   95|                   OCPUsageReportPeriod.objects.filter(cluster_id__in=clusters, report_period_start=start_date)
+#   96|->                 .values_list("provider__uuid", flat=True)
+#   97|                   .distinct()
+#   98|               )
+# This is Django syntax to query through a foreign key.
+
+Error: SNYK_CODE_WARNING (CWE-89):
+project-koku-koku-cf77b7a/koku/masu/api/trino.py:56:13: error[python/Sqli]: Unsanitized input from the HTTP request body flows into execute, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+#   54|           ) as conn:
+#   55|               cur = conn.cursor()
+#   56|->             cur.execute(query)
+#   57|               cols = [des[0] for des in cur.description]
+#   58|               rows = cur.fetchall()
+# this trino connection has been converted to a READONLY connection

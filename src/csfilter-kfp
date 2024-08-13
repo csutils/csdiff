@@ -1,0 +1,238 @@
+#!/usr/bin/env python3
+
+# Copyright (C) 2024 Red Hat, Inc.
+#
+# This file is part of csdiff.
+#
+# csdiff is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# csdiff is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
+
+import argparse
+import os
+import re
+import shlex
+import subprocess
+import sys
+
+
+# if neither --kfp-dir nor --kfp-git-url is specified, use the known-false-positives RPM package
+DEFAULT_KFP_DIR  = "/usr/share/csmock/known-false-positives.d"
+DEFAULT_KFP_JSON = "/usr/share/csmock/known-false-positives.js"
+
+
+def construct_init_cmd(args):
+    # make bash exit on error
+    cmd = 'set -e\n'
+
+    # make bash propagate exit code from piped commands
+    cmd += 'set -o pipefail\n'
+
+    # make bash expand empty globs
+    cmd += 'shopt -s nullglob\n'
+
+    # create a temporary directory with an automatic destructor
+    cmd += 'export td=$(mktemp --directory --tmpdir tmp-csfilter-kfp.XXXXXXXXXX)\n'
+    cmd += 'trap "rm -fr \'${td}\'" EXIT\n'
+
+    if args.verbose:
+        # run shell in XTRACE mode
+        cmd += 'set -x\n'
+
+    return cmd
+
+
+def construct_git_cmd(kfp_git_url):
+    # split kfp_git_url into the clone URL and (optional) revision
+    m = re.match("^(.*)#([0-9a-f]+)", kfp_git_url)
+    if m:
+        # checkout a specific revision
+        url = shlex.quote(m.group(1))
+        rev = m.group(2)
+        return f'git clone {url} ${{td}}/kfp\n' \
+               f'git -C "${{td}}/kfp" reset -q --hard {rev}\n'
+    else:
+        # shallow clone of the default branch
+        url = shlex.quote(kfp_git_url)
+        return f'git clone --depth 1 {url} "${{td}}/kfp"\n'
+
+
+def construct_prep_cmd(args):
+    # check which KFP will be used
+    have_kfp_json = False
+    if args.kfp_git_url:
+        # clone git repo
+        cmd = construct_git_cmd(args.kfp_git_url)
+    elif args.kfp_dir:
+        # symlink an absolute path to the directory
+        kfp_abs = shlex.quote(os.path.realpath(args.kfp_dir))
+        cmd = f'ln -s {kfp_abs} "${{td}}/kfp"\n'
+    elif os.path.isfile(DEFAULT_KFP_JSON):
+        # create symlinks to the known-false-positives RPM package installed on the system
+        cmd = f'ln -s "{DEFAULT_KFP_DIR}" "${{td}}/kfp"\n' \
+              f'ln -s "{DEFAULT_KFP_JSON}" "${{td}}/kfp.json"\n'
+        have_kfp_json = True
+    else:
+        raise RuntimeError("no source of KFP specified, please use --kfp-dir or --kfp-git-url" \
+                " (or install the known-false-positives RPM pacakge)")
+
+    if not have_kfp_json:
+        # create all-in-one kfp.json file from files in ${td}/kfp
+        cmd += 'touch "${td}/empty.err"\n'
+        cmd += '(cd "${td}/kfp" && csgrep --mode=json --remove-duplicates ${td}/empty.err'
+        cmd += ' */ignore.err */true-positives-ignore.err >"${td}/kfp.json")\n'
+
+    return cmd
+
+
+def construct_path_filter(args):
+    if args.project_nvr is None:
+        # TODO: read project_nvr from scan properties if available
+        return '  cat\n'
+
+    # cut off the `-version-release` or `-version` suffix to obtain package name where `version` can be
+    # a number optionally prefixed by `v` or a full-size SHA1 hash encoded in lowercase as, for example,
+    # in `project-koku-koku-cbe5e5c3355c1e140aa1cca7377aebe09d8d8466`
+    proj = re.sub("-(([v]?[0-9][^-]*)|([0-9a-f]{40}))(-[0-9][^-]*)?$", "", args.project_nvr)
+
+    # validate the resulting project name
+    if not re.match("^[A-Za-z0-9-_]+$", proj):
+        raise RuntimeError(f"invalid project name: {proj}")
+
+    # generate a script that will construct the filter at run-time
+    cmd = f'  ep="${{td}}/kfp/{proj}/exclude-paths.txt"\n'
+    cmd += '  re=\n'
+    cmd += '  while read line; do\n'
+    cmd += '    re="${re}|(${line})"\n'
+    cmd += '  done < <(grep -Esv "^(#|\\\\$)" "$ep")\n'
+    cmd += '  if test -n "$re"; then\n'
+    cmd += '    csgrep --mode=json --invert-match --path="${re#|}"\n'
+    cmd += '  else\n'
+    cmd += '    cat\n'
+    cmd += '  fi\n'
+    return cmd
+
+
+def construct_filter_cmd(args):
+    # set shell options and create a temporary diretory ${td}
+    cmd = construct_init_cmd(args)
+
+    # prepare the KFP data from the specified source
+    cmd += construct_prep_cmd(args)
+
+    # read the whole input into a JSON file
+    cmd += 'csgrep --mode=json'
+    if args.input_file:
+        input_file = shlex.quote(args.input_file)
+        cmd += f' {input_file}'
+    cmd += ' >"${td}/input.json"\n'
+
+    # define path-based filter
+    path_filter = construct_path_filter(args)
+    cmd += f'path_filter() {{\n{path_filter}}}\n'
+
+    # exclude individual findings
+    cmd += 'csdiff --show-internal "${td}/kfp.json" "${td}/input.json"'
+
+    # exclude paths in the scan results
+    cmd += ' | path_filter >${td}/output.json\n'
+
+    if args.record_excluded:
+        # record excluded findings to the specified file
+        excluded_file = shlex.quote(args.record_excluded)
+        cmd += 'csdiff "${td}/output.json" "${td}/input.json"'
+        cmd += f' >{excluded_file}\n'
+
+    if not args.json_output:
+        # export plain-text format
+        cmd += 'csgrep "${td}/output.json"\n'
+        return cmd
+
+    # export JSON format
+    cmd += 'csgrep --mode=json "${td}/output.json"'
+
+    # optionally record the source of known-false-positives
+    if args.kfp_dir:
+        kfp_dir = shlex.quote(args.kfp_dir)
+        cmd += f' --set-scan-prop=known-false-positives-dir:{kfp_dir}'
+    elif args.kfp_git_url:
+        kfp_git_url = shlex.quote(args.kfp_git_url)
+        cmd += f' --set-scan-prop=known-false-positives-git-url:{kfp_git_url}'
+    cmd += '\n'
+
+    return cmd
+
+
+def main():
+    # initialize argument parser
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument(
+        "input_file", nargs="?",
+        help="optional name of the input file (standard input is used by default)")
+
+    # source of known-false-positives
+    kfp_source = parser.add_mutually_exclusive_group()
+    kfp_source.add_argument(
+        "--kfp-dir",
+        help="known false positives directory")
+    kfp_source.add_argument(
+        "--kfp-git-url",
+        help="known false positives git URL (optionally taking a revision delimited by #)")
+
+    parser.add_argument(
+        "--project-nvr",
+        help="Name-Version-Release (NVR) of the scanned project, used to find path exclusions")
+
+    parser.add_argument(
+        "--record-excluded",
+        help="file to store all excluded findings to")
+
+    parser.add_argument(
+        "--json-output", action="store_true", default=(not sys.stdout.isatty()),
+        help="produce JSON output (default if stdout is not connected to a terminal)")
+
+    parser.add_argument(
+        "-v", "--verbose", action="store_true",
+        help="run shell in XTRACE mode while executing the filtering script")
+
+    parser.add_argument(
+        "-n", "--dry-run", action="store_true",
+        help="do not execute anything, only print the shell script that would be executed")
+
+    # parse command-line arguments
+    args = parser.parse_args()
+
+    # if --kfp-dir is used, check that a directory was given
+    if args.kfp_dir and not os.path.isdir(args.kfp_dir):
+        parser.error(f"'{args.kfp_dir}' given to --kfp-dir is not a directory")
+
+    # construct the command to filter
+    try:
+        cmd = construct_filter_cmd(args)
+    except RuntimeError as e:
+        parser.error(e)
+
+    if args.dry_run:
+        # print the command and exit successfully
+        print(cmd, end='')
+        sys.exit(0)
+
+    # run the command
+    try:
+        subprocess.run(cmd, shell=True, check=True, executable='/bin/bash')
+    except subprocess.CalledProcessError as e:
+        sys.exit(e.returncode)
+
+
+if __name__ == "__main__":
+    main()

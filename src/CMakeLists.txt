@@ -82,6 +82,11 @@ install(TARGETS
     cstrans-df-run
     DESTINATION ${CMAKE_INSTALL_BINDIR})
 
+# install the csfilter-kfp script
+install(PROGRAMS
+    csfilter-kfp
+    DESTINATION ${CMAKE_INSTALL_BINDIR})
+
 # optionally build statically linked csgrep-static
 option(CSGREP_STATIC "Set to ON to build the csgrep-static executable" OFF)
 if(CSGREP_STATIC)

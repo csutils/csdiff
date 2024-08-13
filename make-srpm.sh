@@ -202,6 +202,7 @@ make version.cc
 %doc README
 %license COPYING
 %{_bindir}/csdiff
+%{_bindir}/csfilter-kfp
 %{_bindir}/csgrep
 %{_bindir}/cshtml
 %{_bindir}/cslinker

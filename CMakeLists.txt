@@ -19,7 +19,7 @@ cmake_minimum_required(VERSION 3.15)
 project(csdiff CXX)
 enable_testing()
 
-# C/C++ sources
+# source code
 add_subdirectory(src)
 
 # regression tests

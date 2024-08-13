@@ -1,0 +1,5 @@
+.*/test/.*
+.*/tests/.*
+.*testing/.*
+.*/[^/]*test_[^/]*\.py$
+.*docker-compose.*

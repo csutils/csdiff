@@ -1,0 +1,24 @@
+set -e
+set -o pipefail
+shopt -s nullglob
+export td=$(mktemp --directory --tmpdir tmp-csfilter-kfp.XXXXXXXXXX)
+trap "rm -fr '${td}'" EXIT
+set -x
+git clone --depth 1 https://github.com/csutils/kfp.git "${td}/kfp"
+touch "${td}/empty.err"
+(cd "${td}/kfp" && csgrep --mode=json --remove-duplicates ${td}/empty.err */ignore.err */true-positives-ignore.err >"${td}/kfp.json")
+csgrep --mode=json >"${td}/input.json"
+path_filter() {
+  ep="${td}/kfp/passt-network-binding-plugin-sidecar-rhel9-container/exclude-paths.txt"
+  re=
+  while read line; do
+    re="${re}|(${line})"
+  done < <(grep -Esv "^(#|\\$)" "$ep")
+  if test -n "$re"; then
+    csgrep --mode=json --invert-match --path="${re#|}"
+  else
+    cat
+  fi
+}
+csdiff --show-internal "${td}/kfp.json" "${td}/input.json" | path_filter >${td}/output.json
+csgrep --mode=json "${td}/output.json" --set-scan-prop=known-false-positives-git-url:https://github.com/csutils/kfp.git
