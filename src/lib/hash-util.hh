@@ -21,7 +21,6 @@
 #include <vector>
 
 #include <boost/algorithm/hex.hpp>
-#include <boost/algorithm/string.hpp>
 
 /// compute TEng hash of `src` and return it as hex-encoded string
 template <typename TEng, typename TSrc>
@@ -43,9 +42,6 @@ std::string hexHashStr(const TSrc &src)
 
     // convert the hash to a hex string
     std::string result;
-    boost::algorithm::hex(hash.begin(), hash.end(), back_inserter(result));
-
-    // convert uppercase letters to lowercase
-    boost::algorithm::to_lower(result);
+    boost::algorithm::hex_lower(hash.begin(), hash.end(), back_inserter(result));
     return result;
 }
