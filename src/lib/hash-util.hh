@@ -31,13 +31,15 @@ std::string hexHashStr(const TSrc &src)
     TEng eng;
     eng.process_bytes(src.data(), src.size());
 
-    // export the hash as an array of unsigned int
-    typename TEng::digest_type dst;
+    // export the hash as an array
+    using TDst = typename TEng::digest_type;
+    TDst dst;
     eng.get_digest(dst);
 
-    // convert the hash to a vector of unsigned int
+    // convert the hash to a vector
     static const size_t len = sizeof(dst) / sizeof(dst[0]);
-    const std::vector<unsigned> hash(dst, dst + len);
+    using TElem = typename std::remove_extent<TDst>::type;
+    const std::vector<TElem> hash(dst, dst + len);
 
     // convert the hash to a hex string
     std::string result;
