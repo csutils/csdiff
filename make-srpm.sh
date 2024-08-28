@@ -189,7 +189,8 @@ make version.cc
 %cmake3                                    \\
     -DCSGREP_STATIC=%{?with_static:ON}     \\
     -DPYCSDIFF_PYTHON2=%{?with_python2:ON} \\
-    -DPYCSDIFF_PYTHON3=%{?with_python3:ON}
+    -DPYCSDIFF_PYTHON3=%{?with_python3:ON} \\
+    -DVERSION='%{name}-%{version}-%{release}'
 %cmake3_build
 
 %install
@@ -210,6 +211,7 @@ make version.cc
 %{_bindir}/cstrans-df-run
 %{_datadir}/%{name}
 %{_mandir}/man1/csdiff.1*
+%{_mandir}/man1/csfilter-kfp.1*
 %{_mandir}/man1/csgrep.1*
 %{_mandir}/man1/cshtml.1*
 %{_mandir}/man1/cslinker.1*

@@ -209,6 +209,10 @@ def main():
         "-n", "--dry-run", action="store_true",
         help="do not execute anything, only print the shell script that would be executed")
 
+    parser.add_argument(
+        "--version", action="version", version="@VERSION@",
+        help="print the version string and exit")
+
     # parse command-line arguments
     args = parser.parse_args()
 

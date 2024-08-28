@@ -83,8 +83,12 @@ install(TARGETS
     DESTINATION ${CMAKE_INSTALL_BINDIR})
 
 # install the csfilter-kfp script
+configure_file(
+    ${CMAKE_CURRENT_SOURCE_DIR}/csfilter-kfp
+    ${CMAKE_CURRENT_BINARY_DIR}/csfilter-kfp
+    @ONLY)
 install(PROGRAMS
-    csfilter-kfp
+    ${CMAKE_CURRENT_BINARY_DIR}/csfilter-kfp
     DESTINATION ${CMAKE_INSTALL_BINDIR})
 
 # optionally build statically linked csgrep-static
@@ -190,6 +194,19 @@ if(HELP2MAN)
     create_manpage(cslinker)
     create_manpage(cssort)
     create_manpage(cstrans-df-run)
+
+    # create/install the csfilter-kfp.1 man page
+    add_custom_command(OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/csfilter-kfp.1"
+        COMMAND env LC_ALL=C ${HELP2MAN} --no-info --section 1
+            --include "${CMAKE_SOURCE_DIR}/doc/csfilter-kfp.h2m"
+            ${CMAKE_CURRENT_BINARY_DIR}/csfilter-kfp
+            > csfilter-kfp.1 || rm -f csfilter-kfp.1
+        COMMENT "Generating csfilter-kfp man page"
+        VERBATIM)
+    add_custom_target(csfilter-kfp.1 ALL DEPENDS
+        "${CMAKE_CURRENT_BINARY_DIR}/csfilter-kfp.1")
+    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/csfilter-kfp.1
+            DESTINATION ${CMAKE_INSTALL_MANDIR}/man1)
 else()
     message(STATUS "help2man not found - documentation will NOT be built")
 endif()
