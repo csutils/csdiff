@@ -157,7 +157,7 @@ for context embedding in legacy build environments.
 %package -n python2-%{name}
 Summary:        Python interface to csdiff for Python 2
 BuildRequires:  python2-devel
-%py_provides    python2-%{name}
+%{?python_provide:%python_provide python2-%{name}}
 
 %description -n python2-%{name}
 This package contains the Python 2 binding for the csdiff tool for comparing
