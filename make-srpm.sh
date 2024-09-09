@@ -171,7 +171,12 @@ code scan defect lists to find out added or fixed defects.
 %package -n python3-%{name}
 Summary:        Python interface to csdiff for Python 3
 BuildRequires:  python3-devel
+%if 0%{?rhel} == 7
+# fallback for epel7 buildroots with outdated RPM macros
+%{?python_provide:%python_provide python3-%{name}}
+%else
 %py_provides    python3-%{name}
+%endif
 
 %description -n python3-%{name}
 This package contains the Python 3 binding for the csdiff tool for comparing
