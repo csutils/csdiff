@@ -323,8 +323,12 @@ bool SarifTreeDecoder::readNode(Defect *def)
     // initialize the defect structure
     *def = Defect(d->singleChecker);
 
-    // initialize the key event
+    // read "level" if available and propagate "error" to the "imp" flag
     const auto level = valueOf<std::string>(defNode, "level", "warning");
+    if (level == "error")
+        def->imp = 1;
+
+    // initialize the key event
     def->events.push_back(DefEvent(level));
     DefEvent &keyEvent = def->events.back();
 
