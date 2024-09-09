@@ -134,6 +134,9 @@ BuildRequires: make
 %if 0%{?rhel} == 7
 Provides: bundled(boost_json)
 Provides: bundled(boost_nowide)
+%else
+# needed for csfilter-kfp --kfp-git-url
+Recommends: git-core
 %endif
 
 %description
