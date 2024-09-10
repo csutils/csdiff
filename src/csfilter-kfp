@@ -113,7 +113,7 @@ def construct_path_filter(args):
     cmd += '  re=\n'
     cmd += '  while read line; do\n'
     cmd += '    re="${re}|(${line})"\n'
-    cmd += '  done < <(grep -Esv \'^(#|$)\' "$ep")\n'
+    cmd += '  done < <(grep -Esv \'^(#| *$)\' "$ep")\n'
     cmd += '  if test -n "$re"; then\n'
     cmd += '    csgrep --mode=json --invert-match --path="${re#|}"\n'
     cmd += '  else\n'

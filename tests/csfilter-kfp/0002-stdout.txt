@@ -13,7 +13,7 @@ path_filter() {
   re=
   while read line; do
     re="${re}|(${line})"
-  done < <(grep -Esv '^(#|$)' "$ep")
+  done < <(grep -Esv '^(#| *$)' "$ep")
   if test -n "$re"; then
     csgrep --mode=json --invert-match --path="${re#|}"
   else
