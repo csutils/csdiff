@@ -1,0 +1,10 @@
+
+Error: SNYK_CODE_WARNING (CWE-547):
+WALinuxAgent-2.7.0.6/azurelinuxagent/common/utils/cryptutil.py:33:1: error[python/HardcodedNonCryptoSecret]: Avoid hardcoding values that are meant to be secret. Found a hardcoded string used in here.
+#   31|   
+#   32|   
+#   33|-> DECRYPT_SECRET_CMD = "{0} cms -decrypt -inform DER -inkey {1} -in /dev/stdin"
+#   34|   
+#   35|
+# DECRYPT_SECRET_CMD is not a hardcoded secret, it is a openssl command template, there's nothing secret in it.
+

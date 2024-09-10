@@ -1,0 +1,956 @@
+{
+    "scan": {
+        "analyzer-version-clang": "17.0.6",
+        "analyzer-version-coverity": "2023.12.0",
+        "analyzer-version-cppcheck": "2.9",
+        "analyzer-version-gcc": "8.5.0",
+        "analyzer-version-shellcheck": "0.8.0",
+        "analyzer-version-snyk-code": "1.1233.0",
+        "analyzer-version-unicontrol": "0.0.2",
+        "cov-compilation-unit-count": 265,
+        "cov-compilation-unit-ratio": 100,
+        "cov-lines-processed": 43499,
+        "cov-time-elapsed-analysis": "00:00:44",
+        "enabled-plugins": "clang, coverity, cppcheck, gcc, shellcheck, snyk, unicontrol",
+        "exit-code": 0,
+        "host": "osh-worker-003.osh-001.prod.iad2.dc.redhat.com",
+        "known-false-positives": "/usr/share/csmock/known-false-positives.js",
+        "known-false-positives-dir": "$PROJECT_ROOT/tests/csfilter-kfp/0004-kfp",
+        "mock-config": "rhel-8-x86_64",
+        "project-name": "WALinuxAgent-2.7.0.6-8.el8_8",
+        "store-results-to": "/tmp/tmpmngokbi0/WALinuxAgent-2.7.0.6-8.el8_8.tar.xz",
+        "time-created": "2024-01-18 22:39:37",
+        "time-finished": "2024-01-18 22:45:05",
+        "tool": "csmock",
+        "tool-args": "'/usr/bin/csmock' '-r' 'rhel-8-x86_64' '-t' 'snyk,unicontrol,cppcheck,clang,shellcheck,gcc,coverity' '-o' '/tmp/tmpmngokbi0/WALinuxAgent-2.7.0.6-8.el8_8.tar.xz' '--keep-going' '--use-host-cppcheck' '--gcc-analyze' '--unicontrol-notests' '--unicontrol-bidi-only' '/tmp/tmpmngokbi0/WALinuxAgent-2.7.0.6-8.el8_8.src.rpm'",
+        "tool-version": "csmock-3.5.0.20240112.154500.g054e508.internal-1.el9"
+    },
+    "defects": [
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 78,
+            "tool": "snyk-code",
+            "hash_v1": "ef732ed4e835cdb42e133cbfd2aef9ca987c5c5e",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "WALinuxAgent-2.7.0.6/azurelinuxagent/agent.py",
+                    "line": 392,
+                    "column": 12,
+                    "event": "warning[python/CommandInjection]",
+                    "message": "Unsanitized input from a command line argument flows into subprocess.Popen, where it is used as a shell command. This may result in a Command Injection vulnerability.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  390|       /dev/null",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  391|       \"\"\"",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  392|->     args = [sys.argv[0], '-daemon']",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  393|       if conf_file_path is not None:",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  394|           args.append('-configuration-path:{0}'.format(conf_file_path))",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 284,
+            "tool": "snyk-code",
+            "hash_v1": "abff736c7cae7440740352c80f029580e2a7249f",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "WALinuxAgent-2.7.0.6/azurelinuxagent/common/dhcp.py",
+                    "line": 323,
+                    "column": 9,
+                    "event": "warning[python/BindToAllNetworkInterfaces]",
+                    "message": "Using bind in bind makes it listen on all network interfaces, which may open the service to unintended traffic.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  321|           sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  322|           sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  323|->         sock.bind((\"0.0.0.0\", 68))",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  324|           sock.sendto(request, (\"<broadcast>\", 67))",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  325|           sock.settimeout(10)",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 798,
+            "tool": "snyk-code",
+            "hash_v1": "195a69a22db8975b91642e0ff6f4da0b629732cd",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "WALinuxAgent-2.7.0.6/azurelinuxagent/common/osutil/gaia.py",
+                    "line": 92,
+                    "column": 9,
+                    "event": "note[python/NoHardcodedCredentials]",
+                    "message": "Do not hardcode credentials in code. Found hardcoded credential used in here.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   90|       def deploy_ssh_keypair(self, username, keypair):",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   91|           logger.info('deploy_ssh_keypair')",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   92|->         username = 'admin'",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   93|           path, thumbprint = keypair",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   94|           path = self._replace_user(path, username)",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 798,
+            "tool": "snyk-code",
+            "hash_v1": "195a69a22db8975b91642e0ff6f4da0b629732cd",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "WALinuxAgent-2.7.0.6/azurelinuxagent/common/osutil/gaia.py",
+                    "line": 144,
+                    "column": 9,
+                    "event": "note[python/NoHardcodedCredentials]",
+                    "message": "Do not hardcode credentials in code. Found hardcoded credential used in here.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  142|       def deploy_ssh_pubkey(self, username, pubkey):",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  143|           logger.info('deploy_ssh_pubkey')",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  144|->         username = 'admin'",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  145|           path, thumbprint, value = pubkey",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  146|           path = self._replace_user(path, username)",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "FORWARD_NULL",
+            "cwe": 476,
+            "function": "put_page_blob",
+            "language": "python",
+            "tool": "coverity",
+            "hash_v1": "b6b8680a7e752b73870bc62c3a5f21518dcde37c",
+            "key_event_idx": 6,
+            "events": [
+                {
+                    "file_name": "WALinuxAgent-2.7.0.6/azurelinuxagent/common/protocol/wire.py",
+                    "line": 513,
+                    "event": "path",
+                    "message": "Condition \"resp.status != httpclient.CREATED\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "WALinuxAgent-2.7.0.6/azurelinuxagent/common/protocol/wire.py",
+                    "line": 517,
+                    "event": "path",
+                    "message": "Condition \"url.count(\"?\") <= 0\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "WALinuxAgent-2.7.0.6/azurelinuxagent/common/protocol/wire.py",
+                    "line": 518,
+                    "event": "path",
+                    "message": "Falling through to end of if statement.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "WALinuxAgent-2.7.0.6/azurelinuxagent/common/protocol/wire.py",
+                    "line": 526,
+                    "event": "path",
+                    "message": "Condition \"end < len(data)\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "WALinuxAgent-2.7.0.6/azurelinuxagent/common/protocol/wire.py",
+                    "line": 540,
+                    "event": "path",
+                    "message": "Condition \"resp === None\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "WALinuxAgent-2.7.0.6/azurelinuxagent/common/protocol/wire.py",
+                    "line": 540,
+                    "event": "null_check",
+                    "message": "Comparing \"resp\" to a null-like value implies that \"resp\" might be null-like.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "WALinuxAgent-2.7.0.6/azurelinuxagent/common/protocol/wire.py",
+                    "line": 541,
+                    "event": "property_access",
+                    "message": "Accessing a property of null-like value \"resp\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  539|                   headers)",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  540|               if resp is None or resp.status != httpclient.CREATED:",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  541|->                 raise UploadError(",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  542|                       \"Failed to upload page blob: {0}\".format(resp.status))",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  543|               start = end",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "DEADCODE",
+            "cwe": 561,
+            "function": "__init__",
+            "language": "python",
+            "tool": "coverity",
+            "hash_v1": "499652819b1c90bf3e7b49d64c1a1ed1b6e8645e",
+            "key_event_idx": 4,
+            "events": [
+                {
+                    "file_name": "WALinuxAgent-2.7.0.6/azurelinuxagent/common/utils/flexible_version.py",
+                    "line": 48,
+                    "event": "cond_types",
+                    "message": "Condition \"prerel_tags === None\", taking false branch. Now the type of \"prerel_tags\" cannot be null.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "WALinuxAgent-2.7.0.6/azurelinuxagent/common/utils/flexible_version.py",
+                    "line": 49,
+                    "event": "assignment",
+                    "message": "Assigning: \"prerel_tags\" = \"{}\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "WALinuxAgent-2.7.0.6/azurelinuxagent/common/utils/flexible_version.py",
+                    "line": 53,
+                    "event": "possible_types",
+                    "message": "At condition \"prerel_tags !== None\", the type of \"prerel_tags\" cannot be null.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "WALinuxAgent-2.7.0.6/azurelinuxagent/common/utils/flexible_version.py",
+                    "line": 53,
+                    "event": "dead_error_condition",
+                    "message": "The condition \"prerel_tags !== None\" must be true.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "WALinuxAgent-2.7.0.6/azurelinuxagent/common/utils/flexible_version.py",
+                    "line": 53,
+                    "event": "dead_error_line",
+                    "message": "Execution cannot reach this statement: \"var <storage from new>;\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   51|           self.sep = sep",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   52|           self.prerel_sep = ''",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   53|->         self.prerel_tags = tuple(prerel_tags) if prerel_tags is not None else ()",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   54|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   55|           self._compile_pattern()",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 611,
+            "tool": "snyk-code",
+            "hash_v1": "e36adc948c85c2910619955d6213edd15f1a5154",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "WALinuxAgent-2.7.0.6/azurelinuxagent/common/utils/textutil.py",
+                    "line": 41,
+                    "column": 12,
+                    "event": "warning[python/InsecureXmlParser]",
+                    "message": "xml.dom.minidom.parseString is considered insecure. Use an analog from the defusedxml package.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   39|       # Encode the string into utf-8 first",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   40|       xml_text = xml_text.encode('utf-8')",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   41|->     return minidom.parseString(xml_text)",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   42|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   43|   ",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 916,
+            "tool": "snyk-code",
+            "hash_v1": "ff16c5ccc07dee5328536c8b2e1cc8d558eb07ba",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "WALinuxAgent-2.7.0.6/azurelinuxagent/common/utils/textutil.py",
+                    "line": 388,
+                    "column": 12,
+                    "event": "note[python/InsecureHash]",
+                    "message": "hashlib.sha1 is insecure. Consider changing it to a secure hashing algorithm.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  386|       for item in string_list:",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  387|           sha1_hash.update(item.encode())",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  388|->     return sha1_hash.digest()",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  389|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  390|   ",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "FORWARD_NULL",
+            "cwe": 476,
+            "function": "launch_command",
+            "language": "python",
+            "tool": "coverity",
+            "hash_v1": "319ec38e623325488bb241cde37d516c82c58e44",
+            "key_event_idx": 3,
+            "events": [
+                {
+                    "file_name": "WALinuxAgent-2.7.0.6/azurelinuxagent/ga/exthandlers.py",
+                    "line": 1899,
+                    "event": "path",
+                    "message": "Condition \"env === None\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "WALinuxAgent-2.7.0.6/azurelinuxagent/ga/exthandlers.py",
+                    "line": 1910,
+                    "event": "null_check",
+                    "message": "Comparing \"extension\" to a null-like value implies that \"extension\" might be null-like.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "WALinuxAgent-2.7.0.6/azurelinuxagent/ga/exthandlers.py",
+                    "line": 1914,
+                    "event": "path",
+                    "message": "Condition \"self.should_perform_multi_config_op(extension)\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "WALinuxAgent-2.7.0.6/azurelinuxagent/ga/exthandlers.py",
+                    "line": 1915,
+                    "event": "property_access",
+                    "message": "Accessing a property of null-like value \"extension\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 1913|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 1914|                   if self.should_perform_multi_config_op(extension):",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 1915|->                     env[ExtCommandEnvVariable.ExtensionName] = extension.name",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 1916|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": " 1917|                   supported_features = []",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 78,
+            "tool": "snyk-code",
+            "hash_v1": "4ca7d3aa13827ddf4bf97af6505b48c610db6d6d",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "WALinuxAgent-2.7.0.6/azurelinuxagent/ga/update.py",
+                    "line": 229,
+                    "column": 34,
+                    "event": "warning[python/CommandInjection]",
+                    "message": "Unsanitized input from a command line argument flows into subprocess.Popen, where it is used as a shell command. This may result in a Command Injection vulnerability.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  227|               self._evaluate_agent_health(latest_agent)",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  228|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  229|->             self.child_process = subprocess.Popen(",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  230|                   cmds,",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  231|                   cwd=agent_dir,",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 377,
+            "tool": "snyk-code",
+            "hash_v1": "adeb876ceb4a1400c29bef72f1a6e2a4528e7ae6",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "WALinuxAgent-2.7.0.6/tests/pa/test_provision.py",
+                    "line": 59,
+                    "column": 29,
+                    "event": "note[python/InsecureTmpFile/test]",
+                    "message": "Use of tempfile.mktemp is deprecated and poses a security risk",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   57|           base64data = 'Q3VzdG9tRGF0YQ=='",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   58|           data = DefaultOSUtil().decode_customdata(base64data)",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   59|->         fileutil.write_file(tempfile.mktemp(), data)",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   60|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   61|       @patch('azurelinuxagent.common.conf.get_provision_enabled',",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 547,
+            "tool": "snyk-code",
+            "hash_v1": "212136f5cde490c71bd3c834c6c9226b831a79eb",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "WALinuxAgent-2.7.0.6/tests/utils/test_crypt_util.py",
+                    "line": 34,
+                    "column": 9,
+                    "event": "note[python/HardcodedNonCryptoSecret/test]",
+                    "message": "Avoid hardcoding values that are meant to be secret. Found a hardcoded string used in here.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   32|           with open(prv_key, 'w+') as c:",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   33|               c.write(load_data(\"wire/sample.pem\"))",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   34|->         secret = ']aPPEv}uNg1FPnl?'",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   35|           crypto = CryptUtil(conf.get_openssl_cmd())",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   36|           decrypted_string = crypto.decrypt_secret(encrypted_string, prv_key)",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 377,
+            "tool": "snyk-code",
+            "hash_v1": "da9b4f409b5d784fde9b5af05acce1592b101506",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "WALinuxAgent-2.7.0.6/tests/utils/test_file_util.py",
+                    "line": 83,
+                    "column": 14,
+                    "event": "note[python/InsecureTmpFile/test]",
+                    "message": "Use of tempfile.mktemp is deprecated and poses a security risk",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   81|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   82|       def test_findre_in_file(self):",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   83|->         fp = tempfile.mktemp()",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   84|           with open(fp, 'w') as f:",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "   85|               f.write(",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 377,
+            "tool": "snyk-code",
+            "hash_v1": "da9b4f409b5d784fde9b5af05acce1592b101506",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "WALinuxAgent-2.7.0.6/tests/utils/test_file_util.py",
+                    "line": 110,
+                    "column": 14,
+                    "event": "note[python/InsecureTmpFile/test]",
+                    "message": "Use of tempfile.mktemp is deprecated and poses a security risk",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  108|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  109|       def test_findstr_in_file(self):",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  110|->         fp = tempfile.mktemp()",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  111|           with open(fp, 'w') as f:",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  112|               f.write(",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 916,
+            "tool": "snyk-code",
+            "hash_v1": "2d56262bb95ae83136be8bcad84edbf770c7acb4",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "WALinuxAgent-2.7.0.6/tests/utils/test_text_util.py",
+                    "line": 159,
+                    "column": 44,
+                    "event": "note[python/InsecureHash/test]",
+                    "message": "hashlib.sha1 is insecure. Consider changing it to a secure hashing algorithm.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  157|           hash_from_string.update(test_string.encode())",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  158|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  159|->         self.assertEqual(result_from_list, hash_from_string.digest())",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  160|           self.assertEqual(hash_from_string.hexdigest(), '6367c48dd193d56ea7b0baad25b19455e529f5ee')",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  161|   ",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "SNYK_CODE_WARNING",
+            "cwe": 916,
+            "tool": "snyk-code",
+            "hash_v1": "645766a30ff74cd96ccd6667b42fb43cade16f77",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "WALinuxAgent-2.7.0.6/tests/utils/test_text_util.py",
+                    "line": 160,
+                    "column": 26,
+                    "event": "note[python/InsecureHash/test]",
+                    "message": "hashlib.sha1 is insecure. Consider changing it to a secure hashing algorithm.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  158|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  159|           self.assertEqual(result_from_list, hash_from_string.digest())",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  160|->         self.assertEqual(hash_from_string.hexdigest(), '6367c48dd193d56ea7b0baad25b19455e529f5ee')",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  161|   ",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "event": "#",
+                    "message": "  162|       def test_empty_strings(self):",
+                    "verbosity_level": 1
+                }
+            ]
+        }
+    ]
+}
