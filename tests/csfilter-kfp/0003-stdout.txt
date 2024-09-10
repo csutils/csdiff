@@ -5,6 +5,7 @@ export td=$(mktemp --directory --tmpdir tmp-csfilter-kfp.XXXXXXXXXX)
 trap "rm -fr '${td}'" EXIT
 git clone https://github.com/csutils/kfp.git ${td}/kfp
 git -C "${td}/kfp" reset -q --hard 96408af024db801c3cb6ebda2bff47fe6c45ad09
+git_url_suffix=
 touch "${td}/empty.err"
 (cd "${td}/kfp" && csgrep --mode=json --remove-duplicates ${td}/empty.err */ignore.err */true-positives-ignore.err >"${td}/kfp.json")
 csgrep --mode=json scan-results.json >"${td}/input.json"
@@ -13,4 +14,4 @@ path_filter() {
 }
 csdiff --show-internal "${td}/kfp.json" "${td}/input.json" | path_filter >${td}/output.json
 csdiff "${td}/output.json" "${td}/input.json" >excluded.json
-csgrep --mode=json "${td}/output.json" --set-scan-prop=known-false-positives-git-url:'https://github.com/csutils/kfp.git#96408af024db801c3cb6ebda2bff47fe6c45ad09'
+csgrep --mode=json "${td}/output.json" --set-scan-prop=known-false-positives-git-url:'https://github.com/csutils/kfp.git#96408af024db801c3cb6ebda2bff47fe6c45ad09'${git_url_suffix}

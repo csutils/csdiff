@@ -53,17 +53,19 @@ def construct_init_cmd(args):
 
 def construct_git_cmd(kfp_git_url):
     # split kfp_git_url into the clone URL and (optional) revision
-    m = re.match("^(.*)#([0-9a-f]+)", kfp_git_url)
+    m = re.match("^(.*)#([0-9a-f]+)$", kfp_git_url)
     if m:
         # checkout a specific revision
         url = shlex.quote(m.group(1))
-        rev = m.group(2)
+        rev = m.group(2)  # no need to quote `rev` because it matches [0-9a-f]+
         return f'git clone {url} ${{td}}/kfp\n' \
-               f'git -C "${{td}}/kfp" reset -q --hard {rev}\n'
+               f'git -C "${{td}}/kfp" reset -q --hard {rev}\n' \
+                'git_url_suffix=\n'
     else:
         # shallow clone of the default branch
         url = shlex.quote(kfp_git_url)
-        return f'git clone --depth 1 {url} "${{td}}/kfp"\n'
+        return f'git clone --depth 1 {url} "${{td}}/kfp"\n' \
+               f'git_url_suffix="#$(git -C "${{td}}/kfp" rev-parse HEAD)"\n'
 
 
 def construct_prep_cmd(args):
@@ -166,7 +168,8 @@ def construct_filter_cmd(args):
         cmd += f' --set-scan-prop=known-false-positives-dir:{kfp_dir}'
     elif args.kfp_git_url:
         kfp_git_url = shlex.quote(args.kfp_git_url)
-        cmd += f' --set-scan-prop=known-false-positives-git-url:{kfp_git_url}'
+        cmd += f' --set-scan-prop=known-false-positives-git-url:{kfp_git_url}' \
+                '${git_url_suffix}'
     cmd += '\n'
 
     return cmd
