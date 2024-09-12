@@ -241,25 +241,28 @@ static void sarifReadCodeFlow(Defect *pDef, const pt::ptree &cf)
     for (const auto &item : *locs) {
         const pt::ptree &tfLoc = item.second;
 
-        const pt::ptree *kindList;
-        if (!findChildOf(&kindList, tfLoc, "kinds") || kindList->empty())
-            // kind of the event not specified
-            continue;
-
-        // concatenate event name
         std::string evtName;
-        for (const auto &kindItem : *kindList) {
-            const pt::ptree &kind = kindItem.second;
-            if (!evtName.empty())
-                evtName += "_";
-            evtName += kind.data();
+        const pt::ptree *kindList;
+        if (findChildOf(&kindList, tfLoc, "kinds")) {
+            // calculate event name from the `kinds` list
+            for (const auto &kindItem : *kindList) {
+                const pt::ptree &kind = kindItem.second;
+                if (!evtName.empty())
+                    evtName += "_";
+                evtName += kind.data();
+            }
         }
 
         // append a new event of the specified kind
         events.push_back(DefEvent(evtName));
         DefEvent &evt = events.back();
 
-        evt.verbosityLevel = valueOf<int>(tfLoc, "nestingLevel", 1);
+        // read/infer verbosity level
+        evt.verbosityLevel = valueOf<int>(tfLoc, "nestingLevel",
+                (evt.event.empty())
+                ? /* trace */ 2
+                : /* info  */ 1);
+
         if (!evt.verbosityLevel)
             // update key event
             keyEventIdx = events.size() - 1U;
@@ -271,6 +274,13 @@ static void sarifReadCodeFlow(Defect *pDef, const pt::ptree &cf)
 
         sarifReadLocation(&evt, *loc);
         sarifReadMsg(&evt.msg, *loc);
+
+        if (evt.event.empty()) {
+            // if no `kind` is given, assume a generic trace event
+            evt.event = "path";
+            if (evt.msg.empty())
+                evt.msg = "generic trace event";
+        }
     }
 
     if (events.size() <= 1U)
