@@ -26,6 +26,7 @@
 
 struct SarifTreeDecoder::Private {
     void updateCweMap(const pt::ptree *driverNode);
+    void readToolInfo(TScanProps *pScanProps, const pt::ptree *toolNode);
 
     std::string                 singleChecker = "UNKNOWN_SARIF_WARNING";
     const RE                    reCwe = RE("^CWE-([0-9]+)$");
@@ -80,6 +81,53 @@ void SarifTreeDecoder::Private::updateCweMap(const pt::ptree *driverNode)
     }
 }
 
+void SarifTreeDecoder::Private::readToolInfo(
+        TScanProps                 *pScanProps,
+        const pt::ptree            *toolNode)
+{
+    const pt::ptree *driverNode;
+    if (!findChildOf(&driverNode, *toolNode, "driver"))
+        return;
+
+    this->updateCweMap(driverNode);
+
+    const auto name = valueOf<std::string>(*driverNode, "name");
+    auto version = valueOf<std::string>(*driverNode, "version");
+    if (version.empty())
+        version = valueOf<std::string>(*driverNode, "semanticVersion");
+
+    if (name == "SnykCode") {
+        // Snyk Code detected!
+        this->singleChecker = "SNYK_CODE_WARNING";
+
+        if (!version.empty())
+            // record tool version of Snyk Code
+            (*pScanProps)["analyzer-version-snyk-code"] = std::move(version);
+    }
+    else if (name == "gitleaks") {
+        // gitleaks
+        this->singleChecker = "GITLEAKS_WARNING";
+
+        if (!version.empty())
+            (*pScanProps)["analyzer-version-gitleaks"] = std::move(version);
+    }
+    else if (name == "Semgrep OSS") {
+        // semgrep
+        this->singleChecker = "SEMGREP_WARNING";
+
+        if (!version.empty())
+            (*pScanProps)["analyzer-version-semgrep"] = std::move(version);
+    }
+    else if (boost::starts_with(name, "GNU C")) {
+        // GCC
+        this->singleChecker = "COMPILER_WARNING";
+
+        boost::smatch sm;
+        if (boost::regex_match(version, sm, this->reVersion))
+            (*pScanProps)["analyzer-version-gcc"] = sm[/* version */ 1];
+    }
+}
+
 void SarifTreeDecoder::readScanProps(
         TScanProps                 *pDst,
         const pt::ptree            *root)
@@ -97,54 +145,17 @@ void SarifTreeDecoder::readScanProps(
 
     // check that we have exactly one run
     const pt::ptree *runs;
-    if (!findChildOf(&runs, *root, "runs") || (1U != runs->size()))
+    if (!findChildOf(&runs, *root, "runs")
+            || /* TODO: warn bout unsupported format */ (1U != runs->size()))
         return;
+
+    // jump to the only run
+    const pt::ptree &run0 = runs->begin()->second;
 
     // check which tool was used for the run
     const pt::ptree *toolNode;
-    if (!findChildOf(&toolNode, runs->begin()->second, "tool"))
-        return;
-    const pt::ptree *driverNode;
-    if (!findChildOf(&driverNode, *toolNode, "driver"))
-        return;
-
-    d->updateCweMap(driverNode);
-
-    const auto name = valueOf<std::string>(*driverNode, "name");
-    auto version = valueOf<std::string>(*driverNode, "version");
-    if (version.empty())
-        version = valueOf<std::string>(*driverNode, "semanticVersion");
-
-    if (name == "SnykCode") {
-        // Snyk Code detected!
-        d->singleChecker = "SNYK_CODE_WARNING";
-
-        if (!version.empty())
-            // record tool version of Snyk Code
-            (*pDst)["analyzer-version-snyk-code"] = std::move(version);
-    }
-    else if (name == "gitleaks") {
-        // gitleaks
-        d->singleChecker = "GITLEAKS_WARNING";
-
-        if (!version.empty())
-            (*pDst)["analyzer-version-gitleaks"] = std::move(version);
-    }
-    else if (name == "Semgrep OSS") {
-        // semgrep
-        d->singleChecker = "SEMGREP_WARNING";
-
-        if (!version.empty())
-            (*pDst)["analyzer-version-semgrep"] = std::move(version);
-    }
-    else if (boost::starts_with(name, "GNU C")) {
-        // GCC
-        d->singleChecker = "COMPILER_WARNING";
-
-        boost::smatch sm;
-        if (boost::regex_match(version, sm, d->reVersion))
-            (*pDst)["analyzer-version-gcc"] = sm[/* version */ 1];
-    }
+    if (findChildOf(&toolNode, run0, "tool"))
+        d->readToolInfo(pDst, toolNode);
 }
 
 void SarifTreeDecoder::readRoot(const pt::ptree *runs)
