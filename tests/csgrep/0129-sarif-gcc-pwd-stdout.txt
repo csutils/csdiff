@@ -1,0 +1,43 @@
+{
+    "scan": {
+        "analyzer-version-gcc": "14.2.1"
+    },
+    "defects": [
+        {
+            "checker": "GCC_ANALYZER_WARNING",
+            "cwe": 476,
+            "language": "c/c++",
+            "tool": "gcc-analyzer",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/home/kdudka/xxx.c",
+                    "line": 4,
+                    "column": 12,
+                    "h_size": 2,
+                    "event": "warning[-Wanalyzer-null-dereference]",
+                    "message": "dereference of NULL ‘p’",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/home/kdudka/xxx.c",
+                    "line": 3,
+                    "column": 10,
+                    "h_size": 1,
+                    "event": "release_memory",
+                    "message": "‘p’ is NULL",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/home/kdudka/xxx.c",
+                    "line": 4,
+                    "column": 12,
+                    "h_size": 2,
+                    "event": "danger",
+                    "message": "dereference of NULL ‘p’",
+                    "verbosity_level": 1
+                }
+            ]
+        }
+    ]
+}

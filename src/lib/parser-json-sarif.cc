@@ -29,6 +29,8 @@ struct SarifTreeDecoder::Private {
     void readToolInfo(TScanProps *pScanProps, const pt::ptree *toolNode);
 
     std::string                 singleChecker = "UNKNOWN_SARIF_WARNING";
+    std::string                 pwd;
+    const RE                    reFileUrl = RE("^file://");
     const RE                    reCwe = RE("^CWE-([0-9]+)$");
     const RE                    reVersion = RE("^([0-9][0-9.]+).*$");
     const RE                    reRuleId =
@@ -156,6 +158,22 @@ void SarifTreeDecoder::readScanProps(
     const pt::ptree *toolNode;
     if (findChildOf(&toolNode, run0, "tool"))
         d->readToolInfo(pDst, toolNode);
+
+    // read PWD so that we can reconstruct absolute paths later on
+    const pt::ptree *uriBase, *pwdNode, *uriNode;
+    if (findChildOf(&uriBase, run0, "originalUriBaseIds")
+            && findChildOf(&pwdNode, *uriBase, "PWD")
+            && findChildOf(&uriNode, *pwdNode, "uri"))
+    {
+        // remove the "file://" prefix
+        const auto &pwd = uriNode->data();
+        d->pwd = boost::regex_replace(pwd, d->reFileUrl, "");
+        // FIXME: Should we check whether d->pwd begins with '/'?
+
+        // make sure that d->pwd ends with '/'
+        if (!d->pwd.empty() && *d->pwd.rbegin() != '/')
+            d->pwd += '/';
+    }
 }
 
 void SarifTreeDecoder::readRoot(const pt::ptree *runs)
@@ -321,6 +339,32 @@ static int sarifCweFromDefNode(const pt::ptree &defNode)
     return 0;
 }
 
+static void expandRelativePaths(Defect *pDef, const std::string &pwd)
+{
+    if (pwd.empty())
+        // no PWD info provided
+        return;
+
+    // go through all events
+    for (DefEvent &evt : pDef->events) {
+        std::string &fileName = evt.fileName;
+        if (fileName.empty())
+            // no file path to expand
+            continue;
+
+        const unsigned char beginsWith = *fileName.begin();
+        switch (beginsWith) {
+            case '/':   // absolute path
+            case '<':   // <unknown> and the like
+                continue;
+
+            default:
+                // prepend `pwd` to relative path
+                fileName = pwd + fileName;
+        }
+    }
+}
+
 bool SarifTreeDecoder::readNode(Defect *def)
 {
     // move the iterator after we get the current position
@@ -388,6 +432,7 @@ bool SarifTreeDecoder::readNode(Defect *def)
     if (findChildOf(&relatedLocs, defNode, "relatedLocations"))
         sarifReadComments(def, *relatedLocs);
 
+    expandRelativePaths(def, d->pwd);
     d->digger.inferLangFromChecker(def);
     d->digger.inferToolFromChecker(def);
 

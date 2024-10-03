@@ -1,0 +1,209 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "GNU C17",
+          "fullName": "GNU C17 (GCC) version 14.2.1 20240912 (Red Hat 14.2.1-4) (x86_64-redhat-linux)",
+          "version": "14.2.1 20240912 (Red Hat 14.2.1-4)",
+          "informationUri": "https://gcc.gnu.org/gcc-14/",
+          "rules": [
+            {
+              "id": "-Wanalyzer-null-dereference",
+              "helpUri": "https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Static-Analyzer-Options.html#index-Wanalyzer-null-dereference"
+            }
+          ]
+        }
+      },
+      "taxonomies": [
+        {
+          "name": "CWE",
+          "version": "4.7",
+          "organization": "MITRE",
+          "shortDescription": {
+            "text": "The MITRE Common Weakness Enumeration"
+          },
+          "taxa": [
+            {
+              "id": "476",
+              "helpUri": "https://cwe.mitre.org/data/definitions/476.html"
+            }
+          ]
+        }
+      ],
+      "invocations": [
+        {
+          "executionSuccessful": true,
+          "toolExecutionNotifications": []
+        }
+      ],
+      "originalUriBaseIds": {
+        "PWD": {
+          "uri": "file:///home/kdudka/"
+        }
+      },
+      "artifacts": [
+        {
+          "location": {
+            "uri": "xxx.c",
+            "uriBaseId": "PWD"
+          },
+          "contents": {
+            "text": "int main()\n{\n    int *p = 0;\n    return *p;\n}\n"
+          },
+          "sourceLanguage": "c"
+        }
+      ],
+      "results": [
+        {
+          "ruleId": "-Wanalyzer-null-dereference",
+          "taxa": [
+            {
+              "id": "476",
+              "toolComponent": {
+                "name": "cwe"
+              }
+            }
+          ],
+          "properties": {
+            "gcc/analyzer/saved_diagnostic/sm": "malloc",
+            "gcc/analyzer/saved_diagnostic/enode": 4,
+            "gcc/analyzer/saved_diagnostic/snode": 1,
+            "gcc/analyzer/saved_diagnostic/sval": "(int *)0B",
+            "gcc/analyzer/saved_diagnostic/state": "null",
+            "gcc/analyzer/saved_diagnostic/idx": 0
+          },
+          "level": "warning",
+          "message": {
+            "text": "dereference of NULL \u2018p\u2019"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "xxx.c",
+                  "uriBaseId": "PWD"
+                },
+                "region": {
+                  "startLine": 4,
+                  "startColumn": 12,
+                  "endColumn": 14
+                },
+                "contextRegion": {
+                  "startLine": 4,
+                  "snippet": {
+                    "text": "    return *p;\n"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "main",
+                  "fullyQualifiedName": "main",
+                  "decoratedName": "main",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "id": "main",
+                  "locations": [
+                    {
+                      "properties": {
+                        "gcc/analyzer/checker_event/emission_id": "(1)",
+                        "gcc/analyzer/checker_event/kind": "EK_STATE_CHANGE"
+                      },
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "xxx.c",
+                            "uriBaseId": "PWD"
+                          },
+                          "region": {
+                            "startLine": 3,
+                            "startColumn": 10,
+                            "endColumn": 11
+                          },
+                          "contextRegion": {
+                            "startLine": 3,
+                            "snippet": {
+                              "text": "    int *p = 0;\n"
+                            }
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "name": "main",
+                            "fullyQualifiedName": "main",
+                            "decoratedName": "main",
+                            "kind": "function"
+                          }
+                        ],
+                        "message": {
+                          "text": "\u2018p\u2019 is NULL"
+                        }
+                      },
+                      "kinds": [
+                        "release",
+                        "memory"
+                      ],
+                      "nestingLevel": 1,
+                      "executionOrder": 1
+                    },
+                    {
+                      "properties": {
+                        "gcc/analyzer/checker_event/emission_id": "(2)",
+                        "gcc/analyzer/checker_event/kind": "EK_WARNING"
+                      },
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "xxx.c",
+                            "uriBaseId": "PWD"
+                          },
+                          "region": {
+                            "startLine": 4,
+                            "startColumn": 12,
+                            "endColumn": 14
+                          },
+                          "contextRegion": {
+                            "startLine": 4,
+                            "snippet": {
+                              "text": "    return *p;\n"
+                            }
+                          }
+                        },
+                        "logicalLocations": [
+                          {
+                            "name": "main",
+                            "fullyQualifiedName": "main",
+                            "decoratedName": "main",
+                            "kind": "function"
+                          }
+                        ],
+                        "message": {
+                          "text": "dereference of NULL \u2018p\u2019"
+                        }
+                      },
+                      "kinds": [
+                        "danger"
+                      ],
+                      "nestingLevel": 1,
+                      "executionOrder": 2
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
