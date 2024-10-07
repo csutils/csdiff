@@ -26,8 +26,11 @@
 
 struct SarifTreeDecoder::Private {
     void updateCweMap(const pt::ptree *driverNode);
+    void readToolInfo(TScanProps *pScanProps, const pt::ptree *toolNode);
 
     std::string                 singleChecker = "UNKNOWN_SARIF_WARNING";
+    std::string                 pwd;
+    const RE                    reFileUrl = RE("^file://");
     const RE                    reCwe = RE("^CWE-([0-9]+)$");
     const RE                    reVersion = RE("^([0-9][0-9.]+).*$");
     const RE                    reRuleId =
@@ -80,6 +83,53 @@ void SarifTreeDecoder::Private::updateCweMap(const pt::ptree *driverNode)
     }
 }
 
+void SarifTreeDecoder::Private::readToolInfo(
+        TScanProps                 *pScanProps,
+        const pt::ptree            *toolNode)
+{
+    const pt::ptree *driverNode;
+    if (!findChildOf(&driverNode, *toolNode, "driver"))
+        return;
+
+    this->updateCweMap(driverNode);
+
+    const auto name = valueOf<std::string>(*driverNode, "name");
+    auto version = valueOf<std::string>(*driverNode, "version");
+    if (version.empty())
+        version = valueOf<std::string>(*driverNode, "semanticVersion");
+
+    if (name == "SnykCode") {
+        // Snyk Code detected!
+        this->singleChecker = "SNYK_CODE_WARNING";
+
+        if (!version.empty())
+            // record tool version of Snyk Code
+            (*pScanProps)["analyzer-version-snyk-code"] = std::move(version);
+    }
+    else if (name == "gitleaks") {
+        // gitleaks
+        this->singleChecker = "GITLEAKS_WARNING";
+
+        if (!version.empty())
+            (*pScanProps)["analyzer-version-gitleaks"] = std::move(version);
+    }
+    else if (name == "Semgrep OSS") {
+        // semgrep
+        this->singleChecker = "SEMGREP_WARNING";
+
+        if (!version.empty())
+            (*pScanProps)["analyzer-version-semgrep"] = std::move(version);
+    }
+    else if (boost::starts_with(name, "GNU C")) {
+        // GCC
+        this->singleChecker = "COMPILER_WARNING";
+
+        boost::smatch sm;
+        if (boost::regex_match(version, sm, this->reVersion))
+            (*pScanProps)["analyzer-version-gcc"] = sm[/* version */ 1];
+    }
+}
+
 void SarifTreeDecoder::readScanProps(
         TScanProps                 *pDst,
         const pt::ptree            *root)
@@ -97,53 +147,32 @@ void SarifTreeDecoder::readScanProps(
 
     // check that we have exactly one run
     const pt::ptree *runs;
-    if (!findChildOf(&runs, *root, "runs") || (1U != runs->size()))
+    if (!findChildOf(&runs, *root, "runs")
+            || /* TODO: warn bout unsupported format */ (1U != runs->size()))
         return;
+
+    // jump to the only run
+    const pt::ptree &run0 = runs->begin()->second;
 
     // check which tool was used for the run
     const pt::ptree *toolNode;
-    if (!findChildOf(&toolNode, runs->begin()->second, "tool"))
-        return;
-    const pt::ptree *driverNode;
-    if (!findChildOf(&driverNode, *toolNode, "driver"))
-        return;
+    if (findChildOf(&toolNode, run0, "tool"))
+        d->readToolInfo(pDst, toolNode);
 
-    d->updateCweMap(driverNode);
+    // read PWD so that we can reconstruct absolute paths later on
+    const pt::ptree *uriBase, *pwdNode, *uriNode;
+    if (findChildOf(&uriBase, run0, "originalUriBaseIds")
+            && findChildOf(&pwdNode, *uriBase, "PWD")
+            && findChildOf(&uriNode, *pwdNode, "uri"))
+    {
+        // remove the "file://" prefix
+        const auto &pwd = uriNode->data();
+        d->pwd = boost::regex_replace(pwd, d->reFileUrl, "");
+        // FIXME: Should we check whether d->pwd begins with '/'?
 
-    const auto name = valueOf<std::string>(*driverNode, "name");
-    auto version = valueOf<std::string>(*driverNode, "version");
-    if (version.empty())
-        version = valueOf<std::string>(*driverNode, "semanticVersion");
-
-    if (name == "SnykCode") {
-        // Snyk Code detected!
-        d->singleChecker = "SNYK_CODE_WARNING";
-
-        if (!version.empty())
-            // record tool version of Snyk Code
-            (*pDst)["analyzer-version-snyk-code"] = std::move(version);
-    }
-    else if (name == "gitleaks") {
-        // gitleaks
-        d->singleChecker = "GITLEAKS_WARNING";
-
-        if (!version.empty())
-            (*pDst)["analyzer-version-gitleaks"] = std::move(version);
-    }
-    else if (name == "Semgrep OSS") {
-        // semgrep
-        d->singleChecker = "SEMGREP_WARNING";
-
-        if (!version.empty())
-            (*pDst)["analyzer-version-semgrep"] = std::move(version);
-    }
-    else if (boost::starts_with(name, "GNU C")) {
-        // GCC
-        d->singleChecker = "COMPILER_WARNING";
-
-        boost::smatch sm;
-        if (boost::regex_match(version, sm, d->reVersion))
-            (*pDst)["analyzer-version-gcc"] = sm[/* version */ 1];
+        // make sure that d->pwd ends with '/'
+        if (!d->pwd.empty() && *d->pwd.rbegin() != '/')
+            d->pwd += '/';
     }
 }
 
@@ -310,6 +339,32 @@ static int sarifCweFromDefNode(const pt::ptree &defNode)
     return 0;
 }
 
+static void expandRelativePaths(Defect *pDef, const std::string &pwd)
+{
+    if (pwd.empty())
+        // no PWD info provided
+        return;
+
+    // go through all events
+    for (DefEvent &evt : pDef->events) {
+        std::string &fileName = evt.fileName;
+        if (fileName.empty())
+            // no file path to expand
+            continue;
+
+        const unsigned char beginsWith = *fileName.begin();
+        switch (beginsWith) {
+            case '/':   // absolute path
+            case '<':   // <unknown> and the like
+                continue;
+
+            default:
+                // prepend `pwd` to relative path
+                fileName = pwd + fileName;
+        }
+    }
+}
+
 bool SarifTreeDecoder::readNode(Defect *def)
 {
     // move the iterator after we get the current position
@@ -377,6 +432,7 @@ bool SarifTreeDecoder::readNode(Defect *def)
     if (findChildOf(&relatedLocs, defNode, "relatedLocations"))
         sarifReadComments(def, *relatedLocs);
 
+    expandRelativePaths(def, d->pwd);
     d->digger.inferLangFromChecker(def);
     d->digger.inferToolFromChecker(def);
 
