@@ -147,7 +147,7 @@ void writeParseWarnings(std::ostream &str, const TScanProps &props) {
         const int ratio = boost::lexical_cast<float>(itRatio->second);
         if (ratio < parsingRatioThr)
             str << "<p><b class='parseWarning'>warning:</b> "
-                "low parsing ratio: " << ratio << "%</p>\n";
+                "low ratio of compilation units successfully parsed by Coverity: " << ratio << "%</p>\n";
 
         itCount = props.find("diffbase-cov-compilation-unit-count");
         itRatio = props.find("diffbase-cov-compilation-unit-ratio");
@@ -158,12 +158,12 @@ void writeParseWarnings(std::ostream &str, const TScanProps &props) {
         const int baseRatio = boost::lexical_cast<float>(itRatio->second);
         if (baseRatio < parsingRatioThr && baseRatio < ratio)
             str << "<p><b class='parseWarning'>warning:</b> "
-                "low parsing ratio in diff base: "
+                "low ratio of compilation units successfully parsed by Coverity in diff base: "
                 << baseRatio << "%</p>\n";
 
         if (!count || 100 * baseCount / count < parsingOldToNewRatioThr)
             str << "<p><b class='parseWarning'>warning:</b> "
-                "low count of parsed units in diff base: "
+                "low count of compilation units successfully parsed by Coverity in diff base: "
                 << baseCount << "</p>\n";
     }
     catch (boost::bad_lexical_cast &) {
