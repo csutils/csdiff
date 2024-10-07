@@ -139,11 +139,6 @@ void writeParseWarnings(std::ostream &str, const TScanProps &props) {
     TScanProps::const_iterator itCount, itRatio;
     itCount = props.find("cov-compilation-unit-count");
     itRatio = props.find("cov-compilation-unit-ratio");
-    if (props.end() == itCount || props.end() == itRatio) {
-        // fallback to deprecated format produced by cov-mockbuild
-        itCount = props.find("compilation-unit-count");
-        itRatio = props.find("compilation-unit-ratio");
-    }
     if (props.end() == itCount || props.end() == itRatio)
         return;
 
@@ -156,11 +151,6 @@ void writeParseWarnings(std::ostream &str, const TScanProps &props) {
 
         itCount = props.find("diffbase-cov-compilation-unit-count");
         itRatio = props.find("diffbase-cov-compilation-unit-ratio");
-        if (props.end() == itCount || props.end() == itRatio) {
-            // fallback to deprecated format produced by cov-mockbuild
-            itCount = props.find("diffbase-compilation-unit-count");
-            itRatio = props.find("diffbase-compilation-unit-ratio");
-        }
         if (props.end() == itCount || props.end() == itRatio)
             return;
 
