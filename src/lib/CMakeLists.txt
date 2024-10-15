@@ -26,6 +26,7 @@ add_library(cs STATIC
     deflookup.cc
     filter.cc
     finger-print.cc
+    glob-expand.cc
     instream.cc
     msg-filter.cc
     parser.cc

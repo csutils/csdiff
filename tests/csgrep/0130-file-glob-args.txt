@@ -1,0 +1,1 @@
+--mode=json --file-glob "$PROJECT_ROOT/tests/csgrep/000[4-9]-*-stdin.txt" "$PROJECT_ROOT/tests/csgrep/000?-*-stdout.txt"
