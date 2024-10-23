@@ -29,7 +29,8 @@
 #define RE_CHECKER_NAME_MISRA "(?:MISRA C(?:\\+\\+)?-[0-9]+ (?:Directive|Rule) [0-9.-]+)"
 #define RE_CHECKER_NAME RE_CHECKER_NAME_SA "|" RE_CHECKER_NAME_CERT "|" RE_CHECKER_NAME_MISRA
 
-#define RE_PATH_LOCAL "[^:]+"
+// the `::` separators are used in file names of perl man pages
+#define RE_PATH_LOCAL "[^:]+(?:::[A-Za-z][^:]+)*"
 #define RE_PATH_URL "http(?:s)?://[^:]+(?::[0-9]+)?[^:]+"
 #define RE_PATH RE_PATH_LOCAL "|" RE_PATH_URL
 
