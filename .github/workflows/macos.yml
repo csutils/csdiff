@@ -27,12 +27,6 @@ jobs:
 
       - name: Install dependencies
         run: |
-          # workaround for https://github.com/actions/setup-python/issues/577
-          for pkg in $(brew list | grep '^python@'); do
-            brew unlink "$pkg"
-            brew link --overwrite "$pkg"
-          done
-
           brew update
           brew install boost boost-python3 help2man
 
