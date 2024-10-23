@@ -20,6 +20,7 @@
 #include "abstract-filter.hh"
 #include "filter.hh"
 #include "finger-print.hh"
+#include "glob-expand.hh"
 #include "msg-filter.hh"
 #include "parser.hh"
 #include "parser-common.hh"
@@ -615,6 +616,7 @@ int main(int argc, char *argv[])
             ("strip-path-prefix",   po::value<string>(),        "string prefix to strip from path (applied after all filters)")
             ("prepend-path-prefix", po::value<string>(),        "string prefix to prepend to relative paths (applied after all filters)")
 
+            ("file-glob",                                       "expand glob patterns in the names of input files")
             ("ignore-case,i",                                   "ignore case when matching regular expressions")
             ("ignore-parser-warnings",                          "if enabled, parser warnings about the input files do not affect exit code")
             ("invert-match,v",                                  "select defects that do not match the selected criteria")
@@ -680,6 +682,15 @@ int main(int argc, char *argv[])
             return 1;
     }
 
+    // if the --file-glob flag was used, check whether a glob pattern was given
+    const bool fileGlob = !!vm.count("file-glob");
+    const bool hasInputFile = !!vm.count("input-file");
+    if (fileGlob && !hasInputFile) {
+        std::cerr << name
+            << ": error: glob pattern is required with --file-glob\n";
+        return 1;
+    }
+
     // create a writer according to the selected mode
     WriterFactory factory;
     AbstractWriter *eng = factory.create(mode);
@@ -726,16 +737,20 @@ int main(int argc, char *argv[])
 
     bool hasError = false;
 
-    if (!vm.count("input-file")) {
-        hasError = !eng->handleFile("-", silent);
-    }
-    else {
-        const TStringList &files = vm["input-file"].as<TStringList>();
-        for (const string &fileName : files) {
-            if (!eng->handleFile(fileName, silent))
-                hasError = true;
-        }
-    }
+    // if no input file is given, read from stdin
+    TStringList files = { "-" };
+
+    if (hasInputFile)
+        // use the given list of input files (or glob patterns)
+        files = vm["input-file"].as<TStringList>();
+
+    if (fileGlob)
+        // expand file globs
+        hasError |= !globExpand(&files);
+
+    // process all input files one by one
+    for (const string &fileName : files)
+        hasError |= !eng->handleFile(fileName, silent);
 
     eng->flush();
     delete eng;
