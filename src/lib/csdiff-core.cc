@@ -20,12 +20,11 @@
 #include "csdiff-core.hh"
 
 #include "deflookup.hh"
-#include "writer-cov.hh"
-#include "writer-json.hh"
+#include "writer.hh"
 
 #include <memory>
 
-// FIXME: some keys should be merge more intelligently if they already exist
+// FIXME: some keys should be merged more intelligently if they already exist
 // TODO: define a nesting limit for keys like diffbase-diffbase-diffbase-...
 void mergeScanProps(TScanProps &props, const TScanProps &oldProps)
 {
