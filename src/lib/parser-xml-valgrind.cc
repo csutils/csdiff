@@ -58,7 +58,7 @@ bool /* continue */ skipLdArgs(
             goto skip_arg;
 
         // record path of the real binary being executed
-        *pExe = argVal;
+        *pExe = std::move(argVal);
         ++(*pIt);
         return /* continue */ (itEnd != *pIt);
 
@@ -224,7 +224,7 @@ void readStack(Defect *pDef, const pt::ptree &stackNode)
         }
 
         // finally push the "note" event
-        pDef->events.push_back(noteEvt);
+        pDef->events.push_back(std::move(noteEvt));
     }
 }
 

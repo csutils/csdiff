@@ -549,13 +549,13 @@ bool BasicGccParser::getNext(Defect *pDef)
             case T_INC:
             case T_SCOPE:
                 done = this->exportAndReset(pDef);
-                defCurrent_.events.push_back(evt);
+                defCurrent_.events.push_back(std::move(evt));
                 break;
 
             case T_MSG:
                 done = this->exportAndReset(pDef);
                 defCurrent_.keyEventIdx = defCurrent_.events.size();
-                defCurrent_.events.push_back(evt);
+                defCurrent_.events.push_back(std::move(evt));
                 hasKeyEvent_ = true;
                 break;
 

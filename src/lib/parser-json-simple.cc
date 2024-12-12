@@ -154,7 +154,7 @@ bool SimpleTreeDecoder::readNode(Defect *def)
         if (-1 == evt.verbosityLevel)
             verbosityLevelNeedsInit = true;
 
-        evtListDst.push_back(evt);
+        evtListDst.push_back(std::move(evt));
     }
 
     // read "defect_id", "cwe", and "function" if available

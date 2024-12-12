@@ -202,7 +202,7 @@ static void sarifReadLocation(DefEvent *pEvt, const pt::ptree &loc)
         const auto uri = valueOf<std::string>(*al, "uri");
         if (!uri.empty())
             // read file name
-            pEvt->fileName = uri;
+            pEvt->fileName = std::move(uri);
     }
 
     const pt::ptree *reg;
@@ -247,7 +247,7 @@ static void sarifReadComments(Defect *pDef, const pt::ptree &relatedLocs)
             continue;
 
         evt.verbosityLevel = 1;
-        pDef->events.push_back(evt);
+        pDef->events.push_back(std::move(evt));
     }
 }
 

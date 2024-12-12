@@ -141,7 +141,7 @@ void ZapTreeDecoder::readScanProps(
 {
     const auto version = valueOf<std::string>(*root, "@version");
     if (!version.empty())
-        (*pDst)["analyzer-version-owasp-zap"] = version;
+        (*pDst)["analyzer-version-owasp-zap"] = std::move(version);
 
     d->timeStamp = valueOf<std::string>(*root, "@generated");
 }

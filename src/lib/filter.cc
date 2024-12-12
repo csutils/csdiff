@@ -111,7 +111,7 @@ void appendCtxLines(
         evt.event = "#";
         evt.msg = str.str();
         evt.verbosityLevel = /* not a key event */ 1;
-        pDst->push_back(evt);
+        pDst->push_back(std::move(evt));
     }
 }
 
@@ -202,7 +202,7 @@ bool DuplicateFilter::matchDef(const Defect &def)
     evt.fileName = MsgFilter::inst().filterPath(evt.fileName);
     evt.msg = MsgFilter::inst().filterMsg(evt.msg, def.checker);
 
-    return d->lookup.insert(evt)./* inserted */second;
+    return d->lookup.insert(std::move(evt))./* inserted */second;
 }
 
 

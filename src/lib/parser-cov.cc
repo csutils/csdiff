@@ -425,7 +425,7 @@ bool KeyEventDigger::guessKeyEvent(Defect *def)
         // no override for the checker -> match the lowered checker name
         std::string str(def->checker);
         boost::algorithm::to_lower(str);
-        defKeyEvent.insert(str);
+        defKeyEvent.insert(std::move(str));
     }
 
     // look for an explicitly defined key event
