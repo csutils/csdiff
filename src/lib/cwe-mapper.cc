@@ -35,6 +35,7 @@ struct CweMap::Private {
     bool detectedByTool(Defect def, const char *tool) const;
 };
 
+// coverity[pass_by_value]
 bool CweMap::Private::detectedByTool(Defect def, const char *tool) const
 {
     // detect tool in case it is not explicitly specified
