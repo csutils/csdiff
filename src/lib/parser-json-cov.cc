@@ -89,4 +89,3 @@ bool CovTreeDecoder::readNode(Defect *def)
 
     return true;
 }
-

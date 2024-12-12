@@ -19,8 +19,8 @@
 
 #include "instream.hh"
 
-InStream::InStream(std::string fileName, const bool silent):
-    fileName_(std::move(fileName)),
+InStream::InStream(const std::string &fileName, const bool silent):
+    fileName_(fileName),
     silent_(silent),
     str_((fileName_ == "-")
                 ? std::cin
