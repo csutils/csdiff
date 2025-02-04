@@ -50,6 +50,7 @@ bool readListFromValMap(TDst *pDst, const TMap &vm, const char *key)
 /// transformation properties set on cmd-line
 struct TransformerProps {
     TStringList prefixCmd;  ///< cmd-line operands
+    bool shellForm;         ///< if true, write shell form of RUN lines
     bool verbose;           ///< if true, print in/out of each transformation
 };
 
@@ -162,20 +163,50 @@ void appendShellExec(TStringList *pExecList, const std::string &str)
     pExecList->push_back(str);
 }
 
-/// precede each back-slash and each quote by back-slash
-std::string runQuoteArg(std::string arg)
+/// precede selected special chars by back-slash
+std::string runQuoteArg(std::string arg, const bool escapeTick=false)
 {
     boost::algorithm::replace_all(arg, "\\", "\\\\");
     boost::algorithm::replace_all(arg, "\"", "\\\"");
     boost::algorithm::replace_all(arg, "\n", "\\n");
     boost::algorithm::replace_all(arg, "\t", "\\t");
+
+    if (escapeTick)
+        boost::algorithm::replace_all(arg, "'", "\\'");
+
     return arg;
+}
+
+/// construct "'cmd' 'arg1' 'arg2' ..." from execList
+std::string runShellCmdFromExecList(const TStringList &execList)
+{
+    std::string cmd;
+
+    int i = 0;
+    for (const std::string &arg : execList) {
+        if (i++)
+            // space-separator
+            cmd += " ";
+
+        const std::string quoted = runQuoteArg(arg, /* escapeTick */ true);
+        if (quoted != arg)
+            // construct $'...'
+            cmd += "$";
+
+        // append the quoted arg
+        cmd += "'" + quoted + "'";
+    }
+
+    return cmd;
 }
 
 /// construct transformed RUN command from execList
 std::string DockerFileTransformer::runCmdFromExecList(
         const TStringList &execList)
 {
+    if (this->tp_.shellForm)
+        return runShellCmdFromExecList(execList);
+
     // construct ["cmd", "arg1", "arg2", ...] from execList
     std::string runLine = "[";
     int i = 0;
@@ -337,6 +368,8 @@ int main(int argc, char *argv[])
         desc.add_options()
             ("in-place,i", po::value<std::string>(),
              "modify the specified file in-place")
+            ("shell-form", "write transformed RUN lines using the shell form"
+             " (rather than exec form, which is the default format)")
             ("verbose", "print transformations to standard error output");
 
         desc.add_options()
@@ -376,6 +409,7 @@ int main(int argc, char *argv[])
 
     // read cmd-line flags
     TransformerProps tp;
+    tp.shellForm    = !!vm.count("shell-form");
     tp.verbose      = !!vm.count("verbose");
 
     // read the prefix command
