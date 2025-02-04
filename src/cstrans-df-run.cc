@@ -33,6 +33,20 @@ typedef std::vector<std::string> TStringList;
 
 const char *prog_name;
 
+/// read non-empty list from value map "vm" with key "key" and store to "dst"
+template<class TDst, class TMap>
+bool readListFromValMap(TDst *pDst, const TMap &vm, const char *key)
+{
+    if (!vm.count(key))
+        // "key" not found in "vm"
+        return false;
+
+    // store the list to "*pDst" and return "true" if the list is not empty
+    TDst &dst = *pDst;
+    dst = vm[key].template as<TDst>();
+    return !dst.empty();
+}
+
 class DockerFileTransformer {
     public:
         DockerFileTransformer(const TStringList &prefixCmd, const bool verbose):
@@ -353,13 +367,9 @@ int main(int argc, char *argv[])
 
     const bool verbose = !!vm.count("verbose");
 
-    if (!vm.count("prefix-cmd")) {
-        desc.print(std::cerr);
-        return 1;
-    }
-
-    const TStringList &prefixCmd = vm["prefix-cmd"].as<TStringList>();
-    if (prefixCmd.empty()) {
+    // read the prefix command
+    TStringList prefixCmd;
+    if (!readListFromValMap(&prefixCmd, vm, "prefix-cmd")) {
         desc.print(std::cerr);
         return 1;
     }
