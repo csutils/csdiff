@@ -47,11 +47,16 @@ bool readListFromValMap(TDst *pDst, const TMap &vm, const char *key)
     return !dst.empty();
 }
 
+/// transformation properties set on cmd-line
+struct TransformerProps {
+    TStringList prefixCmd;  ///< cmd-line operands
+    bool verbose;           ///< if true, print in/out of each transformation
+};
+
 class DockerFileTransformer {
     public:
-        DockerFileTransformer(const TStringList &prefixCmd, const bool verbose):
-            prefixCmd_(prefixCmd),
-            verbose_(verbose),
+        DockerFileTransformer(const TransformerProps &tp):
+            tp_(tp),
             lineNum_(0)
         {
         }
@@ -60,9 +65,8 @@ class DockerFileTransformer {
         bool transform(std::istream &in, std::ostream &out);
 
     private:
-        const TStringList   prefixCmd_;         ///< cmd-line operands
-        const bool          verbose_;           ///< --verbose on cmd-line
-        int                 lineNum_;           ///< line number being read
+        const TransformerProps  tp_;            ///< props set on cmd-line
+        int                     lineNum_;       ///< line number being read
 
         void transformRunLine(std::string *);
 
@@ -192,7 +196,7 @@ void DockerFileTransformer::transformRunLine(std::string *pRunLine)
     const std::string cmd = sm[2];
 
     // start with the prefix specified on cmd-line
-    TStringList execList = prefixCmd_;
+    TStringList execList = tp_.prefixCmd;
 
     if (boost::regex_match(cmd, sm, reLineRunExec_))
         // ["cmd", "arg1", "arg2", ...]
@@ -202,7 +206,7 @@ void DockerFileTransformer::transformRunLine(std::string *pRunLine)
         appendShellExec(&execList, cmd);
 
     newRunLine += runCmdFromExecList(execList);
-    if (verbose_) {
+    if (tp_.verbose) {
         // diagnostic output printed with --verbose
         std::cerr << prog_name << " <<< " << *pRunLine << std::endl;
         std::cerr << prog_name << " >>> " << newRunLine << std::endl;
@@ -365,17 +369,18 @@ int main(int argc, char *argv[])
         return 0;
     }
 
-    const bool verbose = !!vm.count("verbose");
+    // read cmd-line flags
+    TransformerProps tp;
+    tp.verbose      = !!vm.count("verbose");
 
     // read the prefix command
-    TStringList prefixCmd;
-    if (!readListFromValMap(&prefixCmd, vm, "prefix-cmd")) {
+    if (!readListFromValMap(&tp.prefixCmd, vm, "prefix-cmd")) {
         desc.print(std::cerr);
         return 1;
     }
 
-    // pass cmd-line args to DockerFileTransformer
-    DockerFileTransformer dft(prefixCmd, verbose);
+    // create the transformer object
+    DockerFileTransformer dft(tp);
 
     if (vm.count("in-place"))
         // transform Dockerfile in-place
