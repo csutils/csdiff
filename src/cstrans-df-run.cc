@@ -84,6 +84,9 @@ class DockerFileTransformer {
 
         /// match in-line comments
         const RE reComment_     = RE("^\\s*#.*$");
+
+        /// construct transformed RUN command from execList
+        std::string runCmdFromExecList(const TStringList &execList);
 };
 
 /// parse serialized list in the form: "item1", "item2", ...
@@ -169,9 +172,11 @@ std::string runQuoteArg(std::string arg)
     return arg;
 }
 
-std::string runCmdFromExecList(const TStringList &execList)
+/// construct transformed RUN command from execList
+std::string DockerFileTransformer::runCmdFromExecList(
+        const TStringList &execList)
 {
-    // construct RUN ["cmd", "arg1", "arg2", ...] from execList
+    // construct ["cmd", "arg1", "arg2", ...] from execList
     std::string runLine = "[";
     int i = 0;
     for (const std::string &arg : execList) {
@@ -205,7 +210,7 @@ void DockerFileTransformer::transformRunLine(std::string *pRunLine)
         // arbitrary shell code...
         appendShellExec(&execList, cmd);
 
-    newRunLine += runCmdFromExecList(execList);
+    newRunLine += this->runCmdFromExecList(execList);
     if (tp_.verbose) {
         // diagnostic output printed with --verbose
         std::cerr << prog_name << " <<< " << *pRunLine << std::endl;
