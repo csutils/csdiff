@@ -1,0 +1,13 @@
+FROM openshift/golang-builder:1.11 AS builder
+ENV SOURCE_GIT_COMMIT=39c2c111ea818cd16dbd11e31cc682cf2b4042d3 SOURCE_GIT_TAG=golang-github-prometheus-alertmanager-4.0.0-0.100.0-115-g39c2c11
+COPY . ${ALERTMANAGER_GOPATH}
+RUN '/opt/cov-sa-2019.09/bin/cov-build' '--dir=/cov' '--append-log' 'sh' '-c' $'echo \tOK\n'
+FROM ubi7:7.6-159
+ENV SOURCE_GIT_COMMIT=39c2c111ea818cd16dbd11e31cc682cf2b4042d3 SOURCE_GIT_TAG=golang-github-prometheus-alertmanager-4.0.0-0.100.0-115-g39c2c11
+
+CMD        [ "--storage.path=/alertmanager" ]
+
+LABEL \
+        io.k8s.description="This is the Prometheus Alert Manager image." \
+        com.redhat.component="golang-github-prometheus-alertmanager-container" \
+        maintainer="OpenShift Development <dev@lists.openshift.redhat.com>"

@@ -16,13 +16,21 @@
 # along with csdiff.  If not, see <http://www.gnu.org/licenses/>.
 
 # a generic template for cstrans-df-run tests
-macro(test_cstrans_df_run tst)
+macro(test_cstrans_df_run_core tst opt tag)
     set(test_data_prefix "${CMAKE_CURRENT_SOURCE_DIR}/${tst}")
     set(cmd "${CMAKE_BINARY_DIR}/src/cstrans-df-run")
-    set(cmd "${cmd} -- /opt/cov-sa-2019.09/bin/cov-build --dir=/cov --append-log")
+    set(cmd "${cmd} ${opt} -- /opt/cov-sa-2019.09/bin/cov-build --dir=/cov --append-log")
     set(cmd "${cmd} <${test_data_prefix}-stdin.txt")
-    set(cmd "${cmd} | ${diffcmd} ${test_data_prefix}-stdout.txt -")
+    set(cmd "${cmd} | ${diffcmd} ${test_data_prefix}${tag}-stdout.txt -")
     add_test_wrap("cstrans-df-run-${tst}" "${cmd}")
+endmacro()
+
+macro(test_cstrans_df_run tst)
+    # add default test using exec form
+    test_cstrans_df_run_core(${tst} "" "")
+
+    # add another test using shell form
+    test_cstrans_df_run_core(${tst} "--shell-form" "-sf")
 endmacro()
 
 # cstrans-df-run tests

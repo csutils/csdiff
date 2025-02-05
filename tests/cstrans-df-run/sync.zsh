@@ -12,10 +12,15 @@ else
     tests=( "$@" )
 fi
 
+TEST_BIN=${PROJECT_ROOT}/csdiff_build/src/cstrans-df-run
+
 for tst in "${tests[@]}"; do
     tst=${tst%-stdin.txt}
-    ${PROJECT_ROOT}/csdiff_build/src/cstrans-df-run \
-        ${TEST_ARGS[@]} \
+    ${TEST_BIN} ${TEST_ARGS[@]} \
         < ${tst}-stdin.txt \
         > ${tst}-stdout.txt
+
+    ${TEST_BIN} --shell-form ${TEST_ARGS[@]} \
+        < ${tst}-stdin.txt \
+        > ${tst}-sf-stdout.txt
 done
