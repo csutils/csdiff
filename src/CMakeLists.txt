@@ -35,7 +35,8 @@ if(SANITIZERS)
 endif()
 
 # find Boost
-find_package(Boost REQUIRED
+set(Boost_VERBOSE TRUE)
+find_package(Boost CONFIG REQUIRED
     COMPONENTS filesystem
                program_options
                regex
@@ -126,7 +127,7 @@ macro(build_pycsdiff version)
 
     # find boost_python${version}
     set(PYTHON_VERSION_SUFFIX "${version}${Python${version}_VERSION_MINOR}")
-    find_package(Boost REQUIRED COMPONENTS python${PYTHON_VERSION_SUFFIX})
+    find_package(Boost CONFIG REQUIRED COMPONENTS python${PYTHON_VERSION_SUFFIX})
     message(STATUS "Python ${version} binding enabled. "
         "The pycsdiff module will be built!")
 
