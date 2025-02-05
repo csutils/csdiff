@@ -31,4 +31,4 @@ jobs:
           brew install boost boost-python3 help2man
 
       - name: Build and check
-        run: make distcheck CMAKE='cmake -DPython3_EXECUTABLE=/opt/homebrew/bin/python3.12'
+        run: make distcheck CMAKE="cmake -DPython3_EXECUTABLE=/opt/homebrew/bin/$(brew info boost-python3 | grep -oE 'python@3.\d+' | tr -d @)"
