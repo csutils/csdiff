@@ -22,7 +22,7 @@ macro(test_cstrans_df_run_core tst opt tag)
     set(cmd "${cmd} ${opt} -- /opt/cov-sa-2019.09/bin/cov-build --dir=/cov --append-log")
     set(cmd "${cmd} <${test_data_prefix}-stdin.txt")
     set(cmd "${cmd} | ${diffcmd} ${test_data_prefix}${tag}-stdout.txt -")
-    add_test_wrap("cstrans-df-run-${tst}" "${cmd}")
+    add_test_wrap("cstrans-df-run-${tst}${tag}" "${cmd}")
 endmacro()
 
 macro(test_cstrans_df_run tst)
