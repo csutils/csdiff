@@ -29,7 +29,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - if: ${{ always() }}
+      - if: ${{ runner.debug == '1' && !cancelled() }}
         name: Upload artifact with ShellCheck defects in SARIF format
         uses: actions/upload-artifact@v4
         with:
