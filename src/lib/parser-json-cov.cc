@@ -21,6 +21,8 @@
 
 #include "parser-cov.hh"            // for KeyEventDigger
 
+#include <stack>
+
 struct CovTreeDecoder::Private {
     KeyEventDigger              keDigger;
     InStream                   &input;
@@ -55,12 +57,34 @@ static DefEvent covDecodeEvt(const pt::ptree &evtNode)
     return evt;
 }
 
+struct CovEvtStackItem {
+    const pt::ptree             &evts;
+    pt::ptree::const_iterator    iter;
+
+    CovEvtStackItem(const pt::ptree &evts_):
+        evts(evts_),
+        iter(evts_.begin())
+    {
+    }
+};
+
 void CovTreeDecoder::Private::readEvents(Defect *def)
 {
-    // go through the list of events
-    const pt::ptree &evtList = this->pSrc->get_child("events");
-    for (const auto &item : evtList) {
-        const pt::ptree &evtNode = item.second;
+    // stack to traverse events recursively (without recursive fnc call)
+    std::stack<CovEvtStackItem> todo;
+    todo.push(this->pSrc->get_child("events"));
+
+    do {
+        CovEvtStackItem &si = todo.top();
+        if (si.evts.end() == si.iter) {
+            // no more events at this level to iterate through
+            todo.pop();
+            continue;
+        }
+
+        // get current event and move to the next one
+        const pt::ptree &evtNode = (si.iter++)->second;
+
         if (evtNode.get<bool>("main")) {
             // this is a key event
 
@@ -78,6 +102,7 @@ void CovTreeDecoder::Private::readEvents(Defect *def)
         DefEvent evt = covDecodeEvt(evtNode);
         def->events.push_back(std::move(evt));
     }
+    while (!todo.empty());
 }
 
 bool CovTreeDecoder::readNode(Defect *def)
