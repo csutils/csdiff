@@ -23,13 +23,19 @@
 
 struct CovTreeDecoder::Private {
     KeyEventDigger              keDigger;
+    InStream                   &input;
     const pt::ptree            *pSrc;
+
+    Private(InStream &input_):
+        input(input_)
+    {
+    }
 
     void readEvents(Defect *def);
 };
 
-CovTreeDecoder::CovTreeDecoder():
-    d(new Private)
+CovTreeDecoder::CovTreeDecoder(InStream &input):
+    d(new Private(input))
 {
 }
 
@@ -50,10 +56,18 @@ void CovTreeDecoder::Private::readEvents(Defect *def)
         evt.event       = valueOf<std::string>(evtNode, "eventTag");
         evt.msg         = valueOf<std::string>(evtNode, "eventDescription");
 
-        if (evtNode.get<bool>("main"))
+        if (evtNode.get<bool>("main")) {
             // this is a key event
-            // TODO: detect and report re-definitions of key events
+
+            if (def->keyEventIdx)
+                // key event redefinition (TODO: more detailed diagnostic msg)
+                std::cerr << this->input.fileName()
+                    << ": warning: key event redefinition detected"
+                    << std::endl;
+
+            // record key event index
             def->keyEventIdx = def->events.size();
+        }
 
         // push the event to the list of events
         def->events.push_back(std::move(evt));

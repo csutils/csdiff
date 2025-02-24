@@ -25,7 +25,7 @@
 /// tree decoder of the Coverity JSON format
 class CovTreeDecoder: public AbstractTreeDecoder {
     public:
-        CovTreeDecoder();
+        CovTreeDecoder(InStream &input);
         ~CovTreeDecoder() override;
         bool readNode(Defect *def) override;
 

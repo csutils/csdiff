@@ -89,7 +89,7 @@ JsonParser::JsonParser(InStream &input):
             d->decoder.reset(new SimpleTreeDecoder(d->input));
         else if (findChildOf(&node, d->root, "issues"))
             // Coverity JSON format
-            d->decoder.reset(new CovTreeDecoder);
+            d->decoder.reset(new CovTreeDecoder(d->input));
         else if (findChildOf(&node, d->root, "runs"))
             // SARIF format
             d->decoder.reset(new SarifTreeDecoder);
