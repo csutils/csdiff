@@ -41,21 +41,26 @@ CovTreeDecoder::CovTreeDecoder(InStream &input):
 
 CovTreeDecoder::~CovTreeDecoder() = default;
 
+/// decode single event
+static DefEvent covDecodeEvt(const pt::ptree &evtNode)
+{
+    DefEvent evt;
+
+    evt.fileName    = valueOf<std::string>(evtNode, "filePathname");
+    evt.line        = valueOf<int>        (evtNode, "lineNumber");
+    evt.column      = valueOf<int>        (evtNode, "columnNumber");
+    evt.event       = valueOf<std::string>(evtNode, "eventTag");
+    evt.msg         = valueOf<std::string>(evtNode, "eventDescription");
+
+    return evt;
+}
+
 void CovTreeDecoder::Private::readEvents(Defect *def)
 {
     // go through the list of events
     const pt::ptree &evtList = this->pSrc->get_child("events");
     for (const auto &item : evtList) {
         const pt::ptree &evtNode = item.second;
-
-        // decode single event
-        DefEvent evt;
-        evt.fileName    = valueOf<std::string>(evtNode, "filePathname");
-        evt.line        = valueOf<int>        (evtNode, "lineNumber");
-        evt.column      = valueOf<int>        (evtNode, "columnNumber");
-        evt.event       = valueOf<std::string>(evtNode, "eventTag");
-        evt.msg         = valueOf<std::string>(evtNode, "eventDescription");
-
         if (evtNode.get<bool>("main")) {
             // this is a key event
 
@@ -70,6 +75,7 @@ void CovTreeDecoder::Private::readEvents(Defect *def)
         }
 
         // push the event to the list of events
+        DefEvent evt = covDecodeEvt(evtNode);
         def->events.push_back(std::move(evt));
     }
 }
