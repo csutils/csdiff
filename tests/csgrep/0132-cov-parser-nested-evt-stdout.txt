@@ -1,0 +1,1652 @@
+{
+    "defects": [
+        {
+            "checker": "ASSERT_SIDE_EFFECT",
+            "function": "ev_run",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 4156,
+                    "column": 9,
+                    "event": "assignment_where_comparison_intended",
+                    "message": "Assignment \"loop->loop_done = 128\" has a side effect.  This code will work differently in a non-debug build.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 4156,
+                    "column": 9,
+                    "event": "remediation",
+                    "message": "Did you intend to use a comparison (\"==\") instead?",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "ASSERT_SIDE_EFFECT",
+            "function": "ev_run",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 4158,
+                    "column": 9,
+                    "event": "assignment_where_comparison_intended",
+                    "message": "Assignment \"loop->loop_done = EVBREAK_CANCEL\" has a side effect.  This code will work differently in a non-debug build.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 4158,
+                    "column": 9,
+                    "event": "remediation",
+                    "message": "Did you intend to use a comparison (\"==\") instead?",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "CHECKED_RETURN",
+            "cwe": 252,
+            "function": "fd_intern",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 2563,
+                    "column": 3,
+                    "event": "check_return",
+                    "message": "Calling \"fcntl(fd, 2, 1)\" without checking return value. This library function may fail and return an error code.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "CHECKED_RETURN",
+            "cwe": 252,
+            "function": "fd_intern",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 2564,
+                    "column": 3,
+                    "event": "check_return",
+                    "message": "Calling \"fcntl(fd, 4, 2048)\" without checking return value. This library function may fail and return an error code.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "CHECKED_RETURN",
+            "cwe": 252,
+            "function": "pipecb",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 2,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 2832,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"revents & EV_READ\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 2835,
+                    "column": 7,
+                    "event": "path",
+                    "message": "Condition \"loop->evpipe[0] < 0\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 2838,
+                    "column": 11,
+                    "event": "check_return",
+                    "message": "\"read(int, void *, size_t)\" returns the number of bytes read, but it is ignored.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "CHECKED_RETURN",
+            "cwe": 252,
+            "function": "epoll_epoll_create",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 3,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_epoll.c",
+                    "line": 250,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"fd < 0\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_epoll.c",
+                    "line": 250,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"*__errno_location() == 22\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_epoll.c",
+                    "line": 255,
+                    "column": 7,
+                    "event": "path",
+                    "message": "Condition \"fd >= 0\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_epoll.c",
+                    "line": 256,
+                    "column": 9,
+                    "event": "check_return",
+                    "message": "Calling \"fcntl(fd, 2, 1)\" without checking return value. This library function may fail and return an error code.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "CHECKED_RETURN",
+            "cwe": 252,
+            "function": "pipecb",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 2,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 2832,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"revents & EV_READ\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 2835,
+                    "column": 7,
+                    "event": "path",
+                    "message": "Condition \"loop->evpipe[0] < 0\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 2852,
+                    "column": 11,
+                    "event": "check_return",
+                    "message": "\"read(int, void *, size_t)\" returns the number of bytes read, but it is ignored.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "DEADCODE",
+            "cwe": 561,
+            "function": "epoll_modify",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 3,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_epoll.c",
+                    "line": 84,
+                    "column": 3,
+                    "event": "cond_cannot_single",
+                    "message": "Condition \"nev\", taking true branch. Now the value of \"nev\" cannot be equal to 0.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_epoll.c",
+                    "line": 102,
+                    "column": 12,
+                    "event": "cannot_single",
+                    "message": "At condition \"nev\", the value of \"nev\" cannot be equal to 0.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_epoll.c",
+                    "line": 102,
+                    "column": 7,
+                    "event": "dead_error_condition",
+                    "message": "The condition \"!nev\" cannot be true.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_epoll.c",
+                    "line": 103,
+                    "column": 9,
+                    "event": "dead_error_line",
+                    "message": "Execution cannot reach this statement: \"goto dec_egen;\".",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "NO_EFFECT",
+            "cwe": 480,
+            "function": "array_verify",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 3601,
+                    "column": 7,
+                    "event": "extra_comma",
+                    "message": "Part \"\"libev: active index mismatch\"\" of statement \"\"libev: active index mismatch\" , (((W)ws[cnt])->active == cnt + 1)\" has no effect due to the comma.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "NO_EFFECT",
+            "cwe": 480,
+            "function": "timers_reify",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 3823,
+                    "column": 15,
+                    "event": "extra_comma",
+                    "message": "Part \"\"libev: negative ev_timer repeat value found while processing timers\"\" of statement \"\"libev: negative ev_timer repeat value found while processing timers\" , (w->repeat > 0.)\" has no effect due to the comma.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "NO_EFFECT",
+            "cwe": 480,
+            "function": "periodics_reify",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 3886,
+                    "column": 15,
+                    "event": "extra_comma",
+                    "message": "Part \"\"libev: ev_periodic reschedule callback returned time in the past\"\" of statement \"\"libev: ev_periodic reschedule callback returned time in the past\" , (((WT)w)->at >= loop->ev_rt_now)\" has no effect due to the comma.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "NO_EFFECT",
+            "cwe": 480,
+            "function": "ev_io_stop",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 4368,
+                    "column": 3,
+                    "event": "extra_comma",
+                    "message": "Part \"\"libev: ev_io_stop called with illegal fd (must stay constant after start!)\"\" of statement \"\"libev: ev_io_stop called with illegal fd (must stay constant after start!)\" , (w->fd >= 0 && w->fd < loop->anfdmax)\" has no effect due to the comma.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "NO_EFFECT",
+            "cwe": 480,
+            "function": "ev_timer_start",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 4392,
+                    "column": 3,
+                    "event": "extra_comma",
+                    "message": "Part \"\"libev: ev_timer_start called with negative timer repeat value\"\" of statement \"\"libev: ev_timer_start called with negative timer repeat value\" , (w->repeat >= 0.)\" has no effect due to the comma.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "NO_EFFECT",
+            "cwe": 480,
+            "function": "ev_timer_stop",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 4421,
+                    "column": 5,
+                    "event": "extra_comma",
+                    "message": "Part \"\"libev: internal timer heap corruption\"\" of statement \"\"libev: internal timer heap corruption\" , (loop->timers[active].w == (WT)w)\" has no effect due to the comma.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "NO_EFFECT",
+            "cwe": 480,
+            "function": "ev_periodic_start",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 4490,
+                    "column": 7,
+                    "event": "extra_comma",
+                    "message": "Part \"\"libev: ev_periodic_start called with negative interval value\"\" of statement \"\"libev: ev_periodic_start called with negative interval value\" , (w->interval >= 0.)\" has no effect due to the comma.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "NO_EFFECT",
+            "cwe": 480,
+            "function": "ev_periodic_stop",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 4523,
+                    "column": 5,
+                    "event": "extra_comma",
+                    "message": "Part \"\"libev: internal periodic heap corruption\"\" of statement \"\"libev: internal periodic heap corruption\" , (loop->periodics[active].w == (WT)w)\" has no effect due to the comma.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "NO_EFFECT",
+            "cwe": 480,
+            "function": "ev_child_start",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 4684,
+                    "column": 3,
+                    "event": "extra_comma",
+                    "message": "Part \"\"libev: child watchers are only supported in the default loop\"\" of statement \"\"libev: child watchers are only supported in the default loop\" , (loop == ev_default_loop_ptr)\" has no effect due to the comma.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "NO_EFFECT",
+            "cwe": 480,
+            "function": "ev_embed_start",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 5271,
+                    "column": 5,
+                    "event": "extra_comma",
+                    "message": "Part \"\"libev: loop to be embedded is not embeddable\"\" of statement \"\"libev: loop to be embedded is not embeddable\" , (loop->backend & ev_embeddable_backends())\" has no effect due to the comma.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "NO_EFFECT",
+            "cwe": 480,
+            "function": "epoll_modify",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_epoll.c",
+                    "line": 134,
+                    "column": 5,
+                    "event": "extra_comma",
+                    "message": "Part \"\"libev: I/O watcher with invalid fd found in epoll_ctl\"\" of statement \"\"libev: I/O watcher with invalid fd found in epoll_ctl\" , (*__errno_location() != 9 && *__errno_location() != 40 && *__errno_location() != 22)\" has no effect due to the comma.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "NO_EFFECT",
+            "cwe": 480,
+            "function": "iouring_enter",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 240,
+                    "column": 3,
+                    "event": "extra_comma",
+                    "message": "Part \"\"libev: io_uring_enter did not consume all sqes\"\" of statement \"\"libev: io_uring_enter did not consume all sqes\" , (res < 0 || res == loop->iouring_to_submit)\" has no effect due to the comma.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "NO_EFFECT",
+            "cwe": 480,
+            "function": "iouring_fork",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 428,
+                    "column": 3,
+                    "event": "extra_comma",
+                    "message": "Part \"loop\" of statement \"loop , (&loop->iouring_tfd_w)\" has no effect due to the comma.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "NO_EFFECT",
+            "cwe": 480,
+            "function": "iouring_tfd_update",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 489,
+                    "column": 10,
+                    "event": "extra_comma",
+                    "message": "Part \"\"libev: iouring timerfd_settime failed\"\" of statement \"\"libev: iouring timerfd_settime failed\" , 0\" has no effect due to the comma.",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "NO_EFFECT",
+            "cwe": 480,
+            "function": "verify_heap",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 3587,
+                    "column": 7,
+                    "event": "extra_comma",
+                    "message": "Part \"\"libev: active index mismatch in heap\"\" of statement \"\"libev: active index mismatch in heap\" , (((W)heap[i].w)->active == i)\" has no effect due to the comma.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 3588,
+                    "column": 7,
+                    "event": "extra_comma",
+                    "message": "Part \"\"libev: heap condition violated\"\" of statement \"\"libev: heap condition violated\" , (i == 3 || heap[(i - 3 - 1) / 4 + 3].at <= heap[i].at)\" has no effect due to the comma.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 3588,
+                    "column": 7,
+                    "event": "extra_comma",
+                    "message": "Part \"\"libev: heap condition violated\"\" of statement \"\"libev: heap condition violated\" , (i == 4 - 1 || heap[(i - 3 - 1) / 4 + 3].at <= heap[i].at)\" has no effect due to the comma.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 3589,
+                    "column": 7,
+                    "event": "extra_comma",
+                    "message": "Part \"\"libev: heap at cache mismatch\"\" of statement \"\"libev: heap at cache mismatch\" , (heap[i].at == ((WT)heap[i].w)->at)\" has no effect due to the comma.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "NO_EFFECT",
+            "cwe": 480,
+            "function": "verify_watcher",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 3573,
+                    "column": 3,
+                    "event": "extra_comma",
+                    "message": "Part \"\"libev: watcher has invalid priority\"\" of statement \"\"libev: watcher has invalid priority\" , (((W)w)->priority - ((0x7f & 4) ? -2 : 0) >= 0 && ((W)w)->priority - -2 < 5)\" has no effect due to the comma.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 3573,
+                    "column": 3,
+                    "event": "extra_comma",
+                    "message": "Part \"\"libev: watcher has invalid priority\"\" of statement \"\"libev: watcher has invalid priority\" , (((W)w)->priority - -2 >= 0 && ((W)w)->priority - -2 < 5)\" has no effect due to the comma.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 3576,
+                    "column": 5,
+                    "event": "extra_comma",
+                    "message": "Part \"\"libev: pending watcher not on pending queue\"\" of statement \"\"libev: pending watcher not on pending queue\" , (loop->pendings[((W)w)->priority - ((0x7f & 4) ? -2 : 0)][w->pending - 1].w == w)\" has no effect due to the comma.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 3576,
+                    "column": 5,
+                    "event": "extra_comma",
+                    "message": "Part \"\"libev: pending watcher not on pending queue\"\" of statement \"\"libev: pending watcher not on pending queue\" , (loop->pendings[((W)w)->priority - -2][w->pending - 1].w == w)\" has no effect due to the comma.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "NO_EFFECT",
+            "cwe": 480,
+            "function": "ev_signal_start",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 4562,
+                    "column": 3,
+                    "event": "extra_comma",
+                    "message": "Part \"\"libev: ev_signal_start called with illegal signal number\"\" of statement \"\"libev: ev_signal_start called with illegal signal number\" , (w->signum > 0 && w->signum < 65)\" has no effect due to the comma.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 4565,
+                    "column": 3,
+                    "event": "extra_comma",
+                    "message": "Part \"\"libev: a signal must not be attached to two different loops\"\" of statement \"\"libev: a signal must not be attached to two different loops\" , (!signals[w->signum - 1].loop || signals[w->signum - 1].loop == loop)\" has no effect due to the comma.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "NO_EFFECT",
+            "cwe": 480,
+            "function": "poll_poll",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_poll.c",
+                    "line": 113,
+                    "column": 9,
+                    "event": "extra_comma",
+                    "message": "Part \"\"libev: poll returned illegal result, broken BSD kernel?\"\" of statement \"\"libev: poll returned illegal result, broken BSD kernel?\" , (p < loop->polls + loop->pollcnt)\" has no effect due to the comma.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_poll.c",
+                    "line": 121,
+                    "column": 17,
+                    "event": "extra_comma",
+                    "message": "Part \"\"libev: poll found invalid fd in poll set\"\" of statement \"\"libev: poll found invalid fd in poll set\" , 0\" has no effect due to the comma.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "NO_EFFECT",
+            "cwe": 480,
+            "function": "ev_io_start",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 4339,
+                    "column": 3,
+                    "event": "extra_comma",
+                    "message": "Part \"\"libev: ev_io_start called with negative fd\"\" of statement \"\"libev: ev_io_start called with negative fd\" , (fd >= 0)\" has no effect due to the comma.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 4340,
+                    "column": 3,
+                    "event": "extra_comma",
+                    "message": "Part \"\"libev: ev_io_start called with illegal event mask\"\" of statement \"\"libev: ev_io_start called with illegal event mask\" , (!(w->events & 0xffffffffffffff7c))\" has no effect due to the comma.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 4340,
+                    "column": 3,
+                    "event": "extra_comma",
+                    "message": "Part \"\"libev: ev_io_start called with illegal event mask\"\" of statement \"\"libev: ev_io_start called with illegal event mask\" , (!(w->events & ~(EV__IOFDSET | EV_READ | EV_WRITE)))\" has no effect due to the comma.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 4352,
+                    "column": 3,
+                    "event": "extra_comma",
+                    "message": "Part \"\"libev: ev_io_start called with corrupted watcher\"\" of statement \"\"libev: ev_io_start called with corrupted watcher\" , (((WL)w)->next != (WL)w)\" has no effect due to the comma.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "NO_EFFECT",
+            "cwe": 480,
+            "function": "ev_verify",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 3619,
+                    "column": 5,
+                    "event": "extra_comma",
+                    "message": "Part \"\"libev: negative fd in fdchanges\"\" of statement \"\"libev: negative fd in fdchanges\" , (loop->fdchanges[i] >= 0)\" has no effect due to the comma.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 3632,
+                    "column": 15,
+                    "event": "extra_comma",
+                    "message": "Part \"\"libev: io watcher list contains a loop\"\" of statement \"\"libev: io watcher list contains a loop\" , (w != w2)\" has no effect due to the comma.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 3636,
+                    "column": 11,
+                    "event": "extra_comma",
+                    "message": "Part \"\"libev: inactive fd watcher on anfd list\"\" of statement \"\"libev: inactive fd watcher on anfd list\" , (((W)w)->active == 1)\" has no effect due to the comma.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 3637,
+                    "column": 11,
+                    "event": "extra_comma",
+                    "message": "Part \"\"libev: fd mismatch between watcher and anfd\"\" of statement \"\"libev: fd mismatch between watcher and anfd\" , (((ev_io *)w)->fd == i)\" has no effect due to the comma.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "NO_EFFECT",
+            "cwe": 480,
+            "function": "iouring_process_cqe",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 505,
+                    "column": 3,
+                    "event": "extra_comma",
+                    "message": "Part \"\"libev: io_uring fd must be in-bounds\"\" of statement \"\"libev: io_uring fd must be in-bounds\" , (fd >= 0 && fd < loop->anfdmax)\" has no effect due to the comma.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 525,
+                    "column": 11,
+                    "event": "extra_comma",
+                    "message": "Part \"\"libev: event loop rejected bad fd\"\" of statement \"\"libev: event loop rejected bad fd\" , (res != -9)\" has no effect due to the comma.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "NO_EFFECT",
+            "cwe": 480,
+            "function": "ev_run",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 4027,
+                    "column": 3,
+                    "event": "extra_comma",
+                    "message": "Part \"\"libev: ev_loop recursion during release detected\"\" of statement \"\"libev: ev_loop recursion during release detected\" , (loop->loop_done != 128)\" has no effect due to the comma.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 4165,
+                    "column": 13,
+                    "event": "extra_comma",
+                    "message": "Part \"\"libev: pipe_w not active, but pipe not written\"\" of statement \"\"libev: pipe_w not active, but pipe not written\" , (0 + ((ev_watcher *)(void *)&loop->pipe_w)->active)\" has no effect due to the comma.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "TAINTED_SCALAR",
+            "cwe": 606,
+            "function": "infy_cb",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 5,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 4862,
+                    "column": 3,
+                    "event": "tainted_argument",
+                    "message": "Calling function \"read\" taints argument \"*buf\". [Note: The source code implementation of the function has been overridden by a builtin model.]",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 4864,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"ofs < len\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 4866,
+                    "column": 7,
+                    "event": "var_assign_var",
+                    "message": "Assigning: \"ev\" = \"(struct inotify_event *)(buf + ofs)\". Both are now tainted.",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 4868,
+                    "column": 7,
+                    "event": "var_assign_var",
+                    "message": "Compound assignment involving tainted variable \"16UL + ev->len\" to variable \"ofs\" taints \"ofs\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 4869,
+                    "column": 5,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 4864,
+                    "column": 3,
+                    "event": "tainted_data",
+                    "message": "Using tainted variable \"ofs\" as a loop boundary.",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev.c",
+                    "line": 4864,
+                    "column": 3,
+                    "event": "remediation",
+                    "message": "Ensure that tainted values are properly sanitized, by checking that their values are within a permissible range.",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "USE_AFTER_FREE",
+            "cwe": 416,
+            "imp": 1,
+            "function": "iouring_modify",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 23,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 437,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"oev\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 440,
+                    "column": 7,
+                    "event": "freed_arg",
+                    "message": "\"iouring_sqe_get\" frees \"loop->iouring_sq_ring\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 263,
+                    "column": 7,
+                    "event": "path",
+                    "message": "Condition \"!!(tail + 1 - *((unsigned int volatile *)((char *)loop->iouring_sq_ring + loop->iouring_sq_head)) <= *((unsigned int volatile *)((char *)loop->iouring_sq_ring + loop->iouring_sq_ring_entries)))\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 274,
+                    "column": 7,
+                    "event": "path",
+                    "message": "Condition \"res >= 0\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 282,
+                    "column": 5,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 263,
+                    "column": 7,
+                    "event": "path",
+                    "message": "Condition \"!!(tail + 1 - *((unsigned int volatile *)((char *)loop->iouring_sq_ring + loop->iouring_sq_head)) <= *((unsigned int volatile *)((char *)loop->iouring_sq_ring + loop->iouring_sq_ring_entries)))\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 274,
+                    "column": 7,
+                    "event": "path",
+                    "message": "Condition \"res >= 0\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 280,
+                    "column": 7,
+                    "event": "freed_arg",
+                    "message": "\"iouring_poll\" frees parameter \"loop->iouring_sq_ring\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 641,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"iouring_handle_cq(loop)\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 641,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"loop->fdchangecnt\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 642,
+                    "column": 31,
+                    "event": "path",
+                    "message": "Falling through to end of if statement.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 648,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"timeout != 0.\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 648,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"loop->iouring_to_submit\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 652,
+                    "column": 7,
+                    "event": "path",
+                    "message": "Condition \"!!(res < 0)\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 660,
+                    "column": 9,
+                    "event": "freed_arg",
+                    "message": "\"iouring_handle_cq\" frees parameter \"loop->iouring_sq_ring\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 611,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"head == tail\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 615,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"!!*((unsigned int volatile *)((char *)loop->iouring_cq_ring + loop->iouring_cq_overflow))\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 617,
+                    "column": 7,
+                    "event": "freed_arg",
+                    "message": "\"iouring_overflow\" frees parameter \"loop->iouring_sq_ring\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 571,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"!loop->iouring_max_entries\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 574,
+                    "column": 7,
+                    "event": "freed_arg",
+                    "message": "\"iouring_fork\" frees parameter \"loop->iouring_sq_ring\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 420,
+                    "column": 3,
+                    "event": "freed_arg",
+                    "message": "\"iouring_internal_destroy\" frees parameter \"loop->iouring_sq_ring\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 322,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"loop->iouring_sq_ring != (void *)0xffffffffffffffff\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 322,
+                    "column": 38,
+                    "event": "freed_arg",
+                    "message": "\"munmap\" frees parameter \"loop->iouring_sq_ring\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 450,
+                    "column": 7,
+                    "event": "deref_arg",
+                    "message": "Calling \"iouring_sqe_submit\" dereferences freed pointer \"loop->iouring_sq_ring\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 295,
+                    "column": 3,
+                    "event": "deref_parm",
+                    "message": "Directly dereferencing parameter \"loop->iouring_sq_ring\".",
+                    "verbosity_level": 1
+                }
+            ]
+        },
+        {
+            "checker": "USE_AFTER_FREE",
+            "cwe": 416,
+            "imp": 1,
+            "function": "iouring_sqe_get",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 19,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 263,
+                    "column": 7,
+                    "event": "path",
+                    "message": "Condition \"!!(tail + 1 - *((unsigned int volatile *)((char *)loop->iouring_sq_ring + loop->iouring_sq_head)) <= *((unsigned int volatile *)((char *)loop->iouring_sq_ring + loop->iouring_sq_ring_entries)))\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 274,
+                    "column": 7,
+                    "event": "path",
+                    "message": "Condition \"res >= 0\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 280,
+                    "column": 7,
+                    "event": "freed_arg",
+                    "message": "\"iouring_poll\" frees \"loop->iouring_sq_ring\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 641,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"iouring_handle_cq(loop)\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 641,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"loop->fdchangecnt\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 642,
+                    "column": 31,
+                    "event": "path",
+                    "message": "Falling through to end of if statement.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 648,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"timeout != 0.\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 648,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"loop->iouring_to_submit\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 652,
+                    "column": 7,
+                    "event": "path",
+                    "message": "Condition \"!!(res < 0)\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 660,
+                    "column": 9,
+                    "event": "freed_arg",
+                    "message": "\"iouring_handle_cq\" frees parameter \"loop->iouring_sq_ring\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 611,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"head == tail\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 615,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"!!*((unsigned int volatile *)((char *)loop->iouring_cq_ring + loop->iouring_cq_overflow))\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 617,
+                    "column": 7,
+                    "event": "freed_arg",
+                    "message": "\"iouring_overflow\" frees parameter \"loop->iouring_sq_ring\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 571,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"!loop->iouring_max_entries\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 574,
+                    "column": 7,
+                    "event": "freed_arg",
+                    "message": "\"iouring_fork\" frees parameter \"loop->iouring_sq_ring\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 420,
+                    "column": 3,
+                    "event": "freed_arg",
+                    "message": "\"iouring_internal_destroy\" frees parameter \"loop->iouring_sq_ring\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 322,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"loop->iouring_sq_ring != (void *)0xffffffffffffffff\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 322,
+                    "column": 38,
+                    "event": "freed_arg",
+                    "message": "\"munmap\" frees parameter \"loop->iouring_sq_ring\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 282,
+                    "column": 5,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 261,
+                    "column": 7,
+                    "event": "use_after_free",
+                    "message": "Using freed pointer \"loop->iouring_sq_ring\".",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "USE_AFTER_FREE",
+            "cwe": 416,
+            "imp": 1,
+            "function": "iouring_sqe_get",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 23,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 263,
+                    "column": 7,
+                    "event": "path",
+                    "message": "Condition \"!!(tail + 1 - *((unsigned int volatile *)((char *)loop->iouring_sq_ring + loop->iouring_sq_head)) <= *((unsigned int volatile *)((char *)loop->iouring_sq_ring + loop->iouring_sq_ring_entries)))\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 274,
+                    "column": 7,
+                    "event": "path",
+                    "message": "Condition \"res >= 0\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 280,
+                    "column": 7,
+                    "event": "freed_arg",
+                    "message": "\"iouring_poll\" frees \"loop->iouring_sqes\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 641,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"iouring_handle_cq(loop)\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 641,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"loop->fdchangecnt\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 642,
+                    "column": 31,
+                    "event": "path",
+                    "message": "Falling through to end of if statement.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 648,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"timeout != 0.\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 648,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"loop->iouring_to_submit\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 652,
+                    "column": 7,
+                    "event": "path",
+                    "message": "Condition \"!!(res < 0)\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 660,
+                    "column": 9,
+                    "event": "freed_arg",
+                    "message": "\"iouring_handle_cq\" frees parameter \"loop->iouring_sqes\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 611,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"head == tail\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 615,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"!!*((unsigned int volatile *)((char *)loop->iouring_cq_ring + loop->iouring_cq_overflow))\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 617,
+                    "column": 7,
+                    "event": "freed_arg",
+                    "message": "\"iouring_overflow\" frees parameter \"loop->iouring_sqes\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 571,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"!loop->iouring_max_entries\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 574,
+                    "column": 7,
+                    "event": "freed_arg",
+                    "message": "\"iouring_fork\" frees parameter \"loop->iouring_sqes\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 420,
+                    "column": 3,
+                    "event": "freed_arg",
+                    "message": "\"iouring_internal_destroy\" frees parameter \"loop->iouring_sqes\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 322,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"loop->iouring_sq_ring != (void *)0xffffffffffffffff\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 323,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"loop->iouring_cq_ring != (void *)0xffffffffffffffff\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 324,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"loop->iouring_sqes != (void *)0xffffffffffffffff\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 324,
+                    "column": 38,
+                    "event": "freed_arg",
+                    "message": "\"munmap\" frees parameter \"loop->iouring_sqes\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 282,
+                    "column": 5,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 263,
+                    "column": 7,
+                    "event": "path",
+                    "message": "Condition \"!!(tail + 1 - *((unsigned int volatile *)((char *)loop->iouring_sq_ring + loop->iouring_sq_head)) <= *((unsigned int volatile *)((char *)loop->iouring_sq_ring + loop->iouring_sq_ring_entries)))\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 264,
+                    "column": 9,
+                    "event": "path",
+                    "message": "Breaking from loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 286,
+                    "column": 3,
+                    "event": "use_after_free",
+                    "message": "Using freed pointer \"loop->iouring_sqes\".",
+                    "verbosity_level": 0
+                }
+            ]
+        },
+        {
+            "checker": "USE_AFTER_FREE",
+            "cwe": 416,
+            "imp": 1,
+            "function": "iouring_modify",
+            "language": "c/c++",
+            "tool": "coverity",
+            "key_event_idx": 26,
+            "events": [
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 437,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"oev\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 456,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"nev\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 458,
+                    "column": 7,
+                    "event": "freed_arg",
+                    "message": "\"iouring_sqe_get\" frees \"loop->iouring_sq_ring\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 263,
+                    "column": 7,
+                    "event": "path",
+                    "message": "Condition \"!!(tail + 1 - *((unsigned int volatile *)((char *)loop->iouring_sq_ring + loop->iouring_sq_head)) <= *((unsigned int volatile *)((char *)loop->iouring_sq_ring + loop->iouring_sq_ring_entries)))\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 274,
+                    "column": 7,
+                    "event": "path",
+                    "message": "Condition \"res >= 0\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 282,
+                    "column": 5,
+                    "event": "path",
+                    "message": "Jumping back to the beginning of the loop.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 263,
+                    "column": 7,
+                    "event": "path",
+                    "message": "Condition \"!!(tail + 1 - *((unsigned int volatile *)((char *)loop->iouring_sq_ring + loop->iouring_sq_head)) <= *((unsigned int volatile *)((char *)loop->iouring_sq_ring + loop->iouring_sq_ring_entries)))\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 274,
+                    "column": 7,
+                    "event": "path",
+                    "message": "Condition \"res >= 0\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 280,
+                    "column": 7,
+                    "event": "freed_arg",
+                    "message": "\"iouring_poll\" frees parameter \"loop->iouring_sq_ring\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 641,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"iouring_handle_cq(loop)\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 641,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"loop->fdchangecnt\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 642,
+                    "column": 31,
+                    "event": "path",
+                    "message": "Falling through to end of if statement.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 648,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"timeout != 0.\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 648,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"loop->iouring_to_submit\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 652,
+                    "column": 7,
+                    "event": "path",
+                    "message": "Condition \"!!(res < 0)\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 660,
+                    "column": 9,
+                    "event": "freed_arg",
+                    "message": "\"iouring_handle_cq\" frees parameter \"loop->iouring_sq_ring\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 611,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"head == tail\", taking false branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 615,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"!!*((unsigned int volatile *)((char *)loop->iouring_cq_ring + loop->iouring_cq_overflow))\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 617,
+                    "column": 7,
+                    "event": "freed_arg",
+                    "message": "\"iouring_overflow\" frees parameter \"loop->iouring_sq_ring\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 571,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"!loop->iouring_max_entries\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 574,
+                    "column": 7,
+                    "event": "freed_arg",
+                    "message": "\"iouring_fork\" frees parameter \"loop->iouring_sq_ring\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 420,
+                    "column": 3,
+                    "event": "freed_arg",
+                    "message": "\"iouring_internal_destroy\" frees parameter \"loop->iouring_sq_ring\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 322,
+                    "column": 3,
+                    "event": "path",
+                    "message": "Condition \"loop->iouring_sq_ring != (void *)0xffffffffffffffff\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 322,
+                    "column": 38,
+                    "event": "freed_arg",
+                    "message": "\"munmap\" frees parameter \"loop->iouring_sq_ring\".",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 463,
+                    "column": 7,
+                    "event": "path",
+                    "message": "Condition \"nev & EV_READ\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 463,
+                    "column": 7,
+                    "event": "path",
+                    "message": "Condition \"nev & EV_WRITE\", taking true branch.",
+                    "verbosity_level": 2
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 466,
+                    "column": 7,
+                    "event": "deref_arg",
+                    "message": "Calling \"iouring_sqe_submit\" dereferences freed pointer \"loop->iouring_sq_ring\".",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "/builddir/build/BUILD/libev-4.33/ev_iouring.c",
+                    "line": 295,
+                    "column": 3,
+                    "event": "deref_parm",
+                    "message": "Directly dereferencing parameter \"loop->iouring_sq_ring\".",
+                    "verbosity_level": 1
+                }
+            ]
+        }
+    ]
+}

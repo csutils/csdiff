@@ -549,12 +549,20 @@ Error: DEADCODE (CWE-561):
 
 Error: PRINTF_ARGS (CWE-686):
 /builddir/build/BUILD/curl-7.66.0/lib/http2.c:1149: invalid_type: Precision argument "len" to format specifier "%.*s" was expected to have type "int" but has type "unsigned long".
+/builddir/build/BUILD/curl-7.66.0/lib/sendf.c:235: path: Condition "data", taking true branch.
+/builddir/build/BUILD/curl-7.66.0/lib/sendf.c:235: path: Condition "data->set.verbose", taking true branch.
+/builddir/build/BUILD/curl-7.66.0/lib/sendf.c:240: printf_function: Calling "curl_mvsnprintf" which uses a "printf"-style format string. [Note: The source code implementation of the function has been overridden by a builtin model.]
 
 Error: PRINTF_ARGS (CWE-686):
 /builddir/build/BUILD/curl-7.66.0/lib/http2.c:2084: invalid_type: Argument "60000" to format specifier "%zu" was expected to have type "size_t"("unsigned long") but has type "int".
+/builddir/build/BUILD/curl-7.66.0/lib/sendf.c:235: path: Condition "data", taking true branch.
+/builddir/build/BUILD/curl-7.66.0/lib/sendf.c:235: path: Condition "data->set.verbose", taking true branch.
+/builddir/build/BUILD/curl-7.66.0/lib/sendf.c:240: printf_function: Calling "curl_mvsnprintf" which uses a "printf"-style format string. [Note: The source code implementation of the function has been overridden by a builtin model.]
 
 Error: PRINTF_ARGS (CWE-686):
 /builddir/build/BUILD/curl-7.66.0/lib/http2.c:2280: invalid_type: Argument "32768" to format specifier "%zu" was expected to have type "size_t"("unsigned long") but has type "int".
+/builddir/build/BUILD/curl-7.66.0/lib/sendf.c:264: path: Condition "data->set.verbose", taking true branch.
+/builddir/build/BUILD/curl-7.66.0/lib/sendf.c:269: printf_function: Calling "curl_mvsnprintf" which uses a "printf"-style format string. [Note: The source code implementation of the function has been overridden by a builtin model.]
 
 Error: DEADCODE (CWE-561):
 /builddir/build/BUILD/curl-7.66.0/lib/http_chunks.c:157: assignment: Assigning: "result" = "((void)conn->data) , CURLE_OK".
@@ -625,6 +633,9 @@ Error: CHECKED_RETURN (CWE-252):
 
 Error: PRINTF_ARGS (CWE-686):
 /builddir/build/BUILD/curl-7.66.0/lib/krb5.c:217: invalid_type: Argument "output_buffer.value" to format specifier "%s" was expected to have type "char *" but has type "void *".
+/builddir/build/BUILD/curl-7.66.0/lib/sendf.c:235: path: Condition "data", taking true branch.
+/builddir/build/BUILD/curl-7.66.0/lib/sendf.c:235: path: Condition "data->set.verbose", taking true branch.
+/builddir/build/BUILD/curl-7.66.0/lib/sendf.c:240: printf_function: Calling "curl_mvsnprintf" which uses a "printf"-style format string. [Note: The source code implementation of the function has been overridden by a builtin model.]
 
 Error: CHECKED_RETURN (CWE-252):
 /builddir/build/BUILD/curl-7.66.0/lib/multi.c:530: path: Condition "data->state.done", taking false branch.
@@ -842,9 +853,13 @@ Error: CHECKED_RETURN (CWE-252):
 
 Error: PRINTF_ARGS (CWE-686):
 /builddir/build/BUILD/curl-7.66.0/lib/socks_gssapi.c:494: invalid_type: Argument "gss_w_token.length" to format specifier "%d" was expected to have type "int" but has type "unsigned long".
+/builddir/build/BUILD/curl-7.66.0/lib/sendf.c:264: path: Condition "data->set.verbose", taking true branch.
+/builddir/build/BUILD/curl-7.66.0/lib/sendf.c:269: printf_function: Calling "curl_mvsnprintf" which uses a "printf"-style format string. [Note: The source code implementation of the function has been overridden by a builtin model.]
 
 Error: PRINTF_ARGS (CWE-686):
 /builddir/build/BUILD/curl-7.66.0/lib/socks_gssapi.c:506: invalid_type: Argument "gss_recv_token.length" to format specifier "%d" was expected to have type "int" but has type "unsigned long".
+/builddir/build/BUILD/curl-7.66.0/lib/sendf.c:264: path: Condition "data->set.verbose", taking true branch.
+/builddir/build/BUILD/curl-7.66.0/lib/sendf.c:269: printf_function: Calling "curl_mvsnprintf" which uses a "printf"-style format string. [Note: The source code implementation of the function has been overridden by a builtin model.]
 
 Error: CHECKED_RETURN (CWE-252):
 /builddir/build/BUILD/curl-7.66.0/lib/strerror.c:697: path: Condition "0 != strerror_r(err, buf, max)", taking true branch.
@@ -889,6 +904,13 @@ Error: STRING_NULL (CWE-170):
 /builddir/build/BUILD/curl-7.66.0/lib/tftp.c:1139: path: Condition "state->rbytes < 4", taking false branch.
 /builddir/build/BUILD/curl-7.66.0/lib/tftp.c:1149: path: Switch case value "TFTP_EVENT_OACK".
 /builddir/build/BUILD/curl-7.66.0/lib/tftp.c:1178: string_null: Passing unterminated string "(char const *)state->rpacket.data + 2" to "tftp_parse_option_ack", which expects a null-terminated string.
+/builddir/build/BUILD/curl-7.66.0/lib/tftp.c:336: var_assign_parm: Assigning: "tmp" = "ptr". They now point to the same thing.
+/builddir/build/BUILD/curl-7.66.0/lib/tftp.c:342: path: Condition "tmp < ptr + len", taking true branch.
+/builddir/build/BUILD/curl-7.66.0/lib/tftp.c:345: string_null_sink_lv_call: Passing local "tmp", that points to a parameter, to "tftp_option_get", which expects a null-terminated string.
+/builddir/build/BUILD/curl-7.66.0/lib/tftp.c:319: path: Condition "loc >= len", taking false branch.
+/builddir/build/BUILD/curl-7.66.0/lib/tftp.c:321: var_assign_parm: Assigning: "*option" = "buf".
+/builddir/build/BUILD/curl-7.66.0/lib/tftp.c:326: path: Condition "loc > len", taking false branch.
+/builddir/build/BUILD/curl-7.66.0/lib/tftp.c:328: string_null_sink_parm_call: Passing parameter "*option" to "strlen" which expects a null-terminated string.
 
 Error: CHECKED_RETURN (CWE-252):
 /builddir/build/BUILD/curl-7.66.0/lib/url.c:2158: path: Condition "!uc", taking true branch.
@@ -1124,6 +1146,8 @@ Error: OVERRUN (CWE-125):
 /builddir/build/BUILD/curl-7.66.0/lib/vauth/ntlm.c:820: assignment: Assigning: "size" += "domlen". The value of "size" may now be up to 1047.
 /builddir/build/BUILD/curl-7.66.0/lib/vauth/ntlm.c:823: path: Condition "unicode", taking true branch.
 /builddir/build/BUILD/curl-7.66.0/lib/vauth/ntlm.c:824: overrun-local: Overrunning array of 1024 bytes at byte offset 1047 by dereferencing pointer "&ntlmbuf[size]".
+/builddir/build/BUILD/curl-7.66.0/lib/vauth/ntlm.c:342: path: Condition "i < length", taking true branch.
+/builddir/build/BUILD/curl-7.66.0/lib/vauth/ntlm.c:343: deref_parm: Directly dereferencing parameter "dest".
 
 Error: OVERRUN (CWE-125):
 /builddir/build/BUILD/curl-7.66.0/lib/vauth/ntlm.c:525: assignment: Assigning: "ntresplen" = "24U".
@@ -1202,9 +1226,15 @@ Error: CHECKED_RETURN (CWE-252):
 
 Error: PRINTF_ARGS (CWE-686):
 /builddir/build/BUILD/curl-7.66.0/lib/vtls/openssl.c:3479: invalid_type: Precision argument "len" to format specifier "%.*s" was expected to have type "int" but has type "long".
+/builddir/build/BUILD/curl-7.66.0/lib/sendf.c:235: path: Condition "data", taking true branch.
+/builddir/build/BUILD/curl-7.66.0/lib/sendf.c:235: path: Condition "data->set.verbose", taking true branch.
+/builddir/build/BUILD/curl-7.66.0/lib/sendf.c:240: printf_function: Calling "curl_mvsnprintf" which uses a "printf"-style format string. [Note: The source code implementation of the function has been overridden by a builtin model.]
 
 Error: PRINTF_ARGS (CWE-686):
 /builddir/build/BUILD/curl-7.66.0/lib/vtls/openssl.c:3484: invalid_type: Precision argument "len" to format specifier "%.*s" was expected to have type "int" but has type "long".
+/builddir/build/BUILD/curl-7.66.0/lib/sendf.c:235: path: Condition "data", taking true branch.
+/builddir/build/BUILD/curl-7.66.0/lib/sendf.c:235: path: Condition "data->set.verbose", taking true branch.
+/builddir/build/BUILD/curl-7.66.0/lib/sendf.c:240: printf_function: Calling "curl_mvsnprintf" which uses a "printf"-style format string. [Note: The source code implementation of the function has been overridden by a builtin model.]
 
 Error: CHECKED_RETURN (CWE-252):
 /builddir/build/BUILD/curl-7.66.0/lib/vtls/openssl.c:3808: path: Condition "len > 2147483647UL /* (size_t)2147483647 */", taking true branch.
@@ -1215,6 +1245,9 @@ Error: CHECKED_RETURN (CWE-252):
 /builddir/build/BUILD/curl-7.66.0/lib/vtls/openssl.c:3831: path: Condition "conn->ssl[sockindex].state == ssl_connection_complete", taking true branch.
 /builddir/build/BUILD/curl-7.66.0/lib/vtls/openssl.c:3831: path: Condition "conn->proxy_ssl[sockindex].state == ssl_connection_complete", taking true branch.
 /builddir/build/BUILD/curl-7.66.0/lib/vtls/openssl.c:3836: check_return: Calling "Curl_ossl_version(ver, 120UL)" without checking return value. It wraps a library function that may fail and return an error code.
+/builddir/build/BUILD/curl-7.66.0/lib/vtls/openssl.c:3924: path: Condition "ssleay_value < 9461760", taking true branch.
+/builddir/build/BUILD/curl-7.66.0/lib/vtls/openssl.c:3927: path: Falling through to end of if statement.
+/builddir/build/BUILD/curl-7.66.0/lib/vtls/openssl.c:3944: return_wrapper: The function wraps and returns the value of "curl_msnprintf(buffer, size, "%s/%lx.%lx.%lx%s-fips", "OpenSSL", (ssleay_value >> 28) & 0xfUL, (ssleay_value >> 20) & 0xffUL, (ssleay_value >> 12) & 0xffUL, sub)". [Note: The source code implementation of the function has been overridden by a builtin model.]
 
 Error: CHECKED_RETURN (CWE-252):
 /builddir/build/BUILD/curl-7.66.0/lib/vtls/vtls.c:693: path: Condition "!output", taking false branch.
@@ -1693,6 +1726,28 @@ Error: RESOURCE_LEAK (CWE-404):
 /builddir/build/BUILD/curl-7.66.0/src/tool_formparse.c:115: path: Condition "!fstat(fd, &sbuf)", taking true branch.
 /builddir/build/BUILD/curl-7.66.0/src/tool_formparse.c:115: path: Condition "(sbuf.st_mode & 61440) == 32768", taking false branch.
 /builddir/build/BUILD/curl-7.66.0/src/tool_formparse.c:127: alloc_arg: "file2memory" allocates memory that is stored into "data".
+/builddir/build/BUILD/curl-7.66.0/src/tool_paramhlp.c:96: path: Condition "file", taking true branch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_paramhlp.c:100: path: Condition "!buffer", taking true branch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_paramhlp.c:102: path: Condition "alloc + 1 > 9223372036854775807UL /* (size_t)-1 / 2 */", taking false branch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_paramhlp.c:109: path: Condition "!newbuf", taking false branch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_paramhlp.c:117: path: Condition "nread", taking true branch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_paramhlp.c:100: path: Condition "!buffer", taking false branch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_paramhlp.c:100: path: Condition "alloc == nused", taking true branch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_paramhlp.c:102: path: Condition "alloc + 1 > 9223372036854775807UL /* (size_t)-1 / 2 */", taking false branch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_paramhlp.c:109: path: Condition "!newbuf", taking false branch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_paramhlp.c:117: path: Condition "nread", taking true branch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_paramhlp.c:100: path: Condition "!buffer", taking false branch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_paramhlp.c:100: path: Condition "alloc == nused", taking true branch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_paramhlp.c:102: path: Condition "alloc + 1 > 9223372036854775807UL /* (size_t)-1 / 2 */", taking false branch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_paramhlp.c:109: path: Condition "!newbuf", taking false branch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_paramhlp.c:117: path: Condition "nread", taking false branch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_paramhlp.c:121: path: Condition "alloc != nused", taking true branch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_paramhlp.c:122: alloc_fn: Storage is returned from allocation function "realloc".
+/builddir/build/BUILD/curl-7.66.0/src/tool_paramhlp.c:122: assign: Assigning: "newbuf" = "realloc(buffer, nused + 1UL)".
+/builddir/build/BUILD/curl-7.66.0/src/tool_paramhlp.c:123: path: Condition "!newbuf", taking false branch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_paramhlp.c:127: assign: Assigning: "buffer" = "newbuf".
+/builddir/build/BUILD/curl-7.66.0/src/tool_paramhlp.c:130: path: Condition "!nused", taking false branch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_paramhlp.c:135: assign: Assigning: "*bufp" = "buffer".
 /builddir/build/BUILD/curl-7.66.0/src/tool_formparse.c:127: path: Condition "file2memory(&data, &stdinsize, stdin) != PARAM_OK", taking false branch.
 /builddir/build/BUILD/curl-7.66.0/src/tool_formparse.c:132: path: Condition "ferror(stdin)", taking false branch.
 /builddir/build/BUILD/curl-7.66.0/src/tool_formparse.c:137: path: Condition "!stdinsize", taking true branch.
@@ -2151,6 +2206,15 @@ Error: RESOURCE_LEAK (CWE-404):
 /builddir/build/BUILD/curl-7.66.0/src/tool_operate.c:792: path: Condition "!config->globoff", taking true branch.
 /builddir/build/BUILD/curl-7.66.0/src/tool_operate.c:795: path: Condition "global->showerror", taking true branch.
 /builddir/build/BUILD/curl-7.66.0/src/tool_operate.c:795: alloc_arg: "glob_url" allocates memory that is stored into "urls".
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:445: path: Condition "!glob_buffer", taking false branch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:449: alloc_fn: Storage is returned from allocation function "calloc".
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:449: assign: Assigning: "glob_expand" = "calloc(1UL, 4848UL)".
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:450: path: Condition "!glob_expand", taking false branch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:457: noescape: Resource "glob_expand" is not freed or pointed-to in function "glob_parse".
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:352: noescape: "glob_parse(URLGlob *, char *, size_t, unsigned long *)" does not free or save its parameter "glob".
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:458: path: Condition "!res", taking true branch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:459: path: Falling through to end of if statement.
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:482: assign: Assigning: "*glob" = "glob_expand".
 /builddir/build/BUILD/curl-7.66.0/src/tool_operate.c:797: path: Condition "result", taking false branch.
 /builddir/build/BUILD/curl-7.66.0/src/tool_operate.c:801: path: Falling through to end of if statement.
 /builddir/build/BUILD/curl-7.66.0/src/tool_operate.c:806: path: Condition "!outfiles", taking false branch.
@@ -2166,6 +2230,7 @@ Error: RESOURCE_LEAK (CWE-404):
 /builddir/build/BUILD/curl-7.66.0/src/tool_operate.c:870: path: Condition "metalink", taking false branch.
 /builddir/build/BUILD/curl-7.66.0/src/tool_operate.c:886: path: Condition "urls", taking true branch.
 /builddir/build/BUILD/curl-7.66.0/src/tool_operate.c:887: noescape: Resource "urls" is not freed or pointed-to in "glob_next_url".
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:506: noescape: "glob_next_url(char **, URLGlob *)" does not free or save its parameter "glob".
 /builddir/build/BUILD/curl-7.66.0/src/tool_operate.c:888: path: Condition "result", taking false branch.
 /builddir/build/BUILD/curl-7.66.0/src/tool_operate.c:890: path: Falling through to end of if statement.
 /builddir/build/BUILD/curl-7.66.0/src/tool_operate.c:900: path: Condition "!per->this_url", taking false branch.
@@ -2177,6 +2242,7 @@ Error: RESOURCE_LEAK (CWE-404):
 /builddir/build/BUILD/curl-7.66.0/src/tool_operate.c:921: path: Condition "!per->outfile", taking false branch.
 /builddir/build/BUILD/curl-7.66.0/src/tool_operate.c:932: path: Condition "urls", taking true branch.
 /builddir/build/BUILD/curl-7.66.0/src/tool_operate.c:935: noescape: Resource "urls" is not freed or pointed-to in "glob_match_url".
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:600: noescape: "glob_match_url(char **, char *, URLGlob *)" does not free or save its parameter "glob".
 /builddir/build/BUILD/curl-7.66.0/src/tool_operate.c:937: path: Condition "result", taking false branch.
 /builddir/build/BUILD/curl-7.66.0/src/tool_operate.c:947: path: Condition "config->create_dirs", taking true branch.
 /builddir/build/BUILD/curl-7.66.0/src/tool_operate.c:950: path: Condition "result == CURLE_WRITE_ERROR", taking false branch.
@@ -3882,6 +3948,41 @@ Error: RESOURCE_LEAK (CWE-404):
 /builddir/build/BUILD/curl-7.66.0/src/tool_operate.c:768: path: Condition "!infiles", taking false branch.
 /builddir/build/BUILD/curl-7.66.0/src/tool_operate.c:771: path: Condition "inglob", taking true branch.
 /builddir/build/BUILD/curl-7.66.0/src/tool_operate.c:772: alloc_arg: "glob_next_url" allocates memory that is stored into "uploadfile".
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:516: path: Condition "!glob->beenhere", taking true branch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:517: path: Falling through to end of if statement.
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:560: path: Condition "i < glob->size", taking true branch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:562: path: Switch case value "UPTSet".
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:564: path: Condition "pat->content.Set.elements", taking true branch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:571: path: Breaking from switch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:591: path: Jumping back to the beginning of the loop.
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:560: path: Condition "i < glob->size", taking true branch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:562: path: Switch case value "UPTSet".
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:564: path: Condition "pat->content.Set.elements", taking true branch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:571: path: Breaking from switch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:591: path: Jumping back to the beginning of the loop.
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:560: path: Condition "i < glob->size", taking true branch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:562: path: Switch case value "UPTCharRange".
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:573: path: Condition "buflen", taking true branch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:578: path: Breaking from switch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:591: path: Jumping back to the beginning of the loop.
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:560: path: Condition "i < glob->size", taking true branch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:562: path: Switch case value "UPTCharRange".
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:573: path: Condition "buflen", taking false branch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:578: path: Breaking from switch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:591: path: Jumping back to the beginning of the loop.
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:560: path: Condition "i < glob->size", taking true branch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:562: path: Switch case value "UPTSet".
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:564: path: Condition "pat->content.Set.elements", taking true branch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:571: path: Breaking from switch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:591: path: Jumping back to the beginning of the loop.
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:560: path: Condition "i < glob->size", taking true branch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:562: path: Switch case value "UPTNumRange".
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:586: path: Breaking from switch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:591: path: Jumping back to the beginning of the loop.
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:560: path: Condition "i < glob->size", taking false branch.
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:593: alloc_fn: Storage is returned from allocation function "strdup".
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:593: assign: Assigning: "*globbed" = "strdup(glob->glob_buffer)".
+/builddir/build/BUILD/curl-7.66.0/src/tool_urlglob.c:594: path: Condition "!*globbed", taking false branch.
 /builddir/build/BUILD/curl-7.66.0/src/tool_operate.c:773: path: Condition "result == CURLE_OUT_OF_MEMORY", taking false branch.
 /builddir/build/BUILD/curl-7.66.0/src/tool_operate.c:775: path: Falling through to end of if statement.
 /builddir/build/BUILD/curl-7.66.0/src/tool_operate.c:783: path: Condition "!uploadfile", taking false branch.

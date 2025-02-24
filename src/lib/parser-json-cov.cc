@@ -101,6 +101,11 @@ void CovTreeDecoder::Private::readEvents(Defect *def)
         // push the event to the list of events
         DefEvent evt = covDecodeEvt(evtNode);
         def->events.push_back(std::move(evt));
+
+        // check for nested events and eventually process them recursively
+        const pt::ptree &nestedEvts = evtNode.get_child("events");
+        if (!nestedEvts.empty())
+            todo.push(nestedEvts);
     }
     while (!todo.empty());
 }
