@@ -23,6 +23,9 @@
 
 struct CovTreeDecoder::Private {
     KeyEventDigger              keDigger;
+    const pt::ptree            *pSrc;
+
+    void readEvents(Defect *def);
 };
 
 CovTreeDecoder::CovTreeDecoder():
@@ -32,37 +35,10 @@ CovTreeDecoder::CovTreeDecoder():
 
 CovTreeDecoder::~CovTreeDecoder() = default;
 
-bool CovTreeDecoder::readNode(Defect *def)
+void CovTreeDecoder::Private::readEvents(Defect *def)
 {
-    // move the iterator after we get the current position
-    const pt::ptree *pNode = this->nextNode();
-    if (!pNode)
-        // failed initialization or EOF
-        return false;
-
-    const pt::ptree &defNode = *pNode;
-
-    // read per-defect properties
-    def->checker = defNode.get<std::string>("checkerName");
-    def->function = valueOf<std::string>(defNode, "functionDisplayName");
-    def->language = valueOf<std::string>(defNode, "code-language");
-
-    // out of the supported tools, only Coverity produces this data format
-    def->tool = "coverity";
-
-    // extract checker properties if available
-    const pt::ptree *checkerProps;
-    if (findChildOf(&checkerProps, defNode, "checkerProperties")) {
-        // read CWE if available
-        def->cwe = valueOf<int>(*checkerProps, "cweCategory");
-
-        // treat defects with high impact as important
-        if ("High" == valueOf<std::string>(*checkerProps, "impact"))
-            def->imp = 1;
-    }
-
     // count the events and allocate dst array
-    const pt::ptree &evtList = defNode.get_child("events");
+    const pt::ptree &evtList = this->pSrc->get_child("events");
     def->events.resize(evtList.size());
 
     // decode events one by one
@@ -83,6 +59,39 @@ bool CovTreeDecoder::readNode(Defect *def)
             // TODO: detect and report re-definitions of key events
             def->keyEventIdx = idx;
     }
+}
+
+bool CovTreeDecoder::readNode(Defect *def)
+{
+    // move the iterator after we get the current position
+    d->pSrc = this->nextNode();
+    if (!d->pSrc)
+        // failed initialization or EOF
+        return false;
+
+    const pt::ptree &defNode = *d->pSrc;
+
+    // read per-defect properties
+    def->checker = defNode.get<std::string>("checkerName");
+    def->function = valueOf<std::string>(defNode, "functionDisplayName");
+    def->language = valueOf<std::string>(defNode, "code-language");
+
+    // out of the supported tools, only Coverity produces this data format
+    def->tool = "coverity";
+
+    // extract checker properties if available
+    const pt::ptree *checkerProps;
+    if (findChildOf(&checkerProps, defNode, "checkerProperties")) {
+        // read CWE if available
+        def->cwe = valueOf<int>(*checkerProps, "cweCategory");
+
+        // treat defects with high impact as important
+        if ("High" == valueOf<std::string>(*checkerProps, "impact"))
+            def->imp = 1;
+    }
+
+    // read all events
+    d->readEvents(def);
 
     // initialize verbosity level of all events
     d->keDigger.initVerbosity(def);
