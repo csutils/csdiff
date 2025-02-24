@@ -37,17 +37,13 @@ CovTreeDecoder::~CovTreeDecoder() = default;
 
 void CovTreeDecoder::Private::readEvents(Defect *def)
 {
-    // count the events and allocate dst array
+    // go through the list of events
     const pt::ptree &evtList = this->pSrc->get_child("events");
-    def->events.resize(evtList.size());
+    for (const auto &item : evtList) {
+        const pt::ptree &evtNode = item.second;
 
-    // decode events one by one
-    unsigned idx = 0;
-    pt::ptree::const_iterator it;
-    for (it = evtList.begin(); it != evtList.end(); ++it, ++idx) {
-        const pt::ptree &evtNode = it->second;
-        DefEvent &evt = def->events[idx];
-
+        // decode single event
+        DefEvent evt;
         evt.fileName    = valueOf<std::string>(evtNode, "filePathname");
         evt.line        = valueOf<int>        (evtNode, "lineNumber");
         evt.column      = valueOf<int>        (evtNode, "columnNumber");
@@ -57,7 +53,10 @@ void CovTreeDecoder::Private::readEvents(Defect *def)
         if (evtNode.get<bool>("main"))
             // this is a key event
             // TODO: detect and report re-definitions of key events
-            def->keyEventIdx = idx;
+            def->keyEventIdx = def->events.size();
+
+        // push the event to the list of events
+        def->events.push_back(std::move(evt));
     }
 }
 
