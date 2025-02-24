@@ -34,9 +34,14 @@ if(SANITIZERS)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-sanitize-recover=all")
 endif()
 
+# Disable deprecated internal FindBoost module if possible.
+if(POLICY CMP0167)
+    cmake_policy(SET CMP0167 NEW)
+endif()
+
 # find Boost
 set(Boost_VERBOSE TRUE)
-find_package(Boost CONFIG REQUIRED
+find_package(Boost REQUIRED
     COMPONENTS filesystem
                program_options
                regex
@@ -127,7 +132,7 @@ macro(build_pycsdiff version)
 
     # find boost_python${version}
     set(PYTHON_VERSION_SUFFIX "${version}${Python${version}_VERSION_MINOR}")
-    find_package(Boost CONFIG REQUIRED COMPONENTS python${PYTHON_VERSION_SUFFIX})
+    find_package(Boost REQUIRED COMPONENTS python${PYTHON_VERSION_SUFFIX})
     message(STATUS "Python ${version} binding enabled. "
         "The pycsdiff module will be built!")
 
