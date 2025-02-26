@@ -14,7 +14,7 @@ jobs:
       fail-fast: false
       matrix:
         compiler: [clang++, g++]
-        version: [20.04, 22.04, 24.04]
+        version: [22.04, 24.04]
 
     runs-on: ubuntu-${{ matrix.version }}
     env:
