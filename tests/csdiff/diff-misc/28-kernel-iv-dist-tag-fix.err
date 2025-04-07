@@ -1,0 +1,39 @@
+Error: CPPCHECK_WARNING (CWE-415):
+kernel-5.14.0-570.10.1.el9_6/linux-5.14.0-570.10.1.el9.x86_64/tools/power/x86/x86_energy_perf_policy/x86_energy_perf_policy.c:656: error[doubleFree]: Resource handle 'cpuinfo' freed twice.
+#  654|   
+#  655|   	if (!fread(buffer, 1024, 1, cpuinfo)) {
+#  656|-> 		fclose(cpuinfo);
+#  657|   		free(buffer);
+#  658|   		err(1, "Reading /proc/cpuinfo failed");
+
+Error: CPPCHECK_WARNING (CWE-415):
+kernel-5.14.0-570.10.1.el9_6/linux-5.14.0-570.10.1.el9.x86_64/tools/power/x86/x86_energy_perf_policy/x86_energy_perf_policy.c:665: error[doubleFree]: Resource handle 'cpuinfo' freed twice.
+#  663|   	fseek(cpuinfo, flags - buffer, SEEK_SET);
+#  664|   	if (!fgets(buffer, 4096, cpuinfo)) {
+#  665|-> 		fclose(cpuinfo);
+#  666|   		free(buffer);
+#  667|   		err(1, "Reading /proc/cpuinfo failed");
+
+Error: CPPCHECK_WARNING (CWE-415):
+kernel-5.14.0-570.10.1.el9_6/linux-5.14.0-570.10.1.el9.x86_64/tools/power/x86/x86_energy_perf_policy/x86_energy_perf_policy.c:666: error[doubleFree]: Memory pointed to by 'buffer' is freed twice.
+#  664|   	if (!fgets(buffer, 4096, cpuinfo)) {
+#  665|   		fclose(cpuinfo);
+#  666|-> 		free(buffer);
+#  667|   		err(1, "Reading /proc/cpuinfo failed");
+#  668|   	}
+
+Error: CPPCHECK_WARNING (CWE-415):
+kernel-5.14.0-570.10.1.el9_6/linux-5.14.0-570.10.1.el9.x86_64/tools/power/x86/x86_energy_perf_policy/x86_energy_perf_policy.c:669: error[doubleFree]: Resource handle 'cpuinfo' freed twice.
+#  667|   		err(1, "Reading /proc/cpuinfo failed");
+#  668|   	}
+#  669|-> 	fclose(cpuinfo);
+#  670|   
+#  671|   	hypervisor = strstr(buffer, "hypervisor");
+
+Error: CPPCHECK_WARNING (CWE-415):
+kernel-5.14.0-570.10.1.el9_6/linux-5.14.0-570.10.1.el9.x86_64/tools/power/x86/x86_energy_perf_policy/x86_energy_perf_policy.c:673: error[doubleFree]: Memory pointed to by 'buffer' is freed twice.
+#  671|   	hypervisor = strstr(buffer, "hypervisor");
+#  672|   
+#  673|-> 	free(buffer);
+#  674|   
+#  675|   	if (hypervisor)

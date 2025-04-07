@@ -298,7 +298,7 @@ std::string MsgFilter::filterPath(
 
     // try to kill the multiple version strings in paths (kernel, OpenLDAP, ...)
     static const std::string strKrn = "^[a-zA-Z+]+";
-    static const RE reKrn(strKrn + /* convert el8_9 -> el8 */ "|_[0-9]+$");
+    static const RE reKrn(strKrn + /* convert el8_9 -> el8 */ "|_[0-9](?:iv)?+$");
     const std::string ver = boost::regex_replace(nvr, reKrn, "");
     const std::string krnPattern = strKrn + ver + "[^/]*/";
 

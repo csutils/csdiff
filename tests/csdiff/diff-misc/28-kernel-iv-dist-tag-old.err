@@ -1,0 +1,223 @@
+Error: CPPCHECK_WARNING (CWE-685):
+kernel-5.14.0-570.10.1.el9_6/linux-5.14.0-570.10.1.el9.x86_64/samples/bpf/xdp_sample_user.c:672: error[wrongPrintfScanfArgNum]: printf format string requires 7 parameters but only 4 are given.
+#  670|   
+#  671|   		snprintf(str, sizeof(str), "cpu:%d", i);
+#  672|-> 		print_default("    %-18s " FMT_COLUMNf FMT_COLUMNf FMT_COLUMNf
+#  673|   			      "\n",
+#  674|   			      str, PPS(pps), DROP(drop), ERR(err));
+
+Error: CPPCHECK_WARNING (CWE-685):
+kernel-5.14.0-570.10.1.el9_6/linux-5.14.0-570.10.1.el9.x86_64/samples/bpf/xdp_sample_user.c:717: error[wrongPrintfScanfArgNum]: printf format string requires 7 parameters but only 5 are given.
+#  715|   				err = pps / err; /* calc average bulk size */
+#  716|   
+#  717|-> 			print_err(drop,
+#  718|   				  "  %-20s " FMT_COLUMNf FMT_COLUMNf __COLUMN(
+#  719|   					  ".2f") "\n",
+
+Error: CPPCHECK_WARNING (CWE-685):
+kernel-5.14.0-570.10.1.el9_6/linux-5.14.0-570.10.1.el9.x86_64/samples/bpf/xdp_sample_user.c:737: error[wrongPrintfScanfArgNum]: printf format string requires 7 parameters but only 5 are given.
+#  735|   			if (err > 0)
+#  736|   				err = pps / err; /* calc average bulk size */
+#  737|-> 			print_default(
+#  738|   				"    %-18s " FMT_COLUMNf FMT_COLUMNf __COLUMN(
+#  739|   					".2f") "\n",
+
+Error: CPPCHECK_WARNING (CWE-685):
+kernel-5.14.0-570.10.1.el9_6/linux-5.14.0-570.10.1.el9.x86_64/samples/bpf/xdp_sample_user.c:761: error[wrongPrintfScanfArgNum]: printf format string requires 7 parameters but only 4 are given.
+#  759|   		     &xdp_redirect, t);
+#  760|   	if (xdp_pass || xdp_drop || xdp_redirect) {
+#  761|-> 		print_err(xdp_drop,
+#  762|   			  "    %-18s " FMT_COLUMNf FMT_COLUMNf FMT_COLUMNf "\n",
+#  763|   			  "xdp_stats", PASS(xdp_pass), DROP(xdp_drop),
+
+Error: CPPCHECK_WARNING (CWE-685):
+kernel-5.14.0-570.10.1.el9_6/linux-5.14.0-570.10.1.el9.x86_64/samples/bpf/xdp_sample_user.c:777: error[wrongPrintfScanfArgNum]: printf format string requires 7 parameters but only 4 are given.
+#  775|   
+#  776|   		snprintf(str, sizeof(str), "cpu:%d", i);
+#  777|-> 		print_default("      %-16s " FMT_COLUMNf FMT_COLUMNf FMT_COLUMNf
+#  778|   			      "\n",
+#  779|   			      str, PASS(xdp_pass), DROP(xdp_drop),
+
+Error: CPPCHECK_WARNING (CWE-685):
+kernel-5.14.0-570.10.1.el9_6/linux-5.14.0-570.10.1.el9.x86_64/samples/bpf/xdp_sample_user.c:800: error[wrongPrintfScanfArgNum]: printf format string requires 7 parameters but only 5 are given.
+#  798|   	err = calc_errs_pps(&rec->total, &prev->total, t);
+#  799|   
+#  800|-> 	print_err(drop, "  %-20s " FMT_COLUMNf FMT_COLUMNf FMT_COLUMNf "\n",
+#  801|   		  pps ? "kthread total" : "kthread", PPS(pps), DROP(drop), err,
+#  802|   		  "sched");
+
+Error: CPPCHECK_WARNING (CWE-685):
+kernel-5.14.0-570.10.1.el9_6/linux-5.14.0-570.10.1.el9.x86_64/samples/bpf/xdp_sample_user.c:816: error[wrongPrintfScanfArgNum]: printf format string requires 7 parameters but only 5 are given.
+#  814|   
+#  815|   		snprintf(str, sizeof(str), "cpu:%d", i);
+#  816|-> 		print_default("    %-18s " FMT_COLUMNf FMT_COLUMNf FMT_COLUMNf
+#  817|   			      "\n",
+#  818|   			      str, PPS(pps), DROP(drop), err, "sched");
+
+Error: CPPCHECK_WARNING (CWE-685):
+kernel-5.14.0-570.10.1.el9_6/linux-5.14.0-570.10.1.el9.x86_64/samples/bpf/xdp_sample_user.c:844: error[wrongPrintfScanfArgNum]: printf format string requires 3 parameters but only 2 are given.
+#  842|   
+#  843|   		snprintf(str, sizeof(str), "cpu:%d", i);
+#  844|-> 		print_default("    %-18s " FMT_COLUMNf "\n", str, REDIR(pps));
+#  845|   	}
+#  846|   
+
+Error: CPPCHECK_WARNING (CWE-685):
+kernel-5.14.0-570.10.1.el9_6/linux-5.14.0-570.10.1.el9.x86_64/samples/bpf/xdp_sample_user.c:876: error[wrongPrintfScanfArgNum]: printf format string requires 3 parameters but only 2 are given.
+#  874|   								       "%s",
+#  875|   				 xdp_redirect_err_names[rec_i]);
+#  876|-> 			print_err(drop, "    %-18s " FMT_COLUMNf "\n", str,
+#  877|   				  ERR(drop));
+#  878|   		}
+
+Error: CPPCHECK_WARNING (CWE-685):
+kernel-5.14.0-570.10.1.el9_6/linux-5.14.0-570.10.1.el9.x86_64/samples/bpf/xdp_sample_user.c:890: error[wrongPrintfScanfArgNum]: printf format string requires 3 parameters but only 2 are given.
+#  888|   
+#  889|   			snprintf(str, sizeof(str), "cpu:%d", i);
+#  890|-> 			print_default("       %-16s" FMT_COLUMNf "\n", str,
+#  891|   				      ERR(drop));
+#  892|   		}
+
+Error: CPPCHECK_WARNING (CWE-685):
+kernel-5.14.0-570.10.1.el9_6/linux-5.14.0-570.10.1.el9.x86_64/samples/bpf/xdp_sample_user.c:922: error[wrongPrintfScanfArgNum]: printf format string requires 3 parameters but only 2 are given.
+#  920|   
+#  921|   		if (drop > 0 && !out) {
+#  922|-> 			print_always("    %-18s " FMT_COLUMNf "\n",
+#  923|   				     action2str(rec_i), ERR(drop));
+#  924|   
+
+Error: CPPCHECK_WARNING (CWE-685):
+kernel-5.14.0-570.10.1.el9_6/linux-5.14.0-570.10.1.el9.x86_64/samples/bpf/xdp_sample_user.c:936: error[wrongPrintfScanfArgNum]: printf format string requires 3 parameters but only 2 are given.
+#  934|   
+#  935|   				snprintf(str, sizeof(str), "cpu:%d", i);
+#  936|-> 				print_default("       %-16s" FMT_COLUMNf "\n",
+#  937|   					      str, ERR(drop));
+#  938|   			}
+
+Error: CPPCHECK_WARNING (CWE-685):
+kernel-5.14.0-570.10.1.el9_6/linux-5.14.0-570.10.1.el9.x86_64/samples/bpf/xdp_sample_user.c:977: error[wrongPrintfScanfArgNum]: printf format string requires 9 parameters but only 7 are given.
+#  975|   		if (info > 0)
+#  976|   			info = (pps + drop) / info; /* calc avg bulk */
+#  977|-> 		print_default("     %-18s" FMT_COLUMNf FMT_COLUMNf FMT_COLUMNf
+#  978|   				      __COLUMN(".2f") "\n",
+#  979|   			      str, XMIT(pps), DROP(drop), err, "drv_err/s",
+
+Error: CPPCHECK_WARNING (CWE-685):
+kernel-5.14.0-570.10.1.el9_6/linux-5.14.0-570.10.1.el9.x86_64/samples/bpf/xdp_sample_user.c:1070: error[wrongPrintfScanfArgNum]: printf format string requires 9 parameters but only 7 are given.
+# 1068|   		/* Skip idle streams of redirection */
+# 1069|   		if (pps || drop || err) {
+# 1070|-> 			print_err(drop,
+# 1071|   				  "  %-20s " FMT_COLUMNf FMT_COLUMNf FMT_COLUMNf
+# 1072|   				  __COLUMN(".2f") "\n", str, XMIT(pps), DROP(drop),
+
+Error: CPPCHECK_WARNING (CWE-685):
+kernel-5.14.0-570.10.1.el9_6/linux-5.14.0-570.10.1.el9.x86_64/samples/bpf/xdp_sample_user.c:1095: error[wrongPrintfScanfArgNum]: printf format string requires 9 parameters but only 7 are given.
+# 1093|   				info = (pps + drop) / info; /* calc avg bulk */
+# 1094|   
+# 1095|-> 			print_default("     %-18s" FMT_COLUMNf FMT_COLUMNf FMT_COLUMNf
+# 1096|   				      __COLUMN(".2f") "\n", str, XMIT(pps),
+# 1097|   				      DROP(drop), err, "drv_err/s", info, "bulk-avg");
+
+Error: CPPCHECK_WARNING (CWE-685):
+kernel-5.14.0-570.10.1.el9_6/linux-5.14.0-570.10.1.el9.x86_64/samples/bpf/xdp_sample_user.c:1110: error[wrongPrintfScanfArgNum]: printf format string requires 2 parameters but only 1 is given.
+# 1108|   	print_always("%-23s", prefix ?: "Summary");
+# 1109|   	if (mask & SAMPLE_RX_CNT)
+# 1110|-> 		print_always(FMT_COLUMNl, RX(out->totals.rx));
+# 1111|   	if (mask & SAMPLE_REDIRECT_CNT)
+# 1112|   		print_always(FMT_COLUMNl, REDIR(out->totals.redir));
+
+Error: CPPCHECK_WARNING (CWE-685):
+kernel-5.14.0-570.10.1.el9_6/linux-5.14.0-570.10.1.el9.x86_64/samples/bpf/xdp_sample_user.c:1112: error[wrongPrintfScanfArgNum]: printf format string requires 2 parameters but only 1 is given.
+# 1110|   		print_always(FMT_COLUMNl, RX(out->totals.rx));
+# 1111|   	if (mask & SAMPLE_REDIRECT_CNT)
+# 1112|-> 		print_always(FMT_COLUMNl, REDIR(out->totals.redir));
+# 1113|   	printf(FMT_COLUMNl,
+# 1114|   	       out->totals.err + out->totals.drop + out->totals.drop_xmit,
+
+Error: CPPCHECK_WARNING (CWE-685):
+kernel-5.14.0-570.10.1.el9_6/linux-5.14.0-570.10.1.el9.x86_64/samples/bpf/xdp_sample_user.c:1125: error[wrongPrintfScanfArgNum]: printf format string requires 7 parameters but only 4 are given.
+# 1123|   				    "receive total" :
+# 1124|   				    "receive";
+# 1125|-> 		print_err((out->rx_cnt.err || out->rx_cnt.drop),
+# 1126|   			  "  %-20s " FMT_COLUMNl FMT_COLUMNl FMT_COLUMNl "\n",
+# 1127|   			  str, PPS(out->rx_cnt.pps), DROP(out->rx_cnt.drop),
+
+Error: CPPCHECK_WARNING (CWE-685):
+kernel-5.14.0-570.10.1.el9_6/linux-5.14.0-570.10.1.el9.x86_64/samples/bpf/xdp_sample_user.c:1143: error[wrongPrintfScanfArgNum]: printf format string requires 3 parameters but only 2 are given.
+# 1141|   	if (mask & SAMPLE_REDIRECT_CNT) {
+# 1142|   		str = out->redir_cnt.suc ? "redirect total" : "redirect";
+# 1143|-> 		print_default("  %-20s " FMT_COLUMNl "\n", str,
+# 1144|   			      REDIR(out->redir_cnt.suc));
+# 1145|   
+
+Error: CPPCHECK_WARNING (CWE-685):
+kernel-5.14.0-570.10.1.el9_6/linux-5.14.0-570.10.1.el9.x86_64/samples/bpf/xdp_sample_user.c:1153: error[wrongPrintfScanfArgNum]: printf format string requires 3 parameters but only 2 are given.
+# 1151|   				    "redirect_err total" :
+# 1152|   				    "redirect_err";
+# 1153|-> 		print_err(out->redir_cnt.err, "  %-20s " FMT_COLUMNl "\n", str,
+# 1154|   			  ERR(out->redir_cnt.err));
+# 1155|   
+
+Error: CPPCHECK_WARNING (CWE-685):
+kernel-5.14.0-570.10.1.el9_6/linux-5.14.0-570.10.1.el9.x86_64/samples/bpf/xdp_sample_user.c:1163: error[wrongPrintfScanfArgNum]: printf format string requires 3 parameters but only 2 are given.
+# 1161|   						   "xdp_exception";
+# 1162|   
+# 1163|-> 		print_err(out->except_cnt.hits, "  %-20s " FMT_COLUMNl "\n", str,
+# 1164|   			  HITS(out->except_cnt.hits));
+# 1165|   
+
+Error: CPPCHECK_WARNING (CWE-685):
+kernel-5.14.0-570.10.1.el9_6/linux-5.14.0-570.10.1.el9.x86_64/samples/bpf/xdp_sample_user.c:1174: error[wrongPrintfScanfArgNum]: printf format string requires 9 parameters but only 7 are given.
+# 1172|   				    "devmap_xmit";
+# 1173|   
+# 1174|-> 		print_err(out->xmit_cnt.err || out->xmit_cnt.drop,
+# 1175|   			  "  %-20s " FMT_COLUMNl FMT_COLUMNl FMT_COLUMNl
+# 1176|   				  __COLUMN(".2f") "\n",
+
+Error: CPPCHECK_WARNING (CWE-415):
+kernel-5.14.0-570.10.1.el9_6/linux-5.14.0-570.10.1.el9.x86_64/tools/power/x86/x86_energy_perf_policy/x86_energy_perf_policy.c:656: error[doubleFree]: Resource handle 'cpuinfo' freed twice.
+#  654|   
+#  655|   	if (!fread(buffer, 1024, 1, cpuinfo)) {
+#  656|-> 		fclose(cpuinfo);
+#  657|   		free(buffer);
+#  658|   		err(1, "Reading /proc/cpuinfo failed");
+
+Error: CPPCHECK_WARNING (CWE-415):
+kernel-5.14.0-570.10.1.el9_6/linux-5.14.0-570.10.1.el9.x86_64/tools/power/x86/x86_energy_perf_policy/x86_energy_perf_policy.c:665: error[doubleFree]: Resource handle 'cpuinfo' freed twice.
+#  663|   	fseek(cpuinfo, flags - buffer, SEEK_SET);
+#  664|   	if (!fgets(buffer, 4096, cpuinfo)) {
+#  665|-> 		fclose(cpuinfo);
+#  666|   		free(buffer);
+#  667|   		err(1, "Reading /proc/cpuinfo failed");
+
+Error: CPPCHECK_WARNING (CWE-415):
+kernel-5.14.0-570.10.1.el9_6/linux-5.14.0-570.10.1.el9.x86_64/tools/power/x86/x86_energy_perf_policy/x86_energy_perf_policy.c:666: error[doubleFree]: Memory pointed to by 'buffer' is freed twice.
+#  664|   	if (!fgets(buffer, 4096, cpuinfo)) {
+#  665|   		fclose(cpuinfo);
+#  666|-> 		free(buffer);
+#  667|   		err(1, "Reading /proc/cpuinfo failed");
+#  668|   	}
+
+Error: CPPCHECK_WARNING (CWE-415):
+kernel-5.14.0-570.10.1.el9_6/linux-5.14.0-570.10.1.el9.x86_64/tools/power/x86/x86_energy_perf_policy/x86_energy_perf_policy.c:669: error[doubleFree]: Resource handle 'cpuinfo' freed twice.
+#  667|   		err(1, "Reading /proc/cpuinfo failed");
+#  668|   	}
+#  669|-> 	fclose(cpuinfo);
+#  670|   
+#  671|   	hypervisor = strstr(buffer, "hypervisor");
+
+Error: CPPCHECK_WARNING (CWE-415):
+kernel-5.14.0-570.10.1.el9_6/linux-5.14.0-570.10.1.el9.x86_64/tools/power/x86/x86_energy_perf_policy/x86_energy_perf_policy.c:673: error[doubleFree]: Memory pointed to by 'buffer' is freed twice.
+#  671|   	hypervisor = strstr(buffer, "hypervisor");
+#  672|   
+#  673|-> 	free(buffer);
+#  674|   
+#  675|   	if (hypervisor)
+
+Error: CPPCHECK_WARNING (CWE-562):
+kernel-5.14.0-570.10.1.el9_6/linux-5.14.0-570.10.1.el9.x86_64/tools/testing/selftests/bpf/progs/task_kfunc_common.h:38: error[returnDanglingLifetime]: Returning pointer to local variable 'pid' that will be invalid when returning.
+#   36|   		return NULL;
+#   37|   
+#   38|-> 	return bpf_map_lookup_elem(&__tasks_kfunc_map, &pid);
+#   39|   }
+#   40|   

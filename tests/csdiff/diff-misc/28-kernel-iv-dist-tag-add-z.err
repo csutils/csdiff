@@ -1,0 +1,15 @@
+Error: CPPCHECK_WARNING (CWE-562):
+kernel-5.14.0-570.518.1.1.1.el9_6iv/linux-5.14.0-570.518.1.1.1.el9.x86_64/tools/testing/selftests/bpf/progs/cgrp_kfunc_common.h:39: error[returnDanglingLifetime]: Returning pointer to local variable 'id' that will be invalid when returning.
+#   37|   		return NULL;
+#   38|   
+#   39|-> 	return bpf_map_lookup_elem(&__cgrps_kfunc_map, &id);
+#   40|   }
+#   41|   
+
+Error: CPPCHECK_WARNING (CWE-562):
+kernel-5.14.0-570.518.1.1.1.el9_6iv/linux-5.14.0-570.518.1.1.1.el9.x86_64/tools/testing/selftests/bpf/progs/cpumask_common.h:96: error[returnDanglingLifetime]: Returning pointer to local variable 'key' that will be invalid when returning.
+#   94|   	u32 key = 0;
+#   95|   
+#   96|-> 	return bpf_map_lookup_elem(&__cpumask_map, &key);
+#   97|   }
+#   98|   

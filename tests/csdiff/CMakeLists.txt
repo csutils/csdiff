@@ -92,5 +92,6 @@ test_csdiff(diff-misc 24-shellcheck-line-content)
 test_csdiff(diff-misc 25-llvm-17-path-filter)
 test_csdiff(diff-misc 26-too-many-events-filter)
 test_csdiff(diff-misc 27-cov-builtin-model)
+test_csdiff(diff-misc 28-kernel-iv-dist-tag)
 
 add_subdirectory(filter-file)
