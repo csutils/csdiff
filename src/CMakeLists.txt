@@ -207,9 +207,11 @@ if(HELP2MAN)
             --include "${CMAKE_SOURCE_DIR}/doc/csfilter-kfp.h2m"
             ${CMAKE_CURRENT_BINARY_DIR}/csfilter-kfp
             > csfilter-kfp.1 || rm -f csfilter-kfp.1
+        DEPENDS "${CMAKE_CURRENT_BINARY_DIR}/csfilter-kfp"
+                "${CMAKE_SOURCE_DIR}/doc/csfilter-kfp.h2m"
         COMMENT "Generating csfilter-kfp man page"
         VERBATIM)
-    add_custom_target(csfilter-kfp.1 ALL DEPENDS
+    add_custom_target(man-csfilter-kfp ALL DEPENDS
         "${CMAKE_CURRENT_BINARY_DIR}/csfilter-kfp.1")
     install(FILES ${CMAKE_CURRENT_BINARY_DIR}/csfilter-kfp.1
             DESTINATION ${CMAKE_INSTALL_MANDIR}/man1)
