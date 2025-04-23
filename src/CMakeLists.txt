@@ -179,12 +179,15 @@ macro(create_manpage BINARY)
     else()
         set(H2M_ARGS "")
     endif()
-    add_custom_command(TARGET ${BINARY} POST_BUILD
+    add_custom_command(OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/${BINARY}.1"
         COMMAND env LC_ALL=C ${HELP2MAN} --no-info --section 1 ${H2M_ARGS}
             ${CMAKE_CURRENT_BINARY_DIR}/${BINARY}
             > ${BINARY}.1 || rm -f ${BINARY}.1
+        DEPENDS ${BINARY} "${CMAKE_SOURCE_DIR}/doc/${BINARY}.h2m"
         COMMENT "Generating ${BINARY} man page"
         VERBATIM)
+    add_custom_target(man-${BINARY} ALL DEPENDS
+        "${CMAKE_CURRENT_BINARY_DIR}/${BINARY}.1")
     install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${BINARY}.1
             DESTINATION ${CMAKE_INSTALL_MANDIR}/man1)
 endmacro(create_manpage)
