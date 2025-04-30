@@ -23,6 +23,7 @@
 #include "regex.hh"
 
 #include <boost/algorithm/string/predicate.hpp>
+#include <boost/filesystem.hpp>
 
 struct SarifTreeDecoder::Private {
     void updateCweMap(const pt::ptree *driverNode);
@@ -360,7 +361,10 @@ static void expandRelativePaths(Defect *pDef, const std::string &pwd)
 
             default:
                 // prepend `pwd` to relative path
-                fileName = pwd + fileName;
+                boost::filesystem::path fullPath = pwd + fileName;
+
+                // convert "/a/b/../c" to "a/c"
+                fileName = fullPath.lexically_normal().string();
         }
     }
 }

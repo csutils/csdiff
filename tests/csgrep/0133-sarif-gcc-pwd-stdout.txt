@@ -1,0 +1,74 @@
+Error: GCC_ANALYZER_WARNING (CWE-127):
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:80:51: warning[-Wanalyzer-out-of-bounds]: stack-based buffer under-read
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:104:16: enter_function: entry to ‘get_usb_device’
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:112:9: call_function: calling ‘readlink_recursive’ from ‘get_usb_device’
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:23:12: enter_function: entry to ‘readlink_recursive’
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:31:12: branch_false: following ‘false’ branch (when ‘ret <= 0’)...
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:44:17: branch_false: ...to here
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:112:9: return_function: returning to ‘get_usb_device’ from ‘readlink_recursive’
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:113:9: call_function: calling ‘get_absolute_path’ from ‘get_usb_device’
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:50:14: enter_function: entry to ‘get_absolute_path’
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:60:12: branch_false: following ‘false’ branch (when ‘path’ is non-NULL)...
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:63:13: branch_false: ...to here
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:63:12: branch_false: following ‘false’ branch...
+<unknown>: branch_false: ...to here
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:72:16: branch_true: following ‘true’ branch...
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:73:20: branch_false: following ‘false’ branch...
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:79:27: branch_false: ...to here
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:79:27: branch_true: following ‘true’ branch...
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:80:51: danger: out-of-bounds read at byte -1 but ‘absolute_path’ starts at byte 0
+
+Error: GCC_ANALYZER_WARNING (CWE-127):
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:86:42: warning[-Wanalyzer-out-of-bounds]: stack-based buffer under-read
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:104:16: enter_function: entry to ‘get_usb_device’
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:112:9: call_function: calling ‘readlink_recursive’ from ‘get_usb_device’
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:23:12: enter_function: entry to ‘readlink_recursive’
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:31:12: branch_true: following ‘true’ branch (when ‘ret > 0’)...
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:32:20: branch_true: ...to here
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:42:24: call_function: calling ‘readlink_recursive’ from ‘readlink_recursive’
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:23:12: enter_function: entry to ‘readlink_recursive’
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:42:24: return_function: returning to ‘readlink_recursive’ from ‘readlink_recursive’
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:112:9: return_function: returning to ‘get_usb_device’ from ‘readlink_recursive’
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:113:9: call_function: calling ‘get_absolute_path’ from ‘get_usb_device’
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:50:14: enter_function: entry to ‘get_absolute_path’
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:60:12: branch_false: following ‘false’ branch (when ‘path’ is non-NULL)...
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:63:13: branch_false: ...to here
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:63:12: branch_false: following ‘false’ branch...
+<unknown>: branch_false: ...to here
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:72:16: branch_true: following ‘true’ branch...
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:73:20: branch_false: following ‘false’ branch...
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:79:27: branch_false: ...to here
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:79:27: branch_true: following ‘true’ branch...
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:79:28: branch_true: following ‘true’ branch...
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:81:29: branch_true: ...to here
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:81:28: branch_true: following ‘true’ branch...
+<unknown>: branch_true: ...to here
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:86:42: danger: out-of-bounds read at byte -2 but ‘absolute_path’ starts at byte 0
+
+Error: GCC_ANALYZER_WARNING (CWE-127):
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:91:28: warning[-Wanalyzer-out-of-bounds]: stack-based buffer under-read
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:104:16: enter_function: entry to ‘get_usb_device’
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:112:9: call_function: calling ‘readlink_recursive’ from ‘get_usb_device’
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:23:12: enter_function: entry to ‘readlink_recursive’
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:31:12: branch_false: following ‘false’ branch (when ‘ret <= 0’)...
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:44:17: branch_false: ...to here
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:112:9: return_function: returning to ‘get_usb_device’ from ‘readlink_recursive’
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:113:9: call_function: calling ‘get_absolute_path’ from ‘get_usb_device’
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:50:14: enter_function: entry to ‘get_absolute_path’
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:60:12: branch_false: following ‘false’ branch (when ‘path’ is non-NULL)...
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:63:13: branch_false: ...to here
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:63:12: branch_false: following ‘false’ branch...
+<unknown>: branch_false: ...to here
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:72:16: branch_true: following ‘true’ branch...
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:73:20: branch_false: following ‘false’ branch...
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:79:27: branch_false: ...to here
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:89:27: branch_true: following ‘true’ branch...
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:90:28: branch_true: ...to here
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:89:28: branch_true: following ‘true’ branch...
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:91:28: branch_true: ...to here
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:91:28: danger: out-of-bounds read at byte -1 but ‘absolute_path’ starts at byte 0
+
+Error: GCC_ANALYZER_WARNING (CWE-401):
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:169:12: warning[-Wanalyzer-malloc-leak]: leak of ‘iconv_open(nl_langinfo(14), "UTF-16LE")’
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:167:16: acquire_memory: allocated here
+/builddir/build/BUILD/usbutils-018-build/usbutils-018/usbmisc.c:169:12: danger: ‘iconv_open(nl_langinfo(14), "UTF-16LE")’ leaks here; was allocated at [(1)](sarif:/runs/0/results/3/codeFlows/0/threadFlows/0/locations/0)
