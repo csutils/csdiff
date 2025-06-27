@@ -80,8 +80,12 @@ class DockerFileTransformer {
         // split RUN directive with options from the actual command
         const RE reLineRunOpts_ = RE("^(RUN +(?:--[A-Za-z0-9_]+=[^ ]+ +)*)(.*)$");
 
-        /// match ... in RUN [...]
-        const RE reLineRunExec_ = RE("^\\[(.*)\\] *$");
+        /// text to construct RE taking "..." where inner quotes can be escaped
+        const std::string rtQuotedStr_ = "\"([^\"\\\\]|\\\\.)*\"";
+
+        /// match RUN ["cmd", "opt1", "opt2", ...] with zero or more opts
+        const RE reLineRunExec_ = RE("^\\[\\s*(" + rtQuotedStr_
+                + "(?:\\s*,\\s*" + rtQuotedStr_ + ")*)\\s*\\]\\s*$");
 
         /// match in-line comments
         const RE reComment_     = RE("^\\s*#.*$");
