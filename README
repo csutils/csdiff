@@ -17,6 +17,8 @@ Dependences
 
     * CMake 3.12+
 
+    * help2man (required to build man pages)
+
 
 Manual Installation
 -------------------
@@ -54,4 +56,5 @@ List of Utilities
 
 Documentation
 -------------
-See the corresponding man pages in Section 1.
+See the corresponding man pages in Section 1. These are generated during the
+build process using help2man.
