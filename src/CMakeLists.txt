@@ -45,7 +45,6 @@ find_package(Boost REQUIRED
     COMPONENTS filesystem
                program_options
                regex
-               system
     OPTIONAL_COMPONENTS json
                         nowide)
 include_directories(SYSTEM ${Boost_INCLUDE_DIRS})
