@@ -90,8 +90,8 @@ cat > "$SPEC" << EOF
 %bcond_without python2
 %endif
 
-# build csdiff-static on 64bit RHEL-10+ and Fedora
-%if 0%{?__isa_bits} == 64 && (0%{?rhel} > 9 || 0%{?fedora})
+# build csdiff-static on 64bit RHEL-8+ and Fedora
+%if 0%{?__isa_bits} == 64 && (0%{?rhel} > 7 || 0%{?fedora})
 %bcond_without static
 %else
 %bcond_with static
