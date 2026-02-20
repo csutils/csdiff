@@ -81,7 +81,6 @@ SPEC="./$PKG.spec"
 cat > "$SPEC" << EOF
 # disable in source builds on EPEL <9
 %undefine __cmake_in_source_build
-%undefine __cmake3_in_source_build
 
 # python2 is not available on RHEL > 7 and Fedora
 %if 0%{?rhel} > 7 || 0%{?fedora}
@@ -126,7 +125,11 @@ BuildRequires: boost1.78-devel
 BuildRequires: boost-devel
 %endif
 
+%if 0%{?rhel} == 7
 BuildRequires: cmake3
+%else
+BuildRequires: cmake
+%endif
 BuildRequires: gcc-c++
 BuildRequires: help2man
 BuildRequires: make
@@ -194,18 +197,34 @@ export BOOST_LIBRARYDIR=/usr/lib64/boost169
 %endif
 
 make version.cc
-%cmake3                                    \\
+%if 0%{?rhel} == 7
+%cmake3                                  \\
+%else
+%cmake                                   \\
+%endif
     -DCSGREP_STATIC=%{?with_static:ON}     \\
     -DPYCSDIFF_PYTHON2=%{?with_python2:ON} \\
     -DPYCSDIFF_PYTHON3=%{?with_python3:ON} \\
     -DVERSION='%{name}-%{version}-%{release}'
+%if 0%{?rhel} == 7
 %cmake3_build
+%else
+%cmake_build
+%endif
 
 %install
+%if 0%{?rhel} == 7
 %cmake3_install
+%else
+%cmake_install
+%endif
 
 %check
+%if 0%{?rhel} == 7
 %ctest3
+%else
+%ctest
+%endif
 
 %files
 %doc README
