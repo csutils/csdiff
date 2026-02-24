@@ -102,11 +102,17 @@ if(CSGREP_STATIC)
     add_executable(csgrep-static csgrep.cc)
     target_link_options(csgrep-static PRIVATE "-static")
 
-    # FIXME: do not hardcode paths to boost static libs
+    # Use BOOST_LIBRARYDIR if set, otherwise fallback to /usr/lib64
+    if(DEFINED ENV{BOOST_LIBRARYDIR})
+        set(Boost_STATIC_DIR "$ENV{BOOST_LIBRARYDIR}")
+    else()
+        set(Boost_STATIC_DIR "/usr/lib64")
+    endif()
+
     target_link_libraries(csgrep-static cs
-        /usr/lib64/libboost_filesystem.a
-        /usr/lib64/libboost_program_options.a
-        /usr/lib64/libboost_regex.a)
+        ${Boost_STATIC_DIR}/libboost_filesystem.a
+        ${Boost_STATIC_DIR}/libboost_program_options.a
+        ${Boost_STATIC_DIR}/libboost_regex.a)
 
     install(TARGETS csgrep-static
         DESTINATION ${CMAKE_INSTALL_LIBEXECDIR})
