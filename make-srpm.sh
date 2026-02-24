@@ -89,8 +89,8 @@ cat > "$SPEC" << EOF
 %bcond_without python2
 %endif
 
-# build csdiff-static on 64bit RHEL-10+ and Fedora
-%if 0%{?__isa_bits} == 64 && (0%{?rhel} > 9 || 0%{?fedora})
+# build csdiff-static on 64bit RHEL-8+ and Fedora
+%if 0%{?__isa_bits} == 64 && (0%{?rhel} > 7 || 0%{?fedora})
 %bcond_without static
 %else
 %bcond_with static
@@ -150,7 +150,11 @@ defect lists using various filtering predicates.
 %if %{with static}
 %package static
 Summary:        Statically linked csgrep-static executable
+%if 0%{?rhel} == 8 || 0%{?rhel} == 9
+BuildRequires:  boost1.78-static
+%else
 BuildRequires:  boost-static
+%endif
 BuildRequires:  glibc-static
 BuildRequires:  libstdc++-static
 
@@ -194,6 +198,11 @@ code scan defect lists to find out added or fixed defects.
 # Set paths for CMake's FindBoost
 export BOOST_INCLUDEDIR=/usr/include/boost169
 export BOOST_LIBRARYDIR=/usr/lib64/boost169
+%endif
+%if 0%{?rhel} == 8 || 0%{?rhel} == 9
+# Set paths for CMake's FindBoost
+export BOOST_INCLUDEDIR=/usr/include/boost1.78
+export BOOST_LIBRARYDIR=/usr/lib64/boost1.78
 %endif
 
 make version.cc
