@@ -1,0 +1,67 @@
+{
+    "defects": [
+        {
+            "checker": "SHELLCHECK_WARNING",
+            "language": "shell",
+            "hash_v1": "b6311c1fdc52c47d4279cd6650af36e6f8299960",
+            "key_event_idx": 0,
+            "events": [
+                {
+                    "file_name": "/etc/rc.d/rc.sysinit",
+                    "line": 492,
+                    "column": 13,
+                    "input_file": "0136-json-keep-recorded-locations-stdin.txt",
+                    "input_line": 2,
+                    "event": "warning",
+                    "message": "Quote this to prevent word splitting. [SC2046]",
+                    "verbosity_level": 0
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "input_file": "0136-json-keep-recorded-locations-stdin.txt",
+                    "input_line": 3,
+                    "event": "#",
+                    "message": "  490|   if [ -n \"$SELINUX_STATE\" -a \"$READONLY\" != \"yes\" ]; then",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "input_file": "0136-json-keep-recorded-locations-stdin.txt",
+                    "input_line": 4,
+                    "event": "#",
+                    "message": "  491|       if [ -f /.autorelabel ] || strstr \"$cmdline\" autorelabel ; then",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "input_file": "0136-json-keep-recorded-locations-stdin.txt",
+                    "input_line": 5,
+                    "event": "#",
+                    "message": "  492|-> \trestorecon $(awk '!/^#/ && $4 !~ /noauto/ && $2 ~ /^\\// { print $2 }' /etc/fstab) >/dev/null 2>&1",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "input_file": "0136-json-keep-recorded-locations-stdin.txt",
+                    "input_line": 6,
+                    "event": "#",
+                    "message": "  493|       fi",
+                    "verbosity_level": 1
+                },
+                {
+                    "file_name": "",
+                    "line": 0,
+                    "input_file": "0136-json-keep-recorded-locations-stdin.txt",
+                    "input_line": 7,
+                    "event": "#",
+                    "message": "  494|   fi",
+                    "verbosity_level": 1
+                }
+            ]
+        }
+    ]
+}

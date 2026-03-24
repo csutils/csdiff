@@ -62,11 +62,15 @@ class AbstractWriter {
             ignoreParserWarnings_ = val;
         }
 
+        void setRecordInputLocations(const bool val) {
+            recordInputLocations_ = val;
+        }
 
     private:
         EFileFormat                 inputFormat_ = FF_INVALID;
         const TScanProps            emptyProps_{};
         bool                        ignoreParserWarnings_ = false;
+        bool                        recordInputLocations_ = false;
 };
 
 using TWriterPtr = std::unique_ptr<AbstractWriter>;

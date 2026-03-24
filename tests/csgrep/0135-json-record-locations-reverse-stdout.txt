@@ -1,0 +1,7 @@
+Error: SHELLCHECK_WARNING:
+/etc/rc.d/rc.sysinit:492:13: warning: Quote this to prevent word splitting. [SC2046]
+#  490|   if [ -n "$SELINUX_STATE" -a "$READONLY" != "yes" ]; then
+#  491|       if [ -f /.autorelabel ] || strstr "$cmdline" autorelabel ; then
+#  492|-> 	restorecon $(awk '!/^#/ && $4 !~ /noauto/ && $2 ~ /^\// { print $2 }' /etc/fstab) >/dev/null 2>&1
+#  493|       fi
+#  494|   fi

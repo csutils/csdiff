@@ -68,9 +68,11 @@ class AbstractTokenFilter: public ITokenizer {
 
 class Tokenizer: public ITokenizer {
     public:
-        Tokenizer(std::istream &input):
-            input_(input),
-            lineNo_(0)
+        Tokenizer(InStream &input):
+            input_(input.str()),
+            lineNo_(0),
+            fileName_(input.fileName()),
+            recordInputLocations_(input.recordInputLocations())
         {
         }
 
@@ -83,6 +85,8 @@ class Tokenizer: public ITokenizer {
     private:
         std::istream           &input_;
         int                     lineNo_;
+        std::string             fileName_;
+        bool                    recordInputLocations_;
 
         const RE reSideBar_ =
             RE("^ *((([0-9]+)? \\| )|(\\+\\+\\+ \\|\\+)).*$");
@@ -130,6 +134,11 @@ EToken Tokenizer::readNext(DefEvent *pEvt)
 
     *pEvt = DefEvent();
     pEvt->msg = line;
+
+    if (recordInputLocations_) {
+        pEvt->inputLine = lineNo_;
+        pEvt->inputFile = fileName_;
+    }
 
     // check for line markers produced by gcc-9.2.1 (a.k.a. sidebar)
     if (boost::regex_match(pEvt->msg, reSideBar_))
@@ -387,7 +396,7 @@ EToken MultilineConcatenator::readNext(DefEvent *pEvt)
 class BasicGccParser {
     public:
         BasicGccParser(InStream &input):
-            rawTokenizer_(input.str()),
+            rawTokenizer_(input),
             noiseFilter_(&rawTokenizer_),
             markerConverter_(&noiseFilter_),
             tokenizer_(&markerConverter_),
@@ -535,6 +544,7 @@ bool BasicGccParser::getNext(Defect *pDef)
         DefEvent evt;
 
         const EToken tok = tokenizer_.readNext(&evt);
+
         switch (tok) {
             case T_NULL:
                 if (!hasKeyEvent_ && !defCurrent_.events.empty())
@@ -828,7 +838,7 @@ bool GccParser::getNext(Defect *pDef)
     while (d->core.getNext(&d->lastDef) && d->tryMerge(pDef))
         ;
 
-    // initialize verbosityLevel 
+    // initialize verbosityLevel
     // FIXME: similar code to KeyEventDigger::initVerbosity()
     TEvtList &evtList = pDef->events;
     const unsigned evtCount = evtList.size();

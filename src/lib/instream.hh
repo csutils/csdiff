@@ -38,20 +38,23 @@ struct InFileException {
 
 class InStream {
     public:
-        InStream(const std::string &fileName, bool silent = false);
+        InStream(const std::string &fileName, bool silent = false,
+                 bool recordInputLocations = false);
         InStream(std::istringstream &str, bool silent = false);
         ~InStream() = default;
 
-        const std::string& fileName()   const { return fileName_;   }
-        std::istream& str()             const { return str_;        }
-        bool silent()                   const { return silent_;     }
-        bool anyError()                 const { return anyError_;   }
+        const std::string& fileName()   const { return fileName_;       }
+        std::istream& str()             const { return str_;            }
+        bool silent()                   const { return silent_;         }
+        bool recordInputLocations()     const { return recordInputLocations_; }
+        bool anyError()                 const { return anyError_;       }
 
         void handleError(const std::string &msg = "", unsigned long line = 0UL);
 
     private:
         const std::string   fileName_;
         const bool          silent_;
+        const bool          recordInputLocations_ = false;
         bool                anyError_ = false;
         std::ifstream       fileStr_;
         std::istream       &str_;

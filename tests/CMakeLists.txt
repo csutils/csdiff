@@ -28,6 +28,10 @@ set(diffcmd     "diff -up")
 set(jsfilter "sed -e 's|\"version\": \"[^\"]*\"|\"version\": \"\"|g'")
 set(jsfilter "${jsfilter} -e 's|${CMAKE_SOURCE_DIR}/tests/csfilter-kfp/|\$PROJECT_ROOT/tests/csfilter-kfp/|'")
 
+# strip the absolute paths for "input_file" strings in the --record-input-locations tests
+# (namely csgrep/0134 test) for portability
+set(jsfilter "${jsfilter} -e 's|${CMAKE_SOURCE_DIR}/tests/csgrep/0134|0134|g'")
+
 macro(add_test_wrap test_name cmd)
     add_test("${test_name}" bash -c "${cmd}")
     set_tests_properties(${test_name} PROPERTIES ENVIRONMENT

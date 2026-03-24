@@ -56,7 +56,7 @@ bool AbstractWriter::handleFile(InStream &input)
 bool AbstractWriter::handleFile(const std::string &fileName, bool silent)
 {
     try {
-        InStream str(fileName, silent);
+        InStream str(fileName, silent, recordInputLocations_);
         return this->handleFile(str);
     }
     catch (const InFileException &e) {

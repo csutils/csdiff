@@ -19,9 +19,10 @@
 
 #include "instream.hh"
 
-InStream::InStream(const std::string &fileName, const bool silent):
+InStream::InStream(const std::string &fileName, const bool silent, const bool recordInputLocations):
     fileName_(fileName),
     silent_(silent),
+    recordInputLocations_(recordInputLocations),
     str_((fileName_ == "-")
                 ? std::cin
                 : fileStr_)

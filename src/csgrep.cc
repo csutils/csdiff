@@ -619,6 +619,7 @@ int main(int argc, char *argv[])
             ("file-glob",                                       "expand glob patterns in the names of input files")
             ("ignore-case,i",                                   "ignore case when matching regular expressions")
             ("ignore-parser-warnings",                          "if enabled, parser warnings about the input files do not affect exit code")
+            ("record-input-locations",                          "if enabled, events in json will contain input_line and input_file fields referencing the original location of input file/stream")
             ("invert-match,v",                                  "select defects that do not match the selected criteria")
             ("invert-regex,n",                                  "invert regular expressions in all predicates")
             ("filter-file,f",       po::value<TStringList>(),   "read custom filtering rules from a file in JSON format");
@@ -639,7 +640,7 @@ int main(int argc, char *argv[])
         p.add("input-file", -1);
 
         po::store(po::parse_command_line(argc, argv, desc), vm);
-        po::notify(vm);    
+        po::notify(vm);
 
         po::options_description opts;
         opts.add(desc).add(hidden);
@@ -734,6 +735,9 @@ int main(int argc, char *argv[])
 
     if (vm.count("ignore-parser-warnings"))
         eng->setIgnoreParserWarnings(true);
+
+    if (vm.count("record-input-locations"))
+        eng->setRecordInputLocations(true);
 
     bool hasError = false;
 

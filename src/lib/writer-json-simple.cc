@@ -40,7 +40,7 @@ static array simpleEncodeEvents(const TEvtList &events)
     for (const DefEvent &evt : events) {
         object evtNode;
 
-        // describe the location
+        // describe the location from the source code
         evtNode["file_name"] = evt.fileName;
         evtNode["line"] = evt.line;
         if (0 < evt.column)
@@ -49,6 +49,12 @@ static array simpleEncodeEvents(const TEvtList &events)
             evtNode["h_size"] = evt.hSize;
         if (0 < evt.vSize)
             evtNode["v_size"] = evt.vSize;
+
+        // describe the location from the compilation error log/input
+        if (!evt.inputFile.empty())
+            evtNode["input_file"] = evt.inputFile;
+        if (0 < evt.inputLine)
+            evtNode["input_line"] = evt.inputLine;
 
         // describe the event
         evtNode["event"] = evt.event;

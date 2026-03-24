@@ -49,6 +49,8 @@ struct DefEvent {
     std::string         fileName;
     int                 line            = 0;
     int                 column          = 0;
+    int                 inputLine       = 0;
+    std::string         inputFile;
     std::string         event;
     std::string         msg;
 

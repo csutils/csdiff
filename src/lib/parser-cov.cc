@@ -114,8 +114,10 @@ std::ostream& operator<<(std::ostream &str, EToken code)
 
 class ErrFileLexer {
     public:
-        ErrFileLexer(std::istream &input):
-            lineReader_(input),
+        ErrFileLexer(InStream &input):
+            lineReader_(input.str()),
+            fileName_(input.fileName()),
+            recordInputLocations_(input.recordInputLocations()),
             hasError_(false)
         {
         }
@@ -140,6 +142,8 @@ class ErrFileLexer {
 
     private:
         LineReader                  lineReader_;
+        std::string                 fileName_;
+        bool                        recordInputLocations_;
         bool                        hasError_;
         Defect                      def_;
         DefEvent                    evt_;
@@ -181,6 +185,10 @@ EToken ErrFileLexer::readNext()
         evt_ = DefEvent();
         evt_.event  = sm[/* #     */ 1];
         evt_.msg    = sm[/* msg   */ 2];
+        if (recordInputLocations_) {
+            evt_.inputLine = lineReader_.lineNo();
+            evt_.inputFile = fileName_;
+        }
         return T_COMMENT;
     }
 
@@ -201,6 +209,11 @@ EToken ErrFileLexer::readNext()
     // read event and msg
     evt_.event = sm[/* event */ 4];
     evt_.msg = sm[/* msg */ 5];
+
+    if (recordInputLocations_) {
+        evt_.inputLine = lineReader_.lineNo();
+        evt_.inputFile = fileName_;
+    }
 
     return T_EVENT;
 }
@@ -523,7 +536,7 @@ struct CovParser::Private {
     ImpliedAttrDigger       digger;
 
     Private(InStream &input_):
-        lexer(input_.str()),
+        lexer(input_),
         fileName(input_.fileName()),
         silent(input_.silent()),
         hasError(false),

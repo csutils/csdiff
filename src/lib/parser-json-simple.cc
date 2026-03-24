@@ -73,6 +73,8 @@ SimpleTreeDecoder::Private::Private(InStream &input):
         "event",
         "file_name",
         "h_size",
+        "input_file",
+        "input_line",
         "line",
         "message",
         "v_size",
@@ -148,6 +150,8 @@ bool SimpleTreeDecoder::readNode(Defect *def)
         evt.column      = valueOf<int           >(evtNode, "column");
         evt.hSize       = valueOf<TNumDiff      >(evtNode, "h_size");
         evt.vSize       = valueOf<TNumDiff      >(evtNode, "v_size");
+        evt.inputFile   = valueOf<std::string   >(evtNode, "input_file");
+        evt.inputLine   = valueOf<int           >(evtNode, "input_line");
         evt.event       = valueOf<std::string   >(evtNode, "event");
         evt.msg         = valueOf<std::string   >(evtNode, "message");
         evt.verbosityLevel = valueOf<int>(evtNode, "verbosity_level", -1);
@@ -189,4 +193,3 @@ bool SimpleTreeDecoder::readNode(Defect *def)
 
     return true;
 }
-
