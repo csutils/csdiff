@@ -3,7 +3,9 @@ name: Coverity
 
 on:
   push:
-    branches: [main]
+    branches:
+      - coverity
+      # - main
 
 jobs:
   coverity:
